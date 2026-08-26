@@ -27,6 +27,7 @@ const messages = {
     removeFavorite: "Quitar de favoritos",
     saveFavorite: "Guardar en favoritos",
     editMyProfile: "Editar mi perfil",
+    expandProfile: "Ampliar perfil",
     ownershipVerified: "Propiedad verificada",
     viewOwnershipClaim: "Ver reclamación de propiedad",
     claimProducer: "Reclamar este productor",
@@ -71,6 +72,16 @@ const messages = {
     lon: "Longitud decimal WGS84. La latitud y la longitud deben indicarse juntas.",
     "Venta online": "Indica si se ha revisado un mecanismo de pedido vigente.",
     "Canal de venta": "Mecanismos de pedido vigentes demostrados.",
+    "visitas guiadas":
+      "Indica si este productor ofrece actualmente visitas guiadas; déjalo vacío si no se publica.",
+    "mensaje a la comunidad":
+      "Un mensaje público escrito por el productor, conservado en su idioma original y revisado antes de publicarse.",
+    mensaje_comunidad_locale:
+      "El idioma de origen del mensaje a la comunidad; déjalo vacío solo si el mensaje está vacío.",
+    "enlace destacado 1":
+      "Un artículo, entrevista u otra página pública HTTP(S) relevante sobre este productor.",
+    "enlace destacado 2":
+      "Una segunda página pública HTTP(S) distinta; primero debe completarse el enlace 1.",
   },
   common: {
     unitCount: "{count} {unit}",
@@ -186,6 +197,7 @@ const messages = {
     categories: "Categorías",
     allCategories: "Todas",
     information: "Información",
+    expandedProfile: "Perfil ampliado",
   },
   fieldLabels: {
     slug: "Slug",
@@ -198,6 +210,11 @@ const messages = {
     address: "Dirección",
     description: "Descripción",
     descriptionLocale: "Idioma de la descripción",
+    guidedVisits: "Visitas guiadas",
+    communityMessage: "Mensaje a la comunidad",
+    communityMessageLocale: "Idioma del mensaje a la comunidad",
+    highlightedLink1: "Enlace destacado 1",
+    highlightedLink2: "Enlace destacado 2",
     openingHours: "Horario",
     phone: "Teléfono",
     email: "Correo electrónico",

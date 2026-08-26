@@ -35,7 +35,7 @@
     "test:audit-defects": "node scripts/test-audit-defects.mjs",
     "test:check-links": "node scripts/test-check-links.mjs",
     "test:i18n": "tsx --test scripts/test-i18n.ts",
-    "test:accounts": "tsx --test scripts/test-account-domain.ts scripts/test-account-i18n.ts scripts/test-account-migration.ts scripts/test-i18n-presentation.ts scripts/test-materialize-producer-change.ts",
+    "test:accounts": "tsx --test scripts/test-account-domain.ts scripts/test-account-i18n.ts scripts/test-account-migration.ts scripts/test-i18n-presentation.ts scripts/test-materialize-producer-change.ts scripts/test-profile-upgrade-domain.ts && node --conditions=react-server --import tsx --test scripts/test-profile-gifts-service.ts",
     "test:catalog-geography": "tsx --test scripts/test-catalog-area-boundaries.mjs scripts/test-location-onboarding.ts scripts/test-resolve-catalog-area.ts",
     "test:translations": "tsx --test scripts/test-catalog-translations.ts scripts/test-audit-description-locales.mjs",
     "test:intelligence": "pnpm test:evidence-contract && pnpm test:audit-defects && pnpm test:check-links",

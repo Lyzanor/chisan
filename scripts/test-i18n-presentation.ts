@@ -14,6 +14,7 @@ import {
   formatProducerFieldLabel,
   formatProducerFieldValue,
   getDescriptionLocaleOptions,
+  isPublicProducerField,
   presentProducerField,
   presentPublicProducerFields,
 } from "../lib/i18n/producer-fields";
@@ -217,13 +218,21 @@ test("owner field help is complete and localized without changing staff definiti
   assert.doesNotMatch(ownerPage, /<small>\{field\.help\}<\/small>/);
 });
 
-test("public field presentation hides description source locale without changing raw values", async () => {
+test("public field presentation hides locale metadata and expanded-profile fields", async () => {
   const spanish = await loadMessages("es");
+  const hiddenFields = {
+    descripcion_locale: "es",
+    "visitas guiadas": "sí",
+    "mensaje a la comunidad": "Mensaje reservado al bloque ampliado.",
+    mensaje_comunidad_locale: "es",
+    "enlace destacado 1": "https://example.com/uno",
+    "enlace destacado 2": "https://example.com/dos",
+  };
   const fields = presentPublicProducerFields(
     {
       categoria: "Aceite",
       descripcion: "Cultiva olivos.",
-      descripcion_locale: "es",
+      ...hiddenFields,
       "Venta online": "sí",
     },
     "es",
@@ -241,5 +250,65 @@ test("public field presentation hides description source locale without changing
       },
       { key: "Venta online", value: "sí", displayValue: "Sí" },
     ],
+  );
+  for (const key of Object.keys(hiddenFields)) {
+    assert.equal(isPublicProducerField(key), false, `${key} must stay hidden`);
+  }
+});
+
+test("expanded profile source keeps every public entitlement check fail-closed", () => {
+  const source = readFileSync(
+    path.resolve(process.cwd(), "components/expanded-producer-profile.tsx"),
+    "utf8",
+  );
+
+  assert.match(
+    source,
+    /if \(!getAccountSystemConfiguration\(\)\.databaseConfigured\) return null;/,
+  );
+  assert.match(
+    source,
+    /if \(!\(await hasActiveProducerPremiumEntitlement\(country, producerId\)\)\) return null;/,
+  );
+  assert.match(source, /catch \(error\) \{[\s\S]*?return null;\n  \}/);
+});
+
+test("premium admin gifts require exact admin access and remain Stripe-independent", () => {
+  const adminPage = readFileSync(
+    path.resolve(process.cwd(), "app/(application)/admin/premium/page.tsx"),
+    "utf8",
+  );
+  const adminActions = readFileSync(
+    path.resolve(process.cwd(), "app/(application)/admin/actions.ts"),
+    "utf8",
+  );
+  const giftService = readFileSync(
+    path.resolve(process.cwd(), "lib/accounts/producer-profile-gifts.ts"),
+    "utf8",
+  );
+
+  assert.match(adminPage, /requireAdminAccount\("\/admin\/premium"\)/);
+  assert.match(
+    adminActions,
+    /grantProducerPremiumGiftAction[\s\S]*?requireAdminAccount\("\/admin\/premium"\)/,
+  );
+  assert.match(
+    adminActions,
+    /revokeProducerPremiumGiftAction[\s\S]*?requireAdminAccount\("\/admin\/premium"\)/,
+  );
+  assert.doesNotMatch(giftService, /getStripeClient|STRIPE_SECRET_KEY/);
+  assert.match(giftService, /PRODUCER_PROFILE_UPGRADE_ADMIN_GIFT_ENTITLEMENT_SOURCE/);
+  assert.match(giftService, /PRODUCER_PROFILE_UPGRADE_OPEN_STATUSES/);
+  assert.match(giftService, /eq\(staffGrants\.role, "admin"\)/);
+  assert.match(giftService, /eq\(users\.status, "active"\)/);
+  assert.match(giftService, /lockActiveAdmin\(transaction, input\.adminUserId, now\)/g);
+  assert.match(giftService, /\.for\("update"\)/);
+  assert.match(
+    giftService,
+    /grantProducerPremiumGift[\s\S]*?pg_advisory_xact_lock[\s\S]*?lockActiveAdmin\(transaction, input\.adminUserId, now\)/,
+  );
+  assert.match(
+    giftService,
+    /const country = candidate\.country;[\s\S]*?pg_advisory_xact_lock[\s\S]*?lockActiveAdmin\(transaction, input\.adminUserId, now\)/,
   );
 });

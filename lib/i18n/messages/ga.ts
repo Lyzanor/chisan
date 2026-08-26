@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Bain ceanán",
     saveFavorite: "Sábháil mar cheanán",
     editMyProfile: "Cuir mo phróifíl in eagar",
+    expandProfile: "Leathnaigh an phróifíl",
     ownershipVerified: "Úinéireacht fíoraithe",
     viewOwnershipClaim: "Féach ar éileamh úinéireachta",
     claimProducer: "Éiligh an táirgeoir seo",
@@ -70,6 +71,16 @@ const messages = {
     lon: "Domhanfhad deachúil WGS84. Ní mór domhanleithead agus domhanfhad a sholáthar le chéile.",
     "Venta online": "An ndearnadh meicníocht ordaithe reatha a athbhreithniú.",
     "Canal de venta": "Meicníochtaí ordaithe reatha a léiríodh.",
+    "visitas guiadas":
+      "An gcuireann an táirgeoir turais threoraithe ar fáil faoi láthair.",
+    "mensaje a la comunidad":
+      "Teachtaireacht phoiblí ón táirgeoir chuig pobal an bhia áitiúil.",
+    mensaje_comunidad_locale:
+      "Teanga foinse na teachtaireachta pobail; fág folamh í ach amháin nuair atá an teachtaireacht folamh.",
+    "enlace destacado 1":
+      "Nasc poiblí breise HTTP(S) arna roghnú ag an táirgeoir.",
+    "enlace destacado 2":
+      "An dara nasc poiblí breise HTTP(S); ná húsáid ach i ndiaidh an chéad cheann.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -171,6 +182,7 @@ const messages = {
   producer: {
     backToMap: "Fill ar an léarscáil",
     profile: "Próifíl an táirgeora",
+    expandedProfile: "Próifíl leathnaithe",
     website: "Suíomh gréasáin",
     googleMaps: "Google Maps",
     phone: "Fón",
@@ -198,6 +210,11 @@ const messages = {
     address: "Seoladh",
     description: "Tuairisc",
     descriptionLocale: "Teanga na tuairisce",
+    guidedVisits: "Turais threoraithe",
+    communityMessage: "Teachtaireacht don phobal",
+    communityMessageLocale: "Teanga na teachtaireachta pobail",
+    highlightedLink1: "Nasc faoi thrácht 1",
+    highlightedLink2: "Nasc faoi thrácht 2",
     openingHours: "Uaireanta oscailte",
     phone: "Fón",
     email: "Ríomhphost",

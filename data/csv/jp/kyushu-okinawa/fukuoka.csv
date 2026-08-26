@@ -1,60 +1,60 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
-morinokura-kurume,Morinokura,Kurume,Sake,"Morinokura, rice shochu",Kurume,"Brewery founded in 1898 in Kurume, working district rice and soft water from its own well. Own online shop and a visitor room at the main house.",,,,https://www.morinokura.co.jp/,,,,33.319250,130.508330,,verificado,sí,ecommerce,,792,en
-wakatakeya-shuzojo-kurume,Wakatakeya Shuzojo,Kurume,Sake,"Wakatakeya, plum liqueur","Tanushimarumachi Tanushimaru 706, Kurume","Brewery founded in 1699 in Tanushimaru, with a Genroku-era kura still in use as a tasting and sales room. Own online shop.",,+81943722175,info@wakatakeya.com,https://wakatakeya.com/,,,,33.319250,130.508330,,verificado,sí,ecommerce,,1327,en
-yamaguchi-shuzojo-kurume,Yamaguchi Shuzojo,Kurume,Sake,"Niwa no Uguisu, Uguisutoro plum liqueur",Kurume,Brewery founded in 1832 in Kurume. Its Niwa no Uguisu label comes from the nightingale that came down to drink at the courtyard spring.,,+81942782008,,https://niwanouguisu.com/,,,,33.319250,130.508330,,verificado,no comprobado,,,1345,en
-ishikura-shuzo,Ishikura Shuzo,Fukuoka,Sake,"Shochikubai Hakata, Hakata sake",Fukuoka,"Brewery in Hakata. Its century-old kura, the Hakata Hyakunengura, is a listed cultural property.",,,,https://www.ishikura-shuzou.co.jp/,,,,33.590140,130.401720,,verificado,no comprobado,,,429,en
-oga-shuzo-chikushino,Oga Shuzo,Chikushino,Sake,Tamadeizumi,"Futsukaichi Chuo 4-9-1, Chikushino",Brewery founded in 1673 in the hot-spring town of Futsukaichi.,,+81929222633,,https://www.ogashuzo.com/,,,,33.487420,130.525830,,verificado,no comprobado,,,899,en
-kitaya-yame,Kitaya,Yame,Sake,"Kitaya, shochu","Honmachi 374, Yame","Brewery founded in 1820 in Yame, the tea district. Makes sake and shochu.",,+81943232154,,https://www.kitaya.co.jp/,,,,33.212000,130.557860,,parcial,no comprobado,,,602,en
-asahigiku-shuzo-kurume,Asahigiku Shuzo,Kurume,Sake,,福岡県久留米市三潴町壱町原403,,,+81942642003,,https://www.asahikiku.jp/,,,,33.249332,130.446091,,parcial,no comprobado,,,78,
-ikekame-shuzo-kurume,Ikekame Shuzo,Kurume,Sake,,福岡県久留米市三潴町草場545,,,+81942643101,,http://ikekame.com/,,,,33.261002,130.442688,,parcial,no comprobado,,,377,
-asahimatsu-shuzo-yame,Asahimatsu Shuzo,Yame,Sake,,福岡県八女郡黒木町大字黒木36,,,+81943420003,,http://www.asahimatsusyuzou.co.jp/,,,,33.218513,130.741791,,parcial,no comprobado,,,79,
-ayasugi-shuzojo,Ayasugi Shuzojo,Fukuoka,Sake,,福岡県福岡市南区塩原1-12-37,,,+81925413908,,http://www.ayasugi.co.jp/,,,,33.56797,130.429306,,parcial,no comprobado,,,92,
-izu-honten-munakata,Izu Honten,Munakata,Sake,,福岡県宗像市武丸1060,,,+81940323001,,http://www.kamenoo.com/,,,,33.805897,130.611969,,parcial,no comprobado,,,459,
-isonosawa-ukiha,Isonosawa,Ukiha,Sake,,福岡県うきは市浮羽町西隈上1-2,,,+81943773103,,http://www.isonosawa.jp/,,,,33.339203,130.79425,,parcial,no comprobado,,,440,
-umegatani-shuzo-kama,Umegatani Shuzo,Kama,Sake,,福岡県嘉麻市大隈346,,,+81948570005,,,,,,33.539066,130.760452,,parcial,no comprobado,,,1300,
-osato-shuzo-kama,Osato Shuzo,Kama,Sake,,福岡県嘉穂郡嘉穂町大隈551,,,+81948570059,,http://www.kurodabusi.com/index.html,,,,33.539066,130.760452,,parcial,no comprobado,,,957,
-egashira-shuzo-omuta,Egashira Shuzo,Omuta,Sake,,福岡県大牟田市大字三池947,,,+81944523796,,http://user.ariakenet.com/~egashira/,,,,33.04726,130.481506,,parcial,no comprobado,,,191,
-okina-shuzo-koga,Okina Shuzo,Koga,Sake,,福岡県古賀市花見南3-19-1,,,+81929440551,,http://www.okina-shuzo.jp/,,,,33.743641,130.465958,,parcial,no comprobado,,,925,
-kataoka-shuzojo-toho,Kataoka Shuzojo,Toho,Sake,,福岡県朝倉郡東峰村大字宝珠山22,,,+81946722321,,http://www.k4.dion.ne.jp/~kataoka/,,,,33.423416,130.878357,,parcial,no comprobado,,,525,
-ikedaya-miyama,Ikedaya,Miyama,Sake,,福岡県みやま市瀬高町下庄1287,,,+81944622049,,,,,,33.158871,130.471878,,parcial,no comprobado,,,372,
-hoshino-seichaen-yame,Hoshino Seichaen,Yame,Té e infusiones,"Matcha, gyokuro, sencha",福岡県八女市星野村8136-1　他,"Hoshino Seichaen produces matcha, gyokuro, sencha at its Yame unit.",,+81943523151,,https://www.hoshitea.com/jg/,,,,33.249599,130.761124,,verificado,no comprobado,,,344,en
-koga-chagyo-miyama,Koga Chagyo,Miyama,Té e infusiones,"Yame tea, gyokuro",福岡県みやま市瀬高町下庄４９３－１　他,"Koga Chagyo produces yame tea, gyokuro at its Miyama unit.",,+81944632333,,https://kogacha.co.jp/company/,,,,33.147762,130.473389,,verificado,no comprobado,,,623,en
-omubrand-omuta,オーム乳業,Omuta,Lácteos y quesos,,福岡県大牟田市新勝立町1丁目38番地1,Produces cheese and dairy products at its Omuta unit.,,,,https://www.omubrand.co.jp/,,,,33.030280,130.445970,,verificado,no comprobado,,,1742,en
-suginoya-fukuoka,浜地酒造 (博多杉能舎),Fukuoka,Cerveza,,,Brews beer at its Fukuoka unit.,,,,https://suginoya.co.jp/,,,,33.590140,130.401720,,verificado,sí,ecommerce,,2874,en
-masue-winery-itoshima,株式会社 いとしのいとしま/糸島マスエワイナリ,Itoshima,Vino,,福岡県志摩津和崎33-1,Produces wine at its Itoshima unit.,,+81923274033,,https://masue-winery.com/,,,,33.557310,130.195500,,parcial,no comprobado,,,2714,en
-kyoho-japan-kurume,KYOHO JAPAN 株式会社/巨峰ワイナリー,Kurume,Vino,,福岡県久留米市田主丸町益生田246-1,Produces wine at its Kurume unit.,,+81943722382,,https://www.kyoho-winery.com/,,,,33.319250,130.508330,,verificado,no comprobado,,,700,en
-dmiyaki-kitakyushu,ドメーヌ・ル・ミヤキ,Kitakyūshū,Vino,,福岡県北九州市小倉北区三郎丸1-9-22,Produces wine at its Kitakyūshū unit.,,+81939525410,,https://dmiyaki.com/,,,,33.851810,130.846590,,verificado,no comprobado,,,1848,en
-kurumekikko-kurume,クルメキッコー,Kurume,Condimentos,杉桶 九州うまくち,福岡県久留米市宮ノ陣1丁目8番10号,Produces soy sauce and traditional seasonings at its Kurume brewery.,,+81942344147,,http://www.kurumekikko.com/,,,,33.319250,130.508330,,parcial,no comprobado,,,1781,en
-mitsuru-shoyu-itoshima,ミツル醤油醸造元,Itoshima,Condimentos,生成り、こいくち 100ml,福岡県糸島市二丈町深江3-3-1,Produces soy sauce and traditional seasonings at its Itoshima brewery.,,+81923250026,,https://www.mitsuru-shoyu.com/,,,,33.557310,130.195500,,verificado,sí,ecommerce,,1948,en
-tabechoku-3077818,いりえさんちの野菜,Nakagawa,Fruta y verdura,"玉ねぎ, ねぎ",,Produces onions and green onions at its Nakagawa unit.,,,,,,,,33.499580,130.422220,,parcial,sí,marketplace,,1433,en
-tabechoku-23375,須田養蜂場,Buzen,Miel,蜂蜜,,Produces honey at its Buzen unit.,,,,,,,,33.611500,131.130190,,parcial,sí,marketplace,,3289,en
-tabechoku-22353,たつみ園,Yame,Té e infusiones,煎茶,,たつみ園 produces sencha at its Yame unit.,,,,,,,,33.212000,130.557860,,parcial,sí,marketplace,,1546,en
-tabechoku-21484,グリーンワールド八女,Yame,Té e infusiones,"煎茶, 抹茶",,Produces sencha and matcha at its Yame unit.,,,,,,,,33.212000,130.557860,,parcial,sí,marketplace,,1778,en
-tabechoku-20127,お茶の千代乃園,Yame,Té e infusiones,煎茶,,お茶の千代乃園 produces sencha at its Yame unit.,,,,,,,,33.212000,130.557860,,parcial,sí,marketplace,,1465,en
-tabechoku-22408,やまもり養鶏場,Ukiha,Huevos,卵,,Produces eggs at its Ukiha unit.,,,,,,,,33.347440,130.755030,,parcial,sí,marketplace,,1680,en
-tabechoku-22849,博多すぎたけ商店（ドリームマッシュ）,Oki,Setas,きのこ,,Produces mushrooms at its Oki unit.,,,,,,,,33.210440,130.439810,,parcial,sí,marketplace,,2226,en
-tabechoku-3078320,K.ファーム,Itoshima,Setas,きくらげ,,Produces wood ear mushrooms at its Itoshima unit.,,,,,,,,33.557310,130.195500,,parcial,sí,marketplace,,468,en
-tabechoku-21079,マサエイ水産加工,Munakata,Pescado,,,Produces fish and seafood at its Munakata unit.,,,,,,,,33.805530,130.540780,,parcial,sí,marketplace,,1930,en
-tabechoku-21540,肉のたかむく,Yanagawa,Carne,"牛肉, 醤油",,Produces beef and soy sauce at its Yanagawa unit.,,,,,,,,33.163060,130.405810,,parcial,sí,marketplace,,3068,en
-tabechoku-3077218,【博多黒毛和牛】あか村総本家,Aka,Carne,牛肉,,Produces beef at its Aka unit.,,,,,,,,33.616670,130.870920,,parcial,sí,marketplace,,2227,en
-tabechoku-21006,能古島おがわ農園,Fukuoka,Legumbres,"ブルーベリー, 落花生",,Produces blueberries and peanuts at its Fukuoka unit.,,,,,,,,33.590140,130.401720,,parcial,sí,marketplace,,3074,en
-tabechoku-29244,農業福島園,Munakata,Pan y cereal,玄米,,Produces brown rice at its Munakata unit.,,,,,,,,33.805530,130.540780,,parcial,sí,marketplace,,3193,en
-tabechoku-23968,杏里ファーム,Yanagawa,Fruta y verdura,マンゴー,,Produces mangoes at its Yanagawa unit.,,,,,,,,33.163060,130.405810,,parcial,sí,marketplace,,2645,en
-tabechoku-29509,白石アグリ,Onga,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Onga unit.,,,,,,,,33.847890,130.668280,,parcial,sí,marketplace,,2958,en
-tabechoku-23050,よかもんいちご,Ukiha,Fruta y verdura,いちご,,Produces strawberries at its Ukiha unit.,,,,,,,,33.347440,130.755030,,parcial,sí,marketplace,,1686,en
-tabechoku-22204,うるう農園~福岡のいちご~,Kurume,Fruta y verdura,いちご,,Produces strawberries at its Kurume unit.,,,,,,,,33.319250,130.508330,,parcial,sí,marketplace,,1444,en
-tabechoku-26096,川﨑果樹園,Kitakyūshū,Fruta y verdura,ぶどう,,Produces grapes at its Kitakyūshū unit.,,,,,,,,33.851810,130.846590,,parcial,sí,marketplace,,2479,en
-tabechoku-24276,丘の上ファーム,Munakata,Fruta y verdura,にんにく,,Produces garlic at its Munakata unit.,,,,,,,,33.805530,130.540780,,parcial,sí,marketplace,,2045,en
-tabechoku-22939,やまんた農園,Hirokawa,Fruta y verdura,"柑橘, 栗",,Produces citrus fruit and chestnuts at its Hirokawa unit.,,,,,,,,33.241530,130.551500,,parcial,sí,marketplace,,1681,en
-tabechoku-28391,オーガニックハーブ農園 Pala’au,Chikushino,Fruta y verdura,"りんご, レモン",,Produces apples and lemons at its Chikushino unit.,,,,,,,,33.487420,130.525830,,parcial,sí,marketplace,,1740,en
-tabechoku-20007,オーガニックナガミツファーム,Itoshima,Fruta y verdura,野菜,,Produces vegetables at its Itoshima unit.,,,,,,,,33.557310,130.195500,,parcial,sí,marketplace,,1739,en
-jp-fukuoka-saemon-21e7fd4,左衛門,古賀市,Dulces y repostería,和菓子,古賀市鹿部 335-19,"Produces Japanese confectionery in 古賀市, fukuoka.",,,,https://www.saemon.jp/,,,,33.728750,130.470000,,verificado,sí,ecommerce,,2481,en
-jp-fukuoka-yame-co-5eb7f94,牛島製茶,八女市,Té e infusiones,日本茶,,"牛島製茶 produces Japanese tea in 八女市, fukuoka.",,,,https://www.yame.co.jp/,,,,33.212000,130.557860,,verificado,sí,ecommerce,,2923,en
-jp-fukuoka-koganoyamecha-co-3fe2973,古賀製茶本舗,八女市,Té e infusiones,日本茶,,"古賀製茶本舗 produces Japanese tea in 八女市, fukuoka.",,,,https://koganoyamecha.co.jp/,,,,33.212000,130.557860,,verificado,sí,ecommerce,,2233,en
-jp-fukuoka-asanoen-c06b953,浅野園,大牟田市,Té e infusiones,日本茶,,"Produces Japanese tea in 大牟田市, fukuoka.",,,,https://www.asanoen.com/,,,,33.030280,130.445970,,verificado,sí,ecommerce,,2869,en
-fukuoka-craft-brewing,FUKUOKA CRAFT BREWING,Okagaki,Cerveza,,大字内浦544,Brewery producing beer at its Okagaki unit.,,+81934828282,info@fukuokacraft.com,https://fukuokacraft.com/,,https://www.instagram.com/fukuokacraft/,,33.85361,130.61114,,parcial,no comprobado,,,241,en
-the-blue-master,ブルーマスター (The Blue Master),Fukuoka,Cerveza,,別府1-19-8,Brewery producing beer at its Fukuoka unit.,,,,https://brewery.co.jp/,,https://www.instagram.com/thebluemaster_fukuoka/,,33.59014,130.40172,,parcial,no comprobado,,,1911,en
-mojiko-retro-beer,門司港レトロビール (Mojiko Retro Beer),Kitakyushu,Cerveza,,門司区東港町6-9,Brewery producing beer at its Kitakyushu unit.,,,,,,https://www.instagram.com/mojiko_retro_beer/,,33.85181,130.84659,,parcial,no comprobado,,,3268,en
-munakata-beer,宗像麦酒 (Munakata Beer),Munakata,Cerveza,,田島3-2-22,Brewery producing beer at its Munakata unit.,,,,,,https://www.instagram.com/munakatabeer/,,33.80553,130.54078,,parcial,no comprobado,,,2367,en
-maruhachi-itoshima,マルハチ水産,Itoshima,Pescado,"Oysters, rock oysters",福岡県糸島市志摩船越415-17,Farms oysters in Funakoshi Bay and sells them directly from its Itoshima unit.,10:00-17:00,+81923282848,,https://www.maruhachi-kaki.com/,,,,33.556049,130.122757,,verificado,sí,telefono,,1940,en
-yanagawa-nori-honpo-yanagawa,柳川海苔本舗,Yanagawa,Pescado,Roasted nori,福岡県柳川市田脇337-1,Roasts and seasons Ariake Sea nori at its Yanagawa factory.,,+81944726522,,https://yanagawanori.co.jp/,,,,33.177113,130.384888,,verificado,sí,ecommerce,,2683,en
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
+morinokura-kurume,Morinokura,Kurume,Sake,"Morinokura, rice shochu",Kurume,"Brewery founded in 1898 in Kurume, working district rice and soft water from its own well. Own online shop and a visitor room at the main house.",,,,https://www.morinokura.co.jp/,,,,33.319250,130.508330,,verificado,sí,ecommerce,,792,en,,,,,
+wakatakeya-shuzojo-kurume,Wakatakeya Shuzojo,Kurume,Sake,"Wakatakeya, plum liqueur","Tanushimarumachi Tanushimaru 706, Kurume","Brewery founded in 1699 in Tanushimaru, with a Genroku-era kura still in use as a tasting and sales room. Own online shop.",,+81943722175,info@wakatakeya.com,https://wakatakeya.com/,,,,33.319250,130.508330,,verificado,sí,ecommerce,,1327,en,,,,,
+yamaguchi-shuzojo-kurume,Yamaguchi Shuzojo,Kurume,Sake,"Niwa no Uguisu, Uguisutoro plum liqueur",Kurume,Brewery founded in 1832 in Kurume. Its Niwa no Uguisu label comes from the nightingale that came down to drink at the courtyard spring.,,+81942782008,,https://niwanouguisu.com/,,,,33.319250,130.508330,,verificado,no comprobado,,,1345,en,,,,,
+ishikura-shuzo,Ishikura Shuzo,Fukuoka,Sake,"Shochikubai Hakata, Hakata sake",Fukuoka,"Brewery in Hakata. Its century-old kura, the Hakata Hyakunengura, is a listed cultural property.",,,,https://www.ishikura-shuzou.co.jp/,,,,33.590140,130.401720,,verificado,no comprobado,,,429,en,,,,,
+oga-shuzo-chikushino,Oga Shuzo,Chikushino,Sake,Tamadeizumi,"Futsukaichi Chuo 4-9-1, Chikushino",Brewery founded in 1673 in the hot-spring town of Futsukaichi.,,+81929222633,,https://www.ogashuzo.com/,,,,33.487420,130.525830,,verificado,no comprobado,,,899,en,,,,,
+kitaya-yame,Kitaya,Yame,Sake,"Kitaya, shochu","Honmachi 374, Yame","Brewery founded in 1820 in Yame, the tea district. Makes sake and shochu.",,+81943232154,,https://www.kitaya.co.jp/,,,,33.212000,130.557860,,parcial,no comprobado,,,602,en,,,,,
+asahigiku-shuzo-kurume,Asahigiku Shuzo,Kurume,Sake,,福岡県久留米市三潴町壱町原403,,,+81942642003,,https://www.asahikiku.jp/,,,,33.249332,130.446091,,parcial,no comprobado,,,78,,,,,,
+ikekame-shuzo-kurume,Ikekame Shuzo,Kurume,Sake,,福岡県久留米市三潴町草場545,,,+81942643101,,http://ikekame.com/,,,,33.261002,130.442688,,parcial,no comprobado,,,377,,,,,,
+asahimatsu-shuzo-yame,Asahimatsu Shuzo,Yame,Sake,,福岡県八女郡黒木町大字黒木36,,,+81943420003,,http://www.asahimatsusyuzou.co.jp/,,,,33.218513,130.741791,,parcial,no comprobado,,,79,,,,,,
+ayasugi-shuzojo,Ayasugi Shuzojo,Fukuoka,Sake,,福岡県福岡市南区塩原1-12-37,,,+81925413908,,http://www.ayasugi.co.jp/,,,,33.56797,130.429306,,parcial,no comprobado,,,92,,,,,,
+izu-honten-munakata,Izu Honten,Munakata,Sake,,福岡県宗像市武丸1060,,,+81940323001,,http://www.kamenoo.com/,,,,33.805897,130.611969,,parcial,no comprobado,,,459,,,,,,
+isonosawa-ukiha,Isonosawa,Ukiha,Sake,,福岡県うきは市浮羽町西隈上1-2,,,+81943773103,,http://www.isonosawa.jp/,,,,33.339203,130.79425,,parcial,no comprobado,,,440,,,,,,
+umegatani-shuzo-kama,Umegatani Shuzo,Kama,Sake,,福岡県嘉麻市大隈346,,,+81948570005,,,,,,33.539066,130.760452,,parcial,no comprobado,,,1300,,,,,,
+osato-shuzo-kama,Osato Shuzo,Kama,Sake,,福岡県嘉穂郡嘉穂町大隈551,,,+81948570059,,http://www.kurodabusi.com/index.html,,,,33.539066,130.760452,,parcial,no comprobado,,,957,,,,,,
+egashira-shuzo-omuta,Egashira Shuzo,Omuta,Sake,,福岡県大牟田市大字三池947,,,+81944523796,,http://user.ariakenet.com/~egashira/,,,,33.04726,130.481506,,parcial,no comprobado,,,191,,,,,,
+okina-shuzo-koga,Okina Shuzo,Koga,Sake,,福岡県古賀市花見南3-19-1,,,+81929440551,,http://www.okina-shuzo.jp/,,,,33.743641,130.465958,,parcial,no comprobado,,,925,,,,,,
+kataoka-shuzojo-toho,Kataoka Shuzojo,Toho,Sake,,福岡県朝倉郡東峰村大字宝珠山22,,,+81946722321,,http://www.k4.dion.ne.jp/~kataoka/,,,,33.423416,130.878357,,parcial,no comprobado,,,525,,,,,,
+ikedaya-miyama,Ikedaya,Miyama,Sake,,福岡県みやま市瀬高町下庄1287,,,+81944622049,,,,,,33.158871,130.471878,,parcial,no comprobado,,,372,,,,,,
+hoshino-seichaen-yame,Hoshino Seichaen,Yame,Té e infusiones,"Matcha, gyokuro, sencha",福岡県八女市星野村8136-1　他,"Hoshino Seichaen produces matcha, gyokuro, sencha at its Yame unit.",,+81943523151,,https://www.hoshitea.com/jg/,,,,33.249599,130.761124,,verificado,no comprobado,,,344,en,,,,,
+koga-chagyo-miyama,Koga Chagyo,Miyama,Té e infusiones,"Yame tea, gyokuro",福岡県みやま市瀬高町下庄４９３－１　他,"Koga Chagyo produces yame tea, gyokuro at its Miyama unit.",,+81944632333,,https://kogacha.co.jp/company/,,,,33.147762,130.473389,,verificado,no comprobado,,,623,en,,,,,
+omubrand-omuta,オーム乳業,Omuta,Lácteos y quesos,,福岡県大牟田市新勝立町1丁目38番地1,Produces cheese and dairy products at its Omuta unit.,,,,https://www.omubrand.co.jp/,,,,33.030280,130.445970,,verificado,no comprobado,,,1742,en,,,,,
+suginoya-fukuoka,浜地酒造 (博多杉能舎),Fukuoka,Cerveza,,,Brews beer at its Fukuoka unit.,,,,https://suginoya.co.jp/,,,,33.590140,130.401720,,verificado,sí,ecommerce,,2874,en,,,,,
+masue-winery-itoshima,株式会社 いとしのいとしま/糸島マスエワイナリ,Itoshima,Vino,,福岡県志摩津和崎33-1,Produces wine at its Itoshima unit.,,+81923274033,,https://masue-winery.com/,,,,33.557310,130.195500,,parcial,no comprobado,,,2714,en,,,,,
+kyoho-japan-kurume,KYOHO JAPAN 株式会社/巨峰ワイナリー,Kurume,Vino,,福岡県久留米市田主丸町益生田246-1,Produces wine at its Kurume unit.,,+81943722382,,https://www.kyoho-winery.com/,,,,33.319250,130.508330,,verificado,no comprobado,,,700,en,,,,,
+dmiyaki-kitakyushu,ドメーヌ・ル・ミヤキ,Kitakyūshū,Vino,,福岡県北九州市小倉北区三郎丸1-9-22,Produces wine at its Kitakyūshū unit.,,+81939525410,,https://dmiyaki.com/,,,,33.851810,130.846590,,verificado,no comprobado,,,1848,en,,,,,
+kurumekikko-kurume,クルメキッコー,Kurume,Condimentos,杉桶 九州うまくち,福岡県久留米市宮ノ陣1丁目8番10号,Produces soy sauce and traditional seasonings at its Kurume brewery.,,+81942344147,,http://www.kurumekikko.com/,,,,33.319250,130.508330,,parcial,no comprobado,,,1781,en,,,,,
+mitsuru-shoyu-itoshima,ミツル醤油醸造元,Itoshima,Condimentos,生成り、こいくち 100ml,福岡県糸島市二丈町深江3-3-1,Produces soy sauce and traditional seasonings at its Itoshima brewery.,,+81923250026,,https://www.mitsuru-shoyu.com/,,,,33.557310,130.195500,,verificado,sí,ecommerce,,1948,en,,,,,
+tabechoku-3077818,いりえさんちの野菜,Nakagawa,Fruta y verdura,"玉ねぎ, ねぎ",,Produces onions and green onions at its Nakagawa unit.,,,,,,,,33.499580,130.422220,,parcial,sí,marketplace,,1433,en,,,,,
+tabechoku-23375,須田養蜂場,Buzen,Miel,蜂蜜,,Produces honey at its Buzen unit.,,,,,,,,33.611500,131.130190,,parcial,sí,marketplace,,3289,en,,,,,
+tabechoku-22353,たつみ園,Yame,Té e infusiones,煎茶,,たつみ園 produces sencha at its Yame unit.,,,,,,,,33.212000,130.557860,,parcial,sí,marketplace,,1546,en,,,,,
+tabechoku-21484,グリーンワールド八女,Yame,Té e infusiones,"煎茶, 抹茶",,Produces sencha and matcha at its Yame unit.,,,,,,,,33.212000,130.557860,,parcial,sí,marketplace,,1778,en,,,,,
+tabechoku-20127,お茶の千代乃園,Yame,Té e infusiones,煎茶,,お茶の千代乃園 produces sencha at its Yame unit.,,,,,,,,33.212000,130.557860,,parcial,sí,marketplace,,1465,en,,,,,
+tabechoku-22408,やまもり養鶏場,Ukiha,Huevos,卵,,Produces eggs at its Ukiha unit.,,,,,,,,33.347440,130.755030,,parcial,sí,marketplace,,1680,en,,,,,
+tabechoku-22849,博多すぎたけ商店（ドリームマッシュ）,Oki,Setas,きのこ,,Produces mushrooms at its Oki unit.,,,,,,,,33.210440,130.439810,,parcial,sí,marketplace,,2226,en,,,,,
+tabechoku-3078320,K.ファーム,Itoshima,Setas,きくらげ,,Produces wood ear mushrooms at its Itoshima unit.,,,,,,,,33.557310,130.195500,,parcial,sí,marketplace,,468,en,,,,,
+tabechoku-21079,マサエイ水産加工,Munakata,Pescado,,,Produces fish and seafood at its Munakata unit.,,,,,,,,33.805530,130.540780,,parcial,sí,marketplace,,1930,en,,,,,
+tabechoku-21540,肉のたかむく,Yanagawa,Carne,"牛肉, 醤油",,Produces beef and soy sauce at its Yanagawa unit.,,,,,,,,33.163060,130.405810,,parcial,sí,marketplace,,3068,en,,,,,
+tabechoku-3077218,【博多黒毛和牛】あか村総本家,Aka,Carne,牛肉,,Produces beef at its Aka unit.,,,,,,,,33.616670,130.870920,,parcial,sí,marketplace,,2227,en,,,,,
+tabechoku-21006,能古島おがわ農園,Fukuoka,Legumbres,"ブルーベリー, 落花生",,Produces blueberries and peanuts at its Fukuoka unit.,,,,,,,,33.590140,130.401720,,parcial,sí,marketplace,,3074,en,,,,,
+tabechoku-29244,農業福島園,Munakata,Pan y cereal,玄米,,Produces brown rice at its Munakata unit.,,,,,,,,33.805530,130.540780,,parcial,sí,marketplace,,3193,en,,,,,
+tabechoku-23968,杏里ファーム,Yanagawa,Fruta y verdura,マンゴー,,Produces mangoes at its Yanagawa unit.,,,,,,,,33.163060,130.405810,,parcial,sí,marketplace,,2645,en,,,,,
+tabechoku-29509,白石アグリ,Onga,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Onga unit.,,,,,,,,33.847890,130.668280,,parcial,sí,marketplace,,2958,en,,,,,
+tabechoku-23050,よかもんいちご,Ukiha,Fruta y verdura,いちご,,Produces strawberries at its Ukiha unit.,,,,,,,,33.347440,130.755030,,parcial,sí,marketplace,,1686,en,,,,,
+tabechoku-22204,うるう農園~福岡のいちご~,Kurume,Fruta y verdura,いちご,,Produces strawberries at its Kurume unit.,,,,,,,,33.319250,130.508330,,parcial,sí,marketplace,,1444,en,,,,,
+tabechoku-26096,川﨑果樹園,Kitakyūshū,Fruta y verdura,ぶどう,,Produces grapes at its Kitakyūshū unit.,,,,,,,,33.851810,130.846590,,parcial,sí,marketplace,,2479,en,,,,,
+tabechoku-24276,丘の上ファーム,Munakata,Fruta y verdura,にんにく,,Produces garlic at its Munakata unit.,,,,,,,,33.805530,130.540780,,parcial,sí,marketplace,,2045,en,,,,,
+tabechoku-22939,やまんた農園,Hirokawa,Fruta y verdura,"柑橘, 栗",,Produces citrus fruit and chestnuts at its Hirokawa unit.,,,,,,,,33.241530,130.551500,,parcial,sí,marketplace,,1681,en,,,,,
+tabechoku-28391,オーガニックハーブ農園 Pala’au,Chikushino,Fruta y verdura,"りんご, レモン",,Produces apples and lemons at its Chikushino unit.,,,,,,,,33.487420,130.525830,,parcial,sí,marketplace,,1740,en,,,,,
+tabechoku-20007,オーガニックナガミツファーム,Itoshima,Fruta y verdura,野菜,,Produces vegetables at its Itoshima unit.,,,,,,,,33.557310,130.195500,,parcial,sí,marketplace,,1739,en,,,,,
+jp-fukuoka-saemon-21e7fd4,左衛門,古賀市,Dulces y repostería,和菓子,古賀市鹿部 335-19,"Produces Japanese confectionery in 古賀市, fukuoka.",,,,https://www.saemon.jp/,,,,33.728750,130.470000,,verificado,sí,ecommerce,,2481,en,,,,,
+jp-fukuoka-yame-co-5eb7f94,牛島製茶,八女市,Té e infusiones,日本茶,,"牛島製茶 produces Japanese tea in 八女市, fukuoka.",,,,https://www.yame.co.jp/,,,,33.212000,130.557860,,verificado,sí,ecommerce,,2923,en,,,,,
+jp-fukuoka-koganoyamecha-co-3fe2973,古賀製茶本舗,八女市,Té e infusiones,日本茶,,"古賀製茶本舗 produces Japanese tea in 八女市, fukuoka.",,,,https://koganoyamecha.co.jp/,,,,33.212000,130.557860,,verificado,sí,ecommerce,,2233,en,,,,,
+jp-fukuoka-asanoen-c06b953,浅野園,大牟田市,Té e infusiones,日本茶,,"Produces Japanese tea in 大牟田市, fukuoka.",,,,https://www.asanoen.com/,,,,33.030280,130.445970,,verificado,sí,ecommerce,,2869,en,,,,,
+fukuoka-craft-brewing,FUKUOKA CRAFT BREWING,Okagaki,Cerveza,,大字内浦544,Brewery producing beer at its Okagaki unit.,,+81934828282,info@fukuokacraft.com,https://fukuokacraft.com/,,https://www.instagram.com/fukuokacraft/,,33.85361,130.61114,,parcial,no comprobado,,,241,en,,,,,
+the-blue-master,ブルーマスター (The Blue Master),Fukuoka,Cerveza,,別府1-19-8,Brewery producing beer at its Fukuoka unit.,,,,https://brewery.co.jp/,,https://www.instagram.com/thebluemaster_fukuoka/,,33.59014,130.40172,,parcial,no comprobado,,,1911,en,,,,,
+mojiko-retro-beer,門司港レトロビール (Mojiko Retro Beer),Kitakyushu,Cerveza,,門司区東港町6-9,Brewery producing beer at its Kitakyushu unit.,,,,,,https://www.instagram.com/mojiko_retro_beer/,,33.85181,130.84659,,parcial,no comprobado,,,3268,en,,,,,
+munakata-beer,宗像麦酒 (Munakata Beer),Munakata,Cerveza,,田島3-2-22,Brewery producing beer at its Munakata unit.,,,,,,https://www.instagram.com/munakatabeer/,,33.80553,130.54078,,parcial,no comprobado,,,2367,en,,,,,
+maruhachi-itoshima,マルハチ水産,Itoshima,Pescado,"Oysters, rock oysters",福岡県糸島市志摩船越415-17,Farms oysters in Funakoshi Bay and sells them directly from its Itoshima unit.,10:00-17:00,+81923282848,,https://www.maruhachi-kaki.com/,,,,33.556049,130.122757,,verificado,sí,telefono,,1940,en,,,,,
+yanagawa-nori-honpo-yanagawa,柳川海苔本舗,Yanagawa,Pescado,Roasted nori,福岡県柳川市田脇337-1,Roasts and seasons Ariake Sea nori at its Yanagawa factory.,,+81944726522,,https://yanagawanori.co.jp/,,,,33.177113,130.384888,,verificado,sí,ecommerce,,2683,en,,,,,

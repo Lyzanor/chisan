@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Remover dos favoritos",
     saveFavorite: "Guardar nos favoritos",
     editMyProfile: "Editar o meu perfil",
+    expandProfile: "Ampliar perfil",
     ownershipVerified: "Propriedade verificada",
     viewOwnershipClaim: "Ver reivindicação de propriedade",
     claimProducer: "Reivindicar este produtor",
@@ -66,6 +67,16 @@ const messages = {
     lon: "Longitude decimal WGS84. A latitude e a longitude devem ser fornecidas em conjunto.",
     "Venta online": "Indica se foi verificado um mecanismo de encomenda atual.",
     "Canal de venta": "Os mecanismos de encomenda atuais e demonstrados.",
+    "visitas guiadas":
+      "Indica se este produtor oferece atualmente visitas guiadas; deixe vazio se a informação não for publicada.",
+    "mensaje a la comunidad":
+      "Uma mensagem pública escrita pelo produtor, preservada no idioma original e revista antes da publicação.",
+    mensaje_comunidad_locale:
+      "O idioma de origem da mensagem à comunidade; deixe vazio apenas quando a mensagem estiver vazia.",
+    "enlace destacado 1":
+      "Um artigo, entrevista ou outra página pública HTTP(S) relevante sobre este produtor.",
+    "enlace destacado 2":
+      "Uma segunda página pública HTTP(S) distinta; o link 1 tem de ser preenchido primeiro.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -166,6 +177,7 @@ const messages = {
     categories: "Categorias",
     allCategories: "Todas",
     information: "Informação",
+    expandedProfile: "Perfil alargado",
   },
   fieldLabels: {
     slug: "Slug",
@@ -178,6 +190,11 @@ const messages = {
     address: "Morada",
     description: "Descrição",
     descriptionLocale: "Idioma da descrição",
+    guidedVisits: "Visitas guiadas",
+    communityMessage: "Mensagem à comunidade",
+    communityMessageLocale: "Idioma da mensagem à comunidade",
+    highlightedLink1: "Link em destaque 1",
+    highlightedLink2: "Link em destaque 2",
     openingHours: "Horário de abertura",
     phone: "Telefone",
     email: "Email",

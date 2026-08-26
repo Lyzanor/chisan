@@ -27,6 +27,7 @@ const messages = {
     removeFavorite: "Favorit entfernen",
     saveFavorite: "Als Favorit speichern",
     editMyProfile: "Mein Profil bearbeiten",
+    expandProfile: "Profil erweitern",
     ownershipVerified: "Eigentümerschaft verifiziert",
     viewOwnershipClaim: "Eigentumsantrag anzeigen",
     claimProducer: "Diesen Erzeuger beanspruchen",
@@ -71,6 +72,16 @@ const messages = {
     lon: "Dezimaler WGS84-Längengrad. Breiten- und Längengrad müssen zusammen angegeben werden.",
     "Venta online": "Ob eine aktuelle Bestellmöglichkeit geprüft wurde.",
     "Canal de venta": "Aktuell nachgewiesene Bestellmöglichkeiten.",
+    "visitas guiadas":
+      "Ob dieser Erzeuger derzeit Führungen anbietet; leer lassen, wenn dies nicht veröffentlicht wird.",
+    "mensaje a la comunidad":
+      "Eine vom Erzeuger verfasste öffentliche Botschaft, die in ihrer Originalsprache erhalten und vor der Veröffentlichung geprüft wird.",
+    mensaje_comunidad_locale:
+      "Die Ausgangssprache der Botschaft an die Gemeinschaft; nur leer lassen, wenn die Botschaft leer ist.",
+    "enlace destacado 1":
+      "Ein relevanter HTTP(S)-Artikel, ein Interview oder eine andere öffentliche Seite über diesen Erzeuger.",
+    "enlace destacado 2":
+      "Eine zweite, davon verschiedene öffentliche HTTP(S)-Seite; Link 1 muss zuerst ausgefüllt werden.",
   },
   common: {
     unitCount: "{count} {unit}",
@@ -185,6 +196,7 @@ const messages = {
     categories: "Kategorien",
     allCategories: "Alle",
     information: "Informationen",
+    expandedProfile: "Erweitertes Profil",
   },
   fieldLabels: {
     slug: "Slug",
@@ -197,6 +209,11 @@ const messages = {
     address: "Adresse",
     description: "Beschreibung",
     descriptionLocale: "Sprache der Beschreibung",
+    guidedVisits: "Führungen",
+    communityMessage: "Botschaft an die Gemeinschaft",
+    communityMessageLocale: "Sprache der Botschaft an die Gemeinschaft",
+    highlightedLink1: "Hervorgehobener Link 1",
+    highlightedLink2: "Hervorgehobener Link 2",
     openingHours: "Öffnungszeiten",
     phone: "Telefon",
     email: "E-Mail",

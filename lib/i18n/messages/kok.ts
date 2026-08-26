@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "आवडींतल्यान काडात",
     saveFavorite: "आवडींत जतन करात",
     editMyProfile: "म्हजें प्रोफाइल संपादित करात",
+    expandProfile: "प्रोफाइल विस्तार करात",
     ownershipVerified: "मालकी तपासिल्ली",
     viewOwnershipClaim: "मालकीचो दावो पळोवात",
     claimProducer: "ह्या उत्पादकाचो दावो करात",
@@ -65,6 +66,15 @@ const messages = {
     lon: "WGS84 दशांश रेखांश. अक्षांश आनी रेखांश दोगांय एकठांय दियात.",
     "Venta online": "सद्य ऑर्डर करपाची पद्दत तपासिल्ली आसा काय.",
     "Canal de venta": "सद्य प्रमाणीत ऑर्डर करपाचे मार्ग.",
+    "visitas guiadas": "उत्पादक सद्या मार्गदर्शीत भेटी दिता काय.",
+    "mensaje a la comunidad":
+      "थळाव्या अन्न समुदायाक उत्पादकाचो सार्वजनिक संदेश.",
+    mensaje_comunidad_locale:
+      "समुदाय संदेशाची मूळ भास; संदेश रिकामो आसताच रिकामें दवरात.",
+    "enlace destacado 1":
+      "उत्पादकान निवडिल्लो एक अधिक सार्वजनिक HTTP(S) दुवो.",
+    "enlace destacado 2":
+      "दुसरो अधिक सार्वजनिक HTTP(S) दुवो; पयल्या उपरांतच वापरात.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -160,6 +170,7 @@ const messages = {
   producer: {
     backToMap: "नकाश्यार परत वचात",
     profile: "उत्पादक प्रोफाइल",
+    expandedProfile: "विस्तारीत प्रोफाइल",
     website: "वेबसायट",
     googleMaps: "Google Maps",
     phone: "फोन",
@@ -187,6 +198,11 @@ const messages = {
     address: "नामो",
     description: "वर्णन",
     descriptionLocale: "वर्णनाची भास",
+    guidedVisits: "मार्गदर्शीत भेटी",
+    communityMessage: "समुदायाक संदेश",
+    communityMessageLocale: "समुदाय संदेशाची भास",
+    highlightedLink1: "मुखेल दुवो 1",
+    highlightedLink2: "मुखेल दुवो 2",
     openingHours: "उगडपाचे वेळ",
     phone: "फोन",
     email: "ईमेल",

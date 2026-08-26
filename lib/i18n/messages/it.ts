@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Rimuovi dai preferiti",
     saveFavorite: "Salva nei preferiti",
     editMyProfile: "Modifica il mio profilo",
+    expandProfile: "Amplia il profilo",
     ownershipVerified: "Proprietà verificata",
     viewOwnershipClaim: "Visualizza la rivendicazione di proprietà",
     claimProducer: "Rivendica questo produttore",
@@ -66,6 +67,16 @@ const messages = {
     lon: "Longitudine decimale WGS84. Latitudine e longitudine devono essere fornite insieme.",
     "Venta online": "Indica se è stato verificato un attuale meccanismo di ordinazione.",
     "Canal de venta": "I meccanismi di ordinazione attuali e dimostrati.",
+    "visitas guiadas":
+      "Indica se questo produttore offre attualmente visite guidate; lascia vuoto se l’informazione non viene pubblicata.",
+    "mensaje a la comunidad":
+      "Un messaggio pubblico scritto dal produttore, conservato nella lingua originale e verificato prima della pubblicazione.",
+    mensaje_comunidad_locale:
+      "La lingua di origine del messaggio alla comunità; lascia vuoto solo se il messaggio è vuoto.",
+    "enlace destacado 1":
+      "Un articolo, un’intervista o un’altra pagina pubblica HTTP(S) pertinente su questo produttore.",
+    "enlace destacado 2":
+      "Una seconda pagina pubblica HTTP(S) distinta; il link 1 deve essere compilato per primo.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -166,6 +177,7 @@ const messages = {
     categories: "Categorie",
     allCategories: "Tutte",
     information: "Informazioni",
+    expandedProfile: "Profilo esteso",
   },
   fieldLabels: {
     slug: "Slug",
@@ -178,6 +190,11 @@ const messages = {
     address: "Indirizzo",
     description: "Descrizione",
     descriptionLocale: "Lingua della descrizione",
+    guidedVisits: "Visite guidate",
+    communityMessage: "Messaggio alla comunità",
+    communityMessageLocale: "Lingua del messaggio alla comunità",
+    highlightedLink1: "Link in evidenza 1",
+    highlightedLink2: "Link in evidenza 2",
     openingHours: "Orari di apertura",
     phone: "Telefono",
     email: "Email",

@@ -1,25 +1,60 @@
-import { count, inArray } from "drizzle-orm";
+import { and, count, eq, gt, inArray, isNull, lte, or } from "drizzle-orm";
 import Link from "next/link";
 
 import { ProducerChangeTable } from "@/components/admin/producer-change-table";
-import { requireStaffAccount } from "@/lib/accounts/auth";
+import { hasStaffAccess, requireStaffAccount } from "@/lib/accounts/auth";
+import { PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY } from "@/lib/accounts/producer-profile-upgrade-policy";
 import {
   queryAdminProducerChanges,
   queryProducerChangeCounts,
 } from "@/lib/admin/producer-change-requests";
+import { producerProfileUpgradeIncidentCondition } from "@/lib/admin/producer-profile-upgrade-incidents";
 import { getDatabase } from "@/lib/db";
-import { producerClaims } from "@/lib/db/schema";
+import {
+  entitlements,
+  producerClaims,
+  producerProfileUpgradeRequests,
+} from "@/lib/db/schema";
 
 export default async function AdminPage() {
-  await requireStaffAccount();
+  const operator = await requireStaffAccount();
+  const canManagePayments = await hasStaffAccess(operator.id, ["admin"]);
   const database = getDatabase();
-  const [changeCounts, recentChanges, [claimCount]] = await Promise.all([
+  const now = new Date();
+  const [
+    changeCounts,
+    recentChanges,
+    [claimCount],
+    [paymentIncidentCount],
+    [premiumAccessCount],
+  ] = await Promise.all([
     queryProducerChangeCounts(database),
     queryAdminProducerChanges(database, { pageSize: 6 }),
     database
       .select({ value: count() })
       .from(producerClaims)
       .where(inArray(producerClaims.status, ["pending", "needs_info"])),
+    canManagePayments
+      ? database
+          .select({ value: count() })
+          .from(producerProfileUpgradeRequests)
+          .where(producerProfileUpgradeIncidentCondition())
+      : Promise.resolve([]),
+    canManagePayments
+      ? database
+          .select({ value: count() })
+          .from(entitlements)
+          .where(
+            and(
+              eq(entitlements.subjectKind, "producer"),
+              eq(entitlements.key, PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY),
+              eq(entitlements.status, "active"),
+              lte(entitlements.startsAt, now),
+              or(isNull(entitlements.expiresAt), gt(entitlements.expiresAt, now)),
+              isNull(entitlements.revokedAt),
+            ),
+          )
+      : Promise.resolve([]),
   ]);
 
   const reviewCount = changeCounts.submitted + changeCounts.needs_changes;
@@ -54,6 +89,24 @@ export default async function AdminPage() {
       href: "/admin/reclamaciones",
       tone: claimCount?.value ? "warning" : "neutral",
     },
+    ...(canManagePayments
+      ? [
+          {
+            label: "Expanded profiles",
+            value: Number(premiumAccessCount?.value ?? 0),
+            copy: "Active producer-level access from paid upgrades or admin gifts.",
+            href: "/admin/premium",
+            tone: premiumAccessCount?.value ? "positive" : "neutral",
+          },
+          {
+            label: "Payment incidents",
+            value: Number(paymentIncidentCount?.value ?? 0),
+            copy: "Paid profile upgrades requiring commercial or technical attention.",
+            href: "/admin/pagos",
+            tone: paymentIncidentCount?.value ? "danger" : "neutral",
+          },
+        ]
+      : []),
   ];
 
   return (

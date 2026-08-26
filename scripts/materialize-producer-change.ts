@@ -1650,7 +1650,11 @@ async function runCli(): Promise<void> {
       });
     } catch (error) {
       const reason = errorMessage(error, "Could not acquire a materialization lease.");
-      if (/author no longer has active access/i.test(reason)) {
+      if (
+        /author no longer has active access|entitlement required by this change is no longer active/i.test(
+          reason,
+        )
+      ) {
         await failProducerChangePreflight(client, changeId, "conflict", reason);
       }
       throw error;

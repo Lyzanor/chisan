@@ -845,6 +845,21 @@ test("runtime CSV loading fails closed for required producer identity fields", (
   );
 });
 
+test("runtime CSV loading preserves community-message spaces and LF line breaks", () => {
+  const message = "Primera línea.  Dos espacios.\nSegunda línea.";
+  const csv = [
+    "slug,nombre,municipio,categoria,Venta online,producer_id,mensaje a la comunidad,mensaje_comunidad_locale",
+    `producer-one,Producer One,Example Town,Wine,no comprobado,1,"${message}",es`,
+  ].join("\n");
+
+  assert.equal(
+    parseProducerCsvRows(csv, "community-message fixture")[0].fields[
+      "mensaje a la comunidad"
+    ],
+    message,
+  );
+});
+
 test("message dictionaries load one locale at a time through a shared schema", async () => {
   const dictionaries = await Promise.all(SUPPORTED_LOCALES.map(loadMessages));
   assert.deepEqual(

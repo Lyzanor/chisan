@@ -27,6 +27,7 @@ const messages = {
     removeFavorite: "お気に入りから削除",
     saveFavorite: "お気に入りに保存",
     editMyProfile: "プロフィールを編集",
+    expandProfile: "プロフィールを拡張",
     ownershipVerified: "所有権確認済み",
     viewOwnershipClaim: "所有権申請を表示",
     claimProducer: "この生産者の所有権を申請",
@@ -68,6 +69,16 @@ const messages = {
     lon: "WGS84 の十進経度。緯度と経度は両方入力してください。",
     "Venta online": "現在の注文手段が確認済みかどうか。",
     "Canal de venta": "現在利用できることが確認された注文手段。",
+    "visitas guiadas":
+      "この生産者が現在ガイド付き見学を実施しているかどうか。未公開の場合は空欄にします。",
+    "mensaje a la comunidad":
+      "生産者本人が作成した公開メッセージ。原文の言語を保ち、公開前に確認されます。",
+    mensaje_comunidad_locale:
+      "コミュニティ向けメッセージの原文言語。メッセージが空の場合に限り空欄にします。",
+    "enlace destacado 1":
+      "この生産者に関する記事、インタビュー、その他の関連する公開 HTTP(S) ページ。",
+    "enlace destacado 2":
+      "1件目とは異なる2件目の公開 HTTP(S) ページ。先にリンク1を入力してください。",
   },
   common: {
     unitCount: "{count}{unit}",
@@ -181,6 +192,7 @@ const messages = {
     categories: "カテゴリー",
     allCategories: "すべて",
     information: "情報",
+    expandedProfile: "拡張プロフィール",
   },
   fieldLabels: {
     slug: "スラッグ",
@@ -193,6 +205,11 @@ const messages = {
     address: "住所",
     description: "説明",
     descriptionLocale: "説明文の言語",
+    guidedVisits: "ガイド付き見学",
+    communityMessage: "コミュニティへのメッセージ",
+    communityMessageLocale: "コミュニティ向けメッセージの言語",
+    highlightedLink1: "注目リンク1",
+    highlightedLink2: "注目リンク2",
     openingHours: "営業時間",
     phone: "電話",
     email: "メール",

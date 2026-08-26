@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Susa kwizezithandwayo",
     saveFavorite: "Gcina kwizithandwayo",
     editMyProfile: "Hlela iprofayile yam",
+    expandProfile: "Yandisa iprofayile",
     ownershipVerified: "Ubunini buqinisekisiwe",
     viewOwnershipClaim: "Jonga ibango lobunini",
     claimProducer: "Banga lo mvelisi",
@@ -57,6 +58,16 @@ const messages = {
       "Ulwazi oluyinyani olukhethekileyo kulo mvelisi, ngaphandle kwamabango entengiso.",
     descripcion_locale:
       "Ulwimi lwemvelaphi lwenkcazelo esisiseko; lushiye lungenanto kuphela xa inkcazelo ingenanto.",
+    "visitas guiadas":
+      "Ukuba umvelisi ngoku unikezela ngokhenketho olukhokelwayo.",
+    "mensaje a la comunidad":
+      "Umyalezo kawonke-wonke ovela kumvelisi usiya eluntwini.",
+    mensaje_comunidad_locale:
+      "Ulwimi lwemvelaphi lomyalezo woluntu; lushiye lungenanto kuphela xa umyalezo ungenanto.",
+    "enlace destacado 1":
+      "Ikhonkco lokuqala elongezelelweyo elibalaseleyo le-HTTP(S), njengenqaku leendaba.",
+    "enlace destacado 2":
+      "Ikhonkco lesibini elongezelelweyo elibalaseleyo le-HTTP(S), njengenqaku leendaba.",
     direccion: "Idilesi yeyunithi yemveliso okanye indawo ejongene nomvelisi.",
     horario: "Iiyure zangoku zokutyelela, ukuqokelela okanye ukuvulela uluntu.",
     telefono: "Ifomathi yamazwe ngamazwe i-E.164, umzekelo +34600112233.",
@@ -182,6 +193,7 @@ const messages = {
     categories: "Iindidi",
     allCategories: "Zonke",
     information: "Ulwazi",
+    expandedProfile: "Iprofayile eyandisiweyo",
   },
   fieldLabels: {
     slug: "Slug",
@@ -194,6 +206,11 @@ const messages = {
     address: "Idilesi",
     description: "Inkcazelo",
     descriptionLocale: "Ulwimi lwenkcazelo",
+    guidedVisits: "Ukhenketho olukhokelwayo",
+    communityMessage: "Umyalezo eluntwini",
+    communityMessageLocale: "Ulwimi lomyalezo woluntu",
+    highlightedLink1: "Ikhonkco elibalaseleyo 1",
+    highlightedLink2: "Ikhonkco elibalaseleyo 2",
     openingHours: "Iiyure zokuvula",
     phone: "Ifowuni",
     email: "I-imeyile",

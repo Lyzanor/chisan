@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "পছন্দের তালিকা থেকে সরান",
     saveFavorite: "পছন্দের তালিকায় সংরক্ষণ করুন",
     editMyProfile: "আমার প্রোফাইল সম্পাদনা করুন",
+    expandProfile: "প্রোফাইল প্রসারিত করুন",
     ownershipVerified: "মালিকানা যাচাইকৃত",
     viewOwnershipClaim: "মালিকানার দাবি দেখুন",
     claimProducer: "এই উৎপাদকের মালিকানা দাবি করুন",
@@ -67,6 +68,15 @@ const messages = {
     lon: "WGS84 দশমিক দ্রাঘিমাংশ। অক্ষাংশ ও দ্রাঘিমাংশ একসঙ্গে দিতে হবে।",
     "Venta online": "বর্তমান অর্ডার করার ব্যবস্থা যাচাই করা হয়েছে কি না।",
     "Canal de venta": "বর্তমানে প্রমাণিত অর্ডার করার মাধ্যম।",
+    "visitas guiadas": "উৎপাদক বর্তমানে গাইডসহ পরিদর্শনের ব্যবস্থা করেন কি না।",
+    "mensaje a la comunidad":
+      "স্থানীয় খাদ্যসম্প্রদায়ের উদ্দেশে উৎপাদকের একটি প্রকাশ্য বার্তা।",
+    mensaje_comunidad_locale:
+      "সম্প্রদায়ের বার্তার উৎসভাষা; বার্তা ফাঁকা হলেই কেবল ফাঁকা রাখুন।",
+    "enlace destacado 1":
+      "উৎপাদকের নির্বাচিত একটি অতিরিক্ত প্রকাশ্য HTTP(S) লিংক।",
+    "enlace destacado 2":
+      "দ্বিতীয় একটি অতিরিক্ত প্রকাশ্য HTTP(S) লিংক; প্রথমটির পরেই ব্যবহার করুন।",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -164,6 +174,7 @@ const messages = {
   producer: {
     backToMap: "মানচিত্রে ফিরে যান",
     profile: "উৎপাদকের প্রোফাইল",
+    expandedProfile: "বর্ধিত প্রোফাইল",
     website: "ওয়েবসাইট",
     googleMaps: "Google Maps",
     phone: "ফোন",
@@ -191,6 +202,11 @@ const messages = {
     address: "ঠিকানা",
     description: "বিবরণ",
     descriptionLocale: "বিবরণের ভাষা",
+    guidedVisits: "গাইডসহ পরিদর্শন",
+    communityMessage: "সম্প্রদায়ের উদ্দেশে বার্তা",
+    communityMessageLocale: "সম্প্রদায়ের বার্তার ভাষা",
+    highlightedLink1: "উল্লেখযোগ্য লিংক ১",
+    highlightedLink2: "উল্লেখযোগ্য লিংক ২",
     openingHours: "খোলার সময়",
     phone: "ফোন",
     email: "ইমেল",

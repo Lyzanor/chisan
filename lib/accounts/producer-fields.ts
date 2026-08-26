@@ -16,7 +16,7 @@ export const SALES_CHANNEL_VALUES = [
 ] as const;
 export const PRODUCER_DESCRIPTION_LOCALES = DESCRIPTION_SOURCE_LOCALES;
 
-export const PRODUCER_EDITABLE_FIELDS = [
+export const PRODUCER_STANDARD_EDITABLE_FIELDS = [
   {
     key: "nombre",
     label: "Public name",
@@ -171,6 +171,54 @@ export const PRODUCER_EDITABLE_FIELDS = [
   },
 ] as const;
 
+export const PRODUCER_PREMIUM_EDITABLE_FIELDS = [
+  {
+    key: "visitas guiadas",
+    label: "Guided visits",
+    kind: "yes-no",
+    required: false,
+    maxLength: 2,
+    help: "Whether this producer currently offers guided visits; leave empty when unpublished.",
+  },
+  {
+    key: "mensaje a la comunidad",
+    label: "Message to the community",
+    kind: "textarea",
+    required: false,
+    maxLength: 1_000,
+    help: "A producer-authored public message, preserved in its original language and reviewed before publication.",
+  },
+  {
+    key: "mensaje_comunidad_locale",
+    label: "Community message language",
+    kind: "description-locale",
+    required: false,
+    maxLength: 3,
+    help: "The source language of the community message; leave empty only when the message is empty.",
+  },
+  {
+    key: "enlace destacado 1",
+    label: "Highlighted link 1",
+    kind: "url",
+    required: false,
+    maxLength: 2_048,
+    help: "A relevant HTTP(S) article, interview or other public page about this producer.",
+  },
+  {
+    key: "enlace destacado 2",
+    label: "Highlighted link 2",
+    kind: "url",
+    required: false,
+    maxLength: 2_048,
+    help: "A second distinct public HTTP(S) page; link 1 must be filled first.",
+  },
+] as const;
+
+export const PRODUCER_EDITABLE_FIELDS = [
+  ...PRODUCER_STANDARD_EDITABLE_FIELDS,
+  ...PRODUCER_PREMIUM_EDITABLE_FIELDS,
+] as const;
+
 export type ProducerEditableField = (typeof PRODUCER_EDITABLE_FIELDS)[number];
 export type ProducerEditableFieldKey = ProducerEditableField["key"];
 export type ProducerPatch = Partial<Record<ProducerEditableFieldKey, string>>;
@@ -187,12 +235,58 @@ const CATEGORY_SET = new Set<string>(PRODUCER_CATEGORIES);
 const ONLINE_SALES_SET = new Set<string>(ONLINE_SALES_VALUES);
 const SALES_CHANNEL_SET = new Set<string>(SALES_CHANNEL_VALUES);
 const DESCRIPTION_LOCALE_SET = new Set<string>(PRODUCER_DESCRIPTION_LOCALES);
+const PREMIUM_FIELD_KEYS = new Set<string>(
+  PRODUCER_PREMIUM_EDITABLE_FIELDS.map(({ key }) => key),
+);
+
+export function producerEditableFieldsForPremiumAccess(
+  hasPremiumAccess: boolean,
+): readonly ProducerEditableField[] {
+  return hasPremiumAccess
+    ? PRODUCER_EDITABLE_FIELDS
+    : PRODUCER_STANDARD_EDITABLE_FIELDS;
+}
+
+export function isPremiumProducerPatch(patch: ProducerPatch): boolean {
+  return Object.keys(patch).some((key) => PREMIUM_FIELD_KEYS.has(key));
+}
 
 function normalizeText(value: unknown): string {
   return String(value ?? "")
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeProducerFieldValue(key: string, value: unknown): string {
+  if (key !== "mensaje a la comunidad") return normalizeText(value);
+
+  return String(value ?? "")
+    .replace(/\r\n?/g, "\n")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
+    .trim();
+}
+
+function getCommunityMessageContaminationReason(value: string): string | null {
+  if (/<\/?[a-z][^>]*>/iu.test(value)) return "HTML copied from a source page";
+  if (/(?:https?:\/\/|www\.)\S+/iu.test(value)) return "a URL or source citation";
+  if (/_x000d_/iu.test(value)) return "a spreadsheet formatting artifact";
+  if (/milflivecamsforce|livecamsforce/iu.test(value)) return "injected spam text";
+
+  const boilerplateSignals = [
+    /\bcookies?\b/iu,
+    /pol[ií]tica de privacidad|privacy policy/iu,
+    /aviso legal|legal notice/iu,
+    /todos los derechos reservados|all rights reserved/iu,
+    /configuraci[oó]n de cookies?|cookie settings/iu,
+    /aceptar(?: todas)?(?: las)? cookies?|accept all cookies?/iu,
+    /iniciar sesi[oó]n|log[ -]?in|sign[ -]?in/iu,
+    /carrito|shopping cart/iu,
+  ].filter((pattern) => pattern.test(value)).length;
+
+  return boilerplateSignals >= 2
+    ? "copied navigation, legal or cookie boilerplate"
+    : null;
 }
 
 function normalizeDelimitedValues(values: readonly unknown[]): string {
@@ -204,32 +298,39 @@ function normalizeDelimitedValues(values: readonly unknown[]): string {
   return [...new Set(normalized)].join("|");
 }
 
-export function readProducerProposalForm(formData: FormData): ProducerProposal {
+export function readProducerProposalForm(
+  formData: FormData,
+  editableFields: readonly ProducerEditableField[] = PRODUCER_EDITABLE_FIELDS,
+): Partial<Record<ProducerEditableFieldKey, string>> {
   return Object.fromEntries(
-    PRODUCER_EDITABLE_FIELDS.map(({ key, kind }) => {
+    editableFields.map(({ key, kind }) => {
       const value =
         kind === "categories" || kind === "sales-channels"
           ? normalizeDelimitedValues(formData.getAll(key))
-          : normalizeText(formData.get(key));
+          : normalizeProducerFieldValue(key, formData.get(key));
 
       return [key, value];
     }),
-  ) as ProducerProposal;
+  ) as Partial<Record<ProducerEditableFieldKey, string>>;
 }
 
-function validateUrl(value: string): boolean {
-  if (!value) return true;
+function readHttpUrl(value: string): URL | null {
+  if (!value) return null;
 
   try {
     const url = new URL(value);
-    return (
-      (url.protocol === "http:" || url.protocol === "https:") &&
+    return (url.protocol === "http:" || url.protocol === "https:") &&
       !url.username &&
       !url.password
-    );
+      ? url
+      : null;
   } catch {
-    return false;
+    return null;
   }
+}
+
+function validateUrl(value: string): boolean {
+  return !value || readHttpUrl(value) !== null;
 }
 
 function validateEmail(value: string): boolean {
@@ -254,12 +355,17 @@ function hasSpreadsheetFormulaPrefix(value: string): boolean {
 export function validateProducerProposal(
   rawProposal: Partial<Record<ProducerEditableFieldKey, unknown>>,
   currentFields: Record<string, string>,
+  editableFields: readonly ProducerEditableField[] = PRODUCER_EDITABLE_FIELDS,
 ): ProposalValidationResult {
   const errors: Record<string, string> = {};
+  const editableKeys = new Set(editableFields.map(({ key }) => key));
   const candidate = Object.fromEntries(
     PRODUCER_EDITABLE_FIELDS.map(({ key }) => [
       key,
-      normalizeText(rawProposal[key] ?? currentFields[key] ?? ""),
+      normalizeProducerFieldValue(
+        key,
+        editableKeys.has(key) ? rawProposal[key] ?? "" : currentFields[key] ?? "",
+      ),
     ]),
   ) as ProducerProposal;
 
@@ -269,7 +375,11 @@ export function validateProducerProposal(
       errors[field.key] = `${field.label} is required.`;
       continue;
     }
-    if (value.length > field.maxLength) {
+    const valueLength =
+      field.key === "mensaje a la comunidad"
+        ? Array.from(value).length
+        : value.length;
+    if (valueLength > field.maxLength) {
       errors[field.key] = `${field.label} is too long (maximum ${field.maxLength} characters).`;
       continue;
     }
@@ -304,7 +414,14 @@ export function validateProducerProposal(
     errors.correo = "Enter a valid public email address.";
   }
 
-  for (const key of ["web", "Facebook", "Instagram", "Google Maps"] as const) {
+  for (const key of [
+    "web",
+    "Facebook",
+    "Instagram",
+    "Google Maps",
+    "enlace destacado 1",
+    "enlace destacado 2",
+  ] as const) {
     if (!validateUrl(candidate[key])) {
       errors[key] = "Enter a complete HTTP(S) URL without embedded credentials.";
     }
@@ -343,21 +460,53 @@ export function validateProducerProposal(
   ) {
     errors.descripcion_locale = "Choose the source language of the description.";
   }
+  if (candidate["visitas guiadas"] && !["sí", "no"].includes(candidate["visitas guiadas"])) {
+    errors["visitas guiadas"] = "Choose yes, no or leave guided visits unpublished.";
+  }
+  if (!candidate["mensaje a la comunidad"] && candidate.mensaje_comunidad_locale) {
+    errors.mensaje_comunidad_locale =
+      "Leave the community-message language empty when the message is empty.";
+  } else if (
+    candidate["mensaje a la comunidad"] &&
+    !DESCRIPTION_LOCALE_SET.has(candidate.mensaje_comunidad_locale)
+  ) {
+    errors.mensaje_comunidad_locale = "Choose the source language of the community message.";
+  }
+  const communityMessageContamination = getCommunityMessageContaminationReason(
+    candidate["mensaje a la comunidad"],
+  );
+  if (communityMessageContamination) {
+    errors["mensaje a la comunidad"] =
+      `Community message cannot contain ${communityMessageContamination}.`;
+  }
+  if (candidate["enlace destacado 2"] && !candidate["enlace destacado 1"]) {
+    errors["enlace destacado 2"] = "Fill highlighted link 1 before link 2.";
+  } else if (candidate["enlace destacado 1"] && candidate["enlace destacado 2"]) {
+    const highlightedLink1 = readHttpUrl(candidate["enlace destacado 1"]);
+    const highlightedLink2 = readHttpUrl(candidate["enlace destacado 2"]);
+    if (highlightedLink1 && highlightedLink1.href === highlightedLink2?.href) {
+      errors["enlace destacado 2"] = "Highlighted links must be different.";
+    }
+  }
 
   if (Object.keys(errors).length > 0) {
     return { ok: false, errors };
   }
 
-  const descriptionPairChanged = ["descripcion", "descripcion_locale"].some(
-    (key) => candidate[key as ProducerEditableFieldKey] !== normalizeText(currentFields[key] ?? ""),
+  const pairedFields = [
+    ["descripcion", "descripcion_locale"],
+    ["mensaje a la comunidad", "mensaje_comunidad_locale"],
+  ] as const;
+  const changedPairs = pairedFields.filter((pair) =>
+    pair.some(
+      (key) =>
+        candidate[key] !== normalizeProducerFieldValue(key, currentFields[key] ?? ""),
+    ),
   );
   const patch = Object.fromEntries(
-    PRODUCER_EDITABLE_FIELDS.flatMap(({ key }) => {
-      const currentValue = normalizeText(currentFields[key] ?? "");
-      if (
-        descriptionPairChanged &&
-        (key === "descripcion" || key === "descripcion_locale")
-      ) {
+    editableFields.flatMap(({ key }) => {
+      const currentValue = normalizeProducerFieldValue(key, currentFields[key] ?? "");
+      if (changedPairs.some((pair) => pair[0] === key || pair[1] === key)) {
         return [[key, candidate[key]]];
       }
       return candidate[key] === currentValue ? [] : [[key, candidate[key]]];
@@ -377,7 +526,13 @@ export function isProducerPatch(value: unknown): value is ProducerPatch {
 export function hashProducerFields(fields: Record<string, string>): string {
   const stableFields = Object.fromEntries(
     Object.entries(fields)
-      .map(([key, value]) => [normalizeText(key), normalizeText(value)] as const)
+      .map(([key, value]) => {
+        const normalizedKey = normalizeText(key);
+        return [
+          normalizedKey,
+          normalizeProducerFieldValue(normalizedKey, value),
+        ] as const;
+      })
       .sort(([left], [right]) => (left < right ? -1 : left > right ? 1 : 0)),
   );
 

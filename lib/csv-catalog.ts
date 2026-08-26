@@ -952,11 +952,13 @@ export function parseProducerCsvRows(
     const fields = Object.fromEntries(
       Object.entries(row).map(([key, value]) => {
         const field = cleanCell(key);
-        // Translation hashes intentionally preserve source whitespace. Other
-        // catalog fields retain the historical presentation cleanup.
+        // Translation hashes and producer-authored community messages preserve
+        // source whitespace. Other catalog fields retain the historical cleanup.
         return [
           field,
-          field === "descripcion" ? String(value ?? "") : cleanCell(value),
+          field === "descripcion" || field === "mensaje a la comunidad"
+            ? String(value ?? "")
+            : cleanCell(value),
         ];
       }),
     );

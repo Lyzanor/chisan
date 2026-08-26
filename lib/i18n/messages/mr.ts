@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "आवडीतून काढा",
     saveFavorite: "आवडीत जतन करा",
     editMyProfile: "माझे प्रोफाइल संपादित करा",
+    expandProfile: "प्रोफाइल विस्तृत करा",
     ownershipVerified: "मालकी पडताळलेली",
     viewOwnershipClaim: "मालकीचा दावा पहा",
     claimProducer: "या उत्पादकावर दावा करा",
@@ -55,6 +56,14 @@ const messages = {
     descripcion: "प्रचारात्मक दाव्यांविना उत्पादकाशी संबंधित तथ्यात्मक माहिती.",
     descripcion_locale:
       "मूळ वर्णनाची भाषा; वर्णन रिकामे असेल तेव्हाच रिकामे ठेवा.",
+    "visitas guiadas": "उत्पादक सध्या मार्गदर्शित भेटी देतो का.",
+    "mensaje a la comunidad": "उत्पादकाचा समुदायासाठी सार्वजनिक संदेश.",
+    mensaje_comunidad_locale:
+      "समुदाय संदेशाची मूळ भाषा; संदेश रिकामा असेल तेव्हाच रिकामे ठेवा.",
+    "enlace destacado 1":
+      "पहिला अतिरिक्त ठळक HTTP(S) दुवा, उदाहरणार्थ वृत्तलेख.",
+    "enlace destacado 2":
+      "दुसरा अतिरिक्त ठळक HTTP(S) दुवा, उदाहरणार्थ वृत्तलेख.",
     direccion: "उत्पादन युनिटचा किंवा जनतेसाठी खुल्या जागेचा पत्ता.",
     horario: "सध्याचे भेटीचे, संकलनाचे किंवा सार्वजनिक उघडण्याचे तास.",
     telefono: "आंतरराष्ट्रीय E.164 स्वरूप, उदाहरण: +34600112233.",
@@ -177,6 +186,7 @@ const messages = {
     categories: "वर्ग",
     allCategories: "सर्व",
     information: "माहिती",
+    expandedProfile: "विस्तारित प्रोफाइल",
   },
   fieldLabels: {
     slug: "स्लग",
@@ -189,6 +199,11 @@ const messages = {
     address: "पत्ता",
     description: "वर्णन",
     descriptionLocale: "वर्णनाची भाषा",
+    guidedVisits: "मार्गदर्शित भेटी",
+    communityMessage: "समुदायासाठी संदेश",
+    communityMessageLocale: "समुदाय संदेशाची भाषा",
+    highlightedLink1: "ठळक दुवा 1",
+    highlightedLink2: "ठळक दुवा 2",
     openingHours: "उघडण्याचे तास",
     phone: "फोन",
     email: "ईमेल",

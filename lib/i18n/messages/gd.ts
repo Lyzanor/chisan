@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "Thoir air falbh am fear as fheàrr leat",
     saveFavorite: "Sàbhail mar fhear as fheàrr leat",
     editMyProfile: "Deasaich mo phròifil",
+    expandProfile: "Leudaich a' phròifil",
     ownershipVerified: "Seilbh air a dhearbhadh",
     viewOwnershipClaim: "Faic tagradh na seilbhe",
     claimProducer: "Tagair an riochdaire seo",
@@ -73,6 +74,16 @@ const messages = {
     lon: "Domhan-fhad deicheach WGS84. Feumar domhan-leud agus domhan-fhad a thoirt seachad còmhla.",
     "Venta online": "A bheil dòigh òrdachaidh làithreach air a sgrùdadh.",
     "Canal de venta": "Dòighean òrdachaidh làithreach a chaidh a dhearbhadh.",
+    "visitas guiadas":
+      "A bheil an riochdaire a’ tabhann tursan treòraichte an-dràsta.",
+    "mensaje a la comunidad":
+      "Teachdaireachd phoblach bhon riochdaire gu coimhearsnachd a’ bhìdh ionadail.",
+    mensaje_comunidad_locale:
+      "Cànan tùsail teachdaireachd na coimhearsnachd; fàg bàn e dìreach nuair a tha an teachdaireachd bàn.",
+    "enlace destacado 1":
+      "Ceangal poblach HTTP(S) a bharrachd a thagh an riochdaire.",
+    "enlace destacado 2":
+      "Dàrna ceangal poblach HTTP(S) a bharrachd; cleachd e dìreach às dèidh a’ chiad fhear.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -174,6 +185,7 @@ const messages = {
   producer: {
     backToMap: "Air ais chun mhapa",
     profile: "Pròifil an riochdaire",
+    expandedProfile: "Pròifil leudaichte",
     website: "Làrach-lìn",
     googleMaps: "Google Maps",
     phone: "Fòn",
@@ -201,6 +213,11 @@ const messages = {
     address: "Seòladh",
     description: "Tuairisgeul",
     descriptionLocale: "Cànan an tuairisgeul",
+    guidedVisits: "Tursan treòraichte",
+    communityMessage: "Teachdaireachd dhan choimhearsnachd",
+    communityMessageLocale: "Cànan teachdaireachd na coimhearsnachd",
+    highlightedLink1: "Ceangal sònraichte 1",
+    highlightedLink2: "Ceangal sònraichte 2",
     openingHours: "Uairean fosglaidh",
     phone: "Fòn",
     email: "Post-d",

@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "প্ৰিয়ৰ পৰা আঁতৰাওক",
     saveFavorite: "প্ৰিয়ত সংৰক্ষণ কৰক",
     editMyProfile: "মোৰ প্ৰফাইল সম্পাদনা কৰক",
+    expandProfile: "প্ৰফাইল বিস্তাৰ কৰক",
     ownershipVerified: "মালিকীস্বত্ব পৰীক্ষিত",
     viewOwnershipClaim: "মালিকীস্বত্বৰ দাবী চাওক",
     claimProducer: "এই উৎপাদকৰ মালিকীস্বত্ব দাবী কৰক",
@@ -65,6 +66,15 @@ const messages = {
     lon: "WGS84 দশমিক দ্ৰাঘিমাংশ। অক্ষাংশ আৰু দ্ৰাঘিমাংশ একেলগে দিব লাগিব।",
     "Venta online": "বৰ্তমান অৰ্ডাৰ কৰাৰ ব্যৱস্থা পৰীক্ষা কৰা হৈছে নে নাই।",
     "Canal de venta": "বৰ্তমান প্ৰমাণিত অৰ্ডাৰ কৰাৰ মাধ্যম।",
+    "visitas guiadas": "উৎপাদকে বৰ্তমান পথপ্ৰদৰ্শিত ভ্ৰমণৰ সুবিধা দিয়ে নে নাই।",
+    "mensaje a la comunidad":
+      "স্থানীয় খাদ্য সম্প্ৰদায়লৈ উৎপাদকৰ এটা সাৰ্বজনীন বাৰ্তা।",
+    mensaje_comunidad_locale:
+      "সম্প্ৰদায়লৈ বাৰ্তাৰ উৎস ভাষা; বাৰ্তা খালী হ’লেহে খালী ৰাখিব।",
+    "enlace destacado 1":
+      "উৎপাদকে বাছনি কৰা এটা অতিৰিক্ত সাৰ্বজনীন HTTP(S) লিংক।",
+    "enlace destacado 2":
+      "এটা দ্বিতীয় অতিৰিক্ত সাৰ্বজনীন HTTP(S) লিংক; প্ৰথমটোৰ পিছতহে ব্যৱহাৰ কৰিব।",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -160,6 +170,7 @@ const messages = {
   producer: {
     backToMap: "মানচিত্ৰলৈ উভতি যাওক",
     profile: "উৎপাদকৰ প্ৰফাইল",
+    expandedProfile: "সম্প্ৰসাৰিত প্ৰফাইল",
     website: "ৱেবছাইট",
     googleMaps: "Google Maps",
     phone: "ফোন",
@@ -187,6 +198,11 @@ const messages = {
     address: "ঠিকনা",
     description: "বিৱৰণ",
     descriptionLocale: "বিৱৰণৰ ভাষা",
+    guidedVisits: "পথপ্ৰদৰ্শিত ভ্ৰমণ",
+    communityMessage: "সম্প্ৰদায়লৈ বাৰ্তা",
+    communityMessageLocale: "সম্প্ৰদায়ৰ বাৰ্তাৰ ভাষা",
+    highlightedLink1: "উল্লেখযোগ্য লিংক ১",
+    highlightedLink2: "উল্লেখযোগ্য লিংক ২",
     openingHours: "খোলাৰ সময়",
     phone: "ফোন",
     email: "ইমেইল",

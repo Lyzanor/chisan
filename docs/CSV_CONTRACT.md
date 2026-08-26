@@ -147,7 +147,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
 ```
 
 All columns are physically present in every file. “Optional” below means that a
@@ -192,6 +192,11 @@ whitespace.
 | `categorias adicionales` | optional    | Zero or more exact category tokens joined with `\|`; each represents another material product line of the same productive unit. |
 | `producer_id`            | required    | Immutable positive decimal safe integer (`1..9007199254740991`) without leading zeroes; unique within the country.              |
 | `descripcion_locale`     | paired      | Supported lowercase source-language code for a non-empty `descripcion`; empty exactly when `descripcion` is empty.              |
+| `visitas guiadas`        | optional    | Empty when unpublished, otherwise exact token `sí` or `no`; never inferred from ordinary opening hours.                         |
+| `mensaje a la comunidad` | optional    | Producer-authored public message in its original language, with at most 1,000 Unicode characters.                               |
+| `mensaje_comunidad_locale` | paired    | Supported lowercase source-language code for a non-empty community message; empty exactly when that message is empty.           |
+| `enlace destacado 1`     | optional    | Relevant public HTTP(S) article, interview or other external page about this producer.                                          |
+| `enlace destacado 2`     | conditional | A second distinct public HTTP(S) page; allowed only when `enlace destacado 1` is filled.                                        |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -210,6 +215,15 @@ describe the same producer identity as the row. Dynamic facts such as activity,
 hours, contacts and online sales require current support. When a value cannot be
 supported, leave it empty or use the defined unknown state; never complete a row
 by inference.
+
+`mensaje a la comunidad` is the narrow attribution exception: it may originate
+as new first-party speech submitted by an active producer member through the
+reviewed account workflow, so it need not have been published at another public
+URL first. Its source is the attributed submission, whose author, request and
+review trail remain in PostgreSQL and Git rather than being copied into the CSV
+or public evidence ledger. This exception does not turn objective claims inside
+the message into verified facts and does not relax public-source requirements
+for any other field.
 
 New candidates must pass the candidate gate in `docs/EDITORIAL.md` before
 they enter a CSV and start as `parcial` or `verificado`. `pendiente` is reserved
@@ -236,6 +250,41 @@ admission threshold; it is never a holding state for a speculative candidate.
   source commentary and shared templates.
 - `horario` is copied only when the source makes its meaning and currency clear.
   Empty is preferable to an old or ambiguous schedule.
+- `visitas guiadas` records a reviewed explicit offer. Empty means unpublished,
+  `sí` means currently offered and `no` means explicitly reviewed as not offered.
+  It is not derived from `horario`, a shop opening time or general public access.
+- `mensaje a la comunidad` is attributed to the producer rather than written in
+  Chisan's editorial voice. It remains subject to review, must concern the same
+  productive unit, and excludes HTML, source notes, page boilerplate,
+  embedded URLs and claims about third parties. It must not begin with a
+  spreadsheet formula marker (`=`, `+`, `-` or `@`). Internal spaces and LF line
+  breaks are preserved in its declared `mensaje_comunidad_locale`; they are not
+  collapsed during proposal review or public loading. This first version does
+  not materialize the message through translation sidecars.
+- Highlighted links are relevant third-party or producer pages such as press
+  articles and interviews. They do not replace `web`, social links or evidence,
+  are not necessarily official, and never count toward `verificacion`. The two
+  links must remain distinct after standard URL canonicalization (for example,
+  `https://example.com` and `https://example.com/` are the same URL), although
+  the accepted CSV value keeps its original spelling.
+
+## Expanded-profile fields
+
+The current expanded content fields are `visitas guiadas`, `mensaje a la
+comunidad`, `enlace destacado 1` and `enlace destacado 2`, plus the message's
+paired locale metadata. Their values are canonical CSV facts.
+There is deliberately no `premium`, payment status, provider or external
+payment ID column.
+
+PostgreSQL never owns copies of these field values. The account domain owns the
+producer-scoped `producer.profile.premium` entitlement and its commercial
+workflows. CSV loading, review and public rendering are payment-provider
+agnostic. The generic details table omits the premium field set; its dedicated
+block renders non-empty CSV values only while the entitlement is active. If
+account state is unavailable or the entitlement becomes inactive for any
+reason, the base profile remains public and these values remain in CSV for
+traceability but stay hidden and frozen. Payment never proves facts, changes
+verification or bypasses review; standard corrections remain free.
 
 ## Description source locale
 
@@ -254,6 +303,11 @@ admission threshold; it is never a holding state for a speculative candidate.
 - the language is assessed from the actual row prose and may vary per row;
 - editors set it when writing or materially replacing a description and never
   infer it from the country code.
+
+`mensaje_comunidad_locale` follows the same source-language registry and pairing
+rules for `mensaje a la comunidad`, but is not a translation-sidecar source in
+this version. The public block marks the literal message with its source
+language so alternate catalog routes do not misrepresent it as translated.
 
 A language correction that leaves the prose unchanged still invalidates any
 translation whose recorded `source_locale` no longer matches. A factual or
@@ -570,8 +624,10 @@ or override; never move correct producer coordinates to satisfy the validator.
 
 ## Link contract
 
-`web`, `Facebook`, `Instagram` and `Google Maps` may be empty. When filled they
-must be valid HTTP(S) URLs and refer to the row's producer:
+`web`, `Facebook`, `Instagram`, `Google Maps`, `enlace destacado 1` and
+`enlace destacado 2` may be empty. When filled they must be valid HTTP(S) URLs,
+must not contain an embedded username or password, and must refer to the row's
+producer:
 
 - `Facebook` must use a `facebook.com` host and identify a page/profile, not the
   network home, feed or unrelated post.

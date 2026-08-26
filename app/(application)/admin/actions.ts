@@ -1,24 +1,37 @@
 "use server";
 
-import { and, eq, inArray, ne, sql } from "drizzle-orm";
+import { and, eq, gt, inArray, isNull, lte, ne, or, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
 
-import { requireStaffAccount } from "@/lib/accounts/auth";
+import { requireAdminAccount, requireStaffAccount } from "@/lib/accounts/auth";
 import {
   changeReviewSchema,
   claimReviewSchema,
   firstValidationMessage,
   formString,
+  profileUpgradeGiftGrantSchema,
+  profileUpgradeGiftRevokeSchema,
+  profileUpgradeRetrySchema,
 } from "@/lib/accounts/input";
 import { hashProducerFields } from "@/lib/accounts/producer-fields";
+import { PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY } from "@/lib/accounts/producer-profile-upgrade-policy";
+import {
+  grantProducerPremiumGift,
+  revokeProducerPremiumGift,
+} from "@/lib/accounts/producer-profile-gifts";
+import { fulfillProducerProfileUpgradeCheckout } from "@/lib/payments/stripe-profile-upgrades";
+import { STRIPE_PAYMENT_PROVIDER } from "@/lib/payments/payment-provider";
+import { canRetryPaidUnfulfilledProfileUpgrade } from "@/lib/payments/stripe-profile-upgrade-domain";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import {
   auditEvents,
+  entitlements,
   producerChangeExecutions,
   producerChangeRequests,
   producerClaims,
   producerMemberships,
+  producerProfileUpgradeRequests,
   users,
 } from "@/lib/db/schema";
 
@@ -26,6 +39,141 @@ function adminRedirect(path: string, kind: "error" | "notice", message: string):
   const url = new URL(path, "https://chisan.invalid");
   url.searchParams.set(kind, message.slice(0, 300));
   redirect(`${url.pathname}${url.search}`);
+}
+
+function profilePaymentRedirect(result: string): never {
+  redirect(`/admin/pagos?result=${encodeURIComponent(result)}`);
+}
+
+function profileAccessRedirect(result: string): never {
+  redirect(`/admin/premium?result=${encodeURIComponent(result)}`);
+}
+
+export async function grantProducerPremiumGiftAction(
+  formData: FormData,
+): Promise<void> {
+  const operator = await requireAdminAccount("/admin/premium");
+  const parsed = profileUpgradeGiftGrantSchema.safeParse({
+    country: formString(formData, "country"),
+    producerId: formString(formData, "producerId"),
+    reason: formString(formData, "reason"),
+  });
+  if (!parsed.success) profileAccessRedirect("invalid_gift");
+
+  let outcome: Awaited<ReturnType<typeof grantProducerPremiumGift>>;
+  try {
+    outcome = await grantProducerPremiumGift({
+      adminUserId: operator.id,
+      country: parsed.data.country,
+      producerId: parsed.data.producerId,
+      reason: parsed.data.reason,
+    });
+  } catch {
+    profileAccessRedirect("gift_failed");
+  }
+  profileAccessRedirect(outcome.kind);
+}
+
+export async function revokeProducerPremiumGiftAction(
+  formData: FormData,
+): Promise<void> {
+  const operator = await requireAdminAccount("/admin/premium");
+  const parsed = profileUpgradeGiftRevokeSchema.safeParse({
+    confirmation: formString(formData, "confirmation"),
+    entitlementId: formString(formData, "entitlementId"),
+    reason: formString(formData, "reason"),
+  });
+  if (!parsed.success) profileAccessRedirect("invalid_revocation");
+
+  let outcome: Awaited<ReturnType<typeof revokeProducerPremiumGift>>;
+  try {
+    outcome = await revokeProducerPremiumGift({
+      adminUserId: operator.id,
+      entitlementId: parsed.data.entitlementId,
+      reason: parsed.data.reason,
+    });
+  } catch {
+    profileAccessRedirect("revocation_failed");
+  }
+  profileAccessRedirect(outcome.kind);
+}
+
+export async function retryProducerProfileUpgradeAction(
+  formData: FormData,
+): Promise<void> {
+  const operator = await requireAdminAccount("/admin/pagos");
+  const parsed = profileUpgradeRetrySchema.safeParse({
+    requestId: formString(formData, "requestId"),
+  });
+  if (!parsed.success) profilePaymentRedirect("invalid_request");
+
+  const database = getDatabase();
+  const [request] = await database
+    .select()
+    .from(producerProfileUpgradeRequests)
+    .where(eq(producerProfileUpgradeRequests.id, parsed.data.requestId))
+    .limit(1);
+  if (!request) profilePaymentRedirect("not_found");
+  if (request.status !== "paid_unfulfilled") {
+    profilePaymentRedirect(request.status === "paid" ? "already_paid" : "state_changed");
+  }
+  if (
+    request.paymentProvider !== STRIPE_PAYMENT_PROVIDER ||
+    !request.providerCheckoutId ||
+    !canRetryPaidUnfulfilledProfileUpgrade(request.failureCode)
+  ) {
+    profilePaymentRedirect("manual_review_required");
+  }
+
+  const attemptId = `admin-retry:${crypto.randomUUID()}`;
+  let outcome: Awaited<ReturnType<typeof fulfillProducerProfileUpgradeCheckout>>;
+  try {
+    outcome = await fulfillProducerProfileUpgradeCheckout({
+      eventId: attemptId,
+      occurredAt: new Date(),
+      sessionId: request.providerCheckoutId,
+    });
+  } catch (error) {
+    await database.insert(auditEvents).values({
+      actorKind: "user",
+      actorUserId: operator.id,
+      action: "producer_profile_upgrade.reconciliation_failed",
+      targetType: "producer_profile_upgrade_request",
+      targetId: request.id,
+      requestId: attemptId,
+      metadata: {
+        failureCode: request.failureCode,
+        error:
+          error instanceof Error
+            ? error.message.slice(0, 500)
+            : "Unknown reconciliation error",
+      },
+    });
+    profilePaymentRedirect("retry_failed");
+  }
+
+  const [current] = await database
+    .select({ status: producerProfileUpgradeRequests.status })
+    .from(producerProfileUpgradeRequests)
+    .where(eq(producerProfileUpgradeRequests.id, request.id))
+    .limit(1);
+  await database.insert(auditEvents).values({
+    actorKind: "user",
+    actorUserId: operator.id,
+    action: "producer_profile_upgrade.reconciliation_retried",
+    targetType: "producer_profile_upgrade_request",
+    targetId: request.id,
+    requestId: attemptId,
+    metadata: {
+      failureCode: request.failureCode,
+      outcome,
+      resultingStatus: current?.status ?? null,
+    },
+  });
+
+  if (current?.status === "paid") profilePaymentRedirect("reconciled");
+  if (current?.status === "paid_unfulfilled") profilePaymentRedirect("still_unfulfilled");
+  profilePaymentRedirect("state_changed");
 }
 
 export async function reviewProducerClaimAction(formData: FormData): Promise<void> {
@@ -442,6 +590,57 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
         });
         return "membership-revoked";
       }
+      if (change.requiredEntitlementKey) {
+        const [activeEntitlement] = await transaction
+          .select({ id: entitlements.id })
+          .from(entitlements)
+          .where(
+            and(
+              eq(entitlements.subjectKind, "producer"),
+              eq(entitlements.producerCountry, change.country),
+              eq(entitlements.producerId, change.producerId),
+              eq(entitlements.key, PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY),
+              eq(entitlements.key, change.requiredEntitlementKey),
+              eq(entitlements.status, "active"),
+              lte(entitlements.startsAt, new Date()),
+              or(isNull(entitlements.expiresAt), gt(entitlements.expiresAt, new Date())),
+              isNull(entitlements.revokedAt),
+            ),
+          )
+          .for("update")
+          .limit(1);
+        if (!activeEntitlement) {
+          const [cancelled] = await transaction
+            .update(producerChangeRequests)
+            .set({
+              status: "conflict",
+              reviewerUserId: reviewer.id,
+              decisionNote: parsed.data.note,
+              failureReason: "The required producer entitlement was revoked before approval.",
+              reviewedAt: new Date(),
+              lockVersion: sql`${producerChangeRequests.lockVersion} + 1`,
+              updatedAt: new Date(),
+            })
+            .where(
+              and(
+                eq(producerChangeRequests.id, change.id),
+                eq(producerChangeRequests.lockVersion, change.lockVersion),
+                inArray(producerChangeRequests.status, ["submitted", "needs_changes"]),
+              ),
+            )
+            .returning({ id: producerChangeRequests.id });
+          if (!cancelled) return "stale";
+          await transaction.insert(auditEvents).values({
+            actorKind: "user",
+            actorUserId: reviewer.id,
+            action: "producer_change.entitlement_conflict",
+            targetType: "producer_change_request",
+            targetId: change.id,
+            metadata: { country: change.country, producerId: change.producerId },
+          });
+          return "entitlement-revoked";
+        }
+      }
     }
 
     const [updated] = await transaction
@@ -486,6 +685,8 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
       ? `Change request ${parsed.data.decision}.`
       : result === "membership-revoked"
         ? "The producer membership was revoked; the request was marked as a conflict."
+        : result === "entitlement-revoked"
+          ? "The expanded-profile right was revoked; the request was marked as a conflict."
         : "The request changed before this review was saved.",
   );
 }

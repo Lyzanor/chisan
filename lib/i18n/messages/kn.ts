@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ",
     saveFavorite: "ಮೆಚ್ಚಿನವುಗಳಲ್ಲಿ ಉಳಿಸಿ",
     editMyProfile: "ನನ್ನ ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ",
+    expandProfile: "ಪ್ರೊಫೈಲ್ ವಿಸ್ತರಿಸಿ",
     ownershipVerified: "ಮಾಲೀಕತ್ವ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
     viewOwnershipClaim: "ಮಾಲೀಕತ್ವದ ಕ್ಲೇಮ್ ವೀಕ್ಷಿಸಿ",
     claimProducer: "ಈ ಉತ್ಪಾದಕರ ಮಾಲೀಕತ್ವವನ್ನು ಕ್ಲೇಮ್ ಮಾಡಿ",
@@ -69,6 +70,16 @@ const messages = {
     "Venta online":
       "ಪ್ರಸ್ತುತ ಆರ್ಡರ್ ಮಾಡುವ ವ್ಯವಸ್ಥೆಯನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿದೆಯೇ ಎಂಬುದು.",
     "Canal de venta": "ಪ್ರಸ್ತುತ ದೃಢೀಕರಿಸಲಾದ ಆರ್ಡರ್ ಮಾಡುವ ಮಾರ್ಗಗಳು.",
+    "visitas guiadas":
+      "ಉತ್ಪಾದಕರು ಪ್ರಸ್ತುತ ಮಾರ್ಗದರ್ಶಿತ ಭೇಟಿಗಳನ್ನು ನೀಡುತ್ತಾರೆಯೇ ಎಂಬುದು.",
+    "mensaje a la comunidad":
+      "ಸ್ಥಳೀಯ ಆಹಾರ ಸಮುದಾಯಕ್ಕೆ ಉತ್ಪಾದಕರ ಸಾರ್ವಜನಿಕ ಸಂದೇಶ.",
+    mensaje_comunidad_locale:
+      "ಸಮುದಾಯ ಸಂದೇಶದ ಮೂಲ ಭಾಷೆ; ಸಂದೇಶ ಖಾಲಿಯಾಗಿದ್ದಾಗ ಮಾತ್ರ ಖಾಲಿ ಬಿಡಿ.",
+    "enlace destacado 1":
+      "ಉತ್ಪಾದಕರು ಆಯ್ಕೆ ಮಾಡಿದ ಹೆಚ್ಚುವರಿ ಸಾರ್ವಜನಿಕ HTTP(S) ಲಿಂಕ್.",
+    "enlace destacado 2":
+      "ಎರಡನೇ ಹೆಚ್ಚುವರಿ ಸಾರ್ವಜನಿಕ HTTP(S) ಲಿಂಕ್; ಮೊದಲನೆಯದರ ನಂತರ ಮಾತ್ರ ಬಳಸಿ.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -168,6 +179,7 @@ const messages = {
   producer: {
     backToMap: "ನಕ್ಷೆಗೆ ಹಿಂತಿರುಗಿ",
     profile: "ಉತ್ಪಾದಕರ ಪ್ರೊಫೈಲ್",
+    expandedProfile: "ವಿಸ್ತೃತ ಪ್ರೊಫೈಲ್",
     website: "ವೆಬ್‌ಸೈಟ್",
     googleMaps: "Google Maps",
     phone: "ಫೋನ್",
@@ -195,6 +207,11 @@ const messages = {
     address: "ವಿಳಾಸ",
     description: "ವಿವರಣೆ",
     descriptionLocale: "ವಿವರಣೆಯ ಭಾಷೆ",
+    guidedVisits: "ಮಾರ್ಗದರ್ಶಿತ ಭೇಟಿಗಳು",
+    communityMessage: "ಸಮುದಾಯಕ್ಕೆ ಸಂದೇಶ",
+    communityMessageLocale: "ಸಮುದಾಯ ಸಂದೇಶದ ಭಾಷೆ",
+    highlightedLink1: "ಪ್ರಮುಖ ಲಿಂಕ್ 1",
+    highlightedLink2: "ಪ್ರಮುಖ ಲಿಂಕ್ 2",
     openingHours: "ತೆರೆಯುವ ಸಮಯ",
     phone: "ಫೋನ್",
     email: "ಇಮೇಲ್",

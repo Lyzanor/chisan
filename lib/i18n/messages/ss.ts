@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Susa lokutsandvwako",
     saveFavorite: "Gcina lokutsandvwako",
     editMyProfile: "Hlela iphrofayili yami",
+    expandProfile: "Nweba iphrofayili",
     ownershipVerified: "Bunikati buqinisekisiwe",
     viewOwnershipClaim: "Buka sicelo sebunikati",
     claimProducer: "Faka sicelo salomkhiqizi",
@@ -56,6 +57,16 @@ const messages = {
     descripcion: "Lwati lolucinile ngemkhiqizi, ngaphandle kwekudvumisa.",
     descripcion_locale:
       "Lulwimi lwemvelaphi yencazelo; yishiye ingenalutfo kuphela nangabe ingekho incazelo.",
+    "visitas guiadas":
+      "Kutsi umkhiciti uyahlela yini kuvakasha lokuholwa nyalo.",
+    "mensaje a la comunidad":
+      "Umlayeto wemkhiciti lowentiwe emphakatsini.",
+    mensaje_comunidad_locale:
+      "Lulwimi lwemvelaphi yemlayeto wemphakatsi; lushiye lungenalutfo kuphela nangabe umlayeto ungenalutfo.",
+    "enlace destacado 1":
+      "Sichumanisi sekucala lesigcamile se-HTTP(S), njengendzaba yetindzaba.",
+    "enlace destacado 2":
+      "Sichumanisi sesibili lesigcamile se-HTTP(S), njengendzaba yetindzaba.",
     direccion: "Likheli leyunithi yekukhiqiza noma lendzawo yemkhiqizi.",
     horario: "Ema-awa ekusivakashela, kulandza noma kuvula umphakatsi.",
     telefono: "Ifomethi ye-E.164 yemhlaba wonkhe, sibonelo +34600112233.",
@@ -182,6 +193,7 @@ const messages = {
     categories: "Tigaba",
     allCategories: "Konkhe",
     information: "Lwati",
+    expandedProfile: "Iphrofayili lenabile",
   },
   fieldLabels: {
     slug: "Slug",
@@ -194,6 +206,11 @@ const messages = {
     address: "Likheli",
     description: "Incazelo",
     descriptionLocale: "Lulwimi lwencazelo",
+    guidedVisits: "Kuvakasha lokuholwa",
+    communityMessage: "Umlayeto emphakatsini",
+    communityMessageLocale: "Lulwimi lwemlayeto wemphakatsi",
+    highlightedLink1: "Sichumanisi lesigcamile 1",
+    highlightedLink2: "Sichumanisi lesigcamile 2",
     openingHours: "Ema-awa ekuvula",
     phone: "Lucingo",
     email: "I-imeyili",

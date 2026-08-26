@@ -1,63 +1,63 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
-ichinokura-osaki,Ichinokura,Osaki,Sake,"Ichinokura, Suzune espumoso","Matsuyama Sengoku Okeyaki 14, Osaki","Brewery born in 1973 from the union of four Osaki houses, which keeps hand pressing. Own online shop.",,,,https://www.ichinokura.co.jp/,,,,38.577110,140.955580,,verificado,sí,ecommerce,,354,en
-otokoyama-honten-kesennuma,Otokoyama Honten,Kesennuma,Sake,"Sotenden, Miroku",Kesennuma,"Brewery founded in 1912 in the port of Kesennuma, rebuilt after the 2011 tsunami. Own online shop.",,,,https://www.kesennuma.co.jp/,,,,38.908060,141.569940,,verificado,sí,ecommerce,,972,en
-katsuyama-shuzo-sendai,Katsuyama Shuzo,Sendai,Sake,"Katsuyama Ken, Akatsuki","Izumi-ku Fukuoka Futamata 25-1, Sendai","The Isawa house of Sendai, former supplier to the Date clan. Own online shop.",,,,https://www.katsu-yama.com/,,,,38.268220,140.869420,,verificado,sí,ecommerce,,534,en
-saura-shiogama,Saura,Shiogama,Sake,"Urakasumi, Zen","Honcho 2-19, Shiogama","Brewery founded in 1724 in Shiogama, supplier to the Shiwahiko shrine and source of kyokai yeast number 12. Its shop is physical, next to the kura.",,,,https://www.urakasumi.com/,,,,38.314360,141.021970,,verificado,no comprobado,,,1058,en
-niizawa-jozoten-osaki,Niizawa Jozoten,Osaki,Sake,"Hakurakusei, Atago no Matsu","Sanbongi Kitamachi 63, Osaki","Brewery founded in 1873 and based in Osaki. After the 2011 earthquake it moved brewing to Kawasaki, in the same Miyagi, and rebuilt the head office in 2013.",,+81229523002,,https://niizawa-brewery.co.jp/,,,,38.577110,140.955580,,verificado,no comprobado,,,858,en
-hagino-shuzo-kurihara,Hagino Shuzo,Kurihara,Sake,"Hagi no Tsuru, Hiwata","Kannari Aritaka Shinmachi 52, Kurihara","Brewery founded in 1840 in Kurihara, in the north of the prefecture, with seasonal labels.",,+81228442214,,https://www.hagino-shuzou.co.jp/,,,,38.730110,141.021470,,verificado,no comprobado,,,280,en
-taiwagura-shuzo-taiwa,Taiwagura Shuzo,Taiwa,Sake,Yuki no Matsushima,"Taiwa, Kurokawa","Brewery in Taiwa, north of Sendai, maker of Yuki no Matsushima.",,,,https://taiwagura.co.jp/,,,,38.437330,140.886360,,verificado,no comprobado,,,1165,en
-suminoe-shuzo-ishinomaki,Suminoe Shuzo,Ishinomaki,Sake,Suminoe,Ishinomaki,Brewery founded in 1845 in the port of Ishinomaki.,,,,,,,,38.434250,141.302720,,parcial,no comprobado,,,1146,en
-heiko-shuzo-ishinomaki,Heiko Shuzo,Ishinomaki,Sake,Hidakami,Ishinomaki,"Ishinomaki brewery of more than a century and a half, maker of Hidakami, a sake meant to go with fish.",,,,,,,,38.434250,141.302720,,parcial,no comprobado,,,308,en
-abekan-shuzo-shiogama,Abekan Shuzo,Shiogama,Sake,,宮城県塩竈市西町3-9,,,+81223620251,,http://www.abekan.com/index.html,,,,38.317001,141.013672,,parcial,no comprobado,,,15,
-uchigasaki-shuzoten-tomiya,Uchigasaki Shuzoten,Tomiya,Sake,,宮城県富谷市富谷新町27,,,+81223582026,,http://uchigasaki.com/index.html,,,,38.371807,140.869446,,parcial,no comprobado,,,1291,
-sasaki-shuzoten-natori,Sasaki Shuzoten,Natori,Sake,,宮城県名取市美田園7-1-1-E4（閖上さいかい市場内）,,,+81223988596,,http://naminooto.saleshop.jp/,,,,38.160015,140.909164,,parcial,no comprobado,,,1049,
-moritami-shuzoten-osaki,Moritami Shuzoten,Osaki,Sake,,宮城県大崎市岩出山字上川原町15,,,+81229721010,,http://moritamishuzouten.com/,,,,38.657585,140.863098,,parcial,no comprobado,,,794,
-kanbai-shuzo-osaki,Kanbai Shuzo,Osaki,Sake,,宮城県大崎市古川柏崎字境田15,,,+81229262037,,http://miyakanbai.com/,,,,38.576157,140.884216,,parcial,no comprobado,,,503,
-tanaka-shuzoten-kami,Tanaka Shuzoten,Kami,Sake,,宮城県加美郡加美町字西町88-1,,,+81229633005,,http://www.manatsuru.co.jp/,,,,38.571815,140.856461,,parcial,no comprobado,,,1211,
-yamawa-shuzoten-kami,Yamawa Shuzoten,Kami,Sake,,宮城県加美郡加美町字南町109-1,,,+81229633017,,http://www.nona.dti.ne.jp/~yamawa/,,,,38.570541,140.855392,,parcial,no comprobado,,,1362,
-nakayu-shuzoten-kami,Nakayu Shuzoten,Kami,Sake,,宮城県加美郡加美町字南町166番地,,,+81229632018,,http://www.tenjo-mugen.co.jp,,,,38.567043,140.85675,,parcial,no comprobado,,,830,
-kawakei-shoten-misato,Kawakei Shoten,Misato,Sake,,宮城県遠田郡美里町ニ郷字高玉6-7,,,+81229580333,,,,,,38.544426,141.056793,,parcial,no comprobado,,,542,
-chida-shuzo-kurihara,Chida Shuzo,Kurihara,Sake,,宮城県栗原市栗駒中野北畑中63-1,,,+81228451024,,,,,,38.826351,140.984711,,parcial,no comprobado,,,132,
-kanenoi-shuzo-kurihara,Kanenoi Shuzo,Kurihara,Sake,,宮城県栗原市一迫川口町浦1-1,,,+81228542115,,,https://www.facebook.com/kanenoi/,,,38.752392,140.872467,,parcial,no comprobado,,,508,
-ishikoshi-jozo-tome,Ishikoshi Jozo,Tome,Sake,,宮城県登米市石越町北郷字中沢108-1,,,+81228342005,,http://sawanoizumi.jp,,,,38.768333,141.185089,,parcial,no comprobado,,,428,
-kakuboshi-kesennuma,Kakuboshi,Kesennuma,Sake,,宮城県気仙沼市魚町2-1-9,,,+81226220001,,http://kakuboshi.co.jp/,,,,38.906815,141.573746,,parcial,no comprobado,,,479,
-onuma-shuzoten-murata,Onuma Shuzoten,Murata,Sake,,宮城県柴田郡村田町村田字町56-1,,,+81224832025,,,,,,38.118786,140.725647,,parcial,no comprobado,,,950,
-zao-shuzo-shiroishi,Zao Shuzo,Shiroishi,Sake,,宮城県白石市字東小路120-1,,,+81224253355,,http://www.zaoshuzo.com/index.html,,,,38.003895,140.621262,,parcial,no comprobado,,,1399,
-zao-cheese-zao,蔵王酪農センター,Zao,Lácteos y quesos,スモークゴーダ,宮城県刈田郡蔵王町遠刈田温泉字七日原251-4,Produces cheese and dairy products at its Zao unit.,,,,https://www.zao-cheese.or.jp/,,,,38.098080,140.658670,,verificado,no comprobado,,,3128,en
-akiuwinery-sendai,株式会社 仙台秋保醸造所/秋保ワイナリー,Sendai,Vino,,宮城県仙台市太白区秋保町湯元枇杷原西6,株式会社 仙台秋保醸造所/秋保ワイナリー produces wine at its Sendai unit.,,+81222267475,,https://akiuwinery.co.jp/,,,,38.268220,140.869420,,verificado,sí,ecommerce,,2736,en
-buenmosto-shichigahama,ブエンモスト 株式会社/宮城縣七ヶ浜ワイナリー,Shichigahama,Vino,,宮城県宮城郡七ヶ浜町花渕浜字舘下117,Produces wine at its Shichigahama unit.,,+819023639397,,https://buenmosto.myshopify.com/,,,,38.304530,141.059140,,verificado,sí,ecommerce,,1900,en
-msr-wine-minamisanriku,南三陸ワイナリー 株式会社,Minamisanriku,Vino,,宮城県本吉郡南三陸町志津川字旭ケ浦7-3,Produces wine at its Minamisanriku unit.,,+81226485519,,https://www.msr-wine.com/,,,,38.680560,141.462360,,verificado,no comprobado,,,2220,en
-vineyard-and-winery-yamato,株式会社 みらいファームやまと/了美 Vineyard and Winery,Yamato,Vino,,宮城県黒川郡大和町吉田字旦ノ原36-15,Produces wine at its Yamato unit.,,+81227258370,,https://ryomi-wine.jp/,,,,35.487530,139.458030,,verificado,no comprobado,,,2718,en
-tabechoku-3078731,丹庄ファーム,Sendai,Huevos,,,Produces eggs at its Sendai unit.,,,,,,,,38.268220,140.869420,,parcial,sí,marketplace,,2086,en
-tabechoku-3078032,秋保ワイナリー,Sendai,Vino,ワイン,,秋保ワイナリー produces wine at its Sendai unit.,,,,,,,,38.268220,140.869420,,parcial,sí,marketplace,,3006,en
-tabechoku-26154,石巻Eggファーム,Ishinomaki,Huevos,,,Produces eggs at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,2977,en
-tabechoku-22373,おおえだファーム,Kakuda,Huevos,卵,,Produces eggs at its Kakuda unit.,,,,,,,,37.977030,140.782060,,parcial,sí,marketplace,,1451,en
-tabechoku-24624,七つ森ふもと舞茸,Yamato,Setas,,,Produces mushrooms at its Yamato unit.,,,,,,,,35.487530,139.458030,,parcial,sí,marketplace,,2006,en
-tabechoku-28678,キタザワ花園,Kesennuma,Setas,きくらげ,,Produces wood ear mushrooms at its Kesennuma unit.,,,,,,,,38.908060,141.569940,,parcial,sí,marketplace,,1766,en
-tabechoku-21734,たみこの海パック,Minamisanriku,Pescado,,,Produces fish and seafood at its Minamisanriku unit.,,,,,,,,38.680560,141.462360,,parcial,sí,marketplace,,1551,en
-tabechoku-22251,松島牡蠣屋,Matsushima,Pescado,,,Produces fish and seafood at its Matsushima unit.,,,,,,,,38.380170,141.067330,,parcial,sí,marketplace,,2665,en
-tabechoku-22401,㊥マルナカ遠藤水産,Ishinomaki,Pescado,,,Produces fish and seafood at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,2048,en
-tabechoku-27504,太良衛門,Kakuda,Pescado,,,Produces fish and seafood at its Kakuda unit.,,,,,,,,37.977030,140.782060,,parcial,sí,marketplace,,2340,en
-tabechoku-3078415,Yatsu ファーム,Marumori,Carne,米,,Produces rice at its Marumori unit.,,,,,,,,37.911440,140.765390,,parcial,sí,marketplace,,1369,en
-tabechoku-27920,蕪栗グリーンファーム,Osaki,Carne,,,Produces meat at its Osaki unit.,,,,,,,,38.577110,140.955580,,parcial,sí,marketplace,,3129,en
-tabechoku-26155,もりのした,Iwanuma,Pan y cereal,,,Produces grain products at its Iwanuma unit.,,,,,,,,38.104280,140.870170,,parcial,sí,marketplace,,1664,en
-tabechoku-3078127,黒澤農産,Kurihara,Pan y cereal,栗,,Produces chestnuts at its Kurihara unit.,,,,,,,,38.730110,141.021470,,parcial,sí,marketplace,,3335,en
-tabechoku-23272,エコファーム高橋,Kurihara,Pan y cereal,,,Produces grain products at its Kurihara unit.,,,,,,,,38.730110,141.021470,,parcial,sí,marketplace,,1723,en
-tabechoku-21887,エービーfam,Tome,Pan y cereal,,,Produces grain products at its Tome unit.,,,,,,,,38.691830,141.187750,,parcial,sí,marketplace,,1728,en
-tabechoku-24954,Lifetime nature&farming,Ishinomaki,Pan y cereal,,,Produces grain products at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,711,en
-tabechoku-22020,あかま里山農園,Ishinomaki,Frutos secos,,,Produces nuts at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,1409,en
-tabechoku-23338,美食農園 ラ・ファータ【La fata】,Natori,Fruta y verdura,,,Produces fruit and vegetables at its Natori unit.,,,,,,,,38.171530,140.891810,,parcial,sí,marketplace,,3062,en
-tabechoku-3078833,デリシャスファーム,Osaki,Fruta y verdura,"トマト, 野菜",,Produces tomatoes and vegetables at its Osaki unit.,,,,,,,,38.577110,140.955580,,parcial,sí,marketplace,,1843,en
-tabechoku-21755,木漏れ日農園,Tome,Fruta y verdura,"野菜, 蜂蜜, 卵",,"Produces vegetables, honey and eggs at its Tome unit.",,,,,,,,38.691830,141.187750,,parcial,sí,marketplace,Huevos|Miel,2631,en
-tabechoku-21095,いなほ,Tome,Pan y cereal,米,,Produces rice at its Tome unit.,,,,,,,,38.691830,141.187750,,parcial,sí,marketplace,,1432,en
-jp-miyagi-tamazawa-5ef6e2f,九重本舗　玉澤,仙台市,Dulces y repostería,和菓子,仙台市太白区郡山 4-2-1,"Produces Japanese confectionery in 仙台市, miyagi.",,,,http://tamazawa.jp/,,,,38.268220,140.869420,,verificado,sí,ecommerce,,2107,en
-jp-miyagi-miyaginoarare-co-031d9cf,みやぎのあられ,亘理町,Aperitivos,米菓,,"Produces rice crackers in 亘理町, miyagi.",,,,https://www.miyaginoarare.co.jp/,,,,38.044170,140.867560,,verificado,sí,ecommerce,,1645,en
-jp-miyagi-seikadoarare-co-5b75cc1,株式会社精華堂霰総本舗 宮城工場,大崎市,Aperitivos,米菓,,"Produces rice crackers in 大崎市, miyagi.",,,,https://seikadoarare.co.jp/,,,,38.577110,140.955580,,verificado,sí,ecommerce,,2783,en
-jp-miyagi-tsurigane-d347a05,機械製乾めん・ 手延べ干しめん製造 乾めんのお話 各地の代表的なめん 乾めんレシピ 製麺技士の居る 工場一覧 七夕・そうめんの日 リンク パンフレット・ ポスター 会員専用 PL保険 製麺技士の居る工場一覧 (株)きちみ製麺,白石市,Pan y cereal,乾麺,,"Produces dried noodles in 白石市, miyagi.",,,,https://www.tsurigane.com/,,,,38.002440,140.619890,,verificado,sí,ecommerce,,2831,en
-black-tide-brewing,BLACK TIDE BREWING,Kesennuma,Cerveza,,南町3-2-19,Brewery producing beer at its Kesennuma unit.,,,btb-order@blacktidebrewing.com,https://blacktidebrewing.com/,,https://www.instagram.com/blacktidebrewing/,,38.90806,141.56994,,parcial,no comprobado,,,110,en
-great-dane-brewing-japan,Great Dane Brewing Japan,Sendai,Cerveza,,秋保町湯元字枇杷原11-2,Brewery producing beer at its Sendai unit.,,,,https://greatdanebrewing.jp/,,https://www.instagram.com/greatdanebrewing_jp/,,38.26822,140.86942,,parcial,no comprobado,,,275,en
-ishinomaki-hop-works,ISHINOMAKI HOP WORKS,Ishinomaki,Cerveza,,中央1丁目4-3,Brewery producing beer at its Ishinomaki unit.,,,info@ishinomaki-hopworks.org,https://ishinomakihopworks.com/,,https://www.instagram.com/ishinomakihopworks/,,38.43425,141.30272,,parcial,no comprobado,,,431,en
-saikichi-shoten-kesennuma,斉吉商店,Kesennuma,Pescado,Prepared seafood,,Produces additive-free prepared seafood products in Kesennuma.,,,,https://www.saikichi.jp/,,,,38.90806,141.56994,,verificado,sí,ecommerce,,2542,en
-yokotaya-honten-kesennuma,横田屋本店,Kesennuma,Pescado,"Seaweed, prepared seafood",,"Processes nori, kombu and other seafood products in Kesennuma.",,,,https://www.yokotayahonten.com/,,,,38.90806,141.56994,,verificado,sí,ecommerce,,2827,en
-shiraken-kamaboko-ishinomaki,白謙かまぼこ店,Ishinomaki,Pescado,Sasa-kamaboko,,Produces sasa-kamaboko and other fish-paste products in Ishinomaki.,,,,https://www.shiraken.co.jp/,,,,38.43425,141.30272,,verificado,sí,ecommerce,,2961,en
-mamiya-shoten-shiogama,間宮商店,Shiogama,Pescado,"Himono, seafood ochazuke",宮城県塩竈市新浜町1丁目21-8,Produces low-temperature matured dried fish and prepared seafood in Shiogama.,,+81223653890,,https://mamiyashoten.jp/,,,,38.327396,141.044525,,verificado,sí,ecommerce,,3271,en
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
+ichinokura-osaki,Ichinokura,Osaki,Sake,"Ichinokura, Suzune espumoso","Matsuyama Sengoku Okeyaki 14, Osaki","Brewery born in 1973 from the union of four Osaki houses, which keeps hand pressing. Own online shop.",,,,https://www.ichinokura.co.jp/,,,,38.577110,140.955580,,verificado,sí,ecommerce,,354,en,,,,,
+otokoyama-honten-kesennuma,Otokoyama Honten,Kesennuma,Sake,"Sotenden, Miroku",Kesennuma,"Brewery founded in 1912 in the port of Kesennuma, rebuilt after the 2011 tsunami. Own online shop.",,,,https://www.kesennuma.co.jp/,,,,38.908060,141.569940,,verificado,sí,ecommerce,,972,en,,,,,
+katsuyama-shuzo-sendai,Katsuyama Shuzo,Sendai,Sake,"Katsuyama Ken, Akatsuki","Izumi-ku Fukuoka Futamata 25-1, Sendai","The Isawa house of Sendai, former supplier to the Date clan. Own online shop.",,,,https://www.katsu-yama.com/,,,,38.268220,140.869420,,verificado,sí,ecommerce,,534,en,,,,,
+saura-shiogama,Saura,Shiogama,Sake,"Urakasumi, Zen","Honcho 2-19, Shiogama","Brewery founded in 1724 in Shiogama, supplier to the Shiwahiko shrine and source of kyokai yeast number 12. Its shop is physical, next to the kura.",,,,https://www.urakasumi.com/,,,,38.314360,141.021970,,verificado,no comprobado,,,1058,en,,,,,
+niizawa-jozoten-osaki,Niizawa Jozoten,Osaki,Sake,"Hakurakusei, Atago no Matsu","Sanbongi Kitamachi 63, Osaki","Brewery founded in 1873 and based in Osaki. After the 2011 earthquake it moved brewing to Kawasaki, in the same Miyagi, and rebuilt the head office in 2013.",,+81229523002,,https://niizawa-brewery.co.jp/,,,,38.577110,140.955580,,verificado,no comprobado,,,858,en,,,,,
+hagino-shuzo-kurihara,Hagino Shuzo,Kurihara,Sake,"Hagi no Tsuru, Hiwata","Kannari Aritaka Shinmachi 52, Kurihara","Brewery founded in 1840 in Kurihara, in the north of the prefecture, with seasonal labels.",,+81228442214,,https://www.hagino-shuzou.co.jp/,,,,38.730110,141.021470,,verificado,no comprobado,,,280,en,,,,,
+taiwagura-shuzo-taiwa,Taiwagura Shuzo,Taiwa,Sake,Yuki no Matsushima,"Taiwa, Kurokawa","Brewery in Taiwa, north of Sendai, maker of Yuki no Matsushima.",,,,https://taiwagura.co.jp/,,,,38.437330,140.886360,,verificado,no comprobado,,,1165,en,,,,,
+suminoe-shuzo-ishinomaki,Suminoe Shuzo,Ishinomaki,Sake,Suminoe,Ishinomaki,Brewery founded in 1845 in the port of Ishinomaki.,,,,,,,,38.434250,141.302720,,parcial,no comprobado,,,1146,en,,,,,
+heiko-shuzo-ishinomaki,Heiko Shuzo,Ishinomaki,Sake,Hidakami,Ishinomaki,"Ishinomaki brewery of more than a century and a half, maker of Hidakami, a sake meant to go with fish.",,,,,,,,38.434250,141.302720,,parcial,no comprobado,,,308,en,,,,,
+abekan-shuzo-shiogama,Abekan Shuzo,Shiogama,Sake,,宮城県塩竈市西町3-9,,,+81223620251,,http://www.abekan.com/index.html,,,,38.317001,141.013672,,parcial,no comprobado,,,15,,,,,,
+uchigasaki-shuzoten-tomiya,Uchigasaki Shuzoten,Tomiya,Sake,,宮城県富谷市富谷新町27,,,+81223582026,,http://uchigasaki.com/index.html,,,,38.371807,140.869446,,parcial,no comprobado,,,1291,,,,,,
+sasaki-shuzoten-natori,Sasaki Shuzoten,Natori,Sake,,宮城県名取市美田園7-1-1-E4（閖上さいかい市場内）,,,+81223988596,,http://naminooto.saleshop.jp/,,,,38.160015,140.909164,,parcial,no comprobado,,,1049,,,,,,
+moritami-shuzoten-osaki,Moritami Shuzoten,Osaki,Sake,,宮城県大崎市岩出山字上川原町15,,,+81229721010,,http://moritamishuzouten.com/,,,,38.657585,140.863098,,parcial,no comprobado,,,794,,,,,,
+kanbai-shuzo-osaki,Kanbai Shuzo,Osaki,Sake,,宮城県大崎市古川柏崎字境田15,,,+81229262037,,http://miyakanbai.com/,,,,38.576157,140.884216,,parcial,no comprobado,,,503,,,,,,
+tanaka-shuzoten-kami,Tanaka Shuzoten,Kami,Sake,,宮城県加美郡加美町字西町88-1,,,+81229633005,,http://www.manatsuru.co.jp/,,,,38.571815,140.856461,,parcial,no comprobado,,,1211,,,,,,
+yamawa-shuzoten-kami,Yamawa Shuzoten,Kami,Sake,,宮城県加美郡加美町字南町109-1,,,+81229633017,,http://www.nona.dti.ne.jp/~yamawa/,,,,38.570541,140.855392,,parcial,no comprobado,,,1362,,,,,,
+nakayu-shuzoten-kami,Nakayu Shuzoten,Kami,Sake,,宮城県加美郡加美町字南町166番地,,,+81229632018,,http://www.tenjo-mugen.co.jp,,,,38.567043,140.85675,,parcial,no comprobado,,,830,,,,,,
+kawakei-shoten-misato,Kawakei Shoten,Misato,Sake,,宮城県遠田郡美里町ニ郷字高玉6-7,,,+81229580333,,,,,,38.544426,141.056793,,parcial,no comprobado,,,542,,,,,,
+chida-shuzo-kurihara,Chida Shuzo,Kurihara,Sake,,宮城県栗原市栗駒中野北畑中63-1,,,+81228451024,,,,,,38.826351,140.984711,,parcial,no comprobado,,,132,,,,,,
+kanenoi-shuzo-kurihara,Kanenoi Shuzo,Kurihara,Sake,,宮城県栗原市一迫川口町浦1-1,,,+81228542115,,,https://www.facebook.com/kanenoi/,,,38.752392,140.872467,,parcial,no comprobado,,,508,,,,,,
+ishikoshi-jozo-tome,Ishikoshi Jozo,Tome,Sake,,宮城県登米市石越町北郷字中沢108-1,,,+81228342005,,http://sawanoizumi.jp,,,,38.768333,141.185089,,parcial,no comprobado,,,428,,,,,,
+kakuboshi-kesennuma,Kakuboshi,Kesennuma,Sake,,宮城県気仙沼市魚町2-1-9,,,+81226220001,,http://kakuboshi.co.jp/,,,,38.906815,141.573746,,parcial,no comprobado,,,479,,,,,,
+onuma-shuzoten-murata,Onuma Shuzoten,Murata,Sake,,宮城県柴田郡村田町村田字町56-1,,,+81224832025,,,,,,38.118786,140.725647,,parcial,no comprobado,,,950,,,,,,
+zao-shuzo-shiroishi,Zao Shuzo,Shiroishi,Sake,,宮城県白石市字東小路120-1,,,+81224253355,,http://www.zaoshuzo.com/index.html,,,,38.003895,140.621262,,parcial,no comprobado,,,1399,,,,,,
+zao-cheese-zao,蔵王酪農センター,Zao,Lácteos y quesos,スモークゴーダ,宮城県刈田郡蔵王町遠刈田温泉字七日原251-4,Produces cheese and dairy products at its Zao unit.,,,,https://www.zao-cheese.or.jp/,,,,38.098080,140.658670,,verificado,no comprobado,,,3128,en,,,,,
+akiuwinery-sendai,株式会社 仙台秋保醸造所/秋保ワイナリー,Sendai,Vino,,宮城県仙台市太白区秋保町湯元枇杷原西6,株式会社 仙台秋保醸造所/秋保ワイナリー produces wine at its Sendai unit.,,+81222267475,,https://akiuwinery.co.jp/,,,,38.268220,140.869420,,verificado,sí,ecommerce,,2736,en,,,,,
+buenmosto-shichigahama,ブエンモスト 株式会社/宮城縣七ヶ浜ワイナリー,Shichigahama,Vino,,宮城県宮城郡七ヶ浜町花渕浜字舘下117,Produces wine at its Shichigahama unit.,,+819023639397,,https://buenmosto.myshopify.com/,,,,38.304530,141.059140,,verificado,sí,ecommerce,,1900,en,,,,,
+msr-wine-minamisanriku,南三陸ワイナリー 株式会社,Minamisanriku,Vino,,宮城県本吉郡南三陸町志津川字旭ケ浦7-3,Produces wine at its Minamisanriku unit.,,+81226485519,,https://www.msr-wine.com/,,,,38.680560,141.462360,,verificado,no comprobado,,,2220,en,,,,,
+vineyard-and-winery-yamato,株式会社 みらいファームやまと/了美 Vineyard and Winery,Yamato,Vino,,宮城県黒川郡大和町吉田字旦ノ原36-15,Produces wine at its Yamato unit.,,+81227258370,,https://ryomi-wine.jp/,,,,35.487530,139.458030,,verificado,no comprobado,,,2718,en,,,,,
+tabechoku-3078731,丹庄ファーム,Sendai,Huevos,,,Produces eggs at its Sendai unit.,,,,,,,,38.268220,140.869420,,parcial,sí,marketplace,,2086,en,,,,,
+tabechoku-3078032,秋保ワイナリー,Sendai,Vino,ワイン,,秋保ワイナリー produces wine at its Sendai unit.,,,,,,,,38.268220,140.869420,,parcial,sí,marketplace,,3006,en,,,,,
+tabechoku-26154,石巻Eggファーム,Ishinomaki,Huevos,,,Produces eggs at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,2977,en,,,,,
+tabechoku-22373,おおえだファーム,Kakuda,Huevos,卵,,Produces eggs at its Kakuda unit.,,,,,,,,37.977030,140.782060,,parcial,sí,marketplace,,1451,en,,,,,
+tabechoku-24624,七つ森ふもと舞茸,Yamato,Setas,,,Produces mushrooms at its Yamato unit.,,,,,,,,35.487530,139.458030,,parcial,sí,marketplace,,2006,en,,,,,
+tabechoku-28678,キタザワ花園,Kesennuma,Setas,きくらげ,,Produces wood ear mushrooms at its Kesennuma unit.,,,,,,,,38.908060,141.569940,,parcial,sí,marketplace,,1766,en,,,,,
+tabechoku-21734,たみこの海パック,Minamisanriku,Pescado,,,Produces fish and seafood at its Minamisanriku unit.,,,,,,,,38.680560,141.462360,,parcial,sí,marketplace,,1551,en,,,,,
+tabechoku-22251,松島牡蠣屋,Matsushima,Pescado,,,Produces fish and seafood at its Matsushima unit.,,,,,,,,38.380170,141.067330,,parcial,sí,marketplace,,2665,en,,,,,
+tabechoku-22401,㊥マルナカ遠藤水産,Ishinomaki,Pescado,,,Produces fish and seafood at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,2048,en,,,,,
+tabechoku-27504,太良衛門,Kakuda,Pescado,,,Produces fish and seafood at its Kakuda unit.,,,,,,,,37.977030,140.782060,,parcial,sí,marketplace,,2340,en,,,,,
+tabechoku-3078415,Yatsu ファーム,Marumori,Carne,米,,Produces rice at its Marumori unit.,,,,,,,,37.911440,140.765390,,parcial,sí,marketplace,,1369,en,,,,,
+tabechoku-27920,蕪栗グリーンファーム,Osaki,Carne,,,Produces meat at its Osaki unit.,,,,,,,,38.577110,140.955580,,parcial,sí,marketplace,,3129,en,,,,,
+tabechoku-26155,もりのした,Iwanuma,Pan y cereal,,,Produces grain products at its Iwanuma unit.,,,,,,,,38.104280,140.870170,,parcial,sí,marketplace,,1664,en,,,,,
+tabechoku-3078127,黒澤農産,Kurihara,Pan y cereal,栗,,Produces chestnuts at its Kurihara unit.,,,,,,,,38.730110,141.021470,,parcial,sí,marketplace,,3335,en,,,,,
+tabechoku-23272,エコファーム高橋,Kurihara,Pan y cereal,,,Produces grain products at its Kurihara unit.,,,,,,,,38.730110,141.021470,,parcial,sí,marketplace,,1723,en,,,,,
+tabechoku-21887,エービーfam,Tome,Pan y cereal,,,Produces grain products at its Tome unit.,,,,,,,,38.691830,141.187750,,parcial,sí,marketplace,,1728,en,,,,,
+tabechoku-24954,Lifetime nature&farming,Ishinomaki,Pan y cereal,,,Produces grain products at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,711,en,,,,,
+tabechoku-22020,あかま里山農園,Ishinomaki,Frutos secos,,,Produces nuts at its Ishinomaki unit.,,,,,,,,38.434250,141.302720,,parcial,sí,marketplace,,1409,en,,,,,
+tabechoku-23338,美食農園 ラ・ファータ【La fata】,Natori,Fruta y verdura,,,Produces fruit and vegetables at its Natori unit.,,,,,,,,38.171530,140.891810,,parcial,sí,marketplace,,3062,en,,,,,
+tabechoku-3078833,デリシャスファーム,Osaki,Fruta y verdura,"トマト, 野菜",,Produces tomatoes and vegetables at its Osaki unit.,,,,,,,,38.577110,140.955580,,parcial,sí,marketplace,,1843,en,,,,,
+tabechoku-21755,木漏れ日農園,Tome,Fruta y verdura,"野菜, 蜂蜜, 卵",,"Produces vegetables, honey and eggs at its Tome unit.",,,,,,,,38.691830,141.187750,,parcial,sí,marketplace,Huevos|Miel,2631,en,,,,,
+tabechoku-21095,いなほ,Tome,Pan y cereal,米,,Produces rice at its Tome unit.,,,,,,,,38.691830,141.187750,,parcial,sí,marketplace,,1432,en,,,,,
+jp-miyagi-tamazawa-5ef6e2f,九重本舗　玉澤,仙台市,Dulces y repostería,和菓子,仙台市太白区郡山 4-2-1,"Produces Japanese confectionery in 仙台市, miyagi.",,,,http://tamazawa.jp/,,,,38.268220,140.869420,,verificado,sí,ecommerce,,2107,en,,,,,
+jp-miyagi-miyaginoarare-co-031d9cf,みやぎのあられ,亘理町,Aperitivos,米菓,,"Produces rice crackers in 亘理町, miyagi.",,,,https://www.miyaginoarare.co.jp/,,,,38.044170,140.867560,,verificado,sí,ecommerce,,1645,en,,,,,
+jp-miyagi-seikadoarare-co-5b75cc1,株式会社精華堂霰総本舗 宮城工場,大崎市,Aperitivos,米菓,,"Produces rice crackers in 大崎市, miyagi.",,,,https://seikadoarare.co.jp/,,,,38.577110,140.955580,,verificado,sí,ecommerce,,2783,en,,,,,
+jp-miyagi-tsurigane-d347a05,機械製乾めん・ 手延べ干しめん製造 乾めんのお話 各地の代表的なめん 乾めんレシピ 製麺技士の居る 工場一覧 七夕・そうめんの日 リンク パンフレット・ ポスター 会員専用 PL保険 製麺技士の居る工場一覧 (株)きちみ製麺,白石市,Pan y cereal,乾麺,,"Produces dried noodles in 白石市, miyagi.",,,,https://www.tsurigane.com/,,,,38.002440,140.619890,,verificado,sí,ecommerce,,2831,en,,,,,
+black-tide-brewing,BLACK TIDE BREWING,Kesennuma,Cerveza,,南町3-2-19,Brewery producing beer at its Kesennuma unit.,,,btb-order@blacktidebrewing.com,https://blacktidebrewing.com/,,https://www.instagram.com/blacktidebrewing/,,38.90806,141.56994,,parcial,no comprobado,,,110,en,,,,,
+great-dane-brewing-japan,Great Dane Brewing Japan,Sendai,Cerveza,,秋保町湯元字枇杷原11-2,Brewery producing beer at its Sendai unit.,,,,https://greatdanebrewing.jp/,,https://www.instagram.com/greatdanebrewing_jp/,,38.26822,140.86942,,parcial,no comprobado,,,275,en,,,,,
+ishinomaki-hop-works,ISHINOMAKI HOP WORKS,Ishinomaki,Cerveza,,中央1丁目4-3,Brewery producing beer at its Ishinomaki unit.,,,info@ishinomaki-hopworks.org,https://ishinomakihopworks.com/,,https://www.instagram.com/ishinomakihopworks/,,38.43425,141.30272,,parcial,no comprobado,,,431,en,,,,,
+saikichi-shoten-kesennuma,斉吉商店,Kesennuma,Pescado,Prepared seafood,,Produces additive-free prepared seafood products in Kesennuma.,,,,https://www.saikichi.jp/,,,,38.90806,141.56994,,verificado,sí,ecommerce,,2542,en,,,,,
+yokotaya-honten-kesennuma,横田屋本店,Kesennuma,Pescado,"Seaweed, prepared seafood",,"Processes nori, kombu and other seafood products in Kesennuma.",,,,https://www.yokotayahonten.com/,,,,38.90806,141.56994,,verificado,sí,ecommerce,,2827,en,,,,,
+shiraken-kamaboko-ishinomaki,白謙かまぼこ店,Ishinomaki,Pescado,Sasa-kamaboko,,Produces sasa-kamaboko and other fish-paste products in Ishinomaki.,,,,https://www.shiraken.co.jp/,,,,38.43425,141.30272,,verificado,sí,ecommerce,,2961,en,,,,,
+mamiya-shoten-shiogama,間宮商店,Shiogama,Pescado,"Himono, seafood ochazuke",宮城県塩竈市新浜町1丁目21-8,Produces low-temperature matured dried fish and prepared seafood in Shiogama.,,+81223653890,,https://mamiyashoten.jp/,,,,38.327396,141.044525,,verificado,sí,ecommerce,,3271,en,,,,,

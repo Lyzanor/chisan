@@ -422,6 +422,11 @@ supportable, review:
 - current products, categories, description and hours;
 - the description's actual source locale when a description is present;
 - online sales and their mechanism;
+- a current explicit guided-visit offer or explicit absence when that field is
+  in scope;
+- a producer-authored community message and its actual source locale;
+- highlighted links whose subject is the same producer and whose context is
+  useful to readers;
 - an admissible image.
 
 Do not treat the existing `verificacion` value as proof. It is a published claim
@@ -441,10 +446,40 @@ fiction merely to make an advisory queue empty.
 ## Verified-owner changes
 
 Ownership claims are part of the account system, not a fourth editorial level.
-An approved owner's proposal for a published row enters level 3, but membership
-authorizes only the proposal and private owner material is not public evidence.
-Follow the review, materialization, commit and finalization workflow in
-`docs/ACCOUNT_SYSTEM.md`; PostgreSQL never becomes a catalog overlay.
+An active producer member's proposal for a published row enters level 3, but
+membership authorizes only the proposal and private owner material is not public
+evidence. Follow the review, materialization, commit and finalization workflow
+in `docs/ACCOUNT_SYSTEM.md`; PostgreSQL never becomes a catalog overlay.
+
+The expanded-profile payment is also not a fourth editorial level. It permits
+the producer to propose and display the five expanded CSV fields while the
+producer entitlement is active; it never improves `verificacion`, ranking,
+admission or source authority and does not guarantee publication.
+
+For expanded fields, apply these additional review rules:
+
+- `visitas guiadas` is a current operational claim. Publish `sí` only from an
+  explicit current offer and `no` only from explicit, sufficiently current
+  support; do not infer either value from ordinary opening hours or silence.
+- `mensaje a la comunidad` is producer-authored public speech, not Chisan's
+  editorial description. Preserve its meaning and original language, record
+  `mensaje_comunidad_locale`, and reject promotion presented as fact, embedded
+  URLs, HTML, spreadsheet payloads, private data, harassment, unlawful material
+  or unsupported claims about third parties. Review does not turn the message
+  into Chisan-authored evidence. Unlike an objective catalog fact, the message
+  may be newly submitted first-party speech without a pre-existing public URL;
+  record that attribution in the change request and keep account authorship and
+  review as its provenance. Every objective claim in other fields still needs
+  suitable public support.
+- `enlace destacado 1` and `enlace destacado 2` may point to a relevant press
+  article, interview or producer page, but must concern the exact producer and
+  add reader value. They do not replace the official website, social links or
+  evidence, and a highlighted link alone never changes verification.
+
+If an entitlement is suspended after a refund or dispute, do not delete the
+reviewed CSV cells as commercial cleanup. The runtime hides them and the account
+workflow freezes new premium proposals; editorial removal or correction remains
+a separate reviewed catalog decision.
 
 ## Maintenance
 

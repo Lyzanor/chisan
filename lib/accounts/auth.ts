@@ -10,7 +10,10 @@ import {
   getBootstrapAdminEmails,
   isAccountSystemConfigured,
 } from "@/lib/accounts/config";
-import { buildActiveProducerAccessLookup } from "@/lib/accounts/producer-access";
+import {
+  buildActiveProducerAccessLookup,
+  buildActiveProducerOwnerAccessLookup,
+} from "@/lib/accounts/producer-access";
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
 import { getDatabase, type Database } from "@/lib/db";
 import {
@@ -343,6 +346,16 @@ export async function requireStaffAccount(): Promise<AccountUser> {
   return account;
 }
 
+export async function requireAdminAccount(
+  returnBackUrl = "/admin",
+): Promise<AccountUser> {
+  const account = await requireCurrentAccount(returnBackUrl);
+  if (!(await hasStaffAccess(account.id, ["admin"]))) {
+    redirect("/cuenta?error=Administrator%20access%20is%20required.");
+  }
+  return account;
+}
+
 export async function hasProducerAccess(
   userId: string,
   country: string,
@@ -358,6 +371,32 @@ export async function hasProducerAccess(
         eq(producerMemberships.country, lookup.country),
         eq(producerMemberships.producerId, lookup.producerId),
         eq(producerMemberships.status, lookup.status),
+      ),
+    )
+    .limit(1);
+
+  return Boolean(membership);
+}
+
+export async function hasProducerOwnerAccess(
+  userId: string,
+  country: string,
+  producerId: number,
+): Promise<boolean> {
+  const lookup = buildActiveProducerOwnerAccessLookup(userId, {
+    country,
+    producerId,
+  });
+  const [membership] = await getDatabase()
+    .select({ id: producerMemberships.id })
+    .from(producerMemberships)
+    .where(
+      and(
+        eq(producerMemberships.userId, lookup.userId),
+        eq(producerMemberships.country, lookup.country),
+        eq(producerMemberships.producerId, lookup.producerId),
+        eq(producerMemberships.status, lookup.status),
+        eq(producerMemberships.role, lookup.role),
       ),
     )
     .limit(1);

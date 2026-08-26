@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "Verwyder gunsteling",
     saveFavorite: "Stoor gunsteling",
     editMyProfile: "Wysig my profiel",
+    expandProfile: "Brei profiel uit",
     ownershipVerified: "Eienaarskap geverifieer",
     viewOwnershipClaim: "Bekyk eienaarskapseis",
     claimProducer: "Eis hierdie produsent",
@@ -71,6 +72,15 @@ const messages = {
     lon: "WGS84-desimale lengtegraad. Breedte- en lengtegraad moet saam verskaf word.",
     "Venta online": "Of ’n huidige bestelmeganisme nagegaan is.",
     "Canal de venta": "Huidige, bewese bestelmeganismes.",
+    "visitas guiadas": "Of die produsent tans begeleide besoeke aanbied.",
+    "mensaje a la comunidad":
+      "’n Openbare boodskap van die produsent aan die plaaslike voedselgemeenskap.",
+    mensaje_comunidad_locale:
+      "Die brontaal van die gemeenskapsboodskap; laat dit slegs leeg wanneer die boodskap leeg is.",
+    "enlace destacado 1":
+      "’n Bykomende openbare HTTP(S)-skakel wat deur die produsent gekies is.",
+    "enlace destacado 2":
+      "’n Tweede bykomende openbare HTTP(S)-skakel; gebruik dit slegs ná die eerste.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -170,6 +180,7 @@ const messages = {
   producer: {
     backToMap: "Terug na die kaart",
     profile: "Produsentprofiel",
+    expandedProfile: "Uitgebreide profiel",
     website: "Webwerf",
     googleMaps: "Google Maps",
     phone: "Telefoon",
@@ -197,6 +208,11 @@ const messages = {
     address: "Adres",
     description: "Beskrywing",
     descriptionLocale: "Beskrywingstaal",
+    guidedVisits: "Begeleide besoeke",
+    communityMessage: "Boodskap aan die gemeenskap",
+    communityMessageLocale: "Taal van die gemeenskapsboodskap",
+    highlightedLink1: "Uitgeligte skakel 1",
+    highlightedLink2: "Uitgeligte skakel 2",
     openingHours: "Openingsure",
     phone: "Telefoon",
     email: "E-pos",

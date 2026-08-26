@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Tloša go tše di ratwago",
     saveFavorite: "Boloka tše di ratwago",
     editMyProfile: "Lokiša profaele ya ka",
+    expandProfile: "Atološa profaele",
     ownershipVerified: "Beng bo netefaditšwe",
     viewOwnershipClaim: "Bona tseko ya beng",
     claimProducer: "Tseka motšweletši yo",
@@ -57,6 +58,16 @@ const messages = {
       "Tshedimošo ya nnete ka motšweletši, ntle le dipolelo tša papatšo.",
     descripcion_locale:
       "Polelo ya mathomo ya tlhalošo ya motheo; tlogela e se na selo ge tlhalošo e se gona.",
+    "visitas guiadas":
+      "Ge motšweletši a fana ka diketelo tše di hlahlwago gona bjale.",
+    "mensaje a la comunidad":
+      "Molaetša wa setšhaba wa motšweletši go setšhaba.",
+    mensaje_comunidad_locale:
+      "Polelo ya mathomo ya molaetša wa setšhaba; tlogela e se na selo ge molaetša o se gona.",
+    "enlace destacado 1":
+      "Kgokagano ya pele ya HTTP(S) ye e tšwelelago, bjalo ka sengwalwa sa ditaba.",
+    "enlace destacado 2":
+      "Kgokagano ya bobedi ya HTTP(S) ye e tšwelelago, bjalo ka sengwalwa sa ditaba.",
     direccion:
       "Aterese ya yuniti ya tšweletšo goba lefelo la go amogela batšweletši.",
     horario: "Diiri tša bjale tša ketelo, go tšea dilo goba go bula setšhaba.",
@@ -185,6 +196,7 @@ const messages = {
     categories: "Dihlopha",
     allCategories: "Ka moka",
     information: "Tshedimošo",
+    expandedProfile: "Profaele ye e katološitšwego",
   },
   fieldLabels: {
     slug: "Slug",
@@ -197,6 +209,11 @@ const messages = {
     address: "Aterese",
     description: "Tlhalošo",
     descriptionLocale: "Polelo ya tlhalošo",
+    guidedVisits: "Diketelo tše di hlahlwago",
+    communityMessage: "Molaetša go setšhaba",
+    communityMessageLocale: "Polelo ya molaetša wa setšhaba",
+    highlightedLink1: "Kgokagano ye e tšwelelago 1",
+    highlightedLink2: "Kgokagano ye e tšwelelago 2",
     openingHours: "Diiri tša go bula",
     phone: "Mogala",
     email: "Imeile",

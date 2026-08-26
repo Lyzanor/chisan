@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "મનપસંદમાંથી દૂર કરો",
     saveFavorite: "મનપસંદમાં સાચવો",
     editMyProfile: "મારી પ્રોફાઇલ સંપાદિત કરો",
+    expandProfile: "પ્રોફાઇલ વિસ્તારો",
     ownershipVerified: "માલિકીની ચકાસણી થઈ",
     viewOwnershipClaim: "માલિકીના દાવા જુઓ",
     claimProducer: "આ ઉત્પાદક પર દાવો કરો",
@@ -65,6 +66,15 @@ const messages = {
     lon: "WGS84 દશાંશ રેખાંશ. અક્ષાંશ અને રેખાંશ બંને સાથે આપવા જરૂરી છે.",
     "Venta online": "હાલની ઓર્ડર કરવાની રીતની ચકાસણી થઈ છે કે નહીં.",
     "Canal de venta": "હાલની અને દર્શાવેલી ઓર્ડર કરવાની રીતો.",
+    "visitas guiadas": "ઉત્પાદક હાલમાં માર્ગદર્શિત મુલાકાતો આપે છે કે નહીં.",
+    "mensaje a la comunidad":
+      "સ્થાનિક ખાદ્ય સમુદાય માટે ઉત્પાદકનો જાહેર સંદેશ.",
+    mensaje_comunidad_locale:
+      "સમુદાય સંદેશની મૂળ ભાષા; સંદેશ ખાલી હોય ત્યારે જ ખાલી રાખો.",
+    "enlace destacado 1":
+      "ઉત્પાદકે પસંદ કરેલી વધારાની જાહેર HTTP(S) લિંક.",
+    "enlace destacado 2":
+      "બીજી વધારાની જાહેર HTTP(S) લિંક; પહેલી પછી જ તેનો ઉપયોગ કરો.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -162,6 +172,7 @@ const messages = {
   producer: {
     backToMap: "નકશા પર પાછા જાઓ",
     profile: "ઉત્પાદક પ્રોફાઇલ",
+    expandedProfile: "વિસ્તૃત પ્રોફાઇલ",
     website: "વેબસાઇટ",
     googleMaps: "Google Maps",
     phone: "ફોન",
@@ -189,6 +200,11 @@ const messages = {
     address: "સરનામું",
     description: "વર્ણન",
     descriptionLocale: "વર્ણનની ભાષા",
+    guidedVisits: "માર્ગદર્શિત મુલાકાતો",
+    communityMessage: "સમુદાય માટે સંદેશ",
+    communityMessageLocale: "સમુદાય સંદેશની ભાષા",
+    highlightedLink1: "વિશિષ્ટ લિંક 1",
+    highlightedLink2: "વિશિષ્ટ લિંક 2",
     openingHours: "ખુલવાના કલાકો",
     phone: "ફોન",
     email: "ઇમેઇલ",

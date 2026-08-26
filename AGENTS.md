@@ -120,7 +120,8 @@ automatically between countries.
 | Producer images | `docs/IMAGES.md` | `npx pnpm verify:data` |
 | Localized descriptions, translation sidecars, locale labels, or catalog scopes | `docs/CSV_CONTRACT.md`, `docs/EDITORIAL.md` and the affected routing contract | `npx pnpm verify:ai`; data-only translation batches may use `verify:data` once supported |
 | Device-location onboarding or catalog-area boundaries | `docs/LOCATION_ROUTING.md` | `npx pnpm verify:ai` |
-| Accounts, ownership, memberships, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
+| Accounts, ownership, memberships, entitlements, gifts, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
+| Payment-adapter implementation or activation | `docs/ACCOUNT_SYSTEM.md`, then `docs/OPERATIONS.md` | `npx pnpm verify:ai`, then the Operations preflight |
 | Environment, secrets, deploy, rollback, or backups | `docs/OPERATIONS.md` | Follow its preflight and smoke checks |
 | Code, scripts, documentation, policy, or behavior | Owning contract | `npx pnpm verify:ai` |
 

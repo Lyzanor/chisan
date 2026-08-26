@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "Dileu ffefryn",
     saveFavorite: "Cadw ffefryn",
     editMyProfile: "Golygu fy mhroffil",
+    expandProfile: "Ehangu'r proffil",
     ownershipVerified: "Perchnogaeth wedi'i dilysu",
     viewOwnershipClaim: "Gweld hawliad perchnogaeth",
     claimProducer: "Hawlio'r cynhyrchydd hwn",
@@ -71,6 +72,15 @@ const messages = {
     lon: "Hydred degol WGS84. Rhaid darparu lledred a hydred gyda'i gilydd.",
     "Venta online": "A yw dull archebu cyfredol wedi'i adolygu.",
     "Canal de venta": "Mecanweithiau archebu cyfredol a ddangoswyd.",
+    "visitas guiadas": "A yw'r cynhyrchydd yn cynnig teithiau tywys ar hyn o bryd.",
+    "mensaje a la comunidad":
+      "Neges gyhoeddus gan y cynhyrchydd i'r gymuned fwyd leol.",
+    mensaje_comunidad_locale:
+      "Iaith ffynhonnell neges y gymuned; gadewch yn wag dim ond pan fo'r neges yn wag.",
+    "enlace destacado 1":
+      "Dolen HTTP(S) gyhoeddus ychwanegol a ddewiswyd gan y cynhyrchydd.",
+    "enlace destacado 2":
+      "Ail ddolen HTTP(S) gyhoeddus ychwanegol; defnyddiwch hi ar ôl y gyntaf yn unig.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -170,6 +180,7 @@ const messages = {
   producer: {
     backToMap: "Nôl i'r map",
     profile: "Proffil y cynhyrchydd",
+    expandedProfile: "Proffil estynedig",
     website: "Gwefan",
     googleMaps: "Google Maps",
     phone: "Ffôn",
@@ -197,6 +208,11 @@ const messages = {
     address: "Cyfeiriad",
     description: "Disgrifiad",
     descriptionLocale: "Iaith y disgrifiad",
+    guidedVisits: "Teithiau tywys",
+    communityMessage: "Neges i'r gymuned",
+    communityMessageLocale: "Iaith neges y gymuned",
+    highlightedLink1: "Dolen dan sylw 1",
+    highlightedLink2: "Dolen dan sylw 2",
     openingHours: "Oriau agor",
     phone: "Ffôn",
     email: "E-bost",

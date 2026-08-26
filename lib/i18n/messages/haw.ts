@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Wehe i ka punahele",
     saveFavorite: "Mālama i punahele",
     editMyProfile: "Hoʻoponopono i koʻu ʻike",
+    expandProfile: "Hoʻonui i ka ʻike",
     ownershipVerified: "Ua hōʻoia ʻia ka kuleana",
     viewOwnershipClaim: "Nānā i ke koi kuleana",
     claimProducer: "Koi i kēia mea hana",
@@ -71,6 +72,16 @@ const messages = {
     lon: "Lonitu helu WGS84. Pono e hāʻawi pū ʻia ka latitu a me ka lonitu.",
     "Venta online": "Inā ua nānā ʻia kekahi ala kauoha e hana nei.",
     "Canal de venta": "Nā ala kauoha e hana nei i hōʻike ʻia.",
+    "visitas guiadas":
+      "Inā hāʻawi ka mea hana i nā huakaʻi alakaʻi ʻia i kēia manawa.",
+    "mensaje a la comunidad":
+      "He leka lehulehu mai ka mea hana i ke kaiāulu meaʻai kūloko.",
+    mensaje_comunidad_locale:
+      "Ka ʻōlelo kumu o ka leka i ke kaiāulu; waiho hakahaka wale nō ke hakahaka ka leka.",
+    "enlace destacado 1":
+      "He loulou HTTP(S) lehulehu hou i koho ʻia e ka mea hana.",
+    "enlace destacado 2":
+      "He loulou HTTP(S) lehulehu hou ʻelua; hoʻohana wale ma hope o ka mea mua.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -171,6 +182,7 @@ const messages = {
   producer: {
     backToMap: "Hoʻi i ka palapala ʻāina",
     profile: "ʻIke o ka mea hana",
+    expandedProfile: "ʻIke hoʻonui ʻia",
     website: "Pūnaewele",
     googleMaps: "Google Maps",
     phone: "Kelepona",
@@ -198,6 +210,11 @@ const messages = {
     address: "Helu wahi",
     description: "Wehewehe",
     descriptionLocale: "ʻŌlelo wehewehe",
+    guidedVisits: "Nā huakaʻi alakaʻi ʻia",
+    communityMessage: "Leka i ke kaiāulu",
+    communityMessageLocale: "ʻŌlelo o ka leka i ke kaiāulu",
+    highlightedLink1: "Loulou koʻikoʻi 1",
+    highlightedLink2: "Loulou koʻikoʻi 2",
     openingHours: "Nā hola wehe",
     phone: "Kelepona",
     email: "Leka uila",

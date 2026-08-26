@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "ਮਨਪਸੰਦ ਵਿੱਚੋਂ ਹਟਾਓ",
     saveFavorite: "ਮਨਪਸੰਦ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਕਰੋ",
     editMyProfile: "ਮੇਰੀ ਪ੍ਰੋਫ਼ਾਈਲ ਸੋਧੋ",
+    expandProfile: "ਪ੍ਰੋਫ਼ਾਈਲ ਦਾ ਵਿਸਤਾਰ ਕਰੋ",
     ownershipVerified: "ਮਲਕੀਅਤ ਦੀ ਪੁਸ਼ਟੀ ਹੋਈ",
     viewOwnershipClaim: "ਮਲਕੀਅਤ ਦਾ ਦਾਅਵਾ ਵੇਖੋ",
     claimProducer: "ਇਸ ਉਤਪਾਦਕ ਉੱਤੇ ਦਾਅਵਾ ਕਰੋ",
@@ -55,6 +56,14 @@ const messages = {
       "ਇਸ਼ਤਿਹਾਰੀ ਦਾਅਵਿਆਂ ਤੋਂ ਬਿਨਾਂ ਉਤਪਾਦਕ ਨਾਲ ਸਬੰਧਤ ਤੱਥਾਤਮਕ ਜਾਣਕਾਰੀ।",
     descripcion_locale:
       "ਮੂਲ ਵੇਰਵੇ ਦੀ ਸਰੋਤ ਭਾਸ਼ਾ; ਸਿਰਫ਼ ਖਾਲੀ ਵੇਰਵੇ ਨਾਲ ਇਸਨੂੰ ਖਾਲੀ ਛੱਡੋ।",
+    "visitas guiadas": "ਕੀ ਉਤਪਾਦਕ ਇਸ ਵੇਲੇ ਗਾਈਡ ਨਾਲ ਦੌਰੇ ਕਰਵਾਉਂਦਾ ਹੈ।",
+    "mensaje a la comunidad": "ਭਾਈਚਾਰੇ ਲਈ ਉਤਪਾਦਕ ਦਾ ਜਨਤਕ ਸੁਨੇਹਾ।",
+    mensaje_comunidad_locale:
+      "ਭਾਈਚਾਰੇ ਦੇ ਸੁਨੇਹੇ ਦੀ ਸਰੋਤ ਭਾਸ਼ਾ; ਸੁਨੇਹਾ ਖਾਲੀ ਹੋਣ 'ਤੇ ਹੀ ਖਾਲੀ ਛੱਡੋ।",
+    "enlace destacado 1":
+      "ਪਹਿਲਾ ਵਾਧੂ ਪ੍ਰਮੁੱਖ HTTP(S) ਲਿੰਕ, ਜਿਵੇਂ ਕੋਈ ਪ੍ਰੈੱਸ ਲੇਖ।",
+    "enlace destacado 2":
+      "ਦੂਜਾ ਵਾਧੂ ਪ੍ਰਮੁੱਖ HTTP(S) ਲਿੰਕ, ਜਿਵੇਂ ਕੋਈ ਪ੍ਰੈੱਸ ਲੇਖ।",
     direccion: "ਉਤਪਾਦਨ ਇਕਾਈ ਜਾਂ ਲੋਕਾਂ ਲਈ ਖੁੱਲ੍ਹੇ ਸਥਾਨ ਦਾ ਪਤਾ।",
     horario: "ਮੌਜੂਦਾ ਮੁਲਾਕਾਤ, ਸਮਾਨ ਲੈਣ ਜਾਂ ਜਨਤਕ ਖੁੱਲ੍ਹਣ ਦੇ ਸਮੇਂ।",
     telefono: "ਅੰਤਰਰਾਸ਼ਟਰੀ E.164 ਰੂਪ, ਉਦਾਹਰਨ: +34600112233।",
@@ -176,6 +185,7 @@ const messages = {
     categories: "ਸ਼੍ਰੇਣੀਆਂ",
     allCategories: "ਸਭ",
     information: "ਜਾਣਕਾਰੀ",
+    expandedProfile: "ਵਿਸਤ੍ਰਿਤ ਪ੍ਰੋਫ਼ਾਈਲ",
   },
   fieldLabels: {
     slug: "ਸਲੱਗ",
@@ -188,6 +198,11 @@ const messages = {
     address: "ਪਤਾ",
     description: "ਵੇਰਵਾ",
     descriptionLocale: "ਵੇਰਵੇ ਦੀ ਭਾਸ਼ਾ",
+    guidedVisits: "ਗਾਈਡ ਨਾਲ ਦੌਰੇ",
+    communityMessage: "ਭਾਈਚਾਰੇ ਲਈ ਸੁਨੇਹਾ",
+    communityMessageLocale: "ਭਾਈਚਾਰੇ ਦੇ ਸੁਨੇਹੇ ਦੀ ਭਾਸ਼ਾ",
+    highlightedLink1: "ਪ੍ਰਮੁੱਖ ਲਿੰਕ 1",
+    highlightedLink2: "ਪ੍ਰਮੁੱਖ ਲਿੰਕ 2",
     openingHours: "ਖੁੱਲ੍ਹਣ ਦੇ ਸਮੇਂ",
     phone: "ਫ਼ੋਨ",
     email: "ਈਮੇਲ",

@@ -108,9 +108,66 @@ test("account migrations run as a non-superuser CREATEROLE schema owner", async 
     ).rows;
     assert.deepEqual(ownership, {
       api_owner_can_create: false,
-      function_owner_count: 6,
+      function_owner_count: 7,
       view_owner: "chisan_producer_change_api_owner",
     });
+
+    const commercialPrivileges = await database.query<{
+      can_delete: boolean;
+      can_insert: boolean;
+      can_references: boolean;
+      can_select: boolean;
+      can_trigger: boolean;
+      can_truncate: boolean;
+      can_update: boolean;
+      role_name: string;
+    }>(
+      `select role_name,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'select') as can_select,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'insert') as can_insert,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'update') as can_update,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'delete') as can_delete,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'truncate') as can_truncate,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'references') as can_references,
+              has_table_privilege(role_name, 'public.producer_profile_upgrade_requests', 'trigger') as can_trigger
+         from (values
+           ('chisan_admin_read'),
+           ('chisan_producer_change_operator'),
+           ('chisan_producer_change_recovery'),
+           ('chisan_producer_change_api_owner')
+         ) as roles(role_name)
+        order by role_name`,
+    );
+    assert.deepEqual(
+      commercialPrivileges.rows,
+      [
+        "chisan_admin_read",
+        "chisan_producer_change_api_owner",
+        "chisan_producer_change_operator",
+        "chisan_producer_change_recovery",
+      ].map((role_name) => ({
+        role_name,
+        can_select: false,
+        can_insert: false,
+        can_update: false,
+        can_delete: false,
+        can_truncate: false,
+        can_references: false,
+        can_trigger: false,
+      })),
+      "producer-change agent roles must not read or mutate commercial payment state",
+    );
+
+    const publicCommercialPrivileges = await database.query<{ public_acl: string }>(
+      `select coalesce(array_to_string(relacl, ','), '') as public_acl
+         from pg_catalog.pg_class
+        where oid = 'public.producer_profile_upgrade_requests'::regclass`,
+    );
+    assert.doesNotMatch(
+      publicCommercialPrivileges.rows[0]?.public_acl ?? "",
+      /(^|,)=.*[arwdDxt]/,
+      "PUBLIC must not receive commercial table privileges",
+    );
   } finally {
     await database.close();
   }
@@ -147,6 +204,7 @@ test("account migration creates constraints and durable producer keys", async ()
         "producer_change_requests",
         "producer_claims",
         "producer_memberships",
+        "producer_profile_upgrade_requests",
         "staff_grants",
         "users",
         "webhook_receipts",
@@ -173,9 +231,51 @@ test("account migration creates constraints and durable producer keys", async ()
       { table_name: "auth_identity_tombstones", column_name: "provider_deleted_at" },
       { table_name: "auth_identity_tombstones", column_name: "provider_event_id" },
       { table_name: "auth_identity_tombstones", column_name: "subject" },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_charge_id",
+      },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_checkout_id",
+      },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_customer_id",
+      },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_dispute_id",
+      },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_dispute_status",
+      },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_offer_id",
+      },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "provider_payment_id",
+      },
       { table_name: "webhook_receipts", column_name: "provider" },
       { table_name: "webhook_receipts", column_name: "subject" },
     ]);
+
+    const stripeCoupledPurchaseColumns = await database.query<{ column_name: string }>(
+      `select column_name
+         from information_schema.columns
+        where table_schema = 'public'
+          and table_name = 'producer_profile_upgrade_requests'
+          and column_name like 'stripe\_%' escape '\\'
+        order by column_name`,
+    );
+    assert.deepEqual(
+      stripeCoupledPurchaseColumns.rows,
+      [],
+      "commercial requests must identify their provider without provider-specific columns",
+    );
 
     const forbiddenPresentationColumns = await database.query<{
       column_name: string;
@@ -262,6 +362,10 @@ test("account migration creates constraints and durable producer keys", async ()
       { table_name: "producer_memberships", column_name: "granted_by_user_id" },
       { table_name: "producer_memberships", column_name: "revoked_by_user_id" },
       { table_name: "producer_memberships", column_name: "user_id" },
+      {
+        table_name: "producer_profile_upgrade_requests",
+        column_name: "requester_user_id",
+      },
       { table_name: "staff_grants", column_name: "granted_by_user_id" },
       { table_name: "staff_grants", column_name: "revoked_by_user_id" },
       { table_name: "staff_grants", column_name: "user_id" },
@@ -342,6 +446,174 @@ test("account migration creates constraints and durable producer keys", async ()
     await database.query(
       "insert into producer_memberships (user_id, country, producer_id, role) values ($1, 'es', 7, 'editor')",
       [secondUserId],
+    );
+
+    const insertPendingProviderCheckout = (
+      producerId: number,
+      paymentProvider: string,
+      providerCheckoutId: string,
+    ) =>
+      database.query(
+        `insert into producer_profile_upgrade_requests (
+           requester_user_id, country, producer_id, status, amount_minor,
+           currency, terms_version, terms_url, terms_accepted_at,
+           payment_provider, provider_offer_id, provider_checkout_id,
+           checkout_expires_at
+         ) values (
+           $1, 'es', $2, 'pending', 4900, 'eur',
+           'producer-profile-upgrade-v1', '/terms/profile-v1', now(),
+           $3, 'offer_profile49', $4, now() + interval '30 minutes'
+         )`,
+        [userId, producerId, paymentProvider, providerCheckoutId],
+      );
+
+    await insertPendingProviderCheckout(60, "stripe", "checkout_shared_60");
+    await assert.rejects(
+      insertPendingProviderCheckout(61, "stripe", "checkout_shared_60"),
+      /producer_profile_upgrade_requests_checkout_uidx|duplicate key/i,
+    );
+    await assert.doesNotReject(
+      insertPendingProviderCheckout(62, "adyen", "checkout_shared_60"),
+      "the same external reference may exist under a different provider",
+    );
+    await assert.rejects(
+      insertPendingProviderCheckout(63, "Stripe", "checkout_invalid_provider"),
+      /producer_profile_upgrade_requests_provider_check/i,
+    );
+
+    const [pendingUpgrade] = (
+      await database.query<{ id: string }>(
+        `insert into producer_profile_upgrade_requests (
+           requester_user_id, country, producer_id, status, amount_minor,
+           currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id
+         ) values (
+           $1, 'es', 49, 'pending', 4900, 'eur',
+           'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49'
+         ) returning id`,
+        [userId],
+      )
+    ).rows;
+    assert.ok(pendingUpgrade.id);
+    await assert.rejects(
+      database.query(
+        `insert into producer_profile_upgrade_requests (
+           requester_user_id, country, producer_id, status, amount_minor,
+           currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id
+         ) values (
+           $1, 'es', 49, 'pending', 4900, 'eur',
+           'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49'
+         )`,
+        [secondUserId],
+      ),
+      /producer_profile_upgrade_requests_active_producer_uidx|duplicate key/i,
+    );
+    await assert.rejects(
+      database.query(
+        `insert into producer_profile_upgrade_requests (
+           requester_user_id, country, producer_id, status, amount_minor,
+           currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id
+         ) values (
+           $1, 'es', 50, 'pending', 4899, 'eur',
+           'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49'
+         )`,
+        [userId],
+      ),
+      /producer_profile_upgrade_requests_amount_check/i,
+    );
+    await assert.rejects(
+      database.query(
+        `insert into producer_profile_upgrade_requests (
+           requester_user_id, country, producer_id, status, amount_minor,
+           currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id,
+           amount_refunded_minor, refunded_at
+         ) values (
+           $1, 'es', 54, 'pending', 4900, 'eur',
+           'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49',
+           1, now()
+         )`,
+        [userId],
+      ),
+      /producer_profile_upgrade_requests_refund_check/i,
+    );
+    await database.query(
+      `update producer_profile_upgrade_requests
+          set status = 'expired'
+        where id = $1`,
+      [pendingUpgrade.id],
+    );
+    await database.query(
+      `insert into producer_profile_upgrade_requests (
+         requester_user_id, country, producer_id, status, amount_minor,
+         currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id,
+         paid_at, failure_code
+       ) values (
+         $1, 'es', 49, 'paid_unfulfilled', 4900, 'eur',
+         'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49',
+         now(), 'missing_charge'
+       )`,
+      [userId],
+    );
+    await assert.rejects(
+      database.query(
+        `insert into producer_profile_upgrade_requests (
+           requester_user_id, country, producer_id, status, amount_minor,
+           currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id,
+           failure_code
+         ) values (
+           $1, 'es', 51, 'paid_unfulfilled', 4900, 'eur',
+           'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49',
+           'missing_charge'
+         )`,
+        [userId],
+      ),
+      /producer_profile_upgrade_requests_payment_check/i,
+    );
+
+    await database.query(
+      `insert into producer_profile_upgrade_requests (
+         requester_user_id, country, producer_id, status, amount_minor,
+         currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id,
+         provider_payment_id, amount_captured_minor, captured_currency, paid_at
+       ) values (
+         $1, 'es', 52, 'dispute_lost', 4900, 'eur',
+         'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49',
+         'pi_lost_profile52', 4900, 'eur', now()
+       )`,
+      [userId],
+    );
+
+    await database.query(
+      `insert into producer_profile_upgrade_requests (
+         requester_user_id, country, producer_id, status, amount_minor,
+         currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id,
+         provider_payment_id, amount_captured_minor, captured_currency,
+         amount_refunded_minor, paid_at, refunded_at
+       ) values (
+         $1, 'es', 53, 'refunded', 4900, 'eur',
+         'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49',
+         'pi_refunded_mismatch_profile53', 4899, 'usd', 4899, now(), now()
+       )`,
+      [userId],
+    );
+    await database.query(
+      `insert into producer_profile_upgrade_requests (
+         requester_user_id, country, producer_id, status, amount_minor,
+         currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id
+       ) values (
+         $1, 'es', 53, 'pending', 4900, 'eur',
+         'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49'
+       )`,
+      [userId],
+    );
+    await database.query(
+      `insert into producer_profile_upgrade_requests (
+         requester_user_id, country, producer_id, status, amount_minor,
+         currency, terms_version, terms_url, terms_accepted_at, payment_provider, provider_offer_id
+       ) values (
+         $1, 'es', 52, 'pending', 4900, 'eur',
+         'producer-profile-upgrade-v1', '/terms/profile-v1', now(), 'stripe', 'price_test_profile49'
+       )`,
+      [userId],
     );
 
     await database.query(
@@ -522,6 +794,84 @@ test("locale removal preserves existing account-domain records", async () => {
         audit_count: 1,
       },
     ]);
+  } finally {
+    await database.close();
+  }
+});
+
+test("premium producer changes require an active entitlement throughout execution", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    for (const migrationFile of migrationFiles) {
+      await database.exec(await readFile(`drizzle/${migrationFile}`, "utf8"));
+    }
+
+    const [account] = (
+      await database.query<{ id: string }>(
+        "insert into users (display_name) values ('Premium change test') returning id",
+      )
+    ).rows;
+    const [change] = (
+      await database.query<{ id: string }>(
+        `insert into producer_change_requests (
+           author_user_id, country, producer_id, status, base_row_hash,
+           base_snapshot, patch, required_entitlement_key, reviewer_user_id,
+           submitted_at, reviewed_at
+         ) values (
+           $1, 'es', 4900, 'approved', repeat('a', 64),
+           '{"nombre":"Base","producer_id":"4900"}'::jsonb,
+           '{"visitas guiadas":"sí"}'::jsonb,
+           'producer.profile.premium', $1, now(), now()
+         ) returning id`,
+        [account.id],
+      )
+    ).rows;
+
+    const executionId = "00000000-0000-4000-8000-000000004900";
+    const insertExecution = () =>
+      database.query(
+        `insert into producer_change_executions (
+           id, change_request_id, country, producer_id, status, operator_key,
+           worktree_key, source_head_sha, expected_row_hash, lease_expires_at,
+           csv_path
+         ) values (
+           $1, $2, 'es', 4900, 'leased', 'operator:test', repeat('b', 64),
+           repeat('c', 40), repeat('d', 64), now() + interval '15 minutes',
+           'data/csv/es/test/premium.csv'
+         )`,
+        [executionId, change.id],
+      );
+    await assert.rejects(insertExecution(), /required by this change is no longer active/i);
+
+    const [entitlement] = (
+      await database.query<{ id: string }>(
+        `insert into entitlements (
+           subject_kind, producer_country, producer_id, key, status, source
+         ) values (
+           'producer', 'es', 4900, 'producer.profile.premium', 'active', 'test'
+         ) returning id`,
+      )
+    ).rows;
+    await insertExecution();
+
+    await database.query(
+      `update entitlements
+          set status = 'revoked', revoked_at = now()
+        where id = $1`,
+      [entitlement.id],
+    );
+    await assert.rejects(
+      database.query(
+        `update producer_change_executions
+            set status = 'materialized', materialized_at = now()
+          where id = $1`,
+        [executionId],
+      ),
+      /required by this change is no longer active/i,
+    );
   } finally {
     await database.close();
   }

@@ -1,13 +1,23 @@
-import { and, eq, inArray } from "drizzle-orm";
+import { and, desc, eq, inArray } from "drizzle-orm";
 import Link from "next/link";
 
 import { toggleFavoriteAction } from "@/app/(application)/cuenta/actions";
 import { getCurrentAccount } from "@/lib/accounts/auth";
-import { ACCOUNT_ROUTES, isAccountSystemConfigured } from "@/lib/accounts/config";
+import {
+  ACCOUNT_ROUTES,
+  isAccountSystemConfigured,
+} from "@/lib/accounts/config";
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
+import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
 import { getDatabase } from "@/lib/db";
-import { favorites, producerClaims, producerMemberships } from "@/lib/db/schema";
+import {
+  favorites,
+  producerClaims,
+  producerMemberships,
+  producerProfileUpgradeRequests,
+} from "@/lib/db/schema";
 import type { Messages } from "@/lib/i18n/messages";
+import { getStripeProfileUpgradeConfiguration } from "@/lib/payments/stripe-profile-upgrade-config";
 
 type ProducerAccountActionsProps = {
   country: string;
@@ -93,7 +103,7 @@ async function renderProducerAccountActions({
       )
       .limit(1),
     database
-      .select({ id: producerMemberships.id })
+      .select({ id: producerMemberships.id, role: producerMemberships.role })
       .from(producerMemberships)
       .where(
         and(
@@ -117,6 +127,11 @@ async function renderProducerAccountActions({
       )
       .limit(1),
   ]);
+  const canOfferProfileUpgrade =
+    membership?.role === "owner" &&
+    getStripeProfileUpgradeConfiguration().checkoutReady
+    ? await ownerCanStartProfileUpgrade(database, country, producerId)
+    : false;
 
   return (
     <div className="producer-account-actions">
@@ -129,9 +144,16 @@ async function renderProducerAccountActions({
         </button>
       </form>
       {membership ? (
-        <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>
-          {messages.editMyProfile}
-        </Link>
+        <>
+          <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>
+            {messages.editMyProfile}
+          </Link>
+          {canOfferProfileUpgrade ? (
+            <Link href={`/cuenta/productores/${country}/${producerId}/ampliar`}>
+              {messages.expandProfile}
+            </Link>
+          ) : null}
+        </>
       ) : activeOwner ? (
         <span>{messages.ownershipVerified}</span>
       ) : claim ? (
@@ -144,5 +166,33 @@ async function renderProducerAccountActions({
         </Link>
       )}
     </div>
+  );
+}
+
+async function ownerCanStartProfileUpgrade(
+  database: ReturnType<typeof getDatabase>,
+  country: string,
+  producerId: number,
+): Promise<boolean> {
+  const [premiumActive, [latestRequest]] = await Promise.all([
+    hasActiveProducerPremiumEntitlement(country, producerId),
+    database
+      .select({ status: producerProfileUpgradeRequests.status })
+      .from(producerProfileUpgradeRequests)
+      .where(
+        and(
+          eq(producerProfileUpgradeRequests.country, country),
+          eq(producerProfileUpgradeRequests.producerId, producerId),
+        ),
+      )
+      .orderBy(desc(producerProfileUpgradeRequests.createdAt))
+      .limit(1),
+  ]);
+  return (
+    !premiumActive &&
+    (!latestRequest ||
+      ["expired", "payment_failed", "refunded", "dispute_lost"].includes(
+        latestRequest.status,
+      ))
   );
 }

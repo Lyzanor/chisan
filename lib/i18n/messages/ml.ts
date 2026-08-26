@@ -27,6 +27,7 @@ const messages = {
     removeFavorite: "പ്രിയപ്പെട്ടവയിൽ നിന്ന് നീക്കുക",
     saveFavorite: "പ്രിയപ്പെട്ടവയിൽ സംരക്ഷിക്കുക",
     editMyProfile: "എന്റെ പ്രൊഫൈൽ തിരുത്തുക",
+    expandProfile: "പ്രൊഫൈൽ വിപുലീകരിക്കുക",
     ownershipVerified: "ഉടമസ്ഥത പരിശോധിച്ചു",
     viewOwnershipClaim: "ഉടമസ്ഥാവകാശ അവകാശവാദം കാണുക",
     claimProducer: "ഈ ഉൽപ്പാദകന്റെ ഉടമസ്ഥാവകാശം അവകാശപ്പെടുക",
@@ -72,6 +73,16 @@ const messages = {
     lon: "WGS84 ദശാംശ രേഖാംശം. അക്ഷാംശവും രേഖാംശവും ഒരുമിച്ച് നൽകണം.",
     "Venta online": "നിലവിലെ ഓർഡർ സംവിധാനം പരിശോധിച്ചിട്ടുണ്ടോ എന്നത്.",
     "Canal de venta": "നിലവിൽ തെളിയിച്ചിട്ടുള്ള ഓർഡർ മാർഗങ്ങൾ.",
+    "visitas guiadas":
+      "ഉൽപ്പാദകൻ നിലവിൽ ഗൈഡഡ് സന്ദർശനങ്ങൾ നൽകുന്നുണ്ടോ എന്നത്.",
+    "mensaje a la comunidad":
+      "പ്രാദേശിക ഭക്ഷ്യ സമൂഹത്തോടുള്ള ഉൽപ്പാദകന്റെ പൊതുസന്ദേശം.",
+    mensaje_comunidad_locale:
+      "സമൂഹ സന്ദേശത്തിന്റെ ഉറവിട ഭാഷ; സന്ദേശം ശൂന്യമെങ്കിൽ മാത്രം ശൂന്യമായി വിടുക.",
+    "enlace destacado 1":
+      "ഉൽപ്പാദകൻ തിരഞ്ഞെടുത്ത ഒരു അധിക പൊതു HTTP(S) ലിങ്ക്.",
+    "enlace destacado 2":
+      "രണ്ടാമത്തെ അധിക പൊതു HTTP(S) ലിങ്ക്; ആദ്യത്തേതിന് ശേഷം മാത്രം ഉപയോഗിക്കുക.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -169,6 +180,7 @@ const messages = {
   producer: {
     backToMap: "മാപ്പിലേക്ക് മടങ്ങുക",
     profile: "ഉൽപ്പാദകന്റെ പ്രൊഫൈൽ",
+    expandedProfile: "വിപുലീകരിച്ച പ്രൊഫൈൽ",
     website: "വെബ്‌സൈറ്റ്",
     googleMaps: "Google Maps",
     phone: "ഫോൺ",
@@ -196,6 +208,11 @@ const messages = {
     address: "വിലാസം",
     description: "വിവരണം",
     descriptionLocale: "വിവരണത്തിന്റെ ഭാഷ",
+    guidedVisits: "ഗൈഡഡ് സന്ദർശനങ്ങൾ",
+    communityMessage: "സമൂഹത്തോടുള്ള സന്ദേശം",
+    communityMessageLocale: "സമൂഹ സന്ദേശത്തിന്റെ ഭാഷ",
+    highlightedLink1: "പ്രധാന ലിങ്ക് 1",
+    highlightedLink2: "പ്രധാന ലിങ്ക് 2",
     openingHours: "തുറക്കുന്ന സമയം",
     phone: "ഫോൺ",
     email: "ഇമെയിൽ",

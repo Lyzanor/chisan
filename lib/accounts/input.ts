@@ -38,6 +38,26 @@ export const changeReviewSchema = z.object({
   note: z.string().trim().max(4_000),
 });
 
+export const profileUpgradeRetrySchema = z.object({
+  requestId: z.uuid(),
+});
+
+const profileUpgradeAdminReasonSchema = z
+  .string()
+  .trim()
+  .min(10, "Explain why this administrative premium access is being changed.")
+  .max(1_000);
+
+export const profileUpgradeGiftGrantSchema = producerKeySchema.extend({
+  reason: profileUpgradeAdminReasonSchema,
+});
+
+export const profileUpgradeGiftRevokeSchema = z.object({
+  entitlementId: z.uuid(),
+  reason: profileUpgradeAdminReasonSchema,
+  confirmation: z.literal("revoke"),
+});
+
 export const entitlementKeySchema = z
   .string()
   .trim()

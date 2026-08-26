@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "ପସନ୍ଦରୁ ହଟାନ୍ତୁ",
     saveFavorite: "ପସନ୍ଦରେ ସଞ୍ଚୟ କରନ୍ତୁ",
     editMyProfile: "ମୋ ପ୍ରୋଫାଇଲ୍ ସମ୍ପାଦନ କରନ୍ତୁ",
+    expandProfile: "ପ୍ରୋଫାଇଲ୍ ବିସ୍ତାର କରନ୍ତୁ",
     ownershipVerified: "ମାଲିକାନା ଯାଞ୍ଚ ହୋଇଛି",
     viewOwnershipClaim: "ମାଲିକାନା ଦାବି ଦେଖନ୍ତୁ",
     claimProducer: "ଏହି ଉତ୍ପାଦକଙ୍କ ମାଲିକାନା ଦାବି କରନ୍ତୁ",
@@ -57,6 +58,16 @@ const messages = {
     descripcion: "ପ୍ରଚାରମୂଳକ ଦାବି ବିନା ଉତ୍ପାଦକ-ନିର୍ଦ୍ଦିଷ୍ଟ ତଥ୍ୟଭିତ୍ତିକ ସୂଚନା।",
     descripcion_locale:
       "ମୂଳ ବିବରଣୀର ଉତ୍ସ ଭାଷା; ବିବରଣୀ ଖାଲି ଥିଲେ ମାତ୍ର ଖାଲି ରଖନ୍ତୁ।",
+    "visitas guiadas":
+      "ଉତ୍ପାଦକ ବର୍ତ୍ତମାନ ମାର୍ଗଦର୍ଶିତ ପରିଦର୍ଶନ ପ୍ରଦାନ କରନ୍ତି କି ନାହିଁ।",
+    "mensaje a la comunidad":
+      "ସମୁଦାୟ ପାଇଁ ଉତ୍ପାଦକଙ୍କର ସାର୍ବଜନୀନ ବାର୍ତ୍ତା।",
+    mensaje_comunidad_locale:
+      "ସମୁଦାୟ ବାର୍ତ୍ତାର ଉତ୍ସ ଭାଷା; ବାର୍ତ୍ତା ଖାଲି ଥିଲେ ମାତ୍ର ଖାଲି ରଖନ୍ତୁ।",
+    "enlace destacado 1":
+      "ପ୍ରଥମ ଅତିରିକ୍ତ ପ୍ରମୁଖ HTTP(S) ଲିଙ୍କ୍, ଯେପରିକି ସମ୍ବାଦ ପ୍ରବନ୍ଧ।",
+    "enlace destacado 2":
+      "ଦ୍ୱିତୀୟ ଅତିରିକ୍ତ ପ୍ରମୁଖ HTTP(S) ଲିଙ୍କ୍, ଯେପରିକି ସମ୍ବାଦ ପ୍ରବନ୍ଧ।",
     direccion: "ଉତ୍ପାଦନ ୟୁନିଟ୍ କିମ୍ବା ଉତ୍ପାଦକଙ୍କ ଗ୍ରାହକମୁଖୀ ସ୍ଥାନର ଠିକଣା।",
     horario: "ବର୍ତ୍ତମାନର ପରିଦର୍ଶନ, ସଂଗ୍ରହ କିମ୍ବା ସର୍ବସାଧାରଣ ପାଇଁ ଖୋଲିବା ସମୟ।",
     telefono: "ଆନ୍ତର୍ଜାତୀୟ E.164 ଫର୍ମାଟ୍, ଉଦାହରଣ: +34600112233।",
@@ -180,6 +191,7 @@ const messages = {
     categories: "ବର୍ଗଗୁଡ଼ିକ",
     allCategories: "ସମସ୍ତ",
     information: "ସୂଚନା",
+    expandedProfile: "ବିସ୍ତାରିତ ପ୍ରୋଫାଇଲ୍",
   },
   fieldLabels: {
     slug: "ସ୍ଲଗ୍",
@@ -192,6 +204,11 @@ const messages = {
     address: "ଠିକଣା",
     description: "ବିବରଣୀ",
     descriptionLocale: "ବିବରଣୀର ଭାଷା",
+    guidedVisits: "ମାର୍ଗଦର୍ଶିତ ପରିଦର୍ଶନ",
+    communityMessage: "ସମୁଦାୟ ପାଇଁ ବାର୍ତ୍ତା",
+    communityMessageLocale: "ସମୁଦାୟ ବାର୍ତ୍ତାର ଭାଷା",
+    highlightedLink1: "ପ୍ରମୁଖ ଲିଙ୍କ୍ 1",
+    highlightedLink2: "ପ୍ରମୁଖ ଲିଙ୍କ୍ 2",
     openingHours: "ଖୋଲିବା ସମୟ",
     phone: "ଫୋନ୍",
     email: "ଇମେଲ୍",

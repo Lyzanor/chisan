@@ -20,14 +20,28 @@ const ADMIN_NAVIGATION = [
     label: "Ownership claims",
     description: "Identity and control review",
   },
+  {
+    href: "/admin/premium",
+    label: "Expanded profiles",
+    description: "Access registry and administrative gifts",
+    adminOnly: true,
+  },
+  {
+    href: "/admin/pagos",
+    label: "Profile payments",
+    description: "Adapter incidents and reconciliation",
+    adminOnly: true,
+  },
 ] as const;
 
-export function AdminNavigation() {
+export function AdminNavigation({ canManagePayments }: { canManagePayments: boolean }) {
   const pathname = usePathname();
 
   return (
     <nav className="admin-navigation" aria-label="Operations workspace">
-      {ADMIN_NAVIGATION.map((item) => {
+      {ADMIN_NAVIGATION.filter(
+        (item) => !("adminOnly" in item && item.adminOnly) || canManagePayments,
+      ).map((item) => {
         const active =
           "exact" in item && item.exact
             ? pathname === item.href

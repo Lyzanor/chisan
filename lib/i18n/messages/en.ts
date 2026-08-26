@@ -27,6 +27,7 @@ const messages = {
     removeFavorite: "Remove favorite",
     saveFavorite: "Save favorite",
     editMyProfile: "Edit my profile",
+    expandProfile: "Expand profile",
     ownershipVerified: "Ownership verified",
     viewOwnershipClaim: "View ownership claim",
     claimProducer: "Claim this producer",
@@ -68,6 +69,16 @@ const messages = {
     lon: "WGS84 decimal longitude. Latitude and longitude must be supplied together.",
     "Venta online": "Whether a current ordering mechanism has been reviewed.",
     "Canal de venta": "Current demonstrated ordering mechanisms.",
+    "visitas guiadas":
+      "Whether this producer currently offers guided visits; leave empty when unpublished.",
+    "mensaje a la comunidad":
+      "A producer-authored public message, preserved in its original language and reviewed before publication.",
+    mensaje_comunidad_locale:
+      "The source language of the community message; leave empty only when the message is empty.",
+    "enlace destacado 1":
+      "A relevant HTTP(S) article, interview or other public page about this producer.",
+    "enlace destacado 2":
+      "A second distinct public HTTP(S) page; link 1 must be filled first.",
   },
   common: {
     unitCount: "{count} {unit}",
@@ -183,6 +194,7 @@ const messages = {
     categories: "Categories",
     allCategories: "All",
     information: "Information",
+    expandedProfile: "Expanded profile",
   },
   fieldLabels: {
     slug: "Slug",
@@ -195,6 +207,11 @@ const messages = {
     address: "Address",
     description: "Description",
     descriptionLocale: "Description language",
+    guidedVisits: "Guided visits",
+    communityMessage: "Message to the community",
+    communityMessageLocale: "Community message language",
+    highlightedLink1: "Highlighted link 1",
+    highlightedLink2: "Highlighted link 2",
     openingHours: "Opening hours",
     phone: "Phone",
     email: "Email",

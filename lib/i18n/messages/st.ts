@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Tlosa ho tseo ke li ratang",
     saveFavorite: "Boloka seo ke se ratang",
     editMyProfile: "Fetola profaele ea ka",
+    expandProfile: "Atolosa profaele",
     ownershipVerified: "Botho bo netefalitsoe",
     viewOwnershipClaim: "Sheba tseko ea botho",
     claimProducer: "Tseka mohlahisi enoa",
@@ -57,6 +58,16 @@ const messages = {
       "Tlhahisoleseding ea nnete ka mohlahisi, ntle le lipolelo tsa papatso.",
     descripcion_locale:
       "Puo ea mohloli ea tlhaloso ea mantlha; e tlohele e se na letho feela haeba tlhaloso e se na letho.",
+    "visitas guiadas":
+      "Hore na mohlahisi o fana ka maeto a tataiso hona joale.",
+    "mensaje a la comunidad":
+      "Molaetsa oa sechaba oa mohlahisi o eang sechabeng.",
+    mensaje_comunidad_locale:
+      "Puo ea mohloli ea molaetsa oa sechaba; e tlohele e se na letho feela haeba molaetsa o se na letho.",
+    "enlace destacado 1":
+      "Sehokelo sa pele se hlahelletseng sa HTTP(S), joalo ka sengoloa sa litaba.",
+    "enlace destacado 2":
+      "Sehokelo sa bobeli se hlahelletseng sa HTTP(S), joalo ka sengoloa sa litaba.",
     direccion:
       "Aterese ea yuniti ea tlhahiso kapa sebaka se amohelang mohlahisi.",
     horario: "Lihora tsa hajoale tsa ketelo, pokello kapa ho bulela sechaba.",
@@ -184,6 +195,7 @@ const messages = {
     categories: "Lihlopha",
     allCategories: "Tsohle",
     information: "Tlhahisoleseding",
+    expandedProfile: "Profaele e atolositsoeng",
   },
   fieldLabels: {
     slug: "Slug",
@@ -196,6 +208,11 @@ const messages = {
     address: "Aterese",
     description: "Tlhaloso",
     descriptionLocale: "Puo ea tlhaloso",
+    guidedVisits: "Maeto a tataiso",
+    communityMessage: "Molaetsa ho sechaba",
+    communityMessageLocale: "Puo ea molaetsa oa sechaba",
+    highlightedLink1: "Sehokelo se hlahelletseng 1",
+    highlightedLink2: "Sehokelo se hlahelletseng 2",
     openingHours: "Lihora tsa ho bula",
     phone: "Mohala",
     email: "Imeile",

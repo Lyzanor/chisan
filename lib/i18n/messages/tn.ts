@@ -25,6 +25,7 @@ const messages = {
     removeFavorite: "Tlosa se se ratwang",
     saveFavorite: "Boloka se se ratwang",
     editMyProfile: "Baakanya profaele ya me",
+    expandProfile: "Atolosa profaele",
     ownershipVerified: "Bong bo netefaditswe",
     viewOwnershipClaim: "Bona kopo ya bong",
     claimProducer: "Tseya modiri yo",
@@ -57,6 +58,16 @@ const messages = {
       "Tshedimosetso ya boammaaruri ka modiri, kwantle ga dipolelo tsa papatso.",
     descripcion_locale:
       "Puo ya kwa tshimologong ya tlhaloso ya konokono; tlogela e lolea fela fa tlhaloso e lolea.",
+    "visitas guiadas":
+      "Gore a modiri o fana ka maeto a a kaelwang gone jaanong.",
+    "mensaje a la comunidad":
+      "Molaetsa wa phatlalatsa wa modiri o o yang kwa setšhabeng.",
+    mensaje_comunidad_locale:
+      "Puo ya kwa tshimologong ya molaetsa wa setšhaba; tlogela e lolea fela fa molaetsa o lolea.",
+    "enlace destacado 1":
+      "Kgokagano ya ntlha e e tlhagelelang ya HTTP(S), jaaka athikele ya dikgang.",
+    "enlace destacado 2":
+      "Kgokagano ya bobedi e e tlhagelelang ya HTTP(S), jaaka athikele ya dikgang.",
     direccion: "Aterese ya yuniti ya tlhagiso kgotsa lefelo la modiri.",
     horario:
       "Dipego tsa jaanong tsa go etela, go tsaya kgotsa go bulela setšhaba.",
@@ -185,6 +196,7 @@ const messages = {
     categories: "Dikgato",
     allCategories: "Tsotlhe",
     information: "Tshedimosetso",
+    expandedProfile: "Profaele e e atolositsoeng",
   },
   fieldLabels: {
     slug: "Slug",
@@ -197,6 +209,11 @@ const messages = {
     address: "Aterese",
     description: "Tlhaloso",
     descriptionLocale: "Puo ya tlhaloso",
+    guidedVisits: "Maeto a a kaelwang",
+    communityMessage: "Molaetsa kwa setšhabeng",
+    communityMessageLocale: "Puo ya molaetsa wa setšhaba",
+    highlightedLink1: "Kgokagano e e tlhagelelang 1",
+    highlightedLink2: "Kgokagano e e tlhagelelang 2",
     openingHours: "Dipego tsa go bula",
     phone: "Mogala",
     email: "Imeile",

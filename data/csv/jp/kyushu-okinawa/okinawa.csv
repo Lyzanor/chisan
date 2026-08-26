@@ -1,55 +1,55 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
-zuisen-shuzo-naha,Zuisen Shuzo,Naha,Destilados y licores,,〒903-0801 沖縄県那覇市首里末吉町4-5-16,,,+81988850121,,https://mizuhoshuzo.co.jp/,,,,26.228544,127.709335,,parcial,no comprobado,,,1400,
-shikina-shuzo-naha,Shikina Shuzo,Naha,Destilados y licores,,〒903-0813 沖縄県那覇市首里赤田町2-48,,,+81988845451,,http://www.shikinashuzo.com/,,,,26.215654,127.723625,,parcial,no comprobado,,,1091,
-ishikawa-shuzojo-nishihara,Ishikawa Shuzojo,Nishihara,Destilados y licores,,〒903-0103 沖縄県中頭郡西原町字小那覇1438-1,,,+81989453515,,http://kamejikomi.com/,,,,26.234806,127.778809,,parcial,no comprobado,,,427,
-chatan-choro-shuzo-chatan,Chatan Choro Shuzo,Chatan,Destilados y licores,,〒904-0105 沖縄県中頭郡北谷町字吉原63番地,,,+81989361239,,https://chatan-chourou.co.jp/,,,,26.314842,127.773605,,parcial,no comprobado,,,127,
-shinzato-shuzo,Shinzato Shuzo,Okinawa,Destilados y licores,,〒904-2234 沖縄県うるま市洲崎12-17,,,+81989395050,,https://shinzato-shuzo.co.jp/,,,,26.33428,127.80572,,parcial,no comprobado,,,1108,
-higa-shuzo-yomitan,Higa Shuzo,Yomitan,Destilados y licores,,〒904-0324 沖縄県中頭郡読谷村字長浜1061,,,+81989582205,,https://zanpa.co.jp/,,,,26.419283,127.735283,,parcial,no comprobado,,,313,
-kamimura-shuzo-uruma,Kamimura Shuzo,Uruma,Destilados y licores,,〒904-1114 沖縄県うるま市石川嘉手苅570,,,+81989647628,,https://kamimura-shuzo.co.jp/,,,,26.422653,127.809601,,parcial,no comprobado,,,491,
-taikoku-shuzo-uruma,Taikoku Shuzo,Uruma,Destilados y licores,,〒901-2221 沖縄県うるま市平良川90番地,,,+81989733211,,https://taikokushuzo.com/,,,,26.368769,127.85199,,parcial,no comprobado,,,1163,
-sakiyama-shuzosho-kin,Sakiyama Shuzosho,Kin,Destilados y licores,,,,,+81989682417,,https://sakiyamashuzo.jp/,,,,26.46459,127.883301,,parcial,no comprobado,,,1032,
-kin-shuzo-kin,Kin Shuzo,Kin,Destilados y licores,,〒904-1201 沖縄県国頭郡金武町金武4823-1,,,+81989682438,,https://kinsyuzo-tatsu.com/,,,,26.46773,127.916969,,parcial,no comprobado,,,574,
-onna-shuzosho-onna,Onna Shuzosho,Onna,Destilados y licores,,〒904-0411 沖縄県国頭郡恩納村恩納2690,,,+81989668105,,https://manza.jp/,,,,26.485386,127.858391,,parcial,no comprobado,,,945,
-sakimoto-shuzo-onna,Sakimoto Shuzo,Onna,Destilados y licores,,〒904-0416 沖縄県国頭郡恩納村字山田1437-1,,,+81989630208,,https://sakimoto-awamori.com/,,,,26.428755,127.781441,,parcial,no comprobado,,,1031,
-ryusen-shuzo-nago,Ryusen Shuzo,Nago,Destilados y licores,,〒905-1144 沖縄県名護市字仲尾次222,,,+81980582401,,http://ryusen.co.jp/,,,,26.626379,128.028793,,parcial,no comprobado,,,1014,
-tsukayama-shuzosho-nago,Tsukayama Shuzosho,Nago,Destilados y licores,,〒905-0017 沖縄県名護市大中1-14-6,,,+81980522070,,https://awamori-kokka.co.jp/,,,,26.591331,127.983109,,parcial,no comprobado,,,1271,
-helios-shuzo-nago,Helios Shuzo,Nago,Destilados y licores,,沖縄県名護市字許田405,,,+81980523372,,http://www.helios-syuzo.co.jp/,,,,26.538204,127.962738,,parcial,no comprobado,,,309,
-yamakawa-shuzo-motobu,Yamakawa Shuzo,Motobu,Destilados y licores,,〒905-0222 沖縄県国頭郡本部町字並里58,,,+81980472136,,https://yamakawashuzo.com/,,,,26.659473,127.92289,,parcial,no comprobado,,,1348,
-nakijin-shuzo-nakijin,Nakijin Shuzo,Nakijin,Destilados y licores,,〒905-0401 沖縄県国頭郡今帰仁村字仲宗根500,,,+81980562611,,https://nakijinshuzo.jp/,,,,26.688717,127.97554,,parcial,no comprobado,,,833,
-yanbaru-shuzo-ogimi,Yanbaru Shuzo,Ogimi,Destilados y licores,,,,,+81980443297,,http://takazato-maruta.jp/,,,,26.697727,128.181137,,parcial,no comprobado,,,1365,
-izena-shuzosho-izena,Izena Shuzosho,Izena,Destilados y licores,,〒905-0604 沖縄県島尻郡伊是名村伊是名736,,,+81980452089,,https://izenasyuzousyo.com/,,,,26.920258,127.932434,,parcial,no comprobado,,,458,
-iheya-shuzo-iheya,Iheya Shuzo,Iheya,Destilados y licores,,沖縄県島尻郡伊平屋村字我喜屋2131-40,,,+81980462008,,https://iheya-distillery.co.jp/,,,,27.036224,127.956802,,parcial,no comprobado,,,363,
-aragusa-farm-yaese,Aragusa Farm,Yaese,Fruta y verdura,Organic vegetables,沖縄県島尻郡八重瀬町東風平字宜次218-1　他,Aragusa Farm produces organic vegetables at its Yaese unit.,,+81989988914,,https://r.goope.jp/sr-47-473621s0012/,,,,26.152086,127.721199,,verificado,no comprobado,,,65,en
-niijima-farm-nishihara,Niijima Farm,Nishihara,Fruta y verdura,Organic vegetables,沖縄県中頭郡西原町字我謝前川256-1，257-1他,Niijima Farm produces organic vegetables at its Nishihara unit.,,,,https://mi-jimafarm.stores.jp/about,,,,26.215469,127.758080,,verificado,sí,ecommerce,,857,en
-cheeseanista,Cheeseanista,Okinawa,Lácteos y quesos,"Marinated Yomitan tyri, Katiki tyri, Little GREEK tyri Truffle",沖縄県沖縄市久保田3-1-9 プラザハウスショッピングセンター,Produces cheese and dairy products at its Okinawa unit.,,,,https://www.cheeseanista.shop/,,,,26.334280,127.805720,,verificado,sí,ecommerce,,130,en
-tabechoku-29559,グインのアーサ,Izena,Pescado,,,Produces fish and seafood at its Izena unit.,,,,,,,,26.928330,127.941220,,parcial,sí,marketplace,,1772,en
-tabechoku-22732,INOCCHIのもずく屋本舗,Miyakojima,Pescado,,,INOCCHIのもずく屋本舗 produces fish and seafood at its Miyakojima unit.,,,,,,,,24.790060,125.294890,,parcial,sí,marketplace,,406,en
-tabechoku-22102,我那覇畜産,Nago,Carne,,,Produces meat at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,,2531,en
-tabechoku-21722,命豚ふぁーむ,Okinawa,Carne,,,Produces meat at its Okinawa unit.,,,,,,,,26.334280,127.805720,,parcial,sí,marketplace,,2259,en
-tabechoku-22681,シークヮーサーショップ,Ogimi,Condimentos,味噌,,Produces miso at its Ogimi unit.,,,,,,,,26.701690,128.120310,,parcial,sí,marketplace,,1812,en
-tabechoku-22647,南の島の恵み農園,Onna,Pan y cereal,そば,,Produces soba at its Onna unit.,,,,,,,,26.497390,127.853640,,parcial,sí,marketplace,,2219,en
-tabechoku-22949,久米島赤鶏牧場,Kumejima,Carne,,,Produces meat at its Kumejima unit.,,,,,,,,26.340690,126.804940,,parcial,sí,marketplace,,2103,en
-tabechoku-28702,志慶真ファーム,Nakijin,Fruta y verdura,,,志慶真ファーム produces fruit and vegetables at its Nakijin unit.,,,,,,,,26.682500,127.972780,,parcial,sí,marketplace,,2522,en
-tabechoku-24535,てぃーだふぁーむ,Nakijin,Fruta y verdura,,,てぃーだふぁーむ produces fruit and vegetables at its Nakijin unit.,,,,,,,,26.682500,127.972780,,parcial,sí,marketplace,,1561,en
-tabechoku-21170,伊集農園,Yaese,Fruta y verdura,"マンゴー, 野菜",,Produces mangoes and vegetables at its Yaese unit.,,,,,,,,26.158190,127.718610,,parcial,sí,marketplace,,2140,en
-tabechoku-24047,みやぎ農園青果物出荷組合,Nanjō-shi,Fruta y verdura,"野菜, 卵",,Produces vegetables and eggs at its Nanjō-shi unit.,,,,,,,,26.163330,127.770560,,parcial,sí,marketplace,,1646,en
-tabechoku-28883,自然農園 MONSOON FARM & MUSIC,Nanjō-shi,Fruta y verdura,,,Produces fruit and vegetables at its Nanjō-shi unit.,,,,,,,,26.163330,127.770560,,parcial,sí,marketplace,,3082,en
-tabechoku-22246,INAHO FARM,Nago,Fruta y verdura,米,,Produces rice at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,Miel|Pan y cereal|Lácteos y quesos,400,en
-tabechoku-28574,ふるさとマンゴー農園,Nago,Fruta y verdura,マンゴー,,Produces mangoes at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,,1615,en
-tabechoku-26275,イナミファーム,Nago,Fruta y verdura,,,Produces fruit and vegetables at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,,1718,en
-tabechoku-26913,石垣島新鮮野菜きまぐれ〜kimagure〜,Ishigaki,Fruta y verdura,マンゴー,,Produces mangoes at its Ishigaki unit.,,,,,,,,24.344500,124.185250,,parcial,sí,marketplace,,2975,en
-tabechoku-25055,西表ジャングルファーム,Taketomi,Fruta y verdura,,,Produces fruit and vegetables at its Taketomi unit.,,,,,,,,24.339670,124.154360,,parcial,sí,marketplace,,3151,en
-tabechoku-21135,海ぶどう屋さん 富永養殖,Itoman,Fruta y verdura,ぶどう,,Produces grapes at its Itoman unit.,,,,,,,,26.123500,127.665780,,parcial,sí,marketplace,,2882,en
-tabechoku-3078505,畑人,Itoman,Fruta y verdura,野菜,,Produces vegetables at its Itoman unit.,,,,,,,,26.123500,127.665780,,parcial,sí,marketplace,,2952,en
-tabechoku-20922,久米総合開発,Kumejima,Pescado,海老,,Produces shrimp at its Kumejima unit.,,,,,,,,26.340690,126.804940,,parcial,sí,marketplace,,2105,en
-tabechoku-27313,みーぐる工房,Ie,Condimentos,天然塩,,Produces sea salt at its Ie unit.,,,,https://www.yumikof1009.com/,,,,26.713500,127.807060,,verificado,sí,ecommerce|marketplace,,1654,en
-tabechoku-26548,新鮮組,Miyakojima,Pescado,,,新鮮組 produces fish and seafood at its Miyakojima unit.,,,,,,,,24.790060,125.294890,,parcial,sí,marketplace,,2558,en
-jp-okinawa-yonaha-co-4be2364,与那覇食品,西原町,Pan y cereal,乾麺,,"Produces dried noodles in 西原町, okinawa.",,,,https://yonaha.co.jp/,,,,26.222780,127.758890,,verificado,sí,ecommerce,,2043,en
-jp-okinawa-mozukuudon-62e57f2,セイワ食品,浦添市,Pan y cereal,乾麺,,"Produces dried noodles in 浦添市, okinawa.",,,,https://mozukuudon.com/,,,,26.245690,127.721860,,verificado,sí,ecommerce,,1816,en
-jp-okinawa-nishizakimen-4b8b24e,西崎製麺所,糸満市,Pan y cereal,乾麺,,"Produces dried noodles in 糸満市, okinawa.",,,,https://www.nishizakimen.com/,,,,26.123500,127.665780,,verificado,no comprobado,,,3141,en
-miyakojima-cheese-factory,宮古島チーズ工房,Miyakojima,Lácteos y quesos,"モッツァレラ, カマンベール, ブルーチーズ",宮古島市城辺字保良344-9,"Makes a broad range of cheeses from Miyakojima milk, including fresh, washed-rind, blue and semi-hard styles.",土・日 10:00-15:00,+81980778064,,https://okinawa.miyakojima-cheese.jp/,,,,24.790060,125.294890,,verificado,sí,ecommerce,,2375,en
-ishigaki-island-beer,石垣島ビール,Ishigaki,Cerveza,クラフトビール,石垣市新川2094-4,Brewery founded in 1994 that makes Ishigaki craft beer.,平日 10:00-17:00,+81980830202,info@ishigakibeer.com,https://ishigakibeer.com/,,,,24.344500,124.185250,,verificado,no comprobado,,,2974,en
-chatan-harbor-brewery,CHATAN HARBOR BREWERY,Chatan,Cerveza,,美浜53-1,Brewery producing beer at its Chatan unit.,,,,https://www.chatanharbor.jp/,,https://www.instagram.com/chatanharbor/,,26.32003,127.76386,,parcial,no comprobado,,,128,en
-okinawa-sango-beer,南都酒造所 (OKINAWA SANGO BEER),Nanjo,Cerveza,,玉城字前川1336,Brewery producing beer at its Nanjo unit.,,,,https://www.nantosyuzo.com/,,https://www.instagram.com/okinawaworld_nantosyuzo/,,26.16333,127.77056,,parcial,no comprobado,,,2225,en
-helios-craft-beer,ヘリオス酒造 (Helios Craft Beer),Nago,Cerveza,,字許田405,Brewery producing beer at its Nago unit.,,,,,,https://www.instagram.com/helios_syuzo/,,26.59156,127.97756,,parcial,no comprobado,,,1920,en
-cliff-garo-brewing,CLIFF GARO BREWING (クリフビール),Okinawa,Cerveza,,高原2-18-10,Brewery producing beer at its Okinawa unit.,,,,,,https://www.instagram.com/cliff_garo_brewing/,,26.33428,127.80572,,parcial,no comprobado,,,148,en
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
+zuisen-shuzo-naha,Zuisen Shuzo,Naha,Destilados y licores,,〒903-0801 沖縄県那覇市首里末吉町4-5-16,,,+81988850121,,https://mizuhoshuzo.co.jp/,,,,26.228544,127.709335,,parcial,no comprobado,,,1400,,,,,,
+shikina-shuzo-naha,Shikina Shuzo,Naha,Destilados y licores,,〒903-0813 沖縄県那覇市首里赤田町2-48,,,+81988845451,,http://www.shikinashuzo.com/,,,,26.215654,127.723625,,parcial,no comprobado,,,1091,,,,,,
+ishikawa-shuzojo-nishihara,Ishikawa Shuzojo,Nishihara,Destilados y licores,,〒903-0103 沖縄県中頭郡西原町字小那覇1438-1,,,+81989453515,,http://kamejikomi.com/,,,,26.234806,127.778809,,parcial,no comprobado,,,427,,,,,,
+chatan-choro-shuzo-chatan,Chatan Choro Shuzo,Chatan,Destilados y licores,,〒904-0105 沖縄県中頭郡北谷町字吉原63番地,,,+81989361239,,https://chatan-chourou.co.jp/,,,,26.314842,127.773605,,parcial,no comprobado,,,127,,,,,,
+shinzato-shuzo,Shinzato Shuzo,Okinawa,Destilados y licores,,〒904-2234 沖縄県うるま市洲崎12-17,,,+81989395050,,https://shinzato-shuzo.co.jp/,,,,26.33428,127.80572,,parcial,no comprobado,,,1108,,,,,,
+higa-shuzo-yomitan,Higa Shuzo,Yomitan,Destilados y licores,,〒904-0324 沖縄県中頭郡読谷村字長浜1061,,,+81989582205,,https://zanpa.co.jp/,,,,26.419283,127.735283,,parcial,no comprobado,,,313,,,,,,
+kamimura-shuzo-uruma,Kamimura Shuzo,Uruma,Destilados y licores,,〒904-1114 沖縄県うるま市石川嘉手苅570,,,+81989647628,,https://kamimura-shuzo.co.jp/,,,,26.422653,127.809601,,parcial,no comprobado,,,491,,,,,,
+taikoku-shuzo-uruma,Taikoku Shuzo,Uruma,Destilados y licores,,〒901-2221 沖縄県うるま市平良川90番地,,,+81989733211,,https://taikokushuzo.com/,,,,26.368769,127.85199,,parcial,no comprobado,,,1163,,,,,,
+sakiyama-shuzosho-kin,Sakiyama Shuzosho,Kin,Destilados y licores,,,,,+81989682417,,https://sakiyamashuzo.jp/,,,,26.46459,127.883301,,parcial,no comprobado,,,1032,,,,,,
+kin-shuzo-kin,Kin Shuzo,Kin,Destilados y licores,,〒904-1201 沖縄県国頭郡金武町金武4823-1,,,+81989682438,,https://kinsyuzo-tatsu.com/,,,,26.46773,127.916969,,parcial,no comprobado,,,574,,,,,,
+onna-shuzosho-onna,Onna Shuzosho,Onna,Destilados y licores,,〒904-0411 沖縄県国頭郡恩納村恩納2690,,,+81989668105,,https://manza.jp/,,,,26.485386,127.858391,,parcial,no comprobado,,,945,,,,,,
+sakimoto-shuzo-onna,Sakimoto Shuzo,Onna,Destilados y licores,,〒904-0416 沖縄県国頭郡恩納村字山田1437-1,,,+81989630208,,https://sakimoto-awamori.com/,,,,26.428755,127.781441,,parcial,no comprobado,,,1031,,,,,,
+ryusen-shuzo-nago,Ryusen Shuzo,Nago,Destilados y licores,,〒905-1144 沖縄県名護市字仲尾次222,,,+81980582401,,http://ryusen.co.jp/,,,,26.626379,128.028793,,parcial,no comprobado,,,1014,,,,,,
+tsukayama-shuzosho-nago,Tsukayama Shuzosho,Nago,Destilados y licores,,〒905-0017 沖縄県名護市大中1-14-6,,,+81980522070,,https://awamori-kokka.co.jp/,,,,26.591331,127.983109,,parcial,no comprobado,,,1271,,,,,,
+helios-shuzo-nago,Helios Shuzo,Nago,Destilados y licores,,沖縄県名護市字許田405,,,+81980523372,,http://www.helios-syuzo.co.jp/,,,,26.538204,127.962738,,parcial,no comprobado,,,309,,,,,,
+yamakawa-shuzo-motobu,Yamakawa Shuzo,Motobu,Destilados y licores,,〒905-0222 沖縄県国頭郡本部町字並里58,,,+81980472136,,https://yamakawashuzo.com/,,,,26.659473,127.92289,,parcial,no comprobado,,,1348,,,,,,
+nakijin-shuzo-nakijin,Nakijin Shuzo,Nakijin,Destilados y licores,,〒905-0401 沖縄県国頭郡今帰仁村字仲宗根500,,,+81980562611,,https://nakijinshuzo.jp/,,,,26.688717,127.97554,,parcial,no comprobado,,,833,,,,,,
+yanbaru-shuzo-ogimi,Yanbaru Shuzo,Ogimi,Destilados y licores,,,,,+81980443297,,http://takazato-maruta.jp/,,,,26.697727,128.181137,,parcial,no comprobado,,,1365,,,,,,
+izena-shuzosho-izena,Izena Shuzosho,Izena,Destilados y licores,,〒905-0604 沖縄県島尻郡伊是名村伊是名736,,,+81980452089,,https://izenasyuzousyo.com/,,,,26.920258,127.932434,,parcial,no comprobado,,,458,,,,,,
+iheya-shuzo-iheya,Iheya Shuzo,Iheya,Destilados y licores,,沖縄県島尻郡伊平屋村字我喜屋2131-40,,,+81980462008,,https://iheya-distillery.co.jp/,,,,27.036224,127.956802,,parcial,no comprobado,,,363,,,,,,
+aragusa-farm-yaese,Aragusa Farm,Yaese,Fruta y verdura,Organic vegetables,沖縄県島尻郡八重瀬町東風平字宜次218-1　他,Aragusa Farm produces organic vegetables at its Yaese unit.,,+81989988914,,https://r.goope.jp/sr-47-473621s0012/,,,,26.152086,127.721199,,verificado,no comprobado,,,65,en,,,,,
+niijima-farm-nishihara,Niijima Farm,Nishihara,Fruta y verdura,Organic vegetables,沖縄県中頭郡西原町字我謝前川256-1，257-1他,Niijima Farm produces organic vegetables at its Nishihara unit.,,,,https://mi-jimafarm.stores.jp/about,,,,26.215469,127.758080,,verificado,sí,ecommerce,,857,en,,,,,
+cheeseanista,Cheeseanista,Okinawa,Lácteos y quesos,"Marinated Yomitan tyri, Katiki tyri, Little GREEK tyri Truffle",沖縄県沖縄市久保田3-1-9 プラザハウスショッピングセンター,Produces cheese and dairy products at its Okinawa unit.,,,,https://www.cheeseanista.shop/,,,,26.334280,127.805720,,verificado,sí,ecommerce,,130,en,,,,,
+tabechoku-29559,グインのアーサ,Izena,Pescado,,,Produces fish and seafood at its Izena unit.,,,,,,,,26.928330,127.941220,,parcial,sí,marketplace,,1772,en,,,,,
+tabechoku-22732,INOCCHIのもずく屋本舗,Miyakojima,Pescado,,,INOCCHIのもずく屋本舗 produces fish and seafood at its Miyakojima unit.,,,,,,,,24.790060,125.294890,,parcial,sí,marketplace,,406,en,,,,,
+tabechoku-22102,我那覇畜産,Nago,Carne,,,Produces meat at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,,2531,en,,,,,
+tabechoku-21722,命豚ふぁーむ,Okinawa,Carne,,,Produces meat at its Okinawa unit.,,,,,,,,26.334280,127.805720,,parcial,sí,marketplace,,2259,en,,,,,
+tabechoku-22681,シークヮーサーショップ,Ogimi,Condimentos,味噌,,Produces miso at its Ogimi unit.,,,,,,,,26.701690,128.120310,,parcial,sí,marketplace,,1812,en,,,,,
+tabechoku-22647,南の島の恵み農園,Onna,Pan y cereal,そば,,Produces soba at its Onna unit.,,,,,,,,26.497390,127.853640,,parcial,sí,marketplace,,2219,en,,,,,
+tabechoku-22949,久米島赤鶏牧場,Kumejima,Carne,,,Produces meat at its Kumejima unit.,,,,,,,,26.340690,126.804940,,parcial,sí,marketplace,,2103,en,,,,,
+tabechoku-28702,志慶真ファーム,Nakijin,Fruta y verdura,,,志慶真ファーム produces fruit and vegetables at its Nakijin unit.,,,,,,,,26.682500,127.972780,,parcial,sí,marketplace,,2522,en,,,,,
+tabechoku-24535,てぃーだふぁーむ,Nakijin,Fruta y verdura,,,てぃーだふぁーむ produces fruit and vegetables at its Nakijin unit.,,,,,,,,26.682500,127.972780,,parcial,sí,marketplace,,1561,en,,,,,
+tabechoku-21170,伊集農園,Yaese,Fruta y verdura,"マンゴー, 野菜",,Produces mangoes and vegetables at its Yaese unit.,,,,,,,,26.158190,127.718610,,parcial,sí,marketplace,,2140,en,,,,,
+tabechoku-24047,みやぎ農園青果物出荷組合,Nanjō-shi,Fruta y verdura,"野菜, 卵",,Produces vegetables and eggs at its Nanjō-shi unit.,,,,,,,,26.163330,127.770560,,parcial,sí,marketplace,,1646,en,,,,,
+tabechoku-28883,自然農園 MONSOON FARM & MUSIC,Nanjō-shi,Fruta y verdura,,,Produces fruit and vegetables at its Nanjō-shi unit.,,,,,,,,26.163330,127.770560,,parcial,sí,marketplace,,3082,en,,,,,
+tabechoku-22246,INAHO FARM,Nago,Fruta y verdura,米,,Produces rice at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,Miel|Pan y cereal|Lácteos y quesos,400,en,,,,,
+tabechoku-28574,ふるさとマンゴー農園,Nago,Fruta y verdura,マンゴー,,Produces mangoes at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,,1615,en,,,,,
+tabechoku-26275,イナミファーム,Nago,Fruta y verdura,,,Produces fruit and vegetables at its Nago unit.,,,,,,,,26.591560,127.977560,,parcial,sí,marketplace,,1718,en,,,,,
+tabechoku-26913,石垣島新鮮野菜きまぐれ〜kimagure〜,Ishigaki,Fruta y verdura,マンゴー,,Produces mangoes at its Ishigaki unit.,,,,,,,,24.344500,124.185250,,parcial,sí,marketplace,,2975,en,,,,,
+tabechoku-25055,西表ジャングルファーム,Taketomi,Fruta y verdura,,,Produces fruit and vegetables at its Taketomi unit.,,,,,,,,24.339670,124.154360,,parcial,sí,marketplace,,3151,en,,,,,
+tabechoku-21135,海ぶどう屋さん 富永養殖,Itoman,Fruta y verdura,ぶどう,,Produces grapes at its Itoman unit.,,,,,,,,26.123500,127.665780,,parcial,sí,marketplace,,2882,en,,,,,
+tabechoku-3078505,畑人,Itoman,Fruta y verdura,野菜,,Produces vegetables at its Itoman unit.,,,,,,,,26.123500,127.665780,,parcial,sí,marketplace,,2952,en,,,,,
+tabechoku-20922,久米総合開発,Kumejima,Pescado,海老,,Produces shrimp at its Kumejima unit.,,,,,,,,26.340690,126.804940,,parcial,sí,marketplace,,2105,en,,,,,
+tabechoku-27313,みーぐる工房,Ie,Condimentos,天然塩,,Produces sea salt at its Ie unit.,,,,https://www.yumikof1009.com/,,,,26.713500,127.807060,,verificado,sí,ecommerce|marketplace,,1654,en,,,,,
+tabechoku-26548,新鮮組,Miyakojima,Pescado,,,新鮮組 produces fish and seafood at its Miyakojima unit.,,,,,,,,24.790060,125.294890,,parcial,sí,marketplace,,2558,en,,,,,
+jp-okinawa-yonaha-co-4be2364,与那覇食品,西原町,Pan y cereal,乾麺,,"Produces dried noodles in 西原町, okinawa.",,,,https://yonaha.co.jp/,,,,26.222780,127.758890,,verificado,sí,ecommerce,,2043,en,,,,,
+jp-okinawa-mozukuudon-62e57f2,セイワ食品,浦添市,Pan y cereal,乾麺,,"Produces dried noodles in 浦添市, okinawa.",,,,https://mozukuudon.com/,,,,26.245690,127.721860,,verificado,sí,ecommerce,,1816,en,,,,,
+jp-okinawa-nishizakimen-4b8b24e,西崎製麺所,糸満市,Pan y cereal,乾麺,,"Produces dried noodles in 糸満市, okinawa.",,,,https://www.nishizakimen.com/,,,,26.123500,127.665780,,verificado,no comprobado,,,3141,en,,,,,
+miyakojima-cheese-factory,宮古島チーズ工房,Miyakojima,Lácteos y quesos,"モッツァレラ, カマンベール, ブルーチーズ",宮古島市城辺字保良344-9,"Makes a broad range of cheeses from Miyakojima milk, including fresh, washed-rind, blue and semi-hard styles.",土・日 10:00-15:00,+81980778064,,https://okinawa.miyakojima-cheese.jp/,,,,24.790060,125.294890,,verificado,sí,ecommerce,,2375,en,,,,,
+ishigaki-island-beer,石垣島ビール,Ishigaki,Cerveza,クラフトビール,石垣市新川2094-4,Brewery founded in 1994 that makes Ishigaki craft beer.,平日 10:00-17:00,+81980830202,info@ishigakibeer.com,https://ishigakibeer.com/,,,,24.344500,124.185250,,verificado,no comprobado,,,2974,en,,,,,
+chatan-harbor-brewery,CHATAN HARBOR BREWERY,Chatan,Cerveza,,美浜53-1,Brewery producing beer at its Chatan unit.,,,,https://www.chatanharbor.jp/,,https://www.instagram.com/chatanharbor/,,26.32003,127.76386,,parcial,no comprobado,,,128,en,,,,,
+okinawa-sango-beer,南都酒造所 (OKINAWA SANGO BEER),Nanjo,Cerveza,,玉城字前川1336,Brewery producing beer at its Nanjo unit.,,,,https://www.nantosyuzo.com/,,https://www.instagram.com/okinawaworld_nantosyuzo/,,26.16333,127.77056,,parcial,no comprobado,,,2225,en,,,,,
+helios-craft-beer,ヘリオス酒造 (Helios Craft Beer),Nago,Cerveza,,字許田405,Brewery producing beer at its Nago unit.,,,,,,https://www.instagram.com/helios_syuzo/,,26.59156,127.97756,,parcial,no comprobado,,,1920,en,,,,,
+cliff-garo-brewing,CLIFF GARO BREWING (クリフビール),Okinawa,Cerveza,,高原2-18-10,Brewery producing beer at its Okinawa unit.,,,,,,https://www.instagram.com/cliff_garo_brewing/,,26.33428,127.80572,,parcial,no comprobado,,,148,en,,,,,

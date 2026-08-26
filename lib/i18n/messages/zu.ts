@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "Susa kokuthandwayo",
     saveFavorite: "Londoloza kokuthandwayo",
     editMyProfile: "Hlela iphrofayela yami",
+    expandProfile: "Nweba iphrofayela",
     ownershipVerified: "Ubunikazi buqinisekisiwe",
     viewOwnershipClaim: "Buka isimangalo sobunikazi",
     claimProducer: "Faka isimangalo ngalo mkhiqizi",
@@ -58,6 +59,16 @@ const messages = {
       "Ulwazi oluyiqiniso ngomkhiqizi, ngaphandle kwezimangalo zokukhangisa.",
     descripcion_locale:
       "Ulimi lomthombo lwencazelo eyinhloko; kushiye kungenalutho kuphela uma incazelo ingenalutho.",
+    "visitas guiadas":
+      "Ukuthi umkhiqizi uyakunikeza yini ukuvakasha okuholwayo njengamanje.",
+    "mensaje a la comunidad":
+      "Umlayezo womkhiqizi obhekiswe emphakathini.",
+    mensaje_comunidad_locale:
+      "Ulimi lomthombo lomlayezo womphakathi; lushiye lungenalutho kuphela uma umlayezo ungenalutho.",
+    "enlace destacado 1":
+      "Isixhumanisi sokuqala esengeziwe esigqanyisiwe se-HTTP(S), njengodaba lwezindaba.",
+    "enlace destacado 2":
+      "Isixhumanisi sesibili esengeziwe esigqanyisiwe se-HTTP(S), njengodaba lwezindaba.",
     direccion: "Ikheli leyunithi yokukhiqiza noma lendawo ebhekene nomkhiqizi.",
     horario: "Amahora amanje okuvakashela, okuqoqa noma okuvulela umphakathi.",
     telefono: "Ifomethi yamazwe ngamazwe i-E.164, isibonelo +34600112233.",
@@ -183,6 +194,7 @@ const messages = {
     categories: "Izigaba",
     allCategories: "Konke",
     information: "Ulwazi",
+    expandedProfile: "Iphrofayela enwetshiwe",
   },
   fieldLabels: {
     slug: "Slug",
@@ -195,6 +207,11 @@ const messages = {
     address: "Ikheli",
     description: "Incazelo",
     descriptionLocale: "Ulimi lwencazelo",
+    guidedVisits: "Ukuvakasha okuholwayo",
+    communityMessage: "Umlayezo emphakathini",
+    communityMessageLocale: "Ulimi lomlayezo womphakathi",
+    highlightedLink1: "Isixhumanisi esigqanyisiwe 1",
+    highlightedLink2: "Isixhumanisi esigqanyisiwe 2",
     openingHours: "Amahora okuvula",
     phone: "Ucingo",
     email: "I-imeyili",

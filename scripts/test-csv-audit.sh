@@ -35,14 +35,30 @@ prepare_fixture_identity() {
 const crypto = require("node:crypto");
 const fs = require("node:fs");
 const { parse } = require("csv-parse/sync");
+const { stringify } = require("csv-stringify/sync");
 
 const file = process.argv[2];
 const canonicalColumns = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
 const canonical = canonicalColumns.join(",");
-const shortHeader = canonicalColumns.slice(0, -1).join(",");
+const producerIdIndex = canonicalColumns.indexOf("producer_id");
+const descriptionLocaleIndex = canonicalColumns.indexOf("descripcion_locale");
+const identityHeader = canonicalColumns.slice(0, producerIdIndex + 1).join(",");
+const descriptionLocaleHeader = canonicalColumns.slice(0, descriptionLocaleIndex + 1).join(",");
 const raw = fs.readFileSync(file, "utf8");
-const lines = raw.split("\n");
-if (raw.startsWith("\uFEFF") || raw.includes("\r") || ![canonical, shortHeader].includes(lines[0])) {
+const firstLine = raw.split("\n", 1)[0];
+if (
+  raw.startsWith("\uFEFF") ||
+  raw.includes("\r") ||
+  ![canonical, identityHeader, descriptionLocaleHeader].includes(firstLine)
+) {
+  process.exit(0);
+}
+
+let records;
+try {
+  records = parse(raw, { relax_column_count: true });
+} catch {
+  // Leave intentionally malformed CSV untouched so audit-csv reports it.
   process.exit(0);
 }
 
@@ -50,23 +66,25 @@ const base = Number.parseInt(
   crypto.createHash("sha256").update(file).digest("hex").slice(0, 10),
   16,
 ) * 1000;
-let changed = lines[0] === shortHeader;
-lines[0] = canonical;
-for (let index = 1; index < lines.length; index += 1) {
-  if (!lines[index]) continue;
-  const cells = parse(lines[index], { relax_column_count: true })[0];
-  if (cells.length === canonicalColumns.length - 2) {
-    lines[index] += `,${base + index}`;
+let changed = firstLine !== canonical;
+records[0] = [...canonicalColumns];
+for (let index = 1; index < records.length; index += 1) {
+  const cells = records[index];
+  if (cells.length === producerIdIndex) {
     cells.push(String(base + index));
     changed = true;
   }
-  if (cells.length === canonicalColumns.length - 1) {
+  if (cells.length === descriptionLocaleIndex) {
     const description = String(cells[canonicalColumns.indexOf("descripcion")] ?? "").trim();
-    lines[index] += `,${description ? "es" : ""}`;
+    cells.push(description ? "es" : "");
+    changed = true;
+  }
+  while (cells.length < canonicalColumns.length) {
+    cells.push("");
     changed = true;
   }
 }
-if (changed) fs.writeFileSync(file, lines.join("\n"));
+if (changed) fs.writeFileSync(file, stringify(records));
 NODE
   done
 }
@@ -697,12 +715,14 @@ prepare_fixture_identity \
   git commit -qm baseline
   node - <<'NODE'
 const fs = require("node:fs");
+const { parse } = require("csv-parse/sync");
+const { stringify } = require("csv-stringify/sync");
 const file = "data/csv/es/two/two.csv";
-const raw = fs.readFileSync(file, "utf8");
-fs.writeFileSync(
-  file,
-  raw.replace("changed-producer", "stable-producer").replace(",2,es\n", ",1,es\n"),
-);
+const records = parse(fs.readFileSync(file, "utf8"));
+const header = records[0];
+records[1][header.indexOf("slug")] = "stable-producer";
+records[1][header.indexOf("producer_id")] = "1";
+fs.writeFileSync(file, stringify(records));
 NODE
 )
 run_expect_failure "$TMP_DIR/out-changed-country-collision.txt" \
@@ -1086,6 +1106,139 @@ run_expect_success "$TMP_DIR/out-description-locale-empty.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-empty.csv"
 run_expect_success "$TMP_DIR/out-description-locale-source-only.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-source-only.csv"
+
+# Premium profile fields keep their controlled tokens, locale pairing, Unicode
+# ceiling and highlighted-link ordering inside the canonical CSV contract.
+node - "$TMP_DIR/premium-fields-valid.csv" "$TMP_DIR/premium-fields-invalid.csv" <<'NODE'
+const fs = require("node:fs");
+const { stringify } = require("csv-stringify/sync");
+const header = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
+const makeRow = (producerId, overrides = {}) => ({
+  slug: `premium-${producerId}`,
+  nombre: `Premium ${producerId}`,
+  municipio: "Abrera",
+  categoria: "Miel",
+  verificacion: "pendiente",
+  "Venta online": "no comprobado",
+  producer_id: String(producerId),
+  ...overrides,
+});
+const record = (row) => header.map((column) => row[column] ?? "");
+fs.writeFileSync(
+  process.argv[2],
+  stringify([
+    header,
+    record(
+      makeRow(93001, {
+        "visitas guiadas": "sí",
+        "mensaje a la comunidad": "🍯".repeat(1000),
+        mensaje_comunidad_locale: "es",
+        "enlace destacado 1": "http://example.com/prensa",
+        "enlace destacado 2": "https://example.com/entrevista",
+      }),
+    ),
+    record(
+      makeRow(93002, {
+        "visitas guiadas": "no",
+        "mensaje a la comunidad": "Primera línea.  Dos espacios.\nSegunda línea.",
+        mensaje_comunidad_locale: "es",
+      }),
+    ),
+  ]),
+);
+fs.writeFileSync(
+  process.argv[3],
+  stringify([
+    header,
+    record(makeRow(93003, { "visitas guiadas": "Sí" })),
+    record(
+      makeRow(93004, {
+        "mensaje a la comunidad": "Mensaje sin idioma de origen.",
+      }),
+    ),
+    record(makeRow(93005, { mensaje_comunidad_locale: "es" })),
+    record(
+      makeRow(93006, {
+        "mensaje a la comunidad": "🍯".repeat(1001),
+        mensaje_comunidad_locale: "es",
+      }),
+    ),
+    record(
+      makeRow(93007, {
+        "enlace destacado 1": "ftp://example.com/prensa",
+      }),
+    ),
+    record(
+      makeRow(93008, {
+        "enlace destacado 2": "https://example.com/entrevista",
+      }),
+    ),
+    record(
+      makeRow(93009, {
+        "enlace destacado 1": "https://example.com/reportaje",
+        "enlace destacado 2": "https://example.com/reportaje",
+      }),
+    ),
+    record(
+      makeRow(93010, {
+        "mensaje a la comunidad": "=SUM(A1:A2)",
+        mensaje_comunidad_locale: "es",
+      }),
+    ),
+    record(
+      makeRow(93011, {
+        "enlace destacado 1": "https://reporter:secret@example.com/reportaje",
+      }),
+    ),
+    record(
+      makeRow(93012, {
+        "mensaje a la comunidad": `A${" ".repeat(999)}B`,
+        mensaje_comunidad_locale: "es",
+      }),
+    ),
+    record(
+      makeRow(93013, {
+        "enlace destacado 1": "https://example.com",
+        "enlace destacado 2": "https://example.com/",
+      }),
+    ),
+    record(
+      makeRow(93014, {
+        "mensaje a la comunidad": "<nav>Inicio</nav> Mensaje del productor.",
+        mensaje_comunidad_locale: "es",
+      }),
+    ),
+  ]),
+);
+NODE
+run_expect_success "$TMP_DIR/out-premium-fields-valid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/premium-fields-valid.csv"
+run_expect_failure "$TMP_DIR/out-premium-fields-invalid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/premium-fields-invalid.csv"
+grep -q "visitas guiadas must be empty, 'sí' or 'no'" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "non-empty mensaje a la comunidad requires mensaje_comunidad_locale to be one of:" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "empty mensaje a la comunidad requires empty mensaje_comunidad_locale" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "mensaje a la comunidad must be at most 1000 Unicode characters; found 1001" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+test "$(grep -c "mensaje a la comunidad must be at most 1000 Unicode characters; found 1001" \
+  "$TMP_DIR/out-premium-fields-invalid.txt")" -eq 2
+grep -q "mensaje a la comunidad cannot start with a spreadsheet formula marker" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "mensaje a la comunidad contains HTML copied from a source page" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "enlace destacado 1: must use http or https" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "enlace destacado 1: must not include embedded credentials" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "enlace destacado 2 requires enlace destacado 1" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "enlace destacado 1 and enlace destacado 2 must be different" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+test "$(grep -c "enlace destacado 1 and enlace destacado 2 must be different" \
+  "$TMP_DIR/out-premium-fields-invalid.txt")" -eq 2
 
 (cd "$ROOT_DIR" && node_modules/.bin/tsx --test scripts/test-i18n.ts)
 

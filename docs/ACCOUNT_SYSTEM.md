@@ -8,7 +8,8 @@ Chisan has two persistence domains with an explicit boundary:
   publishes a database overlay over a CSV row.
 - PostgreSQL is canonical for accounts, external identities, favorites,
   producer claims, producer memberships, change requests, audit events and
-  future entitlements.
+  entitlements, including the commercial request state for expanded producer
+  profiles. It never stores a second copy of public producer facts.
 - Clerk owns credentials, verified sign-in identifiers and sessions. A Clerk
   subject is linked to an internal user through `auth_identities`; email is
   never an authorization key.
@@ -46,12 +47,16 @@ editorial operator materializes into Git.
 ## Current scope
 
 The production release includes local profiles, favorites, manual ownership
-claims, owner memberships, staff review and reviewed producer-change requests.
-Profile kind is assigned by the account workflow rather than chosen by the
-user. The schema also reserves entitlements and editor memberships for future
-growth, but there is no billing, custom-map purchase, self-service team
-invitation, private document upload or self-service Chisan account-erasure flow
-yet. Do not describe a reserved schema capability as a launched product feature.
+claims, owner memberships, staff review, reviewed producer-change requests,
+producer-scoped expanded-profile entitlements and an admin-only gift workflow.
+The Stripe payment adapter is implemented but deliberately deferred and
+unprovisioned. Do not launch or advertise paid upgrades until the activation
+gate in `docs/OPERATIONS.md` is completed.
+Profile kind is assigned by the account workflow rather than chosen by the user.
+The schema also reserves editor memberships for future growth, but there is no
+subscription, custom-map purchase, self-service team invitation, private
+document upload or self-service Chisan account-erasure flow yet. Do not describe
+a reserved schema capability as a launched product feature.
 
 ## Profiles and authorization
 
@@ -64,8 +69,10 @@ yet. Do not describe a reserved schema capability as a launched product feature.
 - Producer access comes only from an active `producer_membership` for the exact
   `(country, producer_id)`.
 - Reviewer and admin access comes only from an active, unexpired `staff_grant`.
-- Paid capabilities will come from `entitlements`, independently of profile,
-  ownership and staff roles.
+- The expanded-profile capability comes from the exact active producer
+  entitlement `producer.profile.premium`, independently of profile kind, its
+  paid or administrative origin and the current account that owns the
+  producer.
 
 The user edits the Chisan-owned display name at `/cuenta/perfil`; profile kind
 is shown there as read-only state. Clerk's account UI remains limited to
@@ -73,8 +80,10 @@ credentials, verified sign-in identifiers, sessions and authentication factors.
 
 The onboarding checkbox acknowledges that claims and public profile changes are
 reviewed. The legacy database field `terms_accepted_at` records that checkpoint;
-it is not versioned legal consent. Privacy terms or other legal acceptance must
-be published, versioned and stored separately before the product relies on it.
+it is not versioned legal consent. The expanded-profile purchase separately
+records its offer version and acceptance timestamp on the commercial request.
+Privacy terms or any broader legal acceptance must still be published, versioned
+and stored separately before the product relies on it.
 
 Authorization is repeated inside every server-side mutation. `proxy.ts` only
 establishes Clerk's request context and is not an authorization boundary.
@@ -125,9 +134,95 @@ The public evidence ledgers under `data/evidence/**` are not storage for private
 ownership documents. If document upload is added, use private object storage,
 short-lived read URLs, retention limits and a separate artifact table.
 
+## Expanded-profile capability
+
+The expanded profile is a producer-scoped capability, not a subscription or a
+property of a user account. Its only authorization key is an active
+`producer.profile.premium` entitlement for `(country, producer_id)`. It permits
+proposal and presentation of the premium CSV field set; it never grants
+ownership, verification, ranking or publication without review.
+
+The capability is provider-neutral. CSV, catalog loaders, public routes,
+editorial review and entitlement checks know neither Stripe nor any future
+payment service. Entitlements currently have one of two immutable sources:
+
+- `paid_profile_upgrade`, issued only after a payment adapter verifies and
+  fulfils a commercial request;
+- `admin_profile_upgrade_gift`, issued without payment by an exact active admin.
+
+Both sources grant the same right to the producer key. `source_reference` links
+a paid entitlement to its commercial request; provider IDs never become catalog
+identity. An ownership change therefore changes who may act, not which producer
+owns an already valid entitlement.
+
+### Administrative gifts
+
+`/admin/premium` is the admin-only entitlement registry and gift workspace. It
+works without any payment adapter. A grant requires a published producer, an
+active owner and account, an exact active admin, and a substantive reason. The
+operation rechecks all of them under the producer transaction lock and refuses
+an existing active entitlement or open commercial request.
+
+Only an active `admin_profile_upgrade_gift` may be revoked there, with explicit
+confirmation and a second reason. The administrative gift action can never
+override a paid right. A revocation atomically conflicts unpublished premium
+proposals and cancels their live executions, but retains their audit history and
+all published CSV values; those values simply stop rendering until a new
+entitlement exists.
+
+### Paid requests and adapter boundary
+
+`producer_profile_upgrade_requests` is private commercial account state. It
+stores the offer, amount, currency, accepted terms, lifecycle, captured/refunded
+amounts, `payment_provider`, and generic provider references for offer,
+checkout, payment, charge, customer and dispute. It deliberately has no
+provider-specific columns. Provider references are unique within their provider,
+so a replacement adapter can coexist with historical Stripe rows.
+
+The invariant shared by every adapter is:
+
+1. Only the current active owner may begin a purchase for a published producer.
+   The server selects the provider and immutable offer; the client cannot submit
+   price, amount, currency, provider, entitlement key or producer identity.
+2. One producer may have only one open commercial request across all providers.
+   A request snapshots the exact terms version and URL before checkout.
+3. A return URL is presentation only. A signed provider event or explicit
+   server-side reconciliation must re-fetch current commercial state, validate
+   the durable request binding and exact EUR 49 offer, then grant at most one
+   `paid_profile_upgrade` entitlement under the producer lock.
+4. Fulfilment is idempotent. Expiry, delayed payment, refunds and disputes update
+   the same request. Pending adverse state suspends access; succeeded refunds or
+   adverse disputes also conflict unpublished premium proposals. CSV cells are
+   retained and hidden while the entitlement is inactive.
+5. Ownership is required to start checkout, but a bound payment remains attached
+   to the producer if ownership later changes. A current owner may reconcile it
+   without taking over the purchase or creating a second payment.
+
+The operational statuses are `pending`, `paid`, `paid_unfulfilled`,
+`payment_failed`, `expired`, `partially_refunded`, `refunded`, `disputed` and
+`dispute_lost`. `paid_unfulfilled` means money may have been captured but the
+immutable safety checks refused activation; it is never a manual-grant signal.
+Expected and captured amount/currency are stored separately so an anomalous
+charge can be represented and refunded honestly without ever granting access.
+
+Commercial rows and provider references are available only to the application
+runtime and exact admins, never to producer-change agents or public read models.
+`/admin/pagos` is the payment-adapter incident view; its retry can only re-fetch
+the provider and repeat validation. It cannot force an entitlement or issue a
+refund.
+
+### Dormant Stripe adapter
+
+Stripe is the first implemented adapter, but it is deliberately unprovisioned
+and disabled. Its SDK, Checkout orchestration and signed webhook live under the
+payment integration boundary; replacing it means adding another adapter and
+dispatching by `payment_provider`, not changing CSV, routes, review or the
+entitlement key. Stripe resources, events, activation and incident procedures
+live only in `docs/OPERATIONS.md`.
+
 ## Producer profile changes
 
-An approved owner may propose only the fields in
+An active producer member may propose only the fields in
 `lib/accounts/producer-fields.ts`. The server ignores arbitrary form fields and
 never accepts changes to `producer_id`, `slug`, `verificacion` or `imagen`.
 Every proposal stores:
@@ -137,6 +232,13 @@ Every proposal stores:
 - the allowlisted patch;
 - the producer's explanation/public source;
 - review and application state with an optimistic lock version.
+
+The configured premium field set additionally requires an active
+`producer.profile.premium` entitlement. The server reads them only when that
+right exists, and the request records `required_entitlement_key`. Staff approval,
+materialization and finalization re-check the right transactionally so a refund
+or dispute cannot publish an already queued premium patch. Standard profile
+corrections remain available without payment.
 
 All fields require editorial review in the first release. Approval does not
 publish the change. Verified ownership proves authority to propose, not the
@@ -167,8 +269,9 @@ npx pnpm producer:change finalize <change-request-uuid> <full-40-char-commit-sha
 git push origin main
 ```
 
-Materialization refuses stale base hashes, missing producers, revoked ownership,
-non-allowlisted fields, invalid values and a dirty target CSV. Before writing,
+Materialization refuses stale base hashes, missing producers, revoked membership
+or required entitlement, non-allowlisted fields, invalid values and a dirty
+target CSV. Before writing,
 it acquires a durable execution lease unique to the request, producer and CSV;
 that lease fences separate agent worktrees, while advisory locks serialize its
 acquisition. The request stays `approved` until the local atomic write and CSV
@@ -191,6 +294,11 @@ for one request and shows its actors, timestamps, requested diff, current CSV
 comparison, notes, applied commit and targeted audit timeline. The request row is
 the current state; `audit_events` explains recorded transitions and must not be
 used as a reconstructed replacement for that row.
+
+`/admin/premium` owns the entitlement registry and audited gift controls;
+`/admin/pagos` owns the current payment-adapter incident queue and safety
+history. Both require an exact active admin, neither writes CSV, and neither may
+override the other domain. Their full semantics are defined above.
 
 The workspace and local automation share the status vocabulary in
 `lib/accounts/producer-change-workflow.ts` and the read model in
@@ -275,9 +383,18 @@ resolve them explicitly:
   unpublished change request for the retired key in the same transaction;
 - review pending ownership claims and revoke memberships that can no longer
   target a published producer;
+- inspect every profile-upgrade request, attached provider checkout and active
+  premium entitlement for the retiring key. An unattached, unpaid request may
+  be expired through an audited operation. An attached checkout, captured
+  payment, refund, dispute or active entitlement must be resolved through the
+  supported commercial workflow before the row retires;
 - for a true merge, migrate favorites to the surviving key; never transfer an
   owner membership automatically unless the same-unit ownership has been
   reviewed for the target;
+- never transfer a payment, premium entitlement or premium CSV value to a
+  surviving key automatically. The one-time capability applies only while its
+  purchased producer row remains published; any same-unit commercial handoff
+  requires an explicit reviewed and audited operation;
 - for a purge, keep the minimum historical claim, change and audit records
   required for integrity, while removing or making unavailable resources that
   require a live catalog row.
@@ -345,9 +462,11 @@ Clerk production requires a custom application domain. Preview/development
 keys can be used before that domain is ready, but production registration must
 not launch on a temporary `*.vercel.app` identity configuration.
 
-Operational deployment procedures, preflight and smoke checks live in
-`docs/OPERATIONS.md`. Repository code never provisions billable resources, and
-a build asserts migration compatibility but never applies DDL.
+## Payment adapter operations
+
+This document owns neutral request and entitlement semantics. Adapter
+activation, incidents, replacement and retirement are owned by
+`docs/OPERATIONS.md`; repository builds assert migrations but never apply DDL.
 
 ## Security invariants
 
@@ -357,6 +476,9 @@ a build asserts migration compatibility but never applies DDL.
   submitted producer claim promotes it to `producer`; no user mutation may set
   or downgrade it directly.
 - Re-resolve the producer from CSV and re-check the membership in each mutation.
+- Re-check the exact producer entitlement at premium proposal, approval,
+  materialization and finalization. Payment authorizes a capability, never the
+  truth or editorial acceptance of a field.
 - Re-check ownership at claim submission, approval and materialization. An
   active owner blocks every later claim submission for that producer. Membership
   revocation conflicts every unpublished request under the same producer lock.
@@ -369,8 +491,12 @@ a build asserts migration compatibility but never applies DDL.
   explicit Chisan erasure flow must remove favorites, revoke access and
   entitlements, redact synchronized identity/claim/note PII, and preserve the
   minimum claim/change/audit history required for integrity and compliance.
-- Keep webhook verification public but signed; never protect it with a user
-  session.
+- Keep payment webhooks public but signed; never protect them with a user
+  session. Each adapter verifies the provider-required payload. Return URLs and
+  query parameters never grant a right.
+- Never accept a provider, offer, amount, currency or entitlement key from the
+  browser. Provider credentials must match their deployment environment. Do not
+  grant producer-change agents access to commercial rows or provider IDs.
 - Do not fetch submitted URLs synchronously during a request. Future link
   checks need SSRF defenses and an isolated worker.
 - Transactional per-account quotas limit open and daily claims/profile changes.

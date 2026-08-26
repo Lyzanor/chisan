@@ -9,9 +9,17 @@ import {
   isProducerChangeSubmissionEnabled,
 } from "../lib/accounts/config";
 import {
+  profileUpgradeGiftGrantSchema,
+  profileUpgradeGiftRevokeSchema,
+} from "../lib/accounts/input";
+import {
   PRODUCER_EDITABLE_FIELDS,
+  PRODUCER_STANDARD_EDITABLE_FIELDS,
   hashProducerFields,
+  isPremiumProducerPatch,
   isProducerPatch,
+  producerEditableFieldsForPremiumAccess,
+  readProducerProposalForm,
   safeReturnPath,
   validateProducerProposal,
 } from "../lib/accounts/producer-fields";
@@ -246,6 +254,246 @@ test("producer text fields reject spreadsheet formula prefixes", () => {
   assert.equal(validNumericFields.ok, true);
 });
 
+test("expanded profile fields are hidden from non-premium proposal input", () => {
+  assert.equal(
+    producerEditableFieldsForPremiumAccess(false),
+    PRODUCER_STANDARD_EDITABLE_FIELDS,
+  );
+  assert.equal(
+    producerEditableFieldsForPremiumAccess(true),
+    PRODUCER_EDITABLE_FIELDS,
+  );
+
+  const form = new FormData();
+  for (const [key, value] of Object.entries(validFields())) form.set(key, value);
+  form.set("visitas guiadas", "sí");
+  form.set("mensaje a la comunidad", "A hidden premium submission.");
+  form.set("mensaje_comunidad_locale", "en");
+  const raw = readProducerProposalForm(form, PRODUCER_STANDARD_EDITABLE_FIELDS);
+  assert.equal("visitas guiadas" in raw, false);
+  assert.equal("mensaje a la comunidad" in raw, false);
+
+  const current = {
+    ...validFields(),
+    "visitas guiadas": "no",
+    "mensaje a la comunidad": "Existing reviewed message.",
+    mensaje_comunidad_locale: "en",
+  };
+  const result = validateProducerProposal(
+    { ...raw, "visitas guiadas": "sí" },
+    current,
+    PRODUCER_STANDARD_EDITABLE_FIELDS,
+  );
+  assert.equal(result.ok, true);
+  if (result.ok) {
+    assert.equal(result.candidate["visitas guiadas"], "no");
+    assert.equal(result.candidate["mensaje a la comunidad"], "Existing reviewed message.");
+    assert.equal(isPremiumProducerPatch(result.patch), false);
+  }
+});
+
+test("administrative premium gifts require durable producer keys and reasons", () => {
+  assert.equal(
+    profileUpgradeGiftGrantSchema.safeParse({
+      country: "ES",
+      producerId: "49",
+      reason: "Launch partner selected for an audited Chisan pilot.",
+    }).success,
+    true,
+  );
+  assert.equal(
+    profileUpgradeGiftGrantSchema.safeParse({
+      country: "es",
+      producerId: "49",
+      reason: "gift",
+    }).success,
+    false,
+  );
+  assert.equal(
+    profileUpgradeGiftRevokeSchema.safeParse({
+      confirmation: "revoke",
+      entitlementId: "00000000-0000-4000-8000-000000000049",
+      reason: "The documented pilot access period has ended.",
+    }).success,
+    true,
+  );
+  assert.equal(
+    profileUpgradeGiftRevokeSchema.safeParse({
+      confirmation: "yes",
+      entitlementId: "00000000-0000-4000-8000-000000000049",
+      reason: "The documented pilot access period has ended.",
+    }).success,
+    false,
+  );
+});
+
+test("expanded profile proposals validate guided visits, message locale and links", () => {
+  const current = validFields();
+  const valid = validateProducerProposal(
+    {
+      ...current,
+      "visitas guiadas": "sí",
+      "mensaje a la comunidad": "🍯".repeat(1_000),
+      mensaje_comunidad_locale: "es",
+      "enlace destacado 1": "https://news.example/interview",
+      "enlace destacado 2": "https://producer.example/story",
+    },
+    current,
+  );
+  assert.equal(valid.ok, true);
+  if (valid.ok) {
+    assert.equal(isPremiumProducerPatch(valid.patch), true);
+    assert.deepEqual(valid.patch, {
+      "visitas guiadas": "sí",
+      "mensaje a la comunidad": "🍯".repeat(1_000),
+      mensaje_comunidad_locale: "es",
+      "enlace destacado 1": "https://news.example/interview",
+      "enlace destacado 2": "https://producer.example/story",
+    });
+  }
+
+  const invalid = validateProducerProposal(
+    {
+      ...current,
+      "visitas guiadas": "quizá",
+      "mensaje a la comunidad": "🍯".repeat(1_001),
+      mensaje_comunidad_locale: "",
+      "enlace destacado 1": "ftp://example.com/article",
+      "enlace destacado 2": "https://example.com/second",
+    },
+    current,
+  );
+  assert.equal(invalid.ok, false);
+  if (!invalid.ok) {
+    assert.match(invalid.errors["visitas guiadas"], /yes, no/i);
+    assert.match(invalid.errors["mensaje a la comunidad"], /maximum 1000/i);
+    assert.match(invalid.errors.mensaje_comunidad_locale, /source language/i);
+    assert.match(invalid.errors["enlace destacado 1"], /HTTP/i);
+  }
+
+  const linkOrder = validateProducerProposal(
+    { ...current, "enlace destacado 2": "https://example.com/second" },
+    current,
+  );
+  assert.equal(linkOrder.ok, false);
+  if (!linkOrder.ok) {
+    assert.match(linkOrder.errors["enlace destacado 2"], /link 1/i);
+  }
+
+  const duplicateLinks = validateProducerProposal(
+    {
+      ...current,
+      "enlace destacado 1": "https://example.com",
+      "enlace destacado 2": "https://example.com/",
+    },
+    current,
+  );
+  assert.equal(duplicateLinks.ok, false);
+  if (!duplicateLinks.ok) {
+    assert.match(duplicateLinks.errors["enlace destacado 2"], /different/i);
+  }
+
+  const preservedLinkSpelling = validateProducerProposal(
+    { ...current, "enlace destacado 1": "https://example.com" },
+    current,
+  );
+  assert.equal(preservedLinkSpelling.ok, true);
+  if (preservedLinkSpelling.ok) {
+    assert.equal(
+      preservedLinkSpelling.candidate["enlace destacado 1"],
+      "https://example.com",
+    );
+  }
+
+  const credentialedLink = validateProducerProposal(
+    {
+      ...current,
+      "enlace destacado 1": "https://reporter:secret@example.com/article",
+    },
+    current,
+  );
+  assert.equal(credentialedLink.ok, false);
+  if (!credentialedLink.ok) {
+    assert.match(
+      credentialedLink.errors["enlace destacado 1"],
+      /embedded credentials/i,
+    );
+  }
+
+  for (const formula of ["=1+1", "+1+1", "-1+1", "@SUM(A1:A2)"]) {
+    const formulaMessage = validateProducerProposal(
+      {
+        ...current,
+        "mensaje a la comunidad": formula,
+        mensaje_comunidad_locale: "es",
+      },
+      current,
+    );
+    assert.equal(formulaMessage.ok, false);
+    if (!formulaMessage.ok) {
+      assert.match(
+        formulaMessage.errors["mensaje a la comunidad"],
+        /spreadsheet formula/i,
+      );
+    }
+  }
+
+  for (const contaminatedMessage of [
+    "<nav>Inicio</nav> Este mes recibimos visitas.",
+    "Lee la noticia en https://example.com/reportaje",
+  ]) {
+    const contaminated = validateProducerProposal(
+      {
+        ...current,
+        "mensaje a la comunidad": contaminatedMessage,
+        mensaje_comunidad_locale: "es",
+      },
+      current,
+    );
+    assert.equal(contaminated.ok, false);
+    if (!contaminated.ok) {
+      assert.match(
+        contaminated.errors["mensaje a la comunidad"],
+        /cannot contain/i,
+      );
+    }
+  }
+});
+
+test("community messages preserve internal spaces and canonical LF line breaks", () => {
+  const current = validFields();
+  const form = new FormData();
+  for (const [key, value] of Object.entries(current)) form.set(key, value);
+  form.set(
+    "mensaje a la comunidad",
+    "Primera línea.  Dos espacios.\r\nSegunda línea.",
+  );
+  form.set("mensaje_comunidad_locale", "es");
+
+  const raw = readProducerProposalForm(form);
+  const expectedMessage = "Primera línea.  Dos espacios.\nSegunda línea.";
+  assert.equal(raw["mensaje a la comunidad"], expectedMessage);
+
+  const result = validateProducerProposal(raw, current);
+  assert.equal(result.ok, true);
+  if (result.ok) {
+    assert.equal(result.candidate["mensaje a la comunidad"], expectedMessage);
+    assert.deepEqual(result.patch, {
+      "mensaje a la comunidad": expectedMessage,
+      mensaje_comunidad_locale: "es",
+    });
+  }
+
+  assert.notEqual(
+    hashProducerFields({ "mensaje a la comunidad": "Línea.  Dos espacios." }),
+    hashProducerFields({ "mensaje a la comunidad": "Línea. Dos espacios." }),
+  );
+  assert.notEqual(
+    hashProducerFields({ "mensaje a la comunidad": "Primera.\nSegunda." }),
+    hashProducerFields({ "mensaje a la comunidad": "Primera. Segunda." }),
+  );
+});
+
 test("producer row hashes are stable across object key order", () => {
   assert.equal(
     hashProducerFields({ nombre: "A", municipio: "B" }),
@@ -322,6 +570,7 @@ test("producer-change detail exposes a stable durable execution record", () => {
       baseRowHash,
       baseSnapshot: { nombre: "Before" },
       patch: { nombre: "After" },
+      requiredEntitlementKey: null,
       authorNote: null,
       lockVersion: 3,
       reviewerUserId: "00000000-0000-4000-8000-000000000104",

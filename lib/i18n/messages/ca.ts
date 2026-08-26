@@ -27,6 +27,7 @@ const messages = {
     removeFavorite: "Elimina dels preferits",
     saveFavorite: "Desa als preferits",
     editMyProfile: "Edita el meu perfil",
+    expandProfile: "Amplia el perfil",
     ownershipVerified: "Propietat verificada",
     viewOwnershipClaim: "Mostra la reclamació de propietat",
     claimProducer: "Reclama aquest productor",
@@ -71,6 +72,16 @@ const messages = {
     lon: "Longitud decimal WGS84. La latitud i la longitud s'han d'indicar juntes.",
     "Venta online": "Indica si s'ha revisat un mecanisme de comanda vigent.",
     "Canal de venta": "Mecanismes de comanda vigents demostrats.",
+    "visitas guiadas":
+      "Indica si aquest productor ofereix actualment visites guiades; deixa-ho buit si no es publica.",
+    "mensaje a la comunidad":
+      "Un missatge públic escrit pel productor, conservat en la llengua original i revisat abans de publicar-se.",
+    mensaje_comunidad_locale:
+      "La llengua d'origen del missatge a la comunitat; deixa-ho buit només si el missatge és buit.",
+    "enlace destacado 1":
+      "Un article, una entrevista o una altra pàgina pública HTTP(S) rellevant sobre aquest productor.",
+    "enlace destacado 2":
+      "Una segona pàgina pública HTTP(S) diferent; primer cal emplenar l'enllaç 1.",
   },
   common: {
     unitCount: "{count} {unit}",
@@ -185,6 +196,7 @@ const messages = {
     categories: "Categories",
     allCategories: "Totes",
     information: "Informació",
+    expandedProfile: "Perfil ampliat",
   },
   fieldLabels: {
     slug: "Slug",
@@ -197,6 +209,11 @@ const messages = {
     address: "Adreça",
     description: "Descripció",
     descriptionLocale: "Idioma de la descripció",
+    guidedVisits: "Visites guiades",
+    communityMessage: "Missatge a la comunitat",
+    communityMessageLocale: "Llengua del missatge a la comunitat",
+    highlightedLink1: "Enllaç destacat 1",
+    highlightedLink2: "Enllaç destacat 2",
     openingHours: "Horari",
     phone: "Telèfon",
     email: "Correu electrònic",

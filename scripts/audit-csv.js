@@ -26,6 +26,11 @@ const CANONICAL_HEADER = Object.freeze([
   "categorias adicionales",
   "producer_id",
   "descripcion_locale",
+  "visitas guiadas",
+  "mensaje a la comunidad",
+  "mensaje_comunidad_locale",
+  "enlace destacado 1",
+  "enlace destacado 2",
 ]);
 
 // Controlled values are matched exactly, not case/diacritic folded: the CSVs are
@@ -53,6 +58,7 @@ const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
 const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
 const PRODUCER_ID_COLUMN = "producer_id";
+const COMMUNITY_MESSAGE_COLUMN = "mensaje a la comunidad";
 const CATEGORY_SEPARATOR = "|";
 const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
@@ -909,6 +915,43 @@ function cleanCell(value) {
     .trim();
 }
 
+function normalizeCommunityMessage(value) {
+  return String(value ?? "")
+    .replace(/\r\n?/g, "\n")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
+    .trim();
+}
+
+function codePointLength(value) {
+  return Array.from(value).length;
+}
+
+function communityMessageContaminationReason(value) {
+  const text = String(value ?? "").trim();
+  if (!text) return null;
+  if (/<\/?[a-z][^>]*>/iu.test(text)) return "contains HTML copied from a source page";
+  if (/(?:https?:\/\/|www\.)\S+/iu.test(text)) return "contains a URL or source citation";
+  if (/_x000d_/iu.test(text)) return "contains a spreadsheet formatting artifact";
+  if (/milflivecamsforce|livecamsforce/iu.test(text)) return "contains injected spam text";
+  const boilerplateSignals = [
+    /\bcookies?\b/iu,
+    /pol[ií]tica de privacidad|privacy policy/iu,
+    /aviso legal|legal notice/iu,
+    /todos los derechos reservados|all rights reserved/iu,
+    /configuraci[oó]n de cookies?|cookie settings/iu,
+    /aceptar(?: todas)?(?: las)? cookies?|accept all cookies?/iu,
+    /iniciar sesi[oó]n|log[ -]?in|sign[ -]?in/iu,
+    /carrito|shopping cart/iu,
+  ].filter((pattern) => pattern.test(text)).length;
+  return boilerplateSignals >= 2
+    ? "contains copied navigation, legal or cookie boilerplate"
+    : null;
+}
+
+function hasSpreadsheetFormulaPrefix(value) {
+  return /^[=+\-@]/.test(value);
+}
+
 // `œ` and `æ` are single letters with no Unicode decomposition, so NFD leaves
 // them intact and `Belœil` never meets a row spelling itself `Beloeil`. They are
 // folded here and identically in scripts/build-municipality-centroids.js: the
@@ -1003,7 +1046,6 @@ function readUrl(value) {
     if (url.protocol !== "http:" && url.protocol !== "https:") {
       return { error: "must use http or https" };
     }
-
     return { url };
   } catch {
     return { error: "is not a valid URL" };
@@ -1311,7 +1353,15 @@ async function readCsv(csvPath) {
     skip_empty_lines: true,
   }).map((row) =>
     Object.fromEntries(
-      Object.entries(row).map(([key, value]) => [key.trim(), cleanCell(value)]),
+      Object.entries(row).map(([key, value]) => {
+        const normalizedKey = key.trim();
+        return [
+          normalizedKey,
+          normalizedKey === COMMUNITY_MESSAGE_COLUMN
+            ? String(value ?? "")
+            : cleanCell(value),
+        ];
+      }),
     ),
   );
 
@@ -1388,6 +1438,10 @@ function runContractAudit({
 
   const validators = {
     web: () => null,
+    "enlace destacado 1": (url) =>
+      url.username || url.password ? "must not include embedded credentials" : null,
+    "enlace destacado 2": (url) =>
+      url.username || url.password ? "must not include embedded credentials" : null,
     Facebook: (url) =>
       matchesHost(url.hostname, "facebook.com")
         ? null
@@ -1480,6 +1534,101 @@ function runContractAudit({
         slug,
         `non-empty descripcion requires descripcion_locale to be one of: ${DESCRIPTION_SOURCE_LOCALE_DISPLAY}`,
       );
+    }
+
+    const guidedVisits = cleanCell(fields["visitas guiadas"]);
+    if (guidedVisits && guidedVisits !== "sí" && guidedVisits !== "no") {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "visitas guiadas must be empty, 'sí' or 'no'",
+      );
+    }
+
+    const communityMessage = normalizeCommunityMessage(
+      fields[COMMUNITY_MESSAGE_COLUMN],
+    );
+    const communityMessageLocale = cleanCell(fields.mensaje_comunidad_locale);
+    const communityMessageLength = codePointLength(communityMessage);
+    if (communityMessageLength > 1000) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `mensaje a la comunidad must be at most 1000 Unicode characters; found ${communityMessageLength}`,
+      );
+    }
+    const communityContaminationReason =
+      communityMessageContaminationReason(communityMessage);
+    if (communityContaminationReason) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `mensaje a la comunidad ${communityContaminationReason}`,
+      );
+    }
+    if (communityMessage && hasSpreadsheetFormulaPrefix(communityMessage)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "mensaje a la comunidad cannot start with a spreadsheet formula marker",
+      );
+    }
+    if (!communityMessage && communityMessageLocale) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "empty mensaje a la comunidad requires empty mensaje_comunidad_locale",
+      );
+    } else if (
+      communityMessage &&
+      !DESCRIPTION_SOURCE_LOCALES.has(communityMessageLocale)
+    ) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `non-empty mensaje a la comunidad requires mensaje_comunidad_locale to be one of: ${DESCRIPTION_SOURCE_LOCALE_DISPLAY}`,
+      );
+    }
+
+    const highlightedLink1 = cleanCell(fields["enlace destacado 1"]);
+    const highlightedLink2 = cleanCell(fields["enlace destacado 2"]);
+    if (highlightedLink2 && !highlightedLink1) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "enlace destacado 2 requires enlace destacado 1",
+      );
+    } else if (highlightedLink1 && highlightedLink2) {
+      const parsedHighlightedLink1 = readUrl(highlightedLink1);
+      const parsedHighlightedLink2 = readUrl(highlightedLink2);
+      const canonicalHighlightedLink1 = parsedHighlightedLink1?.url?.href;
+      const canonicalHighlightedLink2 = parsedHighlightedLink2?.url?.href;
+      if (
+        canonicalHighlightedLink1 &&
+        canonicalHighlightedLink1 === canonicalHighlightedLink2
+      ) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          "enlace destacado 1 and enlace destacado 2 must be different",
+        );
+      }
     }
 
     const latRaw = cleanCell(fields.lat);

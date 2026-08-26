@@ -43,6 +43,13 @@
       "when": 1787527907365,
       "tag": "0005_swift_dracula",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1787739643311,
+      "tag": "0006_producer_profile_upgrades",
+      "breakpoints": true
     }
   ]
 }

@@ -72,6 +72,20 @@ export const entitlementStatus = pgEnum("entitlement_status", [
   "revoked",
   "expired",
 ]);
+export const producerProfileUpgradeStatus = pgEnum(
+  "producer_profile_upgrade_status",
+  [
+    "pending",
+    "paid",
+    "paid_unfulfilled",
+    "payment_failed",
+    "expired",
+    "partially_refunded",
+    "refunded",
+    "disputed",
+    "dispute_lost",
+  ],
+);
 
 export const users = pgTable(
   "users",
@@ -336,6 +350,7 @@ export const producerChangeRequests = pgTable(
       .$type<Record<string, string>>()
       .notNull(),
     patch: jsonb("patch").$type<Record<string, string>>().notNull().default(sql`'{}'::jsonb`),
+    requiredEntitlementKey: varchar("required_entitlement_key", { length: 120 }),
     authorNote: text("author_note"),
     lockVersion: integer("lock_version").notNull().default(1),
     reviewerUserId: uuid("reviewer_user_id").references(() => users.id),
@@ -382,6 +397,10 @@ export const producerChangeRequests = pgTable(
       sql`jsonb_typeof(${table.baseSnapshot}) = 'object'`,
     ),
     check("producer_change_requests_patch_check", sql`jsonb_typeof(${table.patch}) = 'object'`),
+    check(
+      "producer_change_requests_entitlement_key_check",
+      sql`${table.requiredEntitlementKey} IS NULL OR length(btrim(${table.requiredEntitlementKey})) > 0`,
+    ),
     check("producer_change_requests_lock_version_check", sql`${table.lockVersion} > 0`),
     check(
       "producer_change_requests_submission_check",
@@ -527,6 +546,7 @@ export const auditEvents = pgTable(
       table.action,
       table.occurredAt,
     ),
+    index("audit_events_action_occurred_idx").on(table.action, table.occurredAt),
     index("audit_events_request_id_idx").on(table.requestId),
     check("audit_events_action_check", sql`length(btrim(${table.action})) > 0`),
     check("audit_events_target_type_check", sql`length(btrim(${table.targetType})) > 0`),
@@ -657,6 +677,133 @@ export const entitlements = pgTable(
   ],
 );
 
+export const producerProfileUpgradeRequests = pgTable(
+  "producer_profile_upgrade_requests",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    requesterUserId: uuid("requester_user_id")
+      .notNull()
+      .references(() => users.id),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    status: producerProfileUpgradeStatus("status").notNull().default("pending"),
+    amountMinor: integer("amount_minor").notNull(),
+    currency: varchar("currency", { length: 3 }).notNull(),
+    termsVersion: varchar("terms_version", { length: 80 }).notNull(),
+    termsUrl: varchar("terms_url", { length: 2048 }).notNull(),
+    termsAcceptedAt: timestampWithTimezone("terms_accepted_at").notNull(),
+    paymentProvider: varchar("payment_provider", { length: 32 }).notNull(),
+    providerOfferId: varchar("provider_offer_id", { length: 255 }).notNull(),
+    providerCheckoutId: varchar("provider_checkout_id", { length: 255 }),
+    providerPaymentId: varchar("provider_payment_id", { length: 255 }),
+    providerChargeId: varchar("provider_charge_id", { length: 255 }),
+    providerCustomerId: varchar("provider_customer_id", { length: 255 }),
+    providerDisputeId: varchar("provider_dispute_id", { length: 255 }),
+    providerDisputeStatus: varchar("provider_dispute_status", { length: 64 }),
+    amountCapturedMinor: integer("amount_captured_minor"),
+    capturedCurrency: varchar("captured_currency", { length: 3 }),
+    amountRefundedMinor: integer("amount_refunded_minor").notNull().default(0),
+    entitlementId: uuid("entitlement_id").references(() => entitlements.id),
+    checkoutExpiresAt: timestampWithTimezone("checkout_expires_at"),
+    paidAt: timestampWithTimezone("paid_at"),
+    refundedAt: timestampWithTimezone("refunded_at"),
+    disputedAt: timestampWithTimezone("disputed_at"),
+    failureCode: varchar("failure_code", { length: 80 }),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("producer_profile_upgrade_requests_active_producer_uidx")
+      .on(table.country, table.producerId)
+      .where(
+        sql`${table.status} IN ('pending', 'paid', 'paid_unfulfilled', 'partially_refunded', 'disputed')`,
+      ),
+    uniqueIndex("producer_profile_upgrade_requests_checkout_uidx")
+      .on(table.paymentProvider, table.providerCheckoutId)
+      .where(sql`${table.providerCheckoutId} IS NOT NULL`),
+    uniqueIndex("producer_profile_upgrade_requests_payment_uidx")
+      .on(table.paymentProvider, table.providerPaymentId)
+      .where(sql`${table.providerPaymentId} IS NOT NULL`),
+    uniqueIndex("producer_profile_upgrade_requests_charge_uidx")
+      .on(table.paymentProvider, table.providerChargeId)
+      .where(sql`${table.providerChargeId} IS NOT NULL`),
+    uniqueIndex("producer_profile_upgrade_requests_dispute_uidx")
+      .on(table.paymentProvider, table.providerDisputeId)
+      .where(sql`${table.providerDisputeId} IS NOT NULL`),
+    uniqueIndex("producer_profile_upgrade_requests_entitlement_uidx")
+      .on(table.entitlementId)
+      .where(sql`${table.entitlementId} IS NOT NULL`),
+    index("producer_profile_upgrade_requests_requester_idx").on(
+      table.requesterUserId,
+      table.createdAt,
+    ),
+    index("producer_profile_upgrade_requests_producer_idx").on(
+      table.country,
+      table.producerId,
+      table.createdAt,
+    ),
+    index("producer_profile_upgrade_requests_incident_idx").on(
+      table.paymentProvider,
+      table.status,
+      table.updatedAt,
+    ),
+    check("producer_profile_upgrade_requests_country_check", sql`${table.country} ~ '^[a-z]{2}$'`),
+    check(
+      "producer_profile_upgrade_requests_producer_id_check",
+      sql`${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check("producer_profile_upgrade_requests_amount_check", sql`${table.amountMinor} = 4900`),
+    check("producer_profile_upgrade_requests_currency_check", sql`${table.currency} = 'eur'`),
+    check(
+      "producer_profile_upgrade_requests_terms_check",
+      sql`length(btrim(${table.termsVersion})) > 0 AND length(btrim(${table.termsUrl})) > 0`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_provider_check",
+      sql`${table.paymentProvider} ~ '^[a-z][a-z0-9_-]{0,31}$'`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_offer_check",
+      sql`length(btrim(${table.providerOfferId})) > 0`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_checkout_check",
+      sql`(${table.providerCheckoutId} IS NULL AND ${table.checkoutExpiresAt} IS NULL) OR (${table.providerCheckoutId} IS NOT NULL AND ${table.checkoutExpiresAt} IS NOT NULL)`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_payment_check",
+      sql`(${table.status} IN ('pending', 'payment_failed', 'expired') AND ${table.paidAt} IS NULL AND ${table.amountCapturedMinor} IS NULL AND ${table.capturedCurrency} IS NULL) OR (${table.status} = 'paid_unfulfilled' AND ${table.paidAt} IS NOT NULL) OR (${table.status} IN ('paid', 'partially_refunded', 'refunded', 'disputed', 'dispute_lost') AND ${table.providerPaymentId} IS NOT NULL AND ${table.paidAt} IS NOT NULL AND ${table.amountCapturedMinor} IS NOT NULL AND ${table.capturedCurrency} IS NOT NULL)`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_captured_amount_check",
+      sql`(${table.amountCapturedMinor} IS NULL AND ${table.capturedCurrency} IS NULL) OR (${table.amountCapturedMinor} > 0 AND ${table.capturedCurrency} ~ '^[a-z]{3}$')`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_refund_amount_check",
+      sql`${table.amountRefundedMinor} BETWEEN 0 AND COALESCE(${table.amountCapturedMinor}, ${table.amountMinor})`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_refund_check",
+      sql`((${table.amountRefundedMinor} = 0 AND ${table.refundedAt} IS NULL) OR (${table.amountRefundedMinor} > 0 AND ${table.refundedAt} IS NOT NULL AND ${table.amountCapturedMinor} IS NOT NULL)) AND (${table.status} NOT IN ('pending', 'payment_failed', 'expired', 'paid') OR ${table.amountRefundedMinor} = 0) AND (${table.status} <> 'partially_refunded' OR (${table.amountRefundedMinor} > 0 AND ${table.amountRefundedMinor} < ${table.amountCapturedMinor})) AND (${table.status} <> 'refunded' OR ${table.amountRefundedMinor} = ${table.amountCapturedMinor})`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_dispute_check",
+      sql`(${table.providerDisputeId} IS NULL AND ${table.providerDisputeStatus} IS NULL AND ${table.disputedAt} IS NULL) OR (${table.providerDisputeId} IS NOT NULL AND ${table.providerDisputeStatus} IS NOT NULL AND ${table.disputedAt} IS NOT NULL)`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_entitlement_check",
+      sql`(${table.status} = 'paid' AND ${table.entitlementId} IS NOT NULL) OR (${table.status} IN ('pending', 'payment_failed', 'expired') AND ${table.entitlementId} IS NULL) OR (${table.status} IN ('paid_unfulfilled', 'partially_refunded', 'refunded', 'disputed', 'dispute_lost'))`,
+    ),
+    check(
+      "producer_profile_upgrade_requests_failure_check",
+      sql`(${table.status} IN ('paid_unfulfilled', 'payment_failed') AND ${table.failureCode} IS NOT NULL) OR (${table.status} NOT IN ('paid_unfulfilled', 'payment_failed') AND ${table.failureCode} IS NULL)`,
+    ),
+  ],
+);
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Favorite = typeof favorites.$inferSelect;
@@ -665,3 +812,5 @@ export type ProducerMembership = typeof producerMemberships.$inferSelect;
 export type ProducerChangeRequest = typeof producerChangeRequests.$inferSelect;
 export type ProducerChangeExecution = typeof producerChangeExecutions.$inferSelect;
 export type Entitlement = typeof entitlements.$inferSelect;
+export type ProducerProfileUpgradeRequest =
+  typeof producerProfileUpgradeRequests.$inferSelect;

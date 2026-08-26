@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "मनपर्नेबाट हटाउनुहोस्",
     saveFavorite: "मनपर्नेमा सुरक्षित गर्नुहोस्",
     editMyProfile: "मेरो प्रोफाइल सम्पादन गर्नुहोस्",
+    expandProfile: "प्रोफाइल विस्तार गर्नुहोस्",
     ownershipVerified: "स्वामित्व प्रमाणित",
     viewOwnershipClaim: "स्वामित्व दाबी हेर्नुहोस्",
     claimProducer: "यस उत्पादकको स्वामित्व दाबी गर्नुहोस्",
@@ -56,6 +57,14 @@ const messages = {
     descripcion: "प्रचारात्मक दाबीबिना उत्पादकसम्बन्धी तथ्यात्मक जानकारी।",
     descripcion_locale:
       "मूल विवरणको स्रोत भाषा; विवरण खाली भएमा मात्र खाली छोड्नुहोस्।",
+    "visitas guiadas": "उत्पादकले हाल निर्देशित भ्रमण गराउँछन् कि गराउँदैनन्।",
+    "mensaje a la comunidad": "समुदायका लागि उत्पादकको सार्वजनिक सन्देश।",
+    mensaje_comunidad_locale:
+      "समुदाय सन्देशको स्रोत भाषा; सन्देश खाली भएमा मात्र खाली छोड्नुहोस्।",
+    "enlace destacado 1":
+      "पहिलो अतिरिक्त प्रमुख HTTP(S) लिङ्क, जस्तै प्रेस सामग्री।",
+    "enlace destacado 2":
+      "दोस्रो अतिरिक्त प्रमुख HTTP(S) लिङ्क, जस्तै प्रेस सामग्री।",
     direccion: "उत्पादन एकाइ वा उत्पादकका लागि खुला परिसरको ठेगाना।",
     horario: "हालको भ्रमण, सङ्कलन वा सार्वजनिक खुला समय।",
     telefono: "अन्तर्राष्ट्रिय E.164 ढाँचा, उदाहरण: +34600112233।",
@@ -184,6 +193,7 @@ const messages = {
     categories: "श्रेणीहरू",
     allCategories: "सबै",
     information: "जानकारी",
+    expandedProfile: "विस्तारित प्रोफाइल",
   },
   fieldLabels: {
     slug: "स्लग",
@@ -196,6 +206,11 @@ const messages = {
     address: "ठेगाना",
     description: "विवरण",
     descriptionLocale: "विवरणको भाषा",
+    guidedVisits: "निर्देशित भ्रमण",
+    communityMessage: "समुदायका लागि सन्देश",
+    communityMessageLocale: "समुदाय सन्देशको भाषा",
+    highlightedLink1: "प्रमुख लिङ्क 1",
+    highlightedLink2: "प्रमुख लिङ्क 2",
     openingHours: "खुल्ने समय",
     phone: "फोन",
     email: "इमेल",

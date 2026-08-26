@@ -27,6 +27,18 @@ export type DescriptionLocaleOption = Readonly<{
   label: string;
 }>;
 
+// These fields are omitted from the generic details table. The expanded-profile
+// component renders the premium facts separately after checking the producer
+// entitlement; they are conditional public facts, not private account data.
+const GENERIC_TABLE_HIDDEN_FIELD_KEYS = new Set([
+  "descripcion_locale",
+  "visitas guiadas",
+  "mensaje a la comunidad",
+  "mensaje_comunidad_locale",
+  "enlace destacado 1",
+  "enlace destacado 2",
+]);
+
 function normalizeFieldKey(key: string): string {
   return key
     .trim()
@@ -86,7 +98,10 @@ export function formatProducerFieldValue(
   messages: Messages,
 ): string {
   const normalizedKey = normalizeFieldKey(key);
-  if (normalizedKey === "descripcion_locale") {
+  if (
+    normalizedKey === "descripcion_locale" ||
+    normalizedKey === "mensaje_comunidad_locale"
+  ) {
     return formatDescriptionLocale(value, messages, locale);
   }
   if (!value) return messages.common.unavailable;
@@ -103,6 +118,8 @@ export function formatProducerFieldValue(
     case "verificacion":
       return formatVerification(value, messages.controlledValues);
     case "venta online":
+      return formatOnlineSales(value, messages.controlledValues);
+    case "visitas guiadas":
       return formatOnlineSales(value, messages.controlledValues);
     case "canal de venta":
       return formatSalesChannels(value, locale, messages.controlledValues);
@@ -126,7 +143,7 @@ export function presentProducerField(
 }
 
 export function isPublicProducerField(key: string): boolean {
-  return normalizeFieldKey(key) !== "descripcion_locale";
+  return !GENERIC_TABLE_HIDDEN_FIELD_KEYS.has(normalizeFieldKey(key));
 }
 
 export function presentPublicProducerFields(

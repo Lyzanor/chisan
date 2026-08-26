@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
+import { Suspense } from "react";
 
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import { DetailDesktopNav } from "@/components/detail-desktop-nav";
+import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProducersMap } from "@/components/map/producers-map";
 import {
@@ -268,16 +270,18 @@ export default async function ProducerPage({
                 </a>
               ) : null}
             </div>
-            <ProducerAccountActions
-              country={country.slug}
-              producerId={producer.producerId}
-              returnTo={buildProducerHref(producer, {
-                scope,
-                area,
-                ...catalogQuery,
-              })}
-              messages={messages.accountActions}
-            />
+            <Suspense fallback={null}>
+              <ProducerAccountActions
+                country={country.slug}
+                producerId={producer.producerId}
+                returnTo={buildProducerHref(producer, {
+                  scope,
+                  area,
+                  ...catalogQuery,
+                })}
+                messages={messages.accountActions}
+              />
+            </Suspense>
           </div>
           <figure className="detail-hero-media">
             <Image
@@ -294,6 +298,16 @@ export default async function ProducerPage({
             />
           </figure>
         </header>
+
+        <Suspense fallback={null}>
+          <ExpandedProducerProfile
+            country={country.slug}
+            producerId={producer.producerId}
+            fields={producer.fields}
+            locale={locale}
+            messages={messages}
+          />
+        </Suspense>
 
         <section
           id="detail-location"

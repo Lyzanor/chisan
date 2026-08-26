@@ -26,6 +26,7 @@ const messages = {
     removeFavorite: "ఇష్టమైన వాటి నుంచి తొలగించండి",
     saveFavorite: "ఇష్టమైన వాటిలో భద్రపరచండి",
     editMyProfile: "నా ప్రొఫైల్‌ను సవరించండి",
+    expandProfile: "ప్రొఫైల్‌ను విస్తరించండి",
     ownershipVerified: "యాజమాన్యం ధృవీకరించబడింది",
     viewOwnershipClaim: "యాజమాన్య క్లెయిమ్‌ను చూడండి",
     claimProducer: "ఈ ఉత్పత్తిదారు యాజమాన్యాన్ని క్లెయిమ్ చేయండి",
@@ -58,6 +59,16 @@ const messages = {
       "ప్రచార వాదనలు లేకుండా ఉత్పత్తిదారుకు సంబంధించిన వాస్తవ సమాచారం.",
     descripcion_locale:
       "కానానికల్ వివరణ యొక్క మూల భాష; వివరణ ఖాళీగా ఉన్నప్పుడే ఖాళీగా ఉంచండి.",
+    "visitas guiadas":
+      "ఉత్పత్తిదారు ప్రస్తుతం మార్గదర్శక పర్యటనలు అందిస్తున్నారా అనే విషయం.",
+    "mensaje a la comunidad":
+      "సమాజానికి ఉత్పత్తిదారు అందించే బహిరంగ సందేశం.",
+    mensaje_comunidad_locale:
+      "సమాజ సందేశం యొక్క మూల భాష; సందేశం ఖాళీగా ఉన్నప్పుడే ఖాళీగా ఉంచండి.",
+    "enlace destacado 1":
+      "వార్తా కథనం వంటి మొదటి అదనపు ప్రముఖ HTTP(S) లింక్.",
+    "enlace destacado 2":
+      "వార్తా కథనం వంటి రెండవ అదనపు ప్రముఖ HTTP(S) లింక్.",
     direccion: "ఉత్పత్తి యూనిట్ లేదా ప్రజలకు తెరిచి ఉన్న ప్రాంగణం చిరునామా.",
     horario: "ప్రస్తుత సందర్శన, సేకరణ లేదా ప్రజలకు తెరిచి ఉండే సమయాలు.",
     telefono: "అంతర్జాతీయ E.164 రూపం, ఉదాహరణకు +34600112233.",
@@ -186,6 +197,7 @@ const messages = {
     categories: "వర్గాలు",
     allCategories: "అన్నీ",
     information: "సమాచారం",
+    expandedProfile: "విస్తరించిన ప్రొఫైల్",
   },
   fieldLabels: {
     slug: "Slug",
@@ -198,6 +210,11 @@ const messages = {
     address: "చిరునామా",
     description: "వివరణ",
     descriptionLocale: "వివరణ భాష",
+    guidedVisits: "మార్గదర్శక పర్యటనలు",
+    communityMessage: "సమాజానికి సందేశం",
+    communityMessageLocale: "సమాజ సందేశం భాష",
+    highlightedLink1: "ప్రముఖ లింక్ 1",
+    highlightedLink2: "ప్రముఖ లింక్ 2",
     openingHours: "తెరిచి ఉండే సమయాలు",
     phone: "ఫోన్",
     email: "ఇమెయిల్",

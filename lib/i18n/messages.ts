@@ -33,6 +33,7 @@ export type Messages = {
     removeFavorite: string;
     saveFavorite: string;
     editMyProfile: string;
+    expandProfile: string;
     ownershipVerified: string;
     viewOwnershipClaim: string;
     claimProducer: string;
@@ -49,6 +50,11 @@ export type Messages = {
     "productos estrella": string;
     descripcion: string;
     descripcion_locale: string;
+    "visitas guiadas": string;
+    "mensaje a la comunidad": string;
+    mensaje_comunidad_locale: string;
+    "enlace destacado 1": string;
+    "enlace destacado 2": string;
     direccion: string;
     horario: string;
     telefono: string;
@@ -164,6 +170,7 @@ export type Messages = {
     categories: string;
     allCategories: string;
     information: string;
+    expandedProfile: string;
   };
   fieldLabels: {
     slug: string;
@@ -176,6 +183,11 @@ export type Messages = {
     address: string;
     description: string;
     descriptionLocale: string;
+    guidedVisits: string;
+    communityMessage: string;
+    communityMessageLocale: string;
+    highlightedLink1: string;
+    highlightedLink2: string;
     openingHours: string;
     phone: string;
     email: string;

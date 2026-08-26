@@ -8,6 +8,10 @@ export type ActiveProducerAccessLookup = ProducerAccessIdentity & {
   status: "active";
 };
 
+export type ActiveProducerOwnerAccessLookup = ActiveProducerAccessLookup & {
+  role: "owner";
+};
+
 export function buildActiveProducerAccessLookup(
   userId: string,
   producer: ProducerAccessIdentity,
@@ -17,5 +21,15 @@ export function buildActiveProducerAccessLookup(
     country: producer.country,
     producerId: producer.producerId,
     status: "active",
+  };
+}
+
+export function buildActiveProducerOwnerAccessLookup(
+  userId: string,
+  producer: ProducerAccessIdentity,
+): ActiveProducerOwnerAccessLookup {
+  return {
+    ...buildActiveProducerAccessLookup(userId, producer),
+    role: "owner",
   };
 }

@@ -16,6 +16,7 @@ const messages = {
     saveOrClaimPrompt: "Sla deze producent op of claim het eigenaarschap.",
     signIn: "Inloggen", createAccount: "Account aanmaken", removeFavorite: "Uit favorieten verwijderen",
     saveFavorite: "Aan favorieten toevoegen", editMyProfile: "Mijn profiel bewerken",
+    expandProfile: "Profiel uitbreiden",
     ownershipVerified: "Eigenaarschap geverifieerd", viewOwnershipClaim: "Eigenaarsclaim bekijken",
     claimProducer: "Deze producent claimen",
     descriptionLanguage: {
@@ -43,6 +44,11 @@ const messages = {
     lat: "Decimale WGS84-breedtegraad. Breedte- en lengtegraad moeten samen worden opgegeven.",
     lon: "Decimale WGS84-lengtegraad. Breedte- en lengtegraad moeten samen worden opgegeven.",
     "Venta online": "Of een actuele bestelmogelijkheid is gecontroleerd.", "Canal de venta": "Aantoonbare actuele bestelkanalen.",
+    "visitas guiadas": "Of deze producent momenteel rondleidingen aanbiedt; leeg laten als dit niet wordt gepubliceerd.",
+    "mensaje a la comunidad": "Een door de producent geschreven openbaar bericht, bewaard in de oorspronkelijke taal en vóór publicatie gecontroleerd.",
+    mensaje_comunidad_locale: "De brontaal van het bericht aan de gemeenschap; alleen leeg laten als het bericht leeg is.",
+    "enlace destacado 1": "Een relevant HTTP(S)-artikel, interview of andere openbare pagina over deze producent.",
+    "enlace destacado 2": "Een tweede, andere openbare HTTP(S)-pagina; link 1 moet eerst zijn ingevuld.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: { title: "Pagina niet gevonden", description: "Deze producent of pagina bestaat niet.", backToCatalog: "Terug naar de catalogus" },
@@ -92,12 +98,13 @@ const messages = {
   producer: {
     backToMap: "Terug naar de kaart", profile: "Producentenprofiel", website: "Website", googleMaps: "Google Maps",
     phone: "Telefoon", email: "E-mail", imageAlt: "Afbeelding van {producer}", location: "Locatie", mapAria: "Kaart met {producer}",
-    details: "Details", field: "Veld", value: "Waarde", navigation: "Navigatie", map: "Kaart", categories: "Categorieën", allCategories: "Alle", information: "Informatie",
+    details: "Details", field: "Veld", value: "Waarde", navigation: "Navigatie", map: "Kaart", categories: "Categorieën", allCategories: "Alle", information: "Informatie", expandedProfile: "Uitgebreid profiel",
   },
   fieldLabels: {
     slug: "Slug", producerId: "Producent-ID", name: "Naam", municipality: "Gemeente", category: "Categorie",
     additionalCategories: "Aanvullende categorieën", featuredProducts: "Uitgelichte producten",
-    address: "Adres", description: "Beschrijving", descriptionLocale: "Taal van de beschrijving", openingHours: "Openingstijden",
+    address: "Adres", description: "Beschrijving", descriptionLocale: "Taal van de beschrijving", guidedVisits: "Rondleidingen",
+    communityMessage: "Bericht aan de gemeenschap", communityMessageLocale: "Taal van het bericht aan de gemeenschap", highlightedLink1: "Uitgelichte link 1", highlightedLink2: "Uitgelichte link 2", openingHours: "Openingstijden",
     phone: "Telefoon", email: "E-mail", website: "Web", image: "Afbeelding", onlineSales: "Online verkoop", salesChannels: "Verkoopkanalen",
     facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Breedtegraad", longitude: "Lengtegraad", verification: "Verificatie", },
   controlledValues: {
