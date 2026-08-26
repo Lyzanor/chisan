@@ -1,8 +1,14 @@
 # Texas — candidates
 
 - Target CSV: `data/csv/us/west-south-central/texas.csv`
-- Review date: 2026-08-26.
-- Scope: unresolved GetRawMilk cheese leads only; these are not published catalog rows.
+- Discovery sources: current first-party producer pages; queries `Texas Sake Company Austin brewery` and `Texas sake made in Austin`.
+- Search date: 2026-08-26.
+- Scope: Level 1 only. One absent Austin sake producer is proposed; all US CSVs and notes were checked for name/domain duplicates.
+- Cutoff: retain current first-party evidence of own sake production and Austin unit; verify active brewery and avoid contract-brand admission.
+
+## Remaining work
+
+- Recheck active production and canonical establishment identity before admission.
 
 ## GetRawMilk cheese review — 2026-08-26
 

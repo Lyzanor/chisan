@@ -22,3 +22,6 @@
 {"slug":"agripiemonte","action":"keep","sources":[{"url":"https://agripiemonte.it/chi-siamo/","type":"official-site","checkedAt":"2026-08-21","claims":["identity","producer-activity","municipality","location","contact","link-ownership"]}]}
 {"slug":"il-frutto-permesso","action":"keep","sources":[{"url":"http://fruttopermesso.com/","type":"official-site","checkedAt":"2026-08-21","claims":["identity","producer-activity","municipality","contact","online-sales","link-ownership"]}]}
 {"slug":"molino-peila-spa","action":"keep","sources":[{"url":"https://www.molinopeila.it/it","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope"]}]}
+{"slug":"martini-rossi-pessione","action":"keep","sources":[{"url":"https://www.martini.com/our-heritage/our-history/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}
+{"slug":"domori","action":"keep","sources":[{"url":"https://domori.com/en/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}
+{"slug":"caffarel","action":"keep","sources":[{"url":"https://caffarel.com/chi-siamo/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}

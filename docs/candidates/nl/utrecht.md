@@ -1,0 +1,13 @@
+# Utrecht — Level 1 candidates
+
+- Target CSV: `data/csv/nl/west-nederland/utrecht.csv`
+- Discovery sources/queries: [Stokerij Soestdijk](https://www.stokerijsoestdijk.nl/), [Stookt](https://stookt.nl/), [Fijn Gestookt](https://fijngestookt.nl/), [Remia Den Dolder production](https://www.remia.nl/brochures/Remia-MVO-Jaarverslag-2024.pdf), [Vrumona company profile](https://vrumona.pr-newsroom.nl/bedrijfsinformatie), [Inproba Baarn production](https://www.inproba.nl/oriental/0/4/1973/wie-zijn-wij.html), [Schulp production story](https://schulp.nl/over-schulp/kennis-van-fruit/); queries `Utrecht distilleerderij gin genever award`, `Bunschoten stokerij ambachtelijke distillaten`, `Remia Den Dolder sauzen fabriek`, `Vrumona Bunnik frisdrank productie`, `Inproba Baarn productielocatie`, `Schulp Breukelen sap perserij`.
+- Search date: 2026-08-26.
+- Scope: current Utrecht productive units with own product signals, adding weak `Condimentos` and zero `Bebidas sin alcohol` alongside the existing distillery sweep; all NL CSVs and notes were checked for duplicate names/domains/units.
+- Cutoff: pages and search results available on 2026-08-26; later changes are out of scope.
+- Remaining work: confirm productive municipality/address, current offer, own versus contract production, legal identity, coordinates and editorial eligibility for all leads. Level 1 is discovery only; Remia and Vrumona are manufacturer leads, not admissions.
+
+| nombre | municipio or geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Stokerij Soestdijk | Soest (productive address to confirm) | `Destilados y licores` — genever, vodka, gin and whisky | The current site describes local distilling in copper stills, online ordering and World Drinks Awards medals, including a 2026 gold for Zoesdijck Rogge Genever; it is a clear Soest-area spirits anchor. | [Stokerij Soestdijk](https://www.stokerijsoestdijk.nl/) | [Stokerij Soestdijk](https://www.stokerijsoestdijk.nl/) | Find and confirm the productive address/gemeente; distinguish shop, warehouse and still location. |
+| Stookt V.O.F. / Stookt Dutch Craft Gin | Utrecht, municipality Utrecht | `Destilados y licores` — award-winning craft gin | The producer gives a Utrecht address, describes its own copper-alambic recipe work and reports World Gin Awards 2024 gold/Best Dutch Contemporary Gin; the current offer is orderable and nationally distinctive. | [Stookt](https://stookt.nl/) | [Stookt](https://stookt.nl/) | Confirm whether the Utrecht address is the still/production unit or correspondence address, plus current stock and exact legal identity. |

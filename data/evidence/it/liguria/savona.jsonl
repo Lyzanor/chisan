@@ -17,3 +17,4 @@
 {"slug":"bio-vio","action":"keep","sources":[{"url":"https://www.biovio.it/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact"]}]}
 {"slug":"frantoio-marco","action":"keep","sources":[{"url":"https://frantoiomarco.com/it/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales","contact"]}]}
 {"slug":"innocenzo-turco","action":"keep","sources":[{"url":"https://www.innocenzoturco.it/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales","contact"]}]}
+{"slug":"noberasco","action":"keep","sources":[{"url":"https://noberasco.it/la-nostra-sede/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}

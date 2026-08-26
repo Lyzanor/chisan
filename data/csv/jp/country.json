@@ -13,6 +13,7 @@
     "tokio": "tokyo"
   },
   "producerRouteAliases": {
+    "aichi/ichibiki-nagoya": 1972,
     "akita/akita-jozo-akita": 43,
     "akita/akita-shurui-seizo-akita": 46,
     "akita/akita-shuzo-akita": 47,

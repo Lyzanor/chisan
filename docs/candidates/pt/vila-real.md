@@ -1,0 +1,14 @@
+# Vila Real — Level 1 candidates
+
+- Target CSV: `data/csv/pt/norte/vila-real.csv` (existing area; 58 rows).
+- Discovery sources/queries: current official nut and mushroom producer pages, PortugalFoods, CNCFS materials and focused queries for Vila Real chestnut, nut and mushroom processors.
+- Search date: 2026-08-26.
+- Scope: Level 1 only; absent productive units in `Frutos secos` and `Setas`, prioritising Vila Real’s strongest under-covered food sectors; names were checked against all Portugal CSVs and existing Portugal candidate notes.
+- Reproducible cutoff: public pages opened or indexed on 2026-08-26; one focused discovery pass only. Institutional, professional-network and company pages are discovery signals, not admission or current-activity verification.
+- Remaining work: resolve exact plant locations, current activity and avoid duplicating successor/parent identities in the mushroom sector.
+
+| Name | Municipality / geographic clue | Probable category | Probable output | Reason / relevance | Discovery URL | Official URL | Visible doubt |
+|---|---|---|---|---|---|---|---|
+| FS – Empresa Agrícola | Murça | Frutos secos | Chestnuts, figs, walnuts, almonds and hazelnuts | FS’s current site documents own chestnut production in Murça, subsequent nut production and a dedicated production address; it is a strong Transmontes regional lead. | [FS Agrícola](https://www.fs-agricola.pt/) | [FS Agrícola](https://www.fs-agricola.pt/) | The company also sells honey and preserved olives and works with local producers; confirm own production versus aggregation and current public offer. |
+| AgroAguiar – Agroindústria, S.A. | Vila Pouca de Aguiar (Sabroso de Aguiar) | Frutos secos | Fresh, frozen, cooked and processed chestnuts and other nuts | AgroAguiar states that it cultivates, acquires, processes and distributes nuts, opened an IQF factory and exports internationally; CNCFS material independently identifies its chestnut transformation. | [AgroAguiar company page](https://agroaguiar.pt/sobre-nos/) | [AgroAguiar](https://agroaguiar.pt/) | The group now has several units, including Odemira and Tarouca; resolve the Vila Real productive unit and current consumer output. |
+| CUGA cogumelos | Vila Flor (Benlhevai) | Setas | Cultivated fresh mushrooms | CUGA’s current professional profile identifies Vila Flor’s production address and a large mushroom-food operation; it is a strong lead for Portugal’s one-row mushroom category and may represent the successor/rebrand of the historic Sousacamp business. | [CUGA current profile](https://pt.linkedin.com/company/cuga-cogumelos) | [CUGA](https://cuga.pt/) | The official domain is protected from automated access and the Sousacamp/CUGA corporate continuity needs confirmation; do not add a separate Sousacamp row without resolving it. |

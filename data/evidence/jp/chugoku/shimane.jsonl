@@ -50,3 +50,4 @@
 {"slug":"iwami-bakushu","action":"keep","sources":[{"url":"http://www.iwami-bakushu.com/","type":"official-site","checkedAt":"2026-08-13","claims":["identity","producer-activity","municipality","link-ownership"]}],"notes":"Official site confirms the active brewery and municipality."}
 {"slug":"sea-life-hamada","action":"keep","sources":[{"url":"https://sealife-hamada.net/","type":"official-site","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","link-ownership","online-sales"]}]}
 {"slug":"hirano-kanzume-matsue","action":"keep","sources":[{"url":"https://www.shimane-bussan.or.jp/sb/jigyousyo/j-nousan","type":"institutional-directory","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","location","contact"]}]}
+{"slug":"sankai","action":"keep","sources":[{"url":"https://www.sankai-mdfoods.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}

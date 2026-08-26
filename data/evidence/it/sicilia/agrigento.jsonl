@@ -31,3 +31,4 @@
 {"slug":"cantine-barbera","action":"keep","sources":[{"url":"https://www.cantinebarbera.it/it/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope"]}]}
 {"slug":"mandranova","action":"keep","sources":[{"url":"https://mandranova.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact"]}]}
 {"slug":"ravida","action":"keep","sources":[{"url":"https://ravida.it/en/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact","online-sales"]}]}
+{"slug":"ittica-conserviera-il-faro","action":"keep","sources":[{"url":"https://www.itticailfaro.it/en/lazienda/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}

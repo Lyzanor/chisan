@@ -74,3 +74,5 @@
 {"slug":"ritterhof","action":"keep","sources":[{"url":"https://www.ritterhof.it/de","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact"]}]}
 {"slug":"stroblhof","action":"keep","sources":[{"url":"https://stroblhof.it/de/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact"]}]}
 {"slug":"weingut-plonerhof","action":"keep","sources":[{"url":"https://www.weingut-plonerhof.it/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact"]}]}
+{"slug":"viropa","action":"keep","sources":[{"url":"https://www.viropa.it/it/viropa-home/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}
+{"slug":"pompadour-te","action":"keep","sources":[{"url":"https://www.pompadour.it/it/seopagelabel/responsabilit-sociale-ecologia/pg-31","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}

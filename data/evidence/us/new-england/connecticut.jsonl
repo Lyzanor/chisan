@@ -118,3 +118,4 @@
 {"slug":"lamothe-s-sugar-house","action":"keep","sources":[{"url":"https://lamothesugarhouse.com/","type":"official-site","checkedAt":"2026-08-15","claims":["identity","producer-activity","municipality","link-ownership"]}]}
 {"slug":"maple-craft-foods","action":"keep","sources":[{"url":"https://maplecraftfoods.com/","type":"official-site","checkedAt":"2026-08-15","claims":["identity","producer-activity","municipality","link-ownership","online-sales"]}]}
 {"slug":"haight-brown-vineyard","action":"reject","reason":"closed","sources":[{"url":"https://www.ctinsider.com/news/article/litchfield-haight-brown-vineyard-closes-wine-18278039.php","type":"press","checkedAt":"2026-08-15","claims":["identity","producer-activity","closure"]}]}
+{"slug":"lesserevil-danbury","action":"keep","sources":[{"url":"https://lesserevil.com/pages/our-story","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}

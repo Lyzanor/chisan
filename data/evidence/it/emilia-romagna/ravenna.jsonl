@@ -16,3 +16,4 @@
 {"slug":"rio-del-sol","action":"keep","sources":[{"url":"https://www.riodelsolfruit.it/","type":"official-site","checkedAt":"2026-08-21","claims":["identity","producer-activity","municipality","location","contact","link-ownership"]}]}
 {"slug":"molino-spadoni-s-p-a","action":"keep","sources":[{"url":"https://www.molinospadoni.it/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales"]}]}
 {"slug":"fattoria-zerbina","action":"keep","sources":[{"url":"https://www.zerbina.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales","contact"]}]}
+{"slug":"melandri-gaudenzio","action":"keep","sources":[{"url":"https://www.melandrigaudenzio.com/chi-siamo/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}

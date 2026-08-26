@@ -1,0 +1,13 @@
+# Andaman and Nicobar Islands — candidates
+
+- Target CSV: `data/csv/in/eastern/andaman-nicobar-islands.csv`
+- Review date: 2026-08-26.
+- Scope: second-pass review completed; 3 specific unresolved candidates retained below.
+- Cutoff: pages and search results available through 2026-08-26; later changes are out of scope.
+- Remaining work: resolve each candidate-specific blocker with a current source; uncertainty is not an exclusion.
+
+| nombre | municipio or geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Andaman Pragati Coconut Producer Ltd | Industrial Estate Mitakhari, Ograbraj, South Andaman; town label unresolved | `Aceite` — AG virgin coconut oil | Coconut Development Board’s ODIS record created in 2026 names the company, product brand AG, South Andaman address and 800-litre/day stated utilization. That is a concrete local processing signal for the empty island area, although ODIS itself is a registration/product directory rather than admission proof. | <https://coconutboard.in/odis/ODIS_View_Prod_Details.aspx?Code=ZZ9V4M7G%2FeE%2F3kPadvw9sg%3D%3D> |  | Confirm current public offer, productive address and whether AG/AAJAA are one row or separate units. |
+| Riflex Industries Pvt Ltd (Mithai Raja) | Campbell Bay and Hutbay units; registered contact in Sri Vijaya Puram | `Despensa artesanal` — desiccated coconut powder and flakes | The first-party site says the company has operated since 2000, manufactures desiccated coconut products, and has units at Campbell Bay and Hutbay. The two island units and value addition at a remote location are a strong regional signal, but the contact address is not itself a plant address. | <https://riflexindustries.com/> | <https://riflexindustries.com/> | Split or consolidate the two productive units, confirm town/path address, current food catalog and whether non-food shell charcoal should remain out of scope. |
+| Monsoon Fisheries | Dhanikhari, South Andaman; Port Blair area | `Pescado` — tuna and marine products | The current first-party about page identifies a fisheries business in South Andaman and explicitly presents tuna fish activity. This is a direct productive-sector signal aligned with the official South Andaman marine-fish ODOP, while the page does not yet expose enough detail to establish processing versus trading. | <https://www.monsoonfisheries.in/about-us.htm> | <https://www.monsoonfisheries.in/about-us.htm> | Confirm own landing/processing facility, current product offer, exact municipality, and distinguish the company from a fish trader or distributor. |

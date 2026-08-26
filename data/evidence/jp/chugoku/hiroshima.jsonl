@@ -68,3 +68,4 @@
 {"slug":"keima-kamaboko-onomichi","action":"keep","sources":[{"url":"https://www.keima-kamaboko.com/","type":"official-site","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","link-ownership","online-sales"]}]}
 {"slug":"liberte-honpo","action":"keep","sources":[{"url":"https://libertehonpo.co.jp","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales"]}]}
 {"slug":"sennari","action":"keep","sources":[{"url":"https://sennari-oochi.com","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales"]}]}
+{"slug":"yamadaya","action":"keep","sources":[{"url":"https://momiji-yamadaya.co.jp/about/gaiyou.php","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}

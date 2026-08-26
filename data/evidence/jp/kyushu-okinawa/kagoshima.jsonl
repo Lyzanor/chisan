@@ -61,3 +61,4 @@
 {"slug":"matoba-suisan-makurazaki","action":"keep","sources":[{"url":"https://katsuoya.jp/","type":"official-site","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","link-ownership","online-sales"]}]}
 {"slug":"marumo-makurazaki","action":"keep","sources":[{"url":"https://kk-marumo.co.jp/","type":"official-site","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","location","contact","link-ownership"]}]}
 {"slug":"satomaru-suisan-tarumizu","action":"keep","sources":[{"url":"https://www.sancyokutarumizu.com/blank-9","type":"institutional-directory","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","location","link-ownership"]}]}
+{"slug":"seika-foods-hioki-factory","action":"keep","sources":[{"url":"https://www.seikafoods.jp/company/about/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}

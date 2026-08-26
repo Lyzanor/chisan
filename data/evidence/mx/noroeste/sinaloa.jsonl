@@ -1,3 +1,5 @@
 {"slug":"suaves-de-mazatlan","action":"keep","sources":[{"url":"https://suaves.mx","type":"official-site","checkedAt":"2026-08-16","claims":["identity","producer-activity","municipality","link-ownership","contact"]}]}
 {"slug":"cerveceria-bichola","action":"keep","sources":[{"url":"https://bichola.mx","type":"official-site","checkedAt":"2026-08-16","claims":["identity","producer-activity","municipality","link-ownership"]}]}
 {"slug":"cerveceria-navegante","action":"keep","sources":[{"url":"https://cervecerianavegante.com","type":"official-site","checkedAt":"2026-08-16","claims":["identity","producer-activity","municipality","link-ownership"]}]}
+{"slug":"grupo-pinsa-mazatlan","action":"keep","sources":[{"url":"https://grupopinsa.mx/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"grupo-bajamar-los-mochis","action":"keep","sources":[{"url":"https://www.grupobajamar.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}

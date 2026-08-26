@@ -47,3 +47,4 @@
 {"slug":"mimasaka-beer-works","action":"keep","sources":[{"url":"https://mimasakabeerworks.com/","type":"official-site","checkedAt":"2026-08-13","claims":["identity","producer-activity","municipality","link-ownership"]}],"notes":"Official site confirms the active brewery and municipality."}
 {"slug":"hinase-kaki-koubou-bizen","action":"keep","sources":[{"url":"https://hinase-kakikoubou.com/","type":"official-site","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","link-ownership","online-sales"]}]}
 {"slug":"hattori-suisan-setouchi","action":"keep","sources":[{"url":"https://www.hattorisuisan.co.jp/","type":"official-site","checkedAt":"2026-08-14","claims":["identity","producer-activity","municipality","location","link-ownership"]}]}
+{"slug":"asamurasaki","action":"keep","sources":[{"url":"https://www.asamurasaki.co.jp/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality"]}]}

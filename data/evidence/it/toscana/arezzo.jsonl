@@ -35,3 +35,4 @@
 {"slug":"petrolo","action":"keep","sources":[{"url":"https://www.petrolo.it/en/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","contact"]}]}
 {"slug":"tenuta-di-frassineto","action":"keep","sources":[{"url":"https://www.tenutadifrassineto.com/en/i-vini/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope","online-sales","contact"]}]}
 {"slug":"tunia","action":"keep","sources":[{"url":"https://www.tunia.it/index_it.html","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","scope"]}]}
+{"slug":"le-stagioni-ditalia","action":"keep","sources":[{"url":"https://www.lestagioniditalia.it/en/bio-herbal-tisane-infusions/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}

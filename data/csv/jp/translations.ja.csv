@@ -1150,7 +1150,6 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 1969,descripcion,en,bc5957353180b64339b48327ce58311690199839de2f4362dce713626f2a2843,"ヤマアは土佐清水市, kochiで水産加工品を製造する。",machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 1970,descripcion,en,f7f2ca951a5b6b1e16c07e816ec17c836147bbfa5d92788fcd4853ea1e334471,Numazuでアジ、サバ、その他の干物を製造する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 1971,descripcion,en,8f399ac5f8e8b9c9689e0ca2ec9e1d7637fe11705224f00025b14ecf11acafac,Minamichitaの生産拠点で海藻の保存食品、海鮮せんべい、乾燥魚介類を製造する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
-1972,descripcion,en,4df2614312bcb9cf58cd6217b8b5c0f5891cd9a9a41cce06cc3b4e199db68da6,Nagoyaの生産拠点で魚肉練り製品と調味料を製造する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 1973,descripcion,es,f749605699a34dcd23a18fe729affa3731a6a47d53b43e812d76d6aeb84d9ec1,Hachijojimaの海域で漁獲された魚を使ってくさやを製造する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 1974,descripcion,en,1aab8a6ef79ef72d42ea9c89b6a2422909bff8e09e078097aeda40b497dbcbea,Nachikatsuuraで生マグロを加工し、マグロのシャルキュトリを製造する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 1975,descripcion,en,e83406d62d8697466301ae19d4b171d4d902eee10c9600da1b615cb3b534757e,ヤマシン醸造はHekinanの醸造所でしょうゆと伝統的な調味料を製造する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
