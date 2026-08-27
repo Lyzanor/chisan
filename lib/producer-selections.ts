@@ -1,5 +1,7 @@
 import type { ProducerIdentity } from "@/lib/csv-catalog";
 
+export const PRODUCER_SELECTION_MIN_ZOOM = 2;
+
 export type ProducerSelectionItem = ProducerIdentity & {
   key: string;
   area: string;

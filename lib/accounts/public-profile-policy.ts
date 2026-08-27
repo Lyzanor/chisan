@@ -14,6 +14,7 @@ const RESERVED_PUBLIC_HANDLES = new Set([
   "acceso",
   "admin",
   "api",
+  "chisan",
   "cuenta",
   "events",
   "help",

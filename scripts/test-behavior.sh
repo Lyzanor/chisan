@@ -21,13 +21,15 @@ if (!rows.length) {
   process.exit(1);
 }
 
+const readAdditionalCategories = (row) =>
+  (row["categorias adicionales"] || "")
+    .split("|")
+    .map((category) => category.trim())
+    .filter(Boolean);
 const first = rows[0];
-const multiCategory = rows.find((row) => (row["categorias adicionales"] || "").trim());
+const multiCategory = rows.find((row) => readAdditionalCategories(row).length >= 2);
 const last = rows.at(-1);
-const additionalCategories = (multiCategory?.["categorias adicionales"] || "")
-  .split("|")
-  .map((category) => category.trim())
-  .filter(Boolean);
+const additionalCategories = multiCategory ? readAdditionalCategories(multiCategory) : [];
 const payload = {
   slug: (first.slug || "").trim(),
   name: (first.nombre || "").trim(),

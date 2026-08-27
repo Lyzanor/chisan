@@ -3,6 +3,7 @@ import test from "node:test";
 
 import type { LocatedProducerCsvRow } from "../lib/csv-catalog";
 import { buildProducerSelectionItems } from "../lib/producer-selections.server";
+import { PRODUCER_SELECTION_MIN_ZOOM } from "../lib/producer-selections";
 
 function producer(
   producerId: number,
@@ -45,4 +46,8 @@ test("producer selection items retain distinct current links across areas", () =
       { key: "es:42", href: "/es/madrid/madrid-producer" },
     ],
   );
+});
+
+test("producer selections can fit producers across countries", () => {
+  assert.ok(PRODUCER_SELECTION_MIN_ZOOM <= 2);
 });

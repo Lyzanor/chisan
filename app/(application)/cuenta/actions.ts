@@ -206,6 +206,8 @@ function isPublicHandleConflict(error: unknown): boolean {
   );
 }
 
+class PublicHandleChangedError extends Error {}
+
 export async function updatePublicProfileAction(formData: FormData): Promise<void> {
   const account = await requireCurrentAccount("/cuenta/perfil");
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
@@ -251,14 +253,22 @@ export async function updatePublicProfileAction(formData: FormData): Promise<voi
   const now = new Date();
   try {
     await getDatabase().transaction(async (transaction) => {
-      await transaction
+      const publicHandleGuard = account.publicHandle
+        ? eq(users.publicHandle, account.publicHandle)
+        : publicHandle
+          ? or(isNull(users.publicHandle), eq(users.publicHandle, publicHandle))
+          : isNull(users.publicHandle);
+      const updatedUsers = await transaction
         .update(users)
         .set({
           publicHandle,
           publicProfileVisibility: parsed.data.visibility,
           updatedAt: now,
         })
-        .where(eq(users.id, account.id));
+        .where(and(eq(users.id, account.id), publicHandleGuard))
+        .returning({ id: users.id });
+      if (!updatedUsers.length) throw new PublicHandleChangedError();
+
       await transaction.insert(auditEvents).values({
         actorKind: "user",
         actorUserId: account.id,
@@ -272,6 +282,13 @@ export async function updatePublicProfileAction(formData: FormData): Promise<voi
       });
     });
   } catch (error) {
+    if (error instanceof PublicHandleChangedError) {
+      redirectWithMessage(
+        "/cuenta/perfil",
+        "error",
+        "Your public handle was set in another request. Reload the page to continue.",
+      );
+    }
     if (isPublicHandleConflict(error)) {
       redirectWithMessage(
         "/cuenta/perfil",

@@ -6,7 +6,10 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import type { ProducerMapMarker } from "@/lib/producer-selections";
+import {
+  PRODUCER_SELECTION_MIN_ZOOM,
+  type ProducerMapMarker,
+} from "@/lib/producer-selections";
 
 // Below this threshold, show all points regardless of viewport.
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
@@ -125,12 +128,14 @@ export default function ProducersMapInner({
   points,
   highlightedKey,
   singlePointZoom = 13,
+  minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
   onReady,
 }: {
   points: ProducerMapMarker[];
   highlightedKey?: string;
   singlePointZoom?: number;
+  minZoom?: number;
   messages: {
     openProfile: string;
   };
@@ -143,7 +148,7 @@ export default function ProducersMapInner({
     <MapContainer
       center={initialCenter}
       zoom={initialZoom}
-      minZoom={5}
+      minZoom={minZoom}
       className="producers-map-canvas"
       scrollWheelZoom
       whenReady={onReady}

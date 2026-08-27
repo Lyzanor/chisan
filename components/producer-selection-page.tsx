@@ -52,30 +52,32 @@ export function ProducerSelectionPage({
           <h1>{selection.title}</h1>
           <p>{selection.description}</p>
         </div>
-        <p className="producer-selection-page__summary">
-          {messages.producerCount(selection.items.length)} · {messages.mappedCount(markers.length)}
-        </p>
+        {selection.items.length ? (
+          <p className="producer-selection-page__summary">
+            {messages.producerCount(selection.items.length)} · {messages.mappedCount(markers.length)}
+          </p>
+        ) : null}
       </header>
 
-      <section className="catalog-simple-layout producer-selection-page__layout">
-        <div className="catalog-simple-map" aria-label={messages.map.producerMap}>
-          <ProducerSelectionMap
-            points={markers}
-            messages={{
-              loading: messages.map.loading,
-              emptyCoordinates: messages.map.emptyCoordinates,
-              openProfile: messages.map.openProfile,
-            }}
-          />
-        </div>
-
-        <aside className="catalog-viewer" aria-label={messages.producers}>
-          <div className="catalog-viewer-head">
-            <h2>{messages.producers}</h2>
-            <p>{messages.producerCount(selection.items.length)}</p>
+      {selection.items.length ? (
+        <section className="catalog-simple-layout producer-selection-page__layout">
+          <div className="catalog-simple-map" aria-label={messages.map.producerMap}>
+            <ProducerSelectionMap
+              points={markers}
+              messages={{
+                loading: messages.map.loading,
+                emptyCoordinates: messages.map.emptyCoordinates,
+                openProfile: messages.map.openProfile,
+              }}
+            />
           </div>
 
-          {selection.items.length > 0 ? (
+          <aside className="catalog-viewer" aria-label={messages.producers}>
+            <div className="catalog-viewer-head">
+              <h2>{messages.producers}</h2>
+              <p>{messages.producerCount(selection.items.length)}</p>
+            </div>
+
             <ul className="producer-compact-list">
               {selection.items.map((item) => (
                 <li key={item.key}>
@@ -99,11 +101,11 @@ export function ProducerSelectionPage({
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className="catalog-empty">{selection.emptyMessage}</p>
-          )}
-        </aside>
-      </section>
+          </aside>
+        </section>
+      ) : (
+        <p className="catalog-empty">{selection.emptyMessage}</p>
+      )}
     </main>
   );
 }

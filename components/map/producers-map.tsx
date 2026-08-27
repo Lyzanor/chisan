@@ -8,7 +8,10 @@ import {
   type CatalogNavigationScope,
 } from "@/lib/catalog-navigation";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
-import type { ProducerMapMarker } from "@/lib/producer-selections";
+import {
+  PRODUCER_SELECTION_MIN_ZOOM,
+  type ProducerMapMarker,
+} from "@/lib/producer-selections";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
@@ -53,6 +56,7 @@ export function ProducersMap({
       points={markers}
       highlightedKey={highlightedSlug}
       singlePointZoom={singlePointZoom}
+      minZoom={5}
       messages={messages}
     />
   );
@@ -62,11 +66,13 @@ export function ProducerSelectionMap({
   points,
   highlightedKey,
   singlePointZoom,
+  minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
 }: {
   points: ProducerMapMarker[];
   highlightedKey?: string;
   singlePointZoom?: number;
+  minZoom?: number;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
@@ -83,6 +89,7 @@ export function ProducerSelectionMap({
         points={points}
         highlightedKey={highlightedKey}
         singlePointZoom={singlePointZoom}
+        minZoom={minZoom}
         messages={{
           openProfile: messages.openProfile,
         }}
