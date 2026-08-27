@@ -13,7 +13,13 @@ import {
   firstValidationMessage,
   formString,
   producerKeySchema,
+  publicProfileUpdateSchema,
 } from "@/lib/accounts/input";
+import {
+  isPublicProfileVisible,
+  normalizePublicHandle,
+  publicHandleProblem,
+} from "@/lib/accounts/public-profile-policy";
 import {
   PRODUCER_EDITABLE_FIELDS,
   PRODUCER_PREMIUM_EDITABLE_FIELDS,
@@ -189,6 +195,167 @@ export async function updateAccountProfileAction(formData: FormData): Promise<vo
   redirectWithMessage("/cuenta/perfil", "notice", "Profile updated.");
 }
 
+function isPublicHandleConflict(error: unknown): boolean {
+  return Boolean(
+    error &&
+      typeof error === "object" &&
+      "code" in error &&
+      error.code === "23505" &&
+      "constraint_name" in error &&
+      error.constraint_name === "users_public_handle_uidx",
+  );
+}
+
+export async function updatePublicProfileAction(formData: FormData): Promise<void> {
+  const account = await requireCurrentAccount("/cuenta/perfil");
+  if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
+
+  const parsed = publicProfileUpdateSchema.safeParse({
+    publicHandle: formString(formData, "publicHandle"),
+    visibility: formString(formData, "visibility"),
+  });
+  if (!parsed.success) {
+    redirectWithMessage(
+      "/cuenta/perfil",
+      "error",
+      firstValidationMessage(parsed.error),
+    );
+  }
+
+  const submittedHandle = normalizePublicHandle(parsed.data.publicHandle);
+  if (
+    account.publicHandle &&
+    submittedHandle &&
+    submittedHandle !== account.publicHandle
+  ) {
+    redirectWithMessage(
+      "/cuenta/perfil",
+      "error",
+      "A published handle is stable and cannot be changed from the profile form.",
+    );
+  }
+
+  const publicHandle = account.publicHandle ?? (submittedHandle || null);
+  if (publicHandle) {
+    const problem = publicHandleProblem(publicHandle);
+    if (problem) redirectWithMessage("/cuenta/perfil", "error", problem);
+  }
+  if (isPublicProfileVisible(parsed.data.visibility) && !publicHandle) {
+    redirectWithMessage(
+      "/cuenta/perfil",
+      "error",
+      "Choose a public handle before making the profile visible.",
+    );
+  }
+
+  const now = new Date();
+  try {
+    await getDatabase().transaction(async (transaction) => {
+      await transaction
+        .update(users)
+        .set({
+          publicHandle,
+          publicProfileVisibility: parsed.data.visibility,
+          updatedAt: now,
+        })
+        .where(eq(users.id, account.id));
+      await transaction.insert(auditEvents).values({
+        actorKind: "user",
+        actorUserId: account.id,
+        action: "account.public_profile_updated",
+        targetType: "user",
+        targetId: account.id,
+        metadata: {
+          fields: ["publicHandle", "publicProfileVisibility"],
+          visibility: parsed.data.visibility,
+        },
+      });
+    });
+  } catch (error) {
+    if (isPublicHandleConflict(error)) {
+      redirectWithMessage(
+        "/cuenta/perfil",
+        "error",
+        "That public handle is already in use.",
+      );
+    }
+    throw error;
+  }
+
+  revalidatePath("/cuenta/perfil");
+  if (publicHandle) revalidatePath(`/u/${publicHandle}`);
+  redirectWithMessage("/cuenta/perfil", "notice", "Public profile settings updated.");
+}
+
+export async function setFavoritePublicVisibilityAction(
+  formData: FormData,
+): Promise<void> {
+  const account = await requireCurrentAccount("/cuenta/favoritos");
+  const parsed = producerKeySchema.safeParse({
+    country: formString(formData, "country"),
+    producerId: formString(formData, "producerId"),
+  });
+  const returnTo = safeReturnPath(
+    formString(formData, "returnTo"),
+    "/cuenta/favoritos",
+  );
+  if (!parsed.success) {
+    redirectWithMessage(returnTo, "error", firstValidationMessage(parsed.error));
+  }
+
+  const showOnPublicProfile = formString(formData, "show") === "yes";
+  if (
+    showOnPublicProfile &&
+    !(await findProducerById(parsed.data.country, parsed.data.producerId))
+  ) {
+    redirectWithMessage(
+      returnTo,
+      "error",
+      "That producer is no longer in the catalog.",
+    );
+  }
+
+  const updated = await getDatabase().transaction(async (transaction) => {
+    const rows = await transaction
+      .update(favorites)
+      .set({ showOnPublicProfile })
+      .where(
+        and(
+          eq(favorites.userId, account.id),
+          eq(favorites.country, parsed.data.country),
+          eq(favorites.producerId, parsed.data.producerId),
+        ),
+      )
+      .returning({ producerId: favorites.producerId });
+    if (rows.length) {
+      await transaction.insert(auditEvents).values({
+        actorKind: "user",
+        actorUserId: account.id,
+        action: "favorite.public_visibility_updated",
+        targetType: "favorite",
+        targetId: `${account.id}:${parsed.data.country}:${parsed.data.producerId}`,
+        metadata: { showOnPublicProfile },
+      });
+    }
+    return rows;
+  });
+  if (!updated.length) {
+    redirectWithMessage(returnTo, "error", "Save the producer before sharing it.");
+  }
+
+  revalidatePath(returnTo.split("?")[0] || "/cuenta/favoritos");
+  if (account.publicHandle) revalidatePath(`/u/${account.publicHandle}`);
+  redirectWithMessage(
+    returnTo,
+    "notice",
+    showOnPublicProfile
+      ? isPublicProfileVisible(account.publicProfileVisibility)
+        ? "Producer added to your public profile."
+        : "Producer selected for your profile; the profile remains private."
+      : "Producer hidden from your public profile.",
+  );
+}
+
 export async function toggleFavoriteAction(formData: FormData): Promise<void> {
   const account = await requireCurrentAccount();
   const parsed = producerKeySchema.safeParse({
@@ -241,6 +408,7 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
   }
 
   revalidatePath(returnTo.split("?")[0] || "/");
+  if (account.publicHandle) revalidatePath(`/u/${account.publicHandle}`);
   redirectWithMessage(
     returnTo,
     "notice",

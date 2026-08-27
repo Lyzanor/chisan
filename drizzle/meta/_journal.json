@@ -50,6 +50,13 @@
       "when": 1787739643311,
       "tag": "0006_producer_profile_upgrades",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1787863038776,
+      "tag": "0007_flowery_amphibian",
+      "breakpoints": true
     }
   ]
 }

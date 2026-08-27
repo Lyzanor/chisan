@@ -6,15 +6,14 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import { buildProducerHref, type CatalogNavigationScope } from "@/lib/catalog-navigation";
-import type { ProducerMapPoint } from "@/lib/csv-catalog";
+import type { ProducerMapMarker } from "@/lib/producer-selections";
 
 // Below this threshold, show all points regardless of viewport.
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 200;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
 
-function getPointsBounds(points: ProducerMapPoint[]): L.LatLngBounds | null {
+function getPointsBounds(points: ProducerMapMarker[]): L.LatLngBounds | null {
   if (!points.length) {
     return null;
   }
@@ -24,7 +23,7 @@ function getPointsBounds(points: ProducerMapPoint[]): L.LatLngBounds | null {
   );
 }
 
-function getInitialCenter(points: ProducerMapPoint[]): [number, number] {
+function getInitialCenter(points: ProducerMapMarker[]): [number, number] {
   const bounds = getPointsBounds(points);
   if (!bounds) {
     return DEFAULT_MAP_CENTER;
@@ -50,16 +49,12 @@ const producerPinHighlightedIcon = L.divIcon({
 
 function BoundsAwareMarkers({
   points,
-  scope,
-  area,
-  highlightedSlug,
+  highlightedKey,
   singlePointZoom = 13,
   messages,
 }: {
-  points: ProducerMapPoint[];
-  scope: CatalogNavigationScope;
-  area: string;
-  highlightedSlug?: string;
+  points: ProducerMapMarker[];
+  highlightedKey?: string;
   singlePointZoom?: number;
   messages: {
     openProfile: string;
@@ -85,8 +80,7 @@ function BoundsAwareMarkers({
       const bounds = getPointsBounds(points);
       if (!bounds) return;
 
-      const center = bounds.getCenter();
-      map.setView([center.lat, center.lng], 10, { animate: false });
+      map.fitBounds(bounds.pad(0.2), { animate: false, maxZoom: 10 });
     }
   }, [map, points, singlePointZoom]);
 
@@ -108,16 +102,16 @@ function BoundsAwareMarkers({
     <>
       {visible.map((point) => (
         <Marker
-          key={point.slug}
+          key={point.key}
           position={[point.latitude, point.longitude]}
-          icon={highlightedSlug === point.slug ? producerPinHighlightedIcon : producerPinIcon}
+          icon={highlightedKey === point.key ? producerPinHighlightedIcon : producerPinIcon}
         >
           <Popup>
             <strong>{point.name}</strong>
             <br />
             {point.city} · {point.categories.join(" · ")}
             <br />
-            <Link href={buildProducerHref(point, { scope, area })}>
+            <Link href={point.href}>
               {messages.openProfile}
             </Link>
           </Popup>
@@ -129,17 +123,13 @@ function BoundsAwareMarkers({
 
 export default function ProducersMapInner({
   points,
-  scope,
-  area,
-  highlightedSlug,
+  highlightedKey,
   singlePointZoom = 13,
   messages,
   onReady,
 }: {
-  points: ProducerMapPoint[];
-  scope: CatalogNavigationScope;
-  area: string;
-  highlightedSlug?: string;
+  points: ProducerMapMarker[];
+  highlightedKey?: string;
   singlePointZoom?: number;
   messages: {
     openProfile: string;
@@ -164,9 +154,7 @@ export default function ProducersMapInner({
       />
       <BoundsAwareMarkers
         points={points}
-        scope={scope}
-        area={area}
-        highlightedSlug={highlightedSlug}
+        highlightedKey={highlightedKey}
         singlePointZoom={singlePointZoom}
         messages={messages}
       />

@@ -599,6 +599,15 @@ a {
   align-items: start;
 }
 
+.producer-selection-page__layout {
+  margin-top: 0.75rem;
+}
+
+.producer-selection-page__summary {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
 .catalog-simple-map,
 .catalog-viewer,
 .detail-shell,

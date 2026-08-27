@@ -3,8 +3,12 @@
 import dynamic from "next/dynamic";
 import { useCallback, useState } from "react";
 
-import type { CatalogNavigationScope } from "@/lib/catalog-navigation";
+import {
+  buildProducerHref,
+  type CatalogNavigationScope,
+} from "@/lib/catalog-navigation";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
+import type { ProducerMapMarker } from "@/lib/producer-selections";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
@@ -34,6 +38,37 @@ export function ProducersMap({
   singlePointZoom,
   messages,
 }: ProducersMapProps) {
+  const markers = points.map((point): ProducerMapMarker => ({
+    key: point.slug,
+    href: buildProducerHref(point, { scope, area }),
+    name: point.name,
+    city: point.city,
+    categories: point.categories,
+    latitude: point.latitude,
+    longitude: point.longitude,
+  }));
+
+  return (
+    <ProducerSelectionMap
+      points={markers}
+      highlightedKey={highlightedSlug}
+      singlePointZoom={singlePointZoom}
+      messages={messages}
+    />
+  );
+}
+
+export function ProducerSelectionMap({
+  points,
+  highlightedKey,
+  singlePointZoom,
+  messages,
+}: {
+  points: ProducerMapMarker[];
+  highlightedKey?: string;
+  singlePointZoom?: number;
+  messages: MapMessages;
+}) {
   const [isReady, setIsReady] = useState(false);
   const handleReady = useCallback(() => setIsReady(true), []);
 
@@ -46,9 +81,7 @@ export function ProducersMap({
       {!isReady ? <div className="map-placeholder">{messages.loading}</div> : null}
       <ProducersMapInner
         points={points}
-        scope={scope}
-        area={area}
-        highlightedSlug={highlightedSlug}
+        highlightedKey={highlightedKey}
         singlePointZoom={singlePointZoom}
         messages={{
           openProfile: messages.openProfile,

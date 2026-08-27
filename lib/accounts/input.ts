@@ -1,4 +1,6 @@
 import { z } from "zod";
+
+import { PUBLIC_PROFILE_VISIBILITIES } from "@/lib/accounts/public-profile-policy";
 export const claimMethodSchema = z.enum([
   "business_email",
   "website",
@@ -18,6 +20,11 @@ export const producerKeySchema = z.object({
     .int()
     .positive()
     .safe("Invalid producer ID."),
+});
+
+export const publicProfileUpdateSchema = z.object({
+  publicHandle: z.string().trim().max(80),
+  visibility: z.enum(PUBLIC_PROFILE_VISIBILITIES),
 });
 
 export const claimSubmissionSchema = producerKeySchema.extend({

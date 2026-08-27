@@ -46,9 +46,10 @@ editorial operator materializes into Git.
 
 ## Current scope
 
-The production release includes local profiles, favorites, manual ownership
-claims, owner memberships, staff review, reviewed producer-change requests,
-producer-scoped expanded-profile entitlements and an admin-only gift workflow.
+The production release includes local profiles, favorites, opt-in public user
+profiles with explicitly shared favorites, manual ownership claims, owner
+memberships, staff review, reviewed producer-change requests, producer-scoped
+expanded-profile entitlements and an admin-only gift workflow.
 The Stripe payment adapter is implemented but deliberately deferred and
 unprovisioned. Do not launch or advertise paid upgrades until the activation
 gate in `docs/OPERATIONS.md` is completed.
@@ -78,8 +79,34 @@ The user edits the Chisan-owned display name at `/cuenta/perfil`; profile kind
 is shown there as read-only state. Clerk's account UI remains limited to
 credentials, verified sign-in identifiers, sessions and authentication factors.
 
-The onboarding checkbox acknowledges that claims and public profile changes are
-reviewed. The legacy database field `terms_accepted_at` records that checkpoint;
+### Public user profiles
+
+An active account may publish a producer selection at `/u/<public_handle>`.
+This is account presentation, never authorization and never a second producer
+catalog. `public_handle` is a stable lowercase route identity chosen once; it
+does not replace the internal `users.id` UUID in any domain reference.
+
+Profile visibility is `private`, `unlisted` or `public` and defaults to
+`private`. Private profiles return `404`; unlisted profiles are shareable but
+emit `noindex`; public profiles are eligible for indexing. Changing profile
+visibility never changes profile kind, claims, memberships, staff grants or
+producer entitlements.
+
+Favorites remain private by default. A favorite appears on the public profile
+only after the account explicitly enables `show_on_public_profile` for that
+exact `(country, producer_id)`. Enabling a profile never bulk-publishes existing
+or future favorites. Removing the favorite removes it from the public page.
+Public rendering resolves every enabled key against the current CSV, omits
+retired rows and derives the current area, slug, coordinates and localized URL
+without persisting those values in PostgreSQL.
+
+The shared public list-and-map behavior and its extension boundary for future
+events, editorial selections and restaurant pages live in
+`docs/PRODUCER_SELECTION_PAGES.md`.
+
+The onboarding checkbox acknowledges that claims and public producer-profile
+changes are reviewed. The legacy database field `terms_accepted_at` records
+that checkpoint;
 it is not versioned legal consent. The expanded-profile purchase separately
 records its offer version and acceptance timestamp on the commercial request.
 Privacy terms or any broader legal acceptance must still be published, versioned

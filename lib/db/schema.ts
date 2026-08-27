@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import {
   bigint,
+  boolean,
   check,
   foreignKey,
   index,
@@ -22,6 +23,11 @@ const timestampWithTimezone = (name: string) =>
 
 export const userProfileKind = pgEnum("user_profile_kind", ["user", "producer"]);
 export const userStatus = pgEnum("user_status", ["active", "suspended", "deleted"]);
+export const publicProfileVisibility = pgEnum("public_profile_visibility", [
+  "private",
+  "unlisted",
+  "public",
+]);
 export const staffRole = pgEnum("staff_role", ["reviewer", "admin"]);
 export const producerClaimStatus = pgEnum("producer_claim_status", [
   "draft",
@@ -93,6 +99,10 @@ export const users = pgTable(
     id: uuid("id").primaryKey().defaultRandom(),
     status: userStatus("status").notNull().default("active"),
     displayName: varchar("display_name", { length: 160 }),
+    publicHandle: varchar("public_handle", { length: 40 }),
+    publicProfileVisibility: publicProfileVisibility("public_profile_visibility")
+      .notNull()
+      .default("private"),
     // Automatic UX state: accounts start as user and become producer on first claim.
     // Authorization still comes only from memberships and grants.
     profileKind: userProfileKind("profile_kind").notNull().default("user"),
@@ -108,6 +118,15 @@ export const users = pgTable(
   },
   (table) => [
     index("users_status_idx").on(table.status),
+    uniqueIndex("users_public_handle_uidx").on(table.publicHandle),
+    check(
+      "users_public_handle_format_check",
+      sql`${table.publicHandle} IS NULL OR ${table.publicHandle} ~ '^[a-z0-9]([a-z0-9-]{1,38}[a-z0-9])$'`,
+    ),
+    check(
+      "users_public_profile_handle_check",
+      sql`${table.publicProfileVisibility} = 'private' OR ${table.publicHandle} IS NOT NULL`,
+    ),
     check(
       "users_deleted_state_check",
       sql`(${table.status} = 'deleted' AND ${table.deletedAt} IS NOT NULL) OR (${table.status} <> 'deleted' AND ${table.deletedAt} IS NULL)`,
@@ -220,6 +239,7 @@ export const favorites = pgTable(
       .references(() => users.id, { onDelete: "cascade" }),
     country: varchar("country", { length: 2 }).notNull(),
     producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    showOnPublicProfile: boolean("show_on_public_profile").notNull().default(false),
     createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
   },
   (table) => [

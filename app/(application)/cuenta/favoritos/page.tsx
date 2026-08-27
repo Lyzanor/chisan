@@ -1,7 +1,10 @@
 import { desc, eq } from "drizzle-orm";
 import Link from "next/link";
 
-import { toggleFavoriteAction } from "@/app/(application)/cuenta/actions";
+import {
+  setFavoritePublicVisibilityAction,
+  toggleFavoriteAction,
+} from "@/app/(application)/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
@@ -17,6 +20,8 @@ type FavoritesPageProps = {
 
 export default async function FavoritesPage({ searchParams }: FavoritesPageProps) {
   const account = await requireCurrentAccount("/cuenta/favoritos");
+  const publicProfileVisible =
+    Boolean(account.publicHandle) && account.publicProfileVisibility !== "private";
   const database = getDatabase();
   const [saved, params, presentation] = await Promise.all([
     database
@@ -39,9 +44,26 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
           <h2>Favorite producers</h2>
           <p>Favorites use each producer’s immutable catalog identity.</p>
         </div>
-        <Link href="/" className="account-button account-button--secondary">
-          Explore the catalog
-        </Link>
+        <div className="account-inline-actions">
+          {publicProfileVisible && account.publicHandle ? (
+            <Link
+              href={`/u/${account.publicHandle}`}
+              className="account-button account-button--secondary"
+            >
+              Open public profile
+            </Link>
+          ) : (
+            <Link
+              href="/cuenta/perfil"
+              className="account-button account-button--secondary"
+            >
+              Set up public profile
+            </Link>
+          )}
+          <Link href="/" className="account-button account-button--secondary">
+            Explore the catalog
+          </Link>
+        </div>
       </header>
 
       {saved.length === 0 ? (
@@ -66,6 +88,19 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
                   </p>
                 </div>
                 <div className="account-inline-actions">
+                  <span
+                    className={`account-status ${
+                      favorite.showOnPublicProfile && publicProfileVisible
+                        ? "account-status--approved"
+                        : "account-status--pending"
+                    }`}
+                  >
+                    {favorite.showOnPublicProfile
+                      ? publicProfileVisible
+                        ? "Shown publicly"
+                        : "Selected for profile"
+                      : "Private"}
+                  </span>
                   {producer ? (
                     <Link
                       href={buildAccountProducerHref(
@@ -77,6 +112,24 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
                       Open profile
                     </Link>
                   ) : null}
+                  <form action={setFavoritePublicVisibilityAction}>
+                    <input type="hidden" name="country" value={favorite.country} />
+                    <input type="hidden" name="producerId" value={favorite.producerId} />
+                    <input type="hidden" name="returnTo" value="/cuenta/favoritos" />
+                    <input
+                      type="hidden"
+                      name="show"
+                      value={favorite.showOnPublicProfile ? "no" : "yes"}
+                    />
+                    <button
+                      type="submit"
+                      className="account-button account-button--secondary"
+                    >
+                      {favorite.showOnPublicProfile
+                        ? "Remove from profile"
+                        : "Show on public profile"}
+                    </button>
+                  </form>
                   <form action={toggleFavoriteAction}>
                     <input type="hidden" name="country" value={favorite.country} />
                     <input type="hidden" name="producerId" value={favorite.producerId} />
