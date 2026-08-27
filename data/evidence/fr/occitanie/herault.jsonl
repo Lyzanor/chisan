@@ -48,3 +48,13 @@
 {"slug":"fred-producteur","action":"keep","sources":[{"url":"http://fred-producteur.fr/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","scope","location","link-ownership"]}]}
 {"slug":"miel-and-co","action":"keep","sources":[{"url":"https://www.mielandco.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","scope","location","link-ownership","online-sales"]}]}
 {"slug":"noilly-prat","action":"keep","sources":[{"url":"https://www.noillyprat.com/fr/fr/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership"]}]}
+{"slug":"domaine-auge","action":"keep","sources":[{"url":"https://www.domaine-auge.fr","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"earl-albajan","action":"keep","sources":[{"url":"https://www.domainelamirande.com","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"barthelemy-dandoque-de-seriege","action":"keep","sources":[{"url":"https://www.seriege.fr/chateau-de-seriege-famille-dandoque/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"domaine-guinand","action":"keep","sources":[{"url":"https://domaineguinand.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"saint-martin-dagel","action":"keep","sources":[{"url":"https://www.saintmartindagel.com","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"lise-vedel","action":"keep","sources":[{"url":"https://www.domainegaltier.com","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"domaine-de-mont-d-hortes","action":"keep","sources":[{"url":"https://domaine-montdhortes.fr/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"preignes-le-neuf","action":"keep","sources":[{"url":"https://preignesleneuf.com","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"la-magdeleine-dexindre","action":"keep","sources":[{"url":"https://www.villa-exindrio.fr/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
+{"slug":"mas-de-bayle","action":"keep","sources":[{"url":"https://www.masdebayle.com","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","link-ownership"]}]}
