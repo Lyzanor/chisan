@@ -21,6 +21,11 @@ const ADMIN_NAVIGATION = [
     description: "Identity and control review",
   },
   {
+    href: "/admin/perfiles",
+    label: "User profiles",
+    description: "Visibility and shared selections",
+  },
+  {
     href: "/admin/premium",
     label: "Expanded profiles",
     description: "Access registry and administrative gifts",

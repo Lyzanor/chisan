@@ -3,6 +3,7 @@ import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 import { PGlite } from "@electric-sql/pglite";
+import { drizzle } from "drizzle-orm/pglite";
 
 import {
   isPublicProfileIndexable,
@@ -10,6 +11,13 @@ import {
   normalizePublicHandle,
   publicHandleProblem,
 } from "../lib/accounts/public-profile-policy";
+import {
+  normalizeAdminUserProfileListOptions,
+  queryAdminUserProfileCounts,
+  queryAdminUserProfiles,
+} from "../lib/admin/user-profiles";
+import type { Database } from "../lib/db";
+import * as schema from "../lib/db/schema";
 import { producerSelectionItemKey } from "../lib/producer-selections";
 
 async function applyAccountMigrations(database: PGlite): Promise<void> {
@@ -64,6 +72,32 @@ test("profile visibility distinguishes sharing from indexing", () => {
   assert.equal(isPublicProfileIndexable("private"), false);
   assert.equal(isPublicProfileIndexable("unlisted"), false);
   assert.equal(isPublicProfileIndexable("public"), true);
+});
+
+test("admin profile filters normalize to stable provider-neutral views", () => {
+  assert.deepEqual(normalizeAdminUserProfileListOptions(), {
+    visibility: "all",
+    status: "active",
+    query: "",
+    page: 1,
+    pageSize: 25,
+  });
+  assert.deepEqual(
+    normalizeAdminUserProfileListOptions({
+      visibility: "unknown",
+      status: "unknown",
+      query: "  map   owner  ",
+      page: -5,
+      pageSize: 500,
+    }),
+    {
+      visibility: "all",
+      status: "active",
+      query: "map owner",
+      page: 1,
+      pageSize: 100,
+    },
+  );
 });
 
 test("selection identity remains country plus producer ID across areas", () => {
@@ -158,5 +192,62 @@ test("public profiles and shared favorites are private by default", async () => 
     );
   } finally {
     await database.close();
+  }
+});
+
+test("admin profile registry reads Chisan account and selection state", async () => {
+  const client = new PGlite();
+  try {
+    await applyAccountMigrations(client);
+    const publicAccount = await client.query<{ id: string }>(
+      `insert into users (display_name, public_handle, public_profile_visibility)
+       values ('Public map', 'public-map', 'public')
+       returning id`,
+    );
+    const unlistedAccount = await client.query<{ id: string }>(
+      `insert into users (display_name, public_handle, public_profile_visibility)
+       values ('Unlisted map', 'unlisted-map', 'unlisted')
+       returning id`,
+    );
+    await client.query(
+      `insert into users (display_name, public_handle, public_profile_visibility, status)
+       values ('Suspended map', 'suspended-map', 'public', 'suspended')`,
+    );
+    await client.query(
+      `insert into favorites (user_id, country, producer_id, show_on_public_profile)
+       values ($1, 'es', 41, true), ($1, 'es', 42, false), ($2, 'fr', 8, true)`,
+      [publicAccount.rows[0].id, unlistedAccount.rows[0].id],
+    );
+
+    const database = drizzle(client, { schema }) as unknown as Database;
+    const activeRegistry = await queryAdminUserProfiles(database);
+    assert.equal(activeRegistry.total, 2);
+    assert.deepEqual(
+      activeRegistry.items
+        .map((item) => ({
+          handle: item.publicHandle,
+          favorites: item.favoriteCount,
+          shared: item.sharedProducerCount,
+        }))
+        .sort((left, right) => String(left.handle).localeCompare(String(right.handle))),
+      [
+        { handle: "public-map", favorites: 2, shared: 1 },
+        { handle: "unlisted-map", favorites: 1, shared: 1 },
+      ],
+    );
+
+    const publicRegistry = await queryAdminUserProfiles(database, {
+      visibility: "public",
+      query: "public-map",
+    });
+    assert.equal(publicRegistry.total, 1);
+    assert.equal(publicRegistry.items[0]?.publicHandle, "public-map");
+
+    const activeCounts = await queryAdminUserProfileCounts(database);
+    assert.deepEqual(activeCounts, { all: 2, private: 0, unlisted: 1, public: 1 });
+    const allCounts = await queryAdminUserProfileCounts(database, { status: "all" });
+    assert.deepEqual(allCounts, { all: 3, private: 0, unlisted: 1, public: 2 });
+  } finally {
+    await client.close();
   }
 });

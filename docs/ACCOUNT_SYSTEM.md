@@ -100,6 +100,10 @@ Public rendering resolves every enabled key against the current CSV, omits
 retired rows and derives the current area, slug, coordinates and localized URL
 without persisting those values in PostgreSQL.
 
+The staff registry at `/admin/perfiles` reads this Chisan-owned account state
+directly. It exposes visibility, account state and favorite/share counts without
+depending on a hosting, identity or managed-database provider dashboard.
+
 The shared public list-and-map behavior and its extension boundary for future
 events, editorial selections and restaurant pages live in
 `docs/PRODUCER_SELECTION_PAGES.md`.

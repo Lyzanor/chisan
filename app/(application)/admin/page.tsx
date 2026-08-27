@@ -9,6 +9,7 @@ import {
   queryProducerChangeCounts,
 } from "@/lib/admin/producer-change-requests";
 import { producerProfileUpgradeIncidentCondition } from "@/lib/admin/producer-profile-upgrade-incidents";
+import { queryAdminUserProfileCounts } from "@/lib/admin/user-profiles";
 import { getDatabase } from "@/lib/db";
 import {
   entitlements,
@@ -25,6 +26,7 @@ export default async function AdminPage() {
     changeCounts,
     recentChanges,
     [claimCount],
+    profileCounts,
     [paymentIncidentCount],
     [premiumAccessCount],
   ] = await Promise.all([
@@ -34,6 +36,7 @@ export default async function AdminPage() {
       .select({ value: count() })
       .from(producerClaims)
       .where(inArray(producerClaims.status, ["pending", "needs_info"])),
+    queryAdminUserProfileCounts(database, { status: "active" }),
     canManagePayments
       ? database
           .select({ value: count() })
@@ -88,6 +91,13 @@ export default async function AdminPage() {
       copy: "Identity and productive-unit control checks.",
       href: "/admin/reclamaciones",
       tone: claimCount?.value ? "warning" : "neutral",
+    },
+    {
+      label: "User profiles",
+      value: profileCounts.public + profileCounts.unlisted,
+      copy: `${profileCounts.public} public · ${profileCounts.unlisted} unlisted`,
+      href: "/admin/perfiles",
+      tone: profileCounts.public + profileCounts.unlisted ? "positive" : "neutral",
     },
     ...(canManagePayments
       ? [
