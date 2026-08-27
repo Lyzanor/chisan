@@ -290,6 +290,7 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 722,descripcion,en,a9589ce708d92c76ddc6f5c116cf580eb1412bb07d66c49e18cb77af2a252520,Suwaの蔵めぐりで五番目に位置するMaihime銘柄の酒蔵。自社オンラインショップを持つ。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 724,descripcion,en,52b30f895ec097fcde1b348b07494b850513043137e58cce53abc792e94cca5e,Toyotaの拠点で野菜と大豆を生産する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 725,descripcion,en,606694c756ff9da19c359895c7def3b4d454f79dd8b0891ad50eaffef171f509,Akasakaの小売住所ではなく、Omeの工房でbean-to-barチョコレートを生産する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
+726,descripcion,en,3e1bdc4fba904a2a4ce104ddcf25b1b650a88b76f0521f12ef6a1e36d9f481bb,万代大澤醸造は東町の酒蔵で清酒徳若を少量ずつ手造りし、無濾過または最小限の濾過で、加水せずに瓶詰めしている。,reviewed,codex-agent,gpt-5-2026-08-27,chisan-description-v10,2026-08-24.3
 730,descripcion,en,294630123534b5b6c9b07d2dcdbdebfca281a3c38708d76ee2953da27cb979c4,Mashikiの拠点でチーズと乳製品を生産する。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 734,descripcion,en,8c127d059e862bbd25518dbbb9ba714c3170f100210a990c699f7bdfb22a5011,ShimbashiのベーカリーでNew York式ベーグルを手作りする。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 735,descripcion,en,ed73eeb85ee68f76ceeaf330fd5cbee547c0354e8a8dcef73c5ad14aeb1829b6,活動百年に近づくMiwa somen工房。主力の麺はMiwa no Kamiito。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
@@ -344,6 +345,7 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 844,descripcion,en,328db3c50f1372f75158bebad2e2221d5b7308b0dbe2b4433561a95daab2c71d,Kamikatsuの生産拠点でトマトと野菜を生産している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 848,descripcion,en,6e9805c965763f818913bbd5834decc0821177a872f6ac24b39823d16eef2ad9,Hiradoの生産拠点で卵を生産している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 850,descripcion,en,1cdcc251e0b60a0c97b57d5686202ae4c8cdea752c8899087c4d87d51e0ab41e,Nihonbashi-Hamachoの工房で、単一産地のカカオ豆によるビーントゥバー・チョコレートを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
+853,descripcion,en,ecb3f3f6be9114c185c49d392e816808e87ee403b4d8171776e1e0bff9cf3599,1889年に西宮で創業した日本盛は、用海町の本社工場で日本酒を醸造し、近隣で酒蔵通り煉瓦館を運営している。,reviewed,codex-agent,gpt-5-2026-08-27,chisan-description-v10,2026-08-24.3
 854,descripcion,en,07522b58a18b4a4d745aa9f5834be2c4082dca1a67ddddf7f1e5685889678f67,1711年創業の酒蔵。自然栽培米と自家水を用いて純米酒のみを醸造し、その米の一部は自ら栽培する。自社オンラインショップを持つ。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 857,descripcion,en,564a6eabcd55a68e7578c0e0e3c4fb9ceb48da3459b70b63e05eb6756570c859,Niijima FarmはNishiharaの生産拠点で有機野菜を生産している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 858,descripcion,en,2240c6dffa864cee6f1ec57087ed18270faed6a9f2625224e7344e403723e347,1873年創業でOsakiを本拠とする酒蔵。2011年の震災後、同じMiyagiのKawasakiへ醸造拠点を移し、2013年に本社を再建した。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
@@ -387,6 +389,7 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 952,descripcion,en,9e4a209b49569360a14136606d487539f4b647ced7f5adaa40a658789411403a,OrangeStoreニノミヤはYawatahamaの生産拠点で柑橘類とジュースを生産している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 953,descripcion,es,090f76c0e0a5428da79adc52f199b73f1703395bf59e1193be3f8e81cd78f7cf,旧ブランド主水 mondeを継承するレストラン内のナノブルワリー。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 954,descripcion,en,b107e4a0b7aa87ca9bcc1fcf0ffd415911efb71a886d0a1bf8f8e1da540e3002,Orita Tea GardenはMinamikyushuの生産拠点でchiran茶を生産している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
+958,descripcion,en,043e5e2b513f4c5230b705a07b7c55477608440465d6199ad6169b87a30afd49,1770年創業の大澤本家酒造は、西宮市東町の木造蔵で寳娘を手造りしている。,reviewed,codex-agent,gpt-5-2026-08-27,chisan-description-v10,2026-08-24.3
 959,descripcion,en,348ba3a47c4ccfb7929bf603495bec651ce3249f29aef6afebe62615d611e0bd,SakuのMotaiで1689年に創業し、Takeshige Honkeと壁を隔てて隣接する酒蔵。主力銘柄はMeikyoshisui。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 960,descripcion,en,475f15f7d9ebb86bf41ebe27d45399ba211923efa64f987305d6205f1d5dc7b9,Chigasakiの生産拠点でチーズと乳製品を製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 968,descripcion,en,40e288cfee84f8c57acc32b9a118a0913b2446a0af285cbdb897d533ae584cfb,Kanazawaの生産拠点で果物と野菜を生産している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
@@ -397,6 +400,7 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 982,descripcion,en,13b18ad0f5c5111a029318f4dc5c3bb5659d456a9d777a38b548638b2a1e12cb,Fukuiの生産拠点でビールを醸造するブルワリー。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 983,descripcion,en,08dec03ba985d5db3de906ed9cd760bd36c24ff38c47cfb738962ee1238f4c55,Kofuの生産拠点でビールを醸造するブルワリー。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 989,descripcion,en,da662b33973979b6411bd10269226b133100e46e389dc5eb2364b965c6413979,Nagano西部の旧Shinshushinmachi村にある酒蔵。現在の銘柄はJukuで、歴史的なMisuzunishikiの名も残す。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
+991,descripcion,en,01ed8cc14e908a8ca343c1a0b99ffdd6bfd2c869c0594f1656866cebb3c4719d,1711年に今津で創業した大関は、西宮の本社工場でワンカップ大関や辛丹波をはじめとする日本酒を製造している。,reviewed,codex-agent,gpt-5-2026-08-27,chisan-description-v10,2026-08-24.3
 992,descripcion,en,923b039215c6b6bf08b31d5e8461e1eca3a0741e873d173134fa053f515188c8,Kagurazakaの工房でバゲットと田舎風パンを焼いている。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 993,descripcion,en,2d313aa481d07f581733257e0cdbc0551835599a8bfbac3dad26b94907fc3d1d,Horidome Parkのそばで、国産小麦を使った天然酵母パンを焼いている。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 994,descripcion,en,f7611bef50fbcd1e85385f4685ef86e0d69c7639e5f0d281ba321e391644e7ed,Mitaの生産拠点でスペシャルティコーヒーを焙煎している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
