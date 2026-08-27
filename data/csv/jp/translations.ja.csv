@@ -1904,8 +1904,6 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 2724,descripcion,en,a46f4fdd224a224ba386352ffafba6df75a4420dd851260cd0942bb1c2b01dd8,株式会社 スイミージャパン/深川ワイナリーはKōtō拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 2725,descripcion,en,01fb16fb50920ca59cc9740e01b8daf4b4be46dcf4d4c24f23531a2d42e01bb6,Ōfunato拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 2726,descripcion,en,fd427ea1778b1ae1506aa40cd96a2c69132c9d29c83b45ba61122603d194c731,Sera拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
-2727,descripcion,en,c072b682ae855b93e528abd0f1a12f9018df4857856f1d873e3347d34087c878,株式会社 ナチュラルファーム・グレープアンドワイン/天使の羽ワイナリーはKashiwara拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
-2728,descripcion,en,c072b682ae855b93e528abd0f1a12f9018df4857856f1d873e3347d34087c878,株式会社 ナチュラルファーム・グレープアンドワイン/天使の羽ワイナリーはKashiwara拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 2729,descripcion,en,81f09bd51d10f157b386c05bb1999a985c0ae9dcda206817518813fcafd3ecc3,株式会社 パピーユ/島之内フジマル醸造所はChūō拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 2730,descripcion,en,0b9264537497af415e58639360587413d13c39a09b2702cfc9b1eca738e364b2,株式会社 パピーユ/清澄白河フジマル醸造所はKōtō拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
 2731,descripcion,en,1901c54af3d9fba3d9e6e927d125ad96e7063616c534772ad5883f8f458580fd,Ise拠点でワインを製造している。,machine,codex-subagent,gpt-5.6-sol-2026-08-24,chisan-description-v10,2026-08-24.3
