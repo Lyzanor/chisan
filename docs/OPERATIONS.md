@@ -89,7 +89,12 @@ calls a translation provider at request time.
    `npx pnpm verify:data`, but any code, validator, policy, migration or account
    change requires the full gate.
 4. Run `npx pnpm db:check`. When accounts are enabled in the target environment,
-   run the read-only `npx pnpm db:assert-current` against that exact database.
+   run the read-only `npx pnpm db:assert-current` with an explicit current direct
+   `DATABASE_URL`, or open `/admin/sistema` to run the same contract through the
+   deployed application role. Do not use `vercel env run` for this assertion:
+   sensitive database-integration variables are intentionally not exported to
+   local processes and a local `.env` value could otherwise be mistaken for the
+   Production connection.
 5. Confirm Production has the Chisan domain, Production Clerk keys, signed
    Clerk webhook secret, Production database URLs and the canonical app origin.
    For an ordinary release while Stripe remains deferred, confirm the
@@ -567,8 +572,9 @@ submit a fictitious ownership claim or producer change merely to test a form.
 - Confirm an unauthorized producer edit redirects with a controlled message and
   does not produce a 5xx response.
 - With staff access, open `/admin`, `/admin/reclamaciones`, `/admin/cambios`,
-  `/admin/premium` and `/admin/pagos`; inspect registries and queues without
-  changing real decisions, gifts or payments.
+  `/admin/premium` and `/admin/pagos`; with exact administrator access also open
+  `/admin/sistema` and confirm the database contract is healthy. Inspect every
+  registry and queue without changing real decisions, gifts or payments.
 - Send no hand-built signed webhook. An unsigned request may be used only to
   confirm rejection. Use Clerk's test-event facility for its isolated account
   environment. Exercise Stripe signed events only after its Test adapter is

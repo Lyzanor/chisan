@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const reviewer = await requireStaffAccount();
-  const canManagePayments = await hasStaffAccess(reviewer.id, ["admin"]);
+  const isAdmin = await hasStaffAccess(reviewer.id, ["admin"]);
 
   return (
     <AdminShell
       operatorName={reviewer.displayName || "Authorized operator"}
-      canManagePayments={canManagePayments}
+      isAdmin={isAdmin}
     >
       {children}
     </AdminShell>

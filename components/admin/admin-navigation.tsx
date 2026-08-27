@@ -26,6 +26,12 @@ const ADMIN_NAVIGATION = [
     description: "Visibility and shared selections",
   },
   {
+    href: "/admin/sistema",
+    label: "System status",
+    description: "Database contract and runtime access",
+    adminOnly: true,
+  },
+  {
     href: "/admin/premium",
     label: "Expanded profiles",
     description: "Access registry and administrative gifts",
@@ -39,13 +45,13 @@ const ADMIN_NAVIGATION = [
   },
 ] as const;
 
-export function AdminNavigation({ canManagePayments }: { canManagePayments: boolean }) {
+export function AdminNavigation({ isAdmin }: { isAdmin: boolean }) {
   const pathname = usePathname();
 
   return (
     <nav className="admin-navigation" aria-label="Operations workspace">
       {ADMIN_NAVIGATION.filter(
-        (item) => !("adminOnly" in item && item.adminOnly) || canManagePayments,
+        (item) => !("adminOnly" in item && item.adminOnly) || isAdmin,
       ).map((item) => {
         const active =
           "exact" in item && item.exact

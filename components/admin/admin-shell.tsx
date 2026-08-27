@@ -5,11 +5,11 @@ import { SITE_NAME } from "@/lib/site";
 
 export function AdminShell({
   operatorName,
-  canManagePayments,
+  isAdmin,
   children,
 }: {
   operatorName: string;
-  canManagePayments: boolean;
+  isAdmin: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -20,7 +20,7 @@ export function AdminShell({
             <span>{SITE_NAME}</span>
             <small>Internal operations</small>
           </Link>
-          <AdminNavigation canManagePayments={canManagePayments} />
+          <AdminNavigation isAdmin={isAdmin} />
           <div className="admin-sidebar__operator">
             <span>Signed in as</span>
             <strong>{operatorName}</strong>

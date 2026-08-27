@@ -103,6 +103,9 @@ without persisting those values in PostgreSQL.
 The staff registry at `/admin/perfiles` reads this Chisan-owned account state
 directly. It exposes visibility, account state and favorite/share counts without
 depending on a hosting, identity or managed-database provider dashboard.
+The administrator-only `/admin/sistema` runs the migration and runtime-permission
+contract from the deployed application itself; it reports no connection string,
+provider identifier or secret.
 
 The shared public list-and-map behavior and its extension boundary for future
 events, editorial selections and restaurant pages live in
