@@ -4,7 +4,7 @@ const messages = {
   languageName: "Italiano",
   languageSwitcher: { label: "Lingua" },
   siteHeader: {
-    tagline: "Cibo locale, insieme",
+    tagline: "Connettere il cibo locale.",
     accountNavigation: "Account",
     signIn: "Accedi",
     register: "Registrati",
@@ -85,9 +85,9 @@ const messages = {
     backToCatalog: "Torna al catalogo",
   },
   metadata: {
-    homeTitle: "{site} · Cibo locale, insieme",
+    homeTitle: "{site} · Connettere il cibo locale.",
     homeDescription:
-      "Cibo locale, insieme. Scopri i produttori di cibo e bevande legati al territorio in un unico catalogo affidabile, organizzato per {unit}.",
+      "Connettere il cibo locale. Scopri i produttori di cibo e bevande legati al territorio in un unico catalogo affidabile, organizzato per {unit}.",
     countryTitle: "Produttori in {country} · {site}",
     countryDescription: "Scegli una {unit} di {country} per esplorare i produttori locali.",
     areaNotFoundTitle: "Area non trovata",

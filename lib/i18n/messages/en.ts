@@ -6,7 +6,7 @@ const messages = {
     label: "Language",
   },
   siteHeader: {
-    tagline: "Local food, unified",
+    tagline: "Connecting local food.",
     accountNavigation: "Account",
     signIn: "Sign in",
     register: "Register",
@@ -90,9 +90,9 @@ const messages = {
     backToCatalog: "Back to the catalog",
   },
   metadata: {
-    homeTitle: "{site} · Local food, unified",
+    homeTitle: "{site} · Connecting local food.",
     homeDescription:
-      "Local food, unified. Discover place-based food and drink producers in one trusted catalog, organized by {unit}.",
+      "Connecting local food. Discover place-based food and drink producers in one trusted catalog, organized by {unit}.",
     countryTitle: "{country} · {site} Producers",
     countryDescription: "Pick a {unit} of {country} to browse its local producers.",
     areaNotFoundTitle: "Area not found",

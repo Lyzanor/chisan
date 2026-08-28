@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
+import { SITE_NAME, SITE_ORIGIN, SITE_TAGLINE } from "@/lib/site";
 
 const title = "Our purpose";
 const description =
@@ -43,7 +43,7 @@ export default function OurPurposePage() {
           </p>
         </div>
 
-        <strong className="purpose-page__closing">Local food, unified.</strong>
+        <strong className="purpose-page__closing">{SITE_TAGLINE}</strong>
       </article>
     </main>
   );

@@ -6,7 +6,7 @@ const messages = {
     label: "Sprache",
   },
   siteHeader: {
-    tagline: "Lokale Lebensmittel, vereint",
+    tagline: "Lokale Lebensmittel verbinden.",
     accountNavigation: "Konto",
     signIn: "Anmelden",
     register: "Registrieren",

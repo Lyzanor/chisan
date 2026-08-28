@@ -6,7 +6,7 @@ const messages = {
     label: "Idioma",
   },
   siteHeader: {
-    tagline: "Alimentació local, unificada",
+    tagline: "Connectant l’alimentació local.",
     accountNavigation: "Compte",
     signIn: "Inicia sessió",
     register: "Registra't",

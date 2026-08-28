@@ -4,7 +4,7 @@ const messages = {
   languageName: "Français",
   languageSwitcher: { label: "Langue" },
   siteHeader: {
-    tagline: "L’alimentation locale, réunie",
+    tagline: "Connecter l’alimentation locale.",
     accountNavigation: "Compte",
     signIn: "Se connecter",
     register: "Créer un compte",
@@ -71,8 +71,8 @@ const messages = {
     backToCatalog: "Retour au catalogue",
   },
   metadata: {
-    homeTitle: "{site} · L’alimentation locale, réunie",
-    homeDescription: "L’alimentation locale, réunie. Découvrez les producteurs locaux de produits alimentaires et de boissons dans un catalogue fiable, organisé par {unit}.",
+    homeTitle: "{site} · Connecter l’alimentation locale.",
+    homeDescription: "Connecter l’alimentation locale. Découvrez les producteurs locaux de produits alimentaires et de boissons dans un catalogue fiable, organisé par {unit}.",
     countryTitle: "Producteurs de {country} · {site}",
     countryDescription: "Choisissez une {unit} de {country} pour parcourir ses producteurs locaux.",
     areaNotFoundTitle: "Zone introuvable",

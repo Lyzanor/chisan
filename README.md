@@ -1,6 +1,6 @@
 # Chisan
 
-> Local food, unified.
+> Connecting local food.
 
 Chisan is an early-stage startup building the shared discovery layer for local
 food. It brings place-based food and drink producers into one trustworthy,

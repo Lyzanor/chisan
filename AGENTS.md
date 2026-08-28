@@ -1,8 +1,9 @@
 # Chisan Agent Guide
 
 Chisan is a startup building the shared discovery layer for local food. Its
-promise is **Local food, unified**: one trustworthy product for discovering and
-understanding place-based food and drink producers across regions and countries.
+promise is **Connecting local food.** Chisan is one trustworthy product for
+discovering and understanding place-based food and drink producers across
+regions and countries.
 
 This is the shared product and engineering context for every AI agent working in
 Chisan. The `README.md` is the human landing page; this file describes the

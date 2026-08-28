@@ -6,7 +6,7 @@ const messages = {
     label: "Idioma",
   },
   siteHeader: {
-    tagline: "Alimentación local, unificada",
+    tagline: "Conectando la alimentación local.",
     accountNavigation: "Cuenta",
     signIn: "Iniciar sesión",
     register: "Registrarse",
@@ -93,9 +93,9 @@ const messages = {
     backToCatalog: "Volver al catálogo",
   },
   metadata: {
-    homeTitle: "{site} · Alimentación local, unificada",
+    homeTitle: "{site} · Conectando la alimentación local.",
     homeDescription:
-      "Alimentación local, unificada. Descubre productores locales de alimentos y bebidas en un catálogo fiable, organizados por {unit}.",
+      "Conectando la alimentación local. Descubre productores locales de alimentos y bebidas en un catálogo fiable, organizados por {unit}.",
     countryTitle: "{country} · Productores en {site}",
     countryDescription: "Elige una {unit} de {country} para explorar sus productores locales.",
     areaNotFoundTitle: "Zona no encontrada",

@@ -225,11 +225,11 @@ if [[
 fi
 
 if [[
-  "$HTML_HOME_CLEAN" != *"<title>Chisan · Local food, unified</title>"* ||
-  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Local food, unified"'* ||
+  "$HTML_HOME_CLEAN" != *"<title>Chisan · Connecting local food.</title>"* ||
+  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Connecting local food."'* ||
   "$HTML_HOME_CLEAN" != *'class="site-header__name">Chisan</span>'* ||
-  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Local food, unified</span>'* ||
-  "$HTML_HOME_CLEAN" != *'id="home-about-title">Local food, unified</h2>'* ||
+  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Connecting local food.</span>'* ||
+  "$HTML_HOME_CLEAN" != *'id="home-about-title">Connecting local food.</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
   "$HTML_HOME_CLEAN" != *'href="/our-purpose">Our purpose</a>'* ||
   "$HTML_HOME_CLEAN" != *'>Producer catalog</a>'* ||
@@ -247,7 +247,7 @@ if [[
   "$HTML_PURPOSE" != *'id="purpose-title">Our purpose</h1>'* ||
   "$HTML_PURPOSE" != *'Local food systems are full of value, but too often fragmented.'* ||
   "$HTML_PURPOSE" != *'<em>chisan-chisho</em>'* ||
-  "$HTML_PURPOSE" != *'Local food, unified.</strong>'*
+  "$HTML_PURPOSE" != *'Connecting local food.</strong>'*
 ]]; then
   echo "Error: /our-purpose should render the complete purpose statement and metadata." >&2
   exit 1

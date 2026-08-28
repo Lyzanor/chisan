@@ -6,7 +6,7 @@ const messages = {
     label: "言語",
   },
   siteHeader: {
-    tagline: "地域の食を、ひとつに",
+    tagline: "地域の食をつなぐ。",
     accountNavigation: "アカウント",
     signIn: "ログイン",
     register: "登録",

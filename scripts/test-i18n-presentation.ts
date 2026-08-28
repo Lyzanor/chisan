@@ -67,13 +67,13 @@ test("account presentation messages cover both account action surfaces in every 
     ],
   } as const;
   const expectedTaglines = {
-    en: "Local food, unified",
-    es: "Alimentación local, unificada",
-    ca: "Alimentació local, unificada",
-    de: "Lokale Lebensmittel, vereint",
-    ja: "地域の食を、ひとつに",
-    fr: "L’alimentation locale, réunie",
-    it: "Cibo locale, insieme",
+    en: "Connecting local food.",
+    es: "Conectando la alimentación local.",
+    ca: "Connectant l’alimentació local.",
+    de: "Lokale Lebensmittel verbinden.",
+    ja: "地域の食をつなぐ。",
+    fr: "Connecter l’alimentation locale.",
+    it: "Connettere il cibo locale.",
     nl: "Lokaal eten, verbonden",
     pt: "Comida local, num só lugar",
   } as const;
