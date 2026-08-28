@@ -15,3 +15,14 @@
 ## Remaining work
 
 Verify current first-party channels and durable identities before admission. Eight other elaborators matched existing rows or aliases. The experimental Finca La Grajera unit was excluded from the candidate batch because the council describes its oil as research output destined to institutional acts rather than a public own market offer.
+
+## Carrefour supplier-directory pass — 2026-08-28
+
+- Discovery source: Carrefour public supplier, agreement and SME-recognition pages recorded in the supplied workbook, with producer-owned pages added where found.
+- Search date: 2026-08-28.
+- Scope: names absent from the current area CSV and candidate backlog after alias, closed-evidence and productive-unit reconciliation.
+- Source ceiling: a Carrefour relationship or award is a discovery signal only. It does not establish current activity, a qualifying productive role or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Miel y Miel | La Rioja; municipality unresolved | `Otros` — Miel ecológica | A 2024 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://es.linkedin.com/posts/carrefoures_premiospymecarrefour-activity-7287499210910748672-sZxi) | — | Find a current producer-owned source; confirm municipality, apiary/packing unit, own honey offer, legal identity and current activity. |

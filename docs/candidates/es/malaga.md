@@ -17,3 +17,14 @@
 | Las Abejas / Sonia Belén Duarte García | Ronda | `Miel` | The directory identifies a certified packer, own brand and productive-looking rural address near Ronda. | [DOP packer directory](https://mieldemalaga.org/envasadores/) | — | Confirm current first-party identity, qualifying activity and own offer. |
 | Carmen Trujillo Vargas | Cártama | `Miel` | The council lists a certified packer and public sales points, but no durable brand is stated. | [DOP packer directory](https://mieldemalaga.org/envasadores/) | — | Resolve the public producer/brand identity and prove qualifying activity and current own offer before admission. |
 | Mercaóleo / Dcoop | Antequera | `Aceite` — DOP Montes de Granada | The Montes de Granada council lists this member's productive plant on the A-7281 in Antequera and links its own domain. | [Council member directory](http://domontesdegranada.com/empresas-2/) | <https://www.mercaoleo.es/> | Confirm the exact productive responsibility and whether Mercaóleo has an attributable own offer distinct from the wider Dcoop group. |
+
+## Carrefour supplier-directory pass — 2026-08-28
+
+- Discovery source: Carrefour public supplier, agreement and SME-recognition pages recorded in the supplied workbook, with producer-owned pages added where found.
+- Search date: 2026-08-28.
+- Scope: names absent from the current area CSV and candidate backlog after alias, closed-evidence and productive-unit reconciliation.
+- Source ceiling: a Carrefour relationship or award is a discovery signal only. It does not establish current activity, a qualifying productive role or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cooperativa de Consumo La Unión | Cuevas de San Marcos | `Dulces y repostería` — Pan y dulces tradicionales | A 2024 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://es.linkedin.com/posts/carrefoures_premiospymecarrefour-activity-7270391488025415680-iR7F) | — | Confirm current activity, exact productive unit, legal/public identity, own offer and Chisan eligibility through current first-party or authoritative sources. |

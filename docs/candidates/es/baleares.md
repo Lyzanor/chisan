@@ -27,3 +27,14 @@
 ## Remaining work
 
 Resolve only the blockers above. Do not admit a row until its productive responsibility, current own offer and productive municipality are all supported. A missing result is not an exclusion.
+
+## Carrefour supplier-directory pass — 2026-08-28
+
+- Discovery source: Carrefour public supplier, agreement and SME-recognition pages recorded in the supplied workbook, with producer-owned pages added where found.
+- Search date: 2026-08-28.
+- Scope: names absent from the current area CSV and candidate backlog after alias, closed-evidence and productive-unit reconciliation.
+- Source ceiling: a Carrefour relationship or award is a discovery signal only. It does not establish current activity, a qualifying productive role or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Fundación Mater / Casa La Milagrosa | Can Boqueta, Inca | `Lácteos y huevos` — Huevos ecológicos / avicultura | A 2025 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://www.economiademallorca.com/articulo/empresas/carrefour-lidera-compromiso-pumes-agroalimentarias-baleares/20251023163819112608.html) | <https://orgmater.com/> | Confirm current activity, exact productive unit, legal/public identity, own offer and Chisan eligibility through current first-party or authoritative sources. |

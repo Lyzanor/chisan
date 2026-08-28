@@ -17,3 +17,16 @@
 ## Remaining work
 
 Review each linked producer domain, then de-duplicate brands and legal entities against nearby catalogued mills before admission. Nuestra Señora de las Nieves, Oleovinícola Campo de Calatrava and Olivapalacios were already present.
+
+## Carrefour supplier-directory pass — 2026-08-28
+
+- Discovery source: Carrefour public supplier, agreement and SME-recognition pages recorded in the supplied workbook, with producer-owned pages added where found.
+- Search date: 2026-08-28.
+- Scope: names absent from the current area CSV and candidate backlog after alias, closed-evidence and productive-unit reconciliation.
+- Source ceiling: a Carrefour relationship or award is a discovery signal only. It does not establish current activity, a qualifying productive role or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Albasol Fruit | Ciudad Real province; municipality unresolved | `Fruta y verdura` — Sandía ; Melón | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Sandía and Melón; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56326) | <https://www.albasolfruit.com/> | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
+| Finca Cantarranas / Garín Cobián | Ciudad Real province; exact Finca Cantarranas unit unresolved | `Fruta y verdura` — Uva / derivados de uva | Carrefour's 2023 historical supplier/SME material identifies the entity; the lead requires fresh evidence because the old relationship does not prove current activity or eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56909) | <https://fincacantarranas.com/> | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
+| Sacramento | Malagón | `Fruta y verdura` — Tomate / hortalizas | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Tomate / hortalizas; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56346) | — | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |

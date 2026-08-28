@@ -59,3 +59,14 @@
 ## Remaining work
 
 Verify current activity, exact municipality/address, legal producer identity, own offer, and catalog-level eligibility from first-party or authoritative records. The other DO Alella wineries, two of the four Gall del Penedès producers and six of the eight Llonganissa de Vic operators matched existing rows. The remaining entries are holds; no admission is asserted for them.
+
+## Carrefour supplier-directory pass — 2026-08-28
+
+- Discovery source: Carrefour public supplier, agreement and SME-recognition pages recorded in the supplied workbook, with producer-owned pages added where found.
+- Search date: 2026-08-28.
+- Scope: names absent from the current area CSV and candidate backlog after alias, closed-evidence and productive-unit reconciliation.
+- Source ceiling: a Carrefour relationship or award is a discovery signal only. It does not establish current activity, a qualifying productive role or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Milola | Mataró; Carrefour record refers to an older Balearic legal identity | `Dulces y repostería` — gluten- and dairy-free artisan cookies | Carrefour's 2017 historical SME material identifies Milola, while the current brand sells its own cookie range from Mataró; the historical record does not establish identity continuity, a current Carrefour relationship or eligibility. | [Carrefour evidence](https://static.carrefour.es/crs/cdn_static/c4corp-front/images/grupo-carrefour/memoria-sostenible/2017_v2/es/node/170.html) | <https://milola.com/> | Reconcile the historical Balearic company named by Carrefour with the current Mataró producer and prove uninterrupted identity before admission. |
