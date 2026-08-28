@@ -31,6 +31,15 @@ export async function ExpandedProducerProfile({
   messages,
   producerId,
 }: ExpandedProducerProfileProps) {
+  const guidedVisits = fieldValue(fields, "visitas guiadas");
+  const communityMessage = fieldValue(fields, "mensaje a la comunidad");
+  const communityMessageLocale = fieldValue(fields, "mensaje_comunidad_locale");
+  const highlightedLink1 = fieldValue(fields, "enlace destacado 1");
+  const highlightedLink2 = fieldValue(fields, "enlace destacado 2");
+  if (!guidedVisits && !communityMessage && !highlightedLink1 && !highlightedLink2) {
+    return null;
+  }
+
   // Producer facts stay in CSV. PostgreSQL supplies only the producer-scoped
   // presentation right, and a database incident must not break the base profile.
   if (!getAccountSystemConfiguration().databaseConfigured) return null;
@@ -43,15 +52,6 @@ export async function ExpandedProducerProfile({
       country,
       producerId,
     });
-    return null;
-  }
-
-  const guidedVisits = fieldValue(fields, "visitas guiadas");
-  const communityMessage = fieldValue(fields, "mensaje a la comunidad");
-  const communityMessageLocale = fieldValue(fields, "mensaje_comunidad_locale");
-  const highlightedLink1 = fieldValue(fields, "enlace destacado 1");
-  const highlightedLink2 = fieldValue(fields, "enlace destacado 2");
-  if (!guidedVisits && !communityMessage && !highlightedLink1 && !highlightedLink2) {
     return null;
   }
 

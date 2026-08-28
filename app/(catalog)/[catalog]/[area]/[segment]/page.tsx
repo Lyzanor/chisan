@@ -292,7 +292,6 @@ export default async function ProducerPage({
               width={640}
               height={480}
               sizes="(max-width: 980px) calc(100vw - 2.75rem), 330px"
-              unoptimized
               priority
               className="detail-hero-image"
             />

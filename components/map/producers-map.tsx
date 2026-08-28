@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import {
   buildProducerHref,
@@ -41,15 +41,24 @@ export function ProducersMap({
   singlePointZoom,
   messages,
 }: ProducersMapProps) {
-  const markers = points.map((point): ProducerMapMarker => ({
-    key: point.slug,
-    href: buildProducerHref(point, { scope, area }),
-    name: point.name,
-    city: point.city,
-    categories: point.categories,
-    latitude: point.latitude,
-    longitude: point.longitude,
-  }));
+  const scopeCountry = scope.country;
+  const scopePathPrefix = scope.pathPrefix;
+  const markers = useMemo(
+    () =>
+      points.map((point): ProducerMapMarker => ({
+        key: point.slug,
+        href: buildProducerHref(point, {
+          scope: { country: scopeCountry, pathPrefix: scopePathPrefix },
+          area,
+        }),
+        name: point.name,
+        city: point.city,
+        categories: point.categories,
+        latitude: point.latitude,
+        longitude: point.longitude,
+      })),
+    [area, points, scopeCountry, scopePathPrefix],
+  );
 
   return (
     <ProducerSelectionMap

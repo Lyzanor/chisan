@@ -107,6 +107,7 @@ LAST_SLUG="$(node -p "JSON.parse(process.argv[1]).lastSlug" "$FIXTURE_JSON")"
 
 ./node_modules/.bin/tsx --test \
   scripts/test-root-layouts.ts \
+  scripts/test-catalog-redirects.ts \
   scripts/test-catalog-metadata.ts \
   scripts/test-language-switcher.ts \
   scripts/test-producer-route-aliases.ts
@@ -405,6 +406,12 @@ AREA_ALIAS_RESPONSE="$(curl -sS -o /dev/null --write-out '%{http_code}|%{redirec
   --data-urlencode "lon=-2.4")"
 if [[ "$AREA_ALIAS_RESPONSE" != "308|$BASE_URL/es/la-rioja?category=Vino&highlight=producer-1" ]]; then
   echo "Error: an area alias must normalize its locale and preserve only safe query state; got '$AREA_ALIAS_RESPONSE'." >&2
+  exit 1
+fi
+
+UNPUBLISHED_AREA_ALIAS_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/ca-es/logrono")"
+if [[ "$UNPUBLISHED_AREA_ALIAS_STATUS" != "404" ]]; then
+  echo "Error: an area alias must not invent an unpublished effective locale; got '$UNPUBLISHED_AREA_ALIAS_STATUS'." >&2
   exit 1
 fi
 

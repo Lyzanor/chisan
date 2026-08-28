@@ -6,7 +6,7 @@ import {
   buildCatalogAlternateSet,
   buildLocalizedMetadata,
 } from "@/lib/catalog-metadata";
-import { buildCatalogHref, readCatalogQueryContext } from "@/lib/catalog-navigation";
+import { buildCatalogHref } from "@/lib/catalog-navigation";
 import {
   isCanonicalCatalogSegment,
   resolveAreaCatalog,
@@ -21,10 +21,17 @@ import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 
 type AreaPageProps = {
   params: Promise<{ catalog: string; area: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export const dynamic = "force-dynamic";
+// Catalog data changes only through a deployment. Returning no build-time
+// params lets Next generate each area once, on first request, and keep the
+// result in the Full Route Cache for the lifetime of that deployment.
+export function generateStaticParams() {
+  return [];
+}
+
+export const dynamicParams = true;
+export const revalidate = false;
 
 function localizedAreaLabel(country: Country, area: string, locale: Locale): string {
   const areaOption = country.regions
@@ -69,11 +76,8 @@ export async function generateMetadata({ params }: AreaPageProps): Promise<Metad
   });
 }
 
-export default async function AreaPage({ params, searchParams }: AreaPageProps) {
-  const [{ catalog, area: rawArea }, query] = await Promise.all([
-    params,
-    searchParams,
-  ]);
+export default async function AreaPage({ params }: AreaPageProps) {
+  const { catalog, area: rawArea } = await params;
   const resolved = resolveAreaCatalog(catalog, rawArea);
 
   if (!resolved) notFound();
@@ -81,13 +85,7 @@ export default async function AreaPage({ params, searchParams }: AreaPageProps) 
   const { country, area, scope } = resolved;
 
   if (!isCanonicalCatalogSegment(catalog, scope) || rawArea !== area) {
-    permanentRedirect(
-      buildCatalogHref({
-        scope,
-        area,
-        ...readCatalogQueryContext(query),
-      }),
-    );
+    permanentRedirect(buildCatalogHref({ scope, area }));
   }
 
   return (
@@ -96,7 +94,6 @@ export default async function AreaPage({ params, searchParams }: AreaPageProps) 
       area={area}
       locale={scope.locale}
       scope={scope}
-      searchParams={query}
     />
   );
 }

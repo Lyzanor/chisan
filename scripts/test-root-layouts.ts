@@ -1,9 +1,11 @@
 import assert from "node:assert/strict";
+import { AsyncLocalStorage } from "node:async_hooks";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 import path from "node:path";
 
 import { parseCatalogScope } from "../lib/i18n/catalog-scope";
+import { needsClerkRequestContext } from "../lib/proxy-scope";
 
 const repositoryRoot = process.cwd();
 
@@ -123,4 +125,82 @@ test("the catalog root derives document language only from the async URL scope",
 
   assert.equal(parseCatalogScope("xx-es", countries), null);
   assert.equal(parseCatalogScope("es-zz", countries), null);
+});
+
+test("the proxy skips unrelated traffic and initializes Clerk only where needed", async () => {
+  const proxySource = readRepositoryFile("proxy.ts");
+  const matcherLiteral = /matcher:\s*(\[[\s\S]*?\n\s*\])/.exec(proxySource)?.[1];
+  assert.ok(matcherLiteral, "proxy matcher must remain a static array");
+  const matcher = JSON.parse(matcherLiteral.replace(/,\s*\]$/, "]")) as string[];
+
+  (
+    globalThis as typeof globalThis & {
+      AsyncLocalStorage: typeof AsyncLocalStorage;
+    }
+  ).AsyncLocalStorage = AsyncLocalStorage;
+  const { unstable_doesMiddlewareMatch } = await import(
+    "next/experimental/testing/server"
+  );
+
+  const matches = (pathname: string) =>
+    unstable_doesMiddlewareMatch({
+      config: { matcher },
+      url: `https://chisan.app${pathname}`,
+    });
+
+  for (const pathname of [
+    "/es",
+    "/ca-es/barcelona",
+    "/es/barcelona/producer",
+    "/acceso",
+    "/registro/new",
+    "/cuenta/favoritos",
+    "/admin",
+    "/api",
+    "/api/webhooks/clerk",
+    "/trpc/example",
+  ]) {
+    assert.equal(matches(pathname), true, pathname);
+  }
+
+  for (const pathname of [
+    "/",
+    "/our-purpose",
+    "/u/example",
+    "/favicon.ico",
+    "/_next/static/chunk.js",
+    "/productores/es/example.jpg",
+    "/api/catalog-redirect/es",
+    "/api/catalog-redirect/es/barcelona",
+    "/es/barcelona/producer/extra",
+  ]) {
+    assert.equal(matches(pathname), false, pathname);
+  }
+
+  for (const pathname of [
+    "/es/barcelona/producer",
+    "/acceso",
+    "/registro/new",
+    "/cuenta",
+    "/admin/cambios",
+    "/api/webhooks/clerk",
+    "/trpc/example",
+  ]) {
+    assert.equal(needsClerkRequestContext(pathname), true, pathname);
+  }
+
+  for (const pathname of [
+    "/es",
+    "/ca-es/barcelona",
+    "/our-purpose",
+    "/api/catalog-redirect/es",
+  ]) {
+    assert.equal(needsClerkRequestContext(pathname), false, pathname);
+  }
+
+  assert.doesNotMatch(
+    proxySource,
+    /clerkMiddleware\(\)/,
+    "Clerk must not wrap every matched request",
+  );
 });

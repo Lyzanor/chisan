@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
@@ -50,6 +50,25 @@ const producerPinHighlightedIcon = L.divIcon({
   iconAnchor: [11, 11],
 });
 
+function hasSamePointGeometry(
+  previous: readonly ProducerMapMarker[],
+  current: readonly ProducerMapMarker[],
+): boolean {
+  if (previous.length !== current.length) {
+    return false;
+  }
+
+  return previous.every((point, index) => {
+    const candidate = current[index];
+    return (
+      candidate !== undefined &&
+      point.key === candidate.key &&
+      point.latitude === candidate.latitude &&
+      point.longitude === candidate.longitude
+    );
+  });
+}
+
 function BoundsAwareMarkers({
   points,
   highlightedKey,
@@ -65,10 +84,27 @@ function BoundsAwareMarkers({
 }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
+  const fittedViewRef = useRef<{
+    points: readonly ProducerMapMarker[];
+    singlePointZoom: number;
+  } | null>(null);
 
-  // Fit map to all points whenever the point set changes
+  // Fit only when the effective geometry changes. Navigation state such as a
+  // highlighted producer may rebuild props, but must preserve the user's pan
+  // and zoom.
   useEffect(() => {
     if (points.length === 0) return;
+
+    const fittedView = fittedViewRef.current;
+    if (
+      fittedView &&
+      fittedView.singlePointZoom === singlePointZoom &&
+      hasSamePointGeometry(fittedView.points, points)
+    ) {
+      fittedViewRef.current = { points, singlePointZoom };
+      return;
+    }
+    fittedViewRef.current = { points, singlePointZoom };
 
     if (points.length === 1) {
       map.setView([points[0].latitude, points[0].longitude], singlePointZoom, {
@@ -114,7 +150,7 @@ function BoundsAwareMarkers({
             <br />
             {point.city} · {point.categories.join(" · ")}
             <br />
-            <Link href={point.href}>
+            <Link href={point.href} prefetch={false}>
               {messages.openProfile}
             </Link>
           </Popup>

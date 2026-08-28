@@ -1065,13 +1065,17 @@ test("public producer social links use localized field labels", () => {
 });
 
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {
-  const [css, areaCatalog, mapInner, japanese] = await Promise.all([
+  const [css, areaCatalog, areaExplorer, mapInner, japanese] = await Promise.all([
     fs.promises.readFile(
       path.resolve(process.cwd(), "app/globals.css"),
       "utf8",
     ),
     fs.promises.readFile(
       path.resolve(process.cwd(), "components/area-catalog.tsx"),
+      "utf8",
+    ),
+    fs.promises.readFile(
+      path.resolve(process.cwd(), "components/area-explorer.tsx"),
       "utf8",
     ),
     fs.promises.readFile(
@@ -1112,6 +1116,7 @@ test("Japanese layout and map-popup contracts remain objectively testable", asyn
     /\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana}/u,
   );
   assert.equal(japanese.map.openProfile, "プロフィールを開く");
-  assert.match(areaCatalog, /openProfile:\s*messages\.map\.openProfile/);
+  assert.match(areaCatalog, /mapMessages:\s*messages\.map/);
+  assert.match(areaExplorer, /messages=\{model\.mapMessages\}/);
   assert.match(mapInner, /\{messages\.openProfile\}/);
 });
