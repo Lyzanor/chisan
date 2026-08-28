@@ -25,7 +25,7 @@ const ROW_FIELDS = {
   "Google Maps": "https://www.google.com/maps/place/Uno",
   lat: "41.5",
   lon: "1.9",
-  verificacion: "verificado",
+  verificacion: "pendiente",
   "Venta online": "sí",
   "Canal de venta": "ecommerce",
   producer_id: "1",
@@ -162,7 +162,7 @@ function main() {
     // The pruned shape is the contract: the old decision block, the reviewer tag
     // and the review date are Git's or the CSV's job, and must not come back.
     expectError(
-      [{ ...validKeep(), decision: { verification: "verificado" } }],
+      [{ ...validKeep(), decision: { verification: "pendiente" } }],
       "unknown field(s): decision",
     );
     expectError(

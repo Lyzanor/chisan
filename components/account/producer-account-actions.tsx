@@ -8,6 +8,7 @@ import {
   isAccountSystemConfigured,
 } from "@/lib/accounts/config";
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
+import { isProducerOwnershipVerified } from "@/lib/accounts/producer-ownership";
 import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
 import { getDatabase } from "@/lib/db";
 import {
@@ -54,22 +55,10 @@ async function renderProducerAccountActions({
 }: ProducerAccountActionsProps) {
   const safeReturnTo = safeReturnPath(returnTo, "/");
   const database = getDatabase();
-  const [account, ownerRows] = await Promise.all([
+  const [account, activeOwner] = await Promise.all([
     getCurrentAccount(),
-    database
-      .select({ userId: producerMemberships.userId })
-      .from(producerMemberships)
-      .where(
-        and(
-          eq(producerMemberships.country, country),
-          eq(producerMemberships.producerId, producerId),
-          eq(producerMemberships.role, "owner"),
-          eq(producerMemberships.status, "active"),
-        ),
-      )
-      .limit(1),
+    isProducerOwnershipVerified(country, producerId),
   ]);
-  const activeOwner = ownerRows[0];
 
   if (!account) {
     const redirectQuery = encodeURIComponent(safeReturnTo);

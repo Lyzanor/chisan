@@ -1032,8 +1032,8 @@ test("controlled CSV values retain their tokens but render localized labels", as
   const german = await loadMessages("de");
 
   assert.equal(
-    formatVerification("verificado", german.controlledValues),
-    "Verifiziert",
+    formatVerification("pendiente", german.controlledValues),
+    "Ausstehend",
   );
   assert.equal(
     formatOnlineSales("no comprobado", german.controlledValues),

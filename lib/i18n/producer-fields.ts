@@ -27,10 +27,15 @@ export type DescriptionLocaleOption = Readonly<{
   label: string;
 }>;
 
-// These fields are omitted from the generic details table. The expanded-profile
-// component renders the premium facts separately after checking the producer
-// entitlement; they are conditional public facts, not private account data.
+// These fields are omitted from the generic details table. Internal routing,
+// identity and asset fields remain available to the page itself, while the
+// expanded-profile component renders premium facts separately after checking
+// the producer entitlement.
 const GENERIC_TABLE_HIDDEN_FIELD_KEYS = new Set([
+  "slug",
+  "imagen",
+  "producer_id",
+  "verificacion",
   "descripcion_locale",
   "visitas guiadas",
   "mensaje a la comunidad",
@@ -140,6 +145,23 @@ export function presentProducerField(
     label: formatProducerFieldLabel(key, locale, messages),
     displayValue: formatProducerFieldValue(key, value, locale, messages),
   };
+}
+
+export function presentProducerVerification(
+  value: string,
+  producerOwnershipVerified: boolean,
+  locale: Locale,
+  messages: Messages,
+): ProducerFieldPresentation | null {
+  const normalizedValue = value.trim();
+  if (producerOwnershipVerified) {
+    return {
+      ...presentProducerField("verificacion", normalizedValue, locale, messages),
+      displayValue: messages.accountActions.ownershipVerified,
+    };
+  }
+  if (normalizedValue !== "pendiente") return null;
+  return presentProducerField("verificacion", normalizedValue, locale, messages);
 }
 
 export function isPublicProducerField(key: string): boolean {

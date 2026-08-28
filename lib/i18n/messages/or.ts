@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHub ରେ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ",
   },
   accountActions: {
-    ownershipVerifiedDescription: "ଏହି ଉତ୍ପାଦକଙ୍କ ମାଲିକାନା ଯାଞ୍ଚ ହୋଇଛି।",
+    ownershipVerifiedDescription:
+      "ଏହି ପ୍ରୋଫାଇଲ୍‌କୁ ଉତ୍ପାଦକ ଦାବି କରି ଯାଞ୍ଚ କରିଛନ୍ତି।",
     saveOrClaimPrompt:
       "ଏହି ଉତ୍ପାଦକଙ୍କୁ ସଞ୍ଚୟ କରନ୍ତୁ କିମ୍ବା ମାଲିକାନା ଦାବି କରନ୍ତୁ।",
     signIn: "ସାଇନ୍ ଇନ୍",
@@ -27,7 +28,7 @@ const messages = {
     saveFavorite: "ପସନ୍ଦରେ ସଞ୍ଚୟ କରନ୍ତୁ",
     editMyProfile: "ମୋ ପ୍ରୋଫାଇଲ୍ ସମ୍ପାଦନ କରନ୍ତୁ",
     expandProfile: "ପ୍ରୋଫାଇଲ୍ ବିସ୍ତାର କରନ୍ତୁ",
-    ownershipVerified: "ମାଲିକାନା ଯାଞ୍ଚ ହୋଇଛି",
+    ownershipVerified: "ଉତ୍ପାଦକଙ୍କ ଦ୍ୱାରା ଯାଞ୍ଚିତ",
     viewOwnershipClaim: "ମାଲିକାନା ଦାବି ଦେଖନ୍ତୁ",
     claimProducer: "ଏହି ଉତ୍ପାଦକଙ୍କ ମାଲିକାନା ଦାବି କରନ୍ତୁ",
     descriptionLanguage: {
@@ -226,8 +227,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "ଅପେକ୍ଷାରତ",
-      parcial: "ଆଂଶିକ ଭାବେ ଯାଞ୍ଚ ହୋଇଛି",
-      verificado: "ଯାଞ୍ଚ ହୋଇଛି",
     },
     onlineSales: { sí: "ହଁ", no: "ନା", "no comprobado": "ଯାଞ୍ଚ ହୋଇନାହିଁ" },
     salesChannels: {

@@ -53,7 +53,7 @@ function row(producerId, description, locale) {
     municipio: "Place",
     categoria: "Vino",
     descripcion: description,
-    verificacion: "parcial",
+    verificacion: "pendiente",
     "Venta online": "no comprobado",
     producer_id: String(producerId),
     descripcion_locale: locale,

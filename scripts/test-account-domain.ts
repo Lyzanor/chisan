@@ -157,7 +157,7 @@ test("producer proposals return only changed allowlisted fields", () => {
   });
   assert.equal(isProducerPatch(result.patch), true);
   assert.equal(isProducerPatch({ producer_id: "999" }), false);
-  assert.equal(isProducerPatch({ verificacion: "verificado" }), false);
+  assert.equal(isProducerPatch({ verificacion: "pendiente" }), false);
 });
 
 test("description and source locale are validated and proposed as one pair", () => {

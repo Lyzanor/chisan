@@ -9,6 +9,7 @@ import { DetailDesktopNav } from "@/components/detail-desktop-nav";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProducersMap } from "@/components/map/producers-map";
+import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
 import {
   buildCatalogAlternateSet,
   buildLocalizedMetadata,
@@ -164,6 +165,7 @@ export default async function ProducerPage({
   const phone = getFieldValue(producer.fields, "telefono");
   const instagram = getFieldValue(producer.fields, "Instagram");
   const facebook = getFieldValue(producer.fields, "Facebook");
+  const verification = getFieldValue(producer.fields, "verificacion");
   const phoneHref = buildPhoneHref(phone);
   const publicFields = presentPublicProducerFields(
     producer.fields,
@@ -342,6 +344,15 @@ export default async function ProducerPage({
                 </tr>
               </thead>
               <tbody>
+                <Suspense fallback={null}>
+                  <ProducerVerificationTableRow
+                    country={country.slug}
+                    locale={locale}
+                    messages={messages}
+                    producerId={producer.producerId}
+                    verification={verification}
+                  />
+                </Suspense>
                 {publicFields.map((field) => (
                   <tr key={field.key}>
                     <td>{field.label}</td>

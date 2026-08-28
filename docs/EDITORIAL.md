@@ -64,13 +64,13 @@ failed fetch prove neither inclusion nor exclusion.
 Admission and full enrichment are separate. The gate also requires a supported
 primary category, a check for permanent closure and a de-duplication decision
 for the productive unit. It does not require every optional CSV field. Because
-an admitted candidate has evidence for all three core verification claims, a
-new row starts as `parcial` or `verificado`, never `pendiente`; source quality
-and remaining doubt determine which state applies.
+an admitted candidate has evidence for all three core verification claims, it
+may enter as `pendiente` when a secondary source or material doubt remains;
+otherwise `verificacion` stays empty.
 
 An authoritative institutional directory that explicitly identifies a
 qualifying producer, its productive municipality and a public phone or email
-can support a usable `parcial` row without an official website when the other
+can support a usable `pendiente` row without an official website when the other
 admission claims are sufficient. Copy only the fields it publishes, leave `web`
 empty unless an official site is established, and retain `Venta online=no
 comprobado` unless remote sales are separately proven.
@@ -122,7 +122,7 @@ Exact values, separators and representation live in `docs/CSV_CONTRACT.md`.
 
 ## Decision order
 
-Resolve exclusions before assigning a verification level. `purge` applies to a
+Resolve exclusions before assigning a verification label. `purge` applies to a
 published row; `reject` is the equivalent for a never-published candidate:
 
 | Condition | Existing row | New candidate |
@@ -140,7 +140,7 @@ Use `not-producer` when no material productive activity exists. Use
 fails.
 
 Do not turn uncertainty into an exclusion. An unresolved existing row remains
-`pendiente` or `parcial` according to the available evidence. An unresolved
+`pendiente` according to the available evidence. An unresolved
 candidate receives the workflow outcome `hold` and remains in candidate notes;
 `hold` is not an evidence action and never creates a CSV row.
 
@@ -155,22 +155,22 @@ Verification depends on three independent claims:
 
 | Evidence state | `verificacion` |
 |---|---|
-| All three claims are confirmed by current primary or clearly reliable evidence, including a current verifying source | `verificado` |
-| All three claims have evidence, but at least one depends on a secondary source or retains material doubt | `parcial` |
-| At least one claim lacks sufficient evidence | `pendiente` |
+| All three claims are confirmed by current primary or clearly reliable evidence, including a current verifying source | empty |
+| All three claims have evidence, but at least one depends on a secondary source or retains material doubt | `pendiente` |
+| An existing row lacks sufficient evidence for at least one claim | `pendiente` |
 
 A verifying source is capable of showing the producer as current. Source types
 are represented in `docs/EVIDENCE_CONTRACT.md`, but a type does not make every
 claim reliable. Registries and other supporting sources prove only what they
-publish; without a current verifying source they cap the row at `parcial`.
-`parcial` is a valid, stable result and must not be promoted merely to clear a
-queue.
+publish; without a current verifying source the row remains `pendiente`.
+`pendiente` can be a valid, stable source ceiling and must not be cleared merely
+to reduce a queue.
 
-`verificacion` is the current editorial assessment of the three claims, not
-proof that a review was performed correctly and not a terminal workflow state.
-A later pass reassesses it from the sources; `verificado` may be improved,
-corrected or downgraded. It also does not certify every optional cell: each
-filled value remains a separate public claim.
+`verificacion` is a public editorial caveat, not proof that a review was
+performed correctly and not a terminal workflow state. Empty means that Chisan
+shows no editorial verification label; it does not certify the row or any
+optional field. A later pass can add or clear `pendiente` as the sources change,
+and each filled value remains a separate public claim.
 
 ## Online sales
 
@@ -391,14 +391,14 @@ visible level-3 coverage work, not permission to invent a location.
 
 | Outcome | CSV | Evidence | Candidate note |
 |---|---|---|---|
-| Accepted | Add as `parcial` or `verificado`, never as a new `pendiente` | Create a `keep` with the decision sources | Remove the entry |
+| Accepted | Add as `pendiente` when material doubt remains; otherwise leave `verificacion` empty | Create a `keep` with the decision sources | Remove the entry |
 | Already present | Update only confirmed incidental data | Update the existing `keep` when appropriate | Remove the entry |
 | Rejected | Do not add | Create a `reject` with affirmative proof | Remove the entry |
 | Unresolved | Do not add | Create no decision | Retain the blocker and latest attempt |
 
-`pendiente` is reserved for inherited debt: a published row that does not yet
-meet the current admission threshold. Confirm, merge or remove that row before
-expanding or polishing it.
+An admitted `pendiente` row remains published while its evidence has a material
+source ceiling. A speculative candidate that has not met the gate remains in
+the candidate note instead of entering the CSV.
 
 **Handoff:** every candidate before the cutoff is accepted, already present,
 rejected or retained with an actionable blocker; CSV, evidence and candidate
@@ -429,13 +429,13 @@ supportable, review:
   useful to readers;
 - an admissible image.
 
-Do not treat the existing `verificacion` value as proof. It is a published claim
-that the new review must sustain, downgrade or correct like any other cell.
+Do not treat empty `verificacion` as proof. Review the underlying sources; add
+or retain `pendiente` when material doubt remains.
 
 A broad pass means **reviewed**, not **filled** or permanently complete. An empty
-optional cell may be the correct result; `parcial` may be the correct source
-ceiling, and an inaccessible channel may require `no comprobado`. `verificado`
-describes the current strength of the core claims, not all optional fields.
+optional cell may be the correct result; `pendiente` may be the correct source
+ceiling, and an inaccessible channel may require `no comprobado`. An empty
+verification cell makes no certification claim.
 
 Update an existing `keep` line rather than appending another. A pass closes only
 its stated scope, and the row remains reopenable when a better source, new fact,
@@ -451,9 +451,14 @@ membership authorizes only the proposal and private owner material is not public
 evidence. Follow the review, materialization, commit and finalization workflow
 in `docs/ACCOUNT_SYSTEM.md`; PostgreSQL never becomes a catalog overlay.
 
+The public label `Verificado por el productor` is derived only from an exact
+active owner membership created by an approved claim. It verifies who controls
+the producer profile, not the truth of the CSV facts, and never writes or clears
+`verificacion`.
+
 The expanded-profile payment is also not a fourth editorial level. It permits
 the producer to propose and display the five expanded CSV fields while the
-producer entitlement is active; it never improves `verificacion`, ranking,
+producer entitlement is active; it never changes `verificacion`, ranking,
 admission or source authority and does not guarantee publication.
 
 For expanded fields, apply these additional review rules:

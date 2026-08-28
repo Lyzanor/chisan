@@ -186,7 +186,7 @@ whitespace.
 | `lat`                    | paired      | WGS84 latitude in decimal degrees, between `-90` and `90`.                                                                      |
 | `lon`                    | paired      | WGS84 longitude in decimal degrees, between `-180` and `180`.                                                                   |
 | `imagen`                 | optional    | Root-relative path to a local public image asset.                                                                               |
-| `verificacion`           | required    | Exact token: `pendiente`, `parcial` or `verificado`.                                                                            |
+| `verificacion`           | optional    | Empty for no public editorial label; otherwise the exact token `pendiente`.                                                      |
 | `Venta online`           | required    | Exact token: `sí`, `no` or `no comprobado`.                                                                                     |
 | `Canal de venta`         | conditional | Zero or more allowed channel tokens joined with `\|`; only when `Venta online=sí`.                                              |
 | `categorias adicionales` | optional    | Zero or more exact category tokens joined with `\|`; each represents another material product line of the same productive unit. |
@@ -226,9 +226,9 @@ the message into verified facts and does not relax public-source requirements
 for any other field.
 
 New candidates must pass the candidate gate in `docs/EDITORIAL.md` before
-they enter a CSV and start as `parcial` or `verificado`. `pendiente` is reserved
-for inherited or later-questioned published rows that do not currently meet the
-admission threshold; it is never a holding state for a speculative candidate.
+they enter a CSV. An admitted row uses `pendiente` while material doubt remains
+and otherwise leaves `verificacion` empty. `pendiente` is never a holding state
+for a speculative candidate that has not passed admission.
 
 ## Editorial field conventions
 
@@ -572,15 +572,17 @@ editor-authored prose.
 
 ## Verification and sales states
 
-`docs/EDITORIAL.md` defines how to choose these states. This contract
-only defines their representation and structural floor.
+`docs/EDITORIAL.md` defines how to choose these states. This contract only
+defines their representation.
 
-- `verificacion` is required. `verificado` additionally requires both
-  coordinates and at least one external identity/location link among `web`,
-  `Facebook`, `Instagram` and `Google Maps`.
-- That structural floor is not proof of verification, and `verificado` does not
-  certify that every optional cell is current. Each filled cell remains its own
-  claim.
+- `verificacion` is optional. Its only stored token is `pendiente`, meaning the
+  admitted row retains material doubt or needs further editorial review.
+- Empty `verificacion` means that Chisan publishes no editorial verification
+  label. It is not a certification and does not assert that every optional cell
+  is current; each filled cell remains its own claim.
+- `Verificado por el productor` is derived at request time from an exact active
+  owner membership in PostgreSQL. It is presentation of an approved ownership
+  claim, never a CSV token or an editorial assessment of the row's facts.
 - `Venta online` is required and independent of `verificacion`.
 - `Canal de venta` must be empty when sales are `no` or `no comprobado`. When
   sales are `sí`, it may remain empty while the demonstrated mechanism is still

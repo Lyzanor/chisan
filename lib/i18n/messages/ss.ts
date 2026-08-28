@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Tsintsa natsi ku-GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Bunikati balomkhiqizi buqinisekisiwe.",
+    ownershipVerifiedDescription:
+      "Le phrofayela ifunwe futsi yaqinisekiswa ngumkhiqizi.",
     saveOrClaimPrompt: "Gcina lomkhiqizi noma ufake sicelo sebunikati.",
     signIn: "Ngena",
     createAccount: "Yakha i-akhawunti",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Gcina lokutsandvwako",
     editMyProfile: "Hlela iphrofayili yami",
     expandProfile: "Nweba iphrofayili",
-    ownershipVerified: "Bunikati buqinisekisiwe",
+    ownershipVerified: "Iqinisekiswe ngumkhiqizi",
     viewOwnershipClaim: "Buka sicelo sebunikati",
     claimProducer: "Faka sicelo salomkhiqizi",
     descriptionLanguage: {
@@ -228,8 +229,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Kusalindwe",
-      parcial: "Kucinisekiswe kancane",
-      verificado: "Kucinisekisiwe",
     },
     onlineSales: { sí: "Yebo", no: "Cha", "no comprobado": "Akukahlolwa" },
     salesChannels: {

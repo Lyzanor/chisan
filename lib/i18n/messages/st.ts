@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Ikopanye le rona ho GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Botho ba mohlahisi enoa bo netefalitsoe.",
+    ownershipVerifiedDescription:
+      "Profaele ena e tsekiloe le ho netefatsoa ke mohlahisi.",
     saveOrClaimPrompt: "Boloka mohlahisi enoa kapa u tseke botho.",
     signIn: "Kena",
     createAccount: "Theha akhaonto",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Boloka seo ke se ratang",
     editMyProfile: "Fetola profaele ea ka",
     expandProfile: "Atolosa profaele",
-    ownershipVerified: "Botho bo netefalitsoe",
+    ownershipVerified: "E netefalitsoe ke mohlahisi",
     viewOwnershipClaim: "Sheba tseko ea botho",
     claimProducer: "Tseka mohlahisi enoa",
     descriptionLanguage: {
@@ -230,8 +231,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "E emetse",
-      parcial: "E netefalitsoe ka karolo",
-      verificado: "E netefalitsoe",
     },
     onlineSales: { sí: "E", no: "Che", "no comprobado": "Ha ea hlahlojoa" },
     salesChannels: {

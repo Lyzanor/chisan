@@ -205,8 +205,6 @@ export type Messages = {
   controlledValues: {
     verification: {
       pendiente: string;
-      parcial: string;
-      verificado: string;
     };
     onlineSales: {
       sí: string;

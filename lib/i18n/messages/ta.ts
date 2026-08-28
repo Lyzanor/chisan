@@ -19,7 +19,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "இந்த உற்பத்தியாளரின் உரிமை சரிபார்க்கப்பட்டது.",
+      "இந்தச் சுயவிவரத்தை உற்பத்தியாளர் உரிமைகோரி சரிபார்த்துள்ளார்.",
     saveOrClaimPrompt:
       "இந்த உற்பத்தியாளரைச் சேமிக்கவும் அல்லது உரிமையைக் கோரவும்.",
     signIn: "உள்நுழைக",
@@ -28,7 +28,7 @@ const messages = {
     saveFavorite: "பிடித்தவற்றில் சேமிக்குக",
     editMyProfile: "என் சுயவிவரத்தைத் திருத்துக",
     expandProfile: "சுயவிவரத்தை விரிவாக்குக",
-    ownershipVerified: "உரிமை சரிபார்க்கப்பட்டது",
+    ownershipVerified: "உற்பத்தியாளரால் சரிபார்க்கப்பட்டது",
     viewOwnershipClaim: "உரிமைக் கோரிக்கையைப் பார்க்க",
     claimProducer: "இந்த உற்பத்தியாளரின் உரிமையைக் கோருக",
     descriptionLanguage: {
@@ -238,8 +238,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "நிலுவையில்",
-      parcial: "பகுதியளவு சரிபார்க்கப்பட்டது",
-      verificado: "சரிபார்க்கப்பட்டது",
     },
     onlineSales: {
       sí: "ஆம்",

@@ -1,5 +1,5 @@
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
-finca-argovia,Finca Argovia,Tapachula,Café,,,Café orgánico de especialidad y procesamiento ecológico bajo sombra en el Soconusco,,,,https://www.argovia.com.mx,,,,14.93333,-92.3,,verificado,no comprobado,,,73,es,,,,,
-quesos-laltic,Quesos Laltic,Ocosingo,Lácteos y quesos,Queso bola de Ocosingo,,Elabora queso bola tradicional de Ocosingo con doble capa de pasta desnatada y maduración,,+529191000266,,,https://www.facebook.com/quesoslaltic/,,,16.9,-92.1,,verificado,no comprobado,,,121,es,,,,,
-mexifrutas-planta-arriaga,Mexifrutas — Planta Arriaga,Arriaga,Fruta y verdura,,,,,,,https://helloediteam.com/mexifrutas/es/,,,,,,,parcial,no comprobado,,,162,,,,,,
-exicamp-tapachula,Exicamp,Tapachula,Café,,,,,,,https://exicamp.thomas.com.mx/,,,,,,,parcial,no comprobado,,,163,,,,,,
+finca-argovia,Finca Argovia,Tapachula,Café,,,Café orgánico de especialidad y procesamiento ecológico bajo sombra en el Soconusco,,,,https://www.argovia.com.mx,,,,14.93333,-92.3,,,no comprobado,,,73,es,,,,,
+quesos-laltic,Quesos Laltic,Ocosingo,Lácteos y quesos,Queso bola de Ocosingo,,Elabora queso bola tradicional de Ocosingo con doble capa de pasta desnatada y maduración,,+529191000266,,,https://www.facebook.com/quesoslaltic/,,,16.9,-92.1,,,no comprobado,,,121,es,,,,,
+mexifrutas-planta-arriaga,Mexifrutas — Planta Arriaga,Arriaga,Fruta y verdura,,,,,,,https://helloediteam.com/mexifrutas/es/,,,,,,,pendiente,no comprobado,,,162,,,,,,
+exicamp-tapachula,Exicamp,Tapachula,Café,,,,,,,https://exicamp.thomas.com.mx/,,,,,,,pendiente,no comprobado,,,163,,,,,,

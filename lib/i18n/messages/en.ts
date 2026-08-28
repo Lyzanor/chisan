@@ -20,7 +20,8 @@ const messages = {
     contactLink: "Contact us on GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "This producer's ownership is verified.",
+    ownershipVerifiedDescription:
+      "This profile has been claimed and verified by the producer.",
     saveOrClaimPrompt: "Save this producer or claim ownership.",
     signIn: "Sign in",
     createAccount: "Create account",
@@ -28,7 +29,7 @@ const messages = {
     saveFavorite: "Save favorite",
     editMyProfile: "Edit my profile",
     expandProfile: "Expand profile",
-    ownershipVerified: "Ownership verified",
+    ownershipVerified: "Verified by the producer",
     viewOwnershipClaim: "View ownership claim",
     claimProducer: "Claim this producer",
     descriptionLanguage: {
@@ -229,8 +230,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Pending",
-      parcial: "Partially verified",
-      verificado: "Verified",
     },
     onlineSales: {
       "sí": "Yes",

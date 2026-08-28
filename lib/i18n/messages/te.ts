@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHubలో మమ్మల్ని సంప్రదించండి",
   },
   accountActions: {
-    ownershipVerifiedDescription: "ఈ ఉత్పత్తిదారు యాజమాన్యం ధృవీకరించబడింది.",
+    ownershipVerifiedDescription:
+      "ఈ ప్రొఫైల్‌ను ఉత్పత్తిదారు క్లెయిమ్ చేసి ధృవీకరించారు.",
     saveOrClaimPrompt:
       "ఈ ఉత్పత్తిదారును భద్రపరచండి లేదా యాజమాన్యాన్ని క్లెయిమ్ చేయండి.",
     signIn: "సైన్ ఇన్ చేయండి",
@@ -27,7 +28,7 @@ const messages = {
     saveFavorite: "ఇష్టమైన వాటిలో భద్రపరచండి",
     editMyProfile: "నా ప్రొఫైల్‌ను సవరించండి",
     expandProfile: "ప్రొఫైల్‌ను విస్తరించండి",
-    ownershipVerified: "యాజమాన్యం ధృవీకరించబడింది",
+    ownershipVerified: "ఉత్పత్తిదారుచే ధృవీకరించబడింది",
     viewOwnershipClaim: "యాజమాన్య క్లెయిమ్‌ను చూడండి",
     claimProducer: "ఈ ఉత్పత్తిదారు యాజమాన్యాన్ని క్లెయిమ్ చేయండి",
     descriptionLanguage: {
@@ -232,8 +233,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "పెండింగ్‌లో ఉంది",
-      parcial: "పాక్షికంగా ధృవీకరించబడింది",
-      verificado: "ధృవీకరించబడింది",
     },
     onlineSales: { sí: "అవును", no: "కాదు", "no comprobado": "తనిఖీ చేయలేదు" },
     salesChannels: {

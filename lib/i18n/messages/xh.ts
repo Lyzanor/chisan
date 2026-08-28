@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Qhagamshelana nathi eGitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Ubunini balo mvelisi buqinisekisiwe.",
+    ownershipVerifiedDescription:
+      "Le profayile ibangiwe yaza yaqinisekiswa ngumvelisi.",
     saveOrClaimPrompt: "Gcina lo mvelisi okanye ubange ubunini.",
     signIn: "Ngena",
     createAccount: "Yenza iakhawunti",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Gcina kwizithandwayo",
     editMyProfile: "Hlela iprofayile yam",
     expandProfile: "Yandisa iprofayile",
-    ownershipVerified: "Ubunini buqinisekisiwe",
+    ownershipVerified: "Iqinisekiswe ngumvelisi",
     viewOwnershipClaim: "Jonga ibango lobunini",
     claimProducer: "Banga lo mvelisi",
     descriptionLanguage: {
@@ -228,8 +229,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Kulindelwe",
-      parcial: "Iqinisekiswe ngokuyinxenye",
-      verificado: "Iqinisekisiwe",
     },
     onlineSales: { sí: "Ewe", no: "Hayi", "no comprobado": "Ayikahlolwa" },
     salesChannels: {

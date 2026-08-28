@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Ikopanye le rena go GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Beng ba motšweletši yo ba netefaditšwe.",
+    ownershipVerifiedDescription:
+      "Profaele ye e tserwe ebile e netefaditšwe ke motšweletši.",
     saveOrClaimPrompt: "Boloka motšweletši yo goba o tseke beng.",
     signIn: "Tsena",
     createAccount: "Hlama akhaonte",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Boloka tše di ratwago",
     editMyProfile: "Lokiša profaele ya ka",
     expandProfile: "Atološa profaele",
-    ownershipVerified: "Beng bo netefaditšwe",
+    ownershipVerified: "E netefaditšwe ke motšweletši",
     viewOwnershipClaim: "Bona tseko ya beng",
     claimProducer: "Tseka motšweletši yo",
     descriptionLanguage: {
@@ -231,8 +232,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "E sa letetšwe",
-      parcial: "E netefaditšwe ka karolo",
-      verificado: "E netefaditšwe",
     },
     onlineSales: { sí: "Ee", no: "Aowa", "no comprobado": "Ga se ya lekwa" },
     salesChannels: {

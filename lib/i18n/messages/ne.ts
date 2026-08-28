@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHub मा हामीलाई सम्पर्क गर्नुहोस्",
   },
   accountActions: {
-    ownershipVerifiedDescription: "यस उत्पादकको स्वामित्व प्रमाणित गरिएको छ।",
+    ownershipVerifiedDescription:
+      "यो प्रोफाइल उत्पादकले दाबी गरी प्रमाणित गरेको छ।",
     saveOrClaimPrompt:
       "यस उत्पादकलाई सुरक्षित गर्नुहोस् वा स्वामित्व दाबी गर्नुहोस्।",
     signIn: "साइन इन",
@@ -27,7 +28,7 @@ const messages = {
     saveFavorite: "मनपर्नेमा सुरक्षित गर्नुहोस्",
     editMyProfile: "मेरो प्रोफाइल सम्पादन गर्नुहोस्",
     expandProfile: "प्रोफाइल विस्तार गर्नुहोस्",
-    ownershipVerified: "स्वामित्व प्रमाणित",
+    ownershipVerified: "उत्पादकद्वारा प्रमाणित",
     viewOwnershipClaim: "स्वामित्व दाबी हेर्नुहोस्",
     claimProducer: "यस उत्पादकको स्वामित्व दाबी गर्नुहोस्",
     descriptionLanguage: {
@@ -228,8 +229,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "प्रतीक्षारत",
-      parcial: "आंशिक रूपमा प्रमाणित",
-      verificado: "प्रमाणित",
     },
     onlineSales: { sí: "हो", no: "होइन", "no comprobado": "जाँच गरिएको छैन" },
     salesChannels: {

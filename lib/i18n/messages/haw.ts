@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Hoʻokaʻaʻike iā mākou ma GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Ua hōʻoia ʻia ka kuleana o kēia mea hana.",
+    ownershipVerifiedDescription:
+      "Ua koi a hōʻoia ʻia kēia moʻolelo e ka mea hana.",
     saveOrClaimPrompt: "Mālama i kēia mea hana a koi paha i ka kuleana.",
     signIn: "Komo",
     createAccount: "Hana moʻokāki",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Mālama i punahele",
     editMyProfile: "Hoʻoponopono i koʻu ʻike",
     expandProfile: "Hoʻonui i ka ʻike",
-    ownershipVerified: "Ua hōʻoia ʻia ka kuleana",
+    ownershipVerified: "Ua hōʻoia ʻia e ka mea hana",
     viewOwnershipClaim: "Nānā i ke koi kuleana",
     claimProducer: "Koi i kēia mea hana",
     descriptionLanguage: {
@@ -232,8 +233,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Ke kali nei",
-      parcial: "Ua hōʻoia hapa ʻia",
-      verificado: "Ua hōʻoia ʻia",
     },
     onlineSales: {
       sí: "ʻAe",

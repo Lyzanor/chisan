@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Xhumana nathi e-GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Ubunikazi balo mkhiqizi buqinisekisiwe.",
+    ownershipVerifiedDescription:
+      "Le phrofayela ifunwe futhi yaqinisekiswa ngumkhiqizi.",
     saveOrClaimPrompt:
       "Londoloza lo mkhiqizi noma ufake isimangalo sobunikazi.",
     signIn: "Ngena",
@@ -27,7 +28,7 @@ const messages = {
     saveFavorite: "Londoloza kokuthandwayo",
     editMyProfile: "Hlela iphrofayela yami",
     expandProfile: "Nweba iphrofayela",
-    ownershipVerified: "Ubunikazi buqinisekisiwe",
+    ownershipVerified: "Iqinisekiswe ngumkhiqizi",
     viewOwnershipClaim: "Buka isimangalo sobunikazi",
     claimProducer: "Faka isimangalo ngalo mkhiqizi",
     descriptionLanguage: {
@@ -229,8 +230,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Kusalindwe",
-      parcial: "Kuqinisekiswe ngokwengxenye",
-      verificado: "Kuqinisekisiwe",
     },
     onlineSales: { sí: "Yebo", no: "Cha", "no comprobado": "Akukahlolwa" },
     salesChannels: {

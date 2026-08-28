@@ -110,12 +110,13 @@ function main() {
   });
 
   const catFilter = category ? normalize(category) : null;
-  const counts = { pendiente: 0, parcial: 0, verificado: 0, otro: 0 };
+  const counts = { pendiente: 0, sinEtiqueta: 0, otro: 0 };
   const lines = [];
 
   for (const row of rows) {
-    const verif = normalize(row.verificacion) || "otro";
-    counts[verif in counts ? verif : "otro"] += 1;
+    const verif = normalize(row.verificacion);
+    if (!verif) counts.sinEtiqueta += 1;
+    else counts[verif in counts ? verif : "otro"] += 1;
 
     if (
       catFilter &&
@@ -141,7 +142,7 @@ function main() {
 
   console.log(`# ${path.relative(path.join(__dirname, ".."), resolved)}`);
   console.log(
-    `# ${rows.length} filas — verificado ${counts.verificado} · parcial ${counts.parcial} · pendiente ${counts.pendiente}` +
+    `# ${rows.length} filas — sin etiqueta editorial ${counts.sinEtiqueta} · pendiente ${counts.pendiente}` +
       (counts.otro ? ` · otro ${counts.otro}` : ""),
   );
   console.log(

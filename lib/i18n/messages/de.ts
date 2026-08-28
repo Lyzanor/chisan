@@ -20,7 +20,8 @@ const messages = {
     contactLink: "Auf GitHub Kontakt aufnehmen",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Die Eigentümerschaft dieses Erzeugers ist verifiziert.",
+    ownershipVerifiedDescription:
+      "Dieses Profil wurde vom Erzeuger beansprucht und verifiziert.",
     saveOrClaimPrompt: "Diesen Erzeuger speichern oder Eigentümerschaft beanspruchen.",
     signIn: "Anmelden",
     createAccount: "Konto erstellen",
@@ -28,7 +29,7 @@ const messages = {
     saveFavorite: "Als Favorit speichern",
     editMyProfile: "Mein Profil bearbeiten",
     expandProfile: "Profil erweitern",
-    ownershipVerified: "Eigentümerschaft verifiziert",
+    ownershipVerified: "Vom Erzeuger verifiziert",
     viewOwnershipClaim: "Eigentumsantrag anzeigen",
     claimProducer: "Diesen Erzeuger beanspruchen",
     descriptionLanguage: {
@@ -231,8 +232,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Ausstehend",
-      parcial: "Teilweise verifiziert",
-      verificado: "Verifiziert",
     },
     onlineSales: {
       "sí": "Ja",

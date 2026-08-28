@@ -12,12 +12,12 @@ const messages = {
     navigation: "Navigatie in de voettekst", aboutLink: "Ons doel", catalogLink: "Producentencatalogus",
     contactLink: "Neem contact met ons op via GitHub", },
   accountActions: {
-    ownershipVerifiedDescription: "Het eigenaarschap van deze producent is geverifieerd.",
+    ownershipVerifiedDescription: "Dit profiel is door de producent geclaimd en geverifieerd.",
     saveOrClaimPrompt: "Sla deze producent op of claim het eigenaarschap.",
     signIn: "Inloggen", createAccount: "Account aanmaken", removeFavorite: "Uit favorieten verwijderen",
     saveFavorite: "Aan favorieten toevoegen", editMyProfile: "Mijn profiel bewerken",
     expandProfile: "Profiel uitbreiden",
-    ownershipVerified: "Eigenaarschap geverifieerd", viewOwnershipClaim: "Eigenaarsclaim bekijken",
+    ownershipVerified: "Geverifieerd door de producent", viewOwnershipClaim: "Eigenaarsclaim bekijken",
     claimProducer: "Deze producent claimen",
     descriptionLanguage: {
       none: "Geen beschrijvingstaal",
@@ -108,7 +108,7 @@ const messages = {
     phone: "Telefoon", email: "E-mail", website: "Web", image: "Afbeelding", onlineSales: "Online verkoop", salesChannels: "Verkoopkanalen",
     facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Breedtegraad", longitude: "Lengtegraad", verification: "Verificatie", },
   controlledValues: {
-    verification: { pendiente: "In afwachting", parcial: "Gedeeltelijk geverifieerd", verificado: "Geverifieerd" },
+    verification: { pendiente: "In afwachting" },
     onlineSales: { "sí": "Ja", no: "Nee", "no comprobado": "Niet gecontroleerd" },
     salesChannels: { ecommerce: "Webshop", whatsapp: "WhatsApp", email: "E-mail", telefono: "Telefoon", suscripcion: "Abonnement", marketplace: "Marktplaats" },
   },

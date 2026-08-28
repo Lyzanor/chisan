@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHub चेर आमकां संपर्क करात",
   },
   accountActions: {
-    ownershipVerifiedDescription: "ह्या उत्पादकाची मालकी तपासिल्ली आसा.",
+    ownershipVerifiedDescription:
+      "ह्या प्रोफायलाचेर उत्पादकान दावो करून ताची तपासणी केल्या.",
     saveOrClaimPrompt: "हो उत्पादक जतन करात वा मालकीचो दावो करात.",
     signIn: "साइन इन करात",
     createAccount: "खातें तयार करात",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "आवडींत जतन करात",
     editMyProfile: "म्हजें प्रोफाइल संपादित करात",
     expandProfile: "प्रोफाइल विस्तार करात",
-    ownershipVerified: "मालकी तपासिल्ली",
+    ownershipVerified: "उत्पादकान तपासिल्लें",
     viewOwnershipClaim: "मालकीचो दावो पळोवात",
     claimProducer: "ह्या उत्पादकाचो दावो करात",
     descriptionLanguage: {
@@ -220,8 +221,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "प्रलंबित",
-      parcial: "अंशतः तपासिल्ली",
-      verificado: "तपासिल्ली",
     },
     onlineSales: { sí: "हय", no: "ना", "no comprobado": "तपासिल्ली ना" },
     salesChannels: {

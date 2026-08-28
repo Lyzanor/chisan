@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Ikgolaganye le rona mo GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Bong jwa modiri yo bo netefaditswe.",
+    ownershipVerifiedDescription:
+      "Porofaele eno e tseilwe mme ya netefadiwa ke motlhagisi.",
     saveOrClaimPrompt: "Boloka modiri yo kgotsa o tseye bong.",
     signIn: "Tsena",
     createAccount: "Tlhama akhaonto",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Boloka se se ratwang",
     editMyProfile: "Baakanya profaele ya me",
     expandProfile: "Atolosa profaele",
-    ownershipVerified: "Bong bo netefaditswe",
+    ownershipVerified: "E netefaditswe ke motlhagisi",
     viewOwnershipClaim: "Bona kopo ya bong",
     claimProducer: "Tseya modiri yo",
     descriptionLanguage: {
@@ -231,8 +232,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "E emetse",
-      parcial: "E netefaditswe ka bontlha",
-      verificado: "E netefaditswe",
     },
     onlineSales: { sí: "Ee", no: "Nnyaa", "no comprobado": "Ga e a sekasekwa" },
     salesChannels: {

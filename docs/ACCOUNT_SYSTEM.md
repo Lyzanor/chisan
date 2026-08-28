@@ -280,6 +280,11 @@ truth of any requested public field. Private claim material and author notes do
 not become public evidence; the reviewer applies `docs/EDITORIAL.md`, and
 records only suitable public sources under `data/evidence/**`.
 
+An exact active owner membership may be presented publicly as `Verificado por
+el productor`. That label is derived from PostgreSQL at request time and means
+only that the ownership claim was approved. It never writes the CSV
+`verificacion` cell, upgrades editorial evidence or certifies producer facts.
+
 An owner-submitted change is an input to editorial level 3 in
 `docs/EDITORIAL.md`. Approval authorizes the following two-phase workflow. The
 current admin UI approves or rejects a submitted change. If more

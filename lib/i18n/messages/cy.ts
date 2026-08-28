@@ -19,7 +19,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Mae perchnogaeth y cynhyrchydd hwn wedi'i dilysu.",
+      "Mae'r proffil hwn wedi'i hawlio a'i ddilysu gan y cynhyrchydd.",
     saveOrClaimPrompt: "Cadwch y cynhyrchydd hwn neu hawliwch berchnogaeth.",
     signIn: "Mewngofnodi",
     createAccount: "Creu cyfrif",
@@ -27,7 +27,7 @@ const messages = {
     saveFavorite: "Cadw ffefryn",
     editMyProfile: "Golygu fy mhroffil",
     expandProfile: "Ehangu'r proffil",
-    ownershipVerified: "Perchnogaeth wedi'i dilysu",
+    ownershipVerified: "Wedi'i ddilysu gan y cynhyrchydd",
     viewOwnershipClaim: "Gweld hawliad perchnogaeth",
     claimProducer: "Hawlio'r cynhyrchydd hwn",
     descriptionLanguage: {
@@ -230,8 +230,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Yn aros",
-      parcial: "Wedi'i ddilysu'n rhannol",
-      verificado: "Wedi'i ddilysu",
     },
     onlineSales: { sí: "Oes", no: "Na", "no comprobado": "Heb ei wirio" },
     salesChannels: {

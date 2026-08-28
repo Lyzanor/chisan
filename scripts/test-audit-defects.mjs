@@ -62,7 +62,7 @@ test("admission stage contains only debt that failed the current entry gate", ()
     filterChecks(CHECKS, { stage: "admission" })
       .map((check) => check.id)
       .sort(),
-    ["identidad-duplicada", "pendiente", "sinteticas"],
+    ["identidad-duplicada", "sinteticas"],
   );
 });
 
@@ -113,8 +113,6 @@ test("a row is off the map only when both coordinate cells are empty", () => {
 test("published falsehood is always a cola", () => {
   for (const id of [
     "sinteticas",
-    "pendiente",
-    "evidencia-prestada",
     "maps-sin-ficha",
     "web-de-tercero",
     "identidad-duplicada",

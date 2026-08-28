@@ -444,8 +444,12 @@ if [[ "$REDUNDANT_PRODUCER_RESPONSE" != "308|$BASE_URL/es/barcelona/$SLUG?catego
   exit 1
 fi
 
-if [[ "$HTML_DETAIL_CLEAN" != *"ID del productor"* || "$HTML_DETAIL_CLEAN" != *"$PRODUCER_ID"* ]]; then
-  echo "Error: detail page does not expose the persisted producer_id." >&2
+if [[
+  "$HTML_DETAIL_CLEAN" == *">Slug<"* ||
+  "$HTML_DETAIL_CLEAN" == *">Imagen<"* ||
+  "$HTML_DETAIL_CLEAN" == *">ID del productor<"*
+]]; then
+  echo "Error: detail page exposes an internal slug, image or producer_id table field." >&2
   exit 1
 fi
 

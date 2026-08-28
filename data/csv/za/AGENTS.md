@@ -1,7 +1,7 @@
 # South Africa
 
 ## Operating state
-- Priorities: strengthen partial rows with producer-owned sources, resolve
+- Priorities: strengthen pending rows with producer-owned sources, resolve
   online sales and replace coarse or missing productive-unit details.
 
 ## Country rules
@@ -29,7 +29,7 @@
   roster.
 - Overture Places supports discovery from its category, point and submitted
   contacts. Category errors and retail or hospitality identities require
-  screening, so it normally supports at most `parcial`.
+  screening, so a row relying on it normally remains `pendiente`.
 - The SANHA directory supports the certified food activity, locality and contact
   it publishes; certification does not prove an official web identity or online
   sales.

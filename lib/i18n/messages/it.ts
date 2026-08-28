@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Contattaci su GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "La proprietà di questo produttore è verificata.",
+    ownershipVerifiedDescription:
+      "Questo profilo è stato rivendicato e verificato dal produttore.",
     saveOrClaimPrompt: "Salva questo produttore o rivendicane la proprietà.",
     signIn: "Accedi",
     createAccount: "Crea un account",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Salva nei preferiti",
     editMyProfile: "Modifica il mio profilo",
     expandProfile: "Amplia il profilo",
-    ownershipVerified: "Proprietà verificata",
+    ownershipVerified: "Verificato dal produttore",
     viewOwnershipClaim: "Visualizza la rivendicazione di proprietà",
     claimProducer: "Rivendica questo produttore",
     descriptionLanguage: {
@@ -210,7 +211,7 @@ const messages = {
     verification: "Verifica",
   },
   controlledValues: {
-    verification: { pendiente: "In attesa", parcial: "Verificato parzialmente", verificado: "Verificato" },
+    verification: { pendiente: "In attesa" },
     onlineSales: { "sí": "Sì", no: "No", "no comprobado": "Non verificato" },
     salesChannels: {
       ecommerce: "Negozio online",

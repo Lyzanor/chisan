@@ -1,5 +1,5 @@
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
-ballykilcavan,Ballykilcavan Brewery,Stradbally,Cerveza,,"Stradbally, Co. Laois, R32 Y0PK","Craft brewery based in Stradbally, on a farm the same family has worked since 1639.",,,david@ballykilcavan.com,https://www.ballykilcavan.com/,,,,53.018,-7.115231,,verificado,no comprobado,,,14,en,,,,,
-the-merry-mill,The Merry Mill,Vicarstown,Legumbres y cereales,,,,,,,https://www.themerrymill.ie/,,,,,,,parcial,no comprobado,,,268,,,,,,
-odlums-portarlington-flour-mill,Odlums — Portarlington flour mill,Portarlington,Pan y cereal,,,,,,,https://odlums.ie/about-odlums/,,,,,,,parcial,no comprobado,,,269,,,,,,
-tirlan-portlaoise-oat-mill,Tirlán — Portlaoise oat mill,Portlaoise,Pan y cereal,,,,,,,https://www.tirlan.com/,,,,,,,parcial,no comprobado,,,270,,,,,,
+ballykilcavan,Ballykilcavan Brewery,Stradbally,Cerveza,,"Stradbally, Co. Laois, R32 Y0PK","Craft brewery based in Stradbally, on a farm the same family has worked since 1639.",,,david@ballykilcavan.com,https://www.ballykilcavan.com/,,,,53.018,-7.115231,,,no comprobado,,,14,en,,,,,
+the-merry-mill,The Merry Mill,Vicarstown,Legumbres y cereales,,,,,,,https://www.themerrymill.ie/,,,,,,,pendiente,no comprobado,,,268,,,,,,
+odlums-portarlington-flour-mill,Odlums — Portarlington flour mill,Portarlington,Pan y cereal,,,,,,,https://odlums.ie/about-odlums/,,,,,,,pendiente,no comprobado,,,269,,,,,,
+tirlan-portlaoise-oat-mill,Tirlán — Portlaoise oat mill,Portlaoise,Pan y cereal,,,,,,,https://www.tirlan.com/,,,,,,,pendiente,no comprobado,,,270,,,,,,

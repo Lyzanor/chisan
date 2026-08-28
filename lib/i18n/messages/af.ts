@@ -19,7 +19,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Hierdie produsent se eienaarskap is geverifieer.",
+      "Hierdie profiel is deur die produsent opgeëis en geverifieer.",
     saveOrClaimPrompt: "Stoor hierdie produsent of eis eienaarskap.",
     signIn: "Meld aan",
     createAccount: "Skep rekening",
@@ -27,7 +27,7 @@ const messages = {
     saveFavorite: "Stoor gunsteling",
     editMyProfile: "Wysig my profiel",
     expandProfile: "Brei profiel uit",
-    ownershipVerified: "Eienaarskap geverifieer",
+    ownershipVerified: "Deur die produsent geverifieer",
     viewOwnershipClaim: "Bekyk eienaarskapseis",
     claimProducer: "Eis hierdie produsent",
     descriptionLanguage: {
@@ -230,8 +230,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Hangende",
-      parcial: "Gedeeltelik geverifieer",
-      verificado: "Geverifieer",
     },
     onlineSales: { sí: "Ja", no: "Nee", "no comprobado": "Nie nagegaan nie" },
     salesChannels: {

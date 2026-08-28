@@ -37,7 +37,7 @@ const CANONICAL_HEADER = Object.freeze([
 // the product surface, so 'Sí' or 'VERIFICADO' are drift to fix, not variants to
 // accept silently.
 const VERIFICATION_COLUMN = "verificacion";
-const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
+const VERIFICATION_LEVELS = new Set(["pendiente"]);
 const ONLINE_SALES_COLUMN = "Venta online";
 const ONLINE_SALES_VALUES = new Set(["sí", "no", "no comprobado"]);
 const ONLINE_SALES_DISPLAY_VALUES = "sí, no, no comprobado";
@@ -1763,34 +1763,14 @@ function runContractAudit({
       push("error", line, id, slug, `imagen: ${imagePathError}`);
     }
 
-    if (!verificationRaw) {
-      push("error", line, id, slug, "verificacion is required");
-    } else if (!VERIFICATION_LEVELS.has(verificationRaw)) {
+    if (verificationRaw && !VERIFICATION_LEVELS.has(verificationRaw)) {
       push(
         "error",
         line,
         id,
         slug,
-        `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
+        "verificacion must be empty or pendiente",
       );
-    } else if (verificationRaw === "verificado") {
-      const hasCoords =
-        !Number.isNaN(lat) && !Number.isNaN(lon) && Boolean(latRaw || lonRaw);
-      const hasExternalLink = Boolean(
-        cleanCell(fields.web) ||
-        cleanCell(fields["Google Maps"]) ||
-        cleanCell(fields.Facebook) ||
-        cleanCell(fields.Instagram),
-      );
-      if (!hasCoords || !hasExternalLink) {
-        push(
-          "error",
-          line,
-          id,
-          slug,
-          "verificacion verificado requires coordinates and at least one external link",
-        );
-      }
     }
 
     if (!onlineSalesRaw) {

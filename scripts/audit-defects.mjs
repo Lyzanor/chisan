@@ -472,22 +472,6 @@ export const CHECKS = [
       }),
   },
   {
-    id: "evidencia-prestada",
-    kind: "cola",
-    stage: "verification",
-    label: "`verificado` cuyo único enlace externo es un pin de Google Maps",
-    hint: "un pin es contenido de usuario: prueba que hay un punto, no que el productor esté activo",
-    run: ({ rows }) =>
-      rows.filter(
-        (r) =>
-          r.verificacion === "verificado" &&
-          !r.web &&
-          !r.Instagram &&
-          !r.Facebook &&
-          r["Google Maps"],
-      ),
-  },
-  {
     id: "maps-sin-ficha",
     kind: "cola",
     stage: "verification",
@@ -500,7 +484,7 @@ export const CHECKS = [
     kind: "cola",
     stage: "verification",
     label: `\`web\` compartida por >=${SHARED_DOMAIN_THRESHOLD} filas de la area (consejo, mercado o blog haciendo de web propia)`,
-    hint: "el enlace prestado hace pasar el gate de `verificado` sin una fuente del productor",
+    hint: "un enlace prestado no demuestra la identidad pública ni la actividad actual del productor",
     run: ({ rows }) => {
       const byHost = new Map();
       for (const row of rows) {
@@ -621,14 +605,6 @@ export const CHECKS = [
         return Boolean(checked) && checked < staleBefore;
       });
     },
-  },
-  {
-    id: "pendiente",
-    kind: "cola",
-    stage: "admission",
-    label: "`verificacion=pendiente`",
-    hint: "deuda de admisión heredada: confirma, fusiona o retira; las nuevas altas empiezan en parcial o verificado",
-    run: ({ rows }) => rows.filter((r) => r.verificacion === "pendiente"),
   },
 ];
 

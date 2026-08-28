@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHub પર અમારો સંપર્ક કરો",
   },
   accountActions: {
-    ownershipVerifiedDescription: "આ ઉત્પાદકની માલિકીની ચકાસણી થઈ છે.",
+    ownershipVerifiedDescription:
+      "આ પ્રોફાઇલનો ઉત્પાદકે દાવો કર્યો છે અને તેની ચકાસણી થઈ છે.",
     saveOrClaimPrompt: "આ ઉત્પાદકને સાચવો અથવા માલિકીનો દાવો કરો.",
     signIn: "સાઇન ઇન કરો",
     createAccount: "ખાતું બનાવો",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "મનપસંદમાં સાચવો",
     editMyProfile: "મારી પ્રોફાઇલ સંપાદિત કરો",
     expandProfile: "પ્રોફાઇલ વિસ્તારો",
-    ownershipVerified: "માલિકીની ચકાસણી થઈ",
+    ownershipVerified: "ઉત્પાદક દ્વારા ચકાસાયેલ",
     viewOwnershipClaim: "માલિકીના દાવા જુઓ",
     claimProducer: "આ ઉત્પાદક પર દાવો કરો",
     descriptionLanguage: {
@@ -222,8 +223,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "બાકી",
-      parcial: "આંશિક રીતે ચકાસેલ",
-      verificado: "ચકાસેલ",
     },
     onlineSales: { sí: "હા", no: "ના", "no comprobado": "ચકાસેલ નથી" },
     salesChannels: {

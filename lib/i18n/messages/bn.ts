@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHub-এ আমাদের সঙ্গে যোগাযোগ করুন",
   },
   accountActions: {
-    ownershipVerifiedDescription: "এই উৎপাদকের মালিকানা যাচাই করা হয়েছে।",
+    ownershipVerifiedDescription:
+      "এই প্রোফাইলটি উৎপাদক দাবি করেছেন এবং যাচাই করেছেন।",
     saveOrClaimPrompt: "এই উৎপাদককে সংরক্ষণ করুন অথবা মালিকানা দাবি করুন।",
     signIn: "সাইন ইন",
     createAccount: "অ্যাকাউন্ট তৈরি করুন",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "পছন্দের তালিকায় সংরক্ষণ করুন",
     editMyProfile: "আমার প্রোফাইল সম্পাদনা করুন",
     expandProfile: "প্রোফাইল প্রসারিত করুন",
-    ownershipVerified: "মালিকানা যাচাইকৃত",
+    ownershipVerified: "উৎপাদক কর্তৃক যাচাইকৃত",
     viewOwnershipClaim: "মালিকানার দাবি দেখুন",
     claimProducer: "এই উৎপাদকের মালিকানা দাবি করুন",
     descriptionLanguage: {
@@ -224,8 +225,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "অপেক্ষমাণ",
-      parcial: "আংশিকভাবে যাচাইকৃত",
-      verificado: "যাচাইকৃত",
     },
     onlineSales: {
       sí: "হ্যাঁ",

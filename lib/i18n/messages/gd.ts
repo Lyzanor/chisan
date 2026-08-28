@@ -19,7 +19,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Tha seilbh an riochdaire seo air a dhearbhadh.",
+      "Chaidh am pròifil seo a thagradh agus a dhearbhadh leis an riochdaire.",
     saveOrClaimPrompt: "Sàbhail an riochdaire seo no tagair seilbh air.",
     signIn: "Clàraich a-steach",
     createAccount: "Cruthaich cunntas",
@@ -27,7 +27,7 @@ const messages = {
     saveFavorite: "Sàbhail mar fhear as fheàrr leat",
     editMyProfile: "Deasaich mo phròifil",
     expandProfile: "Leudaich a' phròifil",
-    ownershipVerified: "Seilbh air a dhearbhadh",
+    ownershipVerified: "Air a dhearbhadh leis an riochdaire",
     viewOwnershipClaim: "Faic tagradh na seilbhe",
     claimProducer: "Tagair an riochdaire seo",
     descriptionLanguage: {
@@ -235,8 +235,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "A’ feitheamh",
-      parcial: "Air a dhearbhadh gu ìre",
-      verificado: "Air a dhearbhadh",
     },
     onlineSales: { sí: "Tha", no: "Chan eil", "no comprobado": "Gun sgrùdadh" },
     salesChannels: {

@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Nous contacter sur GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "La propriété de ce producteur est vérifiée.",
+    ownershipVerifiedDescription:
+      "Ce profil a été revendiqué et vérifié par le producteur.",
     saveOrClaimPrompt: "Enregistrez ce producteur ou revendiquez-en la propriété.",
     signIn: "Se connecter",
     createAccount: "Créer un compte",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Ajouter aux favoris",
     editMyProfile: "Modifier mon profil",
     expandProfile: "Enrichir le profil",
-    ownershipVerified: "Propriété vérifiée",
+    ownershipVerified: "Vérifié par le producteur",
     viewOwnershipClaim: "Voir la revendication de propriété",
     claimProducer: "Revendiquer ce producteur",
     descriptionLanguage: {
@@ -148,7 +149,7 @@ const messages = {
     facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Latitude",
     longitude: "Longitude", verification: "Vérification", },
   controlledValues: {
-    verification: { pendiente: "En attente", parcial: "Partiellement vérifié", verificado: "Vérifié" },
+    verification: { pendiente: "En attente" },
     onlineSales: { "sí": "Oui", no: "Non", "no comprobado": "Non vérifié" },
     salesChannels: { ecommerce: "Boutique en ligne", whatsapp: "WhatsApp", email: "E-mail", telefono: "Téléphone", suscripcion: "Abonnement", marketplace: "Place de marché" },
   },

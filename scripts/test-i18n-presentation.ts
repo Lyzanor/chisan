@@ -17,6 +17,7 @@ import {
   isPublicProducerField,
   presentProducerField,
   presentPublicProducerFields,
+  presentProducerVerification,
 } from "../lib/i18n/producer-fields";
 
 test("account presentation messages cover both account action surfaces in every locale", async () => {
@@ -131,8 +132,8 @@ test("producer field presentation localizes display values while retaining CSV t
     "Öl und Honig",
   );
   assert.equal(
-    formatProducerFieldValue("verificacion", "verificado", "de", german),
-    "Verifiziert",
+    formatProducerFieldValue("verificacion", "pendiente", "de", german),
+    "Ausstehend",
   );
   assert.equal(formatProducerFieldValue("Venta online", "sí", "de", german), "Ja");
   assert.equal(
@@ -218,9 +219,13 @@ test("owner field help is complete and localized without changing staff definiti
   assert.doesNotMatch(ownerPage, /<small>\{field\.help\}<\/small>/);
 });
 
-test("public field presentation hides locale metadata and expanded-profile fields", async () => {
+test("public field presentation hides internal, locale and expanded-profile fields", async () => {
   const spanish = await loadMessages("es");
   const hiddenFields = {
+    slug: "productor-interno",
+    imagen: "/productores/es/productor-interno.webp",
+    producer_id: "123",
+    verificacion: "pendiente",
     descripcion_locale: "es",
     "visitas guiadas": "sí",
     "mensaje a la comunidad": "Mensaje reservado al bloque ampliado.",
@@ -254,6 +259,29 @@ test("public field presentation hides locale metadata and expanded-profile field
   for (const key of Object.keys(hiddenFields)) {
     assert.equal(isPublicProducerField(key), false, `${key} must stay hidden`);
   }
+});
+
+test("verification presentation shows only pending or verified producer ownership", async () => {
+  const spanish = await loadMessages("es");
+
+  assert.deepEqual(
+    presentProducerVerification("pendiente", false, "es", spanish),
+    {
+      key: "verificacion",
+      value: "pendiente",
+      label: "Verificación",
+      displayValue: "Pendiente",
+    },
+  );
+  assert.equal(presentProducerVerification("", false, "es", spanish), null);
+  assert.equal(
+    presentProducerVerification("", true, "es", spanish)?.displayValue,
+    "Verificado por el productor",
+  );
+  assert.equal(
+    presentProducerVerification("pendiente", true, "es", spanish)?.displayValue,
+    "Verificado por el productor",
+  );
 });
 
 test("expanded profile source keeps every public entitlement check fail-closed", () => {

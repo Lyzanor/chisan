@@ -20,7 +20,8 @@ const messages = {
     contactLink: "Contacta amb nosaltres a GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "La propietat d'aquest productor està verificada.",
+    ownershipVerifiedDescription:
+      "Aquest perfil ha estat reclamat i verificat pel productor.",
     saveOrClaimPrompt: "Desa aquest productor o reclama'n la propietat.",
     signIn: "Inicia sessió",
     createAccount: "Crea un compte",
@@ -28,7 +29,7 @@ const messages = {
     saveFavorite: "Desa als preferits",
     editMyProfile: "Edita el meu perfil",
     expandProfile: "Amplia el perfil",
-    ownershipVerified: "Propietat verificada",
+    ownershipVerified: "Verificat pel productor",
     viewOwnershipClaim: "Mostra la reclamació de propietat",
     claimProducer: "Reclama aquest productor",
     descriptionLanguage: {
@@ -231,8 +232,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Pendent",
-      parcial: "Verificació parcial",
-      verificado: "Verificat",
     },
     onlineSales: {
       "sí": "Sí",

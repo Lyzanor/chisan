@@ -462,7 +462,7 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 fila-1,Uno,Abrera,Vino,Vino,Carrer 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,https://example.com,no comprobado,https://facebook.com/uno,https://instagram.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,segura
 CSV
 
-cat >"$TMP_DIR/verificado-without-evidence.csv" <<'CSV'
+cat >"$TMP_DIR/legacy-verification.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
 fila-1,Uno,Abrera,Vino,Vino,Carrer 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,,no comprobado,,,,,,verificado
 CSV
@@ -474,14 +474,14 @@ CSV
 
 cat >"$TMP_DIR/sales-channel.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp,
-canal-bad,Masia Bad,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,,verificado,sí,ecommerce|tienda,
-canal-estado,Masia Estado,Abrera,Vino,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,verificado,no,whatsapp,
+canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,,sí,ecommerce|whatsapp,
+canal-bad,Masia Bad,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,,,sí,ecommerce|tienda,
+canal-estado,Masia Estado,Abrera,Vino,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,,no,whatsapp,
 CSV
 
 cat >"$TMP_DIR/canonical-ok.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp,Cerveza
+canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,,sí,ecommerce|whatsapp,Cerveza
 CSV
 
 cat >"$TMP_DIR/identity-format.csv" <<'CSV'
@@ -529,8 +529,8 @@ CSV
 # Controlled values are matched exactly: folded case and a missing accent are drift.
 cat >"$TMP_DIR/inexact-values.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-valor-acento,Masia Acento,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,si,,
-valor-mayus,Masia Mayus,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,Verificado,no,,
+valor-acento,Masia Acento,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,,si,,
+valor-mayus,Masia Mayus,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,Pendiente,no,,
 CSV
 
 cat >"$TMP_DIR/identity-required.csv" <<'CSV'
@@ -601,10 +601,10 @@ CSV
   ' "$ROOT_DIR/data/reference/categories.json"
 )
 
-cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
+cat >"$TMP_DIR/empty-verification.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-verif-sin-contacto,Masia Verif,Abrera,Vino,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,verificado,no comprobado,,
-verif-geo-malo,Masia Lejos,Abrera,Vino,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,,verificado,no comprobado,,
+verif-sin-contacto,Masia Verif,Abrera,Vino,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,,no comprobado,,
+verif-geo-malo,Masia Lejos,Abrera,Vino,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,,,no comprobado,,
 CSV
 
 cat >"$TMP_DIR/geo-blocking.csv" <<'CSV'
@@ -866,11 +866,11 @@ grep -q "ERROR line 2 .* slug is duplicated" "$TMP_DIR/out-duplicate-slug.txt"
 
 run_expect_failure "$TMP_DIR/out-invalid-verification.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/invalid-verification.csv"
-grep -q "verificacion must be one of: pendiente, parcial, verificado" "$TMP_DIR/out-invalid-verification.txt"
+grep -q "verificacion must be empty or pendiente" "$TMP_DIR/out-invalid-verification.txt"
 
-run_expect_failure "$TMP_DIR/out-verificado-evidence.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/verificado-without-evidence.csv"
-grep -q "verificacion verificado requires coordinates and at least one external link" "$TMP_DIR/out-verificado-evidence.txt"
+run_expect_failure "$TMP_DIR/out-legacy-verification.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/legacy-verification.csv"
+grep -q "verificacion must be empty or pendiente" "$TMP_DIR/out-legacy-verification.txt"
 
 run_expect_failure "$TMP_DIR/out-online-sales.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/invalid-online-sales.csv"
@@ -952,7 +952,7 @@ fi
 run_expect_failure "$TMP_DIR/out-inexact.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/inexact-values.csv"
 grep -q "ERROR line 2 .* Venta online must be one of: sí, no, no comprobado" "$TMP_DIR/out-inexact.txt"
-grep -q "ERROR line 3 .* verificacion must be one of: pendiente, parcial, verificado" "$TMP_DIR/out-inexact.txt"
+grep -q "ERROR line 3 .* verificacion must be empty or pendiente" "$TMP_DIR/out-inexact.txt"
 
 # nombre, municipio and categoria are required, not merely advisable.
 run_expect_failure "$TMP_DIR/out-identity.txt" \
@@ -1029,9 +1029,9 @@ run_expect_failure "$TMP_DIR/out-retired-rejected.txt" \
 grep -qF "categoria '$RETIRED_GONE' was retired; use '$RETIRED_GONE_TARGET'" "$TMP_DIR/out-retired-rejected.txt"
 
 # Empty optional fields are valid; the only warning here is the real geography gap.
-run_expect_success "$TMP_DIR/out-verificado-geo.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/verificado-suppression.csv"
-grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-geo.txt"
+run_expect_success "$TMP_DIR/out-empty-verification-geo.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/empty-verification.csv"
+grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-empty-verification-geo.txt"
 
 # One municipio name, two countries: `chiba` is Chiba in Kantō and an alt label
 # of Chiva in Valencia, 10.751 km apart. Each row is measured against its own

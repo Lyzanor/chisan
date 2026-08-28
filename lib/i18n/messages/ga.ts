@@ -18,7 +18,8 @@ const messages = {
     contactLink: "Déan teagmháil linn ar GitHub",
   },
   accountActions: {
-    ownershipVerifiedDescription: "Tá úinéireacht an táirgeora seo fíoraithe.",
+    ownershipVerifiedDescription:
+      "D'éiligh an táirgeoir an phróifíl seo agus fíoraíodh í.",
     saveOrClaimPrompt: "Sábháil an táirgeoir seo nó éiligh úinéireacht air.",
     signIn: "Logáil isteach",
     createAccount: "Cruthaigh cuntas",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "Sábháil mar cheanán",
     editMyProfile: "Cuir mo phróifíl in eagar",
     expandProfile: "Leathnaigh an phróifíl",
-    ownershipVerified: "Úinéireacht fíoraithe",
+    ownershipVerified: "Fíoraithe ag an táirgeoir",
     viewOwnershipClaim: "Féach ar éileamh úinéireachta",
     claimProducer: "Éiligh an táirgeoir seo",
     descriptionLanguage: {
@@ -232,8 +233,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "Ar feitheamh",
-      parcial: "Fíoraithe go páirteach",
-      verificado: "Fíoraithe",
     },
     onlineSales: { sí: "Tá", no: "Níl", "no comprobado": "Gan seiceáil" },
     salesChannels: {

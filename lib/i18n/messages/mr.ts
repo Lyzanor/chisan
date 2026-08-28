@@ -18,7 +18,8 @@ const messages = {
     contactLink: "GitHub वर आमच्याशी संपर्क साधा",
   },
   accountActions: {
-    ownershipVerifiedDescription: "या उत्पादकाची मालकी पडताळलेली आहे.",
+    ownershipVerifiedDescription:
+      "या प्रोफाइलवर उत्पादकाने दावा केला असून त्याची पडताळणी झाली आहे.",
     saveOrClaimPrompt: "हा उत्पादक जतन करा किंवा मालकीचा दावा करा.",
     signIn: "साइन इन करा",
     createAccount: "खाते तयार करा",
@@ -26,7 +27,7 @@ const messages = {
     saveFavorite: "आवडीत जतन करा",
     editMyProfile: "माझे प्रोफाइल संपादित करा",
     expandProfile: "प्रोफाइल विस्तृत करा",
-    ownershipVerified: "मालकी पडताळलेली",
+    ownershipVerified: "उत्पादकाने पडताळलेले",
     viewOwnershipClaim: "मालकीचा दावा पहा",
     claimProducer: "या उत्पादकावर दावा करा",
     descriptionLanguage: {
@@ -221,8 +222,6 @@ const messages = {
   controlledValues: {
     verification: {
       pendiente: "प्रलंबित",
-      parcial: "अंशतः पडताळलेले",
-      verificado: "पडताळलेले",
     },
     onlineSales: { sí: "होय", no: "नाही", "no comprobado": "तपासलेले नाही" },
     salesChannels: {
