@@ -69,6 +69,11 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
     url: purposeUrl,
     alternates: { languages: { en: purposeUrl } },
   });
+  const privacyUrl = new URL("/privacy", SITE_ORIGIN).toString();
+  entries.push({
+    url: privacyUrl,
+    alternates: { languages: { en: privacyUrl } },
+  });
 
   for (const country of countries) {
     appendCatalogTarget(entries, {

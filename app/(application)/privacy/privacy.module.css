@@ -1,0 +1,51 @@
+.page {
+  width: min(860px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5rem) 0;
+}
+
+.article {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.article h1,
+.article h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.article h1 {
+  margin: 0.2rem 0 0.8rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1;
+}
+
+.article h2 {
+  margin: 2rem 0 0.65rem;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+}
+
+.article p,
+.article li {
+  line-height: 1.7;
+}
+
+.article ul {
+  display: grid;
+  gap: 0.55rem;
+  padding-left: 1.25rem;
+}
+
+.article a {
+  color: var(--accent-text);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 0.85rem;
+}

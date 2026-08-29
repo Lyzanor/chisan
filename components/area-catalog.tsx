@@ -2,6 +2,10 @@ import {
   AreaExplorer,
   type AreaExplorerModel,
 } from "@/components/area-explorer";
+import {
+  ProgrammaticAreaAd,
+  ProgrammaticAreaAdPlaceholder,
+} from "@/components/ads/programmatic-area-ad";
 import { buildCatalogHref } from "@/lib/catalog-navigation";
 import {
   type Country,
@@ -25,6 +29,10 @@ import {
   loadMessages,
 } from "@/lib/i18n/messages";
 import { SITE_NAME } from "@/lib/site";
+import {
+  getProgrammaticAdsConfig,
+  PROGRAMMATIC_AREA_AD_MIN_PRODUCERS,
+} from "@/lib/programmatic-ads";
 
 type AreaCatalogProps = {
   country: Country;
@@ -68,6 +76,7 @@ export async function AreaCatalog({ country, area, locale, scope }: AreaCatalogP
     listCategories(countrySlug, area),
     searchProducers({ municipality: "", category: "" }, countrySlug, area, locale),
   ]);
+  const adsConfig = getProgrammaticAdsConfig();
 
   const areaOption = country.regions
     .flatMap((region) => region.areas)
@@ -159,5 +168,30 @@ export async function AreaCatalog({ country, area, locale, scope }: AreaCatalogP
     mapMessages: messages.map,
   };
 
-  return <AreaExplorer model={model} />;
+  const adLabel =
+    locale === "es"
+      ? "Anuncios"
+      : locale === "ca"
+        ? "Anuncis"
+        : "Advertisements";
+  const isAdEligible =
+    adsConfig !== null && allRows.length >= PROGRAMMATIC_AREA_AD_MIN_PRODUCERS;
+  const adSlot = isAdEligible && adsConfig ? (
+    <ProgrammaticAreaAd
+      accountId={adsConfig.accountId}
+      label={adLabel}
+      slotId={adsConfig.areaSlotId}
+    />
+  ) : null;
+  const adPlaceholder = isAdEligible ? (
+    <ProgrammaticAreaAdPlaceholder label={adLabel} />
+  ) : null;
+
+  return (
+    <AreaExplorer
+      model={model}
+      adSlot={adSlot}
+      adPlaceholder={adPlaceholder}
+    />
+  );
 }

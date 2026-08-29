@@ -149,7 +149,7 @@ test("sitemap count matches effective locale policies and every alternate is rec
     assert.ok(area, `Missing area policy for ${route.country}/${route.area}`);
     return count + area.publishedLocales.length;
   }, 0);
-  const expectedCount = 2 + countryCount + areaCount + producerCount;
+  const expectedCount = 3 + countryCount + areaCount + producerCount;
 
   assert.equal(entries.length, expectedCount);
 
@@ -188,6 +188,10 @@ test("sitemap count matches effective locale policies and every alternate is rec
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/our-purpose")?.alternates?.languages,
     { en: "https://chisan.app/our-purpose" },
+  );
+  assert.deepEqual(
+    entryByUrl.get("https://chisan.app/privacy")?.alternates?.languages,
+    { en: "https://chisan.app/privacy" },
   );
 
   for (const country of countries) {

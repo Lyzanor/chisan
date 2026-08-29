@@ -9,6 +9,7 @@ import type { ReactNode } from "react";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
 import type { Messages } from "@/lib/i18n/messages";
+import { getAdSenseAccountId } from "@/lib/programmatic-ads";
 import {
   isPublicDiscoveryEnabled,
   SITE_CONTACT_URL,
@@ -19,6 +20,8 @@ import {
 } from "@/lib/site";
 
 import "../globals.css";
+
+const adsenseAccountId = getAdSenseAccountId();
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -48,6 +51,14 @@ export const SITE_METADATA: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  referrer: "strict-origin-when-cross-origin",
+  ...(adsenseAccountId
+    ? {
+        other: {
+          "google-adsense-account": adsenseAccountId,
+        },
+      }
+    : {}),
   robots: isPublicDiscoveryEnabled()
     ? {
         index: true,
@@ -110,6 +121,11 @@ export function SiteRootShell({
           </Link>
           <Link href="/our-purpose">{footerMessages.aboutLink}</Link>
           <Link href="/">{footerMessages.catalogLink}</Link>
+          <Link href="/privacy">
+            {htmlLang.toLowerCase().startsWith("es")
+              ? "Privacidad y cookies"
+              : "Privacy & cookies"}
+          </Link>
           <a href={SITE_CONTACT_URL}>{footerMessages.contactLink}</a>
         </nav>
       </footer>

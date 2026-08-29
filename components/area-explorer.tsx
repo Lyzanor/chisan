@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useMemo } from "react";
+import { Suspense, useMemo, type ReactNode } from "react";
 
 import { AreaSelector } from "@/components/area-selector";
 import {
@@ -135,10 +135,12 @@ function pushCatalogState(href: string) {
 }
 
 function AreaExplorerView({
+  adSlot,
   model,
   category,
   highlightedSlug,
 }: {
+  adSlot: ReactNode;
   model: AreaExplorerModel;
   category: string;
   highlightedSlug: string;
@@ -316,6 +318,8 @@ function AreaExplorerView({
         })}
       </nav>
 
+      {adSlot}
+
       <section className="catalog-simple-layout">
         <div
           className="catalog-simple-map"
@@ -441,13 +445,20 @@ function AreaExplorerView({
   );
 }
 
-function AreaExplorerFromSearchParams({ model }: { model: AreaExplorerModel }) {
+function AreaExplorerFromSearchParams({
+  adSlot,
+  model,
+}: {
+  adSlot: ReactNode;
+  model: AreaExplorerModel;
+}) {
   const searchParams = useSearchParams();
   const category = searchParams.get("category")?.trim() ?? "";
   const highlightedSlug = searchParams.get("highlight")?.trim() ?? "";
 
   return (
     <AreaExplorerView
+      adSlot={adSlot}
       model={model}
       category={category}
       highlightedSlug={highlightedSlug}
@@ -455,10 +466,27 @@ function AreaExplorerFromSearchParams({ model }: { model: AreaExplorerModel }) {
   );
 }
 
-export function AreaExplorer({ model }: { model: AreaExplorerModel }) {
+export function AreaExplorer({
+  adPlaceholder,
+  adSlot,
+  model,
+}: {
+  adPlaceholder: ReactNode;
+  adSlot: ReactNode;
+  model: AreaExplorerModel;
+}) {
   return (
-    <Suspense fallback={<AreaExplorerView model={model} category="" highlightedSlug="" />}>
-      <AreaExplorerFromSearchParams model={model} />
+    <Suspense
+      fallback={
+        <AreaExplorerView
+          adSlot={adPlaceholder}
+          model={model}
+          category=""
+          highlightedSlug=""
+        />
+      }
+    >
+      <AreaExplorerFromSearchParams adSlot={adSlot} model={model} />
     </Suspense>
   );
 }

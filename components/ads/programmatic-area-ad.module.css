@@ -1,0 +1,63 @@
+.placement {
+  display: grid;
+  gap: 0.45rem;
+  width: 100%;
+  min-height: 138px;
+  padding: 0.65rem 0.8rem 0.8rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  contain: layout paint;
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.unit {
+  display: block;
+  width: min(100%, 300px);
+  height: 100px;
+  margin-inline: auto;
+}
+
+@media (max-width: 499px) {
+  .placement {
+    padding-inline: 0.25rem;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 499px) {
+  .unit {
+    width: min(100%, 320px);
+  }
+}
+
+@media (min-width: 500px) {
+  .placement {
+    min-height: 98px;
+  }
+
+  .unit {
+    width: min(100%, 468px);
+    height: 60px;
+  }
+}
+
+@media (min-width: 800px) {
+  .placement {
+    min-height: 128px;
+  }
+
+  .unit {
+    width: min(100%, 728px);
+    height: 90px;
+  }
+}

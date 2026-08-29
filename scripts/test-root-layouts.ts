@@ -24,6 +24,7 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/(application)/layout.tsx",
     "app/(application)/page.tsx",
     "app/(application)/our-purpose/page.tsx",
+    "app/(application)/privacy/page.tsx",
     "app/(application)/acceso/[[...sign-in]]/page.tsx",
     "app/(application)/registro/[[...sign-up]]/page.tsx",
     "app/(application)/cuenta/layout.tsx",
@@ -76,6 +77,8 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
     shell,
     /href="\/our-purpose">\{footerMessages\.aboutLink\}<\/Link>/,
   );
+  assert.match(shell, /href="\/privacy"/);
+  assert.match(shell, /google-adsense-account/);
   assert.match(shell, /\{footerMessages\.catalogLink\}/);
   assert.match(shell, /\{footerMessages\.contactLink\}/);
   assert.doesNotMatch(shell, /site-footer__copyright/);

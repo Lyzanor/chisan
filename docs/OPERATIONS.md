@@ -67,6 +67,27 @@ review the Vercel Firewall AI Bots policy in the same release so the crawler
 policy and edge enforcement change together. This discovery policy is not
 access control: anyone with a URL can still open the public catalog.
 
+Programmatic advertising is a separate, reversible Production capability.
+`CHISAN_ADSENSE_ACCOUNT_ID` publishes only the ownership meta tag and
+`/ads.txt`; it does not load Google code. Keep
+`CHISAN_PROGRAMMATIC_ADS_ENABLED=false` until AdSense marks the site ready, the
+Google-certified consent message is published and
+`CHISAN_ADSENSE_CMP_READY=true` records that reviewed state, and
+`CHISAN_ADSENSE_AREA_SLOT_ID` identifies the reviewed manual display unit. When
+enabled, the runtime admits one lazy horizontal unit only on area pages with at
+least ten producers. It never admits ads on the home page, producer profiles,
+account or administration routes, policies, errors or empty/thin area pages.
+Auto Ads and automatic optimization remain disabled in AdSense. Advertising
+never changes catalog inclusion, ordering, verification or editorial copy.
+Preview and Development stay ad-free even if their variables are copied.
+
+There are two distinct off states. For a temporary pause, set
+`CHISAN_PROGRAMMATIC_ADS_ENABLED=false` and redeploy; the loader and all slots
+disappear while ownership and `ads.txt` remain. For complete removal, also
+remove `CHISAN_ADSENSE_ACCOUNT_ID` and `CHISAN_ADSENSE_AREA_SLOT_ID`, redeploy,
+and then remove or close the site in AdSense through an explicitly approved
+account operation.
+
 `CHISAN_ADMIN_EMAILS` is bootstrap provisioning, not request-time authorization.
 Remove it after the permanent admin grant exists; a staff grant in PostgreSQL is
 the durable authority.
@@ -560,6 +581,10 @@ submit a fictitious ownership claim or producer change merely to test a form.
 
 - Open `/`, one area and one producer detail; confirm canonical links use
   `https://chisan.app`.
+- Confirm `/privacy` is reachable from the footer. When AdSense ownership is
+  staged, confirm the page source contains the expected
+  `google-adsense-account` meta tag and `/ads.txt` returns the exact authorized
+  seller line with `200 OK`.
 - While public discovery is disabled, confirm pages emit `noindex, nofollow`,
   `robots.txt` contains only the catch-all `Disallow: /` rule and the sitemap is
   empty. When public discovery is enabled, confirm those directives are removed,
@@ -581,6 +606,11 @@ submit a fictitious ownership claim or producer change merely to test a form.
   provisioned, through the isolated activation procedure above.
 - Inspect runtime logs for new 5xx responses, authorization exceptions, database
   errors or repeated webhook failures.
+- While programmatic ads are disabled, confirm there are no requests to
+  `pagead2.googlesyndication.com` and no reserved ad block. After the reviewed
+  activation, confirm exactly one labelled block appears between categories and
+  map/list only on eligible area pages, the consent message can be reopened,
+  and Core Web Vitals show no material regression.
 
 ### Localized catalog smoke check
 
