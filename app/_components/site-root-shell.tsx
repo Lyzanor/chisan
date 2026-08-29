@@ -1,5 +1,6 @@
 import "server-only";
 
+import { Analytics } from "@vercel/analytics/next";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Roboto } from "next/font/google";
@@ -131,6 +132,7 @@ export function SiteRootShell({
         ) : (
           content
         )}
+        <Analytics />
       </body>
     </html>
   );
