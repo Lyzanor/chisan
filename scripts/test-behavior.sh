@@ -234,7 +234,10 @@ if [[
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
   "$HTML_HOME_CLEAN" != *'href="/our-purpose">Our purpose</a>'* ||
   "$HTML_HOME_CLEAN" != *'>Producer catalog</a>'* ||
-  "$HTML_HOME_CLEAN" != *'href="https://github.com/Lyzanor/chisan/issues">Contact us on GitHub</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||
+  "$HTML_HOME_CLEAN" == *'github.com/Lyzanor/chisan'* ||
   "$HTML_HOME_CLEAN" == *'>About us</h2>'* ||
   "$HTML_HOME_CLEAN" == *'class="site-footer__copyright"'*
 ]]; then
@@ -386,7 +389,10 @@ if [[
   "$HTML_CATALAN_AREA" != *"Mapa de productors"* ||
   "$HTML_CATALAN_AREA" != *">El nostre propòsit</a>"* ||
   "$HTML_CATALAN_AREA" != *">Catàleg de productors</a>"* ||
-  "$HTML_CATALAN_AREA" != *">Contacta amb nosaltres a GitHub</a>"*
+  "$HTML_CATALAN_AREA" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
+  "$HTML_CATALAN_AREA" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
+  "$HTML_CATALAN_AREA" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||
+  "$HTML_CATALAN_AREA" == *'github.com/Lyzanor/chisan'*
 ]]; then
   echo "Error: the published Catalan Barcelona locale should render, got '$UNPUBLISHED_AREA_LOCALE_STATUS'." >&2
   exit 1

@@ -1,5 +1,10 @@
 import { getLocaleDisplayTag, type Locale } from "./i18n/locales";
-import { SITE_NAME, SITE_ORIGIN } from "./site";
+import {
+  SITE_INSTAGRAM_URL,
+  SITE_NAME,
+  SITE_ORIGIN,
+  SITE_X_URL,
+} from "./site";
 
 type JsonLdNode = Record<string, unknown>;
 
@@ -173,6 +178,7 @@ export function buildProducerStructuredData({
         "@id": `${SITE_ORIGIN}/#website`,
         url: `${SITE_ORIGIN}/`,
         name: SITE_NAME,
+        sameAs: [SITE_INSTAGRAM_URL, SITE_X_URL],
       },
       webpage,
       {

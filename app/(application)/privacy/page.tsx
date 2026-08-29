@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import {
+  SITE_CONTACT_EMAIL,
   SITE_CONTACT_URL,
   SITE_NAME,
   SITE_ORIGIN,
@@ -99,10 +100,10 @@ export default function PrivacyPage() {
         <p>
           You can remove the language cookie in your browser, decline optional
           advertising purposes, or ask about access, correction or deletion of
-          account information where applicable. Use the {" "}
-          <a href={SITE_CONTACT_URL}>Chisan contact route</a> to request a private
-          channel, and do not place sensitive personal information in a public
-          GitHub issue.
+          account information where applicable. Email Chisan at{" "}
+          <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>. Do not include
+          passwords, identity documents or other sensitive files unless Chisan
+          has provided a private upload channel.
         </p>
 
         <h2>Changes</h2>

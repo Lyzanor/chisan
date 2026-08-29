@@ -176,6 +176,13 @@ property of a user account. Its only authorization key is an active
 proposal and presentation of the premium CSV field set; it never grants
 ownership, verification, ranking or publication without review.
 
+`docs/CSV_CONTRACT.md` section **Public producer-profile rendering and
+structured data** owns the public HTML, locale, canonical identity, indexing and
+JSON-LD contract for both base and expanded profiles. The entitlement changes
+only whether reviewed premium CSV fields may render. It never creates a second
+public entity, locale-dependent account key, database content overlay or
+structured-data verification signal.
+
 The capability is provider-neutral. CSV, catalog loaders, public routes,
 editorial review and entitlement checks know neither Stripe nor any future
 payment service. Entitlements currently have one of two immutable sources:

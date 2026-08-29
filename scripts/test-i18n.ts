@@ -1116,6 +1116,7 @@ test("producer structured data mirrors complete visible profile facts", () => {
       "https://chisan.app/es/barcelona/formatgeria-la-cleda-canovelles#producer",
   );
   const webpage = data["@graph"].find((node) => node["@type"] === "WebPage");
+  const website = data["@graph"].find((node) => node["@type"] === "WebSite");
   const breadcrumb = data["@graph"].find(
     (node) => node["@type"] === "BreadcrumbList",
   );
@@ -1143,6 +1144,10 @@ test("producer structured data mirrors complete visible profile facts", () => {
     { "@type": "Thing", name: "Lácteos y quesos" },
     { "@type": "Thing", name: "Queso de oveja" },
     { "@type": "Thing", name: "Yogur artesanal" },
+  ]);
+  assert.deepEqual(website?.sameAs, [
+    "https://www.instagram.com/chisanapp/",
+    "https://x.com/chisanapp",
   ]);
   assert.equal(
     (breadcrumb?.itemListElement as unknown[]).length,
@@ -1228,6 +1233,47 @@ test("producer profiles promote canonical editorial facts without widening CSV",
   assert.match(producerPage, /className="detail-intro"/);
   assert.match(producerPage, /className="detail-product-list"/);
   assert.equal(producerPage.match(/prefetch=\{false\}/g)?.length, 4);
+});
+
+test("producer profile contracts keep premium access separate from public semantics", () => {
+  const csvContract = fs.readFileSync(
+    path.resolve(process.cwd(), "docs/CSV_CONTRACT.md"),
+    "utf8",
+  );
+  const accountContract = fs.readFileSync(
+    path.resolve(process.cwd(), "docs/ACCOUNT_SYSTEM.md"),
+    "utf8",
+  );
+
+  assert.match(
+    csvContract,
+    /## Public producer-profile rendering and structured data/,
+  );
+  assert.match(csvContract, /one public profile for one canonical CSV row/);
+  assert.match(csvContract, /Premium extension boundary/);
+  for (const requiredBoundary of [
+    "LocalBusiness",
+    "Organization",
+    "Product",
+    "Offer",
+    "AggregateRating",
+    "openingHoursSpecification",
+    "ProfilePage",
+    "inLanguage",
+  ]) {
+    assert.ok(
+      csvContract.includes(requiredBoundary),
+      `producer-profile contract is missing ${requiredBoundary}`,
+    );
+  }
+  assert.match(
+    accountContract,
+    /CSV_CONTRACT\.md` section \*\*Public producer-profile rendering and[\s\S]*?structured data\*\* owns the public HTML/,
+  );
+  assert.match(
+    accountContract,
+    /never creates a second[\s\S]*?structured-data verification signal/,
+  );
 });
 
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {

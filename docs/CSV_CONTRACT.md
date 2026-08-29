@@ -286,6 +286,112 @@ reason, the base profile remains public and these values remain in CSV for
 traceability but stay hidden and frozen. Payment never proves facts, changes
 verification or bypasses review; standard corrections remain free.
 
+## Public producer-profile rendering and structured data
+
+A producer has one public profile for one canonical CSV row and durable
+`(<country>, producer_id)` identity. An expanded or paid profile extends that
+same page; it never creates another producer record, URL family, canonical
+entity or indexing tier. Premium status is an account-domain capability, not a
+public producer fact.
+
+The page renders semantic HTML and JSON-LD on the server from the same resolved
+public fields. Structured data must follow Google's [general structured-data
+policies](https://developers.google.com/search/docs/appearance/structured-data/sd-policies):
+it describes only content that is visible on that response and must not expose
+claim documents, payment state, entitlement history, review notes, audit data
+or unpublished CSV values. A producer membership or payment may control which
+reviewed block is visible, but never proves or upgrades a fact.
+
+### Public graph and factual mapping
+
+Each localized response exposes one linked `@graph` containing `WebSite`,
+`WebPage`, `BreadcrumbList` and the producer entity. Page-local identifiers are
+derived from that response's canonical URL. The account and catalog domains
+continue to use the locale-independent durable producer key.
+
+- Use `LocalBusiness` only when the row has a non-empty reviewed `direccion`;
+  otherwise use `Organization`. A missing street address is never inferred from
+  coordinates, municipality, a map link or account data.
+- Include only public values rendered by the page: producer name, canonical
+  URL, resolved public description, reviewed contact and identity links,
+  address when present and the producer's own image. The generic placeholder
+  image is never an entity image.
+- Include `GeoCoordinates` only when the same productive unit has a reviewed
+  address, its canonical reviewed Google Maps link and valid paired `lat` and
+  `lon`, following `docs/GEOLOCATION.md`. Otherwise locality may be represented
+  as `Place` without inventing a street address or exact location.
+- Localized country, area, category and breadcrumb labels must match the visible
+  HTML. Concrete `productos estrella` and category labels may be represented as
+  `WebPage.about`; this does not turn them into independent commercial entities.
+- Do not emit `Product` or `Offer` until a public item has a normalized product
+  identity and visible, current price, currency, availability and purchase
+  semantics owned by an explicit schema and UI contract.
+- Do not emit `AggregateRating`, reviews or testimonials without genuine
+  first-party user input, visible supporting content and a dedicated moderation
+  contract. Editorial selection, ownership approval and premium status are not
+  ratings or endorsements.
+- Do not derive `openingHoursSpecification` from free-text `horario`. It may be
+  added only after opening periods, exceptions, time zone and freshness are
+  normalized and visibly rendered from an owned contract.
+- Do not use `ProfilePage` for Chisan's third-party producer record. The
+  producer remains the subject of a Chisan-authored directory page.
+
+The breadcrumb graph must mirror the visible breadcrumb trail. JSON is emitted
+with safe serialization so producer-controlled text cannot close the script
+element or inject markup. Structured-data eligibility is not a guarantee that a
+search engine will display a rich result.
+
+### Locale and translation behavior
+
+The route resolves the presentation locale, canonical URL, `hreflang` set and
+`inLanguage`. Shared interface copy, actions, country and area names, categories
+and breadcrumbs use maintained locale resources. Proper names, addresses,
+telephone numbers and external URLs remain canonical facts rather than being
+silently translated.
+
+`descripcion` uses the deterministic sidecar resolver below. A missing, stale
+or invalid translation is omitted from visible body copy and JSON-LD for that
+locale; localized generic metadata may describe the page without pretending to
+be the producer's translated description. `productos estrella` currently stays
+as reviewed canonical source text in both HTML and `WebPage.about`.
+`mensaje a la comunidad` is likewise rendered literally with its declared
+source `lang` and is not materialized through sidecars in this version.
+
+Any future translatable base or premium field must be introduced atomically
+across:
+
+1. the area CSV schema and source-locale pairing;
+2. the sidecar field allowlist, source hash and validators;
+3. the localized-route completeness and `hreflang` policy;
+4. visible HTML and any structured-data mapping; and
+5. behavior, sparse-data and serialization tests.
+
+There is no runtime machine-translation fallback, database copy or implicit
+inheritance from `descripcion`. Until a field has that complete contract, either
+omit its locale-specific semantic claim or render the reviewed source text with
+the correct `lang` only where this document explicitly permits it.
+
+### Premium extension boundary
+
+Future premium content follows the same editorial, localization and structured-
+data rules as the base profile. A new premium field may enter JSON-LD only when
+it is public, visible on the same response, reviewed, normalized for its schema
+type, localized under the preceding contract and covered by tests. Entitlement
+activation alone never makes a field eligible.
+
+If `producer.profile.premium` is inactive or account state fails closed, the
+premium block and any structured facts derived exclusively from it disappear
+from the same response. The base profile, canonical URL, page-local graph
+structure and durable producer identity remain unchanged. Reactivation reveals
+the already reviewed CSV values; it does not restore an unreviewed database
+overlay.
+
+Verification requires `npx pnpm verify:ai`, a complete-profile case, a sparse-
+profile case and a malicious closing-script serialization case. Before enabling
+new schema types or public indexing, inspect raw server HTML to confirm that the
+JSON-LD is present before client JavaScript, matches visible content and passes
+Google's Rich Results Test or Schema Markup Validator as applicable.
+
 ## Description source locale
 
 `descripcion_locale` is the source-language identifier for the canonical

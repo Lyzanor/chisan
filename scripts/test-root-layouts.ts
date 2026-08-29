@@ -80,7 +80,10 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.match(shell, /href="\/privacy"/);
   assert.match(shell, /google-adsense-account/);
   assert.match(shell, /\{footerMessages\.catalogLink\}/);
-  assert.match(shell, /\{footerMessages\.contactLink\}/);
+  assert.match(shell, /href=\{SITE_INSTAGRAM_URL\} rel="me"/);
+  assert.match(shell, /href=\{SITE_X_URL\} rel="me"/);
+  assert.match(shell, /href=\{SITE_CONTACT_URL\}>\{SITE_CONTACT_EMAIL\}/);
+  assert.doesNotMatch(shell, /GitHub|SITE_REPOSITORY_URL/);
   assert.doesNotMatch(shell, /site-footer__copyright/);
   assert.match(shell, /const localizedTagline = headerMessages\.tagline/);
   assert.match(shell, /site-header__tagline">\{localizedTagline\}/);

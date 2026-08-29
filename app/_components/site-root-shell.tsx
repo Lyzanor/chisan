@@ -12,11 +12,14 @@ import type { Messages } from "@/lib/i18n/messages";
 import { getAdSenseAccountId } from "@/lib/programmatic-ads";
 import {
   isPublicDiscoveryEnabled,
+  SITE_CONTACT_EMAIL,
   SITE_CONTACT_URL,
   SITE_DESCRIPTION,
+  SITE_INSTAGRAM_URL,
   SITE_NAME,
   SITE_ORIGIN,
   SITE_TAGLINE,
+  SITE_X_URL,
 } from "@/lib/site";
 
 import "../globals.css";
@@ -79,6 +82,8 @@ export const SITE_METADATA: Metadata = {
     card: "summary",
     title: `${SITE_NAME} · ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
+    site: "@chisanapp",
+    creator: "@chisanapp",
   },
 };
 
@@ -126,7 +131,13 @@ export function SiteRootShell({
               ? "Privacidad y cookies"
               : "Privacy & cookies"}
           </Link>
-          <a href={SITE_CONTACT_URL}>{footerMessages.contactLink}</a>
+          <a href={SITE_INSTAGRAM_URL} rel="me">
+            Instagram
+          </a>
+          <a href={SITE_X_URL} rel="me">
+            X
+          </a>
+          <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
         </nav>
       </footer>
     </>
