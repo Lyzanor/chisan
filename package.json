@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "7.7.9",
+    "@vercel/analytics": "^2.0.1",
     "csv-parse": "^6.1.0",
     "csv-stringify": "6.8.3",
     "drizzle-orm": "0.45.2",

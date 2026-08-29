@@ -54,6 +54,19 @@ export default function PrivacyPage() {
           deliver and protect the website.
         </p>
 
+        <h2>Privacy-friendly site measurement</h2>
+        <p>
+          Chisan uses Vercel Web Analytics on public pages to understand aggregate
+          visits and improve the catalog. This measurement does not use analytics
+          cookies. Chisan removes query parameters before sending a page view and
+          does not load Analytics on sign-in, registration, account,
+          administration or API routes. Read more in Vercel&apos;s {" "}
+          <a href="https://vercel.com/docs/analytics/privacy-policy">
+            Web Analytics privacy documentation
+          </a>
+          .
+        </p>
+
         <h2>Accounts and contributions</h2>
         <p>
           When account features are enabled, Clerk handles authentication. Chisan

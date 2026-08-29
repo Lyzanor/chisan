@@ -7,6 +7,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { SiteAccountNav } from "@/components/account/site-account-nav";
+import { ChisanAnalytics } from "@/components/analytics/chisan-analytics";
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { getAdSenseAccountId } from "@/lib/programmatic-ads";
@@ -158,6 +159,7 @@ export function SiteRootShell({
         ) : (
           content
         )}
+        <ChisanAnalytics />
       </body>
     </html>
   );

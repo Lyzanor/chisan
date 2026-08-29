@@ -79,6 +79,7 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   );
   assert.match(shell, /href="\/privacy"/);
   assert.match(shell, /google-adsense-account/);
+  assert.match(shell, /<ChisanAnalytics \/>/);
   assert.match(shell, /\{footerMessages\.catalogLink\}/);
   assert.match(shell, /href=\{SITE_INSTAGRAM_URL\} rel="me"/);
   assert.match(shell, /href=\{SITE_X_URL\} rel="me"/);
