@@ -50,6 +50,11 @@ import {
   loadMessages,
 } from "../lib/i18n/messages";
 import { buildManualCatalogSelection } from "../lib/i18n/manual-catalog-selection";
+import { getProducerActionLabels } from "../lib/i18n/producer-action-labels";
+import {
+  buildProducerStructuredData,
+  serializeStructuredData,
+} from "../lib/producer-structured-data";
 import {
   normalizeProducerRouteAliasKey,
   normalizeProducerRouteAliasSegment,
@@ -954,6 +959,22 @@ test("message dictionaries load one locale at a time through a shared schema", a
   }
 });
 
+test("producer conversion actions stay localized for every public locale", () => {
+  for (const locale of SUPPORTED_LOCALES) {
+    assert.ok(Object.values(getProducerActionLabels(locale)).every(Boolean));
+  }
+  assert.deepEqual(getProducerActionLabels("es"), {
+    buyOnline: "Comprar online",
+    directions: "Cómo llegar",
+    call: "Llamar",
+  });
+  assert.deepEqual(getProducerActionLabels("ca"), {
+    buyOnline: "Comprar en línia",
+    directions: "Com arribar-hi",
+    call: "Trucar",
+  });
+});
+
 test("message helpers use locale-aware numbers, plurals and word order", async () => {
   const [english, japanese] = await Promise.all([
     loadMessages("en"),
@@ -1062,6 +1083,151 @@ test("public producer social links use localized field labels", () => {
   assert.match(producerPage, /messages\.fieldLabels\.facebook/);
   assert.doesNotMatch(producerPage, />\s*Instagram\s*</);
   assert.doesNotMatch(producerPage, />\s*Facebook\s*</);
+});
+
+test("producer structured data mirrors complete visible profile facts", () => {
+  const data = buildProducerStructuredData({
+    producerName: "Formatgeria La Cleda",
+    canonicalUrl: "https://chisan.app/es/barcelona/formatgeria-la-cleda-canovelles",
+    countryName: "España",
+    countryCode: "es",
+    countryUrl: "https://chisan.app/es",
+    areaName: "Barcelona",
+    areaUrl: "https://chisan.app/es/barcelona",
+    city: "Canovelles",
+    locale: "es",
+    description: "Quesería artesana con leche de su propio rebaño.",
+    address: "Carrer de la Serra, 4",
+    telephone: "+34930000000",
+    email: "hola@example.com",
+    website: "https://example.com/",
+    facebook: "https://www.facebook.com/example",
+    instagram: "https://www.instagram.com/example",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=La+Cleda",
+    imageUrl: "https://chisan.app/productores/es/catalunya/barcelona/la-cleda.webp",
+    latitude: 41.61678,
+    longitude: 2.28391,
+    categories: ["Lácteos y quesos"],
+    featuredProducts: ["Queso de oveja", "Yogur artesanal"],
+  }) as { "@graph": Record<string, unknown>[] };
+
+  const producer = data["@graph"].find(
+    (node) => node["@id"] ===
+      "https://chisan.app/es/barcelona/formatgeria-la-cleda-canovelles#producer",
+  );
+  const webpage = data["@graph"].find((node) => node["@type"] === "WebPage");
+  const breadcrumb = data["@graph"].find(
+    (node) => node["@type"] === "BreadcrumbList",
+  );
+
+  assert.equal(producer?.["@type"], "LocalBusiness");
+  assert.equal(producer?.image, "https://chisan.app/productores/es/catalunya/barcelona/la-cleda.webp");
+  assert.deepEqual(producer?.sameAs, [
+    "https://example.com/",
+    "https://www.facebook.com/example",
+    "https://www.instagram.com/example",
+  ]);
+  assert.deepEqual(producer?.address, {
+    "@type": "PostalAddress",
+    streetAddress: "Carrer de la Serra, 4",
+    addressLocality: "Canovelles",
+    addressRegion: "Barcelona",
+    addressCountry: "ES",
+  });
+  assert.deepEqual(producer?.geo, {
+    "@type": "GeoCoordinates",
+    latitude: 41.61678,
+    longitude: 2.28391,
+  });
+  assert.deepEqual(webpage?.about, [
+    { "@type": "Thing", name: "Lácteos y quesos" },
+    { "@type": "Thing", name: "Queso de oveja" },
+    { "@type": "Thing", name: "Yogur artesanal" },
+  ]);
+  assert.equal(
+    (breadcrumb?.itemListElement as unknown[]).length,
+    3,
+  );
+});
+
+test("sparse producer structured data avoids speculative rich-result claims", () => {
+  const data = buildProducerStructuredData({
+    producerName: "Productor sin ficha ampliada </script>",
+    canonicalUrl: "https://chisan.app/es/asturias/productor-sin-ficha",
+    countryName: "España",
+    countryCode: "es",
+    countryUrl: "https://chisan.app/es",
+    areaName: "Asturias",
+    areaUrl: "https://chisan.app/es/asturias",
+    city: "Oviedo",
+    locale: "es",
+    latitude: 43.3614,
+    longitude: -5.8494,
+  }) as { "@graph": Record<string, unknown>[] };
+  const producer = data["@graph"].find(
+    (node) => node["@id"] ===
+      "https://chisan.app/es/asturias/productor-sin-ficha#producer",
+  );
+  const serialized = serializeStructuredData(data);
+
+  assert.equal(producer?.["@type"], "Organization");
+  assert.ok(producer?.location);
+  for (const unsupportedProperty of [
+    "address",
+    "geo",
+    "hasMap",
+    "image",
+    "description",
+    "sameAs",
+    "openingHoursSpecification",
+    "aggregateRating",
+    "review",
+    "offers",
+  ]) {
+    assert.equal(producer?.[unsupportedProperty], undefined);
+  }
+  assert.doesNotMatch(serialized, /<\/script>/i);
+  assert.match(serialized, /\\u003c\/script>/i);
+  assert.doesNotMatch(serialized, /"@type":"(?:Product|Offer|AggregateRating)"/);
+});
+
+test("producer profiles expose server-rendered JSON-LD and matching breadcrumbs", () => {
+  const producerPage = fs.readFileSync(
+    path.resolve(
+      process.cwd(),
+      "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
+    ),
+    "utf8",
+  );
+
+  assert.match(producerPage, /type="application\/ld\+json"/);
+  assert.match(producerPage, /serializeStructuredData\(structuredData\)/);
+  assert.match(producerPage, /<article className="detail-shell">/);
+  assert.match(producerPage, /className="detail-breadcrumb"/);
+  assert.match(producerPage, /producer\.imageSrc === DEFAULT_PRODUCER_IMAGE_SRC/);
+});
+
+test("producer profiles promote canonical editorial facts without widening CSV", () => {
+  const producerPage = fs.readFileSync(
+    path.resolve(
+      process.cwd(),
+      "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
+    ),
+    "utf8",
+  );
+
+  assert.match(
+    producerPage,
+    /getFieldValue\(producer\.fields, "descripcion"\) \|\|[\s\S]*?messages\.metadata\.producerDescription/,
+  );
+  assert.match(
+    producerPage,
+    /onlineSales === "sí" && salesChannels\.includes\("ecommerce"\) && Boolean\(website\)/,
+  );
+  assert.match(producerPage, /getFieldValue\(producer\.fields, "productos estrella"\)/);
+  assert.match(producerPage, /className="detail-intro"/);
+  assert.match(producerPage, /className="detail-product-list"/);
+  assert.equal(producerPage.match(/prefetch=\{false\}/g)?.length, 4);
 });
 
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {
