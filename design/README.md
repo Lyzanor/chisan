@@ -12,7 +12,7 @@ The design system is organised in four replaceable layers:
 | [`foundations/`](foundations) | Colour, type, spacing, shape and motion tokens | Component markup or product data |
 | [`brand/`](brand) | Approved logo assets, usage rules and asset provenance | Navigation, catalog identity or producer facts |
 | [`adapters/`](adapters) | Thin presentation mappings for a specific surface | Canonical tokens or business logic |
-| [`references/`](references) | Decision boards and superseded explorations | Runtime assets |
+| [`references/`](references) | Decision boards, external inspiration and superseded explorations | Runtime assets |
 
 ## Integration boundary
 

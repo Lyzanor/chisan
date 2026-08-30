@@ -2,6 +2,12 @@
 
 Source reference: `design/references/v0.3/chisan-wordmark-first-board.png`.
 
+Map-marker reference:
+`design/references/v0.3/chisan-marker-join-board.png`. The user selected The
+Join directly from this board. The runtime vector is copied from the matching
+approved source at `design/references/v0.2/chisan-mark.svg`; it is not redrawn
+or approximated in CSS.
+
 The production raster assets were created with the built-in OpenAI image
 generation tool from the approved option 1 board. They are intentionally kept
 as image assets rather than approximated with live type or code geometry.

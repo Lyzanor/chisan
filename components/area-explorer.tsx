@@ -219,6 +219,10 @@ function AreaExplorerView({
     }),
     [category, model.areaSelectorCountry.regions],
   );
+  const allCategoriesHref = buildCatalogHref({
+    scope: model.scope,
+    area: model.area,
+  });
   const clearHighlightHref = buildCatalogHref({
     scope: model.scope,
     area: model.area,
@@ -270,35 +274,53 @@ function AreaExplorerView({
         </div>
       </header>
 
-      <div className="catalog-category-control">
-        <label htmlFor="catalog-category" className="catalog-category-control__label">
-          {model.catalogMessages.categories}
-        </label>
-        <select
-          id="catalog-category"
-          className="catalog-category-control__select"
-          value={category}
-          onChange={(event) => {
-            const nextCategory = event.currentTarget.value;
-            const href = buildCatalogHref({
-              scope: model.scope,
-              area: model.area,
-              category: nextCategory,
-            });
-            pushCatalogState(href);
+      <nav
+        className="catalog-simple-categories"
+        aria-label={model.catalogMessages.categories}
+      >
+        <Link
+          href={allCategoriesHref}
+          prefetch={false}
+          scroll={false}
+          onNavigate={(event) => {
+            event.preventDefault();
+            pushCatalogState(allCategoriesHref);
           }}
+          className={`catalog-chip ${!category ? "is-active" : ""}`}
+          aria-current={!category ? "page" : undefined}
         >
-          <option value="">{model.catalogMessages.allCategories}</option>
-          {model.categories.map((categoryPresentation) => (
-            <option
+          {model.catalogMessages.allCategories}
+        </Link>
+        {model.categories.map((categoryPresentation) => {
+          const href = buildCatalogHref({
+            scope: model.scope,
+            area: model.area,
+            category: categoryPresentation.token,
+          });
+
+          return (
+            <Link
               key={categoryPresentation.token}
-              value={categoryPresentation.token}
+              href={href}
+              prefetch={false}
+              scroll={false}
+              onNavigate={(event) => {
+                event.preventDefault();
+                pushCatalogState(href);
+              }}
+              className={`catalog-chip ${
+                category === categoryPresentation.token ? "is-active" : ""
+              }`}
+              aria-current={
+                category === categoryPresentation.token ? "page" : undefined
+              }
             >
+              <span aria-hidden="true">{categoryPresentation.icon}</span>
               {categoryPresentation.label}
-            </option>
-          ))}
-        </select>
-      </div>
+            </Link>
+          );
+        })}
+      </nav>
 
       {adSlot}
 

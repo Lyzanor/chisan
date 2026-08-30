@@ -6,6 +6,7 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+import chisanMapMarker from "@/design/brand/assets/chisan-map-marker.svg";
 import {
   PRODUCER_SELECTION_MIN_ZOOM,
   type ProducerMapMarker,
@@ -15,6 +16,8 @@ import {
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 200;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
+const chisanMapMarkerSrc =
+  typeof chisanMapMarker === "string" ? chisanMapMarker : chisanMapMarker.src;
 
 function getPointsBounds(points: ProducerMapMarker[]): L.LatLngBounds | null {
   if (!points.length) {
@@ -38,16 +41,16 @@ function getInitialCenter(points: ProducerMapMarker[]): [number, number] {
 
 const producerPinIcon = L.divIcon({
   className: "producer-map-pin",
-  html: '<span class="producer-map-pin-dot"></span>',
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
+  html: `<span class="producer-map-pin-mark"><img src="${chisanMapMarkerSrc}" alt="" aria-hidden="true" /></span>`,
+  iconSize: [20, 20],
+  iconAnchor: [10, 10],
 });
 
 const producerPinHighlightedIcon = L.divIcon({
   className: "producer-map-pin producer-map-pin--highlighted",
-  html: '<span class="producer-map-pin-dot producer-map-pin-dot--highlighted"></span>',
-  iconSize: [22, 22],
-  iconAnchor: [11, 11],
+  html: `<span class="producer-map-pin-mark"><img src="${chisanMapMarkerSrc}" alt="" aria-hidden="true" /></span>`,
+  iconSize: [28, 28],
+  iconAnchor: [14, 14],
 });
 
 function hasSamePointGeometry(
@@ -144,6 +147,7 @@ function BoundsAwareMarkers({
           key={`${point.key}:${highlightedKey === point.key ? "selected" : "default"}`}
           position={[point.latitude, point.longitude]}
           icon={highlightedKey === point.key ? producerPinHighlightedIcon : producerPinIcon}
+          title={point.name}
         >
           <Popup>
             <strong>{point.name}</strong>

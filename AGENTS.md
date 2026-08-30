@@ -125,6 +125,7 @@ automatically between countries.
 | Accounts, ownership, memberships, entitlements, gifts, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
 | Payment-adapter implementation or activation | `docs/ACCOUNT_SYSTEM.md`, then `docs/OPERATIONS.md` | `npx pnpm verify:ai`, then the Operations preflight |
 | Environment, secrets, deploy, rollback, or backups | `docs/OPERATIONS.md` | Follow its preflight and smoke checks |
+| Visual identity, design tokens, brand assets, web presentation, or visual QA | `design/README.md`, then `design/DESIGN_LANGUAGE.md` | `pnpm verify` and a passed comparison record in `design/qa/design-qa.md` |
 | Code, scripts, documentation, policy, or behavior | Owning contract | `npx pnpm verify:ai` |
 
 While iterating on data, use `npx pnpm check:csv:changed` and

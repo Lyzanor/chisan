@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Chisan functional mark</title>
+  <desc id="desc">Two opposing field outlines connect around a precise open centre.</desc>
+  <g fill="none" stroke="#40584A" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M40 16H16V80H40"/>
+    <path d="M56 68H80V28H56"/>
+  </g>
+</svg>
