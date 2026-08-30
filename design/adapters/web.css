@@ -127,44 +127,21 @@ body {
   width: 6.5rem;
 }
 
-/* Exact producer field: geometry stays at the catalog coordinate. */
-.producer-map-pin {
-  display: grid !important;
-  place-items: center;
-  background: transparent !important;
-  border: 0 !important;
+/* Exact producer field: map-native circles stay at the catalog coordinate. */
+.producer-map-circle {
+  fill: var(--chisan-color-surface);
+  fill-opacity: 0.96;
+  stroke: var(--chisan-color-moss-dark);
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
 }
 
-.producer-map-pin-mark {
-  display: grid;
-  width: 20px;
-  height: 20px;
-  place-items: center;
-  background: transparent;
-}
-
-.producer-map-pin-mark img {
-  display: block;
-  width: 18px;
-  height: 18px;
-  filter:
-    drop-shadow(0 0 1px var(--chisan-color-surface))
-    drop-shadow(0 0 1px var(--chisan-color-surface));
-}
-
-.producer-map-pin--highlighted .producer-map-pin-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--chisan-color-surface);
-  box-shadow:
-    0 0 0 2px var(--chisan-color-surface),
-    0 0 0 4px var(--chisan-color-moss);
-}
-
-.producer-map-pin--highlighted .producer-map-pin-mark img {
-  width: 20px;
-  height: 20px;
+.producer-map-circle--highlighted {
+  fill: var(--chisan-color-moss);
+  fill-opacity: 1;
+  stroke: var(--chisan-color-surface);
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 1px var(--chisan-color-moss-dark));
 }
 
 .leaflet-control-attribution {

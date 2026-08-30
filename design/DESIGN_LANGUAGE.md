@@ -65,17 +65,15 @@ The compact `c` glyph is a crop of the same identity, reserved for favicons,
 app avatars and places where the wordmark cannot remain legible. It is not a
 second logo and does not appear beside the wordmark merely as decoration.
 
-**The Join** is the cartographic mark: two opposing field outlines held around
-an open centre. It identifies producer coordinates on maps without replacing
-the primary wordmark or the compact system glyph.
+**The Join** remains documented as a v0.3 identity exploration under
+`design/references/`; it is not an active runtime mark. Producer locations use
+neutral map geometry so the catalog reads before the brand symbol.
 
 ### Logo rules
 
 - Use the wordmark whenever at least 88 px of horizontal space is available.
 - Use the compact glyph below that threshold or for square system icons.
-- Use The Join only for producer map locations and compact map attribution.
-- Primary identity colour is `ink`; reverse is rice paper or white. The Join is
-  `pine` on maps so it reads as location rather than a second logo.
+- Primary identity colour is `ink`; reverse is rice paper or white.
 - Minimum sizes are 88 px wide for the wordmark and 16 px for the glyph.
 - Clear space is one compact-glyph stroke width on every side.
 - Keep the tagline separate and live; never bake it into the logo asset.
@@ -140,10 +138,10 @@ The map is a factual field, not a summary graphic.
 
 - Every mapped producer is represented by one point at its exact coordinate.
 - Do not cluster, aggregate, jitter, offset or replace producers with heatmaps.
-- At overview scale, each producer uses the 18 px Join mark centred on the exact
-  coordinate with a larger invisible hit area.
-- Only the selected producer grows to 20 px and gains a moss ring; selection
-  never changes position.
+- At overview scale, each producer is a 10 px circle with a rice-paper fill and
+  a 1.5 px pine outline, centred on the exact coordinate.
+- Only the selected producer grows to 16 px, fills with moss and gains a 3 px
+  rice-paper outline; selection never changes position.
 - Land is rice paper, controls are surface, geometry is hairline and labels are stone.
 - Categories remain visible in one horizontally scrollable filter bar with one
   icon and one label per category. Pills are functional here because each item

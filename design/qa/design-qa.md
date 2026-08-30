@@ -3,19 +3,22 @@
 ## Evidence
 
 - Identity source: `design/references/v0.3/chisan-wordmark-first-board.png`
-- Selected map-mark source: `design/references/v0.3/chisan-marker-join-board.png`
+- Previous map-mark exploration: `design/references/v0.3/chisan-marker-join-board.png`
+- Current map reference: `design/references/inspiration-alltrails-explore.png`
 - Category-bar source: `design/qa/category-bar-source-v0.2.png`
 - Tonal references: `design/references/inspiration-giftee-home.png` and
   `design/references/inspiration-sanko-mobilefirst.png`
 - Desktop home: `design/qa/implementation-home-desktop.png`
-- Desktop catalog map: `design/qa/implementation-map-join-desktop.png`
-- Mobile catalog map: `design/qa/implementation-map-join-mobile.png`
+- Desktop catalog map: `design/qa/implementation-map-circles-desktop.png`
+- Selected producer: `design/qa/implementation-map-circles-selected.png`
+- Mobile catalog map: `design/qa/implementation-map-circles-mobile.png`
 - Browser: Codex in-app browser against the local Next.js development server
 - Desktop viewport: 1440 x 900 CSS pixels, device scale factor 1
 - Mobile viewport: 390 x 844 CSS pixels, device scale factor 1
 
-The selected Join board, the previous category bar, and the new desktop and
-mobile implementations were opened together for the final visual comparison.
+The loaded AllTrails source and the new desktop implementation were captured at
+the same 1440 x 900 viewport and opened together for the final visual
+comparison. The selected and mobile Chisan states were then inspected together.
 
 ## States exercised
 
@@ -26,8 +29,10 @@ mobile implementations were opened together for the final visual comparison.
 - Category selection changed to `Vino`; the URL updated to `?category=Vino`
   without a full-page navigation and the rendered marker set changed from 191
   viewport points to 33.
-- Producer selection through `highlight`; exactly one Join marker received the
-  selected treatment.
+- A marker hover exposed the producer name, and a click opened the existing
+  producer popup and profile link.
+- Producer selection through `highlight`; exactly one circle received the
+  selected treatment while the other 190 visible circles stayed unchanged.
 - Mobile header, horizontally scrolling category rail, map, and result layout.
 
 ## Visual comparison
@@ -57,11 +62,14 @@ mobile implementations were opened together for the final visual comparison.
 
 - Producer locations remain exact catalog coordinates: no clustering, jitter,
   heatmap, or geographic displacement was introduced.
-- Every default point uses the selected two-bracket Join at 18 px in pine,
-  centered on its exact coordinate. It has no backing tile, so dense areas read
-  as a field of producers rather than a stack of cards.
-- The selected Join grows to 20 px inside a 28 px rice-paper surface with a
-  moss emphasis ring.
+- AllTrails informed the compact circle grammar and selected-state hierarchy;
+  Chisan keeps its own pine, moss and rice-paper tokens and does not adopt
+  clustered count pills.
+- Every default point is a map-native 10 px circle with a rice-paper fill and a
+  1.5 px pine outline, centred on its exact coordinate. Dense areas remain a
+  legible field of individual producers.
+- The selected circle grows to 16 px, fills with moss and gains a 3 px
+  rice-paper outline without changing position.
 - All 23 category options remain present in one horizontal icon-and-label rail.
   The rail scrolls on narrow screens while the map keeps visual priority.
 
@@ -87,6 +95,10 @@ mobile implementations were opened together for the final visual comparison.
 - P2: the first Join implementation placed every mark on a small white tile,
   making dense regions noisy. Resolved by keeping the real SVG asset bare and
   using only a subtle map-contrast halo.
+- P2: even without the backing tile, repeating The Join at catalog density made
+  the map feel too branded and reduced the speed of reading locations. Resolved
+  after user review by replacing it with compact map-native circles and
+  removing the superseded runtime marker asset.
 - P2: the first mobile category-rail override extended the document by 6 px.
   Resolved by matching the rail bleed to the catalog page inset; the final
   390 px viewport measures a 390 px document width.
@@ -96,6 +108,7 @@ mobile implementations were opened together for the final visual comparison.
 - [x] Reference and implementation compared in one visual review.
 - [x] Desktop and mobile layouts inspected.
 - [x] Primary category and producer-selection interactions exercised.
+- [x] Marker hover, popup and profile-link state exercised.
 - [x] All 23 categories remain discoverable in the visible rail.
 - [x] Exact-coordinate producer density remains legible without clustering.
 - [x] No browser console errors or warnings in the final state.

@@ -3,10 +3,17 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import L from "leaflet";
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
+import {
+  CircleMarker,
+  MapContainer,
+  Popup,
+  TileLayer,
+  Tooltip,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import chisanMapMarker from "@/design/brand/assets/chisan-map-marker.svg";
 import {
   PRODUCER_SELECTION_MIN_ZOOM,
   type ProducerMapMarker,
@@ -16,8 +23,6 @@ import {
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 200;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
-const chisanMapMarkerSrc =
-  typeof chisanMapMarker === "string" ? chisanMapMarker : chisanMapMarker.src;
 
 function getPointsBounds(points: ProducerMapMarker[]): L.LatLngBounds | null {
   if (!points.length) {
@@ -38,20 +43,6 @@ function getInitialCenter(points: ProducerMapMarker[]): [number, number] {
   const center = bounds.getCenter();
   return [center.lat, center.lng];
 }
-
-const producerPinIcon = L.divIcon({
-  className: "producer-map-pin",
-  html: `<span class="producer-map-pin-mark"><img src="${chisanMapMarkerSrc}" alt="" aria-hidden="true" /></span>`,
-  iconSize: [20, 20],
-  iconAnchor: [10, 10],
-});
-
-const producerPinHighlightedIcon = L.divIcon({
-  className: "producer-map-pin producer-map-pin--highlighted",
-  html: `<span class="producer-map-pin-mark"><img src="${chisanMapMarkerSrc}" alt="" aria-hidden="true" /></span>`,
-  iconSize: [28, 28],
-  iconAnchor: [14, 14],
-});
 
 function hasSamePointGeometry(
   previous: readonly ProducerMapMarker[],
@@ -142,24 +133,35 @@ function BoundsAwareMarkers({
 
   return (
     <>
-      {visible.map((point) => (
-        <Marker
-          key={`${point.key}:${highlightedKey === point.key ? "selected" : "default"}`}
-          position={[point.latitude, point.longitude]}
-          icon={highlightedKey === point.key ? producerPinHighlightedIcon : producerPinIcon}
-          title={point.name}
-        >
-          <Popup>
-            <strong>{point.name}</strong>
-            <br />
-            {point.city} · {point.categories.join(" · ")}
-            <br />
-            <Link href={point.href} prefetch={false}>
-              {messages.openProfile}
-            </Link>
-          </Popup>
-        </Marker>
-      ))}
+      {visible.map((point) => {
+        const highlighted = highlightedKey === point.key;
+
+        return (
+          <CircleMarker
+            key={`${point.key}:${highlighted ? "selected" : "default"}`}
+            center={[point.latitude, point.longitude]}
+            radius={highlighted ? 8 : 5}
+            pathOptions={{
+              className: highlighted
+                ? "producer-map-circle producer-map-circle--highlighted"
+                : "producer-map-circle",
+            }}
+          >
+            <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
+              {point.name}
+            </Tooltip>
+            <Popup>
+              <strong>{point.name}</strong>
+              <br />
+              {point.city} · {point.categories.join(" · ")}
+              <br />
+              <Link href={point.href} prefetch={false}>
+                {messages.openProfile}
+              </Link>
+            </Popup>
+          </CircleMarker>
+        );
+      })}
     </>
   );
 }
