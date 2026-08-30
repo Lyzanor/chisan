@@ -85,6 +85,7 @@ export const SITE_METADATA: Metadata = {
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
     type: "website",
+    images: [{ url: chisanMark.src, alt: `${SITE_NAME} — ${SITE_TAGLINE}` }],
   },
   twitter: {
     card: "summary",
@@ -139,13 +140,14 @@ export function SiteRootShell({
           <Link href="/" className="site-footer__brand-link">
             <ChisanWordmark alt="" reverse />
           </Link>
-          <Link href="/our-purpose">{footerMessages.aboutLink}</Link>
+          <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
           <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
           <Link href="/privacy">
             {htmlLang.toLowerCase().startsWith("es")
               ? "Privacidad y cookies"
               : "Privacy & cookies"}
           </Link>
+          <Link href="/contact">{footerMessages.contactLink}</Link>
           <a href={SITE_INSTAGRAM_URL} rel="me">
             Instagram
           </a>

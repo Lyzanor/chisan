@@ -10,8 +10,8 @@ const messages = {
     favorites: "Favorieten", signOut: "Uitloggen",
   },
   siteFooter: {
-    navigation: "Navigatie in de voettekst", aboutLink: "Ons doel", catalogLink: "Producentencatalogus",
-    contactLink: "Neem contact met ons op via GitHub", },
+    navigation: "Navigatie in de voettekst", aboutLink: "Hoe Chisan werkt", catalogLink: "Producentencatalogus",
+    contactLink: "Contact", },
   accountActions: {
     ownershipVerifiedDescription: "Dit profiel is door de producent geclaimd en geverifieerd.",
     saveOrClaimPrompt: "Sla deze producent op of claim het eigenaarschap.",

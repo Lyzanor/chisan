@@ -24,6 +24,8 @@ test("public analytics excludes private and operational application routes", () 
     "/",
     "/es/barcelona",
     "/es/barcelona/example-producer",
+    "/contact",
+    "/how-we-work",
     "/our-purpose",
     "/privacy",
     "/u/example",

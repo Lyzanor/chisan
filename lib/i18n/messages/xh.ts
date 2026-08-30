@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Uhambo lwasemazantsi ephepha",
-    aboutLink: "Injongo yethu",
+    aboutLink: "Indlela uChisan asebenza ngayo",
     catalogLink: "Ikhathalogu yabavelisi",
-    contactLink: "Qhagamshelana nathi eGitHub",
+    contactLink: "Qhagamshelana",
   },
   accountActions: {
     ownershipVerifiedDescription:

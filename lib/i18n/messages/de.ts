@@ -17,9 +17,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Fußzeilennavigation",
-    aboutLink: "Unser Ziel",
+    aboutLink: "So funktioniert Chisan",
     catalogLink: "Erzeugerkatalog",
-    contactLink: "Auf GitHub Kontakt aufnehmen",
+    contactLink: "Kontakt",
   },
   accountActions: {
     ownershipVerifiedDescription:

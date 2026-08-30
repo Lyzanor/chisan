@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Seòladh na coise",
-    aboutLink: "Ar n-adhbhar",
+    aboutLink: "Mar a tha Chisan ag obair",
     catalogLink: "Catalog nan riochdairean",
-    contactLink: "Cuir fios thugainn air GitHub",
+    contactLink: "Fios",
   },
   accountActions: {
     ownershipVerifiedDescription:

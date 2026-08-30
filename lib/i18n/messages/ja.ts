@@ -17,9 +17,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "フッターナビゲーション",
-    aboutLink: "私たちの目的",
+    aboutLink: "Chisanの仕組み",
     catalogLink: "生産者カタログ",
-    contactLink: "GitHubでお問い合わせ",
+    contactLink: "お問い合わせ",
   },
   accountActions: {
     ownershipVerifiedDescription: "このプロフィールは生産者本人が申請し、確認済みです。",

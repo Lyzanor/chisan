@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Hoʻokele wāwae",
-    aboutLink: "Ko mākou kumu",
+    aboutLink: "Pehea e hana ai ʻo Chisan",
     catalogLink: "Papa inoa mea hana",
-    contactLink: "Hoʻokaʻaʻike iā mākou ma GitHub",
+    contactLink: "Hoʻokaʻaʻike",
   },
   accountActions: {
     ownershipVerifiedDescription:

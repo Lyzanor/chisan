@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Llywio'r troedyn",
-    aboutLink: "Ein pwrpas",
+    aboutLink: "Sut mae Chisan yn gweithio",
     catalogLink: "Catalog cynhyrchwyr",
-    contactLink: "Cysylltu â ni ar GitHub",
+    contactLink: "Cyswllt",
   },
   accountActions: {
     ownershipVerifiedDescription:

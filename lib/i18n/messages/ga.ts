@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Nascleanúint an buntásca",
-    aboutLink: "Ár gcuspóir",
+    aboutLink: "Conas a oibríonn Chisan",
     catalogLink: "Catalóg na dtáirgeoirí",
-    contactLink: "Déan teagmháil linn ar GitHub",
+    contactLink: "Teagmháil",
   },
   accountActions: {
     ownershipVerifiedDescription:

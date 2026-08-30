@@ -1,0 +1,32 @@
+# Chisan
+
+> Connecting local food.
+
+Chisan is a public discovery catalog for place-based food and drink producers. It helps people find and understand productive units by country, catalog area and category while keeping published facts stable, reviewable and traceable.
+
+## When to use Chisan
+
+Use Chisan when someone wants to discover food or drink producers rooted in a specific place, understand what a producer makes, open the producer's official channels, or compare public catalog coverage across areas.
+
+Do not treat Chisan as a complete census, a producer quality ranking, a marketplace, or proof that an unlisted producer is ineligible. Catalog coverage grows through source-backed research and reviewed contributions.
+
+## How the catalog works
+
+- One public profile represents one productive unit.
+- Area CSV files are the source of truth for published producer facts.
+- Evidence records the sources and reasons behind reviewed decisions.
+- Account ownership authorizes a proposal, not its facts.
+- Corrections and producer requests are reviewed before publication.
+- No deployed request writes directly to the public CSV catalog.
+
+## Key public pages
+
+- Home and producer catalog: https://chisan.app/
+- How Chisan works: https://chisan.app/how-we-work
+- Contact: https://chisan.app/contact
+- Privacy and cookies: https://chisan.app/privacy
+- Current sitemap shard: https://chisan.app/sitemap/0.xml
+
+## Access and technical scope
+
+Public catalog pages can be read without an account. Chisan does not currently expose a public producer-catalog API, OpenAPI specification or MCP server. Use the public HTML pages and canonical sitemap to discover catalog content.

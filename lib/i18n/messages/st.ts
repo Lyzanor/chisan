@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Tsamaiso ea botlaaseng",
-    aboutLink: "Sepheo sa rona",
+    aboutLink: "Kamoo Chisan e sebetsang kateng",
     catalogLink: "Lenane la bahlahisi",
-    contactLink: "Ikopanye le rona ho GitHub",
+    contactLink: "Ikopanye",
   },
   accountActions: {
     ownershipVerifiedDescription:

@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "ફૂટર નેવિગેશન",
-    aboutLink: "અમારો હેતુ",
+    aboutLink: "Chisan કેવી રીતે કામ કરે છે",
     catalogLink: "ઉત્પાદક કેટલોગ",
-    contactLink: "GitHub પર અમારો સંપર્ક કરો",
+    contactLink: "સંપર્ક",
   },
   accountActions: {
     ownershipVerifiedDescription:

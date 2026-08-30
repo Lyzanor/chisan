@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Voetskrif-navigasie",
-    aboutLink: "Ons doel",
+    aboutLink: "Hoe Chisan werk",
     catalogLink: "Produsentekatalogus",
-    contactLink: "Kontak ons op GitHub",
+    contactLink: "Kontak",
   },
   accountActions: {
     ownershipVerifiedDescription:

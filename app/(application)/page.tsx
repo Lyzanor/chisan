@@ -33,6 +33,10 @@ import {
 } from "@/lib/i18n/messages";
 import { listEnabledLocationAreas } from "@/lib/location/enabled-location-areas.server";
 import type { LocationOnboardingArea } from "@/lib/location/location-onboarding";
+import {
+  buildHomeStructuredData,
+  serializeStructuredData,
+} from "@/lib/site-structured-data";
 import { SITE_NAME } from "@/lib/site";
 
 const HOME_LOCALE = "en" as const;
@@ -71,22 +75,28 @@ function CountryStart({
 
   return (
     <main className="catalog-start-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(buildHomeStructuredData()),
+        }}
+      />
       <section
         className="catalog-start-shell"
         aria-labelledby="country-start-title"
       >
-        <LocationOnboarding
-          areas={locationAreas}
-          messages={messages.locationOnboarding}
-          explicitLocale={explicitLocale}
-          browserLocales={browserLocales}
-        />
         <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
           <div>
             <p className="catalog-kicker">{SITE_NAME}</p>
             <h1 id="country-start-title">{messages.home.chooseCountry}</h1>
           </div>
         </div>
+        <LocationOnboarding
+          areas={locationAreas}
+          messages={messages.locationOnboarding}
+          explicitLocale={explicitLocale}
+          browserLocales={browserLocales}
+        />
 
         <div className="country-card-list">
           {countries.map((country) => {
@@ -150,6 +160,11 @@ function CountryStart({
           <div className="home-about__copy">
             <p>{messages.home.aboutDescription}</p>
             <p>{messages.home.aboutCatalogDescription}</p>
+            <p>
+              <Link className="back-link" href="/how-we-work">
+                {messages.siteFooter.aboutLink}
+              </Link>
+            </p>
           </div>
         </section>
       </section>

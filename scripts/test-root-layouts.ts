@@ -23,6 +23,9 @@ test("application and catalog routes live under separate root layout groups", ()
   const expectedFiles = [
     "app/(application)/layout.tsx",
     "app/(application)/page.tsx",
+    "app/(application)/about/page.tsx",
+    "app/(application)/contact/page.tsx",
+    "app/(application)/how-we-work/page.tsx",
     "app/(application)/our-purpose/page.tsx",
     "app/(application)/privacy/page.tsx",
     "app/(application)/acceso/[[...sign-in]]/page.tsx",
@@ -32,6 +35,7 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/(application)/api/webhooks/clerk/route.ts",
     "app/(application)/api/account/me/route.ts",
     "app/(catalog)/[catalog]/layout.tsx",
+    "app/(catalog)/[catalog]/not-found.tsx",
     "app/(catalog)/[catalog]/page.tsx",
     "app/(catalog)/[catalog]/[area]/page.tsx",
     "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
@@ -39,6 +43,7 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/globals.css",
     "app/robots.ts",
     "app/sitemap.ts",
+    "public/llms.txt",
   ];
 
   for (const relativePath of expectedFiles) {
@@ -77,8 +82,9 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.match(shell, /aria-label=\{footerMessages\.navigation\}/);
   assert.match(
     shell,
-    /href="\/our-purpose">\{footerMessages\.aboutLink\}<\/Link>/,
+    /href="\/how-we-work">\{footerMessages\.aboutLink\}<\/Link>/,
   );
+  assert.match(shell, /href="\/contact">\{footerMessages\.contactLink\}<\/Link>/);
   assert.match(shell, /href="\/privacy"/);
   assert.match(shell, /google-adsense-account/);
   assert.match(shell, /<ChisanAnalytics \/>/);
@@ -206,6 +212,9 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
 
   for (const pathname of [
     "/",
+    "/about",
+    "/contact",
+    "/how-we-work",
     "/our-purpose",
     "/u/example",
     "/favicon.ico",
@@ -233,6 +242,8 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
   for (const pathname of [
     "/es",
     "/ca-es/barcelona",
+    "/contact",
+    "/how-we-work",
     "/our-purpose",
     "/api/catalog-redirect/es",
   ]) {

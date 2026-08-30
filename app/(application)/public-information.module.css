@@ -1,0 +1,240 @@
+.page {
+  width: min(1040px, calc(100% - 1.5rem));
+  margin: 1rem auto 4rem;
+}
+
+.hero {
+  min-height: min(680px, calc(100vh - 10rem));
+  padding: clamp(2rem, 7vw, 5.5rem) clamp(1.25rem, 8vw, 6.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.hero h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 6.75rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.94;
+}
+
+.heroStatement {
+  max-width: 730px;
+  margin-top: clamp(2rem, 5vw, 3.75rem);
+  padding-left: clamp(0rem, 8vw, 6rem);
+}
+
+.heroStatement p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  line-height: 1.6;
+}
+
+.heroStatement p + p {
+  margin-top: 1.35em;
+}
+
+.heroStatement p:first-child {
+  color: var(--text);
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  line-height: 1.35;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.7fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  padding: clamp(4rem, 8vw, 7rem) clamp(0.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.sectionHeader h2 {
+  max-width: 15ch;
+  margin: 0.45rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.sectionBody {
+  min-width: 0;
+}
+
+.sectionLead {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.steps,
+.principles,
+.channels {
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step,
+.principle,
+.channel {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.step:last-child,
+.principle:last-child,
+.channel:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.stepNumber {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.step h3,
+.principle h3,
+.channel h3 {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.step p,
+.principle p,
+.channel p,
+.prose p {
+  max-width: 64ch;
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.principle,
+.channel {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.prose p:first-child {
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  min-height: 44px;
+  padding: 0.7rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.primaryAction {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.secondaryAction {
+  background: transparent;
+  color: var(--accent-text);
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible,
+.channel a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.closing {
+  margin: 0;
+  padding: clamp(3rem, 7vw, 5rem) clamp(0.5rem, 4vw, 2.5rem) 0;
+  border-top: 1px solid var(--line);
+  color: var(--accent);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+}
+
+.contactHero {
+  min-height: auto;
+}
+
+.contactIntro {
+  max-width: 64ch;
+  margin: clamp(2rem, 5vw, 3.75rem) 0 0;
+  padding-left: clamp(0rem, 8vw, 6rem);
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.channel a {
+  color: var(--accent-text);
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 720px) {
+  .page {
+    width: min(100% - 1rem, 1040px);
+    margin-top: 0.5rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 3.5rem 1.25rem;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 3.5rem 0.75rem;
+  }
+
+  .sectionHeader h2 {
+    max-width: 18ch;
+  }
+
+  .step {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    justify-content: center;
+  }
+}

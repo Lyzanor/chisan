@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Tšhupetšo ya maoto",
-    aboutLink: "Maikemišetšo a rena",
+    aboutLink: "Kamoo Chisan e šomago ka gona",
     catalogLink: "Lenaneo la batšweletši",
-    contactLink: "Ikopanye le rena go GitHub",
+    contactLink: "Ikgokaganye",
   },
   accountActions: {
     ownershipVerifiedDescription:

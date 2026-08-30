@@ -201,3 +201,67 @@ harness was reverted and is absent from the final diff.
   contract is owned by the design system.
 
 final result: passed
+
+# How Chisan works design QA
+
+## Evidence
+
+- Visual source: `/Users/lyzanor/.codex/visualizations/2026/08/30/01a05428-2776-7760-b2ef-3a56a98f551b/chisan-agentic-audit/03-current-our-purpose.png`
+- Desktop implementation: `/Users/lyzanor/.codex/visualizations/2026/08/30/01a05428-2776-7760-b2ef-3a56a98f551b/chisan-agentic-audit/04-how-we-work-desktop.png`
+- Combined comparison: `/Users/lyzanor/.codex/visualizations/2026/08/30/01a05428-2776-7760-b2ef-3a56a98f551b/chisan-agentic-audit/05-reference-vs-how-we-work.png`
+- Mobile hero: `/Users/lyzanor/.codex/visualizations/2026/08/30/01a05428-2776-7760-b2ef-3a56a98f551b/chisan-agentic-audit/07-how-we-work-mobile.png`
+- Mobile process: `/Users/lyzanor/.codex/visualizations/2026/08/30/01a05428-2776-7760-b2ef-3a56a98f551b/chisan-agentic-audit/08-how-we-work-mobile-process.png`
+- Browser: Codex in-app browser against the local Next.js development server
+- Desktop comparison viewport: 1265 x 712 CSS pixels, device scale factor 1
+- Mobile test viewport: 390 x 844 CSS pixels, device scale factor 1
+
+The source and implementation were captured at the same 1265 x 712 viewport,
+stacked in one comparison image, and reviewed together. The mobile hero and
+catalog-process section were inspected at the narrow breakpoint.
+
+## States exercised
+
+- English `/how-we-work` hero, process, trust, participation, access and footer.
+- Spanish server-rendered copy with `chisan_locale=es`.
+- Mobile hero and numbered process steps.
+- Navigation from `Contact Chisan` to `/contact`.
+- Permanent redirects from `/our-purpose` and `/about`.
+- Public `/llms.txt`, metadata and structured-data output.
+- Useful 404 content for unknown public routes.
+
+## Visual comparison
+
+- The new hero preserves the source surface, border, asymmetrical text column,
+  Noto Sans hierarchy, rice-paper background, ink and moss palette.
+- The longer title keeps the source's large two-line editorial treatment rather
+  than introducing a new landing-page pattern.
+- Subsequent sections use the same hairlines, spacing and typographic hierarchy;
+  the numbered process and trust principles remain flat content, not card grids.
+- At the mobile breakpoint, the layout becomes one clear reading column. The
+  measured document width equals its client width (375 CSS pixels), so there is
+  no horizontal overflow.
+- The existing brand assets remain unchanged and sharp.
+
+## Issues found and resolved
+
+- P1: internal public links initially used plain anchors and failed the Next.js
+  lint rule. Resolved by using `next/link`.
+- P2: the Catalan behavior assertion still expected the retired purpose and
+  GitHub labels. Resolved by checking the new localized footer labels.
+- A stitched full-page browser capture visually repeated sections, but DOM
+  inspection confirmed one instance of every section and one footer. Focused
+  viewport captures were used for the final visual judgment.
+
+## Final checklist
+
+- [x] Reference and implementation reviewed in one combined image.
+- [x] Desktop and mobile layouts inspected.
+- [x] English and Spanish content verified.
+- [x] Primary contact navigation exercised.
+- [x] Useful 404 route rendered and inspected.
+- [x] No horizontal overflow at the narrow breakpoint.
+- [x] No browser console errors or warnings.
+- [x] Lint, production build and behavior tests pass.
+- [x] No remaining P0, P1 or P2 visual defects.
+
+final result: passed

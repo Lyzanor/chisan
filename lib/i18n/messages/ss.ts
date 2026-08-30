@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Kuhamba kwe-footer",
-    aboutLink: "Inhloso yetfu",
+    aboutLink: "Indlela Chisan lesebenta ngayo",
     catalogLink: "Luhlu lwabakhiqizi",
-    contactLink: "Tsintsa natsi ku-GitHub",
+    contactLink: "Tsintsana",
   },
   accountActions: {
     ownershipVerifiedDescription:

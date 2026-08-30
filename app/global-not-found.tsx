@@ -1,56 +1,11 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 
+import { NotFoundContent } from "@/app/_components/not-found-content";
 import { SiteRootShell } from "@/app/_components/site-root-shell";
-import { buildCatalogHref } from "@/lib/catalog-navigation";
-import {
-  findArea,
-  findPublishedCountry,
-  listPublishedCountries,
-  normalizeAreaSlug,
-} from "@/lib/csv-catalog";
-import { buildCatalogScope, parseCatalogScope } from "@/lib/i18n/catalog-scope";
-import { loadMessages } from "@/lib/i18n/messages";
-import { CHISAN_REQUEST_PATH_HEADER } from "@/lib/request-path";
-
-function publishedParentHref(pathname: string, catalog: string) {
-  const scope = parseCatalogScope(catalog, listPublishedCountries());
-  if (!scope) return "/";
-
-  const country = findPublishedCountry(scope.country);
-  if (!country) return "/";
-
-  const rawArea = pathname.split("/").filter(Boolean)[1] ?? "";
-  const area = rawArea ? normalizeAreaSlug(country.slug, rawArea) : "";
-  const areaOption = area ? findArea(country.slug, area) : null;
-  const policy = areaOption ?? country;
-  const locale = policy.publishedLocales.includes(scope.locale)
-    ? scope.locale
-    : country.defaultLocale;
-
-  return buildCatalogHref({
-    scope: buildCatalogScope(country, locale),
-    area: areaOption?.slug,
-  });
-}
-
-async function resolveNotFoundPresentation() {
-  const pathname = (await headers()).get(CHISAN_REQUEST_PATH_HEADER) ?? "/";
-  const catalog = pathname.split("/").filter(Boolean)[0] ?? "";
-  const scope = parseCatalogScope(catalog, listPublishedCountries());
-  const locale = scope?.locale ?? "en";
-  const messages = await loadMessages(locale);
-
-  return {
-    backHref: publishedParentHref(pathname, catalog),
-    htmlLang: scope?.htmlLang ?? "en",
-    locale,
-    messages,
-  };
-}
+import { loadNotFoundPresentation } from "@/lib/not-found-presentation.server";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { messages } = await resolveNotFoundPresentation();
+  const { messages } = await loadNotFoundPresentation();
   return {
     title: messages.notFound.title,
     description: messages.notFound.description,
@@ -59,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function GlobalNotFoundPage() {
   const { backHref, htmlLang, locale, messages } =
-    await resolveNotFoundPresentation();
+    await loadNotFoundPresentation();
 
   return (
     <SiteRootShell
@@ -72,15 +27,7 @@ export default async function GlobalNotFoundPage() {
         options: [{ locale, label: messages.languageName, href: backHref }],
       }}
     >
-      <main className="page-shell">
-        <section className="panel">
-          <h1>{messages.notFound.title}</h1>
-          <p>{messages.notFound.description}</p>
-          <a href={backHref} className="back-link">
-            ← {messages.notFound.backToCatalog}
-          </a>
-        </section>
-      </main>
+      <NotFoundContent backHref={backHref} messages={messages} />
     </SiteRootShell>
   );
 }

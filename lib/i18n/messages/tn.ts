@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Tsamaiso ya kwa tlase",
-    aboutLink: "Maikaelelo a rona",
+    aboutLink: "Kafa Chisan e dirang ka teng",
     catalogLink: "Lenane la badiri",
-    contactLink: "Ikgolaganye le rona mo GitHub",
+    contactLink: "Ikgolaganye",
   },
   accountActions: {
     ownershipVerifiedDescription:

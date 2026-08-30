@@ -210,8 +210,14 @@ wait_for_app
 
 HTML_HOME="$(curl -fsS "$BASE_URL/")"
 HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"
+HTML_HOME_BEFORE_H1="${HTML_HOME_CLEAN%%id=\"country-start-title\"*}"
 
 assert_html_lang "/" "en" "$HTML_HOME_CLEAN"
+
+if [[ "$HTML_HOME_BEFORE_H1" == *"<h2"* ]]; then
+  echo "Error: the home page should expose its H1 before any H2." >&2
+  exit 1
+fi
 
 if [[ "$HTML_HOME_CLEAN" != *"Choose a country"* ]]; then
   echo "Error: home page should ask for an initial country selection." >&2
@@ -244,11 +250,13 @@ if [[
   "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Connecting local food.</span>'* ||
   "$HTML_HOME_CLEAN" != *'id="home-about-title">Connecting local food.</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
-  "$HTML_HOME_CLEAN" != *'href="/our-purpose">Our purpose</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/how-we-work">How Chisan works</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="/#choose-country">Producer catalog</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/contact">Contact</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||
+  "$HTML_HOME_CLEAN" != *'"@type":"Organization"'* ||
   "$HTML_HOME_CLEAN" == *'github.com/Lyzanor/chisan'* ||
   "$HTML_HOME_CLEAN" == *'>About us</h2>'* ||
   "$HTML_HOME_CLEAN" == *'class="site-footer__copyright"'*
@@ -257,15 +265,48 @@ if [[
   exit 1
 fi
 
-HTML_PURPOSE="$(curl -fsS "$BASE_URL/our-purpose" | sed 's/<!-- -->//g')"
+HTML_PURPOSE="$(curl -fsS "$BASE_URL/how-we-work" | sed 's/<!-- -->//g')"
 if [[
-  "$HTML_PURPOSE" != *'<title>Our purpose | Chisan</title>'* ||
-  "$HTML_PURPOSE" != *'id="purpose-title">Our purpose</h1>'* ||
+  "$HTML_PURPOSE" != *'<title>How Chisan works | Chisan</title>'* ||
+  "$HTML_PURPOSE" != *'id="how-chisan-works-title">How Chisan works</h1>'* ||
   "$HTML_PURPOSE" != *'Local food systems are full of value, but too often fragmented.'* ||
-  "$HTML_PURPOSE" != *'<em>chisan-chisho</em>'* ||
-  "$HTML_PURPOSE" != *'Connecting local food.</strong>'*
+  "$HTML_PURPOSE" != *'From a possible producer to a stable public profile'* ||
+  "$HTML_PURPOSE" != *'The CSV catalog is canonical'* ||
+  "$HTML_PURPOSE" != *'Public discovery remains open'* ||
+  "$HTML_PURPOSE" != *'"@type":"AboutPage"'*
 ]]; then
-  echo "Error: /our-purpose should render the complete purpose statement and metadata." >&2
+  echo "Error: /how-we-work should render the complete catalog explanation and metadata." >&2
+  exit 1
+fi
+
+for LEGACY_PURPOSE_PATH in /our-purpose /about; do
+  LEGACY_PURPOSE_REDIRECT="$(curl -sS -o /dev/null --write-out '%{http_code} %{redirect_url}' "$BASE_URL$LEGACY_PURPOSE_PATH")"
+  if [[ "$LEGACY_PURPOSE_REDIRECT" != "308 $BASE_URL/how-we-work" ]]; then
+    echo "Error: $LEGACY_PURPOSE_PATH should permanently redirect to /how-we-work, got '$LEGACY_PURPOSE_REDIRECT'." >&2
+    exit 1
+  fi
+done
+
+HTML_CONTACT="$(curl -fsS "$BASE_URL/contact" | sed 's/<!-- -->//g')"
+if [[
+  "$HTML_CONTACT" != *'<title>Contact Chisan | Chisan</title>'* ||
+  "$HTML_CONTACT" != *'id="contact-title">Contact Chisan</h1>'* ||
+  "$HTML_CONTACT" != *'Catalog corrections'* ||
+  "$HTML_CONTACT" != *'chisanapp@gmail.com'* ||
+  "$HTML_CONTACT" != *'"@type":"ContactPage"'*
+]]; then
+  echo "Error: /contact should expose public, source-aware contact guidance." >&2
+  exit 1
+fi
+
+LLMS_TEXT="$(curl -fsS "$BASE_URL/llms.txt")"
+if [[
+  "$LLMS_TEXT" != *'# Chisan'* ||
+  "$LLMS_TEXT" != *'## When to use Chisan'* ||
+  "$LLMS_TEXT" != *'https://chisan.app/how-we-work'* ||
+  "$LLMS_TEXT" != *'does not currently expose a public producer-catalog API'*
+]]; then
+  echo "Error: /llms.txt should explain when agents should use Chisan and its technical limits." >&2
   exit 1
 fi
 
@@ -306,6 +347,18 @@ fi
 UNKNOWN_COUNTRY_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/zz")"
 if [[ "$UNKNOWN_COUNTRY_STATUS" != "404" ]]; then
   echo "Error: unknown country route should 404, got '$UNKNOWN_COUNTRY_STATUS'." >&2
+  exit 1
+fi
+
+HTML_UNKNOWN_COUNTRY="$(curl -sS "$BASE_URL/zz" | sed 's/<!-- -->//g')"
+if [[
+  "$HTML_UNKNOWN_COUNTRY" != *'Connecting local food.'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'/how-we-work'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'How Chisan works'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'/contact'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'Sitemap'*
+]]; then
+  echo "Error: unknown public routes should return a useful, crawlable 404." >&2
   exit 1
 fi
 
@@ -407,8 +460,9 @@ assert_html_lang "/ca-es/barcelona" "ca" "$HTML_CATALAN_AREA"
 if [[
   "$UNPUBLISHED_AREA_LOCALE_STATUS" != "200" ||
   "$HTML_CATALAN_AREA" != *"Mapa de productors"* ||
-  "$HTML_CATALAN_AREA" != *">El nostre propòsit</a>"* ||
+  "$HTML_CATALAN_AREA" != *">Com funciona Chisan</a>"* ||
   "$HTML_CATALAN_AREA" != *">Catàleg de productors</a>"* ||
+  "$HTML_CATALAN_AREA" != *">Contacte</a>"* ||
   "$HTML_CATALAN_AREA" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
   "$HTML_CATALAN_AREA" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
   "$HTML_CATALAN_AREA" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||

@@ -15,9 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "फुटर नेव्हिगेशन",
-    aboutLink: "आमचो हेतू",
+    aboutLink: "Chisan कसें काम करता",
     catalogLink: "उत्पादक कॅटलॉग",
-    contactLink: "GitHub चेर आमकां संपर्क करात",
+    contactLink: "संपर्क",
   },
   accountActions: {
     ownershipVerifiedDescription:

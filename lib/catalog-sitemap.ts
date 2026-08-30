@@ -64,10 +64,15 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
     url: homeAlternates.canonical,
     alternates: { languages: homeAlternates.languages },
   });
-  const purposeUrl = new URL("/our-purpose", SITE_ORIGIN).toString();
+  const purposeUrl = new URL("/how-we-work", SITE_ORIGIN).toString();
   entries.push({
     url: purposeUrl,
     alternates: { languages: { en: purposeUrl } },
+  });
+  const contactUrl = new URL("/contact", SITE_ORIGIN).toString();
+  entries.push({
+    url: contactUrl,
+    alternates: { languages: { en: contactUrl } },
   });
   const privacyUrl = new URL("/privacy", SITE_ORIGIN).toString();
   entries.push({

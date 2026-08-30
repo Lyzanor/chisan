@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-import {
-  SITE_CONTACT_EMAIL,
-  SITE_CONTACT_URL,
-  SITE_NAME,
-  SITE_ORIGIN,
-} from "@/lib/site";
+import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 
 import styles from "./privacy.module.css";
 
@@ -113,10 +109,10 @@ export default function PrivacyPage() {
         <p>
           You can remove the language cookie in your browser, decline optional
           advertising purposes, or ask about access, correction or deletion of
-          account information where applicable. Email Chisan at{" "}
-          <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>. Do not include
-          passwords, identity documents or other sensitive files unless Chisan
-          has provided a private upload channel.
+          account information where applicable. Use the{" "}
+          <Link href="/contact">Chisan contact page</Link> to choose the appropriate
+          channel, and do not send sensitive personal information through social
+          media.
         </p>
 
         <h2>Changes</h2>
