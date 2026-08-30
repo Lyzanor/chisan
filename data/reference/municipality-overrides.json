@@ -2090,6 +2090,326 @@
         "label": "Piermont (Grafton County, New Hampshire)",
         "region": "new-england"
       }
+    ],
+    "auburn": [
+      {
+        "lat": 38.895075,
+        "lon": -121.076739,
+        "label": "Auburn",
+        "region": "pacific"
+      }
+    ],
+    "berkeley": [
+      {
+        "lat": 37.865673,
+        "lon": -122.298725,
+        "label": "Berkeley",
+        "region": "pacific"
+      }
+    ],
+    "boonville": [
+      {
+        "lat": 39.011474,
+        "lon": -123.374043,
+        "label": "Boonville",
+        "region": "pacific"
+      }
+    ],
+    "brentwood": [
+      {
+        "lat": 37.935578,
+        "lon": -121.71897,
+        "label": "Brentwood",
+        "region": "pacific"
+      }
+    ],
+    "brooks": [
+      {
+        "lat": 38.73688,
+        "lon": -122.146807,
+        "label": "Brooks",
+        "region": "pacific"
+      }
+    ],
+    "carlsbad": [
+      {
+        "lat": 33.129284,
+        "lon": -117.284183,
+        "label": "Carlsbad",
+        "region": "pacific"
+      }
+    ],
+    "capitola": [
+      {
+        "lat": 36.976083,
+        "lon": -121.954012,
+        "label": "Capitola",
+        "region": "pacific"
+      }
+    ],
+    "chico": [
+      {
+        "lat": 39.758951,
+        "lon": -121.81772,
+        "label": "Chico",
+        "region": "pacific"
+      }
+    ],
+    "clements": [
+      {
+        "lat": 38.190751,
+        "lon": -121.088277,
+        "label": "Clements (San Joaquin County, California)",
+        "region": "pacific"
+      }
+    ],
+    "davenport": [
+      {
+        "lat": 37.017779,
+        "lon": -122.187885,
+        "label": "Davenport",
+        "region": "pacific"
+      }
+    ],
+    "eureka": [
+      {
+        "lat": 40.797594,
+        "lon": -124.154191,
+        "label": "Eureka",
+        "region": "pacific"
+      }
+    ],
+    "fairfield": [
+      {
+        "lat": 38.261965,
+        "lon": -122.032389,
+        "label": "Fairfield",
+        "region": "pacific"
+      }
+    ],
+    "folsom": [
+      {
+        "lat": 38.666597,
+        "lon": -121.141635,
+        "label": "Folsom",
+        "region": "pacific"
+      }
+    ],
+    "fremont": [
+      {
+        "lat": 37.49446,
+        "lon": -121.94115,
+        "label": "Fremont",
+        "region": "pacific"
+      }
+    ],
+    "fresno": [
+      {
+        "lat": 36.782684,
+        "lon": -119.793359,
+        "label": "Fresno",
+        "region": "pacific"
+      }
+    ],
+    "hollister": [
+      {
+        "lat": 36.855618,
+        "lon": -121.399544,
+        "label": "Hollister",
+        "region": "pacific"
+      }
+    ],
+    "lake city": [
+      {
+        "lat": 41.645317,
+        "lon": -120.222097,
+        "label": "Lake City",
+        "region": "pacific"
+      }
+    ],
+    "marshall": [
+      {
+        "lat": 38.160477,
+        "lon": -122.894162,
+        "label": "Marshall (Marin County, California)",
+        "region": "pacific"
+      }
+    ],
+    "modesto": [
+      {
+        "lat": 37.637533,
+        "lon": -121.003049,
+        "label": "Modesto",
+        "region": "pacific"
+      }
+    ],
+    "morgan hill": [
+      {
+        "lat": 37.132495,
+        "lon": -121.641891,
+        "label": "Morgan Hill",
+        "region": "pacific"
+      }
+    ],
+    "oakland": [
+      {
+        "lat": 37.769846,
+        "lon": -122.22569,
+        "label": "Oakland",
+        "region": "pacific"
+      }
+    ],
+    "orange": [
+      {
+        "lat": 33.786971,
+        "lon": -117.861265,
+        "label": "Orange",
+        "region": "pacific"
+      }
+    ],
+    "paicines": [
+      {
+        "lat": 36.728571,
+        "lon": -121.278541,
+        "label": "Paicines (San Benito County, California)",
+        "region": "pacific"
+      }
+    ],
+    "paso robles": [
+      {
+        "lat": 35.628513,
+        "lon": -120.650356,
+        "label": "Paso Robles",
+        "region": "pacific"
+      }
+    ],
+    "pasadena": [
+      {
+        "lat": 34.160602,
+        "lon": -118.137954,
+        "label": "Pasadena",
+        "region": "pacific"
+      }
+    ],
+    "philo": [
+      {
+        "lat": 39.065757,
+        "lon": -123.445063,
+        "label": "Philo",
+        "region": "pacific"
+      }
+    ],
+    "rutherford": [
+      {
+        "lat": 38.458864,
+        "lon": -122.428831,
+        "label": "Rutherford",
+        "region": "pacific"
+      }
+    ],
+    "san diego": [
+      {
+        "lat": 32.830391,
+        "lon": -117.120923,
+        "label": "San Diego",
+        "region": "pacific"
+      }
+    ],
+    "san francisco": [
+      {
+        "lat": 37.787936,
+        "lon": -122.40752,
+        "label": "San Francisco",
+        "region": "pacific"
+      }
+    ],
+    "san miguel": [
+      {
+        "lat": 35.754959,
+        "lon": -120.693227,
+        "label": "San Miguel (San Luis Obispo County, California)",
+        "region": "pacific"
+      }
+    ],
+    "san rafael": [
+      {
+        "lat": 37.981003,
+        "lon": -122.50693,
+        "label": "San Rafael",
+        "region": "pacific"
+      }
+    ],
+    "santa cruz": [
+      {
+        "lat": 36.974385,
+        "lon": -122.035268,
+        "label": "Santa Cruz",
+        "region": "pacific"
+      }
+    ],
+    "santa rosa": [
+      {
+        "lat": 38.445824,
+        "lon": -122.706181,
+        "label": "Santa Rosa",
+        "region": "pacific"
+      }
+    ],
+    "sebastopol": [
+      {
+        "lat": 38.400003,
+        "lon": -122.827586,
+        "label": "Sebastopol",
+        "region": "pacific"
+      }
+    ],
+    "st helena": [
+      {
+        "lat": 38.512806,
+        "lon": -122.468076,
+        "label": "St. Helena",
+        "region": "pacific"
+      }
+    ],
+    "stockton": [
+      {
+        "lat": 37.976553,
+        "lon": -121.308598,
+        "label": "Stockton",
+        "region": "pacific"
+      }
+    ],
+    "tracy": [
+      {
+        "lat": 37.727396,
+        "lon": -121.452195,
+        "label": "Tracy",
+        "region": "pacific"
+      }
+    ],
+    "ventura": [
+      {
+        "lat": 34.26778,
+        "lon": -119.254206,
+        "label": "San Buenaventura (Ventura)",
+        "region": "pacific"
+      }
+    ],
+    "vista": [
+      {
+        "lat": 33.189528,
+        "lon": -117.238582,
+        "label": "Vista",
+        "region": "pacific"
+      }
+    ],
+    "windsor": [
+      {
+        "lat": 38.542099,
+        "lon": -122.808613,
+        "label": "Windsor",
+        "region": "pacific"
+      }
     ]
   }
 }
