@@ -44,6 +44,7 @@ async function resolveNotFoundPresentation() {
   return {
     backHref: publishedParentHref(pathname, catalog),
     htmlLang: scope?.htmlLang ?? "en",
+    locale,
     messages,
   };
 }
@@ -57,13 +58,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GlobalNotFoundPage() {
-  const { backHref, htmlLang, messages } = await resolveNotFoundPresentation();
+  const { backHref, htmlLang, locale, messages } =
+    await resolveNotFoundPresentation();
 
   return (
     <SiteRootShell
       htmlLang={htmlLang}
       footerMessages={messages.siteFooter}
       headerMessages={messages.siteHeader}
+      languageMenu={{
+        currentLocale: locale,
+        label: messages.languageSwitcher.label,
+        options: [{ locale, label: messages.languageName, href: backHref }],
+      }}
     >
       <main className="page-shell">
         <section className="panel">

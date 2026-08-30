@@ -9,6 +9,8 @@ const messages = {
     signIn: "साइन इन करें",
     register: "पंजीकरण करें",
     myAccount: "मेरा खाता",
+    greeting: "नमस्ते, {name}",
+    favorites: "पसंदीदा",
     signOut: "साइन आउट करें",
   },
   siteFooter: {

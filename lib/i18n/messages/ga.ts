@@ -9,6 +9,8 @@ const messages = {
     signIn: "Logáil isteach",
     register: "Cláraigh",
     myAccount: "Mo chuntas",
+    greeting: "Dia dhuit, {name}",
+    favorites: "Ceanáin",
     signOut: "Logáil amach",
   },
   siteFooter: {

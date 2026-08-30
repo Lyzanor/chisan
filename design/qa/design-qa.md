@@ -10,15 +10,24 @@
   `design/references/inspiration-sanko-mobilefirst.png`
 - Desktop home: `design/qa/implementation-home-desktop.png`
 - Desktop catalog map: `design/qa/implementation-map-circles-desktop.png`
+- Final 6 px map: `design/qa/implementation-map-circles-6px-desktop.png`
 - Selected producer: `design/qa/implementation-map-circles-selected.png`
 - Mobile catalog map: `design/qa/implementation-map-circles-mobile.png`
+- Account-menu source: `design/qa/account-menu-source-desktop.png`
+- Signed-out account menu:
+  `design/qa/account-menu-implementation-signed-out-open.png`
+- Signed-in account menu, closed and open:
+  `design/qa/account-menu-implementation-signed-in-closed.png` and
+  `design/qa/account-menu-implementation-signed-in-open.png`
+- Mobile account menu: `design/qa/account-menu-implementation-mobile-open.png`
 - Browser: Codex in-app browser against the local Next.js development server
 - Desktop viewport: 1440 x 900 CSS pixels, device scale factor 1
 - Mobile viewport: 390 x 844 CSS pixels, device scale factor 1
 
 The loaded AllTrails source and the new desktop implementation were captured at
 the same 1440 x 900 viewport and opened together for the final visual
-comparison. The selected and mobile Chisan states were then inspected together.
+comparison. The current Chisan header and both account states were likewise
+captured at the same viewport and opened together before mobile inspection.
 
 ## States exercised
 
@@ -33,6 +42,10 @@ comparison. The selected and mobile Chisan states were then inspected together.
   producer popup and profile link.
 - Producer selection through `highlight`; exactly one circle received the
   selected treatment while the other 190 visible circles stayed unchanged.
+- Signed-out account menu with the `Mi cuenta` summary, language selection,
+  sign-in and registration actions.
+- Signed-in account menu with localized `Hola, Aiko`, language selection,
+  account, favorites and sign-out actions.
 - Mobile header, horizontally scrolling category rail, map, and result layout.
 
 ## Visual comparison
@@ -58,6 +71,18 @@ comparison. The selected and mobile Chisan states were then inspected together.
 - Desktop and mobile captures show no horizontal overflow. At 390 px,
   `documentElement.clientWidth` and `scrollWidth` both measured 390 px.
 
+### Account menu
+
+- The closed control stays aligned with the quiet header and becomes the
+  localized greeting only after Chisan resolves the signed-in display name.
+- The open panel uses one hairline, a white surface and square structural
+  corners. Language and account actions are rows rather than another family of
+  capsules.
+- The same language options already supplied by each catalog view feed the
+  header menu, so area-level locale availability and URLs are not duplicated.
+- At 390 px the panel stays within the viewport and every control retains a
+  minimum 40–44 px interaction target.
+
 ### Map
 
 - Producer locations remain exact catalog coordinates: no clustering, jitter,
@@ -65,10 +90,10 @@ comparison. The selected and mobile Chisan states were then inspected together.
 - AllTrails informed the compact circle grammar and selected-state hierarchy;
   Chisan keeps its own pine, moss and rice-paper tokens and does not adopt
   clustered count pills.
-- Every default point is a map-native 4 px solid pine circle at 64% opacity,
+- Every default point is a map-native 6 px solid dark-pine circle at full opacity,
   centred on its exact coordinate. Dense areas read as a field of quiet points
   rather than outlined objects.
-- The selected circle grows to 8 px, fills with moss and gains a 2 px
+- The selected circle grows to 8 px, remains dark pine and gains a 2 px
   rice-paper outline without changing position.
 - All 23 category options remain present in one horizontal icon-and-label rail.
   The rail scrolls on narrow screens while the map keeps visual priority.
@@ -104,6 +129,9 @@ comparison. The selected and mobile Chisan states were then inspected together.
   default attributes beneath the design CSS. Resolved after user review with
   4 px solid pine points, an 8 px selected state, and explicit token-backed
   Leaflet path colours so no blue fallback remains.
+- P2: the 4 px follow-up was too faint for scanning producer density. Resolved
+  with 6 px fully opaque dark-pine points while retaining the existing 8 px
+  selected hierarchy and rice-paper outline.
 - P2: the first mobile category-rail override extended the document by 6 px.
   Resolved by matching the rail bleed to the catalog page inset; the final
   390 px viewport measures a 390 px document width.
@@ -112,6 +140,8 @@ comparison. The selected and mobile Chisan states were then inspected together.
 
 - [x] Reference and implementation compared in one visual review.
 - [x] Desktop and mobile layouts inspected.
+- [x] Signed-out and signed-in account-menu states exercised.
+- [x] Localized greeting, language selection, favorites and sign-out inspected.
 - [x] Primary category and producer-selection interactions exercised.
 - [x] Marker hover, popup and profile-link state exercised.
 - [x] All 23 categories remain discoverable in the visible rail.

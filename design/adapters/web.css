@@ -68,6 +68,113 @@ body {
   color: var(--chisan-color-moss-dark);
 }
 
+.site-account-nav {
+  position: relative;
+  margin-left: auto;
+}
+
+.site-account-menu {
+  position: relative;
+  color: var(--chisan-color-ink);
+}
+
+.site-account-menu > summary {
+  min-height: 44px;
+  padding: 0.65rem var(--chisan-space-3);
+  border-radius: var(--chisan-radius-control);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  list-style-position: inside;
+  transition:
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.site-account-menu > summary:hover,
+.site-account-menu[open] > summary {
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.site-account-menu__panel {
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + var(--chisan-space-2));
+  right: 0;
+  width: min(17rem, calc(100vw - 1.5rem));
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-structural);
+  background: var(--chisan-color-surface);
+  box-shadow: var(--chisan-shadow-overlay);
+}
+
+.site-account-menu__language {
+  display: grid;
+  gap: var(--chisan-space-2);
+  padding: var(--chisan-space-4);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+}
+
+.site-account-menu__language > span {
+  color: var(--chisan-color-stone);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-account-menu__language select {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.45rem 2rem 0.45rem 0.65rem;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  font: 500 0.875rem/1.4 var(--chisan-font-sans);
+}
+
+.site-account-menu__links {
+  display: grid;
+}
+
+.site-account-menu__links > a,
+.site-account-menu__links > button {
+  min-height: 44px;
+  padding: 0.7rem var(--chisan-space-4);
+  border: 0;
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: 0;
+  background: transparent;
+  color: var(--chisan-color-ink);
+  cursor: pointer;
+  font: 500 0.875rem/1.4 var(--chisan-font-sans);
+  text-align: left;
+  text-decoration: none;
+}
+
+.site-account-menu__links > :last-child {
+  border-bottom: 0;
+}
+
+.site-account-menu__links > a:hover,
+.site-account-menu__links > button:hover {
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-moss-dark);
+}
+
+.site-account-menu > summary:focus-visible,
+.site-account-menu__language select:focus-visible,
+.site-account-menu__links > a:focus-visible,
+.site-account-menu__links > button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: -2px;
+}
+
 .location-onboarding__primary,
 .location-onboarding__secondary,
 .location-onboarding__text-button {
@@ -127,10 +234,10 @@ body {
   width: 6.5rem;
 }
 
-/* Exact producer field: map-native circles stay at the catalog coordinate. */
+/* Exact producer field: 6 px map-native circles stay at the catalog coordinate. */
 .producer-map-circle {
   fill: var(--chisan-color-moss-dark);
-  fill-opacity: 0.64;
+  fill-opacity: 1;
   stroke: var(--chisan-color-moss-dark);
   stroke-opacity: 0;
   stroke-width: 0;
@@ -138,7 +245,7 @@ body {
 }
 
 .producer-map-circle--highlighted {
-  fill: var(--chisan-color-moss);
+  fill: var(--chisan-color-moss-dark);
   fill-opacity: 1;
   stroke: var(--chisan-color-surface);
   stroke-opacity: 1;
@@ -177,7 +284,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .site-header nav > a,
-  .site-header nav > button {
+  .site-header nav > button,
+  .site-account-menu > summary {
     transition: none;
   }
 }

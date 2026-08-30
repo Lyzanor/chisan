@@ -9,6 +9,10 @@ import type { ReactNode } from "react";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
 import { ChisanAnalytics } from "@/components/analytics/chisan-analytics";
 import { ChisanWordmark } from "@/components/brand/chisan-brand";
+import {
+  type LanguageMenuConfig,
+  SiteLanguageMenuProvider,
+} from "@/components/language-menu-context";
 import chisanMark from "@/design/brand/assets/chisan-mark-ink.png";
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -91,22 +95,29 @@ export const SITE_METADATA: Metadata = {
 };
 
 type SiteRootShellProps = Readonly<{
+  accountMessages?: Messages["siteHeader"];
   children: ReactNode;
   footerMessages: Messages["siteFooter"];
   headerMessages: Messages["siteHeader"];
   htmlLang: string;
+  languageMenu: LanguageMenuConfig;
 }>;
 
 export function SiteRootShell({
+  accountMessages,
   children,
   footerMessages,
   headerMessages,
   htmlLang,
+  languageMenu,
 }: SiteRootShellProps) {
   const accountAuthConfigured = isAccountAuthConfigured();
   const localizedTagline = headerMessages.tagline;
   const content = (
-    <>
+    <SiteLanguageMenuProvider
+      key={languageMenu.currentLocale}
+      initialMenu={languageMenu}
+    >
       <header className="site-header">
         <Link
           href="/"
@@ -118,7 +129,7 @@ export function SiteRootShell({
         </Link>
         <SiteAccountNav
           authConfigured={accountAuthConfigured}
-          messages={headerMessages}
+          messages={accountMessages ?? headerMessages}
         />
       </header>
       {children}
@@ -143,7 +154,7 @@ export function SiteRootShell({
           <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
         </nav>
       </footer>
-    </>
+    </SiteLanguageMenuProvider>
   );
 
   return (

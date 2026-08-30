@@ -30,6 +30,7 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/(application)/cuenta/layout.tsx",
     "app/(application)/admin/layout.tsx",
     "app/(application)/api/webhooks/clerk/route.ts",
+    "app/(application)/api/account/me/route.ts",
     "app/(catalog)/[catalog]/layout.tsx",
     "app/(catalog)/[catalog]/page.tsx",
     "app/(catalog)/[catalog]/[area]/page.tsx",
@@ -92,6 +93,8 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.match(shell, /import "\.\.\/globals\.css"/);
   assert.match(shell, /design\/foundations\/tokens\.css/);
   assert.match(shell, /design\/adapters\/web\.css/);
+  assert.match(shell, /SiteLanguageMenuProvider/);
+  assert.match(shell, /messages=\{accountMessages \?\? headerMessages\}/);
 
   for (const rootLayout of [applicationRoot, catalogRoot]) {
     assert.doesNotMatch(
@@ -102,6 +105,31 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   }
 
   assert.match(applicationRoot, /htmlLang="en"/);
+  assert.match(applicationRoot, /accountMessages=\{presentation\.messages\.siteHeader\}/);
+  assert.match(applicationRoot, /SUPPORTED_LOCALES\.map/);
+});
+
+test("the shared account menu keeps identity, language and account actions separate", () => {
+  const accountMenu = readRepositoryFile(
+    "components/account/site-account-nav.tsx",
+  );
+  const accountIdentity = readRepositoryFile(
+    "app/(application)/api/account/me/route.ts",
+  );
+  const map = readRepositoryFile("components/map/producers-map-inner.tsx");
+
+  assert.match(accountMenu, /<details className="site-account-menu"/);
+  assert.match(accountMenu, /messages\.greeting/);
+  assert.match(accountMenu, /ACCOUNT_ROUTES\.favorites/);
+  assert.match(accountMenu, /SignOutButton/);
+  assert.match(accountMenu, /useLanguageMenu\(\)/);
+  assert.match(accountMenu, /fetch\("\/api\/account\/me"/);
+  assert.match(accountMenu, /event\.key === "Escape"/);
+  assert.match(accountMenu, /document\.addEventListener\("pointerdown"/);
+  assert.match(accountIdentity, /getCurrentAccount\(\)\.catch/);
+  assert.match(accountIdentity, /"Cache-Control": "private, no-store"/);
+  assert.match(map, /radius=\{highlighted \? 4 : 3\}/);
+  assert.match(map, /fillColor: "var\(--chisan-color-moss-dark\)"/);
 });
 
 test("the catalog root derives document language only from the async URL scope", () => {

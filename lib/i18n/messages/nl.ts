@@ -6,7 +6,8 @@ const messages = {
   siteHeader: {
     tagline: "Lokaal eten, verbonden",
     accountNavigation: "Account", signIn: "Inloggen", register: "Registreren",
-    myAccount: "Mijn account", signOut: "Uitloggen",
+    myAccount: "Mijn account", greeting: "Hallo, {name}",
+    favorites: "Favorieten", signOut: "Uitloggen",
   },
   siteFooter: {
     navigation: "Navigatie in de voettekst", aboutLink: "Ons doel", catalogLink: "Producentencatalogus",

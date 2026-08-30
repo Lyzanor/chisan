@@ -9,6 +9,8 @@ const messages = {
     signIn: "Ngena",
     register: "Bhalisa",
     myAccount: "Iakhawunti yam",
+    greeting: "Molo, {name}",
+    favorites: "Ezithandwayo",
     signOut: "Phuma",
   },
   siteFooter: {

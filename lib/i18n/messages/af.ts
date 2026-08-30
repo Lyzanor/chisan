@@ -9,6 +9,8 @@ const messages = {
     signIn: "Meld aan",
     register: "Registreer",
     myAccount: "My rekening",
+    greeting: "Hallo, {name}",
+    favorites: "Gunstelinge",
     signOut: "Meld af",
   },
   siteFooter: {

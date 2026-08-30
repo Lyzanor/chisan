@@ -9,6 +9,8 @@ const messages = {
     signIn: "ছাইন ইন",
     register: "পঞ্জীয়ন",
     myAccount: "মোৰ একাউণ্ট",
+    greeting: "নমস্কাৰ, {name}",
+    favorites: "প্ৰিয়সমূহ",
     signOut: "ছাইন আউট",
   },
   siteFooter: {
