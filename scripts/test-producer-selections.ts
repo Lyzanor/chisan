@@ -9,6 +9,7 @@ function producer(
   producerId: number,
   area: string,
   slug: string,
+  country = "es",
 ): LocatedProducerCsvRow {
   return {
     producerId,
@@ -23,7 +24,7 @@ function producer(
     latitude: 40 + producerId / 100,
     longitude: -3,
     fields: {},
-    country: "es",
+    country,
     region: area === "barcelona" ? "catalunya" : "madrid",
     area,
   };
@@ -50,4 +51,16 @@ test("producer selection items retain distinct current links across areas", () =
 
 test("producer selections can fit producers across countries", () => {
   assert.ok(PRODUCER_SELECTION_MIN_ZOOM <= 2);
+});
+
+test("public producer selections omit standby countries", () => {
+  const items = buildProducerSelectionItems(
+    [
+      producer(43, "barcelona", "published-producer"),
+      producer(44, "buenos-aires", "standby-producer", "ar"),
+    ],
+    { explicitLocale: null, locale: "en" },
+  );
+
+  assert.deepEqual(items.map(({ key }) => key), ["es:43"]);
 });

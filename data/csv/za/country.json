@@ -1,5 +1,6 @@
 {
   "label": "South Africa",
+  "publicationStatus": "standby",
   "unit": {
     "one": "district",
     "many": "districts"

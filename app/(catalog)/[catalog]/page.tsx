@@ -17,7 +17,7 @@ import {
 import {
   getLocalizedCatalogLabel,
   getLocalizedCatalogUnit,
-  listCountrySlugs,
+  listPublishedCountries,
 } from "@/lib/csv-catalog";
 import { buildCatalogScope, resolveDestinationLocale } from "@/lib/i18n/catalog-scope";
 import type { Locale } from "@/lib/i18n/locales";
@@ -30,7 +30,7 @@ type CountryPageProps = {
 };
 
 export function generateStaticParams() {
-  return listCountrySlugs().map((catalog) => ({ catalog }));
+  return listPublishedCountries().map(({ slug: catalog }) => ({ catalog }));
 }
 
 function capitalizeLabel(value: string, locale: Locale): string {

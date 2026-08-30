@@ -25,6 +25,7 @@ type ManifestLocalePolicy = {
 };
 
 type CatalogRedirectManifest = {
+  publicationStatus?: unknown;
   aliases?: unknown;
   i18n?: {
     defaultLocale?: unknown;
@@ -32,6 +33,8 @@ type CatalogRedirectManifest = {
   };
   regions?: unknown;
 };
+
+type CountryPublicationStatus = "published" | "standby";
 
 type ManifestRegion = {
   slug?: unknown;
@@ -46,6 +49,19 @@ type ManifestArea = {
 
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
 const ROUTE_SEGMENT_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+function readPublicationStatus(
+  value: unknown,
+  owner: string,
+): CountryPublicationStatus {
+  if (value === undefined) return "published";
+  if (value !== "published" && value !== "standby") {
+    throw new Error(
+      `${owner}: publicationStatus must be either 'published' or 'standby'`,
+    );
+  }
+  return value;
+}
 
 function assertRouteSegment(value: unknown, owner: string): string {
   if (typeof value !== "string" || !ROUTE_SEGMENT_PATTERN.test(value)) {
@@ -102,7 +118,7 @@ function readAliases(value: unknown, owner: string): Record<string, string> {
 export function loadCatalogRedirectCountries(
   csvRoot: string = path.resolve(process.cwd(), "data/csv"),
 ): CatalogRedirectCountry[] {
-  return fs
+  const countries = fs
     .readdirSync(csvRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
@@ -116,6 +132,10 @@ export function loadCatalogRedirectCountries(
       const manifest = JSON.parse(
         fs.readFileSync(manifestPath, "utf8"),
       ) as CatalogRedirectManifest;
+      const publicationStatus = readPublicationStatus(
+        manifest.publicationStatus,
+        manifestPath,
+      );
       const defaultLocale = manifest.i18n?.defaultLocale;
       if (!hasLocale(defaultLocale)) {
         throw new Error(`${manifestPath}: i18n.defaultLocale is required`);
@@ -187,11 +207,17 @@ export function loadCatalogRedirectCountries(
 
       return {
         slug: countrySlug,
+        publicationStatus,
         defaultLocale,
         aliases,
         areas,
       };
     });
+
+  return countries.flatMap((country) => {
+    const { publicationStatus, ...publishedCountry } = country;
+    return publicationStatus === "published" ? [publishedCountry] : [];
+  });
 }
 
 function catalogScope(country: CatalogRedirectCountry, locale: Locale): string {

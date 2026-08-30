@@ -1,5 +1,6 @@
 {
   "label": "Argentina",
+  "publicationStatus": "standby",
   "unit": {
     "one": "provincia",
     "many": "provincias"

@@ -6,7 +6,7 @@ import {
   type CatalogMetadataTarget,
 } from "./catalog-metadata";
 import {
-  listCountries,
+  listPublishedCountries,
   listProducerRouteParams,
   type AreaLocation,
   type Country,
@@ -51,7 +51,7 @@ function appendCatalogTarget(
 }
 
 async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
-  const countries = listCountries();
+  const countries = listPublishedCountries();
   const countryBySlug = new Map(countries.map((country) => [country.slug, country]));
   const areas = countries.flatMap(listCountryAreas);
   const areaByKey = new Map(
@@ -92,7 +92,7 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
     }
   }
 
-  for (const route of await listProducerRouteParams()) {
+  for (const route of await listProducerRouteParams(countries)) {
     const country = countryBySlug.get(route.country);
     const area = areaByKey.get(areaRegistryKey(route.country, route.area));
     if (!country || !area) {

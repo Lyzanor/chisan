@@ -1,6 +1,8 @@
 # India
 
 ## Operating state
+- Public catalog status: standby. Keep the catalog, evidence and editorial
+  workflows maintained, but do not publish or index this country.
 - Priorities: re-verification, exact productive-unit geolocation and image
   enrichment for admitted rows, with discovery opened only as a concrete area
   batch.

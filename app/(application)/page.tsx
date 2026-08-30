@@ -13,7 +13,7 @@ import {
   CATALOG_UNIT,
   getLocalizedCatalogLabel,
   getLocalizedCatalogUnit,
-  listCountries,
+  listPublishedCountries,
 } from "@/lib/csv-catalog";
 import {
   buildCatalogScope,
@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-type Countries = ReturnType<typeof listCountries>;
+type Countries = ReturnType<typeof listPublishedCountries>;
 
 function CountryStart({
   countries,
@@ -176,7 +176,7 @@ function CountryStart({
 }
 
 export default async function HomePage() {
-  const countries = listCountries();
+  const countries = listPublishedCountries();
   const locationAreas = listEnabledLocationAreas({
     countries,
     locale: HOME_LOCALE,

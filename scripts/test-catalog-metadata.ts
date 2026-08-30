@@ -17,7 +17,7 @@ import {
   type CatalogSitemapEntry,
 } from "../lib/catalog-sitemap";
 import {
-  listCountries,
+  listPublishedCountries,
   listProducerRouteParams,
   type AreaOption,
 } from "../lib/csv-catalog";
@@ -119,7 +119,7 @@ test("localized metadata shares canonical and alternate state with social cards"
 
 function listAreaPolicies(): Map<string, AreaOption> {
   return new Map(
-    listCountries().flatMap((country) =>
+    listPublishedCountries().flatMap((country) =>
       country.regions.flatMap((region) =>
         region.areas.map(
           (area) => [`${country.slug}/${area.slug}`, area] as const,
@@ -132,9 +132,9 @@ function listAreaPolicies(): Map<string, AreaOption> {
 test("sitemap count matches effective locale policies and every alternate is reciprocal", async () => {
   const [entries, producerRoutes] = await Promise.all([
     listCatalogSitemapEntries(),
-    listProducerRouteParams(),
+    listProducerRouteParams(listPublishedCountries()),
   ]);
-  const countries = listCountries();
+  const countries = listPublishedCountries();
   const areaPolicies = listAreaPolicies();
   const countryCount = countries.reduce(
     (count, country) => count + country.publishedLocales.length,
@@ -189,6 +189,16 @@ test("sitemap count matches effective locale policies and every alternate is rec
     entryByUrl.get("https://chisan.app/our-purpose")?.alternates?.languages,
     { en: "https://chisan.app/our-purpose" },
   );
+  for (const countrySlug of ["ar", "in", "za"]) {
+    assert.ok(
+      entries.every(
+        ({ url }) => !new URL(url).pathname.match(
+          new RegExp(`^/(?:[a-z]{2,3}-)?${countrySlug}(?:/|$)`),
+        ),
+      ),
+      `Standby country '${countrySlug}' leaked into the sitemap.`,
+    );
+  }
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/privacy")?.alternates?.languages,
     { en: "https://chisan.app/privacy" },

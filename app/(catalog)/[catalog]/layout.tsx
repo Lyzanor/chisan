@@ -6,7 +6,7 @@ import {
   SITE_VIEWPORT,
   SiteRootShell,
 } from "@/app/_components/site-root-shell";
-import { listCountries } from "@/lib/csv-catalog";
+import { listPublishedCountries } from "@/lib/csv-catalog";
 import { parseCatalogScope } from "@/lib/i18n/catalog-scope";
 import { loadMessages } from "@/lib/i18n/messages";
 
@@ -23,11 +23,11 @@ export default async function CatalogRootLayout({
   params,
 }: CatalogRootLayoutProps) {
   const { catalog } = await params;
-  const scope = parseCatalogScope(catalog, listCountries());
+  const scope = parseCatalogScope(catalog, listPublishedCountries());
 
-  // Publication remains a page-level decision: the root only recognizes the
-  // URL scope. Invalid scopes use a deterministic English fallback while a
-  // descendant rejects them; no request preference can change a catalog URL.
+  // The root recognizes only publicly visible country scopes. Descendants still
+  // enforce locale publication at their own depth; invalid or standby scopes use
+  // a deterministic English fallback before the page returns 404.
   const locale = scope?.locale ?? "en";
   const htmlLang = scope?.htmlLang ?? "en";
   const messages = await loadMessages(locale);

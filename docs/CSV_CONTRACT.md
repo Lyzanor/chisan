@@ -69,6 +69,7 @@ The localized manifest schema is:
 | Path                                      | Type and meaning                                                                                                                                                 |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `label`                                   | Required non-empty canonical country label.                                                                                                                      |
+| `publicationStatus`                       | Optional exact `published` or `standby`; omission means `published`. `standby` pauses every public country route without removing catalog or workflow state.     |
 | `unit`                                    | Required `{ "one": string, "many": string }` base names for the area level.                                                                                      |
 | `regionUnit`                              | Required `{ "one": string, "many": string }` base names for the region level.                                                                                    |
 | `i18n.defaultLocale`                      | Required supported presentation locale; it owns the short `/<country>` scope.                                                                                    |
@@ -123,10 +124,11 @@ published below them, even when the country landing does not publish every one
 of those locales.
 
 The neutral application shell uses `APPLICATION_DEFAULT_LOCALE` while it lists
-every country, region and area. Consequently that locale's country, region and
-area labels and both country unit-name pairs are mandatory throughout the tree,
-even where the locale is not published as a catalog route. This is an explicit
-consumer requirement, not a fallback to the legacy single `label` fields.
+every publicly `published` country, region and area. The same locale's country,
+region and area labels and both country unit-name pairs remain mandatory
+throughout the full tree, including `standby` countries, because editorial and
+account workflows continue to load them. This is an explicit consumer
+requirement, not a fallback to the legacy single `label` fields.
 
 When a selector lists sibling regions or areas that do not publish the current
 page locale, each destination is labelled in the locale that its link will
@@ -560,12 +562,18 @@ locale URL. Destination selection uses this order:
 4. generic English when it is published and no visitor language matched;
 5. the country default.
 
-Publication is one completeness decision, not a routing-only switch. A locale
-is added to an effective `publishedLocales` list only after its dictionaries,
-territorial and unit labels, controlled-value labels, metadata templates and
-current description variants are complete for that exact scope. The manifest
-policy drives routes, selectors, alternates and sitemap enumeration; do not
-maintain a second release list in code.
+Publication is one completeness decision, not a routing-only switch. A country
+with `publicationStatus=standby` remains in the CSV registry and every
+editorial, evidence and account workflow, but it is absent from public
+selectors, route resolution, compatibility rewrites, language alternates and
+sitemaps; direct catalog requests return 404. Restoring `published` reuses the
+maintained catalog and locale policy without a data migration. Within a
+published country, a locale is added to an effective `publishedLocales` list
+only after its dictionaries, territorial and unit labels, controlled-value
+labels, metadata templates and current description variants are complete for
+that exact scope. The manifest's country publication status and locale policy
+drive routes, selectors, alternates and sitemap enumeration; do not maintain a
+second release list in code.
 
 Each real published page has localized title, description, Open Graph and
 Twitter metadata and a self-referential canonical URL without `category` or
@@ -618,8 +626,9 @@ English, when published, is an ordinary explicit alternate.
 
 The sitemap uses the same canonical/alternate builder as HTML metadata and
 contains only `/`, canonical short defaults and complete published composite
-variants. It excludes redundant default composites, filtered/highlight URLs,
-unpublished or incomplete variants and application, account and admin routes.
+variants. It excludes `standby` countries, redundant default composites,
+filtered/highlight URLs, unpublished or incomplete variants and application,
+account and admin routes.
 Shards keep a safety margin below the 50,000-URL protocol limit; the maintained
 ceiling is currently 40,000 entries. The public-discovery flag applies
 consistently to every locale's robots, indexing metadata and sitemap exposure.

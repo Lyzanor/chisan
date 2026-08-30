@@ -11,7 +11,9 @@ import {
   readCatalogQueryContext,
 } from "../lib/catalog-navigation";
 import {
+  isCatalogCountryPublished,
   listCountries,
+  listPublishedCountries,
   loadCountries,
   parseProducerCsvRows,
   type AreaOption,
@@ -366,6 +368,24 @@ test("neutral manual selection can render the complete registry in English", () 
   );
 });
 
+test("standby countries stay in the registry but leave every public country list", () => {
+  const countries = new Map(
+    listCountries().map((country) => [country.slug, country]),
+  );
+  const publishedSlugs = new Set(
+    listPublishedCountries().map(({ slug }) => slug),
+  );
+
+  for (const countrySlug of ["ar", "in", "za"]) {
+    const country = countries.get(countrySlug);
+    assert.ok(country, `${countrySlug} must remain in the CSV registry`);
+    assert.equal(country.publicationStatus, "standby");
+    assert.equal(isCatalogCountryPublished(country), false);
+    assert.equal(publishedSlugs.has(countrySlug), false);
+  }
+  assert.equal(isCatalogCountryPublished(countries.get("es")!), true);
+});
+
 test("explicit and browser preferences parse without becoming catalog identity", () => {
   assert.equal(EXPLICIT_LOCALE_COOKIE, "chisan_locale");
   assert.equal(parseExplicitLocale("ca"), "ca");
@@ -405,6 +425,23 @@ test("manifests without an explicit locale policy are rejected", (context) => {
   fs.writeFileSync(path.join(regionDir, "braga.csv"), "");
 
   assert.throws(() => loadCountries(root), /i18n\.defaultLocale is required/);
+});
+
+test("country publication status rejects ambiguous visibility tokens", (context) => {
+  const root = fixtureRegistry("valid-defaults.json");
+  context.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const manifestPath = path.join(root, "es", "country.json");
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as Record<
+    string,
+    unknown
+  >;
+  manifest.publicationStatus = "hidden";
+  fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+
+  assert.throws(
+    () => loadCountries(root),
+    /publicationStatus must be either 'published' or 'standby'/,
+  );
 });
 
 test("manifest declarations cannot create regions or areas outside the CSV tree", (context) => {

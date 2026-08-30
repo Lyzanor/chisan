@@ -1,7 +1,10 @@
 import "server-only";
 
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
-import type { LocatedProducerCsvRow } from "@/lib/csv-catalog";
+import {
+  findPublishedCountry,
+  type LocatedProducerCsvRow,
+} from "@/lib/csv-catalog";
 import { getCategoryLabel } from "@/lib/i18n/categories";
 import type { Locale } from "@/lib/i18n/locales";
 import {
@@ -14,7 +17,7 @@ export function buildProducerSelectionItems(
   presentation: { explicitLocale: Locale | null; locale: Locale },
 ): ProducerSelectionItem[] {
   return producers.flatMap((producer) => {
-    if (!producer) return [];
+    if (!producer || !findPublishedCountry(producer.country)) return [];
 
     return [
       {

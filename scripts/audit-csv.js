@@ -82,6 +82,7 @@ const COUNTRY_GUIDE_HEADINGS = [
   "## Country rules",
   "## Source ceilings",
 ];
+const COUNTRY_PUBLICATION_STATUSES = new Set(["published", "standby"]);
 // Keep these sets aligned with lib/i18n/locales.ts. Presentation locales can
 // activate routes and manifest requirements; source-only locales can describe
 // canonical prose without doing so. The audit is plain Node.js so it keeps an
@@ -424,6 +425,14 @@ function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
   }
   if (typeof manifest.label !== "string" || !manifest.label.trim()) {
     errors.push(`${countryOwner} label must be a non-empty string`);
+  }
+  if (
+    manifest.publicationStatus !== undefined &&
+    !COUNTRY_PUBLICATION_STATUSES.has(manifest.publicationStatus)
+  ) {
+    errors.push(
+      `${countryOwner} publicationStatus must be either 'published' or 'standby'`,
+    );
   }
   validateBaseUnit(manifest.unit, "unit", countryOwner, errors);
   validateBaseUnit(manifest.regionUnit, "regionUnit", countryOwner, errors);

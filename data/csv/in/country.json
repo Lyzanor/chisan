@@ -1,5 +1,6 @@
 {
   "label": "India",
+  "publicationStatus": "standby",
   "unit": {
     "one": "state or union territory",
     "many": "states and union territories"

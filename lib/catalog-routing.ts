@@ -2,11 +2,11 @@ import "server-only";
 
 import {
   findArea,
-  findCountry,
+  findPublishedCountry,
   findProducerById,
   findProducerBySlug,
   findProducerRouteAlias,
-  listCountries,
+  listPublishedCountries,
   normalizeAreaSlug,
   type AreaLocation,
   type Country,
@@ -31,10 +31,10 @@ export type ResolvedProducerCatalog = ResolvedAreaCatalog & {
 };
 
 export function resolveKnownCatalogScope(catalog: string): ResolvedCountryCatalog | null {
-  const scope = parseCatalogScope(catalog, listCountries());
+  const scope = parseCatalogScope(catalog, listPublishedCountries());
   if (!scope) return null;
 
-  const country = findCountry(scope.country);
+  const country = findPublishedCountry(scope.country);
   if (!country) return null;
 
   return { scope, country };
@@ -53,10 +53,10 @@ export function resolveAreaCatalog(
   catalog: string,
   rawArea: string,
 ): ResolvedAreaCatalog | null {
-  const scope = parseCatalogScope(catalog, listCountries());
+  const scope = parseCatalogScope(catalog, listPublishedCountries());
   if (!scope) return null;
 
-  const country = findCountry(scope.country);
+  const country = findPublishedCountry(scope.country);
   const area = country ? normalizeAreaSlug(country.slug, rawArea) : "";
   const areaOption = country && area ? findArea(country.slug, area) : null;
   if (!country || !area || !areaOption || !areaOption.publishedLocales.includes(scope.locale)) {

@@ -187,6 +187,9 @@ async function main() {
   if (
     publicSitemap.length < 1_000 ||
     publicSitemap.some(({ url }) => !url.startsWith("https://chisan.app/")) ||
+    publicSitemap.some(({ url }) =>
+      /^\/(?:[a-z]{2,3}-)?(?:ar|in|za)(?:\/|$)/.test(new URL(url).pathname),
+    ) ||
     publicShards.some((shard) => shard.length > 40_000)
   ) {
     throw new Error("Public Production sitemap is incomplete or non-canonical.");
@@ -225,6 +228,13 @@ if [[
   echo "Error: home page should keep JavaScript and no-JavaScript manual area-selection paths." >&2
   exit 1
 fi
+
+for STANDBY_HREF in '/ar' '/in' '/za'; do
+  if [[ "$HTML_HOME_CLEAN" == *"href=\"$STANDBY_HREF\""* ]]; then
+    echo "Error: standby catalog '$STANDBY_HREF' must not appear on the home page." >&2
+    exit 1
+  fi
+done
 
 if [[
   "$HTML_HOME_CLEAN" != *"<title>Chisan · Connecting local food.</title>"* ||
@@ -297,6 +307,14 @@ if [[ "$UNKNOWN_COUNTRY_STATUS" != "404" ]]; then
   echo "Error: unknown country route should 404, got '$UNKNOWN_COUNTRY_STATUS'." >&2
   exit 1
 fi
+
+for STANDBY_SCOPE in ar en-ar in hi-in za af-za; do
+  STANDBY_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/$STANDBY_SCOPE")"
+  if [[ "$STANDBY_STATUS" != "404" ]]; then
+    echo "Error: standby catalog scope '/$STANDBY_SCOPE' should 404, got '$STANDBY_STATUS'." >&2
+    exit 1
+  fi
+done
 
 HTML_ES_NOT_FOUND="$(curl -sS "$BASE_URL/es/area-that-does-not-exist" | sed 's/<!-- -->//g')"
 ES_NOT_FOUND_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/es/area-that-does-not-exist")"

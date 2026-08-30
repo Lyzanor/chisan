@@ -1,6 +1,8 @@
 # South Africa
 
 ## Operating state
+- Public catalog status: standby. Keep the catalog, evidence and editorial
+  workflows maintained, but do not publish or index this country.
 - Priorities: strengthen pending rows with producer-owned sources, resolve
   online sales and replace coarse or missing productive-unit details.
 

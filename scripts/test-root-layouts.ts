@@ -109,7 +109,10 @@ test("the catalog root derives document language only from the async URL scope",
 
   assert.match(catalogRoot, /params: Promise<\{ catalog: string \}>/);
   assert.match(catalogRoot, /const \{ catalog \} = await params/);
-  assert.match(catalogRoot, /parseCatalogScope\(catalog, listCountries\(\)\)/);
+  assert.match(
+    catalogRoot,
+    /parseCatalogScope\(catalog, listPublishedCountries\(\)\)/,
+  );
   assert.match(catalogRoot, /scope\?\.htmlLang \?\? "en"/);
   assert.doesNotMatch(
     catalogRoot,

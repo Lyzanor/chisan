@@ -1,6 +1,8 @@
 # Argentina
 
 ## Operating state
+- Public catalog status: standby. Keep the catalog, evidence and editorial
+  workflows maintained, but do not publish or index this country.
 - Priorities: targeted area discovery, stronger producer-owned evidence for
   directory-seeded rows and resolution of online sales.
 

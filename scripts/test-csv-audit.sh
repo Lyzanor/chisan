@@ -183,6 +183,7 @@ REGISTRY_I18N_INVALID_PAIRS="$TMP_ROOT/registry-i18n-invalid-pairs"
 REGISTRY_I18N_EXCLUDED_DEFAULT="$TMP_ROOT/registry-i18n-excluded-default"
 REGISTRY_I18N_ORPHAN_REGION="$TMP_ROOT/registry-i18n-orphan-region"
 REGISTRY_I18N_ORPHAN_AREA="$TMP_ROOT/registry-i18n-orphan-area"
+REGISTRY_I18N_INVALID_PUBLICATION="$TMP_ROOT/registry-i18n-invalid-publication"
 mkdir -p "$REGISTRY_OK/es/centro" "$REGISTRY_OK/pt/norte"
 mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/es/norte"
 mkdir -p "$REGISTRY_RESERVED/es/centro"
@@ -392,6 +393,14 @@ prepare_i18n_registry "$REGISTRY_I18N_INVALID_PAIRS" "invalid-locale-pairs.json"
 prepare_i18n_registry "$REGISTRY_I18N_EXCLUDED_DEFAULT" "excluded-default.json"
 prepare_i18n_registry "$REGISTRY_I18N_ORPHAN_REGION" "orphan-region.json"
 prepare_i18n_registry "$REGISTRY_I18N_ORPHAN_AREA" "orphan-area.json"
+prepare_i18n_registry "$REGISTRY_I18N_INVALID_PUBLICATION" "valid-defaults.json"
+node - "$REGISTRY_I18N_INVALID_PUBLICATION/es/country.json" <<'NODE'
+const fs = require("node:fs");
+const manifestPath = process.argv[2];
+const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+manifest.publicationStatus = "hidden";
+fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+NODE
 
 run_expect_success "$TMP_ROOT/out-registry-i18n-valid.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_VALID"
@@ -430,6 +439,11 @@ run_expect_failure "$TMP_ROOT/out-registry-i18n-orphan-area.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_ORPHAN_AREA"
 grep -q "declares area 'invented-area' outside the CSV tree" \
   "$TMP_ROOT/out-registry-i18n-orphan-area.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-i18n-invalid-publication.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_INVALID_PUBLICATION"
+grep -q "publicationStatus must be either 'published' or 'standby'" \
+  "$TMP_ROOT/out-registry-i18n-invalid-publication.txt"
 
 cat >"$TMP_DIR/missing-column.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,verificacion

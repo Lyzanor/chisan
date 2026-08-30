@@ -61,6 +61,10 @@ test("repository manifests produce unique static normalization sources", () => {
   );
 
   assert.equal(rewrites.length, countries.length + aliasCount);
+  assert.ok(
+    countries.every(({ slug }) => !["ar", "in", "za"].includes(slug)),
+    "standby countries must not install public normalization rewrites",
+  );
   assert.ok(rewrites.length < 1_024, "catalog rewrites must stay below Vercel's limit");
   assert.equal(new Set(sources).size, sources.length);
   assert.ok(

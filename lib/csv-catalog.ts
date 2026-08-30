@@ -102,6 +102,7 @@ export type UnitName = {
 
 export type Country = EffectiveLocalePolicy & {
   slug: string;
+  publicationStatus: CountryPublicationStatus;
   label: string;
   labels: LocalizedLabels;
   unit: UnitName;
@@ -110,6 +111,8 @@ export type Country = EffectiveLocalePolicy & {
   regionUnitLabels: Partial<Record<Locale, UnitName>>;
   regions: Region[];
 };
+
+export type CountryPublicationStatus = "published" | "standby";
 
 type LocalizedCatalogItem = {
   slug: string;
@@ -150,6 +153,7 @@ export function getLocalizedCatalogUnit(
 export const CATALOG_UNIT: UnitName = { one: "area", many: "areas" };
 
 type CountryManifest = {
+  publicationStatus?: unknown;
   label: string;
   unit: UnitName;
   regionUnit: UnitName;
@@ -181,6 +185,19 @@ type CountryManifest = {
     }[];
   }[];
 };
+
+function countryPublicationStatus(
+  value: unknown,
+  owner: string,
+): CountryPublicationStatus {
+  if (value === undefined) return "published";
+  if (value !== "published" && value !== "standby") {
+    throw new Error(
+      `${owner}: publicationStatus must be either 'published' or 'standby'`,
+    );
+  }
+  return value;
+}
 
 type AreaRegistryEntry = AreaOption & {
   countrySlug: string;
@@ -354,6 +371,10 @@ export function loadCountries(
     const manifest = JSON.parse(
       fs.readFileSync(manifestPath, "utf8"),
     ) as CountryManifest;
+    const publicationStatus = countryPublicationStatus(
+      manifest.publicationStatus,
+      manifestPath,
+    );
     if (
       !manifest.label ||
       !manifest.unit?.one ||
@@ -524,6 +545,7 @@ export function loadCountries(
 
     return {
       slug: countrySlug,
+      publicationStatus,
       label: countryLabel,
       labels: localizedLabels(
         manifest.i18n.labels,
@@ -714,9 +736,24 @@ export function listCountries(): Country[] {
   return COUNTRIES;
 }
 
+export function isCatalogCountryPublished(
+  country: Pick<Country, "publicationStatus">,
+): boolean {
+  return country.publicationStatus === "published";
+}
+
+export function listPublishedCountries(): Country[] {
+  return COUNTRIES.filter(isCatalogCountryPublished);
+}
+
 export function findCountry(country: string): Country | null {
   const normalized = cleanCell(country).toLowerCase();
   return COUNTRIES.find((entry) => entry.slug === normalized) ?? null;
+}
+
+export function findPublishedCountry(country: string): Country | null {
+  const match = findCountry(country);
+  return match && isCatalogCountryPublished(match) ? match : null;
 }
 
 export function listCountrySlugs(): string[] {
@@ -1263,14 +1300,26 @@ export async function findProducerBySlug(
   return rows.find((row) => row.slug === segment) ?? null;
 }
 
-export async function listProducerRouteParams(): Promise<
+export async function listProducerRouteParams(
+  countries: readonly Country[] = COUNTRIES,
+): Promise<
   { country: string; area: string; slug: string }[]
 > {
   const routes: { country: string; area: string; slug: string }[] = [];
 
-  for (const { country, area } of listCountryAreaParams()) {
-    const rows = await loadCsvRows(country, area);
-    routes.push(...rows.map((row) => ({ country, area, slug: row.slug })));
+  for (const country of countries) {
+    for (const region of country.regions) {
+      for (const area of region.areas) {
+        const rows = await loadCsvRows(country.slug, area.slug);
+        routes.push(
+          ...rows.map((row) => ({
+            country: country.slug,
+            area: area.slug,
+            slug: row.slug,
+          })),
+        );
+      }
+    }
   }
 
   return routes;
