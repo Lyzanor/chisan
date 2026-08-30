@@ -119,9 +119,9 @@ automatically between countries.
 | Evidence records or actions | `docs/EVIDENCE_CONTRACT.md` | `npx pnpm verify:data` |
 | Coordinates or Google Maps | `docs/GEOLOCATION.md` | `npx pnpm verify:data` |
 | Producer images | `docs/IMAGES.md` | `npx pnpm verify:data` |
-| Localized descriptions, translation sidecars, locale labels, or catalog scopes | `docs/CSV_CONTRACT.md`, `docs/EDITORIAL.md` and the affected routing contract | `npx pnpm verify:ai`; data-only translation batches may use `verify:data` once supported |
+| Localized descriptions or translation sidecars | `docs/CSV_CONTRACT.md` and `docs/EDITORIAL.md` | `npx pnpm verify:data` for data-only batches; `verify:ai` for manifest, routing, policy or behavior |
 | Device-location onboarding or catalog-area boundaries | `docs/LOCATION_ROUTING.md` | `npx pnpm verify:ai` |
-| Public user maps or other pages selecting concrete producers | `docs/PRODUCER_SELECTION_PAGES.md`, then the owning account/event/editorial contract | `npx pnpm verify:ai` |
+| Public user profiles and their producer selections | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
 | Accounts, ownership, memberships, entitlements, gifts, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
 | Payment-adapter implementation or activation | `docs/ACCOUNT_SYSTEM.md`, then `docs/OPERATIONS.md` | `npx pnpm verify:ai`, then the Operations preflight |
 | Environment, secrets, deploy, rollback, or backups | `docs/OPERATIONS.md` | Follow its preflight and smoke checks |
@@ -129,9 +129,12 @@ automatically between countries.
 | Code, scripts, documentation, policy, or behavior | Owning contract | `npx pnpm verify:ai` |
 
 While iterating on data, use `npx pnpm check:csv:changed` and
-`npx pnpm check:evidence:changed`. `check:defects` is an advisory worklist, not
-stored state or a publication gate. Use `npx pnpm list:producers <area>` for an
-area-scoped roster and de-duplication pass.
+`npx pnpm check:evidence:changed`; add `npx pnpm check:translations:changed`
+when canonical prose or sidecars change, and `npx pnpm check:images` when assets
+change. Finish a data batch with `npx pnpm verify:data`. `check:defects` is an
+advisory worklist, not stored state or a publication gate. Use
+`npx pnpm list:producers <area>` for an area-scoped roster and de-duplication
+pass.
 
 ## Working safely
 

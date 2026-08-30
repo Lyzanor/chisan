@@ -109,12 +109,12 @@ calls a translation provider at request time.
 3. Run `npx pnpm verify:ai`. A data-only release may use
    `npx pnpm verify:data`, but any code, validator, policy, migration or account
    change requires the full gate.
-4. Run `npx pnpm db:check`. When accounts are enabled in the target environment,
-   run the read-only `npx pnpm db:assert-current` with an explicit current direct
-   `DATABASE_URL`, or open `/admin/sistema` to run the same contract through the
-   deployed application role. Do not use `vercel env run` for this assertion:
-   sensitive database-integration variables are intentionally not exported to
-   local processes and a local `.env` value could otherwise be mistaken for the
+4. When accounts are enabled in the target environment, run the read-only
+   `npx pnpm db:assert-current` with an explicit current direct `DATABASE_URL`,
+   or open `/admin/sistema` to run the same contract through the deployed
+   application role. Do not use `vercel env run` for this assertion: sensitive
+   database-integration variables are intentionally not exported to local
+   processes and a local `.env` value could otherwise be mistaken for the
    Production connection.
 5. Confirm Production has the Chisan domain, Production Clerk keys, signed
    Clerk webhook secret, Production database URLs and the canonical app origin.
@@ -162,9 +162,8 @@ Before publishing or changing one locale:
    Confirm selector, `hreflang` and sitemap enumeration derive from that same
    effective manifest policy rather than a manual release list.
 6. Run `npx pnpm verify:ai` for manifest, routing, contract or behavior changes.
-   Once translation checks are part of the data gate, a sidecar-only batch may
-   close with `npx pnpm verify:data`; use changed-only translation checks while
-   iterating.
+   A sidecar-only data batch may close with `npx pnpm verify:data`; use
+   changed-only translation checks while iterating.
 
 Before selecting or changing the automatic translation engine, build a fresh
 source-only benchmark plan and generate candidates into an ignored local path:
@@ -293,8 +292,8 @@ Activation requires all of the following, created only after those decisions:
    with payment-adapter entitlements issued through Stripe and open commercial
    requests.
 7. Create and inspect Live resources while the Production flag remains false.
-8. Run `npx pnpm verify:ai`, `npx pnpm db:assert-current`, backup, preflight and
-   smoke checks against the intended release.
+8. Take a recoverable backup, then complete the preflight and smoke checks for
+   the intended release.
 9. Record an explicit go/no-go decision with named operational owners.
 10. Only after go, set the Production flag to `true` and create a new Production
     deployment. A configuration change does not alter an existing deployment.

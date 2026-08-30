@@ -2,21 +2,19 @@
 
 ## Purpose
 
-`data/csv/**` is the only producer-data source of truth and the only layer read
-by the app. `data/evidence/**` records what a decision rested on: which sources
-were opened, what each one proves, and when it was seen. It never repeats what
-the CSV already states, never records what Git already knows, and never
-overrides either. Editorial meaning belongs in `docs/EDITORIAL.md`.
+The CSV publishes producer facts, evidence records the sources behind editorial
+decisions, and Git records authorship and earlier states. Evidence never
+overrides the CSV or repeats facts already represented there. Editorial meaning
+lives in `docs/EDITORIAL.md`.
 
-Two things live here and nowhere else:
+Evidence uniquely retains:
 
 - **Tombstones.** `reject`, `purge` and `merge` records are the only durable
   trace that a candidate was already resolved. Candidate notes are scratch and
   get pruned; without a tombstone the next pass rediscovers and re-verifies the
   same name.
-- **The source behind a row.** The CSV publishes the producer's own links; the
-  source material that supported the editorial decision is only here, with the
-  date it was checked.
+- **Decision sources.** Each source records what it supports and when it was
+  checked; published producer links remain in the CSV.
 
 ## Storage
 
@@ -27,20 +25,13 @@ data/csv/<country>/<region>/<area>.csv
 data/evidence/<country>/<region>/<area>.jsonl
 ```
 
-Each non-empty JSONL line is one object. A ledger contains at most one current
-record per `slug`; Git keeps earlier versions. Tombstones remain after the row
-is gone, while `keep` records describe rows still present in the matching CSV.
-The durable row key `producer_id` lives only in that CSV row and is not copied
-into evidence.
+Each non-empty JSONL line is one object. A ledger has at most one current record
+per `slug`; later review updates it in place. `keep` requires a current CSV row;
+tombstones remain after removal. `producer_id` stays only in the CSV.
 
-A later review updates that record in place — refreshing `checkedAt` and the
-sources that still apply — instead of appending a second record for the slug.
-
-Historical evidence coverage is advisory: an untouched area or row may have no
-record, and absence alone is not debt to backfill. A newly closed admission,
-rejection, purge or merge normally leaves the record defined by
-`docs/EDITORIAL.md`. Structure is never advisory: a malformed record fails
-`check:evidence`.
+Historical coverage is advisory and absence alone is not backfill debt. New
+closed decisions normally leave the record required by `docs/EDITORIAL.md`.
+Structure is mandatory: malformed evidence fails `check:evidence`.
 
 ## Record
 
@@ -63,20 +54,9 @@ Each source:
 | `claims` | Non-empty, duplicate-free array of allowed claims |
 | `note` | Optional fact about this source |
 
-Unknown fields are errors. Four of them are deliberate exclusions:
-
-| Not in the record | Because it already lives in |
-|---|---|
-| `decision` (`verificacion`, `Venta online`, `Canal de venta`) | the CSV row, which is the source of truth |
-| `producer_id` | the CSV row; it identifies the current published unit rather than describe a source decision |
-| `reviewedBy` | `git log` / `git blame` |
-| `reviewedAt` | the sources' `checkedAt`, which is the fact — the date the proof was seen |
-
-```json
-{"slug":"example-producer","action":"keep","sources":[{"url":"https://example.com/shop","type":"official-store","checkedAt":"2026-06-15","claims":["identity","producer-activity","municipality","online-sales"]}]}
-{"slug":"example-candidate","action":"reject","reason":"not-producer","sources":[{"url":"https://example.org/listing","type":"institutional-directory","checkedAt":"2026-06-15","claims":["identity","scope"]}]}
-{"slug":"old-slug","action":"merge","targetSlug":"current-slug","sources":[{"url":"https://example.com/","type":"official-site","checkedAt":"2026-06-15","claims":["identity","duplicate"]}]}
-```
+Unknown fields are errors. Do not copy CSV decisions or `producer_id`, Git
+authorship, or a separate review timestamp into evidence; `checkedAt` records
+when each source was seen.
 
 ## Actions
 
@@ -89,15 +69,12 @@ Unknown fields are errors. Four of them are deliberate exclusions:
 
 Use `reject` for a definitively excluded candidate that never entered the CSV,
 and `purge` for a previously published row. Insufficient evidence is neither:
-the candidate stays open in the candidate note. The validator can confirm
-current CSV absence, not historical publication, so editors own this
-distinction.
+the candidate stays open in its note. Editors own the historical distinction
+because the validator can confirm only current CSV presence.
 
 Use `merge` only when two records were determined to be the same productive
-unit and one row was removed. A pure SEO or spelling rename keeps the same
-`producer_id`: update its `keep.slug` and any `merge.targetSlug` references,
-without manufacturing a duplicate claim or source merely to record the routing
-rename.
+unit and one row was removed. A routing-only rename is not a merge; its identity
+rules live in `docs/CSV_CONTRACT.md`.
 
 ### Exclusion reasons
 
@@ -138,14 +115,9 @@ Allowed values are `official-site`, `official-store`, `official-social`,
 `google-maps`, `public-registry`, `regulatory-council`,
 `institutional-directory`, `marketplace`, `press`, and `other`.
 
-A type does not make every claim reliable or determine `verificacion`: editors
-must still confirm what the source demonstrates and apply `docs/EDITORIAL.md`.
-
-A `google-maps` source is a specific listing that the editor opened and matched
-to the row. A generated text-search URL is a query, not evidence of the result it
-happens to return. A coordinate-only Maps URL is not a listing and is not
-published in `Google Maps`; the upstream address or coordinate source, not
-Google, carries the `location` claim for `lat`/`lon`.
+A type does not make every claim reliable or determine `verificacion`. A
+`google-maps` source is a specific opened and matched listing, never a generated
+search or coordinate-only URL; upstream sources support `lat`/`lon`.
 
 ## Notes
 
@@ -161,8 +133,6 @@ npx pnpm check:evidence
 npx pnpm test:evidence-contract
 ```
 
-The validator checks paths, JSONL shape, allowed fields and values, source URLs
-and dates, claims, action invariants, slug uniqueness, CSV presence or absence
-per action, and merge targets. **Malformed records fail the run**; coverage is
-reported and never fails. A green run proves structural consistency, not factual
+The validator enforces the structure and CSV relationships above. Malformed
+records fail; coverage is advisory. A green run proves consistency, not factual
 truth or complete provenance.

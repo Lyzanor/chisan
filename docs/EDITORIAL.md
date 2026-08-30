@@ -8,8 +8,8 @@ levels used to research and publish those decisions. `docs/CSV_CONTRACT.md`
 defines how published values are represented, and `docs/EVIDENCE_CONTRACT.md`
 defines how their sources and durable negative decisions are stored.
 
-The CSV is the product. Validators can establish structural consistency, not
-editorial truth.
+The CSV catalog is Chisan's canonical public producer record and trust core.
+Validators can establish consistency, not editorial truth.
 
 ## Catalog scope
 
@@ -51,83 +51,46 @@ anonymous group plants and registry entries that identify only a holding,
 facility or certification. The reason is the failed criterion, not the sector
 or business form.
 
-Published descriptions follow the size and content rules in
-`docs/CSV_CONTRACT.md`. Write producer prose, not a verbal copy of the row: a
-sentence that only combines the name, municipality, category and products is a
-template and should be left empty. Rewrite an overlong, contaminated or
-truncated source extract as concise catalog prose; do not merely cut it at the
-character limit. Use the productive municipality when it reads naturally and
-is supported by the row, while keeping location available independently in
-`municipio`.
-
 ## Candidate gate and lifecycle
 
 A registry, directory, article, map result or product listing is a discovery
-signal, not automatic admission. Before adding a row, establish with traceable
-public evidence its identity, qualifying activity, current own offer and
-productive location. If one claim is unknown, keep investigating or hold the
-candidate in its area note; never import a speculative row as `pendiente`. If a
-claim is affirmatively false, reject the candidate. Missing search results or a
-failed fetch prove neither inclusion nor exclusion.
+signal, not automatic admission. Add a row only after public evidence supports:
 
-Admission and full enrichment are separate. The gate also requires a supported
-primary category, a check for permanent closure and a de-duplication decision
-for the productive unit. It does not require every optional CSV field. Because
-an admitted candidate has evidence for all three core verification claims, it
-may enter as `pendiente` when a secondary source or material doubt remains;
-otherwise `verificacion` stays empty.
+1. the producer identity;
+2. qualifying productive activity and a current own offer;
+3. the productive area and municipality;
+4. a primary category; and
+5. no proven permanent closure or duplicate of the same unit.
 
-An authoritative institutional directory that explicitly identifies a
-qualifying producer, its productive municipality and a public phone or email
-can support a usable `pendiente` row without an official website when the other
-admission claims are sufficient. Copy only the fields it publishes, leave `web`
-empty unless an official site is established, and retain `Venta online=no
-comprobado` unless remote sales are separately proven.
+Unknown is not false. Hold an unresolved candidate in its area note with a
+concrete blocker; never publish it speculatively as `pendiente`. Reject only an
+affirmatively disproved candidate. A failed search or fetch proves neither
+inclusion nor exclusion.
 
-Candidate notes are active discovery workspaces, not decision ledgers. Keep
-source sweeps, batch scope, unresolved leads and pending searches in
-`docs/candidates/<country>/<area>.md`. Remove a resolved entry when it is
-accepted, rejected or found already present, while preserving the remaining
-discovery context. Durable entity decisions belong in `data/evidence/**`;
-negative tombstones retain enough sources and facts to avoid reopening the same
-research.
+Admission and full enrichment are separate. An admitted row may lack optional
+fields. It uses `pendiente` when a core claim still depends on secondary evidence
+or retains material doubt; otherwise `verificacion` stays empty. A suitable
+institutional directory can support a `pendiente` row without an official site,
+but only for the claims it actually publishes.
 
-An incidental lead for another area is not itself an `other-area` rejection.
-Route it to the productive area's candidate note when known. Use `other-area`
-only when the proposed placement under review was checked and disproved. If the
-productive area is unknown, hold the lead with its location clues rather than
-guessing a destination.
+Candidate notes are temporary discovery workspaces. Resolved decisions and
+their sources belong in `data/evidence/**`; accepted facts belong in the CSV.
+Route an incidental lead to its productive area when known. Use `other-area`
+only when the proposed placement was checked and disproved, not merely because
+the lead was found elsewhere.
 
 ## Category assignment
 
-Categories describe material output made by the qualifying productive unit,
-not every product associated with its brand, shop, restaurant or visitor offer.
-Assign them only from evidence that supports the relevant production.
+Categories describe material output made by the qualifying unit, not everything
+sold by its brand, shop, restaurant or visitor offer. `categoria` is the best
+single description of its defining activity; `categorias adicionales` records
+other distinct, material product lines made by that same unit.
 
-`categoria` is the required primary category: the best single description of
-the unit's defining or most prominent producer activity. `categorias
-adicionales` records other distinct, material product lines made by that same
-unit. For example, a kura that makes both sake and beer may use `Sake` as its
-primary category and `Cerveza` as an additional one; a mixed farm that produces
-both dairy and eggs may use either as primary according to its public identity
-and record the other as additional.
-
-Apply these boundaries:
-
-- Keep one row, `producer_id`, slug, location and evidence identity for the
-  productive unit; never duplicate it by category.
-- A separately sold product line can support an additional category. A flavour,
-  ingredient, raw input, by-product, tasting-menu item or occasional workshop
-  output does not do so by itself.
-- Products merely resold or stocked alongside the producer's own output do not
-  qualify. A farm shop is not categorised by its third-party assortment.
-- `productos estrella` and `descripcion` may corroborate a category but are not
-  parsed as taxonomy. Confirm each category from a suitable source rather than
-  inferring it mechanically from free text.
-- Use `Otros` only when no registered category fits a qualifying output, not as
-  a substitute for recording several known categories.
-
-Exact values, separators and representation live in `docs/CSV_CONTRACT.md`.
+Keep one row and identity across categories. Do not promote flavours, inputs,
+by-products, occasional outputs or third-party assortment into categories.
+Free text may corroborate a category but never assigns one mechanically. Use
+`Otros` only when no registered category fits. Exact tokens and representation
+live in `docs/CSV_CONTRACT.md`.
 
 ## Decision order
 
@@ -193,93 +156,28 @@ offered by or on behalf of the producer.
 | The producer's current channels were reviewed and no remote-order mechanism is offered | `no` |
 | Not reviewed, ambiguous, inaccessible or temporarily broken | `no comprobado` |
 
-`no` does not require an exhaustive internet search. Review the producer's
-reasonably identifiable first-party channels far enough to determine that none
-offers remote ordering. If a material channel is inaccessible, stale,
-contradictory or unreviewed, prefer `no comprobado`; do not contact the producer
-solely to prove a negative.
-
-An own shop, explicit phone/message/email ordering, subscription or official
-collective storefront may qualify. Independent third-party resale does not: it
-shows availability, not a sales channel operated by or for the producer. A
-catalog, price list, generic contact route or physical point of sale also does
-not establish remote ordering by itself. An inaccessible or broken checkout
-proves neither `no` nor closure.
+Review the producer's reasonably identifiable first-party channels; an own shop,
+explicit remote ordering, subscription or official collective storefront may
+qualify. Third-party resale, a catalog, a generic contact route or a physical
+point of sale does not. If a material channel is inaccessible, stale,
+contradictory or unreviewed, prefer `no comprobado`; a broken checkout proves
+neither `no` nor closure.
 
 `Canal de venta` records the demonstrated mechanism and is filled only when
 `Venta online=sí`, using the values in `docs/CSV_CONTRACT.md`.
 
 ## Canonical language and localized presentation
 
-The canonical `descripcion` is editor-authored producer prose and has an
-explicit per-row source language in `descripcion_locale`. There is no
-one-language-per-country editorial rule: neighboring rows may legitimately
-have different source locales. Choose a suitable local language when authoring
-new prose, but prefer a precise, supportable description over a weaker text
-written merely to satisfy a language target.
+Canonical `descripcion` records its actual per-row source language. Prefer
+precise, supportable prose over a weaker text written to satisfy a country-wide
+language target.
 
-The description-source registry is deliberately broader than Chisan's public
-presentation locales. `gl` and `eu` may identify canonical prose without
-creating a route, cookie, dictionary, manifest locale, sidecar target or
-`hreflang`. Public activation remains a separate reviewed decision.
-
-The canonical area row remains the factual decision. When a description is
-wrong, incomplete or misleading, correct it there and record its actual source
-locale. Do not repair a factual problem only in a translation. A source edit or
-source-locale correction invalidates its generated variants until they are
-regenerated or reviewed against the new source.
-
-Use the advisory source-locale audit to plan a narrow review when a mechanical
-backfill, import or mixed-language area may have recorded the wrong locale:
-
-```bash
-npx pnpm audit:description-locales --country es --declared-locale es \
-  --candidate-locale ca --output /tmp/chisan-es-ca-locale-review.json
-```
-
-The report is deterministic, includes the canonical source hash and can be
-limited by area. It is deliberately kept outside `data/csv/**` and has no apply
-mode. Detection is always unrestricted before any `--candidate-locale` filter,
-so French prose cannot be forced into a Catalan candidate merely because the
-review asks for Catalan. An unregistered detected language is still only a
-review lead, and a registered source-only language still cannot authorize a
-public locale. Scores are relative rankings rather than confidence, and
-low-margin results remain in the report as `ambiguous`.
-
-For exhaustive review, emit a separate roster instead of treating classifier
-agreement or absence from the candidate report as confirmation:
-
-```bash
-npx pnpm audit:description-locales --country es --area barcelona \
-  --full-review-roster --output /tmp/chisan-barcelona-locale-roster.json
-```
-
-The classifier is unreliable on some short or mixed catalog prose, so every
-result is only a candidate for an editor to read. Record any reviewed correction
-in the canonical row and refresh or re-review affected sidecars normally.
-
-Automatic translation is allowed only as versioned, materialized presentation
-under the sidecar contract in `docs/CSV_CONTRACT.md`. It is not evidence and
-does not independently establish producer identity, activity, location,
-products, verification or sales. Generation and review must preserve every
-supported fact, number, URL, proper name, brand and appellation; they must not
-add claims, omit qualifications or turn factual prose into promotion.
-
-The initial automatically translatable field is only `descripcion`.
-Source-authored names, municipality, address, official product names, published
-hours, contacts and links remain unchanged on every language variant; localize
-their interface labels rather than their values. Category and controlled-value
-tokens likewise remain stable storage identifiers with separate display
-labels.
-
-An ordinary generated translation may remain `origin=machine` after the
-language's benchmark and publication sample have been approved. An editor may
-replace exceptional wording and mark that sidecar row `origin=reviewed`.
-Automatic generation never overwrites reviewed text, but reviewed text is still
-tied to the current canonical source and requires renewed review when stale.
-Missing or stale translations are honest incomplete presentation: hold that
-locale variant from indexed publication instead of mixing in prose from a
-different language.
+The area row remains the factual decision: correct factual or source-locale
+errors there, never only in a translation. Translation sidecars are versioned
+presentation, not evidence, and must preserve every supported fact and proper
+name without adding claims. Missing or stale variants remain unpublished rather
+than falling back to prose in another language. The complete locale, sidecar and
+generation contract lives in `docs/CSV_CONTRACT.md`.
 
 ## Evidence principles
 
@@ -300,119 +198,47 @@ different language.
 ## Operating model
 
 The three levels below are kinds of work on an entity, not states assigned to a
-country, area or catalog. One CSV may simultaneously contain discovery leads,
-admission decisions and published rows at different stages of review. Candidate
-notes, CSV rows and evidence records are the handoff artifacts; do not add
-progress columns, status tables or manual inventories that repeat them.
+country, area or catalog. Candidate notes, CSV rows and evidence records are the
+handoff artifacts; do not add progress columns or status inventories that repeat
+them.
 
-### Choosing the focus
-
-A country's `AGENTS.md` `Operating state` supplies shared priorities, source
-ceilings and risks; it never assigns one workflow level to the whole country.
-Choose the next work for a specific candidate or producer:
-
-1. finish the already-open batch and its candidate cutoff;
-2. resolve discovered candidates before expanding the same search;
-3. when a published row's admission is doubtful, confirm that it should exist
-   before enriching it;
-4. open new discovery only with a concrete area, source, category or
-   municipality scope.
-
-This order applies within work that shares context; it does not require emptying
-a national queue before touching another one. Auditor filters select tasks but
-do not permanently classify a producer.
-
-A batch belongs to one level even when an open source exposes useful data for
-the next. Capture explicit incidental facts when the entity match is clear, but
-do not turn the batch into an unlimited search. Findings after the cutoff belong
-to the next batch.
-
-Live queues come from the artifacts, never from a written status summary:
-
-- level 1 and new level-2 admissions:
-  `docs/candidates/<country>/<area>.md`;
-- published level-2 debt:
-  `npx pnpm check:defects --stage admission --country <iso>`;
-- level 3:
-  `npx pnpm check:defects --stage verification --country <iso>` and the area
-  roster from `npx pnpm list:producers <area>`;
-- verified-owner change proposals: the PostgreSQL queue at `/admin/cambios`,
-  which enters level 3 when reviewed.
-
-The auditor prioritizes only signals derivable from stored data. A row with no
-warning is not thereby verified or permanently complete; any roster row may be
-reopened at level 3.
+Work in finite batches with an explicit scope and cutoff. Finish an open batch
+before expanding the same search; when a published row's admission is doubtful,
+confirm eligibility before enriching it. Capture explicit incidental facts from
+an already-open source when the identity match is clear, but leave lateral
+research for another batch. Country priorities and auditor filters select work;
+they never classify a whole country or permanently complete a producer.
 
 ## Level 1 — Discovery
 
 **Objective:** collect concrete, locatable signals of plausible producers, not
 yet prove admission or complete a future profile.
 
-Start from an explicit source and scope. De-duplicate minimally against the CSV
-and area note. An uncertain match remains a level-2 lead rather than triggering
-a second full investigation during discovery.
+Start from an explicit public source and bounded scope, then de-duplicate against
+the CSV and area note. Record only the identity, location clue, likely category,
+reason it may qualify, discovery URL, date and visible doubt required for another
+editor to continue. Do not fill gaps or research the whole future profile.
 
-Use only no-cost public sources and endpoints. Do not add or call an API that
-requires billing or a payment method, including a free tier that can incur
-charges after its quota.
-
-Each candidate records only what another editor needs to continue:
-
-- public name;
-- area and municipality, or the known geographic clue;
-- probable category and the concrete reason it may qualify;
-- at least one public locator: an official site or profile when available and,
-  in every case, the URL that produced the signal;
-- search date and scope;
-- any already-visible material doubt.
-
-Do not fill gaps by intuition, collect every CSV field or open lateral searches
-only to improve the candidate. `docs/candidates/README.md` defines the workspace
-format and treatment of incidental findings.
-
-**Handoff:** a finite batch in the area note with a recorded cutoff. Level 1
-creates neither a CSV row nor a `keep` record, and the candidate does not yet
-assert that the unit is eligible or active.
+Use only no-cost public sources and endpoints that cannot incur charges. The
+handoff is a finite area-note batch under `docs/candidates/README.md`; Level 1
+creates neither a CSV row nor evidence decision.
 
 ## Level 2 — Catalog admission
 
 **Objective:** decide every candidate in the batch and publish only units that
 already meet the editorial admission threshold.
 
-Investigate the admission claims first:
+Apply the candidate gate and decision order above. A new row is never a parked
+candidate: accept it only when the admission claims are sufficient, reject it
+only when an exclusion is proven, or retain one actionable blocker. Capture
+confirmed incidental fields already exposed by the in-scope sources without
+turning admission into full enrichment.
 
-1. public identity and source match;
-2. qualifying productive activity and current own offer;
-3. productive unit in the published area and municipality;
-4. category supported by that activity;
-5. no proven permanent closure or duplicate of the same unit.
-
-A new row is not a parked candidate. If those claims do not reach the threshold,
-retain the candidate with a concrete blocker or reject it when exclusion is
-proven. If they do, also retain explicit contacts, links, address or products
-already exposed by the in-scope sources; admission does not require researching
-every field.
-
-Location must be useful and honest. The productive municipality is part of the
-threshold. Add exact coordinates or a municipality fallback only when supported
-under `docs/GEOLOCATION.md`. If no defensible point exists, empty `lat`/`lon` is
-visible level-3 coverage work, not permission to invent a location.
-
-| Outcome | CSV | Evidence | Candidate note |
-|---|---|---|---|
-| Accepted | Add as `pendiente` when material doubt remains; otherwise leave `verificacion` empty | Create a `keep` with the decision sources | Remove the entry |
-| Already present | Update only confirmed incidental data | Update the existing `keep` when appropriate | Remove the entry |
-| Rejected | Do not add | Create a `reject` with affirmative proof | Remove the entry |
-| Unresolved | Do not add | Create no decision | Retain the blocker and latest attempt |
-
-An admitted `pendiente` row remains published while its evidence has a material
-source ceiling. A speculative candidate that has not met the gate remains in
-the candidate note instead of entering the CSV.
-
-**Handoff:** every candidate before the cutoff is accepted, already present,
-rejected or retained with an actionable blocker; CSV, evidence and candidate
-note agree. Use changed-only checks while iterating and close with
-`npx pnpm verify:data`.
+Accepted rows receive a `keep` and leave the note; rejected candidates receive a
+tombstone and leave the note; unresolved candidates remain without a CSV or
+evidence decision. Exact coordinates are optional, but the productive
+municipality is not; follow `docs/GEOLOCATION.md` and leave an unsupported point
+empty.
 
 ## Level 3 — Verification and enrichment
 
@@ -420,37 +246,27 @@ note agree. Use changed-only checks while iterating and close with
 complete as the sources permit in that pass.
 
 Resolve falsehoods and contradictions first. Then handle signals requiring a
-decision, such as `Venta online=no comprobado`, borrowed links, non-canonical
-Maps URLs, or doubtful categories and prose. Finally address coverage such as
-exact coordinates, an image or evidence. When applicable and publicly
-supportable, review:
-
-- the three core claims and `verificacion`;
-- address, coordinates and the exact Google Maps listing for the same unit;
-- contacts and links with a sufficiently matched owner identity;
-- current products, categories, description and hours;
-- the description's actual source locale when a description is present;
-- online sales and their mechanism;
-- a current explicit guided-visit offer or explicit absence when that field is
-  in scope;
-- a producer-authored community message and its actual source locale;
-- highlighted links whose subject is the same producer and whose context is
-  useful to readers;
-- an admissible image.
-
-Do not treat empty `verificacion` as proof. Review the underlying sources; add
-or retain `pendiente` when material doubt remains.
+decision, then optional coverage. Review the three core claims and every in-scope
+field against the contract that owns it: CSV representation, geolocation,
+images, links, localization or accounts. Do not treat empty `verificacion` or an
+auditor with no warning as proof.
 
 A broad pass means **reviewed**, not **filled** or permanently complete. An empty
 optional cell may be the correct result; `pendiente` may be the correct source
 ceiling, and an inaccessible channel may require `no comprobado`. An empty
 verification cell makes no certification claim.
 
-Update an existing `keep` line rather than appending another. A pass closes only
-its stated scope, and the row remains reopenable when a better source, new fact,
-contradiction or elapsed time warrants review. Do not leave an unjustified defect
-inside the batch scope, but do not turn legitimate unresolved signals into
-fiction merely to make an advisory queue empty.
+The row remains reopenable when a better source, contradiction or elapsed time
+warrants review. Do not turn a legitimate source ceiling into fiction merely to
+empty an advisory queue.
+
+## Batch closure
+
+Close only the stated scope. Reconcile the CSV, evidence, candidate note and
+image assets that the batch touched; update existing evidence records rather than
+appending duplicates. Inspect the intended diff, use the changed-data checks in
+`AGENTS.md` while iterating, and finish with `npx pnpm verify:data`. A green gate
+proves consistency, not truth or permanent completeness.
 
 ## Verified-owner changes
 
@@ -465,35 +281,10 @@ active owner membership created by an approved claim. It verifies who controls
 the producer profile, not the truth of the CSV facts, and never writes or clears
 `verificacion`.
 
-The expanded-profile payment is also not a fourth editorial level. It permits
-the producer to propose and display the five expanded CSV fields while the
-producer entitlement is active; it never changes `verificacion`, ranking,
-admission or source authority and does not guarantee publication.
-
-For expanded fields, apply these additional review rules:
-
-- `visitas guiadas` is a current operational claim. Publish `sí` only from an
-  explicit current offer and `no` only from explicit, sufficiently current
-  support; do not infer either value from ordinary opening hours or silence.
-- `mensaje a la comunidad` is producer-authored public speech, not Chisan's
-  editorial description. Preserve its meaning and original language, record
-  `mensaje_comunidad_locale`, and reject promotion presented as fact, embedded
-  URLs, HTML, spreadsheet payloads, private data, harassment, unlawful material
-  or unsupported claims about third parties. Review does not turn the message
-  into Chisan-authored evidence. Unlike an objective catalog fact, the message
-  may be newly submitted first-party speech without a pre-existing public URL;
-  record that attribution in the change request and keep account authorship and
-  review as its provenance. Every objective claim in other fields still needs
-  suitable public support.
-- `enlace destacado 1` and `enlace destacado 2` may point to a relevant press
-  article, interview or producer page, but must concern the exact producer and
-  add reader value. They do not replace the official website, social links or
-  evidence, and a highlighted link alone never changes verification.
-
-If an entitlement is suspended after a refund or dispute, do not delete the
-reviewed CSV cells as commercial cleanup. The runtime hides them and the account
-workflow freezes new premium proposals; editorial removal or correction remains
-a separate reviewed catalog decision.
+Entitlements and expanded fields never change admission, ranking, source
+authority or `verificacion`. Their representation lives in
+`docs/CSV_CONTRACT.md`; authorization, suspension and proposal handling live in
+`docs/ACCOUNT_SYSTEM.md`.
 
 ## Maintenance
 
@@ -503,19 +294,6 @@ repository-wide invariants or gates. Encode a rule in `check:csv`,
 `check:evidence` or `check:defects` only when stored data can establish it
 mechanically. Validator or behavior changes require `npx pnpm verify:ai`.
 
-Translation rollout order and completion counts are temporary execution state;
-do not copy them into this policy, country guides or evidence. Durable sidecar
-representation and freshness rules belong in `docs/CSV_CONTRACT.md`.
-
-For dead, parked, or hijacked producer domains, inspect the dated offline
-snapshot before browsing:
-
-```bash
-npx pnpm check:links --offline
-```
-
-Refresh one area with `npx pnpm check:links --area <area>` or the full catalog
-with `npx pnpm check:links --all`. Refreshes remove URLs no longer present in
-the catalog. The command classifies; it never decides. A `403` is not a dead
-site, a `200` is not proof of ownership, and a failed fetch is not proof of
-closure.
+Temporary queues, counts, tool output and rollout state do not belong in policy
+or country guides. Link and defect checks classify work; they never make an
+editorial decision.

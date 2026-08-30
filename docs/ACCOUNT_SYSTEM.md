@@ -100,16 +100,30 @@ Public rendering resolves every enabled key against the current CSV, omits
 retired rows and derives the current area, slug, coordinates and localized URL
 without persisting those values in PostgreSQL.
 
+The public page is a read model over those keys, not a second persistence
+model. The account domain owns visibility and which favorites are shared; the
+shared renderer owns the list-and-map composition, current producer links,
+empty state and accessible marker labels. It supports producers from multiple
+areas or countries. A producer without valid coordinates remains in the list
+and is omitted only from the map.
+
+The Next.js page resolves account state and current CSV rows in a Server
+Component. Only the interactive map crosses into a Client Component, receiving
+plain serializable marker data and resolved public links. It never receives or
+exposes the profile owner's device position.
+
+A database or identity-provider incident must not make the CSV catalog
+unavailable. Private, suspended, deleted, invalid and unknown public profiles
+all return `404` without revealing which condition applied. Tests must preserve
+handle normalization and reservation, private-by-default visibility,
+per-favorite opt-in, durable producer identity and multi-area link construction.
+
 The staff registry at `/admin/perfiles` reads this Chisan-owned account state
 directly. It exposes visibility, account state and favorite/share counts without
 depending on a hosting, identity or managed-database provider dashboard.
 The administrator-only `/admin/sistema` runs the migration and runtime-permission
 contract from the deployed application itself; it reports no connection string,
 provider identifier or secret.
-
-The shared public list-and-map behavior and its extension boundary for future
-events, editorial selections and restaurant pages live in
-`docs/PRODUCER_SELECTION_PAGES.md`.
 
 The onboarding checkbox acknowledges that claims and public producer-profile
 changes are reviewed. The legacy database field `terms_accepted_at` records

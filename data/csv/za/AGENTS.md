@@ -28,7 +28,7 @@
   so membership does not identify a productive unit.
 - Regional wine routes can support current membership and listed contacts, but
   many entries do not publish a productive address and no route is a complete
-  roster.
+  roster. The Stellenbosch route is published at `wineroute.co.za`.
 - Overture Places supports discovery from its category, point and submitted
   contacts. Category errors and retail or hospitality identities require
   screening, so a row relying on it normally remains `pendiente`.
@@ -37,6 +37,10 @@
   sales.
 - Historical Department of Agriculture establishment lists support the dated
   registration, address and activity they record, not ongoing activity.
+- A WordPress directory may expose members through
+  `wp-sitemap-posts-<post-type>-1.xml`; inspect `wp-json/wp/v2/types` to identify
+  the post type. On Wilcity pages, ignore the shared `defaultMapCenter` and use
+  the listing's own `:lat-lng` or `listing-ggmap-url` only as a location clue.
 - The Constitution establishes the official-language framework and Statistics
   South Africa's 2022 Census supports the province-level presentation choice.
   Neither source establishes producer facts or a language preference for an

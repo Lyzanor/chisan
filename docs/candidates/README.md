@@ -10,31 +10,18 @@ or producer profile requests.
 
 ## Document ownership
 
-- This file defines the common note format and lifecycle.
-- `docs/candidates/<country>/README.md`, when useful, contains only durable,
-  reusable discovery methods for that country.
-- `docs/candidates/<country>/<area>.md` contains the active queue, concrete
-  sources and queries, cutoff date, and unresolved work for one area.
-- `data/csv/<country>/AGENTS.md` contains durable country rules and source
-  ceilings.
-- `data/csv/**` and `data/evidence/**` contain published rows and closed
-  decisions respectively.
-
-Never put live counts, completed-area lists, batch results, closure dates,
-current service failures, or pending queues in a README. Do not maintain a
-manual area index; the file tree already is the index.
+This file defines the common note format and lifecycle. Area files contain the
+active queue, sources, cutoff and unresolved work. Country `AGENTS.md` files own
+durable local methods and source ceilings; CSV and evidence own published facts
+and closed decisions. The file tree is the index: do not copy live counts,
+completed areas or batch status into a README.
 
 ## Area notes
 
-Use one file per area: `docs/candidates/<country>/<area>.md`. Add a thematic
-file only when a specific search would make the area note unmanageable. Do not
-copy data already published in the CSV.
-
-Use English for new headings and editor-authored prose, but do not spend a
-standalone cleanup pass translating historical area notes: they are temporary
-and should disappear when their candidates are resolved. Preserve official
-names, verbatim source text, URLs, and controlled CSV or category tokens in
-their canonical form.
+Use one file per area and do not copy published CSV data. New editor-authored
+notes use English while preserving official names, source text, URLs and
+controlled tokens; temporary historical notes do not need standalone
+translation.
 
 The note header records the target CSV, discovery source or query, search date,
 scope, cutoff, and remaining work. For each open candidate retain only what the
@@ -46,34 +33,20 @@ next reviewer needs:
 - discovery URL, plus an official site or profile when found in the same pass;
 - visible material doubts.
 
-Do not fill gaps by intuition or open a full verification search during
-discovery. An entry is open by definition and needs no separate status table.
+Do not fill gaps or start full verification during discovery. An entry is open
+by definition and needs no status field.
 
 ### Incidental findings
 
-After checking for duplicates, place an out-of-scope but plausible producer in
-the note for its actual area, marked as incidental. It becomes a later batch and
-does not expand or block the current cutoff. If the area is unresolved, retain
-it temporarily where it was found with `location unresolved` and the available
-clues. Use `reject:other-area` only for a specific area attribution that was
-investigated and disproved.
-
-When an already-open source explicitly confirms another useful field for the
-same matched producer, update the CSV and evidence in the same change. Do not
-branch into adjacent searches merely to fill blanks. Resolve contradictions
-because they affect correctness. Update an existing `keep` record in place;
-never add a second record for the same `slug`.
+After de-duplication, route an incidental producer to its actual area without
+expanding the current cutoff. If location is unresolved, retain the available
+clues where it was found. `reject:other-area` applies only when a proposed area
+was investigated and disproved. Explicit incidental facts from an already-open
+source may be materialized, but do not branch into adjacent searches.
 
 ## Resolution and deletion
 
-Follow the discovery and admission outcomes in `docs/EDITORIAL.md`. Before
-removing an accepted or rejected candidate, ensure its durable source trail or
-tombstone exists in `data/evidence/**`. Keep an unresolved candidate with one
-specific, actionable blocker.
-
-Update or prune the note with the CSV or evidence change. Delete the area note
-when no unresolved candidates remain: accepted rows are in the CSV, rejections
-are in evidence, and earlier working versions remain in Git.
-
-Run changed-data checks while editing and `npx pnpm verify:data` before closing
-the batch.
+Follow the outcomes and batch closure in `docs/EDITORIAL.md`. Remove accepted or
+rejected candidates only after the CSV or tombstone carries the durable result;
+retain unresolved candidates with one actionable blocker. Delete the area note
+when none remain—Git preserves its earlier working state.

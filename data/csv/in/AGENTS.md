@@ -29,14 +29,18 @@
   English-only until a non-misleading catalog-area policy is reviewed.
 
 ## Source ceilings
+- A producer store's `/products.json?limit=3` may confirm an exposed Shopify
+  catalog; a `404` or HTML response proves only that the route is unavailable.
+  Establish the estate, garden, winery or plant from producer narrative before
+  using a contact-page address, which may be a corporate office.
 - APEDA exporter and organic directories enumerate registered exporters and
   certified operators. Even a manufacturer classification does not by itself
   prove a current public producer identity or consumer offer.
 - Tea Board grower, licensing and geographical-indication material supports only
   the registration or status it publishes; it does not establish current
   trading or online sales.
-- OpenStreetMap can help locate an already identified producer but is not a
-  reliable national producer roster.
+- OpenStreetMap can help locate an already identified urban brewery, shop or
+  productive unit but is not a reliable national producer roster.
 - The Constitution's Eighth Schedule and the applicable state or union-
   territory official-language rules support language-route policy only. They
   do not prove that an individual producer uses that language or that a

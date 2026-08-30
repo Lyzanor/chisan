@@ -16,6 +16,10 @@
   `direccion`.
 
 ## Source ceilings
+- Caminos y Sabores exhibitor guides normally live below
+  `caminosysabores.com.ar/wp-content/uploads/<year>/07/`. Parse each exhibitor
+  block from its uppercase name through `Rubros:`; provincial pavilions may
+  list co-exhibitors without a stand code.
 - Caminos y Sabores exhibitor guides support participation in the dated fair and
   the identity, address and contacts declared there. They do not prove current
   trading, and the declared address may be a commercial office.
@@ -27,6 +31,12 @@
   municipality independently.
 - Las Rutas Sanas del Alimento is an undated self-registration map. Its
   productive-unit layer supports declared identity, approximate location and
-  activity, not current trading.
+  activity, not current trading. Download its public My Maps KML and use the
+  `Unidades productivas / Quintas / Huertas con venta directa` layer; mirrors
+  may truncate contact text.
+- Provincial wine rosters may expose named wineries with address and contact;
+  preserve the exact dated roster in the area note. Use the public Georef API
+  at `apis.datos.gob.ar/georef/api/` only to reconcile administrative names,
+  never as producer evidence.
 - The national INV and RENAPA open datasets publish aggregate departmental
   counts, not producer names, and cannot supply candidates.

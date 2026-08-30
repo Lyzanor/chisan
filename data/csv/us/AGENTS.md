@@ -8,16 +8,12 @@
 - `municipio` is the city, town, village, borough, census-designated place or
   other named community containing the productive unit. A county, ZIP Code or
   USPS mailing city is not a substitute.
-- Tribal ownership, reservation location and federal recognition are separate
-  claims. A tribal enterprise or reservation name does not by itself identify
-  the food or drink producer.
-- State registrations and license labels vary. Resolve the public producer
-  identity and productive address rather than treating an LLC, permit holder,
-  co-packer or mailing office as the unit.
-- English is the country default. New Mexico publishes Spanish and English and
-  prefers Spanish when the visitor accepts it. Hawaii publishes Hawaiian and
-  English and prefers Hawaiian when the visitor accepts it. No other state
-  receives a territorial language solely from demographic inference.
+- Resolve the public producer and productive address rather than treating an
+  LLC, permit holder, co-packer, mailing office, tribal enterprise or
+  reservation name as the unit without supporting evidence. Tribal ownership,
+  reservation location and federal recognition remain separate claims.
+- Presentation locales come from `country.json`; do not infer a producer's or
+  territory's language from demographics.
 
 ## Source ceilings
 - [USDA Local Food Directories](https://www.ams.usda.gov/services/local-regional/food-directories-listings)
@@ -31,8 +27,5 @@
   premises or approved label they name, not current production or brand
   ownership.
 - State agriculture and commodity directories vary from regulated lists to
-  self-submitted marketing rosters. Establish each source's claims in the active
-  area note.
-- New Mexico's Constitution and Hawaii's Constitution support their respective
-  territorial language policies. They do not establish a producer's language,
-  identity, products or current activity.
+  self-submitted marketing rosters. Establish which claims each source supports
+  during review.
