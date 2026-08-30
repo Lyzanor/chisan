@@ -65,10 +65,10 @@ comparison. The selected and mobile Chisan states were then inspected together.
 - AllTrails informed the compact circle grammar and selected-state hierarchy;
   Chisan keeps its own pine, moss and rice-paper tokens and does not adopt
   clustered count pills.
-- Every default point is a map-native 10 px circle with a rice-paper fill and a
-  1.5 px pine outline, centred on its exact coordinate. Dense areas remain a
-  legible field of individual producers.
-- The selected circle grows to 16 px, fills with moss and gains a 3 px
+- Every default point is a map-native 4 px solid pine circle at 64% opacity,
+  centred on its exact coordinate. Dense areas read as a field of quiet points
+  rather than outlined objects.
+- The selected circle grows to 8 px, fills with moss and gains a 2 px
   rice-paper outline without changing position.
 - All 23 category options remain present in one horizontal icon-and-label rail.
   The rail scrolls on narrow screens while the map keeps visual priority.
@@ -99,6 +99,11 @@ comparison. The selected and mobile Chisan states were then inspected together.
   the map feel too branded and reduced the speed of reading locations. Resolved
   after user review by replacing it with compact map-native circles and
   removing the superseded runtime marker asset.
+- P1: the first circle pass used 10 px hollow points, which remained too large
+  at Madrid density, and the generated SVG paths retained Leaflet's blue
+  default attributes beneath the design CSS. Resolved after user review with
+  4 px solid pine points, an 8 px selected state, and explicit token-backed
+  Leaflet path colours so no blue fallback remains.
 - P2: the first mobile category-rail override extended the document by 6 px.
   Resolved by matching the rail bleed to the catalog page inset; the final
   390 px viewport measures a 390 px document width.

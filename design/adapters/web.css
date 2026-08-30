@@ -129,10 +129,11 @@ body {
 
 /* Exact producer field: map-native circles stay at the catalog coordinate. */
 .producer-map-circle {
-  fill: var(--chisan-color-surface);
-  fill-opacity: 0.96;
+  fill: var(--chisan-color-moss-dark);
+  fill-opacity: 0.64;
   stroke: var(--chisan-color-moss-dark);
-  stroke-width: 1.5px;
+  stroke-opacity: 0;
+  stroke-width: 0;
   vector-effect: non-scaling-stroke;
 }
 
@@ -140,8 +141,8 @@ body {
   fill: var(--chisan-color-moss);
   fill-opacity: 1;
   stroke: var(--chisan-color-surface);
-  stroke-width: 3px;
-  filter: drop-shadow(0 0 1px var(--chisan-color-moss-dark));
+  stroke-opacity: 1;
+  stroke-width: 2px;
 }
 
 .leaflet-control-attribution {

@@ -140,11 +140,20 @@ function BoundsAwareMarkers({
           <CircleMarker
             key={`${point.key}:${highlighted ? "selected" : "default"}`}
             center={[point.latitude, point.longitude]}
-            radius={highlighted ? 8 : 5}
+            radius={highlighted ? 4 : 2}
             pathOptions={{
               className: highlighted
                 ? "producer-map-circle producer-map-circle--highlighted"
                 : "producer-map-circle",
+              color: highlighted
+                ? "var(--chisan-color-surface)"
+                : "var(--chisan-color-moss-dark)",
+              fillColor: highlighted
+                ? "var(--chisan-color-moss)"
+                : "var(--chisan-color-moss-dark)",
+              fillOpacity: highlighted ? 1 : 0.64,
+              opacity: highlighted ? 1 : 0,
+              weight: highlighted ? 2 : 0,
             }}
           >
             <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>

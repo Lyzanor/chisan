@@ -138,9 +138,9 @@ The map is a factual field, not a summary graphic.
 
 - Every mapped producer is represented by one point at its exact coordinate.
 - Do not cluster, aggregate, jitter, offset or replace producers with heatmaps.
-- At overview scale, each producer is a 10 px circle with a rice-paper fill and
-  a 1.5 px pine outline, centred on the exact coordinate.
-- Only the selected producer grows to 16 px, fills with moss and gains a 3 px
+- At overview scale, each producer is a 4 px pine circle at reduced opacity,
+  centred on the exact coordinate with no contrasting outline.
+- Only the selected producer grows to 8 px, fills with moss and gains a 2 px
   rice-paper outline; selection never changes position.
 - Land is rice paper, controls are surface, geometry is hairline and labels are stone.
 - Categories remain visible in one horizontally scrollable filter bar with one
