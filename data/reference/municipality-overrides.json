@@ -2074,6 +2074,22 @@
         "label": "Westhampton (Suffolk County, New York)",
         "region": "middle-atlantic"
       }
+    ],
+    "surry": [
+      {
+        "lat": 43.018778,
+        "lon": -72.343383,
+        "label": "Surry (Cheshire County, New Hampshire)",
+        "region": "new-england"
+      }
+    ],
+    "piermont": [
+      {
+        "lat": 43.961851,
+        "lon": -72.001293,
+        "label": "Piermont (Grafton County, New Hampshire)",
+        "region": "new-england"
+      }
     ]
   }
 }

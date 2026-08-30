@@ -20,9 +20,10 @@
   receives a territorial language solely from demographic inference.
 
 ## Source ceilings
-- USDA Local Food Directories describe market outlets. An on-farm market or
-  single-farm CSA can identify a candidate; a farmers market, food hub or
-  multi-farm CSA does not identify its vendors.
+- [USDA Local Food Directories](https://www.ams.usda.gov/services/local-regional/food-directories-listings)
+  describe market outlets. An on-farm market or single-farm CSA can identify a
+  candidate; a farmers market, food hub or multi-farm CSA does not identify its
+  vendors.
 - The USDA Organic Integrity Database supports certification status, scope and
   listed operation details. It does not by itself prove a current public
   identity, own offer, exact productive site or online sales.
