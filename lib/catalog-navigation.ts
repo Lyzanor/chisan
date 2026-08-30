@@ -7,6 +7,15 @@ import {
 } from "./i18n/catalog-scope";
 import type { Locale } from "./i18n/locales";
 
+/**
+ * Home-page anchor for the neutral country listing. Following it is the
+ * explicit request to choose an area manually, so the home page offers the
+ * listing instead of resuming a saved location area.
+ */
+export const MANUAL_AREA_SELECTION_ID = "choose-country";
+export const MANUAL_AREA_SELECTION_HASH = `#${MANUAL_AREA_SELECTION_ID}` as const;
+export const MANUAL_AREA_SELECTION_HREF = `/${MANUAL_AREA_SELECTION_HASH}` as const;
+
 export type CatalogNavigationScope = Pick<CatalogScope, "country" | "pathPrefix">;
 
 export type CatalogNavigationContext = {

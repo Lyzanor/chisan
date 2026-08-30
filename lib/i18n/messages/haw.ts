@@ -122,18 +122,9 @@ const messages = {
       "Me kou ʻae, nānā ʻo Chisan i kou wahi ma kēia polokalamu kele no ka loaʻa ʻana o kahi wahi i uhi ʻia. ʻAʻole hoʻouna ʻia a mālama ʻia kou kūlana.",
     useLocation: "E hoʻohana i koʻu wahi",
     chooseManually: "Koho lima",
-    manualCountryLabel: "ʻĀina",
-    manualCountryPlaceholder: "Koho i ʻāina",
-    manualAreaLabel: "Wahi papa inoa",
-    manualAreaPlaceholder: "Koho i wahi papa inoa",
     locating: "Ke nānā nei i kou wahi…",
     dismissed:
       "He koho ka wahi. Hiki iā ʻoe ke hoʻohana i kēlā me kēia manawa.",
-    savedTitle: "E hoʻomau ma kou wahi i mālama ʻia",
-    savedDescription: "Ua mālama ʻoe iā {area} i wahi Chisan nou.",
-    continueInArea: "E hoʻomau ma {area}",
-    changeArea: "Koho i wahi ʻē aʻe",
-    forgetArea: "Poina i ka wahi i mālama ʻia",
     errors: {
       permissionDenied: "Ua hōʻole ʻia ka ʻae wahi. Koho lima i wahi.",
       timeout: "Ua lōʻihi ka nānā ʻana i kahi. Koho lima i wahi.",

@@ -113,18 +113,8 @@ const messages = {
       "আপোনাৰ অনুমতি লৈ Chisan-এ এই ব্ৰাউজাৰত আপোনাৰ অৱস্থান পৰীক্ষা কৰি সামৰি লোৱা এলাকা বিচাৰে। আপোনাৰ অৱস্থান পঠিওৱা বা সংৰক্ষণ কৰা নহয়।",
     useLocation: "মোৰ অৱস্থান ব্যৱহাৰ কৰক",
     chooseManually: "নিজে বাছক",
-    manualCountryLabel: "দেশ",
-    manualCountryPlaceholder: "এখন দেশ বাছক",
-    manualAreaLabel: "কেটেলগ এলাকা",
-    manualAreaPlaceholder: "এটা কেটেলগ এলাকা বাছক",
     locating: "আপোনাৰ এলাকা পৰীক্ষা কৰি থকা হৈছে…",
     dismissed: "অৱস্থান বৈকল্পিক। ইচ্ছা কৰিলে যিকোনো সময়তে ব্যৱহাৰ কৰিব পাৰে।",
-    savedTitle: "সংৰক্ষিত এলাকাত আগবাঢ়ক",
-    savedDescription:
-      "আপুনি {area}-ক আপোনাৰ Chisan এলাকা হিচাপে সংৰক্ষণ কৰিছে।",
-    continueInArea: "{area}-ত আগবাঢ়ক",
-    changeArea: "বেলেগ এলাকা বাছক",
-    forgetArea: "সংৰক্ষিত এলাকা পাহৰি যাওক",
     errors: {
       permissionDenied: "অৱস্থানৰ অনুমতি নাকচ কৰা হৈছে। এটা এলাকা নিজে বাছক।",
       timeout: "অৱস্থান বিচাৰিবলৈ বেছি সময় লাগিল। এটা এলাকা নিজে বাছক।",

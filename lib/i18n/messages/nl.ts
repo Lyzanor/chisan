@@ -71,11 +71,8 @@ const messages = {
   },
   locationOnboarding: {
     title: "Vind je catalogusgebied", description: "Met jouw toestemming controleert Chisan je locatie in deze browser om een gedekt gebied te vinden. Je locatie wordt niet verstuurd of opgeslagen.",
-    useLocation: "Mijn locatie gebruiken", chooseManually: "Handmatig kiezen", manualCountryLabel: "Land",
-    manualCountryPlaceholder: "Selecteer een land", manualAreaLabel: "Catalogusgebied", manualAreaPlaceholder: "Selecteer een catalogusgebied",
+    useLocation: "Mijn locatie gebruiken", chooseManually: "Handmatig kiezen",
     locating: "Je gebied wordt gezocht…", dismissed: "Locatie is optioneel. Je kunt deze functie gebruiken wanneer je wilt.",
-    savedTitle: "Ga verder in je opgeslagen gebied", savedDescription: "Je hebt {area} opgeslagen als je Chisan-gebied.",
-    continueInArea: "Doorgaan in {area}", changeArea: "Een ander gebied kiezen", forgetArea: "Opgeslagen gebied vergeten",
     errors: {
       permissionDenied: "Locatietoestemming is geweigerd. Kies handmatig een gebied.", timeout: "Het ophalen van de locatie duurt te lang. Kies handmatig een gebied.",
       unavailable: "Locatie is niet beschikbaar. Kies handmatig een gebied.", outside: "Je locatie valt buiten de huidige dekking. Kies handmatig.",

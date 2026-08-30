@@ -116,18 +116,8 @@ const messages = {
       "আপনার অনুমতি নিয়ে Chisan এই ব্রাউজারে আপনার অবস্থান পরীক্ষা করে আওতাভুক্ত এলাকা খুঁজে নেয়। আপনার অবস্থান পাঠানো বা সংরক্ষণ করা হয় না।",
     useLocation: "আমার অবস্থান ব্যবহার করুন",
     chooseManually: "নিজে বেছে নিন",
-    manualCountryLabel: "দেশ",
-    manualCountryPlaceholder: "একটি দেশ বেছে নিন",
-    manualAreaLabel: "ক্যাটালগ এলাকা",
-    manualAreaPlaceholder: "একটি ক্যাটালগ এলাকা বেছে নিন",
     locating: "আপনার এলাকা পরীক্ষা করা হচ্ছে…",
     dismissed: "অবস্থান ঐচ্ছিক। যখন ইচ্ছা এটি ব্যবহার করতে পারেন।",
-    savedTitle: "সংরক্ষিত এলাকায় চালিয়ে যান",
-    savedDescription:
-      "আপনি {area}-কে আপনার Chisan এলাকা হিসেবে সংরক্ষণ করেছেন।",
-    continueInArea: "{area}-এ চালিয়ে যান",
-    changeArea: "অন্য এলাকা বেছে নিন",
-    forgetArea: "সংরক্ষিত এলাকা ভুলে যান",
     errors: {
       permissionDenied:
         "অবস্থান ব্যবহারের অনুমতি প্রত্যাখ্যাত হয়েছে। নিজে একটি এলাকা বেছে নিন।",

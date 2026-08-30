@@ -121,17 +121,8 @@ const messages = {
       "Met jou toestemming kontroleer Chisan jou ligging in hierdie blaaier om ’n gedekte gebied te vind. Jou posisie word nie gestuur of gestoor nie.",
     useLocation: "Gebruik my ligging",
     chooseManually: "Kies handmatig",
-    manualCountryLabel: "Land",
-    manualCountryPlaceholder: "Kies ’n land",
-    manualAreaLabel: "Katalogusgebied",
-    manualAreaPlaceholder: "Kies ’n katalogusgebied",
     locating: "Kontroleer jou gebied…",
     dismissed: "Ligging is opsioneel. Jy kan dit gebruik wanneer jy wil.",
-    savedTitle: "Gaan voort in jou gestoorde gebied",
-    savedDescription: "Jy het {area} as jou Chisan-gebied gestoor.",
-    continueInArea: "Gaan voort in {area}",
-    changeArea: "Kies ’n ander gebied",
-    forgetArea: "Vergeet gestoorde gebied",
     errors: {
       permissionDenied:
         "Liggingstoestemming is geweier. Kies ’n gebied handmatig.",

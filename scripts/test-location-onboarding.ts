@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import actualBarcelonaGeography from "../public/generated/catalog-geography/es.json";
@@ -18,6 +19,7 @@ import {
   forgetLocationOnboarding,
   readLocationOnboardingStorage,
   rememberLocationOnboardingDismissal,
+  resolveSavedLocationAreaHref,
   type CatalogGeographyIndex,
   type LocationFetch,
   type LocationOnboardingArea,
@@ -320,8 +322,64 @@ test("storage v1 rejects extra position fields and forget removes only its own k
   assert.equal(storage.values.get("chisan_locale"), "ca");
 });
 
+test("saved area resume yields to an explicit manual country-list request", () => {
+  const stored = {
+    onboarding: "resolved",
+    area: { country: "es", area: "barcelona" },
+  } as const;
+  const options = {
+    stored,
+    areas: [BARCELONA_AREA],
+    explicitLocale: null,
+    browserLocales: ["ca"] as const,
+  };
+
+  assert.equal(
+    resolveSavedLocationAreaHref({
+      ...options,
+      manualSelectionRequested: false,
+    }),
+    "/ca-es/barcelona",
+  );
+  assert.equal(
+    resolveSavedLocationAreaHref({
+      ...options,
+      manualSelectionRequested: true,
+    }),
+    null,
+  );
+  assert.equal(
+    resolveSavedLocationAreaHref({
+      ...options,
+      stored: { onboarding: "dismissed", area: null },
+      manualSelectionRequested: false,
+    }),
+    null,
+  );
+  assert.equal(
+    resolveSavedLocationAreaHref({
+      ...options,
+      stored: {
+        onboarding: "resolved",
+        area: { country: "es", area: "madrid" },
+      },
+      manualSelectionRequested: false,
+    }),
+    null,
+  );
+});
+
 test("every presentation dictionary provides the complete typed onboarding message set", async () => {
   const dictionaries = await Promise.all(SUPPORTED_LOCALES.map(loadMessages));
+  const expectedKeys = [
+    "chooseManually",
+    "description",
+    "dismissed",
+    "errors",
+    "locating",
+    "title",
+    "useLocation",
+  ];
   const expectedErrors = [
     "ambiguous",
     "loadFailed",
@@ -332,10 +390,55 @@ test("every presentation dictionary provides the complete typed onboarding messa
   ];
   for (const dictionary of dictionaries) {
     assert.deepEqual(
+      Object.keys(dictionary.locationOnboarding).sort(),
+      expectedKeys,
+    );
+    assert.deepEqual(
       Object.keys(dictionary.locationOnboarding.errors).sort(),
       expectedErrors,
     );
     assert.ok(dictionary.locationOnboarding.description);
-    assert.ok(dictionary.locationOnboarding.continueInArea.includes("{area}"));
+    assert.ok(dictionary.locationOnboarding.chooseManually);
   }
+});
+
+test("a saved area resumes on the home page while the profile owns forgetting it", () => {
+  const onboarding = readFileSync("components/location-onboarding.tsx", "utf8");
+  const savedAreaSection = readFileSync(
+    "components/account/saved-catalog-area.tsx",
+    "utf8",
+  );
+  const home = readFileSync("app/(application)/page.tsx", "utf8");
+  const shell = readFileSync("app/_components/site-root-shell.tsx", "utf8");
+
+  // The neutral page resumes instead of offering a saved-area card.
+  assert.match(onboarding, /router\.replace\(resumeHref\)/);
+  assert.match(onboarding, /if \(resumeHref\) return null;/);
+  assert.match(
+    onboarding,
+    /window\.location\.hash === MANUAL_AREA_SELECTION_HASH/,
+  );
+  for (const removed of ["savedTitle", "continueInArea", "changeArea", "forgetArea"]) {
+    assert.doesNotMatch(onboarding, new RegExp(removed));
+  }
+  assert.doesNotMatch(onboarding, /forgetLocationOnboarding/);
+
+  // Choosing manually reaches the country listing, not a selector widget.
+  assert.doesNotMatch(home, /ManualCatalogSelector|manual-area-selection/);
+  assert.match(home, /id=\{MANUAL_AREA_SELECTION_ID\}/);
+  assert.match(
+    shell,
+    /href=\{MANUAL_AREA_SELECTION_HREF\}>\{footerMessages\.catalogLink\}/,
+  );
+
+  // Forgetting a saved area is an account profile control.
+  assert.match(savedAreaSection, /forgetSavedLocationArea/);
+  assert.match(
+    savedAreaSection,
+    /href=\{MANUAL_AREA_SELECTION_HREF\}[\s\S]*?onClick=\{forgetSavedLocationArea\}[\s\S]*?Choose a different area/,
+  );
+  assert.match(
+    readFileSync("app/(application)/cuenta/perfil/page.tsx", "utf8"),
+    /<SavedCatalogArea/,
+  );
 });

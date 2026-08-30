@@ -3,12 +3,14 @@ import { cookies, headers } from "next/headers";
 import Link from "next/link";
 
 import { LocationOnboarding } from "@/components/location-onboarding";
-import { ManualCatalogSelector } from "@/components/manual-catalog-selector";
 import {
   buildHomeAlternateSet,
   buildLocalizedMetadata,
 } from "@/lib/catalog-metadata";
-import { buildCatalogHref } from "@/lib/catalog-navigation";
+import {
+  buildCatalogHref,
+  MANUAL_AREA_SELECTION_ID,
+} from "@/lib/catalog-navigation";
 import {
   CATALOG_UNIT,
   getLocalizedCatalogLabel,
@@ -23,7 +25,6 @@ import {
   resolveDestinationLocale,
 } from "@/lib/i18n/catalog-scope";
 import type { Locale } from "@/lib/i18n/locales";
-import { buildManualCatalogSelection } from "@/lib/i18n/manual-catalog-selection";
 import {
   formatMessage,
   formatUnitCount,
@@ -67,11 +68,6 @@ function CountryStart({
   browserLocales: Locale[];
 }) {
   const localePreferences = { explicitLocale, browserLocales };
-  const manualCountries = buildManualCatalogSelection(
-    countries,
-    HOME_LOCALE,
-    localePreferences,
-  );
 
   return (
     <main className="catalog-start-page">
@@ -84,27 +80,13 @@ function CountryStart({
           messages={messages.locationOnboarding}
           explicitLocale={explicitLocale}
           browserLocales={browserLocales}
-          manualSelectionHref="#manual-area-selection"
         />
-        <div className="catalog-start-head">
+        <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
           <div>
             <p className="catalog-kicker">{SITE_NAME}</p>
             <h1 id="country-start-title">{messages.home.chooseCountry}</h1>
           </div>
         </div>
-
-        <ManualCatalogSelector
-          countries={manualCountries}
-          messages={{
-            title: messages.locationOnboarding.chooseManually,
-            countryLabel: messages.locationOnboarding.manualCountryLabel,
-            countryPlaceholder:
-              messages.locationOnboarding.manualCountryPlaceholder,
-            areaLabel: messages.locationOnboarding.manualAreaLabel,
-            areaPlaceholder: messages.locationOnboarding.manualAreaPlaceholder,
-            submit: messages.areaSelector.submit,
-          }}
-        />
 
         <div className="country-card-list">
           {countries.map((country) => {

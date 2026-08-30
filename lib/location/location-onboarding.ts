@@ -397,6 +397,33 @@ export function buildLocationAreaHref(
   });
 }
 
+export function resolveSavedLocationAreaHref({
+  stored,
+  areas,
+  explicitLocale,
+  browserLocales,
+  manualSelectionRequested,
+}: {
+  stored: LocationOnboardingStorageV1 | null;
+  areas: readonly LocationOnboardingArea[];
+  explicitLocale: Locale | null;
+  browserLocales: readonly Locale[];
+  manualSelectionRequested: boolean;
+}): string | null {
+  if (
+    manualSelectionRequested ||
+    stored?.onboarding !== "resolved" ||
+    !stored.area
+  ) {
+    return null;
+  }
+
+  const savedArea = findEnabledLocationArea(stored.area, areas);
+  return savedArea
+    ? buildLocationAreaHref(savedArea, explicitLocale, browserLocales)
+    : null;
+}
+
 /**
  * Creates the user-activated workflow. Construction has no browser side
  * effects; lookup, storage and navigation occur only when the returned action

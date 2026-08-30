@@ -51,7 +51,6 @@ import {
   formatUnitCount,
   loadMessages,
 } from "../lib/i18n/messages";
-import { buildManualCatalogSelection } from "../lib/i18n/manual-catalog-selection";
 import { getProducerActionLabels } from "../lib/i18n/producer-action-labels";
 import {
   buildProducerStructuredData,
@@ -293,78 +292,6 @@ test("destination locale selection follows explicit, browser, English, default o
         { browserLocales: ["ja"] },
       ),
     /must publish its default locale 'de'/,
-  );
-});
-
-test("neutral manual selection preserves an area-only browser locale", () => {
-  const countries = [
-    {
-      slug: "es",
-      label: "Spain",
-      labels: { en: "Spain", es: "España" },
-      defaultLocale: "es" as const,
-      regions: [
-        {
-          slug: "catalunya",
-          label: "Catalonia",
-          labels: { en: "Catalonia", es: "Cataluña", ca: "Catalunya" },
-          areas: [
-            {
-              slug: "barcelona",
-              label: "Barcelona",
-              labels: { en: "Barcelona", es: "Barcelona", ca: "Barcelona" },
-              defaultLocale: "es" as const,
-              publishedLocales: ["ca", "es", "en"] as const,
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
-  const catalan = buildManualCatalogSelection(countries, "en", {
-    browserLocales: ["ca"],
-  });
-  const spanish = buildManualCatalogSelection(countries, "en", {
-    explicitLocale: "es",
-    browserLocales: ["ca"],
-  });
-  const unsupported = buildManualCatalogSelection(countries, "en", {
-    browserLocales: ["de"],
-  });
-
-  assert.equal(catalan[0].regions[0].areas[0].href, "/ca-es/barcelona");
-  assert.equal(spanish[0].regions[0].areas[0].href, "/es/barcelona");
-  assert.equal(unsupported[0].regions[0].areas[0].href, "/en-es/barcelona");
-});
-
-test("neutral manual selection can render the complete registry in English", () => {
-  const selection = buildManualCatalogSelection(listCountries(), "en", {
-    browserLocales: ["en"],
-  });
-  const selectedAreaCount = selection.reduce(
-    (total, country) =>
-      total +
-      country.regions.reduce((count, region) => count + region.areas.length, 0),
-    0,
-  );
-  const registryAreaCount = listCountries().reduce(
-    (total, country) =>
-      total +
-      country.regions.reduce((count, region) => count + region.areas.length, 0),
-    0,
-  );
-
-  assert.equal(selectedAreaCount, registryAreaCount);
-  assert.ok(selection.every((country) => country.label.trim()));
-  assert.ok(
-    selection.every((country) =>
-      country.regions.every(
-        (region) =>
-          region.label.trim() &&
-          region.areas.every((area) => area.label.trim()),
-      ),
-    ),
   );
 });
 

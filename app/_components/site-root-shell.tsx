@@ -15,6 +15,7 @@ import {
 } from "@/components/language-menu-context";
 import chisanMark from "@/design/brand/assets/chisan-mark-ink.png";
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
+import { MANUAL_AREA_SELECTION_HREF } from "@/lib/catalog-navigation";
 import type { Messages } from "@/lib/i18n/messages";
 import { getAdSenseAccountId } from "@/lib/programmatic-ads";
 import {
@@ -139,7 +140,7 @@ export function SiteRootShell({
             <ChisanWordmark alt="" reverse />
           </Link>
           <Link href="/our-purpose">{footerMessages.aboutLink}</Link>
-          <Link href="/">{footerMessages.catalogLink}</Link>
+          <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
           <Link href="/privacy">
             {htmlLang.toLowerCase().startsWith("es")
               ? "Privacidad y cookies"

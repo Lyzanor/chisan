@@ -117,17 +117,8 @@ const messages = {
       "आपकी अनुमति से Chisan इस ब्राउज़र में आपका स्थान जाँचकर किसी शामिल क्षेत्र को ढूँढता है। आपका स्थान न भेजा जाता है, न सहेजा जाता है।",
     useLocation: "मेरा स्थान इस्तेमाल करें",
     chooseManually: "मैन्युअल रूप से चुनें",
-    manualCountryLabel: "देश",
-    manualCountryPlaceholder: "देश चुनें",
-    manualAreaLabel: "कैटलॉग क्षेत्र",
-    manualAreaPlaceholder: "कैटलॉग क्षेत्र चुनें",
     locating: "आपका क्षेत्र जाँचा जा रहा है…",
     dismissed: "स्थान वैकल्पिक है। आप इसे जब चाहें इस्तेमाल कर सकते हैं।",
-    savedTitle: "अपने सहेजे क्षेत्र में आगे बढ़ें",
-    savedDescription: "आपने {area} को अपना Chisan क्षेत्र सहेजा है।",
-    continueInArea: "{area} में आगे बढ़ें",
-    changeArea: "दूसरा क्षेत्र चुनें",
-    forgetArea: "सहेजा क्षेत्र भूलें",
     errors: {
       permissionDenied:
         "स्थान की अनुमति नहीं मिली। कोई क्षेत्र मैन्युअल रूप से चुनें।",

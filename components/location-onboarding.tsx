@@ -1,31 +1,30 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
+import { MANUAL_AREA_SELECTION_HASH } from "@/lib/catalog-navigation";
 import type { Locale } from "@/lib/i18n/locales";
-import { formatMessage, type Messages } from "@/lib/i18n/messages";
+import type { Messages } from "@/lib/i18n/messages";
 import {
-  buildLocationAreaHref,
-  LOCATION_ONBOARDING_STORAGE_KEY,
   createCatalogLocationRequest,
   createLocationOnboardingActivation,
-  findEnabledLocationArea,
-  forgetLocationOnboarding,
-  parseLocationOnboardingStorageValue,
-  rememberLocationOnboardingDismissal,
+  resolveSavedLocationAreaHref,
   type CatalogLocationFailureReason,
   type LocationFetch,
   type LocationOnboardingArea,
 } from "@/lib/location/location-onboarding";
+import {
+  browserLocationStorage,
+  dismissLocationOnboarding,
+  useLocationOnboardingState,
+} from "@/lib/location/saved-location-area";
 
 export type LocationOnboardingProps = {
   areas: readonly LocationOnboardingArea[];
   messages: Messages["locationOnboarding"];
   explicitLocale: Locale | null;
   browserLocales: readonly Locale[];
-  manualSelectionHref: `#${string}`;
 };
 
 type RequestState =
@@ -33,42 +32,21 @@ type RequestState =
   | { status: "locating" }
   | { status: "failed"; reason: CatalogLocationFailureReason };
 
-const LOCATION_STORAGE_CHANGE_EVENT = "chisan:location-onboarding-storage-change";
-
-function browserStorage(): Storage | null {
-  try {
-    return typeof window === "undefined" ? null : window.localStorage;
-  } catch {
-    return null;
-  }
-}
-
-function readStorageSnapshot(): string | null {
-  try {
-    return browserStorage()?.getItem(LOCATION_ONBOARDING_STORAGE_KEY) ?? null;
-  } catch {
-    return null;
-  }
-}
-
-function readServerStorageSnapshot(): null {
-  return null;
-}
-
-function subscribeToStorageChange(onStoreChange: () => void): () => void {
-  const handleStorage = (event: StorageEvent) => {
-    if (event.key === LOCATION_ONBOARDING_STORAGE_KEY) onStoreChange();
-  };
-  window.addEventListener("storage", handleStorage);
-  window.addEventListener(LOCATION_STORAGE_CHANGE_EVENT, onStoreChange);
+function subscribeToManualSelectionRequest(onStoreChange: () => void): () => void {
+  window.addEventListener("hashchange", onStoreChange);
+  window.addEventListener("popstate", onStoreChange);
   return () => {
-    window.removeEventListener("storage", handleStorage);
-    window.removeEventListener(LOCATION_STORAGE_CHANGE_EVENT, onStoreChange);
+    window.removeEventListener("hashchange", onStoreChange);
+    window.removeEventListener("popstate", onStoreChange);
   };
 }
 
-function notifyStorageChange() {
-  window.dispatchEvent(new Event(LOCATION_STORAGE_CHANGE_EVENT));
+function readManualSelectionRequest(): boolean {
+  return window.location.hash === MANUAL_AREA_SELECTION_HASH;
+}
+
+function readServerManualSelectionRequest(): false {
+  return false;
 }
 
 function failureMessage(
@@ -96,23 +74,30 @@ export function LocationOnboarding({
   messages,
   explicitLocale,
   browserLocales,
-  manualSelectionHref,
 }: LocationOnboardingProps) {
   const router = useRouter();
   const [request, setRequest] = useState<RequestState>({ status: "idle" });
-  const stored = parseLocationOnboardingStorageValue(
-    useSyncExternalStore(
-      subscribeToStorageChange,
-      readStorageSnapshot,
-      readServerStorageSnapshot,
-    ),
+  const stored = useLocationOnboardingState();
+  const manualSelectionRequested = useSyncExternalStore(
+    subscribeToManualSelectionRequest,
+    readManualSelectionRequest,
+    readServerManualSelectionRequest,
   );
 
-  const savedArea =
-    stored?.onboarding === "resolved" && stored.area
-      ? findEnabledLocationArea(stored.area, areas)
-      : null;
+  // A saved area resumes on its own; only an explicit manual request keeps the
+  // neutral country listing on screen. Forgetting it belongs to the profile.
+  const resumeHref = resolveSavedLocationAreaHref({
+    stored,
+    areas,
+    explicitLocale,
+    browserLocales,
+    manualSelectionRequested,
+  });
   const isLocating = request.status === "locating";
+
+  useEffect(() => {
+    if (resumeHref) router.replace(resumeHref);
+  }, [resumeHref, router]);
 
   async function handleUseLocation() {
     if (isLocating) return;
@@ -127,7 +112,7 @@ export function LocationOnboarding({
     });
     const activate = createLocationOnboardingActivation({
       lookup,
-      storage: browserStorage(),
+      storage: browserLocationStorage(),
       areas,
       explicitLocale,
       browserLocales,
@@ -140,47 +125,13 @@ export function LocationOnboarding({
   }
 
   function handleChooseManually() {
-    rememberLocationOnboardingDismissal(browserStorage());
-    notifyStorageChange();
+    // The manual home entry never discards a resolved preference. Replacing or
+    // forgetting that preference is an explicit profile action.
+    if (stored?.onboarding !== "resolved") dismissLocationOnboarding();
     setRequest({ status: "idle" });
   }
 
-  function handleForget() {
-    forgetLocationOnboarding(browserStorage());
-    notifyStorageChange();
-    setRequest({ status: "idle" });
-  }
-
-  if (savedArea) {
-    const href = buildLocationAreaHref(savedArea, explicitLocale, browserLocales);
-    return (
-      <section className="location-onboarding" aria-labelledby="saved-location-title">
-        <div className="location-onboarding__copy">
-          <h2 id="saved-location-title">{messages.savedTitle}</h2>
-          <p>{formatMessage(messages.savedDescription, { area: savedArea.label })}</p>
-        </div>
-        <div className="location-onboarding__actions">
-          <Link className="location-onboarding__primary" href={href}>
-            {formatMessage(messages.continueInArea, { area: savedArea.label })}
-          </Link>
-          <a
-            className="location-onboarding__secondary"
-            href={manualSelectionHref}
-            onClick={handleChooseManually}
-          >
-            {messages.changeArea}
-          </a>
-          <button
-            className="location-onboarding__text-button"
-            type="button"
-            onClick={handleForget}
-          >
-            {messages.forgetArea}
-          </button>
-        </div>
-      </section>
-    );
-  }
+  if (resumeHref) return null;
 
   const wasDismissed = stored?.onboarding === "dismissed";
   return (
@@ -200,7 +151,7 @@ export function LocationOnboarding({
         </button>
         <a
           className="location-onboarding__secondary"
-          href={manualSelectionHref}
+          href={MANUAL_AREA_SELECTION_HASH}
           onClick={handleChooseManually}
         >
           {messages.chooseManually}

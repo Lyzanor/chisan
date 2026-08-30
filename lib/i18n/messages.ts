@@ -103,17 +103,8 @@ export type Messages = {
     description: string;
     useLocation: string;
     chooseManually: string;
-    manualCountryLabel: string;
-    manualCountryPlaceholder: string;
-    manualAreaLabel: string;
-    manualAreaPlaceholder: string;
     locating: string;
     dismissed: string;
-    savedTitle: string;
-    savedDescription: string;
-    continueInArea: string;
-    changeArea: string;
-    forgetArea: string;
     errors: {
       permissionDenied: string;
       timeout: string;

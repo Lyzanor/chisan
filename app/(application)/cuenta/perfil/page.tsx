@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cookies, headers } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -10,8 +11,18 @@ import {
   AccountMessage,
   type AccountMessageParams,
 } from "@/components/account/account-message";
+import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { listPublishedCountries } from "@/lib/csv-catalog";
+import {
+  EXPLICIT_LOCALE_COOKIE,
+  parseAcceptLanguage,
+  parseExplicitLocale,
+} from "@/lib/i18n/catalog-scope";
+import { listEnabledLocationAreas } from "@/lib/location/enabled-location-areas.server";
 import { SITE_NAME } from "@/lib/site";
+
+const ACCOUNT_LOCALE = "en" as const;
 
 export const metadata: Metadata = {
   title: "Account profile",
@@ -25,11 +36,18 @@ type AccountProfilePageProps = {
 export default async function AccountProfilePage({
   searchParams,
 }: AccountProfilePageProps) {
-  const [account, params] = await Promise.all([
+  const [account, params, cookieStore, requestHeaders] = await Promise.all([
     requireCurrentAccount("/cuenta/perfil"),
     searchParams,
+    cookies(),
+    headers(),
   ]);
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
+
+  const locationAreas = listEnabledLocationAreas({
+    countries: listPublishedCountries(),
+    locale: ACCOUNT_LOCALE,
+  });
 
   return (
     <div className="account-content account-content--narrow">
@@ -68,6 +86,29 @@ export default async function AccountProfilePage({
             Save profile
           </button>
         </form>
+      </section>
+
+      <section aria-labelledby="saved-area-title">
+        <header className="account-section-heading">
+          <div>
+            <h2 id="saved-area-title">Saved catalog area</h2>
+            <p>
+              {SITE_NAME} can remember one catalog area in this browser so the home
+              page opens it directly. The preference belongs to this browser only:
+              it is never stored with your account, and your device position is
+              never sent to {SITE_NAME}.
+            </p>
+          </div>
+        </header>
+        <SavedCatalogArea
+          areas={locationAreas}
+          explicitLocale={parseExplicitLocale(
+            cookieStore.get(EXPLICIT_LOCALE_COOKIE)?.value,
+          )}
+          browserLocales={parseAcceptLanguage(
+            requestHeaders.get("accept-language"),
+          )}
+        />
       </section>
 
       <section aria-labelledby="public-profile-title">

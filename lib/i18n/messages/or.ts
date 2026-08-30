@@ -119,17 +119,8 @@ const messages = {
       "ଆପଣଙ୍କ ଅନୁମତିରେ Chisan ଏହି ବ୍ରାଉଜରରେ ଆପଣଙ୍କ ଅବସ୍ଥାନ ଯାଞ୍ଚ କରି ଏକ ଅନ୍ତର୍ଭୁକ୍ତ ଅଞ୍ଚଳ ଖୋଜେ। ଆପଣଙ୍କ ଅବସ୍ଥାନ ପଠାଯାଏ ନାହିଁ କିମ୍ବା ସଞ୍ଚୟ ହୁଏ ନାହିଁ।",
     useLocation: "ମୋ ଅବସ୍ଥାନ ବ୍ୟବହାର କରନ୍ତୁ",
     chooseManually: "ନିଜେ ବାଛନ୍ତୁ",
-    manualCountryLabel: "ଦେଶ",
-    manualCountryPlaceholder: "ଏକ ଦେଶ ବାଛନ୍ତୁ",
-    manualAreaLabel: "କ୍ୟାଟାଲଗ୍ ଅଞ୍ଚଳ",
-    manualAreaPlaceholder: "ଏକ କ୍ୟାଟାଲଗ୍ ଅଞ୍ଚଳ ବାଛନ୍ତୁ",
     locating: "ଆପଣଙ୍କ ଅଞ୍ଚଳ ଯାଞ୍ଚ ହେଉଛି…",
     dismissed: "ଅବସ୍ଥାନ ଇଚ୍ଛାଧୀନ। ଯେତେବେଳେ ଚାହିବେ ବ୍ୟବହାର କରିପାରିବେ।",
-    savedTitle: "ଆପଣଙ୍କ ସଞ୍ଚୟ କରାଯାଇଥିବା ଅଞ୍ଚଳରେ ଜାରି ରଖନ୍ତୁ",
-    savedDescription: "ଆପଣ {area} କୁ ଆପଣଙ୍କ Chisan ଅଞ୍ଚଳ ଭାବେ ସଞ୍ଚୟ କରିଛନ୍ତି।",
-    continueInArea: "{area} ରେ ଜାରି ରଖନ୍ତୁ",
-    changeArea: "ଅନ୍ୟ ଏକ ଅଞ୍ଚଳ ବାଛନ୍ତୁ",
-    forgetArea: "ସଞ୍ଚୟ କରାଯାଇଥିବା ଅଞ୍ଚଳକୁ ଭୁଲିଯାଆନ୍ତୁ",
     errors: {
       permissionDenied:
         "ଅବସ୍ଥାନ ଅନୁମତି ପ୍ରତ୍ୟାଖ୍ୟାନ ହୋଇଛି। ଏକ ଅଞ୍ଚଳ ନିଜେ ବାଛନ୍ତୁ।",

@@ -218,14 +218,15 @@ if [[ "$HTML_HOME_CLEAN" != *"Choose a country"* ]]; then
   exit 1
 fi
 
+# Choosing manually reaches the country listing itself, without a selector widget.
 if [[
-  "$HTML_HOME_CLEAN" != *'id="manual-area-selection"'* ||
-  "$HTML_HOME_CLEAN" != *"Select a catalog area"* ||
-  "$HTML_HOME_CLEAN" != *"Open area"* ||
-  "$HTML_HOME_CLEAN" != *'<noscript><div class="manual-catalog-selector__fallback">'* ||
-  "$HTML_HOME_CLEAN" != *'<a href="/en-es/barcelona">Barcelona</a>'*
+  "$HTML_HOME_CLEAN" != *'id="choose-country"'* ||
+  "$HTML_HOME_CLEAN" != *'class="country-card"'* ||
+  "$HTML_HOME_CLEAN" != *'href="/es"'* ||
+  "$HTML_HOME_CLEAN" == *"manual-catalog-selector"* ||
+  "$HTML_HOME_CLEAN" == *'id="manual-area-selection"'*
 ]]; then
-  echo "Error: home page should keep JavaScript and no-JavaScript manual area-selection paths." >&2
+  echo "Error: home page should keep a JavaScript-free country listing as the manual area path." >&2
   exit 1
 fi
 
@@ -244,7 +245,7 @@ if [[
   "$HTML_HOME_CLEAN" != *'id="home-about-title">Connecting local food.</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
   "$HTML_HOME_CLEAN" != *'href="/our-purpose">Our purpose</a>'* ||
-  "$HTML_HOME_CLEAN" != *'>Producer catalog</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/#choose-country">Producer catalog</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||

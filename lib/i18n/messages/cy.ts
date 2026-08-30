@@ -120,18 +120,9 @@ const messages = {
       "Gyda'ch caniatâd, mae Chisan yn gwirio'ch lleoliad yn y porwr hwn i ddod o hyd i ardal dan sylw. Nid yw'ch safle'n cael ei anfon na'i gadw.",
     useLocation: "Defnyddio fy lleoliad",
     chooseManually: "Dewis â llaw",
-    manualCountryLabel: "Gwlad",
-    manualCountryPlaceholder: "Dewiswch wlad",
-    manualAreaLabel: "Ardal gatalog",
-    manualAreaPlaceholder: "Dewiswch ardal gatalog",
     locating: "Gwirio'ch ardal…",
     dismissed:
       "Mae lleoliad yn ddewisol. Gallwch ei ddefnyddio pryd bynnag y dymunwch.",
-    savedTitle: "Parhau yn eich ardal a gadwyd",
-    savedDescription: "Gwnaethoch gadw {area} fel eich ardal Chisan.",
-    continueInArea: "Parhau yn {area}",
-    changeArea: "Dewis ardal wahanol",
-    forgetArea: "Anghofio'r ardal a gadwyd",
     errors: {
       permissionDenied: "Gwrthodwyd caniatâd lleoliad. Dewiswch ardal â llaw.",
       timeout: "Cymerodd lleoliad ormod o amser. Dewiswch ardal â llaw.",

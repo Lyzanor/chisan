@@ -115,17 +115,8 @@ const messages = {
       "તમારી પરવાનગીથી Chisan આ બ્રાઉઝરમાં તમારું સ્થાન તપાસીને આવરી લેવાયેલો વિસ્તાર શોધે છે. તમારું સ્થાન મોકલાતું કે સાચવાતું નથી.",
     useLocation: "મારું સ્થાન વાપરો",
     chooseManually: "મેન્યુઅલી પસંદ કરો",
-    manualCountryLabel: "દેશ",
-    manualCountryPlaceholder: "દેશ પસંદ કરો",
-    manualAreaLabel: "કેટલોગ વિસ્તાર",
-    manualAreaPlaceholder: "કેટલોગ વિસ્તાર પસંદ કરો",
     locating: "તમારો વિસ્તાર તપાસી રહ્યા છીએ…",
     dismissed: "સ્થાન વૈકલ્પિક છે. તમે તેને જ્યારે ઇચ્છો ત્યારે વાપરી શકો છો.",
-    savedTitle: "સાચવેલા વિસ્તારમાં ચાલુ રાખો",
-    savedDescription: "તમે {area}ને તમારો Chisan વિસ્તાર સાચવ્યો છે.",
-    continueInArea: "{area}માં ચાલુ રાખો",
-    changeArea: "અલગ વિસ્તાર પસંદ કરો",
-    forgetArea: "સાચવેલો વિસ્તાર ભૂલી જાઓ",
     errors: {
       permissionDenied:
         "સ્થાનની પરવાનગી નકારી દેવામાં આવી. વિસ્તાર મેન્યુઅલી પસંદ કરો.",

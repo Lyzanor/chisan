@@ -120,18 +120,9 @@ const messages = {
       "Le do chead, seiceálann Chisan do shuíomh sa bhrabhsálaí seo chun ceantar clúdaithe a aimsiú. Ní sheoltar ná ní shábháiltear do shuíomh.",
     useLocation: "Úsáid mo shuíomh",
     chooseManually: "Roghnaigh de láimh",
-    manualCountryLabel: "Tír",
-    manualCountryPlaceholder: "Roghnaigh tír",
-    manualAreaLabel: "Ceantar catalóige",
-    manualAreaPlaceholder: "Roghnaigh ceantar catalóige",
     locating: "Do cheantar á sheiceáil…",
     dismissed:
       "Tá an suíomh roghnach. Is féidir leat é a úsáid aon uair is mian leat.",
-    savedTitle: "Lean ar aghaidh i do cheantar sábháilte",
-    savedDescription: "Shábháil tú {area} mar do cheantar Chisan.",
-    continueInArea: "Lean ar aghaidh in {area}",
-    changeArea: "Roghnaigh ceantar eile",
-    forgetArea: "Déan dearmad den cheantar sábháilte",
     errors: {
       permissionDenied: "Diúltaíodh cead suímh. Roghnaigh ceantar de láimh.",
       timeout: "Thóg an suíomh ró-fhada. Roghnaigh ceantar de láimh.",

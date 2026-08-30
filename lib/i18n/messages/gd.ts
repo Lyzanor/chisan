@@ -125,18 +125,9 @@ const messages = {
       "Le do chead, bidh Chisan a’ sgrùdadh d’ àite sa bhrabhsair seo gus sgìre a tha fo chòmhdach a lorg. Cha tèid d’ àite a chur no a shàbhaladh.",
     useLocation: "Cleachd m’ àite",
     chooseManually: "Tagh le làimh",
-    manualCountryLabel: "Dùthaich",
-    manualCountryPlaceholder: "Tagh dùthaich",
-    manualAreaLabel: "Sgìre chatalog",
-    manualAreaPlaceholder: "Tagh sgìre chatalog",
     locating: "A’ sgrùdadh do sgìre…",
     dismissed:
       "Tha an t-àite roghainneil. Faodaidh tu a chleachdadh uair sam bith a thogras tu.",
-    savedTitle: "Lean air adhart san sgìre agad a chaidh a shàbhaladh",
-    savedDescription: "Shàbhail thu {area} mar an sgìre Chisan agad.",
-    continueInArea: "Lean air adhart ann an {area}",
-    changeArea: "Tagh sgìre eile",
-    forgetArea: "Dìochuimhnich an sgìre a chaidh a shàbhaladh",
     errors: {
       permissionDenied: "Chaidh cead an àite a dhiùltadh. Tagh sgìre le làimh.",
       timeout: "Thug an t-àite ro fhada. Tagh sgìre le làimh.",

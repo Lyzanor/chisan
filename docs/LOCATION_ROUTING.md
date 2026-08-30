@@ -73,14 +73,18 @@ onboarding. It must:
 2. Call `navigator.geolocation.getCurrentPosition()` only after the visitor
    activates **Use my location**. Page load, hydration and a language choice
    must not trigger the native permission prompt.
-3. Keep the normal country and area selector usable before, during and after
-   the request, including when JavaScript or the Geolocation API is unavailable.
+3. Keep the neutral country listing usable before, during and after the
+   request, including when JavaScript or the Geolocation API is unavailable.
+   **Choose manually** links to that listing; it never duplicates it in a
+   separate selector.
 4. Request one normal-accuracy position with `enableHighAccuracy: false`, an
    8-second timeout and a 5-minute `maximumAge`; never use `watchPosition`.
-5. On a later visit to `/`, offer **Continue in <area>** for a valid saved area
-   instead of redirecting automatically.
-6. Provide visible controls to choose a different area and forget the saved
-   area.
+5. On a later visit to `/`, resume a valid saved area by replacing the neutral
+   page with that area's published URL. Only `/` resumes, and only from the
+   browser that stored the preference.
+6. Publish one manual entry point that suppresses the resume: the
+   `#choose-country` anchor on `/`, which the global footer catalog link uses.
+   The account profile owns the control that forgets the saved area.
 
 An explicit catalog URL always wins. Catalog, area and producer routes never
 invoke geolocation and are never redirected because of a current or saved
@@ -148,7 +152,9 @@ provider and must not appear in:
 Discard the raw position after success or failure. Persist at most a versioned
 local-storage value containing the derived `{ country, area }` preference and
 the onboarding dismissal state. Revalidate that key against the current catalog
-and storage version before offering it. Language preference is stored
+and storage version before resuming it. The preference belongs to the browser:
+it is never written to Clerk, PostgreSQL or any account record, and the profile
+control reads and clears the same local value. Language preference is stored
 separately and forgetting an area must not alter language, account data,
 favorites or claims.
 
@@ -170,6 +176,7 @@ resolve to the existing default locale before alternate languages launch.
 Never guess one input to compensate for the other.
 
 Production smoke checks cover the explanatory prompt, explicit user activation,
-success, denial, timeout, ambiguity, outside-coverage fallback, later-visit
-offer and forget control. Network, storage, analytics and account inspection
+success, denial, timeout, ambiguity, outside-coverage fallback, the later-visit
+resume, the manual entry point that suppresses it, and the profile forget
+control. Network, storage, analytics and account inspection
 must confirm that no raw coordinate crossed the client boundary.
