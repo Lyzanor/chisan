@@ -20,6 +20,16 @@
   `design/qa/account-menu-implementation-signed-in-closed.png` and
   `design/qa/account-menu-implementation-signed-in-open.png`
 - Mobile account menu: `design/qa/account-menu-implementation-mobile-open.png`
+- Language-placement source captures:
+  `design/qa/source-language-area-before.png` and
+  `design/qa/source-language-profile-before.png`
+- Language-placement implementation captures:
+  `design/qa/implementation-language-area-after.png`,
+  `design/qa/implementation-language-profile-after.png`, and
+  `design/qa/implementation-language-account-menu.png`
+- Language-placement mobile captures:
+  `design/qa/implementation-language-area-mobile.png` and
+  `design/qa/implementation-language-profile-mobile.png`
 - Browser: Codex in-app browser against the local Next.js development server
 - Desktop viewport: 1440 x 900 CSS pixels, device scale factor 1
 - Mobile viewport: 390 x 844 CSS pixels, device scale factor 1
@@ -28,6 +38,13 @@ The loaded AllTrails source and the new desktop implementation were captured at
 the same 1440 x 900 viewport and opened together for the final visual
 comparison. The current Chisan header and both account states were likewise
 captured at the same viewport and opened together before mobile inspection.
+The language-placement source and implementation captures are also 1440 x 900
+pixels at a 1440 x 900 CSS viewport and device scale factor 1. Their matching
+area and producer states were opened in one combined comparison. The focused
+region was already fully legible in those captures, so no additional crop was
+needed. Because Clerk is not configured in the local preview, the account-menu
+capture and route-change check used a temporary signed-out render harness; that
+harness was reverted and is absent from the final diff.
 
 ## States exercised
 
@@ -46,6 +63,10 @@ captured at the same viewport and opened together before mobile inspection.
   sign-in and registration actions.
 - Signed-in account menu with localized `Hola, Aiko`, language selection,
   account, favorites and sign-out actions.
+- Barcelona area and Cal Garrigosa profile with no standalone language control.
+- Account-menu registration on Barcelona exposed `Català`, `Español`, and
+  `English`; selecting `Català` navigated to `/ca-es/barcelona`, updated the
+  document language to `ca`, and retained the single language-control location.
 - Mobile header, horizontally scrolling category rail, map, and result layout.
 
 ## Visual comparison
@@ -82,6 +103,23 @@ captured at the same viewport and opened together before mobile inspection.
   header menu, so area-level locale availability and URLs are not duplicated.
 - At 390 px the panel stays within the viewport and every control retains a
   minimum 40–44 px interaction target.
+- Area, country, and producer views now register their exact locale URLs through
+  a non-rendering bridge. The visible language control lives only inside the
+  account menu; the removed standalone control leaves no empty container or
+  compensating spacer.
+
+### Language-placement comparison
+
+- Fonts and typography are unchanged; removing the duplicate control does not
+  alter the existing Noto Sans hierarchy, wrapping, or optical weight.
+- Area spacing improves because the province selector now owns the header-control
+  column. On producer profiles, the back link and breadcrumb move up by the exact
+  height of the removed language row without introducing an arbitrary gap.
+- Colors and tokens are unchanged. No replacement surface, capsule, or accent
+  was introduced.
+- Image crops and asset rendering are identical before and after the change.
+- Existing labels and localized content remain intact; only the duplicate
+  presentation of the language choices was removed.
 
 ### Map
 
@@ -135,6 +173,14 @@ captured at the same viewport and opened together before mobile inspection.
 - P2: the first mobile category-rail override extended the document by 6 px.
   Resolved by matching the rail bleed to the catalog page inset; the final
   390 px viewport measures a 390 px document width.
+- P2: language choice appeared both in the page content and the account menu,
+  splitting ownership of one global preference and adding capsule noise to area
+  and producer headers. Resolved by replacing every catalog-page switcher with
+  `LanguageMenuRegistration`, removing the old visual component and CSS, and
+  verifying the area and profile against
+  `design/qa/implementation-language-area-after.png` and
+  `design/qa/implementation-language-profile-after.png`. No P0/P1/P2 issue
+  remained in the post-fix comparison.
 
 ## Final checklist
 
@@ -142,6 +188,9 @@ captured at the same viewport and opened together before mobile inspection.
 - [x] Desktop and mobile layouts inspected.
 - [x] Signed-out and signed-in account-menu states exercised.
 - [x] Localized greeting, language selection, favorites and sign-out inspected.
+- [x] Standalone language selectors removed from country, area and producer
+  views while their exact locale routes remain available in the account menu.
+- [x] Account-menu language change exercised from Spanish to Catalan.
 - [x] Primary category and producer-selection interactions exercised.
 - [x] Marker hover, popup and profile-link state exercised.
 - [x] All 23 categories remain discoverable in the visible rail.

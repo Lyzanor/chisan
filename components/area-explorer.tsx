@@ -6,9 +6,9 @@ import { Suspense, useMemo, type ReactNode } from "react";
 
 import { AreaSelector } from "@/components/area-selector";
 import {
-  LanguageSwitcher,
-  type LanguageSwitcherOption,
-} from "@/components/language-switcher";
+  LanguageMenuRegistration,
+  type LanguageMenuRegistrationOption,
+} from "@/components/language-menu-registration";
 import { ProducersMap } from "@/components/map/producers-map";
 import {
   buildCatalogHref,
@@ -57,7 +57,7 @@ export type AreaExplorerModel = {
   siteName: string;
   categories: CategoryPresentation[];
   producers: AreaExplorerProducer[];
-  languageOptions: LanguageSwitcherOption[];
+  languageOptions: LanguageMenuRegistrationOption[];
   areaSelectorCountry: AreaSelectorCountry;
   selectorMessages: {
     label: string;
@@ -261,11 +261,6 @@ function AreaExplorerView({
         </div>
 
         <div className="catalog-header-controls">
-          <LanguageSwitcher
-            currentLocale={model.locale}
-            label={model.languageSwitcherLabel}
-            options={languageOptions}
-          />
           <AreaSelector
             country={areaSelectorCountry}
             currentArea={model.area}
@@ -273,6 +268,12 @@ function AreaExplorerView({
           />
         </div>
       </header>
+
+      <LanguageMenuRegistration
+        currentLocale={model.locale}
+        label={model.languageSwitcherLabel}
+        options={languageOptions}
+      />
 
       <nav
         className="catalog-simple-categories"

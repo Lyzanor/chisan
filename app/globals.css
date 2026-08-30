@@ -143,7 +143,6 @@ a {
 .area-selector-select:focus-visible,
 .area-selector-submit:focus-visible,
 .manual-catalog-selector__submit:focus-visible,
-.language-switcher a:focus-visible,
 .catalog-chip:focus-visible,
 .producer-compact-link:focus-visible,
 .producer-compact-detail:focus-visible,
@@ -158,48 +157,6 @@ a {
 
 .area-selector--loading {
   color: var(--muted);
-}
-
-.language-switcher {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.language-switcher__label {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.language-switcher__options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.language-switcher a {
-  display: block;
-  padding: 0.35rem 0.55rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #ffffff;
-  color: var(--text);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.language-switcher a[aria-current="page"] {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent-text);
 }
 
 .catalog-start-page {

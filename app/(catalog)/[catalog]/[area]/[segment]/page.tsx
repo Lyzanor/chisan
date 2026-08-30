@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import { DetailDesktopNav } from "@/components/detail-desktop-nav";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
-import { LanguageSwitcher } from "@/components/language-switcher";
+import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import { ProducersMap } from "@/components/map/producers-map";
 import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
 import {
@@ -317,7 +317,7 @@ export default async function ProducerPage({
           area={area}
           messages={navMessages}
         />
-        <LanguageSwitcher
+        <LanguageMenuRegistration
           currentLocale={locale}
           label={messages.languageSwitcher.label}
           options={languageOptions}

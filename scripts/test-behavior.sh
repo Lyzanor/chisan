@@ -111,7 +111,7 @@ LAST_SLUG="$(node -p "JSON.parse(process.argv[1]).lastSlug" "$FIXTURE_JSON")"
   scripts/test-public-analytics.ts \
   scripts/test-catalog-redirects.ts \
   scripts/test-catalog-metadata.ts \
-  scripts/test-language-switcher.ts \
+  scripts/test-account-language-menu.ts \
   scripts/test-producer-route-aliases.ts
 
 ./node_modules/.bin/tsx -e '
