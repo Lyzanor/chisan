@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">Chisan design language foundations v0.2</title>
+  <desc id="desc">A minimal visual board showing the lower-case Chisan wordmark, monochrome palette, Noto Sans typography and functional Join mark.</desc>
+  <defs>
+    <style>
+      .type { font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif; }
+      .ink { fill: #151815; }
+      .stone { fill: #666B66; }
+      .pine { fill: #40584A; }
+      .meta { font: 500 13px "Noto Sans", "Helvetica Neue", Arial, sans-serif; letter-spacing: 1.3px; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="#F7F7F3"/>
+
+  <!-- Wordmark: primary logo -->
+  <text x="96" y="126" class="type ink" font-size="64" font-weight="500" letter-spacing="0.6">chisan</text>
+  <text x="98" y="160" class="type stone" font-size="16" font-weight="400">Connecting local food.</text>
+  <text x="1240" y="104" class="meta pine">DESIGN LANGUAGE · V0.2</text>
+  <text x="1240" y="137" class="type stone" font-size="16">Radical reduction</text>
+  <line x1="96" y1="206" x2="1504" y2="206" stroke="#D9DCD6"/>
+
+  <!-- Direction -->
+  <text x="96" y="280" class="meta pine">01 · DIRECTION</text>
+  <text x="96" y="365" class="type ink" font-size="76" font-weight="500" letter-spacing="-2.8">
+    <tspan x="96" dy="0">Quiet enough</tspan>
+    <tspan x="96" dy="82">for place to lead.</tspan>
+  </text>
+  <text x="101" y="514" class="type stone" font-size="20">
+    One typeface · one ink · one field colour · meaningful space
+  </text>
+
+  <!-- Functional mark -->
+  <text x="1110" y="280" class="meta pine">02 · FUNCTIONAL MARK</text>
+  <rect x="1110" y="314" width="318" height="234" fill="#FFFFFF" stroke="#D9DCD6"/>
+  <g transform="translate(1216 375) scale(1.12)" fill="none" stroke="#151815" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M40 16H16V80H40"/>
+    <path d="M56 68H80V28H56"/>
+  </g>
+  <text x="1110" y="580" class="type ink" font-size="16" font-weight="500">The Join</text>
+  <text x="1205" y="580" class="type stone" font-size="16">favicon · avatar · compact attribution</text>
+
+  <!-- Palette -->
+  <text x="96" y="650" class="meta pine">03 · PALETTE</text>
+  <g transform="translate(96 686)">
+    <rect width="152" height="102" fill="#151815"/>
+    <text x="0" y="132" class="type ink" font-size="15" font-weight="500">Sumi</text>
+    <text x="0" y="154" class="type stone" font-size="13">#151815</text>
+  </g>
+  <g transform="translate(276 686)">
+    <rect width="152" height="102" fill="#40584A"/>
+    <text x="0" y="132" class="type ink" font-size="15" font-weight="500">Pine</text>
+    <text x="0" y="154" class="type stone" font-size="13">#40584A</text>
+  </g>
+  <g transform="translate(456 686)">
+    <rect width="152" height="102" fill="#666B66"/>
+    <text x="0" y="132" class="type ink" font-size="15" font-weight="500">Stone</text>
+    <text x="0" y="154" class="type stone" font-size="13">#666B66</text>
+  </g>
+  <g transform="translate(636 686)">
+    <rect width="152" height="102" fill="#D9DCD6"/>
+    <text x="0" y="132" class="type ink" font-size="15" font-weight="500">Hairline</text>
+    <text x="0" y="154" class="type stone" font-size="13">#D9DCD6</text>
+  </g>
+  <g transform="translate(816 686)">
+    <rect width="152" height="102" fill="#FFFFFF" stroke="#D9DCD6"/>
+    <text x="0" y="132" class="type ink" font-size="15" font-weight="500">White</text>
+    <text x="0" y="154" class="type stone" font-size="13">#FFFFFF</text>
+  </g>
+
+  <!-- Interface sample -->
+  <text x="1050" y="650" class="meta pine">04 · WEB TONE</text>
+  <rect x="1050" y="686" width="454" height="270" fill="#FFFFFF" stroke="#D9DCD6"/>
+  <g transform="translate(1082 716)">
+    <text x="0" y="18" class="type ink" font-size="20" font-weight="500" letter-spacing="0.2">chisan</text>
+    <text x="338" y="17" class="type ink" font-size="12" font-weight="500">Explore</text>
+    <line x1="0" y1="42" x2="390" y2="42" stroke="#D9DCD6"/>
+    <text x="0" y="78" class="meta pine">GIRONA · 42 PRODUCERS</text>
+    <text x="0" y="125" class="type ink" font-size="35" font-weight="500" letter-spacing="-1.2">Local food, in context.</text>
+    <text x="0" y="157" class="type stone" font-size="14">Find who produces, what they make and where.</text>
+    <rect x="0" y="188" width="158" height="44" rx="4" fill="#40584A"/>
+    <text x="20" y="216" class="type" fill="#FFFFFF" font-size="13" font-weight="500">View producers</text>
+    <text x="190" y="216" class="type ink" font-size="13" font-weight="500">Open map →</text>
+  </g>
+
+  <line x1="96" y1="922" x2="968" y2="922" stroke="#D9DCD6"/>
+  <text x="96" y="962" class="type ink" font-size="25" font-weight="500">Noto Sans · 400 / 500 / 600</text>
+  <text x="96" y="997" class="type stone" font-size="16">Hierarchy through size, position and space—not decoration.</text>
+</svg>

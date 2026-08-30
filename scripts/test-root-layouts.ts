@@ -68,8 +68,9 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
 
   assert.match(shell, /<html lang=\{htmlLang\}/);
   assert.match(shell, /ClerkProvider/);
-  assert.match(shell, /Fraunces/);
-  assert.match(shell, /Roboto/);
+  assert.match(shell, /Noto_Sans/);
+  assert.match(shell, /--font-chisan-sans/);
+  assert.match(shell, /ChisanWordmark/);
   assert.match(shell, /className="site-header"/);
   assert.match(shell, /className="site-footer"/);
   assert.match(shell, /aria-label=\{footerMessages\.navigation\}/);
@@ -89,6 +90,8 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.match(shell, /const localizedTagline = headerMessages\.tagline/);
   assert.match(shell, /site-header__tagline">\{localizedTagline\}/);
   assert.match(shell, /import "\.\.\/globals\.css"/);
+  assert.match(shell, /design\/foundations\/tokens\.css/);
+  assert.match(shell, /design\/adapters\/web\.css/);
 
   for (const rootLayout of [applicationRoot, catalogRoot]) {
     assert.doesNotMatch(

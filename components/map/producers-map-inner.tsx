@@ -141,7 +141,7 @@ function BoundsAwareMarkers({
     <>
       {visible.map((point) => (
         <Marker
-          key={point.key}
+          key={`${point.key}:${highlightedKey === point.key ? "selected" : "default"}`}
           position={[point.latitude, point.longitude]}
           icon={highlightedKey === point.key ? producerPinHighlightedIcon : producerPinIcon}
         >

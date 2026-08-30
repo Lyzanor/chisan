@@ -1,0 +1,188 @@
+/*
+ * Thin web adapter for the v0.3 foundations.
+ * Product components keep their behaviour; this file owns the visual mapping.
+ */
+
+body {
+  font-family: var(--chisan-font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+.site-header {
+  min-height: 64px;
+  margin-top: 0;
+  padding: var(--chisan-space-4) 0;
+  border: 0;
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-structural);
+  background: transparent;
+  box-shadow: none;
+}
+
+.site-header__brand {
+  align-items: center;
+  gap: var(--chisan-space-3);
+}
+
+.chisan-wordmark {
+  display: block;
+  width: 7rem;
+  aspect-ratio: 2084 / 754;
+  flex: 0 0 auto;
+  background: var(--chisan-brand-asset) center / contain no-repeat;
+}
+
+.chisan-wordmark--reverse {
+  filter: brightness(0) invert(1);
+}
+
+.chisan-mark {
+  display: block;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  background: var(--chisan-brand-asset) center / contain no-repeat;
+}
+
+.site-header__tagline {
+  color: var(--chisan-color-stone);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.site-header nav > a,
+.site-header nav > button {
+  min-height: 44px;
+  padding-inline: var(--chisan-space-3);
+  border-radius: var(--chisan-radius-control);
+  color: var(--chisan-color-ink);
+  font-weight: 500;
+  transition:
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.site-header nav > a:hover,
+.site-header nav > button:hover {
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.location-onboarding__primary,
+.location-onboarding__secondary,
+.location-onboarding__text-button {
+  border-radius: var(--chisan-radius-control);
+}
+
+.catalog-category-control {
+  display: grid;
+  grid-template-columns: auto minmax(12rem, 18rem);
+  align-items: center;
+  justify-content: end;
+  gap: var(--chisan-space-3);
+  margin: var(--chisan-space-3) 0;
+}
+
+.catalog-category-control__label {
+  color: var(--chisan-color-stone);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.catalog-category-control__select {
+  min-height: 44px;
+  padding: 0.55rem 2.25rem 0.55rem 0.75rem;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  font: 500 0.875rem/1.4 var(--chisan-font-sans);
+}
+
+.catalog-category-control__select:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.site-footer {
+  border-color: var(--chisan-color-ink);
+  border-radius: var(--chisan-radius-structural);
+  background: var(--chisan-color-ink);
+}
+
+.site-footer .site-footer__brand-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-footer .chisan-wordmark {
+  width: 6.5rem;
+}
+
+/* Exact producer field: geometry stays at the catalog coordinate. */
+.producer-map-pin {
+  display: grid !important;
+  place-items: center;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.producer-map-pin-dot {
+  width: 5px;
+  height: 5px;
+  border: 0;
+  background: var(--chisan-color-ink);
+  box-shadow: 0 0 0 1px rgb(255 253 248 / 82%);
+}
+
+.producer-map-pin-dot--highlighted {
+  width: 9px;
+  height: 9px;
+  background: var(--chisan-color-ink);
+  box-shadow:
+    0 0 0 2px var(--chisan-color-surface),
+    0 0 0 4px var(--chisan-color-moss);
+}
+
+.leaflet-control-attribution {
+  border-radius: 2px 0 0;
+  background: rgb(255 253 248 / 90%) !important;
+  color: var(--chisan-color-stone);
+  font-family: var(--chisan-font-sans);
+}
+
+.leaflet-control-attribution a {
+  color: var(--chisan-color-moss-dark);
+}
+
+@media (max-width: 460px) {
+  .site-header {
+    padding-block: var(--chisan-space-3);
+  }
+
+  .site-header__brand {
+    gap: 0;
+  }
+
+  .chisan-wordmark {
+    width: 5.8rem;
+  }
+
+  .catalog-category-control {
+    grid-template-columns: 1fr;
+    gap: var(--chisan-space-1);
+  }
+
+  .catalog-category-control__select {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header nav > a,
+  .site-header nav > button {
+    transition: none;
+  }
+}

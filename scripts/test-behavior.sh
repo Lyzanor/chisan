@@ -229,7 +229,7 @@ fi
 if [[
   "$HTML_HOME_CLEAN" != *"<title>Chisan · Connecting local food.</title>"* ||
   "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Connecting local food."'* ||
-  "$HTML_HOME_CLEAN" != *'class="site-header__name">Chisan</span>'* ||
+  "$HTML_HOME_CLEAN" != *'class="chisan-wordmark"'* ||
   "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Connecting local food.</span>'* ||
   "$HTML_HOME_CLEAN" != *'id="home-about-title">Connecting local food.</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||

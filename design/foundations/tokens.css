@@ -1,0 +1,61 @@
+/*
+ * Chisan v0.3 foundations.
+ *
+ * The --chisan-* properties are canonical. The final block is a temporary
+ * compatibility bridge for the existing web UI and may be removed once all
+ * components consume the canonical names directly.
+ */
+
+:root {
+  color-scheme: light;
+
+  --chisan-color-rice-paper: #f5f1e8;
+  --chisan-color-surface: #fffdf8;
+  --chisan-color-surface-muted: #ece8de;
+  --chisan-color-ink: #1d201b;
+  --chisan-color-stone: #686c66;
+  --chisan-color-hairline: #d7d3c9;
+  --chisan-color-moss: #52614c;
+  --chisan-color-moss-dark: #344237;
+  --chisan-color-moss-pale: #e5e8e1;
+
+  --chisan-font-sans: var(--font-chisan-sans), "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
+
+  --chisan-space-1: 0.25rem;
+  --chisan-space-2: 0.5rem;
+  --chisan-space-3: 0.75rem;
+  --chisan-space-4: 1rem;
+  --chisan-space-6: 1.5rem;
+  --chisan-space-8: 2rem;
+  --chisan-space-12: 3rem;
+  --chisan-space-16: 4rem;
+  --chisan-space-24: 6rem;
+  --chisan-space-32: 8rem;
+
+  --chisan-radius-structural: 0;
+  --chisan-radius-control: 4px;
+  --chisan-radius-object: 8px;
+  --chisan-line: 1px;
+  --chisan-focus-ring: 2px;
+  --chisan-shadow-overlay: 0 16px 40px rgb(29 32 27 / 10%);
+  --chisan-motion-immediate: 140ms;
+  --chisan-motion-component: 200ms;
+  --chisan-motion-page: 320ms;
+  --chisan-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Existing web semantic names mapped to the v0.3 foundation. */
+  --page-bg: var(--chisan-color-rice-paper);
+  --surface: var(--chisan-color-surface);
+  --surface-muted: var(--chisan-color-surface-muted);
+  --text: var(--chisan-color-ink);
+  --muted: var(--chisan-color-stone);
+  --line: var(--chisan-color-hairline);
+  --accent: var(--chisan-color-moss);
+  --accent-soft: var(--chisan-color-moss-pale);
+  --accent-text: var(--chisan-color-moss-dark);
+  --shadow: none;
+  --radius: var(--chisan-radius-control);
+  --font-fraunces: var(--font-chisan-sans);
+  --font-roboto: var(--font-chisan-sans);
+}
