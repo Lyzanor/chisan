@@ -111,10 +111,12 @@ run_expect_success() {
 
 prepare_git_audit_repo() {
   local repo_root="$1"
-  mkdir -p "$repo_root/scripts" "$repo_root/data/reference" \
+  mkdir -p "$repo_root/scripts/lib" "$repo_root/data/reference" \
     "$repo_root/data/csv/es/one" "$repo_root/data/csv/es/two"
   cp "$ROOT_DIR/scripts/audit-csv.js" "$repo_root/scripts/audit-csv.js"
+  cp "$ROOT_DIR/scripts/lib/description-quality.mjs" "$repo_root/scripts/lib/description-quality.mjs"
   cp "$ROOT_DIR/data/reference/categories.json" "$repo_root/data/reference/categories.json"
+  cp "$ROOT_DIR/data/reference/description-policy.json" "$repo_root/data/reference/description-policy.json"
   ln -s "$ROOT_DIR/node_modules" "$repo_root/node_modules"
   cat >"$repo_root/data/csv/es/AGENTS.md" <<'GUIDE'
 # Country
@@ -664,10 +666,12 @@ grep -q "slug 'country-shared' is duplicated within country 'es'" "$TMP_DIR/out-
 # in an isolated miniature repository so unrelated workspace changes cannot
 # influence the result.
 CHANGED_ROOT="$TMP_ROOT/changed-repo"
-mkdir -p "$CHANGED_ROOT/scripts" "$CHANGED_ROOT/data/reference" \
+mkdir -p "$CHANGED_ROOT/scripts/lib" "$CHANGED_ROOT/data/reference" \
   "$CHANGED_ROOT/data/csv/es/one" "$CHANGED_ROOT/data/csv/es/two"
 cp "$ROOT_DIR/scripts/audit-csv.js" "$CHANGED_ROOT/scripts/audit-csv.js"
+cp "$ROOT_DIR/scripts/lib/description-quality.mjs" "$CHANGED_ROOT/scripts/lib/description-quality.mjs"
 cp "$ROOT_DIR/data/reference/categories.json" "$CHANGED_ROOT/data/reference/categories.json"
+cp "$ROOT_DIR/data/reference/description-policy.json" "$CHANGED_ROOT/data/reference/description-policy.json"
 ln -s "$ROOT_DIR/node_modules" "$CHANGED_ROOT/node_modules"
 cat >"$CHANGED_ROOT/data/csv/es/AGENTS.md" <<'GUIDE'
 # Country
@@ -1072,7 +1076,7 @@ done
 
 # Canonical descriptions and their source locale are one paired editorial
 # value: neither half may be populated independently and codes are exact.
-node - "$TMP_DIR/description-locale-invalid.csv" "$TMP_DIR/description-locale-empty.csv" "$TMP_DIR/description-locale-source-only.csv" <<'NODE'
+node - "$TMP_DIR/description-locale-invalid.csv" "$TMP_DIR/description-locale-empty.csv" "$TMP_DIR/description-locale-source-only.csv" "$TMP_DIR/description-quality-invalid.csv" "$TMP_DIR/description-quality-valid.csv" <<'NODE'
 const fs = require("node:fs");
 const { stringify } = require("csv-stringify/sync");
 const header = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
@@ -1108,6 +1112,22 @@ fs.writeFileSync(
     record(makeRow(91005, "Produit du miel sur son exploitation.", "fr")),
   ]),
 );
+fs.writeFileSync(
+  process.argv[5],
+  stringify([
+    header,
+    record(makeRow(91006, "a".repeat(401), "es")),
+    record(makeRow(91007, "Produces honey at its Abrera unit.", "en")),
+    record(makeRow(91008, "Elabora miel. Más información en https://example.com", "es")),
+  ]),
+);
+fs.writeFileSync(
+  process.argv[6],
+  stringify([
+    header,
+    record(makeRow(91009, "Mantiene colmenas trashumantes y extrae la miel sin calentarla.", "es")),
+  ]),
+);
 NODE
 run_expect_failure "$TMP_DIR/out-description-locale-invalid.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-invalid.csv"
@@ -1120,6 +1140,16 @@ run_expect_success "$TMP_DIR/out-description-locale-empty.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-empty.csv"
 run_expect_success "$TMP_DIR/out-description-locale-source-only.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-source-only.csv"
+run_expect_failure "$TMP_DIR/out-description-quality-invalid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-quality-invalid.csv"
+grep -q "descripcion must be at most 400 Unicode characters" \
+  "$TMP_DIR/out-description-quality-invalid.txt"
+grep -q "descripcion uses a shared template that only repeats structured producer fields" \
+  "$TMP_DIR/out-description-quality-invalid.txt"
+grep -q "descripcion contains a URL or source citation" \
+  "$TMP_DIR/out-description-quality-invalid.txt"
+run_expect_success "$TMP_DIR/out-description-quality-valid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-quality-valid.csv"
 
 # Premium profile fields keep their controlled tokens, locale pairing, Unicode
 # ceiling and highlighted-link ordering inside the canonical CSV contract.

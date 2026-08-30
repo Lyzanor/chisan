@@ -32,6 +32,9 @@ const CANONICAL_HEADER = Object.freeze([
   "enlace destacado 1",
   "enlace destacado 2",
 ]);
+let PRODUCER_DESCRIPTION_MAX_CHARACTERS;
+let descriptionContaminationReason;
+let descriptionNaturalnessReason;
 
 // Controlled values are matched exactly, not case/diacritic folded: the CSVs are
 // the product surface, so 'Sí' or 'VERIFICADO' are drift to fix, not variants to
@@ -212,8 +215,14 @@ async function getDependencies() {
       import("node:path"),
       import("node:child_process"),
       import("csv-parse/sync"),
-    ]).then(([fs, path, childProcess, csvParse]) => {
+      import("./lib/description-quality.mjs"),
+    ]).then(([fs, path, childProcess, csvParse, descriptionQuality]) => {
       loadCategoryConfig(fs, path);
+      ({
+        PRODUCER_DESCRIPTION_MAX_CHARACTERS,
+        descriptionContaminationReason,
+        descriptionNaturalnessReason,
+      } = descriptionQuality);
       return {
         fs,
         path,
@@ -1524,6 +1533,24 @@ function runContractAudit({
 
     const description = cleanCell(fields.descripcion);
     const descriptionLocale = cleanCell(fields.descripcion_locale);
+    const descriptionLength = codePointLength(description);
+    if (descriptionLength > PRODUCER_DESCRIPTION_MAX_CHARACTERS) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `descripcion must be at most ${PRODUCER_DESCRIPTION_MAX_CHARACTERS} Unicode characters; found ${descriptionLength}`,
+      );
+    }
+    const descriptionContamination = descriptionContaminationReason(description);
+    if (descriptionContamination) {
+      push("error", line, id, slug, `descripcion ${descriptionContamination}`);
+    }
+    const descriptionNaturalness = descriptionNaturalnessReason(description);
+    if (descriptionNaturalness) {
+      push("error", line, id, slug, `descripcion ${descriptionNaturalness}`);
+    }
     if (!description && descriptionLocale) {
       push(
         "error",

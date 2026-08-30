@@ -24,6 +24,12 @@ import {
   translationPairKey,
   validateTranslationOutput,
 } from "./lib/catalog-translations.mjs";
+import {
+  TRANSLATED_DESCRIPTION_MAX_CHARACTERS,
+  codePointLength,
+  descriptionContaminationReason,
+  descriptionNaturalnessReason,
+} from "./lib/description-quality.mjs";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const REPOSITORY_ROOT = path.resolve(SCRIPT_DIR, "..");
@@ -403,6 +409,24 @@ function validateSidecar({
       pushError(result, displayPath, recordNumber, "text must be non-empty");
     } else if (row.text !== row.text.normalize("NFC")) {
       pushError(result, displayPath, recordNumber, "text must use Unicode NFC normalization");
+    } else {
+      const textLength = codePointLength(row.text);
+      if (textLength > TRANSLATED_DESCRIPTION_MAX_CHARACTERS) {
+        pushError(
+          result,
+          displayPath,
+          recordNumber,
+          `text must be at most ${TRANSLATED_DESCRIPTION_MAX_CHARACTERS} Unicode characters; found ${textLength}`,
+        );
+      }
+      const contamination = descriptionContaminationReason(row.text);
+      if (contamination) {
+        pushError(result, displayPath, recordNumber, `text ${contamination}`);
+      }
+      const naturalness = descriptionNaturalnessReason(row.text);
+      if (naturalness) {
+        pushError(result, displayPath, recordNumber, `text ${naturalness}`);
+      }
     }
     if (row.origin !== "machine" && row.origin !== "reviewed") {
       pushError(result, displayPath, recordNumber, "origin must be 'machine' or 'reviewed'");

@@ -51,6 +51,15 @@ anonymous group plants and registry entries that identify only a holding,
 facility or certification. The reason is the failed criterion, not the sector
 or business form.
 
+Published descriptions follow the size and content rules in
+`docs/CSV_CONTRACT.md`. Write producer prose, not a verbal copy of the row: a
+sentence that only combines the name, municipality, category and products is a
+template and should be left empty. Rewrite an overlong, contaminated or
+truncated source extract as concise catalog prose; do not merely cut it at the
+character limit. Use the productive municipality when it reads naturally and
+is supported by the row, while keeping location available independently in
+`municipio`.
+
 ## Candidate gate and lifecycle
 
 A registry, directory, article, map result or product listing is a discovery

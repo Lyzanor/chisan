@@ -1,0 +1,6 @@
+{
+  "version": "description-policy-v1",
+  "canonicalMaxCharacters": 400,
+  "translatedMaxCharacters": 500,
+  "areaPreviewMaxCharacters": 120
+}

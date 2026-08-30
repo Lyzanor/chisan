@@ -25,6 +25,12 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "csv-parse/sync";
 
+import {
+  descriptionContaminationReason,
+  descriptionNaturalnessReason,
+  isLikelyDescriptionTruncated,
+} from "./lib/description-quality.mjs";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const CSV_ROOT = path.join(ROOT, "data", "csv");
@@ -499,13 +505,36 @@ export const CHECKS = [
     },
   },
   {
+    id: "descripcion-contaminada",
+    kind: "cola",
+    stage: "verification",
+    label: "`descripcion` contiene texto de web, formato o spam ajeno al productor",
+    hint: "reescribe solo hechos del productor; elimina HTML, URL, navegación, cookies, citas y artefactos de importación",
+    run: ({ rows }) =>
+      rows.filter((row) => descriptionContaminationReason(row.descripcion)),
+  },
+  {
+    id: "descripcion-truncada",
+    kind: "cola",
+    stage: "verification",
+    label: "`descripcion` probablemente termina cortada",
+    hint: "contrasta el texto existente y ciérralo como una o dos frases factuales completas",
+    run: ({ rows }) =>
+      rows.filter((row) => isLikelyDescriptionTruncated(row.descripcion)),
+  },
+  {
     id: "descripcion-generica",
     kind: "cola",
     stage: "verification",
     label: "`descripcion` que no distingue a este productor de otro de su categoría",
     hint: "docs/CSV_CONTRACT.md § Editorial field conventions; se publica tal cual en la ficha",
     run: ({ rows }) =>
-      rows.filter((r) => r.descripcion && GENERIC_DESCRIPTION.some((re) => re.test(r.descripcion))),
+      rows.filter(
+        (row) =>
+          row.descripcion &&
+          (descriptionNaturalnessReason(row.descripcion) ||
+            GENERIC_DESCRIPTION.some((pattern) => pattern.test(row.descripcion))),
+      ),
   },
   // No `geo-sin-check` here on purpose: check:csv already reports it per file
   // as "geo-check skipped", using a centroid lookup with community-aware

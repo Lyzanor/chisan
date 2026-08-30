@@ -116,12 +116,61 @@ test("published falsehood is always a cola", () => {
     "maps-sin-ficha",
     "web-de-tercero",
     "identidad-duplicada",
+    "descripcion-contaminada",
     "descripcion-duplicada",
+    "descripcion-truncada",
   ]) {
     const check = CHECKS.find((c) => c.id === id);
     assert.ok(check, `missing check ${id}`);
     assert.equal(check.kind, "cola", `${id} must count as workload`);
   }
+});
+
+test("description quality queues separate contamination from likely truncation", () => {
+  const contaminated = CHECKS.find((check) => check.id === "descripcion-contaminada");
+  const truncated = CHECKS.find((check) => check.id === "descripcion-truncada");
+  const rows = [
+    { slug: "limpia", descripcion: "Elabora miel en Abrera con colmenas propias." },
+    { slug: "html", descripcion: "<nav>Inicio</nav> Elabora miel." },
+    { slug: "url", descripcion: "Elabora miel. Más información en https://example.com" },
+    { slug: "cortada", descripcion: "Elabora cerveza local obteniendo así un produ" },
+    { slug: "lista-breve", descripcion: "Cultiva tomates, cerezas, calçots…" },
+  ];
+
+  assert.deepEqual(
+    contaminated.run({ rows }).map((row) => row.slug),
+    ["html", "url"],
+  );
+  assert.deepEqual(
+    truncated.run({ rows }).map((row) => row.slug),
+    ["cortada"],
+  );
+});
+
+test("known row-recital templates are generic but producer-specific prose is not", () => {
+  const generic = CHECKS.find((check) => check.id === "descripcion-generica");
+  const rows = [
+    { slug: "unit", descripcion: "Produces cheese at its Kani unit." },
+    { slug: "winery", descripcion: "Winery at Mendoza, Mendoza." },
+    {
+      slug: "filler",
+      descripcion:
+        "Casa Ejemplo es un productor local de Almería especializado en queso, dentro de la provincia de Almería.",
+    },
+    {
+      slug: "propia",
+      descripcion: "Afina sus quesos durante seis meses en una antigua bodega subterránea.",
+    },
+    {
+      slug: "historia",
+      descripcion:
+        "Craft brewery in Moriarty founded in 1996, making and packaging its own ales, stouts and pilsners.",
+    },
+  ];
+  assert.deepEqual(
+    generic.run({ rows }).map((row) => row.slug),
+    ["unit", "winery", "filler"],
+  );
 });
 
 test("coordinate-only Maps links enter the listing migration queue", () => {

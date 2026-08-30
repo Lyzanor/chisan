@@ -791,6 +791,47 @@ test("checker applies content preservation invariants to current machine and rev
   assert.equal(result.stats.current, 0);
 });
 
+test("checker rejects overlong, contaminated or generic localized descriptions", (context) => {
+  const target = fixture(context);
+  const longSource = "Descripción extensa.";
+  const contaminatedSource = "Otra descripción.";
+  const genericSource = "Descripción distintiva.";
+  writeArea(target, [
+    { producerId: "1", text: longSource },
+    { producerId: "2", text: contaminatedSource },
+    { producerId: "3", text: genericSource },
+  ]);
+  writeSidecar(target, [
+    sidecarRow({
+      producerId: "1",
+      source: longSource,
+      text: "a".repeat(501),
+      origin: "reviewed",
+    }),
+    sidecarRow({
+      producerId: "2",
+      source: contaminatedSource,
+      text: "<nav>Inici</nav> Descripció.",
+      origin: "reviewed",
+    }),
+    sidecarRow({
+      producerId: "3",
+      source: genericSource,
+      text: "Produces honey at its Abrera unit.",
+      origin: "reviewed",
+    }),
+  ]);
+
+  const result = audit(target);
+  assert.ok(result.errors.some((error) => error.includes("at most 500 Unicode characters")));
+  assert.ok(result.errors.some((error) => error.includes("contains HTML copied from a source page")));
+  assert.ok(
+    result.errors.some((error) =>
+      error.includes("uses a shared template that only repeats structured producer fields"),
+    ),
+  );
+});
+
 test("an explicitly published locale requires a current complete sidecar", (context) => {
   const target = fixture(context);
   writeArea(target, [{ producerId: "1", text: "Descripción publicada." }]);

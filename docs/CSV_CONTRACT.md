@@ -247,9 +247,19 @@ for a speculative candidate that has not passed admission.
 - `productos estrella` contains only concrete confirmed outputs. Do not repeat
   `categoria` or `categorias adicionales`, invent representative products or
   turn it into prose.
-- `descripcion` states what this producer makes or does and may add supported
-  place, method or history. Exclude promotional claims, search text, citations,
-  source commentary and shared templates.
+- `descripcion` is one or two complete, natural factual sentences, with at most
+  400 Unicode characters. It may add supported products, place, method, people
+  or history, but it must say something producer-specific beyond merely
+  restating `nombre`, `municipio`, categories and `productos estrella`. Exclude
+  promotional claims, search text, URLs, citations, source commentary,
+  cataloguing or review narration, page boilerplate and shared templates. Never
+  publish a mechanically truncated sentence. When the evidence supports no
+  distinctive prose beyond the structured fields, leave `descripcion` empty;
+  generic filler is not completeness.
+- A localized `descripcion` may use up to 500 Unicode characters so languages
+  that expand relative to the canonical prose can preserve every fact without
+  becoming promotional or mechanically truncated. Area cards still apply the
+  shared 120-character word-boundary preview in every locale.
 - `horario` is copied only when the source makes its meaning and currency clear.
   Empty is preferable to an old or ambiguous schedule.
 - `visitas guiadas` records a reviewed explicit offer. Empty means unpublished,
@@ -475,6 +485,13 @@ The sidecar rules are:
   `prompt_version` and `glossary_version` record the reproducible generation
   context; review changes only the origin and reviewed text, not the source to
   which the row is tied.
+- A reviewed current variant may become the canonical description when an
+  editor deliberately changes the canonical source language. Preserve the old
+  canonical prose, when still useful, as a reviewed sidecar row tied to the new
+  source and record `engine=canonical-source-pivot`; this declares a reviewed
+  editorial move, not machine generation. Never rehash other variants as if
+  they had been generated from the new source: review them against it or remove
+  them until they are regenerated.
 - A `machine` row is valid only when that exact engine/version, prompt,
   glossary and target locale resolve to one approved model in
   `data/reference/translation-engines.json`. Each approval cites the reviewed
