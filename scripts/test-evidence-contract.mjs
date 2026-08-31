@@ -159,28 +159,38 @@ function main() {
     assert.equal(result.documentedRows, 1);
     assert.equal(result.tombstones, 2);
 
-    // The pruned shape is the contract: the old decision block, the reviewer tag
-    // and the review date are Git's or the CSV's job, and must not come back.
-    expectError(
-      [{ ...validKeep(), decision: { verification: "pendiente" } }],
-      "unknown field(s): decision",
-    );
-    expectError(
-      [{ ...validKeep(), reviewedBy: "test" }],
-      "unknown field(s): reviewedBy",
-    );
-    expectError(
-      [{ ...validKeep(), reviewedAt: "2026-06-15" }],
-      "unknown field(s): reviewedAt",
-    );
-    expectError(
-      [{ ...validKeep(), producer_id: "1" }],
-      "unknown field(s): producer_id",
-    );
-    expectError(
-      [{ ...validKeep(), slug_aliases: "productor-antiguo" }],
-      "unknown field(s): slug_aliases",
-    );
+    // The pruned shape is the contract. CSV facts, Git audit, private workflow,
+    // research artifacts and copied source content must not become a dossier.
+    for (const [field, value] of [
+      ["decision", { verification: "pendiente" }],
+      ["reviewedBy", "test"],
+      ["reviewedAt", "2026-06-15"],
+      ["producer_id", "1"],
+      ["slug_aliases", "productor-antiguo"],
+      ["rowSnapshot", { nombre: "Productor Uno" }],
+      ["candidateStatus", "resolved"],
+      ["searchQuery", "productor uno municipio"],
+      ["confidence", 0.9],
+      ["model", "example-model"],
+      ["accountId", "account_1"],
+      ["sourceContent", "copied page text"],
+    ]) {
+      expectError([{ ...validKeep(), [field]: value }], `unknown field(s): ${field}`);
+    }
+
+    for (const [field, value] of [
+      ["quote", "copied quotation"],
+      ["html", "<main>copied page</main>"],
+      ["screenshot", "capture.png"],
+      ["response", { status: 200 }],
+      ["checkedBy", "test"],
+      ["confidence", 0.9],
+    ]) {
+      const record = validKeep();
+      record.sources[0][field] = value;
+      expectError([record], `unknown field(s): ${field}`);
+    }
+
     expectError([{ ...validKeep(), action: "add" }], "unsupported action 'add'");
 
     // A keep says the row is in the CSV; a tombstone says it is not.
