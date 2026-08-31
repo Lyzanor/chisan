@@ -202,6 +202,39 @@ harness was reverted and is absent from the final diff.
 
 final result: passed
 
+# Default producer image design QA
+
+## Evidence
+
+- Previous fallback: the Git version of `public/productores/generica.webp`, with
+  the retired `KM0` wordmark and a leaf-shaped map pin.
+- Current fallback: `public/productores/generica.webp`.
+- Profile exercised: `/us/nevada/jacobs-family-berry-farm`, whose catalog row
+  has no `imagen` value.
+- Browser: Codex in-app browser against the local Next.js development server.
+- Desktop rendered image: 418 x 313 CSS pixels.
+- Mobile viewport: 390 x 844 CSS pixels.
+
+## Visual comparison
+
+- The replacement removes the retired name and literal map, leaf and food
+  motifs. It uses tactile paper, negative space and the rice-paper, ink, stone
+  and moss palette without presenting an unsupported producer fact.
+- The 4:3 composition stays intact in the desktop profile and remains legible
+  when the profile collapses to one column on mobile.
+- The image contains no text or essential information, so the localized image
+  alternative remains the accessible description of the profile media.
+
+## Final checklist
+
+- [x] A real producer row with an empty image field resolves to the fallback.
+- [x] Desktop and 390 px mobile layouts inspected.
+- [x] The WebP loaded at its full 1448 x 1086 intrinsic size.
+- [x] No logo, text, map pin, leaf, food, people or producer-specific claim.
+- [x] No remaining P0, P1 or P2 visual defects in the fallback image.
+
+final result: passed
+
 # How Chisan works design QA
 
 ## Evidence
