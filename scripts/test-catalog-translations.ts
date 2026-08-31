@@ -29,7 +29,9 @@ import {
 } from "./benchmark-catalog-translations.mjs";
 import {
   auditCatalogTranslations,
+  buildTranslationRemediationPlan,
   resolveTranslationCheckScope,
+  summarizeCanonicalChanges,
 } from "./check-catalog-translations.mjs";
 import {
   generateCatalogTranslations,
@@ -839,6 +841,43 @@ test("an explicitly published locale requires a current complete sidecar", (cont
   const result = audit(target);
   assert.ok(result.errors.some((error) => error.includes("required translation sidecar is missing")));
   assert.equal(result.stats.missing, 1);
+  assert.deepEqual(buildTranslationRemediationPlan(result.remediations), [
+    {
+      action: "generate",
+      country: target.country,
+      targetLocale: "ca",
+      region: "region",
+      area: "area",
+      producerIds: ["1"],
+      command: `npx pnpm generate:translations --country ${target.country} --target-locale ca --area area`,
+    },
+  ]);
+});
+
+test("reviewed translation remediation requires renewed review instead of generation", () => {
+  assert.deepEqual(
+    buildTranslationRemediationPlan([
+      {
+        action: "review",
+        country: "es",
+        targetLocale: "ca",
+        region: "catalunya",
+        area: "barcelona",
+        producerId: "7",
+      },
+    ]),
+    [
+      {
+        action: "review",
+        country: "es",
+        targetLocale: "ca",
+        region: "catalunya",
+        area: "barcelona",
+        producerIds: ["7"],
+        command: null,
+      },
+    ],
+  );
 });
 
 test("a valid preparatory sidecar may be incomplete before its locale is published", (context) => {
@@ -1232,6 +1271,13 @@ test("changed mode selects a sidecar affected by a canonical area edit", (contex
   });
   assert.deepEqual(scope.selectedSidecars, [target.sidecarPath]);
   assert.deepEqual(scope.canonicalChanges.get(changedPath), [target.sidecarPath]);
+  assert.deepEqual(summarizeCanonicalChanges(scope.canonicalChanges, target.root), [
+    {
+      country: target.country,
+      areaFileCount: 1,
+      sidecars: [`data/csv/${target.country}/translations.ca.csv`],
+    },
+  ]);
 });
 
 test("generator reuses reviewed, replaces stale machine and prunes only obsolete machine rows", async (context) => {

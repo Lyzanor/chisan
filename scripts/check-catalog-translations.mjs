@@ -139,6 +139,34 @@ function sidecarsByCountry(csvRoot, files) {
   return result;
 }
 
+export function summarizeCanonicalChanges(
+  canonicalChanges,
+  repositoryRoot = REPOSITORY_ROOT,
+) {
+  const grouped = new Map();
+  for (const [changedPath, sidecars] of canonicalChanges) {
+    const country = /^data\/csv\/([a-z]{2})\//.exec(changedPath)?.[1] ?? "unknown";
+    const summary = grouped.get(country) ?? {
+      country,
+      areaFiles: new Set(),
+      sidecars: new Set(),
+    };
+    summary.areaFiles.add(changedPath);
+    for (const sidecar of sidecars) {
+      summary.sidecars.add(path.relative(repositoryRoot, sidecar));
+    }
+    grouped.set(country, summary);
+  }
+
+  return [...grouped.values()]
+    .sort((left, right) => left.country.localeCompare(right.country))
+    .map((summary) => ({
+      country: summary.country,
+      areaFileCount: summary.areaFiles.size,
+      sidecars: [...summary.sidecars].sort(),
+    }));
+}
+
 /**
  * @param {{
  *   mode?: string,
@@ -229,6 +257,60 @@ export function resolveTranslationCheckScope({
 function pushError(result, filePath, recordNumber, message) {
   const location = recordNumber ? `${filePath}: record ${recordNumber}` : filePath;
   result.errors.push(`${location}: ${message}`);
+}
+
+function addTranslationRemediation(
+  result,
+  { action, country, targetLocale, source, producerId },
+) {
+  result.remediations.push({
+    action,
+    country,
+    targetLocale,
+    region: source?.region ?? null,
+    area: source?.area ?? null,
+    producerId: String(producerId),
+  });
+}
+
+export function buildTranslationRemediationPlan(remediations) {
+  const grouped = new Map();
+  for (const remediation of remediations) {
+    const key = [
+      remediation.action,
+      remediation.country,
+      remediation.targetLocale,
+      remediation.region ?? "",
+      remediation.area ?? "",
+    ].join("\u0000");
+    const group = grouped.get(key) ?? {
+      action: remediation.action,
+      country: remediation.country,
+      targetLocale: remediation.targetLocale,
+      region: remediation.region,
+      area: remediation.area,
+      producerIds: new Set(),
+    };
+    group.producerIds.add(remediation.producerId);
+    grouped.set(key, group);
+  }
+
+  return [...grouped.values()]
+    .map((group) => ({
+      ...group,
+      producerIds: [...group.producerIds].sort((left, right) => Number(left) - Number(right)),
+      command:
+        group.action === "generate" && group.area
+          ? `npx pnpm generate:translations --country ${group.country} --target-locale ${group.targetLocale} --area ${group.area}`
+          : null,
+    }))
+    .sort(
+      (left, right) =>
+        left.country.localeCompare(right.country) ||
+        left.targetLocale.localeCompare(right.targetLocale) ||
+        String(left.area ?? "").localeCompare(String(right.area ?? "")) ||
+        left.action.localeCompare(right.action),
+    );
 }
 
 function validateVersion(value, field, result, filePath, recordNumber) {
@@ -484,6 +566,13 @@ function validateSidecar({
       const message = `source_locale is stale; expected '${source.sourceLocale}'`;
       if (publicationRequirement?.sources.has(row.producer_id)) {
         pushError(result, displayPath, recordNumber, message);
+        addTranslationRemediation(result, {
+          action: row.origin === "reviewed" ? "review" : "generate",
+          country: classification.country,
+          targetLocale: classification.targetLocale,
+          source,
+          producerId: row.producer_id,
+        });
       } else {
         result.notices.push(`${displayPath}: record ${recordNumber}: ${message} (preparatory scope)`);
       }
@@ -495,6 +584,13 @@ function validateSidecar({
       const message = `source_hash is stale; expected '${expectedHash}'`;
       if (publicationRequirement?.sources.has(row.producer_id)) {
         pushError(result, displayPath, recordNumber, message);
+        addTranslationRemediation(result, {
+          action: row.origin === "reviewed" ? "review" : "generate",
+          country: classification.country,
+          targetLocale: classification.targetLocale,
+          source,
+          producerId: row.producer_id,
+        });
       } else {
         result.notices.push(`${displayPath}: record ${recordNumber}: ${message} (preparatory scope)`);
       }
@@ -517,6 +613,13 @@ function validateSidecar({
         recordNumber,
         `translation content failed validation: ${error instanceof Error ? error.message : String(error)}`,
       );
+      addTranslationRemediation(result, {
+        action: row.origin === "reviewed" ? "review" : "generate",
+        country: classification.country,
+        targetLocale: classification.targetLocale,
+        source,
+        producerId: row.producer_id,
+      });
       continue;
     }
     result.stats.current += 1;
@@ -533,6 +636,13 @@ function validateSidecar({
         null,
         `published area '${source.region}/${source.area}' is missing descripcion translation for producer_id '${source.producerId}'`,
       );
+      addTranslationRemediation(result, {
+        action: "generate",
+        country: classification.country,
+        targetLocale: classification.targetLocale,
+        source,
+        producerId: source.producerId,
+      });
       result.stats.missing += 1;
     }
   }
@@ -570,6 +680,14 @@ export function auditCatalogTranslations({
     repositoryRoot,
     errors: [...scope.errors],
     notices: /** @type {string[]} */ ([]),
+    remediations: /** @type {Array<{
+      action: "generate" | "review",
+      country: string,
+      targetLocale: string,
+      region: string | null,
+      area: string | null,
+      producerId: string,
+    }>} */ ([]),
     canonicalChanges: scope.canonicalChanges,
     selectedSidecars: scope.selectedSidecars,
     stats: {
@@ -622,6 +740,15 @@ export function auditCatalogTranslations({
         ...requirement.areas,
       ].sort().join(", ")} but the required translation sidecar is missing`,
     );
+    for (const source of requirement.sources.values()) {
+      addTranslationRemediation(result, {
+        action: "generate",
+        country: requirement.country,
+        targetLocale: requirement.targetLocale,
+        source,
+        producerId: source.producerId,
+      });
+    }
     result.stats.missing += requirement.sources.size;
   }
 
@@ -651,14 +778,33 @@ function printResult(result) {
   for (const notice of result.notices) console.log(`Notice: ${notice}`);
   if (result.canonicalChanges.size > 0) {
     console.log("Canonical changes and affected sidecars:");
-    for (const [changedPath, sidecars] of result.canonicalChanges) {
-      const display = sidecars.length
-        ? sidecars.map((filePath) => path.relative(result.repositoryRoot, filePath)).join(", ")
+    for (const summary of summarizeCanonicalChanges(
+      result.canonicalChanges,
+      result.repositoryRoot,
+    )) {
+      const display = summary.sidecars.length
+        ? summary.sidecars.join(", ")
         : "none materialized yet";
-      console.log(`- ${changedPath} -> ${display}`);
+      console.log(`- ${summary.country}: ${summary.areaFileCount} area CSV file(s) -> ${display}`);
     }
   }
   for (const error of result.errors) console.error(`- ERROR ${error}`);
+  const remediationPlan = buildTranslationRemediationPlan(result.remediations);
+  if (remediationPlan.length > 0) {
+    console.log("Translation remediation plan:");
+    for (const item of remediationPlan) {
+      const scope = `${item.country}/${item.area ?? "unknown-area"} -> ${item.targetLocale}`;
+      const producers = item.producerIds.join(", ");
+      if (item.command) {
+        console.log(`- ${scope}; producer_id ${producers}`);
+        console.log(`  ${item.command}`);
+      } else {
+        console.log(
+          `- re-review ${scope}; producer_id ${producers} (reviewed rows are never overwritten automatically)`,
+        );
+      }
+    }
+  }
   console.log("Translation check summary");
   console.log(`- countries: ${result.stats.countries}`);
   console.log(`- sidecars: ${result.stats.sidecars}`);

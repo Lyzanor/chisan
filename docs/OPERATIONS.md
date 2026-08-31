@@ -97,6 +97,9 @@ process. They are never `NEXT_PUBLIC_*` values, are not configured in the
 deployed Next.js runtime and must not be required for a build or page request.
 Production renders only checked-in, validated translation sidecars; it never
 calls a translation provider at request time.
+The Vercel build runs the structural translation gate before the database
+assertion and application build. This final fail-closed check does not replace
+the local diff review, semantic review or repository gate.
 
 ## Preflight
 
@@ -139,9 +142,13 @@ calls a translation provider at request time.
 
 Before publishing or changing one locale:
 
-1. Generate with an explicit country, target locale and bounded area or batch.
-   Record the selected engine, engine version, prompt version and glossary
-   version, and inspect the resulting sidecar diff without printing credentials.
+1. After adding a producer description or changing canonical prose, run
+   `npx pnpm check:translations:changed`. Missing or stale machine rows produce
+   the exact bounded country, target-locale and area generation command;
+   stale reviewed rows instead require explicit renewed review. Generate only
+   that scope, record the selected engine, engine version, prompt version and
+   glossary version, and inspect the resulting sidecar diff without printing
+   credentials.
 2. Run the translation checks for the changed scope and then the repository
    gate. Every non-empty description rendered by the locale must have either
    canonical prose in that locale or a current sidecar row whose source locale
@@ -163,7 +170,9 @@ Before publishing or changing one locale:
    effective manifest policy rather than a manual release list.
 6. Run `npx pnpm verify:ai` for manifest, routing, contract or behavior changes.
    A sidecar-only data batch may close with `npx pnpm verify:data`; use
-   changed-only translation checks while iterating.
+   changed-only translation checks while iterating. Commit each canonical CSV
+   change together with every sidecar required by its effective published
+   locales.
 
 Before selecting or changing the automatic translation engine, build a fresh
 source-only benchmark plan and generate candidates into an ignored local path:
@@ -492,6 +501,17 @@ exception: Vercel environment changes apply only to new deployments, so each
 freeze or reactivation above requires a subsequent deployment even when the
 commit is unchanged. The build asserts migration compatibility and fails closed
 when accounts are enabled against an outdated schema.
+
+Every requested push still publishes the complete committed history to GitHub.
+`scripts/vercel-ignore-build.mjs` only suppresses the Vercel build when every
+changed file is deployment-neutral: repository documentation, country agent
+guides, editorial evidence, Markdown design records, GitHub workflow files or
+test-only scripts. Any public catalog row or sidecar, image, application source,
+runtime configuration, dependency, build/check script, or mixed change builds
+and deploys normally. If the previous successful deployment cannot be resolved
+inside Vercel's shallow clone, the classifier fails open and the build runs.
+GitHub CI remains authoritative and continues to validate every push, including
+ones whose Production build is skipped.
 
 The current account runtime and migration URLs may use different pooled/direct
 endpoints, but they must authenticate as the same schema-owning PostgreSQL role.

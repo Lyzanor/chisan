@@ -319,9 +319,10 @@ reserved `needs_changes` status is not a launched conversation loop.
 # 1. Apply one approved request locally and validate its CSV.
 npx pnpm producer:change materialize <change-request-uuid>
 
-# 2. Inspect the diff, add public evidence when appropriate, and run the gate.
+# 2. Inspect the diff, resolve affected translations, add public evidence, and run the gate.
+npx pnpm check:translations:changed
 npx pnpm verify:data
-git add <csv-and-evidence-files>
+git add <csv-evidence-and-required-translation-sidecar-files>
 git commit -m "data: apply reviewed producer profile change"
 
 # 3. Bind the request to the commit that contains its CSV.
@@ -330,6 +331,12 @@ npx pnpm producer:change finalize <change-request-uuid> <full-40-char-commit-sha
 # 4. Push main; GitHub/Vercel then make the committed CSV public.
 git push origin main
 ```
+
+When the approved patch changes `descripcion` or `descripcion_locale`, the
+changed translation check prints bounded generation commands for missing or
+stale machine rows. A stale `reviewed` row must be reviewed again and is never
+replaced automatically. The request's CSV and every sidecar required by the
+area's effective published locales form one atomic commit.
 
 Materialization refuses stale base hashes, missing producers, revoked membership
 or required entitlement, non-allowlisted fields, invalid values and a dirty
