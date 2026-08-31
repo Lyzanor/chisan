@@ -170,6 +170,15 @@ and fixture regressions for required borders, islands and enclaves. It must also
 detect unintended gaps or overlaps in the sampled activation scope and prove
 that generated assets are reproducible from the reviewed sources.
 
+After changing reviewed source geometry or its provenance, regenerate and
+inspect the deterministic browser artifacts before running the gate:
+
+```bash
+npx pnpm build:catalog-geography
+npx pnpm check:catalog-geography
+npx pnpm test:catalog-geography
+```
+
 Location-routing activation is independent of locale publication. An area may
 publish language variants without a boundary, and a validated location may
 resolve to the existing default locale before alternate languages launch.

@@ -142,6 +142,12 @@ the local diff review, semantic review or repository gate.
 
 Before publishing or changing one locale:
 
+Use `npx pnpm report:translation-readiness -- --country <cc>` to inspect one
+country without provider calls or catalog writes. Add `--area <area>` or
+`--target-locale <locale>` for a bounded report. Its statuses distinguish
+missing or stale machine rows from translations that require renewed human
+review; they do not prove full publication readiness.
+
 1. After adding a producer description or changing canonical prose, run
    `npx pnpm check:translations:changed`. Missing or stale machine rows produce
    the exact bounded country, target-locale and area generation command;

@@ -90,6 +90,11 @@ fix reference data only when its identity is supportable. Use
 moving correct producer coordinates. Provider output is always a candidate, not
 a hidden source of truth; follow its terms and limits.
 
+The maintenance utility is exposed as
+`npx pnpm build:municipalities -- --only <country>`. Its default merge preserves
+committed keys while adding newly supported ones. Treat `--refresh` as a
+separate reviewed reference-data change because it may move existing centroids.
+
 ## Evidence and closure
 
 For a reviewed add, re-verification or material correction, prefer a `keep`

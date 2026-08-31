@@ -25,6 +25,7 @@
     "check:translations": "node scripts/check-catalog-translations.mjs --all",
     "check:translations:changed": "node scripts/check-catalog-translations.mjs --changed",
     "build:catalog-geography": "node scripts/build-catalog-area-boundaries.mjs",
+    "build:municipalities": "node scripts/build-municipality-centroids.js",
     "check:catalog-geography": "node scripts/check-catalog-area-boundaries.mjs",
     "generate:translations": "node scripts/generate-catalog-translations.mjs",
     "benchmark:translations": "node scripts/benchmark-catalog-translations.mjs",
@@ -51,7 +52,7 @@
     "producer:ids:locked": "node scripts/with-producer-id-lock.mjs",
     "test:producer-id-lock": "node --test scripts/test-producer-id-lock.mjs",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations",
-    "verify:ai": "pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior"
+    "verify:ai": "pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior"
   },
   "dependencies": {
     "@clerk/nextjs": "7.7.9",
