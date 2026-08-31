@@ -1,18 +1,10 @@
+/*
+ * The visual foundation is loaded from design/foundations/tokens.css directly
+ * after this stylesheet. Product-semantic state and viewport plumbing stay
+ * here instead of becoming brand tokens.
+ */
 :root {
-  --page-bg: #f4f1ec;
-  --surface: #fffdfa;
-  --surface-muted: #ebe7df;
-  --text: #20231f;
-  --muted: #666b61;
-  --line: #d8d2c7;
-  --accent: #2f7a4f;
-  --accent-soft: #d9eadf;
-  --accent-text: #123820;
   --danger: #9d2b22;
-  --shadow: 0 10px 30px rgba(34, 33, 29, 0.08);
-  --radius: 8px;
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
 }
@@ -44,9 +36,33 @@ body {
   padding-right: var(--safe-right);
   background: var(--page-bg);
   color: var(--text);
-  font-family:
-    var(--font-roboto), "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo,
-    system-ui, sans-serif;
+  font-family: var(--chisan-font-sans);
+}
+
+/* Headings carry hierarchy by size, not by an unloaded bold weight. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+  font-weight: 500;
+}
+
+/* These uses of strong are compact interface labels, not prose emphasis. */
+.account-stat-card strong,
+.admin-agent-panel--stacked > strong,
+.admin-filter-tabs a strong,
+.admin-metric > strong,
+.admin-page-heading__meta strong,
+.admin-sidebar__operator strong,
+.admin-workflow strong,
+.admin-workspace__identity strong,
+.auth-profile-list strong,
+.country-card strong,
+.producer-compact-link strong {
+  font-weight: 500;
 }
 
 a {
@@ -75,7 +91,7 @@ a {
   margin: 0 0 0.25rem;
   color: var(--accent);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -84,8 +100,7 @@ a {
 .detail-hero h1,
 .panel h1 {
   margin: 0;
-  font-family: var(--font-fraunces), "Yu Mincho", YuMincho, "Hiragino Mincho ProN", Georgia,
-    serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.65rem, 3vw, 2.6rem);
   line-height: 1.05;
 }
@@ -107,7 +122,7 @@ a {
 .area-selector-label {
   color: var(--muted);
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .area-selector-select {
@@ -130,7 +145,7 @@ a {
   color: #ffffff;
   cursor: pointer;
   font: inherit;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .area-selector-submit:disabled {
@@ -184,7 +199,7 @@ a {
 
 .location-onboarding__copy h2 {
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.2rem;
 }
 
@@ -214,7 +229,7 @@ a {
   cursor: pointer;
   font: inherit;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -275,7 +290,7 @@ a {
 
 .catalog-start-head h1 {
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.65rem, 3vw, 2.6rem);
   line-height: 1.05;
 }
@@ -307,7 +322,7 @@ a {
 }
 
 .country-card strong {
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.35rem;
   line-height: 1.1;
 }
@@ -333,7 +348,7 @@ a {
 
 .home-about h2 {
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.65rem, 3vw, 2.4rem);
   line-height: 1.05;
 }
@@ -370,9 +385,9 @@ a {
 .purpose-page h1 {
   max-width: 10ch;
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(3rem, 9vw, 6.75rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 0.94;
 }
@@ -396,7 +411,7 @@ a {
 
 .purpose-page__statement p:first-child {
   color: var(--text);
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.45rem, 3vw, 2.15rem);
   line-height: 1.35;
 }
@@ -404,7 +419,7 @@ a {
 .purpose-page__closing {
   margin-top: clamp(2.5rem, 6vw, 4.5rem);
   color: var(--accent);
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.45rem, 3vw, 2rem);
 }
 
@@ -500,7 +515,7 @@ a {
   border-color: var(--accent);
   background: var(--accent-soft);
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .catalog-simple-layout {
@@ -516,7 +531,7 @@ a {
 
 .producer-selection-page__summary {
   flex: 0 0 auto;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .catalog-simple-map,
@@ -635,7 +650,7 @@ a {
   background: var(--surface);
   color: var(--accent-text);
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -711,7 +726,7 @@ a {
 .producer-compact-detail {
   color: var(--accent);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -757,7 +772,7 @@ a {
   border-radius: 999px;
   color: var(--accent-text);
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -780,7 +795,7 @@ a {
   cursor: pointer;
   font: inherit;
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .nav-dropdown__panel {
@@ -843,7 +858,7 @@ a {
 
 .detail-breadcrumb a {
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
   text-underline-offset: 0.2em;
 }
 
@@ -862,9 +877,7 @@ a {
   padding: clamp(1.25rem, 4vw, 2.75rem);
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) * 2);
-  background:
-    radial-gradient(circle at 82% 10%, rgba(47, 122, 79, 0.14), transparent 36%),
-    var(--surface);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
@@ -894,8 +907,7 @@ a {
   max-width: 62ch;
   margin: 1rem 0 0;
   color: var(--text);
-  font-family: var(--font-fraunces), "Yu Mincho", YuMincho, "Hiragino Mincho ProN", Georgia,
-    serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.05rem, 1.8vw, 1.35rem);
   line-height: 1.55;
 }
@@ -919,7 +931,7 @@ a {
   background: var(--surface);
   color: var(--accent-text);
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -952,12 +964,12 @@ a {
 .detail-service-chips span,
 .detail-product-list li {
   padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(47, 122, 79, 0.24);
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent-text);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .detail-secondary-links {
@@ -970,7 +982,7 @@ a {
 .detail-secondary-links a {
   color: var(--muted);
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   text-underline-offset: 0.2em;
 }
 
@@ -985,8 +997,7 @@ a {
 .detail-products h2,
 .detail-related h2 {
   margin: 0;
-  font-family: var(--font-fraunces), "Yu Mincho", YuMincho, "Hiragino Mincho ProN", Georgia,
-    serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.25rem, 2.2vw, 1.7rem);
 }
 
@@ -1024,8 +1035,8 @@ a {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--accent-text);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1068,7 +1079,7 @@ a {
 
 .detail-table-card td a {
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
   text-underline-offset: 0.2em;
 }
 
@@ -1098,7 +1109,7 @@ a {
   border-radius: var(--radius);
   background: var(--surface-muted);
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -1129,14 +1140,14 @@ td {
 
 th {
   background: var(--surface-muted);
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.86rem;
 }
 
 td:first-child {
   width: 32%;
-  color: var(--muted);
-  font-weight: 700;
+  color: var(--text);
+  font-weight: 500;
 }
 
 @media (max-width: 980px) {
@@ -1252,15 +1263,15 @@ td:first-child {
 }
 
 .site-header__name {
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .site-header__tagline {
   color: var(--muted);
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.04em;
 }
 
@@ -1283,7 +1294,7 @@ td:first-child {
   cursor: pointer;
   font-family: inherit;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -1312,7 +1323,7 @@ td:first-child {
 .site-footer a {
   color: #ffffff;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration-color: color-mix(in srgb, #ffffff 55%, transparent);
   text-underline-offset: 0.18em;
 }
@@ -1328,7 +1339,7 @@ td:first-child {
 
 .site-footer .site-footer__brand-link {
   margin-right: auto;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.45rem;
   text-decoration: none;
 }
@@ -1352,7 +1363,7 @@ td:first-child {
 
 .auth-copy h1 {
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: clamp(1.8rem, 4vw, 3rem);
   line-height: 1.05;
 }
@@ -1420,7 +1431,7 @@ td:first-child {
 .account-content h2,
 .account-content h3 {
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
 }
 
 .account-content h2 {
@@ -1449,9 +1460,9 @@ td:first-child {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--surface-muted);
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -1470,7 +1481,7 @@ td:first-child {
   border-radius: 999px;
   color: var(--accent-text);
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -1512,12 +1523,12 @@ td:first-child {
 
 .account-stat-card strong {
   color: var(--accent);
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 2rem;
 }
 
 .account-stat-card span {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .account-stat-card small,
@@ -1559,7 +1570,7 @@ td:first-child {
 
 .account-empty {
   background: var(--surface-muted);
-  color: var(--muted);
+  color: var(--text);
 }
 
 .account-message--error,
@@ -1585,7 +1596,7 @@ td:first-child {
   cursor: pointer;
   font: inherit;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -1651,7 +1662,7 @@ td:first-child {
 .account-form-section > legend {
   padding: 0 0.35rem;
   color: var(--text);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .account-form-section > p {
@@ -1684,12 +1695,12 @@ td:first-child {
 .account-field legend {
   color: var(--text);
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .account-field-error {
   color: var(--danger) !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .account-error-summary:focus {
@@ -1850,7 +1861,7 @@ td:first-child {
 .account-review-meta dt {
   color: var(--muted);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .account-diff-list dd,
@@ -1918,9 +1929,9 @@ td:first-child {
 }
 
 .admin-sidebar__brand span {
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-sidebar__brand small,
@@ -1957,7 +1968,7 @@ td:first-child {
 
 .admin-navigation__item span {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-navigation__item small {
@@ -2007,7 +2018,7 @@ td:first-child {
 .admin-review-panel h3,
 .admin-agent-panel h3 {
   margin: 0;
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
 }
 
 .admin-workspace__header h1 {
@@ -2022,8 +2033,8 @@ td:first-child {
 
 .admin-workspace__identity span {
   color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -2089,7 +2100,7 @@ td:first-child {
 
 .admin-page-heading__meta strong {
   color: var(--accent);
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.65rem;
 }
 
@@ -2114,7 +2125,7 @@ td:first-child {
 .admin-section-heading > a {
   color: var(--muted);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-metric-grid {
@@ -2144,14 +2155,14 @@ td:first-child {
 .admin-metric > span {
   align-self: center;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-metric > strong {
   grid-row: 1 / span 2;
   grid-column: 2;
   color: var(--accent-text);
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
   font-size: 1.8rem;
 }
 
@@ -2215,7 +2226,7 @@ td:first-child {
   background: var(--accent);
   color: #ffffff;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-workflow strong {
@@ -2251,7 +2262,7 @@ td:first-child {
 
 .admin-table thead th {
   background: var(--surface-muted);
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.7rem;
   letter-spacing: 0.035em;
   text-transform: uppercase;
@@ -2269,7 +2280,7 @@ td:first-child {
 .admin-table__primary-link {
   display: inline-block;
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18rem;
 }
@@ -2327,8 +2338,8 @@ td:first-child {
   gap: 0.38rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -2342,7 +2353,7 @@ td:first-child {
 
 .admin-status--neutral {
   background: var(--surface-muted);
-  color: var(--muted);
+  color: var(--text);
 }
 
 .admin-status--warning {
@@ -2406,7 +2417,7 @@ td:first-child {
   border-color: var(--accent);
   background: var(--accent-soft);
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-search-form {
@@ -2420,7 +2431,7 @@ td:first-child {
 
 .admin-search-form > label {
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-search-form > div {
@@ -2477,7 +2488,7 @@ td:first-child {
   max-width: 100%;
   padding: 0.65rem 0.72rem;
   overflow-x: auto;
-  border: 1px solid rgba(18, 56, 32, 0.18);
+  border: 1px solid color-mix(in srgb, var(--accent-text) 18%, transparent);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.72);
   color: var(--accent-text);
@@ -2547,7 +2558,7 @@ td:first-child {
   flex: 0 0 auto;
   color: var(--accent-text);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .admin-state-callout--warning {
@@ -2619,8 +2630,8 @@ td:first-child {
 .admin-definition-list dt,
 .admin-hash-list dt {
   color: var(--muted);
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -2702,8 +2713,8 @@ td:first-child {
 
 .admin-note-grid article > span {
   color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
 }
 

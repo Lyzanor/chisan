@@ -17,7 +17,7 @@
   max-width: 11ch;
   margin: 0;
   font-size: clamp(3rem, 9vw, 6.75rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 0.94;
 }
@@ -57,7 +57,7 @@
   max-width: 15ch;
   margin: 0.45rem 0 0;
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.04;
 }
@@ -101,7 +101,7 @@
 .stepNumber {
   color: var(--accent);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.08em;
 }
 
@@ -147,7 +147,7 @@
   align-items: center;
   border: 1px solid var(--accent);
   border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -180,7 +180,7 @@
   border-top: 1px solid var(--line);
   color: var(--accent);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .contactHero {
@@ -198,7 +198,7 @@
 
 .channel a {
   color: var(--accent-text);
-  font-weight: 600;
+  font-weight: 500;
   text-underline-offset: 0.2em;
 }
 

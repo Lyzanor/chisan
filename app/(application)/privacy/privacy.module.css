@@ -14,7 +14,7 @@
 
 .article h1,
 .article h2 {
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--chisan-font-sans);
 }
 
 .article h1 {
@@ -41,7 +41,7 @@
 
 .article a {
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: 500;
   text-underline-offset: 0.2em;
 }
 

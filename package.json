@@ -19,6 +19,7 @@
     "list:producers": "node scripts/list-producers.mjs",
     "check:defects": "node scripts/audit-defects.mjs",
     "check:images": "node scripts/check-images.mjs",
+    "check:design": "node scripts/check-design.mjs",
     "check:links": "node scripts/check-links.mjs",
     "audit:description-locales": "node scripts/audit-description-locales.mjs",
     "check:translations": "node scripts/check-catalog-translations.mjs --all",
@@ -50,7 +51,7 @@
     "producer:ids:locked": "node scripts/with-producer-id-lock.mjs",
     "test:producer-id-lock": "node --test scripts/test-producer-id-lock.mjs",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations",
-    "verify:ai": "pnpm verify && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior"
+    "verify:ai": "pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior"
   },
   "dependencies": {
     "@clerk/nextjs": "7.7.9",

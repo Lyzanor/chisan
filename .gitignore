@@ -19,6 +19,7 @@
 
 # local automation artifacts
 /.playwright-cli/
+/.claude/
 /output/
 
 # production

@@ -1267,29 +1267,38 @@ test("producer profile contracts keep premium access separate from public semant
 });
 
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {
-  const [css, areaCatalog, areaExplorer, mapInner, japanese] = await Promise.all([
-    fs.promises.readFile(
-      path.resolve(process.cwd(), "app/globals.css"),
-      "utf8",
-    ),
-    fs.promises.readFile(
-      path.resolve(process.cwd(), "components/area-catalog.tsx"),
-      "utf8",
-    ),
-    fs.promises.readFile(
-      path.resolve(process.cwd(), "components/area-explorer.tsx"),
-      "utf8",
-    ),
-    fs.promises.readFile(
-      path.resolve(process.cwd(), "components/map/producers-map-inner.tsx"),
-      "utf8",
-    ),
-    loadMessages("ja"),
-  ]);
+  const [css, foundationTokens, areaCatalog, areaExplorer, mapInner, japanese] =
+    await Promise.all([
+      fs.promises.readFile(
+        path.resolve(process.cwd(), "app/globals.css"),
+        "utf8",
+      ),
+      fs.promises.readFile(
+        path.resolve(process.cwd(), "design/foundations/tokens.css"),
+        "utf8",
+      ),
+      fs.promises.readFile(
+        path.resolve(process.cwd(), "components/area-catalog.tsx"),
+        "utf8",
+      ),
+      fs.promises.readFile(
+        path.resolve(process.cwd(), "components/area-explorer.tsx"),
+        "utf8",
+      ),
+      fs.promises.readFile(
+        path.resolve(process.cwd(), "components/map/producers-map-inner.tsx"),
+        "utf8",
+      ),
+      loadMessages("ja"),
+    ]);
 
   assert.match(
     css,
-    /\nbody\s*\{[^}]*font-family:[^}]*"Hiragino Kaku Gothic ProN"[^}]*"Yu Gothic"[^}]*Meiryo[^}]*\}/,
+    /\nbody\s*\{[^}]*font-family:\s*var\(--chisan-font-sans\);[^}]*\}/,
+  );
+  assert.match(
+    foundationTokens,
+    /--chisan-font-sans:[^;]*"Hiragino Kaku Gothic ProN"[^;]*"Yu Gothic"[^;]*Meiryo[^;]*system-ui[^;]*;/,
   );
   assert.match(css, /:lang\(ja\) body\s*\{[^}]*line-break:\s*strict;[^}]*\}/);
 

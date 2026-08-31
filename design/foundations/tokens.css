@@ -1,9 +1,9 @@
 /*
  * Chisan v0.3 foundations.
  *
- * The --chisan-* properties are canonical. The final block is a temporary
- * compatibility bridge for the existing web UI and may be removed once all
- * components consume the canonical names directly.
+ * The --chisan-* properties are canonical. The final block maps them onto the
+ * existing web surface; product-semantic state such as errors stays outside
+ * the brand foundation.
  */
 
 :root {
@@ -44,7 +44,7 @@
   --chisan-motion-page: 320ms;
   --chisan-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  /* Existing web semantic names mapped to the v0.3 foundation. */
+  /* Existing web visual names mapped to the v0.3 foundation. */
   --page-bg: var(--chisan-color-rice-paper);
   --surface: var(--chisan-color-surface);
   --surface-muted: var(--chisan-color-surface-muted);
@@ -56,6 +56,4 @@
   --accent-text: var(--chisan-color-moss-dark);
   --shadow: none;
   --radius: var(--chisan-radius-control);
-  --font-fraunces: var(--font-chisan-sans);
-  --font-roboto: var(--font-chisan-sans);
 }
