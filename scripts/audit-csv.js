@@ -31,6 +31,9 @@ const CANONICAL_HEADER = Object.freeze([
   "mensaje_comunidad_locale",
   "enlace destacado 1",
   "enlace destacado 2",
+  "country",
+  "region",
+  "area",
 ]);
 let PRODUCER_DESCRIPTION_MAX_CHARACTERS;
 let descriptionContaminationReason;
@@ -61,6 +64,7 @@ const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
 const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
 const PRODUCER_ID_COLUMN = "producer_id";
+const LOCATION_COLUMNS = Object.freeze(["country", "region", "area"]);
 const COMMUNITY_MESSAGE_COLUMN = "mensaje a la comunidad";
 const CATEGORY_SEPARATOR = "|";
 const CENTROID_MAX_DISTANCE_KM = 15;
@@ -1219,10 +1223,11 @@ async function loadCentroids() {
 // homonyms by region, so both segments are the scope of a lookup.
 function inferScope(csvPath) {
   const normalized = String(csvPath ?? "").replace(/\\/g, "/");
-  const match = /(?:^|\/)data\/csv\/([^/]+)\/([^/]+)\//.exec(normalized);
+  const match =
+    /(?:^|\/)data\/csv\/([^/]+)\/([^/]+)\/([^/]+)\.csv$/.exec(normalized);
   return match
-    ? { country: match[1], region: match[2] }
-    : { country: null, region: null };
+    ? { country: match[1], region: match[2], area: match[3] }
+    : { country: null, region: null, area: null };
 }
 
 function pickCandidate(entry, scope) {
@@ -1454,6 +1459,16 @@ function runContractAudit({
     );
   }
 
+  if (!scope.country || !scope.region || !scope.area) {
+    push(
+      "error",
+      1,
+      0,
+      "(file)",
+      "area CSV path must match data/csv/<country>/<region>/<area>.csv",
+    );
+  }
+
   const validators = {
     web: () => null,
     "enlace destacado 1": (url) =>
@@ -1521,6 +1536,22 @@ function runContractAudit({
       const lines = slugLines.get(slug) ?? [];
       lines.push(line);
       slugLines.set(slug, lines);
+    }
+
+    for (const column of LOCATION_COLUMNS) {
+      const value = cleanCell(fields[column]);
+      const expected = scope[column];
+      if (!value) {
+        push("error", line, id, slug, `${column} is required`);
+      } else if (expected && value !== expected) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${column} must match CSV path value '${expected}', found '${value}'`,
+        );
+      }
     }
 
     // Identity fields the product cannot render a useful row without: the title,

@@ -44,7 +44,8 @@ Clerk session ──> PostgreSQL account workflows ──> reviewed proposal ─
 - The public app reads producer facts from area files under `data/csv/**`.
   Checked-in country translation sidecars may supply localized presentation,
   but never replace or override an area row. The folder tree defines the
-  countries, regions, areas, and producer pages.
+  countries, regions, areas, and producer pages; every row's required
+  `country`, `region` and `area` cells mirror that exact path for portability.
 - Candidate notes are temporary research. Evidence records the sources behind
   closed decisions. Neither is a runtime producer overlay.
 - Clerk owns credentials and sessions. PostgreSQL owns Chisan account state,
@@ -86,6 +87,9 @@ automatically between countries.
 
 - The CSV tree is the registry: adding a country, region, or area is a data
   change, not a code registration task.
+- `country`, `region` and `area` are required path mirrors on every producer
+  row. They never override the tree and publication fails when they disagree
+  with `data/csv/<country>/<region>/<area>.csv`.
 - One row represents one productive unit. Its durable key is
   `(<country>, producer_id)`; its public identity is the stable `slug` at
   `/<country>/<area>/<slug>`.

@@ -773,6 +773,9 @@ test("runtime CSV loading fails closed for required producer identity fields", (
     "categoria",
     "Venta online",
     "producer_id",
+    "country",
+    "region",
+    "area",
   ];
   const validRow: Record<string, string> = {
     slug: "producer-one",
@@ -781,19 +784,33 @@ test("runtime CSV loading fails closed for required producer identity fields", (
     categoria: "Wine",
     "Venta online": "no comprobado",
     producer_id: "1",
+    country: "es",
+    region: "example-region",
+    area: "example-area",
   };
   const csv = (overrides: Partial<Record<string, string>> = {}) =>
     `${fields.join(",")}\n${fields
       .map((field) => ({ ...validRow, ...overrides })[field] ?? "")
       .join(",")}\n`;
 
-  assert.equal(parseProducerCsvRows(csv(), "fixture")[0].slug, "producer-one");
+  const expectedLocation = {
+    country: "es",
+    region: "example-region",
+    area: "example-area",
+  };
+  assert.equal(
+    parseProducerCsvRows(csv(), "fixture", expectedLocation)[0].slug,
+    "producer-one",
+  );
   for (const field of [
     "slug",
     "nombre",
     "municipio",
     "categoria",
     "Venta online",
+    "country",
+    "region",
+    "area",
   ]) {
     assert.throws(
       () => parseProducerCsvRows(csv({ [field]: "" }), "fixture"),
@@ -812,13 +829,22 @@ test("runtime CSV loading fails closed for required producer identity fields", (
     () => parseProducerCsvRows(csv({ "Venta online": "unknown" }), "fixture"),
     /Venta online.*must be one of: sí, no, no comprobado/,
   );
+  assert.throws(
+    () =>
+      parseProducerCsvRows(
+        csv({ region: "wrong-region" }),
+        "fixture",
+        expectedLocation,
+      ),
+    /region.*must match CSV path value 'example-region'/,
+  );
 });
 
 test("runtime CSV loading preserves community-message spaces and LF line breaks", () => {
   const message = "Primera línea.  Dos espacios.\nSegunda línea.";
   const csv = [
-    "slug,nombre,municipio,categoria,Venta online,producer_id,mensaje a la comunidad,mensaje_comunidad_locale",
-    `producer-one,Producer One,Example Town,Wine,no comprobado,1,"${message}",es`,
+    "slug,nombre,municipio,categoria,Venta online,producer_id,mensaje a la comunidad,mensaje_comunidad_locale,country,region,area",
+    `producer-one,Producer One,Example Town,Wine,no comprobado,1,"${message}",es,es,example-region,example-area`,
   ].join("\n");
 
   assert.equal(

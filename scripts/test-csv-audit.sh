@@ -44,12 +44,13 @@ const producerIdIndex = canonicalColumns.indexOf("producer_id");
 const descriptionLocaleIndex = canonicalColumns.indexOf("descripcion_locale");
 const identityHeader = canonicalColumns.slice(0, producerIdIndex + 1).join(",");
 const descriptionLocaleHeader = canonicalColumns.slice(0, descriptionLocaleIndex + 1).join(",");
+const previousHeader = canonicalColumns.slice(0, -3).join(",");
 const raw = fs.readFileSync(file, "utf8");
 const firstLine = raw.split("\n", 1)[0];
 if (
   raw.startsWith("\uFEFF") ||
   raw.includes("\r") ||
-  ![canonical, identityHeader, descriptionLocaleHeader].includes(firstLine)
+  ![canonical, previousHeader, identityHeader, descriptionLocaleHeader].includes(firstLine)
 ) {
   process.exit(0);
 }
@@ -68,6 +69,8 @@ const base = Number.parseInt(
 ) * 1000;
 let changed = firstLine !== canonical;
 records[0] = [...canonicalColumns];
+const normalizedPath = file.replace(/\\/g, "/");
+const locationMatch = /\/data\/csv\/([^/]+)\/([^/]+)\/([^/]+)\.csv$/.exec(normalizedPath);
 for (let index = 1; index < records.length; index += 1) {
   const cells = records[index];
   if (cells.length === producerIdIndex) {
@@ -82,6 +85,19 @@ for (let index = 1; index < records.length; index += 1) {
   while (cells.length < canonicalColumns.length) {
     cells.push("");
     changed = true;
+  }
+  if (locationMatch) {
+    for (const [column, value] of [
+      ["country", locationMatch[1]],
+      ["region", locationMatch[2]],
+      ["area", locationMatch[3]],
+    ]) {
+      const columnIndex = canonicalColumns.indexOf(column);
+      if (cells[columnIndex] !== value) {
+        cells[columnIndex] = value;
+        changed = true;
+      }
+    }
   }
 }
 if (changed) fs.writeFileSync(file, stringify(records));
@@ -641,6 +657,44 @@ grep -q "header does not match the canonical header (column 12 is 'web' instead 
 # The exact canonical header passes contract mode, regardless of its current length.
 run_expect_success "$TMP_DIR/out-canonical-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/canonical-ok.csv"
+
+# Portable location columns are required and mirror the exact containing path.
+node - "$TMP_DIR/location-columns-valid.csv" "$TMP_DIR/location-columns-invalid.csv" <<'NODE'
+const fs = require("node:fs");
+const { stringify } = require("csv-stringify/sync");
+const header = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
+const category = require(process.cwd() + "/data/reference/categories.json").categories[0];
+const record = (row) => header.map((column) => row[column] ?? "");
+const base = {
+  slug: "location-columns",
+  nombre: "Location Columns",
+  municipio: "Abrera",
+  categoria: category,
+  verificacion: "pendiente",
+  "Venta online": "no comprobado",
+  producer_id: "99001",
+};
+fs.writeFileSync(
+  process.argv[2],
+  stringify([header, record({ ...base, country: "es", region: "catalunya", area: "location-columns-valid" })]),
+);
+fs.writeFileSync(
+  process.argv[3],
+  stringify([header, record({ ...base, country: "", region: "wrong-region", area: "wrong-area" })]),
+);
+NODE
+run_expect_success "$TMP_DIR/out-location-columns-valid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/location-columns-valid.csv"
+if node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/location-columns-invalid.csv" \
+  >"$TMP_DIR/out-location-columns-invalid.txt" 2>&1; then
+  echo "Error: missing or mismatched location columns must fail the contract" >&2
+  exit 1
+fi
+grep -q "country is required" "$TMP_DIR/out-location-columns-invalid.txt"
+grep -q "region must match CSV path value 'catalunya', found 'wrong-region'" \
+  "$TMP_DIR/out-location-columns-invalid.txt"
+grep -q "area must match CSV path value 'location-columns-invalid', found 'wrong-area'" \
+  "$TMP_DIR/out-location-columns-invalid.txt"
 
 run_expect_failure "$TMP_DIR/out-identity-format.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/identity-format.csv"

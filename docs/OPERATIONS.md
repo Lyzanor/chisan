@@ -225,6 +225,13 @@ open row-hash-dependent request, and keep Checkout disabled until migration
 `0006`, the widened catalog, application code and new-form smoke check are all
 live together.
 
+The later portable-location migration widens the same canonical header with
+required trailing `country`, `region` and `area` columns. Each row copies the
+exact three path slugs from `data/csv/<country>/<region>/<area>.csv`; use the
+same producer-change freeze, queue drain, atomic application deployment and
+post-deployment smoke check before accepting new proposals against the widened
+row hashes.
+
 ### Deferred Stripe adapter activation and future launch
 
 **Current state: deliberately deferred, with no launch date.**

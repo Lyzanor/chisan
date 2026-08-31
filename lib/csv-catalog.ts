@@ -26,6 +26,12 @@ import {
 
 type RawCsvRow = Record<string, string | undefined>;
 
+type ProducerCsvLocation = Readonly<{
+  country: string;
+  region: string;
+  area: string;
+}>;
+
 export type ProducerCsvRow = {
   producerId: number;
   slug: string;
@@ -978,6 +984,7 @@ const countryProducerIndexCache = new Map<
 export function parseProducerCsvRows(
   csvRaw: string,
   source = "catalog CSV",
+  expectedLocation?: ProducerCsvLocation,
 ): ProducerCsvRow[] {
   const parsedRows = parse(csvRaw, {
     columns: true,
@@ -1005,6 +1012,19 @@ export function parseProducerCsvRows(
     const name = readRequiredCatalogField(fields, "nombre", rowLabel);
     const city = readRequiredCatalogField(fields, "municipio", rowLabel);
     const category = readRequiredCatalogField(fields, "categoria", rowLabel);
+    for (const locationField of ["country", "region", "area"] as const) {
+      const declaredValue = readRequiredCatalogField(
+        fields,
+        locationField,
+        rowLabel,
+      );
+      const expectedValue = expectedLocation?.[locationField];
+      if (expectedValue && declaredValue !== expectedValue) {
+        throw new Error(
+          `${rowLabel}: '${locationField}' must match CSV path value '${expectedValue}', found '${declaredValue}'. Run check:csv for details.`,
+        );
+      }
+    }
     const onlineSales = readRequiredCatalogField(
       fields,
       ONLINE_SALES_COLUMN,
@@ -1053,9 +1073,17 @@ async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
     return cached;
   }
 
+  const location = findArea(countrySlug, normalizedArea);
+  if (!location) {
+    throw new Error(`Unknown area '${countrySlug}/${normalizedArea}'.`);
+  }
   const csvPath = resolveAreaCsvPath(countrySlug, normalizedArea);
   const csvRaw = await readFile(csvPath, "utf8");
-  const rows = parseProducerCsvRows(csvRaw, csvPath);
+  const rows = parseProducerCsvRows(csvRaw, csvPath, {
+    country: location.countrySlug,
+    region: location.regionSlug,
+    area: location.slug,
+  });
 
   csvCache.set(cacheKey, rows);
   return rows;

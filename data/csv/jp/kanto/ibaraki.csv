@@ -1,83 +1,83 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
-isemata-beikoku-seifun-hitachiota,Isemata Beikoku Seifun,Hitachiota,Pan y cereal,Hitachi Aki Soba,,,,,,https://soba-isemata.com/,,,,36.538280,140.530920,,pendiente,no comprobado,,,421,,,,,,
-iijima-chikusan-hokota,Iijima Chikusan,Hokota,Carne,,,,,,,https://www.iijima1129.co.jp/,,,,36.158670,140.516420,,pendiente,no comprobado,,,366,,,,,,
-fujita-apple-orchard-daigo,Fujita Apple Orchard,Daigo,Fruta y verdura,Apples,,,,,,https://applefujita-llc.com/,,,,36.764170,140.363610,,pendiente,no comprobado,,,229,,,,,,
-fukasaku-farm-hokota,Fukasaku Farm,Hokota,Fruta y verdura,,,,,,,https://fukasaku.com/,,,,36.158670,140.516420,,pendiente,no comprobado,,,233,,,,,,
-nemoto-tsukemono-mito,Nemoto Tsukemono,Mito,Conservas,Tsukemono,,,,,,http://www.nemotuke.com/,,,,36.365830,140.471250,,pendiente,no comprobado,,,851,,,,,,
-kiuchi-brewery-naka,Kiuchi Brewery,Naka,Sake,"Kikusakari, Hitachino Nest",,,,,,https://kiuchibrewery.co.jp/,,,,36.457390,140.486750,,pendiente,no comprobado,,,606,,,,,,
-komatsu-suisan-kitaibaraki,Komatsu Suisan,Kitaibaraki,Pescado,Shirasu,,,,,,http://www.shirasu.com/,,,,36.801900,140.751000,,pendiente,no comprobado,,,636,,,,,,
-nemotoen-bando,Nemotoen,Bando,Té e infusiones,Sashima cha,,,,,,https://nemotoen.com/,,,,36.063890,139.887780,,pendiente,no comprobado,,,852,,,,,,
-kamejirushi-confectionery-mito,Kamejirushi Confectionery,Mito,Dulces y repostería,,,,,,,https://www.kamejirushi.co.jp/,,,,36.365830,140.471250,,pendiente,no comprobado,,,483,,,,,,
-kozawa-foods-naka,Kozawa Foods,Naka,Legumbres,Natto,,,,,,http://www.kozawafoods.jp/,,,,36.457390,140.486750,,pendiente,no comprobado,,,659,,,,,,
-kurosawa-shoyuten-hitachinaka,Kurosawa Shoyuten,Hitachinaka,Condimentos,Fujini shoyu,,,,,,https://www.fujini-shouyu.co.jp/,,,,36.396690,140.534670,,pendiente,no comprobado,,,690,,,,,,
-shibanuma-soy-sauce-tsuchiura,Shibanuma Soy Sauce,Tsuchiura,Condimentos,Shoyu,,,,,,https://www.shibanuma.com/,,,,36.078280,140.204500,,pendiente,no comprobado,,,1084,,,,,,
-meiri-shurui-mito,Meiri Shurui,Mito,Destilados y licores,,,,,,,https://meirishurui.com/,,,,36.365830,140.471250,,pendiente,no comprobado,,,764,,,,,,
-iiyama-seicha-yachiyo,Iiyama Seicha,Yachiyo,Té e infusiones,,"3, Matsumoto, Yachiyo-machi, Yuki-gun, Ibaraki",,,,,https://iiyamaseicha.thebase.in/,,,,36.18161,139.89111,,pendiente,no comprobado,,,369,,,,,,
-hitachi-fugetsudo-hitachi,Hitachi Fugetsudo,Hitachi,Dulces y repostería,,"1773-1 Juocho Yamabe, Hitachi-shi, Ibaraki-ken 319-1307 Japan",,,,,https://www.fugetsudo.net/,,,,36.59914,140.6515,,pendiente,no comprobado,,,329,,,,,,
-terunuma-tokai,Terunuma,Tokai,Fruta y verdura,,"601 Terunuma, Tokaimura,Naka-gun, Ibaraki",,,,,https://hoshiimo.co.jp/,,,,36.434406,140.605515,,pendiente,no comprobado,,,1228,,,,,,
-ibaraki-mogitate-factory,Ibaraki Mogitate Factory,Ibaraki,Comida preparada,,茨城県東茨城郡茨城町小幡18-27,,,+81292978181,,https://ibamogi.jp/,,,,36.260777,140.383102,,pendiente,no comprobado,,,351,,,,,,
-aoki-brewing-koga,Aoki Brewing,Koga,Sake,,茨城県古河市本町2丁目15-11,,,,,https://aokishuzou.co.jp/,,,,36.190598,139.706146,,pendiente,no comprobado,,,58,,,,,,
-kiuchi-brewery-1823-naka,Kiuchi Brewery 1823,Naka,Sake,,,,,,,https://kiuchibrewery.co.jp,,,,36.468292,140.469131,,pendiente,no comprobado,,,607,,,,,,
-sudo-honke-kasama,Sudo Honke,Kasama,Sake,,茨城県笠間市小原2125,,,+81296770152,,https://www.sudohonke.co.jp/,,,,36.375771,140.322342,,pendiente,no comprobado,,,1140,,,,,,
-yoshikubo-sake-brewery-mito,Yoshikubo Sake Brewery,Mito,Sake,,"9-5 Hon-cho 3-chome, Mito-shi, Ibaraki Prefecture",,,,,http://www.ippin.co.jp,,,,36.36583,140.47125,,pendiente,no comprobado,,,1385,,,,,,
-raifuku-sake-brewing-chikusei,Raifuku Sake Brewing,Chikusei,Sake,,"1129 Kadoyama, Bando-shi, Ibaraki",,,,,http://www.raifuku.co.jp/　,,,,36.28944,139.98694,,pendiente,no comprobado,,Vino,999,,,,,,
-nishioka-honten-sakuragawa,Nishioka-Honten,Sakuragawa,Sake,,"6-1 Ta, Makabe-chou, Sakuragawa-shi, Ibaraki-ken",,,,,http://www.hananoi.jp,,,,36.32731,140.09056,,pendiente,no comprobado,,,873,,,,,,
-tsukinoi-shuzouten-oarai,Tsukinoi Shuzouten,Oarai,Sake,,"638 Isohama, Oaraimachi, Higashiibaraki-gun, Ibaraki",,,,,https://tsukinoi.co.jp/,,,,36.31333,140.57486,,pendiente,no comprobado,,,1273,,,,,,
-fujiya-tsukuba-purin-sakuragawa,Fujiya / Tsukuba Purin,Sakuragawa,Dulces y repostería,,"113-1, Iitsuka, Makabe-chou, Sakuragawa-shi, Ibaraki-ken, Japan",,,,,http://www.tsukuba-purin.co.jp/,,,,36.32731,140.09056,,pendiente,no comprobado,,,230,,,,,,
-hanamizuki-tsukuba,Hanamizuki,Tsukuba,Dulces y repostería,,茨城県つくば市二の宮4丁目14-4,,,,,https://www.hanamizuki1991.com/,,,,36.057865,140.120361,,pendiente,no comprobado,,,299,,,,,,
-kogetsuan-chikusei,Kogetsuan,Chikusei,Dulces y repostería,,"202-13 Hei, Chikusei-shi, Ibaraki-ken, Japan",,,,,https://kogetsuan.com/,,,,36.28944,139.98694,,pendiente,no comprobado,,,625,,,,,,
-kasyo-miyakawa-daigo,Kasyo Miyakawa,Daigo,Dulces y repostería,,"1657 Shimonomiya, Daigo-machi, Kuji-gun, Ibaraki-ken",,,,,https://kasyo-miyakawa.com,,,,36.76417,140.36361,,pendiente,no comprobado,,,524,,,,,,
-daruma-foods-mito,Daruma Foods,Mito,Legumbres,,"1-7-8 Yanagi-machi, Mito-shi, Ibaraki Prefecture",,,,,http://www.darumanatto.jp,,,,36.36583,140.47125,,pendiente,no comprobado,,,166,,,,,,
-higeta-shokuhin-tsuchiura,Higeta Shokuhin,Tsuchiura,Legumbres,,茨城県土浦市田中2丁目9-8,,,,,http://www.higeta-natto.co.jp/,,,,36.088001,140.187225,,pendiente,no comprobado,,,317,,,,,,
-anko-no-machi-kitaibaraki,Anko no Machi,Kitaibaraki,Comida preparada,,茨城県北茨城市平潟町235,,,+81293460569,,https://www.marumitsu-net.com/,,,,36.847301,140.793304,,pendiente,no comprobado,,,55,,,,,,
-kiuchi-brewing-and-distilling-hitachino-nest-naka,Kiuchi Brewing and Distilling / Hitachino Nest,Naka,Cerveza,,,,,,,https://kiuchibrewery.co.jp,,,,36.468292,140.469131,,pendiente,no comprobado,,,608,,,,,,
-aiyu-shuzo-itako,Aiyu Shuzo,Itako,Sake,,茨城県潮来市辻205,,,+81299622234,,http://www.aiyu-sake.jp/,,,,35.94556,140.557816,,pendiente,no comprobado,,,28,,,,,,
-asakawa-shuzo-hitachiomiya,Asakawa Shuzo,Hitachiomiya,Sake,,茨城県常陸大宮市上大賀2534,,,+81295520151,,,,,,36.587982,140.407196,,pendiente,no comprobado,,,81,,,,,,
-isaka-shuzoten-hitachiota,Isaka Shuzoten,Hitachiota,Sake,,茨城県常陸太田市小中町187,,,+81294822006,,http://www.isakasyuzou.co.jp/,,,,36.754681,140.512222,,pendiente,no comprobado,,,417,,,,,,
-ota-meijo-hitachiota,Ota Meijo,Hitachiota,Sake,,茨城県常陸太田市松平町1074,,,+81294851100,,,,,,36.588642,140.491821,,pendiente,no comprobado,,,962,,,,,,
-okabe-hitachiota,Okabe,Hitachiota,Sake,,茨城県常陸太田市小沢町2335,,,+81294742171,,http://www.matsuzakari.co.jp/,,,,36.523731,140.541885,,pendiente,no comprobado,,,917,,,,,,
-goretsu-tominaga-shuzoten-hitachiota,Goretsu Tominaga Shuzoten,Hitachiota,Sake,,茨城県常陸太田市大里町3401,,,+81294762007,,http://www.gouretsu.jp/,,,,36.53265,140.490204,,pendiente,no comprobado,,,270,,,,,,
-ishioka-shuzo-ishioka,Ishioka Shuzo,Ishioka,Sake,,茨城県石岡市東大橋字深久保2972,,,+81299263331,,http://www.ishiokashuzo.co.jp/,,,,36.19669,140.31102,,pendiente,no comprobado,,,432,,,,,,
-isokura-shuzo-kasama,Isokura Shuzo,Kasama,Sake,,茨城県笠間市稲田2281番地の1,,,+81296742002,,http://isokura.jp/,,,,36.367428,140.214386,,pendiente,no comprobado,,,439,,,,,,
-inaba-shuzo-tsukuba,Inaba Shuzo,Tsukuba,Sake,,茨城県つくば市沼田1485,,,+81298660020,,http://www.minanogawa.jp/,,,,36.207535,140.090393,,pendiente,no comprobado,,,397,,,,,,
-urazato-shuzoten-tsukuba,Urazato Shuzoten,Tsukuba,Sake,,茨城県つくば市吉沼982,,,+81298650032,,http://www.kiritsukuba.co.jp/,,,,36.14579,140.016678,,pendiente,no comprobado,,,1310,,,,,,
-iekyucho-honten-daigo,Iekyucho Honten,Daigo,Sake,,茨城県久慈郡大子町大子248-1,,,+81295720076,,,,,,36.775879,140.346375,,pendiente,no comprobado,,,361,,,,,,
-kahoku-shuzo-daigo,Kahoku Shuzo,Daigo,Sake,,茨城県久慈郡大子町大字内大野1887,,,+81295760121,,http://www.ibaraki-jizake.com/kahoku/,,,,36.792904,140.424545,,pendiente,no comprobado,,,476,,,,,,
-kinmon-shuzo-toride,Kinmon Shuzo,Toride,Sake,,茨城県取手市青柳65,,,+81297720103,,,,,,35.897175,140.080704,,pendiente,no comprobado,,,578,,,,,,
-tsukuba-ishida-farm-tsukuba,Tsukuba Ishida Farm,Tsukuba,Fruta y verdura,Organic vegetables,茨城県つくば市上郷7923　他,,,+81298952904,,https://tsukuba-ishida-farm.com/shop/,,,,36.096748,140.015488,,,sí,ecommerce,,1275,,,,,,
-cheese-hitachiota-hitachiota,さかい河岸ブルワリー,Sakai,Cerveza,,大字境1341-1,,,,sample@sample.jp,https://www.sakaimachi.co.jp/,,https://www.instagram.com/sakaikashi_brewery/,,36.10847,139.79494,,,sí,ecommerce,,1507,,,,,,
-shintone-cheese-inashiki,新利根チーズ工房,Inashiki,Lácteos y quesos,"新利根ブラン, 勝馬蹄, 白霞",茨城県稲敷市東大沼うし新田1510-6,,,,,https://shintone-cheese.com/,,,,35.956530,140.323940,,,no comprobado,,,2546,,,,,,
-chevre-kan-mito,森のシェーブル館,Mito,Lácteos y quesos,モッツァレラ,茨城県水戸市全隈町1454,,,,,https://www.chevre-kan.com/,,,,36.365830,140.471250,,,no comprobado,,,2807,,,,,,
-oenon-ushiku,合同酒精 株式会社/牛久シャトー,Ushiku,Vino,,茨城県牛久市中央3-20-1,,,+81298733151,,https://www.oenon.jp/ushiku-chateau/,,,,35.979360,140.149560,,,sí,ecommerce,,2242,,,,,,
-tsukuba-winery-tsukuba,株式会社 カドヤカンパニー/つくばワイナリー,Tsukuba,Vino,,茨城県つくば市北条字古城1162-8,,,+81298935115,,https://tsukuba-winery.kadoya-company.com/,,,,36.083470,140.076440,,,sí,ecommerce,,2721,,,,,,
-hiyama-hitachiota-shi,檜山酒造 株式会社,Hitachiōta-shi,Vino,,茨城県常陸太田市町屋町1359,,,+81294780611,,http://www.hiyama.co.jp/,,,,36.538280,140.530920,,pendiente,no comprobado,,,2834,,,,,,
-buryuwinery-hitachiota-shi,常陸コミュニティデザイン 株式会社/武龍ワイナリー,Hitachiōta-shi,Vino,,茨城県常陸太田市瑞龍町1351-2,,,+81294336388,,https://buryuwinery.com/,,,,36.538280,140.530920,,,no comprobado,,,2484,,,,,,
-s-shoyu-chikusei,上ホ醤油,Chikusei,Condimentos,卵に醤油,茨城県筑西市樋口303,Produces soy sauce and traditional seasonings at its Chikusei brewery.,,+81296227575,,,,,,36.289440,139.986940,,pendiente,no comprobado,,,2029,en,,,,,
-tabechoku-21731,松田製茶,Yachiyo,Té e infusiones,,,,,,,,,,,36.181610,139.891110,,pendiente,sí,marketplace,,2672,,,,,,
-tabechoku-23355,七会きのこセンター,Shirosato,Setas,きのこ,,,,,,,,,,36.479220,140.376220,,pendiente,sí,marketplace,,2009,,,,,,
-tabechoku-28633,ハラキン,Kashima,Setas,"きくらげ, きのこ",,,,,,,,,,35.965640,140.644830,,pendiente,sí,marketplace,,1875,,,,,,
-tabechoku-27423,大川水産,Itako,Pescado,,,,,,,,,,,35.947140,140.555360,,pendiente,sí,marketplace,,2316,,,,,,
-tabechoku-21081,涸沼川水産,茨城町,Pescado,,,,,,,,,,,36.286890,140.424530,,pendiente,sí,marketplace,,2884,,,,,,
-tabechoku-29422,コロタファーム,Naka,Pescado,,,,,,,,,,,36.457390,140.486750,,pendiente,sí,marketplace,,1786,,,,,,
-tabechoku-20303,山西牧場,Bando,Carne,豚肉,,,,,,,,,,36.063890,139.887780,,pendiente,sí,marketplace,,2443,,,,,,
-tabechoku-21426,ミートセンター菊地畜産,Hokota,Carne,,,,,,,,,,,36.158670,140.516420,,pendiente,sí,marketplace,,1953,,,,,,
-tabechoku-21710,永井農業 加宝地ほしいも,Hitachinaka,Conservas,,,,,,,,,,,36.396690,140.534670,,pendiente,sí,marketplace,,2846,,,,,,
-tabechoku-24207,常陸農園,Hitachiōta-shi,Conservas,,,,,,,,,,,36.538280,140.530920,,pendiente,sí,marketplace,,2485,,,,,,
-tabechoku-29210,塙商店,Kasama,Pan y cereal,,,,,,,,,,,36.345170,140.304310,,pendiente,sí,marketplace,,2290,,,,,,
-tabechoku-27488,果じゅまる園,Ishioka,Frutos secos,栗,,,,,,,,,,36.190830,140.287220,,pendiente,sí,marketplace,,2677,,,,,,
-tabechoku-24339,野村商店,Tsukubamirai,Legumbres,大豆,,,,,,,,,,35.963060,140.037030,,pendiente,sí,marketplace,,3227,,,,,,
-tabechoku-20202,パチャママ農園,Shimotsuma,Fruta y verdura,,,,,,,,,,,36.184390,139.968420,,pendiente,sí,marketplace,,1865,,,,,,
-tabechoku-24147,岩田青果,Yachiyo,Fruta y verdura,メロン,,,,,,,,,,36.181610,139.891110,,pendiente,sí,marketplace,,2458,,,,,,
-tabechoku-22170,酒詰農園,Toride,Pan y cereal,米,,,,,,,,,,35.911500,140.050360,,pendiente,sí,marketplace,,3219,,,,,,
-tabechoku-21523,オラソル農園 Hola Sol Hacienda,古河市,Fruta y verdura,,,,,,,,,,,36.178250,139.755440,,pendiente,sí,marketplace,,1736,,,,,,
-tabechoku-3077868,茂賀屋,Sakuragawa,Fruta y verdura,,,,,,,,,,,36.327310,140.090560,,pendiente,sí,marketplace,,3097,,,,,,
-tabechoku-26541,甘藷農園 燈屋,Ishioka,Fruta y verdura,,,,,,,,,,,36.190830,140.287220,,pendiente,sí,marketplace,,2936,,,,,,
-tabechoku-23774,ファームマロン,Kasama,Frutos secos,栗,,,,,,,,,,36.345170,140.304310,,pendiente,sí,marketplace,,1893,,,,,,
-tabechoku-22053,デーメテールの恵み｜烏骨鶏がいる農園,Hokota,Fruta y verdura,,,,,,,,,,,36.158670,140.516420,,pendiente,sí,marketplace,,1844,,,,,,
-tabechoku-3077225,岡野ブルーベリーガーデン,Tsukuba,Fruta y verdura,ブルーベリー,,,,,,,,,,36.083470,140.076440,,pendiente,sí,marketplace,,2454,,,,,,
-jp-ibaraki-yuki-udon-1c1a645,㈲西村製麺所,結城市,Pan y cereal,乾麺,,"Produces dried noodles in 結城市, ibaraki.",,,,https://yuki-udon.com/,,,,36.289660,139.871530,,,no comprobado,,,2589,en,,,,,
-ushiku-brewing,麦と葡萄 牛久醸造場 (Ushiku Brewing),Ushiku,Cerveza,,牛久町531-3,,,,grains.grapes@gmail.com,https://www.mugitobudou.com/,,https://www.instagram.com/grains.grapes.ushiku/,,35.97936,140.14956,,pendiente,no comprobado,,,3331,,,,,,
-tsukuba-brewery,つくばブルワリー (Tsukuba Brewery),Tsukuba,Cerveza,,下広岡1040-6,,,,,,,https://www.instagram.com/tsukubabrewery/,,36.08347,140.07644,,pendiente,no comprobado,,,1556,,,,,,
-kashimura-suisan-hitachinaka,樫村水産,Hitachinaka,Pescado,Himono,,Produces dried fish products in Hitachinaka.,,,,https://www.kashimura-suisan.co.jp/,,,,36.39669,140.53467,,,no comprobado,,,2828,en,,,,,
-ninbenichi-oarai,にんべんいち,Oarai,Pescado,"Shirasu, chirimen, tatami iwashi",茨城県東茨城郡大洗町磯浜町5489,"Processes Oarai shirasu into boiled, dried and preserved seafood products at its factory.",,+81292662001,ninben1@gmail.com,https://www.ninben1.com/,,,,36.31333,140.57486,,pendiente,sí,ecommerce,,1578,en,,,,,
-takano-foods-okame-natto,Takano Foods (Okame Natto),Omitama,Legumbres,,,,,,,https://www.takanofoods.co.jp/,,,,,,,pendiente,no comprobado,,,3444,,,,,,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
+isemata-beikoku-seifun-hitachiota,Isemata Beikoku Seifun,Hitachiota,Pan y cereal,Hitachi Aki Soba,,,,,,https://soba-isemata.com/,,,,36.538280,140.530920,,pendiente,no comprobado,,,421,,,,,,,jp,kanto,ibaraki
+iijima-chikusan-hokota,Iijima Chikusan,Hokota,Carne,,,,,,,https://www.iijima1129.co.jp/,,,,36.158670,140.516420,,pendiente,no comprobado,,,366,,,,,,,jp,kanto,ibaraki
+fujita-apple-orchard-daigo,Fujita Apple Orchard,Daigo,Fruta y verdura,Apples,,,,,,https://applefujita-llc.com/,,,,36.764170,140.363610,,pendiente,no comprobado,,,229,,,,,,,jp,kanto,ibaraki
+fukasaku-farm-hokota,Fukasaku Farm,Hokota,Fruta y verdura,,,,,,,https://fukasaku.com/,,,,36.158670,140.516420,,pendiente,no comprobado,,,233,,,,,,,jp,kanto,ibaraki
+nemoto-tsukemono-mito,Nemoto Tsukemono,Mito,Conservas,Tsukemono,,,,,,http://www.nemotuke.com/,,,,36.365830,140.471250,,pendiente,no comprobado,,,851,,,,,,,jp,kanto,ibaraki
+kiuchi-brewery-naka,Kiuchi Brewery,Naka,Sake,"Kikusakari, Hitachino Nest",,,,,,https://kiuchibrewery.co.jp/,,,,36.457390,140.486750,,pendiente,no comprobado,,,606,,,,,,,jp,kanto,ibaraki
+komatsu-suisan-kitaibaraki,Komatsu Suisan,Kitaibaraki,Pescado,Shirasu,,,,,,http://www.shirasu.com/,,,,36.801900,140.751000,,pendiente,no comprobado,,,636,,,,,,,jp,kanto,ibaraki
+nemotoen-bando,Nemotoen,Bando,Té e infusiones,Sashima cha,,,,,,https://nemotoen.com/,,,,36.063890,139.887780,,pendiente,no comprobado,,,852,,,,,,,jp,kanto,ibaraki
+kamejirushi-confectionery-mito,Kamejirushi Confectionery,Mito,Dulces y repostería,,,,,,,https://www.kamejirushi.co.jp/,,,,36.365830,140.471250,,pendiente,no comprobado,,,483,,,,,,,jp,kanto,ibaraki
+kozawa-foods-naka,Kozawa Foods,Naka,Legumbres,Natto,,,,,,http://www.kozawafoods.jp/,,,,36.457390,140.486750,,pendiente,no comprobado,,,659,,,,,,,jp,kanto,ibaraki
+kurosawa-shoyuten-hitachinaka,Kurosawa Shoyuten,Hitachinaka,Condimentos,Fujini shoyu,,,,,,https://www.fujini-shouyu.co.jp/,,,,36.396690,140.534670,,pendiente,no comprobado,,,690,,,,,,,jp,kanto,ibaraki
+shibanuma-soy-sauce-tsuchiura,Shibanuma Soy Sauce,Tsuchiura,Condimentos,Shoyu,,,,,,https://www.shibanuma.com/,,,,36.078280,140.204500,,pendiente,no comprobado,,,1084,,,,,,,jp,kanto,ibaraki
+meiri-shurui-mito,Meiri Shurui,Mito,Destilados y licores,,,,,,,https://meirishurui.com/,,,,36.365830,140.471250,,pendiente,no comprobado,,,764,,,,,,,jp,kanto,ibaraki
+iiyama-seicha-yachiyo,Iiyama Seicha,Yachiyo,Té e infusiones,,"3, Matsumoto, Yachiyo-machi, Yuki-gun, Ibaraki",,,,,https://iiyamaseicha.thebase.in/,,,,36.18161,139.89111,,pendiente,no comprobado,,,369,,,,,,,jp,kanto,ibaraki
+hitachi-fugetsudo-hitachi,Hitachi Fugetsudo,Hitachi,Dulces y repostería,,"1773-1 Juocho Yamabe, Hitachi-shi, Ibaraki-ken 319-1307 Japan",,,,,https://www.fugetsudo.net/,,,,36.59914,140.6515,,pendiente,no comprobado,,,329,,,,,,,jp,kanto,ibaraki
+terunuma-tokai,Terunuma,Tokai,Fruta y verdura,,"601 Terunuma, Tokaimura,Naka-gun, Ibaraki",,,,,https://hoshiimo.co.jp/,,,,36.434406,140.605515,,pendiente,no comprobado,,,1228,,,,,,,jp,kanto,ibaraki
+ibaraki-mogitate-factory,Ibaraki Mogitate Factory,Ibaraki,Comida preparada,,茨城県東茨城郡茨城町小幡18-27,,,+81292978181,,https://ibamogi.jp/,,,,36.260777,140.383102,,pendiente,no comprobado,,,351,,,,,,,jp,kanto,ibaraki
+aoki-brewing-koga,Aoki Brewing,Koga,Sake,,茨城県古河市本町2丁目15-11,,,,,https://aokishuzou.co.jp/,,,,36.190598,139.706146,,pendiente,no comprobado,,,58,,,,,,,jp,kanto,ibaraki
+kiuchi-brewery-1823-naka,Kiuchi Brewery 1823,Naka,Sake,,,,,,,https://kiuchibrewery.co.jp,,,,36.468292,140.469131,,pendiente,no comprobado,,,607,,,,,,,jp,kanto,ibaraki
+sudo-honke-kasama,Sudo Honke,Kasama,Sake,,茨城県笠間市小原2125,,,+81296770152,,https://www.sudohonke.co.jp/,,,,36.375771,140.322342,,pendiente,no comprobado,,,1140,,,,,,,jp,kanto,ibaraki
+yoshikubo-sake-brewery-mito,Yoshikubo Sake Brewery,Mito,Sake,,"9-5 Hon-cho 3-chome, Mito-shi, Ibaraki Prefecture",,,,,http://www.ippin.co.jp,,,,36.36583,140.47125,,pendiente,no comprobado,,,1385,,,,,,,jp,kanto,ibaraki
+raifuku-sake-brewing-chikusei,Raifuku Sake Brewing,Chikusei,Sake,,"1129 Kadoyama, Bando-shi, Ibaraki",,,,,http://www.raifuku.co.jp/　,,,,36.28944,139.98694,,pendiente,no comprobado,,Vino,999,,,,,,,jp,kanto,ibaraki
+nishioka-honten-sakuragawa,Nishioka-Honten,Sakuragawa,Sake,,"6-1 Ta, Makabe-chou, Sakuragawa-shi, Ibaraki-ken",,,,,http://www.hananoi.jp,,,,36.32731,140.09056,,pendiente,no comprobado,,,873,,,,,,,jp,kanto,ibaraki
+tsukinoi-shuzouten-oarai,Tsukinoi Shuzouten,Oarai,Sake,,"638 Isohama, Oaraimachi, Higashiibaraki-gun, Ibaraki",,,,,https://tsukinoi.co.jp/,,,,36.31333,140.57486,,pendiente,no comprobado,,,1273,,,,,,,jp,kanto,ibaraki
+fujiya-tsukuba-purin-sakuragawa,Fujiya / Tsukuba Purin,Sakuragawa,Dulces y repostería,,"113-1, Iitsuka, Makabe-chou, Sakuragawa-shi, Ibaraki-ken, Japan",,,,,http://www.tsukuba-purin.co.jp/,,,,36.32731,140.09056,,pendiente,no comprobado,,,230,,,,,,,jp,kanto,ibaraki
+hanamizuki-tsukuba,Hanamizuki,Tsukuba,Dulces y repostería,,茨城県つくば市二の宮4丁目14-4,,,,,https://www.hanamizuki1991.com/,,,,36.057865,140.120361,,pendiente,no comprobado,,,299,,,,,,,jp,kanto,ibaraki
+kogetsuan-chikusei,Kogetsuan,Chikusei,Dulces y repostería,,"202-13 Hei, Chikusei-shi, Ibaraki-ken, Japan",,,,,https://kogetsuan.com/,,,,36.28944,139.98694,,pendiente,no comprobado,,,625,,,,,,,jp,kanto,ibaraki
+kasyo-miyakawa-daigo,Kasyo Miyakawa,Daigo,Dulces y repostería,,"1657 Shimonomiya, Daigo-machi, Kuji-gun, Ibaraki-ken",,,,,https://kasyo-miyakawa.com,,,,36.76417,140.36361,,pendiente,no comprobado,,,524,,,,,,,jp,kanto,ibaraki
+daruma-foods-mito,Daruma Foods,Mito,Legumbres,,"1-7-8 Yanagi-machi, Mito-shi, Ibaraki Prefecture",,,,,http://www.darumanatto.jp,,,,36.36583,140.47125,,pendiente,no comprobado,,,166,,,,,,,jp,kanto,ibaraki
+higeta-shokuhin-tsuchiura,Higeta Shokuhin,Tsuchiura,Legumbres,,茨城県土浦市田中2丁目9-8,,,,,http://www.higeta-natto.co.jp/,,,,36.088001,140.187225,,pendiente,no comprobado,,,317,,,,,,,jp,kanto,ibaraki
+anko-no-machi-kitaibaraki,Anko no Machi,Kitaibaraki,Comida preparada,,茨城県北茨城市平潟町235,,,+81293460569,,https://www.marumitsu-net.com/,,,,36.847301,140.793304,,pendiente,no comprobado,,,55,,,,,,,jp,kanto,ibaraki
+kiuchi-brewing-and-distilling-hitachino-nest-naka,Kiuchi Brewing and Distilling / Hitachino Nest,Naka,Cerveza,,,,,,,https://kiuchibrewery.co.jp,,,,36.468292,140.469131,,pendiente,no comprobado,,,608,,,,,,,jp,kanto,ibaraki
+aiyu-shuzo-itako,Aiyu Shuzo,Itako,Sake,,茨城県潮来市辻205,,,+81299622234,,http://www.aiyu-sake.jp/,,,,35.94556,140.557816,,pendiente,no comprobado,,,28,,,,,,,jp,kanto,ibaraki
+asakawa-shuzo-hitachiomiya,Asakawa Shuzo,Hitachiomiya,Sake,,茨城県常陸大宮市上大賀2534,,,+81295520151,,,,,,36.587982,140.407196,,pendiente,no comprobado,,,81,,,,,,,jp,kanto,ibaraki
+isaka-shuzoten-hitachiota,Isaka Shuzoten,Hitachiota,Sake,,茨城県常陸太田市小中町187,,,+81294822006,,http://www.isakasyuzou.co.jp/,,,,36.754681,140.512222,,pendiente,no comprobado,,,417,,,,,,,jp,kanto,ibaraki
+ota-meijo-hitachiota,Ota Meijo,Hitachiota,Sake,,茨城県常陸太田市松平町1074,,,+81294851100,,,,,,36.588642,140.491821,,pendiente,no comprobado,,,962,,,,,,,jp,kanto,ibaraki
+okabe-hitachiota,Okabe,Hitachiota,Sake,,茨城県常陸太田市小沢町2335,,,+81294742171,,http://www.matsuzakari.co.jp/,,,,36.523731,140.541885,,pendiente,no comprobado,,,917,,,,,,,jp,kanto,ibaraki
+goretsu-tominaga-shuzoten-hitachiota,Goretsu Tominaga Shuzoten,Hitachiota,Sake,,茨城県常陸太田市大里町3401,,,+81294762007,,http://www.gouretsu.jp/,,,,36.53265,140.490204,,pendiente,no comprobado,,,270,,,,,,,jp,kanto,ibaraki
+ishioka-shuzo-ishioka,Ishioka Shuzo,Ishioka,Sake,,茨城県石岡市東大橋字深久保2972,,,+81299263331,,http://www.ishiokashuzo.co.jp/,,,,36.19669,140.31102,,pendiente,no comprobado,,,432,,,,,,,jp,kanto,ibaraki
+isokura-shuzo-kasama,Isokura Shuzo,Kasama,Sake,,茨城県笠間市稲田2281番地の1,,,+81296742002,,http://isokura.jp/,,,,36.367428,140.214386,,pendiente,no comprobado,,,439,,,,,,,jp,kanto,ibaraki
+inaba-shuzo-tsukuba,Inaba Shuzo,Tsukuba,Sake,,茨城県つくば市沼田1485,,,+81298660020,,http://www.minanogawa.jp/,,,,36.207535,140.090393,,pendiente,no comprobado,,,397,,,,,,,jp,kanto,ibaraki
+urazato-shuzoten-tsukuba,Urazato Shuzoten,Tsukuba,Sake,,茨城県つくば市吉沼982,,,+81298650032,,http://www.kiritsukuba.co.jp/,,,,36.14579,140.016678,,pendiente,no comprobado,,,1310,,,,,,,jp,kanto,ibaraki
+iekyucho-honten-daigo,Iekyucho Honten,Daigo,Sake,,茨城県久慈郡大子町大子248-1,,,+81295720076,,,,,,36.775879,140.346375,,pendiente,no comprobado,,,361,,,,,,,jp,kanto,ibaraki
+kahoku-shuzo-daigo,Kahoku Shuzo,Daigo,Sake,,茨城県久慈郡大子町大字内大野1887,,,+81295760121,,http://www.ibaraki-jizake.com/kahoku/,,,,36.792904,140.424545,,pendiente,no comprobado,,,476,,,,,,,jp,kanto,ibaraki
+kinmon-shuzo-toride,Kinmon Shuzo,Toride,Sake,,茨城県取手市青柳65,,,+81297720103,,,,,,35.897175,140.080704,,pendiente,no comprobado,,,578,,,,,,,jp,kanto,ibaraki
+tsukuba-ishida-farm-tsukuba,Tsukuba Ishida Farm,Tsukuba,Fruta y verdura,Organic vegetables,茨城県つくば市上郷7923　他,,,+81298952904,,https://tsukuba-ishida-farm.com/shop/,,,,36.096748,140.015488,,,sí,ecommerce,,1275,,,,,,,jp,kanto,ibaraki
+cheese-hitachiota-hitachiota,さかい河岸ブルワリー,Sakai,Cerveza,,大字境1341-1,,,,sample@sample.jp,https://www.sakaimachi.co.jp/,,https://www.instagram.com/sakaikashi_brewery/,,36.10847,139.79494,,,sí,ecommerce,,1507,,,,,,,jp,kanto,ibaraki
+shintone-cheese-inashiki,新利根チーズ工房,Inashiki,Lácteos y quesos,"新利根ブラン, 勝馬蹄, 白霞",茨城県稲敷市東大沼うし新田1510-6,,,,,https://shintone-cheese.com/,,,,35.956530,140.323940,,,no comprobado,,,2546,,,,,,,jp,kanto,ibaraki
+chevre-kan-mito,森のシェーブル館,Mito,Lácteos y quesos,モッツァレラ,茨城県水戸市全隈町1454,,,,,https://www.chevre-kan.com/,,,,36.365830,140.471250,,,no comprobado,,,2807,,,,,,,jp,kanto,ibaraki
+oenon-ushiku,合同酒精 株式会社/牛久シャトー,Ushiku,Vino,,茨城県牛久市中央3-20-1,,,+81298733151,,https://www.oenon.jp/ushiku-chateau/,,,,35.979360,140.149560,,,sí,ecommerce,,2242,,,,,,,jp,kanto,ibaraki
+tsukuba-winery-tsukuba,株式会社 カドヤカンパニー/つくばワイナリー,Tsukuba,Vino,,茨城県つくば市北条字古城1162-8,,,+81298935115,,https://tsukuba-winery.kadoya-company.com/,,,,36.083470,140.076440,,,sí,ecommerce,,2721,,,,,,,jp,kanto,ibaraki
+hiyama-hitachiota-shi,檜山酒造 株式会社,Hitachiōta-shi,Vino,,茨城県常陸太田市町屋町1359,,,+81294780611,,http://www.hiyama.co.jp/,,,,36.538280,140.530920,,pendiente,no comprobado,,,2834,,,,,,,jp,kanto,ibaraki
+buryuwinery-hitachiota-shi,常陸コミュニティデザイン 株式会社/武龍ワイナリー,Hitachiōta-shi,Vino,,茨城県常陸太田市瑞龍町1351-2,,,+81294336388,,https://buryuwinery.com/,,,,36.538280,140.530920,,,no comprobado,,,2484,,,,,,,jp,kanto,ibaraki
+s-shoyu-chikusei,上ホ醤油,Chikusei,Condimentos,卵に醤油,茨城県筑西市樋口303,Produces soy sauce and traditional seasonings at its Chikusei brewery.,,+81296227575,,,,,,36.289440,139.986940,,pendiente,no comprobado,,,2029,en,,,,,,jp,kanto,ibaraki
+tabechoku-21731,松田製茶,Yachiyo,Té e infusiones,,,,,,,,,,,36.181610,139.891110,,pendiente,sí,marketplace,,2672,,,,,,,jp,kanto,ibaraki
+tabechoku-23355,七会きのこセンター,Shirosato,Setas,きのこ,,,,,,,,,,36.479220,140.376220,,pendiente,sí,marketplace,,2009,,,,,,,jp,kanto,ibaraki
+tabechoku-28633,ハラキン,Kashima,Setas,"きくらげ, きのこ",,,,,,,,,,35.965640,140.644830,,pendiente,sí,marketplace,,1875,,,,,,,jp,kanto,ibaraki
+tabechoku-27423,大川水産,Itako,Pescado,,,,,,,,,,,35.947140,140.555360,,pendiente,sí,marketplace,,2316,,,,,,,jp,kanto,ibaraki
+tabechoku-21081,涸沼川水産,茨城町,Pescado,,,,,,,,,,,36.286890,140.424530,,pendiente,sí,marketplace,,2884,,,,,,,jp,kanto,ibaraki
+tabechoku-29422,コロタファーム,Naka,Pescado,,,,,,,,,,,36.457390,140.486750,,pendiente,sí,marketplace,,1786,,,,,,,jp,kanto,ibaraki
+tabechoku-20303,山西牧場,Bando,Carne,豚肉,,,,,,,,,,36.063890,139.887780,,pendiente,sí,marketplace,,2443,,,,,,,jp,kanto,ibaraki
+tabechoku-21426,ミートセンター菊地畜産,Hokota,Carne,,,,,,,,,,,36.158670,140.516420,,pendiente,sí,marketplace,,1953,,,,,,,jp,kanto,ibaraki
+tabechoku-21710,永井農業 加宝地ほしいも,Hitachinaka,Conservas,,,,,,,,,,,36.396690,140.534670,,pendiente,sí,marketplace,,2846,,,,,,,jp,kanto,ibaraki
+tabechoku-24207,常陸農園,Hitachiōta-shi,Conservas,,,,,,,,,,,36.538280,140.530920,,pendiente,sí,marketplace,,2485,,,,,,,jp,kanto,ibaraki
+tabechoku-29210,塙商店,Kasama,Pan y cereal,,,,,,,,,,,36.345170,140.304310,,pendiente,sí,marketplace,,2290,,,,,,,jp,kanto,ibaraki
+tabechoku-27488,果じゅまる園,Ishioka,Frutos secos,栗,,,,,,,,,,36.190830,140.287220,,pendiente,sí,marketplace,,2677,,,,,,,jp,kanto,ibaraki
+tabechoku-24339,野村商店,Tsukubamirai,Legumbres,大豆,,,,,,,,,,35.963060,140.037030,,pendiente,sí,marketplace,,3227,,,,,,,jp,kanto,ibaraki
+tabechoku-20202,パチャママ農園,Shimotsuma,Fruta y verdura,,,,,,,,,,,36.184390,139.968420,,pendiente,sí,marketplace,,1865,,,,,,,jp,kanto,ibaraki
+tabechoku-24147,岩田青果,Yachiyo,Fruta y verdura,メロン,,,,,,,,,,36.181610,139.891110,,pendiente,sí,marketplace,,2458,,,,,,,jp,kanto,ibaraki
+tabechoku-22170,酒詰農園,Toride,Pan y cereal,米,,,,,,,,,,35.911500,140.050360,,pendiente,sí,marketplace,,3219,,,,,,,jp,kanto,ibaraki
+tabechoku-21523,オラソル農園 Hola Sol Hacienda,古河市,Fruta y verdura,,,,,,,,,,,36.178250,139.755440,,pendiente,sí,marketplace,,1736,,,,,,,jp,kanto,ibaraki
+tabechoku-3077868,茂賀屋,Sakuragawa,Fruta y verdura,,,,,,,,,,,36.327310,140.090560,,pendiente,sí,marketplace,,3097,,,,,,,jp,kanto,ibaraki
+tabechoku-26541,甘藷農園 燈屋,Ishioka,Fruta y verdura,,,,,,,,,,,36.190830,140.287220,,pendiente,sí,marketplace,,2936,,,,,,,jp,kanto,ibaraki
+tabechoku-23774,ファームマロン,Kasama,Frutos secos,栗,,,,,,,,,,36.345170,140.304310,,pendiente,sí,marketplace,,1893,,,,,,,jp,kanto,ibaraki
+tabechoku-22053,デーメテールの恵み｜烏骨鶏がいる農園,Hokota,Fruta y verdura,,,,,,,,,,,36.158670,140.516420,,pendiente,sí,marketplace,,1844,,,,,,,jp,kanto,ibaraki
+tabechoku-3077225,岡野ブルーベリーガーデン,Tsukuba,Fruta y verdura,ブルーベリー,,,,,,,,,,36.083470,140.076440,,pendiente,sí,marketplace,,2454,,,,,,,jp,kanto,ibaraki
+jp-ibaraki-yuki-udon-1c1a645,㈲西村製麺所,結城市,Pan y cereal,乾麺,,"Produces dried noodles in 結城市, ibaraki.",,,,https://yuki-udon.com/,,,,36.289660,139.871530,,,no comprobado,,,2589,en,,,,,,jp,kanto,ibaraki
+ushiku-brewing,麦と葡萄 牛久醸造場 (Ushiku Brewing),Ushiku,Cerveza,,牛久町531-3,,,,grains.grapes@gmail.com,https://www.mugitobudou.com/,,https://www.instagram.com/grains.grapes.ushiku/,,35.97936,140.14956,,pendiente,no comprobado,,,3331,,,,,,,jp,kanto,ibaraki
+tsukuba-brewery,つくばブルワリー (Tsukuba Brewery),Tsukuba,Cerveza,,下広岡1040-6,,,,,,,https://www.instagram.com/tsukubabrewery/,,36.08347,140.07644,,pendiente,no comprobado,,,1556,,,,,,,jp,kanto,ibaraki
+kashimura-suisan-hitachinaka,樫村水産,Hitachinaka,Pescado,Himono,,Produces dried fish products in Hitachinaka.,,,,https://www.kashimura-suisan.co.jp/,,,,36.39669,140.53467,,,no comprobado,,,2828,en,,,,,,jp,kanto,ibaraki
+ninbenichi-oarai,にんべんいち,Oarai,Pescado,"Shirasu, chirimen, tatami iwashi",茨城県東茨城郡大洗町磯浜町5489,"Processes Oarai shirasu into boiled, dried and preserved seafood products at its factory.",,+81292662001,ninben1@gmail.com,https://www.ninben1.com/,,,,36.31333,140.57486,,pendiente,sí,ecommerce,,1578,en,,,,,,jp,kanto,ibaraki
+takano-foods-okame-natto,Takano Foods (Okame Natto),Omitama,Legumbres,,,,,,,https://www.takanofoods.co.jp/,,,,,,,pendiente,no comprobado,,,3444,,,,,,,jp,kanto,ibaraki

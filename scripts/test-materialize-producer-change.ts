@@ -353,7 +353,7 @@ test("an open pre-migration request cannot materialize unpaired prose and curren
   assert.equal(expected.fields.descripcion_locale, "en");
 });
 
-test("CSV header widening conflicts every open legacy request even when its new cell is empty", () => {
+test("CSV location-column widening conflicts every open legacy request", () => {
   const legacySnapshot = Object.fromEntries(
     PRODUCER_EDITABLE_FIELDS.filter(({ key }) => key !== "descripcion_locale").map(
       ({ key }) => [key, ""],
@@ -367,7 +367,13 @@ test("CSV header widening conflicts every open legacy request even when its new 
   });
 
   const submittedHash = hashProducerFields(legacySnapshot);
-  const widenedCurrentRow = { ...legacySnapshot, descripcion_locale: "" };
+  const widenedCurrentRow = {
+    ...legacySnapshot,
+    descripcion_locale: "",
+    country: "es",
+    region: "comunidad-de-madrid",
+    area: "madrid",
+  };
   assert.notEqual(
     hashProducerFields(widenedCurrentRow),
     submittedHash,

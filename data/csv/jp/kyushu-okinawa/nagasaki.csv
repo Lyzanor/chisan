@@ -1,52 +1,52 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
-imazato-shuzo-hasami,Imazato Shuzo,Hasami,Sake,,長崎県東彼杵郡波佐見町宿郷596,,,+81956852002,,http://www.64sake.com/,,,,33.136646,129.89621,,pendiente,no comprobado,,,394,,,,,,
-umegae-shuzo-sasebo,Umegae Shuzo,Sasebo,Sake,,長崎県佐世保市城間町317,,,+81956592311,,http://umegae-shuzo.com/,,,,33.089893,129.815125,,pendiente,no comprobado,,,1299,,,,,,
-senryu-shuzo-sasebo,Senryu Shuzo,Sasebo,Sake,,長崎県佐世保市江迎町長坂209,,,+81956652209,,http://www.sake-honjin.com/,,,,33.310886,129.625961,,pendiente,no comprobado,,,1077,,,,,,
-nishimuta-shuzo-sasebo,Nishimuta Shuzo,Sasebo,Sake,,長崎県佐世保市中里町129,,,+81956472569,,,,,,33.202251,129.680222,,pendiente,no comprobado,,,869,,,,,,
-fukuda-shuzo-hirado,Fukuda Shuzo,Hirado,Sake,,長崎県平戸市志々伎町1475,,,+81950271111,,http://www.fukuda-shuzo.com/,,,,33.200535,129.40773,,pendiente,no comprobado,,,235,,,,,,
-mori-shuzojo-hirado,Mori Shuzojo,Hirado,Sake,,長崎県平戸市新町31-2,,,+81950233131,,http://mori-shuzou.jp/,,,,33.366306,129.553955,,pendiente,no comprobado,,,789,,,,,,
-omoya-shuzo-iki,Omoya Shuzo,Iki,Sake,,長崎県壱岐市石田町印通寺浦200番地,,,+81920445002,,http://www.omoyashuzo.com/,,,,33.743286,129.759689,,pendiente,no comprobado,,,939,,,,,,
-kawachi-shuzo-tsushima,Kawachi Shuzo,Tsushima,Sake,,長崎県対馬市美津島町鶏知甲490-1,,,+81920542010,,http://www.kawachi-shop.jp/,,,,34.271004,129.310349,,pendiente,no comprobado,,,536,,,,,,
-kinokawa-isahaya,Kinokawa,Isahaya,Sake,,長崎県諫早市土師野尾町17-4,,,+81957225600,,,,,,32.821297,130.029144,,pendiente,no comprobado,,,579,,,,,,
-urakawa-shuzo-minamishimabara,Urakawa Shuzo,Minamishimabara,Sake,,長崎県南島原市有家町山川1123,,,+81957822030,,http://sake-ikkaku.com/,,,,32.670837,130.301041,,pendiente,no comprobado,,,1308,,,,,,
-aimusume-shuzo-unzen,Aimusume Shuzo,Unzen,Sake,,長崎県雲仙市愛野町甲1378,,,+81957360025,,,,,,32.817947,130.162933,,pendiente,no comprobado,,,26,,,,,,
-ito-shuzojo-unzen,Ito Shuzojo,Unzen,Sake,,長崎県雲仙市吾妻町241,,,+81957382035,,,,,,32.822609,130.175812,,pendiente,no comprobado,,,449,,,,,,
-kato-shuzojo-shimabara,Kato Shuzojo,Shimabara,Sake,,長崎県南高来郡有明町大三東戊1216-1,,,+81957680001,,,,,,32.828056,130.318695,,pendiente,no comprobado,,,531,,,,,,
-houryokuen-saza,Houryokuen,Saza,Té e infusiones,Organic green tea,長崎県北松浦郡佐々町八口免350他,,,+81956632709,info@houryokuen.com,https://houryokuen.com/inquiry.html,,,,33.253727,129.682617,,,no comprobado,,,345,,,,,,
-goto-winery-otsu,株式会社 五島ワイナリー,Otsu,Vino,,長崎県五島市上大津町2414-2,,,+81959745277,,https://www.goto-winery.net/,,,,35.017790,135.854810,,,sí,ecommerce,,2735,,,,,,
-fiore-sasebo,チーズ工房 Fiore (里村ファーム),Sasebo,Lácteos y quesos,Fiore レジーナ,長崎県佐世保市里美町1598,,,,,http://satomurafarm.com/,,,,33.180000,129.715000,,,no comprobado,,,1829,,,,,,
-tabechoku-24770,藤田製茶,Higashisonogi,Té e infusiones,,,,,,,,,,,33.036970,129.917140,,pendiente,sí,marketplace,,3134,,,,,,
-tabechoku-22332,NaturalEggLab,Hirado,Huevos,,,,,,,,,,,33.315830,129.486940,,pendiente,sí,marketplace,,848,,,,,,
-tabechoku-28904,楓帆,Sasebo,Pescado,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,2817,,,,,,
-tabechoku-24171,中田水産,Shimabara,Pescado,,,,,,,,,,,32.788140,130.370250,,pendiente,sí,marketplace,,2059,,,,,,
-tabechoku-24202,長崎のイケメン漁師 坂野水産,Hirado,Pescado,,,,,,,,,,,33.315830,129.486940,,pendiente,sí,marketplace,,3260,,,,,,
-tabechoku-26553,百旬館,Hirado,Pescado,,,,,,,,,,,33.315830,129.486940,,pendiente,sí,marketplace,,2965,,,,,,
-tabechoku-24753,あごだしのはたした,Shinkamigoto,Condimentos,,,,,,,,,,,32.984440,129.073330,,pendiente,sí,marketplace,,1412,,,,,,
-tabechoku-27498,アースカンパニー,Sasebo,Pan y cereal,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,1711,,,,,,
-tabechoku-25458,本村製麺工場,Minamishimabara,Pan y cereal,"小麦, 素麺",,,,,,,,,,32.659810,130.297780,,pendiente,sí,marketplace,,2639,,,,,,
-tabechoku-20934,花野果,Shinkamigoto,Dulces y repostería,菓子,,,,,,,,,,32.984440,129.073330,,pendiente,sí,marketplace,,3093,,,,,,
-tabechoku-24893,諫美豚 土井農場,Isahaya,Pan y cereal,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,3158,,,,,,
-tabechoku-26332,ヨシダファーム,Isahaya,Pan y cereal,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,1981,,,,,,
-tabechoku-3078259,やまびこ農苑えぼし,Sasebo,Frutos secos,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,1677,,,,,,
-tabechoku-27895,彩海ファームＭＡＳＡＫＡＺＵ,Sasebo,Fruta y verdura,"柑橘, 野菜",,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,2505,,,,,,
-tabechoku-48,薄田自然農法ファーム,Sasebo,Fruta y verdura,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,3130,,,,,,
-tabechoku-25699,うーぞの農園,Minamishimabara,Fruta y verdura,野菜,,,,,,,,,,32.659810,130.297780,,pendiente,sí,marketplace,,1445,,,,,,
-tabechoku-25128,たぬき池自然農園,Ōmura-shi,Fruta y verdura,野菜,,,,,,,,,,32.900000,129.958330,,pendiente,sí,marketplace,,1549,,,,,,
-tabechoku-29558,薬味屋人作,Shimabara,Fruta y verdura,,,,,,,,,,,32.788140,130.370250,,pendiente,sí,marketplace,,3132,,,,,,
-tabechoku-25519,宮下農園,Isahaya,Fruta y verdura,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,2371,,,,,,
-tabechoku-25225,ファーム中島,Isahaya,Fruta y verdura,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,1896,,,,,,
-tabechoku-20243,のんびり山,Isahaya,Fruta y verdura,生姜,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,1586,,,,,,
-tabechoku-20159,はまちゃんファーム,Unzen,Fruta y verdura,,,,,,,,,,,32.835190,130.187530,,pendiente,sí,marketplace,,1592,,,,,,
-jp-nagasaki-mennoyamaichi-co-11275c4,㈱山一,南島原市,Pan y cereal,乾麺,,,,,,https://www.mennoyamaichi.co.jp/,,,,32.659810,130.297780,,,sí,ecommerce,,2701,,,,,,
-jp-nagasaki-jin-men-851ec8d,㈲手のべ陣川,南島原市,Pan y cereal,乾麺,,,,,,https://www.jin-men.com/,,,,32.659810,130.297780,,,no comprobado,,,2587,,,,,,
-jp-nagasaki-kobayashijin-affd6aa,㈱小林甚製麺,南島原市,Pan y cereal,乾麺,,,,,,https://www.kobayashijin.com/,,,,32.659810,130.297780,,,no comprobado,,,2700,,,,,,
-island-brewery,ISLAND BREWERY (原田酒造),Iki,Cerveza,,勝本町勝本浦249,,,,,https://iki-island.co.jp/,,https://www.instagram.com/islandbrewery/,,33.74992,129.69133,,pendiente,no comprobado,,,435,,,,,,
-hamaguchi-suisan-goto,濵口水産,Gotō,Pescado,Goto kamaboko,,Produces fish-paste products from Goto seafood.,,,,https://www.goto-maki.net/,,,,32.69556,128.84081,,,sí,ecommerce,,2911,en,,,,,
-tsushima-suisan-tsushima,対馬水産,Tsushima,Pescado,"Conger eel, frozen seafood",長崎県対馬市美津島町雞知乙290番地,Processes conger eel and other frozen seafood at its Tsushima factory.,,+81920543677,,https://www.tsushimasuisan.com/,,,,34.271004,129.310349,,,sí,ecommerce,,2398,en,,,,,
-sakano-suisan-hirado,坂野水産,Hirado,Pescado,"Yellowtail, karasumi",長崎県平戸市鏡川町1296-7,Farms branded yellowtail and produces seafood products in Hirado.,,,,https://www.rakuten.co.jp/sakano-suisan/info.html,,,,33.375046,129.536713,,pendiente,sí,ecommerce,,2280,en,,,,,
-shofuken,松翁軒 (Shofuken),長崎市,Dulces y repostería,,,,,,,https://www.shooken.com/,,https://www.instagram.com/shooken_castella/,,32.74953,129.87964,,pendiente,sí,ecommerce,,3359,,,,,,
-chayu,茶友 (Chayu),東彼杵町,Té e infusiones,,,,,,,http://chayou.jp/,,https://www.instagram.com/chayou_sonogicha/,,33.03697,129.91714,,pendiente,no comprobado,,,3360,,,,,,
-iwasaki-honpo,岩崎本舗 (Iwasaki Honpo),時津町,Carne,,,,,,,https://0806.jp/,,https://www.instagram.com/iwasakihonpo/,,32.82886,129.84856,,pendiente,sí,ecommerce,,3361,,,,,,
-ikinokura-shuzo,壱岐の蔵酒造 (Ikinokura Shuzo),壱岐市,Destilados y licores,,,,,,,https://ikinokura.co.jp/,,https://www.instagram.com/ikinokura/,,33.74992,129.69133,,pendiente,no comprobado,,,3362,,,,,,
-o-a-nagasaki-craft-beer,O/A NAGASAKI CRAFT BEER,長崎市,Cerveza,,,,,,,https://o-a-nagasaki.com/,,https://www.instagram.com/oanagasaki/,,32.74953,129.87964,,pendiente,no comprobado,,,3363,,,,,,
-fukusaya,Fukusaya,Isahaya,Dulces y repostería,,,,,,,https://www.fukusaya.co.jp/about/company.html,,,,,,,pendiente,no comprobado,,,3471,,,,,,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
+imazato-shuzo-hasami,Imazato Shuzo,Hasami,Sake,,長崎県東彼杵郡波佐見町宿郷596,,,+81956852002,,http://www.64sake.com/,,,,33.136646,129.89621,,pendiente,no comprobado,,,394,,,,,,,jp,kyushu-okinawa,nagasaki
+umegae-shuzo-sasebo,Umegae Shuzo,Sasebo,Sake,,長崎県佐世保市城間町317,,,+81956592311,,http://umegae-shuzo.com/,,,,33.089893,129.815125,,pendiente,no comprobado,,,1299,,,,,,,jp,kyushu-okinawa,nagasaki
+senryu-shuzo-sasebo,Senryu Shuzo,Sasebo,Sake,,長崎県佐世保市江迎町長坂209,,,+81956652209,,http://www.sake-honjin.com/,,,,33.310886,129.625961,,pendiente,no comprobado,,,1077,,,,,,,jp,kyushu-okinawa,nagasaki
+nishimuta-shuzo-sasebo,Nishimuta Shuzo,Sasebo,Sake,,長崎県佐世保市中里町129,,,+81956472569,,,,,,33.202251,129.680222,,pendiente,no comprobado,,,869,,,,,,,jp,kyushu-okinawa,nagasaki
+fukuda-shuzo-hirado,Fukuda Shuzo,Hirado,Sake,,長崎県平戸市志々伎町1475,,,+81950271111,,http://www.fukuda-shuzo.com/,,,,33.200535,129.40773,,pendiente,no comprobado,,,235,,,,,,,jp,kyushu-okinawa,nagasaki
+mori-shuzojo-hirado,Mori Shuzojo,Hirado,Sake,,長崎県平戸市新町31-2,,,+81950233131,,http://mori-shuzou.jp/,,,,33.366306,129.553955,,pendiente,no comprobado,,,789,,,,,,,jp,kyushu-okinawa,nagasaki
+omoya-shuzo-iki,Omoya Shuzo,Iki,Sake,,長崎県壱岐市石田町印通寺浦200番地,,,+81920445002,,http://www.omoyashuzo.com/,,,,33.743286,129.759689,,pendiente,no comprobado,,,939,,,,,,,jp,kyushu-okinawa,nagasaki
+kawachi-shuzo-tsushima,Kawachi Shuzo,Tsushima,Sake,,長崎県対馬市美津島町鶏知甲490-1,,,+81920542010,,http://www.kawachi-shop.jp/,,,,34.271004,129.310349,,pendiente,no comprobado,,,536,,,,,,,jp,kyushu-okinawa,nagasaki
+kinokawa-isahaya,Kinokawa,Isahaya,Sake,,長崎県諫早市土師野尾町17-4,,,+81957225600,,,,,,32.821297,130.029144,,pendiente,no comprobado,,,579,,,,,,,jp,kyushu-okinawa,nagasaki
+urakawa-shuzo-minamishimabara,Urakawa Shuzo,Minamishimabara,Sake,,長崎県南島原市有家町山川1123,,,+81957822030,,http://sake-ikkaku.com/,,,,32.670837,130.301041,,pendiente,no comprobado,,,1308,,,,,,,jp,kyushu-okinawa,nagasaki
+aimusume-shuzo-unzen,Aimusume Shuzo,Unzen,Sake,,長崎県雲仙市愛野町甲1378,,,+81957360025,,,,,,32.817947,130.162933,,pendiente,no comprobado,,,26,,,,,,,jp,kyushu-okinawa,nagasaki
+ito-shuzojo-unzen,Ito Shuzojo,Unzen,Sake,,長崎県雲仙市吾妻町241,,,+81957382035,,,,,,32.822609,130.175812,,pendiente,no comprobado,,,449,,,,,,,jp,kyushu-okinawa,nagasaki
+kato-shuzojo-shimabara,Kato Shuzojo,Shimabara,Sake,,長崎県南高来郡有明町大三東戊1216-1,,,+81957680001,,,,,,32.828056,130.318695,,pendiente,no comprobado,,,531,,,,,,,jp,kyushu-okinawa,nagasaki
+houryokuen-saza,Houryokuen,Saza,Té e infusiones,Organic green tea,長崎県北松浦郡佐々町八口免350他,,,+81956632709,info@houryokuen.com,https://houryokuen.com/inquiry.html,,,,33.253727,129.682617,,,no comprobado,,,345,,,,,,,jp,kyushu-okinawa,nagasaki
+goto-winery-otsu,株式会社 五島ワイナリー,Otsu,Vino,,長崎県五島市上大津町2414-2,,,+81959745277,,https://www.goto-winery.net/,,,,35.017790,135.854810,,,sí,ecommerce,,2735,,,,,,,jp,kyushu-okinawa,nagasaki
+fiore-sasebo,チーズ工房 Fiore (里村ファーム),Sasebo,Lácteos y quesos,Fiore レジーナ,長崎県佐世保市里美町1598,,,,,http://satomurafarm.com/,,,,33.180000,129.715000,,,no comprobado,,,1829,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-24770,藤田製茶,Higashisonogi,Té e infusiones,,,,,,,,,,,33.036970,129.917140,,pendiente,sí,marketplace,,3134,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-22332,NaturalEggLab,Hirado,Huevos,,,,,,,,,,,33.315830,129.486940,,pendiente,sí,marketplace,,848,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-28904,楓帆,Sasebo,Pescado,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,2817,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-24171,中田水産,Shimabara,Pescado,,,,,,,,,,,32.788140,130.370250,,pendiente,sí,marketplace,,2059,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-24202,長崎のイケメン漁師 坂野水産,Hirado,Pescado,,,,,,,,,,,33.315830,129.486940,,pendiente,sí,marketplace,,3260,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-26553,百旬館,Hirado,Pescado,,,,,,,,,,,33.315830,129.486940,,pendiente,sí,marketplace,,2965,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-24753,あごだしのはたした,Shinkamigoto,Condimentos,,,,,,,,,,,32.984440,129.073330,,pendiente,sí,marketplace,,1412,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-27498,アースカンパニー,Sasebo,Pan y cereal,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,1711,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-25458,本村製麺工場,Minamishimabara,Pan y cereal,"小麦, 素麺",,,,,,,,,,32.659810,130.297780,,pendiente,sí,marketplace,,2639,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-20934,花野果,Shinkamigoto,Dulces y repostería,菓子,,,,,,,,,,32.984440,129.073330,,pendiente,sí,marketplace,,3093,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-24893,諫美豚 土井農場,Isahaya,Pan y cereal,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,3158,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-26332,ヨシダファーム,Isahaya,Pan y cereal,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,1981,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-3078259,やまびこ農苑えぼし,Sasebo,Frutos secos,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,1677,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-27895,彩海ファームＭＡＳＡＫＡＺＵ,Sasebo,Fruta y verdura,"柑橘, 野菜",,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,2505,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-48,薄田自然農法ファーム,Sasebo,Fruta y verdura,,,,,,,,,,,33.180000,129.715000,,pendiente,sí,marketplace,,3130,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-25699,うーぞの農園,Minamishimabara,Fruta y verdura,野菜,,,,,,,,,,32.659810,130.297780,,pendiente,sí,marketplace,,1445,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-25128,たぬき池自然農園,Ōmura-shi,Fruta y verdura,野菜,,,,,,,,,,32.900000,129.958330,,pendiente,sí,marketplace,,1549,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-29558,薬味屋人作,Shimabara,Fruta y verdura,,,,,,,,,,,32.788140,130.370250,,pendiente,sí,marketplace,,3132,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-25519,宮下農園,Isahaya,Fruta y verdura,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,2371,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-25225,ファーム中島,Isahaya,Fruta y verdura,,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,1896,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-20243,のんびり山,Isahaya,Fruta y verdura,生姜,,,,,,,,,,32.843390,130.053140,,pendiente,sí,marketplace,,1586,,,,,,,jp,kyushu-okinawa,nagasaki
+tabechoku-20159,はまちゃんファーム,Unzen,Fruta y verdura,,,,,,,,,,,32.835190,130.187530,,pendiente,sí,marketplace,,1592,,,,,,,jp,kyushu-okinawa,nagasaki
+jp-nagasaki-mennoyamaichi-co-11275c4,㈱山一,南島原市,Pan y cereal,乾麺,,,,,,https://www.mennoyamaichi.co.jp/,,,,32.659810,130.297780,,,sí,ecommerce,,2701,,,,,,,jp,kyushu-okinawa,nagasaki
+jp-nagasaki-jin-men-851ec8d,㈲手のべ陣川,南島原市,Pan y cereal,乾麺,,,,,,https://www.jin-men.com/,,,,32.659810,130.297780,,,no comprobado,,,2587,,,,,,,jp,kyushu-okinawa,nagasaki
+jp-nagasaki-kobayashijin-affd6aa,㈱小林甚製麺,南島原市,Pan y cereal,乾麺,,,,,,https://www.kobayashijin.com/,,,,32.659810,130.297780,,,no comprobado,,,2700,,,,,,,jp,kyushu-okinawa,nagasaki
+island-brewery,ISLAND BREWERY (原田酒造),Iki,Cerveza,,勝本町勝本浦249,,,,,https://iki-island.co.jp/,,https://www.instagram.com/islandbrewery/,,33.74992,129.69133,,pendiente,no comprobado,,,435,,,,,,,jp,kyushu-okinawa,nagasaki
+hamaguchi-suisan-goto,濵口水産,Gotō,Pescado,Goto kamaboko,,Produces fish-paste products from Goto seafood.,,,,https://www.goto-maki.net/,,,,32.69556,128.84081,,,sí,ecommerce,,2911,en,,,,,,jp,kyushu-okinawa,nagasaki
+tsushima-suisan-tsushima,対馬水産,Tsushima,Pescado,"Conger eel, frozen seafood",長崎県対馬市美津島町雞知乙290番地,Processes conger eel and other frozen seafood at its Tsushima factory.,,+81920543677,,https://www.tsushimasuisan.com/,,,,34.271004,129.310349,,,sí,ecommerce,,2398,en,,,,,,jp,kyushu-okinawa,nagasaki
+sakano-suisan-hirado,坂野水産,Hirado,Pescado,"Yellowtail, karasumi",長崎県平戸市鏡川町1296-7,Farms branded yellowtail and produces seafood products in Hirado.,,,,https://www.rakuten.co.jp/sakano-suisan/info.html,,,,33.375046,129.536713,,pendiente,sí,ecommerce,,2280,en,,,,,,jp,kyushu-okinawa,nagasaki
+shofuken,松翁軒 (Shofuken),長崎市,Dulces y repostería,,,,,,,https://www.shooken.com/,,https://www.instagram.com/shooken_castella/,,32.74953,129.87964,,pendiente,sí,ecommerce,,3359,,,,,,,jp,kyushu-okinawa,nagasaki
+chayu,茶友 (Chayu),東彼杵町,Té e infusiones,,,,,,,http://chayou.jp/,,https://www.instagram.com/chayou_sonogicha/,,33.03697,129.91714,,pendiente,no comprobado,,,3360,,,,,,,jp,kyushu-okinawa,nagasaki
+iwasaki-honpo,岩崎本舗 (Iwasaki Honpo),時津町,Carne,,,,,,,https://0806.jp/,,https://www.instagram.com/iwasakihonpo/,,32.82886,129.84856,,pendiente,sí,ecommerce,,3361,,,,,,,jp,kyushu-okinawa,nagasaki
+ikinokura-shuzo,壱岐の蔵酒造 (Ikinokura Shuzo),壱岐市,Destilados y licores,,,,,,,https://ikinokura.co.jp/,,https://www.instagram.com/ikinokura/,,33.74992,129.69133,,pendiente,no comprobado,,,3362,,,,,,,jp,kyushu-okinawa,nagasaki
+o-a-nagasaki-craft-beer,O/A NAGASAKI CRAFT BEER,長崎市,Cerveza,,,,,,,https://o-a-nagasaki.com/,,https://www.instagram.com/oanagasaki/,,32.74953,129.87964,,pendiente,no comprobado,,,3363,,,,,,,jp,kyushu-okinawa,nagasaki
+fukusaya,Fukusaya,Isahaya,Dulces y repostería,,,,,,,https://www.fukusaya.co.jp/about/company.html,,,,,,,pendiente,no comprobado,,,3471,,,,,,,jp,kyushu-okinawa,nagasaki

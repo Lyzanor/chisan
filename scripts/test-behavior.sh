@@ -528,9 +528,12 @@ fi
 if [[
   "$HTML_DETAIL_CLEAN" == *">Slug<"* ||
   "$HTML_DETAIL_CLEAN" == *">Imagen<"* ||
-  "$HTML_DETAIL_CLEAN" == *">ID del productor<"*
+  "$HTML_DETAIL_CLEAN" == *">ID del productor<"* ||
+  "$HTML_DETAIL_CLEAN" == *">Country<"* ||
+  "$HTML_DETAIL_CLEAN" == *">Region<"* ||
+  "$HTML_DETAIL_CLEAN" == *">Area<"*
 ]]; then
-  echo "Error: detail page exposes an internal slug, image or producer_id table field." >&2
+  echo "Error: detail page exposes an internal identity or location-mirror field." >&2
   exit 1
 fi
 

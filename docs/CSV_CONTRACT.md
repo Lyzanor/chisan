@@ -45,6 +45,9 @@ area CSVs.
   country-specific labels and ordering belong in `country.json`.
 - The folder tree is the registry; adding a country, region or area is a data
   change, not a code change.
+- Every area row repeats those exact path slugs in required `country`, `region`
+  and `area` cells. The values are portable location metadata, not a second
+  registry: they must match the containing path byte-for-byte.
 - `<area>` must be unique inside its country. The public area key is
   `(<country>, <area>)`, so different countries may use the same area slug but
   two regions of one country may not.
@@ -149,7 +152,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
 ```
 
 All columns are physically present in every file. “Optional” below means that a
@@ -199,6 +202,9 @@ whitespace.
 | `mensaje_comunidad_locale` | paired    | Supported lowercase source-language code for a non-empty community message; empty exactly when that message is empty.           |
 | `enlace destacado 1`     | optional    | Relevant public HTTP(S) article, interview or other external page about this producer.                                          |
 | `enlace destacado 2`     | conditional | A second distinct public HTTP(S) page; allowed only when `enlace destacado 1` is filled.                                        |
+| `country`                | required    | Exact lowercase country slug from the containing `data/csv/<country>/` path segment.                                            |
+| `region`                 | required    | Exact lowercase region slug from the containing `data/csv/<country>/<region>/` path segment.                                    |
+| `area`                   | required    | Exact lowercase area slug from the containing `<area>.csv` filename.                                                            |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 

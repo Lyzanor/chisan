@@ -279,7 +279,9 @@ live only in `docs/OPERATIONS.md`.
 
 An active producer member may propose only the fields in
 `lib/accounts/producer-fields.ts`. The server ignores arbitrary form fields and
-never accepts changes to `producer_id`, `slug`, `verificacion` or `imagen`.
+never accepts changes to `producer_id`, `slug`, `country`, `region`, `area`,
+`verificacion` or `imagen`. The three location columns are immutable mirrors of
+the canonical CSV path and change only through a reviewed routing migration.
 Every proposal stores:
 
 - the canonical row hash at edit time;

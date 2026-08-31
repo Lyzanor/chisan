@@ -1,56 +1,56 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2
-ishizuchi-shuzo-saijo,Ishizuchi Shuzo,Saijo,Sake,,愛媛県西条市氷見丙402-3,,,+81897578000,,http://www.ishizuchi.co.jp/,,,,33.891342,133.130768,,pendiente,no comprobado,,,433,,,,,,
-akikawa-shuzo-saijo,Akikawa Shuzo,Saijo,Sake,,愛媛県西条市大野150,,,+81898665014,,http://www5b.biglobe.ne.jp/~sake/,,,,33.94566,133.047668,,pendiente,no comprobado,,,41,,,,,,
-umenishiki-yamakawa-shikokuchuo,Umenishiki Yamakawa,Shikokuchuo,Sake,,愛媛県四国中央市金田町金川14,,,+81896581211,,http://www.umenishiki.com/,,,,33.989258,133.594177,,pendiente,no comprobado,,,1302,,,,,,
-imamura-shuzo-shikokuchuo,Imamura Shuzo,Shikokuchuo,Sake,,愛媛県四国中央市上分町742-2,,,+81896583011,,,,,,33.991135,133.590515,,pendiente,no comprobado,,,389,,,,,,
-eiko-shuzo-matsuyama,Eiko Shuzo,Matsuyama,Sake,,愛媛県松山市溝辺町甲443,,,+81899770964,,http://www.eikoo.com/,,,,33.84964,132.803238,,pendiente,no comprobado,,,195,,,,,,
-umebijin-shuzo-yawatahama,Umebijin Shuzo,Yawatahama,Sake,,愛媛県八幡浜市1557-2,,,+81894220312,,http://www.ume-bijin.co.jp/,,,,33.46286,132.42336,,pendiente,no comprobado,,,1297,,,,,,
-kawakame-shuzo-yawatahama,Kawakame Shuzo,Yawatahama,Sake,,愛媛県八幡浜市大字五反田2-4-1,,,+81894220315,,,,,,33.444118,132.441956,,pendiente,no comprobado,,,541,,,,,,
-utsunomiya-shuzo-seiyo,Utsunomiya Shuzo,Seiyo,Sake,,愛媛県西予市宇和町卯之町4-254-1,,,+81894620117,,https://uwanosake.com/,,,,33.360722,132.518463,,pendiente,no comprobado,,,1314,,,,,,
-ogata-shuzo-seiyo,Ogata Shuzo,Seiyo,Sake,,愛媛県西予市野村町野村12-17,,,+81894720036,,,,,,33.378555,132.64064,,pendiente,no comprobado,,,900,,,,,,
-ikedaya-seiyo,Ikedaya,Seiyo,Sake,,愛媛県西予市宇和町卯之町4-332,,,+81894620223,,https://www.uwaikedaya.com/,,,,33.362453,132.515152,,pendiente,no comprobado,,,373,,,,,,
-akamatsu-honke-shuzo-uwajima,Akamatsu Honke Shuzo,Uwajima,Sake,,愛媛県宇和島市津島町上畑地甲1502,,,+81895322727,,,,,,33.088852,132.515274,,pendiente,no comprobado,,,36,,,,,,
-okushima-shuzo-iyo,Okushima Shuzo,Iyo,Sake,,愛媛県伊予市双海町上灘5711,,,+81899860028,,,,,,33.673653,132.666336,,pendiente,no comprobado,,,934,,,,,,
-kachizuru-shuzo-tobe,Kachizuru Shuzo,Tobe,Sake,,愛媛県伊予郡砥部町宮内542,,,+81899622017,,http://www.kachizuru.com/,,,,33.751183,132.795074,,pendiente,no comprobado,,,470,,,,,,
-kyowa-shuzo-tobe,Kyowa Shuzo,Tobe,Sake,,愛媛県伊予郡砥部町大南400,,,+81899622717,,http://www.hatsuyukihai.jp/,,,,33.727814,132.78952,,pendiente,no comprobado,,,703,,,,,,
-kutsuna-jozo-matsuyama,Kutsuna Jozo,Matsuyama,Condimentos,"Soy sauce, miso",愛媛県松山市北条822,,,+81120144301,,https://www.kutsuna.co.jp/,,,,33.978985,132.779617,,,no comprobado,,,695,,,,,,
-shounanen-matsuyama,Shounanen,Matsuyama,Té e infusiones,Green tea,愛媛県松山市小坂5-13-5,,,+81899463312,,https://www.shounanen.co.jp/,,,,33.825695,132.781540,,,no comprobado,,,1123,,,,,,
-iimiso-uwajima,井伊商店,Uwajima,Condimentos,,,,,,,https://iimiso.com/,,,,33.223310,132.560560,,,no comprobado,,,2122,,,,,,
-muchachaen-seiyo,無茶々園,Seiyo,Fruta y verdura,,,Grows and processes fruit and vegetables at its Seiyo unit.,,,,https://muchachaen.shop-pro.jp/,,,,33.362640,132.510860,,,sí,ecommerce,,2918,en,,,,,
-yasuokakamaboko-uwajima,安岡蒲鉾,Uwajima,Pescado,,,,,,,https://yasuokakamaboko.com/,,,,33.223310,132.560560,,,sí,ecommerce,,2360,,,,,,
-ikb-uwajima,愛工房,Uwajima,Fruta y verdura,,愛媛県宇和島市吉田町立間2-146,Grows and processes fruit and vegetables at its Uwajima unit.,,,,https://ikb.co.jp/,,,,33.223310,132.560560,,,no comprobado,,,2528,en,,,,,
-kajuen-imabari,のま果樹園,Imabari,Fruta y verdura,,愛媛県今治市神宮甲844-5,Grows and processes fruit and vegetables at its Imabari unit.,,,,https://www.kajuen.co.jp/,,,,34.066170,132.997780,,,sí,ecommerce,,1583,en,,,,,
-dogobeer-matsuyama,水口酒造 (道後ビール),Matsuyama,Cerveza,,,,,,,https://www.dogobeer.co.jp/,,,,33.839170,132.765640,,,no comprobado,,,2841,,,,,,
-tabechoku-28007,にのらく茶園 有機国産べにふうき専門,Uchiko-chō,Té e infusiones,紅茶,,,,,,,,,,33.533030,132.658280,,pendiente,sí,marketplace,,1577,,,,,,
-tabechoku-3077350,メニークエスト,Seiyo,Dulces y repostería,"栗, 菓子",,,,,,,,,,33.362640,132.510860,,pendiente,sí,marketplace,,1957,,,,,,
-tabechoku-27748,四万十ミライ,Kumakogen,Huevos,"ブルーベリー, 栗, 卵",,,,,,,,,,33.655580,132.901670,,pendiente,sí,marketplace,,2269,,,,,,
-tabechoku-28144,ＴＯＹＯＫＥＮ,Imabari,Huevos,卵,,,,,,,,,,34.066170,132.997780,,pendiente,sí,marketplace,,1259,,,,,,
-tabechoku-28654,森の風,鬼北町,Setas,しいたけ,,,,,,,,,,33.255780,132.684080,,pendiente,sí,marketplace,,2808,,,,,,
-tabechoku-26700,木嶋水産,Ikata,Pescado,ちりめん,,,,,,,,,,33.488610,132.354110,,pendiente,sí,marketplace,,2626,,,,,,
-tabechoku-23638,松本功次（由良のアワビ屋）,Uwajima,Pescado,,,,,,,,,,,33.223310,132.560560,,pendiente,sí,marketplace,,2667,,,,,,
-tabechoku-26556,川原鮮魚,Seiyo,Pescado,,,,,,,,,,,33.362640,132.510860,,pendiente,sí,marketplace,,2472,,,,,,
-tabechoku-20116,ethnic green farm廣川農園,Tōon-shi,Fruta y verdura,野菜,,,,,,,,,,33.791030,132.872220,,pendiente,sí,marketplace,,208,,,,,,
-tabechoku-18,吉本農園,Ainan,Fruta y verdura,柑橘,,,,,,,,,,32.962080,132.583170,,pendiente,sí,marketplace,,2248,,,,,,
-tabechoku-29052,SUNNYSIDE FARM,Matsuyama,Pan y cereal,"野菜, 玄米",,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,1149,,,,,,
-tabechoku-3077649,シトラスベースひめまる,Ikata,Bebidas sin alcohol,"柑橘, ジュース",,,,,,,,,,33.488610,132.354110,,pendiente,sí,marketplace,,1804,,,,,,
-tabechoku-3078566,島馬ファーム瀬戸内,Matsuyama,Bebidas sin alcohol,"柑橘, ジュース",,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,2466,,,,,,
-tabechoku-29523,まるき農園,Imabari,Fruta y verdura,"柑橘, 玉ねぎ, ねぎ",,,,,,,,,,34.066170,132.997780,,pendiente,sí,marketplace,,1635,,,,,,
-tabechoku-21129,OrangeStoreニノミヤ,Yawatahama,Fruta y verdura,"柑橘, ジュース",,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,952,,,,,,
-tabechoku-3079048,NOT FARM,Yawatahama,Fruta y verdura,"柑橘, レモン",,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,885,,,,,,
-tabechoku-22586,えひめ 二宮果樹園,Yawatahama,Fruta y verdura,レモン,,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,1448,,,,,,
-tabechoku-22932,ニノミヤファーム,Yawatahama,Fruta y verdura,柑橘,,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,1859,,,,,,
-tabechoku-25606,新口農園【みかん・柑橘グランプリ2026最高金賞受賞】,Yawatahama,Fruta y verdura,"柑橘, ジュース",,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,2547,,,,,,
-tabechoku-3078159,大友農園,Matsuyama,Fruta y verdura,レモン,,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,2305,,,,,,
-tabechoku-3077713,GUILD Farm,Matsuyama,Fruta y verdura,"柑橘, レモン, ジャム",,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,277,,,,,,
-tabechoku-20790,里居農園（さといのうえん）,Seiyo,Fruta y verdura,野菜,,,,,,,,,,33.362640,132.510860,,pendiente,sí,marketplace,,3221,,,,,,
-jp-ehime-itm-gr-co-d0d0677,一六本舗,松山市,Dulces y repostería,和菓子,松山市東石井 1-2-20,,,,,http://www.itm-gr.co.jp/,,,,33.839170,132.765640,,,no comprobado,,,2003,,,,,,
-jp-ehime-usuzumi-co-21b8df0,中野本舗,松山市,Dulces y repostería,和菓子,松山市井門町 1331-1,,,,,https://www.usuzumi.co.jp/,,,,33.839170,132.765640,,,sí,ecommerce,,2066,,,,,,
-jp-ehime-touyouseika-9ff62c4,東陽製菓株式会社,西条市,Aperitivos,米菓,,"Produces rice crackers in 西条市, ehime.",,,,http://touyouseika.jp/,,,,33.919560,133.181170,,,sí,ecommerce,,2659,en,,,,,
-jp-ehime-kawachiya1848-co-d2b9f44,河内屋蒲鉾,宇和島市,Pescado,水産加工品,,,,,,https://www.kawachiya1848.co.jp/,,,,33.223310,132.560560,,,no comprobado,,,2856,,,,,,
-jp-ehime-ogata-kamaboko-co-8d588e5,おがた蒲鉾,西予市,Pescado,水産加工品,,,,,,https://www.ogata-kamaboko.co.jp/,,,,33.362640,132.510860,,,sí,ecommerce,,1456,,,,,,
-dd4d-brewing,DD4D BREWING,Matsuyama,Cerveza,,千舟町4-1-7,,,,,https://japandemic.co.jp/,,https://www.instagram.com/dd4d_beer/,,33.83917,132.76564,,pendiente,no comprobado,,,168,,,,,,
-omishima-brewery,大三島ブリュワリー (Omishima Brewery),Imabari,Cerveza,,大三島町宮浦5581-1,,,,,,,https://www.instagram.com/omishimabrewery/,,34.06617,132.99778,,pendiente,no comprobado,,,2299,,,,,,
-bokke-brewery,ボッケブルワリー (Bokke Brewery),Matsuyama,Cerveza,,南久米町532-1,ボッケブルワリー (Bokke Brewery) is a brewery producing beer at its Matsuyama unit.,,,,,,https://www.instagram.com/bokkewakaba/,,33.83917,132.76564,,pendiente,no comprobado,,,1925,en,,,,,
-hidecho-suisan-uwajima,秀長水産,Uwajima,Pescado,"Sea bream, yellowtail",愛媛県宇和島市築地町2丁目6-24,Produces and processes farmed sea bream and yellowtail in Uwajima.,,+81895253305,glocalive@hidecho.co.jp,https://www.hidecho.co.jp/,,,,33.225315,132.552475,,,sí,ecommerce,,3005,en,,,,,
-tanimoto-kamaboko-yawatahama,谷本蒲鉾店,Yawatahama,Pescado,"Jakoten, kamaboko",愛媛県八幡浜市駅前1丁目841-1,"Makes jakoten, kamaboko and other fish-paste products at its Yawatahama factory.",,+81894220266,tanimotokamabokoten@gmail.com,https://tanimotokamabokoten.com/,,,,33.458740,132.434601,,,sí,ecommerce,,3162,en,,,,,
-kobayashi-foods,Kobayashi Foods,Uwajima,Pescado,,,,,,,https://www.kobayashi-foods.com/,,,,,,,pendiente,no comprobado,,,3414,,,,,,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
+ishizuchi-shuzo-saijo,Ishizuchi Shuzo,Saijo,Sake,,愛媛県西条市氷見丙402-3,,,+81897578000,,http://www.ishizuchi.co.jp/,,,,33.891342,133.130768,,pendiente,no comprobado,,,433,,,,,,,jp,shikoku,ehime
+akikawa-shuzo-saijo,Akikawa Shuzo,Saijo,Sake,,愛媛県西条市大野150,,,+81898665014,,http://www5b.biglobe.ne.jp/~sake/,,,,33.94566,133.047668,,pendiente,no comprobado,,,41,,,,,,,jp,shikoku,ehime
+umenishiki-yamakawa-shikokuchuo,Umenishiki Yamakawa,Shikokuchuo,Sake,,愛媛県四国中央市金田町金川14,,,+81896581211,,http://www.umenishiki.com/,,,,33.989258,133.594177,,pendiente,no comprobado,,,1302,,,,,,,jp,shikoku,ehime
+imamura-shuzo-shikokuchuo,Imamura Shuzo,Shikokuchuo,Sake,,愛媛県四国中央市上分町742-2,,,+81896583011,,,,,,33.991135,133.590515,,pendiente,no comprobado,,,389,,,,,,,jp,shikoku,ehime
+eiko-shuzo-matsuyama,Eiko Shuzo,Matsuyama,Sake,,愛媛県松山市溝辺町甲443,,,+81899770964,,http://www.eikoo.com/,,,,33.84964,132.803238,,pendiente,no comprobado,,,195,,,,,,,jp,shikoku,ehime
+umebijin-shuzo-yawatahama,Umebijin Shuzo,Yawatahama,Sake,,愛媛県八幡浜市1557-2,,,+81894220312,,http://www.ume-bijin.co.jp/,,,,33.46286,132.42336,,pendiente,no comprobado,,,1297,,,,,,,jp,shikoku,ehime
+kawakame-shuzo-yawatahama,Kawakame Shuzo,Yawatahama,Sake,,愛媛県八幡浜市大字五反田2-4-1,,,+81894220315,,,,,,33.444118,132.441956,,pendiente,no comprobado,,,541,,,,,,,jp,shikoku,ehime
+utsunomiya-shuzo-seiyo,Utsunomiya Shuzo,Seiyo,Sake,,愛媛県西予市宇和町卯之町4-254-1,,,+81894620117,,https://uwanosake.com/,,,,33.360722,132.518463,,pendiente,no comprobado,,,1314,,,,,,,jp,shikoku,ehime
+ogata-shuzo-seiyo,Ogata Shuzo,Seiyo,Sake,,愛媛県西予市野村町野村12-17,,,+81894720036,,,,,,33.378555,132.64064,,pendiente,no comprobado,,,900,,,,,,,jp,shikoku,ehime
+ikedaya-seiyo,Ikedaya,Seiyo,Sake,,愛媛県西予市宇和町卯之町4-332,,,+81894620223,,https://www.uwaikedaya.com/,,,,33.362453,132.515152,,pendiente,no comprobado,,,373,,,,,,,jp,shikoku,ehime
+akamatsu-honke-shuzo-uwajima,Akamatsu Honke Shuzo,Uwajima,Sake,,愛媛県宇和島市津島町上畑地甲1502,,,+81895322727,,,,,,33.088852,132.515274,,pendiente,no comprobado,,,36,,,,,,,jp,shikoku,ehime
+okushima-shuzo-iyo,Okushima Shuzo,Iyo,Sake,,愛媛県伊予市双海町上灘5711,,,+81899860028,,,,,,33.673653,132.666336,,pendiente,no comprobado,,,934,,,,,,,jp,shikoku,ehime
+kachizuru-shuzo-tobe,Kachizuru Shuzo,Tobe,Sake,,愛媛県伊予郡砥部町宮内542,,,+81899622017,,http://www.kachizuru.com/,,,,33.751183,132.795074,,pendiente,no comprobado,,,470,,,,,,,jp,shikoku,ehime
+kyowa-shuzo-tobe,Kyowa Shuzo,Tobe,Sake,,愛媛県伊予郡砥部町大南400,,,+81899622717,,http://www.hatsuyukihai.jp/,,,,33.727814,132.78952,,pendiente,no comprobado,,,703,,,,,,,jp,shikoku,ehime
+kutsuna-jozo-matsuyama,Kutsuna Jozo,Matsuyama,Condimentos,"Soy sauce, miso",愛媛県松山市北条822,,,+81120144301,,https://www.kutsuna.co.jp/,,,,33.978985,132.779617,,,no comprobado,,,695,,,,,,,jp,shikoku,ehime
+shounanen-matsuyama,Shounanen,Matsuyama,Té e infusiones,Green tea,愛媛県松山市小坂5-13-5,,,+81899463312,,https://www.shounanen.co.jp/,,,,33.825695,132.781540,,,no comprobado,,,1123,,,,,,,jp,shikoku,ehime
+iimiso-uwajima,井伊商店,Uwajima,Condimentos,,,,,,,https://iimiso.com/,,,,33.223310,132.560560,,,no comprobado,,,2122,,,,,,,jp,shikoku,ehime
+muchachaen-seiyo,無茶々園,Seiyo,Fruta y verdura,,,Grows and processes fruit and vegetables at its Seiyo unit.,,,,https://muchachaen.shop-pro.jp/,,,,33.362640,132.510860,,,sí,ecommerce,,2918,en,,,,,,jp,shikoku,ehime
+yasuokakamaboko-uwajima,安岡蒲鉾,Uwajima,Pescado,,,,,,,https://yasuokakamaboko.com/,,,,33.223310,132.560560,,,sí,ecommerce,,2360,,,,,,,jp,shikoku,ehime
+ikb-uwajima,愛工房,Uwajima,Fruta y verdura,,愛媛県宇和島市吉田町立間2-146,Grows and processes fruit and vegetables at its Uwajima unit.,,,,https://ikb.co.jp/,,,,33.223310,132.560560,,,no comprobado,,,2528,en,,,,,,jp,shikoku,ehime
+kajuen-imabari,のま果樹園,Imabari,Fruta y verdura,,愛媛県今治市神宮甲844-5,Grows and processes fruit and vegetables at its Imabari unit.,,,,https://www.kajuen.co.jp/,,,,34.066170,132.997780,,,sí,ecommerce,,1583,en,,,,,,jp,shikoku,ehime
+dogobeer-matsuyama,水口酒造 (道後ビール),Matsuyama,Cerveza,,,,,,,https://www.dogobeer.co.jp/,,,,33.839170,132.765640,,,no comprobado,,,2841,,,,,,,jp,shikoku,ehime
+tabechoku-28007,にのらく茶園 有機国産べにふうき専門,Uchiko-chō,Té e infusiones,紅茶,,,,,,,,,,33.533030,132.658280,,pendiente,sí,marketplace,,1577,,,,,,,jp,shikoku,ehime
+tabechoku-3077350,メニークエスト,Seiyo,Dulces y repostería,"栗, 菓子",,,,,,,,,,33.362640,132.510860,,pendiente,sí,marketplace,,1957,,,,,,,jp,shikoku,ehime
+tabechoku-27748,四万十ミライ,Kumakogen,Huevos,"ブルーベリー, 栗, 卵",,,,,,,,,,33.655580,132.901670,,pendiente,sí,marketplace,,2269,,,,,,,jp,shikoku,ehime
+tabechoku-28144,ＴＯＹＯＫＥＮ,Imabari,Huevos,卵,,,,,,,,,,34.066170,132.997780,,pendiente,sí,marketplace,,1259,,,,,,,jp,shikoku,ehime
+tabechoku-28654,森の風,鬼北町,Setas,しいたけ,,,,,,,,,,33.255780,132.684080,,pendiente,sí,marketplace,,2808,,,,,,,jp,shikoku,ehime
+tabechoku-26700,木嶋水産,Ikata,Pescado,ちりめん,,,,,,,,,,33.488610,132.354110,,pendiente,sí,marketplace,,2626,,,,,,,jp,shikoku,ehime
+tabechoku-23638,松本功次（由良のアワビ屋）,Uwajima,Pescado,,,,,,,,,,,33.223310,132.560560,,pendiente,sí,marketplace,,2667,,,,,,,jp,shikoku,ehime
+tabechoku-26556,川原鮮魚,Seiyo,Pescado,,,,,,,,,,,33.362640,132.510860,,pendiente,sí,marketplace,,2472,,,,,,,jp,shikoku,ehime
+tabechoku-20116,ethnic green farm廣川農園,Tōon-shi,Fruta y verdura,野菜,,,,,,,,,,33.791030,132.872220,,pendiente,sí,marketplace,,208,,,,,,,jp,shikoku,ehime
+tabechoku-18,吉本農園,Ainan,Fruta y verdura,柑橘,,,,,,,,,,32.962080,132.583170,,pendiente,sí,marketplace,,2248,,,,,,,jp,shikoku,ehime
+tabechoku-29052,SUNNYSIDE FARM,Matsuyama,Pan y cereal,"野菜, 玄米",,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,1149,,,,,,,jp,shikoku,ehime
+tabechoku-3077649,シトラスベースひめまる,Ikata,Bebidas sin alcohol,"柑橘, ジュース",,,,,,,,,,33.488610,132.354110,,pendiente,sí,marketplace,,1804,,,,,,,jp,shikoku,ehime
+tabechoku-3078566,島馬ファーム瀬戸内,Matsuyama,Bebidas sin alcohol,"柑橘, ジュース",,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,2466,,,,,,,jp,shikoku,ehime
+tabechoku-29523,まるき農園,Imabari,Fruta y verdura,"柑橘, 玉ねぎ, ねぎ",,,,,,,,,,34.066170,132.997780,,pendiente,sí,marketplace,,1635,,,,,,,jp,shikoku,ehime
+tabechoku-21129,OrangeStoreニノミヤ,Yawatahama,Fruta y verdura,"柑橘, ジュース",,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,952,,,,,,,jp,shikoku,ehime
+tabechoku-3079048,NOT FARM,Yawatahama,Fruta y verdura,"柑橘, レモン",,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,885,,,,,,,jp,shikoku,ehime
+tabechoku-22586,えひめ 二宮果樹園,Yawatahama,Fruta y verdura,レモン,,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,1448,,,,,,,jp,shikoku,ehime
+tabechoku-22932,ニノミヤファーム,Yawatahama,Fruta y verdura,柑橘,,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,1859,,,,,,,jp,shikoku,ehime
+tabechoku-25606,新口農園【みかん・柑橘グランプリ2026最高金賞受賞】,Yawatahama,Fruta y verdura,"柑橘, ジュース",,,,,,,,,,33.462860,132.423360,,pendiente,sí,marketplace,,2547,,,,,,,jp,shikoku,ehime
+tabechoku-3078159,大友農園,Matsuyama,Fruta y verdura,レモン,,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,2305,,,,,,,jp,shikoku,ehime
+tabechoku-3077713,GUILD Farm,Matsuyama,Fruta y verdura,"柑橘, レモン, ジャム",,,,,,,,,,33.839170,132.765640,,pendiente,sí,marketplace,,277,,,,,,,jp,shikoku,ehime
+tabechoku-20790,里居農園（さといのうえん）,Seiyo,Fruta y verdura,野菜,,,,,,,,,,33.362640,132.510860,,pendiente,sí,marketplace,,3221,,,,,,,jp,shikoku,ehime
+jp-ehime-itm-gr-co-d0d0677,一六本舗,松山市,Dulces y repostería,和菓子,松山市東石井 1-2-20,,,,,http://www.itm-gr.co.jp/,,,,33.839170,132.765640,,,no comprobado,,,2003,,,,,,,jp,shikoku,ehime
+jp-ehime-usuzumi-co-21b8df0,中野本舗,松山市,Dulces y repostería,和菓子,松山市井門町 1331-1,,,,,https://www.usuzumi.co.jp/,,,,33.839170,132.765640,,,sí,ecommerce,,2066,,,,,,,jp,shikoku,ehime
+jp-ehime-touyouseika-9ff62c4,東陽製菓株式会社,西条市,Aperitivos,米菓,,"Produces rice crackers in 西条市, ehime.",,,,http://touyouseika.jp/,,,,33.919560,133.181170,,,sí,ecommerce,,2659,en,,,,,,jp,shikoku,ehime
+jp-ehime-kawachiya1848-co-d2b9f44,河内屋蒲鉾,宇和島市,Pescado,水産加工品,,,,,,https://www.kawachiya1848.co.jp/,,,,33.223310,132.560560,,,no comprobado,,,2856,,,,,,,jp,shikoku,ehime
+jp-ehime-ogata-kamaboko-co-8d588e5,おがた蒲鉾,西予市,Pescado,水産加工品,,,,,,https://www.ogata-kamaboko.co.jp/,,,,33.362640,132.510860,,,sí,ecommerce,,1456,,,,,,,jp,shikoku,ehime
+dd4d-brewing,DD4D BREWING,Matsuyama,Cerveza,,千舟町4-1-7,,,,,https://japandemic.co.jp/,,https://www.instagram.com/dd4d_beer/,,33.83917,132.76564,,pendiente,no comprobado,,,168,,,,,,,jp,shikoku,ehime
+omishima-brewery,大三島ブリュワリー (Omishima Brewery),Imabari,Cerveza,,大三島町宮浦5581-1,,,,,,,https://www.instagram.com/omishimabrewery/,,34.06617,132.99778,,pendiente,no comprobado,,,2299,,,,,,,jp,shikoku,ehime
+bokke-brewery,ボッケブルワリー (Bokke Brewery),Matsuyama,Cerveza,,南久米町532-1,ボッケブルワリー (Bokke Brewery) is a brewery producing beer at its Matsuyama unit.,,,,,,https://www.instagram.com/bokkewakaba/,,33.83917,132.76564,,pendiente,no comprobado,,,1925,en,,,,,,jp,shikoku,ehime
+hidecho-suisan-uwajima,秀長水産,Uwajima,Pescado,"Sea bream, yellowtail",愛媛県宇和島市築地町2丁目6-24,Produces and processes farmed sea bream and yellowtail in Uwajima.,,+81895253305,glocalive@hidecho.co.jp,https://www.hidecho.co.jp/,,,,33.225315,132.552475,,,sí,ecommerce,,3005,en,,,,,,jp,shikoku,ehime
+tanimoto-kamaboko-yawatahama,谷本蒲鉾店,Yawatahama,Pescado,"Jakoten, kamaboko",愛媛県八幡浜市駅前1丁目841-1,"Makes jakoten, kamaboko and other fish-paste products at its Yawatahama factory.",,+81894220266,tanimotokamabokoten@gmail.com,https://tanimotokamabokoten.com/,,,,33.458740,132.434601,,,sí,ecommerce,,3162,en,,,,,,jp,shikoku,ehime
+kobayashi-foods,Kobayashi Foods,Uwajima,Pescado,,,,,,,https://www.kobayashi-foods.com/,,,,,,,pendiente,no comprobado,,,3414,,,,,,,jp,shikoku,ehime
