@@ -174,6 +174,19 @@ test("the catalog root derives document language only from the async URL scope",
   assert.equal(parseCatalogScope("es-zz", countries), null);
 });
 
+test("the static catalog not-found boundary avoids request-bound APIs", () => {
+  const notFoundBoundary = readRepositoryFile(
+    "app/(catalog)/[catalog]/not-found.tsx",
+  );
+
+  assert.match(notFoundBoundary, /loadMessages\("en"\)/);
+  assert.match(notFoundBoundary, /backHref="\/"/);
+  assert.doesNotMatch(
+    notFoundBoundary,
+    /next\/headers|not-found-presentation|\b(?:headers|cookies|connection|draftMode|noStore)\s*\(/,
+  );
+});
+
 test("the proxy skips unrelated traffic and initializes Clerk only where needed", async () => {
   const proxySource = readRepositoryFile("proxy.ts");
   const matcherLiteral = /matcher:\s*(\[[\s\S]*?\n\s*\])/.exec(proxySource)?.[1];
