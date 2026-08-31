@@ -15,6 +15,7 @@ import {
   buildLocationAreaHref,
   countriesForPosition,
   createCatalogLocationRequest,
+  createCatalogPositionRequest,
   createLocationOnboardingActivation,
   forgetLocationOnboarding,
   readLocationOnboardingStorage,
@@ -185,6 +186,43 @@ test("construction performs zero geolocation, fetch, storage or navigation befor
     assert.equal(stored.includes(secret), false);
   }
   assert.equal(requests.every(({ init }) => init.method === "GET"), true);
+});
+
+test("an already-authorized map lookup returns a transient position after exact area validation", async () => {
+  const rawPosition = {
+    longitude: 2.168612345,
+    latitude: 41.387412345,
+    accuracy: 17.25,
+  };
+  const requests: { href: string; init: RequestInit }[] = [];
+  const lookup = createCatalogPositionRequest({
+    geolocation: successfulGeolocation(rawPosition, {
+      count: 0,
+      options: undefined,
+    }),
+    fetcher: geographyFetcher(requests),
+  });
+
+  assert.deepEqual(await lookup(), {
+    status: "resolved",
+    country: "es",
+    area: "barcelona",
+    position: {
+      longitude: rawPosition.longitude,
+      latitude: rawPosition.latitude,
+      accuracyMeters: rawPosition.accuracy,
+    },
+  });
+  assert.deepEqual(
+    requests.map(({ href }) => href),
+    [CATALOG_GEOGRAPHY_INDEX_HREF, "/generated/catalog-geography/es.json"],
+  );
+  for (const coordinate of [rawPosition.longitude, rawPosition.latitude]) {
+    assert.equal(
+      requests.some(({ href }) => href.includes(String(coordinate))),
+      false,
+    );
+  }
 });
 
 test("country bbox lookup stays local and is not accepted as an area result", async () => {
@@ -441,4 +479,16 @@ test("a saved area resumes on the home page while the profile owns forgetting it
     readFileSync("app/(application)/cuenta/perfil/page.tsx", "utf8"),
     /<SavedCatalogArea/,
   );
+});
+
+test("area-map centering is silent, permission-gated and same-area only", () => {
+  const explorer = readFileSync("components/area-explorer.tsx", "utf8");
+
+  assert.match(explorer, /navigator\.permissions\.query\(\{/);
+  assert.match(explorer, /permission\.state !== "granted"/);
+  assert.match(explorer, /result\.country !== country/);
+  assert.match(explorer, /result\.area !== area/);
+  assert.match(explorer, /createCatalogPositionRequest/);
+  assert.doesNotMatch(explorer, /watchPosition/);
+  assert.doesNotMatch(explorer, /localStorage\.(?:setItem|removeItem)/);
 });

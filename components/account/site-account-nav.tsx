@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { useSiteCatalogControls } from "@/components/account/site-catalog-controls-context";
+import { AreaSelector } from "@/components/area-selector";
 import { useLanguageMenu } from "@/components/language-menu-context";
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
 import { rememberExplicitLocale } from "@/lib/i18n/client-locale";
@@ -18,6 +20,7 @@ type SiteAccountNavProps = {
 
 type AccountMenuProps = {
   messages: Messages["siteHeader"];
+  showAccountLinks: boolean;
   signedIn: boolean;
 };
 
@@ -27,11 +30,13 @@ function formatGreeting(template: string, displayName: string) {
 
 export function AccountMenu({
   messages,
+  showAccountLinks,
   signedIn,
 }: AccountMenuProps) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
   const pathname = usePathname();
   const router = useRouter();
+  const catalogControls = useSiteCatalogControls();
   const languageMenu = useLanguageMenu();
   const [accountDisplayName, setAccountDisplayName] = useState<string | null>(null);
 
@@ -96,10 +101,21 @@ export function AccountMenu({
     router.refresh();
   }
 
+  function closeMenu() {
+    detailsRef.current?.removeAttribute("open");
+  }
+
   return (
     <details className="site-account-menu" ref={detailsRef}>
       <summary>{summary}</summary>
-      <div className="site-account-menu__panel">
+      <div
+        className="site-account-menu__panel"
+        onClickCapture={(event) => {
+          if (event.target instanceof Element && event.target.closest("a")) {
+            closeMenu();
+          }
+        }}
+      >
         <label className="site-account-menu__language">
           <span>{languageMenu.label}</span>
           <select
@@ -114,22 +130,37 @@ export function AccountMenu({
           </select>
         </label>
 
-        <div className="site-account-menu__links">
-          {signedIn ? (
-            <>
-              <Link href={ACCOUNT_ROUTES.dashboard}>{messages.myAccount}</Link>
-              <Link href={ACCOUNT_ROUTES.favorites}>{messages.favorites}</Link>
-              <SignOutButton>
-                <button type="button">{messages.signOut}</button>
-              </SignOutButton>
-            </>
-          ) : (
-            <>
-              <Link href={ACCOUNT_ROUTES.signIn}>{messages.signIn}</Link>
-              <Link href={ACCOUNT_ROUTES.signUp}>{messages.register}</Link>
-            </>
-          )}
-        </div>
+        {catalogControls ? (
+          <section className="site-account-menu__catalog">
+            <AreaSelector
+              country={catalogControls.country}
+              currentArea={catalogControls.currentArea}
+              messages={catalogControls.messages}
+              onNavigate={closeMenu}
+            />
+          </section>
+        ) : null}
+
+        {showAccountLinks ? (
+          <div className="site-account-menu__links">
+            {signedIn ? (
+              <>
+                <Link href={ACCOUNT_ROUTES.dashboard}>{messages.myAccount}</Link>
+                <Link href={ACCOUNT_ROUTES.favorites}>{messages.favorites}</Link>
+                <SignOutButton>
+                  <button type="button" onClick={closeMenu}>
+                    {messages.signOut}
+                  </button>
+                </SignOutButton>
+              </>
+            ) : (
+              <>
+                <Link href={ACCOUNT_ROUTES.signIn}>{messages.signIn}</Link>
+                <Link href={ACCOUNT_ROUTES.signUp}>{messages.register}</Link>
+              </>
+            )}
+          </div>
+        ) : null}
       </div>
     </details>
   );
@@ -139,16 +170,28 @@ export function SiteAccountNav({
   authConfigured,
   messages,
 }: SiteAccountNavProps) {
-  if (!authConfigured) return null;
+  const catalogControls = useSiteCatalogControls();
+
+  if (!authConfigured && !catalogControls) return null;
 
   return (
     <nav className="site-account-nav" aria-label={messages.accountNavigation}>
-      <Show
-        when="signed-in"
-        fallback={<AccountMenu messages={messages} signedIn={false} />}
-      >
-        <AccountMenu messages={messages} signedIn />
-      </Show>
+      {authConfigured ? (
+        <Show
+          when="signed-in"
+          fallback={
+            <AccountMenu messages={messages} showAccountLinks signedIn={false} />
+          }
+        >
+          <AccountMenu messages={messages} showAccountLinks signedIn />
+        </Show>
+      ) : (
+        <AccountMenu
+          messages={messages}
+          showAccountLinks={false}
+          signedIn={false}
+        />
+      )}
     </nav>
   );
 }

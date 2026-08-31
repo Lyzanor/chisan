@@ -4,6 +4,49 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-01 — Compact Barcelona area explorer
+
+final result: passed
+
+Source: `../references/inspiration-alltrails-explore.png` and the supplied
+AllTrails selected-trail mobile state. Implementation evidence:
+`implementation-area-explorer-compact-mobile.png`,
+`implementation-area-explorer-compact-desktop.png` and
+`area-explorer-alltrails-comparison.png`.
+
+Reviewed `/es/barcelona?category=Pan+y+cereal&highlight=pastisseria-duch-abrera`
+with 1440×900 and 390×844 browser viewport overrides. The mobile document has
+no horizontal overflow (375 = 375 after the browser scrollbar), no error alert
+or framework overlay appeared, and the local server reported no runtime error
+during the interaction pass.
+
+- The header now reads `Chisan · España · Barcelona`; the separate area line
+  and visible producer totals are gone. The count remains screen-reader status.
+- The category rail keeps every category and horizontal swipe, while its
+  browser scrollbar is visually hidden.
+- Default points remain 6px dark-pine circles and selection is an 8px
+  dark-pine map state with a surface outline and separate 28px hit target. Map
+  and list selection both update the canonical `highlight` query without a
+  competing highlighted list row.
+- The selected producer is one linked name-and-description surface. Pointer
+  activation outside it and Escape remove `highlight` with replacement history,
+  so no separate `Ver todos` control is needed.
+- On mobile the producer disclosure is structurally attached below the map,
+  full width and shadowless. It closes on outside activation, Escape returns
+  focus to its toggle, and list selection closes it then focuses the selected
+  producer surface.
+- Producer rows show the locality name directly, without a `Municipio` prefix.
+  The area selector lives with language and account actions in the top account
+  menu; authenticated greeting and Favorites remain intact.
+- A previously authorized, same-area device position may select 4–12 nearby
+  producers within a bounded 25km fallback. The exact coordinate stays inside
+  that local selection, is discarded immediately and never reaches the map,
+  URL or storage.
+
+The comparison retained AllTrails' compact map hierarchy and bottom access to
+results without adopting route overlays, clusters, floating control stacks or
+trail-specific imagery.
+
 ## 2026-09-01 — Public catalog inclusion criteria
 
 final result: passed

@@ -29,18 +29,14 @@ export type ProducerMapFocusRequest = Readonly<{
   requestId: number;
 }>;
 
-export type ProducerMapNearbyPosition = Readonly<{
-  latitude: number;
-  longitude: number;
-}>;
-
 type ProducersMapProps = {
   points: ProducerMapPoint[];
   scope: CatalogNavigationScope;
   area: string;
   highlightedSlug?: string;
   focusRequest?: ProducerMapFocusRequest;
-  nearbyPosition?: ProducerMapNearbyPosition;
+  nearbyFocusKeys?: string[];
+  onNearbyFocusConsumed?: () => void;
   onSelectProducer?: (slug: string) => void;
   singlePointZoom?: number;
   messages: MapMessages;
@@ -52,7 +48,8 @@ export function ProducersMap({
   area,
   highlightedSlug,
   focusRequest,
-  nearbyPosition,
+  nearbyFocusKeys,
+  onNearbyFocusConsumed,
   onSelectProducer,
   singlePointZoom,
   messages,
@@ -78,10 +75,12 @@ export function ProducersMap({
 
   return (
     <ProducerSelectionMap
+      key={`${scopeCountry}/${area}`}
       points={markers}
       highlightedKey={highlightedSlug}
       focusRequest={focusRequest}
-      nearbyPosition={nearbyPosition}
+      nearbyFocusKeys={nearbyFocusKeys}
+      onNearbyFocusConsumed={onNearbyFocusConsumed}
       onSelect={onSelectProducer}
       singlePointZoom={singlePointZoom}
       minZoom={5}
@@ -95,7 +94,8 @@ export function ProducerSelectionMap({
   highlightedKey,
   focusRequest,
   initialFocusKeys,
-  nearbyPosition,
+  nearbyFocusKeys,
+  onNearbyFocusConsumed,
   onSelect,
   singlePointZoom,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
@@ -105,7 +105,8 @@ export function ProducerSelectionMap({
   highlightedKey?: string;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
-  nearbyPosition?: ProducerMapNearbyPosition;
+  nearbyFocusKeys?: string[];
+  onNearbyFocusConsumed?: () => void;
   onSelect?: (key: string) => void;
   singlePointZoom?: number;
   minZoom?: number;
@@ -126,7 +127,8 @@ export function ProducerSelectionMap({
         highlightedKey={highlightedKey}
         focusRequest={focusRequest}
         initialFocusKeys={initialFocusKeys}
-        nearbyPosition={nearbyPosition}
+        nearbyFocusKeys={nearbyFocusKeys}
+        onNearbyFocusConsumed={onNearbyFocusConsumed}
         onSelect={onSelect}
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}

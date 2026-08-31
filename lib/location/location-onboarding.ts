@@ -56,6 +56,10 @@ export type CatalogLocationLookupResult =
   | ({ status: "resolved" } & CatalogAreaKey)
   | { status: "failed"; reason: CatalogLocationFailureReason };
 
+export type CatalogPositionLookupResult =
+  | ({ status: "resolved"; position: CatalogPosition } & CatalogAreaKey)
+  | { status: "failed"; reason: CatalogLocationFailureReason };
+
 export type LocationOnboardingActivationResult =
   | {
       status: "navigated";
@@ -257,13 +261,16 @@ async function fetchJson(fetcher: LocationFetch, href: string): Promise<unknown>
 }
 
 /**
- * Creates a one-shot action without invoking geolocation. The returned function
- * is intended to be called only from the explicit "Use my location" handler.
+ * Creates a one-shot position lookup; creating it does not invoke geolocation.
+ * Initial area selection may call the returned request only after the visitor
+ * activates "Use my location". A matching saved-area map may reuse it solely
+ * for presentation framing after the Permissions API reports `granted`, so it
+ * cannot trigger the first native permission prompt.
  */
-export function createCatalogLocationRequest({
+export function createCatalogPositionRequest({
   geolocation,
   fetcher,
-}: LocationRequestDependencies): () => Promise<CatalogLocationLookupResult> {
+}: LocationRequestDependencies): () => Promise<CatalogPositionLookupResult> {
   return async () => {
     const requested = await requestCurrentPosition(geolocation);
     if (requested.status === "failed") return requested;
@@ -291,7 +298,7 @@ export function createCatalogLocationRequest({
 
       const resolved = resolveCatalogArea(requested.position, geography);
       if (resolved.status === "resolved" && resolved.country === candidate.country) {
-        return resolved;
+        return { ...resolved, position: requested.position };
       }
       return {
         status: "failed",
@@ -300,6 +307,22 @@ export function createCatalogLocationRequest({
     } catch {
       return { status: "failed", reason: "load-failed" };
     }
+  };
+}
+
+export function createCatalogLocationRequest(
+  dependencies: LocationRequestDependencies,
+): () => Promise<CatalogLocationLookupResult> {
+  const request = createCatalogPositionRequest(dependencies);
+
+  return async () => {
+    const result = await request();
+    if (result.status === "failed") return result;
+    return {
+      status: "resolved",
+      country: result.country,
+      area: result.area,
+    };
   };
 }
 

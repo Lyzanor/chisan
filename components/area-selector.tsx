@@ -3,33 +3,41 @@
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
-type AreaOption = {
+export type AreaOption = {
   slug: string;
   label: string;
   href: string;
 };
 
-type Region = {
+export type AreaSelectorRegion = {
   slug: string;
   label: string;
   areas: AreaOption[];
 };
 
-type Country = {
-  regions: Region[];
+export type AreaSelectorCountry = {
+  regions: AreaSelectorRegion[];
+};
+
+export type AreaSelectorMessages = {
+  label: string;
+  placeholder: string;
+  submit: string;
 };
 
 type AreaSelectorProps = {
-  country: Country;
+  country: AreaSelectorCountry;
   currentArea: string;
-  messages: {
-    label: string;
-    placeholder: string;
-    submit: string;
-  };
+  messages: AreaSelectorMessages;
+  onNavigate?: () => void;
 };
 
-export function AreaSelector({ country, currentArea, messages }: AreaSelectorProps) {
+export function AreaSelector({
+  country,
+  currentArea,
+  messages,
+  onNavigate,
+}: AreaSelectorProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
@@ -44,6 +52,7 @@ export function AreaSelector({ country, currentArea, messages }: AreaSelectorPro
       .find((option) => option.slug === area);
     if (!destination) return;
 
+    onNavigate?.();
     startTransition(() => {
       router.push(destination.href);
     });
@@ -55,6 +64,7 @@ export function AreaSelector({ country, currentArea, messages }: AreaSelectorPro
         {messages.label}
       </label>
       <select
+        key={currentArea}
         id="area-select"
         name="area"
         defaultValue={currentArea}

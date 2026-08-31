@@ -20,6 +20,18 @@ body {
   padding: 0;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 :lang(ja) body {
   line-break: strict;
 }
@@ -492,6 +504,14 @@ a {
   scrollbar-width: thin;
 }
 
+.catalog-page .catalog-simple-categories {
+  scrollbar-width: none;
+}
+
+.catalog-page .catalog-simple-categories::-webkit-scrollbar {
+  display: none;
+}
+
 .catalog-chip {
   display: inline-flex;
   align-items: center;
@@ -518,11 +538,20 @@ a {
   font-weight: 500;
 }
 
+.catalog-page .catalog-simple-layout {
+  --catalog-map-height: clamp(32.5rem, calc(100svh - 18rem), 47.5rem);
+}
+
 .catalog-simple-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(360px, 0.85fr);
   gap: 0.9rem;
   align-items: start;
+}
+
+.catalog-page .catalog-map-stage {
+  position: relative;
+  min-width: 0;
 }
 
 .producer-selection-page__layout {
@@ -563,6 +592,10 @@ a {
   background: var(--surface-muted);
 }
 
+.catalog-page .map-shell > .map-placeholder {
+  height: var(--catalog-map-height);
+}
+
 .catalog-simple-map .map-shell {
   border: 0;
 }
@@ -580,6 +613,10 @@ a {
   width: 100%;
   height: min(72vh, 760px);
   min-height: 520px;
+}
+
+.catalog-page .producers-map-canvas {
+  height: var(--catalog-map-height);
 }
 
 .producer-map-pin {
@@ -610,14 +647,43 @@ a {
   flex-direction: column;
 }
 
-.catalog-featured-producer {
-  padding: 0.95rem 1rem;
-  border-bottom: 1px solid var(--line);
-  background: var(--accent-soft);
-  color: var(--accent-text);
+.catalog-page .catalog-viewer {
+  height: var(--catalog-map-height);
+  max-height: var(--catalog-map-height);
 }
 
-.catalog-featured-producer h2,
+.catalog-page .catalog-viewer-toggle {
+  display: none;
+}
+
+.catalog-page .catalog-viewer-body {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.catalog-page .catalog-map-selection {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 500;
+  display: flex;
+  pointer-events: none;
+}
+
+.catalog-page .catalog-featured-producer {
+  width: min(34rem, 100%);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-object);
+  background: var(--surface);
+  box-shadow: var(--chisan-shadow-overlay);
+  color: var(--text);
+  pointer-events: auto;
+}
+
 .catalog-viewer-head h2,
 .detail-map-card h2,
 .detail-table-card h2 {
@@ -625,20 +691,54 @@ a {
   font-size: 1.05rem;
 }
 
-.catalog-featured-producer p:not(.catalog-kicker),
 .catalog-viewer-head p {
   margin: 0.25rem 0 0;
   color: var(--muted);
   font-size: 0.86rem;
 }
 
-.catalog-featured-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.7rem;
+.catalog-page .catalog-featured-producer__link {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
 }
 
-.catalog-featured-actions a,
+.catalog-page .catalog-featured-producer__link strong,
+.catalog-page .catalog-featured-producer__link span:not(.catalog-kicker) {
+  display: block;
+}
+
+.catalog-page .catalog-featured-producer__link strong {
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.catalog-page .catalog-featured-producer__link span:not(.catalog-kicker) {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.catalog-page .catalog-featured-producer__link:hover {
+  background: var(--surface-muted);
+}
+
+.catalog-page .catalog-featured-producer__link:focus-visible,
+.catalog-page .catalog-viewer-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .detail-back-link,
 .back-link {
   display: inline-flex;
@@ -654,7 +754,6 @@ a {
   text-decoration: none;
 }
 
-.catalog-featured-actions a:hover,
 .detail-back-link:hover,
 .back-link:hover {
   background: var(--surface-muted);
@@ -665,11 +764,20 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.catalog-page .catalog-viewer-head {
+  flex: 0 0 auto;
+}
+
 .producer-compact-list {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow-y: auto;
+}
+
+.catalog-page .producer-compact-list {
+  min-height: 0;
+  flex: 1;
 }
 
 .producer-selection-groups {
@@ -741,6 +849,10 @@ a {
   background: var(--surface-muted);
 }
 
+.catalog-page .producer-compact-list li {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .producer-compact-link {
   display: grid;
   grid-template-columns: 2rem minmax(0, 1fr);
@@ -767,6 +879,11 @@ a {
 .producer-compact-link .producer-compact-location {
   color: var(--text);
   font-weight: 500;
+}
+
+.catalog-page .producer-compact-link .producer-compact-location {
+  color: var(--muted);
+  font-weight: 400;
 }
 
 .producer-compact-link strong {
@@ -1256,6 +1373,86 @@ td:first-child {
   .catalog-viewer {
     min-height: 420px;
     max-height: none;
+  }
+
+  .catalog-page .catalog-simple-layout {
+    --catalog-map-height: clamp(24rem, calc(100svh - 20rem), 42rem);
+
+    display: block;
+  }
+
+  .catalog-page .producers-map-canvas,
+  .catalog-page .map-shell > .map-placeholder {
+    height: var(--catalog-map-height);
+    min-height: 0;
+    max-height: none;
+  }
+
+  .catalog-page .catalog-simple-map {
+    border-radius: 0;
+  }
+
+  .catalog-page .catalog-viewer {
+    position: relative;
+    z-index: 700;
+    display: flex;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin-top: -1px;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 0;
+    background: var(--surface);
+    box-shadow: none;
+  }
+
+  .catalog-page .catalog-viewer-toggle {
+    display: inline-flex;
+    order: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 0;
+    background: var(--surface);
+    color: var(--accent-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .catalog-page .catalog-viewer-toggle:hover {
+    background: var(--surface-muted);
+  }
+
+  .catalog-page .catalog-viewer-body {
+    display: none;
+    order: 2;
+    max-height: min(44svh, 22rem);
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .catalog-page .catalog-viewer-head {
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .catalog-page .catalog-viewer-head h2 {
+    display: none;
+  }
+
+  .catalog-page .catalog-viewer.is-mobile-open .catalog-viewer-body {
+    display: flex;
+  }
+
+  .catalog-page .catalog-map-selection {
+    bottom: 1rem;
   }
 
   .detail-producer-map .map-shell > .map-placeholder {

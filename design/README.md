@@ -109,10 +109,11 @@ One point per producer, at its exact coordinate. No clustering, jitter, offset
 or heatmaps — ever.
 
 - Default: 6px `moss-dark` circle at full opacity, no outline.
-- Selected: 8px, the same `moss-dark` fill, 2px `surface` outline, same position.
+- Selected: 8px `moss-dark` fill, 2px `surface` outline, same position.
 - Land `rice-paper`, controls `surface`, geometry `hairline`, labels `stone`.
 - All categories stay in one scrollable filter bar, one icon and label each.
-- Counts stay visible as text; density stays visible spatially.
+- Result counts remain available to assistive technology; visual density stays
+  visible spatially without a redundant total.
 
 ## Brand
 

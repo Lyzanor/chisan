@@ -1,6 +1,7 @@
 export const NEARBY_PRODUCER_FOCUS_LIMIT = 12;
 export const NEARBY_PRODUCER_FOCUS_MINIMUM = 4;
 export const NEARBY_PRODUCER_FOCUS_RADIUS_KM = 15;
+export const NEARBY_PRODUCER_FALLBACK_RADIUS_KM = 25;
 
 type NearbyPosition = {
   latitude: number;
@@ -50,10 +51,15 @@ export function selectNearbyProducerKeys(
   const withinRadius = ranked.filter(
     ({ distance }) => distance <= NEARBY_PRODUCER_FOCUS_RADIUS_KM,
   );
+  const withinFallbackRadius = ranked.filter(
+    ({ distance }) => distance <= NEARBY_PRODUCER_FALLBACK_RADIUS_KM,
+  );
   const selected =
     withinRadius.length >= NEARBY_PRODUCER_FOCUS_MINIMUM
       ? withinRadius
-      : ranked.slice(0, NEARBY_PRODUCER_FOCUS_MINIMUM);
+      : withinFallbackRadius.length >= NEARBY_PRODUCER_FOCUS_MINIMUM
+        ? withinFallbackRadius.slice(0, NEARBY_PRODUCER_FOCUS_MINIMUM)
+        : [];
 
   return selected
     .slice(0, NEARBY_PRODUCER_FOCUS_LIMIT)

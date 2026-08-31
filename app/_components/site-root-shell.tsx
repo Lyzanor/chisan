@@ -6,6 +6,7 @@ import { Noto_Sans } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
 import { ChisanAnalytics } from "@/components/analytics/chisan-analytics";
 import { ChisanWordmark } from "@/components/brand/chisan-brand";
@@ -120,43 +121,45 @@ export function SiteRootShell({
       key={languageMenu.currentLocale}
       initialMenu={languageMenu}
     >
-      <header className="site-header">
-        <Link
-          href="/"
-          className="site-header__brand"
-          aria-label={`${SITE_NAME} — ${localizedTagline}`}
-        >
-          <ChisanWordmark alt="" />
-          <span className="site-header__tagline">{localizedTagline}</span>
-        </Link>
-        <SiteAccountNav
-          authConfigured={accountAuthConfigured}
-          messages={accountMessages ?? headerMessages}
-        />
-      </header>
-      {children}
-      <footer className="site-footer">
-        <nav className="site-footer__links" aria-label={footerMessages.navigation}>
-          <Link href="/" className="site-footer__brand-link">
-            <ChisanWordmark alt="" reverse />
+      <SiteCatalogControlsProvider>
+        <header className="site-header">
+          <Link
+            href="/"
+            className="site-header__brand"
+            aria-label={`${SITE_NAME} — ${localizedTagline}`}
+          >
+            <ChisanWordmark alt="" />
+            <span className="site-header__tagline">{localizedTagline}</span>
           </Link>
-          <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
-          <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
-          <Link href="/privacy">
-            {htmlLang.toLowerCase().startsWith("es")
-              ? "Privacidad y cookies"
-              : "Privacy & cookies"}
-          </Link>
-          <Link href="/contact">{footerMessages.contactLink}</Link>
-          <a href={SITE_INSTAGRAM_URL} rel="me">
-            Instagram
-          </a>
-          <a href={SITE_X_URL} rel="me">
-            X
-          </a>
-          <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
-        </nav>
-      </footer>
+          <SiteAccountNav
+            authConfigured={accountAuthConfigured}
+            messages={accountMessages ?? headerMessages}
+          />
+        </header>
+        {children}
+        <footer className="site-footer">
+          <nav className="site-footer__links" aria-label={footerMessages.navigation}>
+            <Link href="/" className="site-footer__brand-link">
+              <ChisanWordmark alt="" reverse />
+            </Link>
+            <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
+            <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
+            <Link href="/privacy">
+              {htmlLang.toLowerCase().startsWith("es")
+                ? "Privacidad y cookies"
+                : "Privacy & cookies"}
+            </Link>
+            <Link href="/contact">{footerMessages.contactLink}</Link>
+            <a href={SITE_INSTAGRAM_URL} rel="me">
+              Instagram
+            </a>
+            <a href={SITE_X_URL} rel="me">
+              X
+            </a>
+            <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
+          </nav>
+        </footer>
+      </SiteCatalogControlsProvider>
     </SiteLanguageMenuProvider>
   );
 

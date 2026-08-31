@@ -81,7 +81,7 @@ const RULES = [
   },
   {
     name: "off-scale-space",
-    baseline: 192,
+    baseline: 191,
     describe: "padding/margin/gap off the 4px scale",
     find: (file, css) =>
       [...css.matchAll(/(?:padding|margin|gap)[a-z-]*:\s*([^;}]+)/g)].flatMap((m) =>

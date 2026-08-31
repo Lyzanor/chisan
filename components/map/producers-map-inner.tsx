@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import L from "leaflet";
 import {
@@ -18,12 +18,9 @@ import {
   PRODUCER_SELECTION_MIN_ZOOM,
   type ProducerMapMarker,
 } from "@/lib/producer-selections";
-import { selectNearbyProducerKeys } from "@/lib/location/nearby-producer-focus";
+import { NEARBY_PRODUCER_FOCUS_MINIMUM } from "@/lib/location/nearby-producer-focus";
 
-import type {
-  ProducerMapFocusRequest,
-  ProducerMapNearbyPosition,
-} from "./producers-map";
+import type { ProducerMapFocusRequest } from "./producers-map";
 
 // Below this threshold, show all points regardless of viewport.
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
@@ -31,7 +28,6 @@ const VIEWPORT_THRESHOLD = 200;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
 const PRODUCER_FOCUS_ZOOM = 13;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
-const NEARBY_FOCUS_MINIMUM_RADIUS_KM = 2;
 const EMPTY_FOCUS_KEYS: string[] = [];
 
 function getPointsBounds(
@@ -90,36 +86,17 @@ function getPointsForKeys(
 
 function fitNearbyProducerView(
   map: L.Map,
-  position: ProducerMapNearbyPosition,
-  points: readonly ProducerMapMarker[],
-): void {
-  const nearbyKeys = selectNearbyProducerKeys(position, points);
-  const nearbyPoints = getPointsForKeys(points, nearbyKeys);
-  const latitudeDelta = NEARBY_FOCUS_MINIMUM_RADIUS_KM / 111.32;
-  const longitudeScale = Math.max(
-    Math.cos((position.latitude * Math.PI) / 180),
-    0.2,
-  );
-  const longitudeDelta =
-    NEARBY_FOCUS_MINIMUM_RADIUS_KM / (111.32 * longitudeScale);
-  const bounds = L.latLngBounds(
-    [
-      position.latitude - latitudeDelta,
-      position.longitude - longitudeDelta,
-    ],
-    [
-      position.latitude + latitudeDelta,
-      position.longitude + longitudeDelta,
-    ],
-  );
+  nearbyPoints: readonly ProducerMapMarker[],
+): boolean {
+  if (nearbyPoints.length < NEARBY_PRODUCER_FOCUS_MINIMUM) return false;
 
-  for (const point of nearbyPoints) {
-    bounds.extend([point.latitude, point.longitude]);
-  }
-  map.fitBounds(bounds.pad(0.12), {
-    animate: false,
-    maxZoom: NEARBY_FOCUS_MAX_ZOOM,
-  });
+  fitProducerPoints(
+    map,
+    nearbyPoints,
+    PRODUCER_FOCUS_ZOOM,
+    NEARBY_FOCUS_MAX_ZOOM,
+  );
+  return true;
 }
 
 function fitProducerPoints(
@@ -148,7 +125,8 @@ function BoundsAwareMarkers({
   highlightedKey,
   focusRequest,
   initialFocusKeys = EMPTY_FOCUS_KEYS,
-  nearbyPosition,
+  nearbyFocusKeys = EMPTY_FOCUS_KEYS,
+  onNearbyFocusConsumed,
   onSelect,
   singlePointZoom = 13,
   messages,
@@ -157,7 +135,8 @@ function BoundsAwareMarkers({
   highlightedKey?: string;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
-  nearbyPosition?: ProducerMapNearbyPosition;
+  nearbyFocusKeys?: string[];
+  onNearbyFocusConsumed?: () => void;
   onSelect?: (key: string) => void;
   singlePointZoom?: number;
   messages: {
@@ -170,8 +149,9 @@ function BoundsAwareMarkers({
     points: readonly ProducerMapMarker[];
     singlePointZoom: number;
     initialFocusKey: string;
-    nearbyPositionKey: string;
+    nearbyFocusKey: string;
   } | null>(null);
+  const viewModeRef = useRef<"area" | "initial" | "nearby">("area");
 
   // Fit only when the effective geometry changes. Navigation state such as a
   // highlighted producer may rebuild props, but must preserve the user's pan
@@ -181,21 +161,19 @@ function BoundsAwareMarkers({
 
     const fittedView = fittedViewRef.current;
     const initialFocusKey = initialFocusKeys.join("\0");
-    const nearbyPositionKey = nearbyPosition
-      ? `${nearbyPosition.latitude}:${nearbyPosition.longitude}`
-      : "";
+    const nearbyFocusKey = nearbyFocusKeys.join("\0");
     if (
       fittedView &&
       fittedView.singlePointZoom === singlePointZoom &&
       fittedView.initialFocusKey === initialFocusKey &&
-      fittedView.nearbyPositionKey === nearbyPositionKey &&
+      fittedView.nearbyFocusKey === nearbyFocusKey &&
       hasSamePointGeometry(fittedView.points, points)
     ) {
       fittedViewRef.current = {
         points,
         singlePointZoom,
         initialFocusKey,
-        nearbyPositionKey,
+        nearbyFocusKey,
       };
       return;
     }
@@ -203,16 +181,26 @@ function BoundsAwareMarkers({
       points,
       singlePointZoom,
       initialFocusKey,
-      nearbyPositionKey,
+      nearbyFocusKey,
     };
 
-    if (nearbyPosition) {
-      fitNearbyProducerView(map, nearbyPosition, points);
+    if (nearbyFocusKeys.length) {
+      const nearbyFocusPoints = getPointsForKeys(points, nearbyFocusKeys);
+      const didFitNearbyView = fitNearbyProducerView(map, nearbyFocusPoints);
+      onNearbyFocusConsumed?.();
+      if (didFitNearbyView) {
+        viewModeRef.current = "nearby";
+        return;
+      }
+    }
+
+    if (viewModeRef.current === "nearby") {
       return;
     }
 
     const initialFocusPoints = getPointsForKeys(points, initialFocusKeys);
     if (initialFocusPoints.length) {
+      viewModeRef.current = "initial";
       fitProducerPoints(
         map,
         initialFocusPoints,
@@ -222,13 +210,21 @@ function BoundsAwareMarkers({
       return;
     }
 
+    viewModeRef.current = "area";
     fitProducerPoints(
       map,
       points,
       singlePointZoom,
       points.length > VIEWPORT_THRESHOLD ? 10 : undefined,
     );
-  }, [initialFocusKeys, map, nearbyPosition, points, singlePointZoom]);
+  }, [
+    initialFocusKeys,
+    map,
+    nearbyFocusKeys,
+    onNearbyFocusConsumed,
+    points,
+    singlePointZoom,
+  ]);
 
   useEffect(() => {
     if (!focusRequest) return;
@@ -266,47 +262,61 @@ function BoundsAwareMarkers({
         const highlighted = highlightedKey === point.key;
 
         return (
-          <CircleMarker
-            key={`${point.key}:${highlighted ? "selected" : "default"}`}
-            center={[point.latitude, point.longitude]}
-            radius={highlighted ? 4 : 3}
-            pathOptions={{
-              className: highlighted
-                ? "producer-map-circle producer-map-circle--highlighted"
-                : "producer-map-circle",
-              color: highlighted
-                ? "var(--chisan-color-surface)"
-                : "var(--chisan-color-moss-dark)",
-              fillColor: highlighted
-                ? "var(--chisan-color-moss)"
-                : "var(--chisan-color-moss-dark)",
-              fillOpacity: 1,
-              opacity: highlighted ? 1 : 0,
-              weight: highlighted ? 2 : 0,
-            }}
-            eventHandlers={
-              onSelect
-                ? {
-                    click: () => onSelect(point.key),
-                  }
-                : undefined
-            }
-          >
-            <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
-              {point.name}
-            </Tooltip>
-            {onSelect ? null : (
-              <Popup>
-                <strong>{point.name}</strong>
-                <br />
-                {point.city} · {point.categories.join(" · ")}
-                <br />
-                <Link href={point.href} prefetch={false}>
-                  {messages.openProfile}
-                </Link>
-              </Popup>
-            )}
-          </CircleMarker>
+          <Fragment key={`${point.key}:${highlighted ? "selected" : "default"}`}>
+            <CircleMarker
+              center={[point.latitude, point.longitude]}
+              radius={highlighted ? 4 : 3}
+              interactive={!onSelect}
+              pathOptions={{
+                className: highlighted
+                  ? "producer-map-circle producer-map-circle--highlighted"
+                  : "producer-map-circle",
+                color: highlighted
+                  ? "var(--chisan-color-surface)"
+                  : "var(--chisan-color-moss-dark)",
+                fillColor: "var(--chisan-color-moss-dark)",
+                fillOpacity: 1,
+                opacity: highlighted ? 1 : 0,
+                weight: highlighted ? 2 : 0,
+              }}
+            >
+              {onSelect ? null : (
+                <>
+                  <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
+                    {point.name}
+                  </Tooltip>
+                  <Popup>
+                    <strong>{point.name}</strong>
+                    <br />
+                    {point.city} · {point.categories.join(" · ")}
+                    <br />
+                    <Link href={point.href} prefetch={false}>
+                      {messages.openProfile}
+                    </Link>
+                  </Popup>
+                </>
+              )}
+            </CircleMarker>
+            {onSelect ? (
+              <CircleMarker
+                center={[point.latitude, point.longitude]}
+                radius={14}
+                pathOptions={{
+                  className: "producer-map-hit-area",
+                  color: "transparent",
+                  fillColor: "transparent",
+                  fillOpacity: 0,
+                  opacity: 0,
+                  weight: 0,
+                }}
+                eventHandlers={{ click: () => onSelect(point.key) }}
+              >
+                <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
+                  {point.name}
+                </Tooltip>
+              </CircleMarker>
+            ) : null}
+          </Fragment>
         );
       })}
     </>
@@ -318,7 +328,8 @@ export default function ProducersMapInner({
   highlightedKey,
   focusRequest,
   initialFocusKeys,
-  nearbyPosition,
+  nearbyFocusKeys,
+  onNearbyFocusConsumed,
   onSelect,
   singlePointZoom = 13,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
@@ -329,7 +340,8 @@ export default function ProducersMapInner({
   highlightedKey?: string;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
-  nearbyPosition?: ProducerMapNearbyPosition;
+  nearbyFocusKeys?: string[];
+  onNearbyFocusConsumed?: () => void;
   onSelect?: (key: string) => void;
   singlePointZoom?: number;
   minZoom?: number;
@@ -359,7 +371,8 @@ export default function ProducersMapInner({
         highlightedKey={highlightedKey}
         focusRequest={focusRequest}
         initialFocusKeys={initialFocusKeys}
-        nearbyPosition={nearbyPosition}
+        nearbyFocusKeys={nearbyFocusKeys}
+        onNearbyFocusConsumed={onNearbyFocusConsumed}
         onSelect={onSelect}
         singlePointZoom={singlePointZoom}
         messages={messages}
