@@ -271,6 +271,9 @@ if [[
   "$HTML_PURPOSE" != *'id="how-chisan-works-title">How Chisan works</h1>'* ||
   "$HTML_PURPOSE" != *'Local food systems are full of value, but too often fragmented.'* ||
   "$HTML_PURPOSE" != *'From a possible producer to a stable public profile'* ||
+  "$HTML_PURPOSE" != *'Who can be part of Chisan'* ||
+  "$HTML_PURPOSE" != *'What does not prove production'* ||
+  "$HTML_PURPOSE" != *'Review, correction and removal'* ||
   "$HTML_PURPOSE" != *'The CSV catalog is canonical'* ||
   "$HTML_PURPOSE" != *'Public discovery remains open'* ||
   "$HTML_PURPOSE" != *'"@type":"AboutPage"'*

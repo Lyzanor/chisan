@@ -21,6 +21,23 @@ type HowChisanWorksCopy = {
     title: string;
     description: string;
   }[];
+  eligibilityKicker: string;
+  eligibilityTitle: string;
+  eligibilityIntroduction: string;
+  eligibilityCriteria: readonly {
+    title: string;
+    description: string;
+  }[];
+  boundariesKicker: string;
+  boundariesTitle: string;
+  boundariesIntroduction: string;
+  boundaries: readonly {
+    title: string;
+    description: string;
+  }[];
+  lifecycleKicker: string;
+  lifecycleTitle: string;
+  lifecycleParagraphs: readonly string[];
   trustKicker: string;
   trustTitle: string;
   trustIntroduction: string;
@@ -97,6 +114,75 @@ const HOW_CHISAN_WORKS = {
         description:
           "Corrections, producer requests and catalog changes are reviewed before publication. No request made on the deployed website writes directly to the public catalog.",
       },
+    ],
+    eligibilityKicker: "Catalog inclusion",
+    eligibilityTitle: "Who can be part of Chisan",
+    eligibilityIntroduction:
+      "Chisan publishes active, place-based identities for food or drink producers. A productive unit qualifies only when every criterion is supported by current public evidence.",
+    eligibilityCriteria: [
+      {
+        title: "A real public identity",
+        description:
+          "A person, business, cooperative or collective can be named and distinguished from similar entities.",
+      },
+      {
+        title: "Material production",
+        description:
+          "It grows, raises, catches, harvests, extracts, mills, ferments, roasts, bakes, preserves, distils, prepares or otherwise materially makes food or drink for people.",
+      },
+      {
+        title: "A current own offer",
+        description:
+          "At least one resulting product reaches the public under an identity that remains attributable to the producer.",
+      },
+      {
+        title: "A productive place",
+        description:
+          "The actual production activity can be assigned to one catalog area and municipality. A public street address is optional.",
+      },
+      {
+        title: "Connected evidence",
+        description:
+          "Public sources connect the identity, productive activity, offer and place. A source that proves one claim does not silently prove the rest.",
+      },
+      {
+        title: "A current, distinct unit",
+        description:
+          "Current evidence supports its activity, and the same productive unit is not already represented by another profile.",
+      },
+    ],
+    boundariesKicker: "Scope and evidence",
+    boundariesTitle: "What does not prove production",
+    boundariesIntroduction:
+      "These signals may help discover or corroborate a producer, but none earns inclusion on its own.",
+    boundaries: [
+      {
+        title: "Registers and distinctions",
+        description:
+          "Appearing in a registry, association, guide or map, or holding a seal or certification, is useful evidence only for the claims that source actually publishes.",
+      },
+      {
+        title: "Commercial presence",
+        description:
+          "A shop, restaurant, café, office, market stall, sales channel or tasting room does not establish where or whether production occurs.",
+      },
+      {
+        title: "Brand and popularity",
+        description:
+          "A brand mention, social profile, product listing or positive review does not identify a qualifying productive unit or determine editorial relevance.",
+      },
+      {
+        title: "Resale and service",
+        description:
+          "Stocking, packing, branding, serving or reselling products made by others is not material production.",
+      },
+    ],
+    lifecycleKicker: "Editorial lifecycle",
+    lifecycleTitle: "Review, correction and removal",
+    lifecycleParagraphs: [
+      "Every suggestion and factual change is reviewed before publication. If essential evidence is missing, the proposed unit stays outside the public catalog while research continues.",
+      "If a published profile no longer meets the criteria, duplicates another unit or belongs in a different area, it is corrected, merged, moved or removed through a reviewed decision.",
+      "The criteria may evolve as the catalog expands. Existing profiles are reviewed against a changed criterion before any correction or removal.",
     ],
     trustKicker: "Trust and limits",
     trustTitle: "Clear sources, stable identities and revisable decisions",
@@ -178,6 +264,75 @@ const HOW_CHISAN_WORKS = {
         description:
           "Las correcciones, las solicitudes de productores y los cambios del catálogo se revisan antes de publicarse. Ninguna petición realizada en la web desplegada escribe directamente en el catálogo público.",
       },
+    ],
+    eligibilityKicker: "Criterios de inclusión",
+    eligibilityTitle: "Quién puede formar parte de Chisan",
+    eligibilityIntroduction:
+      "Chisan publica identidades activas y vinculadas a un lugar de productores de alimentos o bebidas. Una unidad productiva cumple los criterios solo cuando todos ellos están respaldados por evidencias públicas actuales.",
+    eligibilityCriteria: [
+      {
+        title: "Una identidad pública real",
+        description:
+          "Una persona, empresa, cooperativa o colectivo puede identificarse y distinguirse de entidades similares.",
+      },
+      {
+        title: "Producción material",
+        description:
+          "Cultiva, cría, captura, cosecha, extrae, muele, fermenta, tuesta, hornea, conserva, destila, prepara o transforma materialmente alimentos o bebidas para personas.",
+      },
+      {
+        title: "Una oferta propia y actual",
+        description:
+          "Al menos uno de los productos resultantes llega al público bajo una identidad que sigue siendo atribuible al productor.",
+      },
+      {
+        title: "Un lugar productivo",
+        description:
+          "La actividad productiva real puede asignarse a una zona y un municipio del catálogo. No es necesaria una dirección pública exacta.",
+      },
+      {
+        title: "Evidencias conectadas",
+        description:
+          "Las fuentes públicas conectan la identidad, la actividad productiva, la oferta y el lugar. Una fuente que demuestra una afirmación no demuestra automáticamente las demás.",
+      },
+      {
+        title: "Una unidad activa y diferenciada",
+        description:
+          "Las evidencias actuales respaldan su actividad y la misma unidad productiva no está ya representada por otro perfil.",
+      },
+    ],
+    boundariesKicker: "Alcance y evidencias",
+    boundariesTitle: "Lo que no demuestra producción",
+    boundariesIntroduction:
+      "Estas señales pueden ayudar a descubrir o corroborar un productor, pero ninguna justifica por sí sola su inclusión.",
+    boundaries: [
+      {
+        title: "Registros y distintivos",
+        description:
+          "Aparecer en un registro, asociación, guía o mapa, o disponer de un sello o certificación, solo aporta evidencia sobre las afirmaciones que esa fuente publica realmente.",
+      },
+      {
+        title: "Presencia comercial",
+        description:
+          "Una tienda, restaurante, cafetería, oficina, puesto de mercado, canal de venta o sala de degustación no demuestra dónde ni si existe producción.",
+      },
+      {
+        title: "Marca y popularidad",
+        description:
+          "Una mención de marca, un perfil social, un listado de productos o una reseña positiva no identifican una unidad productiva válida ni determinan su relevancia editorial.",
+      },
+      {
+        title: "Reventa y servicio",
+        description:
+          "Almacenar, envasar, presentar, servir o revender productos elaborados por terceros no constituye producción material.",
+      },
+    ],
+    lifecycleKicker: "Ciclo editorial",
+    lifecycleTitle: "Revisión, corrección y retirada",
+    lifecycleParagraphs: [
+      "Cada sugerencia y cambio factual se revisa antes de publicarse. Si falta una evidencia esencial, la unidad propuesta permanece fuera del catálogo público mientras continúa la investigación.",
+      "Si un perfil publicado deja de cumplir los criterios, duplica otra unidad o pertenece a una zona diferente, se corrige, combina, traslada o retira mediante una decisión revisada.",
+      "Los criterios pueden evolucionar a medida que crece el catálogo. Los perfiles existentes se revisan frente a cualquier criterio modificado antes de corregirlos o retirarlos.",
     ],
     trustKicker: "Confianza y límites",
     trustTitle: "Fuentes claras, identidades estables y decisiones revisables",

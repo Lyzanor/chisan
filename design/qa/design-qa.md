@@ -4,6 +4,32 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-01 — Public catalog inclusion criteria
+
+final result: passed
+
+Reviewed `/how-we-work` at 1440×900 in English and 390×844 in Spanish. All
+seven explanatory regions retain a logical heading order, the mobile document
+has no horizontal overflow (390 = 390), and the page and home route render
+without a framework error overlay. The only browser message is the expected
+local `/_vercel/insights` 404.
+
+- Inclusion is now explicit: public identity, material production, a current
+  own offer, productive place, connected evidence and a current distinct unit.
+- Registers, associations, guides, maps, seals and certifications are described
+  as claim-scoped evidence, never automatic admission. Commercial presence,
+  popularity and resale likewise do not prove production.
+- Missing evidence keeps a proposed unit outside the public catalog. Existing
+  profiles are re-reviewed before a changed criterion leads to correction,
+  merging, relocation or removal.
+- The new sections reuse the existing flat editorial composition and list
+  treatment. No card grid, badge, status colour or new visual primitive was
+  introduced.
+
+Rejected: country-specific certification requirements, retailer or restaurant
+percentage thresholds, discretionary inclusion for perceived interest, and a
+publication-time promise that the review workflow does not support.
+
 ## 2026-08-31 — Public favorite maps by proximity
 
 Reviewed the public-profile list and map composition against the area catalog

@@ -92,6 +92,58 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
+        <section className={styles.section} aria-labelledby="catalog-eligibility-title">
+          <div className={styles.sectionHeader}>
+            <p className="catalog-kicker">{copy.eligibilityKicker}</p>
+            <h2 id="catalog-eligibility-title">{copy.eligibilityTitle}</h2>
+          </div>
+          <div className={styles.sectionBody}>
+            <p className={styles.sectionLead}>{copy.eligibilityIntroduction}</p>
+            <ul className={styles.principles}>
+              {copy.eligibilityCriteria.map((criterion) => (
+                <li className={styles.principle} key={criterion.title}>
+                  <div>
+                    <h3>{criterion.title}</h3>
+                    <p>{criterion.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="catalog-boundaries-title">
+          <div className={styles.sectionHeader}>
+            <p className="catalog-kicker">{copy.boundariesKicker}</p>
+            <h2 id="catalog-boundaries-title">{copy.boundariesTitle}</h2>
+          </div>
+          <div className={styles.sectionBody}>
+            <p className={styles.sectionLead}>{copy.boundariesIntroduction}</p>
+            <ul className={styles.principles}>
+              {copy.boundaries.map((boundary) => (
+                <li className={styles.principle} key={boundary.title}>
+                  <div>
+                    <h3>{boundary.title}</h3>
+                    <p>{boundary.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="catalog-lifecycle-title">
+          <div className={styles.sectionHeader}>
+            <p className="catalog-kicker">{copy.lifecycleKicker}</p>
+            <h2 id="catalog-lifecycle-title">{copy.lifecycleTitle}</h2>
+          </div>
+          <div className={`${styles.sectionBody} ${styles.prose}`}>
+            {copy.lifecycleParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.section} aria-labelledby="catalog-trust-title">
           <div className={styles.sectionHeader}>
             <p className="catalog-kicker">{copy.trustKicker}</p>
