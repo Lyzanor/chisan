@@ -14,3 +14,15 @@
 ## Remaining work
 
 Verify current activity, exact municipality/address, legal producer identity, own offer, and catalog-level eligibility from first-party or authoritative records. The remaining entries are holds; no admission is asserted for them.
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php), where the producer was incorrectly grouped under Madrid.
+- Search date: 2026-08-31.
+- Scope: the routed productive lead is absent from the current Segovia CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; current company and registry signals support the productive lead but do not replace admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Lácteas Ruma / Quesos Ruma | Navas de San Antonio | `Lácteos y quesos` — cheese | Current company records classify the entity as a cheese manufacturer and current local listings identify its N-VI unit and own La Flor de San Antonio cheese range. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://ruma.es/> | Confirm the exact productive address, distinguish factory, shop and restaurant functions, and establish a current producer-owned offer before admission. |

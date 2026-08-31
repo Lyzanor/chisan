@@ -100,3 +100,15 @@ Verify current first-party activity, own market identities and productive respon
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: the Vilagarcía production unit remains distinct from CAPSA Food's published Outeiro de Rei unit and is absent from the current CSV and candidate backlog.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; Larsa's current first-party material supports the Vilagarcía productive unit but does not replace unit-level admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Larsa / CAPSA Food — Vilagarcía plant | Vilagarcía de Arousa; Os Martices | `Lácteos y quesos` — cheese and yogurt | Larsa's current material identifies the Vilagarcía factory as its cheese and yogurt production unit, distinct from the Outeiro de Rei milk plant. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://leitelarsa.es/> | Confirm the exact productive address, legal operator and durable public row identity while keeping the Vilagarcía and Outeiro de Rei units distinct. |

@@ -26,3 +26,15 @@ Prioritize the two mills with linked producer domains. Aceites Ambel/Oliambel, C
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Frutas Calatayud | Villalengua | `Fruta y verdura` — Fruta de hueso (nectarina, albaricoque, paraguayo, melocotón) | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Fruta de hueso (nectarina, albaricoque, paraguayo, melocotón); this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56448) | — | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory and brand site support discovery only; packaging, cutting or distribution does not by itself establish a qualifying local producer.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Millán Vicente | La Muela | `Lácteos y quesos` — cheese preparation and packaging | The current company site publishes a La Muela facility and an active cheese range, but several product pages identify foreign cheese origins and other operators. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://millanvicente.com/> | Prove a material cheese-production or elaboration step at La Muela and an attributable own offer beyond cutting, packing, branding or distribution. |

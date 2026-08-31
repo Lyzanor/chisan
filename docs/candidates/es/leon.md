@@ -23,3 +23,16 @@
 ## Remaining work
 
 Review linked first-party sites as two focused batches, then de-duplicate legal operators, brands and productive units. Three of seven Botillo entries and two of nine Pimiento entries matched current rows.
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; the first-party sites support productive leads but do not replace admission and evidence review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesos Marsan | Valencia de Don Juan | `Lácteos y quesos` — cheese | The current producer site identifies its Valencia de Don Juan factory and active Marsan, Campo Oro and San Lázaro cheese ranges. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://marsan.es/> | Confirm the exact productive address, legal/public identity and current own offer before admission. |
+| Lácteas Villa Romana | Villaquilambre; Navatejera locality | `Lácteos y quesos` — cheese | The current producer site presents its own cheese range and identifies the dairy in Navatejera, within the municipality of Villaquilambre. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://lacteasvillaromana.com/> | Confirm the productive address and use the official municipality Villaquilambre rather than the locality as the CSV municipality. |

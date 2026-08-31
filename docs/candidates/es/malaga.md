@@ -28,3 +28,15 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Cooperativa de Consumo La Unión | Cuevas de San Marcos | `Dulces y repostería` — Pan y dulces tradicionales | A 2024 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://es.linkedin.com/posts/carrefoures_premiospymecarrefour-activity-7270391488025415680-iR7F) | — | Confirm current activity, exact productive unit, legal/public identity, own offer and Chisan eligibility through current first-party or authoritative sources. |
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only. The linked first-party site supports the lead but does not replace the normal admission, evidence and duplicate review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesos Sur del Torcal | Villanueva de la Concepción; La Higuera | `Lácteos y quesos` — artisan cheese | The current producer site presents its own cheese range and publishes a productive address on the La Joya–Villanueva de la Concepción road. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesossurdeltorcal.com/> | Confirm the legal/public identity, current own offer and exact productive address through the normal admission and evidence pass. |

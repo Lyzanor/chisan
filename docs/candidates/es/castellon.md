@@ -41,3 +41,15 @@ Verify current activity, exact productive address, legal producer identity, own 
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; the first-party farm site and provincial food programme support a productive lead but do not replace admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cabritillo del Maestrazgo / Granja Maestrazgo | La Torre d'en Besora | `Carne` — kid meat; additional goat cheese line | The family farm describes its own goat herd, kid-meat preparations and artisan cheeses made from its milk at Masía els Masets; Castelló Ruta de Sabor corroborates the productive site. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://www.granjamaestrazgo.es/> | Confirm the durable public identity, exact productive address and current own offer; decide whether `Lácteos y quesos` is an additional category. |

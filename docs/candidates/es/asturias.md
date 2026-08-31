@@ -23,3 +23,15 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; current regional industry material supports the productive unit but does not replace admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Juan Martínez | Siero; Marcenado locality | `Lácteos y quesos` — natural and processed cheese, cheese creams and dairy preparations | Current IDEPA and ASTUREX records identify an active Siero production centre with multiple cheese lines and own brands. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://www.juanmartinezsl.com/> | Confirm the exact productive address, current own offer and durable public identity; distinguish own production from imported or third-party cheeses also commercialized by the company. |

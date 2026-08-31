@@ -66,3 +66,15 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Olis de Catalunya | Tarragona province; exact mill unresolved | `Aceite` — Aceite de oliva | A 2025 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://es.linkedin.com/posts/joserabatmolina_vamoscarrefourespa%C3%B1a-espiritudecombate-activity-7395907475872399360-oGIp) | <https://www.olisdecatalunya.es/> | Confirm current activity, exact productive unit, legal/public identity, own offer and Chisan eligibility through current first-party or authoritative sources. |
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; current first-party and Generalitat records support a productive lead but do not replace admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Queso Perfecto del Delta | Camarles | `Lácteos y quesos` — fresh and matured cheese | The current producer site exposes its cheese range, and the Generalitat's current artisan register identifies cheese production at the Camarles holding. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesoperfecto.com/> | Confirm the legal/public identity, exact productive address and current own offer before admission. |

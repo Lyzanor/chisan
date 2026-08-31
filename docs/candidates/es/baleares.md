@@ -38,3 +38,15 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Fundación Mater / Casa La Milagrosa | Can Boqueta, Inca | `Lácteos y huevos` — Huevos ecológicos / avicultura | A 2025 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://www.economiademallorca.com/articulo/empresas/carrefour-lidera-compromiso-pumes-agroalimentarias-baleares/20251023163819112608.html) | <https://orgmater.com/> | Confirm current activity, exact productive unit, legal/public identity, own offer and Chisan eligibility through current first-party or authoritative sources. |
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; the Menorca cheese council supports the productive identity and offer but does not replace admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Sa Canova / Lacto Industrial Menorquina | Ferreries | `Lácteos y quesos` — Mahón-Menorca cheese and other dairy products | The Menorca cheese association and DOP council identify the active manufacturer and Sa Canova brand at the Ferreries industrial estate with current sale and export activity. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesosacanova.com/> | Confirm the exact productive address, current producer-owned offer and legal/public row identity before admission. |

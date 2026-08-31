@@ -23,3 +23,15 @@ Review the linked producer channel and productive responsibility before admissio
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
+- Search date: 2026-08-31.
+- Scope: Lácteos Albedi remains as a candidate; Quesería Artesana Los Casareños was already present in the Cáceres CSV and is not duplicated here.
+- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
+- Source ceiling: the directory is discovery only; current company material supports a productive lead but does not replace admission review.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Lácteos Albedi | Valdefuentes | `Lácteos y quesos` — cheese and dairy derivatives | Current company material identifies a young cheese producer founded in 2022 and publishes its Valdefuentes unit and own cheese range. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://lacteosalbedi.es/> | Confirm the exact productive address, legal/public identity and current own offer before admission. |
