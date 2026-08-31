@@ -25,6 +25,19 @@ export const producerKeySchema = z.object({
 export const publicProfileUpdateSchema = z.object({
   publicHandle: z.string().trim().max(80),
   visibility: z.enum(PUBLIC_PROFILE_VISIBILITIES),
+  baseLocation: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .regex(
+      /^[a-z]{2}\/[a-z0-9]+(?:-[a-z0-9]+)*$/,
+      "Choose a catalog area for your public profile.",
+    ),
+  baseMunicipality: z
+    .string()
+    .trim()
+    .min(1, "Choose a municipality for your public profile.")
+    .max(160),
 });
 
 export const claimSubmissionSchema = producerKeySchema.extend({

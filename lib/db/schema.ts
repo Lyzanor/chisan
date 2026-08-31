@@ -103,6 +103,11 @@ export const users = pgTable(
     publicProfileVisibility: publicProfileVisibility("public_profile_visibility")
       .notNull()
       .default("private"),
+    publicProfileBaseCountry: varchar("public_profile_base_country", { length: 2 }),
+    publicProfileBaseArea: varchar("public_profile_base_area", { length: 160 }),
+    publicProfileBaseMunicipality: varchar("public_profile_base_municipality", {
+      length: 160,
+    }),
     // Automatic UX state: accounts start as user and become producer on first claim.
     // Authorization still comes only from memberships and grants.
     profileKind: userProfileKind("profile_kind").notNull().default("user"),
@@ -126,6 +131,26 @@ export const users = pgTable(
     check(
       "users_public_profile_handle_check",
       sql`${table.publicProfileVisibility} = 'private' OR ${table.publicHandle} IS NOT NULL`,
+    ),
+    check(
+      "users_public_profile_base_location_check",
+      sql`(${table.publicProfileBaseCountry} IS NULL AND ${table.publicProfileBaseArea} IS NULL AND ${table.publicProfileBaseMunicipality} IS NULL) OR (${table.publicProfileBaseCountry} IS NOT NULL AND ${table.publicProfileBaseArea} IS NOT NULL AND ${table.publicProfileBaseMunicipality} IS NOT NULL)`,
+    ),
+    check(
+      "users_public_profile_base_country_check",
+      sql`${table.publicProfileBaseCountry} IS NULL OR ${table.publicProfileBaseCountry} ~ '^[a-z]{2}$'`,
+    ),
+    check(
+      "users_public_profile_base_area_check",
+      sql`${table.publicProfileBaseArea} IS NULL OR ${table.publicProfileBaseArea} ~ '^[a-z0-9]+(?:-[a-z0-9]+)*$'`,
+    ),
+    check(
+      "users_public_profile_base_municipality_check",
+      sql`${table.publicProfileBaseMunicipality} IS NULL OR length(trim(${table.publicProfileBaseMunicipality})) > 0`,
+    ),
+    check(
+      "users_public_profile_location_required_check",
+      sql`${table.publicHandle} IS NULL OR (${table.publicProfileBaseCountry} IS NOT NULL AND ${table.publicProfileBaseArea} IS NOT NULL AND ${table.publicProfileBaseMunicipality} IS NOT NULL)`,
     ),
     check(
       "users_deleted_state_check",

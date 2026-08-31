@@ -24,11 +24,24 @@ export type MapMessages = {
   openProfile: string;
 };
 
+export type ProducerMapFocusRequest = Readonly<{
+  key: string;
+  requestId: number;
+}>;
+
+export type ProducerMapNearbyPosition = Readonly<{
+  latitude: number;
+  longitude: number;
+}>;
+
 type ProducersMapProps = {
   points: ProducerMapPoint[];
   scope: CatalogNavigationScope;
   area: string;
   highlightedSlug?: string;
+  focusRequest?: ProducerMapFocusRequest;
+  nearbyPosition?: ProducerMapNearbyPosition;
+  onSelectProducer?: (slug: string) => void;
   singlePointZoom?: number;
   messages: MapMessages;
 };
@@ -38,6 +51,9 @@ export function ProducersMap({
   scope,
   area,
   highlightedSlug,
+  focusRequest,
+  nearbyPosition,
+  onSelectProducer,
   singlePointZoom,
   messages,
 }: ProducersMapProps) {
@@ -64,6 +80,9 @@ export function ProducersMap({
     <ProducerSelectionMap
       points={markers}
       highlightedKey={highlightedSlug}
+      focusRequest={focusRequest}
+      nearbyPosition={nearbyPosition}
+      onSelect={onSelectProducer}
       singlePointZoom={singlePointZoom}
       minZoom={5}
       messages={messages}
@@ -74,12 +93,20 @@ export function ProducersMap({
 export function ProducerSelectionMap({
   points,
   highlightedKey,
+  focusRequest,
+  initialFocusKeys,
+  nearbyPosition,
+  onSelect,
   singlePointZoom,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
 }: {
   points: ProducerMapMarker[];
   highlightedKey?: string;
+  focusRequest?: ProducerMapFocusRequest;
+  initialFocusKeys?: string[];
+  nearbyPosition?: ProducerMapNearbyPosition;
+  onSelect?: (key: string) => void;
   singlePointZoom?: number;
   minZoom?: number;
   messages: MapMessages;
@@ -97,6 +124,10 @@ export function ProducerSelectionMap({
       <ProducersMapInner
         points={points}
         highlightedKey={highlightedKey}
+        focusRequest={focusRequest}
+        initialFocusKeys={initialFocusKeys}
+        nearbyPosition={nearbyPosition}
+        onSelect={onSelect}
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}
         messages={{

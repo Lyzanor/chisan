@@ -12,6 +12,11 @@ import {
   publicHandleProblem,
 } from "../lib/accounts/public-profile-policy";
 import {
+  normalizeMunicipalityName,
+  parsePublicProfileBaseLocationKey,
+} from "../lib/accounts/public-profile-location";
+import { publicProfileUpdateSchema } from "../lib/accounts/input";
+import {
   normalizeAdminUserProfileListOptions,
   queryAdminUserProfileCounts,
   queryAdminUserProfiles,
@@ -74,6 +79,26 @@ test("profile visibility distinguishes sharing from indexing", () => {
   assert.equal(isPublicProfileIndexable("public"), true);
 });
 
+test("public profile input requires a canonical area and municipality", () => {
+  assert.equal(
+    publicProfileUpdateSchema.safeParse({
+      publicHandle: "map-owner",
+      visibility: "public",
+      baseLocation: "",
+      baseMunicipality: "",
+    }).success,
+    false,
+  );
+  assert.deepEqual(parsePublicProfileBaseLocationKey(" ES/Barcelona "), {
+    country: "es",
+    area: "barcelona",
+  });
+  assert.equal(
+    normalizeMunicipalityName("  Santa Coloma-de Gramenét "),
+    "santa coloma de gramenet",
+  );
+});
+
 test("admin profile filters normalize to stable provider-neutral views", () => {
   assert.deepEqual(normalizeAdminUserProfileListOptions(), {
     visibility: "all",
@@ -109,6 +134,48 @@ test("selection identity remains country plus producer ID across areas", () => {
     producerSelectionItemKey({ country: "es", producerId: 42 }),
     producerSelectionItemKey({ country: "fr", producerId: 42 }),
   );
+});
+
+test("public profile base location migration backfills existing maps to Barcelona", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^000[0-7]_.+\.sql$/.test(file))
+      .sort();
+    for (const migrationFile of migrationFiles) {
+      await database.exec(await readFile(`drizzle/${migrationFile}`, "utf8"));
+    }
+    await database.exec(
+      `insert into users (display_name, public_handle, public_profile_visibility)
+       values ('Existing map', 'existing-map', 'public')`,
+    );
+
+    const locationMigration = (await readdir("drizzle")).find((file) =>
+      /^0008_.+\.sql$/.test(file),
+    );
+    assert.ok(locationMigration);
+    await database.exec(await readFile(`drizzle/${locationMigration}`, "utf8"));
+
+    const result = await database.query<{
+      public_profile_base_area: string;
+      public_profile_base_country: string;
+      public_profile_base_municipality: string;
+    }>(
+      `select public_profile_base_country, public_profile_base_area,
+              public_profile_base_municipality
+         from users
+        where public_handle = 'existing-map'`,
+    );
+    assert.deepEqual(result.rows, [
+      {
+        public_profile_base_country: "es",
+        public_profile_base_area: "barcelona",
+        public_profile_base_municipality: "Barcelona",
+      },
+    ]);
+  } finally {
+    await database.close();
+  }
 });
 
 test("public profiles and shared favorites are private by default", async () => {
@@ -158,16 +225,32 @@ test("public profiles and shared favorites are private by default", async () => 
     await assert.rejects(
       database.query(
         `update users
-            set public_handle = 'Invalid_Handle'
+            set public_handle = 'Invalid_Handle',
+                public_profile_base_country = 'es',
+                public_profile_base_area = 'barcelona',
+                public_profile_base_municipality = 'Barcelona'
           where id = $1`,
         [account.id],
       ),
       /users_public_handle_format_check/i,
     );
+    await assert.rejects(
+      database.query(
+        `update users
+            set public_handle = 'map-owner', public_profile_visibility = 'unlisted'
+          where id = $1`,
+        [account.id],
+      ),
+      /users_public_profile_location_required_check/i,
+    );
 
     await database.query(
       `update users
-          set public_handle = 'map-owner', public_profile_visibility = 'unlisted'
+          set public_handle = 'map-owner',
+              public_profile_visibility = 'unlisted',
+              public_profile_base_country = 'es',
+              public_profile_base_area = 'barcelona',
+              public_profile_base_municipality = 'Barcelona'
         where id = $1`,
       [account.id],
     );
@@ -184,7 +267,10 @@ test("public profiles and shared favorites are private by default", async () => 
     await assert.rejects(
       database.query(
         `update users
-            set public_handle = 'map-owner'
+            set public_handle = 'map-owner',
+                public_profile_base_country = 'es',
+                public_profile_base_area = 'barcelona',
+                public_profile_base_municipality = 'Barcelona'
           where id = $1`,
         [secondAccount.rows[0].id],
       ),
@@ -200,18 +286,30 @@ test("admin profile registry reads Chisan account and selection state", async ()
   try {
     await applyAccountMigrations(client);
     const publicAccount = await client.query<{ id: string }>(
-      `insert into users (display_name, public_handle, public_profile_visibility)
-       values ('Public map', 'public-map', 'public')
+      `insert into users (
+         display_name, public_handle, public_profile_visibility,
+         public_profile_base_country, public_profile_base_area,
+         public_profile_base_municipality
+       ) values ('Public map', 'public-map', 'public', 'es', 'barcelona', 'Barcelona')
        returning id`,
     );
     const unlistedAccount = await client.query<{ id: string }>(
-      `insert into users (display_name, public_handle, public_profile_visibility)
-       values ('Unlisted map', 'unlisted-map', 'unlisted')
+      `insert into users (
+         display_name, public_handle, public_profile_visibility,
+         public_profile_base_country, public_profile_base_area,
+         public_profile_base_municipality
+       ) values ('Unlisted map', 'unlisted-map', 'unlisted', 'es', 'barcelona', 'Barcelona')
        returning id`,
     );
     await client.query(
-      `insert into users (display_name, public_handle, public_profile_visibility, status)
-       values ('Suspended map', 'suspended-map', 'public', 'suspended')`,
+      `insert into users (
+         display_name, public_handle, public_profile_visibility, status,
+         public_profile_base_country, public_profile_base_area,
+         public_profile_base_municipality
+       ) values (
+         'Suspended map', 'suspended-map', 'public', 'suspended',
+         'es', 'barcelona', 'Barcelona'
+       )`,
     );
     await client.query(
       `insert into favorites (user_id, country, producer_id, show_on_public_profile)

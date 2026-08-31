@@ -68,7 +68,10 @@ export default function PrivacyPage() {
           When account features are enabled, Clerk handles authentication. Chisan
           stores the account profile, favorites, ownership workflows and submitted
           catalog proposals needed to provide those features and keep an audit
-          trail. The public CSV catalog remains separate from account data.
+          trail. If you create a public producer map, the profile also stores the
+          catalog area and municipality you choose and shows that location as the
+          basis for grouping shared favorites. The public CSV catalog remains
+          separate from account data.
         </p>
 
         <h2>Programmatic advertising</h2>

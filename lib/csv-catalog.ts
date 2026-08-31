@@ -1272,6 +1272,7 @@ export async function findProducerById(
 
 export async function findProducersByIds(
   identities: readonly ProducerIdentity[],
+  locale?: Locale,
 ): Promise<(LocatedProducerCsvRow | null)[]> {
   const results: (LocatedProducerCsvRow | null)[] = Array.from(
     { length: identities.length },
@@ -1301,9 +1302,23 @@ export async function findProducersByIds(
         return;
       }
 
-      const index = await loadCountryProducerIndex(country);
+      const [index, translations] = await Promise.all([
+        loadCountryProducerIndex(country),
+        locale ? loadCountryTranslations(country.slug, locale) : null,
+      ]);
       for (const { position, producerId } of entries) {
-        results[position] = index.get(producerId) ?? null;
+        const producer = index.get(producerId) ?? null;
+        if (!producer || !locale || !translations) {
+          results[position] = producer;
+          continue;
+        }
+
+        const [localized] = localizeProducerDescriptions(
+          [producer],
+          locale,
+          translations,
+        );
+        results[position] = { ...producer, ...localized };
       }
     }),
   );

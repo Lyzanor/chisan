@@ -10,9 +10,17 @@ import {
   findPublicUserProfile,
   listPublicProfileFavoriteIdentities,
 } from "@/lib/accounts/public-profiles";
-import { findProducersByIds } from "@/lib/csv-catalog";
+import {
+  findProducersByIds,
+  findPublishedCountry,
+  getLocalizedCatalogLabel,
+} from "@/lib/csv-catalog";
 import { loadApplicationPresentation } from "@/lib/i18n/application-presentation.server";
 import { buildProducerSelectionItems } from "@/lib/producer-selections.server";
+import {
+  getProducerSelectionInitialFocusKeys,
+  groupProducerSelectionItems,
+} from "@/lib/producer-selections";
 import { isPublicDiscoveryEnabled, SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
@@ -26,6 +34,7 @@ const pageMessages: ProducerSelectionPageMessages = {
   mappedCount: (count) => `${count} mapped`,
   producers: "Shared producers",
   details: "Details",
+  emptyGroup: "No shared producers in this group.",
   map: {
     loading: "Loading map…",
     emptyCoordinates: "No shared producers have valid coordinates yet.",
@@ -79,8 +88,16 @@ export default async function PublicUserProfilePage({
     listPublicProfileFavoriteIdentities(profile.id),
     loadApplicationPresentation(),
   ]);
-  const producers = await findProducersByIds(identities);
+  const producers = await findProducersByIds(identities, presentation.locale);
   const items = buildProducerSelectionItems(producers, presentation);
+  const groups = groupProducerSelectionItems(items, profile.baseLocation);
+  const baseCountry = findPublishedCountry(profile.baseLocation.country);
+  const baseArea = baseCountry?.regions
+    .flatMap((region) => region.areas)
+    .find((area) => area.slug === profile.baseLocation.area);
+  const baseAreaLabel = baseArea
+    ? getLocalizedCatalogLabel(baseArea, presentation.locale)
+    : profile.baseLocation.area;
   const profileName = profile.displayName || `@${profile.publicHandle}`;
   const canonicalPath = `/u/${profile.publicHandle}`;
 
@@ -91,9 +108,30 @@ export default async function PublicUserProfilePage({
         canonicalPath,
         eyebrow: `Producer map by @${profile.publicHandle}`,
         title: profileName,
-        description: `A personal selection of local producers shared by ${profileName}.`,
+        description: `A personal selection of local producers shared by ${profileName}. Producers around ${profile.baseLocation.municipality} appear first.`,
         emptyMessage: "This profile has not shared any producers yet.",
         items,
+        sections: [
+          {
+            key: "near-me",
+            title: "Near me",
+            summary: profile.baseLocation.municipality,
+            items: groups["near-me"],
+          },
+          {
+            key: "in-my-area",
+            title: "In my area",
+            summary: baseAreaLabel,
+            items: groups["in-my-area"],
+          },
+          {
+            key: "further-away",
+            title: "Further away",
+            summary: `Outside ${baseAreaLabel}`,
+            items: groups["further-away"],
+          },
+        ],
+        initialFocusKeys: getProducerSelectionInitialFocusKeys(groups),
       }}
       messages={pageMessages}
     />

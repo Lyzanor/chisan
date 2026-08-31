@@ -4,6 +4,24 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-08-31 — Public favorite maps by proximity
+
+Reviewed the public-profile list and map composition against the area catalog
+pattern. Runtime profile capture remains a post-migration smoke check; this pass
+did not mutate a connected account database merely to manufacture visual state.
+
+- Shared producers are presented in three explicit sections: the profile's base
+  municipality, the rest of its catalog area, and all remaining areas.
+- Every row retains its category icon, municipality and bounded current catalog
+  description. Empty sections remain visible so the grouping does not disappear
+  when a profile has no nearby favorite yet.
+- The first map frame uses the nearest section with valid coordinates while all
+  mapped favorites remain available. Proximity does not change marker colour,
+  producer evidence, ranking or authorization.
+- Base location is a required, labelled account setting with grouped catalog-area
+  options and a municipality field; help text explains its presentation-only
+  effect.
+
 ## 2026-08-31 — Typography brought onto the system
 
 Reviewed home, the Spain province index and the Barcelona catalog map at

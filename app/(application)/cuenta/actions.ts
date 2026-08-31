@@ -21,6 +21,10 @@ import {
   publicHandleProblem,
 } from "@/lib/accounts/public-profile-policy";
 import {
+  normalizeMunicipalityName,
+  parsePublicProfileBaseLocationKey,
+} from "@/lib/accounts/public-profile-location";
+import {
   PRODUCER_EDITABLE_FIELDS,
   PRODUCER_PREMIUM_EDITABLE_FIELDS,
   hashProducerFields,
@@ -33,7 +37,11 @@ import {
 import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
 import { PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY } from "@/lib/accounts/producer-profile-upgrade-policy";
 import { isProducerChangeSubmissionEnabled } from "@/lib/accounts/config";
-import { findProducerById } from "@/lib/csv-catalog";
+import {
+  findProducerById,
+  findPublishedCountry,
+  listMunicipalitySummaries,
+} from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import {
   auditEvents,
@@ -215,6 +223,8 @@ export async function updatePublicProfileAction(formData: FormData): Promise<voi
   const parsed = publicProfileUpdateSchema.safeParse({
     publicHandle: formString(formData, "publicHandle"),
     visibility: formString(formData, "visibility"),
+    baseLocation: formString(formData, "baseLocation"),
+    baseMunicipality: formString(formData, "baseMunicipality"),
   });
   if (!parsed.success) {
     redirectWithMessage(
@@ -250,6 +260,48 @@ export async function updatePublicProfileAction(formData: FormData): Promise<voi
     );
   }
 
+  const baseLocation = parsePublicProfileBaseLocationKey(parsed.data.baseLocation);
+  if (!baseLocation) {
+    redirectWithMessage(
+      "/cuenta/perfil",
+      "error",
+      "Choose a catalog area for your public profile.",
+    );
+  }
+  const baseCountry = findPublishedCountry(baseLocation.country);
+  const baseArea = baseCountry?.regions
+    .flatMap((region) => region.areas)
+    .find((area) => area.slug === baseLocation.area);
+  if (!baseCountry || !baseArea) {
+    redirectWithMessage(
+      "/cuenta/perfil",
+      "error",
+      "Choose a published catalog area for your public profile.",
+    );
+  }
+
+  const normalizedMunicipality = normalizeMunicipalityName(
+    parsed.data.baseMunicipality,
+  );
+  const matchingMunicipalities = (
+    await listMunicipalitySummaries(
+      "",
+      Number.MAX_SAFE_INTEGER,
+      baseCountry.slug,
+      baseArea.slug,
+    )
+  ).filter(
+    ({ name }) => normalizeMunicipalityName(name) === normalizedMunicipality,
+  );
+  if (matchingMunicipalities.length !== 1) {
+    redirectWithMessage(
+      "/cuenta/perfil",
+      "error",
+      `Choose a municipality that appears in the ${baseArea.label} catalog area.`,
+    );
+  }
+  const baseMunicipality = matchingMunicipalities[0].name;
+
   const now = new Date();
   try {
     await getDatabase().transaction(async (transaction) => {
@@ -263,6 +315,9 @@ export async function updatePublicProfileAction(formData: FormData): Promise<voi
         .set({
           publicHandle,
           publicProfileVisibility: parsed.data.visibility,
+          publicProfileBaseCountry: baseCountry.slug,
+          publicProfileBaseArea: baseArea.slug,
+          publicProfileBaseMunicipality: baseMunicipality,
           updatedAt: now,
         })
         .where(and(eq(users.id, account.id), publicHandleGuard))
@@ -276,8 +331,19 @@ export async function updatePublicProfileAction(formData: FormData): Promise<voi
         targetType: "user",
         targetId: account.id,
         metadata: {
-          fields: ["publicHandle", "publicProfileVisibility"],
+          fields: [
+            "publicHandle",
+            "publicProfileVisibility",
+            "publicProfileBaseCountry",
+            "publicProfileBaseArea",
+            "publicProfileBaseMunicipality",
+          ],
           visibility: parsed.data.visibility,
+          baseLocation: {
+            country: baseCountry.slug,
+            area: baseArea.slug,
+            municipality: baseMunicipality,
+          },
         },
       });
     });

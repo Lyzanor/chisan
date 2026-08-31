@@ -288,12 +288,16 @@ test("account migration creates constraints and durable producer keys", async ()
             'locale', 'catalog', 'catalog_scope', 'catalog_path',
             'public_path', 'path', 'area', 'slug'
           )
+          and not (
+            table_name = 'users'
+            and column_name = 'public_profile_base_area'
+          )
         order by table_name, column_name`,
     );
     assert.deepEqual(
       forbiddenPresentationColumns.rows,
       [],
-      "presentation routing state must stay outside account tables",
+      "routing state must stay outside account tables; the user profile may retain its explicit base area as presentation data",
     );
 
     const forbiddenPresentationIndexes = await database.query<{

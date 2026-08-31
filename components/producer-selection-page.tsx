@@ -12,6 +12,7 @@ export type ProducerSelectionPageMessages = {
   mappedCount: (count: number) => string;
   producers: string;
   details: string;
+  emptyGroup: string;
   map: {
     loading: string;
     emptyCoordinates: string;
@@ -64,6 +65,7 @@ export function ProducerSelectionPage({
           <div className="catalog-simple-map" aria-label={messages.map.producerMap}>
             <ProducerSelectionMap
               points={markers}
+              initialFocusKeys={selection.initialFocusKeys}
               messages={{
                 loading: messages.map.loading,
                 emptyCoordinates: messages.map.emptyCoordinates,
@@ -78,29 +80,52 @@ export function ProducerSelectionPage({
               <p>{messages.producerCount(selection.items.length)}</p>
             </div>
 
-            <ul className="producer-compact-list">
-              {selection.items.map((item) => (
-                <li key={item.key}>
-                  <Link href={item.href} className="producer-compact-link">
-                    <span className="producer-compact-icon" aria-hidden="true">
-                      {getCategoryIcon(item.category)}
-                    </span>
-                    <span>
-                      <strong>{item.name}</strong>
-                      {item.city ? (
-                        <small className="producer-compact-location">{item.city}</small>
-                      ) : null}
-                      {item.categories.length ? (
-                        <small>{item.categories.join(" · ")}</small>
-                      ) : null}
-                    </span>
-                  </Link>
-                  <Link href={item.href} className="producer-compact-detail">
-                    {messages.details}
-                  </Link>
-                </li>
+            <div className="producer-selection-groups">
+              {selection.sections.map((section) => (
+                <section
+                  key={section.key}
+                  className="producer-selection-group"
+                  aria-labelledby={`producer-selection-${section.key}`}
+                >
+                  <header className="producer-selection-group__heading">
+                    <div>
+                      <h3 id={`producer-selection-${section.key}`}>{section.title}</h3>
+                      <p>{section.summary}</p>
+                    </div>
+                    <span>{messages.producerCount(section.items.length)}</span>
+                  </header>
+                  {section.items.length ? (
+                    <ul className="producer-compact-list">
+                      {section.items.map((item) => (
+                        <li key={item.key}>
+                          <Link href={item.href} className="producer-compact-link">
+                            <span className="producer-compact-icon" aria-hidden="true">
+                              {getCategoryIcon(item.category)}
+                            </span>
+                            <span>
+                              <strong>{item.name}</strong>
+                              {item.city ? (
+                                <small className="producer-compact-location">
+                                  {item.city}
+                                </small>
+                              ) : null}
+                              {item.description ? <small>{item.description}</small> : null}
+                            </span>
+                          </Link>
+                          <Link href={item.href} className="producer-compact-detail">
+                            {messages.details}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="producer-selection-group__empty">
+                      {messages.emptyGroup}
+                    </p>
+                  )}
+                </section>
               ))}
-            </ul>
+            </div>
           </aside>
         </section>
       ) : (

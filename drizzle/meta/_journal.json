@@ -57,6 +57,13 @@
       "when": 1787863038776,
       "tag": "0007_flowery_amphibian",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1788211926803,
+      "tag": "0008_bumpy_victor_mancha",
+      "breakpoints": true
     }
   ]
 }

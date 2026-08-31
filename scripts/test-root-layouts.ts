@@ -135,7 +135,10 @@ test("the shared account menu keeps identity, language and account actions separ
   assert.match(accountIdentity, /getCurrentAccount\(\)\.catch/);
   assert.match(accountIdentity, /"Cache-Control": "private, no-store"/);
   assert.match(map, /radius=\{highlighted \? 4 : 3\}/);
-  assert.match(map, /fillColor: "var\(--chisan-color-moss-dark\)"/);
+  assert.match(
+    map,
+    /fillColor: highlighted\s+\? "var\(--chisan-color-moss\)"\s+: "var\(--chisan-color-moss-dark\)"/,
+  );
 });
 
 test("the catalog root derives document language only from the async URL scope", () => {

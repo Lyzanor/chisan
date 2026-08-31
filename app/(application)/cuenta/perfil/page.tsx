@@ -13,7 +13,11 @@ import {
 } from "@/components/account/account-message";
 import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
-import { listPublishedCountries } from "@/lib/csv-catalog";
+import { publicProfileBaseLocationKey } from "@/lib/accounts/public-profile-location";
+import {
+  getLocalizedCatalogLabel,
+  listPublishedCountries,
+} from "@/lib/csv-catalog";
 import {
   EXPLICIT_LOCALE_COOKIE,
   parseAcceptLanguage,
@@ -44,10 +48,25 @@ export default async function AccountProfilePage({
   ]);
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
 
+  const publishedCountries = listPublishedCountries();
   const locationAreas = listEnabledLocationAreas({
-    countries: listPublishedCountries(),
+    countries: publishedCountries,
     locale: ACCOUNT_LOCALE,
   });
+  const publicProfileAreaGroups = publishedCountries.flatMap((country) =>
+    country.regions.map((region) => ({
+      key: `${country.slug}/${region.slug}`,
+      label: `${getLocalizedCatalogLabel(
+        country,
+        ACCOUNT_LOCALE,
+      )} · ${getLocalizedCatalogLabel(region, ACCOUNT_LOCALE)}`,
+      areas: region.areas.map((area) => ({
+        country: country.slug,
+        area: area.slug,
+        label: getLocalizedCatalogLabel(area, ACCOUNT_LOCALE),
+      })),
+    })),
+  );
 
   return (
     <div className="account-content account-content--narrow">
@@ -145,6 +164,59 @@ export default async function AccountProfilePage({
             />
             <small id="public-handle-help">
               Your permanent URL will be /u/handle. Use lowercase letters, numbers and hyphens.
+            </small>
+          </label>
+          <label className="account-field">
+            <span>Base catalog area</span>
+            <select
+              name="baseLocation"
+              required
+              defaultValue={
+                account.publicProfileBaseCountry && account.publicProfileBaseArea
+                  ? publicProfileBaseLocationKey({
+                      country: account.publicProfileBaseCountry,
+                      area: account.publicProfileBaseArea,
+                    })
+                  : ""
+              }
+              aria-describedby="public-base-area-help"
+            >
+              <option value="" disabled>
+                Choose an area
+              </option>
+              {publicProfileAreaGroups.map((group) => (
+                <optgroup key={group.key} label={group.label}>
+                  {group.areas.map((area) => (
+                    <option
+                      key={`${area.country}/${area.area}`}
+                      value={`${area.country}/${area.area}`}
+                    >
+                      {area.label}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
+            <small id="public-base-area-help">
+              This defines which shared producers belong to your area. It does not
+              change catalog identity or permissions.
+            </small>
+          </label>
+          <label className="account-field">
+            <span>Base municipality</span>
+            <input
+              type="text"
+              name="baseMunicipality"
+              required
+              maxLength={160}
+              defaultValue={account.publicProfileBaseMunicipality ?? ""}
+              placeholder="Barcelona"
+              autoComplete="address-level2"
+              aria-describedby="public-base-municipality-help"
+            />
+            <small id="public-base-municipality-help">
+              Use a municipality that appears in the selected catalog area. Your
+              public map uses it to show nearby producers first.
             </small>
           </label>
           <label className="account-field">

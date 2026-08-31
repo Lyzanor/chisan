@@ -9,6 +9,7 @@ import {
   publicHandleProblem,
   type PublicProfileVisibility,
 } from "@/lib/accounts/public-profile-policy";
+import type { PublicProfileBaseLocation } from "@/lib/accounts/public-profile-location";
 import { getAccountSystemConfiguration } from "@/lib/accounts/config";
 import type { ProducerIdentity } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
@@ -19,6 +20,7 @@ export type PublicUserProfile = {
   displayName: string | null;
   publicHandle: string;
   visibility: PublicProfileVisibility;
+  baseLocation: PublicProfileBaseLocation;
 };
 
 function canReadPublicProfiles(): boolean {
@@ -37,6 +39,9 @@ export const findPublicUserProfile = cache(
         displayName: users.displayName,
         publicHandle: users.publicHandle,
         visibility: users.publicProfileVisibility,
+        baseCountry: users.publicProfileBaseCountry,
+        baseArea: users.publicProfileBaseArea,
+        baseMunicipality: users.publicProfileBaseMunicipality,
       })
       .from(users)
       .where(
@@ -50,7 +55,10 @@ export const findPublicUserProfile = cache(
 
     if (
       !profile?.publicHandle ||
-      !isPublicProfileVisible(profile.visibility)
+      !isPublicProfileVisible(profile.visibility) ||
+      !profile.baseCountry ||
+      !profile.baseArea ||
+      !profile.baseMunicipality
     ) {
       return null;
     }
@@ -60,6 +68,11 @@ export const findPublicUserProfile = cache(
       displayName: profile.displayName,
       publicHandle: profile.publicHandle,
       visibility: profile.visibility,
+      baseLocation: {
+        country: profile.baseCountry,
+        area: profile.baseArea,
+        municipality: profile.baseMunicipality,
+      },
     };
   },
 );

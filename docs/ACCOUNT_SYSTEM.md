@@ -34,6 +34,12 @@ membership, change-request or authorization key. Opening or acting on two
 language variants therefore finds one existing account-domain record and cannot
 create locale duplicates.
 
+A public user profile may store one explicit base location as
+`(country, area, municipality)` for presentation and proximity grouping. This
+voluntary profile setting is not device position and is never part of a
+favorite, claim, membership, change request or authorization key. Changing it
+only changes how that user's shared favorites are ordered and framed.
+
 A localized path may be carried only as validated same-site `returnTo`
 navigation state. It grants no authority and is not persisted as producer
 identity. A language preference remains presentation state outside PostgreSQL;
@@ -86,6 +92,12 @@ This is account presentation, never authorization and never a second producer
 catalog. `public_handle` is a stable lowercase route identity chosen once; it
 does not replace the internal `users.id` UUID in any domain reference.
 
+Creating a public handle requires a base catalog area and a municipality that
+currently appears in that area's catalog. The canonical country, area slug and
+municipality spelling are stored on the user profile. Existing handles created
+before this requirement are assigned `es/barcelona/Barcelona` by the migration
+and may replace it from the profile form.
+
 Profile visibility is `private`, `unlisted` or `public` and defaults to
 `private`. Private profiles return `404`; unlisted profiles are shareable but
 emit `noindex`; public profiles are eligible for indexing. Changing profile
@@ -103,9 +115,13 @@ without persisting those values in PostgreSQL.
 The public page is a read model over those keys, not a second persistence
 model. The account domain owns visibility and which favorites are shared; the
 shared renderer owns the list-and-map composition, current producer links,
-empty state and accessible marker labels. It supports producers from multiple
-areas or countries. A producer without valid coordinates remains in the list
-and is omitted only from the map.
+empty state and accessible marker labels. The list follows the area-map content
+pattern and includes the current catalog description. It separates favorites
+into the same base municipality, the rest of the same country and area, and all
+remaining areas, in that order. The map initially frames the nearest group that
+has valid coordinates while retaining every mapped favorite for exploration.
+It supports producers from multiple areas or countries. A producer without
+valid coordinates remains in the list and is omitted only from the map.
 
 The Next.js page resolves account state and current CSV rows in a Server
 Component. Only the interactive map crosses into a Client Component, receiving
