@@ -32,6 +32,62 @@ does not require ownership of the premises or raw materials, direct-to-consumer
 sales, a particular legal form or a maximum size. Scale and group ownership
 alone neither include nor exclude a producer.
 
+### Human admission test
+
+Apply the scope above as eight questions, in this order:
+
+1. **Is there a real public identity?** A person, business, cooperative or
+   collective can be named and distinguished from similarly named entities.
+2. **Does it materially produce or elaborate?** It grows, raises, catches,
+   harvests, extracts, mills, ferments, roasts, bakes, preserves, distils,
+   prepares or otherwise materially makes the food or drink. Ordinary stocking,
+   serving, packing, branding or reselling alone is not enough.
+3. **Is the output food or drink for people?** An entity whose relevant output
+   is animal feed, agricultural inputs, cosmetics, crafts or another non-food
+   product does not qualify through that activity.
+4. **Does it have an own current offer?** At least one resulting product reaches
+   the public under an identity that remains attributable to this producer.
+5. **Can the productive unit be placed?** Its actual productive activity can be
+   assigned to one catalog area and municipality. A street address is optional;
+   a shop, office, market stall or brand origin is not a substitute.
+6. **Does public evidence join the identity, activity, offer and place?** A
+   source that proves only one of them cannot silently prove the others.
+7. **Is it currently active?** Current public evidence supports ongoing
+   activity or an offer, and there is no reliable permanent-closure evidence.
+   Historical material alone does not establish current activity; there is no
+   universal source-age cutoff.
+8. **Is this unit already represented?** Search the current country catalog by
+   identity, municipality, address, links and productive location before
+   creating another row.
+
+The outcome is mechanical once those answers are known:
+
+- all admission claims are supported and the unit is not a duplicate: **accept**;
+- a required answer is still unknown: **hold**, with one actionable blocker;
+- a scope criterion is affirmatively false: **reject** a candidate or **purge**
+  an existing row with the matching reason;
+- the same productive unit already has a row: remove a duplicate candidate;
+  use **merge** only when consolidating two published records;
+- the unit qualifies but belongs elsewhere: route it to that area and use
+  `other-area` only for the disproved placement.
+
+Optional profile richness never decides admission. A producer with no image,
+description, exact coordinates, address, phone, website or online shop may
+qualify; a polished profile that fails one scope criterion does not.
+
+### Common boundary cases
+
+| Case | Decision rule |
+|---|---|
+| Farm, fisher, apiary, winery, brewery, dairy, bakery, roaster or food workshop | Include when the human test establishes its own output, public identity, productive municipality and current activity |
+| Cooperative or producer collective | Include the collective when it governs the production or market identity of members' output; include a member separately only when that member independently passes the full test |
+| Unit that also manufactures for third parties | Include when it has a qualifying own offer; exclude a service-only or contract-only operation |
+| Restaurant, café, shop, hotel or market stall | Hospitality or retail alone is excluded; include only a distinct, durable producer identity and materially produced take-home offer that independently passes the test |
+| Brand, label, holding company or private-label seller | Include only the qualifying productive unit when public evidence gives it productive responsibility and place; the commercial name alone is not a producer |
+| Company with several productive sites | Use one row per independently identifiable qualifying productive unit; do not add a parent-company row merely to group them |
+| Home-based or address-private producer | It may qualify when the productive municipality and activity are supportable; leave the exact address and coordinates empty when they are not public |
+| Shop, headquarters, tasting room or visitor centre separate from production | It may be a contact or visiting fact, but it neither determines catalog placement nor proves the productive location |
+
 One row represents one qualifying productive unit through its public producer
 identity, or one governed producer collective, in one area:
 

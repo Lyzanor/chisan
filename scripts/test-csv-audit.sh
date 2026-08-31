@@ -18,6 +18,22 @@ if [[ "$DOCUMENTED_HEADER" != "$MACHINE_HEADER" ]]; then
   exit 1
 fi
 
+DOCUMENTED_ROW_FIELDS="$(awk '
+  /^## Row schema$/ { in_schema = 1; next }
+  in_schema && /^## / { exit }
+  in_schema && /^\| `/ {
+    field = $0
+    sub(/^\| `/, "", field)
+    sub(/`.*/, "", field)
+    print field
+  }
+' "$ROOT_DIR/docs/CSV_CONTRACT.md" | paste -sd, -)"
+
+if [[ "$DOCUMENTED_ROW_FIELDS" != "$MACHINE_HEADER" ]]; then
+  echo "Error: docs/CSV_CONTRACT.md must document every canonical row field once and in order" >&2
+  exit 1
+fi
+
 # The audit scopes the centroid lookup to the country and region it reads off
 # the path, so a fixture has to sit where a real area CSV sits or it gets no
 # geography check at all. Abrera, the municipio these fixtures use, is Catalan.

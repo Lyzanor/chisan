@@ -172,39 +172,54 @@ whitespace.
 
 ## Row schema
 
-| Field                    | Presence    | Meaning and representation                                                                                                      |
-| ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `slug`                   | required    | Current public producer slug; lowercase ASCII kebab-case and unique within the country.                                         |
-| `nombre`                 | required    | Public producer identity or brand, not an invented label.                                                                       |
-| `municipio`              | required    | Municipality of the qualifying productive unit, using its public or official local spelling.                                    |
-| `categoria`              | required    | One exact token from the shared category registry.                                                                              |
-| `productos estrella`     | optional    | Short comma-separated list of confirmed producer products, brands or appellations.                                              |
-| `direccion`              | optional    | Published address of the productive unit or its producer-facing premises; never substitute an unrelated shop or head office.    |
-| `descripcion`            | optional    | Concise synthesis of producer-specific, verifiable facts.                                                                       |
-| `horario`                | optional    | Current published visiting, collection or public-opening hours whose purpose is clear.                                          |
-| `telefono`               | optional    | One public producer contact in strict E.164 form, for example `+34600112233`.                                                   |
-| `correo`                 | optional    | One valid public producer email address.                                                                                        |
-| `web`                    | optional    | Official producer HTTP(S) URL.                                                                                                  |
-| `Facebook`               | optional    | Official producer Facebook profile/page HTTP(S) URL.                                                                            |
-| `Instagram`              | optional    | Official producer Instagram profile HTTP(S) URL.                                                                                |
-| `Google Maps`            | optional    | Canonical HTTP(S) Google Maps listing, anchored by a reviewed Place ID, for the producer or productive unit.                    |
-| `lat`                    | paired      | WGS84 latitude in decimal degrees, between `-90` and `90`.                                                                      |
-| `lon`                    | paired      | WGS84 longitude in decimal degrees, between `-180` and `180`.                                                                   |
-| `imagen`                 | optional    | Root-relative path to a local public image asset.                                                                               |
-| `verificacion`           | optional    | Empty for no public editorial label; otherwise the exact token `pendiente`.                                                      |
-| `Venta online`           | required    | Exact token: `sí`, `no` or `no comprobado`.                                                                                     |
-| `Canal de venta`         | conditional | Zero or more allowed channel tokens joined with `\|`; only when `Venta online=sí`.                                              |
-| `categorias adicionales` | optional    | Zero or more exact category tokens joined with `\|`; each represents another material product line of the same productive unit. |
-| `producer_id`            | required    | Immutable positive decimal safe integer (`1..9007199254740991`) without leading zeroes; unique within the country.              |
-| `descripcion_locale`     | paired      | Supported lowercase source-language code for a non-empty `descripcion`; empty exactly when `descripcion` is empty.              |
-| `visitas guiadas`        | optional    | Empty when unpublished, otherwise exact token `sí` or `no`; never inferred from ordinary opening hours.                         |
-| `mensaje a la comunidad` | optional    | Producer-authored public message in its original language, with at most 1,000 Unicode characters.                               |
-| `mensaje_comunidad_locale` | paired    | Supported lowercase source-language code for a non-empty community message; empty exactly when that message is empty.           |
-| `enlace destacado 1`     | optional    | Relevant public HTTP(S) article, interview or other external page about this producer.                                          |
-| `enlace destacado 2`     | conditional | A second distinct public HTTP(S) page; allowed only when `enlace destacado 1` is filled.                                        |
-| `country`                | required    | Exact lowercase country slug from the containing `data/csv/<country>/` path segment.                                            |
-| `region`                 | required    | Exact lowercase region slug from the containing `data/csv/<country>/<region>/` path segment.                                    |
-| `area`                   | required    | Exact lowercase area slug from the containing `<area>.csv` filename.                                                            |
+Do not confuse editorial admission with physical row requirements. A new
+producer first passes `docs/EDITORIAL.md`: identity, qualifying activity and
+current own offer, productive municipality, primary category, closure and
+de-duplication must be resolved from public evidence. Only then is a row
+created. The row must contain every `required` cell below; optional enrichment
+may remain empty indefinitely.
+
+Presence terms have exact meanings:
+
+- **required:** every published row has a non-empty value;
+- **optional:** the column is present but an unsupported or unpublished value
+  stays empty;
+- **paired:** both named cells are filled together or both are empty; and
+- **conditional:** the value is allowed only when its stated dependency holds.
+
+| Field | Presence | What to store | What not to store |
+|---|---|---|---|
+| `slug` | required | Stable public routing name in lowercase ASCII kebab-case, unique within the country | Display capitalization, a generated row number or an area suffix added without a real disambiguation need |
+| `nombre` | required | The producer's public identity or brand, preserving its own spelling | An invented catalog label; use a legal name only when no distinct public identity exists |
+| `municipio` | required | Municipality of the qualifying productive unit in public or official local spelling | Municipality of an unrelated shop, office, market or owner residence |
+| `categoria` | required | One exact registry token describing the unit's defining material output | Everything its shop sells, an ingredient, flavour, service or guessed category |
+| `productos estrella` | optional | Short comma-separated list of confirmed products, brands or appellations made by this unit | Generic examples, category labels, third-party assortment or prose |
+| `direccion` | optional | Published address of the productive unit or clearly producer-facing premises | A private address, unrelated outlet or head office used merely to fill the cell |
+| `descripcion` | optional | One or two complete producer-specific factual sentences, at most 400 Unicode characters | Promotion, generic filler, unsupported inference, URLs, citations, source/review narration or copied page boilerplate |
+| `horario` | optional | Current published visiting, collection or public-opening hours whose purpose is clear | Production schedules, ambiguous hours or an old schedule whose currency is unsupported |
+| `telefono` | optional | One public producer contact in strict E.164 form, for example `+34600112233` | Spaces, punctuation, extensions, several numbers or a private contact |
+| `correo` | optional | One valid public producer email address | Several addresses, a private address or a guessed pattern |
+| `web` | optional | Official producer HTTP(S) URL | Directory, reseller, unrelated corporate group or merely similar domain |
+| `Facebook` | optional | Official Facebook page/profile HTTP(S) URL | Network home, feed, post permalink or ambiguously matched profile |
+| `Instagram` | optional | Official Instagram profile HTTP(S) URL | Network home, explore view, post permalink or ambiguously matched profile |
+| `Google Maps` | optional | Reviewed canonical Google Maps listing for the producer or productive unit, anchored by Place ID | Generated text/coordinate search, shortened interface link or listing for a shop/office mistaken for production |
+| `lat` | paired | WGS84 decimal latitude (`-90..90`) for the same productive unit as `lon` | A standalone coordinate or a shop/office point substituted for production |
+| `lon` | paired | WGS84 decimal longitude (`-180..180`) for the same productive unit as `lat` | A standalone coordinate or a shop/office point substituted for production |
+| `imagen` | optional | Safe root-relative path to the reviewed local public asset | Remote image URL, missing file, generic placeholder path or unlicensed/unreviewed asset |
+| `verificacion` | optional | Exact `pendiente` only when the admitted row retains material doubt; otherwise empty | `verificado`, ownership status, reviewer status or a holding label for an unadmitted candidate |
+| `Venta online` | required | Exact `sí`, `no` or `no comprobado` according to the reviewed current order mechanism | Guessing `no` from silence, confusing contact or third-party resale with an order mechanism |
+| `Canal de venta` | conditional | Allowed mechanism tokens joined with `\|`, only when `Venta online=sí` | Physical outlets, generic contact routes, unknown tokens or any value when sales are `no`/`no comprobado` |
+| `categorias adicionales` | optional | Other exact category tokens for distinct material outputs made by this same unit, joined with `\|` | Repeating the primary category, duplicates, resale, ingredients, flavours or occasional output |
+| `producer_id` | required | Immutable positive country-local safe integer allocated under the ID lock | Row position, reused/deleted ID, leading zeroes or an ID copied from another country as global identity |
+| `descripcion_locale` | paired | Supported lowercase source-language code for a non-empty `descripcion` | Interface locale, inferred country language or a value when `descripcion` is empty |
+| `visitas guiadas` | optional | Exact `sí` when explicitly offered, `no` when explicitly reviewed as not offered, otherwise empty | Inference from ordinary opening hours, a shop or general public access |
+| `mensaje a la comunidad` | optional | Reviewed producer-authored public message in its original language, at most 1,000 Unicode characters | Editor-authored copy, HTML, embedded URLs, source notes, boilerplate, third-party claims or private workflow data |
+| `mensaje_comunidad_locale` | paired | Supported lowercase source-language code for a non-empty community message | Interface locale or a value when the message is empty |
+| `enlace destacado 1` | optional | Relevant public HTTP(S) article, interview or other page about this producer | Replacement for official links, evidence-only source, irrelevant promotion or private page |
+| `enlace destacado 2` | conditional | Second distinct relevant public HTTP(S) page, only after link 1 | Duplicate/canonical equivalent of link 1 or a value while link 1 is empty |
+| `country` | required | Exact lowercase country path slug from `data/csv/<country>/` | Display name, ISO label with different case or inferred producer nationality |
+| `region` | required | Exact lowercase region directory slug containing the row | Display label, municipality, sales territory or another region |
+| `area` | required | Exact lowercase `<area>` filename slug containing the row | Display label, municipality, nearest area or an area chosen independently of the tree |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
