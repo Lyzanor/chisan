@@ -66,11 +66,16 @@ test("mobile producers use one attached accessible disclosure", () => {
   assert.doesNotMatch(styles, /\.catalog-viewer\.is-mobile-open\s*{[^}]*gap:/);
 });
 
-test("list selection focuses the producer on the map without a selected row", () => {
+test("search and producer preview keep the list and map in sync", () => {
+  assert.match(explorer, /type="search"/);
+  assert.match(explorer, /catalogMessages\.searchPlaceholder/);
+  assert.match(explorer, /\.includes\(normalizedSearchQuery\)/);
   assert.match(explorer, /focusRequest=\{mapFocusRequest\}/);
   assert.match(explorer, /onSelectProducer=\{selectMapProducer\}/);
   assert.match(explorer, /requestProducerFocus\(slug\)/);
-  assert.doesNotMatch(explorer, /className=\{selectedItem\?\.slug/);
+  assert.match(explorer, /onMouseEnter=\{\(\) => previewProducer\(item\.slug\)\}/);
+  assert.match(explorer, /onFocus=\{\(\) => previewProducer\(item\.slug\)\}/);
+  assert.match(explorer, /presentedItem\?\.slug === item\.slug \? "is-active"/);
   assert.doesNotMatch(explorer, /is-selected/);
   assert.match(map, /map\.flyTo\(\[point\.latitude, point\.longitude\], zoom/);
   assert.match(explorer, /key: selectedItem\.slug/);
@@ -223,6 +228,8 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.doesNotMatch(mapBoundary, /nearbyPosition/);
   assert.match(map, /getPointsForKeys\(points, initialFocusKeys\)/);
   assert.match(map, /getPointsForKeys\(points, nearbyFocusKeys\)/);
+  assert.match(map, /CATEGORY_MARKER_MIN_ZOOM = 12/);
+  assert.match(map, /getCategoryMarkerIcon\(point\.icon, selected\)/);
   assert.match(map, /radius=\{selected \? 10 : 6\}/);
   assert.match(map, /weight: selected \? 3 : 0/);
   assert.match(map, /renderedPoints\.map/);
@@ -243,6 +250,7 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.match(producerDetail, /selectedSlug=\{producer\.slug\}/);
   assert.match(producerDetail, /markerInteraction="static"/);
   assert.match(producerDetail, /singlePointZoom=\{16\}/);
+  assert.match(producerDetail, /getCategoryIcon\(primaryCategory\)/);
 });
 
 test("private device coordinates only choose public producer focus keys", () => {

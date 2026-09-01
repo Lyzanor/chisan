@@ -159,6 +159,7 @@ const messages = {
     emptyMapView: "മാപ്പിന്റെ ഈ കാഴ്ചയിൽ ഉൽപ്പാദകരാരും ദൃശ്യമല്ല.",
     openProfile: "പ്രൊഫൈൽ തുറക്കുക",
     producers: "ഉൽപ്പാദകർ",
+    searchPlaceholder: "ഉത്പാദകരെ തിരയുക",
     showing: "ആകെ {total}-ൽ {visible} കാണിക്കുന്നു",
     totalInArea: { one: "{area}-ൽ ആകെ {count}", other: "{area}-ൽ ആകെ {count}" },
     details: "വിശദാംശങ്ങൾ",

@@ -67,6 +67,7 @@ export type ProducerMapMarker = Pick<
   | "href"
   | "name"
   | "city"
+  | "icon"
   | "categories"
   | "latitude"
   | "longitude"

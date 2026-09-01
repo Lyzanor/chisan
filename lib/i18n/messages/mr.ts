@@ -148,6 +148,7 @@ const messages = {
     emptyMapView: "नकाशाच्या या दृश्यात कोणतेही उत्पादक दिसत नाहीत.",
     openProfile: "प्रोफाइल उघडा",
     producers: "उत्पादक",
+    searchPlaceholder: "उत्पादक शोधा",
     showing: "{total} पैकी {visible} दाखवत आहे",
     totalInArea: {
       one: "{area}मध्ये एकूण {count}",

@@ -149,6 +149,7 @@ const messages = {
     emptyMapView: "નકશાના આ દૃશ્યમાં કોઈ ઉત્પાદક દેખાતા નથી.",
     openProfile: "પ્રોફાઇલ ખોલો",
     producers: "ઉત્પાદકો",
+    searchPlaceholder: "ઉત્પાદકો શોધો",
     showing: "{total}માંથી {visible} બતાવી રહ્યા છીએ",
     totalInArea: {
       one: "{area}માં કુલ {count}",

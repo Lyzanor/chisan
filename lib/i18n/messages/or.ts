@@ -153,6 +153,7 @@ const messages = {
     emptyMapView: "ମାନଚିତ୍ରର ଏହି ଦୃଶ୍ୟରେ କୌଣସି ଉତ୍ପାଦକ ଦେଖାଯାଉ ନାହାନ୍ତି।",
     openProfile: "ପ୍ରୋଫାଇଲ୍ ଖୋଲନ୍ତୁ",
     producers: "ଉତ୍ପାଦକ",
+    searchPlaceholder: "ଉତ୍ପାଦକ ଖୋଜନ୍ତୁ",
     showing: "ମୋଟ {total} ମଧ୍ୟରୁ {visible} ଦେଖାଯାଉଛି",
     totalInArea: {
       one: "{area} ରେ ମୋଟ {count}",

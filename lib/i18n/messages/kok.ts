@@ -147,6 +147,7 @@ const messages = {
     emptyMapView: "ह्या नकाशा दृश्यांत खंयचेच उत्पादक दिसनात.",
     openProfile: "प्रोफाइल उगडात",
     producers: "उत्पादक",
+    searchPlaceholder: "उत्पादक सोदात",
     showing: "{total} तले {visible} दाखयता",
     totalInArea: {
       one: "{area} त एकूण {count}",

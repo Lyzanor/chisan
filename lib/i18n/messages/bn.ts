@@ -150,6 +150,7 @@ const messages = {
     emptyMapView: "মানচিত্রের এই দৃশ্যে কোনো উৎপাদক দেখা যাচ্ছে না।",
     openProfile: "প্রোফাইল খুলুন",
     producers: "উৎপাদক",
+    searchPlaceholder: "উৎপাদক খুঁজুন",
     showing: "মোট {total}-এর মধ্যে {visible} জন দেখানো হচ্ছে",
     totalInArea: {
       one: "{area}-এ মোট {count} জন",

@@ -6,6 +6,7 @@ import L from "leaflet";
 import {
   CircleMarker,
   MapContainer,
+  Marker,
   Popup,
   TileLayer,
   Tooltip,
@@ -30,8 +31,27 @@ import type {
 const VIEWPORT_THRESHOLD = 200;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
 const PRODUCER_FOCUS_ZOOM = 13;
+const CATEGORY_MARKER_MIN_ZOOM = 12;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
 const EMPTY_FOCUS_KEYS: string[] = [];
+const categoryMarkerIconCache = new Map<string, L.DivIcon>();
+
+function getCategoryMarkerIcon(icon: string, selected: boolean): L.DivIcon {
+  const cacheKey = `${icon}:${selected ? "selected" : "default"}`;
+  const cached = categoryMarkerIconCache.get(cacheKey);
+  if (cached) return cached;
+
+  const markerIcon = L.divIcon({
+    className: "producer-map-category-marker",
+    html: `<span aria-hidden="true" class="producer-map-category-icon ${
+      selected ? "producer-map-category-icon--selected" : ""
+    }">${icon}</span>`,
+    iconAnchor: [22, 22],
+    iconSize: [44, 44],
+  });
+  categoryMarkerIconCache.set(cacheKey, markerIcon);
+  return markerIcon;
+}
 
 function getPointsBounds(
   points: readonly ProducerMapMarker[],
@@ -152,6 +172,7 @@ function BoundsAwareMarkers({
 }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const fittedViewRef = useRef<{
     points: readonly ProducerMapMarker[];
     singlePointZoom: number;
@@ -164,7 +185,11 @@ function BoundsAwareMarkers({
   // moves emit `moveend` synchronously, so a later subscription would miss the
   // initial fitted bounds used by the nearby-first list.
   useMapEvents({
-    moveend: () => setViewBounds(map.getBounds()),
+    moveend: () => {
+      setViewBounds(map.getBounds());
+      setZoom(map.getZoom());
+    },
+    zoomend: () => setZoom(map.getZoom()),
   });
 
   // Fit only when the effective geometry changes. Navigation state such as a
@@ -288,6 +313,7 @@ function BoundsAwareMarkers({
       selectedPoint,
     ];
   }, [selectedKey, visible]);
+  const showCategoryMarkers = zoom >= CATEGORY_MARKER_MIN_ZOOM;
 
   useEffect(() => {
     onVisibleKeysChange?.(visibleKeys);
@@ -297,6 +323,39 @@ function BoundsAwareMarkers({
     <>
       {renderedPoints.map((point) => {
         const selected = selectedKey === point.key;
+
+        if (showCategoryMarkers) {
+          return (
+            <Marker
+              key={`${point.key}:${selected ? "selected" : "default"}`}
+              position={[point.latitude, point.longitude]}
+              icon={getCategoryMarkerIcon(point.icon, selected)}
+              interactive={markerInteraction !== "static"}
+              eventHandlers={
+                markerInteraction === "select" && onSelectKey
+                  ? { click: () => onSelectKey(point.key) }
+                  : undefined
+              }
+            >
+              {markerInteraction !== "static" ? (
+                <Tooltip direction="top" offset={[0, -12]} opacity={0.96}>
+                  {point.name}
+                </Tooltip>
+              ) : null}
+              {markerInteraction === "popup" ? (
+                <Popup>
+                  <strong>{point.name}</strong>
+                  <br />
+                  {point.city} · {point.categories.join(" · ")}
+                  <br />
+                  <Link href={point.href} prefetch={false}>
+                    {messages.openProfile}
+                  </Link>
+                </Popup>
+              ) : null}
+            </Marker>
+          );
+        }
 
         return (
           <Fragment key={`${point.key}:${selected ? "selected" : "default"}`}>

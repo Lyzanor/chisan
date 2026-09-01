@@ -146,6 +146,7 @@ const messages = {
     emptyMapView: "মানচিত্ৰৰ এই দৃশ্যত কোনো উৎপাদক দৃশ্যমান নহয়।",
     openProfile: "প্ৰফাইল খোলক",
     producers: "উৎপাদক",
+    searchPlaceholder: "উৎপাদক সন্ধান কৰক",
     showing: "মুঠ {total}-ৰ ভিতৰত {visible} দেখুওৱা হৈছে",
     totalInArea: {
       one: "{area}-ত মুঠ {count} জন",

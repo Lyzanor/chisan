@@ -156,6 +156,7 @@ const messages = {
     emptyMapView: "ನಕ್ಷೆಯ ಈ ನೋಟದಲ್ಲಿ ಯಾವುದೇ ಉತ್ಪಾದಕರು ಕಾಣಿಸುತ್ತಿಲ್ಲ.",
     openProfile: "ಪ್ರೊಫೈಲ್ ತೆರೆಯಿರಿ",
     producers: "ಉತ್ಪಾದಕರು",
+    searchPlaceholder: "ಉತ್ಪಾದಕರನ್ನು ಹುಡುಕಿ",
     showing: "ಒಟ್ಟು {total}ರಲ್ಲಿ {visible} ತೋರಿಸಲಾಗುತ್ತಿದೆ",
     totalInArea: {
       one: "{area}ಯಲ್ಲಿ ಒಟ್ಟು {count}",

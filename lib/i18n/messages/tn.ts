@@ -157,6 +157,7 @@ const messages = {
     emptyMapView: "Ga go na badiri ba ba bonalang mo ponong eno ya mmapa.",
     openProfile: "Bula profaele",
     producers: "Badiri",
+    searchPlaceholder: "Batla batlhagisi",
     showing: "Go bontshiwa {visible} mo go {total}",
     totalInArea: {
       one: "{count} tsotlhe mo {area}",

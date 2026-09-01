@@ -12,6 +12,7 @@ import {
   PRODUCER_SELECTION_MIN_ZOOM,
   type ProducerMapMarker,
 } from "@/lib/producer-selections";
+import { getCategoryIcon } from "@/lib/get-category-icon";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
@@ -72,6 +73,7 @@ export function ProducersMap({
         }),
         name: point.name,
         city: point.city,
+        icon: getCategoryIcon(point.category),
         categories: point.categories,
         latitude: point.latitude,
         longitude: point.longitude,

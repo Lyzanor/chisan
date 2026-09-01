@@ -87,7 +87,7 @@ const messages = {
     mapped: { one: "{count} op de kaart", other: "{count} op de kaart" },
     categories: "Categorieën", allCategories: "Alle", showMore: "Meer tonen", showMapOnly: "Alleen producenten op de kaart tonen",
     emptyMapView: "Er zijn geen producenten zichtbaar in deze kaartweergave.",
-    openProfile: "Profiel openen", producers: "Producenten", showing: "{visible} van {total} worden getoond",
+    openProfile: "Profiel openen", producers: "Producenten", searchPlaceholder: "Producenten zoeken", showing: "{visible} van {total} worden getoond",
     totalInArea: { one: "{count} in totaal in {area}", other: "{count} in totaal in {area}" },
     details: "Details", emptyCategory: "Geen producenten in deze categorie voor {area}.",
   },

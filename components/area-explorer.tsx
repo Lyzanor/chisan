@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import {
   Suspense,
   useCallback,
@@ -236,6 +237,8 @@ function AreaExplorerView({
   selectedSlug: string;
 }) {
   const [isMobileListOpen, setIsMobileListOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [previewedSlug, setPreviewedSlug] = useState("");
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [mapVisibleProducerScope, setMapVisibleProducerScope] = useState<{
     category: string;
@@ -252,7 +255,8 @@ function AreaExplorerView({
   const selectedProducerLinkRef = useRef<HTMLAnchorElement>(null);
   const focusSelectedProducerAfterCloseRef = useRef(false);
   const normalizedCategory = normalizeCategory(category);
-  const items = useMemo(
+  const normalizedSearchQuery = normalizeCategory(searchQuery);
+  const categoryItems = useMemo(
     () =>
       normalizedCategory
         ? model.producers.filter((producer) =>
@@ -264,6 +268,21 @@ function AreaExplorerView({
         : model.producers,
     [model.producers, normalizedCategory],
   );
+  const items = useMemo(() => {
+    if (!normalizedSearchQuery) return categoryItems;
+
+    return categoryItems.filter((producer) =>
+      normalizeCategory(
+        [
+          producer.name,
+          producer.city,
+          producer.category,
+          ...producer.categories,
+          producer.description,
+        ].join(" "),
+      ).includes(normalizedSearchQuery),
+    );
+  }, [categoryItems, normalizedSearchQuery]);
   const selectedItem = useMemo(
     () =>
       selectedSlug
@@ -272,6 +291,14 @@ function AreaExplorerView({
         : undefined,
     [items, selectedSlug],
   );
+  const previewedItem = useMemo(
+    () =>
+      previewedSlug
+        ? items.find((item) => item.slug === previewedSlug)
+        : undefined,
+    [items, previewedSlug],
+  );
+  const presentedItem = previewedItem ?? selectedItem;
   const categoryPresentations = useMemo(
     () => new Map(model.categories.map((item) => [item.token, item])),
     [model.categories],
@@ -469,6 +496,7 @@ function AreaExplorerView({
 
   function selectProducer(slug: string, href: string, closeMobileList: boolean) {
     previousSelectedSlug.current = slug;
+    setPreviewedSlug("");
     consumeNearbyMapFocus();
     requestProducerFocus(slug);
     pushCatalogState(href);
@@ -491,12 +519,24 @@ function AreaExplorerView({
   }
 
   function selectCategory(href: string) {
+    setPreviewedSlug("");
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
     setIsMobileListOpen(false);
     setExpandedCategory(null);
     setMapVisibleProducerScope(null);
     pushCatalogState(href);
+  }
+
+  function previewProducer(slug: string) {
+    if (previewedSlug === slug) return;
+    consumeNearbyMapFocus();
+    setPreviewedSlug(slug);
+    requestProducerFocus(slug);
+  }
+
+  function clearProducerPreview(slug: string) {
+    setPreviewedSlug((current) => (current === slug ? "" : current));
   }
 
   function toggleProducerScope() {
@@ -543,6 +583,27 @@ function AreaExplorerView({
           <h1>{model.catalogMessages.title}</h1>
         </div>
       </header>
+
+      <div className="catalog-discovery-tools">
+        <label className="catalog-producer-search">
+          <span className="visually-hidden">
+            {model.catalogMessages.searchPlaceholder}
+          </span>
+          <MagnifyingGlassIcon aria-hidden="true" size={20} />
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(event) => {
+              setSearchQuery(event.target.value);
+              setPreviewedSlug("");
+              setExpandedCategory(null);
+              setMapVisibleProducerScope(null);
+            }}
+            placeholder={model.catalogMessages.searchPlaceholder}
+            autoComplete="off"
+          />
+        </label>
+      </div>
 
       <nav
         className="catalog-simple-categories"
@@ -606,7 +667,7 @@ function AreaExplorerView({
               points={mapPoints}
               scope={model.scope}
               area={model.area}
-              selectedSlug={selectedItem?.slug}
+              selectedSlug={presentedItem?.slug}
               focusRequest={mapFocusRequest}
               nearbyFocusKeys={nearbyMapFocusKeys}
               onNearbyFocusConsumed={consumeNearbyMapFocus}
@@ -621,12 +682,12 @@ function AreaExplorerView({
             aria-live="polite"
             aria-atomic="true"
           >
-            {selectedItem ? (
+            {presentedItem ? (
               <ProducerMapSelectionCard
                 linkRef={selectedProducerLinkRef}
                 producer={{
-                  ...selectedItem,
-                  href: buildProducerHref(selectedItem, {
+                  ...presentedItem,
+                  href: buildProducerHref(presentedItem, {
                     scope: model.scope,
                     area: model.area,
                   }),
@@ -689,7 +750,12 @@ function AreaExplorerView({
                   });
 
                   return (
-                    <li key={item.producerId}>
+                    <li
+                      key={item.producerId}
+                      className={
+                        presentedItem?.slug === item.slug ? "is-active" : undefined
+                      }
+                    >
                       <Link
                         href={href}
                         prefetch={false}
@@ -698,6 +764,10 @@ function AreaExplorerView({
                           event.preventDefault();
                           selectProducer(item.slug, href, true);
                         }}
+                        onMouseEnter={() => previewProducer(item.slug)}
+                        onMouseLeave={() => clearProducerPreview(item.slug)}
+                        onFocus={() => previewProducer(item.slug)}
+                        onBlur={() => clearProducerPreview(item.slug)}
                         className="producer-compact-link"
                         aria-current={
                           selectedItem?.slug === item.slug ? true : undefined

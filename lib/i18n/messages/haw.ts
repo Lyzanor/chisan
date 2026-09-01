@@ -159,6 +159,7 @@ const messages = {
     emptyMapView: "ʻAʻohe mea hana i ʻike ʻia ma kēia nānā palapala ʻāina.",
     openProfile: "Wehe i ka ʻike",
     producers: "Nā mea hana",
+    searchPlaceholder: "Huli i nā mea hana",
     showing: "Ke hōʻike nei iā {visible} o {total}",
     totalInArea: {
       one: "{count} ka huina ma {area}",

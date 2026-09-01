@@ -155,6 +155,7 @@ const messages = {
     emptyMapView: "Kute bakhiciti lababonakalako kulombono welimephu.",
     openProfile: "Vula iphrofayili",
     producers: "Bakhiciti",
+    searchPlaceholder: "Funa bakhiciti",
     showing: "Kukhonjiswa {visible} ku-{total}",
     totalInArea: {
       one: "{count} sebabonke e-{area}",

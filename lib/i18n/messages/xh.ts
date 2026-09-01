@@ -155,6 +155,7 @@ const messages = {
     emptyMapView: "Akukho bavelisi babonakalayo kolu jongo lwemephu.",
     openProfile: "Vula iprofayile",
     producers: "Abavelisi",
+    searchPlaceholder: "Khangela abavelisi",
     showing: "Kuboniswa {visible} kwi-{total}",
     totalInArea: {
       one: "{count} bebonke e-{area}",

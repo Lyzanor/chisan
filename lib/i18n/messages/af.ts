@@ -156,6 +156,7 @@ const messages = {
     emptyMapView: "Geen produsente is in hierdie kaartaansig sigbaar nie.",
     openProfile: "Maak profiel oop",
     producers: "Produsente",
+    searchPlaceholder: "Soek produsente",
     showing: "Wys {visible} van {total}",
     totalInArea: {
       one: "{count} totaal in {area}",

@@ -159,6 +159,7 @@ const messages = {
     emptyMapView: "Níl aon táirgeoirí le feiceáil san amharc léarscáile seo.",
     openProfile: "Oscail próifíl",
     producers: "Táirgeoirí",
+    searchPlaceholder: "Cuardaigh táirgeoirí",
     showing: "{visible} de {total} á dtaispeáint",
     totalInArea: {
       one: "{count} san iomlán in {area}",

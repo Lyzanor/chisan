@@ -158,6 +158,7 @@ const messages = {
     emptyMapView: "Ga go na batšweletši bao ba bonagalago ponong ye ya mmapa.",
     openProfile: "Bula profaele",
     producers: "Batšweletši",
+    searchPlaceholder: "Nyaka batšweletši",
     showing: "Go bontšhwa {visible} go tšwa go {total}",
     totalInArea: {
       one: "{count} ka moka kua {area}",

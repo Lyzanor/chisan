@@ -158,6 +158,7 @@ const messages = {
     emptyMapView: "No hi ha productors visibles en aquest enquadrament.",
     openProfile: "Obre el perfil",
     producers: "Productors",
+    searchPlaceholder: "Cerca productors",
     showing: "Mostrant {visible} de {total}",
     totalInArea: {
       one: "{count} en total a {area}",

@@ -118,6 +118,7 @@ const messages = {
     categories: "Catégories", allCategories: "Toutes", showMore: "Voir plus",
     showMapOnly: "Voir seulement ceux de la carte", emptyMapView: "Aucun producteur n’est visible dans cette vue de la carte.",
     openProfile: "Ouvrir le profil", producers: "Producteurs",
+    searchPlaceholder: "Rechercher des producteurs",
     showing: "Affichage de {visible} sur {total}",
     totalInArea: { one: "{count} au total dans {area}", other: "{count} au total dans {area}" },
     details: "Détails", emptyCategory: "Aucun producteur de cette catégorie dans {area}.",

@@ -157,6 +157,7 @@ const messages = {
     emptyMapView: "Ha ho bahlahisi ba bonahalang ponong ena ea 'mapa.",
     openProfile: "Bula profaele",
     producers: "Bahlahisi",
+    searchPlaceholder: "Batla bahlahisi",
     showing: "E bontša {visible} ho {total}",
     totalInArea: {
       one: "{count} kaofela ho {area}",

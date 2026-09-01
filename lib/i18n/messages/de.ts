@@ -158,6 +158,7 @@ const messages = {
     emptyMapView: "In diesem Kartenausschnitt sind keine Erzeuger sichtbar.",
     openProfile: "Profil öffnen",
     producers: "Erzeuger",
+    searchPlaceholder: "Erzeuger suchen",
     showing: "{visible} von {total} werden angezeigt",
     totalInArea: {
       one: "insgesamt {count} in {area}",

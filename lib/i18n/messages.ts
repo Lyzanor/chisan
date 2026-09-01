@@ -134,6 +134,7 @@ export type Messages = {
     emptyMapView: string;
     openProfile: string;
     producers: string;
+    searchPlaceholder: string;
     showing: string;
     totalInArea: PluralMessage;
     details: string;

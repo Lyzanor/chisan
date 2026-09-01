@@ -231,7 +231,7 @@ body {
 }
 
 .catalog-chip > span[aria-hidden="true"] {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1;
 }
 
@@ -282,6 +282,38 @@ body {
   stroke: var(--chisan-color-surface);
   stroke-opacity: 1;
   stroke-width: 3px;
+}
+
+.producer-map-category-marker {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+}
+
+.producer-map-category-icon {
+  display: grid;
+  place-items: center;
+  width: var(--chisan-space-6);
+  height: var(--chisan-space-6);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  font-size: 0.875rem;
+  line-height: 1;
+  transition:
+    width var(--chisan-motion-immediate) var(--chisan-ease),
+    height var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.producer-map-category-icon--selected {
+  width: var(--chisan-space-8);
+  height: var(--chisan-space-8);
+  border-color: var(--chisan-color-moss);
+  background: var(--chisan-color-moss-pale);
+  font-size: 1rem;
 }
 
 .leaflet-control-attribution {

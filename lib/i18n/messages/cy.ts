@@ -156,6 +156,7 @@ const messages = {
     emptyMapView: "Nid oes unrhyw gynhyrchwyr yn weladwy yn yr olygfa map hon.",
     openProfile: "Agor proffil",
     producers: "Cynhyrchwyr",
+    searchPlaceholder: "Chwilio cynhyrchwyr",
     showing: "Yn dangos {visible} o {total}",
     totalInArea: {
       one: "Cyfanswm o {count} yn {area}",

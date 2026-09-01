@@ -161,6 +161,7 @@ const messages = {
     emptyMapView: "Chan eil riochdairean rim faicinn san t-sealladh mapa seo.",
     openProfile: "Fosgail pròifil",
     producers: "Riochdairean",
+    searchPlaceholder: "Lorg riochdairean",
     showing: "A’ sealltainn {visible} de {total}",
     totalInArea: {
       one: "{count} uile gu lèir ann an {area}",

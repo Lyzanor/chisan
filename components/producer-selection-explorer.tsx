@@ -81,6 +81,7 @@ function ProducerSelectionExplorerView({
             href: item.href,
             name: item.name,
             city: item.city,
+            icon: item.icon,
             categories: item.categories,
             latitude: item.latitude,
             longitude: item.longitude,

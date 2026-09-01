@@ -108,9 +108,12 @@ under 12px. Reading column 58–64 characters.
 One point per producer, at its exact coordinate. No clustering, jitter, offset
 or heatmaps — ever.
 
-- Default: 12px `moss-dark` circle at full opacity, no outline.
-- Selected: 20px `moss` fill with a 3px `surface` outline, rendered above
-  neighbouring points at the same position.
+- Overview zooms: 12px `moss-dark` circle at full opacity, no outline.
+- Neighbourhood zooms (`12+`): the producer's existing colourful category
+  pictogram in a 24px `surface` disc. The active producer grows to 32px with a
+  `moss` edge; both retain a 44px interaction target.
+- Selected overview point: 20px `moss` fill with a 3px `surface` outline,
+  rendered above neighbouring points at the same position.
 - Land `rice-paper`, controls `surface`, geometry `hairline`, labels `stone`.
 - All categories stay in one scrollable filter bar, one icon and label each.
 - Result counts remain available to assistive technology; visual density stays
@@ -119,8 +122,11 @@ or heatmaps — ever.
   the visible centre outwards. `Show more` is an explicit escape hatch to the
   broader mapped area list while keeping the current map results first; every
   row can therefore resolve to a map point.
-- Selecting from a list moves the map to the exact producer and changes only
-  the map point. The list row does not gain a competing selected treatment.
+- Searching filters producer name, locality, category and description without
+  introducing another catalog source or changing the URL.
+- Hovering or focusing a list row previews the exact producer on the map and
+  linked producer surface. A restrained `moss-pale` row treatment preserves
+  the connection; clicking remains the durable URL selection.
 - On small screens, the producer list is an attached, non-modal disclosure. Its
   open state uses `moss-pale` and a `moss` edge, never a floating shadow.
 - A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
@@ -153,7 +159,9 @@ selection callback; detail pages state `static` explicitly.
 
 On a multi-producer map, marker and list activation select and focus the same
 exact point, paint only that point above its neighbours, and expose the shared
-linked name-description-image surface. The list row stays visually neutral.
+linked name-description-image surface. Pointer hover and keyboard focus may
+preview that same linked state without writing `highlight`; only activation
+creates durable URL selection.
 The `highlight` query records selection; Escape, outside activation and browser
 Back/Forward clear or restore it. Initial and nearby framing never imply
 selection. Items without coordinates remain ordinary profile links rather than
@@ -162,10 +170,11 @@ pretending to select a missing point.
 A producer-detail map renders its sole producer in fixed selected state and
 keeps that contextual point non-interactive. It does not repeat the selected
 card or open a self-referential popup because the page itself is that surface.
-Dense multi-producer maps retain the deliberate 28px transparent point target;
-this is the sole exception to the 44px target rule and is allowed only when the
-synchronized list provides an equivalent 44px control for every interactive
-point. Fixed detail points are non-essential map context.
+Dense multi-producer overview circles retain the deliberate 28px transparent
+point target; this is the sole exception to the 44px target rule and is allowed
+only when the synchronized list provides an equivalent 44px control for every
+interactive point. Neighbourhood pictograms use the full 44px target. Fixed
+detail points are non-essential map context.
 
 ## Brand
 

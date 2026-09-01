@@ -45,6 +45,7 @@ import {
   formatProducerFieldValue,
   presentPublicProducerFields,
 } from "@/lib/i18n/producer-fields";
+import { getCategoryIcon } from "@/lib/get-category-icon";
 import {
   buildProducerStructuredData,
   serializeStructuredData,
@@ -349,11 +350,20 @@ export default async function ProducerPage({
 
         <header id="detail-hero" className="detail-hero">
           <div className="detail-hero-copy">
-            <p className="detail-eyebrow">{messages.producer.profile}</p>
-            <h1>{producer.name}</h1>
-            <p className="detail-subtitle">
-              {producer.city} · {localizedCategories.join(" · ")}
-            </p>
+            <div className="detail-profile-heading">
+              {primaryCategory ? (
+                <span className="detail-category-icon" aria-hidden="true">
+                  {getCategoryIcon(primaryCategory)}
+                </span>
+              ) : null}
+              <div>
+                <p className="detail-eyebrow">{messages.producer.profile}</p>
+                <h1>{producer.name}</h1>
+                <p className="detail-subtitle">
+                  {producer.city} · {localizedCategories.join(" · ")}
+                </p>
+              </div>
+            </div>
             {description ? <p className="detail-intro">{description}</p> : null}
             <div className="detail-actions">
               {website ? (

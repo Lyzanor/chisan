@@ -163,6 +163,7 @@ const messages = {
     emptyMapView: "இந்த வரைபடக் காட்சியில் உற்பத்தியாளர்கள் யாரும் தெரியவில்லை.",
     openProfile: "சுயவிவரத்தைத் திறக்கவும்",
     producers: "உற்பத்தியாளர்கள்",
+    searchPlaceholder: "உற்பத்தியாளர்களைத் தேடுங்கள்",
     showing: "மொத்தம் {total}-இல் {visible} காட்டப்படுகிறது",
     totalInArea: {
       one: "{area}-இல் மொத்தம் {count}",

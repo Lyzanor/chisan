@@ -142,6 +142,7 @@ const messages = {
     emptyMapView: "Não há produtores visíveis nesta vista do mapa.",
     openProfile: "Abrir perfil",
     producers: "Produtores",
+    searchPlaceholder: "Pesquisar produtores",
     showing: "A mostrar {visible} de {total}",
     totalInArea: { one: "{count} no total em {area}", other: "{count} no total em {area}" },
     details: "Detalhes",

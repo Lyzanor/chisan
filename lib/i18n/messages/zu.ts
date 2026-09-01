@@ -156,6 +156,7 @@ const messages = {
     emptyMapView: "Abekho abakhiqizi ababonakalayo kulokhu kubuka kwemephu.",
     openProfile: "Vula iphrofayela",
     producers: "Abakhiqizi",
+    searchPlaceholder: "Sesha abakhiqizi",
     showing: "Kuboniswa {visible} ku-{total}",
     totalInArea: {
       one: "{count} sebebonke e-{area}",

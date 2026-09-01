@@ -153,6 +153,7 @@ const messages = {
     emptyMapView: "この地図表示には生産者が表示されていません。",
     openProfile: "プロフィールを開く",
     producers: "生産者",
+    searchPlaceholder: "生産者を検索",
     showing: "{total}件中{visible}件を表示",
     totalInArea: {
       one: "{area}は全{count}件",

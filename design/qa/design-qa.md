@@ -22,6 +22,40 @@ with the default `ink` rule, while private profiles expose no active label.
 Rejected: a logo over the QR modules, green QR modules, route parameters in the
 encoded URL and an always-expanded label that would dominate the profile.
 
+## 2026-09-02 — Search and linked colourful producer preview
+
+final result: passed
+
+Source captures: `lovable-source-map-list.png` and
+`lovable-source-producer-profile.png`. Implementation evidence:
+`lovable-search-hover-color-icons.png`, `lovable-profile-color-icon.png`,
+`lovable-map-color-icons-mobile.png` and
+`lovable-profile-color-icon-mobile.png`. The paired reviews are retained as
+`lovable-color-icons-map-comparison.png` and
+`lovable-color-icons-profile-comparison.png`.
+
+- The area search filters the already-loaded canonical producers by name,
+  locality, category and description. It adds no catalog overlay and writes no
+  search state to the public route.
+- Overview zooms keep the compact 12/20px circles. At neighbourhood zooms the
+  existing colourful category pictogram replaces the circle inside a 24px
+  surface disc; hover, focus or selection grows only that producer to 32px.
+  The pictogram markers retain 44px pointer targets.
+- Pointer hover and keyboard focus now preview one producer across the list,
+  map and shared producer card. The `moss-pale` row and `moss` edge make the
+  relationship legible without changing `highlight`; click remains the durable
+  selection. This explicit linked-preview requirement supersedes the earlier
+  rejection of selected-list treatment.
+- Producer profiles repeat the same category pictogram at 18px in a restrained
+  40px framed surface. Existing hero, facts and map framing remain intact.
+- No `Ver todos` control is present. At 390×844 the search, list disclosure and
+  profile remain free of horizontal overflow, and the mobile list toggle stays
+  visible. Desktop and mobile browser checks reported no console errors.
+
+Rejected: large monochrome category glyphs, category pictograms at continental
+overview zooms, a new producer data source, copying the reference typography,
+and retaining a redundant `Ver todos` action.
+
 ## 2026-09-01 — Terminal-accent brand family
 
 final result: passed

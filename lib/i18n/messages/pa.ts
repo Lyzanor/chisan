@@ -147,6 +147,7 @@ const messages = {
     emptyMapView: "ਨਕਸ਼ੇ ਦੇ ਇਸ ਦ੍ਰਿਸ਼ ਵਿੱਚ ਕੋਈ ਉਤਪਾਦਕ ਦਿਖਾਈ ਨਹੀਂ ਦੇ ਰਿਹਾ।",
     openProfile: "ਪ੍ਰੋਫ਼ਾਈਲ ਖੋਲ੍ਹੋ",
     producers: "ਉਤਪਾਦਕ",
+    searchPlaceholder: "ਉਤਪਾਦਕ ਖੋਜੋ",
     showing: "{total} ਵਿੱਚੋਂ {visible} ਦਿਖਾਏ ਜਾ ਰਹੇ ਹਨ",
     totalInArea: {
       one: "{area} ਵਿੱਚ ਕੁੱਲ {count}",
