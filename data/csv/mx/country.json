@@ -1,5 +1,6 @@
 {
   "label": "México",
+  "publicationStatus": "standby",
   "unit": {
     "one": "entidad federativa",
     "many": "entidades federativas"

@@ -1,5 +1,6 @@
 {
   "label": "Portugal",
+  "publicationStatus": "standby",
   "unit": {
     "one": "district",
     "many": "districts"

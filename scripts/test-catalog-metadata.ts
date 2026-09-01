@@ -17,6 +17,7 @@ import {
   type CatalogSitemapEntry,
 } from "../lib/catalog-sitemap";
 import {
+  listCountries,
   listPublishedCountries,
   listProducerRouteParams,
   type AreaOption,
@@ -135,6 +136,7 @@ test("sitemap count matches effective locale policies and every alternate is rec
     listProducerRouteParams(listPublishedCountries()),
   ]);
   const countries = listPublishedCountries();
+  assert.deepEqual(countries.map(({ slug }) => slug), ["es"]);
   const areaPolicies = listAreaPolicies();
   const countryCount = countries.reduce(
     (count, country) => count + country.publishedLocales.length,
@@ -190,7 +192,9 @@ test("sitemap count matches effective locale policies and every alternate is rec
     { en: "https://chisan.app/how-we-work" },
   );
   assert.equal(entryByUrl.has("https://chisan.app/our-purpose"), false);
-  for (const countrySlug of ["ar", "in", "za"]) {
+  for (const countrySlug of listCountries()
+    .map(({ slug }) => slug)
+    .filter((slug) => slug !== "es")) {
     assert.ok(
       entries.every(
         ({ url }) => !new URL(url).pathname.match(

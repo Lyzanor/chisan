@@ -1,5 +1,6 @@
 {
   "label": "Italy",
+  "publicationStatus": "standby",
   "unit": {
     "one": "province",
     "many": "provinces"

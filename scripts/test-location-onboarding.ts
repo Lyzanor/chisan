@@ -4,7 +4,7 @@ import test from "node:test";
 
 import actualBarcelonaGeography from "../public/generated/catalog-geography/es.json";
 import actualGeographyIndex from "../public/generated/catalog-geography/index.json";
-import { listCountries } from "../lib/csv-catalog";
+import { listPublishedCountries } from "../lib/csv-catalog";
 import { SUPPORTED_LOCALES } from "../lib/i18n/locales";
 import { loadMessages } from "../lib/i18n/messages";
 import { listEnabledLocationAreas } from "../lib/location/enabled-location-areas";
@@ -96,7 +96,8 @@ function geographyFetcher(requests: { href: string; init: RequestInit }[]): Loca
 }
 
 test("the neutral home offers only registry areas declared by generated geometry", () => {
-  const countries = listCountries();
+  const countries = listPublishedCountries();
+  assert.deepEqual(countries.map(({ slug }) => slug), ["es"]);
   const enabled = listEnabledLocationAreas({ countries, locale: "en" });
   assert.deepEqual(
     enabled.map(({ country, area }) => ({ country, area })),

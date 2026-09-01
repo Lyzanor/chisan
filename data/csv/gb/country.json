@@ -1,5 +1,6 @@
 {
   "label": "United Kingdom",
+  "publicationStatus": "standby",
   "unit": {
     "one": "county",
     "many": "counties"

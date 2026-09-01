@@ -295,22 +295,23 @@ test("destination locale selection follows explicit, browser, English, default o
   );
 });
 
-test("standby countries stay in the registry but leave every public country list", () => {
-  const countries = new Map(
-    listCountries().map((country) => [country.slug, country]),
-  );
-  const publishedSlugs = new Set(
-    listPublishedCountries().map(({ slug }) => slug),
-  );
+test("all countries stay in the registry while only Spain is published", () => {
+  const countries = listCountries();
 
-  for (const countrySlug of ["ar", "in", "za"]) {
-    const country = countries.get(countrySlug);
-    assert.ok(country, `${countrySlug} must remain in the CSV registry`);
-    assert.equal(country.publicationStatus, "standby");
-    assert.equal(isCatalogCountryPublished(country), false);
-    assert.equal(publishedSlugs.has(countrySlug), false);
+  assert.deepEqual(
+    listPublishedCountries().map(({ slug }) => slug),
+    ["es"],
+  );
+  assert.ok(countries.length > 1, "standby catalogs must remain in the registry");
+
+  for (const country of countries) {
+    const isSpain = country.slug === "es";
+    assert.equal(
+      country.publicationStatus,
+      isSpain ? "published" : "standby",
+    );
+    assert.equal(isCatalogCountryPublished(country), isSpain);
   }
-  assert.equal(isCatalogCountryPublished(countries.get("es")!), true);
 });
 
 test("explicit and browser preferences parse without becoming catalog identity", () => {

@@ -210,7 +210,7 @@ wait_for_app
 
 HTML_HOME="$(curl -fsS "$BASE_URL/")"
 HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"
-HTML_HOME_BEFORE_H1="${HTML_HOME_CLEAN%%id=\"country-start-title\"*}"
+HTML_HOME_BEFORE_H1="${HTML_HOME_CLEAN%%id=\"home-summary-title\"*}"
 
 assert_html_lang "/" "en" "$HTML_HOME_CLEAN"
 
@@ -219,12 +219,12 @@ if [[ "$HTML_HOME_BEFORE_H1" == *"<h2"* ]]; then
   exit 1
 fi
 
-if [[ "$HTML_HOME_CLEAN" != *"Choose a country"* ]]; then
-  echo "Error: home page should ask for an initial country selection." >&2
+if [[ "$HTML_HOME_CLEAN" != *'id="country-start-title">Spain</h2>'* ]]; then
+  echo "Error: home page should present Spain as the active catalog." >&2
   exit 1
 fi
 
-# Choosing manually reaches the country listing itself, without a selector widget.
+# Manual navigation reaches the active country listing without a selector widget.
 if [[
   "$HTML_HOME_CLEAN" != *'id="choose-country"'* ||
   "$HTML_HOME_CLEAN" != *'class="country-card"'* ||
@@ -236,7 +236,7 @@ if [[
   exit 1
 fi
 
-for STANDBY_HREF in '/ar' '/in' '/za'; do
+for STANDBY_HREF in '/ar' '/be' '/de' '/fr' '/gb' '/ie' '/in' '/it' '/jp' '/mx' '/nl' '/pt' '/us' '/za'; do
   if [[ "$HTML_HOME_CLEAN" == *"href=\"$STANDBY_HREF\""* ]]; then
     echo "Error: standby catalog '$STANDBY_HREF' must not appear on the home page." >&2
     exit 1
@@ -248,7 +248,8 @@ if [[
   "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Connecting local food."'* ||
   "$HTML_HOME_CLEAN" != *'class="chisan-wordmark"'* ||
   "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Connecting local food.</span>'* ||
-  "$HTML_HOME_CLEAN" != *'id="home-about-title">Connecting local food.</h2>'* ||
+  "$HTML_HOME_CLEAN" != *'id="home-summary-title">Connecting local food.</h1>'* ||
+  "$HTML_HOME_CLEAN" != *'id="country-start-title">Spain</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
   "$HTML_HOME_CLEAN" != *'href="/how-we-work">How Chisan works</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="/#choose-country">Producer catalog</a>'* ||
@@ -340,13 +341,6 @@ if [[ "$HTML_ES" != *"Chisan"* || "$HTML_ES" == *"KM0"* ]]; then
   exit 1
 fi
 
-HTML_JP="$(curl -fsS "$BASE_URL/jp" | sed 's/<!-- -->//g')"
-assert_html_lang "/jp" "ja" "$HTML_JP"
-if [[ "$HTML_JP" != *"都道府県を選択"* || "$HTML_JP" != *"京都府"* ]]; then
-  echo "Error: /jp should list Japanese prefectures in Japanese." >&2
-  exit 1
-fi
-
 UNKNOWN_COUNTRY_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/zz")"
 if [[ "$UNKNOWN_COUNTRY_STATUS" != "404" ]]; then
   echo "Error: unknown country route should 404, got '$UNKNOWN_COUNTRY_STATUS'." >&2
@@ -365,7 +359,10 @@ if [[
   exit 1
 fi
 
-for STANDBY_SCOPE in ar en-ar in hi-in za af-za; do
+for STANDBY_SCOPE in \
+  ar be de fr gb ie in it jp mx nl pt us za \
+  en-ar en-be en-de en-fr en-gb en-ie hi-in en-it ja-jp es-mx en-nl pt-pt en-us af-za \
+  de/berlin/hofladen de/berlin/hofladen-berlin en-de/berlin/hofladen-berlin; do
   STANDBY_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/$STANDBY_SCOPE")"
   if [[ "$STANDBY_STATUS" != "404" ]]; then
     echo "Error: standby catalog scope '/$STANDBY_SCOPE' should 404, got '$STANDBY_STATUS'." >&2
@@ -559,31 +556,6 @@ fi
 EXAMPLE_HTML="$(curl -fsS "$BASE_URL/es/barcelona/granja-la-pasiega-abrera" | sed 's/<!-- -->//g')"
 if [[ "$EXAMPLE_HTML" != *"Granja La Pasiega"* ]]; then
   echo "Error: requested canonical example /es/barcelona/granja-la-pasiega-abrera does not resolve." >&2
-  exit 1
-fi
-
-BERLIN_HTML="$(curl -fsS "$BASE_URL/de/berlin/hofladen" | sed 's/<!-- -->//g')"
-if [[ "$BERLIN_HTML" != *"Hofladen"* ]]; then
-  echo "Error: requested canonical example /de/berlin/hofladen does not resolve." >&2
-  exit 1
-fi
-
-BERLIN_OLD_SLUG_RESPONSE="$(curl -sS -o /dev/null --write-out '%{http_code}|%{redirect_url}' --get "$BASE_URL/de/berlin/hofladen-berlin" \
-  --data-urlencode "category=Otros" \
-  --data-urlencode "highlight=hofladen-berlin" \
-  --data-urlencode "lat=52.5" \
-  --data-urlencode "lon=13.4" \
-  --data-urlencode "municipality=Berlin")"
-if [[ "$BERLIN_OLD_SLUG_RESPONSE" != "308|$BASE_URL/de/berlin/hofladen?category=Otros&highlight=hofladen" ]]; then
-  echo "Error: a historical producer slug must redirect permanently and preserve only safe query state; got '$BERLIN_OLD_SLUG_RESPONSE'." >&2
-  exit 1
-fi
-
-BERLIN_COMPOSITE_OLD_SLUG_RESPONSE="$(curl -sS -o /dev/null --write-out '%{http_code}|%{redirect_url}' --get "$BASE_URL/en-de/berlin/hofladen-berlin" \
-  --data-urlencode "category=Otros" \
-  --data-urlencode "lat=52.5")"
-if [[ "$BERLIN_COMPOSITE_OLD_SLUG_RESPONSE" != "308|$BASE_URL/en-de/berlin/hofladen?category=Otros" ]]; then
-  echo "Error: a historical producer slug under a composite scope must preserve its resolved locale; got '$BERLIN_COMPOSITE_OLD_SLUG_RESPONSE'." >&2
   exit 1
 fi
 

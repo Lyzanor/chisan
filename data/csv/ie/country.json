@@ -1,5 +1,6 @@
 {
   "label": "Ireland",
+  "publicationStatus": "standby",
   "unit": {
     "one": "county",
     "many": "counties"

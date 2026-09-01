@@ -1,8 +1,10 @@
 # Germany
 
 ## Operating state
-- Priorities: inherited-row review plus targeted brewery and farm-dairy
-  discovery.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - `municipio` is the current Gemeinde, never the Ortsteil; retain the smaller

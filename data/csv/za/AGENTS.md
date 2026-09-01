@@ -1,10 +1,10 @@
 # South Africa
 
 ## Operating state
-- Public catalog status: standby. Keep the catalog, evidence and editorial
-  workflows maintained, but do not publish or index this country.
-- Priorities: strengthen pending rows with producer-owned sources, resolve
-  online sales and replace coarse or missing productive-unit details.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - `municipio` is the town, not the local municipality or district.

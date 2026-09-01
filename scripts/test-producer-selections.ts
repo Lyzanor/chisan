@@ -105,12 +105,12 @@ test("public map highlights resolve only exact durable producer keys", () => {
   const items = buildProducerSelectionItems(
     [
       producer(42, "barcelona", "shared-slug", "es"),
-      producer(42, "paris", "shared-slug", "fr"),
+      producer(43, "madrid", "shared-slug", "es"),
     ],
     { explicitLocale: null, locale: "en" },
   );
 
-  assert.deepEqual(items.map(({ key }) => key), ["es:42", "fr:42"]);
+  assert.deepEqual(items.map(({ key }) => key), ["es:42", "es:43"]);
   assert.equal(
     buildProducerSelectionHighlightHref("/u/local-food", "es:42"),
     "/u/local-food?highlight=es%3A42",
@@ -119,7 +119,7 @@ test("public map highlights resolve only exact durable producer keys", () => {
     buildProducerSelectionHighlightHref("/u/local-food", ""),
     "/u/local-food",
   );
-  assert.equal(resolveProducerSelectionItem(items, "fr:42")?.country, "fr");
+  assert.equal(resolveProducerSelectionItem(items, "es:43")?.country, "es");
   assert.equal(resolveProducerSelectionItem(items, "shared-slug"), undefined);
   assert.equal(resolveProducerSelectionItem(items, "es:404"), undefined);
 });

@@ -11,8 +11,9 @@
 // where", so a doc never has to freeze a count that rots.
 //
 // Usage:
-//   node scripts/audit-defects.mjs                  every province
+//   node scripts/audit-defects.mjs                  sole published country
 //   node scripts/audit-defects.mjs --country it
+//   node scripts/audit-defects.mjs --all-countries
 //   node scripts/audit-defects.mjs --area soria
 //   node scripts/audit-defects.mjs --stage admission
 //   node scripts/audit-defects.mjs --stage verification
@@ -24,6 +25,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "csv-parse/sync";
+import { resolveDefaultCatalogCountry } from "./lib/catalog-operation-scope.mjs";
 
 import {
   descriptionContaminationReason,
@@ -62,7 +64,10 @@ const flag = (name) => {
   return i === -1 ? null : (argv[i + 1] ?? true);
 };
 const onlyArea = flag("area");
-const onlyCountry = flag("country");
+const requestedCountry = flag("country");
+const allCountries = argv.includes("--all-countries");
+const onlyCountry = requestedCountry ||
+  (allCountries ? null : resolveDefaultCatalogCountry(CSV_ROOT));
 const onlyCheck = flag("check");
 const onlyStage = flag("stage");
 const wantList = argv.includes("--list");
@@ -646,6 +651,10 @@ export function filterChecks(checks, { check = "", stage = "" } = {}) {
 }
 
 function main() {
+  if (requestedCountry && allCountries) {
+    console.error("--country y --all-countries no se pueden combinar.");
+    process.exit(1);
+  }
   const provinces = readAreas();
   if (provinces.length === 0) {
     if (onlyArea) {
@@ -772,7 +781,7 @@ function main() {
 
   if (!wantList && !onlyCheck) {
     console.log(
-      "Detalle por fila: --check <id> --list · un país: --country <iso> · una area: --area <nombre> · JSON: --json",
+      "Detalle por fila: --check <id> --list · otro país: --country <iso> · todos: --all-countries · una area: --area <nombre> · JSON: --json",
     );
   }
 }

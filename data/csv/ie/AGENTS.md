@@ -1,8 +1,10 @@
 # Ireland
 
 ## Operating state
-- Priorities: resolve held candidates, strengthen admitted rows with current
-  producer sources and improve productive-unit location.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - `municipio` is the town or village the producer publishes, not a local

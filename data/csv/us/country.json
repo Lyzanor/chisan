@@ -1,5 +1,6 @@
 {
   "label": "United States",
+  "publicationStatus": "standby",
   "unit": {
     "one": "state or federal district",
     "many": "states and federal district"

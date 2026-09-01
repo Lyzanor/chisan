@@ -1,10 +1,10 @@
 # Argentina
 
 ## Operating state
-- Public catalog status: standby. Keep the catalog, evidence and editorial
-  workflows maintained, but do not publish or index this country.
-- Priorities: targeted area discovery, stronger producer-owned evidence for
-  directory-seeded rows and resolution of online sales.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - Argentine addresses do not use one consistent administrative layer:

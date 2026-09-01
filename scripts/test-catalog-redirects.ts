@@ -61,9 +61,10 @@ test("repository manifests produce unique static normalization sources", () => {
   );
 
   assert.equal(rewrites.length, countries.length + aliasCount);
-  assert.ok(
-    countries.every(({ slug }) => !["ar", "in", "za"].includes(slug)),
-    "standby countries must not install public normalization rewrites",
+  assert.deepEqual(
+    countries.map(({ slug }) => slug),
+    ["es"],
+    "Vercel normalization rewrites must come only from published manifests",
   );
   assert.ok(rewrites.length < 1_024, "catalog rewrites must stay below Vercel's limit");
   assert.equal(new Set(sources).size, sources.length);
@@ -73,15 +74,6 @@ test("repository manifests produce unique static normalization sources", () => {
         rewrite.source === "/:catalog(es-es|es)/logrono/:path*" &&
         rewrite.destination ===
           "/api/catalog-redirect/es/es/:catalog/la-rioja/:path*",
-    ),
-  );
-  assert.ok(
-    rewrites.some(
-      (rewrite) =>
-        rewrite.source ===
-          "/:catalog(en-be|fr-be|nl-be|be)/bruselas/:path*" &&
-        rewrite.destination ===
-          "/api/catalog-redirect/be/fr/:catalog/bruxelles-capitale/:path*",
     ),
   );
   assert.ok(
@@ -182,7 +174,10 @@ test("Next config installs build rewrites and disables image transformations", a
   const rewrites = await nextConfig.rewrites();
   assert.equal(Array.isArray(rewrites), false);
   if (Array.isArray(rewrites)) assert.fail("Expected phased rewrites");
-  assert.ok(rewrites.beforeFiles && rewrites.beforeFiles.length > 15);
+  assert.deepEqual(
+    rewrites.beforeFiles,
+    buildCatalogNormalizationRewritesFromManifests(),
+  );
   assert.deepEqual(rewrites.afterFiles, []);
   assert.deepEqual(rewrites.fallback, []);
 });

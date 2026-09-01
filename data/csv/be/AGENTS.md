@@ -1,8 +1,10 @@
 # Belgium
 
 ## Operating state
-- Priorities: review inherited rows and investigate decisions through
-  area-scoped source passes.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - `municipio` is the official municipality, never a deelgemeente or postal

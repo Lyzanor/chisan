@@ -24,6 +24,7 @@ import {
   validateTranslationOutput,
   writeTranslationSidecarAtomic,
 } from "./lib/catalog-translations.mjs";
+import { resolveDefaultCatalogCountry } from "./lib/catalog-operation-scope.mjs";
 import { createOpenAICompatibleAdapter } from "./lib/translation-providers.mjs";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
@@ -44,9 +45,10 @@ const DEFAULT_ENGINE_REGISTRY_PATH = path.join(
 
 function usage() {
   console.log(`Usage: node scripts/generate-catalog-translations.mjs \\
-  --country <cc> --target-locale <locale> [options]
+  --target-locale <locale> [--country <cc>] [options]
 
 Options:
+  --country <cc>        Override the sole published country used by default.
   --area <area>          Generate only one catalog area.
   --batch <n>/<total>    Generate one deterministic shard (1-based).
   --batch-size <n>       Maximum structured entries per provider request (default 25).
@@ -118,8 +120,11 @@ function parseArgs(argv) {
     else if (argument === "--help" || argument === "-h") args.help = true;
     else throw new Error(`unknown argument '${argument}'`);
   }
-  if (!args.help && (!args.country || !args.targetLocale)) {
-    throw new Error("--country and --target-locale are required");
+  if (!args.help && !args.targetLocale) {
+    throw new Error("--target-locale is required");
+  }
+  if (!args.help && !args.country) {
+    args.country = resolveDefaultCatalogCountry(args.csvRoot);
   }
   return args;
 }

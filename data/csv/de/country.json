@@ -1,5 +1,6 @@
 {
   "label": "Germany",
+  "publicationStatus": "standby",
   "unit": {
     "one": "federal state",
     "many": "federal states"

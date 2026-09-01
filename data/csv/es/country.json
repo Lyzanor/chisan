@@ -1,5 +1,6 @@
 {
   "label": "Spain",
+  "publicationStatus": "published",
   "unit": {
     "one": "province",
     "many": "provinces"

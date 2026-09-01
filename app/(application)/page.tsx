@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 type Countries = ReturnType<typeof listPublishedCountries>;
 
-function CountryStart({
+function ProjectSummary({
   countries,
   messages,
   locationAreas,
@@ -72,6 +72,10 @@ function CountryStart({
   browserLocales: Locale[];
 }) {
   const localePreferences = { explicitLocale, browserLocales };
+  const onlyCountry = countries.length === 1 ? countries[0] : null;
+  const catalogTitle = onlyCountry
+    ? getLocalizedCatalogLabel(onlyCountry, HOME_LOCALE)
+    : messages.home.chooseCountry;
 
   return (
     <main className="catalog-start-page">
@@ -83,79 +87,17 @@ function CountryStart({
       />
       <section
         className="catalog-start-shell"
-        aria-labelledby="country-start-title"
+        aria-labelledby="home-summary-title"
       >
-        <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
-          <div>
-            <p className="catalog-kicker">{SITE_NAME}</p>
-            <h1 id="country-start-title">{messages.home.chooseCountry}</h1>
-          </div>
-        </div>
-        <LocationOnboarding
-          areas={locationAreas}
-          messages={messages.locationOnboarding}
-          explicitLocale={explicitLocale}
-          browserLocales={browserLocales}
-        />
-
-        <div className="country-card-list">
-          {countries.map((country) => {
-            const places = country.regions.reduce(
-              (total, region) => total + region.areas.length,
-              0,
-            );
-            const countryLabel = getLocalizedCatalogLabel(country, HOME_LOCALE);
-            const areaUnit = getLocalizedCatalogUnit(country, HOME_LOCALE);
-            const regionUnit = getLocalizedCatalogUnit(
-              country,
-              HOME_LOCALE,
-              "region",
-            );
-            const areaCount = formatUnitCount(
-              HOME_LOCALE,
-              places,
-              areaUnit,
-              messages.common.unitCount,
-            );
-            const regionCount = formatUnitCount(
-              HOME_LOCALE,
-              country.regions.length,
-              regionUnit,
-              messages.common.unitCount,
-            );
-            const destinationLocale = resolveDestinationLocale(
-              country,
-              localePreferences,
-            );
-
-            return (
-              <Link
-                key={country.slug}
-                href={buildCatalogHref({
-                  scope: buildCatalogScope(country, destinationLocale),
-                })}
-                className="country-card"
-              >
-                <strong>{countryLabel}</strong>
-                <small>
-                  {formatMessage(messages.home.countrySummary, {
-                    areas: areaCount,
-                    regions: regionCount,
-                  })}
-                </small>
-              </Link>
-            );
-          })}
-        </div>
-
-        <section
-          id="about"
-          className="home-about"
-          aria-labelledby="home-about-title"
-        >
+        <div className="catalog-start-head">
           <div>
             <p className="catalog-kicker">{messages.home.aboutKicker}</p>
-            <h2 id="home-about-title">{messages.siteHeader.tagline}</h2>
+            <h1 id="home-summary-title">{messages.siteHeader.tagline}</h1>
+          </div>
+        </div>
+        <div id="about" className="home-about">
+          <div>
+            <p className="catalog-kicker">{SITE_NAME}</p>
           </div>
           <div className="home-about__copy">
             <p>{messages.home.aboutDescription}</p>
@@ -165,6 +107,78 @@ function CountryStart({
                 {messages.siteFooter.aboutLink}
               </Link>
             </p>
+          </div>
+        </div>
+
+        <section className="home-catalog" aria-labelledby="country-start-title">
+          <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
+            <div>
+              <p className="catalog-kicker">{messages.siteFooter.catalogLink}</p>
+              <h2 id="country-start-title">{catalogTitle}</h2>
+            </div>
+          </div>
+          <LocationOnboarding
+            areas={locationAreas}
+            messages={messages.locationOnboarding}
+            explicitLocale={explicitLocale}
+            browserLocales={browserLocales}
+          />
+
+          <div
+            className={`country-card-list${
+              onlyCountry ? " country-card-list--single" : ""
+            }`}
+          >
+            {countries.map((country) => {
+              const places = country.regions.reduce(
+                (total, region) => total + region.areas.length,
+                0,
+              );
+              const countryLabel = getLocalizedCatalogLabel(
+                country,
+                HOME_LOCALE,
+              );
+              const areaUnit = getLocalizedCatalogUnit(country, HOME_LOCALE);
+              const regionUnit = getLocalizedCatalogUnit(
+                country,
+                HOME_LOCALE,
+                "region",
+              );
+              const areaCount = formatUnitCount(
+                HOME_LOCALE,
+                places,
+                areaUnit,
+                messages.common.unitCount,
+              );
+              const regionCount = formatUnitCount(
+                HOME_LOCALE,
+                country.regions.length,
+                regionUnit,
+                messages.common.unitCount,
+              );
+              const destinationLocale = resolveDestinationLocale(
+                country,
+                localePreferences,
+              );
+
+              return (
+                <Link
+                  key={country.slug}
+                  href={buildCatalogHref({
+                    scope: buildCatalogScope(country, destinationLocale),
+                  })}
+                  className="country-card"
+                >
+                  <strong>{countryLabel}</strong>
+                  <small>
+                    {formatMessage(messages.home.countrySummary, {
+                      areas: areaCount,
+                      regions: regionCount,
+                    })}
+                  </small>
+                </Link>
+              );
+            })}
           </div>
         </section>
       </section>
@@ -184,7 +198,7 @@ export default async function HomePage() {
     headers(),
   ]);
   return (
-    <CountryStart
+    <ProjectSummary
       countries={countries}
       messages={messages}
       locationAreas={locationAreas}

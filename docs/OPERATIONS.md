@@ -142,9 +142,10 @@ the local diff review, semantic review or repository gate.
 
 Before publishing or changing one locale:
 
-Use `npx pnpm report:translation-readiness -- --country <cc>` to inspect one
-country without provider calls or catalog writes. Add `--area <area>` or
-`--target-locale <locale>` for a bounded report. Its statuses distinguish
+Use `npx pnpm report:translation-readiness` to inspect the sole published
+country without provider calls or catalog writes. Pass `--country <cc>` for a
+deliberate override or `--all-countries` for a cross-catalog report; add
+`--area <area>` or `--target-locale <locale>` for a bounded report. Its statuses distinguish
 missing or stale machine rows from translations that require renewed human
 review; they do not prove full publication readiness.
 
@@ -613,6 +614,10 @@ submit a fictitious ownership claim or producer change merely to test a form.
 
 - Open `/`, one area and one producer detail; confirm canonical links use
   `https://chisan.app`.
+- Confirm the home page, catalog routes, normalization rewrites and sitemap
+  expose only manifest-published countries. Direct requests to a representative
+  standby country return 404 while its catalog remains valid under the full
+  data and translation checks.
 - Confirm `/privacy` is reachable from the footer. When AdSense ownership is
   staged, confirm the page source contains the expected
   `google-adsense-account` meta tag and `/ads.txt` returns the exact authorized

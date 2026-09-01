@@ -1,8 +1,10 @@
 # Portugal
 
 ## Operating state
-- Priorities: resolve held candidates, expand selectively and improve individual
-  published rows.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - `municipio` is the concelho, never the freguesia, localidade or district;

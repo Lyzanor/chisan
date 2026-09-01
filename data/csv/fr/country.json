@@ -1,5 +1,6 @@
 {
   "label": "France",
+  "publicationStatus": "standby",
   "unit": {
     "one": "department",
     "many": "departments"

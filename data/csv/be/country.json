@@ -1,5 +1,6 @@
 {
   "label": "Belgique",
+  "publicationStatus": "standby",
   "unit": { "one": "province", "many": "provinces" },
   "regionUnit": { "one": "région", "many": "régions" },
   "aliases": {

@@ -1,8 +1,9 @@
 # Spain
 
 ## Operating state
-- Priorities: targeted area discovery and ongoing review of individual rows in
-  a mature catalog.
+- Public catalog status: published and the primary operating scope.
+- Priorities: targeted area discovery, translation and geolocation coverage,
+  and ongoing review of individual rows in a mature catalog.
 
 ## Country rules
 - `municipio` is the official municipality, not a barrio, distrito, pedanía,

@@ -4,6 +4,22 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-01 — Spain-first project summary
+
+final result: passed
+
+The neutral home now opens with the project promise and concise explanatory
+copy, then presents the active catalog as a separate section. With Spain as the
+sole published manifest, the catalog section uses one full-width Spain entry;
+standby countries create no empty cards, placeholder controls or visual noise.
+Location remains an optional action inside the catalog section, and manual
+navigation still works without browser permission or JavaScript.
+
+Rejected: a country-launch dashboard, disabled country cards, standby badges
+and a Spain-specific component fork. The layout continues to render the
+manifest-published collection and returns naturally to a multi-country grid
+when more than one country is published.
+
 ## 2026-09-01 — Shared producer-map selection contract
 
 final result: passed

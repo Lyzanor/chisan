@@ -1,5 +1,6 @@
 {
   "label": "Nederland",
+  "publicationStatus": "standby",
   "unit": { "one": "provincie", "many": "provincies" },
   "regionUnit": { "one": "regio", "many": "regio's" },
   "aliases": {

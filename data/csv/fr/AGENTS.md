@@ -1,8 +1,10 @@
 # France
 
 ## Operating state
-- Priorities: review inherited rows and record decisions by department; there is
-  no country-wide discovery roster.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - `municipio` is the current official commune. A commune nouvelle replaces

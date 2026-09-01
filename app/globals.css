@@ -298,9 +298,11 @@ a {
   gap: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 1rem;
 }
 
-.catalog-start-head h1 {
+.catalog-start-head h1,
+.catalog-start-head h2 {
   margin: 0;
   font-family: var(--chisan-font-sans);
   font-size: clamp(1.65rem, 3vw, 2.6rem);
@@ -319,6 +321,10 @@ a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
   margin-top: 1rem;
+}
+
+.country-card-list--single {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .country-card {
@@ -375,6 +381,12 @@ a {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.home-catalog {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
 }
 
 .purpose-page {

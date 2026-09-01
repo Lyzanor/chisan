@@ -1,8 +1,10 @@
 # United Kingdom
 
 ## Operating state
-- Priorities: area-scoped discovery from protected-name, trade and regulatory
-  sources, followed by review of admitted rows.
+- Public catalog status: standby. Keep catalog, evidence, account and
+  repository-wide validation state maintained, but do not publish or index it.
+- Pause routine discovery, enrichment, translation and geolocation updates.
+  Resume them only through an explicit country-scoped instruction.
 
 ## Country rules
 - The post town in a UK address is a Royal Mail sorting label and may name a town

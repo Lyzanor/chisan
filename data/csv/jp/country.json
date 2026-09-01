@@ -1,5 +1,6 @@
 {
   "label": "Japan",
+  "publicationStatus": "standby",
   "unit": {
     "one": "prefecture",
     "many": "prefectures"

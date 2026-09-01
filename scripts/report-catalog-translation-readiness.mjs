@@ -20,6 +20,7 @@ import {
   translationPairKey,
   validateTranslationOutput,
 } from "./lib/catalog-translations.mjs";
+import { resolveDefaultCatalogCountry } from "./lib/catalog-operation-scope.mjs";
 import { readTranslationBenchmarkSpec } from "./benchmark-catalog-translations.mjs";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
@@ -48,8 +49,9 @@ function usage() {
   console.log(`Usage: node scripts/report-catalog-translation-readiness.mjs [options]
 
 Options:
-  --country <cc>          Limit the report to one country.
-  --area <area>           Limit the report to one area (requires --country).
+  --country <cc>          Override the sole published country used by default.
+  --all-countries         Report every catalog country, including standby.
+  --area <area>           Limit the report to one area in the selected country.
   --target-locale <code>  Limit the report to one maintained presentation locale.
   --output <path>         Write deterministic JSON; no catalog file is changed.
   --root <csv-root>       Override data/csv (primarily for isolated tests).
@@ -62,6 +64,7 @@ Options:
 function parseArgs(argv) {
   const args = {
     country: null,
+    allCountries: false,
     area: null,
     targetLocale: null,
     outputPath: null,
@@ -80,6 +83,7 @@ function parseArgs(argv) {
     };
     if (argument === "--") continue;
     if (argument === "--country") args.country = next();
+    else if (argument === "--all-countries") args.allCountries = true;
     else if (argument === "--area") args.area = next();
     else if (argument === "--target-locale" || argument === "--locale") {
       args.targetLocale = next();
@@ -91,9 +95,15 @@ function parseArgs(argv) {
     else if (argument === "--help" || argument === "-h") args.help = true;
     else throw new Error(`unknown argument '${argument}'`);
   }
-  if (args.area && !args.country) throw new Error("--area requires --country");
+  if (args.country && args.allCountries) {
+    throw new Error("--country and --all-countries cannot be combined");
+  }
+  if (args.area && args.allCountries) throw new Error("--area requires one country");
   if (args.country && !/^[a-z]{2}$/.test(args.country)) {
     throw new Error("--country must be a two-letter catalog code");
+  }
+  if (!args.help && !args.country && !args.allCountries) {
+    args.country = resolveDefaultCatalogCountry(args.csvRoot);
   }
   return args;
 }

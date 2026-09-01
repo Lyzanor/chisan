@@ -611,7 +611,13 @@ only after its dictionaries, territorial and unit labels, controlled-value
 labels, metadata templates and current description variants are complete for
 that exact scope. The manifest's country publication status and locale policy
 drive routes, selectors, alternates and sitemap enumeration; do not maintain a
-second release list in code.
+second release list in code. A standby country also pauses routine discovery,
+enrichment, translation materialization and geolocation work through its
+`Operating state`; repository-wide migrations, validators, integrity repairs
+and account references still include it. Operational commands with no country
+argument may derive their default only when the manifests expose exactly one
+published country. An explicit country scope remains available for deliberate
+standby maintenance and future publication work.
 
 Each real published page has localized title, description, Open Graph and
 Twitter metadata and a self-referential canonical URL without `category` or

@@ -265,6 +265,12 @@ an already-open source when the identity match is clear, but leave lateral
 research for another batch. Country priorities and auditor filters select work;
 they never classify a whole country or permanently complete a producer.
 
+When exactly one country is published, an editorial command without an explicit
+country may use that manifest-owned country as its working default. Pass
+`--country <cc>` to work deliberately in another country, or the documented
+all-country option for a cross-catalog audit. Standby countries remain inside
+repository-wide checks but do not receive routine discovery or enrichment.
+
 ## Level 1 — Discovery
 
 **Objective:** collect concrete, locatable signals of plausible producers, not

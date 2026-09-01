@@ -127,6 +127,11 @@ only when its intended geometry and ambiguity fixtures pass review; an
 uncovered location remains a manual selection even when a nearby catalog area
 exists.
 
+The neutral home intersects those reviewed assets with the manifest-published
+country list before offering location routing. Prepared geometry for a standby
+country may remain versioned and validated, but it cannot become a destination
+until that country's manifest is published again.
+
 The routing flow exposes only the exact derived catalog key to navigation, which
 then uses the central catalog URL builder. The presentation-only map flow may
 hold the validated position only inside its local nearby-producer selection,
