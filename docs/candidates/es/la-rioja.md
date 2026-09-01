@@ -26,3 +26,15 @@ Verify current first-party channels and durable identities before admission. Eig
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Miel y Miel | La Rioja; municipality unresolved | `Otros` — Miel ecológica | A 2024 Carrefour SME recognition identifies the entity as a regional food business; the award supports discovery but does not prove supplier status, productive responsibility or eligibility. | [Carrefour evidence](https://es.linkedin.com/posts/carrefoures_premiospymecarrefour-activity-7287499210910748672-sZxi) | — | Find a current producer-owned source; confirm municipality, apiary/packing unit, own honey offer, legal identity and current activity. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Venta Moncalvillo | Daroca de Rioja | `Fruta y verdura` — biodynamic farm and garden; also animals | The restaurant describes an extensive productive garden and farm managed as part of its food system. | [Venta Moncalvillo](https://ventamoncalvillo.com/web/venta-moncalvillo-granja-y-huerta/) | <https://ventamoncalvillo.com/web/venta-moncalvillo-granja-y-huerta/> | Verify the exact productive unit, establish the durable producer identity and prove a current own take-home offer. |

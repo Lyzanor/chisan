@@ -43,10 +43,22 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
-- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only; the Menorca cheese council supports the productive identity and offer but does not replace admission review.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Sa Canova / Lacto Industrial Menorquina | Ferreries | `Lácteos y quesos` — Mahón-Menorca cheese and other dairy products | The Menorca cheese association and DOP council identify the active manufacturer and Sa Canova brand at the Ferreries industrial estate with current sale and export activity. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesosacanova.com/> | Confirm the exact productive address, current producer-owned offer and legal/public row identity before admission. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission. The area had capacity for three new leads under the backlog guard, so Andreu Genestra, Maca de Castro and Béns d'Avall were retained; Ca Na Toneta and Terrae were deferred.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Andreu Genestra | Productive estate in Mallorca; current restaurant in Llucmajor | `Vino` — own vineyard and wine; also olive oil, honey and garden | Public material attributes several productive lines to the restaurant project, including vineyard and bottled outputs. | [Guía Repsol](https://www.guiarepsol.com/es/comer/nuestros-favoritos/nuevos-platos-andreu-genestra-mallorca/) | <https://andreugenestra.com/> | Locate the current productive units after the restaurant move, establish the durable producer identity and verify the current own bottled offer. |
+| Maca de Castro | Gardens in Sa Pobla; restaurant in Alcúdia | `Fruta y verdura` — own garden produce | The restaurant project identifies cultivated gardens in Sa Pobla as part of its direct production. | [Maca de Castro](https://macadecastro.com/maca-de-castro/) | <https://macadecastro.com/maca-de-castro/> | Verify the exact garden unit and governance, establish the durable producer identity and prove a current own take-home offer. |
+| Béns d'Avall | Sóller / Serra de Tramuntana | `Aceite` — own olive grove and oil; also citrus and garden produce | Public coverage describes a long-standing own olive grove with material oil output, alongside citrus and permaculture cultivation. | [FaceFood](https://facefoodmag.com/mallorca/magazine/jaume-vicens-bens-davall-todo-queda-familia) | — | Verify the exact productive unit from a first-party source, establish the durable producer identity and confirm a current public bottled offer. |

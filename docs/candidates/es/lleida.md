@@ -36,3 +36,15 @@
 |---|---|---|---|---|---|---|
 | Cooperativa Agropecuària i Secció de Crèdit de Soses | Soses | `Fruta y verdura` — Fruta de hueso (nectarina, albaricoque, paraguayo, melocotón) | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Fruta de hueso (nectarina, albaricoque, paraguayo, melocotón); this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56448) | — | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
 | Domingo Catalá | La Portella | `Fruta y verdura` — Fruta de hueso (nectarina, albaricoque, paraguayo, melocotón) | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Fruta de hueso (nectarina, albaricoque, paraguayo, melocotón); this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56448) | <https://www.dcatala.com/> | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| La Boscana | Bellvís | `Fruta y verdura` — ecological garden and fruit arboretum | The estate describes its ecological cultivation and a fruit-focused productive project connected to the restaurant. | [Green Star note](https://laboscana.net/es/recibimos-la-estrella-verde-michelin/) | <https://laboscana.net/projecte-fruita/> | Verify the exact productive unit, the durable producer identity and a current own take-home offer. |

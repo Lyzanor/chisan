@@ -34,9 +34,20 @@
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
 - Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only. The linked first-party site supports the lead but does not replace the normal admission, evidence and duplicate review.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Quesos Sur del Torcal | Villanueva de la Concepción; La Higuera | `Lácteos y quesos` — artisan cheese | The current producer site presents its own cheese range and publishes a productive address on the La Joya–Villanueva de la Concepción road. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesossurdeltorcal.com/> | Confirm the legal/public identity, current own offer and exact productive address through the normal admission and evidence pass. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Sollo | Fuengirola | `Pescado` — freshwater fish raised with aquaponics; also vegetables | The restaurant describes an aquaponic system that produces freshwater fish and vegetables for its kitchen. | [Sollo](https://www.sollo.es/es/) | <https://www.sollo.es/es/> | Verify the exact productive unit, a durable producer identity and a current own take-home offer beyond restaurant service. |

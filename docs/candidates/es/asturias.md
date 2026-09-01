@@ -28,10 +28,20 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
-- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only; current regional industry material supports the productive unit but does not replace admission review.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Juan Martínez | Siero; Marcenado locality | `Lácteos y quesos` — natural and processed cheese, cheese creams and dairy preparations | Current IDEPA and ASTUREX records identify an active Siero production centre with multiple cheese lines and own brands. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://www.juanmartinezsl.com/> | Confirm the exact productive address, current own offer and durable public identity; distinguish own production from imported or third-party cheeses also commercialized by the company. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Narbasu | Cereceda, Piloña | `Fruta y verdura` — own garden | The restaurant presents an own garden as a direct source for its kitchen. | [Narbasu](https://www.narbasu.com/restaurante/) | <https://www.narbasu.com/restaurante/> | Verify the productive garden, establish a durable producer identity and prove a current own take-home offer rather than restaurant-only consumption. |

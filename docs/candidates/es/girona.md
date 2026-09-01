@@ -34,3 +34,17 @@
 ## Remaining work
 
 Verify current activity, exact municipality/address, legal producer identity, own offer, and catalog-level eligibility from first-party or authoritative records. The Fesols directory establishes growing activity and location but not an attributable current market offer. The remaining entries are holds; no admission is asserted for them.
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Empòrium / Bistrot 1965 | Castelló d'Empúries | `Conservas` — preserves and condiments from a shared garden | The two restaurant names share the Hotel Empòrium productive system, which describes its garden, aromatic plants and in-house preserves; this is one lead, not two productive units. | [Empòrium sustainability](https://www.emporiumhotel.com/es/sostenibilidad) | <https://www.emporiumhotel.com/es/sostenibilidad> | Establish one durable productive identity, verify the garden and processing unit, and prove a current take-home own offer. |
+| El Celler de Can Roca / Mas Marroch | Vilablareix | `Fruta y verdura` — Mas Marroch garden and Terra Animada project | The Roca project presents Mas Marroch as a cultivated productive setting within its wider hospitality ecosystem. | [Roca brothers](https://cellercanroca.com/los-hermanos-roca/) | <https://cellercanroca.com/universo-roca/mas-marroch/> | Establish the exact productive unit and producer identity, prove a current own take-home offer, and distinguish it from the published Obrador Rocambolesc identity. |
+| Les Cols | Cultivated fields in Vall de Bianya; restaurant in Olot | `Fruta y verdura` — garden and field crops; also eggs | The project describes cultivated fields and related food-production experiments beyond ordinary restaurant purchasing. | [Les Cols projects](https://www.lescols.com/es/proyectos/) | <https://www.lescols.com/es/proyectos/> | Resolve the exact productive municipality and unit, establish a durable producer identity and prove a current own take-home offer. |

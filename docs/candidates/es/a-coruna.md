@@ -39,3 +39,16 @@ These directory records remain unresolved and are not published catalog rows.
 | name | locality / clue | discovery | remaining work |
 |---|---|---|---|
 | Lugar Salgueiral | O Regueiro | [GetRawMilk](https://getrawmilk.com/map/lugar-salgueiral-o-regueiro-es) | The listing gives a place name and a recent directory claim, but no attributable public producer identity or municipality has been established. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| O Balado | Boqueixón | `Fruta y verdura` — own garden | Public material describes an own garden supplying the restaurant. | [Guía Repsol](https://www.guiarepsol.com/es/fichas/restaurante/o-balado-75246/) | <https://obalado.com/> | Verify the exact productive unit, establish a durable producer identity and prove a current own take-home offer. |
+| O Secadeiro | Serra de Outes | `Fruta y verdura` — own garden | The restaurant presents cultivation as part of its local food project. | [O Secadeiro](https://osecadeiro.es/) | <https://osecadeiro.es/> | Verify the exact productive unit, establish a durable producer identity and prove a current own take-home offer. |

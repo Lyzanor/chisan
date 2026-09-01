@@ -8,6 +8,19 @@
 
 | nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cenador de Amós | Villaverde de Pontones, Ribamontán al Monte | `Fruta y verdura` — own garden | Its sustainability material describes an own garden supplying part of the restaurant's plant produce. | [Cenador de Amós](https://cenadordeamos.com/sostenibilidad/) | <https://cenadordeamos.com/sostenibilidad/> | Verify the exact productive unit, establish a durable producer identity and prove a current own take-home offer. |
+| Casona del Judío | Santander | `Fruta y verdura` — coastal herb garden | The restaurant describes an own coastal garden used to grow aromatic and culinary plants. | [Casona del Judío](https://www.casonadeljudio.com/sostenibilidad/) | <https://www.casonadeljudio.com/sostenibilidad/> | Locate and verify the garden, establish a durable producer identity and prove a current own take-home offer. |
 | Lácteos de Santander | Meruelo | `Lácteos y quesos` — consumer dairy products | The company identifies a current Meruelo plant with substantial capacity for consumer dairy formats and gives its own operating address; this fills a visible Cantabrian industrial gap. | [Lácteos de Santander](https://lacteosdesantander.es/) | [PRTR plant record](https://eu.prtr-es.miteco.gob.es/informes/fichacomplejo.aspx?Id_Complejo=1909) | Confirm current own-brand/public offer and legal relationship to Leche Celta before admission. |
 
 ## Remaining work
