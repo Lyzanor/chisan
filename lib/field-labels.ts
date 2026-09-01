@@ -19,6 +19,12 @@ const FIELD_LABEL_KEYS: Record<string, FieldLabelKey> = {
   mensaje_comunidad_locale: "communityMessageLocale",
   "enlace destacado 1": "highlightedLink1",
   "enlace destacado 2": "highlightedLink2",
+  video: "video",
+  "quien hay detras": "behindProducer",
+  quien_hay_detras_locale: "behindProducerLocale",
+  historia: "history",
+  historia_locale: "historyLocale",
+  "fecha ultimo cambio": "lastApprovedChange",
   horario: "openingHours",
   telefono: "phone",
   correo: "email",
@@ -32,6 +38,17 @@ const FIELD_LABEL_KEYS: Record<string, FieldLabelKey> = {
   lat: "latitude",
   lon: "longitude",
   verificacion: "verification",
+};
+
+const OPTIONAL_FIELD_LABEL_FALLBACKS: Partial<
+  Record<FieldLabelKey, string>
+> = {
+  video: "Video",
+  behindProducer: "Who is behind it",
+  behindProducerLocale: "Who-is-behind language",
+  history: "History",
+  historyLocale: "History language",
+  lastApprovedChange: "Last approved producer change",
 };
 
 function normalizeKey(key: string): string {
@@ -50,7 +67,7 @@ export function getFieldLabel(
   const normalized = normalizeKey(csvColumnName);
   const labelKey = FIELD_LABEL_KEYS[normalized];
   if (labelKey) {
-    return labels[labelKey];
+    return labels[labelKey] ?? OPTIONAL_FIELD_LABEL_FALLBACKS[labelKey] ?? csvColumnName;
   }
   if (!csvColumnName) return csvColumnName;
   return (

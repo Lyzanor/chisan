@@ -104,10 +104,14 @@ function readSubmittedProducerChangeValues(formData: FormData): Record<string, s
               const item = formData.get(field.key);
               return typeof item === "string" ? item : "";
             })();
-      const preservedValue =
-        field.key === "descripcion" || field.key === "mensaje a la comunidad"
-          ? Array.from(value).slice(0, responseLimit).join("")
-          : value.slice(0, responseLimit);
+      const preservedValue = [
+        "descripcion",
+        "mensaje a la comunidad",
+        "quien hay detras",
+        "historia",
+      ].includes(field.key)
+        ? Array.from(value).slice(0, responseLimit).join("")
+        : value.slice(0, responseLimit);
       return [field.key, preservedValue];
     }),
   );

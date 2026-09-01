@@ -81,6 +81,15 @@ const messages = {
       "Un mensaje público escrito por el productor, conservado en su idioma original y revisado antes de publicarse.",
     mensaje_comunidad_locale:
       "El idioma de origen del mensaje a la comunidad; déjalo vacío solo si el mensaje está vacío.",
+    video: "Una URL HTTPS oficial de YouTube para un vídeo público del productor.",
+    "quien hay detras":
+      "Texto revisado del productor sobre las personas propietarias o el equipo de esta unidad productiva.",
+    quien_hay_detras_locale:
+      "El idioma de origen de quién hay detrás; déjalo vacío solo si el texto está vacío.",
+    historia:
+      "Texto revisado del productor sobre el origen y la evolución de esta unidad productiva.",
+    historia_locale:
+      "El idioma de origen de la historia; déjalo vacío solo si la historia está vacía.",
     "enlace destacado 1":
       "Un artículo, entrevista u otra página pública HTTP(S) relevante sobre este productor.",
     "enlace destacado 2":
@@ -211,6 +220,12 @@ const messages = {
     communityMessageLocale: "Idioma del mensaje a la comunidad",
     highlightedLink1: "Enlace destacado 1",
     highlightedLink2: "Enlace destacado 2",
+    video: "Vídeo",
+    behindProducer: "Quién hay detrás",
+    behindProducerLocale: "Idioma de quién hay detrás",
+    history: "Historia",
+    historyLocale: "Idioma de la historia",
+    lastApprovedChange: "Último cambio aprobado del productor",
     openingHours: "Horario",
     phone: "Teléfono",
     email: "Correo electrónico",

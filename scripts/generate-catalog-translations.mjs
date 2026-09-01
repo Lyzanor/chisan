@@ -6,7 +6,6 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 import {
   SUPPORTED_TRANSLATION_TARGET_LOCALE_SET,
-  TRANSLATION_FIELD,
   TRANSLATION_PROMPT_VERSION,
   TRANSLATION_REPAIR_SYSTEM_PROMPT,
   TRANSLATION_SYSTEM_PROMPT,
@@ -20,6 +19,7 @@ import {
   readTranslationEngineRegistry,
   readTranslationGlossary,
   readTranslationSidecar,
+  translationFieldSpec,
   translationPairKey,
   validateTranslationOutput,
   writeTranslationSidecarAtomic,
@@ -179,6 +179,12 @@ export function validateTranslationBatchResponse({ entries, response, targetLoca
     const output = outputById.get(entry.id);
     const text = normalizeTranslationSource(output.text);
     try {
+      const spec = translationFieldSpec(entry.field ?? "descripcion");
+      if (!spec || Array.from(text).length > spec.translatedMaxCharacters) {
+        throw new Error(
+          `translation text must be at most ${spec?.translatedMaxCharacters ?? 0} Unicode characters`,
+        );
+      }
       validateTranslationOutput({
         source: entry.text,
         sourceLocale: entry.sourceLocale,
@@ -315,6 +321,10 @@ function machineRowIsReusable(row, source, targetLocale, adapter, glossary) {
     row.glossary_version === glossary.version;
   if (!metadataMatches) return false;
   try {
+    const spec = translationFieldSpec(source.field);
+    if (!spec || Array.from(row.text).length > spec.translatedMaxCharacters) {
+      return false;
+    }
     validateTranslationOutput({
       source: source.text,
       sourceLocale: source.sourceLocale,
@@ -354,8 +364,8 @@ function selectSources(rows, { targetLocale, area, batch, limit }) {
   let selected = rows
     .filter((source) => source.text && source.sourceLocale !== targetLocale)
     .sort((left, right) => compareTranslationRows(
-      { producer_id: left.producerId, field: TRANSLATION_FIELD },
-      { producer_id: right.producerId, field: TRANSLATION_FIELD },
+      { producer_id: left.producerId, field: left.field },
+      { producer_id: right.producerId, field: right.field },
     ));
   if (area) selected = selected.filter((source) => source.area === area);
   if (batch) selected = selected.filter((_, index) => index % batch.total === batch.index - 1);
@@ -435,9 +445,14 @@ export async function generateCatalogTranslations({
     seen.add(key);
   }
 
-  const selectedSources = selectSources(canonical.rows, { targetLocale, area, batch, limit });
+  const selectedSources = selectSources(canonical.translationSources, {
+    targetLocale,
+    area,
+    batch,
+    limit,
+  });
   const selectedKeys = new Set(
-    selectedSources.map((source) => translationPairKey(source.producerId, TRANSLATION_FIELD)),
+    selectedSources.map((source) => translationPairKey(source.producerId, source.field)),
   );
   const fullyScoped = !area && !batch && limit === null;
   const output = new Map();
@@ -450,11 +465,8 @@ export async function generateCatalogTranslations({
 
   for (const row of existingRows) {
     const key = translationPairKey(row.producer_id, row.field);
-    const source = canonical.byId.get(row.producer_id);
-    const expected =
-      row.field === TRANSLATION_FIELD &&
-      source?.text &&
-      source.sourceLocale !== targetLocale;
+    const source = canonical.byKey.get(key);
+    const expected = source?.text && source.sourceLocale !== targetLocale;
 
     if (row.origin === "reviewed") {
       output.set(key, row);
@@ -491,12 +503,13 @@ export async function generateCatalogTranslations({
   }
 
   for (const source of selectedSources) {
-    const key = translationPairKey(source.producerId, TRANSLATION_FIELD);
+    const key = translationPairKey(source.producerId, source.field);
     const existing = output.get(key);
     if (existing?.origin === "reviewed" || existing?.origin === "machine") continue;
     pending.push({
-      id: `${source.producerId}:${TRANSLATION_FIELD}`,
+      id: `${source.producerId}:${source.field}`,
       producerId: source.producerId,
+      field: source.field,
       producerName: source.producerName,
       sourceLocale: source.sourceLocale,
       sourceText: source.text,
@@ -519,10 +532,10 @@ export async function generateCatalogTranslations({
       repaired += validated.filter((item) => item.repaired).length;
       const outputById = new Map(validated.map((item) => [item.id, item.text]));
       for (const entry of entries) {
-        const key = translationPairKey(entry.producerId, TRANSLATION_FIELD);
+        const key = translationPairKey(entry.producerId, entry.field);
         output.set(key, {
           producer_id: entry.producerId,
-          field: TRANSLATION_FIELD,
+          field: entry.field,
           source_locale: entry.sourceLocale,
           source_hash: hashTranslationSource(entry.sourceText),
           text: outputById.get(entry.id),
@@ -547,7 +560,9 @@ export async function generateCatalogTranslations({
           targetLocale,
         });
       }
-      const source = canonical.byId.get(row.producer_id);
+      const source = canonical.byKey.get(
+        translationPairKey(row.producer_id, row.field),
+      );
       if (
         !source ||
         source.sourceLocale === targetLocale ||
@@ -556,6 +571,12 @@ export async function generateCatalogTranslations({
         continue;
       }
       try {
+        const spec = translationFieldSpec(row.field);
+        if (!spec || Array.from(row.text).length > spec.translatedMaxCharacters) {
+          throw new Error(
+            `translation text must be at most ${spec?.translatedMaxCharacters ?? 0} Unicode characters`,
+          );
+        }
         validateTranslationOutput({
           source: source.text,
           sourceLocale: source.sourceLocale,
@@ -566,7 +587,7 @@ export async function generateCatalogTranslations({
         });
       } catch (error) {
         throw new Error(
-          `${sidecarPath}: producer_id '${row.producer_id}' translation content failed validation: ${error instanceof Error ? error.message : String(error)}`,
+          `${sidecarPath}: producer_id '${row.producer_id}' field '${row.field}' translation content failed validation: ${error instanceof Error ? error.message : String(error)}`,
         );
       }
     }

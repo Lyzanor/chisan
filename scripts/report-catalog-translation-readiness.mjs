@@ -17,6 +17,7 @@ import {
   readTranslationEngineRegistry,
   readTranslationGlossary,
   readTranslationSidecar,
+  translationFieldSpec,
   translationPairKey,
   validateTranslationOutput,
 } from "./lib/catalog-translations.mjs";
@@ -117,6 +118,10 @@ function currentSource(row, source) {
 
 function validContent(row, source, targetLocale, glossary) {
   try {
+    const spec = translationFieldSpec(source.field);
+    if (!spec || Array.from(row.text).length > spec.translatedMaxCharacters) {
+      return false;
+    }
     validateTranslationOutput({
       source: source.text,
       sourceLocale: source.sourceLocale,
@@ -223,7 +228,7 @@ export function buildCatalogTranslationReadiness({
       const approvals = approvedContexts(registry, locale, glossary.version);
 
       for (const areaEntry of areas) {
-        const sources = canonical.rows.filter(
+        const sources = canonical.translationSources.filter(
           (source) => source.region === areaEntry.region && source.area === areaEntry.area,
         );
         const record = {
@@ -234,8 +239,8 @@ export function buildCatalogTranslationReadiness({
           manifest_published:
             publication.get(`${areaEntry.region}/${areaEntry.area}`)?.has(locale) ?? false,
           approved_engine_contexts: approvals.length,
-          canonical_descriptions: sources.filter((source) => source.text).length,
-          canonical_target_descriptions: sources.filter(
+          canonical_translatable_fields: sources.filter((source) => source.text).length,
+          canonical_target_fields: sources.filter(
             (source) => source.text && source.sourceLocale === locale,
           ).length,
           required_sidecar_rows: 0,
@@ -252,7 +257,9 @@ export function buildCatalogTranslationReadiness({
         for (const source of sources) {
           if (!source.text || source.sourceLocale === locale) continue;
           record.required_sidecar_rows += 1;
-          const row = sidecarByKey.get(translationPairKey(source.producerId));
+          const row = sidecarByKey.get(
+            translationPairKey(source.producerId, source.field),
+          );
           if (!row) {
             record.missing += 1;
             continue;
@@ -294,12 +301,12 @@ export function buildCatalogTranslationReadiness({
     statusCounts[record.status] = (statusCounts[record.status] ?? 0) + 1;
   }
   return {
-    schema_version: 2,
+    schema_version: 3,
     mode: "dry_run",
     signal_scope: "translation_materialization_only",
     publication_readiness_evaluated: false,
     publication_readiness_note:
-      "Translation readiness covers canonical description-language pairing and current localized description materialization only. It does not prove complete dictionaries, labels, controlled values, metadata, routes, review, Preview or deployment readiness.",
+      "Translation readiness covers the source-language pairing and current localized materialization of canonical producer profile prose only. It does not prove complete dictionaries, labels, controlled values, metadata, routes, review, Preview or deployment readiness.",
     benchmark_version: spec.version,
     prompt_version: TRANSLATION_PROMPT_VERSION,
     glossary_version: glossary.version,

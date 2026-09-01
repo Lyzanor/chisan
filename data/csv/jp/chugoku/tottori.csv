@@ -1,47 +1,47 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
-chiyomusubi-shuzo-sakaiminato,Chiyomusubi Shuzo,Sakaiminato,Sake,,鳥取県境港市大正町131,,,+81859423191,,http://www.chiyomusubi.co.jp/,,,,35.544758,133.22467,,pendiente,no comprobado,,,138,,,,,,,jp,chugoku,tottori
-inata-honten-yonago,Inata Honten,Yonago,Sake,,鳥取県米子市夜見町325-16,,,+81859291108,,http://www.inata.co.jp/,,,,35.457314,133.292053,,pendiente,no comprobado,,,404,,,,,,,jp,chugoku,tottori
-kumezakura-shuzo-hoki,Kumezakura Shuzo,Hoki,Sake,,鳥取県西伯郡伯耆町丸山1740-50,,,+81859686555,,http://g-beer.jp/kumezakura/,,,,35.391953,133.48262,,pendiente,no comprobado,,,677,,,,,,,jp,chugoku,tottori
-suwa-shuzo-chizu,Suwa Shuzo,Chizu,Sake,,鳥取県八頭郡智頭町智頭451,,,+81858750618,,http://suwaizumi.jp/,,,,35.270245,134.228455,,pendiente,no comprobado,,,1152,,,,,,,jp,chugoku,tottori
-gensui-shuzo-kurayoshi,Gensui Shuzo,Kurayoshi,Sake,,鳥取県倉吉市駄経寺町2-31,,,+81858225020,,http://www.gensui.jp/,,,,35.429005,133.838928,,pendiente,no comprobado,,,262,,,,,,,jp,chugoku,tottori
-takada-shuzo-kurayoshi,Takada Shuzo,Kurayoshi,Sake,,鳥取県倉吉市西仲町2633,,,+81858231511,,http://www.shikun.co.jp/,,,,35.432072,133.822388,,pendiente,no comprobado,,,1170,,,,,,,jp,chugoku,tottori
-nakai-shuzo-kurayoshi,Nakai Shuzo,Kurayoshi,Sake,,鳥取県倉吉市中河原555,,,+81858280821,,http://www.yasio.net/,,,,35.412849,133.802536,,pendiente,no comprobado,,,818,,,,,,,jp,chugoku,tottori
-otani-shuzo-kotoura,Otani Shuzo,Kotoura,Sake,,鳥取県東伯郡琴浦町浦安368,,,+81858530111,,http://www.takaisami.co.jp/,,,,35.493301,133.691757,,pendiente,no comprobado,,,967,,,,,,,jp,chugoku,tottori
-ehara-shuzo-honten-kotoura,Ehara Shuzo Honten,Kotoura,Sake,,鳥取県東伯郡琴浦町八橋1400,,,+81858522203,,http://ebara-shuzo.com/,,,,35.476727,133.653458,,pendiente,no comprobado,,,193,,,,,,,jp,chugoku,tottori
-umetsu-shuzo-hokuei,Umetsu Shuzo,Hokuei,Sake,,鳥取県東伯郡北栄町大谷1350,,,+81858372008,,http://umetsu-sake.jp/,,,,35.498772,133.732193,,pendiente,no comprobado,,,1303,,,,,,,jp,chugoku,tottori
-kunshi-shuzo,Kunshi Shuzo,Tottori,Sake,,鳥取県鳥取市秋里153-2,,,+81857233471,,,,,,35.517719,134.213715,,pendiente,no comprobado,,,684,,,,,,,jp,chugoku,tottori
-ota-shuzojo-wakasa,Ota Shuzojo,Wakasa,Sake,,鳥取県八頭郡若桜町若桜1223の2,,,+81858820611,,http://www1.ocn.ne.jp/~bentenmu/,,,,35.345505,134.394974,,pendiente,no comprobado,,,966,,,,,,,jp,chugoku,tottori
-takada-shuzojo-iwami,Takada Shuzojo,Kurayoshi,Sake,,鳥取県倉吉市西仲町2633,,,+81858231511,,http://www.shikun.co.jp/,,,,35.432072,133.822388,,pendiente,no comprobado,,,1172,,,,,,,jp,chugoku,tottori
-oiwa-shuzo-honten-kofu,Oiwa Shuzo Honten,Kofu,Sake,,鳥取県日野郡江府町江尾1872,,,+81859752404,,http://www.syuhou-iwaizumi.jp/,,,,35.280533,133.499268,,pendiente,no comprobado,,,916,,,,,,,jp,chugoku,tottori
-talmary-chizu,タルマーリー,Chizu,Cerveza,,,,,,,https://www.talmary.com/,,,,35.265000,134.226640,,,sí,ecommerce,,1824,,,,,,,jp,chugoku,tottori
-daisenwinery-hoki-cho,農業法人大山ワイナリー 株式会社,Hōki-chō,Vino,,鳥取県西伯郡伯耆町真野169-4,,,+81859686188,,https://daisenwinery.com/,,,,35.385250,133.407330,,,no comprobado,,,3190,,,,,,,jp,chugoku,tottori
-hojyowine-hokuei,株式会社 北条ワイン醸造所,Hokuei,Vino,,鳥取県東伯郡北栄町松神608,,,+81858362015,,https://hojyowine.jp/,,,,35.490000,133.758360,,,sí,ecommerce,,2738,,,,,,,jp,chugoku,tottori
-tottowinery-tottori,株式会社 兎ッ兎ワイナリー,Tottori,Vino,,鳥取県鳥取市国府町麻生178-11,,,+81857300003,,https://www.tottowinery.com/,,,,35.494390,134.221610,,pendiente,no comprobado,,,2737,,,,,,,jp,chugoku,tottori
-tabechoku-29352,あんどう青果,Kurayoshi,Fruta y verdura,"野菜, 蜂蜜",,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,1426,,,,,,,jp,chugoku,tottori
-tabechoku-29414,アイディケきのこ事業部,Yazu,Setas,きくらげ,,,,,,,,,,35.409220,134.250530,,pendiente,sí,marketplace,,1698,,,,,,,jp,chugoku,tottori
-tabechoku-22807,ISN,Iwami-chō,Setas,きのこ,,,,,,,,,,35.576000,134.332110,,pendiente,sí,marketplace,,436,,,,,,,jp,chugoku,tottori
-tabechoku-23345,木子ぽっぽ,Tottori,Setas,しいたけ,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,2625,,,,,,,jp,chugoku,tottori
-tabechoku-26882,らっきょう市場,Tottori,Pescado,,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,1688,,,,,,,jp,chugoku,tottori
-tabechoku-3078423,鳥取の清流 御子垣農園,Tottori,Pescado,,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3319,,,,,,,jp,chugoku,tottori
-tabechoku-20892,鹿野地鶏,Tottori,Carne,鶏肉,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3330,,,,,,,jp,chugoku,tottori
-tabechoku-3078222,Mファーム,Hōki-chō,Pan y cereal,,,,,,,,,,,35.385250,133.407330,,pendiente,sí,marketplace,,808,,,,,,,jp,chugoku,tottori
-tabechoku-3078132,大山農園,Daisen,Pan y cereal,,,,,,,,,,,35.510690,133.496060,,pendiente,sí,marketplace,,2315,,,,,,,jp,chugoku,tottori
-tabechoku-21719,米蔵砂川屋,Tottori,Pan y cereal,,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3038,,,,,,,jp,chugoku,tottori
-tabechoku-21659,のぎ屋,Kurayoshi,Fruta y verdura,,,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,1579,,,,,,,jp,chugoku,tottori
-tabechoku-21478,岸田秀果園,Kurayoshi,Fruta y verdura,梨,,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,2460,,,,,,,jp,chugoku,tottori
-tabechoku-3077223,西谷農園,Kurayoshi,Fruta y verdura,,,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,3152,,,,,,,jp,chugoku,tottori
-tabechoku-22066,丸山農園,Yazu,Fruta y verdura,"梨, 柿",,,,,,,,,,35.409220,134.250530,,pendiente,sí,marketplace,,2075,,,,,,,jp,chugoku,tottori
-tabechoku-28459,竹信農園,Hokuei,Fruta y verdura,スイカ,,,,,,,,,,35.490000,133.758360,,pendiente,sí,marketplace,,3020,,,,,,,jp,chugoku,tottori
-tabechoku-3077700,Farm Nakahara,Hokuei,Fruta y verdura,,,,,,,,,,,35.490000,133.758360,,pendiente,sí,marketplace,,211,,,,,,,jp,chugoku,tottori
-tabechoku-3078098,梨屋 こうさてん十,Daisen,Fruta y verdura,梨,,,,,,,,,,35.510690,133.496060,,pendiente,sí,marketplace,,2805,,,,,,,jp,chugoku,tottori
-tabechoku-22280,LUCK HILL（ラックヒル）,Daisen,Fruta y verdura,野菜,,,,,,,,,,35.510690,133.496060,,pendiente,sí,marketplace,,719,,,,,,,jp,chugoku,tottori
-tabechoku-29594,ふくの喜,Kotoura,Fruta y verdura,,,,,,,,,,,35.495030,133.692720,,pendiente,sí,marketplace,,1608,,,,,,,jp,chugoku,tottori
-tabechoku-3078364,つむぎfarm,Tottori,Fruta y verdura,野菜,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,1559,,,,,,,jp,chugoku,tottori
-tabechoku-25191,西田園芸,Tottori,Fruta y verdura,"トマト, 野菜",,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3148,,,,,,,jp,chugoku,tottori
-tabechoku-27820,たにがみ農園,Tottori,Fruta y verdura,梨,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,1548,,,,,,,jp,chugoku,tottori
-g,くめざくら大山ブルワリー (大山Gビール),Hoki,Cerveza,,丸山1729-40,,,,,http://g-beer.jp/,,https://www.instagram.com/daisen_brewery/,,35.38525,133.40733,,pendiente,no comprobado,,,1492,,,,,,,jp,chugoku,tottori
-akari-brewing,AKARI BREWING,鳥取市,Cerveza,,,,,,,https://akari-brewing.co.jp/user_data/factory,,https://www.instagram.com/akari_brewing/,,35.49439,134.22161,,pendiente,no comprobado,,,3374,,,,,,,jp,chugoku,tottori
-brew-lab-kurayoshi,BREW LAB KURAYOSHI (倉吉ビール),倉吉市,Cerveza,,,,,,,https://brewlab-kurayoshi.jp/,,https://www.instagram.com/brewlab.kurayoshi/,,35.43011,133.82553,,pendiente,no comprobado,,,3375,,,,,,,jp,chugoku,tottori
-oenosato-natural-farm,大江ノ郷自然牧場 (Oenosato Natural Farm),八頭町,Huevos,,,,,,,https://www.oenosato.com/,,https://www.instagram.com/oenosato_resort/,,35.40922,134.25053,,pendiente,no comprobado,,,3376,,,,,,,jp,chugoku,tottori
-daisen-ham,大山ハム (Daisen Ham),伯耆町,Carne,,,,,,,https://www.daisenham.co.jp/,,https://www.instagram.com/terrace_the_daisen/,,35.38525,133.40733,,pendiente,sí,ecommerce,,3377,,,,,,,jp,chugoku,tottori
-hogetsudo,宝月堂 (Hogetsudo),鳥取市,Dulces y repostería,,,,,,,https://hougetsudou.jp/,,https://www.instagram.com/hougetsudou/,,35.49439,134.22161,,pendiente,no comprobado,,,3378,,,,,,,jp,chugoku,tottori
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+chiyomusubi-shuzo-sakaiminato,Chiyomusubi Shuzo,Sakaiminato,Sake,,鳥取県境港市大正町131,,,+81859423191,,http://www.chiyomusubi.co.jp/,,,,35.544758,133.22467,,pendiente,no comprobado,,,138,,,,,,,jp,chugoku,tottori,,,,,,
+inata-honten-yonago,Inata Honten,Yonago,Sake,,鳥取県米子市夜見町325-16,,,+81859291108,,http://www.inata.co.jp/,,,,35.457314,133.292053,,pendiente,no comprobado,,,404,,,,,,,jp,chugoku,tottori,,,,,,
+kumezakura-shuzo-hoki,Kumezakura Shuzo,Hoki,Sake,,鳥取県西伯郡伯耆町丸山1740-50,,,+81859686555,,http://g-beer.jp/kumezakura/,,,,35.391953,133.48262,,pendiente,no comprobado,,,677,,,,,,,jp,chugoku,tottori,,,,,,
+suwa-shuzo-chizu,Suwa Shuzo,Chizu,Sake,,鳥取県八頭郡智頭町智頭451,,,+81858750618,,http://suwaizumi.jp/,,,,35.270245,134.228455,,pendiente,no comprobado,,,1152,,,,,,,jp,chugoku,tottori,,,,,,
+gensui-shuzo-kurayoshi,Gensui Shuzo,Kurayoshi,Sake,,鳥取県倉吉市駄経寺町2-31,,,+81858225020,,http://www.gensui.jp/,,,,35.429005,133.838928,,pendiente,no comprobado,,,262,,,,,,,jp,chugoku,tottori,,,,,,
+takada-shuzo-kurayoshi,Takada Shuzo,Kurayoshi,Sake,,鳥取県倉吉市西仲町2633,,,+81858231511,,http://www.shikun.co.jp/,,,,35.432072,133.822388,,pendiente,no comprobado,,,1170,,,,,,,jp,chugoku,tottori,,,,,,
+nakai-shuzo-kurayoshi,Nakai Shuzo,Kurayoshi,Sake,,鳥取県倉吉市中河原555,,,+81858280821,,http://www.yasio.net/,,,,35.412849,133.802536,,pendiente,no comprobado,,,818,,,,,,,jp,chugoku,tottori,,,,,,
+otani-shuzo-kotoura,Otani Shuzo,Kotoura,Sake,,鳥取県東伯郡琴浦町浦安368,,,+81858530111,,http://www.takaisami.co.jp/,,,,35.493301,133.691757,,pendiente,no comprobado,,,967,,,,,,,jp,chugoku,tottori,,,,,,
+ehara-shuzo-honten-kotoura,Ehara Shuzo Honten,Kotoura,Sake,,鳥取県東伯郡琴浦町八橋1400,,,+81858522203,,http://ebara-shuzo.com/,,,,35.476727,133.653458,,pendiente,no comprobado,,,193,,,,,,,jp,chugoku,tottori,,,,,,
+umetsu-shuzo-hokuei,Umetsu Shuzo,Hokuei,Sake,,鳥取県東伯郡北栄町大谷1350,,,+81858372008,,http://umetsu-sake.jp/,,,,35.498772,133.732193,,pendiente,no comprobado,,,1303,,,,,,,jp,chugoku,tottori,,,,,,
+kunshi-shuzo,Kunshi Shuzo,Tottori,Sake,,鳥取県鳥取市秋里153-2,,,+81857233471,,,,,,35.517719,134.213715,,pendiente,no comprobado,,,684,,,,,,,jp,chugoku,tottori,,,,,,
+ota-shuzojo-wakasa,Ota Shuzojo,Wakasa,Sake,,鳥取県八頭郡若桜町若桜1223の2,,,+81858820611,,http://www1.ocn.ne.jp/~bentenmu/,,,,35.345505,134.394974,,pendiente,no comprobado,,,966,,,,,,,jp,chugoku,tottori,,,,,,
+takada-shuzojo-iwami,Takada Shuzojo,Kurayoshi,Sake,,鳥取県倉吉市西仲町2633,,,+81858231511,,http://www.shikun.co.jp/,,,,35.432072,133.822388,,pendiente,no comprobado,,,1172,,,,,,,jp,chugoku,tottori,,,,,,
+oiwa-shuzo-honten-kofu,Oiwa Shuzo Honten,Kofu,Sake,,鳥取県日野郡江府町江尾1872,,,+81859752404,,http://www.syuhou-iwaizumi.jp/,,,,35.280533,133.499268,,pendiente,no comprobado,,,916,,,,,,,jp,chugoku,tottori,,,,,,
+talmary-chizu,タルマーリー,Chizu,Cerveza,,,,,,,https://www.talmary.com/,,,,35.265000,134.226640,,,sí,ecommerce,,1824,,,,,,,jp,chugoku,tottori,,,,,,
+daisenwinery-hoki-cho,農業法人大山ワイナリー 株式会社,Hōki-chō,Vino,,鳥取県西伯郡伯耆町真野169-4,,,+81859686188,,https://daisenwinery.com/,,,,35.385250,133.407330,,,no comprobado,,,3190,,,,,,,jp,chugoku,tottori,,,,,,
+hojyowine-hokuei,株式会社 北条ワイン醸造所,Hokuei,Vino,,鳥取県東伯郡北栄町松神608,,,+81858362015,,https://hojyowine.jp/,,,,35.490000,133.758360,,,sí,ecommerce,,2738,,,,,,,jp,chugoku,tottori,,,,,,
+tottowinery-tottori,株式会社 兎ッ兎ワイナリー,Tottori,Vino,,鳥取県鳥取市国府町麻生178-11,,,+81857300003,,https://www.tottowinery.com/,,,,35.494390,134.221610,,pendiente,no comprobado,,,2737,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-29352,あんどう青果,Kurayoshi,Fruta y verdura,"野菜, 蜂蜜",,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,1426,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-29414,アイディケきのこ事業部,Yazu,Setas,きくらげ,,,,,,,,,,35.409220,134.250530,,pendiente,sí,marketplace,,1698,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-22807,ISN,Iwami-chō,Setas,きのこ,,,,,,,,,,35.576000,134.332110,,pendiente,sí,marketplace,,436,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-23345,木子ぽっぽ,Tottori,Setas,しいたけ,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,2625,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-26882,らっきょう市場,Tottori,Pescado,,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,1688,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3078423,鳥取の清流 御子垣農園,Tottori,Pescado,,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3319,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-20892,鹿野地鶏,Tottori,Carne,鶏肉,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3330,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3078222,Mファーム,Hōki-chō,Pan y cereal,,,,,,,,,,,35.385250,133.407330,,pendiente,sí,marketplace,,808,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3078132,大山農園,Daisen,Pan y cereal,,,,,,,,,,,35.510690,133.496060,,pendiente,sí,marketplace,,2315,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-21719,米蔵砂川屋,Tottori,Pan y cereal,,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3038,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-21659,のぎ屋,Kurayoshi,Fruta y verdura,,,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,1579,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-21478,岸田秀果園,Kurayoshi,Fruta y verdura,梨,,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,2460,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3077223,西谷農園,Kurayoshi,Fruta y verdura,,,,,,,,,,,35.430110,133.825530,,pendiente,sí,marketplace,,3152,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-22066,丸山農園,Yazu,Fruta y verdura,"梨, 柿",,,,,,,,,,35.409220,134.250530,,pendiente,sí,marketplace,,2075,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-28459,竹信農園,Hokuei,Fruta y verdura,スイカ,,,,,,,,,,35.490000,133.758360,,pendiente,sí,marketplace,,3020,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3077700,Farm Nakahara,Hokuei,Fruta y verdura,,,,,,,,,,,35.490000,133.758360,,pendiente,sí,marketplace,,211,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3078098,梨屋 こうさてん十,Daisen,Fruta y verdura,梨,,,,,,,,,,35.510690,133.496060,,pendiente,sí,marketplace,,2805,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-22280,LUCK HILL（ラックヒル）,Daisen,Fruta y verdura,野菜,,,,,,,,,,35.510690,133.496060,,pendiente,sí,marketplace,,719,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-29594,ふくの喜,Kotoura,Fruta y verdura,,,,,,,,,,,35.495030,133.692720,,pendiente,sí,marketplace,,1608,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-3078364,つむぎfarm,Tottori,Fruta y verdura,野菜,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,1559,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-25191,西田園芸,Tottori,Fruta y verdura,"トマト, 野菜",,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,3148,,,,,,,jp,chugoku,tottori,,,,,,
+tabechoku-27820,たにがみ農園,Tottori,Fruta y verdura,梨,,,,,,,,,,35.494390,134.221610,,pendiente,sí,marketplace,,1548,,,,,,,jp,chugoku,tottori,,,,,,
+g,くめざくら大山ブルワリー (大山Gビール),Hoki,Cerveza,,丸山1729-40,,,,,http://g-beer.jp/,,https://www.instagram.com/daisen_brewery/,,35.38525,133.40733,,pendiente,no comprobado,,,1492,,,,,,,jp,chugoku,tottori,,,,,,
+akari-brewing,AKARI BREWING,鳥取市,Cerveza,,,,,,,https://akari-brewing.co.jp/user_data/factory,,https://www.instagram.com/akari_brewing/,,35.49439,134.22161,,pendiente,no comprobado,,,3374,,,,,,,jp,chugoku,tottori,,,,,,
+brew-lab-kurayoshi,BREW LAB KURAYOSHI (倉吉ビール),倉吉市,Cerveza,,,,,,,https://brewlab-kurayoshi.jp/,,https://www.instagram.com/brewlab.kurayoshi/,,35.43011,133.82553,,pendiente,no comprobado,,,3375,,,,,,,jp,chugoku,tottori,,,,,,
+oenosato-natural-farm,大江ノ郷自然牧場 (Oenosato Natural Farm),八頭町,Huevos,,,,,,,https://www.oenosato.com/,,https://www.instagram.com/oenosato_resort/,,35.40922,134.25053,,pendiente,no comprobado,,,3376,,,,,,,jp,chugoku,tottori,,,,,,
+daisen-ham,大山ハム (Daisen Ham),伯耆町,Carne,,,,,,,https://www.daisenham.co.jp/,,https://www.instagram.com/terrace_the_daisen/,,35.38525,133.40733,,pendiente,sí,ecommerce,,3377,,,,,,,jp,chugoku,tottori,,,,,,
+hogetsudo,宝月堂 (Hogetsudo),鳥取市,Dulces y repostería,,,,,,,https://hougetsudou.jp/,,https://www.instagram.com/hougetsudou/,,35.49439,134.22161,,pendiente,no comprobado,,,3378,,,,,,,jp,chugoku,tottori,,,,,,

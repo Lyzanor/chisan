@@ -9,6 +9,7 @@ import {
   SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET,
   SUPPORTED_TRANSLATION_TARGET_LOCALE_SET,
   TRANSLATION_FIELD,
+  TRANSLATION_FIELD_SET,
   TRANSLATION_PROMPT_VERSION,
   classifyCatalogCsvPath,
   compareTranslationRows,
@@ -22,6 +23,7 @@ import {
   readTranslationGlossary,
   readTranslationSidecar,
   translationPairKey,
+  translationFieldSpec,
   validateTranslationOutput,
 } from "./lib/catalog-translations.mjs";
 import {
@@ -269,6 +271,7 @@ function addTranslationRemediation(
     targetLocale,
     region: source?.region ?? null,
     area: source?.area ?? null,
+    field: source?.field ?? TRANSLATION_FIELD,
     producerId: String(producerId),
   });
 }
@@ -290,8 +293,10 @@ export function buildTranslationRemediationPlan(remediations) {
       region: remediation.region,
       area: remediation.area,
       producerIds: new Set(),
+      fields: new Set(),
     };
     group.producerIds.add(remediation.producerId);
+    group.fields.add(remediation.field ?? TRANSLATION_FIELD);
     grouped.set(key, group);
   }
 
@@ -299,6 +304,7 @@ export function buildTranslationRemediationPlan(remediations) {
     .map((group) => ({
       ...group,
       producerIds: [...group.producerIds].sort((left, right) => Number(left) - Number(right)),
+      fields: [...group.fields].sort(),
       command:
         group.action === "generate" && group.area
           ? `npx pnpm generate:translations --country ${group.country} --target-locale ${group.targetLocale} --area ${group.area}`
@@ -404,7 +410,7 @@ function buildPublicationRequirements({
         const targetSelected =
           !filters || countryFilter.all || countryFilter.targets.has(targetLocale);
         if (!areaSelected && !targetSelected) continue;
-        const sources = canonical.rows.filter(
+        const sources = canonical.translationSources.filter(
           (source) =>
             path.resolve(source.filePath) === path.resolve(areaScope.filePath) &&
             source.text &&
@@ -419,7 +425,12 @@ function buildPublicationRequirements({
           areas: new Set(),
         };
         requirement.areas.add(`${areaScope.region}/${areaScope.area}`);
-        for (const source of sources) requirement.sources.set(source.producerId, source);
+        for (const source of sources) {
+          requirement.sources.set(
+            translationPairKey(source.producerId, source.field),
+            source,
+          );
+        }
         requirements.set(key, requirement);
       }
     }
@@ -478,8 +489,13 @@ function validateSidecar({
     if (!isPositiveProducerId(row.producer_id)) {
       pushError(result, displayPath, recordNumber, "producer_id must be a positive decimal integer");
     }
-    if (row.field !== TRANSLATION_FIELD) {
-      pushError(result, displayPath, recordNumber, `field must be '${TRANSLATION_FIELD}'`);
+    if (!TRANSLATION_FIELD_SET.has(row.field)) {
+      pushError(
+        result,
+        displayPath,
+        recordNumber,
+        `field must be one of: ${[...TRANSLATION_FIELD_SET].join(", ")}`,
+      );
     }
     if (!SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET.has(row.source_locale)) {
       pushError(result, displayPath, recordNumber, "source_locale is not supported");
@@ -492,20 +508,24 @@ function validateSidecar({
     } else if (row.text !== row.text.normalize("NFC")) {
       pushError(result, displayPath, recordNumber, "text must use Unicode NFC normalization");
     } else {
+      const fieldSpec = translationFieldSpec(row.field);
+      const maximum = fieldSpec?.translatedMaxCharacters ?? TRANSLATED_DESCRIPTION_MAX_CHARACTERS;
       const textLength = codePointLength(row.text);
-      if (textLength > TRANSLATED_DESCRIPTION_MAX_CHARACTERS) {
+      if (textLength > maximum) {
         pushError(
           result,
           displayPath,
           recordNumber,
-          `text must be at most ${TRANSLATED_DESCRIPTION_MAX_CHARACTERS} Unicode characters; found ${textLength}`,
+          `text for ${row.field} must be at most ${maximum} Unicode characters; found ${textLength}`,
         );
       }
       const contamination = descriptionContaminationReason(row.text);
       if (contamination) {
         pushError(result, displayPath, recordNumber, `text ${contamination}`);
       }
-      const naturalness = descriptionNaturalnessReason(row.text);
+      const naturalness = row.field === TRANSLATION_FIELD
+        ? descriptionNaturalnessReason(row.text)
+        : null;
       if (naturalness) {
         pushError(result, displayPath, recordNumber, `text ${naturalness}`);
       }
@@ -555,7 +575,7 @@ function validateSidecar({
       );
     }
 
-    const source = canonical.byId.get(row.producer_id);
+    const source = canonical.byKey.get(pair);
     if (!source || !source.text || source.sourceLocale === classification.targetLocale) {
       const origin = row.origin === "reviewed" ? "reviewed (retained for human review)" : "machine";
       pushError(result, displayPath, recordNumber, `obsolete ${origin} translation row`);
@@ -564,7 +584,7 @@ function validateSidecar({
     }
     if (row.source_locale !== source.sourceLocale) {
       const message = `source_locale is stale; expected '${source.sourceLocale}'`;
-      if (publicationRequirement?.sources.has(row.producer_id)) {
+      if (publicationRequirement?.sources.has(pair)) {
         pushError(result, displayPath, recordNumber, message);
         addTranslationRemediation(result, {
           action: row.origin === "reviewed" ? "review" : "generate",
@@ -582,7 +602,7 @@ function validateSidecar({
     const expectedHash = hashTranslationSource(source.text);
     if (row.source_hash !== expectedHash) {
       const message = `source_hash is stale; expected '${expectedHash}'`;
-      if (publicationRequirement?.sources.has(row.producer_id)) {
+      if (publicationRequirement?.sources.has(pair)) {
         pushError(result, displayPath, recordNumber, message);
         addTranslationRemediation(result, {
           action: row.origin === "reviewed" ? "review" : "generate",
@@ -628,13 +648,13 @@ function validateSidecar({
   }
 
   for (const source of publicationRequirement?.sources.values() ?? []) {
-    const pair = translationPairKey(source.producerId, TRANSLATION_FIELD);
+    const pair = translationPairKey(source.producerId, source.field);
     if (!presentPairs.has(pair)) {
       pushError(
         result,
         displayPath,
         null,
-        `published area '${source.region}/${source.area}' is missing descripcion translation for producer_id '${source.producerId}'`,
+        `published area '${source.region}/${source.area}' is missing ${source.field} translation for producer_id '${source.producerId}'`,
       );
       addTranslationRemediation(result, {
         action: "generate",

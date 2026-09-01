@@ -45,6 +45,11 @@ export type Messages = {
     };
   };
   ownerProducerFieldHelp: {
+    video?: string;
+    "quien hay detras"?: string;
+    quien_hay_detras_locale?: string;
+    historia?: string;
+    historia_locale?: string;
     nombre: string;
     municipio: string;
     categoria: string;
@@ -183,6 +188,12 @@ export type Messages = {
     communityMessageLocale: string;
     highlightedLink1: string;
     highlightedLink2: string;
+    video?: string;
+    behindProducer?: string;
+    behindProducerLocale?: string;
+    history?: string;
+    historyLocale?: string;
+    lastApprovedChange?: string;
     openingHours: string;
     phone: string;
     email: string;
@@ -253,8 +264,40 @@ const MESSAGE_LOADERS = {
   zu: () => import("./messages/zu"),
 } satisfies Record<Locale, () => Promise<{ default: Messages }>>;
 
+const PREMIUM_STORY_FIELD_HELP_FALLBACKS = {
+  video: "An official HTTPS YouTube URL for one public producer video.",
+  "quien hay detras":
+    "Reviewed producer-authored text about the owners or team behind this productive unit.",
+  quien_hay_detras_locale:
+    "The source language of the who-is-behind text; leave empty only when that text is empty.",
+  historia:
+    "Reviewed producer-authored text about the origins and development of this productive unit.",
+  historia_locale:
+    "The source language of the history; leave empty only when the history is empty.",
+} as const;
+
+const PREMIUM_STORY_FIELD_LABEL_FALLBACKS = {
+  video: "Video",
+  behindProducer: "Who is behind it",
+  behindProducerLocale: "Who-is-behind language",
+  history: "History",
+  historyLocale: "History language",
+  lastApprovedChange: "Last approved producer change",
+} as const;
+
 export async function loadMessages(locale: Locale): Promise<Messages> {
-  return (await MESSAGE_LOADERS[locale]()).default;
+  const messages = (await MESSAGE_LOADERS[locale]()).default;
+  return {
+    ...messages,
+    ownerProducerFieldHelp: {
+      ...PREMIUM_STORY_FIELD_HELP_FALLBACKS,
+      ...messages.ownerProducerFieldHelp,
+    },
+    fieldLabels: {
+      ...PREMIUM_STORY_FIELD_LABEL_FALLBACKS,
+      ...messages.fieldLabels,
+    },
+  };
 }
 
 type TemplateValue = string | number;

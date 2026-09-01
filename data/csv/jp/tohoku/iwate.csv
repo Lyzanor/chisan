@@ -1,67 +1,67 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
-nanbu-bijin-ninohe,Nanbu Bijin,Ninohe,Sake,"Nanbu Bijin, junmai daiginjo","Fukuoka Kamimachi 13, Ninohe",Ninohe brewery producing kosher- and vegan-certified sake. Own online shop.,,+81195233133,,https://www.nanbubijin.co.jp/,,,,40.237980,141.195760,,,sí,ecommerce,,837,en,,,,,,jp,tohoku,iwate
-sekinoichi-shuzo-ichinoseki,Sekinoichi Shuzo,Ichinoseki,Sake,"Sekinoichi, Iwate Kura beer","Tamuracho 5-42, Ichinoseki","Brewery founded in 1918 in Ichinoseki, making sake and Iwate Kura beer on the same grounds, with its own museum and restaurant.",,+81191211144,,https://sekinoichi.co.jp/,,,,38.934720,141.126580,,,sí,ecommerce,Cerveza,1070,en,,,,,,jp,tohoku,iwate
-suisen-shuzo-ofunato,Suisen Shuzo,Ofunato,Sake,Suisen,Ofunato,Historic Rikuzentakata brewery: the 2011 tsunami destroyed its kura and it has brewed in Ofunato ever since. Own online shop.,,,,https://suisenshuzo.jp/,,,,39.081940,141.708890,,,sí,ecommerce,,1145,en,,,,,,jp,tohoku,iwate
-akabu-shuzo-morioka,Akabu Shuzo,Morioka,Sake,AKABU,"Kitaioka 1-8-60, Morioka","Brewery originally from Otsuchi, wiped out by the 2011 tsunami and rebuilt in Morioka. Brews the AKABU label.",,+81196818895,,https://www.akabu1.com/,,,,39.702080,141.154500,,,sí,ecommerce,,33,en,,,,,,jp,tohoku,iwate
-hamachidori-kamaishi,Hamachidori,Kamaishi,Sake,Hamachidori,Kamaishi,"Founded in 1923 in Kamaishi, on the Rikuchu coast. Own online shop with a cart.",,,,https://hamachidori.net/,,,,39.275810,141.885690,,,sí,ecommerce,,293,en,,,,,,jp,tohoku,iwate
-asabiraki-morioka,Asabiraki,Morioka,Sake,Asabiraki,"Daijijicho 10-34, Morioka","Brewery founded in 1871 in Morioka, with a sales room and visits to the Showa Asahigura kura.",,,,https://www.asabiraki-net.jp/,,,,39.702080,141.154500,,,no comprobado,,,71,en,,,,,,jp,tohoku,iwate
-kikunotsukasa-shuzo-morioka,Kikunotsukasa Shuzo,Morioka,Sake,,岩手県盛岡市紺屋町4-20,,,+81196241311,,http://www.kikunotsukasa.jp/,,,,39.703663,141.156708,,pendiente,no comprobado,,,563,,,,,,,jp,tohoku,iwate
-sakuragao-shuzo-morioka,Sakuragao Shuzo,Morioka,Sake,,岩手県盛岡市川目町23-18,,,+81196226800,,http://sakuragao.com/,,,,39.67992,141.186172,,pendiente,no comprobado,,,1035,,,,,,,jp,tohoku,iwate
-azumamine-shuzoten-shiwa,Azumamine Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町土舘字内川5,,,+81196737221,,http://www.azumamine.com/,,,,39.55175,141.109558,,pendiente,no comprobado,,,95,,,,,,,jp,tohoku,iwate
-tsuki-no-wa-shuzoten-shiwa,Tsuki no Wa Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町高水寺向畑101,,,+81196721133,,http://www.tsukinowa-iwate.com/,,,,39.576363,141.16832,,pendiente,no comprobado,,,1272,,,,,,,jp,tohoku,iwate
-hirota-shuzoten-shiwa,Hirota Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町宮手字泉屋敷 2-4,,,+81196737706,,http://hiroki.xm.shopserve.jp/,,,,39.563614,141.103821,,pendiente,no comprobado,,,326,,,,,,,jp,tohoku,iwate
-takahashi-shuzoten-shiwa,Takahashi Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町片寄堀米36,,,+81196737308,,,,,,39.524326,141.124252,,pendiente,no comprobado,,,1183,,,,,,,jp,tohoku,iwate
-kawamura-shuzoten-hanamaki,Kawamura Shuzoten,Hanamaki,Sake,,岩手県花巻市石鳥谷町好地12-132,,,+81198452226,,,,,,39.500217,141.149384,,pendiente,no comprobado,,,544,,,,,,,jp,tohoku,iwate
-kikuzakari-shuzo-kitakami,Kikuzakari Shuzo,Kitakami,Sake,,岩手県北上市更木3-54,,,+81197662625,,http://kikuzakari.jp/,,,,39.346016,141.145721,,pendiente,no comprobado,,,568,,,,,,,jp,tohoku,iwate
-iwanoi-shuzo-ichinoseki,Iwanoi Shuzo,Ichinoseki,Sake,,岩手県一関市花泉涌津字舘72,,,+81191822100,,http://www.iwanoi.co.jp/,,,,38.77644,141.226974,,pendiente,no comprobado,,,453,,,,,,,jp,tohoku,iwate
-ryoban-shuzo-ichinoseki,Ryoban Shuzo,Ichinoseki,Sake,,岩手県一関市末広1-8-23,,,+81191233392,,http://www.seisyu-kanzan.com/,,,,38.92844,141.126022,,pendiente,no comprobado,,,1011,,,,,,,jp,tohoku,iwate
-iwate-meijo-oshu,Iwate Meijo,Oshu,Sake,,岩手県奥州市前沢区新町13,,,+81197563131,,http://www.iwate-meijo.com/index.html,,,,39.047668,141.111847,,pendiente,no comprobado,,,456,,,,,,,jp,tohoku,iwate
-kamihei-shuzo-tono,Kamihei Shuzo,Tono,Sake,,岩手県遠野市青笹町糠前31-19-7,,,+81198622002,,http://kamihei-shuzo.jp/,,,,39.323559,141.575317,,pendiente,no comprobado,,,487,,,,,,,jp,tohoku,iwate
-senkin-shuzo-iwaizumi,Senkin Shuzo,Iwaizumi,Sake,,岩手県下閉伊郡岩泉町岩泉字太田30,,,+81194223211,,http://www.ginga.or.jp/~senkin/,,,,39.846806,141.790665,,pendiente,no comprobado,,,1076,,,,,,,jp,tohoku,iwate
-washinoo-hachimantai,Washinoo,Hachimantai,Sake,,岩手県八幡平市大更第22地割158,,,+81195763211,,http://www.washinoo.co.jp/,,,,39.909588,141.094452,,pendiente,no comprobado,,,1329,,,,,,,jp,tohoku,iwate
-grateful-farm-hanamaki,Grateful Farm,Hanamaki,Pan y cereal,"Wheat, flour",岩手県花巻市東和町百ノ沢4区３４８,,,,,https://www.grateful-farm.com/,,,,39.399151,141.233063,,,no comprobado,,,274,,,,,,,jp,tohoku,iwate
-kuzumaki-kuzumaki,くずまき高原牧場,Kuzumaki,Lácteos y quesos,"カッテージチーズ, フォーレ（クリームチーズやまぶどう味）, ゴーダチーズ",岩手県岩手郡葛巻町葛巻40-57-176,,,,,https://kuzumaki.jp/,,,,40.039830,141.436500,,,no comprobado,,,1490,,,,,,,jp,tohoku,iwate
-artpaysan-hanamaki,社会福祉法人 悠和会/アールペイザンワイナリー,Hanamaki,Vino,,岩手県花巻市幸田4-35-1,,,+81198418566,,https://artpaysan.stores.jp/,,,,39.388610,141.116920,,pendiente,no comprobado,,,2985,,,,,,,jp,tohoku,iwate
-agri-hiraizumi-hiraizumi,農事組合法人アグリ平泉/平泉ワイナリー,Hiraizumi,Vino,,岩手県西磐井郡平泉町長島字砂子沢172-6,,,+81191484360,,https://agri-hiraizumi.com/,,,,38.986610,141.113830,,pendiente,no comprobado,,,3181,,,,,,,jp,tohoku,iwate
-edelwein-hanamaki,株式会社 エーデルワイン,Hanamaki,Vino,,岩手県花巻市大迫町大迫10地割18-3,,,+81198483037,,https://edelwein.co.jp/,,,,39.388610,141.116920,,,sí,ecommerce,,2720,,,,,,,jp,tohoku,iwate
-ohsmsatovineyard-hanamaki,大迫佐藤葡萄園,Hanamaki,Vino,,岩手県花巻市大迫町大迫第1地割4ｰ51,,,+819039523100,,https://ohsmsatovineyard.com/,,,,39.388610,141.116920,,,sí,ecommerce,,2323,,,,,,,jp,tohoku,iwate
-0192-55-2222-rikuzentakata,有限会社 神田葡萄園,Rikuzentakata,Vino,,岩手県陸前高田市米崎町字神田33,,,+81192552222,,http://0192-55-2222.jp/,,,,39.020420,141.633060,,pendiente,no comprobado,,,2605,,,,,,,jp,tohoku,iwate
-koto-morioka,株式会社 KOTOワイン盛岡,Morioka,Vino,,岩手県盛岡市乙部30-17-1,,,+81196588485,,https://koto-wine.com/,,,,39.702080,141.154500,,,no comprobado,,,2710,,,,,,,jp,tohoku,iwate
-shiwa-fruitspark-shiwa,株式会社 紫波フルーツパーク/自園自醸ワイン紫波,Shiwa,Vino,,岩手県紫波郡紫波町遠山字松原1-11,,,+81196765301,,https://www.shiwa-fruitspark.co.jp/winery/,,,,39.554390,141.155470,,,no comprobado,,,2748,,,,,,,jp,tohoku,iwate
-3peaks-ofunato,株式会社 スリーピークス,Ōfunato,Vino,,岩手県大船渡市大船渡町字茶屋前99,,,+815053724014,,https://3peaks.jp/,,,,39.081940,141.708890,,,no comprobado,,,2725,,,,,,,jp,tohoku,iwate
-monnosukefarm-hanamaki,もんのすけ農園,Hanamaki,Vino,,岩手県花巻市南万丁目1087-4,,,+819076631490,,https://monnosukefarm.com/,,,,39.388610,141.116920,,,no comprobado,,,1668,,,,,,,jp,tohoku,iwate
-mitani-ichinohe,おさんぽジャージー三谷牧場,Ichinohe,Lácteos y quesos,"金のチーズ 丸タイプ, 金のフロマージュブラン",岩手県二戸郡一戸町奥中山字西田子1276,,,,,http://mitani.pinoko.jp/,,,,40.212890,141.295440,,pendiente,no comprobado,,,1459,,,,,,,jp,tohoku,iwate
-yagisawa-s-rikuzentakata,八木澤商店,Rikuzentakata,Condimentos,丸むらさき,岩手県陸前高田市矢作町字諏訪41,Produces soy sauce and traditional seasonings at its Rikuzentakata brewery.,,+81192553261,,http://www.yagisawa-s.co.jp/,,,,39.020420,141.633060,,,no comprobado,,,2177,en,,,,,,jp,tohoku,iwate
-sasachou-hanamaki,佐々長醸造,Hanamaki,Condimentos,生醤油,岩手県花巻市東和町土沢5-417,Produces soy sauce and traditional seasonings at its Hanamaki brewery.,,+81198422311,,https://www.sasachou.co.jp/,,,,39.388610,141.116920,,,no comprobado,,,2147,en,,,,,,jp,tohoku,iwate
-tabechoku-3078424,ハチミツ農家YoYo,Morioka,Miel,,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1864,,,,,,,jp,tohoku,iwate
-tabechoku-20076,巣鴨養蜂園,Nishiwaga,Miel,蜂蜜,,,,,,,,,,39.434580,140.750030,,pendiente,sí,marketplace,,2480,,,,,,,jp,tohoku,iwate
-tabechoku-26782,岩手 牧草の丘,Kanegasaki,Lácteos y quesos,,,,,,,,,,,39.195720,141.116330,,pendiente,sí,marketplace,,2456,,,,,,,jp,tohoku,iwate
-tabechoku-28175,安比まいたけ,Hachimantai,Setas,,,,,,,,,,,39.956390,141.071640,,pendiente,sí,marketplace,,2363,,,,,,,jp,tohoku,iwate
-tabechoku-25815,安俱里まほら岩手,Morioka,Setas,きのこ,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,2359,,,,,,,jp,tohoku,iwate
-tabechoku-3077472,長瀬農園,Karumai,Setas,,,,,,,,,,,40.326750,141.460470,,pendiente,sí,marketplace,,3263,,,,,,,jp,tohoku,iwate
-tabechoku-27172,魚武,Tanohata,Pescado,,,,,,,,,,,39.930470,141.888920,,pendiente,sí,marketplace,,3315,,,,,,,jp,tohoku,iwate
-tabechoku-20883,やんべファーム,Morioka,Pescado,,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1682,,,,,,,jp,tohoku,iwate
-tabechoku-22389,柿木畜産,Kuji,Carne,牛肉,,,,,,,,,,40.143610,141.659170,,pendiente,sí,marketplace,,2687,,,,,,,jp,tohoku,iwate
-tabechoku-28385,うたがき優命園,Ōshū-shi,Huevos,,,,,,,,,,,39.129720,141.094720,,pendiente,sí,marketplace,,1441,,,,,,,jp,tohoku,iwate
-tabechoku-21360,しあわせ牧場,Miyako,Carne,,,,,,,,,,,39.639720,141.946110,,pendiente,sí,marketplace,,1527,,,,,,,jp,tohoku,iwate
-tabechoku-29417,佐々研山葵農園,Iwaizumi,Fruta y verdura,わさび,,,,,,,,,,39.843140,141.796390,,pendiente,sí,marketplace,,2146,,,,,,,jp,tohoku,iwate
-tabechoku-3077939,いわいずみ和做美,Iwaizumi,Fruta y verdura,わさび,,,,,,,,,,39.843140,141.796390,,pendiente,sí,marketplace,,1435,,,,,,,jp,tohoku,iwate
-tabechoku-20510,米農家 仁左ェ門,Takizawa,Pan y cereal,,,,,,,,,,,39.734690,141.077060,,pendiente,sí,marketplace,,3039,,,,,,,jp,tohoku,iwate
-tabechoku-3077889,タカハシ農園,Hanamaki,Pan y cereal,米,,,,,,,,,,39.388610,141.116920,,pendiente,sí,marketplace,,1823,,,,,,,jp,tohoku,iwate
-tabechoku-24141,上小田代,Ōshū-shi,Frutos secos,,,,,,,,,,,39.129720,141.094720,,pendiente,sí,marketplace,,2032,,,,,,,jp,tohoku,iwate
-tabechoku-20631,由井野菜園,Takizawa,Fruta y verdura,,,,,,,,,,,39.734690,141.077060,,pendiente,sí,marketplace,,2949,,,,,,,jp,tohoku,iwate
-tabechoku-22314,サンファーム,Morioka,Fruta y verdura,りんご,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1796,,,,,,,jp,tohoku,iwate
-tabechoku-24711,またくるファーム,Morioka,Fruta y verdura,,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1631,,,,,,,jp,tohoku,iwate
-tabechoku-24231,ほそかわ農園,Yahaba,Legumbres,"トマト, 落花生",,,,,,,,,,39.606000,141.142940,,pendiente,sí,marketplace,Fruta y verdura,1621,,,,,,,jp,tohoku,iwate
-tabechoku-21008,太陽商会,Hanamaki,Pan y cereal,"野菜, 小麦",,,,,,,,,,39.388610,141.116920,,pendiente,sí,marketplace,Fruta y verdura,2343,,,,,,,jp,tohoku,iwate
-tabechoku-26287,中野圭,Ōfunato,Pescado,,,,,,,,,,,39.081940,141.708890,,pendiente,sí,marketplace,,2065,,,,,,,jp,tohoku,iwate
-jp-iwate-shoeidoh-co-83324f0,松栄堂,一関市,Dulces y repostería,和菓子,一関市地主町 3-36,,,,,https://www.shoeidoh.co.jp/,,,,38.934720,141.126580,,,no comprobado,,,2668,,,,,,,jp,tohoku,iwate
-jp-iwate-saitoseika-co-9ed82bc,三陸菓匠さいとう,大船渡市,Dulces y repostería,和菓子,大船渡市大船渡町台 26-18,,,,,http://saitoseika.co.jp/,,,,39.081940,141.708890,,,sí,ecommerce,,2028,,,,,,,jp,tohoku,iwate
-tanohata-yamachi-milkport-nao,田野畑山地酪農牛乳 milkport NAO,Tanohata,Lácteos y quesos,"牛乳, ヨーグルト, チーズ",田野畑村蝦夷森161-15,"Raises dairy cattle year-round on mountain pasture and makes milk, yogurt and cheese at milkport NAO.",,+81194342725,,https://yamachi.jp/,,,,39.930470,141.888920,,,sí,ecommerce,,2947,en,,,,,,jp,tohoku,iwate
-baeren-brewery,ベアレン醸造所 (Baeren Brewery),Morioka,Cerveza,,北山1丁目3-1,,,,,https://www.baerenbier.co.jp/,,https://www.instagram.com/baerenbier/,,39.70208,141.1545,,pendiente,no comprobado,,,1918,,,,,,,jp,tohoku,iwate
-zumona,上閉伊酒造 (遠野麦酒 ZUMONA),Tono,Cerveza,,青笹町糠前31-19-7,,,,xxxx@kamihei-shuzo.jp,https://kamihei-shuzo.jp/,,https://www.instagram.com/zumonabeer/,,39.33203,141.53289,,pendiente,no comprobado,,,2038,,,,,,,jp,tohoku,iwate
-kamata-suisan-ofunato,鎌田水産,Ōfunato,Pescado,"Pacific saury, salmon, shellfish",岩手県大船渡市赤崎町字鳥沢164番地2,"Operates fishing vessels, aquaculture and seafood processing units in Ōfunato.",,+81192278470,3riku-aji@kamasui.com,https://kamata-suisan.co.jp/,,,,39.030315,141.739441,,,no comprobado,,,3255,en,,,,,,jp,tohoku,iwate
-nakamuraya-kamaishi,中村家,Kamaishi,Pescado,Sanriku Kaisenzuke,,Produces Sanriku Kaisenzuke and other prepared seafood in Kamaishi.,,,info@iwate-nakamuraya.co.jp,https://www.iwate-nakamuraya.co.jp/,,,,39.27581,141.88569,,,no comprobado,,,2054,en,,,,,,jp,tohoku,iwate
-kawashu-miyako,川秀,Miyako,Pescado,"Seafood preserves, roe, seaweed",岩手県宮古市津軽石13地割411,"Processes seafood, roe, dried fish and seaweed at its Miyako factory.",,+81193831733,,https://kawashu.com/,,,,39.567345,141.931503,,,no comprobado,,,2478,en,,,,,,jp,tohoku,iwate
-kimura-shoten-yamada,木村商店,Yamada,Pescado,"Ika tokkuri, himono, prepared seafood",岩手県下閉伊郡山田町豊間根7-30,"Hand-makes ika tokkuri, dried fish and prepared seafood at its Yamada factory.",,+81193835510,,https://kimura-tokkuri.com/,,,,39.46767,141.94892,,pendiente,sí,ecommerce,,2627,en,,,,,,jp,tohoku,iwate
-koiwai-milk-shizukuishi-factory,小岩井乳業 — 小岩井工場,Shizukuishi,Lácteos y quesos,"milk, yoghurt and butter","Maruyachi 36-1, Shizukuishi, Iwate",,,,,https://www.koiwaimilk.com/,,,,,,,pendiente,no comprobado,,,3522,,,,,,,jp,tohoku,iwate
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+nanbu-bijin-ninohe,Nanbu Bijin,Ninohe,Sake,"Nanbu Bijin, junmai daiginjo","Fukuoka Kamimachi 13, Ninohe",Ninohe brewery producing kosher- and vegan-certified sake. Own online shop.,,+81195233133,,https://www.nanbubijin.co.jp/,,,,40.237980,141.195760,,,sí,ecommerce,,837,en,,,,,,jp,tohoku,iwate,,,,,,
+sekinoichi-shuzo-ichinoseki,Sekinoichi Shuzo,Ichinoseki,Sake,"Sekinoichi, Iwate Kura beer","Tamuracho 5-42, Ichinoseki","Brewery founded in 1918 in Ichinoseki, making sake and Iwate Kura beer on the same grounds, with its own museum and restaurant.",,+81191211144,,https://sekinoichi.co.jp/,,,,38.934720,141.126580,,,sí,ecommerce,Cerveza,1070,en,,,,,,jp,tohoku,iwate,,,,,,
+suisen-shuzo-ofunato,Suisen Shuzo,Ofunato,Sake,Suisen,Ofunato,Historic Rikuzentakata brewery: the 2011 tsunami destroyed its kura and it has brewed in Ofunato ever since. Own online shop.,,,,https://suisenshuzo.jp/,,,,39.081940,141.708890,,,sí,ecommerce,,1145,en,,,,,,jp,tohoku,iwate,,,,,,
+akabu-shuzo-morioka,Akabu Shuzo,Morioka,Sake,AKABU,"Kitaioka 1-8-60, Morioka","Brewery originally from Otsuchi, wiped out by the 2011 tsunami and rebuilt in Morioka. Brews the AKABU label.",,+81196818895,,https://www.akabu1.com/,,,,39.702080,141.154500,,,sí,ecommerce,,33,en,,,,,,jp,tohoku,iwate,,,,,,
+hamachidori-kamaishi,Hamachidori,Kamaishi,Sake,Hamachidori,Kamaishi,"Founded in 1923 in Kamaishi, on the Rikuchu coast. Own online shop with a cart.",,,,https://hamachidori.net/,,,,39.275810,141.885690,,,sí,ecommerce,,293,en,,,,,,jp,tohoku,iwate,,,,,,
+asabiraki-morioka,Asabiraki,Morioka,Sake,Asabiraki,"Daijijicho 10-34, Morioka","Brewery founded in 1871 in Morioka, with a sales room and visits to the Showa Asahigura kura.",,,,https://www.asabiraki-net.jp/,,,,39.702080,141.154500,,,no comprobado,,,71,en,,,,,,jp,tohoku,iwate,,,,,,
+kikunotsukasa-shuzo-morioka,Kikunotsukasa Shuzo,Morioka,Sake,,岩手県盛岡市紺屋町4-20,,,+81196241311,,http://www.kikunotsukasa.jp/,,,,39.703663,141.156708,,pendiente,no comprobado,,,563,,,,,,,jp,tohoku,iwate,,,,,,
+sakuragao-shuzo-morioka,Sakuragao Shuzo,Morioka,Sake,,岩手県盛岡市川目町23-18,,,+81196226800,,http://sakuragao.com/,,,,39.67992,141.186172,,pendiente,no comprobado,,,1035,,,,,,,jp,tohoku,iwate,,,,,,
+azumamine-shuzoten-shiwa,Azumamine Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町土舘字内川5,,,+81196737221,,http://www.azumamine.com/,,,,39.55175,141.109558,,pendiente,no comprobado,,,95,,,,,,,jp,tohoku,iwate,,,,,,
+tsuki-no-wa-shuzoten-shiwa,Tsuki no Wa Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町高水寺向畑101,,,+81196721133,,http://www.tsukinowa-iwate.com/,,,,39.576363,141.16832,,pendiente,no comprobado,,,1272,,,,,,,jp,tohoku,iwate,,,,,,
+hirota-shuzoten-shiwa,Hirota Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町宮手字泉屋敷 2-4,,,+81196737706,,http://hiroki.xm.shopserve.jp/,,,,39.563614,141.103821,,pendiente,no comprobado,,,326,,,,,,,jp,tohoku,iwate,,,,,,
+takahashi-shuzoten-shiwa,Takahashi Shuzoten,Shiwa,Sake,,岩手県紫波郡紫波町片寄堀米36,,,+81196737308,,,,,,39.524326,141.124252,,pendiente,no comprobado,,,1183,,,,,,,jp,tohoku,iwate,,,,,,
+kawamura-shuzoten-hanamaki,Kawamura Shuzoten,Hanamaki,Sake,,岩手県花巻市石鳥谷町好地12-132,,,+81198452226,,,,,,39.500217,141.149384,,pendiente,no comprobado,,,544,,,,,,,jp,tohoku,iwate,,,,,,
+kikuzakari-shuzo-kitakami,Kikuzakari Shuzo,Kitakami,Sake,,岩手県北上市更木3-54,,,+81197662625,,http://kikuzakari.jp/,,,,39.346016,141.145721,,pendiente,no comprobado,,,568,,,,,,,jp,tohoku,iwate,,,,,,
+iwanoi-shuzo-ichinoseki,Iwanoi Shuzo,Ichinoseki,Sake,,岩手県一関市花泉涌津字舘72,,,+81191822100,,http://www.iwanoi.co.jp/,,,,38.77644,141.226974,,pendiente,no comprobado,,,453,,,,,,,jp,tohoku,iwate,,,,,,
+ryoban-shuzo-ichinoseki,Ryoban Shuzo,Ichinoseki,Sake,,岩手県一関市末広1-8-23,,,+81191233392,,http://www.seisyu-kanzan.com/,,,,38.92844,141.126022,,pendiente,no comprobado,,,1011,,,,,,,jp,tohoku,iwate,,,,,,
+iwate-meijo-oshu,Iwate Meijo,Oshu,Sake,,岩手県奥州市前沢区新町13,,,+81197563131,,http://www.iwate-meijo.com/index.html,,,,39.047668,141.111847,,pendiente,no comprobado,,,456,,,,,,,jp,tohoku,iwate,,,,,,
+kamihei-shuzo-tono,Kamihei Shuzo,Tono,Sake,,岩手県遠野市青笹町糠前31-19-7,,,+81198622002,,http://kamihei-shuzo.jp/,,,,39.323559,141.575317,,pendiente,no comprobado,,,487,,,,,,,jp,tohoku,iwate,,,,,,
+senkin-shuzo-iwaizumi,Senkin Shuzo,Iwaizumi,Sake,,岩手県下閉伊郡岩泉町岩泉字太田30,,,+81194223211,,http://www.ginga.or.jp/~senkin/,,,,39.846806,141.790665,,pendiente,no comprobado,,,1076,,,,,,,jp,tohoku,iwate,,,,,,
+washinoo-hachimantai,Washinoo,Hachimantai,Sake,,岩手県八幡平市大更第22地割158,,,+81195763211,,http://www.washinoo.co.jp/,,,,39.909588,141.094452,,pendiente,no comprobado,,,1329,,,,,,,jp,tohoku,iwate,,,,,,
+grateful-farm-hanamaki,Grateful Farm,Hanamaki,Pan y cereal,"Wheat, flour",岩手県花巻市東和町百ノ沢4区３４８,,,,,https://www.grateful-farm.com/,,,,39.399151,141.233063,,,no comprobado,,,274,,,,,,,jp,tohoku,iwate,,,,,,
+kuzumaki-kuzumaki,くずまき高原牧場,Kuzumaki,Lácteos y quesos,"カッテージチーズ, フォーレ（クリームチーズやまぶどう味）, ゴーダチーズ",岩手県岩手郡葛巻町葛巻40-57-176,,,,,https://kuzumaki.jp/,,,,40.039830,141.436500,,,no comprobado,,,1490,,,,,,,jp,tohoku,iwate,,,,,,
+artpaysan-hanamaki,社会福祉法人 悠和会/アールペイザンワイナリー,Hanamaki,Vino,,岩手県花巻市幸田4-35-1,,,+81198418566,,https://artpaysan.stores.jp/,,,,39.388610,141.116920,,pendiente,no comprobado,,,2985,,,,,,,jp,tohoku,iwate,,,,,,
+agri-hiraizumi-hiraizumi,農事組合法人アグリ平泉/平泉ワイナリー,Hiraizumi,Vino,,岩手県西磐井郡平泉町長島字砂子沢172-6,,,+81191484360,,https://agri-hiraizumi.com/,,,,38.986610,141.113830,,pendiente,no comprobado,,,3181,,,,,,,jp,tohoku,iwate,,,,,,
+edelwein-hanamaki,株式会社 エーデルワイン,Hanamaki,Vino,,岩手県花巻市大迫町大迫10地割18-3,,,+81198483037,,https://edelwein.co.jp/,,,,39.388610,141.116920,,,sí,ecommerce,,2720,,,,,,,jp,tohoku,iwate,,,,,,
+ohsmsatovineyard-hanamaki,大迫佐藤葡萄園,Hanamaki,Vino,,岩手県花巻市大迫町大迫第1地割4ｰ51,,,+819039523100,,https://ohsmsatovineyard.com/,,,,39.388610,141.116920,,,sí,ecommerce,,2323,,,,,,,jp,tohoku,iwate,,,,,,
+0192-55-2222-rikuzentakata,有限会社 神田葡萄園,Rikuzentakata,Vino,,岩手県陸前高田市米崎町字神田33,,,+81192552222,,http://0192-55-2222.jp/,,,,39.020420,141.633060,,pendiente,no comprobado,,,2605,,,,,,,jp,tohoku,iwate,,,,,,
+koto-morioka,株式会社 KOTOワイン盛岡,Morioka,Vino,,岩手県盛岡市乙部30-17-1,,,+81196588485,,https://koto-wine.com/,,,,39.702080,141.154500,,,no comprobado,,,2710,,,,,,,jp,tohoku,iwate,,,,,,
+shiwa-fruitspark-shiwa,株式会社 紫波フルーツパーク/自園自醸ワイン紫波,Shiwa,Vino,,岩手県紫波郡紫波町遠山字松原1-11,,,+81196765301,,https://www.shiwa-fruitspark.co.jp/winery/,,,,39.554390,141.155470,,,no comprobado,,,2748,,,,,,,jp,tohoku,iwate,,,,,,
+3peaks-ofunato,株式会社 スリーピークス,Ōfunato,Vino,,岩手県大船渡市大船渡町字茶屋前99,,,+815053724014,,https://3peaks.jp/,,,,39.081940,141.708890,,,no comprobado,,,2725,,,,,,,jp,tohoku,iwate,,,,,,
+monnosukefarm-hanamaki,もんのすけ農園,Hanamaki,Vino,,岩手県花巻市南万丁目1087-4,,,+819076631490,,https://monnosukefarm.com/,,,,39.388610,141.116920,,,no comprobado,,,1668,,,,,,,jp,tohoku,iwate,,,,,,
+mitani-ichinohe,おさんぽジャージー三谷牧場,Ichinohe,Lácteos y quesos,"金のチーズ 丸タイプ, 金のフロマージュブラン",岩手県二戸郡一戸町奥中山字西田子1276,,,,,http://mitani.pinoko.jp/,,,,40.212890,141.295440,,pendiente,no comprobado,,,1459,,,,,,,jp,tohoku,iwate,,,,,,
+yagisawa-s-rikuzentakata,八木澤商店,Rikuzentakata,Condimentos,丸むらさき,岩手県陸前高田市矢作町字諏訪41,Produces soy sauce and traditional seasonings at its Rikuzentakata brewery.,,+81192553261,,http://www.yagisawa-s.co.jp/,,,,39.020420,141.633060,,,no comprobado,,,2177,en,,,,,,jp,tohoku,iwate,,,,,,
+sasachou-hanamaki,佐々長醸造,Hanamaki,Condimentos,生醤油,岩手県花巻市東和町土沢5-417,Produces soy sauce and traditional seasonings at its Hanamaki brewery.,,+81198422311,,https://www.sasachou.co.jp/,,,,39.388610,141.116920,,,no comprobado,,,2147,en,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-3078424,ハチミツ農家YoYo,Morioka,Miel,,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1864,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-20076,巣鴨養蜂園,Nishiwaga,Miel,蜂蜜,,,,,,,,,,39.434580,140.750030,,pendiente,sí,marketplace,,2480,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-26782,岩手 牧草の丘,Kanegasaki,Lácteos y quesos,,,,,,,,,,,39.195720,141.116330,,pendiente,sí,marketplace,,2456,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-28175,安比まいたけ,Hachimantai,Setas,,,,,,,,,,,39.956390,141.071640,,pendiente,sí,marketplace,,2363,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-25815,安俱里まほら岩手,Morioka,Setas,きのこ,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,2359,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-3077472,長瀬農園,Karumai,Setas,,,,,,,,,,,40.326750,141.460470,,pendiente,sí,marketplace,,3263,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-27172,魚武,Tanohata,Pescado,,,,,,,,,,,39.930470,141.888920,,pendiente,sí,marketplace,,3315,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-20883,やんべファーム,Morioka,Pescado,,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1682,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-22389,柿木畜産,Kuji,Carne,牛肉,,,,,,,,,,40.143610,141.659170,,pendiente,sí,marketplace,,2687,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-28385,うたがき優命園,Ōshū-shi,Huevos,,,,,,,,,,,39.129720,141.094720,,pendiente,sí,marketplace,,1441,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-21360,しあわせ牧場,Miyako,Carne,,,,,,,,,,,39.639720,141.946110,,pendiente,sí,marketplace,,1527,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-29417,佐々研山葵農園,Iwaizumi,Fruta y verdura,わさび,,,,,,,,,,39.843140,141.796390,,pendiente,sí,marketplace,,2146,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-3077939,いわいずみ和做美,Iwaizumi,Fruta y verdura,わさび,,,,,,,,,,39.843140,141.796390,,pendiente,sí,marketplace,,1435,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-20510,米農家 仁左ェ門,Takizawa,Pan y cereal,,,,,,,,,,,39.734690,141.077060,,pendiente,sí,marketplace,,3039,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-3077889,タカハシ農園,Hanamaki,Pan y cereal,米,,,,,,,,,,39.388610,141.116920,,pendiente,sí,marketplace,,1823,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-24141,上小田代,Ōshū-shi,Frutos secos,,,,,,,,,,,39.129720,141.094720,,pendiente,sí,marketplace,,2032,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-20631,由井野菜園,Takizawa,Fruta y verdura,,,,,,,,,,,39.734690,141.077060,,pendiente,sí,marketplace,,2949,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-22314,サンファーム,Morioka,Fruta y verdura,りんご,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1796,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-24711,またくるファーム,Morioka,Fruta y verdura,,,,,,,,,,,39.702080,141.154500,,pendiente,sí,marketplace,,1631,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-24231,ほそかわ農園,Yahaba,Legumbres,"トマト, 落花生",,,,,,,,,,39.606000,141.142940,,pendiente,sí,marketplace,Fruta y verdura,1621,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-21008,太陽商会,Hanamaki,Pan y cereal,"野菜, 小麦",,,,,,,,,,39.388610,141.116920,,pendiente,sí,marketplace,Fruta y verdura,2343,,,,,,,jp,tohoku,iwate,,,,,,
+tabechoku-26287,中野圭,Ōfunato,Pescado,,,,,,,,,,,39.081940,141.708890,,pendiente,sí,marketplace,,2065,,,,,,,jp,tohoku,iwate,,,,,,
+jp-iwate-shoeidoh-co-83324f0,松栄堂,一関市,Dulces y repostería,和菓子,一関市地主町 3-36,,,,,https://www.shoeidoh.co.jp/,,,,38.934720,141.126580,,,no comprobado,,,2668,,,,,,,jp,tohoku,iwate,,,,,,
+jp-iwate-saitoseika-co-9ed82bc,三陸菓匠さいとう,大船渡市,Dulces y repostería,和菓子,大船渡市大船渡町台 26-18,,,,,http://saitoseika.co.jp/,,,,39.081940,141.708890,,,sí,ecommerce,,2028,,,,,,,jp,tohoku,iwate,,,,,,
+tanohata-yamachi-milkport-nao,田野畑山地酪農牛乳 milkport NAO,Tanohata,Lácteos y quesos,"牛乳, ヨーグルト, チーズ",田野畑村蝦夷森161-15,"Raises dairy cattle year-round on mountain pasture and makes milk, yogurt and cheese at milkport NAO.",,+81194342725,,https://yamachi.jp/,,,,39.930470,141.888920,,,sí,ecommerce,,2947,en,,,,,,jp,tohoku,iwate,,,,,,
+baeren-brewery,ベアレン醸造所 (Baeren Brewery),Morioka,Cerveza,,北山1丁目3-1,,,,,https://www.baerenbier.co.jp/,,https://www.instagram.com/baerenbier/,,39.70208,141.1545,,pendiente,no comprobado,,,1918,,,,,,,jp,tohoku,iwate,,,,,,
+zumona,上閉伊酒造 (遠野麦酒 ZUMONA),Tono,Cerveza,,青笹町糠前31-19-7,,,,xxxx@kamihei-shuzo.jp,https://kamihei-shuzo.jp/,,https://www.instagram.com/zumonabeer/,,39.33203,141.53289,,pendiente,no comprobado,,,2038,,,,,,,jp,tohoku,iwate,,,,,,
+kamata-suisan-ofunato,鎌田水産,Ōfunato,Pescado,"Pacific saury, salmon, shellfish",岩手県大船渡市赤崎町字鳥沢164番地2,"Operates fishing vessels, aquaculture and seafood processing units in Ōfunato.",,+81192278470,3riku-aji@kamasui.com,https://kamata-suisan.co.jp/,,,,39.030315,141.739441,,,no comprobado,,,3255,en,,,,,,jp,tohoku,iwate,,,,,,
+nakamuraya-kamaishi,中村家,Kamaishi,Pescado,Sanriku Kaisenzuke,,Produces Sanriku Kaisenzuke and other prepared seafood in Kamaishi.,,,info@iwate-nakamuraya.co.jp,https://www.iwate-nakamuraya.co.jp/,,,,39.27581,141.88569,,,no comprobado,,,2054,en,,,,,,jp,tohoku,iwate,,,,,,
+kawashu-miyako,川秀,Miyako,Pescado,"Seafood preserves, roe, seaweed",岩手県宮古市津軽石13地割411,"Processes seafood, roe, dried fish and seaweed at its Miyako factory.",,+81193831733,,https://kawashu.com/,,,,39.567345,141.931503,,,no comprobado,,,2478,en,,,,,,jp,tohoku,iwate,,,,,,
+kimura-shoten-yamada,木村商店,Yamada,Pescado,"Ika tokkuri, himono, prepared seafood",岩手県下閉伊郡山田町豊間根7-30,"Hand-makes ika tokkuri, dried fish and prepared seafood at its Yamada factory.",,+81193835510,,https://kimura-tokkuri.com/,,,,39.46767,141.94892,,pendiente,sí,ecommerce,,2627,en,,,,,,jp,tohoku,iwate,,,,,,
+koiwai-milk-shizukuishi-factory,小岩井乳業 — 小岩井工場,Shizukuishi,Lácteos y quesos,"milk, yoghurt and butter","Maruyachi 36-1, Shizukuishi, Iwate",,,,,https://www.koiwaimilk.com/,,,,,,,pendiente,no comprobado,,,3522,,,,,,,jp,tohoku,iwate,,,,,,

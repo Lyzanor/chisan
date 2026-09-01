@@ -159,6 +159,18 @@ test("producer field presentation localizes display values while retaining CSV t
     formatProducerFieldLabel("descripcion_locale", "es", spanish),
     "Idioma de la descripción",
   );
+  assert.equal(
+    formatProducerFieldLabel("quien hay detras", "es", spanish),
+    "Quién hay detrás",
+  );
+  assert.equal(
+    formatProducerFieldLabel("fecha ultimo cambio", "es", spanish),
+    "Último cambio aprobado del productor",
+  );
+  assert.equal(
+    formatProducerFieldValue("fecha ultimo cambio", "2026-09-02", "es", spanish),
+    "2 de septiembre de 2026",
+  );
 
   assert.deepEqual(
     presentProducerField("Venta online", "sí", "de", german),
@@ -234,6 +246,12 @@ test("public field presentation hides internal, locale and expanded-profile fiel
     "visitas guiadas": "sí",
     "mensaje a la comunidad": "Mensaje reservado al bloque ampliado.",
     mensaje_comunidad_locale: "es",
+    video: "https://youtu.be/dQw4w9WgXcQ",
+    "quien hay detras": "Ana y Luis.",
+    quien_hay_detras_locale: "es",
+    historia: "Comenzó en 1987.",
+    historia_locale: "es",
+    "fecha ultimo cambio": "2026-09-02",
     "enlace destacado 1": "https://example.com/uno",
     "enlace destacado 2": "https://example.com/dos",
   };

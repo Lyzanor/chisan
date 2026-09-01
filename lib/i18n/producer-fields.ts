@@ -43,6 +43,12 @@ const GENERIC_TABLE_HIDDEN_FIELD_KEYS = new Set([
   "visitas guiadas",
   "mensaje a la comunidad",
   "mensaje_comunidad_locale",
+  "video",
+  "quien hay detras",
+  "quien_hay_detras_locale",
+  "historia",
+  "historia_locale",
+  "fecha ultimo cambio",
   "enlace destacado 1",
   "enlace destacado 2",
 ]);
@@ -108,11 +114,23 @@ export function formatProducerFieldValue(
   const normalizedKey = normalizeFieldKey(key);
   if (
     normalizedKey === "descripcion_locale" ||
-    normalizedKey === "mensaje_comunidad_locale"
+    normalizedKey === "mensaje_comunidad_locale" ||
+    normalizedKey === "quien_hay_detras_locale" ||
+    normalizedKey === "historia_locale"
   ) {
     return formatDescriptionLocale(value, messages, locale);
   }
   if (!value) return messages.common.unavailable;
+
+  if (normalizedKey === "fecha ultimo cambio" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    const parsed = new Date(`${value}T00:00:00.000Z`);
+    if (!Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value) {
+      return new Intl.DateTimeFormat(getLocaleDisplayTag(locale), {
+        dateStyle: "long",
+        timeZone: "UTC",
+      }).format(parsed);
+    }
+  }
 
   switch (normalizedKey) {
     case "categoria":

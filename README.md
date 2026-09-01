@@ -69,7 +69,7 @@ area selector.
 ## Project map
 
 - Producer data: `data/csv/<country>/<region>/<area>.csv`
-- Materialized localized descriptions:
+- Materialized localized producer profile prose:
   `data/csv/<country>/translations.<locale>.csv`
 - Product and engineering context for agents: `AGENTS.md`
 - Account, claim and producer-edit workflow: `docs/ACCOUNT_SYSTEM.md`

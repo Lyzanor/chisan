@@ -149,7 +149,8 @@ deliberate override or `--all-countries` for a cross-catalog report; add
 missing or stale machine rows from translations that require renewed human
 review; they do not prove full publication readiness.
 
-1. After adding a producer description or changing canonical prose, run
+1. After adding or changing canonical translatable profile prose
+   (`descripcion`, `quien hay detras` or `historia`), run
    `npx pnpm check:translations:changed`. Missing or stale machine rows produce
    the exact bounded country, target-locale and area generation command;
    stale reviewed rows instead require explicit renewed review. Generate only
@@ -157,9 +158,10 @@ review; they do not prove full publication readiness.
    glossary version, and inspect the resulting sidecar diff without printing
    credentials.
 2. Run the translation checks for the changed scope and then the repository
-   gate. Every non-empty description rendered by the locale must have either
-   canonical prose in that locale or a current sidecar row whose source locale
-   and source hash match. Stale reviewed rows block release and are never
+   gate. Every non-empty translatable profile field rendered by the locale must
+   have either canonical prose in that locale or a current sidecar row for that
+   exact field whose source locale and source hash match. Stale reviewed rows
+   block release and are never
    replaced automatically. The gate reapplies exact numeric-token, ordered
    quantitative-fact, URL, protected-term, length and unchanged-source
    invariants to current machine and reviewed rows; a current machine row that
@@ -247,6 +249,15 @@ exact three path slugs from `data/csv/<country>/<region>/<area>.csv`; use the
 same producer-change freeze, queue drain, atomic application deployment and
 post-deployment smoke check before accepting new proposals against the widened
 row hashes.
+
+The premium-story migration appends `video`, `quien hay detras`,
+`quien_hay_detras_locale`, `historia`, `historia_locale` and `fecha ultimo
+cambio` after those portable-location columns. The two prose fields participate
+in the country sidecars; the date is materialized automatically from an
+approved request's `reviewed_at` in UTC and is never form input. Freeze and
+drain row-hash-dependent requests before deployment, then re-enable producer
+changes only after the widened catalog, validators, form and public premium
+block pass the production smoke check together.
 
 ### Deferred Stripe adapter activation and future launch
 

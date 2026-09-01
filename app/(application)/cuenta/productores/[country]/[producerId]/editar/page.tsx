@@ -285,13 +285,12 @@ export default async function EditProducerPage({
     } else if (field.kind === "sales-channels") {
       options = salesChannelOptions;
     } else if (field.kind === "description-locale") {
-      options =
-        field.key === "mensaje_comunidad_locale"
-          ? communityMessageLocaleOptions
-          : descriptionLocaleOptions;
+      options = field.key === "descripcion_locale"
+        ? descriptionLocaleOptions
+        : communityMessageLocaleOptions;
     }
     return {
-      help: presentation.messages.ownerProducerFieldHelp[field.key],
+      help: presentation.messages.ownerProducerFieldHelp[field.key] ?? field.help,
       initialValue: producer.fields[field.key] ?? "",
       key: field.key,
       kind: field.kind,
@@ -359,7 +358,7 @@ export default async function EditProducerPage({
         </strong>
         <p>
           {premiumActive
-            ? "Guided visits, a community message and highlighted links can be proposed below."
+            ? "A YouTube video, guided visits, producer story, team introduction and highlighted links can be proposed below."
             : upgradePending
               ? "Stripe has not yet confirmed the open Checkout request. Premium fields remain unavailable until the signed webhook succeeds."
               : upgradeNeedsReconciliation
@@ -367,8 +366,8 @@ export default async function EditProducerPage({
                 : !checkoutReady
                   ? "Standard profile corrections remain available. New expanded-profile purchases will return when billing is ready."
                 : owner
-                  ? "You can unlock guided visits, a community message and highlighted links with one €49 payment."
-                  : "The verified owner can unlock guided visits, a community message and highlighted links with one €49 payment."}
+                  ? "You can unlock a video, guided visits, producer story, team introduction and highlighted links with one €49 payment."
+                  : "The verified owner can unlock a video, guided visits, producer story, team introduction and highlighted links with one €49 payment."}
         </p>
         {canOpenUpgrade ? (
           <Link

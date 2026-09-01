@@ -224,9 +224,12 @@ neither `no` nor closure.
 
 ## Canonical language and localized presentation
 
-Canonical `descripcion` records its actual per-row source language. Prefer
-precise, supportable prose over a weaker text written to satisfy a country-wide
-language target.
+Canonical `descripcion`, `quien hay detras` and `historia` each record their
+actual per-row source language in the paired locale cell. Prefer precise,
+supportable prose over a weaker text written to satisfy a country-wide language
+target. The two long-form premium fields may be first-party producer speech,
+but review must exclude private personal data, HTML, URLs, boilerplate and
+unsupported claims about third parties.
 
 The area row remains the factual decision: correct factual or source-locale
 errors there, never only in a translation. Translation sidecars are versioned
@@ -337,6 +340,10 @@ An active producer member's proposal for a published row enters level 3, but
 membership authorizes only the proposal and private owner material is not public
 evidence. Follow the review, materialization, commit and finalization workflow
 in `docs/ACCOUNT_SYSTEM.md`; PostgreSQL never becomes a catalog overlay.
+
+`fecha ultimo cambio` is workflow metadata for this path only. The materializer
+sets it from the approval timestamp when an owner proposal is approved and
+applied; editors do not set it during ordinary catalog research or maintenance.
 
 The public label `Verificado por el productor` is derived only from an exact
 active owner membership created by an approved claim. It verifies who controls

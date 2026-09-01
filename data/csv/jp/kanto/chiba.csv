@@ -1,53 +1,53 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
-iinuma-honke-shisui,Iinuma Honke,Shisui,Sake,,千葉県印旛郡酒々井町馬橋106,,,+81434961111,,http://www.iinumahonke.co.jp/,,,,35.707287,140.271637,,pendiente,no comprobado,,,367,,,,,,,jp,kanto,chiba
-asahitsuru-sakura,Asahitsuru,Sakura,Sake,,千葉県佐倉市馬渡918,,,+81120650002,,http://www.asahiduru.jp/,,,,35.66927,140.22673,,pendiente,no comprobado,,,80,,,,,,,jp,kanto,chiba
-iida-honke-katori,Iida Honke,Katori,Sake,,千葉県香取市小見川178,,,+81478822037,,http://www.chiba-sake.jp/suigo/iida/,,,,35.852749,140.601807,,pendiente,no comprobado,,,364,,,,,,,jp,kanto,chiba
-iida-shuzojo-choshi,Iida Shuzojo,Choshi,Sake,,千葉県銚子市清川町2-1-2,,,+81479220821,,http://maruchiba.jp/sys/data/index/page/id/17158,,,,35.729614,140.820404,,pendiente,no comprobado,,,365,,,,,,,jp,kanto,chiba
-ishigami-shuzo-choshi,Ishigami Shuzo,Choshi,Sake,,千葉県銚子市田中町7-1,,,+81479220655,,http://www.isbc.co.jp/,,,,35.732742,140.842758,,pendiente,no comprobado,,,423,,,,,,,jp,kanto,chiba
-kubota-shuzo-noda,Kubota Shuzo,Noda,Sake,,千葉県野田市山崎685,,,+81471253331,,http://www.chuokai-chiba.or.jp/sake/kura/kura41.html,,,,35.915726,139.893127,,pendiente,no comprobado,,,666,,,,,,,jp,kanto,chiba
-aoyagi-shuzo-yokoshibahikari,Aoyagi Shuzo,Yokoshibahikari,Sake,,千葉県山武郡横芝光町篠本726,,,+81479850012,,,,,,35.703388,140.499939,,pendiente,no comprobado,,,64,,,,,,,jp,kanto,chiba
-umeichirin-shuzo-sanmu,Umeichirin Shuzo,Sanmu,Sake,,千葉県山武市松ヶ谷イ2902,,,+81475842221,,http://www.umeichirin.com/,,,,35.584686,140.473022,,pendiente,no comprobado,,,1301,,,,,,,jp,kanto,chiba
-kankiku-meijo-sanmu,Kankiku Meijo,Sanmu,Sake,,千葉県山武市松尾町武野里11,,,+81479863050,,http://www.kankiku.com/,,,,35.625526,140.483612,,pendiente,no comprobado,,,511,,,,,,,jp,kanto,chiba
-inaka-shuzo-ichinomiya,Inaka Shuzo,Ichinomiya,Sake,,千葉県長生郡一宮町東浪見5841,,,+81475423134,,http://www.inahana-syuzou.com/,,,,35.361095,140.372665,,pendiente,no comprobado,,,401,,,,,,,jp,kanto,chiba
-kidoizumi-shuzo-isumi,Kidoizumi Shuzo,Isumi,Sake,,千葉県いすみ市大原7635-1,,,+81470620013,,http://kidoizumi.jpn.com/,,,,35.252422,140.387589,,pendiente,no comprobado,,,553,,,,,,,jp,kanto,chiba
-iwase-shuzo-onjuku,Iwase Shuzo,Onjuku,Sake,,千葉県夷隅郡御宿町久保1916,,,+81470682034,,http://iwanoi.com/,,,,35.191868,140.355713,,pendiente,no comprobado,,,455,,,,,,,jp,kanto,chiba
-azumanada-jozo-katsuura,Azumanada Jozo,Katsuura,Sake,,千葉県勝浦市串浜1033,,,+81470735221,,https://azumanada.net/,,,,35.155655,140.303329,,pendiente,no comprobado,,,96,,,,,,,jp,kanto,chiba
-kameda-shuzo-kamogawa,Kameda Shuzo,Kamogawa,Sake,,千葉県鴨川市仲329,,,+81470971116,,http://jumangame.com/,,,,35.131218,140.026093,,pendiente,no comprobado,,,481,,,,,,,jp,kanto,chiba
-kase-farm-katori,Kase Farm,Katori,Fruta y verdura,Organic vegetables,千葉県香取市沢2602　他,,,+81478795665,,https://kasenouen.com/,,,,35.812061,140.471405,,,no comprobado,,,520,,,,,,,jp,kanto,chiba
-ohtaka-shoyu-sanmu,Ohtaka Shoyu,Sanmu,Condimentos,"Soy sauce, tsuyu, tare",千葉県山武市富田540,,,+81475825581,,https://ohtakasho-yu.shop-pro.jp/?mode=sk,,,,35.612583,140.423325,,,sí,ecommerce,,909,,,,,,,jp,kanto,chiba
-sen-otaki,チーズ工房【千】sen,Otaki,Lácteos y quesos,"和み, うぶすな, 豊熟",千葉県夷隅郡大多喜町馬場内178,,,,,https://fromage-sen.com/,,,,35.809330,137.550750,,,sí,ecommerce,,1832,,,,,,,jp,kanto,chiba
-matthewswine-tateyama,チョウシ・チアーズ (銚子ビール),Choshi,Cerveza,,垣根町1-283,,,,,https://choshicheers.com/,,https://www.instagram.com/choshibeer/,,35.73464,140.82678,,,no comprobado,,,1828,,,,,,,jp,kanto,chiba
-takahide-dairyfarm-isumi,高秀牧場チーズ工房,Isumi,Lácteos y quesos,"高秀ブッラータ, ミルクのたまご（スモーク）, いすみの白い月",千葉県いすみ市須賀谷1339-1,,,,,https://www.takahide-dairyfarm.com/,,,,35.253920,140.385190,,pendiente,no comprobado,,,3309,,,,,,,jp,kanto,chiba
-taiheig-sosa-shi,タイヘイ,Sōsa-shi,Condimentos,平左衛門,千葉県匝瑳市八日市場イ2614,Produces soy sauce and traditional seasonings at its Sōsa-shi brewery.,,+81479731111,,https://www.taiheig.co.jp/shokuhin/,,,,35.707860,140.564280,,pendiente,no comprobado,,,1820,en,,,,,,jp,kanto,chiba
-miyashoyu-futtsu,宮醤油店,Futtsu,Condimentos,さしみしょうゆ,千葉県富津市佐貫247番地,Produces soy sauce and traditional seasonings at its Futtsu brewery.,,+81439660003,,http://www.miyashoyu.co.jp/,,,,35.304080,139.857030,,pendiente,no comprobado,,,2388,en,,,,,,jp,kanto,chiba
-ikspiari-urayasu,イクスピアリ (ハーヴェスト・ムーン),Urayasu,Cerveza,,,,,,,https://ikspiari.com/,,,,35.653140,139.902000,,,sí,ecommerce,,1714,,,,,,,jp,kanto,chiba
-tabechoku-21957,ハチミツさん,Isumi,Miel,蜂蜜,,,,,,,,,,35.253920,140.385190,,pendiente,sí,marketplace,,1863,,,,,,,jp,kanto,chiba
-tabechoku-3077998,ONE DROP FARM,Ichihara,Miel,"柑橘, 野菜, 蜂蜜",,,,,,,,,,35.498060,140.115440,,pendiente,sí,marketplace,,942,,,,,,,jp,kanto,chiba
-tabechoku-23733,戸辺養鶏場,Noda,Huevos,,,,,,,,,,,35.955080,139.874810,,pendiente,sí,marketplace,,2533,,,,,,,jp,kanto,chiba
-tabechoku-25605,豊受きのこ園,Abiko,Setas,"しいたけ, きのこ",,,,,,,,,,35.864220,140.028390,,pendiente,sí,marketplace,,3166,,,,,,,jp,kanto,chiba
-tabechoku-20616,きのこ屋でんべえ,Asahi,Setas,,,,,,,,,,,35.716060,140.648140,,pendiente,sí,marketplace,,1485,,,,,,,jp,kanto,chiba
-tabechoku-22946,留守農場,Yachimata,Fruta y verdura,"野菜, 落花生",,,,,,,,,,35.665890,140.317940,,pendiente,sí,marketplace,,2954,,,,,,,jp,kanto,chiba
-tabechoku-20925,東京湾水産,Futtsu,Pescado,,,,,,,,,,,35.304080,139.857030,,pendiente,sí,marketplace,,2654,,,,,,,jp,kanto,chiba
-tabechoku-20417,不動丸,Asahi,Condimentos,味噌,,,,,,,,,,35.716060,140.648140,,pendiente,sí,marketplace,,2042,,,,,,,jp,kanto,chiba
-tabechoku-22463,鈴常丸,Funabashi,Pescado,,,,,,,,,,,35.694560,139.982560,,pendiente,sí,marketplace,,3238,,,,,,,jp,kanto,chiba
-tabechoku-24550,ジェリービーンズ,Tako,Carne,豚肉,,,,,,,,,,35.735610,140.467750,,pendiente,sí,marketplace,,1801,,,,,,,jp,kanto,chiba
-tabechoku-3078158,大倉モーモー農園,Chiba,Legumbres,落花生,,,,,,,,,,35.607280,140.106360,,pendiente,sí,marketplace,,2303,,,,,,,jp,kanto,chiba
-tabechoku-28505,ヤマハン,Asahi,Legumbres,落花生,,,,,,,,,,35.716060,140.648140,,pendiente,sí,marketplace,,1977,,,,,,,jp,kanto,chiba
-tabechoku-29583,ラグエルジャパン,Ichihara,Fruta y verdura,"ブルーベリー, ジャム",,,,,,,,,,35.498060,140.115440,,pendiente,sí,marketplace,,1985,,,,,,,jp,kanto,chiba
-tabechoku-23284,輝農塾,Chiba,Pan y cereal,米,,,,,,,,,,35.607280,140.106360,,pendiente,sí,marketplace,,3180,,,,,,,jp,kanto,chiba
-tabechoku-20073,ののま自然農園,Kimitsu,Legumbres,"野菜, 大豆",,,,,,,,,,35.330530,139.902470,,pendiente,sí,marketplace,Fruta y verdura,1581,,,,,,,jp,kanto,chiba
-tabechoku-22632,ksfarm,Shiroi,Fruta y verdura,"梨, ジュース",,,,,,,,,,35.791470,140.056310,,pendiente,sí,marketplace,,661,,,,,,,jp,kanto,chiba
-tabechoku-26865,アグリヨシノ,Yachimata,Fruta y verdura,"生姜, 野菜",,,,,,,,,,35.665890,140.317940,,pendiente,sí,marketplace,,1705,,,,,,,jp,kanto,chiba
-tabechoku-25506,おかざきファーム,Minamiboso,Fruta y verdura,"野菜, ビール",,,,,,,,,,35.043170,139.840000,,pendiente,sí,marketplace,,1455,,,,,,,jp,kanto,chiba
-tabechoku-73,ベジLIFE!!,Abiko,Fruta y verdura,野菜,,,,,,,,,,35.864220,140.028390,,pendiente,sí,marketplace,,1919,,,,,,,jp,kanto,chiba
-tabechoku-29215,和か葉農園,Noda,Fruta y verdura,野菜,,,,,,,,,,35.955080,139.874810,,pendiente,sí,marketplace,,2260,,,,,,,jp,kanto,chiba
-tabechoku-3079015,こもれび果実,Kamagaya,Fruta y verdura,梨,,,,,,,,,,35.772780,139.998890,,pendiente,sí,marketplace,,1505,,,,,,,jp,kanto,chiba
-tabechoku-24128,漬物工房彩,Katori,Fruta y verdura,"ねぎ, 漬物",,,,,,,,,,35.897720,140.499190,,pendiente,sí,marketplace,,2909,,,,,,,jp,kanto,chiba
-jp-chiba-k-sasaya-57771ea,ささや,千葉市,Dulces y repostería,和菓子,千葉市稲毛区緑町 1-24-2,,,,,http://www.k-sasaya.jp/,,,,35.607280,140.106360,,,no comprobado,,,1512,,,,,,,jp,kanto,chiba
-jp-chiba-nagomi-yoneya-co-4d83aaf,なごみの米屋,成田市,Dulces y repostería,和菓子,成田市上町 500,,,,,https://nagomi-yoneya.co.jp/,,,,35.776670,140.318330,,,sí,ecommerce,,1568,,,,,,,jp,kanto,chiba
-jp-chiba-boyodo-co-a0e37cd,房洋堂,館山市,Dulces y repostería,和菓子,館山市安布里 780,,,,,http://boyodo.co.jp/,,,,34.996580,139.869970,,,sí,ecommerce,,2535,,,,,,,jp,kanto,chiba
-jp-chiba-shigeno-co-ddf3ef6,茂野製麺㈱,鎌ヶ谷市,Pan y cereal,乾麺,,"Produces dried noodles in 鎌ヶ谷市, chiba.",,,,https://shigeno.co.jp/online-shop/,,,,35.772780,139.998890,,,sí,ecommerce,,3098,en,,,,,,jp,kanto,chiba
-locobeer,合同会社ロコビア (LOCOBEER),Sakura,Cerveza,,上座1193,,,,,http://www.locobeer.jp/,,https://www.instagram.com/locobeer_inc/,,35.72347,140.22394,,pendiente,no comprobado,,,2240,,,,,,,jp,kanto,chiba
-songbird-beer,SONGBIRD BEER,Kisarazu,Cerveza,,清見台1-18-12,,,,,https://songbirdbeer.blogspot.com/,,https://www.instagram.com/songbirdbeer/,,35.37597,139.91683,,pendiente,no comprobado,,,1132,,,,,,,jp,kanto,chiba
-chiba-shoyu,Chiba Shoyu,Katori,Condimentos,salsa de soja,"1208 Kinouchi, Katori-shi, Chiba 289-0337, Japón",,,,info@chibashoyu.com,https://www.chibashoyu.com/english/company.html,,,,35.89772,140.49919,,pendiente,no comprobado,,,3391,,,,,,,jp,kanto,chiba
-kikkoman-noda-plant,Kikkoman Noda Plant,Noda,Condimentos,,,,,,,https://www.kikkoman.com/en/quality/safety/production.html,,,,,,,pendiente,no comprobado,,,3413,,,,,,,jp,kanto,chiba
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+iinuma-honke-shisui,Iinuma Honke,Shisui,Sake,,千葉県印旛郡酒々井町馬橋106,,,+81434961111,,http://www.iinumahonke.co.jp/,,,,35.707287,140.271637,,pendiente,no comprobado,,,367,,,,,,,jp,kanto,chiba,,,,,,
+asahitsuru-sakura,Asahitsuru,Sakura,Sake,,千葉県佐倉市馬渡918,,,+81120650002,,http://www.asahiduru.jp/,,,,35.66927,140.22673,,pendiente,no comprobado,,,80,,,,,,,jp,kanto,chiba,,,,,,
+iida-honke-katori,Iida Honke,Katori,Sake,,千葉県香取市小見川178,,,+81478822037,,http://www.chiba-sake.jp/suigo/iida/,,,,35.852749,140.601807,,pendiente,no comprobado,,,364,,,,,,,jp,kanto,chiba,,,,,,
+iida-shuzojo-choshi,Iida Shuzojo,Choshi,Sake,,千葉県銚子市清川町2-1-2,,,+81479220821,,http://maruchiba.jp/sys/data/index/page/id/17158,,,,35.729614,140.820404,,pendiente,no comprobado,,,365,,,,,,,jp,kanto,chiba,,,,,,
+ishigami-shuzo-choshi,Ishigami Shuzo,Choshi,Sake,,千葉県銚子市田中町7-1,,,+81479220655,,http://www.isbc.co.jp/,,,,35.732742,140.842758,,pendiente,no comprobado,,,423,,,,,,,jp,kanto,chiba,,,,,,
+kubota-shuzo-noda,Kubota Shuzo,Noda,Sake,,千葉県野田市山崎685,,,+81471253331,,http://www.chuokai-chiba.or.jp/sake/kura/kura41.html,,,,35.915726,139.893127,,pendiente,no comprobado,,,666,,,,,,,jp,kanto,chiba,,,,,,
+aoyagi-shuzo-yokoshibahikari,Aoyagi Shuzo,Yokoshibahikari,Sake,,千葉県山武郡横芝光町篠本726,,,+81479850012,,,,,,35.703388,140.499939,,pendiente,no comprobado,,,64,,,,,,,jp,kanto,chiba,,,,,,
+umeichirin-shuzo-sanmu,Umeichirin Shuzo,Sanmu,Sake,,千葉県山武市松ヶ谷イ2902,,,+81475842221,,http://www.umeichirin.com/,,,,35.584686,140.473022,,pendiente,no comprobado,,,1301,,,,,,,jp,kanto,chiba,,,,,,
+kankiku-meijo-sanmu,Kankiku Meijo,Sanmu,Sake,,千葉県山武市松尾町武野里11,,,+81479863050,,http://www.kankiku.com/,,,,35.625526,140.483612,,pendiente,no comprobado,,,511,,,,,,,jp,kanto,chiba,,,,,,
+inaka-shuzo-ichinomiya,Inaka Shuzo,Ichinomiya,Sake,,千葉県長生郡一宮町東浪見5841,,,+81475423134,,http://www.inahana-syuzou.com/,,,,35.361095,140.372665,,pendiente,no comprobado,,,401,,,,,,,jp,kanto,chiba,,,,,,
+kidoizumi-shuzo-isumi,Kidoizumi Shuzo,Isumi,Sake,,千葉県いすみ市大原7635-1,,,+81470620013,,http://kidoizumi.jpn.com/,,,,35.252422,140.387589,,pendiente,no comprobado,,,553,,,,,,,jp,kanto,chiba,,,,,,
+iwase-shuzo-onjuku,Iwase Shuzo,Onjuku,Sake,,千葉県夷隅郡御宿町久保1916,,,+81470682034,,http://iwanoi.com/,,,,35.191868,140.355713,,pendiente,no comprobado,,,455,,,,,,,jp,kanto,chiba,,,,,,
+azumanada-jozo-katsuura,Azumanada Jozo,Katsuura,Sake,,千葉県勝浦市串浜1033,,,+81470735221,,https://azumanada.net/,,,,35.155655,140.303329,,pendiente,no comprobado,,,96,,,,,,,jp,kanto,chiba,,,,,,
+kameda-shuzo-kamogawa,Kameda Shuzo,Kamogawa,Sake,,千葉県鴨川市仲329,,,+81470971116,,http://jumangame.com/,,,,35.131218,140.026093,,pendiente,no comprobado,,,481,,,,,,,jp,kanto,chiba,,,,,,
+kase-farm-katori,Kase Farm,Katori,Fruta y verdura,Organic vegetables,千葉県香取市沢2602　他,,,+81478795665,,https://kasenouen.com/,,,,35.812061,140.471405,,,no comprobado,,,520,,,,,,,jp,kanto,chiba,,,,,,
+ohtaka-shoyu-sanmu,Ohtaka Shoyu,Sanmu,Condimentos,"Soy sauce, tsuyu, tare",千葉県山武市富田540,,,+81475825581,,https://ohtakasho-yu.shop-pro.jp/?mode=sk,,,,35.612583,140.423325,,,sí,ecommerce,,909,,,,,,,jp,kanto,chiba,,,,,,
+sen-otaki,チーズ工房【千】sen,Otaki,Lácteos y quesos,"和み, うぶすな, 豊熟",千葉県夷隅郡大多喜町馬場内178,,,,,https://fromage-sen.com/,,,,35.809330,137.550750,,,sí,ecommerce,,1832,,,,,,,jp,kanto,chiba,,,,,,
+matthewswine-tateyama,チョウシ・チアーズ (銚子ビール),Choshi,Cerveza,,垣根町1-283,,,,,https://choshicheers.com/,,https://www.instagram.com/choshibeer/,,35.73464,140.82678,,,no comprobado,,,1828,,,,,,,jp,kanto,chiba,,,,,,
+takahide-dairyfarm-isumi,高秀牧場チーズ工房,Isumi,Lácteos y quesos,"高秀ブッラータ, ミルクのたまご（スモーク）, いすみの白い月",千葉県いすみ市須賀谷1339-1,,,,,https://www.takahide-dairyfarm.com/,,,,35.253920,140.385190,,pendiente,no comprobado,,,3309,,,,,,,jp,kanto,chiba,,,,,,
+taiheig-sosa-shi,タイヘイ,Sōsa-shi,Condimentos,平左衛門,千葉県匝瑳市八日市場イ2614,Produces soy sauce and traditional seasonings at its Sōsa-shi brewery.,,+81479731111,,https://www.taiheig.co.jp/shokuhin/,,,,35.707860,140.564280,,pendiente,no comprobado,,,1820,en,,,,,,jp,kanto,chiba,,,,,,
+miyashoyu-futtsu,宮醤油店,Futtsu,Condimentos,さしみしょうゆ,千葉県富津市佐貫247番地,Produces soy sauce and traditional seasonings at its Futtsu brewery.,,+81439660003,,http://www.miyashoyu.co.jp/,,,,35.304080,139.857030,,pendiente,no comprobado,,,2388,en,,,,,,jp,kanto,chiba,,,,,,
+ikspiari-urayasu,イクスピアリ (ハーヴェスト・ムーン),Urayasu,Cerveza,,,,,,,https://ikspiari.com/,,,,35.653140,139.902000,,,sí,ecommerce,,1714,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-21957,ハチミツさん,Isumi,Miel,蜂蜜,,,,,,,,,,35.253920,140.385190,,pendiente,sí,marketplace,,1863,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-3077998,ONE DROP FARM,Ichihara,Miel,"柑橘, 野菜, 蜂蜜",,,,,,,,,,35.498060,140.115440,,pendiente,sí,marketplace,,942,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-23733,戸辺養鶏場,Noda,Huevos,,,,,,,,,,,35.955080,139.874810,,pendiente,sí,marketplace,,2533,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-25605,豊受きのこ園,Abiko,Setas,"しいたけ, きのこ",,,,,,,,,,35.864220,140.028390,,pendiente,sí,marketplace,,3166,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-20616,きのこ屋でんべえ,Asahi,Setas,,,,,,,,,,,35.716060,140.648140,,pendiente,sí,marketplace,,1485,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-22946,留守農場,Yachimata,Fruta y verdura,"野菜, 落花生",,,,,,,,,,35.665890,140.317940,,pendiente,sí,marketplace,,2954,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-20925,東京湾水産,Futtsu,Pescado,,,,,,,,,,,35.304080,139.857030,,pendiente,sí,marketplace,,2654,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-20417,不動丸,Asahi,Condimentos,味噌,,,,,,,,,,35.716060,140.648140,,pendiente,sí,marketplace,,2042,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-22463,鈴常丸,Funabashi,Pescado,,,,,,,,,,,35.694560,139.982560,,pendiente,sí,marketplace,,3238,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-24550,ジェリービーンズ,Tako,Carne,豚肉,,,,,,,,,,35.735610,140.467750,,pendiente,sí,marketplace,,1801,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-3078158,大倉モーモー農園,Chiba,Legumbres,落花生,,,,,,,,,,35.607280,140.106360,,pendiente,sí,marketplace,,2303,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-28505,ヤマハン,Asahi,Legumbres,落花生,,,,,,,,,,35.716060,140.648140,,pendiente,sí,marketplace,,1977,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-29583,ラグエルジャパン,Ichihara,Fruta y verdura,"ブルーベリー, ジャム",,,,,,,,,,35.498060,140.115440,,pendiente,sí,marketplace,,1985,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-23284,輝農塾,Chiba,Pan y cereal,米,,,,,,,,,,35.607280,140.106360,,pendiente,sí,marketplace,,3180,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-20073,ののま自然農園,Kimitsu,Legumbres,"野菜, 大豆",,,,,,,,,,35.330530,139.902470,,pendiente,sí,marketplace,Fruta y verdura,1581,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-22632,ksfarm,Shiroi,Fruta y verdura,"梨, ジュース",,,,,,,,,,35.791470,140.056310,,pendiente,sí,marketplace,,661,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-26865,アグリヨシノ,Yachimata,Fruta y verdura,"生姜, 野菜",,,,,,,,,,35.665890,140.317940,,pendiente,sí,marketplace,,1705,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-25506,おかざきファーム,Minamiboso,Fruta y verdura,"野菜, ビール",,,,,,,,,,35.043170,139.840000,,pendiente,sí,marketplace,,1455,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-73,ベジLIFE!!,Abiko,Fruta y verdura,野菜,,,,,,,,,,35.864220,140.028390,,pendiente,sí,marketplace,,1919,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-29215,和か葉農園,Noda,Fruta y verdura,野菜,,,,,,,,,,35.955080,139.874810,,pendiente,sí,marketplace,,2260,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-3079015,こもれび果実,Kamagaya,Fruta y verdura,梨,,,,,,,,,,35.772780,139.998890,,pendiente,sí,marketplace,,1505,,,,,,,jp,kanto,chiba,,,,,,
+tabechoku-24128,漬物工房彩,Katori,Fruta y verdura,"ねぎ, 漬物",,,,,,,,,,35.897720,140.499190,,pendiente,sí,marketplace,,2909,,,,,,,jp,kanto,chiba,,,,,,
+jp-chiba-k-sasaya-57771ea,ささや,千葉市,Dulces y repostería,和菓子,千葉市稲毛区緑町 1-24-2,,,,,http://www.k-sasaya.jp/,,,,35.607280,140.106360,,,no comprobado,,,1512,,,,,,,jp,kanto,chiba,,,,,,
+jp-chiba-nagomi-yoneya-co-4d83aaf,なごみの米屋,成田市,Dulces y repostería,和菓子,成田市上町 500,,,,,https://nagomi-yoneya.co.jp/,,,,35.776670,140.318330,,,sí,ecommerce,,1568,,,,,,,jp,kanto,chiba,,,,,,
+jp-chiba-boyodo-co-a0e37cd,房洋堂,館山市,Dulces y repostería,和菓子,館山市安布里 780,,,,,http://boyodo.co.jp/,,,,34.996580,139.869970,,,sí,ecommerce,,2535,,,,,,,jp,kanto,chiba,,,,,,
+jp-chiba-shigeno-co-ddf3ef6,茂野製麺㈱,鎌ヶ谷市,Pan y cereal,乾麺,,"Produces dried noodles in 鎌ヶ谷市, chiba.",,,,https://shigeno.co.jp/online-shop/,,,,35.772780,139.998890,,,sí,ecommerce,,3098,en,,,,,,jp,kanto,chiba,,,,,,
+locobeer,合同会社ロコビア (LOCOBEER),Sakura,Cerveza,,上座1193,,,,,http://www.locobeer.jp/,,https://www.instagram.com/locobeer_inc/,,35.72347,140.22394,,pendiente,no comprobado,,,2240,,,,,,,jp,kanto,chiba,,,,,,
+songbird-beer,SONGBIRD BEER,Kisarazu,Cerveza,,清見台1-18-12,,,,,https://songbirdbeer.blogspot.com/,,https://www.instagram.com/songbirdbeer/,,35.37597,139.91683,,pendiente,no comprobado,,,1132,,,,,,,jp,kanto,chiba,,,,,,
+chiba-shoyu,Chiba Shoyu,Katori,Condimentos,salsa de soja,"1208 Kinouchi, Katori-shi, Chiba 289-0337, Japón",,,,info@chibashoyu.com,https://www.chibashoyu.com/english/company.html,,,,35.89772,140.49919,,pendiente,no comprobado,,,3391,,,,,,,jp,kanto,chiba,,,,,,
+kikkoman-noda-plant,Kikkoman Noda Plant,Noda,Condimentos,,,,,,,https://www.kikkoman.com/en/quality/safety/production.html,,,,,,,pendiente,no comprobado,,,3413,,,,,,,jp,kanto,chiba,,,,,,

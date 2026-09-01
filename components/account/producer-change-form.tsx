@@ -48,6 +48,13 @@ function valueSet(value: string): Set<string> {
   return new Set(value.split("|").map((item) => item.trim()).filter(Boolean));
 }
 
+const LONG_PROSE_FIELDS = new Set([
+  "descripcion",
+  "mensaje a la comunidad",
+  "quien hay detras",
+  "historia",
+]);
+
 function fieldId(group: "standard" | "premium", index: number): string {
   return `producer-change-${group}-${index}`;
 }
@@ -123,14 +130,8 @@ function ProducerChangeField({
           {...controlProps}
           defaultValue={value}
           required={field.required}
-          maxLength={
-            field.key === "descripcion" || field.key === "mensaje a la comunidad"
-              ? undefined
-              : field.maxLength
-          }
-          rows={
-            field.key === "descripcion" || field.key === "mensaje a la comunidad" ? 6 : 3
-          }
+          maxLength={LONG_PROSE_FIELDS.has(field.key) ? undefined : field.maxLength}
+          rows={field.key === "historia" ? 10 : LONG_PROSE_FIELDS.has(field.key) ? 6 : 3}
         />
       ) : field.options.length > 0 ? (
         <select
@@ -293,13 +294,13 @@ export function ProducerChangeForm({
           minLength={20}
           maxLength={4_000}
           rows={6}
-          placeholder="Explain what changed and include the official public source. For a community message, state that it is the producer-authored text submitted here."
+          placeholder="Explain what changed and include the official public source. For producer-authored premium prose, confirm that the text may be published and translated."
           aria-describedby={`producer-change-author-note-help${authorNoteError ? " producer-change-author-note-error" : ""}`}
           aria-invalid={authorNoteError ? "true" : undefined}
         />
         <small id="producer-change-author-note-help">
-          Objective catalog claims still need public support. A community message is reviewed
-          as attributed producer speech and keeps its authorship in the account audit trail.
+          Objective catalog claims still need public support. Producer-authored premium prose is
+          reviewed as attributed speech and keeps its authorship in the account audit trail.
         </small>
         {authorNoteError ? (
           <small id="producer-change-author-note-error" className="account-field-error">

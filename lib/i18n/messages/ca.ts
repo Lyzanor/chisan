@@ -81,6 +81,15 @@ const messages = {
       "Un missatge públic escrit pel productor, conservat en la llengua original i revisat abans de publicar-se.",
     mensaje_comunidad_locale:
       "La llengua d'origen del missatge a la comunitat; deixa-ho buit només si el missatge és buit.",
+    video: "Un URL HTTPS oficial de YouTube per a un vídeo públic del productor.",
+    "quien hay detras":
+      "Text revisat del productor sobre les persones propietàries o l'equip d'aquesta unitat productiva.",
+    quien_hay_detras_locale:
+      "La llengua d'origen de qui hi ha al darrere; deixa-ho buit només si el text és buit.",
+    historia:
+      "Text revisat del productor sobre l'origen i l'evolució d'aquesta unitat productiva.",
+    historia_locale:
+      "La llengua d'origen de la història; deixa-ho buit només si la història és buida.",
     "enlace destacado 1":
       "Un article, una entrevista o una altra pàgina pública HTTP(S) rellevant sobre aquest productor.",
     "enlace destacado 2":
@@ -210,6 +219,12 @@ const messages = {
     communityMessageLocale: "Llengua del missatge a la comunitat",
     highlightedLink1: "Enllaç destacat 1",
     highlightedLink2: "Enllaç destacat 2",
+    video: "Vídeo",
+    behindProducer: "Qui hi ha al darrere",
+    behindProducerLocale: "Idioma de qui hi ha al darrere",
+    history: "Història",
+    historyLocale: "Idioma de la història",
+    lastApprovedChange: "Últim canvi aprovat del productor",
     openingHours: "Horari",
     phone: "Telèfon",
     email: "Correu electrònic",

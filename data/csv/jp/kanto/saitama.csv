@@ -1,60 +1,60 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
-chichibu-distillery-chichibu,Chichibu Distillery,Chichibu,Destilados y licores,Ichiro's Malt,埼玉県秩父市みどりが丘49,,,,,https://www.ichirosmalt.com/,,,,36.046673,139.052994,,pendiente,no comprobado,,,131,,,,,,,jp,kanto,saitama
-coedo-brewery-kawagoe,Coedo Brewery,Kawagoe,Cerveza,Coedo,,,,,,https://coedobrewery.com/,,,,35.925140,139.485780,,pendiente,no comprobado,,,150,,,,,,,jp,kanto,saitama
-maeda-foods-satte,Maeda Foods,Satte,Pan y cereal,,,,,,,https://maedashokuhin.co.jp/,,,,36.078080,139.725860,,pendiente,no comprobado,,,720,,,,,,,jp,kanto,saitama
-hiratsuka-seika-soka,Hiratsuka Seika,Soka,Chocolate,Tokyo Cacao,埼玉県草加市八幡町628,,,,,https://www.hiratsuka-seika.co.jp/,,,,35.853802,139.803101,,pendiente,no comprobado,,,324,,,,,,,jp,kanto,saitama
-matsuoka-brewing-ogawa,Matsuoka Brewing,Ogawa,Sake,,,,,+81493721234,,https://www.mikadomatsu.com/,,,,36.043732,139.240219,,pendiente,no comprobado,,,758,,,,,,,jp,kanto,saitama
-yao-honten-chichibu,Yao Honten,Chichibu,Sake,,埼玉県秩父市別所字久保ノ入1432,,,+81494228787,,http://www.yao.co.jp/chichibunishiki/,,,,35.992695,139.061356,,pendiente,no comprobado,,,1367,,,,,,,jp,kanto,saitama
-buko-shuzo-chichibu,Buko Shuzo,Chichibu,Sake,,埼玉県秩父市宮側町21-27,,,+81494220046,,http://www.bukou.co.jp/,,,,36.000393,139.084427,,pendiente,no comprobado,,,116,,,,,,,jp,kanto,saitama
-taisei-chichibu-kikusui-chichibu,Taisei Chichibu Kikusui,Chichibu,Sake,,埼玉県秩父市下吉田3786-1,,,+81494772010,,http://www.chichibu-kikusui.com/index.html,,,,36.037281,139.025421,,pendiente,no comprobado,,,1164,,,,,,,jp,kanto,saitama
-takizawa-shuzo-fukaya,Takizawa Shuzo,Fukaya,Sake,,埼玉県深谷市田所町9-20,,,+81485710267,,http://kikuizumi.jp/frameset1.html,,,,36.194862,139.274826,,pendiente,no comprobado,,,1202,,,,,,,jp,kanto,saitama
-fujihashi-tozaburo-shoten-fukaya,Fujihashi Tozaburo Shoten,Fukaya,Sake,,埼玉県深谷市仲町4-10,,,+81485710136,,http://fujihashi.fcciweb.jp/,,,,36.195137,139.281296,,pendiente,no comprobado,,,224,,,,,,,jp,kanto,saitama
-maruyama-shuzo-fukaya,Maruyama Shuzo,Fukaya,Sake,,埼玉県深谷市横瀬1323番地,,,+81485872144,,http://www.maruyamasz.com/,,,,36.240681,139.254913,,pendiente,no comprobado,,,744,,,,,,,jp,kanto,saitama
-seiun-shuzo-ogawa,Seiun Shuzo,Ogawa,Sake,,埼玉県比企郡小川町大字大塚178-2,,,+81493720055,,http://www.kumagaya.or.jp/~seiun/,,,,36.053406,139.256607,,pendiente,no comprobado,,,1066,,,,,,,jp,kanto,saitama
-gonda-shuzo-kumagaya,Gonda Shuzo,Kumagaya,Sake,,埼玉県熊谷市三ヶ尻1491,,,+81485323611,,http://www.ksky.ne.jp/~gonda/,,,,36.155514,139.31926,,pendiente,no comprobado,,,268,,,,,,,jp,kanto,saitama
-kanbai-shuzo-kuki,Kanbai Shuzo,Kuki,Sake,,埼玉県久喜市久喜中央2-9-27,,,+81480212301,,http://www.kanbai.co.jp/,,,,36.065632,139.674423,,pendiente,no comprobado,,,502,,,,,,,jp,kanto,saitama
-ishii-shuzo-satte,Ishii Shuzo,Satte,Sake,,埼玉県幸手市南2-6-11,,,+81480421120,,http://www.ishii-syuzo.jp/,,,,36.068481,139.710419,,pendiente,no comprobado,,,425,,,,,,,jp,kanto,saitama
-fujisaki-sohei-shoten-nagatoro,Fujisaki Sohei Shoten,Nagatoro,Sake,,埼玉県秩父郡長瀞町1158,,,+81494690001,,http://www.nagatorogura.co.jp,,,,36.114746,139.109802,,pendiente,no comprobado,,,228,,,,,,,jp,kanto,saitama
-asahara-shuzo-moroyama,Asahara Shuzo,Moroyama,Sake,,埼玉県入間郡毛呂山町毛呂本郷94,,,+81492986010,,http://www.musashino-asahara.jp/,,,,35.941463,139.302673,,pendiente,no comprobado,,,72,,,,,,,jp,kanto,saitama
-koyama-honke-shuzo,Koyama Honke Shuzo,Saitama,Sake,,埼玉県さいたま市西区大字指扇1798番地,,,+81486230013,,http://www.koyamahonke.co.jp/,,,,35.917019,139.578217,,pendiente,no comprobado,,,653,,,,,,,jp,kanto,saitama
-yokozeki-shuzoten-misato,Yokozeki Shuzoten,Misato,Sake,,埼玉県児玉郡美里町猪俣3214-1,,,+81495761051,,http://park3.wakwak.com/~yokozeki/,,,,36.15863,139.182068,,pendiente,no comprobado,,,1377,,,,,,,jp,kanto,saitama
-seiryu-shuzo-hasuda,Seiryu Shuzo,Hasuda,Sake,,埼玉県蓮田市閏戸659-3,,,+81487682025,,http://www.seiryu-syuzou.co.jp/,,,,35.999519,139.64772,,pendiente,no comprobado,,,1064,,,,,,,jp,kanto,saitama
-yugeta-shoyu-sakado,Yugeta Shoyu,Sakado,Condimentos,Organic soy sauce,埼玉県坂戸市多和目475　他,,,+81492860811,,https://yugeta.com/,,,,35.921436,139.337326,,,no comprobado,,,1391,,,,,,,jp,kanto,saitama
-inoue-spice-ageo,Inoue Spice,Ageo,Condimentos,"Curry powder, spices",埼玉県上尾市上野491-1,,,,,https://inouespice.co.jp/,,,,35.942322,139.556412,,,no comprobado,,,411,,,,,,,jp,kanto,saitama
-takahashi-seimen-konosu,Takahashi Seimen,Kōnosu,Pan y cereal,Noodles,埼玉県鴻巣市笠原2620番地　他,,,,,https://www.takahashiseimen.com/,,,,36.070156,139.550888,,,no comprobado,,,1178,,,,,,,jp,kanto,saitama
-chichibu-cheese-chichibu,秩父やまなみチーズ工房,Chichibu,Lácteos y quesos,"モッツァレラ, 秩父カマンベール, ルビー",埼玉県秩父市下吉田4074-2,,,,,https://chichibu-cheese.shop-pro.jp/,,,,35.959720,138.933330,,,sí,ecommerce,,3009,,,,,,,jp,kanto,saitama
-baffi-hidaka,加藤牧場バッフィ,Hidaka,Lácteos y quesos,"加藤牧場・ブッラータ, 加藤牧場・ブルー, 加藤牧場・ハード",埼玉県日高市旭ケ丘572,,,,,https://www.baffi.ne.jp/,,,,33.925640,135.141060,,,no comprobado,,,2196,,,,,,,jp,kanto,saitama
-chichibu-ff-chichibu,株式会社 秩父ファーマーズファクトリー/兎田ワイナリー,Chichibu,Vino,,埼玉県秩父市下吉田字兎田3720,,,+81494267173,,https://chichibu-ff.com/,,,,35.959720,138.933330,,,no comprobado,,,2747,,,,,,,jp,kanto,saitama
-chichibuwine-ogano,有限会社 秩父ワイン,Ogano,Vino,,埼玉県秩父郡小鹿野町両神薄41,,,+81494790629,,https://chichibuwine.co.jp/,,,,36.017110,139.008580,,,sí,ecommerce,,2606,,,,,,,jp,kanto,saitama
-kinbue-kawajima,笛木醤油,Kawajima,Condimentos,金笛 再仕込生醤油,埼玉県比企郡川島町上伊草660,Produces soy sauce and traditional seasonings at its Kawajima brewery.,,+81492970041,,https://kinbue.jp/,,,,35.982060,139.481560,,,no comprobado,,,3027,en,,,,,,jp,kanto,saitama
-tabechoku-22755,彩Honey,Saitama,Miel,,,,,,,,,,,35.861390,139.645560,,pendiente,sí,marketplace,,2504,,,,,,,jp,kanto,saitama
-tabechoku-3077743,山﨑養蜂,Sugito,Miel,蜂蜜,,,,,,,,,,36.025780,139.736720,,pendiente,sí,marketplace,,2446,,,,,,,jp,kanto,saitama
-tabechoku-25604,元狭山 友野園,Iruma,Té e infusiones,,,,,,,,,,,35.835810,139.391140,,pendiente,sí,marketplace,,2168,,,,,,,jp,kanto,saitama
-tabechoku-23808,池乃屋園,Iruma,Té e infusiones,,,,,,,,,,,35.835810,139.391140,,pendiente,sí,marketplace,,2852,,,,,,,jp,kanto,saitama
-tabechoku-21559,村田農産,Moroyama,Setas,しいたけ,,,,,,,,,,35.941530,139.316000,,pendiente,sí,marketplace,,2648,,,,,,,jp,kanto,saitama
-tabechoku-26842,塩谷農園,Chichibu,Setas,しいたけ,,,,,,,,,,35.959720,138.933330,,pendiente,sí,marketplace,,2295,,,,,,,jp,kanto,saitama
-tabechoku-21275,大野農場,Kawagoe,Carne,,,,,,,,,,,35.925140,139.485780,,pendiente,sí,marketplace,,2326,,,,,,,jp,kanto,saitama
-tabechoku-28092,国分牧場,Higashimatsuyama,Carne,,,,,,,,,,,36.042170,139.399920,,pendiente,sí,marketplace,,2271,,,,,,,jp,kanto,saitama
-tabechoku-24501,カントリーファーム,Fukaya,Pan y cereal,,,,,,,,,,,36.197470,139.281500,,pendiente,sí,marketplace,,1761,,,,,,,jp,kanto,saitama
-tabechoku-21058,西田農園,Kumagaya,Pan y cereal,,,,,,,,,,,36.147390,139.388640,,pendiente,sí,marketplace,,3149,,,,,,,jp,kanto,saitama
-tabechoku-3078638,いちご家×栗原農園,Yoshimi,Frutos secos,,,,,,,,,,,36.039890,139.453750,,pendiente,sí,marketplace,,1430,,,,,,,jp,kanto,saitama
-tabechoku-25607,森屋農場,Ogawa,Huevos,,,,,,,,,,,36.056670,139.261830,,pendiente,sí,marketplace,,2810,,,,,,,jp,kanto,saitama
-tabechoku-26303,有機農家ないとう農園,伊奈町,Fruta y verdura,,,,,,,,,,,36.000080,139.624170,,pendiente,sí,marketplace,,2593,,,,,,,jp,kanto,saitama
-tabechoku-20279,いるま鬼丸,Iruma,Fruta y verdura,にんにく,,,,,,,,,,35.835810,139.391140,,pendiente,sí,marketplace,,1434,,,,,,,jp,kanto,saitama
-tabechoku-25321,鈴木農園,Kazo,Fruta y verdura,,,,,,,,,,,36.131440,139.601780,,pendiente,sí,marketplace,,3243,,,,,,,jp,kanto,saitama
-tabechoku-3078044,米農家りんご堂,Kasukabe,Pan y cereal,米,,,,,,,,,,35.975250,139.752280,,pendiente,sí,marketplace,,3040,,,,,,,jp,kanto,saitama
-tabechoku-3077769,塩原農園,Honjō-shi,Fruta y verdura,野菜,,,,,,,,,,36.243580,139.190390,,pendiente,sí,marketplace,,2292,,,,,,,jp,kanto,saitama
-tabechoku-29561,鏡農園,Fukaya,Fruta y verdura,,,,,,,,,,,36.197470,139.281500,,pendiente,sí,marketplace,,3256,,,,,,,jp,kanto,saitama
-tabechoku-20100,あかいし農園,Kumagaya,Fruta y verdura,野菜,,,,,,,,,,36.147390,139.388640,,pendiente,sí,marketplace,,1408,,,,,,,jp,kanto,saitama
-tabechoku-21022,ちちぶ丸山農園,Chichibu,Fruta y verdura,,,,,,,,,,,35.959720,138.933330,,pendiente,sí,marketplace,,1554,,,,,,,jp,kanto,saitama
-tabechoku-24902,Pino farm,Hanyū-shi,Fruta y verdura,野菜,,,,,,,,,,36.172500,139.548470,,pendiente,sí,marketplace,,997,,,,,,,jp,kanto,saitama
-tabechoku-27227,管理栄養士が育てる固定種/在来種のお野菜・自然栽培ナチュベジ＊ウィル,Hannō,Fruta y verdura,,,,,,,,,,,35.855560,139.327780,,pendiente,sí,marketplace,,3030,,,,,,,jp,kanto,saitama
-jp-saitama-r-goope-076095a,有限会社川野武次郎商店,宮代町,Aperitivos,米菓,,,,,,https://r.goope.jp/takejirou/,,,,36.022670,139.722720,,,no comprobado,,,2617,,,,,,,jp,kanto,saitama
-jp-saitama-miyasakabeika-co-a0d9f12,宮坂米菓株式会社,川越市,Aperitivos,米菓,,,,,,https://miyasakabeika.co.jp/,,,,35.925140,139.485780,,,no comprobado,,,2377,,,,,,,jp,kanto,saitama
-jp-saitama-matsuzakibeika-944fe3f,株式会社松崎米菓,深谷市,Aperitivos,米菓,,,,,,http://www.matsuzakibeika.jp/,,,,36.197470,139.281500,,,no comprobado,,,2775,,,,,,,jp,kanto,saitama
-jp-saitama-mikami-s-co-71d72dd,㈲三上製麺,所沢市,Pan y cereal,乾麺,,"Produces dried noodles in 所沢市, saitama.",,,,https://www.mikami-s.co.jp/,,,,35.799440,139.468890,,,no comprobado,,,2584,en,,,,,,jp,kanto,saitama
-chichibu-beer,秩父麦酒 (Chichibu Beer),Chichibu,Cerveza,,下吉田3786-1,,,,,https://chichibubeer.bestbeerjapan.com/,,https://www.instagram.com/chichibu_beer/,,35.95972,138.93333,,pendiente,no comprobado,,,3010,,,,,,,jp,kanto,saitama
-tokorozawa-beer,所沢ビール (Tokorozawa Beer),Tokorozawa,Cerveza,,北原町866-17,,,,info@sake.com,https://tokorozawabeer.com/,,https://www.instagram.com/tokorozawabeer/,,35.79944,139.46889,,pendiente,no comprobado,,,2536,,,,,,,jp,kanto,saitama
-hikawa-brewery,氷川ブリュワリー (Hikawa Brewery),Saitama,Cerveza,,大宮区高鼻町1-36-1,氷川ブリュワリー (Hikawa Brewery) is a brewery producing beer at its Saitama unit.,,,info.hikawa.brewery@gmail.com,https://hikawa-brewery.com/,,https://www.instagram.com/hikawa_brewery/,,35.86139,139.64556,,pendiente,no comprobado,,,2843,en,,,,,,jp,kanto,saitama
-u-b-p-brewery,U.B.P BREWERY,Saitama,Cerveza,,浦和区高砂2-1-19,U.B.P BREWERY is a brewery producing beer at its Saitama unit.,,,,https://www.ubpbrewery.jp/,,https://www.instagram.com/u.b.p_brewery/,,35.86139,139.64556,,pendiente,no comprobado,,,1288,en,,,,,,jp,kanto,saitama
-lotte-urawa-factory,Lotte Urawa Factory,Saitama,Chocolate,,,,,,,https://www.lotte.co.jp/kengaku/,,,,,,,pendiente,no comprobado,,,3504,,,,,,,jp,kanto,saitama
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+chichibu-distillery-chichibu,Chichibu Distillery,Chichibu,Destilados y licores,Ichiro's Malt,埼玉県秩父市みどりが丘49,,,,,https://www.ichirosmalt.com/,,,,36.046673,139.052994,,pendiente,no comprobado,,,131,,,,,,,jp,kanto,saitama,,,,,,
+coedo-brewery-kawagoe,Coedo Brewery,Kawagoe,Cerveza,Coedo,,,,,,https://coedobrewery.com/,,,,35.925140,139.485780,,pendiente,no comprobado,,,150,,,,,,,jp,kanto,saitama,,,,,,
+maeda-foods-satte,Maeda Foods,Satte,Pan y cereal,,,,,,,https://maedashokuhin.co.jp/,,,,36.078080,139.725860,,pendiente,no comprobado,,,720,,,,,,,jp,kanto,saitama,,,,,,
+hiratsuka-seika-soka,Hiratsuka Seika,Soka,Chocolate,Tokyo Cacao,埼玉県草加市八幡町628,,,,,https://www.hiratsuka-seika.co.jp/,,,,35.853802,139.803101,,pendiente,no comprobado,,,324,,,,,,,jp,kanto,saitama,,,,,,
+matsuoka-brewing-ogawa,Matsuoka Brewing,Ogawa,Sake,,,,,+81493721234,,https://www.mikadomatsu.com/,,,,36.043732,139.240219,,pendiente,no comprobado,,,758,,,,,,,jp,kanto,saitama,,,,,,
+yao-honten-chichibu,Yao Honten,Chichibu,Sake,,埼玉県秩父市別所字久保ノ入1432,,,+81494228787,,http://www.yao.co.jp/chichibunishiki/,,,,35.992695,139.061356,,pendiente,no comprobado,,,1367,,,,,,,jp,kanto,saitama,,,,,,
+buko-shuzo-chichibu,Buko Shuzo,Chichibu,Sake,,埼玉県秩父市宮側町21-27,,,+81494220046,,http://www.bukou.co.jp/,,,,36.000393,139.084427,,pendiente,no comprobado,,,116,,,,,,,jp,kanto,saitama,,,,,,
+taisei-chichibu-kikusui-chichibu,Taisei Chichibu Kikusui,Chichibu,Sake,,埼玉県秩父市下吉田3786-1,,,+81494772010,,http://www.chichibu-kikusui.com/index.html,,,,36.037281,139.025421,,pendiente,no comprobado,,,1164,,,,,,,jp,kanto,saitama,,,,,,
+takizawa-shuzo-fukaya,Takizawa Shuzo,Fukaya,Sake,,埼玉県深谷市田所町9-20,,,+81485710267,,http://kikuizumi.jp/frameset1.html,,,,36.194862,139.274826,,pendiente,no comprobado,,,1202,,,,,,,jp,kanto,saitama,,,,,,
+fujihashi-tozaburo-shoten-fukaya,Fujihashi Tozaburo Shoten,Fukaya,Sake,,埼玉県深谷市仲町4-10,,,+81485710136,,http://fujihashi.fcciweb.jp/,,,,36.195137,139.281296,,pendiente,no comprobado,,,224,,,,,,,jp,kanto,saitama,,,,,,
+maruyama-shuzo-fukaya,Maruyama Shuzo,Fukaya,Sake,,埼玉県深谷市横瀬1323番地,,,+81485872144,,http://www.maruyamasz.com/,,,,36.240681,139.254913,,pendiente,no comprobado,,,744,,,,,,,jp,kanto,saitama,,,,,,
+seiun-shuzo-ogawa,Seiun Shuzo,Ogawa,Sake,,埼玉県比企郡小川町大字大塚178-2,,,+81493720055,,http://www.kumagaya.or.jp/~seiun/,,,,36.053406,139.256607,,pendiente,no comprobado,,,1066,,,,,,,jp,kanto,saitama,,,,,,
+gonda-shuzo-kumagaya,Gonda Shuzo,Kumagaya,Sake,,埼玉県熊谷市三ヶ尻1491,,,+81485323611,,http://www.ksky.ne.jp/~gonda/,,,,36.155514,139.31926,,pendiente,no comprobado,,,268,,,,,,,jp,kanto,saitama,,,,,,
+kanbai-shuzo-kuki,Kanbai Shuzo,Kuki,Sake,,埼玉県久喜市久喜中央2-9-27,,,+81480212301,,http://www.kanbai.co.jp/,,,,36.065632,139.674423,,pendiente,no comprobado,,,502,,,,,,,jp,kanto,saitama,,,,,,
+ishii-shuzo-satte,Ishii Shuzo,Satte,Sake,,埼玉県幸手市南2-6-11,,,+81480421120,,http://www.ishii-syuzo.jp/,,,,36.068481,139.710419,,pendiente,no comprobado,,,425,,,,,,,jp,kanto,saitama,,,,,,
+fujisaki-sohei-shoten-nagatoro,Fujisaki Sohei Shoten,Nagatoro,Sake,,埼玉県秩父郡長瀞町1158,,,+81494690001,,http://www.nagatorogura.co.jp,,,,36.114746,139.109802,,pendiente,no comprobado,,,228,,,,,,,jp,kanto,saitama,,,,,,
+asahara-shuzo-moroyama,Asahara Shuzo,Moroyama,Sake,,埼玉県入間郡毛呂山町毛呂本郷94,,,+81492986010,,http://www.musashino-asahara.jp/,,,,35.941463,139.302673,,pendiente,no comprobado,,,72,,,,,,,jp,kanto,saitama,,,,,,
+koyama-honke-shuzo,Koyama Honke Shuzo,Saitama,Sake,,埼玉県さいたま市西区大字指扇1798番地,,,+81486230013,,http://www.koyamahonke.co.jp/,,,,35.917019,139.578217,,pendiente,no comprobado,,,653,,,,,,,jp,kanto,saitama,,,,,,
+yokozeki-shuzoten-misato,Yokozeki Shuzoten,Misato,Sake,,埼玉県児玉郡美里町猪俣3214-1,,,+81495761051,,http://park3.wakwak.com/~yokozeki/,,,,36.15863,139.182068,,pendiente,no comprobado,,,1377,,,,,,,jp,kanto,saitama,,,,,,
+seiryu-shuzo-hasuda,Seiryu Shuzo,Hasuda,Sake,,埼玉県蓮田市閏戸659-3,,,+81487682025,,http://www.seiryu-syuzou.co.jp/,,,,35.999519,139.64772,,pendiente,no comprobado,,,1064,,,,,,,jp,kanto,saitama,,,,,,
+yugeta-shoyu-sakado,Yugeta Shoyu,Sakado,Condimentos,Organic soy sauce,埼玉県坂戸市多和目475　他,,,+81492860811,,https://yugeta.com/,,,,35.921436,139.337326,,,no comprobado,,,1391,,,,,,,jp,kanto,saitama,,,,,,
+inoue-spice-ageo,Inoue Spice,Ageo,Condimentos,"Curry powder, spices",埼玉県上尾市上野491-1,,,,,https://inouespice.co.jp/,,,,35.942322,139.556412,,,no comprobado,,,411,,,,,,,jp,kanto,saitama,,,,,,
+takahashi-seimen-konosu,Takahashi Seimen,Kōnosu,Pan y cereal,Noodles,埼玉県鴻巣市笠原2620番地　他,,,,,https://www.takahashiseimen.com/,,,,36.070156,139.550888,,,no comprobado,,,1178,,,,,,,jp,kanto,saitama,,,,,,
+chichibu-cheese-chichibu,秩父やまなみチーズ工房,Chichibu,Lácteos y quesos,"モッツァレラ, 秩父カマンベール, ルビー",埼玉県秩父市下吉田4074-2,,,,,https://chichibu-cheese.shop-pro.jp/,,,,35.959720,138.933330,,,sí,ecommerce,,3009,,,,,,,jp,kanto,saitama,,,,,,
+baffi-hidaka,加藤牧場バッフィ,Hidaka,Lácteos y quesos,"加藤牧場・ブッラータ, 加藤牧場・ブルー, 加藤牧場・ハード",埼玉県日高市旭ケ丘572,,,,,https://www.baffi.ne.jp/,,,,33.925640,135.141060,,,no comprobado,,,2196,,,,,,,jp,kanto,saitama,,,,,,
+chichibu-ff-chichibu,株式会社 秩父ファーマーズファクトリー/兎田ワイナリー,Chichibu,Vino,,埼玉県秩父市下吉田字兎田3720,,,+81494267173,,https://chichibu-ff.com/,,,,35.959720,138.933330,,,no comprobado,,,2747,,,,,,,jp,kanto,saitama,,,,,,
+chichibuwine-ogano,有限会社 秩父ワイン,Ogano,Vino,,埼玉県秩父郡小鹿野町両神薄41,,,+81494790629,,https://chichibuwine.co.jp/,,,,36.017110,139.008580,,,sí,ecommerce,,2606,,,,,,,jp,kanto,saitama,,,,,,
+kinbue-kawajima,笛木醤油,Kawajima,Condimentos,金笛 再仕込生醤油,埼玉県比企郡川島町上伊草660,Produces soy sauce and traditional seasonings at its Kawajima brewery.,,+81492970041,,https://kinbue.jp/,,,,35.982060,139.481560,,,no comprobado,,,3027,en,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-22755,彩Honey,Saitama,Miel,,,,,,,,,,,35.861390,139.645560,,pendiente,sí,marketplace,,2504,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-3077743,山﨑養蜂,Sugito,Miel,蜂蜜,,,,,,,,,,36.025780,139.736720,,pendiente,sí,marketplace,,2446,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-25604,元狭山 友野園,Iruma,Té e infusiones,,,,,,,,,,,35.835810,139.391140,,pendiente,sí,marketplace,,2168,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-23808,池乃屋園,Iruma,Té e infusiones,,,,,,,,,,,35.835810,139.391140,,pendiente,sí,marketplace,,2852,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-21559,村田農産,Moroyama,Setas,しいたけ,,,,,,,,,,35.941530,139.316000,,pendiente,sí,marketplace,,2648,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-26842,塩谷農園,Chichibu,Setas,しいたけ,,,,,,,,,,35.959720,138.933330,,pendiente,sí,marketplace,,2295,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-21275,大野農場,Kawagoe,Carne,,,,,,,,,,,35.925140,139.485780,,pendiente,sí,marketplace,,2326,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-28092,国分牧場,Higashimatsuyama,Carne,,,,,,,,,,,36.042170,139.399920,,pendiente,sí,marketplace,,2271,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-24501,カントリーファーム,Fukaya,Pan y cereal,,,,,,,,,,,36.197470,139.281500,,pendiente,sí,marketplace,,1761,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-21058,西田農園,Kumagaya,Pan y cereal,,,,,,,,,,,36.147390,139.388640,,pendiente,sí,marketplace,,3149,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-3078638,いちご家×栗原農園,Yoshimi,Frutos secos,,,,,,,,,,,36.039890,139.453750,,pendiente,sí,marketplace,,1430,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-25607,森屋農場,Ogawa,Huevos,,,,,,,,,,,36.056670,139.261830,,pendiente,sí,marketplace,,2810,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-26303,有機農家ないとう農園,伊奈町,Fruta y verdura,,,,,,,,,,,36.000080,139.624170,,pendiente,sí,marketplace,,2593,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-20279,いるま鬼丸,Iruma,Fruta y verdura,にんにく,,,,,,,,,,35.835810,139.391140,,pendiente,sí,marketplace,,1434,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-25321,鈴木農園,Kazo,Fruta y verdura,,,,,,,,,,,36.131440,139.601780,,pendiente,sí,marketplace,,3243,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-3078044,米農家りんご堂,Kasukabe,Pan y cereal,米,,,,,,,,,,35.975250,139.752280,,pendiente,sí,marketplace,,3040,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-3077769,塩原農園,Honjō-shi,Fruta y verdura,野菜,,,,,,,,,,36.243580,139.190390,,pendiente,sí,marketplace,,2292,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-29561,鏡農園,Fukaya,Fruta y verdura,,,,,,,,,,,36.197470,139.281500,,pendiente,sí,marketplace,,3256,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-20100,あかいし農園,Kumagaya,Fruta y verdura,野菜,,,,,,,,,,36.147390,139.388640,,pendiente,sí,marketplace,,1408,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-21022,ちちぶ丸山農園,Chichibu,Fruta y verdura,,,,,,,,,,,35.959720,138.933330,,pendiente,sí,marketplace,,1554,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-24902,Pino farm,Hanyū-shi,Fruta y verdura,野菜,,,,,,,,,,36.172500,139.548470,,pendiente,sí,marketplace,,997,,,,,,,jp,kanto,saitama,,,,,,
+tabechoku-27227,管理栄養士が育てる固定種/在来種のお野菜・自然栽培ナチュベジ＊ウィル,Hannō,Fruta y verdura,,,,,,,,,,,35.855560,139.327780,,pendiente,sí,marketplace,,3030,,,,,,,jp,kanto,saitama,,,,,,
+jp-saitama-r-goope-076095a,有限会社川野武次郎商店,宮代町,Aperitivos,米菓,,,,,,https://r.goope.jp/takejirou/,,,,36.022670,139.722720,,,no comprobado,,,2617,,,,,,,jp,kanto,saitama,,,,,,
+jp-saitama-miyasakabeika-co-a0d9f12,宮坂米菓株式会社,川越市,Aperitivos,米菓,,,,,,https://miyasakabeika.co.jp/,,,,35.925140,139.485780,,,no comprobado,,,2377,,,,,,,jp,kanto,saitama,,,,,,
+jp-saitama-matsuzakibeika-944fe3f,株式会社松崎米菓,深谷市,Aperitivos,米菓,,,,,,http://www.matsuzakibeika.jp/,,,,36.197470,139.281500,,,no comprobado,,,2775,,,,,,,jp,kanto,saitama,,,,,,
+jp-saitama-mikami-s-co-71d72dd,㈲三上製麺,所沢市,Pan y cereal,乾麺,,"Produces dried noodles in 所沢市, saitama.",,,,https://www.mikami-s.co.jp/,,,,35.799440,139.468890,,,no comprobado,,,2584,en,,,,,,jp,kanto,saitama,,,,,,
+chichibu-beer,秩父麦酒 (Chichibu Beer),Chichibu,Cerveza,,下吉田3786-1,,,,,https://chichibubeer.bestbeerjapan.com/,,https://www.instagram.com/chichibu_beer/,,35.95972,138.93333,,pendiente,no comprobado,,,3010,,,,,,,jp,kanto,saitama,,,,,,
+tokorozawa-beer,所沢ビール (Tokorozawa Beer),Tokorozawa,Cerveza,,北原町866-17,,,,info@sake.com,https://tokorozawabeer.com/,,https://www.instagram.com/tokorozawabeer/,,35.79944,139.46889,,pendiente,no comprobado,,,2536,,,,,,,jp,kanto,saitama,,,,,,
+hikawa-brewery,氷川ブリュワリー (Hikawa Brewery),Saitama,Cerveza,,大宮区高鼻町1-36-1,氷川ブリュワリー (Hikawa Brewery) is a brewery producing beer at its Saitama unit.,,,info.hikawa.brewery@gmail.com,https://hikawa-brewery.com/,,https://www.instagram.com/hikawa_brewery/,,35.86139,139.64556,,pendiente,no comprobado,,,2843,en,,,,,,jp,kanto,saitama,,,,,,
+u-b-p-brewery,U.B.P BREWERY,Saitama,Cerveza,,浦和区高砂2-1-19,U.B.P BREWERY is a brewery producing beer at its Saitama unit.,,,,https://www.ubpbrewery.jp/,,https://www.instagram.com/u.b.p_brewery/,,35.86139,139.64556,,pendiente,no comprobado,,,1288,en,,,,,,jp,kanto,saitama,,,,,,
+lotte-urawa-factory,Lotte Urawa Factory,Saitama,Chocolate,,,,,,,https://www.lotte.co.jp/kengaku/,,,,,,,pendiente,no comprobado,,,3504,,,,,,,jp,kanto,saitama,,,,,,

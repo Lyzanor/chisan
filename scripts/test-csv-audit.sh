@@ -1244,9 +1244,15 @@ fs.writeFileSync(
     header,
     record(
       makeRow(93001, {
+        video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "visitas guiadas": "sí",
         "mensaje a la comunidad": "🍯".repeat(1000),
         mensaje_comunidad_locale: "es",
+        "quien hay detras": "Ana y Luis dirigen esta unidad productiva.",
+        quien_hay_detras_locale: "es",
+        historia: "La explotación comenzó en 1987.",
+        historia_locale: "es",
+        "fecha ultimo cambio": "2026-09-02",
         "enlace destacado 1": "http://example.com/prensa",
         "enlace destacado 2": "https://example.com/entrevista",
       }),
@@ -1322,6 +1328,26 @@ fs.writeFileSync(
         mensaje_comunidad_locale: "es",
       }),
     ),
+    record(makeRow(93015, { video: "https://vimeo.com/123456" })),
+    record(
+      makeRow(93016, {
+        "quien hay detras": "Equipo sin idioma.",
+      }),
+    ),
+    record(makeRow(93017, { quien_hay_detras_locale: "es" })),
+    record(
+      makeRow(93018, {
+        historia: "🌱".repeat(4001),
+        historia_locale: "es",
+      }),
+    ),
+    record(
+      makeRow(93019, {
+        historia: "Consulta https://example.com para conocer los orígenes.",
+        historia_locale: "es",
+      }),
+    ),
+    record(makeRow(93020, { "fecha ultimo cambio": "2026-02-30" })),
   ]),
 );
 NODE
@@ -1353,6 +1379,18 @@ grep -q "enlace destacado 1 and enlace destacado 2 must be different" \
   "$TMP_DIR/out-premium-fields-invalid.txt"
 test "$(grep -c "enlace destacado 1 and enlace destacado 2 must be different" \
   "$TMP_DIR/out-premium-fields-invalid.txt")" -eq 2
+grep -q "video: must be a complete HTTPS YouTube video URL" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "non-empty quien hay detras requires quien_hay_detras_locale to be one of:" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "empty quien hay detras requires empty quien_hay_detras_locale" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "historia must be at most 4000 Unicode characters; found 4001" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "historia contains a URL or source citation" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
+grep -q "fecha ultimo cambio must be empty or an exact YYYY-MM-DD UTC approval date" \
+  "$TMP_DIR/out-premium-fields-invalid.txt"
 
 (cd "$ROOT_DIR" && node_modules/.bin/tsx --test scripts/test-i18n.ts)
 

@@ -34,6 +34,12 @@ const CANONICAL_HEADER = Object.freeze([
   "country",
   "region",
   "area",
+  "video",
+  "quien hay detras",
+  "quien_hay_detras_locale",
+  "historia",
+  "historia_locale",
+  "fecha ultimo cambio",
 ]);
 let PRODUCER_DESCRIPTION_MAX_CHARACTERS;
 let descriptionContaminationReason;
@@ -66,6 +72,13 @@ const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
 const PRODUCER_ID_COLUMN = "producer_id";
 const LOCATION_COLUMNS = Object.freeze(["country", "region", "area"]);
 const COMMUNITY_MESSAGE_COLUMN = "mensaje a la comunidad";
+const BEHIND_PRODUCER_COLUMN = "quien hay detras";
+const HISTORY_COLUMN = "historia";
+const LONG_PROSE_COLUMNS = new Set([
+  COMMUNITY_MESSAGE_COLUMN,
+  BEHIND_PRODUCER_COLUMN,
+  HISTORY_COLUMN,
+]);
 const CATEGORY_SEPARATOR = "|";
 const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
@@ -937,7 +950,7 @@ function cleanCell(value) {
     .trim();
 }
 
-function normalizeCommunityMessage(value) {
+function normalizeProducerAuthoredText(value) {
   return String(value ?? "")
     .replace(/\r\n?/g, "\n")
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
@@ -948,7 +961,7 @@ function codePointLength(value) {
   return Array.from(value).length;
 }
 
-function communityMessageContaminationReason(value) {
+function producerAuthoredTextContaminationReason(value) {
   const text = String(value ?? "").trim();
   if (!text) return null;
   if (/<\/?[a-z][^>]*>/iu.test(text)) return "contains HTML copied from a source page";
@@ -1077,6 +1090,24 @@ function readUrl(value) {
 function matchesHost(hostname, matcher) {
   const host = hostname.toLowerCase();
   return host === matcher || host.endsWith(`.${matcher}`);
+}
+
+function youtubeVideoId(url) {
+  if (url.protocol !== "https:" || url.username || url.password) return null;
+  let candidate = "";
+  if (matchesHost(url.hostname, "youtu.be")) {
+    candidate = url.pathname.split("/").filter(Boolean)[0] || "";
+  } else if (
+    matchesHost(url.hostname, "youtube.com") ||
+    matchesHost(url.hostname, "youtube-nocookie.com")
+  ) {
+    const segments = url.pathname.split("/").filter(Boolean);
+    if (url.pathname === "/watch") candidate = url.searchParams.get("v") || "";
+    else if (["embed", "live", "shorts"].includes(segments[0] || "")) {
+      candidate = segments[1] || "";
+    }
+  }
+  return /^[A-Za-z0-9_-]{11}$/.test(candidate) ? candidate : null;
 }
 
 function validateGoogleMapsUrl(url) {
@@ -1380,7 +1411,7 @@ async function readCsv(csvPath) {
         const normalizedKey = key.trim();
         return [
           normalizedKey,
-          normalizedKey === COMMUNITY_MESSAGE_COLUMN
+          LONG_PROSE_COLUMNS.has(normalizedKey)
             ? String(value ?? "")
             : cleanCell(value),
         ];
@@ -1484,6 +1515,10 @@ function runContractAudit({
         ? null
         : "must point to instagram.com",
     "Google Maps": (url) => validateGoogleMapsUrl(url),
+    video: (url) =>
+      youtubeVideoId(url)
+        ? null
+        : "must be a complete HTTPS YouTube video URL",
   };
 
   for (const [index, fields] of rows.entries()) {
@@ -1614,7 +1649,7 @@ function runContractAudit({
       );
     }
 
-    const communityMessage = normalizeCommunityMessage(
+    const communityMessage = normalizeProducerAuthoredText(
       fields[COMMUNITY_MESSAGE_COLUMN],
     );
     const communityMessageLocale = cleanCell(fields.mensaje_comunidad_locale);
@@ -1629,7 +1664,7 @@ function runContractAudit({
       );
     }
     const communityContaminationReason =
-      communityMessageContaminationReason(communityMessage);
+      producerAuthoredTextContaminationReason(communityMessage);
     if (communityContaminationReason) {
       push(
         "error",
@@ -1667,6 +1702,69 @@ function runContractAudit({
         slug,
         `non-empty mensaje a la comunidad requires mensaje_comunidad_locale to be one of: ${DESCRIPTION_SOURCE_LOCALE_DISPLAY}`,
       );
+    }
+
+    for (const [textColumn, localeColumn, maximum] of [
+      [BEHIND_PRODUCER_COLUMN, "quien_hay_detras_locale", 2000],
+      [HISTORY_COLUMN, "historia_locale", 4000],
+    ]) {
+      const text = normalizeProducerAuthoredText(fields[textColumn]);
+      const sourceLocale = cleanCell(fields[localeColumn]);
+      const length = codePointLength(text);
+      if (length > maximum) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${textColumn} must be at most ${maximum} Unicode characters; found ${length}`,
+        );
+      }
+      const contamination = producerAuthoredTextContaminationReason(text);
+      if (contamination) {
+        push("error", line, id, slug, `${textColumn} ${contamination}`);
+      }
+      if (text && hasSpreadsheetFormulaPrefix(text)) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${textColumn} cannot start with a spreadsheet formula marker`,
+        );
+      }
+      if (!text && sourceLocale) {
+        push("error", line, id, slug, `empty ${textColumn} requires empty ${localeColumn}`);
+      } else if (text && !DESCRIPTION_SOURCE_LOCALES.has(sourceLocale)) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `non-empty ${textColumn} requires ${localeColumn} to be one of: ${DESCRIPTION_SOURCE_LOCALE_DISPLAY}`,
+        );
+      }
+    }
+
+    const lastApprovedChange = cleanCell(fields["fecha ultimo cambio"]);
+    if (lastApprovedChange) {
+      const dateMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(lastApprovedChange);
+      const parsedDate = dateMatch
+        ? new Date(`${lastApprovedChange}T00:00:00.000Z`)
+        : null;
+      if (
+        !parsedDate ||
+        Number.isNaN(parsedDate.getTime()) ||
+        parsedDate.toISOString().slice(0, 10) !== lastApprovedChange
+      ) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          "fecha ultimo cambio must be empty or an exact YYYY-MM-DD UTC approval date",
+        );
+      }
     }
 
     const highlightedLink1 = cleanCell(fields["enlace destacado 1"]);

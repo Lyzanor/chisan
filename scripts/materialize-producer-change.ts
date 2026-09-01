@@ -18,9 +18,9 @@ import { stringify } from "csv-stringify/sync";
 import postgres, { type Sql } from "postgres";
 
 import {
+  PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD,
   hashProducerFields,
   isProducerPatch,
-  type ProducerPatch,
   validateProducerProposal,
 } from "../lib/accounts/producer-fields";
 import {
@@ -61,7 +61,7 @@ export type ProducerCsvPatchResult = {
 };
 
 export type ExpectedProducerChange = {
-  patch: ProducerPatch;
+  patch: Readonly<Record<string, string>>;
   fields: Record<string, string>;
   hash: string;
 };
@@ -416,11 +416,23 @@ export function applyProducerPatchToCsv(
   };
 }
 
-/** Derives the sole expected state from the immutable submission snapshot and patch. */
+function approvedProducerChangeDate(reviewedAt: unknown): string {
+  if (!(reviewedAt instanceof Date) && typeof reviewedAt !== "string") {
+    throw new Error("The approved producer change has no review timestamp.");
+  }
+  const parsed = reviewedAt instanceof Date ? reviewedAt : new Date(reviewedAt);
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error("The approved producer change has a malformed review timestamp.");
+  }
+  return parsed.toISOString().slice(0, 10);
+}
+
+/** Derives the sole expected state from the immutable submission snapshot and approval. */
 export function resolveExpectedProducerChange(
   baseSnapshot: unknown,
   baseRowHash: string,
   patch: unknown,
+  reviewedAt: unknown,
 ): ExpectedProducerChange {
   if (!isStringRecord(baseSnapshot)) {
     throw new Error("The stored base snapshot is not a string-valued object.");
@@ -434,6 +446,11 @@ export function resolveExpectedProducerChange(
   if (!isProducerPatch(patch) || Object.keys(patch).length === 0) {
     throw new Error("The stored patch is empty or contains a non-editable field.");
   }
+  if (!(PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD in baseSnapshot)) {
+    throw new Error(
+      `The stored base snapshot predates the '${PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD}' catalog column.`,
+    );
+  }
 
   const validation = validateProducerProposal(
     { ...baseSnapshot, ...patch },
@@ -446,9 +463,14 @@ export function resolveExpectedProducerChange(
     throw new Error("The stored patch does not change the base snapshot.");
   }
 
-  const fields = { ...baseSnapshot, ...validation.patch };
+  const materializationPatch = {
+    ...validation.patch,
+    [PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD]:
+      approvedProducerChangeDate(reviewedAt),
+  };
+  const fields = { ...baseSnapshot, ...materializationPatch };
   return {
-    patch: validation.patch,
+    patch: materializationPatch,
     fields,
     hash: hashProducerFields(fields),
   };
@@ -1498,6 +1520,7 @@ async function runCli(): Promise<void> {
         initialChange.baseSnapshot,
         initialChange.baseRowHash,
         initialChange.patch,
+        initialChange.reviewedAt,
       );
     } catch (error) {
       return terminalPreflight(
@@ -1785,6 +1808,7 @@ async function runCli(): Promise<void> {
       initialChange.baseSnapshot,
       initialChange.baseRowHash,
       initialChange.patch,
+      initialChange.reviewedAt,
     );
     const execution = await recoveryProducerChangeExecution(
       client,
@@ -1878,6 +1902,7 @@ async function runCli(): Promise<void> {
       initialChange.baseSnapshot,
       initialChange.baseRowHash,
       initialChange.patch,
+      initialChange.reviewedAt,
     );
     const execution = await finalizationProducerChangeExecution(client, changeId);
     if (!execution) {

@@ -1,72 +1,72 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
-shata-shuzo-hakusan,Shata Shuzo,Hakusan,Sake,Tengumai,"Bomaruimachi 60-1, Hakusan",Brewery founded in 1823 on the Kaga plain. Own online shop and a tasting room at the kura.,,+81762751165,,https://www.tengumai.co.jp/,,,,36.514420,136.565580,,,sí,ecommerce,,1083,en,,,,,,jp,chubu,ishikawa
-fukumitsuya-kanazawa,Fukumitsuya,Kanazawa,Sake,"Kagatobi, Fukumasamune",Kanazawa,Brewery founded in 1625. Junmai only since 2001; own online shop and a sales room in the city.,,,,https://www.fukumitsuya.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,239,en,,,,,,jp,chubu,ishikawa
-kazuma-shuzo-noto,Kazuma Shuzo,Noto,Sake,Chikuha,"Ushitsu, Noto","Noto brewery working rice from farmers in the village. Still brewing after the 2024 earthquake, with its own online shop.",,,,https://chikuha.co.jp/,,,,37.310330,137.147690,,,sí,ecommerce,,551,en,,,,,,jp,chubu,ishikawa
-sogen-shuzo-suzu,Sogen Shuzo,Suzu,Sake,Sogen,"Horyumachi, Suzu","Brewery founded in 1768, at the tip of the Noto peninsula. Resumed brewing two weeks after the 2024 earthquake.",,,,https://sogenonline.myshopify.com/,,,,37.436330,137.260470,,,sí,ecommerce,,1131,en,,,,,,jp,chubu,ishikawa
-yoshida-shuzoten-hakusan,Yoshida Shuzoten,Hakusan,Sake,"Tedorigawa, Yoshidagura u","Ayoshimachi 41, Hakusan","Brewery on the alluvial fan of the Tetori river. Runs two separate lines, Tedorigawa and Yoshidagura u, brewed in the same kura.",,,,https://tedorigawa.com/,,,,36.514420,136.565580,,,no comprobado,,,1382,en,,,,,,jp,chubu,ishikawa
-kikuhime-hakusan,Kikuhime,Hakusan,Sake,"Kikuhime yamahai junmai, aged ginjo","Tsurugi Shinmachi Ta 8, Hakusan","Tsurugi brewery tied to the Hakusan shrine, producing long-aged sake.",,+81762721234,,https://www.kikuhime.co.jp/,,,,36.514420,136.565580,,pendiente,no comprobado,,,556,en,,,,,,jp,chubu,ishikawa
-nakamura-brewery-kanazawa,Nakamura Brewery,Kanazawa,Sake,,,,,,,https://nakamura-shuzou.co.jp/,,,,36.56551,136.644287,,pendiente,no comprobado,,,820,,,,,,,jp,chubu,ishikawa
-yachiya-brewing-kanazawa,Yachiya Brewing,Kanazawa,Sake,,,,,,,http://www.yachiya-sake.co.jp/,,,,36.585556,136.675797,,pendiente,no comprobado,,,1340,,,,,,,jp,chubu,ishikawa
-kanaya-shuzouten-hakusan,Kanaya Shuzouten,Hakusan,Sake,,石川県白山市安田町3-2,,,,,https://www.hakusan-takasago.jp/,,,,36.522449,136.561584,,pendiente,no comprobado,,,501,,,,,,,jp,chubu,ishikawa
-manzairaku-sake-kura-hakusan,Manzairaku Sake Kura,Hakusan,Sake,,,,,,,https://manzairaku.co.jp/,,,,36.446976,136.627762,,pendiente,no comprobado,,,727,,,,,,,jp,chubu,ishikawa
-kaetsu-sake-brewery-komatsu,Kaetsu Sake Brewery,Komatsu,Sake,,,,,,,http://www.kanpaku.co.jp/,,,,36.37011,136.431183,,pendiente,no comprobado,,,472,,,,,,,jp,chubu,ishikawa
-higashi-sake-brewing-komatsu,Higashi Sake Brewing,Komatsu,Sake,,,,,,,http://www.sake-sinsen.co.jp/einglish.html,,,,36.432198,136.480362,,pendiente,no comprobado,,,314,,,,,,,jp,chubu,ishikawa
-kano-sake-brewery-kaga,Kano Sake Brewery,Kaga,Sake,,,,,,,https://jokigen.co.jp/jyokigen-brewery-guide/,,,,36.324944,136.371109,,pendiente,no comprobado,,,514,,,,,,,jp,chubu,ishikawa
-mioya-brewery-hakui,Mioya Brewery,Hakui,Sake,,石川県羽咋市大町イ8,,,,,http://mioya-sake.com/,,,,36.927418,136.869797,,pendiente,no comprobado,,,772,,,,,,,jp,chubu,ishikawa
-matsunami-shuzo-noto,Matsunami Shuzo,Noto,Sake,,石川県鳳珠郡能登町松波30-114,,,,,https://www.o-eyama.com/eng,,,,37.359467,137.237823,,pendiente,no comprobado,,,755,,,,,,,jp,chubu,ishikawa
-sakurada-sake-brewery-suzu,Sakurada Sake Brewery,Suzu,Sake,,石川県珠洲市蛸島町ソ93,,,,,https://sakurada.co.jp/en/,,,,37.440075,137.314545,,pendiente,no comprobado,,,1034,,,,,,,jp,chubu,ishikawa
-hakuto-sake-brewery-wajima,Hakuto Sake Brewery,Wajima,Sake,,石川県輪島市鳳至町上町24,,,,,http://www.hakutousyuzou.jp/index_en.html,,,,37.396645,136.897156,,pendiente,no comprobado,,,291,,,,,,,jp,chubu,ishikawa
-kuze-shuzoten-tsubata,Kuze Shuzoten,Tsubata,Sake,,石川県河北郡津幡町清水イ122,,,+81762892028,,http://www.choseimai.co.jp/,,,,36.672508,136.73378,,pendiente,no comprobado,,,696,,,,,,,jp,chubu,ishikawa
-takeuchi-shuzoten-kanazawa,Takeuchi Shuzoten,Kanazawa,Sake,,石川県金沢市御所町イ22乙,,,+81762525476,,,,,,36.583576,136.679962,,pendiente,no comprobado,,,1201,,,,,,,jp,chubu,ishikawa
-tezuka-shuzojo-komatsu,Tezuka Shuzojo,Komatsu,Sake,,石川県小松市串町庚7,,,+81761441200,,,,,,36.371246,136.422272,,pendiente,no comprobado,,,1230,,,,,,,jp,chubu,ishikawa
-tsuruno-shuzoten-noto,Tsuruno Shuzoten,Noto,Sake,,石川県鳳珠郡能登町鵜川19字64番地,,,+81768672311,,http://www.taniizumi.jp/,,,,37.256832,137.080231,,pendiente,no comprobado,,,1279,,,,,,,jp,chubu,ishikawa
-hiyoshi-shuzoten-wajima,Hiyoshi Shuzoten,Wajima,Sake,,石川県輪島市河井町2-27-1,,,+81768220130,,http://www.hiyoshisyuzou.com/,,,,37.393986,136.900452,,pendiente,no comprobado,,,330,,,,,,,jp,chubu,ishikawa
-shirafuji-shuzoten-wajima,Shirafuji Shuzoten,Wajima,Sake,,石川県輪島市鳳至町上町24,,,+81768222115,,http://www.hakutousyuzou.jp/,,,,37.396645,136.897156,,pendiente,no comprobado,,,1111,,,,,,,jp,chubu,ishikawa
-shimizu-shuzoten-wajima,Shimizu Shuzoten,Wajima,Sake,,石川県輪島市河井町1部18の1,,,+81768225858,,http://www.notohomare.com/,,,,37.396023,136.899872,,pendiente,no comprobado,,,1098,,,,,,,jp,chubu,ishikawa
-chuno-shuzo-wajima,Chuno Shuzo,Wajima,Sake,,石川県輪島市町野町寺山3-42,,,+81768321130,,,,,,37.434071,137.126328,,pendiente,no comprobado,,,143,,,,,,,jp,chubu,ishikawa
-nakano-shuzo-wajima,Nakano Shuzo,Wajima,Sake,,石川県輪島市門前町広瀬ニ5-2,,,+81768420008,,,,,,37.285583,136.775009,,pendiente,no comprobado,,,823,,,,,,,jp,chubu,ishikawa
-nakashima-shuzoten-wajima,Nakashima Shuzoten,Wajima,Sake,,石川県輪島市鳳至町稲荷町8,,,+81768220018,,http://www.notosuehiro.com/,,,,37.393238,136.894806,,pendiente,no comprobado,,,827,,,,,,,jp,chubu,ishikawa
-naogen-kanazawa,直源醤油,Kanazawa,Condimentos,,,,,,,https://www.naogen.co.jp/,,,,36.561060,136.656500,,,no comprobado,,,2970,,,,,,,jp,chubu,ishikawa
-nabeki-kanazawa,鍋喜醤油,Kanazawa,Condimentos,,,,,,,https://nabeki.net/,,,,36.561060,136.656500,,,sí,ecommerce,,3251,,,,,,,jp,chubu,ishikawa
-konichi-shoyu-kanazawa,紺市醤油味噌,Kanazawa,Condimentos,,,,,,,https://konichi-shoyu.com/,,,,36.561060,136.656500,,,no comprobado,,,3052,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa,橋徳醤油醸造所,Kanazawa,Condimentos,,石川県金沢市大野町4-97,,,+81762670438,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2829,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa-2,奥村醤油醸造所,Kanazawa,Condimentos,,石川県金沢市大野町6-23,,,+81762670165,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2350,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa-3,紺善醤油味噌,Kanazawa,Condimentos,,石川県金沢市大野町1-44,,,+81762670130,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,3051,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa-4,ヤマト醤油味噌,Kanazawa,Condimentos,,石川県金沢市大野町4ｰｲ170,,,+810762681248,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,1976,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa-5,粟長醤油,Kanazawa,Condimentos,,石川県金沢市大野町4ｰﾊ38,,,+81762670260,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,3044,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa-6,川助醤油店,Kanazawa,Condimentos,,石川県金沢市大野町7-5,,,+81762670635,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2470,,,,,,,jp,chubu,ishikawa
-oonomurasaki-kanazawa-7,本江醸造食品,Kanazawa,Condimentos,,石川県金沢市東山3-5-27,,,+81762520330,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2640,,,,,,,jp,chubu,ishikawa
-oonomurasaki-hakusan,大屋醤油,Hakusan,Condimentos,,石川県白山市鶴来本町2-ﾜ133,Produces soy sauce and traditional seasonings at its Hakusan brewery.,,+81762720007,,,,,,36.514420,136.565580,,pendiente,no comprobado,,,2313,en,,,,,,jp,chubu,ishikawa
-tabechoku-21981,ハーブ農園ペザン,Tsubata,Té e infusiones,,,,,,,,,,,36.669170,136.728780,,pendiente,sí,marketplace,,1882,,,,,,,jp,chubu,ishikawa
-tabechoku-23455,宮本自然農園,Kanazawa,Lácteos y quesos,ヨーグルト,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,2383,,,,,,,jp,chubu,ishikawa
-tabechoku-26680,ハイネファーム,かほく市,Setas,きのこ,,,,,,,,,,36.719830,136.706690,,pendiente,sí,marketplace,,1862,,,,,,,jp,chubu,ishikawa
-tabechoku-29294,のとっこ,Noto,Setas,"しいたけ, きくらげ",,,,,,,,,,37.310330,137.147690,,pendiente,sí,marketplace,,1580,,,,,,,jp,chubu,ishikawa
-tabechoku-29617,佐の川園,Nomi,Setas,きのこ,,,,,,,,,,36.447000,136.554080,,pendiente,sí,marketplace,,2148,,,,,,,jp,chubu,ishikawa
-tabechoku-28327,第八豊丸,Shika,Pescado,,,,,,,,,,,37.006190,136.778030,,pendiente,sí,marketplace,,3029,,,,,,,jp,chubu,ishikawa
-tabechoku-20771,淡水養魚場「白山堂」,Hakusan,Pescado,,,,,,,,,,,36.514420,136.565580,,pendiente,sí,marketplace,,2885,,,,,,,jp,chubu,ishikawa
-tabechoku-22973,義祥丸水産,Anamizu,Pescado,牡蠣,,,,,,,,,,37.230920,136.912280,,pendiente,sí,marketplace,,3063,,,,,,,jp,chubu,ishikawa
-tabechoku-28949,ほんだ農場,Nomi,Pescado,,,,,,,,,,,36.447000,136.554080,,pendiente,sí,marketplace,,1623,,,,,,,jp,chubu,ishikawa
-tabechoku-27064,金沢ちはらファーム,Kanazawa,Dulces y repostería,,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,3232,,,,,,,jp,chubu,ishikawa
-tabechoku-26366,んめえ米,Kaga,Pan y cereal,,,,,,,,,,,36.302780,136.315030,,pendiente,sí,marketplace,,1696,,,,,,,jp,chubu,ishikawa
-tabechoku-3078773,岡元農場,Nomi,Pan y cereal,,,,,,,,,,,36.447000,136.554080,,pendiente,sí,marketplace,,2448,,,,,,,jp,chubu,ishikawa
-tabechoku-23203,ハルサ,Noto,Fruta y verdura,野菜,,,,,,,,,,37.310330,137.147690,,pendiente,sí,marketplace,,1877,,,,,,,jp,chubu,ishikawa
-tabechoku-22405,味きらら☆福田農園,Shika,Fruta y verdura,,,,,,,,,,,37.006190,136.778030,,pendiente,sí,marketplace,,2257,,,,,,,jp,chubu,ishikawa
-tabechoku-3077842,ぶるベジ,Hakusan,Fruta y verdura,,,,,,,,,,,36.514420,136.565580,,pendiente,sí,marketplace,,1617,,,,,,,jp,chubu,ishikawa
-tabechoku-27450,ほくベジ,Anamizu,Fruta y verdura,野菜,,,,,,,,,,37.230920,136.912280,,pendiente,sí,marketplace,,1620,,,,,,,jp,chubu,ishikawa
-tabechoku-3077166,アグリコ,Anamizu,Fruta y verdura,"トマト, 野菜",,,,,,,,,,37.230920,136.912280,,pendiente,sí,marketplace,,1702,,,,,,,jp,chubu,ishikawa
-tabechoku-20169,百姓ひろばオズランド,Hakui,Fruta y verdura,野菜,,,,,,,,,,36.893610,136.778970,,pendiente,sí,marketplace,,2964,,,,,,,jp,chubu,ishikawa
-tabechoku-20935,ぶどうの森農園,Kanazawa,Fruta y verdura,"ぶどう, 菓子",,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,1610,,,,,,,jp,chubu,ishikawa
-tabechoku-23048,加賀米野菜基地（かがこめやさいきち）,Kanazawa,Fruta y verdura,野菜,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,2198,,,,,,,jp,chubu,ishikawa
-tabechoku-21225,OTM オーティーエム,Kanazawa,Fruta y verdura,,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,968,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-yamanakaishikawaya-0ddd019,山中石川屋,加賀市,Dulces y repostería,和菓子,加賀市山中温泉本町 2-ナ-24,,,,,https://www.yamanakaishikawaya.com/,,,,36.302780,136.315030,,,no comprobado,,,2419,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-matsubaya-9f39904,松葉屋,小松市,Dulces y repostería,和菓子,小松市大文字町 69,,,,,http://www.matsubaya.jp/,,,,36.311110,136.498330,,,sí,ecommerce,,2674,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-saikadou-4e57499,彩霞堂,白山市,Dulces y repostería,和菓子,白山市石同町 22,,,,,https://saikadou.jp/,,,,36.514420,136.565580,,,sí,ecommerce,,2507,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-kintuba-co-a0d51b8,中田屋,金沢市,Dulces y repostería,和菓子,金沢市東山 3-4-30,,,,,https://www.kintuba.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,2058,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-ame-tawaraya-co-e196b18,あめの俵屋,金沢市,Dulces y repostería,和菓子,金沢市小橋町 2-4,,,,,http://www.ame-tawaraya.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,1422,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-urata-k-co-cbf4602,浦田甘陽堂,金沢市,Dulces y repostería,和菓子,金沢市御影町 21-14,,,,,https://www.urata-k.co.jp/,,,,36.561060,136.656500,,,no comprobado,,,2878,,,,,,,jp,chubu,ishikawa
-jp-ishikawa-moroeya-co-01e13bc,落雁　諸江屋,金沢市,Dulces y repostería,和菓子,金沢市野町 3-1-38,,,,,https://moroeya.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,3121,,,,,,,jp,chubu,ishikawa
-oriental-brewing,オリエンタルブルーイング (Oriental Brewing),Kanazawa,Cerveza,,湯涌町イ1-1,オリエンタルブルーイング (Oriental Brewing) is a brewery producing beer at its Kanazawa unit.,,,,https://orientalbrewing.com/,,https://www.instagram.com/orientalbrewing/,,36.56106,136.6565,,pendiente,no comprobado,,,1737,en,,,,,,jp,chubu,ishikawa
-nihonkai-club,日本海倶楽部 (Nihonkai Club),Noto,Cerveza,,立壁6-1,,,,n-beer@bussien.com,https://www.nihonkai-club.com/,,https://www.instagram.com/nihonkai_club/,,37.31033,137.14769,,pendiente,no comprobado,,,2562,,,,,,,jp,chubu,ishikawa
-kanazawa-brewery,金沢ブルワリー (Kanazawa Brewery),Kanazawa,Cerveza,,円光寺3-17-17,金沢ブルワリー (Kanazawa Brewery) is a brewery producing beer at its Kanazawa unit.,,,,,,https://www.instagram.com/kanazawa_brewery/,,36.56106,136.6565,,pendiente,no comprobado,,,3233,en,,,,,,jp,chubu,ishikawa
-kadoshima-teichi-nanao,鹿渡島定置,Nanao,Pescado,"Wild fish, himono, fish sauce",石川県七尾市鵜浦町9-38-2,Operates fixed-net fishing and processes its catch in Nanao.,,+81767581350,,http://www.nanaonet.jp/~kadoshimateichi/,,,,37.093964,137.042358,,pendiente,no comprobado,,,3329,en,,,,,,jp,chubu,ishikawa
-wako-food-industry,Wako Food Industry,Hakusan,Comida preparada,,,,,,,https://www.wako-co.jp/,,,,,,,pendiente,no comprobado,,,3445,,,,,,,jp,chubu,ishikawa
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+shata-shuzo-hakusan,Shata Shuzo,Hakusan,Sake,Tengumai,"Bomaruimachi 60-1, Hakusan",Brewery founded in 1823 on the Kaga plain. Own online shop and a tasting room at the kura.,,+81762751165,,https://www.tengumai.co.jp/,,,,36.514420,136.565580,,,sí,ecommerce,,1083,en,,,,,,jp,chubu,ishikawa,,,,,,
+fukumitsuya-kanazawa,Fukumitsuya,Kanazawa,Sake,"Kagatobi, Fukumasamune",Kanazawa,Brewery founded in 1625. Junmai only since 2001; own online shop and a sales room in the city.,,,,https://www.fukumitsuya.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,239,en,,,,,,jp,chubu,ishikawa,,,,,,
+kazuma-shuzo-noto,Kazuma Shuzo,Noto,Sake,Chikuha,"Ushitsu, Noto","Noto brewery working rice from farmers in the village. Still brewing after the 2024 earthquake, with its own online shop.",,,,https://chikuha.co.jp/,,,,37.310330,137.147690,,,sí,ecommerce,,551,en,,,,,,jp,chubu,ishikawa,,,,,,
+sogen-shuzo-suzu,Sogen Shuzo,Suzu,Sake,Sogen,"Horyumachi, Suzu","Brewery founded in 1768, at the tip of the Noto peninsula. Resumed brewing two weeks after the 2024 earthquake.",,,,https://sogenonline.myshopify.com/,,,,37.436330,137.260470,,,sí,ecommerce,,1131,en,,,,,,jp,chubu,ishikawa,,,,,,
+yoshida-shuzoten-hakusan,Yoshida Shuzoten,Hakusan,Sake,"Tedorigawa, Yoshidagura u","Ayoshimachi 41, Hakusan","Brewery on the alluvial fan of the Tetori river. Runs two separate lines, Tedorigawa and Yoshidagura u, brewed in the same kura.",,,,https://tedorigawa.com/,,,,36.514420,136.565580,,,no comprobado,,,1382,en,,,,,,jp,chubu,ishikawa,,,,,,
+kikuhime-hakusan,Kikuhime,Hakusan,Sake,"Kikuhime yamahai junmai, aged ginjo","Tsurugi Shinmachi Ta 8, Hakusan","Tsurugi brewery tied to the Hakusan shrine, producing long-aged sake.",,+81762721234,,https://www.kikuhime.co.jp/,,,,36.514420,136.565580,,pendiente,no comprobado,,,556,en,,,,,,jp,chubu,ishikawa,,,,,,
+nakamura-brewery-kanazawa,Nakamura Brewery,Kanazawa,Sake,,,,,,,https://nakamura-shuzou.co.jp/,,,,36.56551,136.644287,,pendiente,no comprobado,,,820,,,,,,,jp,chubu,ishikawa,,,,,,
+yachiya-brewing-kanazawa,Yachiya Brewing,Kanazawa,Sake,,,,,,,http://www.yachiya-sake.co.jp/,,,,36.585556,136.675797,,pendiente,no comprobado,,,1340,,,,,,,jp,chubu,ishikawa,,,,,,
+kanaya-shuzouten-hakusan,Kanaya Shuzouten,Hakusan,Sake,,石川県白山市安田町3-2,,,,,https://www.hakusan-takasago.jp/,,,,36.522449,136.561584,,pendiente,no comprobado,,,501,,,,,,,jp,chubu,ishikawa,,,,,,
+manzairaku-sake-kura-hakusan,Manzairaku Sake Kura,Hakusan,Sake,,,,,,,https://manzairaku.co.jp/,,,,36.446976,136.627762,,pendiente,no comprobado,,,727,,,,,,,jp,chubu,ishikawa,,,,,,
+kaetsu-sake-brewery-komatsu,Kaetsu Sake Brewery,Komatsu,Sake,,,,,,,http://www.kanpaku.co.jp/,,,,36.37011,136.431183,,pendiente,no comprobado,,,472,,,,,,,jp,chubu,ishikawa,,,,,,
+higashi-sake-brewing-komatsu,Higashi Sake Brewing,Komatsu,Sake,,,,,,,http://www.sake-sinsen.co.jp/einglish.html,,,,36.432198,136.480362,,pendiente,no comprobado,,,314,,,,,,,jp,chubu,ishikawa,,,,,,
+kano-sake-brewery-kaga,Kano Sake Brewery,Kaga,Sake,,,,,,,https://jokigen.co.jp/jyokigen-brewery-guide/,,,,36.324944,136.371109,,pendiente,no comprobado,,,514,,,,,,,jp,chubu,ishikawa,,,,,,
+mioya-brewery-hakui,Mioya Brewery,Hakui,Sake,,石川県羽咋市大町イ8,,,,,http://mioya-sake.com/,,,,36.927418,136.869797,,pendiente,no comprobado,,,772,,,,,,,jp,chubu,ishikawa,,,,,,
+matsunami-shuzo-noto,Matsunami Shuzo,Noto,Sake,,石川県鳳珠郡能登町松波30-114,,,,,https://www.o-eyama.com/eng,,,,37.359467,137.237823,,pendiente,no comprobado,,,755,,,,,,,jp,chubu,ishikawa,,,,,,
+sakurada-sake-brewery-suzu,Sakurada Sake Brewery,Suzu,Sake,,石川県珠洲市蛸島町ソ93,,,,,https://sakurada.co.jp/en/,,,,37.440075,137.314545,,pendiente,no comprobado,,,1034,,,,,,,jp,chubu,ishikawa,,,,,,
+hakuto-sake-brewery-wajima,Hakuto Sake Brewery,Wajima,Sake,,石川県輪島市鳳至町上町24,,,,,http://www.hakutousyuzou.jp/index_en.html,,,,37.396645,136.897156,,pendiente,no comprobado,,,291,,,,,,,jp,chubu,ishikawa,,,,,,
+kuze-shuzoten-tsubata,Kuze Shuzoten,Tsubata,Sake,,石川県河北郡津幡町清水イ122,,,+81762892028,,http://www.choseimai.co.jp/,,,,36.672508,136.73378,,pendiente,no comprobado,,,696,,,,,,,jp,chubu,ishikawa,,,,,,
+takeuchi-shuzoten-kanazawa,Takeuchi Shuzoten,Kanazawa,Sake,,石川県金沢市御所町イ22乙,,,+81762525476,,,,,,36.583576,136.679962,,pendiente,no comprobado,,,1201,,,,,,,jp,chubu,ishikawa,,,,,,
+tezuka-shuzojo-komatsu,Tezuka Shuzojo,Komatsu,Sake,,石川県小松市串町庚7,,,+81761441200,,,,,,36.371246,136.422272,,pendiente,no comprobado,,,1230,,,,,,,jp,chubu,ishikawa,,,,,,
+tsuruno-shuzoten-noto,Tsuruno Shuzoten,Noto,Sake,,石川県鳳珠郡能登町鵜川19字64番地,,,+81768672311,,http://www.taniizumi.jp/,,,,37.256832,137.080231,,pendiente,no comprobado,,,1279,,,,,,,jp,chubu,ishikawa,,,,,,
+hiyoshi-shuzoten-wajima,Hiyoshi Shuzoten,Wajima,Sake,,石川県輪島市河井町2-27-1,,,+81768220130,,http://www.hiyoshisyuzou.com/,,,,37.393986,136.900452,,pendiente,no comprobado,,,330,,,,,,,jp,chubu,ishikawa,,,,,,
+shirafuji-shuzoten-wajima,Shirafuji Shuzoten,Wajima,Sake,,石川県輪島市鳳至町上町24,,,+81768222115,,http://www.hakutousyuzou.jp/,,,,37.396645,136.897156,,pendiente,no comprobado,,,1111,,,,,,,jp,chubu,ishikawa,,,,,,
+shimizu-shuzoten-wajima,Shimizu Shuzoten,Wajima,Sake,,石川県輪島市河井町1部18の1,,,+81768225858,,http://www.notohomare.com/,,,,37.396023,136.899872,,pendiente,no comprobado,,,1098,,,,,,,jp,chubu,ishikawa,,,,,,
+chuno-shuzo-wajima,Chuno Shuzo,Wajima,Sake,,石川県輪島市町野町寺山3-42,,,+81768321130,,,,,,37.434071,137.126328,,pendiente,no comprobado,,,143,,,,,,,jp,chubu,ishikawa,,,,,,
+nakano-shuzo-wajima,Nakano Shuzo,Wajima,Sake,,石川県輪島市門前町広瀬ニ5-2,,,+81768420008,,,,,,37.285583,136.775009,,pendiente,no comprobado,,,823,,,,,,,jp,chubu,ishikawa,,,,,,
+nakashima-shuzoten-wajima,Nakashima Shuzoten,Wajima,Sake,,石川県輪島市鳳至町稲荷町8,,,+81768220018,,http://www.notosuehiro.com/,,,,37.393238,136.894806,,pendiente,no comprobado,,,827,,,,,,,jp,chubu,ishikawa,,,,,,
+naogen-kanazawa,直源醤油,Kanazawa,Condimentos,,,,,,,https://www.naogen.co.jp/,,,,36.561060,136.656500,,,no comprobado,,,2970,,,,,,,jp,chubu,ishikawa,,,,,,
+nabeki-kanazawa,鍋喜醤油,Kanazawa,Condimentos,,,,,,,https://nabeki.net/,,,,36.561060,136.656500,,,sí,ecommerce,,3251,,,,,,,jp,chubu,ishikawa,,,,,,
+konichi-shoyu-kanazawa,紺市醤油味噌,Kanazawa,Condimentos,,,,,,,https://konichi-shoyu.com/,,,,36.561060,136.656500,,,no comprobado,,,3052,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa,橋徳醤油醸造所,Kanazawa,Condimentos,,石川県金沢市大野町4-97,,,+81762670438,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2829,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa-2,奥村醤油醸造所,Kanazawa,Condimentos,,石川県金沢市大野町6-23,,,+81762670165,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2350,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa-3,紺善醤油味噌,Kanazawa,Condimentos,,石川県金沢市大野町1-44,,,+81762670130,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,3051,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa-4,ヤマト醤油味噌,Kanazawa,Condimentos,,石川県金沢市大野町4ｰｲ170,,,+810762681248,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,1976,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa-5,粟長醤油,Kanazawa,Condimentos,,石川県金沢市大野町4ｰﾊ38,,,+81762670260,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,3044,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa-6,川助醤油店,Kanazawa,Condimentos,,石川県金沢市大野町7-5,,,+81762670635,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2470,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-kanazawa-7,本江醸造食品,Kanazawa,Condimentos,,石川県金沢市東山3-5-27,,,+81762520330,,,,,,36.561060,136.656500,,pendiente,no comprobado,,,2640,,,,,,,jp,chubu,ishikawa,,,,,,
+oonomurasaki-hakusan,大屋醤油,Hakusan,Condimentos,,石川県白山市鶴来本町2-ﾜ133,Produces soy sauce and traditional seasonings at its Hakusan brewery.,,+81762720007,,,,,,36.514420,136.565580,,pendiente,no comprobado,,,2313,en,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-21981,ハーブ農園ペザン,Tsubata,Té e infusiones,,,,,,,,,,,36.669170,136.728780,,pendiente,sí,marketplace,,1882,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-23455,宮本自然農園,Kanazawa,Lácteos y quesos,ヨーグルト,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,2383,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-26680,ハイネファーム,かほく市,Setas,きのこ,,,,,,,,,,36.719830,136.706690,,pendiente,sí,marketplace,,1862,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-29294,のとっこ,Noto,Setas,"しいたけ, きくらげ",,,,,,,,,,37.310330,137.147690,,pendiente,sí,marketplace,,1580,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-29617,佐の川園,Nomi,Setas,きのこ,,,,,,,,,,36.447000,136.554080,,pendiente,sí,marketplace,,2148,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-28327,第八豊丸,Shika,Pescado,,,,,,,,,,,37.006190,136.778030,,pendiente,sí,marketplace,,3029,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-20771,淡水養魚場「白山堂」,Hakusan,Pescado,,,,,,,,,,,36.514420,136.565580,,pendiente,sí,marketplace,,2885,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-22973,義祥丸水産,Anamizu,Pescado,牡蠣,,,,,,,,,,37.230920,136.912280,,pendiente,sí,marketplace,,3063,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-28949,ほんだ農場,Nomi,Pescado,,,,,,,,,,,36.447000,136.554080,,pendiente,sí,marketplace,,1623,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-27064,金沢ちはらファーム,Kanazawa,Dulces y repostería,,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,3232,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-26366,んめえ米,Kaga,Pan y cereal,,,,,,,,,,,36.302780,136.315030,,pendiente,sí,marketplace,,1696,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-3078773,岡元農場,Nomi,Pan y cereal,,,,,,,,,,,36.447000,136.554080,,pendiente,sí,marketplace,,2448,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-23203,ハルサ,Noto,Fruta y verdura,野菜,,,,,,,,,,37.310330,137.147690,,pendiente,sí,marketplace,,1877,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-22405,味きらら☆福田農園,Shika,Fruta y verdura,,,,,,,,,,,37.006190,136.778030,,pendiente,sí,marketplace,,2257,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-3077842,ぶるベジ,Hakusan,Fruta y verdura,,,,,,,,,,,36.514420,136.565580,,pendiente,sí,marketplace,,1617,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-27450,ほくベジ,Anamizu,Fruta y verdura,野菜,,,,,,,,,,37.230920,136.912280,,pendiente,sí,marketplace,,1620,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-3077166,アグリコ,Anamizu,Fruta y verdura,"トマト, 野菜",,,,,,,,,,37.230920,136.912280,,pendiente,sí,marketplace,,1702,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-20169,百姓ひろばオズランド,Hakui,Fruta y verdura,野菜,,,,,,,,,,36.893610,136.778970,,pendiente,sí,marketplace,,2964,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-20935,ぶどうの森農園,Kanazawa,Fruta y verdura,"ぶどう, 菓子",,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,1610,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-23048,加賀米野菜基地（かがこめやさいきち）,Kanazawa,Fruta y verdura,野菜,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,2198,,,,,,,jp,chubu,ishikawa,,,,,,
+tabechoku-21225,OTM オーティーエム,Kanazawa,Fruta y verdura,,,,,,,,,,,36.561060,136.656500,,pendiente,sí,marketplace,,968,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-yamanakaishikawaya-0ddd019,山中石川屋,加賀市,Dulces y repostería,和菓子,加賀市山中温泉本町 2-ナ-24,,,,,https://www.yamanakaishikawaya.com/,,,,36.302780,136.315030,,,no comprobado,,,2419,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-matsubaya-9f39904,松葉屋,小松市,Dulces y repostería,和菓子,小松市大文字町 69,,,,,http://www.matsubaya.jp/,,,,36.311110,136.498330,,,sí,ecommerce,,2674,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-saikadou-4e57499,彩霞堂,白山市,Dulces y repostería,和菓子,白山市石同町 22,,,,,https://saikadou.jp/,,,,36.514420,136.565580,,,sí,ecommerce,,2507,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-kintuba-co-a0d51b8,中田屋,金沢市,Dulces y repostería,和菓子,金沢市東山 3-4-30,,,,,https://www.kintuba.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,2058,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-ame-tawaraya-co-e196b18,あめの俵屋,金沢市,Dulces y repostería,和菓子,金沢市小橋町 2-4,,,,,http://www.ame-tawaraya.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,1422,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-urata-k-co-cbf4602,浦田甘陽堂,金沢市,Dulces y repostería,和菓子,金沢市御影町 21-14,,,,,https://www.urata-k.co.jp/,,,,36.561060,136.656500,,,no comprobado,,,2878,,,,,,,jp,chubu,ishikawa,,,,,,
+jp-ishikawa-moroeya-co-01e13bc,落雁　諸江屋,金沢市,Dulces y repostería,和菓子,金沢市野町 3-1-38,,,,,https://moroeya.co.jp/,,,,36.561060,136.656500,,,sí,ecommerce,,3121,,,,,,,jp,chubu,ishikawa,,,,,,
+oriental-brewing,オリエンタルブルーイング (Oriental Brewing),Kanazawa,Cerveza,,湯涌町イ1-1,オリエンタルブルーイング (Oriental Brewing) is a brewery producing beer at its Kanazawa unit.,,,,https://orientalbrewing.com/,,https://www.instagram.com/orientalbrewing/,,36.56106,136.6565,,pendiente,no comprobado,,,1737,en,,,,,,jp,chubu,ishikawa,,,,,,
+nihonkai-club,日本海倶楽部 (Nihonkai Club),Noto,Cerveza,,立壁6-1,,,,n-beer@bussien.com,https://www.nihonkai-club.com/,,https://www.instagram.com/nihonkai_club/,,37.31033,137.14769,,pendiente,no comprobado,,,2562,,,,,,,jp,chubu,ishikawa,,,,,,
+kanazawa-brewery,金沢ブルワリー (Kanazawa Brewery),Kanazawa,Cerveza,,円光寺3-17-17,金沢ブルワリー (Kanazawa Brewery) is a brewery producing beer at its Kanazawa unit.,,,,,,https://www.instagram.com/kanazawa_brewery/,,36.56106,136.6565,,pendiente,no comprobado,,,3233,en,,,,,,jp,chubu,ishikawa,,,,,,
+kadoshima-teichi-nanao,鹿渡島定置,Nanao,Pescado,"Wild fish, himono, fish sauce",石川県七尾市鵜浦町9-38-2,Operates fixed-net fishing and processes its catch in Nanao.,,+81767581350,,http://www.nanaonet.jp/~kadoshimateichi/,,,,37.093964,137.042358,,pendiente,no comprobado,,,3329,en,,,,,,jp,chubu,ishikawa,,,,,,
+wako-food-industry,Wako Food Industry,Hakusan,Comida preparada,,,,,,,https://www.wako-co.jp/,,,,,,,pendiente,no comprobado,,,3445,,,,,,,jp,chubu,ishikawa,,,,,,

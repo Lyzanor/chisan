@@ -13,11 +13,13 @@ import {
   type Locale,
 } from "./i18n/locales";
 import {
+  TRANSLATABLE_PRODUCER_FIELDS,
+  TRANSLATABLE_PRODUCER_FIELD_LOCALES,
   TRANSLATION_SIDECAR_HEADER,
-  parseDescriptionTranslations,
-  resolveLocalizedDescription,
-  type DescriptionTranslation,
-  type RawDescriptionTranslation,
+  parseProducerTranslations,
+  resolveLocalizedProducerField,
+  type ProducerTranslation,
+  type RawProducerTranslation,
 } from "./i18n/translations";
 import {
   normalizeProducerRouteAliasKey,
@@ -975,7 +977,7 @@ export type ProducerSearchFilters = {
 };
 
 const csvCache = new Map<string, ProducerCsvRow[]>();
-const translationCache = new Map<string, Promise<DescriptionTranslation[]>>();
+const translationCache = new Map<string, Promise<ProducerTranslation[]>>();
 const countryProducerIndexCache = new Map<
   string,
   Promise<ReadonlyMap<number, LocatedProducerCsvRow>>
@@ -996,11 +998,14 @@ export function parseProducerCsvRows(
     const fields = Object.fromEntries(
       Object.entries(row).map(([key, value]) => {
         const field = cleanCell(key);
-        // Translation hashes and producer-authored community messages preserve
+        // Translatable prose and producer-authored community messages preserve
         // source whitespace. Other catalog fields retain the historical cleanup.
         return [
           field,
-          field === "descripcion" || field === "mensaje a la comunidad"
+          field === "descripcion" ||
+          field === "mensaje a la comunidad" ||
+          field === "quien hay detras" ||
+          field === "historia"
             ? String(value ?? "")
             : cleanCell(value),
         ];
@@ -1092,7 +1097,7 @@ async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
 async function loadCountryTranslations(
   country: string,
   targetLocale: Locale,
-): Promise<DescriptionTranslation[]> {
+): Promise<ProducerTranslation[]> {
   const countrySlug = cleanCell(country).toLowerCase();
   const cacheKey = `${countrySlug}/${targetLocale}`;
   const cached = translationCache.get(cacheKey);
@@ -1149,9 +1154,9 @@ async function loadCountryTranslations(
           column,
           record[columnIndex] ?? "",
         ]),
-      ) as RawDescriptionTranslation;
+      ) as RawProducerTranslation;
     });
-    return parseDescriptionTranslations(rows, targetLocale);
+    return parseProducerTranslations(rows, targetLocale);
   })();
   translationCache.set(cacheKey, pending);
   void pending.catch(() => {
@@ -1161,29 +1166,46 @@ async function loadCountryTranslations(
   return pending;
 }
 
-export function localizeProducerDescriptions(
+export function localizeProducerFields(
   rows: readonly ProducerCsvRow[],
   requestedLocale: Locale,
-  translations: readonly DescriptionTranslation[],
+  translations: readonly ProducerTranslation[],
 ): ProducerCsvRow[] {
   return rows.map((row) => {
-    const text = row.fields.descripcion ?? "";
-    const sourceLocale = row.fields.descripcion_locale;
-    if (!text) return row;
-    if (!hasDescriptionSourceLocale(sourceLocale)) {
-      return { ...row, fields: { ...row.fields, descripcion: "" } };
-    }
+    let localizedFields: Record<string, string> | null = null;
+    for (const field of TRANSLATABLE_PRODUCER_FIELDS) {
+      const localeField = TRANSLATABLE_PRODUCER_FIELD_LOCALES[field];
+      const text = row.fields[field] ?? "";
+      const sourceLocale = row.fields[localeField];
+      if (!text) continue;
+      if (!hasDescriptionSourceLocale(sourceLocale)) {
+        localizedFields ??= { ...row.fields };
+        localizedFields[field] = "";
+        localizedFields[localeField] = "";
+        continue;
+      }
 
-    const resolved = resolveLocalizedDescription(
-      { producerId: String(row.producerId), text, locale: sourceLocale },
-      requestedLocale,
-      translations,
-    );
-    const localizedText = resolved?.text ?? "";
-    if (localizedText === text) return row;
-    return { ...row, fields: { ...row.fields, descripcion: localizedText } };
+      const resolved = resolveLocalizedProducerField(
+        {
+          producerId: String(row.producerId),
+          field,
+          text,
+          locale: sourceLocale,
+        },
+        requestedLocale,
+        translations,
+      );
+      const localizedText = resolved?.text ?? "";
+      if (localizedText === text && sourceLocale === requestedLocale) continue;
+      localizedFields ??= { ...row.fields };
+      localizedFields[field] = localizedText;
+      localizedFields[localeField] = resolved?.locale ?? "";
+    }
+    return localizedFields ? { ...row, fields: localizedFields } : row;
   });
 }
+
+export const localizeProducerDescriptions = localizeProducerFields;
 
 async function loadLocalizedCsvRows(
   country: string,
@@ -1194,7 +1216,7 @@ async function loadLocalizedCsvRows(
     loadCsvRows(country, area),
     loadCountryTranslations(country, locale),
   ]);
-  return localizeProducerDescriptions(rows, locale, translations);
+  return localizeProducerFields(rows, locale, translations);
 }
 
 function isValidProducerId(producerId: number): boolean {
@@ -1313,7 +1335,7 @@ export async function findProducersByIds(
           continue;
         }
 
-        const [localized] = localizeProducerDescriptions(
+        const [localized] = localizeProducerFields(
           [producer],
           locale,
           translations,

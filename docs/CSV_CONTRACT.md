@@ -152,7 +152,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
 ```
 
 All columns are physically present in every file. “Optional” below means that a
@@ -220,6 +220,12 @@ Presence terms have exact meanings:
 | `country` | required | Exact lowercase country path slug from `data/csv/<country>/` | Display name, ISO label with different case or inferred producer nationality |
 | `region` | required | Exact lowercase region directory slug containing the row | Display label, municipality, sales territory or another region |
 | `area` | required | Exact lowercase `<area>` filename slug containing the row | Display label, municipality, nearest area or an area chosen independently of the tree |
+| `video` | optional | One complete official HTTPS YouTube video URL for this producer | A channel, playlist, shortener other than `youtu.be`, non-YouTube host, tracking embed or unrelated video |
+| `quien hay detras` | optional | Reviewed producer-authored description of the owners or team behind this productive unit, at most 2,000 Unicode characters | Private personal data, HTML, URLs, boilerplate, unsupported third-party claims or editor-invented biography |
+| `quien_hay_detras_locale` | paired | Supported lowercase source-language code for non-empty `quien hay detras` | Interface locale, inferred country language or a value when the text is empty |
+| `historia` | optional | Reviewed producer-authored account of the origins and development of this productive unit, at most 4,000 Unicode characters | Generic brand copy, HTML, URLs, unsupported claims, copied page boilerplate or private workflow narration |
+| `historia_locale` | paired | Supported lowercase source-language code for non-empty `historia` | Interface locale, inferred country language or a value when the text is empty |
+| `fecha ultimo cambio` | optional, system-managed | UTC calendar date (`YYYY-MM-DD`) of the most recent approved producer change materialized for this row | Producer input, ordinary editorial edit date, Git commit date, review timestamp with time or a manually inferred date |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -239,14 +245,15 @@ hours, contacts and online sales require current support. When a value cannot be
 supported, leave it empty or use the defined unknown state; never complete a row
 by inference.
 
-`mensaje a la comunidad` is the narrow attribution exception: it may originate
-as new first-party speech submitted by an active producer member through the
-reviewed account workflow, so it need not have been published at another public
-URL first. Its source is the attributed submission, whose author, request and
-review trail remain in PostgreSQL and Git rather than being copied into the CSV
-or public evidence ledger. This exception does not turn objective claims inside
-the message into verified facts and does not relax public-source requirements
-for any other field.
+`mensaje a la comunidad`, `quien hay detras` and `historia` are the narrow
+attribution exceptions: they may originate as new first-party speech submitted
+by an active producer member through the reviewed account workflow, so they
+need not have been published at another public URL first. Their source is the
+attributed submission, whose author, request and review trail remain in
+PostgreSQL and Git rather than being copied into the CSV or public evidence
+ledger. This exception does not turn objective claims inside the prose into
+verified facts and does not relax public-source requirements for any other
+field.
 
 New candidates must pass the candidate gate in `docs/EDITORIAL.md` before
 they enter a CSV. An admitted row uses `pendiente` while material doubt remains
@@ -294,6 +301,22 @@ for a speculative candidate that has not passed admission.
   breaks are preserved in its declared `mensaje_comunidad_locale`; they are not
   collapsed during proposal review or public loading. This first version does
   not materialize the message through translation sidecars.
+- `video` accepts a complete HTTPS YouTube URL for one concrete video. It is
+  rendered as an external link, not a third-party iframe, so profile display
+  does not introduce an automatic YouTube request or a second consent surface.
+- `quien hay detras` and `historia` are producer-authored long-form profile
+  prose. They retain internal spaces and LF line breaks, use their paired source
+  locales and follow the same HTML, URL, formula-marker, boilerplate and
+  third-party-claim exclusions as the community message. Their canonical limits
+  are 2,000 and 4,000 Unicode characters; localized sidecar variants may use
+  2,500 and 5,000 respectively so translation expansion does not force
+  truncation.
+- `fecha ultimo cambio` is never accepted in a proposal patch. Materialization
+  derives it from the approved request's immutable `reviewed_at` timestamp in
+  UTC and writes the calendar date together with the reviewed patch. It updates
+  after any approved producer-submitted change, including a standard
+  correction, but ordinary editorial CSV maintenance does not change it. It
+  remains empty until a producer proposal is approved and materialized.
 - Highlighted links are relevant third-party or producer pages such as press
   articles and interviews. They do not replace `web`, social links or evidence,
   are not necessarily official, and never count toward `verificacion`. The two
@@ -303,9 +326,10 @@ for a speculative candidate that has not passed admission.
 
 ## Expanded-profile fields
 
-The current expanded content fields are `visitas guiadas`, `mensaje a la
-comunidad`, `enlace destacado 1` and `enlace destacado 2`, plus the message's
-paired locale metadata. Their values are canonical CSV facts.
+The current expanded content fields are `video`, `visitas guiadas`, `mensaje a
+la comunidad`, `quien hay detras`, `historia`, `enlace destacado 1` and `enlace
+destacado 2`, plus the three prose fields' paired locale metadata and the
+system-managed `fecha ultimo cambio`. Their values are canonical CSV facts.
 There is deliberately no `premium`, payment status, provider or external
 payment ID column.
 
@@ -382,11 +406,12 @@ and breadcrumbs use maintained locale resources. Proper names, addresses,
 telephone numbers and external URLs remain canonical facts rather than being
 silently translated.
 
-`descripcion` uses the deterministic sidecar resolver below. A missing, stale
-or invalid translation is omitted from visible body copy and JSON-LD for that
-locale; localized generic metadata may describe the page without pretending to
-be the producer's translated description. `productos estrella` currently stays
-as reviewed canonical source text in both HTML and `WebPage.about`.
+`descripcion`, `quien hay detras` and `historia` use the deterministic sidecar
+resolver below. A missing, stale or invalid translation is omitted from visible
+body copy and, where mapped, JSON-LD for that locale; localized generic metadata
+may describe the page without pretending to be translated producer prose.
+`productos estrella` currently stays as reviewed canonical source text in both
+HTML and `WebPage.about`.
 `mensaje a la comunidad` is likewise rendered literally with its declared
 source `lang` and is not materialized through sidecars in this version.
 
@@ -412,6 +437,11 @@ it is public, visible on the same response, reviewed, normalized for its schema
 type, localized under the preceding contract and covered by tests. Entitlement
 activation alone never makes a field eligible.
 
+`video`, `quien hay detras`, `historia` and `fecha ultimo cambio` currently
+render only in the visible expanded-profile HTML. They have no JSON-LD mapping;
+the approval date is workflow context, not `dateModified` for the whole page or
+an ownership/verification signal.
+
 If `producer.profile.premium` is inactive or account state fails closed, the
 premium block and any structured facts derived exclusively from it disappear
 from the same response. The base profile, canonical URL, page-local graph
@@ -425,13 +455,14 @@ new schema types or public indexing, inspect raw server HTML to confirm that the
 JSON-LD is present before client JavaScript, matches visible content and passes
 Google's Rich Results Test or Schema Markup Validator as applicable.
 
-## Description source locale
+## Translatable prose source locales
 
-`descripcion_locale` is the source-language identifier for the canonical
-`descripcion`, not the locale of the producer, country or current request:
+`descripcion_locale`, `quien_hay_detras_locale` and `historia_locale` are the
+source-language identifiers for their paired canonical prose, not the locale of
+the producer, country or current request:
 
-- empty `descripcion` requires empty `descripcion_locale`;
-- non-empty `descripcion` requires one lowercase code from the maintained
+- empty prose requires its paired locale cell to be empty;
+- non-empty prose requires one lowercase code from the maintained
   description-source registry: every presentation locale plus the source-only
   `gl` and `eu` codes;
 - the value is a base language from the locale registry, never a catalog scope
@@ -440,7 +471,7 @@ Google's Rich Results Test or Schema Markup Validator as applicable.
   not activate routes, cookies, manifests, dictionaries, sidecar targets or
   `hreflang` entries;
 - the language is assessed from the actual row prose and may vary per row;
-- editors set it when writing or materially replacing a description and never
+- editors set the paired locale when writing or materially replacing prose and never
   infer it from the country code.
 
 `mensaje_comunidad_locale` follows the same source-language registry and pairing
@@ -455,7 +486,7 @@ a generated translation.
 
 ## Materialized translation sidecars
 
-Localized descriptions are stored by country and target locale:
+Localized producer profile prose is stored by country and target locale:
 
 ```text
 data/csv/<country>/translations.<target-locale>.csv
@@ -478,8 +509,10 @@ The sidecar rules are:
 - `producer_id` must resolve to one current area row in the same country.
   `(producer_id, field)` is unique within a target file; row order is canonical
   by numeric `producer_id` and then `field`.
-- Initially, the only allowed `field` is `descripcion`. Its `source_locale`
-  must equal that row's current non-empty `descripcion_locale`, and a
+- The allowed `field` values and paired source-locale columns are
+  `descripcion`/`descripcion_locale`, `quien hay detras`/
+  `quien_hay_detras_locale` and `historia`/`historia_locale`. A sidecar row's
+  `source_locale` must equal the current paired locale, and a
   source-equals-target row is not stored because the canonical prose already
   supplies that variant.
 - `source_hash` is the lowercase hexadecimal SHA-256 digest of the parsed
@@ -491,7 +524,9 @@ The sidecar rules are:
   an LF only in the provider prompt. It remains part of the canonical source
   hash, is not a number or protected term, and must not leak into localized
   presentation.
-- `text` is non-empty localized presentation. It must preserve the source's
+- `text` is non-empty localized presentation. Its Unicode-character limit is
+  500 for `descripcion`, 2,500 for `quien hay detras` and 5,000 for `historia`.
+  It must preserve the source's
   facts, numbers, URLs and protected terms and must not add claims or
   promotional language. Numeric literals are compared exactly. The ordered
   quantitative-fact fingerprint also covers an adjacent sign, percentage or
@@ -506,9 +541,10 @@ The sidecar rules are:
   `prompt_version` and `glossary_version` record the reproducible generation
   context; review changes only the origin and reviewed text, not the source to
   which the row is tied.
-- A reviewed current variant may become the canonical description when an
-  editor deliberately changes the canonical source language. Preserve the old
-  canonical prose, when still useful, as a reviewed sidecar row tied to the new
+- A reviewed current variant may become canonical prose when an editor
+  deliberately changes that field's canonical source language. Preserve the
+  old canonical prose, when still useful, as a reviewed sidecar row for the
+  same field tied to the new
   source and record `engine=canonical-source-pivot`; this declares a reviewed
   editorial move, not machine generation. Never rehash other variants as if
   they had been generated from the new source: review them against it or remove
@@ -536,23 +572,24 @@ The sidecar rules are:
   naturally, preserve legitimate brands, and never add repetitive padding or
   new facts merely to raise the ratio.
 
-For a requested locale, description resolution is deterministic:
+For a requested locale, each translatable prose field resolves independently:
 
-1. use canonical `descripcion` when `descripcion_locale` equals the request;
-2. otherwise use a current `reviewed` sidecar row;
-3. otherwise use a current `machine` sidecar row;
-4. otherwise expose no localized description variant.
+1. use the canonical field when its paired source locale equals the request;
+2. otherwise use a current `reviewed` sidecar row for that exact field;
+3. otherwise use a current `machine` sidecar row for that exact field;
+4. otherwise expose no localized variant of that field.
 
 A locale variant is not published in a sitemap or `hreflang` until every
-non-empty description it renders resolves currently. An indexed localized page
-must not silently fall back to canonical prose in another language.
+non-empty translatable prose field it renders resolves currently. An indexed
+localized page must not silently fall back to canonical prose in another
+language.
 
 The effective `i18n.publishedLocales` policy is the publication gate for
-description data. For each area and each published locale, every row
-whose `descripcion_locale` differs must have a current row in that locale's
-country sidecar. Missing or stale rows block that area/locale scope. A valid
-preparatory sidecar for a supported locale may remain partial while the locale
-is not published.
+translatable prose. For each area and each published locale, every populated
+allowed field whose paired source locale differs must have a current row for
+that exact `(producer_id, field)` in the locale's country sidecar. Missing or
+stale rows block that area/locale scope. A valid preparatory sidecar for a
+supported locale may remain partial while the locale is not published.
 
 Sidecars are checked-in, regenerable presentation artifacts. They are not
 editorial evidence, do not establish or correct producer facts, and must not

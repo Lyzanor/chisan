@@ -157,18 +157,47 @@ function writeEngineRegistry(
 
 function writeArea(
   target: Fixture,
-  rows: Array<{ producerId: string; text: string; locale?: string }>,
+  rows: Array<{
+    producerId: string;
+    text: string;
+    locale?: string;
+    behind?: string;
+    behindLocale?: string;
+    history?: string;
+    historyLocale?: string;
+  }>,
   { omitDescriptionLocale = false } = {},
 ) {
-  const header = omitDescriptionLocale
-    ? ["producer_id", "descripcion"]
-    : ["producer_id", "descripcion", "descripcion_locale"];
+  const header = [
+    "producer_id",
+    "descripcion",
+    ...(omitDescriptionLocale ? [] : ["descripcion_locale"]),
+    "quien hay detras",
+    "quien_hay_detras_locale",
+    "historia",
+    "historia_locale",
+  ];
   const records = [header];
   for (const row of rows) {
     records.push(
       omitDescriptionLocale
-        ? [row.producerId, row.text]
-        : [row.producerId, row.text, row.locale ?? "es"],
+        ? [
+            row.producerId,
+            row.text,
+            row.behind ?? "",
+            row.behindLocale ?? (row.behind ? "es" : ""),
+            row.history ?? "",
+            row.historyLocale ?? (row.history ? "es" : ""),
+          ]
+        : [
+            row.producerId,
+            row.text,
+            row.locale ?? "es",
+            row.behind ?? "",
+            row.behindLocale ?? (row.behind ? "es" : ""),
+            row.history ?? "",
+            row.historyLocale ?? (row.history ? "es" : ""),
+          ],
     );
   }
   const escaped = records.map((record) =>
@@ -192,6 +221,7 @@ function sidecarRow({
   engineVersion = "fixture-v1",
   promptVersion = TRANSLATION_PROMPT_VERSION,
   glossaryVersion = GLOSSARY.version,
+  field = TRANSLATION_FIELD,
 }: {
   producerId: string;
   source: string;
@@ -202,10 +232,11 @@ function sidecarRow({
   engineVersion?: string;
   promptVersion?: string;
   glossaryVersion?: string;
+  field?: string;
 }) {
   return {
     producer_id: producerId,
-    field: TRANSLATION_FIELD,
+    field,
     source_locale: sourceLocale,
     source_hash: hashTranslationSource(source),
     text,
@@ -635,8 +666,24 @@ test("description resolution uses canonical first, then current reviewed before 
 test("runtime parses the dedicated sidecar schema and never mixes canonical prose", () => {
   assert.deepEqual(RUNTIME_TRANSLATION_SIDECAR_HEADER, TRANSLATION_SIDECAR_HEADER);
   const source = "Produce miel en la finca.";
+  const behind = "Ana y Luis dirigen la explotación familiar.";
+  const history = "La finca nació en 1987 y sigue elaborando miel propia.";
   const parsed = parseDescriptionTranslations(
-    [sidecarRow({ producerId: "7", source, text: "Produeix mel a la finca." })],
+    [
+      sidecarRow({ producerId: "7", source, text: "Produeix mel a la finca." }),
+      sidecarRow({
+        producerId: "7",
+        source: behind,
+        text: "L'Ana i en Luis dirigeixen l'explotació familiar.",
+        field: "quien hay detras",
+      }),
+      sidecarRow({
+        producerId: "7",
+        source: history,
+        text: "La finca va néixer el 1987 i continua elaborant mel pròpia.",
+        field: "historia",
+      }),
+    ],
     "ca",
   );
   const row: ProducerCsvRow = {
@@ -651,10 +698,28 @@ test("runtime parses the dedicated sidecar schema and never mixes canonical pros
     imageSrc: "",
     latitude: null,
     longitude: null,
-    fields: { descripcion: source, descripcion_locale: "es" },
+    fields: {
+      descripcion: source,
+      descripcion_locale: "es",
+      "quien hay detras": behind,
+      quien_hay_detras_locale: "es",
+      historia: history,
+      historia_locale: "es",
+    },
   };
 
-  assert.equal(localizeProducerDescriptions([row], "ca", parsed)[0].fields.descripcion, "Produeix mel a la finca.");
+  const localized = localizeProducerDescriptions([row], "ca", parsed)[0].fields;
+  assert.equal(localized.descripcion, "Produeix mel a la finca.");
+  assert.equal(
+    localized["quien hay detras"],
+    "L'Ana i en Luis dirigeixen l'explotació familiar.",
+  );
+  assert.equal(
+    localized.historia,
+    "La finca va néixer el 1987 i continua elaborant mel pròpia.",
+  );
+  assert.equal(localized.quien_hay_detras_locale, "ca");
+  assert.equal(localized.historia_locale, "ca");
   assert.equal(localizeProducerDescriptions([row], "de", [])[0].fields.descripcion, "");
   assert.equal(localizeProducerDescriptions([row], "es", [])[0], row);
   assert.equal(
@@ -726,6 +791,58 @@ test("source-only locales resolve through sidecars without becoming translation 
   writeSidecar(target, []);
   const result = audit(target);
   assert.ok(result.errors.some((error) => error.includes("unsupported target locale 'gl'")));
+});
+
+test("published locales require current sidecar rows for every populated profile prose field", (context) => {
+  const target = fixture(context);
+  const description = "Produce miel en la finca.";
+  const behind = "Ana y Luis dirigen la explotación.";
+  const history = "La finca nació en 1987.";
+  writeArea(target, [{ producerId: "1", text: description, behind, history }]);
+  writeSidecar(target, [
+    sidecarRow({ producerId: "1", source: description, text: "Produeix mel a la finca." }),
+    sidecarRow({
+      producerId: "1",
+      source: behind,
+      text: "L'Ana i en Luis dirigeixen l'explotació.",
+      field: "quien hay detras",
+    }),
+    sidecarRow({
+      producerId: "1",
+      source: history,
+      text: "La finca va néixer el 1987.",
+      field: "historia",
+    }),
+  ]);
+
+  assert.deepEqual(audit(target).errors, []);
+  const readiness = buildCatalogTranslationReadiness({
+    country: target.country,
+    targetLocale: "ca",
+    csvRoot: target.csvRoot,
+    glossaryPath: target.glossaryPath,
+    engineRegistryPath: target.engineRegistryPath,
+    specPath: path.join(process.cwd(), "data", "reference", "translation-benchmark.json"),
+  });
+  assert.equal(readiness.summary.required_sidecar_rows, 3);
+  assert.equal(readiness.records[0].canonical_translatable_fields, 3);
+
+  writeSidecar(target, [
+    sidecarRow({ producerId: "1", source: description, text: "Produeix mel a la finca." }),
+    sidecarRow({
+      producerId: "1",
+      source: behind,
+      text: "L'Ana i en Luis dirigeixen l'explotació.",
+      field: "quien hay detras",
+    }),
+  ]);
+  assert.ok(
+    audit(target).errors.some(
+      (error) =>
+        error.includes("missing historia translation") &&
+        error.includes("producer_id '1'"),
+    ),
+  );
 });
 
 test("missing country manifest is rejected by the mandatory locale contract", (context) => {
@@ -849,6 +966,7 @@ test("an explicitly published locale requires a current complete sidecar", (cont
       region: "region",
       area: "area",
       producerIds: ["1"],
+      fields: ["descripcion"],
       command: `npx pnpm generate:translations --country ${target.country} --target-locale ca --area area`,
     },
   ]);
@@ -874,6 +992,7 @@ test("reviewed translation remediation requires renewed review instead of genera
         region: "catalunya",
         area: "barcelona",
         producerIds: ["7"],
+        fields: ["descripcion"],
         command: null,
       },
     ],
@@ -909,9 +1028,9 @@ test("stale and missing rows block only areas that explicitly publish the target
   fs.writeFileSync(
     otherAreaPath,
     [
-      "producer_id,descripcion,descripcion_locale",
-      "2,Descripción preparatoria dos.,es",
-      "3,Descripción preparatoria tres.,es",
+      "producer_id,descripcion,descripcion_locale,quien hay detras,quien_hay_detras_locale,historia,historia_locale",
+      "2,Descripción preparatoria dos.,es,,,,",
+      "3,Descripción preparatoria tres.,es,,,,",
       "",
     ].join("\n"),
   );

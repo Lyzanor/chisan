@@ -19,6 +19,7 @@ import {
   hashProducerFields,
   PRODUCER_CATEGORIES,
   PRODUCER_EDITABLE_FIELDS,
+  PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD,
 } from "../lib/accounts/producer-fields";
 import {
   applyProducerPatchToCsv,
@@ -298,7 +299,7 @@ test("materialization preserves a final row without a record delimiter", () => {
   assert.equal(patched.csv.endsWith("\n"), false);
 });
 
-test("the expected state is derived only from baseSnapshot plus the stored patch", () => {
+test("the expected state is derived from the base snapshot, stored patch and approval date", () => {
   const baseSnapshot = Object.fromEntries(
     PRODUCER_EDITABLE_FIELDS.map(({ key }) => [key, ""]),
   );
@@ -309,19 +310,35 @@ test("the expected state is derived only from baseSnapshot plus the stored patch
     "Venta online": "no comprobado",
     producer_id: "7",
     slug: "base-producer-madrid",
+    [PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD]: "",
   });
   const baseHash = hashProducerFields(baseSnapshot);
 
-  const expected = resolveExpectedProducerChange(baseSnapshot, baseHash, {
-    nombre: "Updated producer",
-  });
+  const expected = resolveExpectedProducerChange(
+    baseSnapshot,
+    baseHash,
+    { nombre: "Updated producer" },
+    new Date("2026-09-02T23:45:00Z"),
+  );
 
   assert.equal(expected.fields.nombre, "Updated producer");
   assert.equal(expected.fields.municipio, "Madrid");
+  assert.equal(expected.fields[PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD], "2026-09-02");
+  assert.equal(expected.patch[PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD], "2026-09-02");
   assert.equal(expected.hash, hashProducerFields(expected.fields));
   assert.throws(
-    () => resolveExpectedProducerChange(baseSnapshot, "0".repeat(64), { nombre: "Other" }),
+    () =>
+      resolveExpectedProducerChange(
+        baseSnapshot,
+        "0".repeat(64),
+        { nombre: "Other" },
+        new Date("2026-09-02T23:45:00Z"),
+      ),
     /base snapshot does not match/i,
+  );
+  assert.throws(
+    () => resolveExpectedProducerChange(baseSnapshot, baseHash, { nombre: "Other" }, null),
+    /no review timestamp/i,
   );
 });
 
@@ -336,10 +353,17 @@ test("an open pre-migration request cannot materialize unpaired prose and curren
     categoria: PRODUCER_CATEGORIES[0],
     descripcion: "Legacy prose without an explicit source language.",
     "Venta online": "no comprobado",
+    [PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD]: "",
   });
   const legacyHash = hashProducerFields(legacySnapshot);
   assert.throws(
-    () => resolveExpectedProducerChange(legacySnapshot, legacyHash, { nombre: "Renamed" }),
+    () =>
+      resolveExpectedProducerChange(
+        legacySnapshot,
+        legacyHash,
+        { nombre: "Renamed" },
+        new Date("2026-09-02T10:00:00Z"),
+      ),
     /source language/i,
   );
 
@@ -348,9 +372,34 @@ test("an open pre-migration request cannot materialize unpaired prose and curren
     currentSnapshot,
     hashProducerFields(currentSnapshot),
     { descripcion: "Updated canonical prose." },
+    new Date("2026-09-02T10:00:00Z"),
   );
   assert.equal(expected.fields.descripcion, "Updated canonical prose.");
   assert.equal(expected.fields.descripcion_locale, "en");
+});
+
+test("an open request captured before the approval-date column cannot materialize", () => {
+  const legacySnapshot = Object.fromEntries(
+    PRODUCER_EDITABLE_FIELDS.map(({ key }) => [key, ""]),
+  );
+  Object.assign(legacySnapshot, {
+    nombre: "Legacy producer",
+    municipio: "Madrid",
+    categoria: PRODUCER_CATEGORIES[0],
+    "Venta online": "no comprobado",
+  });
+  const legacyHash = hashProducerFields(legacySnapshot);
+
+  assert.throws(
+    () =>
+      resolveExpectedProducerChange(
+        legacySnapshot,
+        legacyHash,
+        { nombre: "Renamed" },
+        new Date("2026-09-02T10:00:00Z"),
+      ),
+    /predates.*fecha ultimo cambio/i,
+  );
 });
 
 test("CSV location-column widening conflicts every open legacy request", () => {

@@ -2,7 +2,10 @@ import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-pre
 import { getAccountSystemConfiguration } from "@/lib/accounts/config";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
-import { formatProducerFieldValue } from "@/lib/i18n/producer-fields";
+import {
+  formatProducerFieldLabel,
+  formatProducerFieldValue,
+} from "@/lib/i18n/producer-fields";
 
 type ExpandedProducerProfileProps = {
   country: string;
@@ -32,11 +35,26 @@ export async function ExpandedProducerProfile({
   producerId,
 }: ExpandedProducerProfileProps) {
   const guidedVisits = fieldValue(fields, "visitas guiadas");
+  const video = fieldValue(fields, "video");
   const communityMessage = fieldValue(fields, "mensaje a la comunidad");
   const communityMessageLocale = fieldValue(fields, "mensaje_comunidad_locale");
+  const behindProducer = fieldValue(fields, "quien hay detras");
+  const behindProducerLocale = fieldValue(fields, "quien_hay_detras_locale");
+  const history = fieldValue(fields, "historia");
+  const historyLocale = fieldValue(fields, "historia_locale");
+  const lastApprovedChange = fieldValue(fields, "fecha ultimo cambio");
   const highlightedLink1 = fieldValue(fields, "enlace destacado 1");
   const highlightedLink2 = fieldValue(fields, "enlace destacado 2");
-  if (!guidedVisits && !communityMessage && !highlightedLink1 && !highlightedLink2) {
+  if (
+    !video &&
+    !guidedVisits &&
+    !communityMessage &&
+    !behindProducer &&
+    !history &&
+    !lastApprovedChange &&
+    !highlightedLink1 &&
+    !highlightedLink2
+  ) {
     return null;
   }
 
@@ -65,6 +83,23 @@ export async function ExpandedProducerProfile({
         {messages.producer.expandedProfile}
       </p>
       <h2 id="detail-expanded-title">{messages.producer.expandedProfile}</h2>
+      {video ? (
+        <a href={video} target="_blank" rel="noreferrer">
+          {formatProducerFieldLabel("video", locale, messages)} · YouTube
+        </a>
+      ) : null}
+      {behindProducer ? (
+        <div className="detail-expanded-profile__message">
+          <h3>{formatProducerFieldLabel("quien hay detras", locale, messages)}</h3>
+          <p lang={behindProducerLocale || undefined}>{behindProducer}</p>
+        </div>
+      ) : null}
+      {history ? (
+        <div className="detail-expanded-profile__message">
+          <h3>{formatProducerFieldLabel("historia", locale, messages)}</h3>
+          <p lang={historyLocale || undefined}>{history}</p>
+        </div>
+      ) : null}
       {communityMessage ? (
         <div className="detail-expanded-profile__message">
           <h3>{messages.fieldLabels.communityMessage}</h3>
@@ -77,6 +112,17 @@ export async function ExpandedProducerProfile({
           {formatProducerFieldValue(
             "visitas guiadas",
             guidedVisits,
+            locale,
+            messages,
+          )}
+        </p>
+      ) : null}
+      {lastApprovedChange ? (
+        <p>
+          <strong>{formatProducerFieldLabel("fecha ultimo cambio", locale, messages)}:</strong>{" "}
+          {formatProducerFieldValue(
+            "fecha ultimo cambio",
+            lastApprovedChange,
             locale,
             messages,
           )}

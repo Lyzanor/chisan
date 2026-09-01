@@ -52,6 +52,37 @@ export const SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET = new Set(
   SUPPORTED_DESCRIPTION_SOURCE_LOCALES,
 );
 export const TRANSLATION_FIELD = "descripcion";
+export const TRANSLATION_FIELD_SPECS = Object.freeze([
+  Object.freeze({
+    field: TRANSLATION_FIELD,
+    localeField: "descripcion_locale",
+    canonicalMaxCharacters: 400,
+    translatedMaxCharacters: 500,
+  }),
+  Object.freeze({
+    field: "quien hay detras",
+    localeField: "quien_hay_detras_locale",
+    canonicalMaxCharacters: 2000,
+    translatedMaxCharacters: 2500,
+  }),
+  Object.freeze({
+    field: "historia",
+    localeField: "historia_locale",
+    canonicalMaxCharacters: 4000,
+    translatedMaxCharacters: 5000,
+  }),
+]);
+export const TRANSLATION_FIELDS = Object.freeze(
+  TRANSLATION_FIELD_SPECS.map(({ field }) => field),
+);
+export const TRANSLATION_FIELD_SET = new Set(TRANSLATION_FIELDS);
+const TRANSLATION_FIELD_SPEC_BY_FIELD = new Map(
+  TRANSLATION_FIELD_SPECS.map((spec) => [spec.field, spec]),
+);
+
+export function translationFieldSpec(field) {
+  return TRANSLATION_FIELD_SPEC_BY_FIELD.get(field) ?? null;
+}
 export const TRANSLATION_SIDECAR_HEADER = Object.freeze([
   "producer_id",
   "field",
@@ -177,7 +208,7 @@ export const TRANSLATION_QUANTITATIVE_FACT_REGISTRY = Object.freeze({
     "s",
   ]),
 });
-export const TRANSLATION_SYSTEM_PROMPT = `You translate Chisan producer descriptions as factual catalog prose.
+export const TRANSLATION_SYSTEM_PROMPT = `You translate Chisan producer profile prose as factual catalog prose.
 Return only the requested JSON object. Translate every entry into the requested target locale.
 Do not add or omit facts, qualifications, products, dates, numbers or URLs. Do not make the prose promotional.
 Preserve proper names, brands, appellations, protected terms, romanized identities, numbers and URLs exactly.
@@ -674,7 +705,9 @@ export function readCanonicalCountry(csvRoot, country) {
     (filePath) => classifyCatalogCsvPath(csvRoot, filePath).country === country,
   );
   const rows = [];
+  const translationSources = [];
   const byId = new Map();
+  const byKey = new Map();
   const errors = [];
 
   for (const filePath of areaFiles) {
@@ -690,14 +723,17 @@ export function readCanonicalCountry(csvRoot, country) {
     const header = records[0].map(String);
     const producerIdIndex = header.indexOf("producer_id");
     const producerNameIndex = header.indexOf("nombre");
-    const descriptionIndex = header.indexOf("descripcion");
-    const sourceLocaleIndex = header.indexOf("descripcion_locale");
-    if (producerIdIndex === -1 || descriptionIndex === -1) {
-      errors.push(`${filePath}: area header must contain producer_id and descripcion`);
-      continue;
-    }
-    if (sourceLocaleIndex === -1) {
-      errors.push(`${filePath}: area header must contain descripcion_locale`);
+    const missingTranslationColumns = TRANSLATION_FIELD_SPECS.flatMap((spec) =>
+      [spec.field, spec.localeField].filter((column) => !header.includes(column)),
+    );
+    if (producerIdIndex === -1 || missingTranslationColumns.length > 0) {
+      errors.push(
+        `${filePath}: area header must contain producer_id and translatable field columns${
+          missingTranslationColumns.length > 0
+            ? `; missing ${missingTranslationColumns.join(", ")}`
+            : ""
+        }`,
+      );
       continue;
     }
 
@@ -706,48 +742,61 @@ export function readCanonicalCountry(csvRoot, country) {
       const producerId = String(record[producerIdIndex] ?? "");
       const producerName =
         producerNameIndex === -1 ? "" : String(record[producerNameIndex] ?? "");
-      const text = String(record[descriptionIndex] ?? "");
-      const sourceLocale = String(record[sourceLocaleIndex] ?? "");
       const label = `${filePath}: record ${index + 1}`;
       if (!POSITIVE_ID_PATTERN.test(producerId)) {
         errors.push(`${label}: producer_id must be a positive decimal integer`);
         continue;
       }
-      if (!text && sourceLocale) {
-        errors.push(`${label}: empty descripcion requires empty descripcion_locale`);
-      }
-      if (
-        text &&
-        !SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET.has(sourceLocale)
-      ) {
-        errors.push(
-          `${label}: non-empty descripcion requires a supported descripcion_locale`,
-        );
-      }
-
-      const row = {
-        country,
-        region: classification.region,
-        area: classification.area,
-        filePath,
-        recordNumber: index + 1,
-        producerId,
-        producerName,
-        text,
-        sourceLocale,
-      };
       if (byId.has(producerId)) {
         errors.push(
           `${label}: producer_id '${producerId}' is duplicated in country '${country}'`,
         );
-      } else {
-        byId.set(producerId, row);
+        continue;
       }
-      rows.push(row);
+
+      for (const spec of TRANSLATION_FIELD_SPECS) {
+        const text = String(record[header.indexOf(spec.field)] ?? "");
+        const sourceLocale = String(record[header.indexOf(spec.localeField)] ?? "");
+        if (!text && sourceLocale) {
+          errors.push(`${label}: empty ${spec.field} requires empty ${spec.localeField}`);
+        }
+        if (text && !SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET.has(sourceLocale)) {
+          errors.push(
+            `${label}: non-empty ${spec.field} requires a supported ${spec.localeField}`,
+          );
+        }
+
+        const source = {
+          country,
+          region: classification.region,
+          area: classification.area,
+          filePath,
+          recordNumber: index + 1,
+          producerId,
+          producerName,
+          field: spec.field,
+          text,
+          sourceLocale,
+        };
+        translationSources.push(source);
+        byKey.set(translationPairKey(producerId, spec.field), source);
+        if (spec.field === TRANSLATION_FIELD) {
+          rows.push(source);
+          byId.set(producerId, source);
+        }
+      }
     }
   }
 
-  return { country, areaFiles, rows, byId, errors };
+  return {
+    country,
+    areaFiles,
+    rows,
+    byId,
+    translationSources,
+    byKey,
+    errors,
+  };
 }
 
 export function readTranslationGlossary(glossaryPath) {

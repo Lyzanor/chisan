@@ -38,6 +38,10 @@ const HEADER = [
   "categorias adicionales",
   "producer_id",
   "descripcion_locale",
+  "quien hay detras",
+  "quien_hay_detras_locale",
+  "historia",
+  "historia_locale",
 ];
 
 function fixtureRoot(context) {

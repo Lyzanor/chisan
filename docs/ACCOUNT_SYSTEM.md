@@ -225,6 +225,12 @@ property of a user account. Its only authorization key is an active
 proposal and presentation of the premium CSV field set; it never grants
 ownership, verification, ranking or publication without review.
 
+That editable set is `video`, `visitas guiadas`, `mensaje a la comunidad` plus
+its locale, `quien hay detras` plus its locale, `historia` plus its locale and
+the two highlighted links. `fecha ultimo cambio` is displayed with that block
+but is not editable: the materializer derives its UTC `YYYY-MM-DD` value from
+the request's `reviewed_at` timestamp after approval.
+
 The printable producer QR is an optional presentation feature within that same
 capability. It is hidden by default and renders only while the entitlement is
 active and its `profileQrEnabled` metadata flag is `true`. Only the exact active
@@ -357,6 +363,14 @@ information or a corrected patch is required, the reviewer rejects it with a
 clear note or the owner withdraws it, and the owner creates a new proposal; the
 reserved `needs_changes` status is not a launched conversation loop.
 
+The producer patch allowlist deliberately excludes `fecha ultimo cambio`.
+During materialization, the operator combines the validated reviewed patch with
+the UTC calendar date from the immutable approval `reviewed_at`, then hashes,
+audits and commits that complete row. An approved request whose base snapshot
+predates this column is a schema conflict and must be resubmitted; it is never
+silently widened. Editorial work performed outside this owner-proposal workflow
+does not alter the date.
+
 ```bash
 # 1. Apply one approved request locally and validate its CSV.
 npx pnpm producer:change materialize <change-request-uuid>
@@ -374,11 +388,12 @@ npx pnpm producer:change finalize <change-request-uuid> <full-40-char-commit-sha
 git push origin main
 ```
 
-When the approved patch changes `descripcion` or `descripcion_locale`, the
-changed translation check prints bounded generation commands for missing or
-stale machine rows. A stale `reviewed` row must be reviewed again and is never
-replaced automatically. The request's CSV and every sidecar required by the
-area's effective published locales form one atomic commit.
+When the approved patch changes `descripcion`, `quien hay detras`, `historia`
+or any of their paired source-locale columns, the changed translation check
+prints bounded generation commands for missing or stale machine rows. A stale
+`reviewed` row must be reviewed again and is never replaced automatically. The
+request's CSV and every sidecar required by the area's effective published
+locales form one atomic commit.
 
 Materialization refuses stale base hashes, missing producers, revoked membership
 or required entitlement, non-allowlisted fields, invalid values and a dirty

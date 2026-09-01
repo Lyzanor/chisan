@@ -349,3 +349,13 @@ viewport. The account-side activation reuses the existing premium callout,
 field, checkbox and button primitives; no new colour, shape or elevation rule
 was introduced. Producer and public-selection labels retain their existing moss
 and ink physical treatments after activation.
+
+## 2026-09-02 — Premium video, team and history
+
+The expanded producer block now presents one external YouTube link, the
+producer-authored team and history prose, and the last approved producer-change
+date. It reuses the existing premium section, heading, link and 75-character
+prose measure without introducing new tokens or CSS. YouTube stays an explicit
+external link rather than an embedded player, avoiding an automatic third-party
+request. Empty values leave no placeholders, and the entire set still fails
+closed with the producer entitlement so base-profile layout is unchanged.

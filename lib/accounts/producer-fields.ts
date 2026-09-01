@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 
 import categoriesRegistry from "@/data/reference/categories.json";
 import { DESCRIPTION_SOURCE_LOCALES } from "@/lib/i18n/locales";
+import { isYouTubeVideoUrl } from "@/lib/youtube";
 
 export const PRODUCER_CATEGORIES = categoriesRegistry.categories as readonly string[];
 
@@ -15,6 +16,9 @@ export const SALES_CHANNEL_VALUES = [
   "marketplace",
 ] as const;
 export const PRODUCER_DESCRIPTION_LOCALES = DESCRIPTION_SOURCE_LOCALES;
+export const PRODUCER_BEHIND_MAX_CHARACTERS = 2_000;
+export const PRODUCER_HISTORY_MAX_CHARACTERS = 4_000;
+export const PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD = "fecha ultimo cambio" as const;
 
 export const PRODUCER_STANDARD_EDITABLE_FIELDS = [
   {
@@ -173,6 +177,14 @@ export const PRODUCER_STANDARD_EDITABLE_FIELDS = [
 
 export const PRODUCER_PREMIUM_EDITABLE_FIELDS = [
   {
+    key: "video",
+    label: "Video",
+    kind: "url",
+    required: false,
+    maxLength: 2_048,
+    help: "An official HTTPS YouTube URL for one public producer video.",
+  },
+  {
     key: "visitas guiadas",
     label: "Guided visits",
     kind: "yes-no",
@@ -195,6 +207,38 @@ export const PRODUCER_PREMIUM_EDITABLE_FIELDS = [
     required: false,
     maxLength: 3,
     help: "The source language of the community message; leave empty only when the message is empty.",
+  },
+  {
+    key: "quien hay detras",
+    label: "Who is behind the producer",
+    kind: "textarea",
+    required: false,
+    maxLength: PRODUCER_BEHIND_MAX_CHARACTERS,
+    help: "Reviewed producer-authored text about the owners or team behind this productive unit.",
+  },
+  {
+    key: "quien_hay_detras_locale",
+    label: "Who-is-behind language",
+    kind: "description-locale",
+    required: false,
+    maxLength: 3,
+    help: "The source language of the who-is-behind text; leave empty only when that text is empty.",
+  },
+  {
+    key: "historia",
+    label: "History",
+    kind: "textarea",
+    required: false,
+    maxLength: PRODUCER_HISTORY_MAX_CHARACTERS,
+    help: "Reviewed producer-authored text about the origins and development of this productive unit.",
+  },
+  {
+    key: "historia_locale",
+    label: "History language",
+    kind: "description-locale",
+    required: false,
+    maxLength: 3,
+    help: "The source language of the history; leave empty only when the history is empty.",
   },
   {
     key: "enlace destacado 1",
@@ -258,8 +302,14 @@ function normalizeText(value: unknown): string {
     .trim();
 }
 
+const MULTILINE_PRODUCER_FIELD_KEYS = new Set([
+  "mensaje a la comunidad",
+  "quien hay detras",
+  "historia",
+]);
+
 function normalizeProducerFieldValue(key: string, value: unknown): string {
-  if (key !== "mensaje a la comunidad") return normalizeText(value);
+  if (!MULTILINE_PRODUCER_FIELD_KEYS.has(key)) return normalizeText(value);
 
   return String(value ?? "")
     .replace(/\r\n?/g, "\n")
@@ -267,7 +317,7 @@ function normalizeProducerFieldValue(key: string, value: unknown): string {
     .trim();
 }
 
-function getCommunityMessageContaminationReason(value: string): string | null {
+function getProducerAuthoredTextContaminationReason(value: string): string | null {
   if (/<\/?[a-z][^>]*>/iu.test(value)) return "HTML copied from a source page";
   if (/(?:https?:\/\/|www\.)\S+/iu.test(value)) return "a URL or source citation";
   if (/_x000d_/iu.test(value)) return "a spreadsheet formatting artifact";
@@ -375,10 +425,9 @@ export function validateProducerProposal(
       errors[field.key] = `${field.label} is required.`;
       continue;
     }
-    const valueLength =
-      field.key === "mensaje a la comunidad"
-        ? Array.from(value).length
-        : value.length;
+    const valueLength = MULTILINE_PRODUCER_FIELD_KEYS.has(field.key)
+      ? Array.from(value).length
+      : value.length;
     if (valueLength > field.maxLength) {
       errors[field.key] = `${field.label} is too long (maximum ${field.maxLength} characters).`;
       continue;
@@ -421,10 +470,14 @@ export function validateProducerProposal(
     "Google Maps",
     "enlace destacado 1",
     "enlace destacado 2",
+    "video",
   ] as const) {
     if (!validateUrl(candidate[key])) {
       errors[key] = "Enter a complete HTTP(S) URL without embedded credentials.";
     }
+  }
+  if (candidate.video && !isYouTubeVideoUrl(candidate.video)) {
+    errors.video = "Enter a complete HTTPS YouTube video URL.";
   }
 
   const latitude = normalizeCoordinate(candidate.lat, -90, 90);
@@ -472,12 +525,28 @@ export function validateProducerProposal(
   ) {
     errors.mensaje_comunidad_locale = "Choose the source language of the community message.";
   }
-  const communityMessageContamination = getCommunityMessageContaminationReason(
+  const communityMessageContamination = getProducerAuthoredTextContaminationReason(
     candidate["mensaje a la comunidad"],
   );
   if (communityMessageContamination) {
     errors["mensaje a la comunidad"] =
       `Community message cannot contain ${communityMessageContamination}.`;
+  }
+  for (const [textKey, localeKey, label] of [
+    ["quien hay detras", "quien_hay_detras_locale", "who-is-behind text"],
+    ["historia", "historia_locale", "history"],
+  ] as const) {
+    const text = candidate[textKey];
+    const sourceLocale = candidate[localeKey];
+    if (!text && sourceLocale) {
+      errors[localeKey] = `Leave the ${label} language empty when the ${label} is empty.`;
+    } else if (text && !DESCRIPTION_LOCALE_SET.has(sourceLocale)) {
+      errors[localeKey] = `Choose the source language of the ${label}.`;
+    }
+    const contamination = getProducerAuthoredTextContaminationReason(text);
+    if (contamination) {
+      errors[textKey] = `${label.charAt(0).toUpperCase()}${label.slice(1)} cannot contain ${contamination}.`;
+    }
   }
   if (candidate["enlace destacado 2"] && !candidate["enlace destacado 1"]) {
     errors["enlace destacado 2"] = "Fill highlighted link 1 before link 2.";
@@ -496,6 +565,8 @@ export function validateProducerProposal(
   const pairedFields = [
     ["descripcion", "descripcion_locale"],
     ["mensaje a la comunidad", "mensaje_comunidad_locale"],
+    ["quien hay detras", "quien_hay_detras_locale"],
+    ["historia", "historia_locale"],
   ] as const;
   const changedPairs = pairedFields.filter((pair) =>
     pair.some(

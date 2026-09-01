@@ -1,62 +1,62 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area
-izumibashi-shuzo-ebina,Izumibashi Shuzo,Ebina,Sake,,神奈川県海老名市下今泉5-5-1,,,+81462311338,,http://izumibashi.com/,,,,35.465294,139.390335,,pendiente,no comprobado,,,461,,,,,,,jp,kanto,kanagawa
-kumazawa-shuzo-chigasaki,Kumazawa Shuzo,Chigasaki,Sake,,神奈川県茅ヶ崎市香川7-10-7,,,+81467526118,,http://www.kumazawa.jp/,,,,35.3605,139.4021,,pendiente,no comprobado,,,676,,,,,,,jp,kanto,kanagawa
-kikkawa-jozo-isehara,Kikkawa Jozo,Isehara,Sake,,神奈川県伊勢原市神戸681,,,+81463953071,,https://kikkawa-jozo.com/,,,,35.398216,139.287399,,pendiente,no comprobado,,,554,,,,,,,jp,kanto,kanagawa
-kanai-shuzoten-hadano,Kanai Shuzoten,Hadano,Sake,,神奈川県秦野市堀山下182-1,,,+81463887521,,https://www.kaneishuzo.co.jp/,,,,35.382633,139.196686,,pendiente,no comprobado,,,500,,,,,,,jp,kanto,kanagawa
-koganei-shuzo-atsugi,Koganei Shuzo,Atsugi,Sake,,神奈川県厚木市七沢769,,,+81462480124,,http://www.koganeishuzou.com/,,,,35.444031,139.298203,,pendiente,no comprobado,,,624,,,,,,,jp,kanto,kanagawa
-oyataka-shuzo-aikawa,Oyataka Shuzo,Aikawa,Sake,,神奈川県愛甲郡愛川町田代521,,,+81462810028,,http://www.hourai.jp/,,,,35.528461,139.289001,,pendiente,no comprobado,,,984,,,,,,,jp,kanto,kanagawa
-kubota-shuzo-sagamihara,Kubota Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区根小屋702,,,+81427840045,,http://www.tsukui.ne.jp/kubota/,,,,35.571915,139.279922,,pendiente,no comprobado,,,667,,,,,,,jp,kanto,kanagawa
-shimizu-shuzo-sagamihara,Shimizu Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区中野1322,,,+81427840010,,http://www.shimizusyuzo.com/,,,,35.587254,139.250748,,pendiente,no comprobado,,,1097,,,,,,,jp,kanto,kanagawa
-ishii-jozo-oi,Ishii Jozo,Oi,Sake,,神奈川県足柄上郡大井町上大井954,,,+81465823241,,http://www.ishiijozo.com/,,,,35.320938,139.166962,,pendiente,no comprobado,,,424,,,,,,,jp,kanto,kanagawa
-inoue-shuzo-oi,Inoue Shuzo,Oi,Sake,,神奈川県足柄上郡大井町上大井552,,,+81465820325,,http://www.hakoneyama.co.jp,,,,35.322258,139.160767,,pendiente,no comprobado,,,410,,,,,,,jp,kanto,kanagawa
-kawanishiya-shuzoten-yamakita,Kawanishiya Shuzoten,Yamakita,Sake,,神奈川県足柄上郡山北町山北250,,,+81465750009,,http://www.kanagawa-jizake.or.jp/kawanishiya/,,,,35.364208,139.095093,,pendiente,no comprobado,,,546,,,,,,,jp,kanto,kanagawa
-seto-shuzoten-kaisei,Seto Shuzoten,Kaisei,Sake,,神奈川県足柄上郡開成町金井島17,,,+81465820055,,http://www.kanagawa-jizake.or.jp/seto/,,,,35.342831,139.112106,,pendiente,no comprobado,,,1080,,,,,,,jp,kanto,kanagawa
-nakazawa-shuzo-matsuda,Nakazawa Shuzo,Matsuda,Sake,,神奈川県足柄上郡松田町松田惣領1875,,,+81465820024,,http://www.matsumidori.jp/,,,,35.346249,139.138565,,pendiente,no comprobado,,,831,,,,,,,jp,kanto,kanagawa
-latteria-bebe-kamakura-kamakura,Latteria BeBè Kamakura,Kamakura,Lácteos y quesos,"モッツァレッラ, リコッタ, ブッラータ",神奈川県鎌倉市御成町11-17,,,,,https://latteria-bebe.com/,,,,35.319170,139.547220,,,sí,ecommerce,,706,,,,,,,jp,kanto,kanagawa
-osteria-e-bottega-s-chigasaki,Osteria e Bottega S,Chigasaki,Lácteos y quesos,,神奈川県茅ヶ崎市東海岸北1-5-7,,,,,https://osteriaebottegas.com/,,,,35.333860,139.404720,,,no comprobado,,,960,,,,,,,jp,kanto,kanagawa
-sanktgallenbrewery-atsugi,サンクトガーレン,Atsugi,Cerveza,,,,,,,https://www.sanktgallenbrewery.com/,,,,35.443060,139.362500,,,no comprobado,,,1792,,,,,,,jp,kanto,kanagawa
-yorocco-beer-zushi,ヨロッコビール,Zushi,Cerveza,,,,,,,https://yorocco-beer.com/,,,,35.295610,139.580330,,,no comprobado,,,1982,,,,,,,jp,kanto,kanagawa
-rainerucheese-aikawa,ライネルチーズ工房,Aikawa,Lácteos y quesos,,神奈川県愛甲郡愛川町中津2647-10,,,,,https://rainerucheese.jp/,,,,35.528810,139.321640,,,no comprobado,,,1984,,,,,,,jp,kanto,kanagawa
-yokohamabeer-yokohama,横浜ビール,Yokohama,Cerveza,,,,,,,https://yokohamabeer.com/,,,,35.450330,139.634220,,,sí,ecommerce,,2824,,,,,,,jp,kanto,kanagawa
-kamakura-beer-kamakura,鎌倉ビール醸造,Kamakura,Cerveza,,,,,,,https://www.kamakura-beer.co.jp/,,,,35.319170,139.547220,,,sí,ecommerce,,3253,,,,,,,jp,kanto,kanagawa
-yokohamawinery-yokohama,横濱ワイナリー 株式会社,Yokohama,Vino,,神奈川県横浜市中区新山下1-3-12鈴木ビル1F,,,+81452289713,,https://yokohamawinery.com/,,,,35.450330,139.634220,,,sí,ecommerce,,2826,,,,,,,jp,kanto,kanagawa
-takanashi-milk-yokohama,タカナシ乳業,Yokohama,Lácteos y quesos,"Brise de mer FAISSELLE, 北海道リコッタ, 北海道マスカルポーネ",神奈川県横浜市旭区本宿町５番地,,,,,https://www.takanashi-milk.co.jp/,,,,35.450330,139.634220,,,no comprobado,,,1822,,,,,,,jp,kanto,kanagawa
-tabechoku-21387,永島農園,Yokohama,Setas,"しいたけ, きくらげ",,,,,,,,,,35.450330,139.634220,,pendiente,sí,marketplace,,2847,,,,,,,jp,kanto,kanagawa
-tabechoku-27630,勘網,Yokosuka,Pescado,,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,2199,,,,,,,jp,kanto,kanagawa
-tabechoku-27682,鉄釜ひじき 海藻の房丸,Yokosuka,Pescado,,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,3245,,,,,,,jp,kanto,kanagawa
-tabechoku-20410,丸良水産,Yokosuka,Pescado,海苔,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,2082,,,,,,,jp,kanto,kanagawa
-tabechoku-3078438,【ジビエ総本家】小田原貴族ブランド,Odawara,Carne,,,,,,,,,,,35.264610,139.152220,,pendiente,sí,marketplace,,1806,,,,,,,jp,kanto,kanagawa
-tabechoku-22147,みやじ豚,Fujisawa,Carne,,,,,,,,,,,35.338780,139.490890,,pendiente,sí,marketplace,,1648,,,,,,,jp,kanto,kanagawa
-tabechoku-26962,霜島農園,Atsugi,Pan y cereal,ぶどう,,,,,,,,,,35.443060,139.362500,,pendiente,sí,marketplace,,3282,,,,,,,jp,kanto,kanagawa
-tabechoku-26947,お米農家 曽我,Odawara,Pan y cereal,,,,,,,,,,,35.264610,139.152220,,pendiente,sí,marketplace,,1464,,,,,,,jp,kanto,kanagawa
-tabechoku-29222,佐野農園,Isehara,Fruta y verdura,"梨, ぶどう, 野菜",,,,,,,,,,35.402940,139.314970,,pendiente,sí,marketplace,,2154,,,,,,,jp,kanto,kanagawa
-tabechoku-21955,あすなろファーム,Odawara,Fruta y verdura,"梅, 野菜",,,,,,,,,,35.264610,139.152220,,pendiente,sí,marketplace,,1417,,,,,,,jp,kanto,kanagawa
-tabechoku-3078860,くだかけ農園,Yamakita,Huevos,野菜,,,,,,,,,,35.360580,139.083830,,pendiente,sí,marketplace,,1491,,,,,,,jp,kanto,kanagawa
-tabechoku-21386,NO-RA ～農楽～,Aikawa,Fruta y verdura,,,,,,,,,,,35.528810,139.321640,,pendiente,sí,marketplace,,878,,,,,,,jp,kanto,kanagawa
-tabechoku-23483,有機農園けのひ,Aikawa,Fruta y verdura,野菜,,,,,,,,,,35.528810,139.321640,,pendiente,sí,marketplace,,2592,,,,,,,jp,kanto,kanagawa
-tabechoku-22819,Kururu farm,Yokohama,Fruta y verdura,,,,,,,,,,,35.450330,139.634220,,pendiente,sí,marketplace,,692,,,,,,,jp,kanto,kanagawa
-tabechoku-27186,カメーダ農園,Yokohama,Fruta y verdura,野菜,,,,,,,,,,35.450330,139.634220,,pendiente,sí,marketplace,,1760,,,,,,,jp,kanto,kanagawa
-tabechoku-20806,鈴也ファーム,Yokosuka,Fruta y verdura,,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,3236,,,,,,,jp,kanto,kanagawa
-tabechoku-28446,ニッポンルーバス,Ebina,Fruta y verdura,,,,,,,,,,,35.446420,139.390810,,pendiente,sí,marketplace,,1858,,,,,,,jp,kanto,kanagawa
-tabechoku-23067,榎本農園,Yugawara,Fruta y verdura,柑橘,,,,,,,,,,35.147890,139.108310,,pendiente,sí,marketplace,,2819,,,,,,,jp,kanto,kanagawa
-tabechoku-21182,ぶるべの樹,Sagamihara,Fruta y verdura,ブルーベリー,,,,,,,,,,35.571420,139.373140,,pendiente,sí,marketplace,,1616,,,,,,,jp,kanto,kanagawa
-tabechoku-3078762,さとくら農園,Sagamihara,Fruta y verdura,野菜,,,,,,,,,,35.571420,139.373140,,pendiente,sí,marketplace,,1515,,,,,,,jp,kanto,kanagawa
-tabechoku-23858,渋谷ファーム,Fujisawa,Fruta y verdura,トマト,,,,,,,,,,35.338780,139.490890,,pendiente,sí,marketplace,,2896,,,,,,,jp,kanto,kanagawa
-tabechoku-22165,子どもの野菜湘南藤沢農場,Fujisawa,Fruta y verdura,野菜,,,,,,,,,,35.338780,139.490890,,pendiente,sí,marketplace,,2355,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-ukyou-8a38ce5,右京,小田原市,Dulces y repostería,和菓子,小田原市本町 4-3-29,,,,,https://www.ukyou.jp/,,,,35.264610,139.152220,,,no comprobado,,,2235,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-suehiroan-co-825bc79,菓子匠　末広庵,川崎市,Dulces y repostería,和菓子,川崎市川崎区東田町 3-16,,,,,https://www.suehiroan.co.jp/,,,,35.530890,139.703000,,,sí,ecommerce,,3112,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-yokohama-bunmeido-co-8e8d34c,文明堂,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 4-114,,,,,https://yokohama-bunmeido.co.jp/,,,,35.450330,139.634220,,,sí,ecommerce,,2541,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-meigetsu-92f751c,御菓子司　名月,横浜市,Dulces y repostería,和菓子,横浜市金沢区六浦町 5-23-29,,,,,https://meigetsu.org/,,,,35.450330,139.634220,,,sí,ecommerce,,2510,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-choshiya-co-a452648,銚子屋,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 7-150,,,,,http://www.choshiya.co.jp/,,,,35.450330,139.634220,,,sí,ecommerce,,3250,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-yumochi-ff440cf,ちもと,箱根町,Dulces y repostería,和菓子,足柄下郡箱根町湯本 509,,,,,https://www.yumochi.com/,,,,35.232360,139.106940,,,sí,ecommerce,,1555,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-atsugimikawaya-8a447e9,合資会社三河屋,厚木市,Aperitivos,米菓,,,,,,https://atsugimikawaya.com/,,,,35.443060,139.362500,,,sí,ecommerce,,2245,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-minoya-arare-001a899,株式会社美濃屋あられ,横浜市,Aperitivos,米菓,,,,,,https://minoya-arare.jp/,,,,35.450330,139.634220,,,sí,ecommerce,,2785,,,,,,,jp,kanto,kanagawa
-jp-kanagawa-mikawaya-co-651ba7d,有限会社三河屋,茅ヶ崎市,Aperitivos,米菓,,,,,,https://www.mikawaya.co.jp/,,,,35.333860,139.404720,,,no comprobado,,,2611,,,,,,,jp,kanto,kanagawa
-t-k-brewing,T.K.Brewing,Kawasaki,Cerveza,,小田5-1-30,,,,r.takabayashi@tkbrewing.com,https://tkbrewing.com/,,https://www.instagram.com/tkbrewing/,,35.53089,139.7030,,pendiente,no comprobado,,,1155,,,,,,,jp,kanto,kanagawa
-humans-beer,HUMANS BEER,Yugawara,Cerveza,,福浦437-6,,,,,https://humansbeer.com/,,https://www.instagram.com/humansbeer/,,35.14789,139.10831,,pendiente,no comprobado,,,347,,,,,,,jp,kanto,kanagawa
-yokohama-bay-brewing,横浜ベイブルーイング (Yokohama Bay Brewing),Yokohama,Cerveza,,上矢部町2006,,,,,,,https://www.instagram.com/yokohamabaybrewing/,,35.45033,139.63422,,pendiente,no comprobado,,,2825,,,,,,,jp,kanto,kanagawa
-passific-brewing,Passific Brewing,Chigasaki,Cerveza,,萩園2644-3,Passific Brewing is a brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/passificbrewing/,,35.33386,139.40472,,pendiente,no comprobado,,,995,en,,,,,,jp,kanto,kanagawa
-barbaric-works,Barbaric WORKS,Chigasaki,Cerveza,,幸町23-16,Barbaric WORKS is a brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/barbaric_works/,,35.33386,139.40472,,pendiente,no comprobado,,,100,en,,,,,,jp,kanto,kanagawa
-suzuhiro-kamaboko-odawara,鈴廣かまぼこ,Odawara,Pescado,Kamaboko,,Produces Odawara kamaboko and other fish-paste products.,,,,https://www.kamaboko.com/,,,,35.26461,139.15222,,,sí,ecommerce,,3239,en,,,,,,jp,kanto,kanagawa
-misaki-megumi-suisan-miura,三崎恵水産,Miura,Pescado,Tuna,,Processes and markets its branded tuna products from Miura.,,,,https://misaki-megumi.co.jp/,,,,35.14419,139.62072,,,no comprobado,,,2012,en,,,,,,jp,kanto,kanagawa
-kiyoken-yokohama-factory,Kiyoken Yokohama Factory,Yokohama,Comida preparada,,,,,,,https://kiyoken.com/factory/,,,,,,,pendiente,no comprobado,,,3447,,,,,,,jp,kanto,kanagawa
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+izumibashi-shuzo-ebina,Izumibashi Shuzo,Ebina,Sake,,神奈川県海老名市下今泉5-5-1,,,+81462311338,,http://izumibashi.com/,,,,35.465294,139.390335,,pendiente,no comprobado,,,461,,,,,,,jp,kanto,kanagawa,,,,,,
+kumazawa-shuzo-chigasaki,Kumazawa Shuzo,Chigasaki,Sake,,神奈川県茅ヶ崎市香川7-10-7,,,+81467526118,,http://www.kumazawa.jp/,,,,35.3605,139.4021,,pendiente,no comprobado,,,676,,,,,,,jp,kanto,kanagawa,,,,,,
+kikkawa-jozo-isehara,Kikkawa Jozo,Isehara,Sake,,神奈川県伊勢原市神戸681,,,+81463953071,,https://kikkawa-jozo.com/,,,,35.398216,139.287399,,pendiente,no comprobado,,,554,,,,,,,jp,kanto,kanagawa,,,,,,
+kanai-shuzoten-hadano,Kanai Shuzoten,Hadano,Sake,,神奈川県秦野市堀山下182-1,,,+81463887521,,https://www.kaneishuzo.co.jp/,,,,35.382633,139.196686,,pendiente,no comprobado,,,500,,,,,,,jp,kanto,kanagawa,,,,,,
+koganei-shuzo-atsugi,Koganei Shuzo,Atsugi,Sake,,神奈川県厚木市七沢769,,,+81462480124,,http://www.koganeishuzou.com/,,,,35.444031,139.298203,,pendiente,no comprobado,,,624,,,,,,,jp,kanto,kanagawa,,,,,,
+oyataka-shuzo-aikawa,Oyataka Shuzo,Aikawa,Sake,,神奈川県愛甲郡愛川町田代521,,,+81462810028,,http://www.hourai.jp/,,,,35.528461,139.289001,,pendiente,no comprobado,,,984,,,,,,,jp,kanto,kanagawa,,,,,,
+kubota-shuzo-sagamihara,Kubota Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区根小屋702,,,+81427840045,,http://www.tsukui.ne.jp/kubota/,,,,35.571915,139.279922,,pendiente,no comprobado,,,667,,,,,,,jp,kanto,kanagawa,,,,,,
+shimizu-shuzo-sagamihara,Shimizu Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区中野1322,,,+81427840010,,http://www.shimizusyuzo.com/,,,,35.587254,139.250748,,pendiente,no comprobado,,,1097,,,,,,,jp,kanto,kanagawa,,,,,,
+ishii-jozo-oi,Ishii Jozo,Oi,Sake,,神奈川県足柄上郡大井町上大井954,,,+81465823241,,http://www.ishiijozo.com/,,,,35.320938,139.166962,,pendiente,no comprobado,,,424,,,,,,,jp,kanto,kanagawa,,,,,,
+inoue-shuzo-oi,Inoue Shuzo,Oi,Sake,,神奈川県足柄上郡大井町上大井552,,,+81465820325,,http://www.hakoneyama.co.jp,,,,35.322258,139.160767,,pendiente,no comprobado,,,410,,,,,,,jp,kanto,kanagawa,,,,,,
+kawanishiya-shuzoten-yamakita,Kawanishiya Shuzoten,Yamakita,Sake,,神奈川県足柄上郡山北町山北250,,,+81465750009,,http://www.kanagawa-jizake.or.jp/kawanishiya/,,,,35.364208,139.095093,,pendiente,no comprobado,,,546,,,,,,,jp,kanto,kanagawa,,,,,,
+seto-shuzoten-kaisei,Seto Shuzoten,Kaisei,Sake,,神奈川県足柄上郡開成町金井島17,,,+81465820055,,http://www.kanagawa-jizake.or.jp/seto/,,,,35.342831,139.112106,,pendiente,no comprobado,,,1080,,,,,,,jp,kanto,kanagawa,,,,,,
+nakazawa-shuzo-matsuda,Nakazawa Shuzo,Matsuda,Sake,,神奈川県足柄上郡松田町松田惣領1875,,,+81465820024,,http://www.matsumidori.jp/,,,,35.346249,139.138565,,pendiente,no comprobado,,,831,,,,,,,jp,kanto,kanagawa,,,,,,
+latteria-bebe-kamakura-kamakura,Latteria BeBè Kamakura,Kamakura,Lácteos y quesos,"モッツァレッラ, リコッタ, ブッラータ",神奈川県鎌倉市御成町11-17,,,,,https://latteria-bebe.com/,,,,35.319170,139.547220,,,sí,ecommerce,,706,,,,,,,jp,kanto,kanagawa,,,,,,
+osteria-e-bottega-s-chigasaki,Osteria e Bottega S,Chigasaki,Lácteos y quesos,,神奈川県茅ヶ崎市東海岸北1-5-7,,,,,https://osteriaebottegas.com/,,,,35.333860,139.404720,,,no comprobado,,,960,,,,,,,jp,kanto,kanagawa,,,,,,
+sanktgallenbrewery-atsugi,サンクトガーレン,Atsugi,Cerveza,,,,,,,https://www.sanktgallenbrewery.com/,,,,35.443060,139.362500,,,no comprobado,,,1792,,,,,,,jp,kanto,kanagawa,,,,,,
+yorocco-beer-zushi,ヨロッコビール,Zushi,Cerveza,,,,,,,https://yorocco-beer.com/,,,,35.295610,139.580330,,,no comprobado,,,1982,,,,,,,jp,kanto,kanagawa,,,,,,
+rainerucheese-aikawa,ライネルチーズ工房,Aikawa,Lácteos y quesos,,神奈川県愛甲郡愛川町中津2647-10,,,,,https://rainerucheese.jp/,,,,35.528810,139.321640,,,no comprobado,,,1984,,,,,,,jp,kanto,kanagawa,,,,,,
+yokohamabeer-yokohama,横浜ビール,Yokohama,Cerveza,,,,,,,https://yokohamabeer.com/,,,,35.450330,139.634220,,,sí,ecommerce,,2824,,,,,,,jp,kanto,kanagawa,,,,,,
+kamakura-beer-kamakura,鎌倉ビール醸造,Kamakura,Cerveza,,,,,,,https://www.kamakura-beer.co.jp/,,,,35.319170,139.547220,,,sí,ecommerce,,3253,,,,,,,jp,kanto,kanagawa,,,,,,
+yokohamawinery-yokohama,横濱ワイナリー 株式会社,Yokohama,Vino,,神奈川県横浜市中区新山下1-3-12鈴木ビル1F,,,+81452289713,,https://yokohamawinery.com/,,,,35.450330,139.634220,,,sí,ecommerce,,2826,,,,,,,jp,kanto,kanagawa,,,,,,
+takanashi-milk-yokohama,タカナシ乳業,Yokohama,Lácteos y quesos,"Brise de mer FAISSELLE, 北海道リコッタ, 北海道マスカルポーネ",神奈川県横浜市旭区本宿町５番地,,,,,https://www.takanashi-milk.co.jp/,,,,35.450330,139.634220,,,no comprobado,,,1822,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-21387,永島農園,Yokohama,Setas,"しいたけ, きくらげ",,,,,,,,,,35.450330,139.634220,,pendiente,sí,marketplace,,2847,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-27630,勘網,Yokosuka,Pescado,,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,2199,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-27682,鉄釜ひじき 海藻の房丸,Yokosuka,Pescado,,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,3245,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-20410,丸良水産,Yokosuka,Pescado,海苔,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,2082,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-3078438,【ジビエ総本家】小田原貴族ブランド,Odawara,Carne,,,,,,,,,,,35.264610,139.152220,,pendiente,sí,marketplace,,1806,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-22147,みやじ豚,Fujisawa,Carne,,,,,,,,,,,35.338780,139.490890,,pendiente,sí,marketplace,,1648,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-26962,霜島農園,Atsugi,Pan y cereal,ぶどう,,,,,,,,,,35.443060,139.362500,,pendiente,sí,marketplace,,3282,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-26947,お米農家 曽我,Odawara,Pan y cereal,,,,,,,,,,,35.264610,139.152220,,pendiente,sí,marketplace,,1464,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-29222,佐野農園,Isehara,Fruta y verdura,"梨, ぶどう, 野菜",,,,,,,,,,35.402940,139.314970,,pendiente,sí,marketplace,,2154,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-21955,あすなろファーム,Odawara,Fruta y verdura,"梅, 野菜",,,,,,,,,,35.264610,139.152220,,pendiente,sí,marketplace,,1417,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-3078860,くだかけ農園,Yamakita,Huevos,野菜,,,,,,,,,,35.360580,139.083830,,pendiente,sí,marketplace,,1491,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-21386,NO-RA ～農楽～,Aikawa,Fruta y verdura,,,,,,,,,,,35.528810,139.321640,,pendiente,sí,marketplace,,878,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-23483,有機農園けのひ,Aikawa,Fruta y verdura,野菜,,,,,,,,,,35.528810,139.321640,,pendiente,sí,marketplace,,2592,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-22819,Kururu farm,Yokohama,Fruta y verdura,,,,,,,,,,,35.450330,139.634220,,pendiente,sí,marketplace,,692,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-27186,カメーダ農園,Yokohama,Fruta y verdura,野菜,,,,,,,,,,35.450330,139.634220,,pendiente,sí,marketplace,,1760,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-20806,鈴也ファーム,Yokosuka,Fruta y verdura,,,,,,,,,,,35.281310,139.672080,,pendiente,sí,marketplace,,3236,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-28446,ニッポンルーバス,Ebina,Fruta y verdura,,,,,,,,,,,35.446420,139.390810,,pendiente,sí,marketplace,,1858,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-23067,榎本農園,Yugawara,Fruta y verdura,柑橘,,,,,,,,,,35.147890,139.108310,,pendiente,sí,marketplace,,2819,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-21182,ぶるべの樹,Sagamihara,Fruta y verdura,ブルーベリー,,,,,,,,,,35.571420,139.373140,,pendiente,sí,marketplace,,1616,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-3078762,さとくら農園,Sagamihara,Fruta y verdura,野菜,,,,,,,,,,35.571420,139.373140,,pendiente,sí,marketplace,,1515,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-23858,渋谷ファーム,Fujisawa,Fruta y verdura,トマト,,,,,,,,,,35.338780,139.490890,,pendiente,sí,marketplace,,2896,,,,,,,jp,kanto,kanagawa,,,,,,
+tabechoku-22165,子どもの野菜湘南藤沢農場,Fujisawa,Fruta y verdura,野菜,,,,,,,,,,35.338780,139.490890,,pendiente,sí,marketplace,,2355,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-ukyou-8a38ce5,右京,小田原市,Dulces y repostería,和菓子,小田原市本町 4-3-29,,,,,https://www.ukyou.jp/,,,,35.264610,139.152220,,,no comprobado,,,2235,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-suehiroan-co-825bc79,菓子匠　末広庵,川崎市,Dulces y repostería,和菓子,川崎市川崎区東田町 3-16,,,,,https://www.suehiroan.co.jp/,,,,35.530890,139.703000,,,sí,ecommerce,,3112,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-yokohama-bunmeido-co-8e8d34c,文明堂,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 4-114,,,,,https://yokohama-bunmeido.co.jp/,,,,35.450330,139.634220,,,sí,ecommerce,,2541,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-meigetsu-92f751c,御菓子司　名月,横浜市,Dulces y repostería,和菓子,横浜市金沢区六浦町 5-23-29,,,,,https://meigetsu.org/,,,,35.450330,139.634220,,,sí,ecommerce,,2510,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-choshiya-co-a452648,銚子屋,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 7-150,,,,,http://www.choshiya.co.jp/,,,,35.450330,139.634220,,,sí,ecommerce,,3250,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-yumochi-ff440cf,ちもと,箱根町,Dulces y repostería,和菓子,足柄下郡箱根町湯本 509,,,,,https://www.yumochi.com/,,,,35.232360,139.106940,,,sí,ecommerce,,1555,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-atsugimikawaya-8a447e9,合資会社三河屋,厚木市,Aperitivos,米菓,,,,,,https://atsugimikawaya.com/,,,,35.443060,139.362500,,,sí,ecommerce,,2245,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-minoya-arare-001a899,株式会社美濃屋あられ,横浜市,Aperitivos,米菓,,,,,,https://minoya-arare.jp/,,,,35.450330,139.634220,,,sí,ecommerce,,2785,,,,,,,jp,kanto,kanagawa,,,,,,
+jp-kanagawa-mikawaya-co-651ba7d,有限会社三河屋,茅ヶ崎市,Aperitivos,米菓,,,,,,https://www.mikawaya.co.jp/,,,,35.333860,139.404720,,,no comprobado,,,2611,,,,,,,jp,kanto,kanagawa,,,,,,
+t-k-brewing,T.K.Brewing,Kawasaki,Cerveza,,小田5-1-30,,,,r.takabayashi@tkbrewing.com,https://tkbrewing.com/,,https://www.instagram.com/tkbrewing/,,35.53089,139.7030,,pendiente,no comprobado,,,1155,,,,,,,jp,kanto,kanagawa,,,,,,
+humans-beer,HUMANS BEER,Yugawara,Cerveza,,福浦437-6,,,,,https://humansbeer.com/,,https://www.instagram.com/humansbeer/,,35.14789,139.10831,,pendiente,no comprobado,,,347,,,,,,,jp,kanto,kanagawa,,,,,,
+yokohama-bay-brewing,横浜ベイブルーイング (Yokohama Bay Brewing),Yokohama,Cerveza,,上矢部町2006,,,,,,,https://www.instagram.com/yokohamabaybrewing/,,35.45033,139.63422,,pendiente,no comprobado,,,2825,,,,,,,jp,kanto,kanagawa,,,,,,
+passific-brewing,Passific Brewing,Chigasaki,Cerveza,,萩園2644-3,Passific Brewing is a brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/passificbrewing/,,35.33386,139.40472,,pendiente,no comprobado,,,995,en,,,,,,jp,kanto,kanagawa,,,,,,
+barbaric-works,Barbaric WORKS,Chigasaki,Cerveza,,幸町23-16,Barbaric WORKS is a brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/barbaric_works/,,35.33386,139.40472,,pendiente,no comprobado,,,100,en,,,,,,jp,kanto,kanagawa,,,,,,
+suzuhiro-kamaboko-odawara,鈴廣かまぼこ,Odawara,Pescado,Kamaboko,,Produces Odawara kamaboko and other fish-paste products.,,,,https://www.kamaboko.com/,,,,35.26461,139.15222,,,sí,ecommerce,,3239,en,,,,,,jp,kanto,kanagawa,,,,,,
+misaki-megumi-suisan-miura,三崎恵水産,Miura,Pescado,Tuna,,Processes and markets its branded tuna products from Miura.,,,,https://misaki-megumi.co.jp/,,,,35.14419,139.62072,,,no comprobado,,,2012,en,,,,,,jp,kanto,kanagawa,,,,,,
+kiyoken-yokohama-factory,Kiyoken Yokohama Factory,Yokohama,Comida preparada,,,,,,,https://kiyoken.com/factory/,,,,,,,pendiente,no comprobado,,,3447,,,,,,,jp,kanto,kanagawa,,,,,,

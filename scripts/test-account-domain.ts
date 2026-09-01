@@ -269,9 +269,17 @@ test("expanded profile fields are hidden from non-premium proposal input", () =>
   form.set("visitas guiadas", "sí");
   form.set("mensaje a la comunidad", "A hidden premium submission.");
   form.set("mensaje_comunidad_locale", "en");
+  form.set("video", "https://youtu.be/dQw4w9WgXcQ");
+  form.set("quien hay detras", "A hidden team profile.");
+  form.set("quien_hay_detras_locale", "en");
+  form.set("historia", "A hidden origin story.");
+  form.set("historia_locale", "en");
   const raw = readProducerProposalForm(form, PRODUCER_STANDARD_EDITABLE_FIELDS);
   assert.equal("visitas guiadas" in raw, false);
   assert.equal("mensaje a la comunidad" in raw, false);
+  assert.equal("video" in raw, false);
+  assert.equal("quien hay detras" in raw, false);
+  assert.equal("historia" in raw, false);
 
   const current = {
     ...validFields(),
@@ -327,7 +335,7 @@ test("administrative premium gifts require durable producer keys and reasons", (
   );
 });
 
-test("expanded profile proposals validate guided visits, message locale and links", () => {
+test("expanded profile proposals validate video, long-form prose, visits and links", () => {
   const current = validFields();
   const valid = validateProducerProposal(
     {
@@ -335,6 +343,11 @@ test("expanded profile proposals validate guided visits, message locale and link
       "visitas guiadas": "sí",
       "mensaje a la comunidad": "🍯".repeat(1_000),
       mensaje_comunidad_locale: "es",
+      video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "quien hay detras": "Ana y Luis dirigen esta unidad productiva.",
+      quien_hay_detras_locale: "es",
+      historia: "La explotación comenzó en 1987.",
+      historia_locale: "es",
       "enlace destacado 1": "https://news.example/interview",
       "enlace destacado 2": "https://producer.example/story",
     },
@@ -347,6 +360,11 @@ test("expanded profile proposals validate guided visits, message locale and link
       "visitas guiadas": "sí",
       "mensaje a la comunidad": "🍯".repeat(1_000),
       mensaje_comunidad_locale: "es",
+      video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "quien hay detras": "Ana y Luis dirigen esta unidad productiva.",
+      quien_hay_detras_locale: "es",
+      historia: "La explotación comenzó en 1987.",
+      historia_locale: "es",
       "enlace destacado 1": "https://news.example/interview",
       "enlace destacado 2": "https://producer.example/story",
     });
@@ -358,6 +376,11 @@ test("expanded profile proposals validate guided visits, message locale and link
       "visitas guiadas": "quizá",
       "mensaje a la comunidad": "🍯".repeat(1_001),
       mensaje_comunidad_locale: "",
+      video: "https://vimeo.com/123456",
+      "quien hay detras": "Equipo sin idioma.",
+      quien_hay_detras_locale: "",
+      historia: "🌱".repeat(4_001),
+      historia_locale: "es",
       "enlace destacado 1": "ftp://example.com/article",
       "enlace destacado 2": "https://example.com/second",
     },
@@ -368,6 +391,9 @@ test("expanded profile proposals validate guided visits, message locale and link
     assert.match(invalid.errors["visitas guiadas"], /yes, no/i);
     assert.match(invalid.errors["mensaje a la comunidad"], /maximum 1000/i);
     assert.match(invalid.errors.mensaje_comunidad_locale, /source language/i);
+    assert.match(invalid.errors.video, /YouTube/i);
+    assert.match(invalid.errors.quien_hay_detras_locale, /source language/i);
+    assert.match(invalid.errors.historia, /maximum 4000/i);
     assert.match(invalid.errors["enlace destacado 1"], /HTTP/i);
   }
 
@@ -460,7 +486,7 @@ test("expanded profile proposals validate guided visits, message locale and link
   }
 });
 
-test("community messages preserve internal spaces and canonical LF line breaks", () => {
+test("producer-authored profile prose preserves internal spaces and canonical LF line breaks", () => {
   const current = validFields();
   const form = new FormData();
   for (const [key, value] of Object.entries(current)) form.set(key, value);
@@ -469,10 +495,19 @@ test("community messages preserve internal spaces and canonical LF line breaks",
     "Primera línea.  Dos espacios.\r\nSegunda línea.",
   );
   form.set("mensaje_comunidad_locale", "es");
+  form.set("quien hay detras", "Ana y Luis.  Equipo familiar.\r\nSegunda línea.");
+  form.set("quien_hay_detras_locale", "es");
+  form.set("historia", "Comenzó en 1987.\r\nContinúa hoy.");
+  form.set("historia_locale", "es");
 
   const raw = readProducerProposalForm(form);
   const expectedMessage = "Primera línea.  Dos espacios.\nSegunda línea.";
   assert.equal(raw["mensaje a la comunidad"], expectedMessage);
+  assert.equal(
+    raw["quien hay detras"],
+    "Ana y Luis.  Equipo familiar.\nSegunda línea.",
+  );
+  assert.equal(raw.historia, "Comenzó en 1987.\nContinúa hoy.");
 
   const result = validateProducerProposal(raw, current);
   assert.equal(result.ok, true);
@@ -481,6 +516,10 @@ test("community messages preserve internal spaces and canonical LF line breaks",
     assert.deepEqual(result.patch, {
       "mensaje a la comunidad": expectedMessage,
       mensaje_comunidad_locale: "es",
+      "quien hay detras": "Ana y Luis.  Equipo familiar.\nSegunda línea.",
+      quien_hay_detras_locale: "es",
+      historia: "Comenzó en 1987.\nContinúa hoy.",
+      historia_locale: "es",
     });
   }
 
