@@ -4,6 +4,46 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-01 — Nearby-first producer map selection
+
+final result: passed
+
+Source: `../references/inspiration-alltrails-explore.png` and the supplied
+AllTrails selected-trail mobile states. Implementation evidence:
+`implementation-area-explorer-nearby-desktop.png`,
+`implementation-area-explorer-nearby-mobile-closed.png`,
+`implementation-area-explorer-nearby-mobile.png` and
+`area-explorer-nearby-comparison.png`.
+
+Reviewed `/es/barcelona?category=Pan+y+cereal&highlight=pastisseria-duch-abrera`
+with 1440×900 and 390×844 browser window overrides, plus `/jp/tokyo` at
+390×844. The retained captures show the resulting 1440×816 and 390×816 page
+viewports; the lower-left `N` is the local Next.js development indicator, not
+product UI. There is no horizontal overflow, visible producer totals or
+selected-list styling.
+
+- Default producer points are now 12px dark-moss circles. The selected point is
+  a 20px moss circle with a 3px surface outline and is painted above the other
+  points; the separate 28px interaction target remains unchanged.
+- The default list contains only producers inside the current map bounds and
+  follows distance from the map centre rather than alphabetic order. Panning or
+  zooming updates it. A zero-result viewport has localized guidance. `Ver más`
+  appends the broader mapped list after the nearby results, focuses the first
+  newly exposed producer and can return to the map-only scope; every exposed
+  row can therefore resolve to a marker.
+- Selecting a list row updates and focuses the map point while the row itself
+  remains visually neutral. The separate `Seleccionado` label is removed.
+- The selected producer surface adds one lazy-loaded canonical producer image.
+  No producer image is mounted when there is no selection, and the whole
+  name-image-description surface remains the profile link.
+- The mobile list remains attached beneath the map without a shadow. Its open
+  state raises the moss border and pale-moss background enough to show the
+  disclosure change without returning to a floating sheet.
+
+The comparison retained AllTrails' map-led selection, nearby-result hierarchy
+and compact selected surface without adopting route overlays, clusters or
+floating control stacks.
+
 ## 2026-09-01 — Compact Barcelona area explorer
 
 final result: passed

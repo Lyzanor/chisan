@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
   buildProducerHref,
@@ -38,6 +38,7 @@ type ProducersMapProps = {
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelectProducer?: (slug: string) => void;
+  onVisibleProducerKeysChange?: (keys: string[]) => void;
   singlePointZoom?: number;
   messages: MapMessages;
 };
@@ -51,6 +52,7 @@ export function ProducersMap({
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelectProducer,
+  onVisibleProducerKeysChange,
   singlePointZoom,
   messages,
 }: ProducersMapProps) {
@@ -82,6 +84,7 @@ export function ProducersMap({
       nearbyFocusKeys={nearbyFocusKeys}
       onNearbyFocusConsumed={onNearbyFocusConsumed}
       onSelect={onSelectProducer}
+      onVisibleKeysChange={onVisibleProducerKeysChange}
       singlePointZoom={singlePointZoom}
       minZoom={5}
       messages={messages}
@@ -97,6 +100,7 @@ export function ProducerSelectionMap({
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelect,
+  onVisibleKeysChange,
   singlePointZoom,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
@@ -108,12 +112,19 @@ export function ProducerSelectionMap({
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelect?: (key: string) => void;
+  onVisibleKeysChange?: (keys: string[]) => void;
   singlePointZoom?: number;
   minZoom?: number;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
   const handleReady = useCallback(() => setIsReady(true), []);
+
+  useEffect(() => {
+    if (!points.length) {
+      onVisibleKeysChange?.([]);
+    }
+  }, [onVisibleKeysChange, points.length]);
 
   if (!points.length) {
     return <div className="map-placeholder">{messages.emptyCoordinates}</div>;
@@ -130,6 +141,7 @@ export function ProducerSelectionMap({
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}
         onSelect={onSelect}
+        onVisibleKeysChange={onVisibleKeysChange}
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}
         messages={{

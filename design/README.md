@@ -108,12 +108,23 @@ under 12px. Reading column 58–64 characters.
 One point per producer, at its exact coordinate. No clustering, jitter, offset
 or heatmaps — ever.
 
-- Default: 6px `moss-dark` circle at full opacity, no outline.
-- Selected: 8px `moss-dark` fill, 2px `surface` outline, same position.
+- Default: 12px `moss-dark` circle at full opacity, no outline.
+- Selected: 20px `moss` fill with a 3px `surface` outline, rendered above
+  neighbouring points at the same position.
 - Land `rice-paper`, controls `surface`, geometry `hairline`, labels `stone`.
 - All categories stay in one scrollable filter bar, one icon and label each.
 - Result counts remain available to assistive technology; visual density stays
   visible spatially without a redundant total.
+- The discovery list follows the current map bounds and orders producers from
+  the visible centre outwards. `Show more` is an explicit escape hatch to the
+  broader mapped area list while keeping the current map results first; every
+  row can therefore resolve to a map point.
+- Selecting from a list moves the map to the exact producer and changes only
+  the map point. The list row does not gain a competing selected treatment.
+- On small screens, the producer list is an attached, non-modal disclosure. Its
+  open state uses `moss-pale` and a `moss` edge, never a floating shadow.
+- A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
+  map points never preload producer imagery.
 
 ## Brand
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -40,6 +41,7 @@ import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
 
 const VISIBLE_PRODUCER_LIMIT = 400;
 const PRODUCER_LIST_ID = "catalog-producer-list";
+const PRODUCER_RESULTS_ID = "catalog-producer-results";
 
 type AreaExplorerProducer = {
   producerId: number;
@@ -49,6 +51,7 @@ type AreaExplorerProducer = {
   category: string;
   categories: string[];
   description: string;
+  imageSrc: string;
   latitude: number | null;
   longitude: number | null;
 };
@@ -232,11 +235,17 @@ function AreaExplorerView({
   highlightedSlug: string;
 }) {
   const [isMobileListOpen, setIsMobileListOpen] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  const [mapVisibleProducerScope, setMapVisibleProducerScope] = useState<{
+    category: string;
+    keys: string[];
+  } | null>(null);
   const [mapFocusRequest, setMapFocusRequest] =
     useState<ProducerMapFocusRequest>();
   const mapFocusRequestId = useRef(0);
   const previousHighlightedSlug = useRef("");
   const listToggleRef = useRef<HTMLButtonElement>(null);
+  const producerListRef = useRef<HTMLUListElement>(null);
   const viewerRef = useRef<HTMLElement>(null);
   const selectedProducerLinkRef = useRef<HTMLAnchorElement>(null);
   const focusSelectedProducerAfterCloseRef = useRef(false);
@@ -265,36 +274,77 @@ function AreaExplorerView({
     () => new Map(model.categories.map((item) => [item.token, item])),
     [model.categories],
   );
+  const mappedItems = useMemo(
+    () =>
+      items.filter(
+        (
+          item,
+        ): item is AreaExplorerProducer & {
+          latitude: number;
+          longitude: number;
+        } => item.latitude !== null && item.longitude !== null,
+      ),
+    [items],
+  );
   const mapPoints = useMemo(
     () =>
-      items.flatMap((item): ProducerMapPoint[] => {
-        if (item.latitude === null || item.longitude === null) return [];
-
-        return [
-          {
-            slug: item.slug,
-            name: item.name,
-            city: item.city,
-            category: item.category,
-            categories: item.categories.map(
-              (itemCategory) =>
-                categoryPresentations.get(itemCategory)?.label ?? itemCategory,
-            ),
-            latitude: item.latitude,
-            longitude: item.longitude,
-          },
-        ];
-      }),
-    [categoryPresentations, items],
+      mappedItems.map(
+        (item): ProducerMapPoint => ({
+          slug: item.slug,
+          name: item.name,
+          city: item.city,
+          category: item.category,
+          categories: item.categories.map(
+            (itemCategory) =>
+              categoryPresentations.get(itemCategory)?.label ?? itemCategory,
+          ),
+          latitude: item.latitude,
+          longitude: item.longitude,
+        }),
+      ),
+    [categoryPresentations, mappedItems],
   );
   const {
     keys: nearbyMapFocusKeys,
     consume: consumeNearbyMapFocus,
   } = useNearbyMapFocusKeys(model.scope.country, model.area, mapPoints);
-  const visibleItems = useMemo(
-    () => items.slice(0, VISIBLE_PRODUCER_LIMIT),
+  const itemsBySlug = useMemo(
+    () => new Map(items.map((item) => [item.slug, item])),
     [items],
   );
+  const mapVisibleProducerKeys =
+    mapVisibleProducerScope?.category === category
+      ? mapVisibleProducerScope.keys
+      : null;
+  const isFullProducerListVisible = expandedCategory === category;
+  const mapVisibleItems = useMemo(
+    () =>
+      mapVisibleProducerKeys === null
+        ? mappedItems.slice(0, VISIBLE_PRODUCER_LIMIT)
+        : mapVisibleProducerKeys.flatMap((key) => {
+            const item = itemsBySlug.get(key);
+            return item ? [item] : [];
+          }),
+    [itemsBySlug, mapVisibleProducerKeys, mappedItems],
+  );
+  const expandedItems = useMemo(() => {
+    const visibleKeys = new Set(mapVisibleItems.map(({ slug }) => slug));
+    return [
+      ...mapVisibleItems,
+      ...mappedItems.filter(({ slug }) => !visibleKeys.has(slug)),
+    ];
+  }, [mapVisibleItems, mappedItems]);
+  const visibleItems = useMemo(
+    () =>
+      (isFullProducerListVisible ? expandedItems : mapVisibleItems).slice(
+        0,
+        VISIBLE_PRODUCER_LIMIT,
+      ),
+    [expandedItems, isFullProducerListVisible, mapVisibleItems],
+  );
+  const hasMoreProducers =
+    mapVisibleProducerKeys !== null &&
+    mapVisibleItems.length < Math.min(mappedItems.length, VISIBLE_PRODUCER_LIMIT);
   const languageOptions = useMemo(
     () =>
       model.languageOptions.map((option) => ({
@@ -326,8 +376,21 @@ function AreaExplorerView({
   });
   const screenReaderSummary = formatMessage(model.catalogMessages.showing, {
     visible: formatNumber(model.localeDisplayTag, visibleItems.length),
-    total: formatNumber(model.localeDisplayTag, items.length),
+    total: formatNumber(model.localeDisplayTag, mappedItems.length),
   });
+  const handleVisibleProducerKeysChange = useCallback((keys: string[]) => {
+    setMapVisibleProducerScope((current) => {
+      if (
+        current?.category === category &&
+        current.keys.length === keys.length &&
+        current.keys.every((key, index) => key === keys[index])
+      ) {
+        return current;
+      }
+
+      return { category, keys };
+    });
+  }, [category]);
 
   const clearProducerSelection = useCallback(() => {
     consumeNearbyMapFocus();
@@ -429,6 +492,7 @@ function AreaExplorerView({
 
     if (closeMobileList && window.matchMedia("(max-width: 980px)").matches) {
       focusSelectedProducerAfterCloseRef.current = true;
+      setExpandedCategory(null);
       setIsMobileListOpen(false);
     }
   }
@@ -447,7 +511,25 @@ function AreaExplorerView({
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
     setIsMobileListOpen(false);
+    setExpandedCategory(null);
+    setMapVisibleProducerScope(null);
     pushCatalogState(href);
+  }
+
+  function toggleProducerScope() {
+    if (isFullProducerListVisible) {
+      setExpandedCategory(null);
+      return;
+    }
+
+    const firstAdditionalResult = mapVisibleItems.length;
+    setExpandedCategory(category);
+    window.requestAnimationFrame(() => {
+      producerListRef.current
+        ?.querySelectorAll<HTMLAnchorElement>(".producer-compact-link")
+        .item(firstAdditionalResult)
+        ?.focus();
+    });
   }
 
   return (
@@ -544,6 +626,7 @@ function AreaExplorerView({
               nearbyFocusKeys={nearbyMapFocusKeys}
               onNearbyFocusConsumed={consumeNearbyMapFocus}
               onSelectProducer={selectMapProducer}
+              onVisibleProducerKeysChange={handleVisibleProducerKeysChange}
               messages={model.mapMessages}
             />
           </div>
@@ -564,13 +647,23 @@ function AreaExplorerView({
                   })}
                   prefetch={false}
                 >
-                  <span className="catalog-kicker">
-                    {model.catalogMessages.selected}
+                  <span className="catalog-featured-producer__media">
+                    <Image
+                      src={highlightedItem.imageSrc}
+                      alt=""
+                      width={160}
+                      height={120}
+                      sizes="(max-width: 620px) 104px, 128px"
+                      loading="lazy"
+                      className="catalog-featured-producer__image"
+                    />
                   </span>
-                  <strong>{highlightedItem.name}</strong>
-                  {highlightedItem.description ? (
-                    <span>{highlightedItem.description}</span>
-                  ) : null}
+                  <span className="catalog-featured-producer__content">
+                    <strong>{highlightedItem.name}</strong>
+                    {highlightedItem.description ? (
+                      <span>{highlightedItem.description}</span>
+                    ) : null}
+                  </span>
                 </Link>
               </article>
             ) : null}
@@ -605,11 +698,22 @@ function AreaExplorerView({
               <h2>{model.catalogMessages.producers}</h2>
               <p className="visually-hidden" aria-live="polite">
                 {screenReaderSummary}
+                {visibleItems[0] ? `: ${visibleItems[0].name}` : ""}
               </p>
             </div>
 
-            {visibleItems.length > 0 ? (
-              <ul className="producer-compact-list">
+            {items.length === 0 ? (
+              <p className="catalog-empty">
+                {formatMessage(model.catalogMessages.emptyCategory, {
+                  area: model.areaLabel,
+                })}
+              </p>
+            ) : visibleItems.length > 0 ? (
+              <ul
+                ref={producerListRef}
+                id={PRODUCER_RESULTS_ID}
+                className="producer-compact-list"
+              >
                 {visibleItems.map((item) => {
                   const href = buildCatalogHref({
                     scope: model.scope,
@@ -651,12 +755,25 @@ function AreaExplorerView({
                 })}
               </ul>
             ) : (
-              <p className="catalog-empty">
-                {formatMessage(model.catalogMessages.emptyCategory, {
-                  area: model.areaLabel,
-                })}
+              <p id={PRODUCER_RESULTS_ID} className="catalog-empty">
+                {model.catalogMessages.emptyMapView}
               </p>
             )}
+
+            {hasMoreProducers ? (
+              <div className="catalog-viewer-scope">
+                <button
+                  type="button"
+                  aria-pressed={isFullProducerListVisible}
+                  aria-controls={PRODUCER_RESULTS_ID}
+                  onClick={toggleProducerScope}
+                >
+                  {isFullProducerListVisible
+                    ? model.catalogMessages.showMapOnly
+                    : model.catalogMessages.showMore}
+                </button>
+              </div>
+            ) : null}
           </div>
         </aside>
       </section>

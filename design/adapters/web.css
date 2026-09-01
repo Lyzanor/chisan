@@ -266,7 +266,7 @@ body {
   width: 6.5rem;
 }
 
-/* Exact producer field: 6 px map-native circles stay at the catalog coordinate. */
+/* Exact producer field: map-native circles stay at the catalog coordinate. */
 .producer-map-circle {
   fill: var(--chisan-color-moss-dark);
   fill-opacity: 1;
@@ -277,11 +277,11 @@ body {
 }
 
 .producer-map-circle--highlighted {
-  fill: var(--chisan-color-moss-dark);
+  fill: var(--chisan-color-moss);
   fill-opacity: 1;
   stroke: var(--chisan-color-surface);
   stroke-opacity: 1;
-  stroke-width: 2px;
+  stroke-width: 3px;
 }
 
 .leaflet-control-attribution {

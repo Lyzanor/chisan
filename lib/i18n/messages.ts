@@ -129,8 +129,9 @@ export type Messages = {
     mapped: PluralMessage;
     categories: string;
     allCategories: string;
-    selected: string;
-    seeAll: string;
+    showMore: string;
+    showMapOnly: string;
+    emptyMapView: string;
     openProfile: string;
     producers: string;
     showing: string;

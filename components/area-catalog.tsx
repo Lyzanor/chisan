@@ -150,6 +150,7 @@ export async function AreaCatalog({ country, area, locale, scope }: AreaCatalogP
       category: producer.category,
       categories: producer.categories,
       description: getDescriptionPreview(producer.fields),
+      imageSrc: producer.imageSrc,
       latitude: hasProducerMapPoint(producer) ? producer.latitude : null,
       longitude: hasProducerMapPoint(producer) ? producer.longitude : null,
     })),

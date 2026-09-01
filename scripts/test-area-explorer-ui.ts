@@ -33,6 +33,14 @@ test("mobile producers use one attached accessible disclosure", () => {
   assert.equal(explorer.match(/className="producer-compact-list"/g)?.length, 1);
   assert.match(styles, /\.catalog-viewer\s*{[^}]*position: relative/);
   assert.match(styles, /\.catalog-viewer-toggle\s*{[^}]*width: 100%/);
+  assert.match(
+    styles,
+    /\.catalog-viewer\.is-mobile-open\s*{[^}]*border-color: var\(--chisan-color-moss\)/,
+  );
+  assert.match(
+    styles,
+    /\.catalog-viewer\.is-mobile-open \.catalog-viewer-toggle\s*{[^}]*background: var\(--chisan-color-moss-pale\)/,
+  );
   assert.doesNotMatch(styles, /\.catalog-viewer\.is-mobile-open\s*{[^}]*gap:/);
 });
 
@@ -45,19 +53,65 @@ test("list selection focuses the producer on the map without a selected row", ()
   assert.match(map, /map\.flyTo\(\[point\.latitude, point\.longitude\], zoom/);
   assert.match(explorer, /key: highlightedItem\.slug/);
   assert.doesNotMatch(explorer, /key: highlightedSlug/);
+  assert.doesNotMatch(explorer, /key=\{category \|\| "all"\}/);
+  assert.match(
+    explorer,
+    /if \(closeMobileList && window\.matchMedia[\s\S]*?setExpandedCategory\(null\)/,
+  );
 });
 
 test("selected producer information is one dismissible profile surface", () => {
   assert.match(explorer, /className="catalog-featured-producer__link"/);
+  assert.match(explorer, /src=\{highlightedItem\.imageSrc\}/);
+  assert.match(explorer, /alt=""/);
+  assert.match(explorer, /loading="lazy"/);
   assert.match(explorer, /highlightedItem\.description/);
   assert.match(explorer, /clearFromOutside/);
   assert.match(explorer, /replaceCatalogState\(clearHighlightHref\)/);
   assert.doesNotMatch(explorer, /catalog-featured-producer__clear/);
-  assert.doesNotMatch(explorer, /catalogMessages\.seeAll/);
+  assert.doesNotMatch(explorer, /catalogMessages\.selected/);
   assert.doesNotMatch(
     explorer,
     />\s*\{model\.catalogMessages\.openProfile\}\s*</,
   );
+});
+
+test("the producer list follows the visible map and can expand deliberately", () => {
+  assert.match(explorer, /mapVisibleProducerKeys/);
+  assert.match(
+    explorer,
+    /onVisibleProducerKeysChange=\{handleVisibleProducerKeysChange\}/,
+  );
+  assert.match(explorer, /mapVisibleProducerKeys\.flatMap/);
+  assert.match(explorer, /const mappedItems = useMemo/);
+  assert.match(explorer, /const expandedItems = useMemo/);
+  assert.match(explorer, /isFullProducerListVisible \? expandedItems/);
+  assert.match(explorer, /model\.catalogMessages\.emptyMapView/);
+  assert.match(explorer, /aria-live="polite"/);
+  assert.match(explorer, /model\.catalogMessages\.showMore/);
+  assert.match(explorer, /model\.catalogMessages\.showMapOnly/);
+  assert.match(explorer, /aria-pressed=\{isFullProducerListVisible\}/);
+  assert.match(explorer, /aria-controls=\{PRODUCER_RESULTS_ID\}/);
+  assert.match(explorer, /onClick=\{toggleProducerScope\}/);
+  assert.match(explorer, /\.item\(firstAdditionalResult\)[\s\S]*?\.focus\(\)/);
+  assert.match(
+    mapBoundary,
+    /onVisibleProducerKeysChange\?: \(keys: string\[\]\) => void/,
+  );
+  assert.match(
+    mapBoundary,
+    /onVisibleKeysChange=\{onVisibleProducerKeysChange\}/,
+  );
+  assert.match(
+    map,
+    /viewBounds\.contains\(\[point\.latitude, point\.longitude\]\)/,
+  );
+  assert.match(
+    map,
+    /map\.distance\(center, \[a\.latitude, a\.longitude\]\)/,
+  );
+  assert.match(map, /onVisibleKeysChange\?\.\(visibleKeys\)/);
+  assert.match(map, /setViewBounds\(map\.getBounds\(\)\)/);
 });
 
 test("producer rows use the plain locality name", () => {
@@ -100,7 +154,9 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.doesNotMatch(mapBoundary, /nearbyPosition/);
   assert.match(map, /getPointsForKeys\(points, initialFocusKeys\)/);
   assert.match(map, /getPointsForKeys\(points, nearbyFocusKeys\)/);
-  assert.match(map, /radius=\{highlighted \? 4 : 3\}/);
+  assert.match(map, /radius=\{highlighted \? 10 : 6\}/);
+  assert.match(map, /weight: highlighted \? 3 : 0/);
+  assert.match(map, /renderedPoints\.map/);
   assert.match(map, /className: "producer-map-hit-area"/);
   assert.match(map, /radius=\{14\}/);
   assert.match(map, /onNearbyFocusConsumed\?\.\(\)/);

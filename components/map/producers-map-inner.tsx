@@ -128,6 +128,7 @@ function BoundsAwareMarkers({
   nearbyFocusKeys = EMPTY_FOCUS_KEYS,
   onNearbyFocusConsumed,
   onSelect,
+  onVisibleKeysChange,
   singlePointZoom = 13,
   messages,
 }: {
@@ -138,6 +139,7 @@ function BoundsAwareMarkers({
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelect?: (key: string) => void;
+  onVisibleKeysChange?: (keys: string[]) => void;
   singlePointZoom?: number;
   messages: {
     openProfile: string;
@@ -152,6 +154,13 @@ function BoundsAwareMarkers({
     nearbyFocusKey: string;
   } | null>(null);
   const viewModeRef = useRef<"area" | "initial" | "nearby">("area");
+
+  // Register before the fitting effects below. Their non-animated Leaflet
+  // moves emit `moveend` synchronously, so a later subscription would miss the
+  // initial fitted bounds used by the nearby-first list.
+  useMapEvents({
+    moveend: () => setViewBounds(map.getBounds()),
+  });
 
   // Fit only when the effective geometry changes. Navigation state such as a
   // highlighted producer may rebuild props, but must preserve the user's pan
@@ -242,12 +251,6 @@ function BoundsAwareMarkers({
     });
   }, [focusRequest, map, points]);
 
-  // moveend fires after every pan and after every zoom (Leaflet always fires
-  // moveend at the end of a zoom sequence), so zoomend is redundant here.
-  useMapEvents({
-    moveend: () => setViewBounds(map.getBounds()),
-  });
-
   const visible = useMemo(
     () =>
       points.length > VIEWPORT_THRESHOLD
@@ -255,17 +258,46 @@ function BoundsAwareMarkers({
         : points,
     [points, viewBounds],
   );
+  const visibleKeys = useMemo(() => {
+    const center = map.getCenter();
+
+    return points
+      .filter((point) =>
+        viewBounds.contains([point.latitude, point.longitude]),
+      )
+      .sort((a, b) => {
+        const distance =
+          map.distance(center, [a.latitude, a.longitude]) -
+          map.distance(center, [b.latitude, b.longitude]);
+        return distance || a.key.localeCompare(b.key);
+      })
+      .map(({ key }) => key);
+  }, [map, points, viewBounds]);
+  const renderedPoints = useMemo(() => {
+    if (!highlightedKey) return visible;
+    const highlightedPoint = visible.find(({ key }) => key === highlightedKey);
+    if (!highlightedPoint) return visible;
+
+    return [
+      ...visible.filter(({ key }) => key !== highlightedKey),
+      highlightedPoint,
+    ];
+  }, [highlightedKey, visible]);
+
+  useEffect(() => {
+    onVisibleKeysChange?.(visibleKeys);
+  }, [onVisibleKeysChange, visibleKeys]);
 
   return (
     <>
-      {visible.map((point) => {
+      {renderedPoints.map((point) => {
         const highlighted = highlightedKey === point.key;
 
         return (
           <Fragment key={`${point.key}:${highlighted ? "selected" : "default"}`}>
             <CircleMarker
               center={[point.latitude, point.longitude]}
-              radius={highlighted ? 4 : 3}
+              radius={highlighted ? 10 : 6}
               interactive={!onSelect}
               pathOptions={{
                 className: highlighted
@@ -274,10 +306,12 @@ function BoundsAwareMarkers({
                 color: highlighted
                   ? "var(--chisan-color-surface)"
                   : "var(--chisan-color-moss-dark)",
-                fillColor: "var(--chisan-color-moss-dark)",
+                fillColor: highlighted
+                  ? "var(--chisan-color-moss)"
+                  : "var(--chisan-color-moss-dark)",
                 fillOpacity: 1,
                 opacity: highlighted ? 1 : 0,
-                weight: highlighted ? 2 : 0,
+                weight: highlighted ? 3 : 0,
               }}
             >
               {onSelect ? null : (
@@ -331,6 +365,7 @@ export default function ProducersMapInner({
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelect,
+  onVisibleKeysChange,
   singlePointZoom = 13,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
@@ -343,6 +378,7 @@ export default function ProducersMapInner({
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelect?: (key: string) => void;
+  onVisibleKeysChange?: (keys: string[]) => void;
   singlePointZoom?: number;
   minZoom?: number;
   messages: {
@@ -374,6 +410,7 @@ export default function ProducersMapInner({
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}
         onSelect={onSelect}
+        onVisibleKeysChange={onVisibleKeysChange}
         singlePointZoom={singlePointZoom}
         messages={messages}
       />

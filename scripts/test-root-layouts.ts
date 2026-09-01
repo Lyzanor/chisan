@@ -134,10 +134,10 @@ test("the shared account menu keeps identity, language and account actions separ
   assert.match(accountMenu, /document\.addEventListener\("pointerdown"/);
   assert.match(accountIdentity, /getCurrentAccount\(\)\.catch/);
   assert.match(accountIdentity, /"Cache-Control": "private, no-store"/);
-  assert.match(map, /radius=\{highlighted \? 4 : 3\}/);
+  assert.match(map, /radius=\{highlighted \? 10 : 6\}/);
   assert.match(
     map,
-    /fillColor: "var\(--chisan-color-moss-dark\)"/,
+    /fillColor: highlighted[\s\S]*"var\(--chisan-color-moss\)"/,
   );
 });
 
