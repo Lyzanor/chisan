@@ -153,8 +153,6 @@ const messages = {
     mapped: { one: "{count} mmapeng", other: "{count} mmapeng" },
     categories: "Dihlopha",
     allCategories: "Ka moka",
-    showMore: "Bona tše dingwe",
-    showMapOnly: "Bona fela bao ba lego mmapeng",
     emptyMapView: "Ga go na batšweletši bao ba bonagalago ponong ye ya mmapa.",
     openProfile: "Bula profaele",
     producers: "Batšweletši",
@@ -175,7 +173,6 @@ const messages = {
     openProfile: "Bula profaele",
   },
   producer: {
-    backToMap: "Boela mmapeng",
     profile: "Profaele ya motšweletši",
     website: "Websaete",
     googleMaps: "Google Maps",

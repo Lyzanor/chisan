@@ -4,6 +4,50 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-02 — Map-selected row and streamlined producer profile
+
+final result: passed
+
+Reproduced a Barcelona marker selection whose producer fell outside the first
+400 nearby-prioritized rows, then reviewed the Casa Salieri profile at desktop
+width.
+
+- Marker activation now appends only the missing selected row, highlights it
+  and scrolls it into view. The original 400-row order remains unchanged.
+- The producer profile removes the repeated Map / Categories / Information
+  bar; the breadcrumb remains the catalog-context navigation.
+- Public email is presented as `Contactar`, and Facebook joins Instagram in the
+  same compact action group. No secondary text-link strip remains.
+- Account and ownership actions render after the location map and before the
+  related-category section.
+- The tested map and profile states had no horizontal overflow.
+
+Rejected: moving the selected producer to the top of the roster, reordering the
+nearby base list, retaining two visual tiers of contact links, and removing the
+breadcrumb together with the repeated navigation bar.
+
+## 2026-09-02 — Stable nearby-first producer list
+
+final result: passed
+
+Reviewed `/es/barcelona` at desktop width and at 390×844, then traversed three
+consecutive producer rows with keyboard focus while allowing every linked map
+movement to finish.
+
+- The list is one continuous roster with producers near the opening map view
+  first. The former `Show more` / map-only scope control is absent in desktop
+  and mobile layouts.
+- Starting pointer or keyboard navigation locks only the displayed order. Map
+  focus, the active row, the category marker and the linked producer card keep
+  updating; all tested row positions stayed byte-for-byte identical.
+- The mobile disclosure exposes the same roster without horizontal overflow.
+  The producer profile removes both redundant `Back to map` links while keeping
+  the breadcrumb intact.
+
+Rejected: reordering the DOM after each producer-focused map movement, a
+one-way replacement for the removed scope toggle, and removing the profile
+breadcrumb.
+
 ## 2026-09-02 — Printable profile QR labels
 
 final result: passed

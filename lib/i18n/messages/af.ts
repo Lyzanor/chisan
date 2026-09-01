@@ -151,8 +151,6 @@ const messages = {
     mapped: { one: "{count} op die kaart", other: "{count} op die kaart" },
     categories: "Kategorieë",
     allCategories: "Almal",
-    showMore: "Wys meer",
-    showMapOnly: "Wys net dié op die kaart",
     emptyMapView: "Geen produsente is in hierdie kaartaansig sigbaar nie.",
     openProfile: "Maak profiel oop",
     producers: "Produsente",
@@ -173,7 +171,6 @@ const messages = {
     openProfile: "Maak profiel oop",
   },
   producer: {
-    backToMap: "Terug na die kaart",
     profile: "Produsentprofiel",
     expandedProfile: "Uitgebreide profiel",
     website: "Webwerf",

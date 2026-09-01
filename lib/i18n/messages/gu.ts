@@ -144,8 +144,6 @@ const messages = {
     mapped: { one: "નકશા પર {count}", other: "નકશા પર {count}" },
     categories: "શ્રેણીઓ",
     allCategories: "બધા",
-    showMore: "વધુ જુઓ",
-    showMapOnly: "નકશા પરના ઉત્પાદકો જ જુઓ",
     emptyMapView: "નકશાના આ દૃશ્યમાં કોઈ ઉત્પાદક દેખાતા નથી.",
     openProfile: "પ્રોફાઇલ ખોલો",
     producers: "ઉત્પાદકો",
@@ -166,7 +164,6 @@ const messages = {
     openProfile: "પ્રોફાઇલ ખોલો",
   },
   producer: {
-    backToMap: "નકશા પર પાછા જાઓ",
     profile: "ઉત્પાદક પ્રોફાઇલ",
     expandedProfile: "વિસ્તૃત પ્રોફાઇલ",
     website: "વેબસાઇટ",

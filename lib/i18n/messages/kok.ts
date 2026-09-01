@@ -142,8 +142,6 @@ const messages = {
     mapped: { one: "नकाश्यार {count}", other: "नकाश्यार {count}" },
     categories: "वर्ग",
     allCategories: "सगळे",
-    showMore: "आनीक पळोवात",
-    showMapOnly: "नकाशाचेर आशिल्ले तेच पळोवात",
     emptyMapView: "ह्या नकाशा दृश्यांत खंयचेच उत्पादक दिसनात.",
     openProfile: "प्रोफाइल उगडात",
     producers: "उत्पादक",
@@ -164,7 +162,6 @@ const messages = {
     openProfile: "प्रोफाइल उगडात",
   },
   producer: {
-    backToMap: "नकाश्यार परत वचात",
     profile: "उत्पादक प्रोफाइल",
     expandedProfile: "विस्तारीत प्रोफाइल",
     website: "वेबसायट",

@@ -150,8 +150,6 @@ const messages = {
     mapped: { one: "{count} kwimephu", other: "{count} kwimephu" },
     categories: "Iindidi",
     allCategories: "Zonke",
-    showMore: "Bona ngakumbi",
-    showMapOnly: "Bona kuphela abo bakwimephu",
     emptyMapView: "Akukho bavelisi babonakalayo kolu jongo lwemephu.",
     openProfile: "Vula iprofayile",
     producers: "Abavelisi",
@@ -172,7 +170,6 @@ const messages = {
     openProfile: "Vula iprofayile",
   },
   producer: {
-    backToMap: "Buyela kwimephu",
     profile: "Iprofayile yomvelisi",
     website: "Iwebhusayithi",
     googleMaps: "Google Maps",

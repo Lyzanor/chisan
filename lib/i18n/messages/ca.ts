@@ -162,8 +162,6 @@ const messages = {
     },
     categories: "Categories",
     allCategories: "Totes",
-    showMore: "Veure'n més",
-    showMapOnly: "Veure només els del mapa",
     emptyMapView: "No hi ha productors visibles en aquest enquadrament.",
     openProfile: "Obre el perfil",
     producers: "Productors",
@@ -184,7 +182,6 @@ const messages = {
     openProfile: "Obre el perfil",
   },
   producer: {
-    backToMap: "Torna al mapa",
     profile: "Perfil del productor",
     website: "Lloc web",
     googleMaps: "Google Maps",

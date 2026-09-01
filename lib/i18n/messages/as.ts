@@ -141,8 +141,6 @@ const messages = {
     mapped: { one: "মানচিত্ৰত {count} জন", other: "মানচিত্ৰত {count} জন" },
     categories: "শ্ৰেণীসমূহ",
     allCategories: "সকলো",
-    showMore: "আৰু চাওক",
-    showMapOnly: "কেৱল মানচিত্ৰত থকাবোৰ চাওক",
     emptyMapView: "মানচিত্ৰৰ এই দৃশ্যত কোনো উৎপাদক দৃশ্যমান নহয়।",
     openProfile: "প্ৰফাইল খোলক",
     producers: "উৎপাদক",
@@ -163,7 +161,6 @@ const messages = {
     openProfile: "প্ৰফাইল খোলক",
   },
   producer: {
-    backToMap: "মানচিত্ৰলৈ উভতি যাওক",
     profile: "উৎপাদকৰ প্ৰফাইল",
     expandedProfile: "সম্প্ৰসাৰিত প্ৰফাইল",
     website: "ৱেবছাইট",

@@ -154,8 +154,6 @@ const messages = {
     },
     categories: "Nā ʻano",
     allCategories: "Nā mea a pau",
-    showMore: "Hōʻike hou aku",
-    showMapOnly: "Hōʻike wale i nā mea ma ka palapala ʻāina",
     emptyMapView: "ʻAʻohe mea hana i ʻike ʻia ma kēia nānā palapala ʻāina.",
     openProfile: "Wehe i ka ʻike",
     producers: "Nā mea hana",
@@ -176,7 +174,6 @@ const messages = {
     openProfile: "Wehe i ka ʻike",
   },
   producer: {
-    backToMap: "Hoʻi i ka palapala ʻāina",
     profile: "ʻIke o ka mea hana",
     expandedProfile: "ʻIke hoʻonui ʻia",
     website: "Pūnaewele",

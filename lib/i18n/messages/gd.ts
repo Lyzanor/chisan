@@ -156,8 +156,6 @@ const messages = {
     mapped: { one: "{count} air a’ mhapa", other: "{count} air a’ mhapa" },
     categories: "Roinnean",
     allCategories: "Uile",
-    showMore: "Seall barrachd",
-    showMapOnly: "Seall dìreach an fheadhainn air a’ mhapa",
     emptyMapView: "Chan eil riochdairean rim faicinn san t-sealladh mapa seo.",
     openProfile: "Fosgail pròifil",
     producers: "Riochdairean",
@@ -178,7 +176,6 @@ const messages = {
     openProfile: "Fosgail pròifil",
   },
   producer: {
-    backToMap: "Air ais chun mhapa",
     profile: "Pròifil an riochdaire",
     expandedProfile: "Pròifil leudaichte",
     website: "Làrach-lìn",

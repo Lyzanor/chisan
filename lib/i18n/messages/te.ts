@@ -154,8 +154,6 @@ const messages = {
     mapped: { one: "మ్యాప్‌లో {count}", other: "మ్యాప్‌లో {count}" },
     categories: "వర్గాలు",
     allCategories: "అన్నీ",
-    showMore: "మరిన్ని చూడండి",
-    showMapOnly: "మ్యాప్‌లో ఉన్న ఉత్పత్తిదారులను మాత్రమే చూడండి",
     emptyMapView: "ఈ మ్యాప్ వీక్షణలో ఉత్పత్తిదారులు ఎవరూ కనిపించడం లేదు.",
     openProfile: "ప్రొఫైల్‌ను తెరవండి",
     producers: "ఉత్పత్తిదారులు",
@@ -176,7 +174,6 @@ const messages = {
     openProfile: "ప్రొఫైల్‌ను తెరవండి",
   },
   producer: {
-    backToMap: "మ్యాప్‌కు తిరిగి వెళ్లండి",
     profile: "ఉత్పత్తిదారు ప్రొఫైల్",
     website: "వెబ్‌సైట్",
     googleMaps: "Google Maps",

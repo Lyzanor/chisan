@@ -142,8 +142,6 @@ const messages = {
     mapped: { one: "ਨਕਸ਼ੇ ਉੱਤੇ {count}", other: "ਨਕਸ਼ੇ ਉੱਤੇ {count}" },
     categories: "ਸ਼੍ਰੇਣੀਆਂ",
     allCategories: "ਸਭ",
-    showMore: "ਹੋਰ ਵੇਖੋ",
-    showMapOnly: "ਸਿਰਫ਼ ਨਕਸ਼ੇ ਉੱਤੇ ਮੌਜੂਦ ਉਤਪਾਦਕ ਵੇਖੋ",
     emptyMapView: "ਨਕਸ਼ੇ ਦੇ ਇਸ ਦ੍ਰਿਸ਼ ਵਿੱਚ ਕੋਈ ਉਤਪਾਦਕ ਦਿਖਾਈ ਨਹੀਂ ਦੇ ਰਿਹਾ।",
     openProfile: "ਪ੍ਰੋਫ਼ਾਈਲ ਖੋਲ੍ਹੋ",
     producers: "ਉਤਪਾਦਕ",
@@ -164,7 +162,6 @@ const messages = {
     openProfile: "ਪ੍ਰੋਫ਼ਾਈਲ ਖੋਲ੍ਹੋ",
   },
   producer: {
-    backToMap: "ਨਕਸ਼ੇ ਉੱਤੇ ਵਾਪਸ ਜਾਓ",
     profile: "ਉਤਪਾਦਕ ਪ੍ਰੋਫ਼ਾਈਲ",
     website: "ਵੈੱਬਸਾਈਟ",
     googleMaps: "Google Maps",

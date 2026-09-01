@@ -152,8 +152,6 @@ const messages = {
     mapped: { one: "{count} 'mapeng", other: "{count} 'mapeng" },
     categories: "Lihlopha",
     allCategories: "Tsohle",
-    showMore: "Sheba tse ling",
-    showMapOnly: "Sheba feela ba 'mapeng",
     emptyMapView: "Ha ho bahlahisi ba bonahalang ponong ena ea 'mapa.",
     openProfile: "Bula profaele",
     producers: "Bahlahisi",
@@ -174,7 +172,6 @@ const messages = {
     openProfile: "Bula profaele",
   },
   producer: {
-    backToMap: "Khutlela 'mapeng",
     profile: "Profaele ea mohlahisi",
     website: "Webosaete",
     googleMaps: "Google Maps",

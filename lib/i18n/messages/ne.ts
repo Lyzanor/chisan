@@ -149,8 +149,6 @@ const messages = {
     mapped: { one: "नक्सामा {count}", other: "नक्सामा {count}" },
     categories: "श्रेणीहरू",
     allCategories: "सबै",
-    showMore: "थप हेर्नुहोस्",
-    showMapOnly: "नक्सामा भएका उत्पादक मात्र हेर्नुहोस्",
     emptyMapView: "नक्साको यो दृश्यमा कुनै उत्पादक देखिँदैनन्।",
     openProfile: "प्रोफाइल खोल्नुहोस्",
     producers: "उत्पादकहरू",
@@ -171,7 +169,6 @@ const messages = {
     openProfile: "प्रोफाइल खोल्नुहोस्",
   },
   producer: {
-    backToMap: "नक्सामा फर्कनुहोस्",
     profile: "उत्पादक प्रोफाइल",
     website: "वेबसाइट",
     googleMaps: "Google Maps",

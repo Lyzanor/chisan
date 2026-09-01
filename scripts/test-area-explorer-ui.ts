@@ -76,6 +76,16 @@ test("search and producer preview keep the list and map in sync", () => {
   assert.match(explorer, /onMouseEnter=\{\(\) => previewProducer\(item\.slug\)\}/);
   assert.match(explorer, /onFocus=\{\(\) => previewProducer\(item\.slug\)\}/);
   assert.match(explorer, /presentedItem\?\.slug === item\.slug \? "is-active"/);
+  assert.match(explorer, /router\.push\(href, \{ scroll: false \}\)/);
+  assert.match(
+    explorer,
+    /return \[\.\.\.baseVisibleItems, selectedItem\]/,
+  );
+  assert.match(explorer, /selectedListItem\.scrollIntoView\(\{ block: "nearest" \}\)/);
+  assert.match(
+    explorer,
+    /scrollSelectedListItemAfterMapSelectionRef\.current = true/,
+  );
   assert.doesNotMatch(explorer, /is-selected/);
   assert.match(map, /map\.flyTo\(\[point\.latitude, point\.longitude\], zoom/);
   assert.match(explorer, /key: selectedItem\.slug/);
@@ -83,8 +93,9 @@ test("search and producer preview keep the list and map in sync", () => {
   assert.doesNotMatch(explorer, /key=\{category \|\| "all"\}/);
   assert.match(
     explorer,
-    /if \(closeMobileList && window\.matchMedia[\s\S]*?setExpandedCategory\(null\)/,
+    /if \(closeMobileList && window\.matchMedia[\s\S]*?setIsMobileListOpen\(false\)/,
   );
+  assert.doesNotMatch(explorer, /setExpandedCategory/);
 
   assert.match(producerSelectionExplorer, /selectedKey=\{selectedItem\?\.key\}/);
   assert.match(producerSelectionExplorer, /focusRequest=\{mapFocusRequest\}/);
@@ -136,7 +147,10 @@ test("selected producer information is one dismissible profile surface", () => {
     assert.match(surface, /returnFocusRef: mapSurfaceRef/);
     assert.match(surface, /tabIndex=\{-1\}/);
   }
-  assert.match(explorer, /replaceCatalogState\(clearSelectionHref\)/);
+  assert.match(
+    explorer,
+    /router\.replace\(clearSelectionHref, \{ scroll: false \}\)/,
+  );
   assert.match(
     producerSelectionExplorer,
     /replaceSelectionState\(clearSelectionHref\)/,
@@ -148,24 +162,34 @@ test("selected producer information is one dismissible profile surface", () => {
   );
 });
 
-test("the producer list follows the visible map and can expand deliberately", () => {
-  assert.match(explorer, /mapVisibleProducerKeys/);
+test("the producer list keeps nearby priority without a map-only scope", () => {
+  assert.match(explorer, /prioritizedProducerKeys/);
   assert.match(
     explorer,
     /onVisibleProducerKeysChange=\{handleVisibleProducerKeysChange\}/,
   );
-  assert.match(explorer, /mapVisibleProducerKeys\.flatMap/);
+  assert.match(explorer, /prioritizedProducerKeys\.flatMap/);
   assert.match(explorer, /const mappedItems = useMemo/);
-  assert.match(explorer, /const expandedItems = useMemo/);
-  assert.match(explorer, /isFullProducerListVisible \? expandedItems/);
+  assert.match(explorer, /const orderedItems = useMemo/);
+  assert.match(explorer, /orderedItems\.slice\(0, VISIBLE_PRODUCER_LIMIT\)/);
+  assert.match(
+    explorer,
+    /const listOrderLockedCategoryRef = useRef<string \| null>\(null\)/,
+  );
+  assert.match(
+    explorer,
+    /if \(listOrderLockedCategoryRef\.current === category\) return/,
+  );
+  assert.match(
+    explorer,
+    /function previewProducer[\s\S]*?listOrderLockedCategoryRef\.current = category/,
+  );
   assert.match(explorer, /model\.catalogMessages\.emptyMapView/);
   assert.match(explorer, /aria-live="polite"/);
-  assert.match(explorer, /model\.catalogMessages\.showMore/);
-  assert.match(explorer, /model\.catalogMessages\.showMapOnly/);
-  assert.match(explorer, /aria-pressed=\{isFullProducerListVisible\}/);
-  assert.match(explorer, /aria-controls=\{PRODUCER_RESULTS_ID\}/);
-  assert.match(explorer, /onClick=\{toggleProducerScope\}/);
-  assert.match(explorer, /\.item\(firstAdditionalResult\)[\s\S]*?\.focus\(\)/);
+  assert.doesNotMatch(explorer, /catalogMessages\.showMore/);
+  assert.doesNotMatch(explorer, /catalogMessages\.showMapOnly/);
+  assert.doesNotMatch(explorer, /toggleProducerScope/);
+  assert.doesNotMatch(explorer, /catalog-viewer-scope/);
   assert.match(
     mapBoundary,
     /onVisibleProducerKeysChange\?: \(keys: string\[\]\) => void/,
@@ -251,6 +275,28 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.match(producerDetail, /markerInteraction="static"/);
   assert.match(producerDetail, /singlePointZoom=\{16\}/);
   assert.match(producerDetail, /getCategoryIcon\(primaryCategory\)/);
+  assert.doesNotMatch(producerDetail, /DetailDesktopNav/);
+  assert.doesNotMatch(producerDetail, /detail-secondary-links/);
+  assert.doesNotMatch(producerDetail, /backToMap/);
+  assert.doesNotMatch(producerDetail, /detail-back-link/);
+  assert.doesNotMatch(producerDetail, /detail-mobile-bar/);
+});
+
+test("producer profile actions and ownership placement stay coherent", () => {
+  assert.match(
+    producerDetail,
+    /href=\{`mailto:\$\{email\}`\}>\{actionLabels\.contact\}<\/a>/,
+  );
+  assert.match(
+    producerDetail,
+    /href=\{facebook\}[\s\S]*?\{messages\.fieldLabels\.facebook\}/,
+  );
+  assert.match(
+    producerDetail,
+    /<\/section>\s*<Suspense fallback=\{null\}>\s*<ProducerAccountActions[\s\S]*?<section className="detail-related"/,
+  );
+  assert.doesNotMatch(styles, /\.detail-desktop-nav/);
+  assert.doesNotMatch(styles, /\.detail-secondary-links/);
 });
 
 test("private device coordinates only choose public producer focus keys", () => {

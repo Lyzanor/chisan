@@ -143,8 +143,6 @@ const messages = {
     mapped: { one: "नकाशावर {count}", other: "नकाशावर {count}" },
     categories: "वर्ग",
     allCategories: "सर्व",
-    showMore: "आणखी पहा",
-    showMapOnly: "फक्त नकाशावरील उत्पादक पहा",
     emptyMapView: "नकाशाच्या या दृश्यात कोणतेही उत्पादक दिसत नाहीत.",
     openProfile: "प्रोफाइल उघडा",
     producers: "उत्पादक",
@@ -165,7 +163,6 @@ const messages = {
     openProfile: "प्रोफाइल उघडा",
   },
   producer: {
-    backToMap: "नकाशावर परत जा",
     profile: "उत्पादक प्रोफाइल",
     website: "वेबसाइट",
     googleMaps: "Google Maps",

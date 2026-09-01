@@ -151,8 +151,6 @@ const messages = {
     mapped: { one: "ನಕ್ಷೆಯಲ್ಲಿ {count}", other: "ನಕ್ಷೆಯಲ್ಲಿ {count}" },
     categories: "ವರ್ಗಗಳು",
     allCategories: "ಎಲ್ಲವೂ",
-    showMore: "ಇನ್ನಷ್ಟು ನೋಡಿ",
-    showMapOnly: "ನಕ್ಷೆಯಲ್ಲಿರುವ ಉತ್ಪಾದಕರನ್ನು ಮಾತ್ರ ನೋಡಿ",
     emptyMapView: "ನಕ್ಷೆಯ ಈ ನೋಟದಲ್ಲಿ ಯಾವುದೇ ಉತ್ಪಾದಕರು ಕಾಣಿಸುತ್ತಿಲ್ಲ.",
     openProfile: "ಪ್ರೊಫೈಲ್ ತೆರೆಯಿರಿ",
     producers: "ಉತ್ಪಾದಕರು",
@@ -173,7 +171,6 @@ const messages = {
     openProfile: "ಪ್ರೊಫೈಲ್ ತೆರೆಯಿರಿ",
   },
   producer: {
-    backToMap: "ನಕ್ಷೆಗೆ ಹಿಂತಿರುಗಿ",
     profile: "ಉತ್ಪಾದಕರ ಪ್ರೊಫೈಲ್",
     expandedProfile: "ವಿಸ್ತೃತ ಪ್ರೊಫೈಲ್",
     website: "ವೆಬ್‌ಸೈಟ್",

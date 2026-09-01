@@ -145,8 +145,6 @@ const messages = {
     mapped: { one: "মানচিত্রে {count} জন", other: "মানচিত্রে {count} জন" },
     categories: "বিভাগ",
     allCategories: "সব",
-    showMore: "আরও দেখুন",
-    showMapOnly: "শুধু মানচিত্রে থাকা উৎপাদকদের দেখুন",
     emptyMapView: "মানচিত্রের এই দৃশ্যে কোনো উৎপাদক দেখা যাচ্ছে না।",
     openProfile: "প্রোফাইল খুলুন",
     producers: "উৎপাদক",
@@ -167,7 +165,6 @@ const messages = {
     openProfile: "প্রোফাইল খুলুন",
   },
   producer: {
-    backToMap: "মানচিত্রে ফিরে যান",
     profile: "উৎপাদকের প্রোফাইল",
     expandedProfile: "বর্ধিত প্রোফাইল",
     website: "ওয়েবসাইট",

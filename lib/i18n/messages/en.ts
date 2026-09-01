@@ -151,8 +151,6 @@ const messages = {
     },
     categories: "Categories",
     allCategories: "All",
-    showMore: "Show more",
-    showMapOnly: "Show only those on the map",
     emptyMapView: "No producers are visible in this map view.",
     openProfile: "Open profile",
     producers: "Producers",
@@ -173,7 +171,6 @@ const messages = {
     openProfile: "Open profile",
   },
   producer: {
-    backToMap: "Back to the map",
     profile: "Producer profile",
     website: "Website",
     googleMaps: "Google Maps",

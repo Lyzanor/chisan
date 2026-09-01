@@ -158,8 +158,6 @@ const messages = {
     mapped: { one: "வரைபடத்தில் {count}", other: "வரைபடத்தில் {count}" },
     categories: "வகைகள்",
     allCategories: "அனைத்தும்",
-    showMore: "மேலும் காண்க",
-    showMapOnly: "வரைபடத்தில் உள்ள உற்பத்தியாளர்களை மட்டும் காண்க",
     emptyMapView: "இந்த வரைபடக் காட்சியில் உற்பத்தியாளர்கள் யாரும் தெரியவில்லை.",
     openProfile: "சுயவிவரத்தைத் திறக்கவும்",
     producers: "உற்பத்தியாளர்கள்",
@@ -180,7 +178,6 @@ const messages = {
     openProfile: "சுயவிவரத்தைத் திறக்கவும்",
   },
   producer: {
-    backToMap: "வரைபடத்திற்குத் திரும்புக",
     profile: "உற்பத்தியாளர் சுயவிவரம்",
     website: "இணையதளம்",
     googleMaps: "Google Maps",

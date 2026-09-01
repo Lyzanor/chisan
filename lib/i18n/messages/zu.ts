@@ -151,8 +151,6 @@ const messages = {
     mapped: { one: "{count} kumephu", other: "{count} kumephu" },
     categories: "Izigaba",
     allCategories: "Konke",
-    showMore: "Bona okwengeziwe",
-    showMapOnly: "Bona kuphela abakumephu",
     emptyMapView: "Abekho abakhiqizi ababonakalayo kulokhu kubuka kwemephu.",
     openProfile: "Vula iphrofayela",
     producers: "Abakhiqizi",
@@ -173,7 +171,6 @@ const messages = {
     openProfile: "Vula iphrofayela",
   },
   producer: {
-    backToMap: "Buyela kumephu",
     profile: "Iphrofayela yomkhiqizi",
     website: "Iwebhusayithi",
     googleMaps: "Google Maps",

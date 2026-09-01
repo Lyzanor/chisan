@@ -151,8 +151,6 @@ const messages = {
     mapped: { one: "{count} ar y map", other: "{count} ar y map" },
     categories: "Categorïau",
     allCategories: "Pob un",
-    showMore: "Dangos mwy",
-    showMapOnly: "Dangos dim ond y rhai ar y map",
     emptyMapView: "Nid oes unrhyw gynhyrchwyr yn weladwy yn yr olygfa map hon.",
     openProfile: "Agor proffil",
     producers: "Cynhyrchwyr",
@@ -173,7 +171,6 @@ const messages = {
     openProfile: "Agor proffil",
   },
   producer: {
-    backToMap: "Nôl i'r map",
     profile: "Proffil y cynhyrchydd",
     expandedProfile: "Proffil estynedig",
     website: "Gwefan",

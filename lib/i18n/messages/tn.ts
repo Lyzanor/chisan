@@ -152,8 +152,6 @@ const messages = {
     mapped: { one: "{count} mo mmapeng", other: "{count} mo mmapeng" },
     categories: "Dikgato",
     allCategories: "Tsotlhe",
-    showMore: "Bona tse dingwe",
-    showMapOnly: "Bona fela ba ba mo mmapeng",
     emptyMapView: "Ga go na badiri ba ba bonalang mo ponong eno ya mmapa.",
     openProfile: "Bula profaele",
     producers: "Badiri",
@@ -175,7 +173,6 @@ const messages = {
     openProfile: "Bula profaele",
   },
   producer: {
-    backToMap: "Boela kwa mmapeng",
     profile: "Profaele ya modiri",
     website: "Webosaete",
     googleMaps: "Google Maps",

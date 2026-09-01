@@ -5,7 +5,6 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
 
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
-import { DetailDesktopNav } from "@/components/detail-desktop-nav";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import { ProducersMap } from "@/components/map/producers-map";
@@ -30,13 +29,11 @@ import {
 import {
   findProducerBySlug,
   getLocalizedCatalogLabel,
-  listCategories,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
 import {
   formatCategoryList,
   getCategoryLabel,
-  getCategoryPresentation,
 } from "@/lib/i18n/categories";
 import { buildCatalogScope } from "@/lib/i18n/catalog-scope";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
@@ -156,9 +153,8 @@ export default async function ProducerPage({
 
   const { country, area, areaOption, scope, isProducerRouteAlias } = resolved;
   const locale = scope.locale;
-  const [producer, categories, messages] = await Promise.all([
+  const [producer, messages] = await Promise.all([
     findProducerBySlug(resolved.producer.slug, country.slug, area, locale),
-    listCategories(country.slug, area),
     loadMessages(locale),
   ]);
 
@@ -168,12 +164,6 @@ export default async function ProducerPage({
 
   const catalogQuery = readCatalogQueryContext(query);
   const canonicalSegment = buildProducerPathSegment(producer.slug);
-  const backHref = buildCatalogHref({
-    scope,
-    area,
-    category: catalogQuery.category,
-    highlight: producer.slug,
-  });
 
   if (
     !isCanonicalCatalogSegment(catalog, scope) ||
@@ -228,9 +218,6 @@ export default async function ProducerPage({
       getCategoryLabel(pointCategory, locale),
     ),
   }));
-  const categoryPresentations = categories.map((producerCategory) =>
-    getCategoryPresentation(producerCategory, locale),
-  );
   const countryLabel = getLocalizedCatalogLabel(country, locale);
   const areaLabel = getLocalizedCatalogLabel(areaOption, locale);
   const primaryCategory = producer.categories[0];
@@ -241,13 +228,6 @@ export default async function ProducerPage({
   const relatedAreaHref = buildCatalogHref({ scope, area });
   const actionLabels = getProducerActionLabels(locale);
   const profileQrPath = buildProducerHref(producer, { scope, area });
-  const navMessages = {
-    navigation: messages.producer.navigation,
-    map: messages.producer.map,
-    categories: messages.producer.categories,
-    allCategories: messages.producer.allCategories,
-    information: messages.producer.information,
-  };
   const mapMessages = {
     loading: messages.map.loading,
     emptyCoordinates: messages.map.emptyCoordinates,
@@ -308,30 +288,12 @@ export default async function ProducerPage({
           __html: serializeStructuredData(structuredData),
         }}
       />
-      <div className="detail-mobile-bar">
-        <Link href={backHref} className="detail-back-link">
-          ← {messages.producer.backToMap}
-        </Link>
-      </div>
       <article className="detail-shell">
-        <DetailDesktopNav
-          categories={categoryPresentations}
-          scope={scope}
-          area={area}
-          messages={navMessages}
-        />
         <LanguageMenuRegistration
           currentLocale={locale}
           label={messages.languageSwitcher.label}
           options={languageOptions}
         />
-        <Link
-          href={backHref}
-          className="detail-back-link detail-back-link--desktop"
-        >
-          ← {messages.producer.backToMap}
-        </Link>
-
         <nav className="detail-breadcrumb" aria-label={messages.producer.navigation}>
           <ol>
             <li>
@@ -394,6 +356,15 @@ export default async function ProducerPage({
                   <span aria-hidden="true">↗</span>
                 </a>
               ) : null}
+              {facebook ? (
+                <a href={facebook} target="_blank" rel="noreferrer">
+                  {messages.fieldLabels.facebook}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ) : null}
+              {email ? (
+                <a href={`mailto:${email}`}>{actionLabels.contact}</a>
+              ) : null}
             </div>
             {onlineSales === "sí" ? (
               <div
@@ -415,30 +386,6 @@ export default async function ProducerPage({
                 ))}
               </div>
             ) : null}
-            {email || facebook ? (
-              <div className="detail-secondary-links">
-                {email ? (
-                  <a href={`mailto:${email}`}>{messages.producer.email}</a>
-                ) : null}
-                {facebook ? (
-                  <a href={facebook} target="_blank" rel="noreferrer">
-                    {messages.fieldLabels.facebook}
-                  </a>
-                ) : null}
-              </div>
-            ) : null}
-            <Suspense fallback={null}>
-              <ProducerAccountActions
-                country={country.slug}
-                producerId={producer.producerId}
-                returnTo={buildProducerHref(producer, {
-                  scope,
-                  area,
-                  ...catalogQuery,
-                })}
-                messages={messages.accountActions}
-              />
-            </Suspense>
           </div>
           <figure className="detail-hero-media">
             <Image
@@ -552,6 +499,19 @@ export default async function ProducerPage({
             />
           </div>
         </section>
+
+        <Suspense fallback={null}>
+          <ProducerAccountActions
+            country={country.slug}
+            producerId={producer.producerId}
+            returnTo={buildProducerHref(producer, {
+              scope,
+              area,
+              ...catalogQuery,
+            })}
+            messages={messages.accountActions}
+          />
+        </Suspense>
 
         <section className="detail-related" aria-labelledby="detail-related-title">
           <p className="detail-eyebrow">{messages.producer.categories}</p>

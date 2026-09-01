@@ -148,8 +148,6 @@ const messages = {
     },
     categories: "カテゴリー",
     allCategories: "すべて",
-    showMore: "もっと見る",
-    showMapOnly: "地図上の生産者のみ表示",
     emptyMapView: "この地図表示には生産者が表示されていません。",
     openProfile: "プロフィールを開く",
     producers: "生産者",
@@ -170,7 +168,6 @@ const messages = {
     openProfile: "プロフィールを開く",
   },
   producer: {
-    backToMap: "地図に戻る",
     profile: "生産者プロフィール",
     website: "ウェブサイト",
     googleMaps: "Google マップ",

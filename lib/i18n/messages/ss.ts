@@ -150,8 +150,6 @@ const messages = {
     mapped: { one: "{count} ebaleni", other: "{count} ebaleni" },
     categories: "Tigaba",
     allCategories: "Konkhe",
-    showMore: "Bona lokunyenti",
-    showMapOnly: "Bona labo labakumephu kuphela",
     emptyMapView: "Kute bakhiciti lababonakalako kulombono welimephu.",
     openProfile: "Vula iphrofayili",
     producers: "Bakhiciti",
@@ -172,7 +170,6 @@ const messages = {
     openProfile: "Vula iphrofayili",
   },
   producer: {
-    backToMap: "Buyela ekhempini",
     profile: "Iphrofayili yemkhiqizi",
     website: "Iwebhusayithi",
     googleMaps: "Google Maps",

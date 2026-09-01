@@ -118,10 +118,13 @@ or heatmaps — ever.
 - All categories stay in one scrollable filter bar, one icon and label each.
 - Result counts remain available to assistive technology; visual density stays
   visible spatially without a redundant total.
-- The discovery list follows the current map bounds and orders producers from
-  the visible centre outwards. `Show more` is an explicit escape hatch to the
-  broader mapped area list while keeping the current map results first; every
-  row can therefore resolve to a map point.
+- The discovery list uses one continuous mapped roster, with producers near the
+  current opening view first and no map-only scope. Once list navigation begins,
+  that order stays fixed so map focus cannot move a row beneath the pointer or
+  keyboard focus.
+- Marker activation highlights and reveals the matching producer row. When the
+  selected producer falls outside the bounded base roster, append that one row
+  without reordering the existing results, then scroll it into view.
 - Searching filters producer name, locality, category and description without
   introducing another catalog source or changing the URL.
 - Hovering or focusing a list row previews the exact producer on the map and
@@ -175,6 +178,15 @@ point target; this is the sole exception to the 44px target rule and is allowed
 only when the synchronized list provides an equivalent 44px control for every
 interactive point. Neighbourhood pictograms use the full 44px target. Fixed
 detail points are non-essential map context.
+
+## Producer profile
+
+The breadcrumb provides the profile's catalog context; the page does not repeat
+it with a sticky Map / Categories / Information bar. Website, directions,
+telephone, Instagram, Facebook and public email use the same compact action
+treatment, with email labelled as a contact action rather than exposing the
+address as the primary call to action. Account and ownership actions sit after
+the location map and before related-category discovery.
 
 ## Brand
 

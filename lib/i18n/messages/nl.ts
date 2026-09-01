@@ -85,7 +85,7 @@ const messages = {
     title: "Producentenkaart", summary: "{area} · {producers} · {mapped}",
     producersFound: { one: "{count} producent gevonden", other: "{count} producenten gevonden" },
     mapped: { one: "{count} op de kaart", other: "{count} op de kaart" },
-    categories: "Categorieën", allCategories: "Alle", showMore: "Meer tonen", showMapOnly: "Alleen producenten op de kaart tonen",
+    categories: "Categorieën", allCategories: "Alle",
     emptyMapView: "Er zijn geen producenten zichtbaar in deze kaartweergave.",
     openProfile: "Profiel openen", producers: "Producenten", searchPlaceholder: "Producenten zoeken", showing: "{visible} van {total} worden getoond",
     totalInArea: { one: "{count} in totaal in {area}", other: "{count} in totaal in {area}" },
@@ -95,7 +95,7 @@ const messages = {
     loading: "Kaart wordt geladen…", emptyCoordinates: "Geen geldige coördinaten in deze selectie.",
     producerMap: "Producentenkaart", producers: "Producenten", openProfile: "Profiel openen", },
   producer: {
-    backToMap: "Terug naar de kaart", profile: "Producentenprofiel", website: "Website", googleMaps: "Google Maps",
+    profile: "Producentenprofiel", website: "Website", googleMaps: "Google Maps",
     phone: "Telefoon", email: "E-mail", imageAlt: "Afbeelding van {producer}", location: "Locatie", mapAria: "Kaart met {producer}",
     details: "Details", field: "Veld", value: "Waarde", navigation: "Navigatie", map: "Kaart", categories: "Categorieën", allCategories: "Alle", information: "Informatie", expandedProfile: "Uitgebreid profiel",
   },

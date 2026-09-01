@@ -163,8 +163,6 @@ const messages = {
     },
     categories: "Categorías",
     allCategories: "Todas",
-    showMore: "Ver más",
-    showMapOnly: "Ver solo los del mapa",
     emptyMapView: "No hay productores visibles en este encuadre.",
     openProfile: "Abrir perfil",
     producers: "Productores",
@@ -185,7 +183,6 @@ const messages = {
     openProfile: "Abrir perfil",
   },
   producer: {
-    backToMap: "Volver al mapa",
     profile: "Perfil del productor",
     website: "Sitio web",
     googleMaps: "Google Maps",

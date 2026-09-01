@@ -154,8 +154,6 @@ const messages = {
     },
     categories: "Catagóirí",
     allCategories: "Uile",
-    showMore: "Taispeáin tuilleadh",
-    showMapOnly: "Taispeáin iad siúd ar an léarscáil amháin",
     emptyMapView: "Níl aon táirgeoirí le feiceáil san amharc léarscáile seo.",
     openProfile: "Oscail próifíl",
     producers: "Táirgeoirí",
@@ -176,7 +174,6 @@ const messages = {
     openProfile: "Oscail próifíl",
   },
   producer: {
-    backToMap: "Fill ar an léarscáil",
     profile: "Próifíl an táirgeora",
     expandedProfile: "Próifíl leathnaithe",
     website: "Suíomh gréasáin",

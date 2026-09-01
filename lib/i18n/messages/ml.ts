@@ -154,8 +154,6 @@ const messages = {
     mapped: { one: "മാപ്പിൽ {count}", other: "മാപ്പിൽ {count}" },
     categories: "വിഭാഗങ്ങൾ",
     allCategories: "എല്ലാം",
-    showMore: "കൂടുതൽ കാണുക",
-    showMapOnly: "മാപ്പിലുള്ള ഉൽപ്പാദകരെ മാത്രം കാണുക",
     emptyMapView: "മാപ്പിന്റെ ഈ കാഴ്ചയിൽ ഉൽപ്പാദകരാരും ദൃശ്യമല്ല.",
     openProfile: "പ്രൊഫൈൽ തുറക്കുക",
     producers: "ഉൽപ്പാദകർ",
@@ -173,7 +171,6 @@ const messages = {
     openProfile: "പ്രൊഫൈൽ തുറക്കുക",
   },
   producer: {
-    backToMap: "മാപ്പിലേക്ക് മടങ്ങുക",
     profile: "ഉൽപ്പാദകന്റെ പ്രൊഫൈൽ",
     expandedProfile: "വിപുലീകരിച്ച പ്രൊഫൈൽ",
     website: "വെബ്‌സൈറ്റ്",

@@ -148,8 +148,6 @@ const messages = {
     mapped: { one: "ମାନଚିତ୍ରରେ {count}", other: "ମାନଚିତ୍ରରେ {count}" },
     categories: "ବର୍ଗଗୁଡ଼ିକ",
     allCategories: "ସମସ୍ତ",
-    showMore: "ଅଧିକ ଦେଖନ୍ତୁ",
-    showMapOnly: "କେବଳ ମାନଚିତ୍ରରେ ଥିବା ଉତ୍ପାଦକମାନଙ୍କୁ ଦେଖନ୍ତୁ",
     emptyMapView: "ମାନଚିତ୍ରର ଏହି ଦୃଶ୍ୟରେ କୌଣସି ଉତ୍ପାଦକ ଦେଖାଯାଉ ନାହାନ୍ତି।",
     openProfile: "ପ୍ରୋଫାଇଲ୍ ଖୋଲନ୍ତୁ",
     producers: "ଉତ୍ପାଦକ",
@@ -170,7 +168,6 @@ const messages = {
     openProfile: "ପ୍ରୋଫାଇଲ୍ ଖୋଲନ୍ତୁ",
   },
   producer: {
-    backToMap: "ମାନଚିତ୍ରକୁ ଫେରନ୍ତୁ",
     profile: "ଉତ୍ପାଦକ ପ୍ରୋଫାଇଲ୍",
     website: "ୱେବସାଇଟ୍",
     googleMaps: "Google Maps",

@@ -137,8 +137,6 @@ const messages = {
     mapped: { one: "{count} sulla mappa", other: "{count} sulla mappa" },
     categories: "Categorie",
     allCategories: "Tutte",
-    showMore: "Mostra altro",
-    showMapOnly: "Mostra solo quelli sulla mappa",
     emptyMapView: "Nessun produttore è visibile in questa vista della mappa.",
     openProfile: "Apri il profilo",
     producers: "Produttori",
@@ -156,7 +154,6 @@ const messages = {
     openProfile: "Apri il profilo",
   },
   producer: {
-    backToMap: "Torna alla mappa",
     profile: "Profilo del produttore",
     website: "Sito web",
     googleMaps: "Google Maps",

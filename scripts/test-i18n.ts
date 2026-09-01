@@ -958,11 +958,13 @@ test("producer conversion actions stay localized for every public locale", () =>
     buyOnline: "Comprar online",
     directions: "Cómo llegar",
     call: "Llamar",
+    contact: "Contactar",
   });
   assert.deepEqual(getProducerActionLabels("ca"), {
     buyOnline: "Comprar en línia",
     directions: "Com arribar-hi",
     call: "Trucar",
+    contact: "Contactar",
   });
 });
 

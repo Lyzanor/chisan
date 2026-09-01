@@ -148,8 +148,6 @@ const messages = {
     mapped: { one: "मानचित्र पर {count}", other: "मानचित्र पर {count}" },
     categories: "श्रेणियाँ",
     allCategories: "सभी",
-    showMore: "और देखें",
-    showMapOnly: "सिर्फ़ नक्शे पर दिख रहे उत्पादक देखें",
     emptyMapView: "नक्शे के इस दृश्य में कोई उत्पादक दिखाई नहीं दे रहा है।",
     openProfile: "प्रोफ़ाइल खोलें",
     producers: "उत्पादक",
@@ -170,7 +168,6 @@ const messages = {
     openProfile: "प्रोफ़ाइल खोलें",
   },
   producer: {
-    backToMap: "मानचित्र पर लौटें",
     profile: "उत्पादक प्रोफ़ाइल",
     expandedProfile: "विस्तृत प्रोफ़ाइल",
     website: "वेबसाइट",

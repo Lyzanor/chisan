@@ -134,8 +134,6 @@ export type Messages = {
     mapped: PluralMessage;
     categories: string;
     allCategories: string;
-    showMore: string;
-    showMapOnly: string;
     emptyMapView: string;
     openProfile: string;
     producers: string;
@@ -153,7 +151,6 @@ export type Messages = {
     openProfile: string;
   };
   producer: {
-    backToMap: string;
     profile: string;
     website: string;
     googleMaps: string;

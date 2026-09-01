@@ -153,8 +153,6 @@ const messages = {
     },
     categories: "Kategorien",
     allCategories: "Alle",
-    showMore: "Mehr anzeigen",
-    showMapOnly: "Nur Produzenten auf der Karte anzeigen",
     emptyMapView: "In diesem Kartenausschnitt sind keine Erzeuger sichtbar.",
     openProfile: "Profil öffnen",
     producers: "Erzeuger",
@@ -175,7 +173,6 @@ const messages = {
     openProfile: "Profil öffnen",
   },
   producer: {
-    backToMap: "Zurück zur Karte",
     profile: "Erzeugerprofil",
     website: "Website",
     googleMaps: "Google Maps",
