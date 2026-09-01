@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import {
   updateAccountProfileAction,
+  updatePublicProfileQrAction,
   updatePublicProfileAction,
 } from "@/app/(application)/cuenta/actions";
 import {
@@ -14,6 +15,9 @@ import {
 import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
 import { ProfileQrLabel } from "@/components/profile-qr-label";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import {
+  getActiveUserProfilePremiumEntitlement,
+} from "@/lib/accounts/profile-qr-entitlements";
 import { publicProfileBaseLocationKey } from "@/lib/accounts/public-profile-location";
 import {
   getLocalizedCatalogLabel,
@@ -25,6 +29,7 @@ import {
   parseExplicitLocale,
 } from "@/lib/i18n/catalog-scope";
 import { listEnabledLocationAreas } from "@/lib/location/enabled-location-areas.server";
+import { isProfileQrEnabled } from "@/lib/profile-qr";
 import { SITE_NAME } from "@/lib/site";
 
 const ACCOUNT_LOCALE = "en" as const;
@@ -48,6 +53,14 @@ export default async function AccountProfilePage({
     headers(),
   ]);
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
+
+  const publicProfilePremiumEntitlement =
+    await getActiveUserProfilePremiumEntitlement(account.id);
+  const profileQrEnabled = isProfileQrEnabled(
+    publicProfilePremiumEntitlement?.metadata,
+  );
+  const publicProfileVisible =
+    Boolean(account.publicHandle) && account.publicProfileVisibility !== "private";
 
   const publishedCountries = listPublishedCountries();
   const locationAreas = listEnabledLocationAreas({
@@ -140,7 +153,7 @@ export default async function AccountProfilePage({
               Producer facts and links continue to come from the current CSV catalog.
             </p>
           </div>
-          {account.publicHandle && account.publicProfileVisibility !== "private" ? (
+          {publicProfileVisible && account.publicHandle ? (
             <Link
               href={`/u/${account.publicHandle}`}
               className="account-button account-button--secondary"
@@ -238,18 +251,50 @@ export default async function AccountProfilePage({
             Save public profile
           </button>
         </form>
-        {account.publicHandle && account.publicProfileVisibility !== "private" ? (
+        {publicProfilePremiumEntitlement ? (
+          <div className="account-callout account-form-section--premium">
+            <strong>Premium QR label</strong>
+            <p>
+              The QR label is optional. It appears on your public profile only after you enable
+              it here, and only while Premium remains active.
+            </p>
+            <form action={updatePublicProfileQrAction} className="account-form">
+              <label className="account-field">
+                <span>QR label</span>
+                <span>
+                  <input
+                    type="checkbox"
+                    name="profileQrEnabled"
+                    value="yes"
+                    defaultChecked={profileQrEnabled}
+                  />{" "}
+                  Show and enable the downloadable QR label
+                </span>
+                {!publicProfileVisible ? (
+                  <small>
+                    {profileQrEnabled
+                      ? "The private profile hides this label. You can disable the stored preference here."
+                      : "Make this profile Unlisted or Public and save it first."}
+                  </small>
+                ) : null}
+              </label>
+              <button
+                type="submit"
+                className="account-button"
+                disabled={!publicProfileVisible && !profileQrEnabled}
+              >
+                Save QR preference
+              </button>
+            </form>
+          </div>
+        ) : null}
+        {profileQrEnabled && publicProfileVisible && account.publicHandle ? (
           <ProfileQrLabel
             kind="selection"
             locale={ACCOUNT_LOCALE}
             name={account.displayName || `@${account.publicHandle}`}
             path={`/u/${account.publicHandle}`}
           />
-        ) : account.publicHandle ? (
-          <p className="account-callout">
-            Choose Unlisted or Public and save these settings to activate your profile QR and
-            print label.
-          </p>
         ) : null}
       </section>
     </div>

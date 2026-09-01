@@ -104,13 +104,20 @@ emit `noindex`; public profiles are eligible for indexing. Changing profile
 visibility never changes profile kind, claims, memberships, staff grants or
 producer entitlements.
 
-Every non-private public profile may present and download a Chisan QR label for
-its stable `/u/<public_handle>` URL. The QR and generated image are presentation
-of that route only: they store no account or catalog state and do not create a
+A non-private public profile may present and download a Chisan QR label for its
+stable `/u/<public_handle>` URL only while the account has the exact active
+user-scoped `user.profile.premium` entitlement and has explicitly enabled the
+label from `/cuenta/perfil`. The opt-in is `false` by default and is stored as
+the presentation flag `profileQrEnabled` in that entitlement's metadata. An
+inactive entitlement fails closed and hides the label; a later entitlement
+starts disabled again. The QR and generated image are presentation of the
+stable route only: they store no account or catalog identity and do not create a
 second identifier. The label uses the neutral selection treatment, even when
 the account belongs to a restaurant or shop, until an explicit reviewed public
 business-type field exists. A private profile never exposes an active label
-because its destination intentionally returns `404`.
+because its destination intentionally returns `404`. The producer-scoped
+expanded-profile purchase does not grant this user entitlement, and there is no
+self-service user-profile premium purchase flow in the current release.
 
 Favorites remain private by default. A favorite appears on the public profile
 only after the account explicitly enables `show_on_public_profile` for that
@@ -217,6 +224,13 @@ property of a user account. Its only authorization key is an active
 `producer.profile.premium` entitlement for `(country, producer_id)`. It permits
 proposal and presentation of the premium CSV field set; it never grants
 ownership, verification, ranking or publication without review.
+
+The printable producer QR is an optional presentation feature within that same
+capability. It is hidden by default and renders only while the entitlement is
+active and its `profileQrEnabled` metadata flag is `true`. Only the exact active
+owner may change that flag from the producer profile controls. The preference
+does not enter the CSV, does not change the producer route or identity, and an
+entitlement revocation hides the QR immediately without deleting catalog data.
 
 `docs/CSV_CONTRACT.md` section **Public producer-profile rendering and
 structured data** owns the public HTML, locale, canonical identity, indexing and
@@ -576,6 +590,9 @@ activation, incidents, replacement and retirement are owned by
 - Re-check the exact producer entitlement at premium proposal, approval,
   materialization and finalization. Payment authorizes a capability, never the
   truth or editorial acceptance of a field.
+- Re-check the exact active user or producer premium entitlement and, for a
+  producer, the exact owner membership in every QR preference mutation. A
+  client checkbox, profile kind or public route never grants QR access.
 - Re-check ownership at claim submission, approval and materialization. An
   active owner blocks every later claim submission for that producer. Membership
   revocation conflicts every unpublished request under the same producer lock.

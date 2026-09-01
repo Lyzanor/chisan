@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
+import { updateProducerProfileQrAction } from "@/app/(application)/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import {
   ProducerChangeForm,
   type ProducerChangeFormField,
 } from "@/components/account/producer-change-form";
+import { ProfileQrLabel } from "@/components/profile-qr-label";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import {
   hasProducerAccess,
@@ -24,7 +26,7 @@ import {
   hashProducerFields,
   type ProducerEditableField,
 } from "@/lib/accounts/producer-fields";
-import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
+import { getActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import {
@@ -39,6 +41,7 @@ import {
   getDescriptionLocaleOptions,
 } from "@/lib/i18n/producer-fields";
 import { getStripeProfileUpgradeConfiguration } from "@/lib/payments/stripe-profile-upgrade-config";
+import { isProfileQrEnabled } from "@/lib/profile-qr";
 
 export const metadata: Metadata = {
   title: "Edit producer profile",
@@ -49,6 +52,59 @@ type EditProducerPageProps = {
   params: Promise<{ country: string; producerId: string }>;
   searchParams: Promise<AccountMessageParams>;
 };
+
+function ProducerQrSettings({
+  country,
+  enabled,
+  locale,
+  name,
+  path,
+  producerId,
+}: {
+  country: string;
+  enabled: boolean;
+  locale: Parameters<typeof ProfileQrLabel>[0]["locale"];
+  name: string;
+  path: string;
+  producerId: number;
+}) {
+  return (
+    <section className="account-callout account-form-section--premium">
+      <strong>Premium QR label</strong>
+      <p>
+        The producer QR is optional. It appears publicly only after the verified owner enables
+        it here, and only while the expanded-profile entitlement remains active.
+      </p>
+      <form action={updateProducerProfileQrAction} className="account-form">
+        <input type="hidden" name="country" value={country} />
+        <input type="hidden" name="producerId" value={producerId} />
+        <label className="account-field">
+          <span>QR label</span>
+          <span>
+            <input
+              type="checkbox"
+              name="profileQrEnabled"
+              value="yes"
+              defaultChecked={enabled}
+            />{" "}
+            Show and enable the downloadable QR label
+          </span>
+        </label>
+        <button type="submit" className="account-button">
+          Save QR preference
+        </button>
+      </form>
+      {enabled ? (
+        <ProfileQrLabel
+          kind="producer"
+          locale={locale}
+          name={name}
+          path={path}
+        />
+      ) : null}
+    </section>
+  );
+}
 
 export default async function EditProducerPage({
   params,
@@ -79,7 +135,7 @@ export default async function EditProducerPage({
   const producer = await findProducerById(country, producerId);
   if (!producer) notFound();
 
-  const [[openChange], premiumActive, owner, [latestUpgrade]] = await Promise.all([
+  const [[openChange], premiumEntitlement, owner, [latestUpgrade]] = await Promise.all([
     getDatabase()
       .select()
       .from(producerChangeRequests)
@@ -99,7 +155,7 @@ export default async function EditProducerPage({
       )
       .orderBy(desc(producerChangeRequests.createdAt))
       .limit(1),
-    hasActiveProducerPremiumEntitlement(country, producerId),
+    getActiveProducerPremiumEntitlement(country, producerId),
     hasProducerOwnerAccess(account.id, country, producerId),
     getDatabase()
       .select({
@@ -117,6 +173,19 @@ export default async function EditProducerPage({
   ]);
 
   const publicHref = buildAccountProducerHref(producer, presentation.explicitLocale);
+  const premiumActive = Boolean(premiumEntitlement);
+  const producerQrEnabled = isProfileQrEnabled(premiumEntitlement?.metadata);
+  const producerQrSettings =
+    premiumActive && owner ? (
+      <ProducerQrSettings
+        country={country}
+        enabled={producerQrEnabled}
+        locale={presentation.locale}
+        name={producer.name}
+        path={publicHref}
+        producerId={producerId}
+      />
+    ) : null;
   if (openChange) {
     return (
       <div className="account-content account-content--narrow">
@@ -137,6 +206,7 @@ export default async function EditProducerPage({
             </Link>
           </div>
         </div>
+        {producerQrSettings}
       </div>
     );
   }
@@ -156,6 +226,7 @@ export default async function EditProducerPage({
             Public profile
           </Link>
         </div>
+        {producerQrSettings}
       </div>
     );
   }
@@ -310,6 +381,8 @@ export default async function EditProducerPage({
           </Link>
         ) : null}
       </div>
+
+      {producerQrSettings}
 
       <ProducerChangeForm
         baseRowHash={hashProducerFields(producer.fields)}

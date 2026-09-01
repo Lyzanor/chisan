@@ -133,12 +133,16 @@ export default async function PublicUserProfilePage({
         initialFocusKeys: getProducerSelectionInitialFocusKeys(groups),
       }}
       messages={pageMessages}
-      profileQr={{
-        kind: "selection",
-        locale: presentation.locale,
-        name: profileName,
-        path: canonicalPath,
-      }}
+      profileQr={
+        profile.profileQrEnabled
+          ? {
+              kind: "selection",
+              locale: presentation.locale,
+              name: profileName,
+              path: canonicalPath,
+            }
+          : undefined
+      }
     />
   );
 }

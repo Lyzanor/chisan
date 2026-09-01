@@ -338,3 +338,14 @@ numbered process and trust principles stay flat content, not card grids.
 
 Note: stitched full-page captures visually repeat sections. Use focused viewport
 captures for visual judgement.
+
+## 2026-09-02 — Premium QR opt-in
+
+Reviewed the producer detail at 1283px after making the printable QR label an
+explicit premium preference. A producer without both an active entitlement and
+the `profileQrEnabled` opt-in renders no QR disclosure, leaves no empty slot
+between the hero and following content, and keeps document width equal to the
+viewport. The account-side activation reuses the existing premium callout,
+field, checkbox and button primitives; no new colour, shape or elevation rule
+was introduced. Producer and public-selection labels retain their existing moss
+and ink physical treatments after activation.

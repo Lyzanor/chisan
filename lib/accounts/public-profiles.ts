@@ -11,6 +11,7 @@ import {
 } from "@/lib/accounts/public-profile-policy";
 import type { PublicProfileBaseLocation } from "@/lib/accounts/public-profile-location";
 import { getAccountSystemConfiguration } from "@/lib/accounts/config";
+import { isPublicUserProfileQrEnabled } from "@/lib/accounts/profile-qr-entitlements";
 import type { ProducerIdentity } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { favorites, users } from "@/lib/db/schema";
@@ -19,6 +20,7 @@ export type PublicUserProfile = {
   id: string;
   displayName: string | null;
   publicHandle: string;
+  profileQrEnabled: boolean;
   visibility: PublicProfileVisibility;
   baseLocation: PublicProfileBaseLocation;
 };
@@ -67,6 +69,7 @@ export const findPublicUserProfile = cache(
       id: profile.id,
       displayName: profile.displayName,
       publicHandle: profile.publicHandle,
+      profileQrEnabled: await isPublicUserProfileQrEnabled(profile.id),
       visibility: profile.visibility,
       baseLocation: {
         country: profile.baseCountry,

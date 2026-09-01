@@ -9,7 +9,7 @@ import { DetailDesktopNav } from "@/components/detail-desktop-nav";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import { ProducersMap } from "@/components/map/producers-map";
-import { ProfileQrLabel } from "@/components/profile-qr-label";
+import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
 import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
 import {
   absoluteSiteUrl,
@@ -455,11 +455,12 @@ export default async function ProducerPage({
           </figure>
         </header>
 
-        <ProfileQrLabel
-          kind="producer"
+        <ProducerProfileQrLabel
+          country={country.slug}
           locale={locale}
           name={producer.name}
           path={profileQrPath}
+          producerId={producer.producerId}
         />
 
         {featuredProducts.length > 0 ? (

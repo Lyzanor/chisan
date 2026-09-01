@@ -2,8 +2,15 @@ import { SITE_ORIGIN } from "@/lib/site";
 
 export const PROFILE_QR_LABEL_WIDTH = 1200;
 export const PROFILE_QR_LABEL_HEIGHT = 1600;
+export const PROFILE_QR_ENABLED_METADATA_KEY = "profileQrEnabled";
 
 export type ProfileQrKind = "producer" | "selection";
+
+export function isProfileQrEnabled(
+  metadata: Readonly<Record<string, unknown>> | null | undefined,
+): boolean {
+  return metadata?.[PROFILE_QR_ENABLED_METADATA_KEY] === true;
+}
 
 export function buildProfileQrUrl(path: string): string {
   const url = new URL(path, SITE_ORIGIN);
