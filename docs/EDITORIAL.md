@@ -80,7 +80,7 @@ qualify; a polished profile that fails one scope criterion does not.
 | Case | Decision rule |
 |---|---|
 | Farm, fisher, apiary, winery, brewery, dairy, bakery, roaster or food workshop | Include when the human test establishes its own output, public identity, productive municipality and current activity |
-| Cooperative or producer collective | Include the collective when it governs the production or market identity of members' output; include a member separately only when that member independently passes the full test |
+| Cooperative or producer collective | Include the collective when it governs the production or market identity of members' output **and** at least one resulting food or drink reaches the market under the collective's own identity; exclude a body that only represents, negotiates, auctions, transports or retails while each member sells under their own identity. Include a member separately only when that member independently passes the full test |
 | Unit that also manufactures for third parties | Include when it has a qualifying own offer; exclude a service-only or contract-only operation |
 | Restaurant, café, shop, hotel or market stall | Hospitality or retail alone is excluded; include only a distinct, durable producer identity and materially produced take-home offer that independently passes the test |
 | Brand, label, holding company or private-label seller | Include only the qualifying productive unit when public evidence gives it productive responsibility and place; the commercial name alone is not a producer |
