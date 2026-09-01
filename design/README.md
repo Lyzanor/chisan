@@ -171,14 +171,24 @@ point. Fixed detail points are non-essential map context.
 
 The lower-case wordmark **chisan** is the logo, shipped as a raster. The compact
 `c` is a crop of it, for favicons, avatars and square icons only — never beside
-the wordmark.
+the wordmark. Short `moss` caps mark both terminals of the compact `c`; the
+wordmark repeats that signature only on the natural terminals of `c` and `s`.
 
 - Wordmark above 88px of width, glyph below. Minimums: 88px and 16px.
-- Clear space: one glyph stroke width. `ink`, reversed on rice paper or white.
+- Clear space: one glyph stroke width. The primary body is `ink`; the reversed
+  body is `surface`. Both retain the `moss` terminal caps.
 - Tagline stays separate live text. Never redraw the logo in font, CSS or SVG.
-- No containers, outlines, shadows, gradients or extra colours.
+- No containers, outlines, shadows, gradients or colours outside `ink`,
+  `surface` and the approved `moss` caps.
 - No food, leaf, map-pin, seal, torii, ensō, calligraphy, rising-sun or
   network-node motifs.
+
+Profile QR labels keep the code itself in `ink` on `surface`, with its full
+quiet zone and no logo overlay. The producer label has a `moss` outer rule; a
+public user's producer selection has an `ink` rule. Use the wordmark on the
+physical label and the compact `c` only as the square UI affordance that opens
+it. Neither treatment implies verification, ownership, premium status or a
+reviewed restaurant/shop classification.
 
 Sizing and alt text live in `components/brand/chisan-brand.tsx`. Give an image
 empty alt text when its link already has an accessible name.
@@ -220,20 +230,26 @@ From `references/v0.3/chisan-wordmark-first-board.png`, with an image model:
 
 > Isolate and faithfully recreate only **[the lowercase `chisan` wordmark |
 > the compact `c`]** from the board as a crisp, high-resolution transparent PNG
-> in solid ink `#1D201B`. Preserve **[the custom lowercase proportions, open
-> `c`, wide geometric rhythm, single-storey `a` and optical spacing | its open
-> circular form, diagonal-cut terminals, weight, aperture and 16px
-> legibility]**. Include no background, tagline, symbol, container, border,
-> shadow, gradient, labels or extra text.
+> with an `ink` `#1D201B` body. Preserve **[the custom lowercase proportions,
+> open `c`, wide geometric rhythm, single-storey `a` and optical spacing | its
+> open circular form, diagonal-cut terminals, weight, aperture and 16px
+> legibility]**. Recolour only **[the four natural terminals of `c` and `s` |
+> the two terminals of `c`]** with equal short `moss` `#52614C` caps. Keep every
+> other pixel and the alpha silhouette unchanged. Include no background,
+> tagline, symbol, container, border, shadow, gradient, labels or extra text.
 
-The two production RGBA rasters were generated with OpenAI image generation
-from approved option 1 of that board. They remain image assets rather than a
-live-font, CSS or SVG approximation.
+The terminal-accent references were generated with OpenAI image generation
+from the approved mark and wordmark. The production rasters preserve the prior
+alpha geometry, use only the exact `ink`, `surface` and `moss` colours, and
+remain image assets rather than a live-font, CSS or SVG approximation.
 
 ## References
 
 - `v0.3/chisan-wordmark-first-board.png` — approved direction and source of the
   production rasters.
+- `v0.3/chisan-terminal-accent-mark-reference.png` — approved two-cap compact mark.
+- `v0.3/chisan-terminal-accent-wordmark-reference.png` — approved restrained
+  `c`/`s` treatment.
 - `v0.3/chisan-marker-join-board.png` — The Join marker, superseded by map circles.
 - `v0.2/` — earlier board and functional mark.
 - `inspiration-giftee-home.png` — capture of <https://giftee.co.jp/> on

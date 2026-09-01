@@ -4,6 +4,31 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-01 — Terminal-accent brand family
+
+final result: passed
+
+Compared the two approved ImageGen references with the production rasters in
+`chisan-brand-terminal-accent-comparison.png`, then reviewed the wordmark in the
+home header and footer. Focused implementation captures are stored beside this
+log.
+
+- The compact `c` keeps its original alpha silhouette and uses exactly two
+  short `moss` terminal caps. The wordmark repeats the treatment only on the
+  four natural terminals of `c` and `s`; `h`, `i`, `a` and `n` stay `ink`.
+- The reverse raster uses `surface` for the letterforms and retains the same
+  `moss` caps, avoiding a CSS filter that would recolour the signature.
+- The favicon contains 16, 32, 48 and 256px PNG frames generated from the
+  compact mark. All three production rasters contain only their approved body
+  colour, `moss` and alpha.
+- The first comparison found a P2 dark edge around several green terminals.
+  Rebuilding the colour mask against the original raster geometry removed it;
+  the second comparison has clean diagonal joins at every size.
+
+Rejected: colouring every letter, enlarging the terminal caps into wedges,
+putting green inside QR modules, and filtering the reverse logo into a single
+colour.
+
 ## 2026-09-01 — Spain-first project summary
 
 final result: passed
