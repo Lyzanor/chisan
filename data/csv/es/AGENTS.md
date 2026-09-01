@@ -14,6 +14,10 @@
 - CartoCiudad may normalize the road type. Accept a candidate only when name,
   number, postcode and municipality match an independently published productive
   address.
+- An *alhóndiga* that auctions members' lots is a marketplace: the produce
+  leaves under the buyer's identity, so it is `not-producer`. A hortofruit
+  cooperative, SAT or commercialiser that puts that same output on the market
+  under its own name or brand is a governed producer collective and qualifies.
 
 ## Source ceilings
 - Denomination councils, certification registers and autonomous or provincial
