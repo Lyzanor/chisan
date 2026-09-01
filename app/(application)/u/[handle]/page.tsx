@@ -33,7 +33,6 @@ const pageMessages: ProducerSelectionPageMessages = {
   producerCount: (count) => `${count} ${count === 1 ? "producer" : "producers"}`,
   mappedCount: (count) => `${count} mapped`,
   producers: "Shared producers",
-  details: "Details",
   emptyGroup: "No shared producers in this group.",
   map: {
     loading: "Loading map…",

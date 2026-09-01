@@ -29,16 +29,19 @@ export type ProducerMapFocusRequest = Readonly<{
   requestId: number;
 }>;
 
+export type ProducerMapMarkerInteraction = "popup" | "select" | "static";
+
 type ProducersMapProps = {
   points: ProducerMapPoint[];
   scope: CatalogNavigationScope;
   area: string;
-  highlightedSlug?: string;
+  selectedSlug?: string;
   focusRequest?: ProducerMapFocusRequest;
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelectProducer?: (slug: string) => void;
   onVisibleProducerKeysChange?: (keys: string[]) => void;
+  markerInteraction?: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   messages: MapMessages;
 };
@@ -47,12 +50,13 @@ export function ProducersMap({
   points,
   scope,
   area,
-  highlightedSlug,
+  selectedSlug,
   focusRequest,
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelectProducer,
   onVisibleProducerKeysChange,
+  markerInteraction,
   singlePointZoom,
   messages,
 }: ProducersMapProps) {
@@ -79,12 +83,13 @@ export function ProducersMap({
     <ProducerSelectionMap
       key={`${scopeCountry}/${area}`}
       points={markers}
-      highlightedKey={highlightedSlug}
+      selectedKey={selectedSlug}
       focusRequest={focusRequest}
       nearbyFocusKeys={nearbyFocusKeys}
       onNearbyFocusConsumed={onNearbyFocusConsumed}
-      onSelect={onSelectProducer}
+      onSelectKey={onSelectProducer}
       onVisibleKeysChange={onVisibleProducerKeysChange}
+      markerInteraction={markerInteraction}
       singlePointZoom={singlePointZoom}
       minZoom={5}
       messages={messages}
@@ -94,31 +99,35 @@ export function ProducersMap({
 
 export function ProducerSelectionMap({
   points,
-  highlightedKey,
+  selectedKey,
   focusRequest,
   initialFocusKeys,
   nearbyFocusKeys,
   onNearbyFocusConsumed,
-  onSelect,
+  onSelectKey,
   onVisibleKeysChange,
+  markerInteraction,
   singlePointZoom,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
 }: {
   points: ProducerMapMarker[];
-  highlightedKey?: string;
+  selectedKey?: string;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
-  onSelect?: (key: string) => void;
+  onSelectKey?: (key: string) => void;
   onVisibleKeysChange?: (keys: string[]) => void;
+  markerInteraction?: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   minZoom?: number;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
   const handleReady = useCallback(() => setIsReady(true), []);
+  const resolvedMarkerInteraction =
+    markerInteraction ?? (onSelectKey ? "select" : "popup");
 
   useEffect(() => {
     if (!points.length) {
@@ -135,13 +144,14 @@ export function ProducerSelectionMap({
       {!isReady ? <div className="map-placeholder">{messages.loading}</div> : null}
       <ProducersMapInner
         points={points}
-        highlightedKey={highlightedKey}
+        selectedKey={selectedKey}
         focusRequest={focusRequest}
         initialFocusKeys={initialFocusKeys}
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}
-        onSelect={onSelect}
+        onSelectKey={onSelectKey}
         onVisibleKeysChange={onVisibleKeysChange}
+        markerInteraction={resolvedMarkerInteraction}
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}
         messages={{

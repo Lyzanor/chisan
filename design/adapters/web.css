@@ -276,7 +276,7 @@ body {
   vector-effect: non-scaling-stroke;
 }
 
-.producer-map-circle--highlighted {
+.producer-map-circle--selected {
   fill: var(--chisan-color-moss);
   fill-opacity: 1;
   stroke: var(--chisan-color-surface);

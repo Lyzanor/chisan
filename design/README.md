@@ -126,6 +126,47 @@ or heatmaps — ever.
 - A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
   map points never preload producer imagery.
 
+### Map component contract
+
+There is one producer-map stack. Pages configure it; they never redraw markers
+or redefine selection styles.
+
+```
+components/map/producers-map.tsx                 public map boundary
+components/map/producers-map-inner.tsx           private Leaflet renderer
+components/map/producer-map-selection-card.tsx   linked selected surface
+components/map/use-dismissible-producer-map-selection.ts  outside/Escape dismissal
+components/area-explorer.tsx                     area filters and URL state
+components/producer-selection-explorer.tsx       profile groups and URL state
+```
+
+Every marker crosses the public boundary with one opaque key. Area maps use the
+area-local slug, profile selections use `country:producer_id`, and a producer
+detail fixes its current slug as the selected key. Selection is presentation
+state: it never changes identity, coordinates, favorites, grouping or
+authorization.
+
+The public boundary exposes three explicit marker interactions: `select` for a
+synchronized map and list, `popup` for a standalone browsing map, and `static`
+for contextual location. Controllers normally infer `select` from their
+selection callback; detail pages state `static` explicitly.
+
+On a multi-producer map, marker and list activation select and focus the same
+exact point, paint only that point above its neighbours, and expose the shared
+linked name-description-image surface. The list row stays visually neutral.
+The `highlight` query records selection; Escape, outside activation and browser
+Back/Forward clear or restore it. Initial and nearby framing never imply
+selection. Items without coordinates remain ordinary profile links rather than
+pretending to select a missing point.
+
+A producer-detail map renders its sole producer in fixed selected state and
+keeps that contextual point non-interactive. It does not repeat the selected
+card or open a self-referential popup because the page itself is that surface.
+Dense multi-producer maps retain the deliberate 28px transparent point target;
+this is the sole exception to the 44px target rule and is allowed only when the
+synchronized list provides an equivalent 44px control for every interactive
+point. Fixed detail points are non-essential map context.
+
 ## Brand
 
 The lower-case wordmark **chisan** is the logo, shipped as a raster. The compact
@@ -155,8 +196,10 @@ Write with exact nouns and plain uncertainty. Keep **Connecting local food.**
 exact, including the period. Layouts expand for translation rather than
 truncate; no locale is a variant of another.
 
-Pointer targets at least 44×44px. Visible labels, logical heading order, no
-essential text inside an image. Prominence never implies stronger evidence.
+Pointer targets at least 44×44px, except for the documented dense-map point
+target paired with its synchronized list control. Visible labels, logical
+heading order, no essential text inside an image. Prominence never implies
+stronger evidence.
 
 ## Before you ship
 
@@ -164,7 +207,8 @@ essential text inside an image. Prominence never implies stronger evidence.
 - [ ] Every space value is on the 4px scale.
 - [ ] Every size and weight is in the type table.
 - [ ] Pills only on toggles.
-- [ ] Targets 44×44px, focus visible as an outline.
+- [ ] Targets 44×44px, apart from the documented dense-map exception; focus
+      visible as an outline.
 - [ ] No horizontal overflow at 390px.
 - [ ] Checked in one long or non-Latin locale.
 

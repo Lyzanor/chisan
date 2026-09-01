@@ -20,7 +20,10 @@ import {
 } from "@/lib/producer-selections";
 import { NEARBY_PRODUCER_FOCUS_MINIMUM } from "@/lib/location/nearby-producer-focus";
 
-import type { ProducerMapFocusRequest } from "./producers-map";
+import type {
+  ProducerMapFocusRequest,
+  ProducerMapMarkerInteraction,
+} from "./producers-map";
 
 // Below this threshold, show all points regardless of viewport.
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
@@ -122,24 +125,26 @@ function fitProducerPoints(
 
 function BoundsAwareMarkers({
   points,
-  highlightedKey,
+  selectedKey,
   focusRequest,
   initialFocusKeys = EMPTY_FOCUS_KEYS,
   nearbyFocusKeys = EMPTY_FOCUS_KEYS,
   onNearbyFocusConsumed,
-  onSelect,
+  onSelectKey,
   onVisibleKeysChange,
+  markerInteraction,
   singlePointZoom = 13,
   messages,
 }: {
   points: ProducerMapMarker[];
-  highlightedKey?: string;
+  selectedKey?: string;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
-  onSelect?: (key: string) => void;
+  onSelectKey?: (key: string) => void;
   onVisibleKeysChange?: (keys: string[]) => void;
+  markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   messages: {
     openProfile: string;
@@ -163,7 +168,7 @@ function BoundsAwareMarkers({
   });
 
   // Fit only when the effective geometry changes. Navigation state such as a
-  // highlighted producer may rebuild props, but must preserve the user's pan
+  // selected producer may rebuild props, but must preserve the user's pan
   // and zoom.
   useEffect(() => {
     if (points.length === 0) return;
@@ -274,15 +279,15 @@ function BoundsAwareMarkers({
       .map(({ key }) => key);
   }, [map, points, viewBounds]);
   const renderedPoints = useMemo(() => {
-    if (!highlightedKey) return visible;
-    const highlightedPoint = visible.find(({ key }) => key === highlightedKey);
-    if (!highlightedPoint) return visible;
+    if (!selectedKey) return visible;
+    const selectedPoint = visible.find(({ key }) => key === selectedKey);
+    if (!selectedPoint) return visible;
 
     return [
-      ...visible.filter(({ key }) => key !== highlightedKey),
-      highlightedPoint,
+      ...visible.filter(({ key }) => key !== selectedKey),
+      selectedPoint,
     ];
-  }, [highlightedKey, visible]);
+  }, [selectedKey, visible]);
 
   useEffect(() => {
     onVisibleKeysChange?.(visibleKeys);
@@ -291,30 +296,30 @@ function BoundsAwareMarkers({
   return (
     <>
       {renderedPoints.map((point) => {
-        const highlighted = highlightedKey === point.key;
+        const selected = selectedKey === point.key;
 
         return (
-          <Fragment key={`${point.key}:${highlighted ? "selected" : "default"}`}>
+          <Fragment key={`${point.key}:${selected ? "selected" : "default"}`}>
             <CircleMarker
               center={[point.latitude, point.longitude]}
-              radius={highlighted ? 10 : 6}
-              interactive={!onSelect}
+              radius={selected ? 10 : 6}
+              interactive={markerInteraction === "popup"}
               pathOptions={{
-                className: highlighted
-                  ? "producer-map-circle producer-map-circle--highlighted"
+                className: selected
+                  ? "producer-map-circle producer-map-circle--selected"
                   : "producer-map-circle",
-                color: highlighted
+                color: selected
                   ? "var(--chisan-color-surface)"
                   : "var(--chisan-color-moss-dark)",
-                fillColor: highlighted
+                fillColor: selected
                   ? "var(--chisan-color-moss)"
                   : "var(--chisan-color-moss-dark)",
                 fillOpacity: 1,
-                opacity: highlighted ? 1 : 0,
-                weight: highlighted ? 3 : 0,
+                opacity: selected ? 1 : 0,
+                weight: selected ? 3 : 0,
               }}
             >
-              {onSelect ? null : (
+              {markerInteraction === "popup" ? (
                 <>
                   <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
                     {point.name}
@@ -329,9 +334,9 @@ function BoundsAwareMarkers({
                     </Link>
                   </Popup>
                 </>
-              )}
+              ) : null}
             </CircleMarker>
-            {onSelect ? (
+            {markerInteraction === "select" && onSelectKey ? (
               <CircleMarker
                 center={[point.latitude, point.longitude]}
                 radius={14}
@@ -343,7 +348,7 @@ function BoundsAwareMarkers({
                   opacity: 0,
                   weight: 0,
                 }}
-                eventHandlers={{ click: () => onSelect(point.key) }}
+                eventHandlers={{ click: () => onSelectKey(point.key) }}
               >
                 <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
                   {point.name}
@@ -359,26 +364,28 @@ function BoundsAwareMarkers({
 
 export default function ProducersMapInner({
   points,
-  highlightedKey,
+  selectedKey,
   focusRequest,
   initialFocusKeys,
   nearbyFocusKeys,
   onNearbyFocusConsumed,
-  onSelect,
+  onSelectKey,
   onVisibleKeysChange,
+  markerInteraction,
   singlePointZoom = 13,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   messages,
   onReady,
 }: {
   points: ProducerMapMarker[];
-  highlightedKey?: string;
+  selectedKey?: string;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
-  onSelect?: (key: string) => void;
+  onSelectKey?: (key: string) => void;
   onVisibleKeysChange?: (keys: string[]) => void;
+  markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   minZoom?: number;
   messages: {
@@ -404,13 +411,14 @@ export default function ProducersMapInner({
       />
       <BoundsAwareMarkers
         points={points}
-        highlightedKey={highlightedKey}
+        selectedKey={selectedKey}
         focusRequest={focusRequest}
         initialFocusKeys={initialFocusKeys}
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}
-        onSelect={onSelect}
+        onSelectKey={onSelectKey}
         onVisibleKeysChange={onVisibleKeysChange}
+        markerInteraction={markerInteraction}
         singlePointZoom={singlePointZoom}
         messages={messages}
       />

@@ -13,7 +13,8 @@ export type ProducerSelectionItem = ProducerIdentity & {
   name: string;
   city: string;
   description: string;
-  category: string;
+  imageSrc: string;
+  icon: string;
   categories: string[];
   href: string;
   latitude: number | null;
@@ -49,6 +50,17 @@ export type ProducerSelectionPageModel = {
   initialFocusKeys: string[];
 };
 
+export type ProducerSelectionExplorerModel = Pick<
+  ProducerSelectionPageModel,
+  "canonicalPath" | "items" | "initialFocusKeys"
+> & {
+  sections: Array<
+    Pick<ProducerSelectionSection, "key" | "title" | "summary"> & {
+      itemKeys: string[];
+    }
+  >;
+};
+
 export type ProducerMapMarker = Pick<
   ProducerSelectionItem,
   | "key"
@@ -65,6 +77,24 @@ export type ProducerMapMarker = Pick<
 
 export function producerSelectionItemKey(identity: ProducerIdentity): string {
   return `${identity.country}:${identity.producerId}`;
+}
+
+export function buildProducerSelectionHighlightHref(
+  canonicalPath: string,
+  selectedKey: string,
+): string {
+  if (!selectedKey) return canonicalPath;
+
+  const params = new URLSearchParams({ highlight: selectedKey });
+  return `${canonicalPath}?${params.toString()}`;
+}
+
+export function resolveProducerSelectionItem(
+  items: readonly ProducerSelectionItem[],
+  selectedKey: string,
+): ProducerSelectionItem | undefined {
+  if (!selectedKey) return undefined;
+  return items.find(({ key }) => key === selectedKey);
 }
 
 export function groupProducerSelectionItems(

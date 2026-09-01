@@ -525,7 +525,8 @@ export default async function ProducerPage({
               points={mapPoints}
               scope={scope}
               area={area}
-              highlightedSlug={producer.slug}
+              selectedSlug={producer.slug}
+              markerInteraction="static"
               singlePointZoom={16}
               messages={mapMessages}
             />

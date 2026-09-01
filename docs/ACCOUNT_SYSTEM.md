@@ -124,9 +124,13 @@ It supports producers from multiple areas or countries. A producer without
 valid coordinates remains in the list and is omitted only from the map.
 
 The Next.js page resolves account state and current CSV rows in a Server
-Component. Only the interactive map crosses into a Client Component, receiving
-plain serializable marker data and resolved public links. It never receives or
-exposes the profile owner's device position.
+Component. A narrow selection explorer crosses into a Client Component with
+only plain serializable items, groups, marker coordinates and resolved public
+links. Its `highlight` query is transient presentation state keyed by the exact
+`country:producer_id`; it is never written to PostgreSQL and an unknown key is
+ignored. The client explorer never receives or exposes the profile owner's
+device position. The visual and interaction contract for all producer maps is
+owned by `design/README.md` rather than duplicated here.
 
 A database or identity-provider incident must not make the CSV catalog
 unavailable. Private, suspended, deleted, invalid and unknown public profiles

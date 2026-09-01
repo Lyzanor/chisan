@@ -5,7 +5,7 @@ import {
   findPublishedCountry,
   type LocatedProducerCsvRow,
 } from "@/lib/csv-catalog";
-import { getCategoryLabel } from "@/lib/i18n/categories";
+import { getCategoryIcon, getCategoryLabel } from "@/lib/i18n/categories";
 import type { Locale } from "@/lib/i18n/locales";
 import {
   producerSelectionItemKey,
@@ -48,7 +48,8 @@ export function buildProducerSelectionItems(
         name: producer.name,
         city: producer.city,
         description: getDescriptionPreview(producer.fields),
-        category: producer.category,
+        imageSrc: producer.imageSrc,
+        icon: getCategoryIcon(producer.category),
         categories: producer.categories.map((category) =>
           getCategoryLabel(category, presentation.locale),
         ),

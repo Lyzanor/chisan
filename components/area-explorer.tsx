@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -23,6 +22,8 @@ import {
   ProducersMap,
   type ProducerMapFocusRequest,
 } from "@/components/map/producers-map";
+import { ProducerMapSelectionCard } from "@/components/map/producer-map-selection-card";
+import { useDismissibleProducerMapSelection } from "@/components/map/use-dismissible-producer-map-selection";
 import {
   buildCatalogHref,
   buildProducerHref,
@@ -227,12 +228,12 @@ function AreaExplorerView({
   adSlot,
   model,
   category,
-  highlightedSlug,
+  selectedSlug,
 }: {
   adSlot: ReactNode;
   model: AreaExplorerModel;
   category: string;
-  highlightedSlug: string;
+  selectedSlug: string;
 }) {
   const [isMobileListOpen, setIsMobileListOpen] = useState(false);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
@@ -243,10 +244,11 @@ function AreaExplorerView({
   const [mapFocusRequest, setMapFocusRequest] =
     useState<ProducerMapFocusRequest>();
   const mapFocusRequestId = useRef(0);
-  const previousHighlightedSlug = useRef("");
+  const previousSelectedSlug = useRef("");
   const listToggleRef = useRef<HTMLButtonElement>(null);
   const producerListRef = useRef<HTMLUListElement>(null);
   const viewerRef = useRef<HTMLElement>(null);
+  const mapSurfaceRef = useRef<HTMLDivElement>(null);
   const selectedProducerLinkRef = useRef<HTMLAnchorElement>(null);
   const focusSelectedProducerAfterCloseRef = useRef(false);
   const normalizedCategory = normalizeCategory(category);
@@ -262,13 +264,13 @@ function AreaExplorerView({
         : model.producers,
     [model.producers, normalizedCategory],
   );
-  const highlightedItem = useMemo(
+  const selectedItem = useMemo(
     () =>
-      highlightedSlug
-        ? items.find((item) => item.slug === highlightedSlug) ??
-          items.find((item) => String(item.producerId) === highlightedSlug)
+      selectedSlug
+        ? items.find((item) => item.slug === selectedSlug) ??
+          items.find((item) => String(item.producerId) === selectedSlug)
         : undefined,
-    [highlightedSlug, items],
+    [items, selectedSlug],
   );
   const categoryPresentations = useMemo(
     () => new Map(model.categories.map((item) => [item.token, item])),
@@ -349,9 +351,9 @@ function AreaExplorerView({
     () =>
       model.languageOptions.map((option) => ({
         ...option,
-        href: withCatalogQuery(option.href, category, highlightedSlug),
+        href: withCatalogQuery(option.href, category, selectedSlug),
       })),
-    [category, highlightedSlug, model.languageOptions],
+    [category, model.languageOptions, selectedSlug],
   );
   const areaSelectorCountry = useMemo<AreaSelectorCountry>(
     () => ({
@@ -369,7 +371,7 @@ function AreaExplorerView({
     scope: model.scope,
     area: model.area,
   });
-  const clearHighlightHref = buildCatalogHref({
+  const clearSelectionHref = buildCatalogHref({
     scope: model.scope,
     area: model.area,
     category,
@@ -395,57 +397,38 @@ function AreaExplorerView({
   const clearProducerSelection = useCallback(() => {
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
-    replaceCatalogState(clearHighlightHref);
-  }, [clearHighlightHref, consumeNearbyMapFocus]);
+    replaceCatalogState(clearSelectionHref);
+  }, [clearSelectionHref, consumeNearbyMapFocus]);
 
   useEffect(() => {
-    if (
-      !highlightedItem ||
-      previousHighlightedSlug.current === highlightedItem.slug
-    ) {
-      previousHighlightedSlug.current = highlightedItem?.slug ?? "";
+    if (!selectedItem || previousSelectedSlug.current === selectedItem.slug) {
+      previousSelectedSlug.current = selectedItem?.slug ?? "";
       return;
     }
 
-    previousHighlightedSlug.current = highlightedItem.slug;
+    previousSelectedSlug.current = selectedItem.slug;
     consumeNearbyMapFocus();
     mapFocusRequestId.current += 1;
     setMapFocusRequest({
-      key: highlightedItem.slug,
+      key: selectedItem.slug,
       requestId: mapFocusRequestId.current,
     });
-  }, [consumeNearbyMapFocus, highlightedItem]);
+  }, [consumeNearbyMapFocus, selectedItem]);
 
-  useEffect(() => {
-    if (!highlightedItem) return;
-
-    function clearFromOutside(event: PointerEvent) {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-      if (selectedProducerLinkRef.current?.contains(target)) return;
-      if (target.closest(".producer-map-hit-area, .producer-map-circle")) return;
-      clearProducerSelection();
-    }
-
-    function clearFromKeyboard(event: KeyboardEvent) {
-      if (event.key === "Escape" && !isMobileListOpen) {
-        clearProducerSelection();
-      }
-    }
-
-    document.addEventListener("pointerdown", clearFromOutside);
-    document.addEventListener("keydown", clearFromKeyboard);
-    return () => {
-      document.removeEventListener("pointerdown", clearFromOutside);
-      document.removeEventListener("keydown", clearFromKeyboard);
-    };
-  }, [clearProducerSelection, highlightedItem, isMobileListOpen]);
+  useDismissibleProducerMapSelection({
+    active: Boolean(selectedItem),
+    selectedSurfaceRef: selectedProducerLinkRef,
+    relatedSurfaceRef: viewerRef,
+    returnFocusRef: mapSurfaceRef,
+    suspendEscape: isMobileListOpen,
+    onDismiss: clearProducerSelection,
+  });
 
   useEffect(() => {
     if (
       !focusSelectedProducerAfterCloseRef.current ||
       isMobileListOpen ||
-      !highlightedItem
+      !selectedItem
     ) {
       return;
     }
@@ -454,7 +437,7 @@ function AreaExplorerView({
     window.requestAnimationFrame(() =>
       selectedProducerLinkRef.current?.focus({ preventScroll: true }),
     );
-  }, [highlightedItem, isMobileListOpen]);
+  }, [isMobileListOpen, selectedItem]);
 
   useEffect(() => {
     if (!isMobileListOpen) return;
@@ -485,7 +468,7 @@ function AreaExplorerView({
   }
 
   function selectProducer(slug: string, href: string, closeMobileList: boolean) {
-    previousHighlightedSlug.current = slug;
+    previousSelectedSlug.current = slug;
     consumeNearbyMapFocus();
     requestProducerFocus(slug);
     pushCatalogState(href);
@@ -612,16 +595,18 @@ function AreaExplorerView({
       {adSlot}
 
       <section className="catalog-simple-layout">
-        <div className="catalog-map-stage">
+        <div className="producer-map-stage">
           <div
+            ref={mapSurfaceRef}
             className="catalog-simple-map"
             aria-label={model.mapMessages.producerMap}
+            tabIndex={-1}
           >
             <ProducersMap
               points={mapPoints}
               scope={model.scope}
               area={model.area}
-              highlightedSlug={highlightedItem?.slug}
+              selectedSlug={selectedItem?.slug}
               focusRequest={mapFocusRequest}
               nearbyFocusKeys={nearbyMapFocusKeys}
               onNearbyFocusConsumed={consumeNearbyMapFocus}
@@ -632,40 +617,21 @@ function AreaExplorerView({
           </div>
 
           <div
-            className="catalog-map-selection"
+            className="producer-map-selection-surface"
             aria-live="polite"
             aria-atomic="true"
           >
-            {highlightedItem ? (
-              <article className="catalog-featured-producer">
-                <Link
-                  ref={selectedProducerLinkRef}
-                  className="catalog-featured-producer__link"
-                  href={buildProducerHref(highlightedItem, {
+            {selectedItem ? (
+              <ProducerMapSelectionCard
+                linkRef={selectedProducerLinkRef}
+                producer={{
+                  ...selectedItem,
+                  href: buildProducerHref(selectedItem, {
                     scope: model.scope,
                     area: model.area,
-                  })}
-                  prefetch={false}
-                >
-                  <span className="catalog-featured-producer__media">
-                    <Image
-                      src={highlightedItem.imageSrc}
-                      alt=""
-                      width={160}
-                      height={120}
-                      sizes="(max-width: 620px) 104px, 128px"
-                      loading="lazy"
-                      className="catalog-featured-producer__image"
-                    />
-                  </span>
-                  <span className="catalog-featured-producer__content">
-                    <strong>{highlightedItem.name}</strong>
-                    {highlightedItem.description ? (
-                      <span>{highlightedItem.description}</span>
-                    ) : null}
-                  </span>
-                </Link>
-              </article>
+                  }),
+                }}
+              />
             ) : null}
           </div>
         </div>
@@ -734,7 +700,7 @@ function AreaExplorerView({
                         }}
                         className="producer-compact-link"
                         aria-current={
-                          highlightedItem?.slug === item.slug ? true : undefined
+                          selectedItem?.slug === item.slug ? true : undefined
                         }
                       >
                         <span className="producer-compact-icon" aria-hidden="true">
@@ -790,14 +756,14 @@ function AreaExplorerFromSearchParams({
 }) {
   const searchParams = useSearchParams();
   const category = searchParams.get("category")?.trim() ?? "";
-  const highlightedSlug = searchParams.get("highlight")?.trim() ?? "";
+  const selectedSlug = searchParams.get("highlight")?.trim() ?? "";
 
   return (
     <AreaExplorerView
       adSlot={adSlot}
       model={model}
       category={category}
-      highlightedSlug={highlightedSlug}
+      selectedSlug={selectedSlug}
     />
   );
 }
@@ -818,7 +784,7 @@ export function AreaExplorer({
           adSlot={adPlaceholder}
           model={model}
           category=""
-          highlightedSlug=""
+          selectedSlug=""
         />
       }
     >

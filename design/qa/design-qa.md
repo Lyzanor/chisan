@@ -4,6 +4,38 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-01 — Shared producer-map selection contract
+
+final result: passed
+
+Reviewed the selected state on the Barcelona area map and a producer-detail
+map at a 360px mobile viewport. Both use the same 20px moss point, 3px surface
+outline and selected rendering order; the area map also uses the shared
+lazy-image name-description surface and outside/Escape dismissal.
+
+The public-profile controller now crosses the same map boundary with the exact
+`country:producer_id` key. Its map points and list rows select and focus each
+other, selection is represented by the canonical `highlight` query, and its
+mobile list uses the same attached disclosure as area discovery. Producers
+without valid coordinates remain ordinary profile links.
+
+Because the local account feature is intentionally disabled, the profile
+controller was visually exercised with a temporary non-persisted component
+fixture instead of manufacturing account state. At 360px, the attached list
+opened without horizontal overflow, selecting a row closed it and focused the
+card, and an unmapped producer ignored a manual highlight. At 1280px, map,
+card and grouped list formed the same two-column composition as area discovery.
+Back/Forward restored selection and outside activation cleared it. The fixture
+also confirmed that Back returns from producer B to producer A. With the mobile
+list open, the first Escape closed the disclosure and kept A selected; the
+second cleared A and returned focus to the map. The fixture was removed after
+review; no account or database state changed. Shared source contracts,
+account-domain tests, lint and the production build provide the retained
+regression evidence.
+
+Rejected: a second marker renderer, profile-only selected styling, a selected
+list-row treatment, duplicate profile links and eager list imagery.
+
 ## 2026-09-01 — Nearby-first producer map selection
 
 final result: passed

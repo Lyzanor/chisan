@@ -70,7 +70,7 @@ function toPx(value) {
 const RULES = [
   {
     name: "raw-colour",
-    baseline: 73,
+    baseline: 71,
     describe: "colour literals outside design/foundations",
     find: (file, css) =>
       file === TOKENS
@@ -81,7 +81,7 @@ const RULES = [
   },
   {
     name: "off-scale-space",
-    baseline: 191,
+    baseline: 190,
     describe: "padding/margin/gap off the 4px scale",
     find: (file, css) =>
       [...css.matchAll(/(?:padding|margin|gap)[a-z-]*:\s*([^;}]+)/g)].flatMap((m) =>
@@ -93,7 +93,7 @@ const RULES = [
   },
   {
     name: "type-scale",
-    baseline: 81,
+    baseline: 80,
     describe: "font-size below 12px or off the type scale",
     find: (file, css) =>
       [...css.matchAll(/font-size:\s*([^;}]+)/g)]
@@ -124,7 +124,7 @@ const RULES = [
   },
   {
     name: "decorative-pill",
-    baseline: 14,
+    baseline: 13,
     describe: "999px radius outside filters and tags",
     find: (file, css) =>
       blocks(css)

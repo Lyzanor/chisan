@@ -4,9 +4,11 @@ import test from "node:test";
 import type { LocatedProducerCsvRow } from "../lib/csv-catalog";
 import { buildProducerSelectionItems } from "../lib/producer-selections.server";
 import {
+  buildProducerSelectionHighlightHref,
   getProducerSelectionInitialFocusKeys,
   groupProducerSelectionItems,
   PRODUCER_SELECTION_MIN_ZOOM,
+  resolveProducerSelectionItem,
 } from "../lib/producer-selections";
 
 function producer(
@@ -25,7 +27,7 @@ function producer(
     additionalCategories: [],
     categories: ["Aceite"],
     featuredProducts: "",
-    imageSrc: "",
+    imageSrc: `/productores/${slug}.webp`,
     latitude: 40 + producerId / 100,
     longitude: -3,
     fields: {
@@ -48,17 +50,27 @@ test("producer selection items retain distinct current links across areas", () =
   );
 
   assert.deepEqual(
-    items.map(({ key, href, description }) => ({ key, href, description })),
+    items.map(({ key, href, description, imageSrc, icon }) => ({
+      key,
+      href,
+      description,
+      imageSrc,
+      icon,
+    })),
     [
       {
         key: "es:41",
         href: "/es/barcelona/barcelona-producer",
         description: "Producer 41 makes local food in barcelona.",
+        imageSrc: "/productores/barcelona-producer.webp",
+        icon: "🫒",
       },
       {
         key: "es:42",
         href: "/es/madrid/madrid-producer",
         description: "Producer 42 makes local food in madrid.",
+        imageSrc: "/productores/madrid-producer.webp",
+        icon: "🫒",
       },
     ],
   );
@@ -87,6 +99,29 @@ test("public selections group the base municipality before the base area and the
 
 test("producer selections can fit producers across countries", () => {
   assert.ok(PRODUCER_SELECTION_MIN_ZOOM <= 2);
+});
+
+test("public map highlights resolve only exact durable producer keys", () => {
+  const items = buildProducerSelectionItems(
+    [
+      producer(42, "barcelona", "shared-slug", "es"),
+      producer(42, "paris", "shared-slug", "fr"),
+    ],
+    { explicitLocale: null, locale: "en" },
+  );
+
+  assert.deepEqual(items.map(({ key }) => key), ["es:42", "fr:42"]);
+  assert.equal(
+    buildProducerSelectionHighlightHref("/u/local-food", "es:42"),
+    "/u/local-food?highlight=es%3A42",
+  );
+  assert.equal(
+    buildProducerSelectionHighlightHref("/u/local-food", ""),
+    "/u/local-food",
+  );
+  assert.equal(resolveProducerSelectionItem(items, "fr:42")?.country, "fr");
+  assert.equal(resolveProducerSelectionItem(items, "shared-slug"), undefined);
+  assert.equal(resolveProducerSelectionItem(items, "es:404"), undefined);
 });
 
 test("public producer selections omit standby countries", () => {
