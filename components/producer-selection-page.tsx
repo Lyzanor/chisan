@@ -1,4 +1,8 @@
 import { ProducerSelectionExplorer } from "@/components/producer-selection-explorer";
+import {
+  ProfileQrLabel,
+  type ProfileQrLabelProps,
+} from "@/components/profile-qr-label";
 import type {
   ProducerSelectionExplorerModel,
   ProducerSelectionPageModel,
@@ -20,9 +24,11 @@ export type ProducerSelectionPageMessages = {
 export function ProducerSelectionPage({
   selection,
   messages,
+  profileQr,
 }: {
   selection: ProducerSelectionPageModel;
   messages: ProducerSelectionPageMessages;
+  profileQr?: ProfileQrLabelProps;
 }) {
   const mappedCount = selection.items.filter(
     (item) =>
@@ -63,6 +69,8 @@ export function ProducerSelectionPage({
           </p>
         ) : null}
       </header>
+
+      {profileQr ? <ProfileQrLabel {...profileQr} /> : null}
 
       {selection.items.length ? (
         <ProducerSelectionExplorer

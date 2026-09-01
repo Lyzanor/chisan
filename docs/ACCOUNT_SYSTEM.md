@@ -104,6 +104,14 @@ emit `noindex`; public profiles are eligible for indexing. Changing profile
 visibility never changes profile kind, claims, memberships, staff grants or
 producer entitlements.
 
+Every non-private public profile may present and download a Chisan QR label for
+its stable `/u/<public_handle>` URL. The QR and generated image are presentation
+of that route only: they store no account or catalog state and do not create a
+second identifier. The label uses the neutral selection treatment, even when
+the account belongs to a restaurant or shop, until an explicit reviewed public
+business-type field exists. A private profile never exposes an active label
+because its destination intentionally returns `404`.
+
 Favorites remain private by default. A favorite appears on the public profile
 only after the account explicitly enables `show_on_public_profile` for that
 exact `(country, producer_id)`. Enabling a profile never bulk-publishes existing

@@ -4,6 +4,24 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-02 — Printable profile QR labels
+
+final result: passed
+
+Reviewed the producer profile at 1280×900 and 390×844 using
+`profile-qr-producer-desktop.png` and `profile-qr-producer-mobile.png`. The
+collapsed control is visible directly below the profile hero; opening it shows
+the Chisan wordmark, an unmodified high-correction QR with its full quiet zone,
+and the producer name inside a `moss` rule. The mobile label is 310px wide in a
+390px viewport with zero horizontal overflow.
+
+The download action generated a 1200×1600 PNG. Its destination is the canonical
+parameter-free producer URL. Public user selections reuse the same component
+with the default `ink` rule, while private profiles expose no active label.
+
+Rejected: a logo over the QR modules, green QR modules, route parameters in the
+encoded URL and an always-expanded label that would dominate the profile.
+
 ## 2026-09-01 — Terminal-accent brand family
 
 final result: passed

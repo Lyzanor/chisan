@@ -12,6 +12,7 @@ import {
   type AccountMessageParams,
 } from "@/components/account/account-message";
 import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
+import { ProfileQrLabel } from "@/components/profile-qr-label";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { publicProfileBaseLocationKey } from "@/lib/accounts/public-profile-location";
 import {
@@ -237,6 +238,19 @@ export default async function AccountProfilePage({
             Save public profile
           </button>
         </form>
+        {account.publicHandle && account.publicProfileVisibility !== "private" ? (
+          <ProfileQrLabel
+            kind="selection"
+            locale={ACCOUNT_LOCALE}
+            name={account.displayName || `@${account.publicHandle}`}
+            path={`/u/${account.publicHandle}`}
+          />
+        ) : account.publicHandle ? (
+          <p className="account-callout">
+            Choose Unlisted or Public and save these settings to activate your profile QR and
+            print label.
+          </p>
+        ) : null}
       </section>
     </div>
   );
