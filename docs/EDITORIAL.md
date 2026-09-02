@@ -41,10 +41,11 @@ Apply the scope above as eight questions, in this order:
 2. **Does it materially produce or elaborate?** It grows, raises, catches,
    harvests, extracts, mills, ferments, roasts, bakes, preserves, distils,
    prepares or otherwise materially makes the food or drink. Ordinary stocking,
-   serving, packing, branding or reselling alone is not enough.
+   serving, washing, peeling, cutting, packing, branding or reselling alone is
+   not enough.
 3. **Is the output food or drink for people?** An entity whose relevant output
-   is animal feed, agricultural inputs, cosmetics, crafts or another non-food
-   product does not qualify through that activity.
+   is animal feed, breeding stock, agricultural inputs, cosmetics, crafts or
+   another non-food product does not qualify through that activity.
 4. **Does it have an own current offer?** At least one resulting product reaches
    the public under an identity that remains attributable to this producer.
 5. **Can the productive unit be placed?** Its actual productive activity can be
@@ -87,6 +88,10 @@ qualify; a polished profile that fails one scope criterion does not.
 | Company with several productive sites | Use one row per independently identifiable qualifying productive unit; do not add a parent-company row merely to group them |
 | Home-based or address-private producer | It may qualify when the productive municipality and activity are supportable; leave the exact address and coordinates empty when they are not public |
 | Shop, headquarters, tasting room or visitor centre separate from production | It may be a contact or visiting fact, but it neither determines catalog placement nor proves the productive location |
+| Washing, peeling, cutting, bagging or freezing fresh produce | Handling is not elaboration, whatever the format, atmosphere or gama it is sold as. A grower qualifies through its own growing; a unit that starts from others' produce qualifies only through a further transforming step such as cooking, roasting, fermenting, curing or preserving |
+| Tea, herb or botanical packer | Roasting, drying, fermenting, infusing or extracting on the unit's own premises is elaboration, as it is for coffee. Blending and packing leaf or botanicals bought ready-processed is not |
+| Edible input sold only to other manufacturers | An ingredient, culture, casing or additive that reaches the public only inside another company's product has no own offer. The same unit qualifies when it also sells under its own public identity |
+| Edible ice and comparable placeless commodities | Exclude as `out-of-scope`. The output is food, but nothing attaches it to the unit as its origin, so it fails the place-based identity criterion however it is branded |
 
 One row represents one qualifying productive unit through its public producer
 identity, or one governed producer collective, in one area:
@@ -148,29 +153,38 @@ Free text may corroborate a category but never assigns one mechanically. Use
 `Otros` only when no registered category fits. Exact tokens and representation
 live in `docs/CSV_CONTRACT.md`.
 
-## Decision order
+## Editorial decision matrix
 
-Resolve exclusions before assigning a verification label. `purge` applies to a
-published row; `reject` is the equivalent for a never-published candidate:
+This is the canonical place to choose an editorial outcome. Apply exclusions
+before assigning a verification label; the evidence contract only serializes
+the decision made here.
 
-| Condition | Existing row | New candidate |
-|---|---|---|
-| Same productive unit as an existing row | `merge` | Already present; remove from candidates |
-| Entity reliably proven not to exist | `purge:nonexistent` | `reject:nonexistent` |
-| Entity exists but is not a producer | `purge:not-producer` | `reject:not-producer` |
-| Entity is real but fails the catalog scope | `purge:out-of-scope` | `reject:out-of-scope` |
-| Permanent closure reliably established | `purge:closed` | `reject:closed` |
-| Qualifying productive unit belongs to another area | `purge:other-area` | `reject:other-area` |
-| No exclusion applies | Keep and assign `verificacion` | Add only when admission claims are sufficient; otherwise hold |
+| Situation | Editorial outcome | CSV | Evidence | Temporary or private state |
+|---|---|---|---|---|
+| A new candidate satisfies every admission claim and is not a duplicate | **accept** | Add the current public facts | Create `keep` with only the sources relied on | Remove the resolved candidate |
+| A published producer remains eligible or receives a supported correction | **update** | Keep or update the row | Create or update `keep` | Preserve contribution audit only in PostgreSQL or Git |
+| A required admission answer for a new candidate remains unknown | **hold** | No row | No record or tombstone | Retain one actionable blocker in the area note |
+| A never-published candidate affirmatively fails the catalog scope | **reject** | No row | Create `reject:<reason>` | Remove the resolved candidate |
+| A published row affirmatively fails the catalog scope | **purge** | Remove the row under the catalog lifecycle contract | Create `purge:<reason>` | Preserve account consequences in PostgreSQL and Git |
+| Two published rows are the same productive unit | **merge** | Keep the surviving row and remove the duplicate | Create `merge` from the removed slug to `targetSlug` | Preserve account and route consequences in their owning systems |
+| A candidate is the same productive unit as an existing row | **already represented** | No change | No record and never a fabricated `merge` | Remove the duplicate candidate |
+| A candidate belongs to another known area and its proposed placement was not disproved | **route** | No change | No record | Move the lead to the actual area's note without expanding the current cutoff |
 
-Use `not-producer` when no material productive activity exists. Use
-`out-of-scope` when productive activity exists but another scope criterion
-fails.
+Use these exact exclusion reasons only for `reject` and `purge`:
 
-Do not turn uncertainty into an exclusion. An unresolved existing row remains
-`pendiente` according to the available evidence. An unresolved
-candidate receives the workflow outcome `hold` and remains in candidate notes;
-`hold` is not an evidence action and never creates a CSV row.
+| Condition | Reason |
+|---|---|
+| Entity reliably proven not to exist | `nonexistent` |
+| Entity exists but performs no qualifying production or elaboration | `not-producer` |
+| Entity produces something but fails another catalog-scope criterion | `out-of-scope` |
+| Permanent closure reliably established | `closed` |
+| The proposed area was investigated and disproved | `other-area` |
+
+Unknown is not false. An unresolved existing row remains published and uses
+`pendiente` only according to the available evidence; `hold` applies to a new
+candidate and is neither an evidence action nor a CSV state. Route an incidental
+lead when its actual area is known, and use `other-area` only for a placement
+that was actually checked and disproved.
 
 ## Core verification claims
 
@@ -302,7 +316,7 @@ turning admission into full enrichment.
 Accepted rows receive a `keep` and leave the note; rejected candidates receive a
 tombstone and leave the note; unresolved candidates remain without a CSV or
 evidence decision. Exact coordinates are optional, but the productive
-municipality is not; follow `docs/GEOLOCATION.md` and leave an unsupported point
+municipality is not; follow `docs/PRODUCER_GEOLOCATION.md` and leave an unsupported point
 empty.
 
 ## Level 3 — Verification and enrichment
