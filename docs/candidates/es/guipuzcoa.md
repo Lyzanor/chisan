@@ -6,7 +6,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/guipuzcoa>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 55 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 54 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -62,7 +62,6 @@
 | Ikanorte | Usurbil | `Pescado` | The directory states: “Ikanorte es una compañía localizada en Usurbil (Guipúzcoa) su especialidad es la distribución de pescado fresco y…” | [Directory](https://www.proveedores.com/proveedores/ikanorte/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Ner Breen | Hondarribia | `Pescado` | The directory states: “Actualmente somos los únicos productores de tilapia nacional” | [Directory](https://www.proveedores.com/proveedores/ner-breen/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Yurrita e Hijos | Mutriku | `Pescado` | The directory states: “Fundada en 1867, Yurrita e Hijos es una empresa situada en Mutriku (Guipúzcoa) que se especializa en la elaboración y…” | [Directory](https://www.proveedores.com/proveedores/yurrita-e-hijos/) | <https://www.yurritagroup.com/> | Confirm an own offer that stays attributable to this producer through sale. |
-| Sammic | Azkoitia | `Setas` | The directory states: “Desde hace más de 50 años, Sammic se dedica a la fabricación de maquinaria para hostelería , colectividades y…” | [Directory](https://www.proveedores.com/proveedores/sammic/) | <https://www.sammic.es/> | Confirm a food or drink offer for people; the listing describes breeding stock or another non-food output. |
 | Obea-Chair | Andoain | `Té e infusiones` | The directory states: “En Obea-Chair ,somos fabricantes y distribuidores de productos de ortopedia” | [Directory](https://www.proveedores.com/proveedores/obea-chair/) | <https://obea.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Arizmendi Ardoak eta Gutiziak | Sondika | `Vino` | The directory states: “Somos una empresa nacional responsable, que selecciona directamente los productos que distribuye, conociendo de cerca…” | [Directory](https://www.proveedores.com/proveedores/arizmendi-ardoak-eta-gutiziak/) |  | Confirm the winery and its current published range. |
 | Festara | Donostia-San Sebastián | `Vino` | The directory states: “Festara es una empresa dedicada a la fabricación de vino espumoso bajo la marca Basondoa” | [Directory](https://www.proveedores.com/proveedores/festara/) | <https://basondoa.com/> | Confirm the winery and its current published range. |

@@ -6,7 +6,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/cuenca>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 38 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 37 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -15,7 +15,7 @@
 | Alfricema | El Pedernoso | `Fruta y verdura` | The directory states: “Cultivo y distribución de ajo de primera calidad” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | La Majadilla | Villarta | `Huevos` | The directory states: “Granja avícola con unas 1.000 gallinas camperas en terreno ecológico” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Noalles y Balanza | Cuenca | `Legumbres y cereales` | The directory states: “Fabricación de derivados de cereales, sobre todo avena” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
-| Kitu Snack | Villanueva de la Jara | `Aperitivos` | The directory states: “Fabrica snacks vegetales saludables con marca propia” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Scope question: decide whether blending and packing imported leaf is qualifying elaboration with a place-based identity. |
+| Kitu Snack | Villanueva de la Jara | `Aperitivos` | The directory states: “Fabrica snacks vegetales saludables con marca propia” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | La Abeja Prodigiosa | Landete | `Miel` | The directory states: “Tres generaciones produciendo y comercializando miel con colmenar propio” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm an own apiary behind the honey sold. |
 | Panadería Pastelería Marisol | Casas de Fernando Alonso | `Dulces y repostería` | The directory states: “Cuatro generaciones de maestros panaderos elaborando dulces artesanales” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive workshop and that it is currently active. |
 | Panificadora Conquense | Cuenca | `Pan y cereal` | The directory states: “Panificadora fundada en 1936 con instalaciones en Cuenca” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm an own offer that stays attributable to this producer through sale. |
@@ -49,4 +49,3 @@
 | Legumbres La Manchega | Villarta | `Legumbres` | The directory states: “Empresa familiar dedicada al mercado de las legumbres” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive workshop and that it is currently active. |
 | Agrozonher | Zarza de Tajo | `Frutos secos` | The directory states: “Suministra pistacho natural, bio y ecológico en varios formatos” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Comercial Azucarera Almaguer | Tarancón | `Otros` | The directory states: “Se declara fabricante de azúcar con 25 años en el sector” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive workshop and that it is currently active. |
-| Hielos Cubysul | Tarancón | `Otros` | The directory states: “Fabrica cubitos de hielo en Tarancón” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |

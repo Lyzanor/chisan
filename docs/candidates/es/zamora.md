@@ -36,7 +36,7 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Buleza S. Coop. (Leche de Burra) | Zamora | `Lácteos y quesos` | The directory states: “Cooperativa de ganaderos de asno zamorano-leonés dedicada al ordeño” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Scope question: decide whether an edible input with no public own offer belongs in the catalog. |
+| Buleza S. Coop. (Leche de Burra) | Zamora | `Lácteos y quesos` | The directory states: “Cooperativa de ganaderos de asno zamorano-leonés dedicada al ordeño” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the input also reaches the public under this producer’s own identity, not only inside another company’s product. |
 | Huevos Ecológicos EcoTera | Mombuey | `Huevos` | The directory states: “Explotación familiar avícola de huevo ecológico. Aparece dos veces en el directorio” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Consolidate the duplicate listings before creating a row. |
 | Licores Deza | Coreses | `Destilados y licores` | The directory states: “Licores propios elaborados en Coreses desde 1980” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Cárnicas Casaseca | Zamora | `Carne` | The directory states: “Elaboración de productos de casquería de vacuno, fresca y elaborada” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm an own offer that stays attributable to this producer through sale. |
@@ -61,7 +61,7 @@
 | Quesos Campostera | Villalpando | `Lácteos y quesos` | The directory states: “Distribución de queso de cabra” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the dairy and that it is currently active. |
 | Carnicería Kikin | Fuentesaúco | `Carne` | The directory states: “Más de 30 años elaborando carne” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
 | Legumbres Luisca | Benavente | `Legumbres` | The directory states: “Tres décadas en la venta al por mayor de legumbre” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the productive workshop and that it is currently active. |
-| Cárnicas Mombuey | Mombuey | `Carne` | The directory states: “Proveedores de carne de cerdo en Mombuey” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Scope question: decide whether cutting and packing without transformation is qualifying elaboration. |
+| Cárnicas Mombuey | Mombuey | `Carne` | The directory states: “Proveedores de carne de cerdo en Mombuey” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm a transforming step beyond washing, peeling, cutting and packing; handling alone is not elaboration. |
 | Azúcares Zamora | Zamora | `Otros` | The directory states: “Fabricación y distribución mayorista de azúcar” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the productive workshop and that it is currently active. |
 
 ## FROMAGO Cheese Experience — 2026-09-03

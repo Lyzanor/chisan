@@ -6,7 +6,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/jaen>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 131 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
+- Scope: 130 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -132,7 +132,6 @@
 | Alavi Huevos Camperos | Mengíbar | `Huevos` | The directory states: “En Alavi Huevos Camperos somos una empresa familiar que ha logrado fusionar su pasión por los animales y su bienestar…” | [Directory](https://www.proveedores.com/proveedores/alavi-huevos-camperos/) | <https://alavihuevoscamperos.es/> | Confirm the farm behind the declared output. |
 | Granja La Ruidera | Andújar | `Huevos` | The directory states: “Gracias a la alimentación natural de nuestras gallinas, garantizamos un producto de primera calidad y la más completa…” | [Directory](https://www.proveedores.com/proveedores/granja-la-ruidera/) | <http://www.granjalaruidera.com/> | Confirm the farm behind the declared output. |
 | Legumbres Gómez | Jamilena | `Legumbres` | The directory states: “Ubicados en Jamilena (Jaén) desde 1980, Legumbres Gómez es una empresa familiar dedicada a la selección…” | [Directory](https://www.proveedores.com/proveedores/legumbres-gomez/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
-| Hielos Sierra Segura | Puente de Génave | `Otros` | The directory states: “Hielos Sierra Segura es una empresa fabricante y distribuidora de hielo localizada en Puente de Génave (Jaén)” | [Directory](https://www.proveedores.com/proveedores/hielos-sierra-segura/) | <https://hielossierrasegura.com/> | Scope question: decide whether edible ice is food or drink within the catalog scope. |
 | Telecubito | Jaén | `Otros` | The directory states: “Telecubito es una empresa española localizada en Jaén cuya actividad consiste en ser proveedores de hielo” | [Directory](https://www.proveedores.com/proveedores/telecubito/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | DISTRIBUCIONES JUAN LEIVA GAMEZ | Jaén | `Pan y cereal` | The directory states: “DISTRIBUCIONES JUAN LEIVA GAMEZ es una empresa dedicada a la comercialización de materia prima para la fabricación de…” | [Directory](https://www.proveedores.com/proveedores/distribuciones-juan-leiva-gamez/) |  | Separate the own productive activity from the trading arm before placing the row. |
 | Hornipan Rangel | Bailén | `Pan y cereal` | The directory states: “Hornipan Rangel es una empresa afincada en Jaén especializada en el mundo de los proveedores de pan desde hace más de…” | [Directory](https://www.proveedores.com/proveedores/hornipan-rangel/) |  | Confirm the productive workshop and that it is currently active. |

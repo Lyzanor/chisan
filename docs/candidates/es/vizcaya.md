@@ -34,7 +34,7 @@ Target CSV: `data/csv/es/pais-vasco/vizcaya.csv`
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/vizcaya>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 62 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 60 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -84,8 +84,6 @@ Target CSV: `data/csv/es/pais-vasco/vizcaya.csv`
 | Guvac Leche | Carranza | `Lácteos y quesos` | The directory states: “Con su sede localizada en Vizcaya, Guvac Leche es una cooperativa cuya actividad consiste en ser proveedores de leche” | [Directory](https://www.proveedores.com/proveedores/guvac-leche/) |  | Confirm the dairy and that it is currently active. |
 | Swallow uP | Bilbao | `Lácteos y quesos` | The directory states: “Elaboración de estrategias comerciales e impulso para nuevos productos y su comercialización en zonas de venta…” | [Directory](https://www.proveedores.com/proveedores/swallow-up/) |  | Confirm the dairy and that it is currently active. |
 | Mendieder | Abadiño | `Miel` | The directory states: “Ofrecemos miel de producción propia en colmenas duranguesado” | [Directory](https://www.proveedores.com/proveedores/mendieder/) |  | Confirm an own apiary behind the honey sold. |
-| Cubibilbo | Galdakao | `Otros` | The directory states: “Nos especializamos en la fabricación y comercialización al por mayor de cubitos de hielo” | [Directory](https://www.proveedores.com/proveedores/cubibilbo/) | <https://www.cubibilbo.com/> | Scope question: decide whether edible ice is food or drink within the catalog scope. |
-| Irokori Solutions | Bilbao | `Otros` | The directory states: “Únicamente producimos bloques de hielo cristalino que después cortamos con sierra en diferentes medidas” | [Directory](https://www.proveedores.com/proveedores/irokori-solutions/) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |
 | Lurko | Gizaburuaga | `Otros` | The directory states: “Ubicada en Gizaburuaga (Vizcaya), Lurko es una empresa especializada en la elaboración de comida tradicional vasca …” | [Directory](https://www.proveedores.com/proveedores/lurko/) |  | Identify the actual product and productive unit before assigning a category. |
 | Mas Ke Pan Siglo XXI | Bilbao | `Pan y cereal` | The directory states: “Mas Ke Pan Siglo XXI se encuentra en Bilbao y desarrolla sus actividades en el mercado de los proveedores de pan…” | [Directory](https://www.proveedores.com/proveedores/mas-ke-pan-siglo-xxi/) | <http://www.maskepan.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Obleas Artesanas Yonata | Arrigorriaga | `Pan y cereal` | The directory states: “Obleas Artesanas Yonata es una empresa con sede en Vizcaya que desde el año 1988 se dedica a la fabricación y…” | [Directory](https://www.proveedores.com/proveedores/obleas-artesanas-yonata/) | <https://obleasyonata.com/> | Confirm the productive workshop and that it is currently active. |

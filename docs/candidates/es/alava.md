@@ -27,7 +27,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/alava>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 36 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 35 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -63,9 +63,8 @@
 | Bodegas Fuidio | Yécora | `Vino` | The directory states: “Familia que cultiva 25 hectáreas propias y elabora desde 1999” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Confirm the winery and its current published range. |
 | Araex | Vitoria-Gasteiz | `Vino` | The directory states: “Se declara fabricante y distribuidor de vino con 20 años en el sector” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Publish the specific productive unit, not the parent group. |
 | Artevino | Villabuena de Álava | `Vino` | The directory states: “Grupo vitivinícola que agrupa varias bodegas prestigiosas” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Publish the specific productive unit, not the parent group. |
-| Natuber | Vitoria-Gasteiz | `Fruta y verdura` | The directory states: “Comercialización mayorista de patata pelada de variedad agria” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Scope question: decide whether washing, peeling and packing counts as qualifying elaboration. |
-| Hielos Gasteiz | Moreda de Álava | `Otros` | The directory states: “Proveedores de hielo desde 1978” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |
-| Guserbiot | Vitoria-Gasteiz | `Otros` | The directory states: “Productores y distribuidores de levadura” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Scope question: decide whether an edible input with no public own offer belongs in the catalog. |
+| Natuber | Vitoria-Gasteiz | `Fruta y verdura` | The directory states: “Comercialización mayorista de patata pelada de variedad agria” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Confirm a transforming step beyond washing, peeling, cutting and packing; handling alone is not elaboration. |
+| Guserbiot | Vitoria-Gasteiz | `Otros` | The directory states: “Productores y distribuidores de levadura” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Confirm the input also reaches the public under this producer’s own identity, not only inside another company’s product. |
 | Bodegas Grupo Eguren | Laguardia | `Vino` | The directory states: “Parte de Viñedos y Bodegas Sierra Cantabria; la ficha habla de venta” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Publish the specific productive unit, not the parent group. |
 | Cafés La Brasileña | Vitoria-Gasteiz | `Café` | The directory states: “Casa cafetera de Vitoria fundada en 1928” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Confirm an own roastery rather than repackaging third-party coffee. |
 | Celigüeta | Salvatierra | `Otros` | The directory states: “Fabricación y comercialización desde 1996, sin producto identificado” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Identify the actual product and productive unit before assigning a category. |

@@ -19,7 +19,7 @@ Plausible lead; admission not assessed. Confirm the exact productive-unit link f
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/burgos>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 46 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 45 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -53,7 +53,6 @@ Plausible lead; admission not assessed. Confirm the exact productive-unit link f
 | Fábrica de Quesos Vadorrey | Fuentecén | `Lácteos y quesos` | The directory states: “Localizada en Fuentecén (Burgos) y con una gran tradición en el sector, Fábrica de Quesos Vadorrey es una empresa que…” | [Directory](https://www.proveedores.com/proveedores/fabrica-de-quesos-vadorrey/) |  | Confirm the dairy and that it is currently active. |
 | Frías | Burgos | `Lácteos y quesos` | The directory states: “Frías es una empresa de Burgos que se especializa en la fabricación y distribución de leche y otros productos lácteos” | [Directory](https://www.proveedores.com/proveedores/frias/) | <https://frias.es/> | Confirm the dairy and that it is currently active. |
 | Raíz de Guzman | Roa | `Lácteos y quesos` | The directory states: “Raíz de Guzman es una empresa localizada en Roa (Burgos) que desde el año 2006 distribuye productos exclusivos en…” | [Directory](https://www.proveedores.com/proveedores/raiz-de-guzman/) |  | Confirm the dairy and that it is currently active. |
-| Cubitos de Hielo Duero | Aranda de Duero | `Otros` | The directory states: “Fabricamos dos tipos de hielo en cubitos” | [Directory](https://www.proveedores.com/proveedores/cubitos-de-hielo-duero/) | <https://cubitosduero.com/> | Scope question: decide whether edible ice is food or drink within the catalog scope. |
 | Harinera Arandina | Aranda de Duero | `Pan y cereal` | The directory states: “Inaugurada en el año 1982 en Aranda del Duero (Burgos), la empresa Harinera Arandina se especializa en la fabricación…” | [Directory](https://www.proveedores.com/proveedores/harinera-arandina/) | <https://www.harineraarandina.com/> | Confirm an own mill. |
 | Mimosas | Burgos | `Pan y cereal` | The directory states: “Con sede en Burgos, Mimosas es una empresa dedicada a la elaboración y comercialización de pastas tradicionales…” | [Directory](https://www.proveedores.com/proveedores/mimosas/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Gambafresh | Valdorros | `Pescado` | The directory states: “Gambafresh es una empresa fundada en 2003 situada en Valdorros (Burgos), dedicada al sector del marisco” | [Directory](https://www.proveedores.com/proveedores/gambafresh/) |  | Confirm an own offer that stays attributable to this producer through sale. |

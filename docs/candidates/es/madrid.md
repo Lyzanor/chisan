@@ -73,7 +73,7 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/madrid>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 279 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 278 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -95,7 +95,6 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Singular Destilados Artesanos | Madrid | `Destilados y licores` | The directory states: “Marca propia de ginebra y vodka artesanos” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/madrid) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Pan Rústico | Madrid | `Pan y cereal` | The directory states: “Dice elaborar y distribuir pan precocido y bollería congelada” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/madrid) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Naturquinoa | San Fernando de Henares | `Legumbres y cereales` | The directory states: “Declara transformación además de importación y distribución de quinoa ecológica” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/madrid) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
-| Cubitos de Hielo Cumbreño | Madrid | `Otros` | The directory states: “Fabricante familiar de hielo desde hace cuarenta años para la hostelería madrileña” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/madrid) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |
 | Tupana Obrador | Madrid | `Pan y cereal` | The directory states: “Obrador artesano con cuatro generaciones de panaderos” | [Listing](https://www.proveedores.com/proveedores/tupana-obrador/) | <https://tupanaobrador.com> | Confirm an own offer that stays attributable to this producer through sale. |
 | Barrancos Food | Madrid | `Comida preparada` | The directory states: “Elaboración de comida gourmet de quinta gama para restauración” | [Listing](https://www.proveedores.com/proveedores/barrancos-food/) | <https://barrancosfood.com> | Confirm an own offer that stays attributable to this producer through sale. |
 | Quinto Café | Tres Cantos | `Café` | The directory states: “Selección, tueste y producción de café de especialidad” | [Listing](https://www.proveedores.com/proveedores/quinto-cafe/) | <https://quintocafe.es> | Confirm an own offer that stays attributable to this producer through sale. |
