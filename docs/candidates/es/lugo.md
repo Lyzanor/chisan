@@ -98,3 +98,17 @@
 | Cárnicas Nay | Sarria | `Carne` | The directory states: “Venta de canales y medias canales de ternera gallega” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Confirm the productive workshop and that it is currently active. |
 | Leche de Galicia | Vilalba | `Lácteos y quesos` | The directory states: “Fabricación y comercialización de leche” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Consolidate the duplicate listings before creating a row. |
 | Leite Río | Lugo | `Lácteos y quesos` | The directory states: “Líder gallego de leche con más de 31 años” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Consolidate the duplicate listings before creating a row. |
+
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Lugo, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Queso Bisqato + El Kano | Guitiriz | `Lácteos y quesos` — artisan raw cow-milk cheese | Small farmstead cheese workshop in Guitiriz transforming pasture-fed raw cow milk; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy holding in Guitiriz, sanitary register and current cheese lineup. |
+| Panadería Lareira | Cervo (Vila de Suso) | `Pan y cereal` — traditional Galician sourdough bread | Traditional Galician wood-fired artisan bakery in Vila de Suso (Cervo, A Mariña Lucense); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify dedicated baking workshop in Cervo and daily direct-sales availability. |
+

@@ -38,3 +38,19 @@ Target CSV: `data/csv/es/castilla-y-leon/avila.csv`
 | Vinos Perlado | Cebreros | `Vino` | The directory states: “Elabora y comercializa bebidas alcohólicas en Cebreros desde 1940” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/avila) | <https://bodegasbenitoblazquez.com> | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
 | Serenitea | Lanzahíta | `Té e infusiones` | The directory states: “Té biológico e infusiones ecológicas con más de cuarenta variedades” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/avila) |  | Scope question: decide whether blending and packing imported leaf is qualifying elaboration with a place-based identity. |
 | La Esmeralda (Vidal Sánchez e Hijos) | El Barco de Ávila | `Legumbres` | The directory states: “Comercializa legumbres desde El Barco de Ávila” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/avila) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
+
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 4 unresolved Level 1 leads in Ávila, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Sabores del Aravalle | Umbrías | `Dulces` — artisan jams and preserves | Craft confectionery workshop in the Aravalle valley making artisan jams and sweet preserves; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.saboresdelaravalle.com> | Confirm physical workshop premises in Umbrías and active commercial distribution. |
+| Soles de Gredos | Hoyocasero | `Dulces` — traditional pastry and confectionery | Traditional artisan bakery and pastry workshop located in Hoyocasero (Sierra de Gredos); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.pasteleriasolesdegredos.com> | Verify dedicated production premises in Hoyocasero and current packaged offer. |
+| Cooperativa Caprino de Candeleda | Candeleda / Navalperal de Tormes | `Lácteos y quesos` — Verata goat cheese | Goat farmers collective producing traditional raw goat-milk cheese in Gredos; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://quebrantahuesos.org/> | Verify dairy transformation workshop address and retail cheese lineup. |
+| Hidromiel Decuria | Madrigal de las Altas Torres | `Destilados y licores` — artisan mead | Craft mead producer based in Madrigal de las Altas Torres; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.hidromieldecuria.es> | Confirm dedicated fermentation cellar in Madrigal de las Altas Torres and bottled lineup. |
+

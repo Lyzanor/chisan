@@ -157,3 +157,17 @@ Review each linked lead through current first-party or authoritative material. T
 | Gourmet del Monte | Badajoz | `Vino` | The directory states: “Estamos localizados en Badajoz y somos proveedores de productos gourmet seleccionados de las mejores bodegas…” | [Directory](https://www.proveedores.com/proveedores/gourmet-del-monte/) | <https://www.gourmetdelmonte.es/> | Confirm the winery and its current published range. |
 | Viñas de Alange | Alange | `Vino` | The directory states: “Viñas de Alange es una empresa localizada en Córdoba especialista en la producción y distribución de vinos con la más…” | [Directory](https://www.proveedores.com/proveedores/vinas-de-alange/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Vinos Leneus | Almendralejo | `Vino` | The directory states: “Vinos Leneus es una empresa localizada en Extremadura y nos especializamos como productores y proveedores de vinos…” | [Directory](https://www.proveedores.com/proveedores/vinos-leneus/) |  | Confirm the winery and its current published range. |
+
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Badajoz, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| El Señorío de Monesterio | Monesterio | `Carne` — cured acorn-fed Iberian ham and charcuterie | Artisan Iberian curing house and livestock holding in Monesterio (Tentudía); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.señoriodemonesterio.es/> | Verify physical curing cellars in Monesterio and continuous branded retail offer. |
+| Quesería Buena Vista | Ribera del Fresno | `Lácteos y quesos` — artisan goat and sheep cheese | Family-run cheese dairy in Ribera del Fresno (Tierra de Barros) crafting raw milk cheeses; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.queseriabuenavista.com/es/> | Confirm dedicated dairy workshop address in Ribera del Fresno and current cheese lineup. |
+
