@@ -68,7 +68,7 @@
 
 - Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
 - Search date: 2026-09-03.
-- Scope: 19 unresolved Level 1 leads in Zamora, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Scope: 18 unresolved Level 1 leads in Zamora, after de-duplication against the current area CSV, candidate backlog and closed evidence.
 - Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
 - Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
 
@@ -89,7 +89,7 @@
 | Vinos de la Sierra de la Culebra | Riofrío de Aliste | `Vino` — mountain wines | Viticultural project (Cepas de la Culebra) producing wines in Riofrío de Aliste; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.cepasdelaculebra.com/vinos-de-la-sierra-de-la-culebra/> | Verify on-site winemaking cellar in Riofrío de Aliste and current wine labels. |
 | Bodega Los Bruños | Arcenillas | `Vino` — Tierra del Vino winery | Craft winery project located in Arcenillas; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.facebook.com/profile.php?id=100084763030933> | Verify physical cellar in Arcenillas, vineyard holdings and active commercial production. |
 | Licores del Abuelo de Vega y Gin Vega | Vega de Tera | `Destilados y licores` — artisan spirits and gin | Traditional distillery in Vega de Tera; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.licoresabuelodevega.es> | Confirm own distilling equipment in Vega de Tera and current packaged spirits portfolio. |
-| Chocolate Tierra Dulce | Moraleja del Vino | `Dulces` — artisan chocolate | Craft confectionery workshop in Moraleja del Vino; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm dedicated workshop in Moraleja del Vino and commercial take-home chocolate range. |
+| Chocolate Tierra Dulce | Moraleja del Vino | `Chocolate` / `Dulces y repostería` — artisan chocolate | Craft confectionery workshop in Moraleja del Vino; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm dedicated workshop in Moraleja del Vino and commercial take-home chocolate range. |
 | Cardiza | Morales del Vino | `Carne` — cured meats and charcuterie | Meat elaboration workshop (Cárnicas Díaz) in Morales del Vino; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.carnicasdiaz.com/> | Verify transformation and curing facility in Morales del Vino versus pure meat distribution. |
 | Oxen Durii | Sobradillo de Palomares | `Carne` — extensive organic ox meat | Free-range ox breeding holding in Sobradillo de Palomares (Sayago); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.oxendurii.com> | Verify extensive livestock farm in Sobradillo de Palomares and packaged meat direct offer. |
-| La Panera del Che | Zamora | `Pan y cereal` — traditional bakery | Artisan wood-fired bakery project based in Zamora; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.vinodotoro.com> | Verify physical baking workshop in Zamora and stable ongoing retail presence. |
+

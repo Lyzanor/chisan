@@ -45,7 +45,8 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Membrillo La Comarca | Pereje (Trabadelo) | `Dulces` — artisan quince paste | El Bierzo craft workshop specializing in natural artisan quince paste; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://membrillolacomarca.com/> | Verify physical workshop address in Pereje / Trabadelo and current commercial retail channels. |
+| Membrillo La Comarca | Pereje (Trabadelo) | `Dulces y repostería` — artisan quince paste | El Bierzo craft workshop specializing in natural artisan quince paste; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://membrillolacomarca.com/> | Verify physical workshop address in Pereje / Trabadelo and current commercial retail channels. |
+
 | Quesos Colemasa | Mansilla de las Mulas | `Lácteos y quesos` — artisan cheese | Traditional cheese producer located in Mansilla de las Mulas; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy workshop in Mansilla de las Mulas, milk source and commercial range. |
 
 ## Feria del Pimiento Morrón de Fresno de la Vega — 2026-09-03

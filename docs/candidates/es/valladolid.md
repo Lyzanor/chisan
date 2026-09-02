@@ -37,9 +37,10 @@
 |---|---|---|---|---|---|---|
 | Pura Churra | Portillo | `Carne` — churra sheep products | Autochthonous Churra sheep livestock breeding holding based in Portillo; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm holding location in Portillo, transformation workshop and commercial packaged offer. |
 | Aceitunas Martín Castro | Villanubla | `Conservas` — artisan seasoned olives | Traditional family olive dressing and seasoning workshop in Villanubla; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://aceitunasmartincastro.com/> | Verify physical transformation facility in Villanubla versus pure merchant distribution. |
-| Clauval Artesanos | Valladolid | `Dulces` — traditional artisan confectionery | Craft bakery and confectionery workshop located in Valladolid; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.clauvalartesanos.es> | Verify dedicated production workshop in Valladolid and current packaged range. |
+| Clauval Artesanos | Valladolid | `Dulces y repostería` — traditional artisan confectionery | Craft bakery and confectionery workshop located in Valladolid; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.clauvalartesanos.es> | Verify dedicated production workshop in Valladolid and current packaged range. |
 | Miel Oro del Duero | Valladolid | `Miel` — artisan Duero honey | Beekeeping project extracting and packing regional Duero valley honeys; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.orodelduero.com/> | Verify own apiary holdings, extraction facility address and current retail channels. |
-| Qrèm | Valladolid | `Dulces` — craft cheesecake bakery | Artisan bakery specializing in signature craft cheesecakes; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm dedicated craft workshop in Valladolid and direct take-home availability. |
+| Qrèm | Valladolid | `Dulces y repostería` — craft cheesecake obrador | Artisan bakery specializing in signature craft cheesecakes; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://qrem.es/> | Confirm dedicated craft workshop in Valladolid and direct take-home availability. |
+
 
 ## Proveedores.com directory sweep — 2026-09-02
 
