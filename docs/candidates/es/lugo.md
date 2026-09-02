@@ -126,4 +126,18 @@
 | Panadería Ousá | Friol | `Pan y cereal` — traditional wood-fired Galician bread | Historic wood-fired bakery in Friol renowned for its traditional Galician crusty bread and artisan empanadas; featured regularly in San Froilán traditional markets. | [San Froilán](https://sanfroilan.info) | — | Verify physical bakery premises in Friol, flour sourcing and continuous direct sales. |
 | Mel de Muras | Muras | `Miel` — mountain heather and chestnut honey | Mountain beekeeping holding in Muras (Serra do Xistral); regular exhibitor at the Feira do Mel de San Froilán. | [San Froilán](https://sanfroilan.info) | — | Confirm active apiaries in Serra do Xistral, extraction workshop and commercial distribution. |
 
+## Festa da Castaña de Folgoso do Courel — 2026-09-03
+
+- Discovery source: Festa da Castaña de Folgoso do Courel (<https://concellodocourel.es>) and Asociación de Desenvolvemento Rural O Courel.
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Lugo, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published festival notices and local artisan registers available on 2026-09-03.
+- Source ceiling: festival notices establish local traditional harvesting, sequeiro operation and community origin; they do not by themselves prove full catalog admission or autonomous commercial workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Sequeiro de Mostad | Folgoso do Courel | `Frutos secos` / `Otros` — traditional smoked dried chestnuts (castaña maiada) | Traditional stone drying house (*sequeiro*) in Mostad (Folgoso do Courel) processing sweet chestnuts over slow oak-ember smoke; iconic heritage producer of the Festa da Castaña. | [Folgoso do Courel](https://concellodocourel.es) | — | Verify physical sequeiro facility in Mostad, seasonal drying schedule and direct sales availability. |
+| Caurel Natura | Folgoso do Courel | `Miel` / `Frutos secos` — raw chestnut honey and chestnut flour | Mountain holding in Folgoso do Courel producing artisanal raw honey from chestnut blossoms and milled chestnut flour; regular local festival exhibitor. | [Folgoso do Courel](https://concellodocourel.es) | — | Confirm farmstead workshop premises in Folgoso do Courel, apiary location and retail points. |
+
+
 

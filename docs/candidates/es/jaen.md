@@ -143,3 +143,17 @@
 | Piscifactoría Aguamula | Cazorla | `Pescado` | The directory states: “En Piscifactoría Aguamula somos una piscifactoría de truchas ubicada en el corazón de la Sierra de Cazorla (Jaén)” | [Directory](https://www.proveedores.com/proveedores/piscifactoria-aguamula/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Andunatura | Andújar | `Té e infusiones` | The directory states: “Andunatura es una empresa que tiene 50 años de experiencia como proveedores de plantas medicinales” | [Directory](https://www.proveedores.com/proveedores/andunatura/) | <https://andunatura.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | CaféVerde | Guarromán | `Té e infusiones` | The directory states: “CaféVerde es una empresa localizada en Jaén (Guarromán), especializada en la elaboración y comercialización de café” | [Directory](https://www.proveedores.com/proveedores/cafeverde/) |  | Confirm an own offer that stays attributable to this producer through sale. |
+
+## Fiesta de la Aceituna de Martos — 2026-09-03
+
+- Discovery source: Fiesta de la Aceituna de Martos (<https://martos.es>) and Ayuntamiento de Martos official olive oil festival records.
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Jaén, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published festival notices, cooperative registries and first-party pages available on 2026-09-03.
+- Source ceiling: festival notices establish cooperative mill presence, harvest celebration and brand lines; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SCA San Antonio de Padua (Tuccioliva) | Martos | `Aceite` — early harvest Picual AOVE (Tuccioliva Gran Selección) | Benchmark olive oil cooperative in Martos producing the acclaimed Tuccioliva early-harvest extra virgin olive oil (multiple Alimentos de España awards); central participant in the fiesta. | [Martos](https://martos.es) | <https://tuccioliva.com/> | Confirm cooperative oil mill address in Martos, member olive grove register and active bottled offer. |
+| SCA San Amador | Martos | `Aceite` — extra virgin olive oil (Sierra de la Pandera) | Historic olive cooperative founded in Martos milling Picual olives from the Martos countryside and Sierra de la Pandera; participant in the municipal olive campaign. | [Martos](https://martos.es) | <https://sierradelapandera.com/> | Verify physical mill installations in Martos, packaging registry and retail availability. |
+

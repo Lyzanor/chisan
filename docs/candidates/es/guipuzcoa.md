@@ -67,3 +67,19 @@
 | Arizmendi Ardoak eta Gutiziak | Sondika | `Vino` | The directory states: “Somos una empresa nacional responsable, que selecciona directamente los productos que distribuye, conociendo de cerca…” | [Directory](https://www.proveedores.com/proveedores/arizmendi-ardoak-eta-gutiziak/) |  | Confirm the winery and its current published range. |
 | Festara | Donostia-San Sebastián | `Vino` | The directory states: “Festara es una empresa dedicada a la fabricación de vino espumoso bajo la marca Basondoa” | [Directory](https://www.proveedores.com/proveedores/festara/) | <https://basondoa.com/> | Confirm the winery and its current published range. |
 | Pernod Ricard Bodegas | Donostia-San Sebastián | `Vino` | The directory states: “Pernod Ricard Bodegas forma parte del Grupo Pernod Ricard y estamos ubicados en Donostia, San Sebastián aunque…” | [Directory](https://www.proveedores.com/proveedores/pernod-ricard-bodegas/) |  | Confirm the winery and its current published range. |
+
+## Fiesta de la Alubia de Tolosa (Babarrunaren Festa) — 2026-09-03
+
+- Discovery source: Tolosako Babarrunaren Festa (<https://tolosa.eus>) and Tolosako Babarrunaren Elkartea official producers contest records.
+- Search date: 2026-09-03.
+- Scope: 4 unresolved Level 1 leads in Gipuzkoa, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published competition award records and official producer associations available on 2026-09-03.
+- Source ceiling: competition awards and fair participant records establish verified artisan production, category and local baserri holding; they do not by themselves prove full catalog admission or autonomous commercial workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Caserío Gorregi | Tolosa | `Legumbres y cereales` — Eusko Label Tolosako Babarruna | Traditional family baserri holding in Tolosa cultivating authentic Alubia de Tolosa under Eusko Label; runner-up at the Concurso Oficial de Productores de Alubia de Tolosa. | [Tolosa Babarruna](https://tolosa.eus) | — | Confirm baserri agricultural plots in Tolosa, harvest volume and direct packaging/sales point. |
+| Casa Toki Eder | Legorreta | `Legumbres y cereales` — Eusko Label Tolosako Babarruna | Family agricultural producer in Legorreta cultivating native black beans under the Tolosako Babarruna Elkartea quality standards; 2nd place winner in 2025. | [Tolosa Babarruna](https://tolosa.eus) | — | Verify farm holding in Legorreta, Eusko Label certification and retail availability. |
+| Garikano Harategia | Tolosa | `Carne` — artisan Morcilla de Tolosa (odolkia) | Traditional butcher and charcuterie workshop in Tolosa specializing in handmade local black pudding (odolkia); 1st prize winner at the 2025 Tolosa Morcilla contest. | [Tolosa](https://tolosa.eus) | — | Confirm dedicated butcher workshop premises in Tolosa, sanitary registration and continuous counter offer. |
+| Olano Harategia | Beasain | `Carne` — traditional Morcilla de Beasain / Gipuzkoa | Benchmark family charcuterie workshop in Beasain renowned for its artisan onion morcilla; multi-time champion of the Gipuzkoa and Euskal Herria Odolki Txapelketa. | [Beasain](https://tolosa.eus) | <https://carniceriaolano.com/> | Verify production facility in Beasain and current direct sales availability. |
+

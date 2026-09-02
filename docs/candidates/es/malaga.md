@@ -270,3 +270,16 @@
 | D’Cantavinos | Málaga | `Vino` | The directory states: “Trabajamos con las Bodegas José Molina,Bodegas Eresma,Bodegas Alconde, Bodegas Zuazo gaston,Bodegas Ribera del Ornia…” | [Directory](https://www.proveedores.com/proveedores/dcantavinos/) | <https://dcantavinos.es/> | Confirm the winery and its current published range. |
 | LA CAV DEL SUR | Estepona | `Vino` | The directory states: “Trabajamos con bodegas de renombre al nivel nacional como bodega Castillo de Monjardin, Arroyo, Valderiz, Copaboca…” | [Directory](https://www.proveedores.com/proveedores/la-cav-del-sur/) | <https://www.vinoslacavdelsur.com/inicio.html/> | Confirm the winery and its current published range. |
 | Vinos Españoles por el Mundo | Marbella | `Vino` | The directory states: “Nuestra empresa ofrece una amplia variedad de vinos , cavas , licores y accesorios procedentes de más de 30 bodegas…” | [Directory](https://www.proveedores.com/proveedores/vinos-espanoles-por-el-mundo/) | <https://www.vinosespañolesporelmundo.com/> | Confirm the winery and its current published range. |
+
+## Fiesta de la Castaña y el Vino de Yunquera — 2026-09-03
+
+- Discovery source: Fiesta de la Castaña y el Vino de Yunquera (<https://yunquera.es>) and Ayuntamiento de Yunquera official festival records.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Málaga, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published festival registers and first-party pages available on 2026-09-03.
+- Source ceiling: festival registers establish agricultural presence, harvest origin and local collective scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Castañas Sierra de las Nieves | Yunquera | `Fruta y verdura` / `Otros` — fresh and roasted mountain chestnuts | Local growers cooperative and collective in Yunquera harvesting native sweet chestnuts in the Sierra de las Nieves National Park; central producer behind the annual fiesta. | [Yunquera](https://yunquera.es) | — | Confirm agricultural cooperative processing facility in Yunquera, member orchards and fresh seasonal distribution. |
+
