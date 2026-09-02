@@ -201,3 +201,15 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Celler Tern | Batea | `Vino` | The directory states: “Celler Tern es una empresa situada en Batea (Tarragona) que se especializa en la elaboración de vinos” | [Directory](https://www.proveedores.com/proveedores/celler-tern/) |  | Confirm the winery and its current published range. |
 | Vinícola de Nulles | Nulles | `Vino` | The directory states: “Somos una bodega elaboradora de vinos con D.O” | [Directory](https://www.proveedores.com/proveedores/vinicola-de-nulles/) | <https://adernats-shop.com/> | Confirm this is an independently identifiable productive unit and not the row already published. |
 | Wineintube | Tarragona | `Vino` | The directory states: “Tenemos un viñedo familiar que cuenta con 90 hectareas dedicadas a la elaboración de un buen vino” | [Directory](https://www.proveedores.com/proveedores/wineintube/) | <https://www.wineintube.com/> | Confirm the winery and its current published range. |
+
+## Mostra de Cervesa Artesana EbreBeer & fires de setembre — 2026-09-03
+
+- Discovery source: Som Gastronomia September 2026 fairs calendar (<https://www.instagram.com/p/DcykBX3CL0S/>) and EbreBeer - Mostra de Cervesa Artesana de les Terres de l'Ebre roster.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Tarragona, after de-duplication against the current area CSV, candidate backlog and closed evidence (key participants Cervesa L'Anjub, Les Clandestines and Formatges Sant Gil d'Albió are already cataloged in `tarragona.csv`).
+- Cutoff: published festival announcements and first-party pages available on 2026-09-03.
+- Source ceiling: a festival participant roster establishes attendance; it does not by itself prove full catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| La Segarreta | Santa Coloma de Queralt | `Cerveza` — rural craft beer | Independent rural craft microbrewery with its own brewing facilities in Santa Coloma de Queralt; confirmed exhibitor at EbreBeer 2026. | [EbreBeer Tortosa](https://www.instagram.com/ebrebeer/) | <https://lasegarreta.com/> | Verify current physical brewhouse in Santa Coloma de Queralt, active production batches and direct/retail distribution channels. |

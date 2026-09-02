@@ -123,3 +123,15 @@
 | Ramón Comellas | Lleida | `Pan y cereal` | The directory states: “Ramón Comellas es una empresa que fue inaugurada hace más de 80 años en Lleida y que desde entonces se dedica a la…” | [Directory](https://www.proveedores.com/proveedores/ramon-comellas/) |  | Confirm an own mill. |
 | Exclusivas Pinyol | Lleida | `Vino` | The directory states: “Nuestra apuesta por nuestros productos es total, los diseñamos seleccionando los mejores fabricantes, con los más…” | [Directory](https://www.proveedores.com/proveedores/exclusivas-pinyol/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | FxCK 2020 | Lleida | `Vino` | The directory states: “Se trata de un cava de la bodega (Celler Most-Doré)” | [Directory](https://www.proveedores.com/proveedores/fxck-2020/) |  | Confirm the winery and its current published range. |
+
+## Fira del Formatge Artesà de Lladó & fires de setembre — 2026-09-03
+
+- Discovery source: Som Gastronomia September 2026 fairs calendar (<https://www.instagram.com/p/DcykBX3CL0S/>) and 30a Fira Catalana del Formatge Artesà de Lladó official exhibitor directory (<https://firadelformatge.cat/artesans-alimentaris-no-formatgers/>).
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Lleida, after de-duplication against the current area CSV, candidate backlog and closed evidence (key festival participants Lo Vilot Farm Brewery, Cerveseria Matoll, Formatges Camps and Formatges de Pallars are already cataloged in `lleida.csv`).
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: an artisan fair listing establishes presence and product focus; it does not by itself prove full catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Elixirs de Ponent | Almacelles | `Destilados y licores` — artisan traditional liqueurs | Artisan distillery in Almacelles producing traditional liqueurs since 2016; confirmed exhibitor at Fira de Lladó 2026. | [Fira del Formatge de Lladó](https://firadelformatge.cat/artesans-alimentaris-no-formatgers/) | <https://www.elixirsdeponent.com> | Verify physical craft distilling workshop in Almacelles, legal operator status and ongoing retail availability. |
