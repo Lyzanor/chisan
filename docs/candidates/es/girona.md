@@ -49,6 +49,18 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | El Celler de Can Roca / Mas Marroch | Vilablareix | `Fruta y verdura` — Mas Marroch garden and Terra Animada project | The Roca project presents Mas Marroch as a cultivated productive setting within its wider hospitality ecosystem. | [Roca brothers](https://cellercanroca.com/los-hermanos-roca/) | <https://cellercanroca.com/universo-roca/mas-marroch/> | Establish the exact productive unit and producer identity, prove a current own take-home offer, and distinguish it from the published Obrador Rocambolesc identity. |
 | Les Cols | Cultivated fields in Vall de Bianya; restaurant in Olot | `Fruta y verdura` — garden and field crops; also eggs | The project describes cultivated fields and related food-production experiments beyond ordinary restaurant purchasing. | [Les Cols projects](https://www.lescols.com/es/proyectos/) | <https://www.lescols.com/es/proyectos/> | Resolve the exact productive municipality and unit, establish a durable producer identity and prove a current own take-home offer. |
 
+## Linverd catalog brand pass — 2026-09-01
+
+- Discovery source: [Linverd online catalog](https://linverd.com/es/catalogo), using its manufacturer facets and producer-owned pages for same-lead corroboration.
+- Search date: 2026-09-01.
+- Scope: food and drink identities in the complete catalog, reconciled against the current CSV, candidate note, country-wide aliases and closed evidence, then routed to the productive area.
+- Cutoff: 3,716 catalog references across 310 pages and 477 named manufacturer facets visible on the search date; personal-care, supplement-only and unattributed references were excluded.
+- Source ceiling: a Linverd listing supports only a retail product-to-brand signal. It does not establish productive responsibility, the productive unit, identity continuity or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Liquats Vegetals / YOSOY | Viladrau | `Bebidas sin alcohol` — plant-based drinks | Linverd lists four YOSOY drinks and Liquats identifies YOSOY as one of the brands produced at its Viladrau production centre. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=602) | <https://liquats.com/es/nosotros/> | Confirm the exact productive unit and current attributable offer; use the producer identity Liquats Vegetals rather than creating an independent YOSOY brand row. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/girona>, a B2B supplier directory whose listings are written by the companies themselves.

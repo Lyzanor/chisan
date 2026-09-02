@@ -26,6 +26,7 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
 | Molino de Urdániz | Urdaitz / Urdániz | `Fruta y verdura` — own garden | Public coverage describes garden cultivation connected to the restaurant. | [Guía Repsol](https://www.guiarepsol.com/es/fichas/restaurante/molino-de-urdaniz-9006/) | <http://www.elmolinourdaniz.com> | Verify the exact productive garden from a current first-party source, establish the durable producer identity and prove a current own take-home offer. |
 | DANTZA | Andosilla | `Conservas` — Alcachofa de Tudela / Espárrago de Navarra | The current Reyno Gourmet database lists this Navarra company for Alcachofa de Tudela and Espárrago de Navarra with a public address and channel. | [Reyno Gourmet company database](https://www.reynogourmet.com/empresas/) | <http://www.dantza.com/> | Confirm current qualifying elaboration, own offer and durable public identity; reconcile group/brand relationships and shared facilities before admission. |
 | CONSERVAS ITURRI | Arroniz | `Conservas` — Espárrago de Navarra | The current Reyno Gourmet database lists this Navarra company for Espárrago de Navarra with a public address and channel. | [Reyno Gourmet company database](https://www.reynogourmet.com/empresas/) | <http://www.conservasiturri.es/> | Confirm current qualifying elaboration, own offer and durable public identity; reconcile group/brand relationships and shared facilities before admission. |
@@ -47,6 +48,19 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## Linverd catalog brand pass — 2026-09-01
+
+- Discovery source: [Linverd online catalog](https://linverd.com/es/catalogo), using its manufacturer facets and producer-owned pages for same-lead corroboration.
+- Search date: 2026-09-01.
+- Scope: food and drink identities in the complete catalog, reconciled against the current CSV, candidate note, country-wide aliases and closed evidence, then routed to the productive area.
+- Cutoff: 3,716 catalog references across 310 pages and 477 named manufacturer facets visible on the search date; personal-care, supplement-only and unattributed references were excluded.
+- Source ceiling: a Linverd listing supports only a retail product-to-brand signal. It does not establish productive responsibility, the productive unit, identity continuity or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Ferment Art | Lodosa; project recently moved from Arizkun | `Conservas` — kimchi and fermented vegetables | Linverd lists a Ferment Art kimchi and the current project sells fermented foods under the same identity; recent reporting places its workshop in Lodosa. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=464) | <https://fermentart.org/> | Confirm the current Lodosa productive address and legal/public identity after the move, plus an attributable current offer. |
+| Martiko | Bera | `Carne` / `Pescado y marisco` — duck products and smoked fish | Linverd lists two smoked-salmon products and the producer presents current duck and smoked-fish production from its Bera base. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=649) | <https://martiko.com/escuela-martiko/> | Identify the exact productive unit or units responsible for the Linverd products and determine whether the duck and fish operations require separate catalog identities. |
 
 ## Proveedores.com directory sweep — 2026-09-02
 
