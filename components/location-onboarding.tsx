@@ -1,12 +1,18 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import {
+  CheckCircleIcon,
+  CircleNotchIcon,
+  NavigationArrowIcon,
+} from "@phosphor-icons/react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import { MANUAL_AREA_SELECTION_HASH } from "@/lib/catalog-navigation";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
 import {
+  buildLocationAreaHref,
   createCatalogLocationRequest,
   createLocationOnboardingActivation,
   resolveSavedLocationAreaHref,
@@ -30,6 +36,7 @@ export type LocationOnboardingProps = {
 type RequestState =
   | { status: "idle" }
   | { status: "locating" }
+  | { status: "resolved"; areaLabel: string }
   | { status: "failed"; reason: CatalogLocationFailureReason };
 
 function subscribeToManualSelectionRequest(onStoreChange: () => void): () => void {
@@ -77,6 +84,7 @@ export function LocationOnboarding({
 }: LocationOnboardingProps) {
   const router = useRouter();
   const [request, setRequest] = useState<RequestState>({ status: "idle" });
+  const requestGenerationRef = useRef(0);
   const stored = useLocationOnboardingState();
   const manualSelectionRequested = useSyncExternalStore(
     subscribeToManualSelectionRequest,
@@ -94,16 +102,26 @@ export function LocationOnboarding({
     manualSelectionRequested,
   });
   const isLocating = request.status === "locating";
+  const isPending = isLocating || request.status === "resolved";
 
   useEffect(() => {
     if (resumeHref) router.replace(resumeHref);
   }, [resumeHref, router]);
 
+  useEffect(
+    () => () => {
+      requestGenerationRef.current += 1;
+    },
+    [],
+  );
+
   async function handleUseLocation() {
-    if (isLocating) return;
+    if (isPending) return;
+    const requestGeneration = requestGenerationRef.current + 1;
+    requestGenerationRef.current = requestGeneration;
     setRequest({ status: "locating" });
 
-    const lookup = createCatalogLocationRequest({
+    const locationLookup = createCatalogLocationRequest({
       geolocation:
         typeof navigator !== "undefined" && navigator.geolocation
           ? navigator.geolocation
@@ -111,23 +129,46 @@ export function LocationOnboarding({
       fetcher: window.fetch.bind(window) as LocationFetch,
     });
     const activate = createLocationOnboardingActivation({
-      lookup,
+      lookup: async () => {
+        const result = await locationLookup();
+        return requestGenerationRef.current === requestGeneration
+          ? result
+          : { status: "failed", reason: "unavailable" };
+      },
       storage: browserLocationStorage(),
       areas,
       explicitLocale,
       browserLocales,
-      navigate: (href) => router.push(href),
+      navigate: (href) => {
+        if (requestGenerationRef.current !== requestGeneration) return;
+        const destination = areas.find(
+          (area) =>
+            buildLocationAreaHref(area, explicitLocale, browserLocales) === href,
+        );
+        setRequest({
+          status: "resolved",
+          areaLabel: destination?.label ?? "",
+        });
+        router.push(href);
+      },
     });
     const result = await activate();
+    if (requestGenerationRef.current !== requestGeneration) return;
     if (result.status === "failed") {
       setRequest({ status: "failed", reason: result.reason });
     }
   }
 
   function handleChooseManually() {
+    requestGenerationRef.current += 1;
     // The manual home entry never discards a resolved preference. Replacing or
     // forgetting that preference is an explicit profile action.
-    if (stored?.onboarding !== "resolved") dismissLocationOnboarding();
+    if (
+      stored?.onboarding !== "resolved" &&
+      request.status !== "resolved"
+    ) {
+      dismissLocationOnboarding();
+    }
     setRequest({ status: "idle" });
   }
 
@@ -135,7 +176,11 @@ export function LocationOnboarding({
 
   const wasDismissed = stored?.onboarding === "dismissed";
   return (
-    <section className="location-onboarding" aria-labelledby="location-onboarding-title">
+    <section
+      className="location-onboarding"
+      aria-labelledby="location-onboarding-title"
+      data-status={request.status}
+    >
       <div className="location-onboarding__copy">
         <h2 id="location-onboarding-title">{messages.title}</h2>
         <p>{wasDismissed ? messages.dismissed : messages.description}</p>
@@ -144,10 +189,28 @@ export function LocationOnboarding({
         <button
           className="location-onboarding__primary"
           type="button"
-          disabled={isLocating}
+          disabled={isPending}
+          aria-busy={isLocating}
           onClick={handleUseLocation}
         >
-          {isLocating ? messages.locating : messages.useLocation}
+          {request.status === "locating" ? (
+            <CircleNotchIcon
+              className="location-onboarding__spinner"
+              aria-hidden="true"
+              size={18}
+            />
+          ) : request.status === "resolved" ? (
+            <CheckCircleIcon aria-hidden="true" size={18} weight="fill" />
+          ) : (
+            <NavigationArrowIcon aria-hidden="true" size={18} />
+          )}
+          <span>
+            {request.status === "locating"
+              ? messages.locating
+              : request.status === "resolved"
+                ? request.areaLabel
+                : messages.useLocation}
+          </span>
         </button>
         <a
           className="location-onboarding__secondary"
@@ -157,11 +220,18 @@ export function LocationOnboarding({
           {messages.chooseManually}
         </a>
       </div>
-      <p className="location-onboarding__status" aria-live="polite">
+      <p
+        className="location-onboarding__status"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         {request.status === "failed"
           ? failureMessage(request.reason, messages.errors)
           : request.status === "locating"
             ? messages.locating
+            : request.status === "resolved"
+              ? `${messages.title}: ${request.areaLabel}`
             : ""}
       </p>
     </section>

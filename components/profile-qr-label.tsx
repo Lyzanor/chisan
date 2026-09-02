@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { CheckIcon } from "@phosphor-icons/react";
+import { useEffect, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
@@ -22,6 +23,7 @@ const LABEL_COLORS = {
   stone: "#686c66",
   moss: "#52614c",
 } as const;
+const COPY_FEEDBACK_DURATION_MS = 1_500;
 
 export type ProfileQrLabelProps = Readonly<{
   kind: ProfileQrKind;
@@ -112,7 +114,10 @@ async function copyText(value: string) {
 
 export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps) {
   const qrCanvas = useRef<HTMLCanvasElement>(null);
+  const copyResetTimerRef = useRef<number | null>(null);
+  const copyFeedbackGenerationRef = useRef(0);
   const [status, setStatus] = useState("");
+  const [isCopied, setIsCopied] = useState(false);
   const labels = getProfileQrLabels(locale);
   const profileUrl = buildProfileQrUrl(path);
   const isProducer = kind === "producer";
@@ -121,16 +126,49 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
     : labels.selectionDescription;
   const labelType = isProducer ? labels.producerLabel : labels.selectionLabel;
 
+  useEffect(
+    () => () => {
+      copyFeedbackGenerationRef.current += 1;
+      if (copyResetTimerRef.current !== null) {
+        window.clearTimeout(copyResetTimerRef.current);
+      }
+    },
+    [],
+  );
+
+  function clearCopyFeedback() {
+    copyFeedbackGenerationRef.current += 1;
+    if (copyResetTimerRef.current !== null) {
+      window.clearTimeout(copyResetTimerRef.current);
+      copyResetTimerRef.current = null;
+    }
+    setIsCopied(false);
+    setStatus("");
+  }
+
   async function handleCopy() {
+    clearCopyFeedback();
+    const copyFeedbackGeneration = copyFeedbackGenerationRef.current;
     try {
       await copyText(profileUrl);
+      if (copyFeedbackGenerationRef.current !== copyFeedbackGeneration) return;
+      setIsCopied(true);
       setStatus(labels.copied);
+      copyResetTimerRef.current = window.setTimeout(() => {
+        if (copyFeedbackGenerationRef.current !== copyFeedbackGeneration) return;
+        setIsCopied(false);
+        setStatus("");
+        copyResetTimerRef.current = null;
+      }, COPY_FEEDBACK_DURATION_MS);
     } catch {
+      if (copyFeedbackGenerationRef.current !== copyFeedbackGeneration) return;
       setStatus(labels.copyFailed);
     }
   }
 
   async function handleDownload() {
+    clearCopyFeedback();
+    const downloadFeedbackGeneration = copyFeedbackGenerationRef.current;
     const sourceQr = qrCanvas.current;
     if (!sourceQr) {
       setStatus(labels.downloadFailed);
@@ -193,9 +231,17 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       document.body.append(link);
       link.click();
       link.remove();
-      setStatus("");
+      if (
+        copyFeedbackGenerationRef.current === downloadFeedbackGeneration
+      ) {
+        setStatus("");
+      }
     } catch {
-      setStatus(labels.downloadFailed);
+      if (
+        copyFeedbackGenerationRef.current === downloadFeedbackGeneration
+      ) {
+        setStatus(labels.downloadFailed);
+      }
     }
   }
 
@@ -220,13 +266,31 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
             <button type="button" onClick={handleDownload}>
               {labels.download}
             </button>
-            <button type="button" className="profile-qr__action--secondary" onClick={handleCopy}>
-              {labels.copy}
+            <button
+              type="button"
+              className="profile-qr__action--secondary profile-qr__copy-button"
+              aria-label={labels.copy}
+              onClick={handleCopy}
+            >
+              <span className="profile-qr__copy-label" aria-hidden="true">
+                <span className={isCopied ? undefined : "is-visible"}>
+                  {labels.copy}
+                </span>
+                <span className={isCopied ? "is-visible" : undefined}>
+                  <CheckIcon size={16} weight="bold" />
+                  {labels.copied}
+                </span>
+              </span>
             </button>
           </div>
           <small>{labels.fileNote}</small>
-          <p className="profile-qr__status" aria-live="polite">
-            {status}
+          <p
+            className="profile-qr__status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {isCopied ? <span className="visually-hidden">{status}</span> : status}
           </p>
         </div>
 

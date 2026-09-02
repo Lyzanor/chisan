@@ -104,6 +104,14 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
   assert.match(component, /level="H"/);
   assert.match(component, /marginSize=\{4\}/);
   assert.doesNotMatch(component, /imageSettings=/);
+  assert.match(component, /COPY_FEEDBACK_DURATION_MS = 1_500/);
+  assert.match(component, /copyFeedbackGenerationRef/);
+  assert.match(component, /downloadFeedbackGeneration/);
+  assert.match(component, /aria-label=\{labels\.copy\}/);
+  assert.match(component, /isCopied \? "is-visible" : undefined/);
+  assert.match(component, /role="status"/);
+  assert.match(component, /aria-atomic="true"/);
+  assert.match(styles, /\.profile-qr__copy-label > span\.is-visible/);
   assert.match(styles, /\.profile-qr--producer[\s\S]*--chisan-color-moss/);
   assert.match(styles, /--profile-qr-accent: var\(--chisan-color-ink\)/);
   assert.match(producerPage, /<ProducerProfileQrLabel/);

@@ -137,7 +137,9 @@ test("the shared account menu keeps identity, language and account actions separ
   assert.match(map, /getCategoryMarkerIcon\(point\.icon, selected\)/);
   assert.match(map, /producer-map-category-icon--selected/);
   assert.match(map, /iconSize: \[44, 44\]/);
-  assert.doesNotMatch(map, /CircleMarker/);
+  assert.match(map, /CATEGORY_MARKER_MIN_ZOOM = 11/);
+  assert.match(map, /<CircleMarker/);
+  assert.match(map, /radius=\{selected \? 4 : 3\}/);
 });
 
 test("the catalog root derives document language only from the async URL scope", () => {

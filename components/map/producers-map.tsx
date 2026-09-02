@@ -28,6 +28,7 @@ export type MapMessages = {
 export type ProducerMapFocusRequest = Readonly<{
   key: string;
   requestId: number;
+  behavior: "preview" | "select";
 }>;
 
 export type ProducerMapMarkerInteraction = "popup" | "select" | "static";
@@ -41,6 +42,8 @@ type ProducersMapProps = {
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelectProducer?: (slug: string) => void;
+  onPreviewProducer?: (slug: string) => void;
+  onPreviewProducerEnd?: (slug: string) => void;
   onVisibleProducerKeysChange?: (keys: string[]) => void;
   markerInteraction?: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
@@ -56,6 +59,8 @@ export function ProducersMap({
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelectProducer,
+  onPreviewProducer,
+  onPreviewProducerEnd,
   onVisibleProducerKeysChange,
   markerInteraction,
   singlePointZoom,
@@ -90,6 +95,8 @@ export function ProducersMap({
       nearbyFocusKeys={nearbyFocusKeys}
       onNearbyFocusConsumed={onNearbyFocusConsumed}
       onSelectKey={onSelectProducer}
+      onPreviewKey={onPreviewProducer}
+      onPreviewEndKey={onPreviewProducerEnd}
       onVisibleKeysChange={onVisibleProducerKeysChange}
       markerInteraction={markerInteraction}
       singlePointZoom={singlePointZoom}
@@ -107,6 +114,8 @@ export function ProducerSelectionMap({
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelectKey,
+  onPreviewKey,
+  onPreviewEndKey,
   onVisibleKeysChange,
   markerInteraction,
   singlePointZoom,
@@ -120,6 +129,8 @@ export function ProducerSelectionMap({
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelectKey?: (key: string) => void;
+  onPreviewKey?: (key: string) => void;
+  onPreviewEndKey?: (key: string) => void;
   onVisibleKeysChange?: (keys: string[]) => void;
   markerInteraction?: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
@@ -152,13 +163,13 @@ export function ProducerSelectionMap({
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}
         onSelectKey={onSelectKey}
+        onPreviewKey={onPreviewKey}
+        onPreviewEndKey={onPreviewEndKey}
         onVisibleKeysChange={onVisibleKeysChange}
         markerInteraction={resolvedMarkerInteraction}
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}
-        messages={{
-          openProfile: messages.openProfile,
-        }}
+        messages={messages}
         onReady={handleReady}
       />
     </div>

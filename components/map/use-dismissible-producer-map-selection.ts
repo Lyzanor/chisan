@@ -25,7 +25,13 @@ export function useDismissibleProducerMapSelection({
       if (!(target instanceof Element)) return;
       if (selectedSurfaceRef.current?.contains(target)) return;
       if (relatedSurfaceRef?.current?.contains(target)) return;
-      if (target.closest(".producer-map-category-marker")) return;
+      if (
+        target.closest(
+          ".producer-map-category-marker, .producer-map-hit-area",
+        )
+      ) {
+        return;
+      }
       onDismiss();
     }
 

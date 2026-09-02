@@ -4,6 +4,33 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-03 — Catalog microinteractions and feedback states
+
+final result: passed
+
+- Pointer hover and keyboard focus on a producer row temporarily emphasize its
+  map point and keep the URL unchanged. Marker hover exposes the matching
+  producer in the fixed contextual card, including when its row is outside the
+  rendered list window. Only an explicit click persists `highlight` and zooms.
+- Area-scale views use compact exact-coordinate points below zoom 11 and restore
+  category pictograms from zoom 11. A separate 44px hit area keeps the points
+  usable without inflating their visual footprint.
+- Search highlighting preserves the original spelling in producer names,
+  municipalities, category labels and descriptions while matching without
+  diacritics.
+- Map tooltips present producer, municipality and primary category without
+  implying an outbound action. Their restrained reveal and the filter-pill
+  press state use existing motion and colour tokens and honour reduced motion.
+- The location action has distinct idle, locating, resolved and failed states.
+  Manual selection invalidates a pending lookup; raw device position remains
+  transient and successful navigation is never delayed for an animation.
+- QR copy feedback replaces the action label for 1.5 seconds, keeps the button
+  width stable, announces success once and returns without a toast.
+
+This supersedes the earlier all-zoom pictogram rule for dense area overviews.
+Rejected: automatic list reordering on marker hover, artificial location-success
+delays, an animation dependency and global toast feedback for copying.
+
 ## 2026-09-02 — Producer distance from the visitor
 
 final result: passed

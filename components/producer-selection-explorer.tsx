@@ -123,7 +123,11 @@ function ProducerSelectionExplorerView({
 
   function requestProducerFocus(key: string) {
     mapFocusRequestId.current += 1;
-    setMapFocusRequest({ key, requestId: mapFocusRequestId.current });
+    setMapFocusRequest({
+      key,
+      requestId: mapFocusRequestId.current,
+      behavior: "select",
+    });
   }
 
   function selectProducer(key: string, closeMobileList = false) {

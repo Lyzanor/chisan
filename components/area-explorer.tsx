@@ -30,6 +30,10 @@ import {
   buildProducerHref,
   type CatalogNavigationScope,
 } from "@/lib/catalog-navigation";
+import {
+  findCatalogSearchMatch,
+  normalizeCatalogSearch,
+} from "@/lib/catalog-search";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 import type { CategoryPresentation } from "@/lib/i18n/categories";
 import type { Locale } from "@/lib/i18n/locales";
@@ -80,16 +84,6 @@ export type AreaExplorerModel = {
   mapMessages: Messages["map"];
 };
 
-function normalizeCategory(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLocaleLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 function formatMessage(
   template: string,
   values: Readonly<Record<string, string | number>>,
@@ -125,6 +119,21 @@ function withCatalogQuery(
 
   const query = url.searchParams.toString();
   return `${url.pathname}${query ? `?${query}` : ""}${url.hash}`;
+}
+
+function SearchMatch({ text, query }: { text: string; query: string }) {
+  const match = findCatalogSearchMatch(text, query);
+  if (!match) return text;
+
+  return (
+    <>
+      {text.slice(0, match.start)}
+      <mark className="catalog-search-match">
+        {text.slice(match.start, match.end)}
+      </mark>
+      {text.slice(match.end)}
+    </>
+  );
 }
 
 function useNearbyMapFocusKeys(
@@ -244,15 +253,19 @@ function AreaExplorerView({
   const selectedProducerLinkRef = useRef<HTMLAnchorElement>(null);
   const selectedListItemRef = useRef<HTMLLIElement>(null);
   const scrollSelectedListItemAfterMapSelectionRef = useRef(false);
-  const normalizedCategory = normalizeCategory(category);
-  const normalizedSearchQuery = normalizeCategory(searchQuery);
+  const normalizedCategory = normalizeCatalogSearch(category);
+  const normalizedSearchQuery = normalizeCatalogSearch(searchQuery);
+  const categoryPresentations = useMemo(
+    () => new Map(model.categories.map((item) => [item.token, item])),
+    [model.categories],
+  );
   const categoryItems = useMemo(
     () =>
       normalizedCategory
         ? model.producers.filter((producer) =>
             producer.categories.some(
               (producerCategory) =>
-                normalizeCategory(producerCategory) === normalizedCategory,
+                normalizeCatalogSearch(producerCategory) === normalizedCategory,
             ),
           )
         : model.producers,
@@ -262,17 +275,20 @@ function AreaExplorerView({
     if (!normalizedSearchQuery) return categoryItems;
 
     return categoryItems.filter((producer) =>
-      normalizeCategory(
+      normalizeCatalogSearch(
         [
           producer.name,
           producer.city,
-          producer.category,
-          ...producer.categories,
+          ...producer.categories.map(
+            (producerCategory) =>
+              categoryPresentations.get(producerCategory)?.label ??
+              producerCategory,
+          ),
           producer.description,
         ].join(" "),
       ).includes(normalizedSearchQuery),
     );
-  }, [categoryItems, normalizedSearchQuery]);
+  }, [categoryItems, categoryPresentations, normalizedSearchQuery]);
   const selectedItem = useMemo(
     () =>
       selectedSlug
@@ -289,10 +305,6 @@ function AreaExplorerView({
     [items, previewedSlug],
   );
   const presentedItem = previewedItem ?? selectedItem;
-  const categoryPresentations = useMemo(
-    () => new Map(model.categories.map((item) => [item.token, item])),
-    [model.categories],
-  );
   const mappedItems = useMemo(
     () =>
       items.filter(
@@ -433,6 +445,7 @@ function AreaExplorerView({
     setMapFocusRequest({
       key: selectedItem.slug,
       requestId: mapFocusRequestId.current,
+      behavior: "select",
     });
   }, [category, consumeNearbyMapFocus, selectedItem]);
 
@@ -460,30 +473,43 @@ function AreaExplorerView({
     onDismiss: clearProducerSelection,
   });
 
-  function requestProducerFocus(slug: string) {
-    mapFocusRequestId.current += 1;
-    setMapFocusRequest({ key: slug, requestId: mapFocusRequestId.current });
-  }
+  const requestProducerFocus = useCallback(
+    (slug: string, behavior: ProducerMapFocusRequest["behavior"]) => {
+      mapFocusRequestId.current += 1;
+      setMapFocusRequest({
+        key: slug,
+        requestId: mapFocusRequestId.current,
+        behavior,
+      });
+    },
+    [],
+  );
 
-  function selectProducer(slug: string, href: string) {
-    previousSelectedSlug.current = slug;
-    listOrderLockedCategoryRef.current = category;
-    setPreviewedSlug("");
-    consumeNearbyMapFocus();
-    requestProducerFocus(slug);
-    router.push(href, { scroll: false });
-  }
+  const selectProducer = useCallback(
+    (slug: string, href: string) => {
+      previousSelectedSlug.current = slug;
+      listOrderLockedCategoryRef.current = category;
+      setPreviewedSlug("");
+      consumeNearbyMapFocus();
+      requestProducerFocus(slug, "select");
+      router.push(href, { scroll: false });
+    },
+    [category, consumeNearbyMapFocus, requestProducerFocus, router],
+  );
 
-  function selectMapProducer(slug: string) {
-    const href = buildCatalogHref({
-      scope: model.scope,
-      area: model.area,
-      category,
-      highlight: slug,
-    });
-    scrollSelectedListItemAfterMapSelectionRef.current = true;
-    selectProducer(slug, href);
-  }
+  const selectMapProducer = useCallback(
+    (slug: string) => {
+      const href = buildCatalogHref({
+        scope: model.scope,
+        area: model.area,
+        category,
+        highlight: slug,
+      });
+      scrollSelectedListItemAfterMapSelectionRef.current = true;
+      selectProducer(slug, href);
+    },
+    [category, model.area, model.scope, selectProducer],
+  );
 
   function selectCategory(href: string) {
     setPreviewedSlug("");
@@ -499,12 +525,21 @@ function AreaExplorerView({
     listOrderLockedCategoryRef.current = category;
     consumeNearbyMapFocus();
     setPreviewedSlug(slug);
-    requestProducerFocus(slug);
+    requestProducerFocus(slug, "preview");
   }
 
-  function clearProducerPreview(slug: string) {
+  const clearProducerPreview = useCallback((slug: string) => {
     setPreviewedSlug((current) => (current === slug ? "" : current));
-  }
+  }, []);
+
+  const previewMapProducer = useCallback(
+    (slug: string) => {
+      listOrderLockedCategoryRef.current = category;
+      consumeNearbyMapFocus();
+      setPreviewedSlug(slug);
+    },
+    [category, consumeNearbyMapFocus],
+  );
 
   return (
     <main className="catalog-page catalog-page--simple">
@@ -623,6 +658,8 @@ function AreaExplorerView({
               nearbyFocusKeys={nearbyMapFocusKeys}
               onNearbyFocusConsumed={consumeNearbyMapFocus}
               onSelectProducer={selectMapProducer}
+              onPreviewProducer={previewMapProducer}
+              onPreviewProducerEnd={clearProducerPreview}
               onVisibleProducerKeysChange={handleVisibleProducerKeysChange}
               messages={model.mapMessages}
             />
@@ -681,6 +718,18 @@ function AreaExplorerView({
                     category,
                     highlight: item.slug,
                   });
+                  const matchingCategoryText = normalizedSearchQuery
+                    ? item.categories
+                        .map(
+                          (itemCategory) =>
+                            categoryPresentations.get(itemCategory)?.label ??
+                            itemCategory,
+                        )
+                        .filter((categoryLabel) =>
+                          findCatalogSearchMatch(categoryLabel, searchQuery),
+                        )
+                        .join(" · ")
+                    : "";
 
                   return (
                     <li
@@ -721,14 +770,29 @@ function AreaExplorerView({
                             "🧺"}
                         </span>
                         <span>
-                          <strong>{item.name}</strong>
+                          <strong>
+                            <SearchMatch text={item.name} query={searchQuery} />
+                          </strong>
                           {item.city ? (
                             <small className="producer-compact-location">
-                              {item.city}
+                              <SearchMatch text={item.city} query={searchQuery} />
+                            </small>
+                          ) : null}
+                          {matchingCategoryText ? (
+                            <small>
+                              <SearchMatch
+                                text={matchingCategoryText}
+                                query={searchQuery}
+                              />
                             </small>
                           ) : null}
                           {item.description ? (
-                            <small>{item.description}</small>
+                            <small>
+                              <SearchMatch
+                                text={item.description}
+                                query={searchQuery}
+                              />
+                            </small>
                           ) : null}
                         </span>
                       </Link>

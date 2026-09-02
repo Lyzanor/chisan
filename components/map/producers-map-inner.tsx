@@ -1,9 +1,19 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  Fragment,
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type RefObject,
+} from "react";
 import Link from "next/link";
 import L from "leaflet";
 import {
+  CircleMarker,
   MapContainer,
   Marker,
   Popup,
@@ -28,11 +38,128 @@ import type {
 // Below this threshold, show all points regardless of viewport.
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 200;
+const KEYBOARD_MARKER_LIMIT = 100;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
 const PRODUCER_FOCUS_ZOOM = 13;
+const CATEGORY_MARKER_MIN_ZOOM = 11;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
 const EMPTY_FOCUS_KEYS: string[] = [];
 const categoryMarkerIconCache = new Map<string, L.DivIcon>();
+
+function producerMarkerLabel(point: ProducerMapMarker): string {
+  return [point.name, point.city, point.categories[0]].filter(Boolean).join(", ");
+}
+
+function ProducerTooltipContent({ point }: { point: ProducerMapMarker }) {
+  const metadata = [point.city, point.categories[0]].filter(Boolean).join(" · ");
+
+  return (
+    <span className="producer-map-tooltip__content">
+      <strong>{point.name}</strong>
+      {metadata ? <span>{metadata}</span> : null}
+    </span>
+  );
+}
+
+function useAccessibleProducerLayer({
+  layerRef,
+  point,
+  onActivate,
+  onPreview,
+  onPreviewEnd,
+  interactive,
+  keyboardAccessible,
+}: {
+  layerRef: RefObject<L.Marker | L.CircleMarker | null>;
+  point: ProducerMapMarker;
+  onActivate?: () => void;
+  onPreview?: (key: string) => void;
+  onPreviewEnd?: (key: string) => void;
+  interactive: boolean;
+  keyboardAccessible: boolean;
+}) {
+  const label = producerMarkerLabel(point);
+
+  useEffect(() => {
+    const layer = layerRef.current;
+    const element = layer?.getElement();
+    if (!layer || !element) return;
+
+    if (!interactive) {
+      element.removeAttribute("role");
+      element.removeAttribute("aria-label");
+      element.setAttribute("tabindex", "-1");
+      return;
+    }
+
+    element.setAttribute("role", "button");
+    element.setAttribute("tabindex", keyboardAccessible ? "0" : "-1");
+    element.setAttribute("aria-label", label);
+
+    function handleFocus() {
+      onPreview?.(point.key);
+      layer?.openTooltip();
+    }
+
+    function handleBlur() {
+      onPreviewEnd?.(point.key);
+      layer?.closeTooltip();
+    }
+
+    function handleKeyDown(event: Event) {
+      const keyboardEvent = event as KeyboardEvent;
+      if (keyboardEvent.key !== "Enter" && keyboardEvent.key !== " ") return;
+
+      keyboardEvent.preventDefault();
+      keyboardEvent.stopPropagation();
+      if (onActivate) {
+        onActivate();
+      } else {
+        layer?.openPopup();
+      }
+    }
+
+    if (keyboardAccessible) {
+      element.addEventListener("focus", handleFocus);
+      element.addEventListener("blur", handleBlur);
+      element.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      element.removeEventListener("focus", handleFocus);
+      element.removeEventListener("blur", handleBlur);
+      element.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [
+    keyboardAccessible,
+    interactive,
+    label,
+    layerRef,
+    onActivate,
+    onPreview,
+    onPreviewEnd,
+    point.key,
+  ]);
+}
+
+function producerMarkerEventHandlers({
+  point,
+  onSelect,
+  onPreview,
+  onPreviewEnd,
+}: {
+  point: ProducerMapMarker;
+  onSelect?: (key: string) => void;
+  onPreview?: (key: string) => void;
+  onPreviewEnd?: (key: string) => void;
+}): L.LeafletEventHandlerFnMap | undefined {
+  if (!onSelect && !onPreview && !onPreviewEnd) return undefined;
+
+  return {
+    ...(onSelect ? { click: () => onSelect(point.key) } : {}),
+    ...(onPreview ? { mouseover: () => onPreview(point.key) } : {}),
+    ...(onPreviewEnd ? { mouseout: () => onPreviewEnd(point.key) } : {}),
+  };
+}
 
 function getCategoryMarkerIcon(icon: string, selected: boolean): L.DivIcon {
   const cacheKey = `${icon}:${selected ? "selected" : "default"}`;
@@ -50,6 +177,207 @@ function getCategoryMarkerIcon(icon: string, selected: boolean): L.DivIcon {
   categoryMarkerIconCache.set(cacheKey, markerIcon);
   return markerIcon;
 }
+
+const CategoryProducerMarker = memo(function CategoryProducerMarker({
+  point,
+  selected,
+  markerInteraction,
+  onSelectKey,
+  onPreviewKey,
+  onPreviewEndKey,
+  keyboardAccessible,
+  messages,
+}: {
+  point: ProducerMapMarker;
+  selected: boolean;
+  markerInteraction: ProducerMapMarkerInteraction;
+  onSelectKey?: (key: string) => void;
+  onPreviewKey?: (key: string) => void;
+  onPreviewEndKey?: (key: string) => void;
+  keyboardAccessible: boolean;
+  messages: { openProfile: string };
+}) {
+  const markerRef = useRef<L.Marker>(null);
+  const selectable = markerInteraction === "select";
+  const interactive = markerInteraction !== "static";
+  const select = selectable ? onSelectKey : undefined;
+  const preview = selectable ? onPreviewKey : undefined;
+  const previewEnd = selectable ? onPreviewEndKey : undefined;
+
+  useAccessibleProducerLayer({
+    layerRef: markerRef,
+    point,
+    onActivate: select ? () => select(point.key) : undefined,
+    onPreview: preview,
+    onPreviewEnd: previewEnd,
+    interactive,
+    keyboardAccessible: interactive && keyboardAccessible,
+  });
+
+  return (
+    <Marker
+      ref={markerRef}
+      position={[point.latitude, point.longitude]}
+      icon={getCategoryMarkerIcon(point.icon, selected)}
+      interactive={interactive}
+      zIndexOffset={selected ? 1_000 : 0}
+      riseOnHover
+      eventHandlers={producerMarkerEventHandlers({
+        point,
+        onSelect: select,
+        onPreview: preview,
+        onPreviewEnd: previewEnd,
+      })}
+    >
+      {interactive ? (
+        <Tooltip
+          className="producer-map-tooltip"
+          direction="top"
+          offset={[0, -14]}
+          opacity={0.98}
+        >
+          <ProducerTooltipContent point={point} />
+        </Tooltip>
+      ) : null}
+      {markerInteraction === "popup" ? (
+        <Popup>
+          <strong>{point.name}</strong>
+          <br />
+          {point.city} · {point.categories.join(" · ")}
+          <br />
+          <Link href={point.href} prefetch={false}>
+            {messages.openProfile}
+          </Link>
+        </Popup>
+      ) : null}
+    </Marker>
+  );
+});
+
+const OverviewProducerMarker = memo(function OverviewProducerMarker({
+  point,
+  selected,
+  markerInteraction,
+  onSelectKey,
+  onPreviewKey,
+  onPreviewEndKey,
+  keyboardAccessible,
+  messages,
+}: {
+  point: ProducerMapMarker;
+  selected: boolean;
+  markerInteraction: ProducerMapMarkerInteraction;
+  onSelectKey?: (key: string) => void;
+  onPreviewKey?: (key: string) => void;
+  onPreviewEndKey?: (key: string) => void;
+  keyboardAccessible: boolean;
+  messages: { openProfile: string };
+}) {
+  const visualMarkerRef = useRef<L.CircleMarker>(null);
+  const hitAreaRef = useRef<L.CircleMarker>(null);
+  const selectable = markerInteraction === "select";
+  const interactive = markerInteraction !== "static";
+  const select = selectable ? onSelectKey : undefined;
+  const preview = selectable ? onPreviewKey : undefined;
+  const previewEnd = selectable ? onPreviewEndKey : undefined;
+  const interactiveLayerRef = selectable ? hitAreaRef : visualMarkerRef;
+
+  useAccessibleProducerLayer({
+    layerRef: interactiveLayerRef,
+    point,
+    onActivate: select ? () => select(point.key) : undefined,
+    onPreview: preview,
+    onPreviewEnd: previewEnd,
+    interactive,
+    keyboardAccessible: interactive && keyboardAccessible,
+  });
+
+  useEffect(() => {
+    const visualMarker = visualMarkerRef.current;
+    visualMarker
+      ?.getElement()
+      ?.classList.toggle("producer-map-circle--selected", selected);
+    if (selected) {
+      visualMarker?.bringToFront();
+      hitAreaRef.current?.bringToFront();
+    }
+  }, [selected]);
+
+  return (
+    <Fragment>
+      <CircleMarker
+        ref={visualMarkerRef}
+        center={[point.latitude, point.longitude]}
+        radius={selected ? 4 : 3}
+        interactive={markerInteraction === "popup"}
+        className="producer-map-circle"
+        pathOptions={{
+          color: selected
+            ? "var(--chisan-color-surface)"
+            : "var(--chisan-color-moss-dark)",
+          fillColor: selected
+            ? "var(--chisan-color-moss)"
+            : "var(--chisan-color-moss-dark)",
+          fillOpacity: 1,
+          opacity: selected ? 1 : 0,
+          weight: selected ? 2 : 0,
+        }}
+      >
+        {markerInteraction === "popup" ? (
+          <>
+            <Tooltip
+              className="producer-map-tooltip"
+              direction="top"
+              offset={[0, -8]}
+              opacity={0.98}
+            >
+              <ProducerTooltipContent point={point} />
+            </Tooltip>
+            <Popup>
+              <strong>{point.name}</strong>
+              <br />
+              {point.city} · {point.categories.join(" · ")}
+              <br />
+              <Link href={point.href} prefetch={false}>
+                {messages.openProfile}
+              </Link>
+            </Popup>
+          </>
+        ) : null}
+      </CircleMarker>
+      {selectable ? (
+        <CircleMarker
+          ref={hitAreaRef}
+          center={[point.latitude, point.longitude]}
+          radius={22}
+          className="producer-map-hit-area"
+          pathOptions={{
+            color: "transparent",
+            fillColor: "transparent",
+            fillOpacity: 0,
+            opacity: 0,
+            weight: 0,
+          }}
+          eventHandlers={producerMarkerEventHandlers({
+            point,
+            onSelect: select,
+            onPreview: preview,
+            onPreviewEnd: previewEnd,
+          })}
+        >
+          <Tooltip
+            className="producer-map-tooltip"
+            direction="top"
+            offset={[0, -8]}
+            opacity={0.98}
+          >
+            <ProducerTooltipContent point={point} />
+          </Tooltip>
+        </CircleMarker>
+      ) : null}
+    </Fragment>
+  );
+});
 
 function getPointsBounds(
   points: readonly ProducerMapMarker[],
@@ -149,6 +477,8 @@ function BoundsAwareMarkers({
   nearbyFocusKeys = EMPTY_FOCUS_KEYS,
   onNearbyFocusConsumed,
   onSelectKey,
+  onPreviewKey,
+  onPreviewEndKey,
   onVisibleKeysChange,
   markerInteraction,
   singlePointZoom = 13,
@@ -161,6 +491,8 @@ function BoundsAwareMarkers({
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelectKey?: (key: string) => void;
+  onPreviewKey?: (key: string) => void;
+  onPreviewEndKey?: (key: string) => void;
   onVisibleKeysChange?: (keys: string[]) => void;
   markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
@@ -172,6 +504,7 @@ function BoundsAwareMarkers({
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() =>
     map.getBounds(),
   );
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const fittedViewRef = useRef<{
     points: readonly ProducerMapMarker[];
     singlePointZoom: number;
@@ -179,15 +512,47 @@ function BoundsAwareMarkers({
     nearbyFocusKey: string;
   } | null>(null);
   const viewModeRef = useRef<"area" | "initial" | "nearby">("area");
+  const previewedMapKeyRef = useRef("");
+  const handlePreviewKey = useCallback(
+    (key: string) => {
+      previewedMapKeyRef.current = key;
+      onPreviewKey?.(key);
+    },
+    [onPreviewKey],
+  );
+  const handlePreviewEndKey = useCallback(
+    (key: string) => {
+      if (previewedMapKeyRef.current === key) {
+        previewedMapKeyRef.current = "";
+      }
+      onPreviewEndKey?.(key);
+    },
+    [onPreviewEndKey],
+  );
+  const clearMapPreview = useCallback(() => {
+    const previewedKey = previewedMapKeyRef.current;
+    if (!previewedKey) return;
+
+    previewedMapKeyRef.current = "";
+    onPreviewEndKey?.(previewedKey);
+  }, [onPreviewEndKey]);
 
   // Register before the fitting effects below. Their non-animated Leaflet
   // moves emit `moveend` synchronously, so a later subscription would miss the
   // initial fitted bounds used by the nearby-first list.
   useMapEvents({
+    movestart: clearMapPreview,
     moveend: () => {
+      clearMapPreview();
       setViewBounds(map.getBounds());
+      setZoom(map.getZoom());
     },
-    zoomend: () => setViewBounds(map.getBounds()),
+    zoomstart: clearMapPreview,
+    zoomend: () => {
+      clearMapPreview();
+      setViewBounds(map.getBounds());
+      setZoom(map.getZoom());
+    },
   });
 
   // Fit only when the effective geometry changes. Navigation state such as a
@@ -268,6 +633,15 @@ function BoundsAwareMarkers({
     const point = points.find(({ key }) => key === focusRequest.key);
     if (!point) return;
 
+    if (focusRequest.behavior === "preview") {
+      map.panInside([point.latitude, point.longitude], {
+        animate: !motionIsReduced(),
+        duration: 0.2,
+        padding: [48, 48],
+      });
+      return;
+    }
+
     const zoom = Math.max(map.getZoom(), PRODUCER_FOCUS_ZOOM);
     if (motionIsReduced()) {
       map.setView([point.latitude, point.longitude], zoom, { animate: false });
@@ -309,41 +683,38 @@ function BoundsAwareMarkers({
   useEffect(() => {
     onVisibleKeysChange?.(visibleKeys);
   }, [onVisibleKeysChange, visibleKeys]);
+  const showCategoryMarkers = zoom >= CATEGORY_MARKER_MIN_ZOOM;
+  const keyboardAccessible = visible.length <= KEYBOARD_MARKER_LIMIT;
 
   return (
     <>
       {renderedPoints.map((point) => {
         const selected = selectedKey === point.key;
 
-        return (
-          <Marker
-            key={`${point.key}:${selected ? "selected" : "default"}`}
-            position={[point.latitude, point.longitude]}
-            icon={getCategoryMarkerIcon(point.icon, selected)}
-            interactive={markerInteraction !== "static"}
-            eventHandlers={
-              markerInteraction === "select" && onSelectKey
-                ? { click: () => onSelectKey(point.key) }
-                : undefined
-            }
-          >
-            {markerInteraction !== "static" ? (
-              <Tooltip direction="top" offset={[0, -12]} opacity={0.96}>
-                {point.name}
-              </Tooltip>
-            ) : null}
-            {markerInteraction === "popup" ? (
-              <Popup>
-                <strong>{point.name}</strong>
-                <br />
-                {point.city} · {point.categories.join(" · ")}
-                <br />
-                <Link href={point.href} prefetch={false}>
-                  {messages.openProfile}
-                </Link>
-              </Popup>
-            ) : null}
-          </Marker>
+        return showCategoryMarkers ? (
+          <CategoryProducerMarker
+            key={point.key}
+            point={point}
+            selected={selected}
+            markerInteraction={markerInteraction}
+            onSelectKey={onSelectKey}
+            onPreviewKey={handlePreviewKey}
+            onPreviewEndKey={handlePreviewEndKey}
+            keyboardAccessible={keyboardAccessible}
+            messages={messages}
+          />
+        ) : (
+          <OverviewProducerMarker
+            key={point.key}
+            point={point}
+            selected={selected}
+            markerInteraction={markerInteraction}
+            onSelectKey={onSelectKey}
+            onPreviewKey={handlePreviewKey}
+            onPreviewEndKey={handlePreviewEndKey}
+            keyboardAccessible={keyboardAccessible}
+            messages={messages}
+          />
         );
       })}
     </>
@@ -358,6 +729,8 @@ export default function ProducersMapInner({
   nearbyFocusKeys,
   onNearbyFocusConsumed,
   onSelectKey,
+  onPreviewKey,
+  onPreviewEndKey,
   onVisibleKeysChange,
   markerInteraction,
   singlePointZoom = 13,
@@ -372,6 +745,8 @@ export default function ProducersMapInner({
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
   onSelectKey?: (key: string) => void;
+  onPreviewKey?: (key: string) => void;
+  onPreviewEndKey?: (key: string) => void;
   onVisibleKeysChange?: (keys: string[]) => void;
   markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
@@ -405,6 +780,8 @@ export default function ProducersMapInner({
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}
         onSelectKey={onSelectKey}
+        onPreviewKey={onPreviewKey}
+        onPreviewEndKey={onPreviewEndKey}
         onVisibleKeysChange={onVisibleKeysChange}
         markerInteraction={markerInteraction}
         singlePointZoom={singlePointZoom}

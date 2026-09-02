@@ -108,10 +108,10 @@ under 12px. Reading column 58–64 characters.
 One point per producer, at its exact coordinate. No clustering, jitter, offset
 or heatmaps — ever.
 
-- Every zoom uses the producer's existing colourful category pictogram in a
-  24px `surface` disc. The active producer grows to 32px with a `moss` edge,
-  is rendered above neighbouring points at the same position and retains the
-  same 44px interaction target.
+- Area overviews use exact-coordinate 6px `moss-dark` points below zoom 11;
+  from zoom 11, each producer uses its existing colourful category pictogram
+  in a 24px `surface` disc. The active or previewed producer grows above its
+  neighbours, keeps a `moss` edge and retains the same 44px interaction target.
 - Land `rice-paper`, controls `surface`, geometry `hairline`, labels `stone`.
 - All categories stay in one scrollable filter bar, one icon and label each.
 - Result counts remain available to assistive technology; visual density stays

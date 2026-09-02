@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
+import { findCatalogSearchMatch } from "../lib/catalog-search";
+
 const explorer = readFileSync("components/area-explorer.tsx", "utf8");
 const producerSelection = readFileSync(
   "components/producer-selection-page.tsx",
@@ -26,6 +28,7 @@ const producerDetail = readFileSync(
 const styles = readFileSync("app/globals.css", "utf8");
 const map = readFileSync("components/map/producers-map-inner.tsx", "utf8");
 const mapBoundary = readFileSync("components/map/producers-map.tsx", "utf8");
+const webStyles = readFileSync("design/adapters/web.css", "utf8");
 
 test("the compact discovery header delegates area controls and names the area", () => {
   assert.match(explorer, /<SiteCatalogControlsRegistration/);
@@ -76,12 +79,15 @@ test("search and producer preview keep the list and map in sync", () => {
   assert.match(explorer, /\.includes\(normalizedSearchQuery\)/);
   assert.match(explorer, /focusRequest=\{mapFocusRequest\}/);
   assert.match(explorer, /onSelectProducer=\{selectMapProducer\}/);
-  assert.match(explorer, /requestProducerFocus\(slug\)/);
+  assert.match(explorer, /requestProducerFocus\(slug, "preview"\)/);
+  assert.match(explorer, /requestProducerFocus\(slug, "select"\)/);
   assert.match(
     explorer,
     /onMouseEnter=\{\(\) => previewProducer\(item\.slug\)\}/,
   );
   assert.match(explorer, /onFocus=\{\(\) => previewProducer\(item\.slug\)\}/);
+  assert.match(explorer, /onPreviewProducer=\{previewMapProducer\}/);
+  assert.match(explorer, /onPreviewProducerEnd=\{clearProducerPreview\}/);
   assert.match(explorer, /presentedItem\?\.slug === item\.slug/);
   assert.match(explorer, /\? "is-active"/);
   assert.match(explorer, /router\.push\(href, \{ scroll: false \}\)/);
@@ -96,6 +102,8 @@ test("search and producer preview keep the list and map in sync", () => {
   );
   assert.doesNotMatch(explorer, /is-selected/);
   assert.match(map, /map\.flyTo\(\[point\.latitude, point\.longitude\], zoom/);
+  assert.match(map, /focusRequest\.behavior === "preview"/);
+  assert.match(map, /map\.panInside\(\[point\.latitude, point\.longitude\]/);
   assert.match(explorer, /key: selectedItem\.slug/);
   assert.doesNotMatch(explorer, /key: selectedSlug/);
   assert.doesNotMatch(explorer, /key=\{category \|\| "all"\}/);
@@ -129,6 +137,27 @@ test("search and producer preview keep the list and map in sync", () => {
   assert.doesNotMatch(producerSelectionExplorer, /producer-compact-detail/);
 });
 
+test("search highlights preserve original spelling and Unicode ranges", () => {
+  assert.deepEqual(findCatalogSearchMatch("Aranjuez", "aran"), {
+    start: 0,
+    end: 4,
+  });
+  assert.deepEqual(findCatalogSearchMatch("Penedès", "penedes"), {
+    start: 0,
+    end: 7,
+  });
+  assert.deepEqual(findCatalogSearchMatch("Cafe\u0301", "café"), {
+    start: 0,
+    end: 5,
+  });
+  assert.equal(findCatalogSearchMatch("Aranjuez", "vino"), null);
+  assert.equal(findCatalogSearchMatch("Aranjuez", ""), null);
+  assert.match(explorer, /<mark className="catalog-search-match">/);
+  assert.match(explorer, /const matchingCategoryText = normalizedSearchQuery/);
+  assert.match(explorer, /text=\{matchingCategoryText\}/);
+  assert.match(styles, /\.catalog-search-match[\s\S]*moss-pale/);
+});
+
 test("selected producer information is one dismissible profile surface", () => {
   assert.match(explorer, /<ProducerMapSelectionCard/);
   assert.match(producerSelectionExplorer, /<ProducerMapSelectionCard/);
@@ -145,6 +174,7 @@ test("selected producer information is one dismissible profile surface", () => {
   assert.match(selectionDismissal, /dismissFromOutside/);
   assert.match(selectionDismissal, /relatedSurfaceRef\?\.current\?\.contains/);
   assert.match(selectionDismissal, /\.producer-map-category-marker/);
+  assert.match(selectionDismissal, /\.producer-map-hit-area/);
   assert.match(selectionDismissal, /event\.key === "Escape"/);
   assert.match(selectionDismissal, /returnFocusRef\?\.current\?\.focus\(\)/);
   for (const surface of [explorer, producerSelectionExplorer]) {
@@ -215,7 +245,7 @@ test("the producer list keeps nearby priority without a map-only scope", () => {
 test("producer rows use the plain locality name", () => {
   assert.match(
     explorer,
-    /className="producer-compact-location"[^>]*>[\s\S]*?\{item\.city\}/,
+    /className="producer-compact-location"[^>]*>[\s\S]*?<SearchMatch text=\{item\.city\}/,
   );
   assert.doesNotMatch(explorer, /municipalityLabel/);
 });
@@ -260,10 +290,19 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.match(map, /getCategoryMarkerIcon\(point\.icon, selected\)/);
   assert.match(map, /renderedPoints\.map/);
   assert.match(map, /<Marker/);
-  assert.match(map, /interactive=\{markerInteraction !== "static"\}/);
-  assert.doesNotMatch(map, /CATEGORY_MARKER_MIN_ZOOM/);
-  assert.doesNotMatch(map, /CircleMarker/);
-  assert.doesNotMatch(map, /producer-map-circle/);
+  assert.match(map, /const interactive = markerInteraction !== "static"/);
+  assert.match(map, /CATEGORY_MARKER_MIN_ZOOM = 11/);
+  assert.match(map, /<CircleMarker/);
+  assert.match(map, /className="producer-map-circle"/);
+  assert.match(map, /className="producer-map-hit-area"/);
+  assert.doesNotMatch(map, /pathOptions=\{\{\s*className:/);
+  assert.match(map, /radius=\{22\}/);
+  assert.match(map, /zIndexOffset=\{selected \? 1_000 : 0\}/);
+  assert.match(map, /element\.setAttribute\("aria-label", label\)/);
+  assert.match(map, /const previewedMapKeyRef = useRef\(""\)/);
+  assert.match(map, /movestart: clearMapPreview/);
+  assert.match(map, /moveend: \(\) => \{\s*clearMapPreview\(\)/);
+  assert.doesNotMatch(map, /key=\{`\$\{point\.key\}:\$\{selected/);
   assert.match(map, /onNearbyFocusConsumed\?\.\(\)/);
   assert.doesNotMatch(map, /position\.latitude/);
   assert.doesNotMatch(map, /position\.longitude/);
@@ -273,7 +312,7 @@ test("shared maps keep all points while supporting nearby and interactive focus"
     mapBoundary,
     /markerInteraction \?\? \(onSelectKey \? "select" : "popup"\)/,
   );
-  assert.match(map, /markerInteraction === "select" && onSelectKey/);
+  assert.match(map, /const selectable = markerInteraction === "select"/);
   assert.match(producerDetail, /selectedSlug=\{producer\.slug\}/);
   assert.match(producerDetail, /markerInteraction="static"/);
   assert.match(producerDetail, /singlePointZoom=\{16\}/);
@@ -283,6 +322,18 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.doesNotMatch(producerDetail, /backToMap/);
   assert.doesNotMatch(producerDetail, /detail-back-link/);
   assert.doesNotMatch(producerDetail, /detail-mobile-bar/);
+});
+
+test("map tooltips and category pills use restrained contextual motion", () => {
+  assert.match(map, /className="producer-map-tooltip"/);
+  assert.match(map, /point\.city, point\.categories\[0\]/);
+  assert.match(webStyles, /\.catalog-chip:active[\s\S]*translateY/);
+  assert.match(webStyles, /@keyframes chisan-map-marker-emphasis/);
+  assert.match(webStyles, /@keyframes chisan-map-tooltip-in/);
+  assert.match(
+    webStyles,
+    /prefers-reduced-motion[\s\S]*\.catalog-chip[\s\S]*animation: none/,
+  );
 });
 
 test("producer profile actions and ownership placement stay coherent", () => {
