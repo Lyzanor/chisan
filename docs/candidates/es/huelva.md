@@ -26,6 +26,18 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 |---|---|---|---|---|---|---|
 | Dehesa Maladúa | Aroche | `Carne` — 100% Iberian acorn-fed ham | Linverd lists the brand's ham and public producer material connects the family project, its own dehesa and Iberian production to Aroche. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=424) | <https://dehesamaladua.bio/> | Confirm current activity and offer, the exact curing and productive unit, and the durable legal/public identity before admission. |
 
+## Feria Regional del Jamón y del Cerdo Ibérico de Aracena — 2026-09-03
+
+- Discovery source: Feria Regional del Jamón y del Cerdo Ibérico de Aracena (<https://aracena.es>) official exhibitor registers.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Huelva, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
+- Source ceiling: fair participant registers establish regular artisan presence, category and geographical clue; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Jamones Hermanos Cárdeno | Cumbres Mayores | `Carne` — traditional acorn-fed 100% Ibérico ham (DOP Jabugo) | Historic family curing house founded in 1910 in Cumbres Mayores with natural underground cellars for slow-cured pure acorn-fed Ibérico ham; regular commercial exhibitor. | [Feria de Aracena](https://aracena.es) | <https://hermanoscardeno.es/> | Verify curing cellar facilities in Cumbres Mayores, sanitary register and current bottled/sliced direct offer. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/huelva>, a B2B supplier directory whose listings are written by the companies themselves.
