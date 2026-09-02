@@ -763,3 +763,15 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Vertical Wine | Sant Pere de Ribes | `Vino` | The directory states: “Contamos con un amplio y variado catálogo compuesto por vinos provenientes de bodegas seleccionadas cuidadosamente y…” | [Directory](https://www.proveedores.com/proveedores/vertical-wine/) | <https://verticalwine.es/> | Confirm the winery and its current published range. |
 | Viniscoop | Barcelona | `Vino` | The directory states: “Valoramos enormemente la autenticidad y la pureza de la experiencia vinícola, por eso te llevamos los vinos…” | [Directory](https://www.proveedores.com/proveedores/viniscoop/) | <https://www.vinisclub.com/> | Confirm the winery and its current published range. |
 | Vinos Sarraillé DOCa Rioja | Centelles | `Vino` | The directory states: “Sarraillé es una bodega destinada a la elaboración y producción de vinos con Denominación de Origen Calificada Rioja” | [Directory](https://www.proveedores.com/proveedores/vinos-sarraille-doca-rioja/) | <https://sarraille.com/> | Confirm the winery and its current published range. |
+
+## Fira del Formatge Artesà de Lladó & fires de setembre — 2026-09-03
+
+- Discovery source: Som Gastronomia September 2026 fairs calendar (<https://www.instagram.com/p/DcykBX3CL0S/>) and 30a Fira Catalana del Formatge Artesà de Lladó official exhibitor directory (<https://firadelformatge.cat/artesans-formatgers/>).
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Barcelona, after de-duplication against the current area CSV, candidate backlog and closed evidence (all other Barcelona exhibitors like Montbrú, Can Pujol, Mas Rovira, Forn Franquesa, Cal Cantaré, Melmelades Calada, Ubach, La Petita Ànima, Can Ponsa, Formatgeria del Montseny and Can Morral del Molí are already cataloged).
+- Cutoff: published exhibitor directories and social profiles available on 2026-09-03.
+- Source ceiling: a fair listing establishes attendance and craft focus; it does not by itself prove full catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Formatgeria La Baterola | Viver i Serrateix | `Lácteos y quesos` — artisan goat cheese of shepherd | Agroecological shepherd project in Berguedà crafting cheeses from own goat herd; confirmed exhibitor at Fira de Lladó 2026. | [Fira del Formatge de Lladó](https://firadelformatge.cat/artesans-formatgers/) | <https://www.instagram.com/baterola.formatges/> | Verify physical dairy workshop location in Viver i Serrateix, sanitary register, and stable direct-purchase channels. |
