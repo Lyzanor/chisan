@@ -40,14 +40,18 @@ test("the compact discovery header delegates area controls and names the area", 
   assert.match(styles, /scrollbar-width: none/);
 });
 
-test("mobile producers use one attached accessible disclosure", () => {
-  for (const surface of [explorer, producerSelectionExplorer]) {
-    assert.match(surface, /className="catalog-viewer-toggle"/);
-    assert.match(surface, /aria-expanded=\{isMobileListOpen\}/);
-    assert.match(surface, /closeListFromOutside/);
-    assert.match(surface, /event\.key !== "Escape"/);
-  }
-  assert.match(explorer, /aria-controls=\{PRODUCER_LIST_ID\}/);
+test("the mobile area roster is visible while profile rosters remain disclosures", () => {
+  assert.match(
+    explorer,
+    /className="catalog-viewer catalog-viewer--persistent"/,
+  );
+  assert.doesNotMatch(explorer, /className="catalog-viewer-toggle"/);
+  assert.doesNotMatch(explorer, /isMobileListOpen/);
+  assert.doesNotMatch(explorer, /closeListFromOutside/);
+  assert.match(producerSelectionExplorer, /className="catalog-viewer-toggle"/);
+  assert.match(producerSelectionExplorer, /aria-expanded=\{isMobileListOpen\}/);
+  assert.match(producerSelectionExplorer, /closeListFromOutside/);
+  assert.match(producerSelectionExplorer, /event\.key !== "Escape"/);
   assert.match(
     producerSelectionExplorer,
     /aria-controls=\{PRODUCER_SELECTION_LIST_ID\}/,
@@ -57,7 +61,7 @@ test("mobile producers use one attached accessible disclosure", () => {
   assert.match(styles, /\.catalog-viewer-toggle\s*{[^}]*width: 100%/);
   assert.match(
     styles,
-    /\.catalog-viewer\.is-mobile-open\s*{[^}]*border-color: var\(--chisan-color-moss\)/,
+    /\.catalog-viewer--persistent \.catalog-viewer-body\s*{[^}]*display: flex/,
   );
   assert.match(
     styles,
@@ -73,15 +77,19 @@ test("search and producer preview keep the list and map in sync", () => {
   assert.match(explorer, /focusRequest=\{mapFocusRequest\}/);
   assert.match(explorer, /onSelectProducer=\{selectMapProducer\}/);
   assert.match(explorer, /requestProducerFocus\(slug\)/);
-  assert.match(explorer, /onMouseEnter=\{\(\) => previewProducer\(item\.slug\)\}/);
-  assert.match(explorer, /onFocus=\{\(\) => previewProducer\(item\.slug\)\}/);
-  assert.match(explorer, /presentedItem\?\.slug === item\.slug \? "is-active"/);
-  assert.match(explorer, /router\.push\(href, \{ scroll: false \}\)/);
   assert.match(
     explorer,
-    /return \[\.\.\.baseVisibleItems, selectedItem\]/,
+    /onMouseEnter=\{\(\) => previewProducer\(item\.slug\)\}/,
   );
-  assert.match(explorer, /selectedListItem\.scrollIntoView\(\{ block: "nearest" \}\)/);
+  assert.match(explorer, /onFocus=\{\(\) => previewProducer\(item\.slug\)\}/);
+  assert.match(explorer, /presentedItem\?\.slug === item\.slug/);
+  assert.match(explorer, /\? "is-active"/);
+  assert.match(explorer, /router\.push\(href, \{ scroll: false \}\)/);
+  assert.match(explorer, /return \[\.\.\.baseVisibleItems, selectedItem\]/);
+  assert.match(
+    explorer,
+    /selectedListItem\.scrollIntoView\(\{ block: "nearest" \}\)/,
+  );
   assert.match(
     explorer,
     /scrollSelectedListItemAfterMapSelectionRef\.current = true/,
@@ -91,13 +99,13 @@ test("search and producer preview keep the list and map in sync", () => {
   assert.match(explorer, /key: selectedItem\.slug/);
   assert.doesNotMatch(explorer, /key: selectedSlug/);
   assert.doesNotMatch(explorer, /key=\{category \|\| "all"\}/);
-  assert.match(
-    explorer,
-    /if \(closeMobileList && window\.matchMedia[\s\S]*?setIsMobileListOpen\(false\)/,
-  );
+  assert.doesNotMatch(explorer, /closeMobileList|setIsMobileListOpen/);
   assert.doesNotMatch(explorer, /setExpandedCategory/);
 
-  assert.match(producerSelectionExplorer, /selectedKey=\{selectedItem\?\.key\}/);
+  assert.match(
+    producerSelectionExplorer,
+    /selectedKey=\{selectedItem\?\.key\}/,
+  );
   assert.match(producerSelectionExplorer, /focusRequest=\{mapFocusRequest\}/);
   assert.match(producerSelectionExplorer, /onSelectKey=\{selectProducer\}/);
   assert.match(producerSelectionExplorer, /requestProducerFocus\(key\)/);
@@ -136,10 +144,7 @@ test("selected producer information is one dismissible profile surface", () => {
   );
   assert.match(selectionDismissal, /dismissFromOutside/);
   assert.match(selectionDismissal, /relatedSurfaceRef\?\.current\?\.contains/);
-  assert.match(
-    selectionDismissal,
-    /\.producer-map-hit-area, \.producer-map-circle/,
-  );
+  assert.match(selectionDismissal, /\.producer-map-category-marker/);
   assert.match(selectionDismissal, /event\.key === "Escape"/);
   assert.match(selectionDismissal, /returnFocusRef\?\.current\?\.focus\(\)/);
   for (const surface of [explorer, producerSelectionExplorer]) {
@@ -202,10 +207,7 @@ test("the producer list keeps nearby priority without a map-only scope", () => {
     map,
     /viewBounds\.contains\(\[point\.latitude, point\.longitude\]\)/,
   );
-  assert.match(
-    map,
-    /map\.distance\(center, \[a\.latitude, a\.longitude\]\)/,
-  );
+  assert.match(map, /map\.distance\(center, \[a\.latitude, a\.longitude\]\)/);
   assert.match(map, /onVisibleKeysChange\?\.\(visibleKeys\)/);
   assert.match(map, /setViewBounds\(map\.getBounds\(\)\)/);
 });
@@ -221,7 +223,10 @@ test("producer rows use the plain locality name", () => {
 test("area-list styles do not change shared producer selection surfaces", () => {
   assert.match(producerSelection, /<ProducerSelectionExplorer/);
   assert.match(producerSelection, /countLabels/);
-  assert.match(producerSelection, /itemKeys: items\.map\(\(item\) => item\.key\)/);
+  assert.match(
+    producerSelection,
+    /itemKeys: items\.map\(\(item\) => item\.key\)/,
+  );
   assert.doesNotMatch(producerSelection, /ProducerSelectionMap/);
   assert.doesNotMatch(producerSelectionExplorer, /getCategoryIcon/);
   assert.match(producerSelectionExplorer, /\{item\.icon\}/);
@@ -252,14 +257,13 @@ test("shared maps keep all points while supporting nearby and interactive focus"
   assert.doesNotMatch(mapBoundary, /nearbyPosition/);
   assert.match(map, /getPointsForKeys\(points, initialFocusKeys\)/);
   assert.match(map, /getPointsForKeys\(points, nearbyFocusKeys\)/);
-  assert.match(map, /CATEGORY_MARKER_MIN_ZOOM = 12/);
   assert.match(map, /getCategoryMarkerIcon\(point\.icon, selected\)/);
-  assert.match(map, /radius=\{selected \? 10 : 6\}/);
-  assert.match(map, /weight: selected \? 3 : 0/);
   assert.match(map, /renderedPoints\.map/);
-  assert.match(map, /producer-map-circle--selected/);
-  assert.match(map, /className: "producer-map-hit-area"/);
-  assert.match(map, /radius=\{14\}/);
+  assert.match(map, /<Marker/);
+  assert.match(map, /interactive=\{markerInteraction !== "static"\}/);
+  assert.doesNotMatch(map, /CATEGORY_MARKER_MIN_ZOOM/);
+  assert.doesNotMatch(map, /CircleMarker/);
+  assert.doesNotMatch(map, /producer-map-circle/);
   assert.match(map, /onNearbyFocusConsumed\?\.\(\)/);
   assert.doesNotMatch(map, /position\.latitude/);
   assert.doesNotMatch(map, /position\.longitude/);
@@ -269,7 +273,6 @@ test("shared maps keep all points while supporting nearby and interactive focus"
     mapBoundary,
     /markerInteraction \?\? \(onSelectKey \? "select" : "popup"\)/,
   );
-  assert.match(map, /interactive=\{markerInteraction === "popup"\}/);
   assert.match(map, /markerInteraction === "select" && onSelectKey/);
   assert.match(producerDetail, /selectedSlug=\{producer\.slug\}/);
   assert.match(producerDetail, /markerInteraction="static"/);

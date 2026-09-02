@@ -266,24 +266,6 @@ body {
   width: 6.5rem;
 }
 
-/* Exact producer field: map-native circles stay at the catalog coordinate. */
-.producer-map-circle {
-  fill: var(--chisan-color-moss-dark);
-  fill-opacity: 1;
-  stroke: var(--chisan-color-moss-dark);
-  stroke-opacity: 0;
-  stroke-width: 0;
-  vector-effect: non-scaling-stroke;
-}
-
-.producer-map-circle--selected {
-  fill: var(--chisan-color-moss);
-  fill-opacity: 1;
-  stroke: var(--chisan-color-surface);
-  stroke-opacity: 1;
-  stroke-width: 3px;
-}
-
 .producer-map-category-marker {
   display: grid;
   place-items: center;

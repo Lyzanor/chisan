@@ -4,6 +4,27 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-02 — Persistent mobile roster and category markers at every zoom
+
+final result: passed
+
+Reviewed `/es/barcelona` with the area map at its opening zoom and in the narrow
+mobile layout.
+
+- The mobile area roster is visible from initial render and remains attached
+  below the map. Search and map interaction no longer control a separate list
+  disclosure state.
+- Every producer point uses its existing colourful category pictogram from the
+  opening zoom onward. The 24px default and 32px selected treatments keep the
+  existing 44px interaction target.
+- Profile selection rosters retain their disclosure because they do not share
+  the area search-and-map composition.
+
+This explicit follow-up supersedes the earlier preference for overview circles
+and the collapsed mobile area roster. Rejected: black overview points, closing
+the area roster from search or map interaction, and expanding the pictograms
+beyond their compact marker sizes.
+
 ## 2026-09-02 — Map-selected row and streamlined producer profile
 
 final result: passed

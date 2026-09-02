@@ -48,17 +48,17 @@ number. `--list <rule>` prints the offending lines.
 
 ## Colour
 
-| Token | Value | Role |
-|---|---:|---|
-| `rice-paper` | `#F5F1E8` | Page field |
-| `surface` | `#FFFDF8` | Controls, raised surfaces |
-| `surface-muted` | `#ECE8DE` | Table headers, quiet fills |
-| `ink` | `#1D201B` | Text, wordmark, dark surfaces |
-| `stone` | `#686C66` | Secondary text, map labels |
-| `hairline` | `#D7D3C9` | Rules, borders, map geometry |
-| `moss` | `#52614C` | Primary action, focus, active selection |
-| `moss-dark` | `#344237` | Text on `moss-pale` |
-| `moss-pale` | `#E5E8E1` | Quiet selected state |
+| Token           |     Value | Role                                    |
+| --------------- | --------: | --------------------------------------- |
+| `rice-paper`    | `#F5F1E8` | Page field                              |
+| `surface`       | `#FFFDF8` | Controls, raised surfaces               |
+| `surface-muted` | `#ECE8DE` | Table headers, quiet fills              |
+| `ink`           | `#1D201B` | Text, wordmark, dark surfaces           |
+| `stone`         | `#686C66` | Secondary text, map labels              |
+| `hairline`      | `#D7D3C9` | Rules, borders, map geometry            |
+| `moss`          | `#52614C` | Primary action, focus, active selection |
+| `moss-dark`     | `#344237` | Text on `moss-pale`                     |
+| `moss-pale`     | `#E5E8E1` | Quiet selected state                    |
 
 Every other pair meets WCAG AA. These three do not — never use them:
 
@@ -76,13 +76,13 @@ tinted shadows, saturated fields or colour-coded card sets. Status colours
 One family: **Noto Sans**, with the Noto or system fallback per script. No serif
 anywhere in a fallback chain.
 
-| Role | Weight | Size | Line height |
-|---|---|---|---|
-| Display | 500 | 48–88px | 0.98–1.05 |
-| Heading | 500 | 28–40px | 1.1–1.2 |
-| Body | 400 | 16–18px | 1.55–1.7 |
-| Interface | 500 | 14–16px | 1.35–1.5 |
-| Metadata | 500 | 12–13px | 1.4, `0.04em` |
+| Role      | Weight | Size    | Line height   |
+| --------- | ------ | ------- | ------------- |
+| Display   | 500    | 48–88px | 0.98–1.05     |
+| Heading   | 500    | 28–40px | 1.1–1.2       |
+| Body      | 400    | 16–18px | 1.55–1.7      |
+| Interface | 500    | 14–16px | 1.35–1.5      |
+| Metadata  | 500    | 12–13px | 1.4, `0.04em` |
 
 `next/font` loads 400, 500 and 700. CSS uses only 400 and 500 — hierarchy comes
 from size, position and space, never from weight. 700 belongs to `<strong>` and
@@ -108,12 +108,10 @@ under 12px. Reading column 58–64 characters.
 One point per producer, at its exact coordinate. No clustering, jitter, offset
 or heatmaps — ever.
 
-- Overview zooms: 12px `moss-dark` circle at full opacity, no outline.
-- Neighbourhood zooms (`12+`): the producer's existing colourful category
-  pictogram in a 24px `surface` disc. The active producer grows to 32px with a
-  `moss` edge; both retain a 44px interaction target.
-- Selected overview point: 20px `moss` fill with a 3px `surface` outline,
-  rendered above neighbouring points at the same position.
+- Every zoom uses the producer's existing colourful category pictogram in a
+  24px `surface` disc. The active producer grows to 32px with a `moss` edge,
+  is rendered above neighbouring points at the same position and retains the
+  same 44px interaction target.
 - Land `rice-paper`, controls `surface`, geometry `hairline`, labels `stone`.
 - All categories stay in one scrollable filter bar, one icon and label each.
 - Result counts remain available to assistive technology; visual density stays
@@ -130,8 +128,10 @@ or heatmaps — ever.
 - Hovering or focusing a list row previews the exact producer on the map and
   linked producer surface. A restrained `moss-pale` row treatment preserves
   the connection; clicking remains the durable URL selection.
-- On small screens, the producer list is an attached, non-modal disclosure. Its
-  open state uses `moss-pale` and a `moss` edge, never a floating shadow.
+- On small area-discovery screens, the producer list is an always-visible,
+  attached roster below the map. Profile producer selections may use an
+  attached non-modal disclosure; its open state uses `moss-pale` and a `moss`
+  edge, never a floating shadow.
 - A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
   map points never preload producer imagery.
 
@@ -173,11 +173,8 @@ pretending to select a missing point.
 A producer-detail map renders its sole producer in fixed selected state and
 keeps that contextual point non-interactive. It does not repeat the selected
 card or open a self-referential popup because the page itself is that surface.
-Dense multi-producer overview circles retain the deliberate 28px transparent
-point target; this is the sole exception to the 44px target rule and is allowed
-only when the synchronized list provides an equivalent 44px control for every
-interactive point. Neighbourhood pictograms use the full 44px target. Fixed
-detail points are non-essential map context.
+Every interactive category pictogram uses the full 44px target, including at
+overview zooms. Fixed detail points are non-essential map context.
 
 ## Producer profile
 

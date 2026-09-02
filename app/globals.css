@@ -1416,6 +1416,11 @@ td:first-child {
     background: var(--surface);
   }
 
+  .catalog-page .catalog-viewer--persistent .catalog-viewer-body {
+    display: flex;
+    border-top-color: var(--chisan-color-moss);
+  }
+
   .catalog-page .catalog-viewer-head {
     padding: 0;
     border-bottom: 0;
@@ -3279,8 +3284,6 @@ td:first-child {
   color: var(--chisan-color-stone);
   font-size: 0.75rem;
 }
-
-
 
 @media (max-width: 1050px) {
   .admin-shell {

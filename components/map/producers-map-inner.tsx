@@ -1,10 +1,9 @@
 "use client";
 
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import L from "leaflet";
 import {
-  CircleMarker,
   MapContainer,
   Marker,
   Popup,
@@ -31,7 +30,6 @@ import type {
 const VIEWPORT_THRESHOLD = 200;
 const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
 const PRODUCER_FOCUS_ZOOM = 13;
-const CATEGORY_MARKER_MIN_ZOOM = 12;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
 const EMPTY_FOCUS_KEYS: string[] = [];
 const categoryMarkerIconCache = new Map<string, L.DivIcon>();
@@ -171,8 +169,9 @@ function BoundsAwareMarkers({
   };
 }) {
   const map = useMap();
-  const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
-  const [zoom, setZoom] = useState(() => map.getZoom());
+  const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() =>
+    map.getBounds(),
+  );
   const fittedViewRef = useRef<{
     points: readonly ProducerMapMarker[];
     singlePointZoom: number;
@@ -187,9 +186,8 @@ function BoundsAwareMarkers({
   useMapEvents({
     moveend: () => {
       setViewBounds(map.getBounds());
-      setZoom(map.getZoom());
     },
-    zoomend: () => setZoom(map.getZoom()),
+    zoomend: () => setViewBounds(map.getBounds()),
   });
 
   // Fit only when the effective geometry changes. Navigation state such as a
@@ -292,9 +290,7 @@ function BoundsAwareMarkers({
     const center = map.getCenter();
 
     return points
-      .filter((point) =>
-        viewBounds.contains([point.latitude, point.longitude]),
-      )
+      .filter((point) => viewBounds.contains([point.latitude, point.longitude]))
       .sort((a, b) => {
         const distance =
           map.distance(center, [a.latitude, a.longitude]) -
@@ -308,13 +304,8 @@ function BoundsAwareMarkers({
     const selectedPoint = visible.find(({ key }) => key === selectedKey);
     if (!selectedPoint) return visible;
 
-    return [
-      ...visible.filter(({ key }) => key !== selectedKey),
-      selectedPoint,
-    ];
+    return [...visible.filter(({ key }) => key !== selectedKey), selectedPoint];
   }, [selectedKey, visible]);
-  const showCategoryMarkers = zoom >= CATEGORY_MARKER_MIN_ZOOM;
-
   useEffect(() => {
     onVisibleKeysChange?.(visibleKeys);
   }, [onVisibleKeysChange, visibleKeys]);
@@ -324,97 +315,35 @@ function BoundsAwareMarkers({
       {renderedPoints.map((point) => {
         const selected = selectedKey === point.key;
 
-        if (showCategoryMarkers) {
-          return (
-            <Marker
-              key={`${point.key}:${selected ? "selected" : "default"}`}
-              position={[point.latitude, point.longitude]}
-              icon={getCategoryMarkerIcon(point.icon, selected)}
-              interactive={markerInteraction !== "static"}
-              eventHandlers={
-                markerInteraction === "select" && onSelectKey
-                  ? { click: () => onSelectKey(point.key) }
-                  : undefined
-              }
-            >
-              {markerInteraction !== "static" ? (
-                <Tooltip direction="top" offset={[0, -12]} opacity={0.96}>
-                  {point.name}
-                </Tooltip>
-              ) : null}
-              {markerInteraction === "popup" ? (
-                <Popup>
-                  <strong>{point.name}</strong>
-                  <br />
-                  {point.city} · {point.categories.join(" · ")}
-                  <br />
-                  <Link href={point.href} prefetch={false}>
-                    {messages.openProfile}
-                  </Link>
-                </Popup>
-              ) : null}
-            </Marker>
-          );
-        }
-
         return (
-          <Fragment key={`${point.key}:${selected ? "selected" : "default"}`}>
-            <CircleMarker
-              center={[point.latitude, point.longitude]}
-              radius={selected ? 10 : 6}
-              interactive={markerInteraction === "popup"}
-              pathOptions={{
-                className: selected
-                  ? "producer-map-circle producer-map-circle--selected"
-                  : "producer-map-circle",
-                color: selected
-                  ? "var(--chisan-color-surface)"
-                  : "var(--chisan-color-moss-dark)",
-                fillColor: selected
-                  ? "var(--chisan-color-moss)"
-                  : "var(--chisan-color-moss-dark)",
-                fillOpacity: 1,
-                opacity: selected ? 1 : 0,
-                weight: selected ? 3 : 0,
-              }}
-            >
-              {markerInteraction === "popup" ? (
-                <>
-                  <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
-                    {point.name}
-                  </Tooltip>
-                  <Popup>
-                    <strong>{point.name}</strong>
-                    <br />
-                    {point.city} · {point.categories.join(" · ")}
-                    <br />
-                    <Link href={point.href} prefetch={false}>
-                      {messages.openProfile}
-                    </Link>
-                  </Popup>
-                </>
-              ) : null}
-            </CircleMarker>
-            {markerInteraction === "select" && onSelectKey ? (
-              <CircleMarker
-                center={[point.latitude, point.longitude]}
-                radius={14}
-                pathOptions={{
-                  className: "producer-map-hit-area",
-                  color: "transparent",
-                  fillColor: "transparent",
-                  fillOpacity: 0,
-                  opacity: 0,
-                  weight: 0,
-                }}
-                eventHandlers={{ click: () => onSelectKey(point.key) }}
-              >
-                <Tooltip direction="top" offset={[0, -8]} opacity={0.96}>
-                  {point.name}
-                </Tooltip>
-              </CircleMarker>
+          <Marker
+            key={`${point.key}:${selected ? "selected" : "default"}`}
+            position={[point.latitude, point.longitude]}
+            icon={getCategoryMarkerIcon(point.icon, selected)}
+            interactive={markerInteraction !== "static"}
+            eventHandlers={
+              markerInteraction === "select" && onSelectKey
+                ? { click: () => onSelectKey(point.key) }
+                : undefined
+            }
+          >
+            {markerInteraction !== "static" ? (
+              <Tooltip direction="top" offset={[0, -12]} opacity={0.96}>
+                {point.name}
+              </Tooltip>
             ) : null}
-          </Fragment>
+            {markerInteraction === "popup" ? (
+              <Popup>
+                <strong>{point.name}</strong>
+                <br />
+                {point.city} · {point.categories.join(" · ")}
+                <br />
+                <Link href={point.href} prefetch={false}>
+                  {messages.openProfile}
+                </Link>
+              </Popup>
+            ) : null}
+          </Marker>
         );
       })}
     </>

@@ -42,7 +42,6 @@ import { selectNearbyProducerKeys } from "@/lib/location/nearby-producer-focus";
 import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
 
 const VISIBLE_PRODUCER_LIMIT = 400;
-const PRODUCER_LIST_ID = "catalog-producer-list";
 const PRODUCER_RESULTS_ID = "catalog-producer-results";
 
 type AreaExplorerProducer = {
@@ -106,7 +105,11 @@ function formatNumber(locale: string, value: number): string {
   return new Intl.NumberFormat(locale).format(value);
 }
 
-function withCatalogQuery(href: string, category: string, highlight: string): string {
+function withCatalogQuery(
+  href: string,
+  category: string,
+  highlight: string,
+): string {
   const url = new URL(href, "https://catalog.invalid");
 
   if (category) {
@@ -151,7 +154,9 @@ function useNearbyMapFocusKeys(
 
   useEffect(() => {
     const requestKey =
-      savedCountry === country && savedArea === area ? `${country}/${area}` : "";
+      savedCountry === country && savedArea === area
+        ? `${country}/${area}`
+        : "";
     if (!requestKey) {
       requestGenerationRef.current += 1;
       return;
@@ -223,7 +228,6 @@ function AreaExplorerView({
   selectedSlug: string;
 }) {
   const router = useRouter();
-  const [isMobileListOpen, setIsMobileListOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [previewedSlug, setPreviewedSlug] = useState("");
   const [prioritizedProducerScope, setPrioritizedProducerScope] = useState<{
@@ -235,13 +239,11 @@ function AreaExplorerView({
   const mapFocusRequestId = useRef(0);
   const previousSelectedSlug = useRef("");
   const listOrderLockedCategoryRef = useRef<string | null>(null);
-  const listToggleRef = useRef<HTMLButtonElement>(null);
   const viewerRef = useRef<HTMLElement>(null);
   const mapSurfaceRef = useRef<HTMLDivElement>(null);
   const selectedProducerLinkRef = useRef<HTMLAnchorElement>(null);
   const selectedListItemRef = useRef<HTMLLIElement>(null);
   const scrollSelectedListItemAfterMapSelectionRef = useRef(false);
-  const focusSelectedProducerAfterCloseRef = useRef(false);
   const normalizedCategory = normalizeCategory(category);
   const normalizedSearchQuery = normalizeCategory(searchQuery);
   const categoryItems = useMemo(
@@ -274,8 +276,8 @@ function AreaExplorerView({
   const selectedItem = useMemo(
     () =>
       selectedSlug
-        ? items.find((item) => item.slug === selectedSlug) ??
-          items.find((item) => String(item.producerId) === selectedSlug)
+        ? (items.find((item) => item.slug === selectedSlug) ??
+          items.find((item) => String(item.producerId) === selectedSlug))
         : undefined,
     [items, selectedSlug],
   );
@@ -305,26 +307,22 @@ function AreaExplorerView({
   );
   const mapPoints = useMemo(
     () =>
-      mappedItems.map(
-        (item): ProducerMapPoint => ({
-          slug: item.slug,
-          name: item.name,
-          city: item.city,
-          category: item.category,
-          categories: item.categories.map(
-            (itemCategory) =>
-              categoryPresentations.get(itemCategory)?.label ?? itemCategory,
-          ),
-          latitude: item.latitude,
-          longitude: item.longitude,
-        }),
-      ),
+      mappedItems.map((item): ProducerMapPoint => ({
+        slug: item.slug,
+        name: item.name,
+        city: item.city,
+        category: item.category,
+        categories: item.categories.map(
+          (itemCategory) =>
+            categoryPresentations.get(itemCategory)?.label ?? itemCategory,
+        ),
+        latitude: item.latitude,
+        longitude: item.longitude,
+      })),
     [categoryPresentations, mappedItems],
   );
-  const {
-    keys: nearbyMapFocusKeys,
-    consume: consumeNearbyMapFocus,
-  } = useNearbyMapFocusKeys(model.scope.country, model.area, mapPoints);
+  const { keys: nearbyMapFocusKeys, consume: consumeNearbyMapFocus } =
+    useNearbyMapFocusKeys(model.scope.country, model.area, mapPoints);
   const itemsBySlug = useMemo(
     () => new Map(items.map((item) => [item.slug, item])),
     [items],
@@ -344,9 +342,7 @@ function AreaExplorerView({
     [itemsBySlug, mappedItems, prioritizedProducerKeys],
   );
   const orderedItems = useMemo(() => {
-    const prioritizedKeys = new Set(
-      prioritizedItems.map(({ slug }) => slug),
-    );
+    const prioritizedKeys = new Set(prioritizedItems.map(({ slug }) => slug));
     return [
       ...prioritizedItems,
       ...mappedItems.filter(({ slug }) => !prioritizedKeys.has(slug)),
@@ -399,21 +395,24 @@ function AreaExplorerView({
     visible: formatNumber(model.localeDisplayTag, visibleItems.length),
     total: formatNumber(model.localeDisplayTag, mappedItems.length),
   });
-  const handleVisibleProducerKeysChange = useCallback((keys: string[]) => {
-    if (listOrderLockedCategoryRef.current === category) return;
+  const handleVisibleProducerKeysChange = useCallback(
+    (keys: string[]) => {
+      if (listOrderLockedCategoryRef.current === category) return;
 
-    setPrioritizedProducerScope((current) => {
-      if (
-        current?.category === category &&
-        current.keys.length === keys.length &&
-        current.keys.every((key, index) => key === keys[index])
-      ) {
-        return current;
-      }
+      setPrioritizedProducerScope((current) => {
+        if (
+          current?.category === category &&
+          current.keys.length === keys.length &&
+          current.keys.every((key, index) => key === keys[index])
+        ) {
+          return current;
+        }
 
-      return { category, keys };
-    });
-  }, [category]);
+        return { category, keys };
+      });
+    },
+    [category],
+  );
 
   const clearProducerSelection = useCallback(() => {
     consumeNearbyMapFocus();
@@ -458,65 +457,21 @@ function AreaExplorerView({
     selectedSurfaceRef: selectedProducerLinkRef,
     relatedSurfaceRef: viewerRef,
     returnFocusRef: mapSurfaceRef,
-    suspendEscape: isMobileListOpen,
     onDismiss: clearProducerSelection,
   });
-
-  useEffect(() => {
-    if (
-      !focusSelectedProducerAfterCloseRef.current ||
-      isMobileListOpen ||
-      !selectedItem
-    ) {
-      return;
-    }
-
-    focusSelectedProducerAfterCloseRef.current = false;
-    window.requestAnimationFrame(() =>
-      selectedProducerLinkRef.current?.focus({ preventScroll: true }),
-    );
-  }, [isMobileListOpen, selectedItem]);
-
-  useEffect(() => {
-    if (!isMobileListOpen) return;
-
-    function closeListFromOutside(event: PointerEvent) {
-      if (!viewerRef.current?.contains(event.target as Node)) {
-        setIsMobileListOpen(false);
-      }
-    }
-
-    function closeListFromKeyboard(event: KeyboardEvent) {
-      if (event.key !== "Escape") return;
-      setIsMobileListOpen(false);
-      listToggleRef.current?.focus();
-    }
-
-    document.addEventListener("pointerdown", closeListFromOutside);
-    document.addEventListener("keydown", closeListFromKeyboard);
-    return () => {
-      document.removeEventListener("pointerdown", closeListFromOutside);
-      document.removeEventListener("keydown", closeListFromKeyboard);
-    };
-  }, [isMobileListOpen]);
 
   function requestProducerFocus(slug: string) {
     mapFocusRequestId.current += 1;
     setMapFocusRequest({ key: slug, requestId: mapFocusRequestId.current });
   }
 
-  function selectProducer(slug: string, href: string, closeMobileList: boolean) {
+  function selectProducer(slug: string, href: string) {
     previousSelectedSlug.current = slug;
     listOrderLockedCategoryRef.current = category;
     setPreviewedSlug("");
     consumeNearbyMapFocus();
     requestProducerFocus(slug);
     router.push(href, { scroll: false });
-
-    if (closeMobileList && window.matchMedia("(max-width: 980px)").matches) {
-      focusSelectedProducerAfterCloseRef.current = true;
-      setIsMobileListOpen(false);
-    }
   }
 
   function selectMapProducer(slug: string) {
@@ -527,14 +482,13 @@ function AreaExplorerView({
       highlight: slug,
     });
     scrollSelectedListItemAfterMapSelectionRef.current = true;
-    selectProducer(slug, href, false);
+    selectProducer(slug, href);
   }
 
   function selectCategory(href: string) {
     setPreviewedSlug("");
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
-    setIsMobileListOpen(false);
     listOrderLockedCategoryRef.current = null;
     setPrioritizedProducerScope(null);
     router.push(href, { scroll: false });
@@ -696,24 +650,10 @@ function AreaExplorerView({
 
         <aside
           ref={viewerRef}
-          className={`catalog-viewer ${
-            isMobileListOpen ? "is-mobile-open" : ""
-          }`}
+          className="catalog-viewer catalog-viewer--persistent"
           aria-label={model.mapMessages.producers}
         >
-          <button
-            ref={listToggleRef}
-            type="button"
-            className="catalog-viewer-toggle"
-            aria-expanded={isMobileListOpen}
-            aria-controls={PRODUCER_LIST_ID}
-            onClick={() => setIsMobileListOpen((isOpen) => !isOpen)}
-          >
-            {model.catalogMessages.producers}
-          </button>
-
           <div
-            id={PRODUCER_LIST_ID}
             className="catalog-viewer-body"
             role="region"
             aria-label={model.catalogMessages.producers}
@@ -733,10 +673,7 @@ function AreaExplorerView({
                 })}
               </p>
             ) : visibleItems.length > 0 ? (
-              <ul
-                id={PRODUCER_RESULTS_ID}
-                className="producer-compact-list"
-              >
+              <ul id={PRODUCER_RESULTS_ID} className="producer-compact-list">
                 {visibleItems.map((item) => {
                   const href = buildCatalogHref({
                     scope: model.scope,
@@ -754,7 +691,9 @@ function AreaExplorerView({
                           : undefined
                       }
                       className={
-                        presentedItem?.slug === item.slug ? "is-active" : undefined
+                        presentedItem?.slug === item.slug
+                          ? "is-active"
+                          : undefined
                       }
                     >
                       <Link
@@ -763,7 +702,7 @@ function AreaExplorerView({
                         scroll={false}
                         onNavigate={(event) => {
                           event.preventDefault();
-                          selectProducer(item.slug, href, true);
+                          selectProducer(item.slug, href);
                         }}
                         onMouseEnter={() => previewProducer(item.slug)}
                         onMouseLeave={() => clearProducerPreview(item.slug)}
@@ -774,8 +713,12 @@ function AreaExplorerView({
                           selectedItem?.slug === item.slug ? true : undefined
                         }
                       >
-                        <span className="producer-compact-icon" aria-hidden="true">
-                          {categoryPresentations.get(item.category)?.icon ?? "🧺"}
+                        <span
+                          className="producer-compact-icon"
+                          aria-hidden="true"
+                        >
+                          {categoryPresentations.get(item.category)?.icon ??
+                            "🧺"}
                         </span>
                         <span>
                           <strong>{item.name}</strong>
@@ -784,7 +727,9 @@ function AreaExplorerView({
                               {item.city}
                             </small>
                           ) : null}
-                          {item.description ? <small>{item.description}</small> : null}
+                          {item.description ? (
+                            <small>{item.description}</small>
+                          ) : null}
                         </span>
                       </Link>
                     </li>
@@ -796,7 +741,6 @@ function AreaExplorerView({
                 {model.catalogMessages.emptyMapView}
               </p>
             )}
-
           </div>
         </aside>
       </section>

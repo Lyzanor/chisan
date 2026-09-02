@@ -134,11 +134,10 @@ test("the shared account menu keeps identity, language and account actions separ
   assert.match(accountMenu, /document\.addEventListener\("pointerdown"/);
   assert.match(accountIdentity, /getCurrentAccount\(\)\.catch/);
   assert.match(accountIdentity, /"Cache-Control": "private, no-store"/);
-  assert.match(map, /radius=\{selected \? 10 : 6\}/);
-  assert.match(
-    map,
-    /fillColor: selected[\s\S]*"var\(--chisan-color-moss\)"/,
-  );
+  assert.match(map, /getCategoryMarkerIcon\(point\.icon, selected\)/);
+  assert.match(map, /producer-map-category-icon--selected/);
+  assert.match(map, /iconSize: \[44, 44\]/);
+  assert.doesNotMatch(map, /CircleMarker/);
 });
 
 test("the catalog root derives document language only from the async URL scope", () => {
