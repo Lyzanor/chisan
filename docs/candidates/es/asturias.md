@@ -59,6 +59,18 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | La Prunal – Queso Gamoneu | Bobia (Onís) | `Lácteos y quesos` — Queso Gamonéu del Valle | Traditional pastoral cheese producer in Bobia (Onís) making protected DOP Gamonéu del Valle; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy premises in Bobia / Onís and active commercial distribution channels. |
 | Queso Azul Campobio | Otur (Valdés) | `Lácteos y quesos` — organic blue cheese | Certified organic dairy project in Otur (Valdés) elaborating organic blue cow's milk cheese; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://campobio.es> | Verify dedicated dairy workshop in Otur and current retail availability. |
 
+## Certamen del Queso Gamonéu — 2026-09-03
+
+- Discovery source: Certamen del Queso Gamonéu en Benia de Onís (<https://quesogamoneu.com>) and Consejo Regulador DOP Gamonéu official registered dairies.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Asturias, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published DOP registries and fair records available on 2026-09-03.
+- Source ceiling: fair records establish registered artisan status and product scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería Torió | Cangas de Onís (Labra) | `Lácteos y quesos` — raw milk DOP Gamonéu del Valle cheese | Traditional artisan cheese maker in Labra (Cangas de Onís) crafting smoked raw-milk DOP Gamonéu del Valle; regular registered participant at Benia de Onís. | [DOP Gamonéu](https://quesogamoneu.com) | — | Confirm dedicated dairy workshop address in Labra, herd management and active commercial distribution. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/asturias>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -129,7 +141,7 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | Dulce de frutas La Collotense | Caravia | `Fruta y verdura` | The directory states: “La Collotense es una empresa familiar ubicada en Asturias, dedicada a la elaboración de dulce de frutas desde 1962” | [Directory](https://www.proveedores.com/proveedores/dulce-de-frutas-la-collotense/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Codilex Distribuidores Mayoristas | Gijón | `Frutos secos` | The directory states: “Codilex Distribuidores Mayoristas es una empresa que comercializa pasta , legumbres , frutos secos y fruta seca” | [Directory](https://www.proveedores.com/proveedores/codilex-distribuidores-mayoristas/) | <https://www.codilex.com/> | Separate the own productive activity from the trading arm before placing the row. |
 | Eiralabs | Oviedo | `Huevos` | The directory states: “Eiralabs es una empresa que se dedica a la fabricación y comercialización de complementos de nutrición , con…” | [Directory](https://www.proveedores.com/proveedores/eiralabs/) |  | Confirm the farm behind the declared output. |
-| G. Menéndez | Gijón | `Legumbres` | The directory states: “Desde hace más de 40 años G” | [Directory](https://www.proveedores.com/proveedores/g-menendez/) | <https://legumbresdeme.com/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
+| G. Menéndez | Gijón | `Legumbres` | The directory states: “Desde hace más de 40 años G. Menéndez se dedica al sector de los proveedores de legumbres ofreciendo legumbres de…” | [Directory](https://www.proveedores.com/proveedores/g-menendez/) | <https://legumbresdeme.com/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Santiago Galán | Siero | `Legumbres` | The directory states: “En Santiago Galán somos productores de legumbre autóctona de Asturias” | [Directory](https://www.proveedores.com/proveedores/santiago-galan/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Central Lechera Asturiana | Siero | `Lácteos y quesos` | The directory states: “Nuestra larga trayectoria ha hecho de nuestras técnicas tradicionales un valuarte en la fabricación de alimentos…” | [Directory](https://www.proveedores.com/proveedores/central-lechera-asturiana/) | <https://www.centrallecheraasturiana.es/> | Confirm the dairy and that it is currently active. |
 | Derivados Lácteos de Villaviciosa | Villaviciosa | `Lácteos y quesos` | The directory states: “Derivados Lácteos de Villaviciosa es una empresa fabricante de productos lácteos en polvo : leche en polvo…” | [Directory](https://www.proveedores.com/proveedores/derivados-lacteos-de-villaviciosa/) |  | Confirm the dairy and that it is currently active. |
@@ -173,16 +185,3 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | Bodegas Orvi | Gijón | `Vino` | The directory states: “Situada en Gijón (Asturias), Bodegas Orvi es una empresas que cuenta con más de 40 años de experiencia en la…” | [Directory](https://www.proveedores.com/proveedores/bodegas-orvi/) |  | Confirm the winery and its current published range. |
 | Bodegas Tino | Gijón | `Vino` | The directory states: “Bodegas Tino es una empresa dedicada a la distribución de bebidas al sector de hostelería” | [Directory](https://www.proveedores.com/proveedores/bodegas-tino/) | <https://www.bodegastino.com/> | Confirm the winery and its current published range. |
 | COTOBELLO | Oviedo | `Vino` | The directory states: “COTOBELLO es la marca eje de un grupo de fabricantes de diversos productos que han realizado una selección de alta…” | [Directory](https://www.proveedores.com/proveedores/cotobello/) | <https://cotobello.webnode.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
-
-## Certamen del Queso Gamonéu — 2026-09-03
-
-- Discovery source: Certamen del Queso Gamonéu en Benia de Onís (<https://quesogamoneu.com>) and Consejo Regulador DOP Gamonéu official registered dairies.
-- Search date: 2026-09-03.
-- Scope: 1 unresolved Level 1 lead in Asturias, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published DOP registries and fair records available on 2026-09-03.
-- Source ceiling: fair records establish registered artisan status and product scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Quesería Torió | Cangas de Onís (Labra) | `Lácteos y quesos` — raw milk DOP Gamonéu del Valle cheese | Traditional artisan cheese maker in Labra (Cangas de Onís) crafting smoked raw-milk DOP Gamonéu del Valle; regular registered participant at Benia de Onís. | [DOP Gamonéu](https://quesogamoneu.com) | — | Confirm dedicated dairy workshop address in Labra, herd management and active commercial distribution. |
-

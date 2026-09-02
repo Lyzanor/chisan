@@ -48,6 +48,19 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | Membrillo La Comarca | Pereje (Trabadelo) | `Dulces` — artisan quince paste | El Bierzo craft workshop specializing in natural artisan quince paste; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://membrillolacomarca.com/> | Verify physical workshop address in Pereje / Trabadelo and current commercial retail channels. |
 | Quesos Colemasa | Mansilla de las Mulas | `Lácteos y quesos` — artisan cheese | Traditional cheese producer located in Mansilla de las Mulas; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy workshop in Mansilla de las Mulas, milk source and commercial range. |
 
+## Feria del Pimiento Morrón de Fresno de la Vega — 2026-09-03
+
+- Discovery source: Feria del Pimiento Morrón de Fresno de la Vega (<https://feriadelpimientomorron.es>) and Ayuntamiento de Fresno de la Vega official participant notices.
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in León, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
+- Source ceiling: fair exhibitor registries establish localized workshop activity, category and product identity; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Conservas Morán | Fresno de la Vega | `Conservas` — roasted Fresno de la Vega morrón pepper preserves | Family craft cannery in Fresno de la Vega specialized in wood-roasted traditional morrón peppers and local vegetable preserves; regular exhibitor at the fair. | [Fresno de la Vega](https://feriadelpimientomorron.es) | <https://conservasmoran.es/> | Confirm cannery address in Fresno de la Vega, sanitary register and current bottled retail offer. |
+| Conservas El Pimiento de Fresno | Fresno de la Vega | `Conservas` — artisan hand-peeled roasted pepper preserves | Traditional vegetable canning workshop situated in Fresno de la Vega transforming own-harvest and local Esla valley peppers; regular participant in the fair. | [Fresno de la Vega](https://feriadelpimientomorron.es) | — | Verify physical canning workshop in Fresno de la Vega, harvest origin and commercial distribution. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/leon>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -126,17 +139,3 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | Vermouth Perdon | León | `Vermut` | The directory states: “Se encuentra localizada en León la empresa Vermouth Perdón , proveedores de bebidas alcohólicas” | [Directory](https://www.proveedores.com/proveedores/vermouth-perdon/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Losada Vinos de Finca | Cacabelos | `Vino` | The directory states: “En Losada Vinos de Finca , somos una bodega localizada en la Denominación de Origen Bierzo (León), donde elaboramos…” | [Directory](https://www.proveedores.com/proveedores/losada-vinos-de-finca/) |  | Confirm the winery and its current published range. |
 | Terras Gauda | León | `Vino` | The directory states: “Terras Gauda es una compañía especialista en la producción y elaboración de vino” | [Directory](https://www.proveedores.com/proveedores/terras-gauda/) |  | Confirm this is an independently identifiable productive unit and not the row already published in galicia/pontevedra. |
-
-## Feria del Pimiento Morrón de Fresno de la Vega — 2026-09-03
-
-- Discovery source: Feria del Pimiento Morrón de Fresno de la Vega (<https://feriadelpimientomorron.es>) and Ayuntamiento de Fresno de la Vega official participant notices.
-- Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in León, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
-- Source ceiling: fair exhibitor registries establish localized workshop activity, category and product identity; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Conservas Morán | Fresno de la Vega | `Conservas` — roasted Fresno de la Vega morrón pepper preserves | Family craft cannery in Fresno de la Vega specialized in wood-roasted traditional morrón peppers and local vegetable preserves; regular exhibitor at the fair. | [Fresno de la Vega](https://feriadelpimientomorron.es) | <https://conservasmoran.es/> | Confirm cannery address in Fresno de la Vega, sanitary register and current bottled retail offer. |
-| Conservas El Pimiento de Fresno | Fresno de la Vega | `Conservas` — artisan hand-peeled roasted pepper preserves | Traditional vegetable canning workshop situated in Fresno de la Vega transforming own-harvest and local Esla valley peppers; regular participant in the fair. | [Fresno de la Vega](https://feriadelpimientomorron.es) | — | Verify physical canning workshop in Fresno de la Vega, harvest origin and commercial distribution. |
-

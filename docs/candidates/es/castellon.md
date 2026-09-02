@@ -82,6 +82,20 @@ Verify current activity, exact productive address, legal producer identity, own 
 
 Retained at the backlog cap after directory entry 26 of 185. Resume the same source at alphabetical position 27 (`begona-antequera`); positions 27–185 were not examined in this pass. The out-of-window record `essentia-oleum` (position 92) was consulted only as the source duplicate of the `Aceites Essentia Oleum` lead and must not be counted again on resume.
 
+## Feria del Queso Artesano de Montanejos — 2026-09-03
+
+- Discovery source: Feria del Queso Artesano de Montanejos (<https://feriaquesomontanejos.com>) official competition awards and exhibitor records.
+- Search date: 2026-09-03.
+- Scope: 3 unresolved Level 1 leads in Castellón, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published fair directories and first-party pages available on 2026-09-03.
+- Source ceiling: fair awards records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Els Massets | La Torre d'en Besora | `Lácteos y quesos` — artisan pressed sheep cheese and fresh yogurt | Farmstead dairy holding in La Torre d'en Besora (Alt Maestrat) managing own sheep flock; double award winner at Montanejos 2025 (pressed sheep cheese and yogurt). | [Feria de Montanejos](https://feriaquesomontanejos.com) | — | Confirm farmstead dairy workshop address in La Torre d'en Besora, flock census and direct sales channels. |
+| Quesería Masía Els Vivencs | La Pobla de Benifassà | `Lácteos y quesos` — artisan goat cheese | Small craft goat dairy located in Masía Els Vivencs (Parc Natural de la Tinença de Benifassà); regular participant in Comunitat Valenciana artisan fairs. | [Feria de Montanejos](https://feriaquesomontanejos.com) | — | Verify farmstead dairy holding in La Pobla de Benifassà, herd origin and commercial availability. |
+| Formatgeria Mas de la Creu | Catí | `Lácteos y quesos` — farmstead goat cheese | Farmstead cheese workshop at Mas de la Creu in Catí (Alt Maestrat) processing raw goat milk from its own herd. | [Feria de Montanejos](https://feriaquesomontanejos.com) | — | Confirm dedicated dairy holding at Mas de la Creu, sanitary registration and retail presence. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/castellon>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -155,7 +169,7 @@ Retained at the backlog cap after directory entry 26 of 185. Resume the same sou
 | Panhevi | Castellón de la Plana/Castelló de la Plana | `Pan y cereal` | The directory states: “Iniciamos nuestros trabajos desde el año 1962 y somos fabricantes y proveedores de pan artesanal” | [Directory](https://www.proveedores.com/proveedores/panhevi/) |  | Confirm the productive workshop and that it is currently active. |
 | Prado Gluten Free | La Vall d'Uixó | `Pan y cereal` | The directory states: “En Prado Gluten Free nos especializamos en la elaboración de alimentos sin gluten y sin conservantes de alta calidad” | [Directory](https://www.proveedores.com/proveedores/prado-gluten-free/) | <https://pradogf.es/> | Confirm the productive workshop and that it is currently active. |
 | SCARXA | Onda | `Pan y cereal` | The directory states: “También somos fabricantes de hielo para bares y mayoristas” | [Directory](https://www.proveedores.com/proveedores/scarxa/) | <https://www.scarxa.com/> | Confirm an own offer that stays attributable to this producer through sale. |
-| Congelados Selectos | Castellón de la Plana/Castelló de la Plana | `Pescado` | The directory states: “Nuestra especialidad es la elaboración y distribución de alimentos congelado s” | [Directory](https://www.proveedores.com/proveedores/congelados-selectos/) | <https://congeladosdil.com/es/> | Confirm an own offer that stays attributable to this producer through sale. |
+| Congelados Selectos | Castellón de la Plana/Castelló de la Plana | `Pescado` | The directory states: “Nuestra especialidad es la elaboración y distribución de alimentos congelado s. Cada uno de nuestros productos…” | [Directory](https://www.proveedores.com/proveedores/congelados-selectos/) | <https://congeladosdil.com/es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | DeCasa | Castellón de la Plana/Castelló de la Plana | `Pescado` | The directory states: “La calidad de nuestros productos congelados es una de nuestras principales cartas de presentación, junto con un…” | [Directory](https://www.proveedores.com/proveedores/decasa/) | <https://decasa.es/es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | El Menú | Vinaròs | `Pescado` | The directory states: “El Menú está catalogada como una de las principales empresas fabricantes de conservas y semiconservas de pescado” | [Directory](https://www.proveedores.com/proveedores/el-menu/) | <https://www.gilcomes.com/es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Pescaplana | Burriana | `Pescado` | The directory states: “Pescaplana es una compañía localizada en Burriana especialista en la comercialización y distribución de pescado…” | [Directory](https://www.proveedores.com/proveedores/pescaplana/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
@@ -165,18 +179,3 @@ Retained at the backlog cap after directory entry 26 of 185. Resume the same sou
 | Trufasa | L'Alcora | `Setas` | The directory states: “Cultivamos el diamante negro de la gastronomía, apreciada por su potente sabor y aroma, y la ponemos a su disposición” | [Directory](https://www.proveedores.com/proveedores/trufasa/) | <https://trufasa.es/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Bodegas Besalduch Valls | Sant Mateu | `Vino` | The directory states: “Bodegas Besalduch Valls es el emprendimiento del matrimonio Roser Valls Vidal y Joseph Mª Besalduch i Claràcon, con…” | [Directory](https://www.proveedores.com/proveedores/bodegas-besalduch-valls/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Bodegas Valdelomar | Castellón de la Plana/Castelló de la Plana | `Vino` | The directory states: “Desde 1875, Bodegas Valdelomar se ha especializado en ser proveedores de vino” | [Directory](https://www.proveedores.com/proveedores/bodegas-valdelomar/) |  | Confirm the winery and its current published range. |
-
-## Feria del Queso Artesano de Montanejos — 2026-09-03
-
-- Discovery source: Feria del Queso Artesano de Montanejos (<https://feriaquesomontanejos.com>) official competition awards and exhibitor records.
-- Search date: 2026-09-03.
-- Scope: 3 unresolved Level 1 leads in Castellón, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published fair directories and first-party pages available on 2026-09-03.
-- Source ceiling: fair awards records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Els Massets | La Torre d'en Besora | `Lácteos y quesos` — artisan pressed sheep cheese and fresh yogurt | Farmstead dairy holding in La Torre d'en Besora (Alt Maestrat) managing own sheep flock; double award winner at Montanejos 2025 (pressed sheep cheese and yogurt). | [Feria de Montanejos](https://feriaquesomontanejos.com) | — | Confirm farmstead dairy workshop address in La Torre d'en Besora, flock census and direct sales channels. |
-| Quesería Masía Els Vivencs | La Pobla de Benifassà | `Lácteos y quesos` — artisan goat cheese | Small craft goat dairy located in Masía Els Vivencs (Parc Natural de la Tinença de Benifassà); regular participant in Comunitat Valenciana artisan fairs. | [Feria de Montanejos](https://feriaquesomontanejos.com) | — | Verify farmstead dairy holding in La Pobla de Benifassà, herd origin and commercial availability. |
-| Formatgeria Mas de la Creu | Catí | `Lácteos y quesos` — farmstead goat cheese | Farmstead cheese workshop at Mas de la Creu in Catí (Alt Maestrat) processing raw goat milk from its own herd. | [Feria de Montanejos](https://feriaquesomontanejos.com) | — | Confirm dedicated dairy holding at Mas de la Creu, sanitary registration and retail presence. |
-
