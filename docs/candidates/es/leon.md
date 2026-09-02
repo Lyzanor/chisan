@@ -113,3 +113,17 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | Vermouth Perdon | León | `Vermut` | The directory states: “Se encuentra localizada en León la empresa Vermouth Perdón , proveedores de bebidas alcohólicas” | [Directory](https://www.proveedores.com/proveedores/vermouth-perdon/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Losada Vinos de Finca | Cacabelos | `Vino` | The directory states: “En Losada Vinos de Finca , somos una bodega localizada en la Denominación de Origen Bierzo (León), donde elaboramos…” | [Directory](https://www.proveedores.com/proveedores/losada-vinos-de-finca/) |  | Confirm the winery and its current published range. |
 | Terras Gauda | León | `Vino` | The directory states: “Terras Gauda es una compañía especialista en la producción y elaboración de vino” | [Directory](https://www.proveedores.com/proveedores/terras-gauda/) |  | Confirm the winery and its current published range. |
+
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in León, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Membrillo La Comarca | Pereje (Trabadelo) | `Dulces` — artisan quince paste | El Bierzo craft workshop specializing in natural artisan quince paste; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://membrillolacomarca.com/> | Verify physical workshop address in Pereje / Trabadelo and current commercial retail channels. |
+| Quesos Colemasa | Mansilla de las Mulas | `Lácteos y quesos` — artisan cheese | Traditional cheese producer located in Mansilla de las Mulas; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy workshop in Mansilla de las Mulas, milk source and commercial range. |
+

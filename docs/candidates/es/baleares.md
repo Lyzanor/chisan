@@ -75,3 +75,17 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 |---|---|---|---|---|---|---|
 | MariGold | Palma | `Cerveza` | The directory states: “Pilsen mallorquina presentada como cerveza propia de la casa” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/islas-baleares) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |
 | Coffee Center | Inca | `Café` | The directory states: “Se presenta como empresa productora de café e infusiones para hostelería en Inca” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/islas-baleares) |  | Confirm an own roastery rather than repackaging third-party coffee. |
+
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Baleares, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| S’Hort de Sant Patrici | Ferreries (Menorca) | `Lácteos y quesos` / `Vino` — Mahón-Menorca cheese and estate wine | Estate dairy and winery in Ferreries (Menorca) elaborating artisan raw cow milk DOP Mahón-Menorca cheeses; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://santpatrici.es/es/quesos-sant-patrici> | Verify estate holding address in Ferreries, dairy facilities and continuous commercial availability. |
+| S’Arangi | Es Mercadal (Menorca) | `Lácteos y quesos` — artisan Mahón-Menorca cheese | Traditional Menorcan farmstead dairy in Es Mercadal crafting raw-milk Mahón-Menorca cheese; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm farmstead workshop premises in Es Mercadal, sanitary registration and retail cheese offer. |
+
