@@ -69,3 +69,16 @@
 | Bodegas Grupo Eguren | Laguardia | `Vino` | The directory states: “Parte de Viñedos y Bodegas Sierra Cantabria; la ficha habla de venta” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Publish the specific productive unit, not the parent group. |
 | Cafés La Brasileña | Vitoria-Gasteiz | `Café` | The directory states: “Casa cafetera de Vitoria fundada en 1928” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Confirm an own roastery rather than repackaging third-party coffee. |
 | Celigüeta | Salvatierra | `Otros` | The directory states: “Fabricación y comercialización desde 1996, sin producto identificado” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/alava) |  | Identify the actual product and productive unit before assigning a category. |
+
+## Último Lunes de Gernika — 2026-09-03
+
+- Discovery source: Feria del Último Lunes de Gernika / Urriko Azken Astelehena official competition records (<https://www.gernika-lumo.eus>).
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Álava, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published agricultural fair records and first-party pages available on 2026-09-03.
+- Source ceiling: fair awards records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería Larrebe | Zuia (Agiñaga) | `Lácteos y quesos` — shepherd raw Latxa milk Idiazabal cheese | Pastoral cheese holding in Agiñaga (Zuia, Gorbeialdea) raising Latxa sheep and making raw-milk shepherd cheese; 1st prize and auction record at Gernika 2024. | [Gernika 2024](https://www.gernika-lumo.eus) | — | Confirm farmstead workshop premises in Zuia, flock origin and continuous direct-sales offer. |
+

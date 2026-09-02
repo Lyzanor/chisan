@@ -253,3 +253,16 @@
 | Territorio de Vinos | Dos Hermanas | `Vino` | The directory states: “Trabajamos con las mejores bodegas de diferentes denominaciones y siempre estamos investigando para acercar a…” | [Directory](https://www.proveedores.com/proveedores/territorio-de-vinos/) |  | Confirm the winery and its current published range. |
 | Valhalla Hidromiel | Sevilla | `Vino` | The directory states: “Bodegas Valhalla es una empresa joven y formada por un grupo de amigos que se especializa en la elaboración de…” | [Directory](https://www.proveedores.com/proveedores/valhalla-hidromiel/) | <https://valhallahidromiel.com/es/> | Confirm the winery and its current published range. |
 | Vinanthia Wines | Sevilla | `Vino` | The directory states: “Ofrecemos el mejor precio posible ya que la venta se realiza a través de bodega para reducir los precios y que los…” | [Directory](https://www.proveedores.com/proveedores/vinanthia-wines/) |  | Confirm the winery and its current published range. |
+
+## Feria del Queso Artesano de Teba — 2026-09-03
+
+- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Sevilla, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
+- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería El Tajo | Cazalla de la Sierra | `Lácteos y quesos` — Sierra Morena goat cheese | Traditional craft dairy in Cazalla de la Sierra (Parque Natural Sierra Morena de Sevilla) processing Florida goat milk; confirmed exhibitor at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | — | Confirm dedicated dairy workshop address in Cazalla de la Sierra, sanitary register and current cheese range. |
+

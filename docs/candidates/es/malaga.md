@@ -256,3 +256,18 @@
 | D’Cantavinos | Málaga | `Vino` | The directory states: “Trabajamos con las Bodegas José Molina,Bodegas Eresma,Bodegas Alconde, Bodegas Zuazo gaston,Bodegas Ribera del Ornia…” | [Directory](https://www.proveedores.com/proveedores/dcantavinos/) | <https://dcantavinos.es/> | Confirm the winery and its current published range. |
 | LA CAV DEL SUR | Estepona | `Vino` | The directory states: “Trabajamos con bodegas de renombre al nivel nacional como bodega Castillo de Monjardin, Arroyo, Valderiz, Copaboca…” | [Directory](https://www.proveedores.com/proveedores/la-cav-del-sur/) | <https://www.vinoslacavdelsur.com/inicio.html/> | Confirm the winery and its current published range. |
 | Vinos Españoles por el Mundo | Marbella | `Vino` | The directory states: “Nuestra empresa ofrece una amplia variedad de vinos , cavas , licores y accesorios procedentes de más de 30 bodegas…” | [Directory](https://www.proveedores.com/proveedores/vinos-espanoles-por-el-mundo/) | <https://www.vinosespañolesporelmundo.com/> | Confirm the winery and its current published range. |
+
+## Feria del Queso Artesano de Teba — 2026-09-03
+
+- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
+- Search date: 2026-09-03.
+- Scope: 3 unresolved Level 1 leads in Málaga, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
+- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería Doña Manuela | Campillos | `Lácteos y quesos` — artisan goat and sheep cheese | Craft dairy workshop in Campillos (Guadalteba) specializing in cured and semicured artisanal cheeses; regular exhibitor at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | — | Confirm dedicated dairy address in Campillos, herd source and continuous retail channels. |
+| Quesería El Pinsapo | Alhaurín el Grande | `Lácteos y quesos` — Malagueña goat cheese | Craft cheese maker producing native Malagueña goat milk cheeses in the Guadalhorce valley; confirmed exhibitor at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://queseriaelpinsapo.es/> | Verify dedicated dairy premises in Alhaurín el Grande and current branded cheese range. |
+| Quesos Montes de Málaga | Colmenar | `Lácteos y quesos` — Montes de Málaga goat cheese | Traditional cheese project in Colmenar elaborating pure goat milk cheeses from the Montes de Málaga range; confirmed exhibitor at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://quesosmontesdemalaga.com/> | Verify physical dairy workshop in Colmenar, sanitary registration and retail availability. |
+
