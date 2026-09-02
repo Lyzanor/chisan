@@ -37,6 +37,19 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 
+## Feria de la Alubia y la Hortaliza de Casar de Periedo — 2026-09-03
+
+- Discovery source: Feria de la Alubia y la Hortaliza de Casar de Periedo (<https://turismocabezondelasal.com>) official participant and artisan records.
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Cantabria, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
+- Source ceiling: fair participant registers establish regular artisan presence, category and geographical clue; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Destilería Los Ojetes | Cabezón de Liébana | `Destilados y licores` — traditional Liébana orujo | Artisan family distillery in Cabezón de Liébana using traditional copper alquitaras to distill DOP Orujo de Liébana; regular exhibitor at regional craft food fairs. | [Casar de Periedo](https://turismocabezondelasal.com) | — | Confirm dedicated distillery premises in Cabezón de Liébana, sanitary register and current bottled range. |
+| Quesería Artesanal Los Valles | Cabezón de la Sal | `Lácteos y quesos` — artisan cow-milk cheese | Small-scale artisan cheese workshop based in Cabezón de la Sal crafting traditional local cheeses; participant in the municipal fair circuit. | [Casar de Periedo](https://turismocabezondelasal.com) | — | Verify physical workshop address in Cabezón de la Sal, milk sourcing and regular commercial distribution. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/cantabria>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -94,4 +107,4 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Fast Tea | Torrelavega | `Té e infusiones` | The directory states: “Seleccionamos y elaboramos infusiones de alta calidad, a granel o en bolsas piramidales” | [Directory](https://www.proveedores.com/proveedores/fast-tea/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Meta Mate España | Guriezo | `Té e infusiones` | The directory states: “Presenta elaboración artesanal europea de yerba mate” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cantabria) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Naturseed | Piélagos | `Té e infusiones` | The directory states: “Somos Naturseed , una empresa familiar de proveedores de alimentos , en especial aceites y aperitivos , localizada en…” | [Directory](https://www.proveedores.com/proveedores/naturseed/) | <http://naturseed.com/> | Confirm an own offer that stays attributable to this producer through sale. |
-| Bodega Rioja Alta | Los Corrales de Buelna | `Vino` | The directory states: “Bodega Rioja Alta somos una bodega ubicada en la zona de La Rioja alta, donde trabajamos con vinos D.O” | [Directory](https://www.proveedores.com/proveedores/bodega-rioja-alta/) | <https://www.riojalta.com/> | Confirm the winery and its current published range. |
+| Bodega Rioja Alta | Los Corrales de Buelna | `Vino` | The directory states: “Bodega Rioja Alta somos una bodega ubicada en la zona de La Rioja alta, donde trabajamos con vinos D.O. Rioja” | [Directory](https://www.proveedores.com/proveedores/bodega-rioja-alta/) | <https://www.riojalta.com/> | Confirm the winery and its current published range. |
