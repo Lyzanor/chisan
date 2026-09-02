@@ -46,6 +46,19 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | El Fénix Lácteos | Mairena, Nevada | `Lácteos y quesos` — artisan dairy products | The current first-party site identifies an artisan dairy in Mairena and ties its products to milk from the family's Ugíjar farm. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://elfenixlacteos.com/> | Confirm the exact Mairena productive address, durable public identity and current offer before admission. |
 | La Quesería 1907 / Natural Food Gourmet Ibérica | Escúzar | `Lácteos y quesos` — mozzarella and dairy products | The current site identifies a dairy transformation centre in Escúzar and the directory ties the older El Rey de la Mozzarella identity to this producer. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://laqueseria1907.com/> | Establish a current producer-attributable own offer and reconcile El Rey de la Mozzarella, La Quesería 1907 and the legal operator before admission. |
 
+## Feria del Queso Artesano de Teba — 2026-09-03
+
+- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Granada, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
+- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesos Montefrieño | Montefrío | `Lácteos y quesos` — raw goat milk cheese | Long-standing artisan dairy in Montefrío (Poniente Granadino) crafting long-aged goat's milk cheeses; regular participant and winner at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://quesomontefrieno.com/> | Verify physical dairy workshop premises in Montefrío and active commercial lineup. |
+| Quesos Abuela Eva | Capileira | `Lácteos y quesos` — Alpujarra mountain goat cheese | High-mountain artisan cheese workshop in Capileira (Barranco de Poqueira, La Alpujarra); confirmed exhibitor at Teba cheese market. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | — | Confirm dedicated dairy workshop address in Capileira and direct retail availability. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/granada>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -163,17 +176,3 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | Bodega Ramón Asensio | Baza | `Vino` | The directory states: “La empresa Bodega Ramón Asensio , localizada en Baza (Granada) cuenta con más de 16 años de experiencia en la…” | [Directory](https://www.proveedores.com/proveedores/bodega-ramon-asensio/) | <http://www.bodegasasensio.es/> | Confirm the winery and its current published range. |
 | Bodegas Jabalcón | Baza | `Vino` | The directory states: “Situada en Baza, Granada está Bodega Jabalcón , dedicada desde 2007 al cultivo de la uva y elaboración de vinos tintos” | [Directory](https://www.proveedores.com/proveedores/bodegas-jabalcon/) |  | Confirm the winery and its current published range. |
 | Valdyr Hidromiel | Baza | `Vino` | The directory states: “Valdyr Hidromiel es una empresa dedicada a ser fabricantes y proveedores de hidromiel” | [Directory](https://www.proveedores.com/proveedores/valdyr-hidromiel/) |  | Confirm the winery and its current published range. |
-
-## Feria del Queso Artesano de Teba — 2026-09-03
-
-- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
-- Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in Granada, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
-- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Quesos Montefrieño | Montefrío | `Lácteos y quesos` — raw goat milk cheese | Long-standing artisan dairy in Montefrío (Poniente Granadino) crafting long-aged goat's milk cheeses; regular participant and winner at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://quesomontefrieno.com/> | Verify physical dairy workshop premises in Montefrío and active commercial lineup. |
-| Quesos Abuela Eva | Capileira | `Lácteos y quesos` — Alpujarra mountain goat cheese | High-mountain artisan cheese workshop in Capileira (Barranco de Poqueira, La Alpujarra); confirmed exhibitor at Teba cheese market. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | — | Confirm dedicated dairy workshop address in Capileira and direct retail availability. |
-

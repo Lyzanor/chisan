@@ -14,6 +14,21 @@
 | Frutas y Verduras Carrasco | Salamanca province; municipality unresolved | `Fruta y verdura` — Tomate / hortalizas | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Tomate / hortalizas; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56346) | — | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
 | Hortalizas Zamorano | Salamanca province; municipality unresolved | `Fruta y verdura` — Tomate / hortalizas | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Tomate / hortalizas; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56346) | — | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
 
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 4 unresolved Level 1 leads in Salamanca, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Abeja Sayaguesa | Canillas de Abajo | `Miel` — artisan honey | Traditional beekeeping project based in Canillas de Abajo; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.abejasayaguesamiel.es> | Verify active apiaries, extraction unit in Canillas de Abajo and direct-sales channels. |
+| Juan Antonio del Valle Cascón | Villoria | `Lácteos y quesos` — raw sheep milk cheese | Local cheese artisan based in Villoria; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy premises in Villoria, sanitary registration and current cheese range. |
+| Delicias Garrapiñadas | Salamanca | `Dulces` — traditional candied nuts | Artisan confectionery workshop in Salamanca specializing in traditional candied almonds and nuts; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify physical workshop address in Salamanca and retail packaging. |
+| Panadería Repostería La Espiga de Castilla | La Vellés | `Pan y cereal` / `Dulces` — traditional bakery | Rural wood-fired bakery and traditional pastry maker in La Vellés; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify dedicated baking workshop in La Vellés and continuous retail availability. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/salamanca>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -112,19 +127,3 @@
 | Bodegas Labrador | Salamanca | `Vino` | The directory states: “Bodegas Labrador es una empresa con sede en Salamanca que desde el año 2007 se dedica a la venta de vinos” | [Directory](https://www.proveedores.com/proveedores/bodegas-labrador/) |  | Confirm the winery and its current published range. |
 | Las Cuatro TTTT | Salamanca | `Vino` | The directory states: “Nuestro vino frizzante 5.5 se elabora mediante un proceso de fermentación de mosto de uva de la variedad verdejo…” | [Directory](https://www.proveedores.com/proveedores/las-cuatro-tttt/) | <https://lascuatrotttt.com/> | Confirm the winery and its current published range. |
 | Montefer | Villares de la Reina | `Vino` | The directory states: “Ofrecemos una gran variedad de vinos de las principales bodegas , como es el vaso de Condado de Oriza, Luis Cañas o…” | [Directory](https://www.proveedores.com/proveedores/montefer/) | <https://montefer.com/> | Confirm the winery and its current published range. |
-
-## FROMAGO Cheese Experience — 2026-09-03
-
-- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
-- Search date: 2026-09-03.
-- Scope: 4 unresolved Level 1 leads in Salamanca, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
-- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Abeja Sayaguesa | Canillas de Abajo | `Miel` — artisan honey | Traditional beekeeping project based in Canillas de Abajo; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.abejasayaguesamiel.es> | Verify active apiaries, extraction unit in Canillas de Abajo and direct-sales channels. |
-| Juan Antonio del Valle Cascón | Villoria | `Lácteos y quesos` — raw sheep milk cheese | Local cheese artisan based in Villoria; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy premises in Villoria, sanitary registration and current cheese range. |
-| Delicias Garrapiñadas | Salamanca | `Dulces` — traditional candied nuts | Artisan confectionery workshop in Salamanca specializing in traditional candied almonds and nuts; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify physical workshop address in Salamanca and retail packaging. |
-| Panadería Repostería La Espiga de Castilla | La Vellés | `Pan y cereal` / `Dulces` — traditional bakery | Rural wood-fired bakery and traditional pastry maker in La Vellés; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify dedicated baking workshop in La Vellés and continuous retail availability. |
-

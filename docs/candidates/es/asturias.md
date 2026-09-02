@@ -46,6 +46,19 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 |---|---|---|---|---|---|---|
 | Narbasu | Cereceda, Piloña | `Fruta y verdura` — own garden | The restaurant presents an own garden as a direct source for its kitchen. | [Narbasu](https://www.narbasu.com/restaurante/) | <https://www.narbasu.com/restaurante/> | Verify the productive garden, establish a durable producer identity and prove a current own take-home offer rather than restaurant-only consumption. |
 
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Asturias, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| La Prunal – Queso Gamoneu | Bobia (Onís) | `Lácteos y quesos` — Queso Gamonéu del Valle | Traditional pastoral cheese producer in Bobia (Onís) making protected DOP Gamonéu del Valle; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy premises in Bobia / Onís and active commercial distribution channels. |
+| Queso Azul Campobio | Otur (Valdés) | `Lácteos y quesos` — organic blue cheese | Certified organic dairy project in Otur (Valdés) elaborating organic blue cow's milk cheese; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://campobio.es> | Verify dedicated dairy workshop in Otur and current retail availability. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/asturias>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -160,17 +173,3 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | Bodegas Orvi | Gijón | `Vino` | The directory states: “Situada en Gijón (Asturias), Bodegas Orvi es una empresas que cuenta con más de 40 años de experiencia en la…” | [Directory](https://www.proveedores.com/proveedores/bodegas-orvi/) |  | Confirm the winery and its current published range. |
 | Bodegas Tino | Gijón | `Vino` | The directory states: “Bodegas Tino es una empresa dedicada a la distribución de bebidas al sector de hostelería” | [Directory](https://www.proveedores.com/proveedores/bodegas-tino/) | <https://www.bodegastino.com/> | Confirm the winery and its current published range. |
 | COTOBELLO | Oviedo | `Vino` | The directory states: “COTOBELLO es la marca eje de un grupo de fabricantes de diversos productos que han realizado una selección de alta…” | [Directory](https://www.proveedores.com/proveedores/cotobello/) | <https://cotobello.webnode.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
-
-## FROMAGO Cheese Experience — 2026-09-03
-
-- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
-- Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in Asturias, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
-- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| La Prunal – Queso Gamoneu | Bobia (Onís) | `Lácteos y quesos` — Queso Gamonéu del Valle | Traditional pastoral cheese producer in Bobia (Onís) making protected DOP Gamonéu del Valle; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy premises in Bobia / Onís and active commercial distribution channels. |
-| Queso Azul Campobio | Otur (Valdés) | `Lácteos y quesos` — organic blue cheese | Certified organic dairy project in Otur (Valdés) elaborating organic blue cow's milk cheese; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://campobio.es> | Verify dedicated dairy workshop in Otur and current retail availability. |
-
