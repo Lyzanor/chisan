@@ -24,3 +24,15 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | La Botica de Matapozuelos | Matapozuelos | `Fruta y verdura` — herbs and vegetables from a small garden | Public coverage describes a garden producing herbs and vegetables for the restaurant. | [Guía Repsol](https://www.guiarepsol.com/es/comer/nuestros-favoritos/restaurante-la-botica-de-matapozuelos-matapozuelos-valladolid/) | — | Locate and verify the productive garden from a current first-party source, establish a durable producer identity and prove a current own take-home offer. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/valladolid>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 1 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Piñones Román Lorenzo | Matapozuelos | `Frutos secos` | The directory states: “Empresa familiar que selecciona, elabora y envasa piñón ibérico y almendra de origen Castilla. Dirección productiva concreta…” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/valladolid) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |

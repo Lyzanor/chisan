@@ -51,3 +51,17 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Sollo | Fuengirola | `Pescado` — freshwater fish raised with aquaponics; also vegetables | The restaurant describes an aquaponic system that produces freshwater fish and vegetables for its kitchen. | [Sollo](https://www.sollo.es/es/) | <https://www.sollo.es/es/> | Verify the exact productive unit, a durable producer identity and a current own take-home offer beyond restaurant service. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/malaga>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 3 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Juanito Baker | Alcaucín | `Pan y cereal` | The directory states: “Pan brioche y panes especiales desde un obrador familiar de 60 años en la Axarquía” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/malaga) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
+| Helados Geppetto | Mijas | `Helados` | The directory states: “Más de siete años elaborando helado artesanal en nave propia de Mijas” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/malaga) |  | Confirm current activity from a first-party source. |
+| Tequesol | Málaga | `Comida preparada` | The directory states: “Tequeños y masas ultracongelados de fabricación artesanal” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/malaga) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |

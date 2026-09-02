@@ -10,3 +10,15 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Prolact / Productos Lácteos Artesanales | Fuente Palmera | `Lácteos y quesos` — artisan cheese | The current producer site describes cheesemaking since 2009, ties production to its own cattle farm and publishes a unit on the Fuente Palmera–Posadas road. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://prolact.es/> | Confirm the legal/public identity, exact productive address and current own offer before admission. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/cordoba>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 1 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Patatas Fritas Maribel | Lucena | `Aperitivos` | The directory states: “Productor de patatas fritas y aperitivos con dirección de carretera declarada en Lucena” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cordoba) |  | Confirm an own offer that stays attributable to this producer through sale. |

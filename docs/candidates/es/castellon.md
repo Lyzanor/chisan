@@ -81,3 +81,15 @@ Verify current activity, exact productive address, legal producer identity, own 
 | Barratruf | not published by the directory; province of Castellón | `Setas` — truffle | The provincial producer directory lists it under `Truficultura y setas` as a distinct agrifood producer identity with a published contact line. | [Directory record](https://www.castellorutadesabor.es/productor/barratruf/) | — | Locate the productive municipality and truffle-growing unit; distinguish it from the area's published truffle rows and from the identities already closed by `purge` tombstones, and confirm a current own offer. |
 
 Retained at the backlog cap after directory entry 26 of 185. Resume the same source at alphabetical position 27 (`begona-antequera`); positions 27–185 were not examined in this pass. The out-of-window record `essentia-oleum` (position 92) was consulted only as the source duplicate of the `Aceites Essentia Oleum` lead and must not be counted again on resume.
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/castellon>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 1 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| MGO Horchata y Granizados | Almassora | `Bebidas sin alcohol` | The directory states: “Elaboración artesanal de horchata y granizados en dirección de polígono declarada. Producto fuertemente ligado al lugar” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/castellon) |  | Confirm current activity from a first-party source. |

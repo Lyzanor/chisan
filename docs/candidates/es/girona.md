@@ -48,3 +48,17 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Empòrium / Bistrot 1965 | Castelló d'Empúries | `Conservas` — preserves and condiments from a shared garden | The two restaurant names share the Hotel Empòrium productive system, which describes its garden, aromatic plants and in-house preserves; this is one lead, not two productive units. | [Empòrium sustainability](https://www.emporiumhotel.com/es/sostenibilidad) | <https://www.emporiumhotel.com/es/sostenibilidad> | Establish one durable productive identity, verify the garden and processing unit, and prove a current take-home own offer. |
 | El Celler de Can Roca / Mas Marroch | Vilablareix | `Fruta y verdura` — Mas Marroch garden and Terra Animada project | The Roca project presents Mas Marroch as a cultivated productive setting within its wider hospitality ecosystem. | [Roca brothers](https://cellercanroca.com/los-hermanos-roca/) | <https://cellercanroca.com/universo-roca/mas-marroch/> | Establish the exact productive unit and producer identity, prove a current own take-home offer, and distinguish it from the published Obrador Rocambolesc identity. |
 | Les Cols | Cultivated fields in Vall de Bianya; restaurant in Olot | `Fruta y verdura` — garden and field crops; also eggs | The project describes cultivated fields and related food-production experiments beyond ordinary restaurant purchasing. | [Les Cols projects](https://www.lescols.com/es/proyectos/) | <https://www.lescols.com/es/proyectos/> | Resolve the exact productive municipality and unit, establish a durable producer identity and prove a current own take-home offer. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/girona>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 3 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cerveses Artesanes Conill | Cassà de la Selva | `Cerveza` | The directory states: “Cervecera catalana pequeña con recetas y marca propias” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/girona) |  | Confirm the productive unit in the stated municipality and an own offer attributable through sale. |
+| Gicarns | Riudellots de la Selva | `Carne` | The directory states: “Suministra carne congelada y elaborados cárnicos sin gluten” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/girona) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
+| Arte Sano Natural | Ripoll | `Té e infusiones` | The directory states: “Quince años formulando, mezclando y envasando tés, rooibos y especias en Ripoll” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/girona) |  | Confirm the productive unit in the stated municipality and an own offer attributable through sale. |

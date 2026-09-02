@@ -112,3 +112,15 @@ Verify current first-party activity, own market identities and productive respon
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Larsa / CAPSA Food — Vilagarcía plant | Vilagarcía de Arousa; Os Martices | `Lácteos y quesos` — cheese and yogurt | Larsa's current material identifies the Vilagarcía factory as its cheese and yogurt production unit, distinct from the Outeiro de Rei milk plant. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://leitelarsa.es/> | Confirm the exact productive address, legal operator and durable public row identity while keeping the Vilagarcía and Outeiro de Rei units distinct. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/pontevedra>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 1 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Conservas Palacio de Oriente | Vigo | `Conservas` | The directory states: “Marca propia de Conservas Antonio Alonso S.A.: bonito, atún claro y mejillón de las rías, envasados en Vigo” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/pontevedra) |  | Confirm the cannery and that it is currently active. |

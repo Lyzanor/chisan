@@ -47,3 +47,18 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/navarra>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 4 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Bodegas Bagordi | Andosilla | `Vino` | The directory states: “Bodega familiar en Andosilla que elabora vinos ecológicos de DOCa Rioja. El catálogo ya tiene cuatro filas de Andosilla,…” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Confirm the winery and its current published range. |
+| Precocinados FRISA | Villafranca | `Comida preparada` | The directory states: “Cuarenta años elaborando ultracongelados navarros con planta propia en el polígono Alesves II” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |
+| Pan Barcos | Peralta | `Pan y cereal` | The directory states: “Fabrica pan y bollería en Peralta desde 1903, fresco y congelado” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Separate the own productive activity from the trading arm before placing the row. |
+| Bread Free | Tudela | `Pan y cereal` | The directory states: “Proceso biotecnológico patentado tras PURA, presentada como primera harina de trigo sin gluten” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Confirm the productive workshop and that it is currently active. |
