@@ -36,6 +36,18 @@ Review the linked producer channel and productive responsibility before admissio
 |---|---|---|---|---|---|---|
 | Lácteos Albedi | Valdefuentes | `Lácteos y quesos` — cheese and dairy derivatives | Current company material identifies a young cheese producer founded in 2022 and publishes its Valdefuentes unit and own cheese range. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://lacteosalbedi.es/> | Confirm the exact productive address, legal/public identity and current own offer before admission. |
 
+## Feria Europea del Queso de Casar de Cáceres — 2026-09-03
+
+- Discovery source: Feria Europea del Queso en Casar de Cáceres (<https://tortadelcasar.eu>) and Consejo Regulador DOP Torta del Casar.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Cáceres, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published DOP registries and fair records available on 2026-09-03.
+- Source ceiling: fair records establish registered operator status and product scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Pastocasar | Casar de Cáceres | `Lácteos y quesos` — DOP Torta del Casar raw sheep milk cheese | Traditional craft dairy in Casar de Cáceres specialized in raw sheep milk DOP Torta del Casar with wild cardoon coagulant; regular exhibitor in the European Cheese Route fair. | [DOP Torta del Casar](https://tortadelcasar.eu) | <https://pastocasar.com/> | Confirm dedicated dairy workshop address in Casar de Cáceres, sanitary register and current retail lineup. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/caceres>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -87,22 +99,9 @@ Review the linked producer channel and productive responsibility before admissio
 | Quesos Artesanos Extremeños | Cáceres | `Lácteos y quesos` | The directory states: “Quesos Artesanos Extremeños es una empresa especializada en la fabricación de quesos gourmet” | [Directory](https://www.proveedores.com/proveedores/quesos-artesanos-extremenos/) |  | Confirm the dairy and that it is currently active. |
 | Hielos Extremadura | Cáceres | `Otros` | The directory states: “Estamos especializados en la fabricación de hielo en cubitos , así como en el alquiler e instalación de máquinas…” | [Directory](https://www.proveedores.com/proveedores/hielos-extremadura/) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |
 | Hielos Méndez | Montehermoso | `Otros` | The directory states: “Hielos Méndez , es una empresa afincada en Cáceres y desde nuestros inicios en el año 1991, somos fabricantes y…” | [Directory](https://www.proveedores.com/proveedores/hielos-mendez/) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |
-| Hielos R. Nevado | Valencia de Alcántara | `Otros` | The directory states: “Nevado es una empresa especializada en la fabricación de cubitos de hielo” | [Directory](https://www.proveedores.com/proveedores/hielos-r-nevado/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
+| Hielos R. Nevado | Valencia de Alcántara | `Otros` | The directory states: “Ubicada en Valencia de Alcántara (Cáceres), Hielos R. Nevado es una empresa especializada en la fabricación de…” | [Directory](https://www.proveedores.com/proveedores/hielos-r-nevado/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Extremeña de Arroces | Miajadas | `Pan y cereal` | The directory states: “Con sede en Miajadas (Cáceres), Extremeña de Arroces ofrece al mercado arroces vaporizados y blancos redondos o…” | [Directory](https://www.proveedores.com/proveedores/extremena-de-arroces/) | <https://www.extrarroz.com/es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Panadería Bollería Sánchez | Conquista de la Sierra | `Pan y cereal` | The directory states: “Ubicada en Conquista de la Sierra (Cáceres), Panadería Bollería Sánchez es una empresa de elaboración de dulces y…” | [Directory](https://www.proveedores.com/proveedores/panaderia-bolleria-sanchez/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Pescadería Salgado | Cáceres | `Pescado` | The directory states: “En Pescadería Salgado ofrecemos productos de máxima calidad y frescura, somos proveedores de pescado congelado …” | [Directory](https://www.proveedores.com/proveedores/pescaderia-salgado/) | <https://www.pescaderiasalgado.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Tencas de Galilea | Cáceres | `Pescado` | The directory states: “Tencas de Galilea es una empresa familiar dedicada a la producción de Tenca (tinca tinca) en todas sus fases, desde…” | [Directory](https://www.proveedores.com/proveedores/tencas-de-galilea/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Bodega Los Chozones | Montehermoso | `Vino` | The directory states: “Ubicada en Montehermoso (Cáceres) y fundada hace más de 25 años, Bodegas Los Chozones es una bodega que se dedica a…” | [Directory](https://www.proveedores.com/proveedores/bodega-los-chozones/) |  | Confirm the winery and its current published range. |
-
-## Feria Europea del Queso de Casar de Cáceres — 2026-09-03
-
-- Discovery source: Feria Europea del Queso en Casar de Cáceres (<https://tortadelcasar.eu>) and Consejo Regulador DOP Torta del Casar.
-- Search date: 2026-09-03.
-- Scope: 1 unresolved Level 1 lead in Cáceres, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published DOP registries and fair records available on 2026-09-03.
-- Source ceiling: fair records establish registered operator status and product scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Pastocasar | Casar de Cáceres | `Lácteos y quesos` — DOP Torta del Casar raw sheep milk cheese | Traditional craft dairy in Casar de Cáceres specialized in raw sheep milk DOP Torta del Casar with wild cardoon coagulant; regular exhibitor in the European Cheese Route fair. | [DOP Torta del Casar](https://tortadelcasar.eu) | <https://pastocasar.com/> | Confirm dedicated dairy workshop address in Casar de Cáceres, sanitary register and current retail lineup. |
-
