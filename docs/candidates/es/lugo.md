@@ -112,3 +112,18 @@
 | Queso Bisqato + El Kano | Guitiriz | `Lácteos y quesos` — artisan raw cow-milk cheese | Small farmstead cheese workshop in Guitiriz transforming pasture-fed raw cow milk; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy holding in Guitiriz, sanitary register and current cheese lineup. |
 | Panadería Lareira | Cervo (Vila de Suso) | `Pan y cereal` — traditional Galician sourdough bread | Traditional Galician wood-fired artisan bakery in Vila de Suso (Cervo, A Mariña Lucense); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify dedicated baking workshop in Cervo and daily direct-sales availability. |
 
+## Festas de San Froilán — 2026-09-03
+
+- Discovery source: Festas de San Froilán (Lugo) official artisan & food market records (<https://sanfroilan.info>).
+- Search date: 2026-09-03.
+- Scope: 3 unresolved Level 1 leads in Lugo, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
+- Source ceiling: fair participant registers establish regular artisan presence, category and geographical clue; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Queixería As Fontelas | Vilalba | `Lácteos y quesos` — DOP San Simón da Costa smoked cow-milk cheese | Family-run artisan cheese workshop in Vilalba (Terra Chá) elaborating traditional DOP San Simón da Costa smoked with native birch wood; regular participant at San Froilán. | [San Froilán](https://sanfroilan.info) | <https://asfontelas.com/> | Confirm dedicated dairy workshop address in Vilalba, sanitary registration and retail availability. |
+| Panadería Ousá | Friol | `Pan y cereal` — traditional wood-fired Galician bread | Historic wood-fired bakery in Friol renowned for its traditional Galician crusty bread and artisan empanadas; featured regularly in San Froilán traditional markets. | [San Froilán](https://sanfroilan.info) | — | Verify physical bakery premises in Friol, flour sourcing and continuous direct sales. |
+| Mel de Muras | Muras | `Miel` — mountain heather and chestnut honey | Mountain beekeeping holding in Muras (Serra do Xistral); regular exhibitor at the Feira do Mel de San Froilán. | [San Froilán](https://sanfroilan.info) | — | Confirm active apiaries in Serra do Xistral, extraction workshop and commercial distribution. |
+
+

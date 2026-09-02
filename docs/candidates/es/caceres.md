@@ -93,3 +93,16 @@ Review the linked producer channel and productive responsibility before admissio
 | Pescadería Salgado | Cáceres | `Pescado` | The directory states: “En Pescadería Salgado ofrecemos productos de máxima calidad y frescura, somos proveedores de pescado congelado …” | [Directory](https://www.proveedores.com/proveedores/pescaderia-salgado/) | <https://www.pescaderiasalgado.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Tencas de Galilea | Cáceres | `Pescado` | The directory states: “Tencas de Galilea es una empresa familiar dedicada a la producción de Tenca (tinca tinca) en todas sus fases, desde…” | [Directory](https://www.proveedores.com/proveedores/tencas-de-galilea/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Bodega Los Chozones | Montehermoso | `Vino` | The directory states: “Ubicada en Montehermoso (Cáceres) y fundada hace más de 25 años, Bodegas Los Chozones es una bodega que se dedica a…” | [Directory](https://www.proveedores.com/proveedores/bodega-los-chozones/) |  | Confirm the winery and its current published range. |
+
+## Feria Europea del Queso de Casar de Cáceres — 2026-09-03
+
+- Discovery source: Feria Europea del Queso en Casar de Cáceres (<https://tortadelcasar.eu>) and Consejo Regulador DOP Torta del Casar.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Cáceres, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published DOP registries and fair records available on 2026-09-03.
+- Source ceiling: fair records establish registered operator status and product scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Pastocasar | Casar de Cáceres | `Lácteos y quesos` — DOP Torta del Casar raw sheep milk cheese | Traditional craft dairy in Casar de Cáceres specialized in raw sheep milk DOP Torta del Casar with wild cardoon coagulant; regular exhibitor in the European Cheese Route fair. | [DOP Torta del Casar](https://tortadelcasar.eu) | <https://pastocasar.com/> | Confirm dedicated dairy workshop address in Casar de Cáceres, sanitary register and current retail lineup. |
+
