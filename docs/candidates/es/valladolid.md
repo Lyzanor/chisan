@@ -25,6 +25,22 @@
 |---|---|---|---|---|---|---|
 | La Botica de Matapozuelos | Matapozuelos | `Fruta y verdura` — herbs and vegetables from a small garden | Public coverage describes a garden producing herbs and vegetables for the restaurant. | [Guía Repsol](https://www.guiarepsol.com/es/comer/nuestros-favoritos/restaurante-la-botica-de-matapozuelos-matapozuelos-valladolid/) | — | Locate and verify the productive garden from a current first-party source, establish a durable producer identity and prove a current own take-home offer. |
 
+## FROMAGO Cheese Experience — 2026-09-03
+
+- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
+- Search date: 2026-09-03.
+- Scope: 5 unresolved Level 1 leads in Valladolid, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
+- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Pura Churra | Portillo | `Carne` — churra sheep products | Autochthonous Churra sheep livestock breeding holding based in Portillo; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm holding location in Portillo, transformation workshop and commercial packaged offer. |
+| Aceitunas Martín Castro | Villanubla | `Conservas` — artisan seasoned olives | Traditional family olive dressing and seasoning workshop in Villanubla; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://aceitunasmartincastro.com/> | Verify physical transformation facility in Villanubla versus pure merchant distribution. |
+| Clauval Artesanos | Valladolid | `Dulces` — traditional artisan confectionery | Craft bakery and confectionery workshop located in Valladolid; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.clauvalartesanos.es> | Verify dedicated production workshop in Valladolid and current packaged range. |
+| Miel Oro del Duero | Valladolid | `Miel` — artisan Duero honey | Beekeeping project extracting and packing regional Duero valley honeys; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.orodelduero.com/> | Verify own apiary holdings, extraction facility address and current retail channels. |
+| Qrèm | Valladolid | `Dulces` — craft cheesecake bakery | Artisan bakery specializing in signature craft cheesecakes; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm dedicated craft workshop in Valladolid and direct take-home availability. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/valladolid>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -121,20 +137,3 @@
 | Valbuena Merlot | Valbuena de Duero | `Vino` | The directory states: “Producidos en pequeñas bodegas exclusivas, que hacen los mejores y más cuidados vinos, con la producción de sus…” | [Directory](https://www.proveedores.com/proveedores/valbuena-merlot/) |  | Confirm the winery and its current published range. |
 | Viñedos Carramata | Valladolid | `Vino` | The directory states: “En viñedos Carramata somos elaboradores y proveedores de vino de la variedad Verdejo con D.O” | [Directory](https://www.proveedores.com/proveedores/vinedos-carramata/) | <https://www.carramata.es/> | Confirm the winery and its current published range. |
 | Vino de Ángeles | Valladolid | `Vino` | The directory states: “Vino de Ángeles es una empresa de Valladolid que se especializa en la distribución de vinos y licores” | [Directory](https://www.proveedores.com/proveedores/vino-de-angeles/) | <https://vinodeangeles.es/es/> | Confirm the winery and its current published range. |
-
-## FROMAGO Cheese Experience — 2026-09-03
-
-- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
-- Search date: 2026-09-03.
-- Scope: 5 unresolved Level 1 leads in Valladolid, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
-- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Pura Churra | Portillo | `Carne` — churra sheep products | Autochthonous Churra sheep livestock breeding holding based in Portillo; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm holding location in Portillo, transformation workshop and commercial packaged offer. |
-| Aceitunas Martín Castro | Villanubla | `Conservas` — artisan seasoned olives | Traditional family olive dressing and seasoning workshop in Villanubla; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://aceitunasmartincastro.com/> | Verify physical transformation facility in Villanubla versus pure merchant distribution. |
-| Clauval Artesanos | Valladolid | `Dulces` — traditional artisan confectionery | Craft bakery and confectionery workshop located in Valladolid; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.clauvalartesanos.es> | Verify dedicated production workshop in Valladolid and current packaged range. |
-| Miel Oro del Duero | Valladolid | `Miel` — artisan Duero honey | Beekeeping project extracting and packing regional Duero valley honeys; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.orodelduero.com/> | Verify own apiary holdings, extraction facility address and current retail channels. |
-| Qrèm | Valladolid | `Dulces` — craft cheesecake bakery | Artisan bakery specializing in signature craft cheesecakes; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm dedicated craft workshop in Valladolid and direct take-home availability. |
-

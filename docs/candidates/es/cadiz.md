@@ -51,6 +51,18 @@
 
 Verify current activity, exact municipality/address, legal producer identity, own offer, and catalog-level eligibility from first-party or authoritative records. The council directory is a strong discovery source but group brands, legal entities and multiple cellars still need productive-unit de-duplication. The remaining entries are holds; no admission is asserted for them.
 
+## Feria del Queso Artesano de Teba — 2026-09-03
+
+- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Cádiz, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
+- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería Artesanal Sierra de Ubrique | Ubrique | `Lácteos y quesos` — Payoya goat and Grazalema sheep cheese | Traditional artisan dairy in Ubrique (Sierra de Grazalema) processing native Payoya goat and Merino sheep milk; multiple winner at Premio Guadalteba in Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://quesosdeubrique.com/> | Confirm dedicated dairy workshop address in Ubrique, milk origin and continuous retail lineup. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/cadiz>, a B2B supplier directory whose listings are written by the companies themselves.
@@ -154,16 +166,3 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Copa a Copa | Conil de la Frontera | `Vino` | The directory states: “Trabajamos con las principales bodegas y ofrecemos un amplio surtido de bebidas” | [Directory](https://www.proveedores.com/proveedores/copa-a-copa/) |  | Confirm the winery and its current published range. |
 | M. Gil Luque | Jerez de la Frontera | `Vino` | The directory states: “Gil Luque , localizada en la región de Jerez de la Frontera (Cádiz) y dedicada a la elaboración y comercialización de…” | [Directory](https://www.proveedores.com/proveedores/m-gil-luque/) | <https://www.laguita.com/> | Confirm the winery and its current published range. |
 | Tio Pepe | Jerez de la Frontera | `Vino` | The directory states: “La empresa Tío Pepe se encuentra localizada en la región de Jerez de la Frontera (Cádiz) y se ha especializado en la…” | [Directory](https://www.proveedores.com/proveedores/tio-pepe/) | <https://www.tiopepe.com/es-es/validate> | Confirm the winery and its current published range. |
-
-## Feria del Queso Artesano de Teba — 2026-09-03
-
-- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
-- Search date: 2026-09-03.
-- Scope: 1 unresolved Level 1 lead in Cádiz, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
-- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Quesería Artesanal Sierra de Ubrique | Ubrique | `Lácteos y quesos` — Payoya goat and Grazalema sheep cheese | Traditional artisan dairy in Ubrique (Sierra de Grazalema) processing native Payoya goat and Merino sheep milk; multiple winner at Premio Guadalteba in Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://quesosdeubrique.com/> | Confirm dedicated dairy workshop address in Ubrique, milk origin and continuous retail lineup. |
-
