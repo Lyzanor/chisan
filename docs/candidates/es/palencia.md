@@ -24,16 +24,3 @@
 | Hermanos Borja Pérez | Astudillo | `Otros` | The directory states: “Desde 1978 aporta "productos de calidad" a empresas, sin especificar” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/palencia) |  | Identify the actual product and productive unit before assigning a category. |
 | Hielos Palencia | Palencia | `Otros` | The directory states: “Fabrica y vende hielo en varios formatos” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/palencia) |  | Scope question: decide whether edible ice is food or drink within the catalog scope. |
 
-## FROMAGO Cheese Experience — 2026-09-03
-
-- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
-- Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in Palencia, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
-- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Quesos El Afinador | Venta de Baños | `Lácteos y quesos` — affineur and artisan cheeses | Specialized cheese refiner and artisan cheesemaker in Venta de Baños; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.quesoselafinador.com> | Verify ripening cellars / dairy premises in Venta de Baños and active retail lineup. |
-| La Tahona Cántabra | Pomar de Valdivia | `Pan y cereal` — traditional bakery | Mountain wood-fired bakery in Pomar de Valdivia (Montaña Palentina); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify active baking workshop in Pomar de Valdivia and direct take-home sales points. |
-

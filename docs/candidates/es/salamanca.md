@@ -26,8 +26,9 @@
 |---|---|---|---|---|---|---|
 | Abeja Sayaguesa | Canillas de Abajo | `Miel` — artisan honey | Traditional beekeeping project based in Canillas de Abajo; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.abejasayaguesamiel.es> | Verify active apiaries, extraction unit in Canillas de Abajo and direct-sales channels. |
 | Juan Antonio del Valle Cascón | Villoria | `Lácteos y quesos` — raw sheep milk cheese | Local cheese artisan based in Villoria; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm physical dairy premises in Villoria, sanitary registration and current cheese range. |
-| Delicias Garrapiñadas | Salamanca | `Dulces` — traditional candied nuts | Artisan confectionery workshop in Salamanca specializing in traditional candied almonds and nuts; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify physical workshop address in Salamanca and retail packaging. |
-| Panadería Repostería La Espiga de Castilla | La Vellés | `Pan y cereal` / `Dulces` — traditional bakery | Rural wood-fired bakery and traditional pastry maker in La Vellés; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify dedicated baking workshop in La Vellés and continuous retail availability. |
+| Delicias Garrapiñadas | Salamanca | `Frutos secos` / `Dulces y repostería` — traditional candied nuts | Artisan confectionery workshop in Salamanca specializing in traditional candied almonds and nuts; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify physical workshop address in Salamanca and retail packaging. |
+| Panadería Repostería La Espiga de Castilla | La Vellés | `Pan y cereal` / `Dulces y repostería` — traditional bakery and pastries | Rural wood-fired bakery and traditional pastry maker in La Vellés; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Verify dedicated baking workshop in La Vellés and continuous retail availability. |
+
 
 ## Proveedores.com directory sweep — 2026-09-02
 
