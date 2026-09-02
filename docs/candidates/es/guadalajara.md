@@ -14,6 +14,18 @@
 
 Verify current activity, exact municipality/address, legal producer identity, own offer, and catalog-level eligibility from first-party or authoritative records. This entry remains a hold; no admission is asserted.
 
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Molino de Alcuneza | Alcuneza, Sigüenza | `Fruta y verdura` — own garden | Public coverage describes a garden cultivated for the restaurant at the Alcuneza property. | [Guía Repsol](https://www.guiarepsol.com/es/fichas/restaurante/molino-de-alcuneza-10971/) | — | Verify the productive garden from a current first-party source, establish its durable producer identity and prove a current own take-home offer. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/guadalajara>, a B2B supplier directory whose listings are written by the companies themselves.

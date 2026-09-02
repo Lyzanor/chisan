@@ -47,7 +47,6 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
 - Scope: four productive leads after routing Quesos JM to Zamora, Lácteas Ruma to Segovia and excluding the Delahuertacasa multi-producer retail identity.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only. Hospitality, B2B and shop identities still need a distinct productive unit and attributable own take-home offer.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
@@ -56,6 +55,19 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Pastaio | Madrid | `Pan y cereal` — fresh pasta | The current first-party site states that fresh pasta is made daily in its own Ríos Rosas workshop and exposes a take-home product offer. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://pastaio.com/> | Confirm that the published address is the durable productive workshop and reconcile the shop/restaurant and producer identities before admission. |
 | Mantequillas Lacbal | Madrid | `Lácteos y quesos` — butter and ghee | Current company material describes artisan butter production in Madrid and publishes the Calle Pilarica unit, with an active own product range. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://mantequillaslacbal.com/> | Confirm the exact productive address, current producer-owned offer and legal/public identity through the normal admission pass. |
 | Helardy | Madrid | `Helados` — artisan ice cream | The current site presents its own artisan ice creams, online products and a B2B restaurant offer under the Helardy identity. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://helardy.com/> | Identify the durable productive workshop and prove a distinct take-home producer offer independent of ordinary café or restaurant activity. |
+
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Coque / Finca Jaral de la Mira | San Lorenzo de El Escorial | `Fruta y verdura` — productive finca and garden | Public material connects Coque with Finca Jaral de la Mira as its own productive estate. | [Guía Repsol](https://www.guiarepsol.com/content/repsol-guia/es/home/soles-repsol/soles-2022/restaurante-coque-madrid-jaral-mira-el-escorial.html) | <https://www.jaraldelamira.com/finca.php> | Verify governance and the exact productive unit, establish the durable producer identity and prove a current own take-home offer. |
+| El Invernadero / Rodrigo de la Calle experimental garden | Madrid area; exact current garden unresolved | `Fruta y verdura` — experimental garden | The chef's public project describes cultivation as part of its plant-focused research, but the restaurant and historical gardens have moved. | [Rodrigo de la Calle](https://rodrigodelacalle.es/) | <https://elinvernaderorestaurante.com/> | Locate the current productive garden, prove that it supplies the current restaurant, establish a durable producer identity and verify a current own take-home offer. |
 
 ## Proveedores.com directory sweep — 2026-09-02
 

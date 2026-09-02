@@ -36,7 +36,6 @@ Review each linked producer domain, then de-duplicate brands and legal entities 
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
 - Scope: four unique productive leads after normalizing the directory's legal names and brands.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only; linked producer sites support the leads but do not replace admission and evidence review.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |

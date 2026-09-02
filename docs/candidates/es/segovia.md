@@ -19,8 +19,6 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php), where the producer was incorrectly grouped under Madrid.
 - Search date: 2026-08-31.
-- Scope: the routed productive lead is absent from the current Segovia CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only; current company and registry signals support the productive lead but do not replace admission review.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |

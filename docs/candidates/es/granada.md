@@ -39,7 +39,6 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
 - Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory is discovery only. First-party production claims support these leads but do not replace the normal admission, evidence and duplicate review.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |

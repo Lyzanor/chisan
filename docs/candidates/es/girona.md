@@ -35,6 +35,32 @@
 
 Verify current activity, exact municipality/address, legal producer identity, own offer, and catalog-level eligibility from first-party or authoritative records. The Fesols directory establishes growing activity and location but not an attributable current market offer. The remaining entries are holds; no admission is asserted for them.
 
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Empòrium / Bistrot 1965 | Castelló d'Empúries | `Conservas` — preserves and condiments from a shared garden | The two restaurant names share the Hotel Empòrium productive system, which describes its garden, aromatic plants and in-house preserves; this is one lead, not two productive units. | [Empòrium sustainability](https://www.emporiumhotel.com/es/sostenibilidad) | <https://www.emporiumhotel.com/es/sostenibilidad> | Establish one durable productive identity, verify the garden and processing unit, and prove a current take-home own offer. |
+| El Celler de Can Roca / Mas Marroch | Vilablareix | `Fruta y verdura` — Mas Marroch garden and Terra Animada project | The Roca project presents Mas Marroch as a cultivated productive setting within its wider hospitality ecosystem. | [Roca brothers](https://cellercanroca.com/los-hermanos-roca/) | <https://cellercanroca.com/universo-roca/mas-marroch/> | Establish the exact productive unit and producer identity, prove a current own take-home offer, and distinguish it from the published Obrador Rocambolesc identity. |
+| Les Cols | Cultivated fields in Vall de Bianya; restaurant in Olot | `Fruta y verdura` — garden and field crops; also eggs | The project describes cultivated fields and related food-production experiments beyond ordinary restaurant purchasing. | [Les Cols projects](https://www.lescols.com/es/proyectos/) | <https://www.lescols.com/es/proyectos/> | Resolve the exact productive municipality and unit, establish a durable producer identity and prove a current own take-home offer. |
+
+## Linverd catalog brand pass — 2026-09-01
+
+- Discovery source: [Linverd online catalog](https://linverd.com/es/catalogo), using its manufacturer facets and producer-owned pages for same-lead corroboration.
+- Search date: 2026-09-01.
+- Scope: food and drink identities in the complete catalog, reconciled against the current CSV, candidate note, country-wide aliases and closed evidence, then routed to the productive area.
+- Cutoff: 3,716 catalog references across 310 pages and 477 named manufacturer facets visible on the search date; personal-care, supplement-only and unattributed references were excluded.
+- Source ceiling: a Linverd listing supports only a retail product-to-brand signal. It does not establish productive responsibility, the productive unit, identity continuity or catalog admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Liquats Vegetals / YOSOY | Viladrau | `Bebidas sin alcohol` — plant-based drinks | Linverd lists four YOSOY drinks and Liquats identifies YOSOY as one of the brands produced at its Viladrau production centre. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=602) | <https://liquats.com/es/nosotros/> | Confirm the exact productive unit and current attributable offer; use the producer identity Liquats Vegetals rather than creating an independent YOSOY brand row. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/girona>, a B2B supplier directory whose listings are written by the companies themselves.

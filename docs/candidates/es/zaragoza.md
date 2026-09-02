@@ -31,10 +31,25 @@ Prioritize the two mills with linked producer domains. Aceites Ambel/Oliambel, C
 
 - Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
 - Search date: 2026-08-31.
-- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
 - Source ceiling: the directory and brand site support discovery only; packaging, cutting or distribution does not by itself establish a qualifying local producer.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Millán Vicente | La Muela | `Lácteos y quesos` — cheese preparation and packaging | The current company site publishes a La Muela facility and an active cheese range, but several product pages identify foreign cheese origins and other operators. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://millanvicente.com/> | Prove a material cheese-production or elaboration step at La Muela and an attributable own offer beyond cutting, packing, branding or distribution. |
+
+## Registro de Artesanía Alimentaria de Aragón pass — 2026-09-01
+
+- Discovery source: [Registro de la Artesanía Alimentaria en Aragón (30/06/2026)](https://www.aragon.es/documents/d/guest/20260630_registro_artesania_alimentaria), Sección Empresas Artesanales Alimentarias.
+- Search date: 2026-09-01.
+- Scope: the 33 Zaragoza-province entries of the 30/06/2026 register, retained only when absent from the area CSV, the open backlog, the area tombstones and country-wide aliases; 5 unresolved leads remain from the 10 reviewed before the discovery cutoff.
+- Source ceiling: registration supports identity, published municipality, address and declared products. It does not by itself establish current activity, a qualifying own offer, or a producer identity distinct from a shop, brand or contract plant.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Esenzia del Salz (Albedi, S.C.) | Samper del Salz, 50134; C/ Diseminados, s/n | `Conservas` — mermeladas | Registered as an artisan food company for jams, with a productive address published in Samper del Salz. | [Aragón artisan register](https://www.aragon.es/documents/d/guest/20260630_registro_artesania_alimentaria) | — | Confirm current activity, an own public offer and the producer identity behind the Albedi, S.C. registration; the register publishes no web or social channel. |
+| Cerveza Populus (Cerveza artesana Rasmia, S.C.) | Caspe, 50700; C/ La Fuente, 1 | `Cerveza` | Registered artisan brewer in Caspe under the Cerveza Populus brand, distinct from the Caspe brewery already published. | [Aragón artisan register](https://www.aragon.es/documents/d/guest/20260630_registro_artesania_alimentaria) | — | Confirm current brewing activity, own offer and public identity; the register publishes no web or social channel, and this S.C. must be distinguished from Hidromieles artesanas Rasmia, S.L. in Lechón. |
+| Lahoz (Conservas de carnes selectas, S.L.) | La Muela, 50198; Polígono Centrovía, C/ Buenos Aires, 103 | `Conservas` — conservas cárnicas y platos preparados | Registered artisan food company with its own Lahoz brand and domain at a La Muela industrial unit. | [Aragón artisan register](https://www.aragon.es/documents/d/guest/20260630_registro_artesania_alimentaria) | <https://www.conservasselectas.com/> | Confirm a qualifying own offer rather than contract or private-label production only, and current activity. |
+| Embutidos Los Mañicos (Herederos de Primitivo Aznar, C.B.) | La Muela, 50196; Autovía Madrid-Zaragoza, Km 298 | `Carne` — jamones y paletas | Registered artisan food company curing hams and shoulders under its own name at a roadside site in La Muela. | [Aragón artisan register](https://www.aragon.es/documents/d/guest/20260630_registro_artesania_alimentaria) | <https://www.losmanicos.com/> | The register-published domain did not respond on 2026-09-01, which is uncertainty rather than closure; confirm current activity and whether the Km 298 site is a productive unit or only a roadside sales point. |
+| Loras SC | Muel, 50450; Avenida García Giménez, 34, local | `Pan y cereal` — panadería, bollería y repostería | Registered artisan bakery with a productive address published in Muel. | [Aragón artisan register](https://www.aragon.es/documents/d/guest/20260630_registro_artesania_alimentaria) | — | Confirm current activity, a public producer identity beyond the S.C. name and an own offer; the register publishes no web or social channel. |
+
+The pass stopped at the 10-lead limit, not at the end of the register. Nineteen further Zaragoza entries already matched published rows. Reconciliation of the remaining register entries resumes, in its own alphabetical order by titular, at Luis Angel López Sanz (Almonacid de la Sierra), Mª Carmen Royo Perún / Lattidos (Mediana de Aragón) and Tortos de Peñaflor, S.L. (Cuarte de Huerva).

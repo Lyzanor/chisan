@@ -11,6 +11,18 @@
 |---|---|---|---|---|---|---|
 | Soilik.eus | Vitoria-Gasteiz | Fruta y verdura | Directory signal retained after review. | <https://app.katuma.org/soilik-eus/shop> | — | La web propia no respondió y el único canal encontrado es Katuma; el OFN indica pedidos cerrados desde hace más de un año. Recheck a producer-owned channel or a reopened OFN order cycle that proves a current own offer before admission. |
 
+## Michelin Green Star own-production lead pass — 2026-08-31
+
+- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
+- Search date: 2026-08-31.
+- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
+- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
+- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ARREA! | Santa Cruz de Campezo / Santikurutze Kanpezu | `Fruta y verdura` — own garden | Public coverage attributes cultivation to the restaurant's local-food project. | [Guía Repsol](https://www.guiarepsol.com/es/fichas/restaurante/arrea-321842/) | <http://www.arrea.eus> | Verify the exact productive unit from a current first-party source, establish the durable producer identity and prove a current own take-home offer. |
+
 ## Proveedores.com directory sweep — 2026-09-02
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/alava>, a B2B supplier directory whose listings are written by the companies themselves.
