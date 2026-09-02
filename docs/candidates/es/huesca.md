@@ -79,3 +79,18 @@ The other 54 members reconciled: 51 matched published Huesca rows, "Miel del Pir
 | Aguas Vilas del Turbón | Huesca | `Bebidas sin alcohol` | The directory states: “Envasado y distribución de agua mineral natural del Turbón” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/huesca) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Casas Royes | Fraga | `Fruta y verdura` | The directory states: “Sesenta años como proveedores de fruta y hortaliza” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/huesca) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Barón de Villacampa | Huesca | `Vino` | The directory states: “Elabora y distribuye vinos con denominación de La Rioja” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/huesca) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
+
+## Concurso de Quesos de Otoño de Biescas — 2026-09-03
+
+- Discovery source: Concurso de Quesos de Otoño de la Feria de Otoño de Biescas (<https://www.biescas.es>).
+- Search date: 2026-09-03.
+- Scope: 3 unresolved Level 1 leads in Huesca, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published agricultural fair records and first-party pages available on 2026-09-03.
+- Source ceiling: fair records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesos de Guara | Bierge (Lasbellas) | `Lácteos y quesos` — Sierra de Guara artisan goat cheese | Traditional craft dairy in Lasbellas (Bierge, Parque Natural de la Sierra y Cañones de Guara) processing goat milk; finalist at Biescas Autumn Fair. | [Feria de Biescas](https://www.biescas.es) | <https://quesosdeguara.com/> | Confirm dedicated dairy workshop address in Bierge, milk source and commercial retail channels. |
+| Quesería Benabarre | Benabarre | `Lácteos y quesos` — Ribagorza artisan goat cheese | Family goat holding and farmstead dairy in Benabarre (La Ribagorza) crafting raw and pasteurized goat milk cheeses; regular exhibitor at Biescas. | [Feria de Biescas](https://www.biescas.es) | <https://quesosbenabarre.es/> | Verify on-farm dairy holding in Benabarre, flock size and active commercial lineup. |
+| Quesería Casa Mayor | Berdún | `Lácteos y quesos` — Jacetania artisan sheep cheese | Craft sheep cheese workshop located in Berdún (Canal de Berdún, Jacetania); regular participant in Pyrenean cheese fairs. | [Feria de Biescas](https://www.biescas.es) | — | Confirm dedicated dairy premises in Berdún, sanitary registration and current cheese range. |
+

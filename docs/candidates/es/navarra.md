@@ -76,3 +76,17 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Precocinados FRISA | Villafranca | `Comida preparada` | The directory states: “Cuarenta años elaborando ultracongelados navarros con planta propia en el polígono Alesves II” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |
 | Pan Barcos | Peralta | `Pan y cereal` | The directory states: “Fabrica pan y bollería en Peralta desde 1903, fresco y congelado” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Separate the own productive activity from the trading arm before placing the row. |
 | Bread Free | Tudela | `Pan y cereal` | The directory states: “Proceso biotecnológico patentado tras PURA, presentada como primera harina de trigo sin gluten” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/navarra) |  | Confirm the productive workshop and that it is currently active. |
+
+## Concursos de quesos de Gernika y Biescas — 2026-09-03
+
+- Discovery source: Feria del Último Lunes de Gernika (<https://www.gernika-lumo.eus>) and Concurso de Quesos de Otoño de Biescas (<https://www.biescas.es>).
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in Navarra, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published agricultural fair records and first-party pages available on 2026-09-03.
+- Source ceiling: fair awards records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería Ricardo Remiro | Eulate | `Lácteos y quesos` — shepherd raw Latxa milk Idiazabal cheese | Celebrated pastoral cheese holding at the foot of Sierra de Urbasa in Eulate; 2nd prize at Gernika 2024 and multiple champion of Ordizia and Euskal Herria. | [Gernika 2024](https://www.gernika-lumo.eus) | <https://www.remiro.es/> | Confirm farmstead dairy premises in Eulate, flock origin and continuous commercial availability. |
+| Quesería Ukerdi | Isaba | `Lácteos y quesos` — shepherd raw Latxa milk DOP Roncal cheese | Traditional high-mountain shepherd cheese dairy in Isaba (Valle del Roncal) crafting raw-milk DOP Roncal from own Latxa flock; regular finalist at Biescas Autumn Fair. | [Feria de Biescas](https://www.biescas.es) | <https://queseriasukerdi.com/> | Verify farmstead dairy holding in Isaba, flock management and commercial retail channels. |
+
