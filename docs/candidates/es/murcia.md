@@ -55,3 +55,16 @@ Prioritize Bodegas Antonio Candela, which already has a current producer-owned s
 | Jimbofresh / Jimbee | La Unión / Cartagena; office and productive unit need reconciliation | `Fruta y verdura` — Melón | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Melón; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56326) | <https://jimbee.es/> | Distinguish the La Unión/Cartagena production sites from the public office and confirm the durable producer identity and own offer. |
 | Moyca Grapes | Totana; multiple sites | `Fruta y verdura` — Uva de mesa | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Uva de mesa; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-60307) | <https://uvasmoyca.com/> | Choose the exact productive unit under Chisan's one-unit-per-row rule; confirm the legal/public identity and current own grape offer. |
 | Pozo Sur | Águilas | `Fruta y verdura` — Sandía | Carrefour publicly identifies the entity in a direct-purchase or supplier programme for Sandía; this is a concrete discovery lead, not proof of the exact productive unit or current Chisan eligibility. | [Carrefour evidence](https://www.carrefour.es/grupo-carrefour/sala-de-prensa/noticias.aspx?tcm=tcm%3A5-56326) | <https://www.pozosur.com/> | Confirm current activity, cultivation or qualifying elaboration rather than packing/wholesale, exact productive unit, own offer and legal/public identity. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/murcia>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 2 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Nutipical | Roldán | `Frutos secos` | The directory states: “Tercera generación de almendricultores con marca propia de almendra saborizada y dirección de finca” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/murcia) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
+| Panarro Foods | Archena | `Bebidas sin alcohol` | The directory states: “Zumos ecológicos elaborados a partir de agricultura ecológica propia, en planta propia de Archena” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/murcia) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |

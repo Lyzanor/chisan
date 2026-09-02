@@ -78,3 +78,16 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Queso Perfecto del Delta | Camarles | `Lácteos y quesos` — fresh and matured cheese | The current producer site exposes its cheese range, and the Generalitat's current artisan register identifies cheese production at the Camarles holding. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesoperfecto.com/> | Confirm the legal/public identity, exact productive address and current own offer before admission. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/tarragona>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 2 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cafés Andreu | Tarragona | `Café` | The directory states: “Treinta años en el mundo del café con selección propia” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/tarragona) |  | Confirm an own roastery rather than repackaging third-party coffee. |
+| Edulcodiet (Dulcilight) | Perafort | `Otros` | The directory states: “Fabricante veterano de edulcorante de mesa granulado bajo marca propia Dulcilight” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/tarragona) |  | Scope question: decide whether an edible input with no public own offer belongs in the catalog. |

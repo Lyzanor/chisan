@@ -50,3 +50,16 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Sa Canova / Lacto Industrial Menorquina | Ferreries | `Lácteos y quesos` — Mahón-Menorca cheese and other dairy products | The Menorca cheese association and DOP council identify the active manufacturer and Sa Canova brand at the Ferreries industrial estate with current sale and export activity. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesosacanova.com/> | Confirm the exact productive address, current producer-owned offer and legal/public row identity before admission. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/islas-baleares>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 2 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| MariGold | Palma | `Cerveza` | The directory states: “Pilsen mallorquina presentada como cerveza propia de la casa” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/islas-baleares) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |
+| Coffee Center | Inca | `Café` | The directory states: “Se presenta como empresa productora de café e infusiones para hostelería en Inca” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/islas-baleares) |  | Confirm an own roastery rather than repackaging third-party coffee. |

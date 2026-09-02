@@ -53,3 +53,15 @@ Verify current activity, exact productive address, legal producer identity, own 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Cabritillo del Maestrazgo / Granja Maestrazgo | La Torre d'en Besora | `Carne` — kid meat; additional goat cheese line | The family farm describes its own goat herd, kid-meat preparations and artisan cheeses made from its milk at Masía els Masets; Castelló Ruta de Sabor corroborates the productive site. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://www.granjamaestrazgo.es/> | Confirm the durable public identity, exact productive address and current own offer; decide whether `Lácteos y quesos` is an additional category. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/castellon>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 1 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| MGO Horchata y Granizados | Almassora | `Bebidas sin alcohol` | The directory states: “Elaboración artesanal de horchata y granizados en dirección de polígono declarada. Producto fuertemente ligado al lugar” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/castellon) |  | Confirm current activity from a first-party source. |

@@ -12,3 +12,15 @@
 | Quesera Napoli | Olmedo | `Lácteos y quesos` — mozzarella | Current official and authoritative listings identify an active mozzarella factory in the La Estación industrial estate at Olmedo. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://queseranapoli.com/> | Confirm the exact productive address, legal/public identity and current own offer before admission. |
 | CRICA | Megeces | `Lácteos y quesos` — organic cheese and dairy products | The current producer site identifies its farm and cheese dairy in Megeces and exposes an active own product range and online shop. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://crica.es/> | Confirm the legal/public identity and exact productive address through the normal admission pass. |
 | Quesos Muñiz | Mojados | `Lácteos y quesos` — cheese | Current producer and institutional material identify the family cheesemaker and factory on the Megeces road in Mojados. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://quesosmuniz.com/> | Confirm the exact productive address, current own offer and legal/public identity before admission. |
+
+## Proveedores.com directory sweep — 2026-09-02
+
+- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/valladolid>, a B2B supplier directory whose listings are written by the companies themselves.
+- Search date: 2026-09-02.
+- Scope: 1 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
+- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Piñones Román Lorenzo | Matapozuelos | `Frutos secos` | The directory states: “Empresa familiar que selecciona, elabora y envasa piñón ibérico y almendra de origen Castilla. Dirección productiva concreta…” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/valladolid) |  | Confirm an own-brand offer rather than contract manufacturing for third parties. |
