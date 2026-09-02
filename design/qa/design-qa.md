@@ -4,6 +4,32 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-02 — Producer distance from the visitor
+
+final result: passed
+
+Reviewed the Spanish Formatgeria La Cleda profile at desktop width and 390 ×
+844, with the new control immediately above the existing location card.
+
+- Idle desktop state: `design/qa/producer-distance-desktop-idle.png`
+- Calculated desktop state: `design/qa/producer-distance-desktop-result.png`
+- Calculated mobile state: `design/qa/producer-distance-mobile-result.png`
+- The compact surface uses existing spacing, color, radius, type and focus
+  tokens. Its action remains 44px high and becomes full-width on mobile.
+- At 390px the document width stayed exactly 390px. The scoped accessibility
+  audit reported no violations.
+- The Spanish result rendered as an approximate straight-line distance with
+  locale-aware number formatting. Permission denial also produced a local,
+  non-blocking message.
+- Profiles without both reviewed producer coordinates omit the control. Page
+  load never requests device location; only the explicit action does.
+- Network inspection after calculation showed no request containing the
+  visitor position or calculated distance.
+
+Rejected: automatic location requests, persisted visitor coordinates, road
+distance or travel-time claims, and showing an unusable control when the
+producer has no reviewed point.
+
 ## 2026-09-02 — Persistent mobile roster and category markers at every zoom
 
 final result: passed

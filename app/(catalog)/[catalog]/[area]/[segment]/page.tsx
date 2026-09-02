@@ -8,6 +8,7 @@ import { ProducerAccountActions } from "@/components/account/producer-account-ac
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import { ProducersMap } from "@/components/map/producers-map";
+import { ProducerDistance } from "@/components/producer-distance";
 import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
 import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
 import {
@@ -38,6 +39,7 @@ import {
 import { buildCatalogScope } from "@/lib/i18n/catalog-scope";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 import { getProducerActionLabels } from "@/lib/i18n/producer-action-labels";
+import { getProducerDistanceMessages } from "@/lib/i18n/producer-distance";
 import {
   formatProducerFieldValue,
   presentPublicProducerFields,
@@ -227,6 +229,7 @@ export default async function ProducerPage({
     : null;
   const relatedAreaHref = buildCatalogHref({ scope, area });
   const actionLabels = getProducerActionLabels(locale);
+  const distanceMessages = getProducerDistanceMessages(locale);
   const profileQrPath = buildProducerHref(producer, { scope, area });
   const mapMessages = {
     loading: messages.map.loading,
@@ -475,6 +478,15 @@ export default async function ProducerPage({
             </table>
           </div>
         </section>
+
+        {producer.latitude !== null && producer.longitude !== null ? (
+          <ProducerDistance
+            latitude={producer.latitude}
+            longitude={producer.longitude}
+            locale={locale}
+            messages={distanceMessages}
+          />
+        ) : null}
 
         <section
           id="detail-location"

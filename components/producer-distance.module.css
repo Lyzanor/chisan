@@ -1,0 +1,73 @@
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--chisan-space-3) var(--chisan-space-4);
+  align-items: center;
+  margin-top: var(--chisan-space-4);
+  padding: var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+}
+
+.copy h2,
+.copy p,
+.status {
+  margin: 0;
+}
+
+.copy h2 {
+  font-size: 1.05rem;
+}
+
+.copy p,
+.status {
+  max-width: 64ch;
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.copy p {
+  margin-top: var(--chisan-space-1);
+}
+
+.action {
+  min-height: 44px;
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-moss);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-moss);
+  color: var(--chisan-color-surface);
+  cursor: pointer;
+  font: 500 0.875rem/1.4 var(--chisan-font-sans);
+}
+
+.action:hover:not(:disabled) {
+  background: var(--chisan-color-moss-dark);
+}
+
+.action:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.action:disabled {
+  cursor: progress;
+  opacity: 0.65;
+}
+
+.status {
+  grid-column: 1 / -1;
+  min-height: 1.3125rem;
+}
+
+@media (max-width: 640px) {
+  .card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .action {
+    width: 100%;
+  }
+}

@@ -3,10 +3,11 @@
 ## Purpose and boundary
 
 This contract governs the optional use of a visitor's device position on the
-neutral `/` page to suggest a covered Chisan catalog area, plus the bounded
-reuse of an already-authorized position to choose a nearby-producer frame for
-that saved area's public map. It owns the permission experience, client-side
-area resolution, boundary data, privacy and failure behavior.
+neutral `/` page to suggest a covered Chisan catalog area, the bounded reuse of
+an already-authorized position to choose a nearby-producer frame for that saved
+area's public map, and an explicitly requested straight-line distance on a
+producer profile. It owns the permission experience, client-side area
+resolution, boundary data, privacy and failure behavior.
 
 It does not govern producer coordinates. `docs/PRODUCER_GEOLOCATION.md` owns the
 sourcing and review of public `lat`/`lon` values for productive units. Producer
@@ -62,8 +63,8 @@ not establish either classification; never infer those labels merely from a
 disjoint component or an interior ring.
 
 Device coordinates are never a source file or source of truth. They are
-transient browser input and are discarded after one routing or map-framing
-decision.
+transient browser input and are discarded after one routing, map-framing or
+producer-distance calculation.
 
 ## Permission and choice experience
 
@@ -104,6 +105,15 @@ catalog coordinates may reach the map. When fewer than 4 producers qualify,
 the normal area-wide view remains unchanged. The lookup never redirects,
 stores a municipality, guesses from producer density or changes which
 producers belong to the requested category.
+
+A producer profile with reviewed coordinates may expose a **Calculate
+distance** control. It must make no location request on load and may call
+`getCurrentPosition()` only after that explicit activation. It uses the same
+normal-accuracy request options as onboarding, calculates the great-circle
+distance entirely in the browser and retains only the resulting kilometres in
+component memory. The result is labelled as approximate and straight-line; it
+must not imply road distance or travel time. A profile without both producer
+coordinates omits the control.
 
 ## Client-side resolution
 
@@ -162,10 +172,10 @@ area result to infer language.
 
 ## Privacy and persistence
 
-Browser geolocation is sensitive. Raw latitude, longitude, accuracy and any
-derived shape intersection must remain in ephemeral client memory for the
-immediate lookup. They must not be sent to Chisan or a reverse-geocoding
-provider and must not appear in:
+Browser geolocation is sensitive. Raw latitude, longitude, accuracy, any
+derived shape intersection and any producer-distance result must remain in
+ephemeral client memory for the immediate interaction. They must not be sent
+to Chisan or a reverse-geocoding provider and must not appear in:
 
 - a URL, query parameter, referrer or navigation state;
 - cookies or local storage;
@@ -173,10 +183,10 @@ provider and must not appear in:
 - Clerk metadata, PostgreSQL or any account-domain record; or
 - support, claim, favorite or producer-change data.
 
-Discard the raw position after success, failure or local selection of the
-bounded public producer set used to frame the map. Persist at most a versioned
-local-storage value containing the derived `{ country, area }` preference and
-the onboarding dismissal state.
+Discard the raw position after success, failure, local selection of the bounded
+public producer set used to frame the map or calculation of a producer
+distance. Persist at most a versioned local-storage value containing the
+derived `{ country, area }` preference and the onboarding dismissal state.
 Revalidate that key against the current catalog and storage version before
 resuming it or allowing a map-framing request. The preference belongs to the
 browser: it is never written to Clerk, PostgreSQL or any account record, and the
@@ -215,5 +225,8 @@ success, denial, timeout, ambiguity, outside-coverage fallback, the later-visit
 resume, the manual entry point that suppresses it, and the profile forget
 control. Area-map checks also cover granted, prompt and denied permission,
 same-area revalidation and a moved visitor whose current area no longer matches.
-Network, storage, analytics and account inspection must confirm that no raw
-coordinate crossed the client boundary.
+Producer-profile checks cover no request on load, explicit activation, a
+locale-aware approximate kilometre result, missing producer coordinates and
+permission, timeout or unavailable failures. Network, storage, analytics and
+account inspection must confirm that no raw coordinate crossed the client
+boundary.
