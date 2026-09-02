@@ -173,3 +173,16 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | Bodegas Orvi | Gijón | `Vino` | The directory states: “Situada en Gijón (Asturias), Bodegas Orvi es una empresas que cuenta con más de 40 años de experiencia en la…” | [Directory](https://www.proveedores.com/proveedores/bodegas-orvi/) |  | Confirm the winery and its current published range. |
 | Bodegas Tino | Gijón | `Vino` | The directory states: “Bodegas Tino es una empresa dedicada a la distribución de bebidas al sector de hostelería” | [Directory](https://www.proveedores.com/proveedores/bodegas-tino/) | <https://www.bodegastino.com/> | Confirm the winery and its current published range. |
 | COTOBELLO | Oviedo | `Vino` | The directory states: “COTOBELLO es la marca eje de un grupo de fabricantes de diversos productos que han realizado una selección de alta…” | [Directory](https://www.proveedores.com/proveedores/cotobello/) | <https://cotobello.webnode.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
+
+## Certamen del Queso Gamonéu — 2026-09-03
+
+- Discovery source: Certamen del Queso Gamonéu en Benia de Onís (<https://quesogamoneu.com>) and Consejo Regulador DOP Gamonéu official registered dairies.
+- Search date: 2026-09-03.
+- Scope: 1 unresolved Level 1 lead in Asturias, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published DOP registries and fair records available on 2026-09-03.
+- Source ceiling: fair records establish registered artisan status and product scope; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería Torió | Cangas de Onís (Labra) | `Lácteos y quesos` — raw milk DOP Gamonéu del Valle cheese | Traditional artisan cheese maker in Labra (Cangas de Onís) crafting smoked raw-milk DOP Gamonéu del Valle; regular registered participant at Benia de Onís. | [DOP Gamonéu](https://quesogamoneu.com) | — | Confirm dedicated dairy workshop address in Labra, herd management and active commercial distribution. |
+
