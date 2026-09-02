@@ -139,3 +139,17 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | Vermouth Perdon | León | `Vermut` | The directory states: “Se encuentra localizada en León la empresa Vermouth Perdón , proveedores de bebidas alcohólicas” | [Directory](https://www.proveedores.com/proveedores/vermouth-perdon/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Losada Vinos de Finca | Cacabelos | `Vino` | The directory states: “En Losada Vinos de Finca , somos una bodega localizada en la Denominación de Origen Bierzo (León), donde elaboramos…” | [Directory](https://www.proveedores.com/proveedores/losada-vinos-de-finca/) |  | Confirm the winery and its current published range. |
 | Terras Gauda | León | `Vino` | The directory states: “Terras Gauda es una compañía especialista en la producción y elaboración de vino” | [Directory](https://www.proveedores.com/proveedores/terras-gauda/) |  | Confirm this is an independently identifiable productive unit and not the row already published in galicia/pontevedra. |
+
+## Feria de la Cecina de Chivo de Vegacervera — 2026-09-03
+
+- Discovery source: Feria de la Cecina de Chivo de Vegacervera (<https://aytovegacervera.es>) and Asociación de Productores de Cecina de Chivo de Vegacervera.
+- Search date: 2026-09-03.
+- Scope: 2 unresolved Level 1 leads in León, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
+- Source ceiling: fair participant registers establish regular artisan presence, category and geographical clue; they do not by themselves prove full catalog admission or autonomous physical workshop.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cárnicas Tavito | Vegacervera | `Carne` — Marca de Garantía Cecina de Chivo de Vegacervera | Artisan curing facility and livestock farm in Vegacervera specializing in oak-wood smoked Cecina de Chivo and cured mountain charcuterie; benchmark exhibitor at the fair. | [Vegacervera](https://aytovegacervera.es) | <https://tavito.es/> | Confirm curing plant and livestock premises in Vegacervera, sanitary register and current direct-sales offer. |
+| Cárnicas Miserias | Vegacervera | `Carne` — traditional Cecina de Chivo curada al humo | Family-run traditional meat curing workshop in Vegacervera crafting artisan goat cecina and cured mountain meats under the local Marca de Garantía. | [Vegacervera](https://aytovegacervera.es) | — | Verify physical workshop address in Vegacervera, sanitary authorization and retail distribution channels. |
+
