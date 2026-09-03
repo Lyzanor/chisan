@@ -28,3 +28,10 @@
 - Municipal markets, food routes and fair rosters are discovery sources and may
   list retailers, hospitality, associations or sales points rather than
   qualifying producers.
+- The RGSEAA sanitary register supports the legal entity, its registered
+  activity class and the industrial address it publishes. It does not establish
+  a public producer identity, a brand, a current own offer, current activity or
+  online sales, and its `localidad` is that address's locality, which may be a
+  pedanía rather than the official municipality. A registration whose only
+  category is storage, packing, distribution or import is not by itself
+  qualifying elaboration.

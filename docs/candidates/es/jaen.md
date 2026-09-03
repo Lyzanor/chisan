@@ -180,3 +180,28 @@
 | S.C.A. Ntra. Sra. Pilar del Andaraje | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina selling picual virgin olive oils | [Council directory](https://www.sierramagina.org/almazaras/) | <https://pilardeandaraje.es/> | Resolve the productive municipality from the cooperative's own site. |
 | S.C.A. San Juan Bautista | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina | [Council directory](https://www.sierramagina.org/almazaras/) |  | Resolve the productive municipality and separate it from the published Puente de Génave cooperative of the same name. |
 | S.C.A. Santa Isabel | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina | [Council directory](https://www.sierramagina.org/almazaras/) |  | Resolve the productive municipality; the council directory publishes no locality. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES SIERRA SEGURA S.L. | El Tamaral | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00457/J | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AVENIDA ANDALUCIA Nº145". |
+| CHOCOLATE Y TRUFA, S.L. | Alcaudete | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01380/J | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "CALLE ALCALDE JUAN VALLEJO Nº74". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SALES MANCHA REAL S.C. | Mancha Real | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00864/J | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "POLIGONO INDUSTRIAL CAMINO ANCHO S/N". |

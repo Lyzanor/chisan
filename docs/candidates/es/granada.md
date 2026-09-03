@@ -175,3 +175,57 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | Bodega Ramón Asensio | Baza | `Vino` | The directory states: “La empresa Bodega Ramón Asensio , localizada en Baza (Granada) cuenta con más de 16 años de experiencia en la…” | [Directory](https://www.proveedores.com/proveedores/bodega-ramon-asensio/) | <http://www.bodegasasensio.es/> | Confirm the winery and its current published range. |
 | Bodegas Jabalcón | Baza | `Vino` | The directory states: “Situada en Baza, Granada está Bodega Jabalcón , dedicada desde 2007 al cultivo de la uva y elaboración de vinos tintos” | [Directory](https://www.proveedores.com/proveedores/bodegas-jabalcon/) |  | Confirm the winery and its current published range. |
 | Valdyr Hidromiel | Baza | `Vino` | The directory states: “Valdyr Hidromiel es una empresa dedicada a ser fabricantes y proveedores de hidromiel” | [Directory](https://www.proveedores.com/proveedores/valdyr-hidromiel/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 6 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES AGUAYO S.L. | Vegas del Genil | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00261/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AGUAYO 2 BELICENA". |
+| CAFES CALI S.L.L. | Churriana de la Vega | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01204/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "ESPAÑA 14 NAVE 3 P.I. SAN CAYETANO". |
+| CAFES SOLYCREMA S.L. | Motril | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00956/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CARRETERA ALMERIA Nº34". |
+| CAFES ZAIDIN S.A. | Peligros | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00658/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE SEVILLA POLG. IND. ASEGRA PARC.16 B". |
+| KUBIK COFFEE COMPANY S.L. | Ogijares | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003722/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE LEON Nº9". |
+| CHOCOLATE GUEYSH, S.L. | Santa Fe | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00902/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "CTRA. MALAGA KM 441 HUERTA ARDILA". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS Y TURRONES LOS VALENCIANOS S.L. | Baza | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00083/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ ROMA, NAVE 10-11 (POL. IND. EL BAICO)". |
+| PASTELERIA HELADERIA ALICIA S.L.L. | Padul | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00176/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "AVDA. ANDALUCIA 135". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| C.B. ALPU-MIEL | Lanjaron | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03030/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CORTIJUELOS BAJOS 6 2º". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SALINAS DE LA MALAHA S.L. | La Malaha | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001937/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CALLE SALINAS (DE LAS) S/N". |

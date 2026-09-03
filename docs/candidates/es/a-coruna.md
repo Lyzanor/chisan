@@ -162,3 +162,57 @@ These directory records remain unresolved and are not published catalog rows.
 | Plantamus | Ordes | `Setas` | The directory states: “Plantamus , ubicada en A Coruña, es una empresa productora de arbustos y árboles ornamentales y frutales” | [Directory](https://www.proveedores.com/proveedores/plantamus/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Cannaliza | A Coruña | `Té e infusiones` | The directory states: “Cannaliza es una empresa con sede en A Coruña que se especializa en la producción y comercialización de productos…” | [Directory](https://www.proveedores.com/proveedores/cannaliza/) |  | Confirm the productive workshop and that it is currently active. |
 | Exclusivas Ribadavia | Culleredo | `Vino` | The directory states: “Somos referentes en el sector de los proveedores de vinos y licores y contamos con una amplia variedad de bodegas y…” | [Directory](https://www.proveedores.com/proveedores/exclusivas-ribadavia/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 5 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ASTRO CAFE SL | A Coruña | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003525/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "R/ GALILEO GALILEI, 39". |
+| CAFE ARUBA INTERGAL SL | Arteixo | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002783/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AVENIDA MANUEL PLATAS VARELA, 195 A - VILLARODIS". |
+| CAFES SABURIDO, S.L. | Teo | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00950/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "POLIG. INDUST. DE MONTOUTO, NAVE 5". |
+| LA OLIMPICA COFFEE SHOP S.L. | A Coruña | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003175/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "C/ ALFREDO VICENTI, 39". |
+| CHOCOLATES PACOA SL | A Coruña | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002999/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "R/ CARDENAL CISNEROS, 55". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| RAFA GELATO SL | Cambre | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.003128/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "R/ ZEPPELIN, S/N, POL. IND. ESPIRITU SANTO". |
+| REGAL HELADOS ARTESANOS SL | Culleredo | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002861/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "PARQUE EMPRESARIAL ALVEDRO, H13, NAVE A". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| APICOLA DEL NOROESTE SL | Oza-cesuras | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004454/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "LUGAR AS TABLAS, 74". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ESPECIAS E HIERBAS CELTIGOS SLU | Betanzos | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001946/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "REAL CAMINO DE INFESTA 114". |
+| LOXISTICA GALEGA DE VINAGRES GOYVAL, S.L. | Santa Comba | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01323/C | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CALLE CAMIÑO VELLO (DO)". |

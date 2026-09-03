@@ -280,3 +280,40 @@
 |---|---|---|---|---|---|---|
 | Castañas Sierra de las Nieves | Yunquera | `Fruta y verdura` / `Otros` — fresh and roasted mountain chestnuts | Local growers cooperative and collective in Yunquera harvesting native sweet chestnuts in the Sierra de las Nieves National Park; central producer behind the annual fiesta. | [Yunquera](https://yunquera.es) | — | Confirm agricultural cooperative processing facility in Yunquera, member orchards and fresh seasonal distribution. |
 
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| BUNA CAFE ESPECIALIDAD SL | Torremolinos | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003924/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE MERCEDES DE LAS Nº21". |
+| IDEAS DEL CAFE 2018 SL | Malaga | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003819/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE TOMAS HEREDIA Nº3". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SANTILLI´S SOFT ICE CREAM S.L. | Manilva | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02318/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "CALLE ANTEQUERA S/N". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| MIEL SIERRA BERMEJA S.L. | Estepona | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03129/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "LUGAR DEL PADRON Nº1 POLIGONO 21". |

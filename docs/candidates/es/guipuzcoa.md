@@ -106,3 +106,28 @@
 Incidental from the same source, for a later level 3 pass rather than admission: the council
 registers `Begiristain` in Ikaztegieta, `Lizeaga` in Astigarraga and `Laneko` in Gizaburuaga,
 while the published rows carry Legorreta, Donostia and Ispaster.
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES LOINAZ SL | Lazkao | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00610/SS | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "Zubierreka (Polígono/Poligonoa) , Num: 53". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| OBRADOR J. ARGUIÑANO, SL | Zarautz | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004154/SS | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "Urdaneta (Camino/Bidea) , Num: 5, 3.3". |
+| USURBILGO GOROSTITXO EZTIOLA ELKARTEA | Usurbil | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01972/SS | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "Gernika (Paseo/Ibilbidea) , Num: 13". |

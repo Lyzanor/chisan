@@ -166,3 +166,31 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Valles del Esla — Miguel Vergara, S.L. | León | `Carne` | Registered company of the IGP Cecina de León | [Council register](https://www.cecinadeleon.org/empresas/) |  | Resolve the productive municipality and the durable public name between Valles del Esla and Miguel Vergara. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES TC 3 S.A.L. | Fuentes Nuevas | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01581/LE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "POLIGONO INDUSTRIAL CANTALOBOS NAVE 16". |
+| SAN AGUSTIN TOSTADORES DE CAFE, S.L. | Villaobispo de las Regueras | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003163/LE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE VAGO 15". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 4 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CARAMELOS SANTOS, S. A. | Onzonilla | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.00191/LE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "POLIGONO INDUSTRIAL LEON M 72". |
+| INNOVACIONES DULCES, S.L. | Leon | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004917/LE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "CARRETERA VILECHA TRAV 33, EDIFICIO MILAN, NAVE 12-2". |
+| LA CAZURRA EXPLOTACION AGRARIA APICOLA DE TITULARIDAD COMPARTIDA | Llanos de Alba | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004794/LE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "C/ BERNESGA Nº 30". |
+| MIEL YORDAS S.L. | Riaño | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.00403/LE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CALLE RESEJO 1, BJ.". |

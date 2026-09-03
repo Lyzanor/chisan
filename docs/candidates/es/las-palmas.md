@@ -76,3 +76,42 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 | Buildremas Gourmet | Las Palmas de Gran Canaria | `Vino` | The directory states: “Buildremas Gourmet es una empresa con el deseo de instruir al público con la deliciosa costumbre del vino y los…” | [Directory](https://www.proveedores.com/proveedores/buildremas-gourmet/) |  | Confirm the winery and its current published range. |
 | La Cava de Piñero | Agüimes | `Vino` | The directory states: “Pero la clave está en los elementos únicos que ofrecemos: por un lado, una cuidadosa curación de producto que combina…” | [Directory](https://www.proveedores.com/proveedores/la-cava-de-pinero/) | <https://lacavadepinero.es/> | Confirm the winery and its current published range. |
 | Marvinfuerte | San Bartolomé de Tirajana | `Vino` | The directory states: “En Marvinfuerte somos proveedores de vino tinto , vino blanco y vino espumoso de calidad directamente de productores…” | [Directory](https://www.proveedores.com/proveedores/marvinfuerte/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFE ORTEGA, S.A. | Las Palmas de Gran Canaria | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00362/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "C/ AGAETE, 23 - URB. IND. LOMO BLANCO". |
+| Café Lupita, S.L. | Santa Maria de Guia de Gran Canaria | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002355/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "Finca El Parral s/n El Calvario La Atalaya de Guía". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Chelado Maestros Heladeros, S.L. | San Bartolome de Tirajana | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002963/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "Cartago 9 El Tablero". |
+| HELADOS BAKOKA, S.L. | Agüimes | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.01449/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ HERRAJE, S/N. MANZANA 1, NAVE 2. POL. IND. ARINAGA". |
+| Tucano Helado Artesanal, S.L. | San Bartolome | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02373/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/Mayor, 51 Residencial Playa Honda - Local 165 (Puerta Trasera)". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| APICOLA CANARIA, S.L. | Valsequillo de Gran Canaria | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02831/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "C/SALVIA, 18". |

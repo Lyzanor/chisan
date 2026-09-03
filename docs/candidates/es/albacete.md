@@ -102,3 +102,53 @@
 | Azafrán Sanfiro | Albacete | `Condimentos` | The directory states: “Fabricantes de hierbas y especias en Castilla-La Mancha” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm the productive workshop and that it is currently active. |
 | Flor de Esgueva | Albacete | `Lácteos y quesos` | The directory states: “Elaboración de queso curado con proyección nacional” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
 | Cortijo Los Almeces | Albacete | `Aceite` | The directory states: “Comercializa aceite de oliva virgen extra entre otros productos” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm an own oil mill rather than bottling bought oil. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| YUEDARI SPECIALTY COFFEE SOCIEDAD LIMITADA | Tobarra | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003757/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AVENIDA REINA SOFIA 21". |
+| SPANISH CHOCOLATE, S.L. | Albacete | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002366/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "AVDA. DE LOS MOLINOS, 86 A-B, P.I. LOS MOLINOS". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADERIA GRAN VIA SOCIEDAD LIMITADA | Hellin | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002945/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ NUESTRA SEÑORA DE LOURDES Nº: 24". |
+| HELADEROS ALBACETE SOCIEDAD LIMITADA | Albacete | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.01951/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ C, Nº 61 NAVE 2 (P. I. CAMPOLLANO)". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| FRUTAS Y TURRONES, S.A. | Tobarra | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.00736/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "AVDA. DE LA MANCHA, S/N". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CORPORACION DE OPERADORES DE AZAFRAN ESPAÑOL, S.L. | Petrola | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01474/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "POLIGONO 3, PARCELA 174". |

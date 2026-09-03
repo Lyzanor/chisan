@@ -98,3 +98,44 @@
 | Marineto Agrícola | Almería | `Fruta y verdura` | The directory states: “Empresa de nueva creación formada por profesionales con 40 años de oficio” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/almeria) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Polvillo Almería | Almería | `Pan y cereal` | The directory states: “Panadería y pastelería con producto principal propio” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/almeria) |  | Confirm the productive workshop and that it is currently active. |
 | Gusta-Té | Almería | `Té e infusiones` | The directory states: “Envasado y distribución de té e infusiones, más sets de regalo” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/almeria) |  | Confirm roasting, drying, fermenting or infusing on the unit’s own premises rather than blending and packing leaf bought ready-processed. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 4 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFE LOS GONZALEZ S.L. | Macael | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01457/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "POL. IND. RUBIRA SOLA, PARC. V-2". |
+| CAFE MENA S.L.L. | La Mojonera | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01727/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "POLIGONO IND. SAN NICOLAS Nº18 C/ 29 DE JUNIO". |
+| COMPAÑIA INTERNACIONAL DE CAFES S.A. | La Cañada de San Urbano | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00442/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CTRA. EL MAMI KM. A 300". |
+| PRODUCTOS MAR DE CAFE SL | La Cañada de San Urbano | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002502/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE HAZA TABLEADA Nº57". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| GELATO E FANTASIA S.L. | Almeria | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02446/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "CALLE RUEDA LOPEZ Nº16". |
+| HELADOS ARTESANALES MILANO SLU | Benahadux | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002613/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POLIGONO INDUSTRIAL SAN SALVADOR Nº11 PARCELA P1". |
+| HELADOS BARON Y UROZ S.L. | Almeria | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002580/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "BRONCE 102 P.I. SECTOR 2O". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| MIELES SIERRA DE GADOR SL | El Ejido | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004724/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CALLE MONTENEGRO Nº13". |

@@ -157,3 +157,39 @@
 | Cooperativa de Vallbona de les Monges | Vallbona de les Monges | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; Vallbona de les Monges has no published row yet. |
 | Cuadrat Valley — Finca Agrícola | Les Garrigues (Lleida) | `Aceite` | Registered entity of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Resolve the productive municipality; the council register publishes no locality for this entity. |
 | Olis Bellaguarda | Bellaguarda | `Aceite` | Registered mill of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the productive unit in Bellaguarda and an own offer attributable through sale. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES ROMA SCP | Balaguer | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00837/L | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CR Comte D'Urgell 16". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| GELATS PYRENEUM SL | Bellver de Cerdanya | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02476/L | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "PL del Portal, 3". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| BADIA VINAGRES SL | Mollerussa | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00384/L | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CR Palau, 9". |

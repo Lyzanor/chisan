@@ -136,3 +136,28 @@
 | Valbuena Merlot | Valbuena de Duero | `Vino` | The directory states: “Producidos en pequeñas bodegas exclusivas, que hacen los mejores y más cuidados vinos, con la producción de sus…” | [Directory](https://www.proveedores.com/proveedores/valbuena-merlot/) |  | Confirm the winery and its current published range. |
 | Viñedos Carramata | Valladolid | `Vino` | The directory states: “En viñedos Carramata somos elaboradores y proveedores de vino de la variedad Verdejo con D.O. Rueda” | [Directory](https://www.proveedores.com/proveedores/vinedos-carramata/) | <https://www.carramata.es/> | Confirm the winery and its current published range. |
 | Vino de Ángeles | Valladolid | `Vino` | The directory states: “Vino de Ángeles es una empresa de Valladolid que se especializa en la distribución de vinos y licores” | [Directory](https://www.proveedores.com/proveedores/vino-de-angeles/) | <https://vinodeangeles.es/es/> | Confirm the winery and its current published range. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS BAONZA, S.L. | Tordesillas | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00468/VA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "CALLE VIÑA 5". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| H.M. GOLOSINAS, S. L. | Valladolid | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03449/VA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "CALLE VAZQUEZ DE MENCHACA Nº 1". |
+| APICOLA DE TIEDRA, S.L. | Tiedra | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004577/VA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CTRA. VP-6604 A MOTA DEL MARQUES". |

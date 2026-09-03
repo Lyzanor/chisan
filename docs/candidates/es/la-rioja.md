@@ -165,3 +165,27 @@ Verify current first-party channels and durable identities before admission. Eig
 | Solorioja.com | Logroño | `Vino` | The directory states: “Lo invitamos a conocer más de nuestra variedad de vinos ingresando a nuestra página web o contactándonos…” | [Directory](https://www.proveedores.com/proveedores/solorioja-com/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Viñedos de Alfaro | Aldeanueva de Ebro | `Vino` | The directory states: “Somos productores y distribuidores de vino blanco, vino rosado y vino tinto” | [Directory](https://www.proveedores.com/proveedores/vinedos-de-alfaro/) |  | Confirm the winery and its current published range. |
 | Vintae | Logroño | `Vino` | The directory states: “En Vintae , somos una empresa afincada en La Rioja y tras varios años de presencia en el sector, somos productores y…” | [Directory](https://www.proveedores.com/proveedores/vintae/) | <https://vintae.com/> | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| UCC COFFEE SPAIN, S.L.U. | Logroño | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00587/LO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "POL CANTABRIA I AVDA. DE MENDAVIA, 7". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| VINAGRERIAS RIOJANAS S.A.(CONDIMENTOS) | Logroño | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00543/LO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "AVENIDA MENDAVIA 8". |

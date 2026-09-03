@@ -153,3 +153,42 @@ Review each linked producer domain, then de-duplicate brands and legal entities 
 | Pago Casa del Blanco | Manzanares | `Vino` | The directory states: “Pago Casa del Blanco es una bodega familiar ubicada en Manzanares (Ciudad Real) que se especializa en la producción y…” | [Directory](https://www.proveedores.com/proveedores/pago-casa-del-blanco/) | <https://pagocasadelblanco.es/> | Confirm the winery and its current published range. |
 | Vega Demara | Ciudad Real | `Vino` | The directory states: “Somos productores y distribuidores de vino blanco, vino tinto y vino rosado” | [Directory](https://www.proveedores.com/proveedores/vega-demara/) | <https://vegademara.com/> | Confirm the winery and its current published range. |
 | Vinícola De Castilla | Manzanares | `Vino` | The directory states: “Vinícola De Castilla es una bodega fundada en 1976 en Manzanares (Ciudad Real)” | [Directory](https://www.proveedores.com/proveedores/vinicola-de-castilla/) | <https://vinicoladecastilla.com/> | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFE ARRIERO, S.L. | Valdepeñas | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00884/CR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "BATANEROS, 116". |
+| CAFES CANDIL, S.L. | Fernan Caballero | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01014/CR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "PROLONGACION REAL, S/N". |
+| QUIERO COFFEE, SOCIEDAD LIMITADA | Alcazar de San Juan | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003758/CR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AV CONSTITUCION Nº: 35". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS BERNABEU LOS VALENCIANOS, C.B. | Valdepeñas | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00303/CR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "SEIS DE JUNIO, 62". |
+| PASTELERIA HELADERIA LA ROSA, S.L | Alcazar de San Juan | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.01621/CR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "EMILIO CASTELAR, 43". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| PRODUCTOS LA ROSA DEL AZAFRAN, C.B. | Membrilla | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00605/CR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CTRA. MANZANARES-LA SOLANA, 23". |

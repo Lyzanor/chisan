@@ -93,3 +93,15 @@ Verify current first-party activity, own market identities and productive respon
 | Patatas Vila | Xinzo de Limia | `Fruta y verdura` | The directory states: “Pequeña empresa familiar de patata gallega” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/ourense) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Camemorcol Corp | Celanova | `Otros` | The directory states: “Se declara fabricante y mayorista de azúcar” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/ourense) |  | Confirm the productive workshop and that it is currently active. |
 | Bodega Cooperativa Virgen de las Viñas | Ourense | `Vino` | The directory states: “Elaboración de vino desde 1964” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/ourense) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| LA CENTRAL HELADERA ARTESANA DE OURENSE SL | San Cibrao das Viñas | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002703/OU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POL. IND. C/5 C-15 (2ª FASE SECT. C)". |

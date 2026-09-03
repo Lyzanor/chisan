@@ -164,3 +164,43 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Copa a Copa | Conil de la Frontera | `Vino` | The directory states: “Trabajamos con las principales bodegas y ofrecemos un amplio surtido de bebidas” | [Directory](https://www.proveedores.com/proveedores/copa-a-copa/) |  | Confirm the winery and its current published range. |
 | M. Gil Luque | Jerez de la Frontera | `Vino` | The directory states: “Fue inaugurada en el año 1908 la empresa M. Gil Luque , localizada en la región de Jerez de la Frontera (Cádiz) y…” | [Directory](https://www.proveedores.com/proveedores/m-gil-luque/) | <https://www.laguita.com/> | Confirm the winery and its current published range. |
 | Tio Pepe | Jerez de la Frontera | `Vino` | The directory states: “La empresa Tío Pepe se encuentra localizada en la región de Jerez de la Frontera (Cádiz) y se ha especializado en la…” | [Directory](https://www.proveedores.com/proveedores/tio-pepe/) | <https://www.tiopepe.com/es-es/validate> | Confirm the winery and its current published range. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADERIA EL MASTREN 2007 S.L. | Vejer de la Frontera | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002674/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "CALLE JUAN RELINQUE Nº4". |
+| IL GELATO DI FIORENZA, S.L. | Algeciras | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.003165/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POLIGONO LAS PILAS Nº24". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| S.COOP. ANDALUZA CAMPO-MUSEO DE LA MIEL RANCHO CORTESANO | Cuartillos | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02582/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CARRETERA DE CORTES DESVIO EL TORNO KM 2". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 4 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CRIADORES Y EXPORTADORES DE VINAGRE S.L. | El Puerto de Santa Maria | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01445/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "C/ BENJAMIN FRANKLIN (POL. IND. LAS SALINAS DE PONIENTE)". |
+| MARITIMA DE SALES S.L. | El Puerto de Santa Maria | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01225/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "MARGEN IZDA. RIO GUADALETE-SALINAS SANTA MARIA". |
+| VINAGRERIA LA ANDALUZA S.L. | Jerez de la Frontera | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01182/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "MARQUETERIA 7 PQ. EMPRES. OESTE". |
+| VINAGRES MICHELANGELO S.L. | Cuartillos | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.002503/CA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CARRETERA 2003 KM 11.5". |

@@ -201,3 +201,45 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | Juan Díaz Herrero | Tielve, Cabrales | `Lácteos y quesos` | Certified Cabrales elaborator, council code 0109 | [Council register](https://www.quesocabrales.org/elaboradores-de-queso) |  | Separate it from the published Ángel Díaz Herrero row before treating it as a new productive unit. |
 | Pablo Ruíz Ibáñez | Asiego, Cabrales | `Lácteos y quesos` | Certified Cabrales elaborator, council code 0102 | [Council register](https://www.quesocabrales.org/elaboradores-de-queso) |  | Separate it from the published Quesería Asiegu and La Pandiella rows in the same locality. |
 | Rosa Bada Herrero | Poo, Cabrales | `Lácteos y quesos` | Certified Cabrales elaborator, council code 0005 | [Council register](https://www.quesocabrales.org/elaboradores-de-queso) |  | Separate it from the published Francisco Bada and Juan José Bada Herrero rows before treating it as a new unit. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFE EL CHICARO VENEZUELA SL | Grandas de Salime | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003465/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AVENIDA DEL COUSO Nº S/N". |
+| CHOCOLATES DEL NORTE SA | Meres | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00014/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "CARRETERA DE TIÑANA KM 1". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS LA IBENSE ASTUR SL | Gijon / Xixon | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00179/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "CALLE EMILIO TUYA Nº 54". |
+| HELADOS LA REAL SL | Almuña | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002698/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "BARRIO LA ESPINERA". |
+| HELADOS VALENCIANOS SL | Aviles | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00389/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "RIVERO". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 4 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ARTICULOS DE CONFITERIA SA | Viella | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02909/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "POLIGONO INDUSTRIAL DE NAON CARRETERA DE VIELLA, S/N, NAVE 11". |
+| ASTURIAS APICOLA, SL | Pola de Allande | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03359/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "LUGAR FINCA LA ESPINA Nº S/N". |
+| ASTURIAS APÍCOLA, S.L. | Cangas del Narcea | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.003916/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "POLÍGONO INDUSTRIAL DE TEBONGO, Nº15". |
+| BOAL APICOLA SL | Llaviada | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01887/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "LLAVIADA". |

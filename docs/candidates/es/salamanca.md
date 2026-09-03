@@ -166,3 +166,15 @@
 | Mario y Enrique González, S.A. | Frades de la Sierra | `Carne` | Certified company of the DOP Guijuelo register for Iberian ham and shoulder | [Council register](https://jamondoguijuelo.com/los-socios) | <https://www.mariogonzalez-me.es> | Confirm the productive municipality; Frades de la Sierra has no published row yet. |
 | Franrodel, S.L. | Campillo de Salvatierra | `Carne` | Certified company of the DOP Guijuelo register for Iberian ham and shoulder | [Council register](https://jamondoguijuelo.com/los-socios) | <https://www.franrodel.es> | Confirm the productive municipality; Campillo de Salvatierra has no published row yet. |
 | Productos Ibéricos Gómez Robles, S.L. (Patabrava) | Guijuelo | `Carne` | Certified company of the DOP Guijuelo register for Iberian ham and shoulder | [Council register](https://jamondoguijuelo.com/los-socios) | <https://www.patabrava.es> | Choose the durable public name between the company and the Patabrava brand. |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| APICULTURA GARCIA SANCHON S.L. | Villasdardo | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.00626/SA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CALLE SALAS POMBO 9". |

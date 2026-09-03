@@ -49,3 +49,27 @@
 | Legumbres La Manchega | Villarta | `Legumbres` | The directory states: “Empresa familiar dedicada al mercado de las legumbres” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive workshop and that it is currently active. |
 | Agrozonher | Zarza de Tajo | `Frutos secos` | The directory states: “Suministra pistacho natural, bio y ecológico en varios formatos” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Comercial Azucarera Almaguer | Tarancón | `Otros` | The directory states: “Se declara fabricante de azúcar con 25 años en el sector” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive workshop and that it is currently active. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS ROSEMAR, S.L. | Casas de Fernando Alonso | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02143/CU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ PASEO DE LA PAZ, NÚM. 1". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| LAS SALINAS BELINCHON, S.L. | Belinchon | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00357/CU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CAMINO LAS SALINAS, KM. 4,1". |

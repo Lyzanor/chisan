@@ -94,3 +94,41 @@ The other 54 members reconciled: 51 matched published Huesca rows, "Miel del Pir
 | Quesería Benabarre | Benabarre | `Lácteos y quesos` — Ribagorza artisan goat cheese | Family goat holding and farmstead dairy in Benabarre (La Ribagorza) crafting raw and pasteurized goat milk cheeses; regular exhibitor at Biescas. | [Feria de Biescas](https://www.biescas.es) | <https://quesosbenabarre.es/> | Verify on-farm dairy holding in Benabarre, flock size and active commercial lineup. |
 | Quesería Casa Mayor | Berdún | `Lácteos y quesos` — Jacetania artisan sheep cheese | Craft sheep cheese workshop located in Berdún (Canal de Berdún, Jacetania); regular participant in Pyrenean cheese fairs. | [Feria de Biescas](https://www.biescas.es) | — | Confirm dedicated dairy premises in Berdún, sanitary registration and current cheese range. |
 
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CHOCOLATES FRAIM, S.L. | Benabarre | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01678/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "Calle CTRA. NAL. 230, KM 68". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| PASTELERIA F PUYET S.L | Graus | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.005045/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. A second establishment of the same company appears in this area, so confirm they are distinct productive units. Resolve the official municipality from the registered address "Calle ANGEL SAMBLANCAT, 34 LOCAL - BAJO DERECHA". |
+| PASTELERIA F PUYET S.L | Graus | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01375/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. A second establishment of the same company appears in this area, so confirm they are distinct productive units. Resolve the official municipality from the registered address "Calle ANGEL SAMBLANCAT, 40". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ASOCIACION DE AZAFRAN DE LA RIBAGORZA | Benabarre | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001613/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CALLE VICENTE PINIÉS 27". |
+| SALES MONZON S.A. | Castejon del Puente | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00668/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CMO. DEL VEDAO S/N". |

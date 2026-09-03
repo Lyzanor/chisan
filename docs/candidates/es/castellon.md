@@ -176,3 +176,15 @@ Retained at the backlog cap after directory entry 26 of 185. Resume the same sou
 | Trufasa | L'Alcora | `Setas` | The directory states: “Cultivamos el diamante negro de la gastronomía, apreciada por su potente sabor y aroma, y la ponemos a su disposición” | [Directory](https://www.proveedores.com/proveedores/trufasa/) | <https://trufasa.es/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Bodegas Besalduch Valls | Sant Mateu | `Vino` | The directory states: “Bodegas Besalduch Valls es el emprendimiento del matrimonio Roser Valls Vidal y Joseph Mª Besalduch i Claràcon, con…” | [Directory](https://www.proveedores.com/proveedores/bodegas-besalduch-valls/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Bodegas Valdelomar | Castellón de la Plana/Castelló de la Plana | `Vino` | The directory states: “Desde 1875, Bodegas Valdelomar se ha especializado en ser proveedores de vino” | [Directory](https://www.proveedores.com/proveedores/bodegas-valdelomar/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS COSTA DORADA, S.L. | Benicarlo | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00532/CS | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "Ptda. POVET Num. 61". |

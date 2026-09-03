@@ -70,3 +70,15 @@ Plausible lead; admission not assessed. Confirm the exact productive-unit link f
 | Valtoñar | Anguix | `Vino` | The directory states: “Nos encargamos de la elaboración y comercialización de vino tinto en diferentes modalidades: crianza, reserva, joven…” | [Directory](https://www.proveedores.com/proveedores/valtonar/) | <http://www.valtonar.com/> | Confirm the winery and its current published range. |
 | Viña Aguilera | Aranda de Duero | `Vino` | The directory states: “Con sede en Aranda de Duero (Burgos), Viña Aguilera es una pequeña bodega familiar con viñedos propios con los que…” | [Directory](https://www.proveedores.com/proveedores/vina-aguilera/) |  | Confirm the winery and its current published range. |
 | Vinos Peningles | Quintana del Pidio | `Vino` | The directory states: “Somos viticultores-elaboradores de la Ribera del Duero y ofrecemos nuestro vino de producción muy limitada” | [Directory](https://www.proveedores.com/proveedores/vinos-peningles/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SERVICIOS APICOLAS MERINDADES NORTES SOCIEDAD COOPERATIVA | Quisicedo | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02820/BU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "BARRIO DEL LIVIO". |

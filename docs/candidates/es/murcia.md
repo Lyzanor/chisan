@@ -359,3 +359,58 @@ Prioritize Bodegas Antonio Candela, which already has a current producer-owned s
 | Rincón del Vino | Totana | `Vino` | The directory states: “En Totana (Murcia) se encuentra localizada la empresa Rincón del Vino , especializada en la comercialización de…” | [Directory](https://www.proveedores.com/proveedores/rincon-del-vino/) | <https://elrincondelvino.com/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Viñas de la Casa del Rico | Jumilla | `Vino` | The directory states: “Viñas de la Casa del Rico es una empresa localizada en Jumilla (Murcia) dedicada a la elaboración y comercialización…” | [Directory](https://www.proveedores.com/proveedores/vinas-de-la-casa-del-rico/) |  | Confirm the winery and its current published range. |
 | Viñedos Casa de las Especias | Yecla | `Vino` | The directory states: “Con sede en Yecla (Murcia), Viñedos Casa de las Especias es una bodega ecológica dedicada a la producción de vinos…” | [Directory](https://www.proveedores.com/proveedores/vinedos-casa-de-las-especias/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 4 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| COFFEE MARKER, S.L.U. | Torreciega | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003719/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AVENIDA BRUSELAS, 144 - POLIGONO INDUSTRIAL CABEZO BEAZA (HONDÓN)". |
+| GREMIO COFFEE, S.L. | Cartagena | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01395/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AVENIDA LUXEMBURGO, PARC G Nº9, NAVE 13 -P.I. CABEZO BEAZA". |
+| BOMBONES EL MAESTRO | Los Alcazares | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01808/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "C/ MADRESELVA Nº10". |
+| MURCIANA DE HERBORISTERIA, S.A. | Cobatillas | `Té e infusiones` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01235/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site drying, roasting, fermenting or infusing rather than blending and packing leaf bought ready-processed. Resolve the official municipality from the registered address "C/ MAR MEDITERRANEO, 6". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADERIA ANTARTIDA | Cieza | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02047/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "CALLEJON DE LOS FRAILES 15 CIEZA, MURCIA". |
+| HELADERIA BUSQUETS | Rincon de San Gines | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02117/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "MAYOR 45 LOS BELONES RINCON DE SAN GINES, CARTAGENAMURCIA". |
+| HELADOS CASEROS, S.L. | Aguilas | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002511/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "AVENIDA JOSE JIMENEZ RUANO, S/N, CALABARDINA". |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| DULCEPLUS GOLOSINAS, S.A. | Abanilla | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03468/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "CALLE K, NAVES 3,4,5,8 Y 9 -POL. IND. EL SEMOLILLA-". |
+| JARCA TURRONES Y DULCES, S.L. | Santa Cruz | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.00437/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "INDUSTRIA 1 SANTA CRUZ, MURCIA". |
+| TURRONES BLANCO, S.L. | Lorca | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01790/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "C/ EMBALSE DEL CENAJO 4 POL. IND. LA HOYA". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| LORD SPICES GROUP, S.L. | Molina de Segura | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001846/MU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "C/ YECLA, 14 -POL. IND. LA POLVORISTA-". |

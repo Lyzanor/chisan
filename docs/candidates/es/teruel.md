@@ -108,3 +108,15 @@ row spells the municipality `Villarluego`.
 | Sierra de Mora (Moraviejo) | Mora de Rubielos | `Carne` — DOP Jamón de Teruel dry-cured ham | Traditional family curing facility in Mora de Rubielos (Sierra de Gúdar); Bronze Medal winner at the 2025 Concurso de Calidad del Jamón de Teruel. | [Feria del Jamón](https://jamondeteruel.com) | <https://sierrademora.com/> | Confirm natural curing cellar address in Mora de Rubielos and continuous commercial distribution. |
 | Jamones Castelfrío (Jamones Perfecto) | Cedrillas | `Carne` — DOP Jamón de Teruel natural cured ham | Natural curing facility located at 1,364 meters altitude in Cedrillas; Silver Medal winner at the 2024 Concurso de Calidad del Jamón de Teruel. | [Feria del Jamón](https://jamondeteruel.com) | <https://castelfrio.com/> | Verify curing facilities in Cedrillas, altitude drying regime and current bottled/sliced lineup. |
 | Trufas La Valbona | Valbona / Sarrión | `Setas` — fresh black winter truffle (*Tuber melanosporum*) | Family truffle-growing enterprise based in Valbona and Sarrión (Gúdar-Javalambre) harvesting with trained dogs; regular exhibitor at FITRUF Sarrión. | [FITRUF](https://sarrion.es) | <https://trufaslavalbona.com/> | Confirm agricultural plantation holdings in Valbona, cleaning/shipping workshop and fresh season offer. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS ZIART SL | Vinaceite | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.01975/TE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "Calle AVDA. CONSTITUCION, 23 BAJO". |

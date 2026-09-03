@@ -108,3 +108,28 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 | Pulpymar | Ayamonte | `Pescado` | The directory states: “Pulpymar es una empresa española dedicada a la fabricación de pulpo cocido pasteurizado envasado al vacío y…” | [Directory](https://www.proveedores.com/proveedores/pulpymar/) |  | Confirm the productive workshop and that it is currently active. |
 | Bodegas Andrade / Botellitas de vino para bodas | Huelva | `Vino` | The directory states: “Ubicada en Huelva, Bodegas Andrade es una empresa especializada en la elaboración de vinos y vinagres con…” | [Directory](https://www.proveedores.com/proveedores/bodegas-andrade-botellitas-de-vino-para-bodas/) | <https://bodegasandrade.es/> | Confirm this is an independently identifiable productive unit and not the row already published. |
 | Vinos Juliana de la Rosa | Huelva | `Vino` | The directory states: “Llevamos desde el año 2006 produciendo uvas de gran calidad en Villa del Prado, que son destinadas a la elaboración…” | [Directory](https://www.proveedores.com/proveedores/vinos-juliana-de-la-rosa/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADOS ARTESANOS MAZAGON S.L. | Mazagon | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02243/H | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POL. IND. LOS PINOS, NAVES 57-58". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SALINAS DEL ODIEL S.L. | Huelva | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001641/H | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "DIQUE JUAN CARLOS I S/N - ISLA BACUTA". |
+| VINAGRES CAMERO MILLAN S.L. | La Palma del Condado | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01074/H | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CARRETERA CIRCUNVALACION NAVE 1". |

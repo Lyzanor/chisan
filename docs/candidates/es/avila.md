@@ -55,3 +55,15 @@ Target CSV: `data/csv/es/castilla-y-leon/avila.csv`
 | Hidromiel Decuria | Madrigal de las Altas Torres | `Destilados y licores` — artisan mead | Craft mead producer based in Madrigal de las Altas Torres; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.hidromieldecuria.es> | Confirm dedicated fermentation cellar in Madrigal de las Altas Torres and bottled lineup. |
 
 
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| COOPERATIVA APICOLA EL TOMILLAR | Navaluenga | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01228/AV | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CTRA. DE MADRID 72". |

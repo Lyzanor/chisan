@@ -103,3 +103,29 @@ Review the linked producer channel and productive responsibility before admissio
 | Pescadería Salgado | Cáceres | `Pescado` | The directory states: “En Pescadería Salgado ofrecemos productos de máxima calidad y frescura, somos proveedores de pescado congelado …” | [Directory](https://www.proveedores.com/proveedores/pescaderia-salgado/) | <https://www.pescaderiasalgado.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Tencas de Galilea | Cáceres | `Pescado` | The directory states: “Tencas de Galilea es una empresa familiar dedicada a la producción de Tenca (tinca tinca) en todas sus fases, desde…” | [Directory](https://www.proveedores.com/proveedores/tencas-de-galilea/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Bodega Los Chozones | Montehermoso | `Vino` | The directory states: “Ubicada en Montehermoso (Cáceres) y fundada hace más de 25 años, Bodegas Los Chozones es una bodega que se dedica a…” | [Directory](https://www.proveedores.com/proveedores/bodega-los-chozones/) |  | Confirm the winery and its current published range. |
+
+## RGSEAA honey and confectionery elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| APICOLA VILLUERQUINA | Cañamero | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.00474/CC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "POL. IND. LA COLADA S/N". |
+| FOMENTO APICOLA S.L. | Alia | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01026/CC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CTRA. DIRECCION VILLA-ZIZI PANTANO CIJARA". |
+
+## RGSEAA condiment and spice elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CONDIMENTOS SOL Y MAR S.L.U. | Coria | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00850/CC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CERVANTES 40". |
+| ESPECIAS DEL SOL S.L.L. | Hervas | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01220/CC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "POL IND LAS CAÑADAS CALLE CINCO 9-12 10740". |

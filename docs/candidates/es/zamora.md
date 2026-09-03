@@ -93,3 +93,16 @@
 | Cardiza | Morales del Vino | `Carne` — cured meats and charcuterie | Meat elaboration workshop (Cárnicas Díaz) in Morales del Vino; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.carnicasdiaz.com/> | Verify transformation and curing facility in Morales del Vino versus pure meat distribution. |
 | Oxen Durii | Sobradillo de Palomares | `Carne` — extensive organic ox meat | Free-range ox breeding holding in Sobradillo de Palomares (Sayago); confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <http://www.oxendurii.com> | Verify extensive livestock farm in Sobradillo de Palomares and packaged meat direct offer. |
 
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES Y SOLUBLES LA FLOR DE AMERICA, S. L. | Zamora | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00559/ZA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE JOSE REGOJO 52". |
+| HIERBAS DEL TERA, S. COOP. | Quiruelas de Vidriales | `Té e infusiones` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003369/ZA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site drying, roasting, fermenting or infusing rather than blending and packing leaf bought ready-processed. Resolve the official municipality from the registered address "POLIG. FILLOVAL, S/N, POLIGONO 1, PARCELA 562 FILLOVAL". |

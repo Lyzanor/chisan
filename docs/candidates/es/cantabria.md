@@ -105,3 +105,28 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Meta Mate España | Guriezo | `Té e infusiones` | The directory states: “Presenta elaboración artesanal europea de yerba mate” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cantabria) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Naturseed | Piélagos | `Té e infusiones` | The directory states: “Somos Naturseed , una empresa familiar de proveedores de alimentos , en especial aceites y aperitivos , localizada en…” | [Directory](https://www.proveedores.com/proveedores/naturseed/) | <http://naturseed.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Bodega Rioja Alta | Los Corrales de Buelna | `Vino` | The directory states: “Bodega Rioja Alta somos una bodega ubicada en la zona de La Rioja alta, donde trabajamos con vinos D.O. Rioja” | [Directory](https://www.proveedores.com/proveedores/bodega-rioja-alta/) | <https://www.riojalta.com/> | Confirm the winery and its current published range. |
+
+## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| CAFES DEL CANTABRICO S.L. | Maliaño | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01270/S | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "C/ POL. DE LA CERRADA 37, NAVE 10". |
+
+## RGSEAA ice-cream elaborators — 2026-09-03
+
+- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
+- Search date: 2026-09-03.
+- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| HELADERIAS LA POLAR SL | Maliaño | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00617/S | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POLIGONO INDUSTRIAL DE CROSS PARCELAS 22-23 Nº .". |
+| HELADOS DEL NORTE SL | Santillana | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002977/S | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ DEL RIO Nº2". |
