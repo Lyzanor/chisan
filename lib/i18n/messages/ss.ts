@@ -9,6 +9,7 @@ const messages = {
     signIn: "Ngena",
     register: "Bhalisa",
     myAccount: "I-akhawunti yami",
+    greeting: "Sawubona, {name}",
     favorites: "Lokutsandvwako",
     signOut: "Phuma",
   },

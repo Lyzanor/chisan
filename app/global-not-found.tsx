@@ -13,13 +13,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GlobalNotFoundPage() {
-  const { backHref, htmlLang, messages } = await loadNotFoundPresentation();
+  const { backHref, htmlLang, locale, messages } =
+    await loadNotFoundPresentation();
 
   return (
     <SiteRootShell
       htmlLang={htmlLang}
       footerMessages={messages.siteFooter}
       headerMessages={messages.siteHeader}
+      languageMenu={{
+        currentLocale: locale,
+        label: messages.languageSwitcher.label,
+        options: [{ locale, label: messages.languageName, href: backHref }],
+      }}
     >
       <NotFoundContent backHref={backHref} messages={messages} />
     </SiteRootShell>

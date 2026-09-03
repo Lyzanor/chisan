@@ -103,7 +103,7 @@ automatically between countries.
   producer record or source of editorial facts.
 - Device position is transient browser input for optional area routing. It is
   never catalog data or account state, and only a derived catalog area may be
-  retained as described by `docs/VISITOR_LOCATION_ROUTING.md`.
+  retained as described by `docs/LOCATION_ROUTING.md`.
 - A deployed request never writes `data/csv/**`. Ownership authorizes a
   proposal, not its facts; only reviewed local materialization changes the CSV.
 - The CSV stores public decisions, evidence stores sources, and Git stores who
@@ -121,13 +121,13 @@ automatically between countries.
 | Producer eligibility, verification, online sales, or candidates | Country guide, `docs/EDITORIAL.md`, CSV and evidence contracts | `npx pnpm verify:data` |
 | CSV fields, categories, identity, routing, links, or validators | `docs/CSV_CONTRACT.md` and the affected policy | `npx pnpm verify:ai` for behavior/schema; otherwise `verify:data` |
 | Evidence records or actions | `docs/EVIDENCE_CONTRACT.md` | `npx pnpm verify:data` |
-| Coordinates or Google Maps | `docs/PRODUCER_GEOLOCATION.md` | `npx pnpm verify:data` |
+| Coordinates or Google Maps | `docs/GEOLOCATION.md` | `npx pnpm verify:data` |
 | Producer images | `docs/IMAGES.md` | `npx pnpm verify:data` |
 | Localized descriptions or translation sidecars | `docs/CSV_CONTRACT.md` and `docs/EDITORIAL.md` | `npx pnpm verify:data` for data-only batches; `verify:ai` for manifest, routing, policy or behavior |
-| Device-location onboarding or catalog-area boundaries | `docs/VISITOR_LOCATION_ROUTING.md` | `npx pnpm verify:ai` |
+| Device-location onboarding or catalog-area boundaries | `docs/LOCATION_ROUTING.md` | `npx pnpm verify:ai` |
 | Public user profiles and their producer selections | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
 | Accounts, ownership, memberships, entitlements, gifts, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
-| Payment-adapter implementation or activation | `docs/ACCOUNT_SYSTEM.md`, `docs/STRIPE_RUNBOOK.md`, then `docs/OPERATIONS.md` | `npx pnpm verify:ai`, then the Stripe gate and Operations preflight |
+| Payment-adapter implementation or activation | `docs/ACCOUNT_SYSTEM.md`, then `docs/OPERATIONS.md` | `npx pnpm verify:ai`, then the Operations preflight |
 | Environment, secrets, deploy, rollback, or backups | `docs/OPERATIONS.md` | Follow its preflight and smoke checks |
 | Visual identity, design tokens, brand assets, web presentation, or visual QA | `design/README.md` | `npx pnpm check:design`, `pnpm verify`, and a record in `design/qa/design-qa.md` |
 | Code, scripts, documentation, policy, or behavior | Owning contract | `npx pnpm verify:ai` |

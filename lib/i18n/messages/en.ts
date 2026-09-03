@@ -11,6 +11,7 @@ const messages = {
     signIn: "Sign in",
     register: "Register",
     myAccount: "My account",
+    greeting: "Hello, {name}",
     favorites: "Favorites",
     signOut: "Sign out",
   },

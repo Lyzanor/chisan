@@ -44,6 +44,7 @@ export async function loadNotFoundPresentation() {
   return {
     backHref: publishedParentHref(pathname, catalog),
     htmlLang: scope?.htmlLang ?? "en",
+    locale,
     messages,
   };
 }

@@ -41,7 +41,6 @@ import { buildCatalogTranslationReadiness } from "./report-catalog-translation-r
 import {
   SUPPORTED_DESCRIPTION_SOURCE_LOCALES,
   SUPPORTED_TRANSLATION_TARGET_LOCALES,
-  TRANSLATED_DESCRIPTION_MAX_CHARACTERS,
   TRANSLATION_FIELD,
   TRANSLATION_PROMPT_VERSION,
   TRANSLATION_SIDECAR_HEADER,
@@ -77,26 +76,10 @@ const FIXTURE_ENGINE_APPROVAL = {
   engine_version: "fixture-v1",
   prompt_version: TRANSLATION_PROMPT_VERSION,
   glossary_version: GLOSSARY.version,
-  approved_on: "2026-08-31",
   benchmark_version: "fixture-benchmark-v1",
   benchmark_plan_hash: "a".repeat(64),
   target_locales: [...SUPPORTED_TRANSLATION_TARGET_LOCALES],
 };
-
-test("translation output respects the public description character limit", () => {
-  assert.equal(TRANSLATED_DESCRIPTION_MAX_CHARACTERS, 500);
-  assert.throws(
-    () =>
-      validateTranslationOutput({
-        source: "a".repeat(501),
-        sourceLocale: "en",
-        text: "a".repeat(501),
-        targetLocale: "en",
-        protectedTerms: [],
-      }),
-    /at most 500 Unicode characters; found 501/,
-  );
-});
 
 type Fixture = {
   root: string;
@@ -121,7 +104,7 @@ function fixture(context: test.TestContext, country = "xx"): Fixture {
   fs.writeFileSync(
     engineRegistryPath,
     `${JSON.stringify({
-      schema_version: 2,
+      schema_version: 1,
       registry_version: "fixture-registry-v1",
       approved_engines: [FIXTURE_ENGINE_APPROVAL],
     }, null, 2)}\n`,
@@ -165,7 +148,7 @@ function writeEngineRegistry(
   fs.writeFileSync(
     target.engineRegistryPath,
     `${JSON.stringify({
-      schema_version: 2,
+      schema_version: 1,
       registry_version: "fixture-registry-v1",
       approved_engines: approvedEngines,
     }, null, 2)}\n`,
@@ -927,6 +910,47 @@ test("checker applies content preservation invariants to current machine and rev
   assert.equal(result.stats.current, 0);
 });
 
+test("checker rejects overlong, contaminated or generic localized descriptions", (context) => {
+  const target = fixture(context);
+  const longSource = "Descripción extensa.";
+  const contaminatedSource = "Otra descripción.";
+  const genericSource = "Descripción distintiva.";
+  writeArea(target, [
+    { producerId: "1", text: longSource },
+    { producerId: "2", text: contaminatedSource },
+    { producerId: "3", text: genericSource },
+  ]);
+  writeSidecar(target, [
+    sidecarRow({
+      producerId: "1",
+      source: longSource,
+      text: "a".repeat(501),
+      origin: "reviewed",
+    }),
+    sidecarRow({
+      producerId: "2",
+      source: contaminatedSource,
+      text: "<nav>Inici</nav> Descripció.",
+      origin: "reviewed",
+    }),
+    sidecarRow({
+      producerId: "3",
+      source: genericSource,
+      text: "Produces honey at its Abrera unit.",
+      origin: "reviewed",
+    }),
+  ]);
+
+  const result = audit(target);
+  assert.ok(result.errors.some((error) => error.includes("at most 500 Unicode characters")));
+  assert.ok(result.errors.some((error) => error.includes("contains HTML copied from a source page")));
+  assert.ok(
+    result.errors.some((error) =>
+      error.includes("uses a shared template that only repeats structured producer fields"),
+    ),
+  );
+});
+
 test("an explicitly published locale requires a current complete sidecar", (context) => {
   const target = fixture(context);
   writeArea(target, [{ producerId: "1", text: "Descripción publicada." }]);
@@ -1103,11 +1127,11 @@ test("checker enforces the exact dedicated header and path classification", (con
   );
 });
 
-test("the checked-in engine registry contains declared production contexts", () => {
+test("the checked-in engine registry contains only production-approved contexts", () => {
   const registry = readTranslationEngineRegistry(
     path.resolve(process.cwd(), "data/reference/translation-engines.json"),
   );
-  assert.equal(registry.schema_version, 2);
+  assert.equal(registry.schema_version, 1);
   assert.match(registry.registry_version, /^\d{4}-\d{2}-\d{2}\.\d+$/);
   assert.equal(registry.approved_engines.length, 1);
   assert.deepEqual(
@@ -1165,49 +1189,6 @@ test("checker rejects unapproved machine rows while reviewed rows remain portabl
   assert.deepEqual(reviewed.errors, []);
   assert.equal(reviewed.stats.reviewed, 1);
   assert.equal(reviewed.stats.unapproved, 0);
-});
-
-test("engine registry and generator accept an explicit approval without a benchmark", async (context) => {
-  const target = fixture(context);
-  const declaredEngine = {
-    engine: "future-agent",
-    model: "future-model",
-    engine_version: "future-model-1",
-    prompt_version: TRANSLATION_PROMPT_VERSION,
-    glossary_version: GLOSSARY.version,
-    approved_on: "2026-08-31",
-    target_locales: ["ca"],
-  };
-  writeEngineRegistry(target, [declaredEngine]);
-
-  const registry = readTranslationEngineRegistry(target.engineRegistryPath);
-  assert.deepEqual(registry.approved_engines, [declaredEngine]);
-
-  const source = "Produce miel en el municipio.";
-  writeArea(target, [{ producerId: "1", text: source }]);
-  const adapter = createFixtureTranslationAdapter({
-    engine: declaredEngine.engine,
-    model: declaredEngine.model,
-    engineVersion: declaredEngine.engine_version,
-    translations: { "1:descripcion": "Produeix mel al municipi." },
-  });
-  await generateCatalogTranslations({
-    country: target.country,
-    targetLocale: "ca",
-    adapter,
-    csvRoot: target.csvRoot,
-    glossaryPath: target.glossaryPath,
-    engineRegistryPath: target.engineRegistryPath,
-  });
-  assert.equal(readTranslationSidecar(target.sidecarPath)[0].engine, declaredEngine.engine);
-
-  writeEngineRegistry(target, [
-    { ...declaredEngine, benchmark_version: "optional-benchmark" },
-  ]);
-  assert.throws(
-    () => readTranslationEngineRegistry(target.engineRegistryPath),
-    /benchmark_version and benchmark_plan_hash must be provided together/,
-  );
 });
 
 test("generator rejects an unapproved adapter before provider calls or writes", async (context) => {
@@ -1828,25 +1809,11 @@ test("batch validation rejects changed URLs, numbers, protected terms, ids and s
   );
 });
 
-test("openai-compatible adapter requires explicit engine provenance", () => {
-  assert.throws(
-    () =>
-      createOpenAICompatibleAdapter({
-        env: {
-          NODE_ENV: "test",
-          CHISAN_TRANSLATION_MODEL: "otherwise-valid-model",
-        } as NodeJS.ProcessEnv,
-      }),
-    /CHISAN_TRANSLATION_ENGINE must be a non-empty version token/,
-  );
-});
-
 test("openai-compatible adapter supports LM Studio defaults, JSON Schema and CHISAN-only credentials", async () => {
   let requestUrl = "";
   let requestInit: RequestInit | undefined;
   const adapter = createOpenAICompatibleAdapter({
     env: {
-      CHISAN_TRANSLATION_ENGINE: "local-editorial-agent",
       CHISAN_TRANSLATION_MODEL: "local-model",
       CHISAN_TRANSLATION_ENGINE_VERSION: "local-model-q4",
       CHISAN_TRANSLATION_REASONING_EFFORT: "none",
@@ -1888,7 +1855,7 @@ test("openai-compatible adapter supports LM Studio defaults, JSON Schema and CHI
   });
 
   assert.equal(requestUrl, "http://127.0.0.1:1234/v1/chat/completions");
-  assert.equal(adapter.engine, "local-editorial-agent");
+  assert.equal(adapter.engine, "openai-compatible");
   assert.equal(adapter.engineVersion, "local-model-q4");
   assert.equal((requestInit?.headers as Record<string, string>).authorization, undefined);
   const body = JSON.parse(String(requestInit?.body));
@@ -1924,7 +1891,6 @@ test("openai-compatible retries only 429 and 5xx with a bounded deterministic bu
   const adapter = createOpenAICompatibleAdapter({
     env: {
       NODE_ENV: "test",
-      CHISAN_TRANSLATION_ENGINE: "retry-agent",
       CHISAN_TRANSLATION_MODEL: "retry-model",
       CHISAN_TRANSLATION_MAX_RETRIES: "2",
       CHISAN_TRANSLATION_RETRY_BASE_MS: "7",
@@ -1970,7 +1936,6 @@ test("openai-compatible retries only 429 and 5xx with a bounded deterministic bu
     const clientAdapter = createOpenAICompatibleAdapter({
       env: {
         NODE_ENV: "test",
-        CHISAN_TRANSLATION_ENGINE: "client-error-agent",
         CHISAN_TRANSLATION_MODEL: "client-error-model",
         CHISAN_TRANSLATION_MAX_RETRIES: "5",
         CHISAN_TRANSLATION_RETRY_BASE_MS: "0",

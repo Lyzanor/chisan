@@ -5,7 +5,6 @@ const DEFAULT_RETRY_BASE_MS = 500;
 const MAX_RETRIES = 5;
 const MAX_RETRY_DELAY_MS = 10_000;
 const REASONING_EFFORTS = new Set(["none", "minimal", "low", "medium", "high", "xhigh"]);
-const VERSION_TOKEN_PATTERN = /^[^\s\u0000-\u001f\u007f]+$/u;
 
 export const OPENAI_COMPATIBLE_RESPONSE_SCHEMA = Object.freeze({
   type: "object",
@@ -69,14 +68,6 @@ function boundedNonNegativeInteger(value, label, fallback, maximum) {
   return Number(value);
 }
 
-function requiredVersionToken(value, label) {
-  const token = String(value ?? "").trim();
-  if (!VERSION_TOKEN_PATTERN.test(token)) {
-    throw new Error(`${label} must be a non-empty version token`);
-  }
-  return token;
-}
-
 function completionsUrl(baseUrl) {
   const url = new URL(baseUrl);
   if (!/^https?:$/.test(url.protocol)) {
@@ -90,10 +81,6 @@ function completionsUrl(baseUrl) {
 }
 
 export function readOpenAICompatibleConfig(env = process.env) {
-  const engine = requiredVersionToken(
-    env.CHISAN_TRANSLATION_ENGINE,
-    "CHISAN_TRANSLATION_ENGINE",
-  );
   const model = String(env.CHISAN_TRANSLATION_MODEL ?? "").trim();
   if (!model) {
     throw new Error(
@@ -105,10 +92,8 @@ export function readOpenAICompatibleConfig(env = process.env) {
     env.CHISAN_TRANSLATION_BASE_URL ?? DEFAULT_LM_STUDIO_BASE_URL,
   ).trim();
   const apiKey = String(env.CHISAN_TRANSLATION_API_KEY ?? "").trim();
-  const engineVersion = requiredVersionToken(
-    env.CHISAN_TRANSLATION_ENGINE_VERSION ?? model,
-    "CHISAN_TRANSLATION_ENGINE_VERSION",
-  );
+  const engineVersion = String(env.CHISAN_TRANSLATION_ENGINE_VERSION ?? model).trim();
+  if (!engineVersion) throw new Error("CHISAN_TRANSLATION_ENGINE_VERSION must not be empty");
   const reasoningEffort = String(env.CHISAN_TRANSLATION_REASONING_EFFORT ?? "").trim();
   if (reasoningEffort && !REASONING_EFFORTS.has(reasoningEffort)) {
     throw new Error(
@@ -120,7 +105,7 @@ export function readOpenAICompatibleConfig(env = process.env) {
     endpoint: completionsUrl(baseUrl),
     apiKey,
     model,
-    engine,
+    engine: "openai-compatible",
     engineVersion,
     reasoningEffort,
     timeoutMs: positiveInteger(

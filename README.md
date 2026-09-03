@@ -49,8 +49,7 @@ Open <http://localhost:3000>.
 
 The public discovery experience works without environment variables. Accounts
 and contribution flows are optional in local development; see
-`docs/ACCOUNT_SYSTEM.md` and `docs/OPERATIONS.md` when working on them; Stripe's
-provider-specific procedure lives in `docs/STRIPE_RUNBOOK.md`.
+`docs/ACCOUNT_SYSTEM.md` and `docs/OPERATIONS.md` when working on them.
 
 Canonical public routes follow the data tree. The short country scope serves
 that country's configured default language:
@@ -75,13 +74,12 @@ area selector.
 - Product and engineering context for agents: `AGENTS.md`
 - Account, claim and producer-edit workflow: `docs/ACCOUNT_SYSTEM.md`
 - Operations, deployment and recovery: `docs/OPERATIONS.md`
-- Stripe provisioning, activation and incidents: `docs/STRIPE_RUNBOOK.md`
 - Editorial policy, workflow and handoffs: `docs/EDITORIAL.md`
 - Candidate discovery workspace: `docs/candidates/README.md`
 - Published-row contract: `docs/CSV_CONTRACT.md`
 - Decision provenance: `docs/EVIDENCE_CONTRACT.md`
-- Producer coordinates: `docs/PRODUCER_GEOLOCATION.md`
-- Optional visitor-location area routing: `docs/VISITOR_LOCATION_ROUTING.md`
+- Producer coordinates: `docs/GEOLOCATION.md`
+- Optional device-location area routing: `docs/LOCATION_ROUTING.md`
 - Producer images: `docs/IMAGES.md`
 
 Run `npx pnpm verify:data` for data-only changes and `npx pnpm verify:ai` for

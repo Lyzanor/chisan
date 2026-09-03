@@ -17,6 +17,7 @@ export type Messages = {
     signIn: string;
     register: string;
     myAccount: string;
+    greeting: string;
     favorites: string;
     signOut: string;
   };

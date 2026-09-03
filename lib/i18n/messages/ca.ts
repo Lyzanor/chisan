@@ -11,6 +11,7 @@ const messages = {
     signIn: "Inicia sessió",
     register: "Registra't",
     myAccount: "El meu compte",
+    greeting: "Hola, {name}",
     favorites: "Preferits",
     signOut: "Tanca la sessió",
   },

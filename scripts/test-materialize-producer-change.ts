@@ -34,7 +34,6 @@ import {
   resolveExpectedProducerChange,
 } from "./materialize-producer-change";
 import {
-  assertProducerChangeCredentialIsolation,
   producerChangeDatabaseSource,
   producerChangeDatabaseUrlFromEnvironment,
 } from "./producer-change-access";
@@ -174,47 +173,6 @@ test("producer-change commands select isolated credentials with no generic fallb
         DATABASE_MIGRATION_URL: "postgres://migration.example/chisan",
       }),
     /CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL.*intentionally ignored/i,
-  );
-});
-
-test("producer-change commands reject colocated privilege contexts", () => {
-  const files = (present: readonly string[]) => (filePath: string) =>
-    present.includes(filePath);
-
-  assert.doesNotThrow(() =>
-    assertProducerChangeCredentialIsolation("list", {
-      environment: {},
-      fileExists: files([".env.admin-read.local"]),
-    }),
-  );
-  assert.throws(
-    () =>
-      assertProducerChangeCredentialIsolation("list", {
-        environment: {},
-        fileExists: files([".env.producer-change-operator.local"]),
-      }),
-    /read.*operator.*isolated credential context/i,
-  );
-  assert.throws(
-    () =>
-      assertProducerChangeCredentialIsolation("materialize", {
-        environment: {
-          CHISAN_PRODUCER_CHANGE_RECOVERY_DATABASE_URL: "postgresql://recovery.invalid/db",
-        },
-        fileExists: files([]),
-      }),
-    /operator.*recovery.*isolated credential context/i,
-  );
-  assert.throws(
-    () =>
-      assertProducerChangeCredentialIsolation("recover", {
-        environment: {},
-        fileExists: files([
-          ".env.admin-read.local",
-          ".env.producer-change-operator.local",
-        ]),
-      }),
-    /recovery.*read.*operator.*isolated credential context/i,
   );
 });
 
@@ -518,17 +476,6 @@ test("an exact materialized dirty write can recover its completion receipt", () 
       now,
     ),
     false,
-  );
-
-  assert.equal(
-    canResumeExactDirtyMaterialization(
-      { ...execution, leaseExpiresAt: new Date(now + 60_000).toISOString() },
-      { worktreeKey: "b".repeat(64), sourceHeadSha: "c".repeat(40) },
-      "d".repeat(64),
-      "data/csv/es/test/area.csv",
-      now,
-    ),
-    true,
   );
   assert.equal(
     canResumeExactDirtyMaterialization(

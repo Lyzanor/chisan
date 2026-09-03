@@ -223,6 +223,58 @@ function derivePostBootstrapAliases(currentRoutes) {
   return aliases;
 }
 
+function deriveMergeAliases(currentRoutes) {
+  const producerIdsByRoute = new Map();
+  for (const [identity, currentRoute] of currentRoutes) {
+    const [country, producerId] = identity.split("/");
+    const key = `${country}/${currentRoute}`;
+    assert.equal(
+      producerIdsByRoute.has(key),
+      false,
+      `duplicate current producer route ${key}`,
+    );
+    producerIdsByRoute.set(key, Number(producerId));
+  }
+
+  const aliases = new Map();
+  const visit = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        visit(file);
+        continue;
+      }
+      if (!entry.isFile() || !entry.name.endsWith(".jsonl")) continue;
+
+      const segments = path.relative(ROOT, file).replaceAll("\\", "/").split("/");
+      const country = segments[2];
+      const area = entry.name.slice(0, -".jsonl".length);
+      for (const line of fs.readFileSync(file, "utf8").split("\n")) {
+        if (!line.trim()) continue;
+        const record = JSON.parse(line);
+        if (record.action !== "merge") continue;
+
+        const producerId = producerIdsByRoute.get(
+          `${country}/${area}/${record.targetSlug}`,
+        );
+        assert.ok(
+          producerId,
+          `merge target ${country}/${area}/${record.targetSlug} has no current producer_id`,
+        );
+        const formerRoute = `${country}/${area}/${record.slug}`;
+        const existing = aliases.get(formerRoute);
+        assert.ok(
+          existing === undefined || existing === producerId,
+          `merge route ${formerRoute} was assigned to multiple producer IDs`,
+        );
+        aliases.set(formerRoute, producerId);
+      }
+    }
+  };
+  visit(path.join(ROOT, "data/evidence"));
+  return aliases;
+}
+
 function readStoredAliases() {
   const aliases = new Map();
   for (const country of fs.readdirSync(path.join(ROOT, "data/csv")).sort()) {
@@ -254,17 +306,27 @@ test("producerRouteAliases cover every demonstrable historical route", () => {
   assert.deepEqual(bootstrapCounts, BOOTSTRAP_COUNTS);
 
   const currentRoutes = readCurrentRoutes();
-  const expectedAliases = new Map([
+  const requiredAliases = new Map([
     ...bootstrapAliases,
     ...derivePostBootstrapAliases(currentRoutes),
   ]);
+  const mergeAliases = deriveMergeAliases(currentRoutes);
   const storedAliases = readStoredAliases();
-  assert.deepEqual(
-    [...storedAliases].sort(([left], [right]) => left.localeCompare(right)),
-    [...expectedAliases].sort(([left], [right]) => left.localeCompare(right)),
-  );
+
+  for (const [formerRoute, producerId] of requiredAliases) {
+    assert.equal(
+      storedAliases.get(formerRoute),
+      producerId,
+      `missing or incorrect historical route alias ${formerRoute}`,
+    );
+  }
 
   for (const [formerRoute, producerId] of storedAliases) {
+    assert.ok(
+      requiredAliases.get(formerRoute) === producerId ||
+        mergeAliases.get(formerRoute) === producerId,
+      `${formerRoute} is not demonstrated by producer history or a merge tombstone`,
+    );
     const [country, ...routeSegments] = formerRoute.split("/");
     const canonicalRoute = currentRoutes.get(`${country}/${producerId}`);
     assert.ok(canonicalRoute, `${formerRoute} has no current producer_id destination`);

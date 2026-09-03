@@ -11,6 +11,7 @@ const messages = {
     signIn: "ログイン",
     register: "登録",
     myAccount: "マイアカウント",
+    greeting: "こんにちは、{name}さん",
     favorites: "お気に入り",
     signOut: "ログアウト",
   },
