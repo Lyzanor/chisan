@@ -81,7 +81,7 @@ test("stage and individual check filters compose", () => {
 
 test("coverage gaps that may stay open forever are señales, not colas", () => {
   // Empty is a valid end state for all four: images are a 60% target, evidence
-  // is advisory, docs/GEOLOCATION.md rules that a missing coordinate is a
+  // is advisory, docs/PRODUCER_GEOLOCATION.md rules that a missing coordinate is a
   // coverage signal because some rows correctly end with none, and a stale
   // source date is a re-check invitation, not a defect in the row. Counting
   // them as workload inflates the union ~6x and buries the real overlap.
@@ -144,32 +144,6 @@ test("description quality queues separate contamination from likely truncation",
   assert.deepEqual(
     truncated.run({ rows }).map((row) => row.slug),
     ["cortada"],
-  );
-});
-
-test("known row-recital templates are generic but producer-specific prose is not", () => {
-  const generic = CHECKS.find((check) => check.id === "descripcion-generica");
-  const rows = [
-    { slug: "unit", descripcion: "Produces cheese at its Kani unit." },
-    { slug: "winery", descripcion: "Winery at Mendoza, Mendoza." },
-    {
-      slug: "filler",
-      descripcion:
-        "Casa Ejemplo es un productor local de Almería especializado en queso, dentro de la provincia de Almería.",
-    },
-    {
-      slug: "propia",
-      descripcion: "Afina sus quesos durante seis meses en una antigua bodega subterránea.",
-    },
-    {
-      slug: "historia",
-      descripcion:
-        "Craft brewery in Moriarty founded in 1996, making and packaging its own ales, stouts and pilsners.",
-    },
-  ];
-  assert.deepEqual(
-    generic.run({ rows }).map((row) => row.slug),
-    ["unit", "winery", "filler"],
   );
 });
 

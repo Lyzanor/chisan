@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chisan Area Discovery"
+  short_description: "Queue plausible producer leads by area"
+  default_prompt: "Use $chisan-area-discovery to queue plausible producer leads for one Chisan area without assessing catalog admission."

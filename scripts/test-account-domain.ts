@@ -214,6 +214,35 @@ test("description and source locale are validated and proposed as one pair", () 
   }
 });
 
+test("producer descriptions enforce the shared Unicode limit and reject source-page payloads", () => {
+  const current = validFields();
+  const withinLimit = validateProducerProposal(
+    { ...current, descripcion: "🍯".repeat(400), descripcion_locale: "es" },
+    current,
+  );
+  assert.equal(withinLimit.ok, true);
+
+  const overLimit = validateProducerProposal(
+    { ...current, descripcion: "🍯".repeat(401), descripcion_locale: "es" },
+    current,
+  );
+  assert.equal(overLimit.ok, false);
+  if (!overLimit.ok) assert.match(overLimit.errors.descripcion, /maximum 400/);
+
+  for (const descripcion of [
+    "<nav>Inicio</nav> Produce miel.",
+    "Produce miel. Fuente: https://example.com/ficha",
+    "Produce_x000d_miel.",
+  ]) {
+    const result = validateProducerProposal(
+      { ...current, descripcion, descripcion_locale: "es" },
+      current,
+    );
+    assert.equal(result.ok, false);
+    if (!result.ok) assert.match(result.errors.descripcion, /cannot contain/);
+  }
+});
+
 test("producer proposals enforce cross-field and format invariants", () => {
   const current = validFields();
   const result = validateProducerProposal(
@@ -460,27 +489,6 @@ test("expanded profile proposals validate video, long-form prose, visits and lin
       assert.match(
         formulaMessage.errors["mensaje a la comunidad"],
         /spreadsheet formula/i,
-      );
-    }
-  }
-
-  for (const contaminatedMessage of [
-    "<nav>Inicio</nav> Este mes recibimos visitas.",
-    "Lee la noticia en https://example.com/reportaje",
-  ]) {
-    const contaminated = validateProducerProposal(
-      {
-        ...current,
-        "mensaje a la comunidad": contaminatedMessage,
-        mensaje_comunidad_locale: "es",
-      },
-      current,
-    );
-    assert.equal(contaminated.ok, false);
-    if (!contaminated.ok) {
-      assert.match(
-        contaminated.errors["mensaje a la comunidad"],
-        /cannot contain/i,
       );
     }
   }

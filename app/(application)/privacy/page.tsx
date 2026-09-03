@@ -44,6 +44,12 @@ export default function PrivacyPage() {
           suggest a catalog area.
         </p>
         <p>
+          Only the resulting catalog area is kept in this browser, so the home page
+          can open it directly on a later visit. The catalog link in the footer
+          always returns to the country list, and the profile page of an account can
+          forget the saved area.
+        </p>
+        <p>
           The optional <code>chisan_locale</code> cookie stores an explicit
           language choice. Essential infrastructure may also process IP address,
           request, device and security information in ordinary server logs to
@@ -112,7 +118,7 @@ export default function PrivacyPage() {
         <p>
           You can remove the language cookie in your browser, decline optional
           advertising purposes, or ask about access, correction or deletion of
-          account information where applicable. Use the{" "}
+          account information where applicable. Use the {" "}
           <Link href="/contact">Chisan contact page</Link> to choose the appropriate
           channel, and do not send sensitive personal information through social
           media.

@@ -54,4 +54,3 @@ __pycache__/
 .tmp/
 /tmp/
 /scratch/
-/verified_clean_pool_round*.json

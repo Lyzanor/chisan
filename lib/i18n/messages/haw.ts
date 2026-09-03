@@ -9,7 +9,6 @@ const messages = {
     signIn: "Komo",
     register: "Kakau inoa",
     myAccount: "Koʻu moʻokāki",
-    greeting: "Aloha, {name}",
     favorites: "Nā punahele",
     signOut: "Haʻalele",
   },

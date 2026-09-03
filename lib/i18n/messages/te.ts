@@ -9,7 +9,6 @@ const messages = {
     signIn: "సైన్ ఇన్ చేయండి",
     register: "నమోదు చేయండి",
     myAccount: "నా ఖాతా",
-    greeting: "నమస్కారం, {name}",
     favorites: "ఇష్టమైనవి",
     signOut: "సైన్ అవుట్ చేయండి",
   },

@@ -90,7 +90,6 @@ test("account presentation messages cover both account action surfaces in every 
       assert.ok(messages.siteHeader.tagline.length > 0);
     }
     assert.ok(Object.values(messages.siteHeader).every((value) => value.length > 0));
-    assert.match(messages.siteHeader.greeting, /\{name\}/);
     assert.ok(Object.values(messages.siteFooter).every((value) => value.length > 0));
     const accountText = Object.entries(messages.accountActions)
       .filter(([key]) => key !== "descriptionLanguage")

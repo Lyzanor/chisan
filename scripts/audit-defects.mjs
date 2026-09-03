@@ -29,7 +29,6 @@ import { resolveDefaultCatalogCountry } from "./lib/catalog-operation-scope.mjs"
 
 import {
   descriptionContaminationReason,
-  descriptionNaturalnessReason,
   isLikelyDescriptionTruncated,
 } from "./lib/description-quality.mjs";
 
@@ -450,7 +449,7 @@ export const CHECKS = [
     kind: "cola",
     stage: "admission",
     label: "filas sin un solo enlace ni contacto (candidatas a fila sintética)",
-    hint: "docs/EDITORIAL.md § Decision order: cruzar contra la fuente exhaustiva de la region antes de decidir",
+    hint: "docs/EDITORIAL.md § Editorial decision matrix: cruzar contra la fuente exhaustiva de la region antes de decidir",
     run: ({ rows }) =>
       rows.filter(
         (r) =>
@@ -534,12 +533,7 @@ export const CHECKS = [
     label: "`descripcion` que no distingue a este productor de otro de su categoría",
     hint: "docs/CSV_CONTRACT.md § Editorial field conventions; se publica tal cual en la ficha",
     run: ({ rows }) =>
-      rows.filter(
-        (row) =>
-          row.descripcion &&
-          (descriptionNaturalnessReason(row.descripcion) ||
-            GENERIC_DESCRIPTION.some((pattern) => pattern.test(row.descripcion))),
-      ),
+      rows.filter((r) => r.descripcion && GENERIC_DESCRIPTION.some((re) => re.test(r.descripcion))),
   },
   // No `geo-sin-check` here on purpose: check:csv already reports it per file
   // as "geo-check skipped", using a centroid lookup with community-aware
@@ -556,7 +550,7 @@ export const CHECKS = [
     kind: "senal",
     stage: "verification",
     label: "sin `lat`/`lon`: la fila no aparece en el mapa",
-    hint: "docs/GEOLOCATION.md; el punto es la unidad productiva, y una celda vacía es mejor que un punto convincente y equivocado",
+    hint: "docs/PRODUCER_GEOLOCATION.md; el punto es la unidad productiva, y una celda vacía es mejor que un punto convincente y equivocado",
     // Both cells: a half-filled pair is a blocking contract error and belongs to
     // check:csv, not to an advisory coverage count.
     run: ({ rows }) => rows.filter((r) => !r.lat && !r.lon),

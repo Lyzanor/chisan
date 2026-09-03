@@ -91,9 +91,9 @@ Options:
   --spec <path>          Override the benchmark specification.
   -h, --help             Show this help.
 
-Run mode uses the same CHISAN_TRANSLATION_* openai-compatible configuration as
-generate:translations. Results are always marked unreviewed and require a
-separate human assessment before any provider is selected.`);
+Run mode uses the same CHISAN_TRANSLATION_* openai-compatible transport as
+generate:translations, including an explicit CHISAN_TRANSLATION_ENGINE
+provenance id. Results are always marked unreviewed.`);
 }
 
 function positiveInteger(value, label) {

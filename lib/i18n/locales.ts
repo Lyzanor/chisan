@@ -36,42 +36,6 @@ export const SUPPORTED_LOCALES = [
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
-export const LOCALE_NATIVE_NAMES = {
-  en: "English",
-  es: "Español",
-  ca: "Català",
-  de: "Deutsch",
-  ja: "日本語",
-  fr: "Français",
-  it: "Italiano",
-  nl: "Nederlands",
-  pt: "Português",
-  af: "Afrikaans",
-  as: "অসমীয়া",
-  bn: "বাংলা",
-  cy: "Cymraeg",
-  ga: "Gaeilge",
-  gd: "Gàidhlig",
-  gu: "ગુજરાતી",
-  haw: "ʻŌlelo Hawaiʻi",
-  hi: "हिन्दी",
-  kn: "ಕನ್ನಡ",
-  kok: "कोंकणी",
-  ml: "മലയാളം",
-  mr: "मराठी",
-  ne: "नेपाली",
-  nso: "Sepedi",
-  or: "ଓଡ଼ିଆ",
-  pa: "ਪੰਜਾਬੀ",
-  ss: "siSwati",
-  st: "Sesotho",
-  ta: "தமிழ்",
-  te: "తెలుగు",
-  tn: "Setswana",
-  xh: "isiXhosa",
-  zu: "isiZulu",
-} as const satisfies Record<Locale, string>;
-
 // Canonical descriptions may be authored in languages that Chisan does not
 // yet publish as interface or catalog-route locales. Keep this registry
 // separate so accepting source prose never activates a route, cookie, manifest

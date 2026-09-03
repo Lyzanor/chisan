@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import postgres, { type Sql, type TransactionSql } from "postgres";
 
 import {
+  assertProducerChangeCredentialIsolation,
   PRODUCER_CHANGE_OPERATOR_DATABASE_VARIABLE,
   PRODUCER_CHANGE_OPERATOR_ENV_FILE,
   PRODUCER_CHANGE_READ_DATABASE_VARIABLE,
@@ -402,6 +403,9 @@ function assertProbe(
 
 async function run(): Promise<void> {
   const { access, principal } = parseProducerChangeAccessProvision(process.argv.slice(2));
+  assertProducerChangeCredentialIsolation(
+    access === "read" ? "list" : access === "operator" ? "materialize" : "recover",
+  );
   if (!process.env.DATABASE_MIGRATION_URL) {
     const migrationFile = ".env.migration.local";
     if (await assertPrivateCredentialFile(migrationFile)) {

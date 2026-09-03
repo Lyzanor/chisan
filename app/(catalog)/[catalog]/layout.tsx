@@ -37,11 +37,6 @@ export default async function CatalogRootLayout({
       htmlLang={htmlLang}
       footerMessages={messages.siteFooter}
       headerMessages={messages.siteHeader}
-      languageMenu={{
-        currentLocale: locale,
-        label: messages.languageSwitcher.label,
-        options: [{ locale, label: messages.languageName, href: scope?.pathPrefix ?? "/" }],
-      }}
     >
       {children}
     </SiteRootShell>

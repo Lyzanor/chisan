@@ -9,7 +9,6 @@ const messages = {
     signIn: "Iniciar sessão",
     register: "Registar",
     myAccount: "A minha conta",
-    greeting: "Olá, {name}",
     favorites: "Favoritos",
     signOut: "Terminar sessão",
   },

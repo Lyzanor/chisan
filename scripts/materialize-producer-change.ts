@@ -889,6 +889,8 @@ type ProducerChangeExecutionReceipt = {
 
 type ProducerChangeFailureOutcome = "conflict" | "failed";
 
+const POSTGRES_TEXT_ARRAY_OID = 1009;
+
 export type ActiveProducerChangeExecution = {
   id: string;
   status: "leased" | "materialized";
@@ -897,9 +899,17 @@ export type ActiveProducerChangeExecution = {
   worktreeKey: string;
   sourceHeadSha: string;
   expectedRowHash: string;
-  leaseExpiresAt: Date;
+  leaseExpiresAt: Date | string;
   csvPath: string;
 };
+
+function executionLeaseTimestamp(value: Date | string): number {
+  const timestamp = value instanceof Date ? value.getTime() : Date.parse(value);
+  if (!Number.isFinite(timestamp)) {
+    throw new Error("Producer-change execution has an invalid lease timestamp.");
+  }
+  return timestamp;
+}
 
 export function canResumeExactDirtyMaterialization(
   execution: ActiveProducerChangeExecution | null,
@@ -915,7 +925,8 @@ export function canResumeExactDirtyMaterialization(
       execution.sourceHeadSha === gitContext.sourceHeadSha &&
       execution.expectedRowHash === expectedRowHash &&
       execution.csvPath === csvPath &&
-      (execution.status === "materialized" || execution.leaseExpiresAt.getTime() > now),
+      (execution.status === "materialized" ||
+        executionLeaseTimestamp(execution.leaseExpiresAt) > now),
   );
 }
 
@@ -1065,7 +1076,7 @@ async function completeProducerChangeExecution(
       select public.chisan_complete_producer_change_execution_v1(
         ${executionId}::uuid,
         ${expectedRowHash},
-        ${client.array(fields)}::text[],
+        ${client.array(fields, POSTGRES_TEXT_ARRAY_OID)}::text[],
         ${alreadyPresent}
       )
     `,
@@ -1648,12 +1659,12 @@ async function runCli(): Promise<void> {
       activeExecution.sourceHeadSha === gitContext.sourceHeadSha &&
       activeExecution.expectedRowHash === expected.hash &&
       activeExecution.csvPath === relativeCsvPath &&
-      activeExecution.leaseExpiresAt.getTime() > Date.now()
+      executionLeaseTimestamp(activeExecution.leaseExpiresAt) > Date.now()
         ? activeExecution
         : null;
     const expiredExecution =
       activeExecution?.status === "leased" &&
-      activeExecution.leaseExpiresAt.getTime() <= Date.now();
+      executionLeaseTimestamp(activeExecution.leaseExpiresAt) <= Date.now();
     if (activeExecution && !resumableExecution && !expiredExecution) {
       throw new Error(
         `Active execution ${activeExecution.id} belongs to another operator/worktree or no longer matches this preflight. Wait for its lease to expire or resume it from its original context.`,

@@ -9,7 +9,6 @@ const messages = {
     signIn: "Clàraich a-steach",
     register: "Clàraich",
     myAccount: "Mo chunntas",
-    greeting: "Halò, {name}",
     favorites: "An fheadhainn as fheàrr",
     signOut: "Clàraich a-mach",
   },

@@ -62,6 +62,7 @@ Options:
 Provider configuration is read only from CHISAN_TRANSLATION_* variables:
   CHISAN_TRANSLATION_PROVIDER=openai-compatible (default)
   CHISAN_TRANSLATION_BASE_URL=http://127.0.0.1:1234/v1 (LM Studio default)
+  CHISAN_TRANSLATION_ENGINE=<approved provenance id; required>
   CHISAN_TRANSLATION_MODEL=<model id>
   CHISAN_TRANSLATION_API_KEY=<optional local/provider key>
   CHISAN_TRANSLATION_ENGINE_VERSION=<optional reproducibility label>

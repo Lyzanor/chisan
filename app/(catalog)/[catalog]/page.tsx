@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 
 import { AreaSelector } from "@/components/area-selector";
-import { LanguageMenuRegistration } from "@/components/language-menu-registration";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import {
   buildCatalogAlternateSet,
   buildLocalizedMetadata,
@@ -152,6 +152,11 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
             </h1>
           </div>
           <div className="catalog-header-controls">
+            <LanguageSwitcher
+              currentLocale={locale}
+              label={messages.languageSwitcher.label}
+              options={languageOptions}
+            />
             <AreaSelector
               country={{ regions: localizedRegions }}
               currentArea=""
@@ -159,12 +164,6 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
             />
           </div>
         </div>
-
-        <LanguageMenuRegistration
-          currentLocale={locale}
-          label={messages.languageSwitcher.label}
-          options={languageOptions}
-        />
 
         <div className="region-group-list">
           {localizedRegions.map((region) => (

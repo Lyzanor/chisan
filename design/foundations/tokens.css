@@ -1,9 +1,9 @@
 /*
  * Chisan v0.3 foundations.
  *
- * The --chisan-* properties are canonical. The final block maps them onto the
- * existing web surface; product-semantic state such as errors stays outside
- * the brand foundation.
+ * The --chisan-* properties are canonical. The final block redefines the names
+ * app/globals.css already declares in its own :root, and wins only because this
+ * file is imported after it. See design/README.md § Integration boundary.
  */
 
 :root {
@@ -18,6 +18,9 @@
   --chisan-color-moss: #52614c;
   --chisan-color-moss-dark: #344237;
   --chisan-color-moss-pale: #e5e8e1;
+
+  /* Status. Owned here so no surface invents its own. 6.65:1 on rice paper. */
+  --chisan-color-danger: #9d2b22;
 
   --chisan-font-sans: var(--font-chisan-sans), "Hiragino Kaku Gothic ProN",
     "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
@@ -44,7 +47,7 @@
   --chisan-motion-page: 320ms;
   --chisan-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  /* Existing web visual names mapped to the v0.3 foundation. */
+  /* Overrides the same names in app/globals.css :root. Load-bearing order. */
   --page-bg: var(--chisan-color-rice-paper);
   --surface: var(--chisan-color-surface);
   --surface-muted: var(--chisan-color-surface-muted);
@@ -54,6 +57,7 @@
   --accent: var(--chisan-color-moss);
   --accent-soft: var(--chisan-color-moss-pale);
   --accent-text: var(--chisan-color-moss-dark);
+  --danger: var(--chisan-color-danger);
   --shadow: none;
   --radius: var(--chisan-radius-control);
 }
