@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "registry_version": "2026-08-25.1",
+  "schema_version": 2,
+  "registry_version": "2026-09-02.1",
   "approved_engines": [
     {
       "engine": "codex-subagent",
@@ -8,6 +8,7 @@
       "engine_version": "gpt-5.6-sol-2026-08-24",
       "prompt_version": "chisan-description-v10",
       "glossary_version": "2026-08-24.3",
+      "approved_on": "2026-08-24",
       "benchmark_version": "2026-08-24.3",
       "benchmark_plan_hash": "628a6d2896e12df6e663c717510dd27aaa4d8b67f76d735b140a8b01010ecc97",
       "target_locales": [
@@ -29,6 +30,25 @@
         "late_canonical_delta_candidates": 8,
         "late_canonical_delta_editorial_pass": 8,
         "late_canonical_delta_quantitative_integrity_failures": 0
+      }
+    },
+    {
+      "engine": "google-gemma-3",
+      "model": "google-gemma-3-12b-4bit",
+      "engine_version": "google-gemma-3-12b@4bit",
+      "prompt_version": "chisan-description-v10",
+      "glossary_version": "2026-08-24.3",
+      "approved_on": "2026-09-02",
+      "target_locales": [
+        "en",
+        "ca"
+      ],
+      "review": {
+        "reviewed_on": "2026-09-02",
+        "initial_candidates": 4,
+        "editorial_pass": 4,
+        "semantic_exceptions": 0,
+        "automatic_quantitative_repairs": 0
       }
     }
   ]
