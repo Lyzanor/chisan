@@ -292,7 +292,7 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | BUNA CAFE ESPECIALIDAD SL | Torremolinos | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003924/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE MERCEDES DE LAS Nº21". |
-| IDEAS DEL CAFE 2018 SL | Malaga | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003819/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE TOMAS HEREDIA Nº3". |
+| IDEAS DEL CAFE 2018 SL | Malaga | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003819/MA | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Registered at the same address as the published “Santa Coffee” row (“CALLE TOMAS HEREDIA Nº3” against “Calle Tomás Heredia, 3, 29001 Málaga”): decide whether they are one productive unit before creating a row. Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE TOMAS HEREDIA Nº3". |
 
 ## RGSEAA ice-cream elaborators — 2026-09-03
 
