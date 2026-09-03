@@ -1,6 +1,6 @@
 # Producer Geolocation
 
-This guide covers how to source and review producer coordinates. The published
+This contract covers how to source and review producer coordinates. The published
 `lat`/`lon` representation and distance gates live in `docs/CSV_CONTRACT.md`;
 decision provenance lives in `docs/EVIDENCE_CONTRACT.md`.
 

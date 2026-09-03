@@ -104,21 +104,18 @@ Use `merge` only when two records were determined to be the same productive
 unit and one row was removed. A routing-only rename is not a merge; its identity
 rules live in `docs/CSV_CONTRACT.md`.
 
-### Decision handoff
+### Editorial handoff
 
-| Editorial outcome | CSV | Evidence | Temporary or private state |
-|---|---|---|---|
-| Accept or update a producer | Materialize the current public facts | Create or update one `keep` record with only the sources still relied on | Remove the resolved candidate; keep contribution audit in PostgreSQL/Git |
-| Hold for more research | No change | No record and no tombstone | Keep the unresolved question in the candidate note |
-| Reject a never-published candidate | No row | Write `reject` | Remove the resolved candidate |
-| Remove a published row | Remove the row under the lifecycle contract | Write `purge` | Keep account consequences in PostgreSQL/Git |
-| Consolidate the same productive unit | Keep the surviving row | Write `merge` from removed slug to surviving slug | Keep account and route consequences in their owning systems |
-| Rename or move a route without consolidating units | Update the same durable row under the CSV contract | Update its existing evidence reference; do not manufacture `merge` | Git and routing policy preserve the transition |
+Choose `accept`, `update`, `hold`, `reject`, `purge`, `merge`, routing or an
+already-represented result only through `docs/EDITORIAL.md` § Editorial
+decision matrix. This contract serializes an accepted or updated public row as
+`keep`, a rejected never-published candidate as `reject`, a removed published
+row as `purge`, and a consolidation of two published rows as `merge`.
 
-Owner or community submissions remain private workflow state until reviewed.
-Publication materializes only the accepted public facts in the CSV and, when
-needed, suitable public decision sources here; it never copies the submission
-or its author into evidence.
+`hold`, routing and an already-represented candidate create no evidence record.
+Owner or community submissions remain private workflow state until review;
+publication copies only accepted public facts into the CSV and, when needed,
+the minimum suitable public decision sources here.
 
 ### Exclusion reasons
 

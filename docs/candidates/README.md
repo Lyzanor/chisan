@@ -46,7 +46,10 @@ source may be materialized, but do not branch into adjacent searches.
 
 ## Resolution and deletion
 
-Follow the outcomes and batch closure in `docs/EDITORIAL.md`. Remove accepted or
-rejected candidates only after the CSV or tombstone carries the durable result;
-retain unresolved candidates with one actionable blocker. Delete the area note
-when none remain—Git preserves its earlier working state.
+Choose the outcome through `docs/EDITORIAL.md` § Editorial decision matrix,
+then serialize any durable record under `docs/EVIDENCE_CONTRACT.md` § Actions.
+This file owns neither decision meanings nor evidence representation.
+
+Retain only candidates whose canonical outcome is `hold`, with one actionable
+blocker. Remove every resolved candidate after its required CSV/evidence handoff,
+and delete the area note when none remain; Git preserves earlier working state.
