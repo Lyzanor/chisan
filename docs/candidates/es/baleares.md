@@ -189,3 +189,19 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 | Caffe' Pascucci Distribución | Sant Antoni de Portmany | `Té e infusiones` | The directory states: “Ubicada en Islas Baleares, Caffe' Pascucci Distribución somos una empresa con una larga trayectoria como proveedores…” | [Directory](https://www.proveedores.com/proveedores/caffe-pascucci-distribucion/) |  | Separate the own productive activity from the trading arm before placing the row. |
 | ILUMINAME | Palma de Mallorca | `Té e infusiones` | The directory states: “En ILUMINAME somos proveedores de velas aromáticas de cera de soja al 100% , jabones artesanales de aceite de oliva …” | [Directory](https://www.proveedores.com/proveedores/iluminame/) |  | Confirm the productive workshop and that it is currently active. |
 | Mallorca Tea House | Palma de Mallorca | `Té e infusiones` | The directory states: “Nuestras mezclas herbales son fórmulas magistrales de elaboración propia con un centro de homeopátia” | [Directory](https://www.proveedores.com/proveedores/mallorca-tea-house/) | <https://mallorcateahouse.es/> | Confirm an own offer that stays attributable to this producer through sale. |
+
+## IGP Sobrassada de Mallorca certified-elaborator sweep — 2026-09-03
+
+- Discovery source: <https://sobrasadademallorca.org/elaboradores-certificados/>, the certified-elaborator list published by the Consell Regulador IGP Sobrassada de Mallorca.
+- Search date: 2026-09-03.
+- Scope: all 15 elaborators published by the council, de-duplicated against the current area CSV by name. Ten were already represented; the 5 below are open Level 1 leads.
+- Cutoff: the council list as published on 2026-09-03. The council publishes names and logos only, without addresses, so no municipality is available for these leads.
+- Source ceiling: the council register supports membership, product and the elaborator identity it publishes. It does not by itself establish current activity, a public own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Bon Gust | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality and separate it from the unrelated `Xips Ve de Gust` row in Barcelona. |
+| Ca Na Paulina | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality; the council register publishes no locality. |
+| Sezavi | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality and the durable public name behind the company. |
+| Aplicacions Tècniques Insulars | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Confirm a qualifying own offer under a public producer identity; the registered name is a service company. |
+| TuCarn | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality and confirm elaboration rather than butchery retail. |

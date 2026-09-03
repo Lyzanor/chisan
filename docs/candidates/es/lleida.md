@@ -135,3 +135,25 @@
 | Ramón Comellas | Lleida | `Pan y cereal` | The directory states: “Ramón Comellas es una empresa que fue inaugurada hace más de 80 años en Lleida y que desde entonces se dedica a la…” | [Directory](https://www.proveedores.com/proveedores/ramon-comellas/) |  | Confirm an own mill. |
 | Exclusivas Pinyol | Lleida | `Vino` | The directory states: “Nuestra apuesta por nuestros productos es total, los diseñamos seleccionando los mejores fabricantes, con los más…” | [Directory](https://www.proveedores.com/proveedores/exclusivas-pinyol/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | FxCK 2020 | Lleida | `Vino` | The directory states: “Se trata de un cava de la bodega (Celler Most-Doré)” | [Directory](https://www.proveedores.com/proveedores/fxck-2020/) |  | Confirm the winery and its current published range. |
+
+## DOP Les Garrigues registered-cooperative sweep — 2026-09-03
+
+- Discovery source: <https://olidoplesgarrigues.com/cooperatives-inscrites/>, the registered cooperative and mill list published by the Consell Regulador DOP Les Garrigues.
+- Search date: 2026-09-03.
+- Scope: all 20 entities published by the council, de-duplicated against every `Aceite` row in the denomination municipalities by name and municipality. Ten were already represented; the 10 below are open Level 1 leads.
+- Cutoff: the council list as published on 2026-09-03. The council publishes names without addresses, so the municipality below is read from the entity's own name where it carries one.
+- Source ceiling: the council register supports membership, product and the entity identity it publishes. It does not by itself establish current activity, a public own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Molí d'Alcanó (Grup Fruits de Ponent) | Alcanó | `Aceite` | Registered mill of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the mill has an own offer under its own identity rather than only supplying the Fruits de Ponent group. |
+| Cooperativa d'Alfés | Alfés | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; Alfés has no published row yet. |
+| Cooperativa d'Almatret | Almatret | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; Almatret has no published row yet. |
+| Cooperativa de Cervià de les Garrigues | Cervià de les Garrigues | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; Cervià de les Garrigues has no published row yet. |
+| Cooperativa del Cogul | El Cogul | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; El Cogul has no published row yet. |
+| Cooperativa de Maldà | Maldà | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; Maldà has no published row yet. |
+| Molí de Rocafort | Rocafort de Vallbona (Sant Martí de Riucorb) | `Aceite` | Registered mill of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Record Sant Martí de Riucorb as the official municipality; Rocafort de Vallbona is a locality within it. |
+| Cooperativa de Sant Martí de Maldà | Sant Martí de Maldà (Sant Martí de Riucorb) | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Record Sant Martí de Riucorb as the official municipality and confirm it is distinct from Molí de Rocafort. |
+| Cooperativa de Vallbona de les Monges | Vallbona de les Monges | `Aceite` | Registered cooperative of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the cooperative markets oil under its own identity; Vallbona de les Monges has no published row yet. |
+| Cuadrat Valley — Finca Agrícola | Les Garrigues (Lleida) | `Aceite` | Registered entity of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Resolve the productive municipality; the council register publishes no locality for this entity. |
+| Olis Bellaguarda | Bellaguarda | `Aceite` | Registered mill of the DOP Les Garrigues | [Council register](https://olidoplesgarrigues.com/cooperatives-inscrites/) |  | Confirm the productive unit in Bellaguarda and an own offer attributable through sale. |

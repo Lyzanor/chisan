@@ -141,3 +141,16 @@
 | Cruz de Sagrillas | Córdoba | `Vino` | The directory states: “Cruz de Sagrillas es una empresa con sede en Córdoba que se dedica a la producción y venta vía online de un más que…” | [Directory](https://www.proveedores.com/proveedores/cruz-de-sagrillas/) | <https://www.bodegascruzdesagrillas.com/> | Confirm the winery and its current published range. |
 | Lugar del Vino | Rute | `Vino` | The directory states: “Además de vender una amplia variedad de caldos de excelente calidad a través de nuestra tienda online, ofrecemos…” | [Directory](https://www.proveedores.com/proveedores/lugar-del-vino/) |  | Confirm the winery and its current published range. |
 | Vinali Marketing Distribución Moderna | Córdoba | `Vino` | The directory states: “Además, somos especialistas en el asesoramiento de empresas vinculadas al mundo del vino como bodegas, restaurantes…” | [Directory](https://www.proveedores.com/proveedores/vinali-marketing-distribucion-moderna/) |  | Separate the own productive activity from the trading arm before placing the row. |
+
+## DOP Baena registered-company sweep — 2026-09-03
+
+- Discovery source: <https://www.dobaena.com/nuestras-empresas-y-marcas/>, the registered-entity and brand list published by the Consejo Regulador DOP Baena.
+- Search date: 2026-09-03.
+- Scope: all 17 entities published by the council, de-duplicated against every `Aceite` row in the denomination zone by name and municipality. Fifteen were already represented; the 2 below are open Level 1 leads.
+- Cutoff: the council list as published on 2026-09-03. No first-party site or productive address was consulted in this pass.
+- Source ceiling: the council register supports membership, product, brand and identity. It does not by itself establish current activity, a public own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Peña de Baena, S.L.U. (Baena Oliva) | Baena | `Aceite` | Registered entity of the DOP Baena marketing the Baena Oliva brand | [Council register](https://www.dobaena.com/nuestras-empresas-y-marcas/) | <https://baenaoliva.com> | Confirm an own mill rather than a bottling identity over third-party oil. |
+| OS Aceite (La niña de mis ojos) | Baena | `Aceite` | Registered entity of the DOP Baena marketing the "La niña de mis ojos" brand | [Council register](https://www.dobaena.com/nuestras-empresas-y-marcas/) | <https://osaceite.es> | Confirm an own mill rather than a bottling identity over third-party oil. |

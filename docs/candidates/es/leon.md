@@ -154,3 +154,15 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | Cárnicas Tavito | Vegacervera | `Carne` — Marca de Garantía Cecina de Chivo de Vegacervera | Artisan curing facility and livestock farm in Vegacervera specializing in oak-wood smoked Cecina de Chivo and cured mountain charcuterie; benchmark exhibitor at the fair. | [Vegacervera](https://aytovegacervera.es) | <https://tavito.es/> | Confirm curing plant and livestock premises in Vegacervera, sanitary register and current direct-sales offer. |
 | Cárnicas Miserias | Vegacervera | `Carne` — traditional Cecina de Chivo curada al humo | Family-run traditional meat curing workshop in Vegacervera crafting artisan goat cecina and cured mountain meats under the local Marca de Garantía. | [Vegacervera](https://aytovegacervera.es) | — | Verify physical workshop address in Vegacervera, sanitary authorization and retail distribution channels. |
 
+
+## IGP Cecina de León registered-company sweep — 2026-09-03
+
+- Discovery source: <https://www.cecinadeleon.org/empresas/>, the registered-company list published by the Consejo Regulador IGP Cecina de León.
+- Search date: 2026-09-03.
+- Scope: all 10 companies published by the council, de-duplicated against the current area CSV by name and municipality. Nine were already represented; the one below is the single open Level 1 lead.
+- Cutoff: the council list as published on 2026-09-03. The council publishes names without addresses.
+- Source ceiling: the council register supports membership, product and the company identity it publishes. It does not by itself establish current activity, a public own offer, online sales or the productive municipality.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Valles del Esla — Miguel Vergara, S.L. | León | `Carne` | Registered company of the IGP Cecina de León | [Council register](https://www.cecinadeleon.org/empresas/) |  | Resolve the productive municipality and the durable public name between Valles del Esla and Miguel Vergara. |
