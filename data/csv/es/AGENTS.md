@@ -34,6 +34,19 @@
   products. One record therefore carries identity, own productive output, offer
   and municipality, and can admit a row on its own at `pendiente`. It does not
   establish current activity, a first-party channel or online sales.
+- The CCPAE *guia d'operadors* is a Catalonia-wide organic certification
+  register, not a provincial producer directory. One record supports the
+  operator, its certified activity class and the municipality it publishes;
+  most records are raw agricultural activity rather than elaboration, and
+  logistics, distribution, industrial oils and importers are registered beside
+  producers. It carries no operator registration date, so it cannot be narrowed
+  to recent entries, and it publishes no open dataset. Query it by certified
+  elaboration activity, or by comarca keeping only the elaboration rows, rather
+  than sweeping the register; its annual *Guia d'Operadors* PDF is the
+  parseable alternative. The subset that carries a brand and a sellable own
+  offer already reaches the catalog through the *venda de proximitat* register,
+  Xarxa Productes de la Terra, Gastroteca and mercats de pagès, which carry the
+  same organic distinction.
 - RIAAC records an establishment and its registered activity class. Like the
   RGSEAA it supports the entity, that activity class and the registered address
   only; it never admits a row by itself, whatever the activity class says.
