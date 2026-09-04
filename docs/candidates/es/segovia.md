@@ -29,7 +29,7 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/segovia>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 33 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 32 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -44,7 +44,6 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Ciervos de Crianza | Lastras del Pozo | `Carne` | The directory states: “Cría ecológica de ciervo para carne y derivados” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Cuellarana de Patatas | Cuéllar | `Fruta y verdura` | The directory states: “Familia de tercera generación produciendo patata desde 1944” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Separate the own productive activity from the trading arm before placing the row. |
 | PASHERRANZ | Armuña | `Fruta y verdura` | The directory states: “Productores de hortaliza ecológica certificada: puerro y patata” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Confirm an own offer that stays attributable to this producer through sale. |
-| Granja Los Nogales | Segovia | `Huevos` | The directory states: “Granja familiar de gallinas camperas y huevo campero” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Monte Nevado | Carbonero el Mayor | `Carne` | The directory states: “Elaboración y comercialización de jamón con certificaciones” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Confirm an own curing house and current activity. |
 | Panadería Pascual | Segovia | `Pan y cereal` | The directory states: “Panadería fundada en 1895 que fabrica y comercializa pan” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Confirm the productive workshop and that it is currently active. |
 | huevosfrescos.es | Villacastín | `Huevos` | The directory states: “Producción y comercialización mayorista y minorista de huevo” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/segovia) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |

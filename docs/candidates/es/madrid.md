@@ -73,7 +73,7 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/madrid>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 278 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 277 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -245,7 +245,6 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Sancho Croquetas y Croquetones | Madrid | `Comida preparada` | The directory states: “Fabricantes de croqueta casera” | [Listing](https://www.proveedores.com/proveedores/sancho-croquetas-y-croquetones-caseros/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Salazones Cárnicas Miguélez | Leganés | `Carne` | The directory states: “Pequeña familiar que fabrica bacón y salazones cárnicas” | [Listing](https://www.proveedores.com/proveedores/salazones-carnicas-miguelez/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Sensaciones de Chocolate | Madrid | `Chocolate` | The directory states: “Elabora chocolates personalizados y tabletas de origen” | [Listing](https://www.proveedores.com/proveedores/sensaciones-de-chocolate/) |  | Confirm an own offer that stays attributable to this producer through sale. |
-| The One Beer | Madrid | `Cerveza` | The directory states: “Elabora su propia cerveza artesana ecológica” | [Listing](https://www.proveedores.com/proveedores/theonebeer-es/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Rezeptes de Omi | Madrid | `Dulces y repostería` | The directory states: “Treinta años fabricando galletas” | [Listing](https://www.proveedores.com/proveedores/rezeptes-de-omi/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Panadería Bayón | Getafe | `Pan y cereal` | The directory states: “Fabricantes de bollería del día” | [Listing](https://www.proveedores.com/proveedores/panaderia-bayon/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Cervezas Fergar | San Agustín de Guadalix | `Cerveza` | The directory states: “Fabricación de cerveza artesana con agua local” | [Listing](https://www.proveedores.com/proveedores/cervezas-fergar/) |  | Confirm an own offer that stays attributable to this producer through sale. |
