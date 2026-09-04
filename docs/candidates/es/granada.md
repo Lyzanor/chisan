@@ -1,75 +1,35 @@
 # Granada — candidates
 
 - Target CSV: `data/csv/es/andalucia/granada.csv`
-- Discovery sources: DOP Montes de Granada member directory and DOP Poniente de Granada registered brands, reached through the MAPA and eAmbrosia geographical-indication registers.
-- Review date: 2026-08-26.
-- Scope: 10 unresolved holds after current-source admission review.
-- Source ceiling: council registration supports identity, olive-oil activity and published location but does not by itself prove a current public own offer or resolve shared legal identities.
+- Editorial review: 2026-09-04; 120 unresolved candidate entries remain.
+- The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
+- Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
+- Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
+- Editorial and source rules: `docs/EDITORIAL.md`, `docs/EVIDENCE_CONTRACT.md` and `data/csv/es/AGENTS.md`.
 
-| nombre | municipio | probable category / output | discovery | remaining work |
-|---|---|---|---|---|
-| Ntra. Sra. de la Cabeza de Zújar, S. Coop. And. | Zújar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm current own brand/offer and productive-unit identity. |
-| Ntra. Sra. de los Remedios de Campotéjar, S. Coop. And. | Campotéjar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Distinguish this unit from the same-named Iznalloz cooperative and confirm current own offer. |
-| Ntra. Sra. del Pilar, S. Coop. And. | Colomera | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Reconcile the operator with Oleomera and confirm its current own offer. |
-| Olibaza, S.L. | Baza | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/); [Directory](https://www.proveedores.com/proveedores/olibaza/); [olibaza.com](https://www.olibaza.com/es/) | Confirm current first-party activity and own offer. |
-| San Ildefonso de Peligros, S. Coop. And. | Peligros | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Reconcile the operator with Ildeoliva and confirm its current own offer. |
-| Santa Mónica de Píñar, S. Coop. And. | Píñar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm current first-party activity and own offer. |
-| Aceites Maeva, S.L. | Escúzar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm the productive unit, own brands and current offer; distinguish it from group or contract-processing identities. |
-| San Francisco de Asís, S. Coop. And. | Montefrío | `Aceite` — DOP Poniente de Granada | [DOP registered brands](https://www.doponientedegranada.com/paginas/Marcas-Inscritas.asp) | Confirm current public brand, offer and exact productive address. |
-| Aceites Algarinejo, S. Coop. And. | Algarinejo | `Aceite` — DOP Poniente de Granada | [DOP registered brands](https://www.doponientedegranada.com/paginas/Marcas-Inscritas.asp) | Confirm current public brand, offer and exact productive address. |
-
-## Nominal directory pass — official GI operators
-
-- Added on 2026-08-26: 1 unresolved Level 1 lead after name, alias, municipality and domain reconciliation against the current CSV and candidate backlog.
-- Source ceilings: council registration supports operator identity, registered scope and published location. It does not alone prove current public own offer, cultivation, an independent productive unit or catalog admission.
-
-### DO Chufa de Valencia
-
-| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| INDUSTRIAS LACTEAS DE GRANADA | Granada | `Bebidas sin alcohol` — certified Chufa de Valencia horchata elaborator | The current council directory certifies this entity for horchata elaboration and publishes its location and first-party channel. | [DO Chufa profile](https://chufadevalencia.org/empresas/industrias-lacteas-de-granada/) | <http://www.chufi.es/> | Confirm the exact productive unit, current own offer and catalog eligibility; certification scope does not automatically prove cultivation or an independent producer identity. |
-
-
-## Remaining work
-
-Review producer-owned domains and brands, then de-duplicate cooperative identities. Mercaóleo's listed plant belongs to Antequera and is routed to the Málaga note instead of this area.
-
-## RestaurantesMadrid cheese-directory pass — 2026-08-31
-
-- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
-- Search date: 2026-08-31.
-- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Source ceiling: the directory is discovery only. First-party production claims support these leads but do not replace the normal admission, evidence and duplicate review.
+## DO Chufa de Valencia
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| El Fénix Lácteos | Mairena, Nevada | `Lácteos y quesos` — artisan dairy products | The current first-party site identifies an artisan dairy in Mairena and ties its products to milk from the family's Ugíjar farm. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://elfenixlacteos.com/> | Confirm the exact Mairena productive address, durable public identity and current offer before admission. |
+| INDUSTRIAS LACTEAS DE GRANADA | Granada | `Bebidas sin alcohol` — certified Chufa de Valencia horchata elaborator | The current council directory certifies this entity for horchata elaboration and publishes its location and first-party channel. | [DO Chufa profile](https://chufadevalencia.org/empresas/industrias-lacteas-de-granada/) | <http://www.chufi.es/> | Confirm the exact productive unit, current own offer and catalog eligibility; certification scope does not automatically prove cultivation or an independent producer identity. |
+
+## RestaurantesMadrid cheese-directory pass — 2026-08-31
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
 | La Quesería 1907 / Natural Food Gourmet Ibérica | Escúzar | `Lácteos y quesos` — mozzarella and dairy products | The current site identifies a dairy transformation centre in Escúzar and the directory ties the older El Rey de la Mozzarella identity to this producer. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://laqueseria1907.com/> | Establish a current producer-attributable own offer and reconcile El Rey de la Mozzarella, La Quesería 1907 and the legal operator before admission. |
 
 ## Feria del Queso Artesano de Teba — 2026-09-03
 
-- Discovery source: Feria del Queso Artesano de Teba (<https://www.feriadelquesoteba.com/stands>) and Concurso de Quesos Artesanos Premio Guadalteba.
-- Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in Granada, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published fair directories, awards registries and first-party pages available on 2026-09-03.
-- Source ceiling: fair records establish participation, contact and product line; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Quesos Montefrieño | Montefrío | `Lácteos y quesos` — raw goat milk cheese | Long-standing artisan dairy in Montefrío (Poniente Granadino) crafting long-aged goat's milk cheeses; regular participant and winner at Teba. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | <https://quesomontefrieno.com/> | Verify physical dairy workshop premises in Montefrío and active commercial lineup. |
 | Quesos Abuela Eva | Capileira | `Lácteos y quesos` — Alpujarra mountain goat cheese | High-mountain artisan cheese workshop in Capileira (Barranco de Poqueira, La Alpujarra); confirmed exhibitor at Teba cheese market. | [Feria de Teba](https://www.feriadelquesoteba.com/stands) | — | Confirm dedicated dairy workshop address in Capileira and direct retail availability. |
 
 ## Proveedores.com directory sweep — 2026-09-02
 
-- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/granada>, a B2B supplier directory whose listings are written by the companies themselves.
-- Search date: 2026-09-02.
-- Scope: 102 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
-- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
-- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Aceites Sierra Sur | Granada | `Aceite` | The directory states: “Proveedores caracterizados por su gran calidad en la elaboración y envasamiento realizado totalmente en sus…” | [Directory](https://www.proveedores.com/proveedores/aceites-sierra-sur/) | <https://aceitessierrasur.es/> | Confirm an own oil mill rather than bottling bought oil. |
+| Aceites Sierra Sur | Granada | `Aceite` | The directory states: “Proveedores caracterizados por su gran calidad en la elaboración y envasamiento realizado totalmente en sus…” | [Directory](https://www.proveedores.com/proveedores/aceites-sierra-sur/) | <https://aceitessierrasur.es/> | The same Aceites Sierra Sur domain is already represented in Cabra del Santo Cristo. The live group site names several installations and a Pinos Puente contact; establish an independently identifiable additional unit before admission. |
 | Aceites Tellus Magna | Granada | `Aceite` | The directory states: “Aceites Tellus Magna es una empresa cuya sede se localiza en Granada, que se especializa en la fabricación y…” | [Directory](https://www.proveedores.com/proveedores/aceites-tellus-magna/) |  | Confirm an own oil mill rather than bottling bought oil. |
 | Cooperativa de Santa Mónica de Piñar | Píñar | `Aceite` | The directory states: “Con sede en Piñar (Granada), la Cooperativa de Santa Mónica de Piñar se especializa en la elaboración de aceite de…” | [Directory](https://www.proveedores.com/proveedores/cooperativa-de-santa-monica-de-pinar/) | <https://cooperativasantamonica.es/> | Collective: confirm it governs the market identity of its members' output and that produce reaches the market under its own name. |
 | Dehesa Andaluza | Albolote | `Aceite` | The directory states: “Somos productores por lo que nuestros precios son muy competitivos” | [Directory](https://www.proveedores.com/proveedores/dehesa-andaluza/) |  | Confirm an own oil mill rather than bottling bought oil. |
@@ -117,14 +77,13 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | Dulces el Buen Sabor | Peligros | `Dulces y repostería` | The directory states: “Dulces el Buen Sabor es una empresa especializada en la elaboración de dulces artesanales y productos de pastelería…” | [Directory](https://www.proveedores.com/proveedores/dulces-el-buen-sabor/) |  | Confirm the productive workshop and that it is currently active. |
 | Pastelería El Sol | Granada | `Dulces y repostería` | The directory states: “Nos especializamos en ofrecer productos de pastelería artesanal, como alfajores, tartas, cremas, chocolates, milhojas…” | [Directory](https://www.proveedores.com/proveedores/pasteleria-el-sol/) | <https://www.pasteleriaelsol.com/> | Confirm this is an independently identifiable productive unit and not the row already published in cantabria/cantabria. |
 | Pastelería Pepe Vidrieras | Motril | `Dulces y repostería` | The directory states: “Elaboramos además diversos productos de pastelería artesanal tradicional” | [Directory](https://www.proveedores.com/proveedores/pasteleria-pepe-vidrieras/) |  | Confirm the productive workshop and that it is currently active. |
-| Tartas Cristina | Granada | `Dulces y repostería` | The directory states: “Todas las tartas que comercializamos son de elaboración artesanal y completamente diferentes al tipo de tarta que…” | [Directory](https://www.proveedores.com/proveedores/tartas-cristina/) | <https://tartascristina.com/> | Confirm the productive workshop and that it is currently active. |
 | Tartas San Antonio | Cúllar Vega | `Dulces y repostería` | The directory states: “Somos fabricantes de postres de todo tipo, desde postres individuales a tartas , siempre buscando algo diferente en…” | [Directory](https://www.proveedores.com/proveedores/tartas-san-antonio/) |  | Confirm the productive workshop and that it is currently active. |
 | Agrocastell | Gualchos | `Fruta y verdura` | The directory states: “Si necesita más información acerca de nuestras hortalizas , no dude en ponerse en contacto con nuestro equipo…” | [Directory](https://www.proveedores.com/proveedores/agrocastell/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Agroespinar | Gualchos | `Fruta y verdura` | The directory states: “Contamos con un pequeño almacén desde donde lo hacemos todo artesanalmente y envasando nuestros productos…” | [Directory](https://www.proveedores.com/proveedores/agroespinar/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Almacenes Rodríguez Valderrubio | Pinos Puente | `Fruta y verdura` | The directory states: “Con sede ubicada en la provincia de Granada, Almacenes Rodríguez Valderrubio es una compañía en la que nos…” | [Directory](https://www.proveedores.com/proveedores/almacenes-rodriguez-valderrubio/) | <https://www.almacenesrodriguez.net/> | Separate the own productive activity from the trading arm before placing the row. |
 | Artesafood | Jun | `Fruta y verdura` | The directory states: “Fabricamos y comercializamos productos en diferentes formatos” | [Directory](https://www.proveedores.com/proveedores/artesafood/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Biofruma | Motril | `Fruta y verdura` | The directory states: “Desde nuestra sede localizada en Motril (Granada) comercializamos hortalizas como pepinos , pimientos , calabacín …” | [Directory](https://www.proveedores.com/proveedores/biofruma/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
-| Cebestur | Dúrcal | `Fruta y verdura` | The directory states: “Ofrecemos cebolla en todos los tamaños y envases, además trabajamos para empresas de cuarta gama, fabricas de…” | [Directory](https://www.proveedores.com/proveedores/cebestur/) | <https://www.cebestur.es/> | Confirm a transforming step beyond washing, peeling, cutting and packing; handling alone is not elaboration. |
+| Cebestur | Dúrcal | `Fruta y verdura` | The directory states: “Ofrecemos cebolla en todos los tamaños y envases, además trabajamos para empresas de cuarta gama, fabricas de…” | [Directory](https://www.proveedores.com/proveedores/cebestur/) | <https://www.cebestur.es/> | The live Cebestur site offers peeled onions for manufacturers. Verify a material transformation or own growing beyond peeling and distribution. |
 | Frutas Manzano | Salobreña | `Fruta y verdura` | The directory states: “Frutas Manzano es una empresa localizada en Granada especialista en la producción y el almacenamiento de frutas…” | [Directory](https://www.proveedores.com/proveedores/frutas-manzano/) | <https://www.frutasmanzano.com/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Frutos Rojos de la Alpujarra | Órgiva | `Fruta y verdura` | The directory states: “Localizada en la cara sur de la Sierra Nevada, Frutos Rojos de La Alpujarra es una empresa familiar dedicada al…” | [Directory](https://www.proveedores.com/proveedores/frutos-rojos-de-la-alpujarra/) | <https://frutosrojosdelaalpujarra.com/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Fulgencio Spa | Granada | `Fruta y verdura` | The directory states: “Fulgencio Spa es una compañía proveedora de vegetales y frutas de la ciudad de Granada” | [Directory](https://www.proveedores.com/proveedores/fulgencio-spa/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
@@ -145,7 +104,6 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | Almendras Chirlata | Freila | `Frutos secos` | The directory states: “En Almendras Chirlata somos productores y distribuidores de almendras ecológicas , cultivadas en extensivo y en secano” | [Directory](https://www.proveedores.com/proveedores/almendras-chirlata/) | <https://almendraschirlata.com/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Frutos Secos y Golosinas Alhambra | Albolote | `Frutos secos` | The directory states: “Nos dedicamos a la fabricación y comercialización mayorista de productos destinados al sector alimenticio” | [Directory](https://www.proveedores.com/proveedores/frutos-secos-y-golosinas-alhambra/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | González & Piñango - Spain Global Marketers | Granada | `Frutos secos` | The directory states: “En González & Piñango - Spain Global Marketers comercializamos productos españoles de alta calidad a precios…” | [Directory](https://www.proveedores.com/proveedores/gonzalez-pinango-spain-global-marketers/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
-| Montial Exports | Granada | `Frutos secos` | The directory states: “En Montial Exports somos proveedores de almendras, nueces, pistachos, anacardos, entre otros Nuestra empresa ha…” | [Directory](https://www.proveedores.com/proveedores/montial-exports/) | <https://www.montialexports.com/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Helados La Rosa | Granada | `Helados` | The directory states: “Fabricamos helados artesanales de primera calidad lo que nos ha ganado la confianza de nuestra clientela” | [Directory](https://www.proveedores.com/proveedores/helados-la-rosa/) |  | Confirm the productive workshop and that it is currently active. |
 | Lopez Aguado | Granada | `Helados` | The directory states: “En Lopez Aguado tenemos 50 años distribuyendo todos los productos necesarios para profesionales de la heladería y la…” | [Directory](https://www.proveedores.com/proveedores/lopez-aguado/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Nevamar | Motril | `Helados` | The directory states: “Nevamar es una empresa cuya sede se encuentra en Granada y que cuenta con años de experiencia en el sector de los…” | [Directory](https://www.proveedores.com/proveedores/nevamar/) | <http://www.nevamar.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
@@ -156,7 +114,6 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | Quesería-lechería Condes de Sástago | Granada | `Lácteos y quesos` | The directory states: “Quesería-lechería Condes de Sástago es una empresa familiar, situada en la localidad de Órgiva (Granada) que se…” | [Directory](https://www.proveedores.com/proveedores/queseria-lecheria-condes-de-sastago/) |  | Confirm the dairy and that it is currently active. |
 | Biosearch Life | Granada | `Otros` | The directory states: “Biosearch Life es una empresa que se dedica a la elaboración, diseño y desarrollo de diferentes alimentos dietéticos…” | [Directory](https://www.proveedores.com/proveedores/biosearch-life/) |  | Identify the actual product and productive unit before assigning a category. |
 | Caracolsa | Albondón | `Otros` | The directory states: “Tenemos lo que necesitas, ya sea que tengas un negocio y quieres vender caracoles frescos, como si eres productor y…” | [Directory](https://www.proveedores.com/proveedores/caracolsa/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
-| Hielos Cubilacen | Granada | `Otros` | The directory states: “Nos especializamos en la fabricación, comercialización y distribución mayorista de diferentes variedades de hielo…” | [Directory](https://www.proveedores.com/proveedores/hielos-cubilacen/) | <https://hieloscubilacen.com/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Codigran | Santa Fe | `Pan y cereal` | The directory states: “Codigran es una empresa con más de un Siglo distribuyendo a los negocios de panadería y pastelería en la provincia de…” | [Directory](https://www.proveedores.com/proveedores/codigran/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Harinera Las Mercedes | Pinos Puente | `Pan y cereal` | The directory states: “Harinera Las Mercedes es una empresa localizada en Pinos Puente (Granada) que se dedica a la fabricación y…” | [Directory](https://www.proveedores.com/proveedores/harinera-las-mercedes/) | <https://harimersa.es/> | Confirm an own mill. |
 | Horno Sirves | Benalúa | `Pan y cereal` | The directory states: “Ubicada en Granada, en Horno Sirves somos proveedores de pan artesano 100%” | [Directory](https://www.proveedores.com/proveedores/horno-sirves/) |  | Confirm the productive workshop and that it is currently active. |
@@ -174,28 +131,15 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 
 ## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
 
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 6 open Level 1 leads fall in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | CAFES AGUAYO S.L. | Vegas del Genil | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00261/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "AGUAYO 2 BELICENA". |
 | CAFES CALI S.L.L. | Churriana de la Vega | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.01204/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "ESPAÑA 14 NAVE 3 P.I. SAN CAYETANO". |
-| CAFES SOLYCREMA S.L. | Motril | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00956/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Registered at the same address as the published “Cafés Sol y Crema” row (“CARRETERA ALMERIA Nº34” against “Carr. de Almería, 34, 18720 Motril, Granada, España”): decide whether they are one productive unit before creating a row. Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CARRETERA ALMERIA Nº34". |
 | CAFES ZAIDIN S.A. | Peligros | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00658/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE SEVILLA POLG. IND. ASEGRA PARC.16 B". |
 | KUBIK COFFEE COMPANY S.L. | Ogíjares | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.003722/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "CALLE LEON Nº9". |
 | CHOCOLATE GUEYSH, S.L. | Santa Fe | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00902/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "CTRA. MALAGA KM 441 HUERTA ARDILA". |
 
 ## RGSEAA ice-cream elaborators — 2026-09-03
-
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
@@ -204,24 +148,26 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 
 ## RGSEAA honey and confectionery elaborators — 2026-09-03
 
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | C.B. ALPU-MIEL | Lanjarón | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03030/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CORTIJUELOS BAJOS 6 2º". |
 
 ## RGSEAA condiment and spice elaborators — 2026-09-03
 
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | SALINAS DE LA MALAHA S.L. | La Malaha | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001937/GR | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CALLE SALINAS (DE LAS) S/N". |
+
+## Earlier candidate holds
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Ntra. Sra. de la Cabeza de Zújar, S. Coop. And. | Zújar | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Confirm current own brand/offer and productive-unit identity. |
+| Ntra. Sra. de los Remedios de Campotéjar, S. Coop. And. | Campotéjar | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Distinguish this unit from the same-named Iznalloz cooperative and confirm current own offer. |
+| Ntra. Sra. del Pilar, S. Coop. And. | Colomera | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Reconcile the operator with Oleomera and confirm its current own offer. |
+| Olibaza, S.L. | Baza | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/); [Directory](https://www.proveedores.com/proveedores/olibaza/); [olibaza.com](https://www.olibaza.com/es/) | — | Confirm current first-party activity and own offer. |
+| San Ildefonso de Peligros, S. Coop. And. | Peligros | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Reconcile the operator with Ildeoliva and confirm its current own offer. |
+| Santa Mónica de Píñar, S. Coop. And. | Píñar | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Confirm current first-party activity and own offer. |
+| Aceites Maeva, S.L. | Escúzar | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Confirm the productive unit, own brands and current offer; distinguish it from group or contract-processing identities. |
+| San Francisco de Asís, S. Coop. And. | Montefrío | `Aceite` — DOP Poniente de Granada | — | [DOP registered brands](https://www.doponientedegranada.com/paginas/Marcas-Inscritas.asp) | — | Confirm current public brand, offer and exact productive address. |
+| Aceites Algarinejo, S. Coop. And. | Algarinejo | `Aceite` — DOP Poniente de Granada | — | [DOP registered brands](https://www.doponientedegranada.com/paginas/Marcas-Inscritas.asp) | — | Confirm current public brand, offer and exact productive address. |

@@ -1,14 +1,13 @@
 # Candidate backlog — Las Palmas
 
-Target CSV: `data/csv/es/canarias/las-palmas.csv`
+- Target CSV: `data/csv/es/canarias/las-palmas.csv`
+- Editorial review: 2026-09-04; 53 unresolved candidate entries remain.
+- The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
+- Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
+- Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
+- Editorial and source rules: `docs/EDITORIAL.md`, `docs/EVIDENCE_CONTRACT.md` and `data/csv/es/AGENTS.md`.
 
 ## Michelin Green Star own-production lead pass — 2026-08-31
-
-- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
-- Search date: 2026-08-31.
-- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
-- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
-- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
@@ -16,19 +15,13 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 
 ## Proveedores.com directory sweep — 2026-09-03
 
-- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/las-palmas>, a B2B supplier directory whose listings are written by the companies themselves.
-- Search date: 2026-09-03.
-- Scope: 52 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
-- Cutoff: the directory listing as published on 2026-09-03. No first-party source, sanitary register or denomination council was consulted in this pass.
-- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Akro Market | Las Palmas de Gran Canaria | `Aceite` | The directory states: “Posibilidad de entrega directa desde almazara” | [Directory](https://www.proveedores.com/proveedores/akro-market/) |  | Confirm an own oil mill rather than bottling bought oil. |
 | La Florita de Lanzarote | Las Palmas de Gran Canaria | `Aperitivos` | The directory states: “Con sede en Las Palmas, La Florita de Lanzarote es una empresa familiar ubicada en la isla volcánica de Canarias…” | [Directory](https://www.proveedores.com/proveedores/la-florita-de-lanzarote/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Aguas de Teror | Teror | `Bebidas sin alcohol` | The directory states: “Embotellamos y distribuimos agua de mineralización débil, proveniente del manantial Fuente Agria de Teror” | [Directory](https://www.proveedores.com/proveedores/aguas-de-teror/) | <https://www.aguasdeteror.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Dakota Energy Drink | Las Palmas de Gran Canaria | `Bebidas sin alcohol` | The directory states: “Ubicada en Las Palmas (Las Palmas de Gran Canaria), Dakota Energy Drink es una empresa especializada en la…” | [Directory](https://www.proveedores.com/proveedores/dakota-energy-drink/) |  | Confirm an own offer that stays attributable to this producer through sale. |
-| E.I. Archipiélago | Las Palmas de Gran Canaria | `Bebidas sin alcohol` | The directory states: “E.I. Archipiélago es una empresa española que se especializa desde hace 42 años en la fabricación de zumos Libby’s en…” | [Directory](https://www.proveedores.com/proveedores/ei-archipielago/) | <https://libbys.es/> | Confirm an own offer that stays attributable to this producer through sale. |
+| E.I. Archipiélago | Las Palmas de Gran Canaria | `Bebidas sin alcohol` | The directory states: “E.I. Archipiélago es una empresa española que se especializa desde hace 42 años en la fabricación de zumos Libby’s en…” | [Directory](https://www.proveedores.com/proveedores/ei-archipielago/) | <https://libbys.es/> | The current Libby’s producer identity is already represented in Santa Cruz de Tenerife; the site gives only Canarias-wide production. Establish a separate Las Palmas productive unit before another row. |
 | Romanella Drinks España | Telde | `Bebidas sin alcohol` | The directory states: “Desde nuestra inauguración en el año 1976 nos hemos dedicado a ser proveedores de alimentos y bebidas” | [Directory](https://www.proveedores.com/proveedores/romanella-drinks-espana/) | <https://www.romanella.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Volcán | Las Palmas de Gran Canaria | `Bebidas sin alcohol` | The directory states: “Ubicada en Las Palmas de Gran Canaria, Volcán es una empresa dedicada a la elaboración y comercialización de bebidas…” | [Directory](https://www.proveedores.com/proveedores/volcan/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Zumos de Gran Canaria | Agüimes | `Bebidas sin alcohol` | The directory states: “Zumos de Gran Canaria es una empresa con sede en Agüimes, especializada en la elaboración de zumos concentrados en…” | [Directory](https://www.proveedores.com/proveedores/zumos-de-gran-canaria/) | <https://www.zumosgrancanaria.com/> | Confirm an own offer that stays attributable to this producer through sale. |
@@ -38,8 +31,6 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 | Avícolas Domínguez | Telde | `Carne` | The directory states: “La empresa Avícolas Domínguez se encuentra localizada en Las Palmas y se especializa en proveer huevos frecos de…” | [Directory](https://www.proveedores.com/proveedores/avicolas-dominguez/) |  | Confirm the farm behind the declared output. |
 | Camimpex Canarias | Agüimes | `Carne` | The directory states: “Luego trozamos la carne y la envasamos al vacío o congelamos, a pedido” | [Directory](https://www.proveedores.com/proveedores/camimpex-canarias/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Granja Avícola San Antonio | Ingenio | `Carne` | The directory states: “Además realizamos cría de gallinas ponedoras tanto para explotaciones ganaderas como para particulares” | [Directory](https://www.proveedores.com/proveedores/granja-avicola-san-antonio/) | <https://www.avicolasanantonio.com/> | Confirm the farm behind the declared output. |
-| Cervecería Viva | Santa Lucía de Tirajana | `Cerveza` | The directory states: “Cervecería Viva fue fundada en el año 1999 y se encuentra en Gran Canaria donde se dedica a la elaboración de cerveza…” | [Directory](https://www.proveedores.com/proveedores/cerveceria-viva/) | <https://cervezaviva.com/> | Confirm an own offer that stays attributable to this producer through sale. |
-| La Isleña | Arucas | `Chocolate` | The directory states: “Con sede en Gran Canaria, La Isleña es una empresa con trayectoria en el sector de los proveedores de chocolates que…” | [Directory](https://www.proveedores.com/proveedores/la-islena/) | <https://laislena.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Croquelinas | Arucas | `Comida preparada` | The directory states: “Ubicada en Arucas (Las Palmas), Croquelinas es una empresa dedicada a la fabricación artesana de precocinados gourmet…” | [Directory](https://www.proveedores.com/proveedores/croquelinas/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Panna&Pomodoro | Puerto del Rosario | `Comida preparada` | The directory states: “Su fragancia y el sabor se mantienen intactos desde la salida del horno hasta la mesa del consumidor, por un sistema…” | [Directory](https://www.proveedores.com/proveedores/panna-pomodoro/) | <https://www.pannapomodoro.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Llobet de Fortuny | Telde | `Condimentos` | The directory states: “En Llobet de Fortuny somos productores y envasadores de sal z elva en Gran Canaria” | [Directory](https://www.proveedores.com/proveedores/llobet-de-fortuny/) | <https://llobetdefortuny.com/> | Confirm an own offer that stays attributable to this producer through sale. |
@@ -47,14 +38,12 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 | Intercasa | San Bartolomé de Tirajana | `Conservas` | The directory states: “Situada en San Bartolomé de Tirajana (Las Palmas), Intercasa es una empresa productora y elaboradora de concentrado…” | [Directory](https://www.proveedores.com/proveedores/intercasa/) | <https://www.intercasacanarias.es/index.php/> | Confirm the cannery and that it is currently active. |
 | Aperitivos Snack | Agüimes | `Dulces y repostería` | The directory states: “Somos fabricantes de las marcas de snacks Munchitos, Bocabits y 3D’s y comercializamos también Lays, Ruffles…” | [Directory](https://www.proveedores.com/proveedores/aperitivos-snack/) | <https://aperitivossnack.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Galletas Bandama | Arucas | `Dulces y repostería` | The directory states: “Ubicada en Las Palmas, Galletas Bandama es una empresa especializa en la fabricación y distribución de galletas” | [Directory](https://www.proveedores.com/proveedores/galletas-bandama/) | <https://www.galletasbandama.com/> | Confirm an own offer that stays attributable to this producer through sale. |
-| Pastelería Teror | Teror | `Dulces y repostería` | The directory states: “La empresa es referente en el mercado de la elaboración de la bollería industrial” | [Directory](https://www.proveedores.com/proveedores/pasteleria-teror/) | <https://www.pasteleriateror.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Piccole Delizie Dolci | Telde | `Dulces y repostería` | The directory states: “Piccole Delizie Dolci es una empresa con sede en Telde (Las Palmas) especializada en la elaboración y…” | [Directory](https://www.proveedores.com/proveedores/piccole-delizie-dolci/) | <https://www.facebook.com/piccoledeliziedolci/> | Confirm the productive workshop and that it is currently active. |
 | EcoArucas | Firgas | `Fruta y verdura` | The directory states: “Somos EcoArucas , una tienda online ubicada en Las Palmas, de proveedores de alimentación ecológica artesanal” | [Directory](https://www.proveedores.com/proveedores/ecoarucas/) | <https://ecoarucas.com/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | FRESH FRUTAS CANARIAS | Las Palmas de Gran Canaria | `Fruta y verdura` | The directory states: “FRESH FRUTAS CANARIA S es una empresa dedicada a la fabricación de zumos y macedonias de la marca Zumisimo” | [Directory](https://www.proveedores.com/proveedores/fresh-frutas-canarias/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Love Life Smoothies & Fruit Solutions | Las Palmas de Gran Canaria | `Fruta y verdura` | The directory states: “En Love Life Smoothies & Fruit Solutions somos dostribuidores de smoothies, frutas y frappés congelados IQF de…” | [Directory](https://www.proveedores.com/proveedores/love-life-smoothies-fruit-solutions/) | <https://www.lovelifesmoothies.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Alibeb Canarias | Telde | `Aperitivos` | The directory states: “Nos encontramos localizados en Telde (Las Palmas), especializándonos en la distribución de aperitivos y snacks del…” | [Directory](https://www.proveedores.com/proveedores/alibeb-canarias/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Hermach | Las Palmas de Gran Canaria | `Frutos secos` | The directory states: “Somos fabricantes de marcas blancas de productos como frutos secos , semillas productos de confitería y artículos de…” | [Directory](https://www.proveedores.com/proveedores/hermach/) | <https://www.hermach.es/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
-| Heladeria Topsweet Corralejo | La Oliva | `Helados` | The directory states: “Topsweet Corralejo es una empresa fabricante de helado artesanal con sede en Corralejo, Fuerteventura (Islas Canarias)” | [Directory](https://www.proveedores.com/proveedores/heladeria-topsweet-corralejo/) | <https://www.heladeriatopsweet.com/> | Confirm the productive workshop and that it is currently active. |
 | Iglú | Santa Lucía de Tirajana | `Helados` | The directory states: “Iglú es una empresa especializada en la fabricación y distribución de helado artesanal italiano, con sede en…” | [Directory](https://www.proveedores.com/proveedores/iglu/) |  | Confirm the productive workshop and that it is currently active. |
 | Granja De Teror | Las Palmas de Gran Canaria | `Huevos` | The directory states: “Granja De Teror es una granja con una dilatada historia, muy ligada a su entorno natural y a Gran Canaria” | [Directory](https://www.proveedores.com/proveedores/granja-de-teror/) |  | Confirm the farm behind the declared output. |
 | Granja La Pardilla | Telde | `Huevos` | The directory states: “Somos Granja La Pardilla , una empresa que cuenta con más de cuarenta años de experiencia en la producción de huevos…” | [Directory](https://www.proveedores.com/proveedores/granja-la-pardilla/) |  | Confirm the farm behind the declared output. |
@@ -65,7 +54,6 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 | Grupo Haricana | Agüimes | `Pan y cereal` | The directory states: “Somos fabricantes y distribuidores de harina y suministros de panadería” | [Directory](https://www.proveedores.com/proveedores/grupo-haricana/) | <http://www.grupoharicana.com/> | Publish the specific productive unit, not the parent group. |
 | Molinera de Schamann | Las Palmas de Gran Canaria | `Pan y cereal` | The directory states: “Molinera de Schamann es una empresa española localizada en Tamaraceite (Las Palmas de Gran Canaria) que se dedica a…” | [Directory](https://www.proveedores.com/proveedores/molinera-de-schamann/) |  | Confirm an own mill. |
 | Padupasa | Las Palmas de Gran Canaria | `Pan y cereal` | The directory states: “Padupasa somos fabricantes y proveedores de pan” | [Directory](https://www.proveedores.com/proveedores/padupasa/) |  | Confirm an own offer that stays attributable to this producer through sale. |
-| Panadería Bollería Tajaste | Tinajo | `Pan y cereal` | The directory states: “Nuestra empresa se encuentra en Lanzarote y conjugamos los métodos artesanales de elaboración con las más modernas…” | [Directory](https://www.proveedores.com/proveedores/panaderia-bolleria-tajaste/) | <http://www.pbtajaste.com/> | Confirm the productive workshop and that it is currently active. |
 | Panadería Hermanos Rodríguez | Pájara | `Pan y cereal` | The directory states: “Somos proveedores de pasteles artesanos y utilizamos la última tecnología pero mantenemos las recetas tradicionales e…” | [Directory](https://www.proveedores.com/proveedores/panaderia-hermanos-rodriguez/) | <https://www.panaderiahnosrodriguez.com/> | Confirm the productive workshop and that it is currently active. |
 | Panadería Pulido | Vega de San Mateo | `Pan y cereal` | The directory states: “Nos avala la experiencia y liderazgo de nuestra empresa en el mercado del pan y la bollería” | [Directory](https://www.proveedores.com/proveedores/panaderia-pulido/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Panadería – Pastelería Pulido | Vega de San Mateo | `Pan y cereal` | The directory states: “Panadería – Pastelería Pulido es una empresa con sede en Gran Canaria, que desde el año 1923 se dedica a la…” | [Directory](https://www.proveedores.com/proveedores/panaderia-pasteleria-pulido/) |  | Confirm an own offer that stays attributable to this producer through sale. |
@@ -74,16 +62,9 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 | Samak Seafood | Las Palmas de Gran Canaria | `Pescado` | The directory states: “Samak Seafood es una empresa ubicada en Las Palma (Gran Camaria), con una larga experiencia como exportador de…” | [Directory](https://www.proveedores.com/proveedores/samak-seafood/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Para Pymes Canarias | Las Palmas de Gran Canaria | `Té e infusiones` | The directory states: “Para Pymes Canarias se encuentra en el sur de Gran Canaria y es distribuidor para la provincia de Las Palmas de…” | [Directory](https://www.proveedores.com/proveedores/para-pymes-canarias/) | <https://www.ayurvedacanarias.es/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Buildremas Gourmet | Las Palmas de Gran Canaria | `Vino` | The directory states: “Buildremas Gourmet es una empresa con el deseo de instruir al público con la deliciosa costumbre del vino y los…” | [Directory](https://www.proveedores.com/proveedores/buildremas-gourmet/) |  | Confirm the winery and its current published range. |
-| La Cava de Piñero | Agüimes | `Vino` | The directory states: “Pero la clave está en los elementos únicos que ofrecemos: por un lado, una cuidadosa curación de producto que combina…” | [Directory](https://www.proveedores.com/proveedores/la-cava-de-pinero/) | <https://lacavadepinero.es/> | Confirm the winery and its current published range. |
 | Marvinfuerte | San Bartolomé de Tirajana | `Vino` | The directory states: “En Marvinfuerte somos proveedores de vino tinto , vino blanco y vino espumoso de calidad directamente de productores…” | [Directory](https://www.proveedores.com/proveedores/marvinfuerte/) |  | Confirm the winery and its current published range. |
 
 ## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
-
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 25 "Alimentos estimulantes, especies vegetales para infusiones y sus derivados", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 857 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a coffee, cocoa or infusion producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
@@ -92,12 +73,6 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 
 ## RGSEAA ice-cream elaborators — 2026-09-03
 
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 3 open Level 1 leads fall in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Chelado Maestros Heladeros, S.L. | San Bartolomé de Tirajana | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002963/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "Cartago 9 El Tablero". |
@@ -105,12 +80,6 @@ Target CSV: `data/csv/es/canarias/las-palmas.csv`
 | Tucano Helado Artesanal, S.L. | San Bartolome | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02373/GC | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/Mayor, 51 Residencial Playa Honda - Local 165 (Puerta Trasera)". |
 
 ## RGSEAA honey and confectionery elaborators — 2026-09-03
-
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|

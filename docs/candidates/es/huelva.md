@@ -1,14 +1,13 @@
 # Candidate backlog — Huelva
 
-Target CSV: `data/csv/es/andalucia/huelva.csv`
+- Target CSV: `data/csv/es/andalucia/huelva.csv`
+- Editorial review: 2026-09-04; 59 unresolved candidate entries remain.
+- The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
+- Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
+- Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
+- Editorial and source rules: `docs/EDITORIAL.md`, `docs/EVIDENCE_CONTRACT.md` and `data/csv/es/AGENTS.md`.
 
 ## Michelin Green Star own-production lead pass — 2026-08-31
-
-- Discovery source: supplied workbook `estrellas_verdes_michelin_produccion_propia_49.xlsx`, cross-checked with linked public pages.
-- Search date: 2026-08-31.
-- Scope: restaurant identities in this area with a concrete own-production signal, deduped against the current catalog, candidate queue and evidence.
-- Cutoff: workbook rows and public pages accessible on the search date; no adjacent search.
-- Source ceiling: Green Star, guide and restaurant pages support only the stated hospitality and production signal. They do not by themselves establish a distinct durable producer identity, a current take-home own offer, the exact productive unit or admission.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
@@ -16,42 +15,16 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 
 ## Linverd catalog brand pass — 2026-09-01
 
-- Discovery source: [Linverd online catalog](https://linverd.com/es/catalogo), using its manufacturer facets and producer-owned pages for same-lead corroboration.
-- Search date: 2026-09-01.
-- Scope: food and drink identities in the complete catalog, reconciled against the current CSV, candidate note, country-wide aliases and closed evidence, then routed to the productive area.
-- Cutoff: 3,716 catalog references across 310 pages and 477 named manufacturer facets visible on the search date; personal-care, supplement-only and unattributed references were excluded.
-- Source ceiling: a Linverd listing supports only a retail product-to-brand signal. It does not establish productive responsibility, the productive unit, identity continuity or catalog admission.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Dehesa Maladúa | Aroche | `Carne` — 100% Iberian acorn-fed ham | Linverd lists the brand's ham and public producer material connects the family project, its own dehesa and Iberian production to Aroche. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=424) | <https://dehesamaladua.bio/> | Confirm current activity and offer, the exact curing and productive unit, and the durable legal/public identity before admission. |
-
-## Feria Regional del Jamón y del Cerdo Ibérico de Aracena — 2026-09-03
-
-- Discovery source: Feria Regional del Jamón y del Cerdo Ibérico de Aracena (<https://aracena.es>) official exhibitor registers.
-- Search date: 2026-09-03.
-- Scope: 1 unresolved Level 1 lead in Huelva, after de-duplication against the current area CSV, candidate backlog and closed evidence.
-- Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
-- Source ceiling: fair participant registers establish regular artisan presence, category and geographical clue; they do not by themselves prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Jamones Hermanos Cárdeno | Cumbres Mayores | `Carne` — traditional acorn-fed 100% Ibérico ham (DOP Jabugo) | Historic family curing house founded in 1910 in Cumbres Mayores with natural underground cellars for slow-cured pure acorn-fed Ibérico ham; regular commercial exhibitor. | [Feria de Aracena](https://aracena.es) | <https://hermanoscardeno.es/> | Verify curing cellar facilities in Cumbres Mayores, sanitary register and current bottled/sliced direct offer. |
+| Dehesa Maladúa | Aroche | `Carne` — 100% Iberian acorn-fed ham | Linverd lists the brand's ham and public producer material connects the family project, its own dehesa and Iberian production to Aroche. | [Linverd brand filter](https://linverd.com/es/catalogo?fm=424) | <https://dehesamaladua.bio/> | The live site proves a current own ibérico offer and estate/curing responsibility, but only broadly locates them in Sierra de Aracena y Picos de Aroche. Establish whether the productive unit is in Aroche municipality. |
 
 ## Proveedores.com directory sweep — 2026-09-02
-
-- Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/huelva>, a B2B supplier directory whose listings are written by the companies themselves.
-- Search date: 2026-09-02.
-- Scope: 60 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
-- Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
-- Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Martinez S | Huelva | `Aceite` | The directory states: “También somos productores y proveedores de mermelada de fresa” | [Directory](https://www.proveedores.com/proveedores/martinez-s/) |  | Confirm an own oil mill rather than bottling bought oil. |
 | Real Distribución | Huelva | `Bebidas sin alcohol` | The directory states: “Ubicada en Huelva, Real Distribución es una empresa especializada en la distribución de productos alimenticios y…” | [Directory](https://www.proveedores.com/proveedores/real-distribucion/) |  | Separate the own productive activity from the trading arm before placing the row. |
-| Sat Coffee Profesionales del Café | Huelva | `Café` | The directory states: “Sat Coffee Profesionales del Café es un tostadero que además de tienda física con tienda online con envío a toda…” | [Directory](https://www.proveedores.com/proveedores/sat-coffee-profesionales-del-cafe/) | <https://www.satcoffee.es/> | Collective: confirm it governs the market identity of its members' output and that produce reaches the market under its own name. |
-| Antonio Castaño | Cumbres Mayores | `Carne` | The directory states: “Antonio Castaño es una empresa familiar especializada en la fabricación de productos derivados del cerdo ibérico” | [Directory](https://www.proveedores.com/proveedores/antonio-castano/) | <https://jamonesac.com/> | Confirm an own curing house and current activity. |
 | Avi Fres | Huelva | `Carne` | The directory states: “Desde hace más de quince años que Avi Fres se dedica al sector de los proveedores de carne de aves desde su sede en…” | [Directory](https://www.proveedores.com/proveedores/avi-fres/) |  | Confirm the productive workshop and that it is currently active. |
 | Biofincamontefrio | Cortegana | `Carne` | The directory states: “Ubicada en la comarca de Jabugo, en la Sierra de Huelva se encuentra Biofinca Montefrío , una dehesa ecológica la…” | [Directory](https://www.proveedores.com/proveedores/biofincamontefrio/) |  | Confirm an own curing house and current activity. |
 | Carnicería NutriCampo | Huelva | `Carne` | The directory states: “Carnicería NutriCampo es una empresa dedicada a la comercialización de una amplia gama de Jamones de la sierra y…” | [Directory](https://www.proveedores.com/proveedores/carniceria-nutricampo/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
@@ -61,7 +34,6 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 | Hamburguesas Nene Mayoristas | Huelva | `Carne` | The directory states: “Hamburguesas Nene Mayoristas es una empresa localizada en Huelva especializada en la fabricación y distribución al…” | [Directory](https://www.proveedores.com/proveedores/hamburguesas-nene-mayoristas/) |  | Separate the own productive activity from the trading arm before placing the row. |
 | Iberden | Encinasola | `Carne` | The directory states: “Ubicada en Encinasola (Huelva), Iberden es una empresa que se dedica a la elaboración y comercialización de jamón…” | [Directory](https://www.proveedores.com/proveedores/iberden/) | <https://iberden.es/> | Confirm an own curing house and current activity. |
 | Jamones Chaparro | Cumbres Mayores | `Carne` | The directory states: “Jamones Chaparro es una fábrica de jamones , paletas y embutidos derivados del cerdo ibérico” | [Directory](https://www.proveedores.com/proveedores/jamones-chaparro/) | <https://www.jamoneschaparro.com/> | Confirm an own curing house and current activity. |
-| Jamones y Embutidos Galván | Cumbres Mayores | `Carne` | The directory states: “Con sede afincada en Huelva, Jamones y Embutidos Galván es una compañía en la que somos productores y distribuidores…” | [Directory](https://www.proveedores.com/proveedores/jamones-y-embutidos-galvan/) | <https://www.jamonesgalvan.es/> | Confirm an own curing house and current activity. |
 | Juan Macias Jabugo | Jabugo | `Carne` | The directory states: “Juan Macias Jabugo es una empresa situada en Jabugo (Huelva) que se especializa en la fabricación y comercialización…” | [Directory](https://www.proveedores.com/proveedores/juan-macias-jabugo/) |  | Confirm an own curing house and current activity. |
 | La Última Dehesa | Hinojales | `Carne` | The directory states: “No fabricamos un producto plano, fabricamos un producto diferente, marcado por sabores únicos que nos llevan a…” | [Directory](https://www.proveedores.com/proveedores/la-ultima-dehesa/) | <https://laultimadehesa.es/> | Confirm an own curing house and current activity. |
 | LONCHEADOS JUAN MACÍAS | Cortegana | `Carne` | The directory states: “Somos una empresa familiar con una vasta experiencia seleccionando y escogiendo jamones en las Bodegas de Jabugo” | [Directory](https://www.proveedores.com/proveedores/loncheados-juan-macias/) | <https://loncheadosjuanmacias.com/> | Confirm an own-brand offer rather than contract manufacturing for third parties. |
@@ -69,7 +41,6 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 | Sánchez Romero Carvajal | Huelva | `Carne` | The directory states: “Sánchez Romero Carvajal es una empresa con una extensa tradición en la elaboración de jamones y otros productos…” | [Directory](https://www.proveedores.com/proveedores/sanchez-romero-carvajal/) |  | Confirm an own curing house and current activity. |
 | Selección de Jabugo | Aracena | `Carne` | The directory states: “Ubicada en Aracena (Huelva), Selección de Jabugo es una empresa especializa en la fabricación y comercialización de…” | [Directory](https://www.proveedores.com/proveedores/seleccion-de-jabugo/) | <https://www.selecciondejabugo.com/> | Confirm an own curing house and current activity. |
 | Selección Reserva Jabugo | Cortegana | `Carne` | The directory states: “Trabajamos para ofrecerles los embutidos más exquisitos, elaborados siguiendo las técnicas artesanales, a precios…” | [Directory](https://www.proveedores.com/proveedores/seleccion-reserva-jabugo/) | <https://jamonrey.com/> | The listing declares trade: confirm an own productive step before treating it as a producer. |
-| Salinas del Alemán | Isla Cristina | `Condimentos` | The directory states: “La extracción y manipulación de nuestra sal se realiza de manera única y característico 100% artesanal, garantizando…” | [Directory](https://www.proveedores.com/proveedores/salinas-del-aleman/) | <https://www.salinasdelaleman.es/> | Confirm the productive workshop and that it is currently active. |
 | Anisados Arenas | Zalamea La Real | `Destilados y licores` | The directory states: “Nos dedicamos a la fabricación de forma artesanal en calderas de cobre con leña de encina” | [Directory](https://www.proveedores.com/proveedores/anisados-arenas/) | <https://www.anisadosarenas.com/> | Confirm an own still rather than contract distilling. |
 | Anisados Zarza Mora | Valverde del Camino | `Destilados y licores` | The directory states: “Anisados Zarza Mora es la empresa que más años lleva dedicada a la fabricación de bebidas espirituosas en nuestro país” | [Directory](https://www.proveedores.com/proveedores/anisados-zarza-mora/) |  | Confirm an own still rather than contract distilling. |
 | El Camarín | El Rocío | `Destilados y licores` | The directory states: “El Camarín nace en el corazón de Doñana, en una aldea con sabores a historia, arte, flamenco y devoción” | [Directory](https://www.proveedores.com/proveedores/el-camarin/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
@@ -82,10 +53,9 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 | La Canastita | Lucena del Puerto | `Fruta y verdura` | The directory states: “Somos productores y proveedores de moras” | [Directory](https://www.proveedores.com/proveedores/la-canastita/) | <https://www.lacanastita.com/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | La Huerta de Raquel | Palos de la Frontera | `Fruta y verdura` | The directory states: “Cultivamos nuestros productos en las mejores condiciones y su recolecta se realiza de manera manual para garantizar…” | [Directory](https://www.proveedores.com/proveedores/la-huerta-de-raquel/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Mogalla | Cartaya | `Fruta y verdura` | The directory states: “Localizada en Cartaya (Huelva), Mogalla es una empresa agrícola productora y comercializadora de fruta cítrica , así…” | [Directory](https://www.proveedores.com/proveedores/mogalla/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
-| Rocfruit | Rociana del Condado | `Fruta y verdura` | The directory states: “Rocfruit es una empresa familiar dedicada desde hace 36 años al cultivo, producción y comercialización al por mayor…” | [Directory](https://www.proveedores.com/proveedores/rocfruit/) | <https://rocfruit.es/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Soloberry | Moguer | `Fruta y verdura` | The directory states: “Soloberry es una compañía localizada en Huelva que se encarga de cultivar frutas” | [Directory](https://www.proveedores.com/proveedores/soloberry/) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Surexport | Almonte | `Fruta y verdura` | The directory states: “Surexport es una empresa de Huelva que se encarga de la producción y comercialización de frutas” | [Directory](https://www.proveedores.com/proveedores/surexport/) | <https://www.surexport.es/es/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
-| Gilper | La Palma del Condado | `Frutos secos` | The directory states: “Ubicada en La Palma del Condado (Huelva), Gilper es una empresa dedicada a la fabricación y comercialización de…” | [Directory](https://www.proveedores.com/proveedores/gilper/) | <http://gilper.com/> | Confirm own cultivation on an identifiable holding rather than buying to resell. |
+| Gilper | La Palma del Condado | `Frutos secos` | The directory states: “Ubicada en La Palma del Condado (Huelva), Gilper es una empresa dedicada a la fabricación y comercialización de…” | [Directory](https://www.proveedores.com/proveedores/gilper/) | <http://gilper.com/> | The linked Gilper domain is a development placeholder with no current food production evidence. Locate a current authoritative source; this access finding does not establish business closure. |
 | Granja de Gallinas Camperas Viva La Vida | Berrocal | `Huevos` | The directory states: “Granja de Gallinas Camperas Viva La Vida es una empresa ubicada en Berrocal (Huelva)” | [Directory](https://www.proveedores.com/proveedores/granja-de-gallinas-camperas-viva-la-vida/) | <https://www.facebook.com/gallinascontentas/> | Confirm the farm behind the declared output. |
 | Huevos Doñana | Hinojos | `Huevos` | The directory states: “Huevos Doñana es una empresa con una larga trayectoria como proveedores de huevos camperos” | [Directory](https://www.proveedores.com/proveedores/huevos-donana/) | <https://huevosdonana.com/> | Confirm the farm behind the declared output. |
 | La Casa De Los Quesos | Huelva | `Lácteos y quesos` | The directory states: “La Casa De Los Quesos es una empresa situada en Huelva que ofrece una amplia selección de quesos artesanales de gran…” | [Directory](https://www.proveedores.com/proveedores/la-casa-de-los-quesos/) | <https://lacasadelosquesos.com/> | Confirm the dairy and that it is currently active. |
@@ -100,7 +70,6 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 | Mariscos Carrillo | Punta Umbría | `Pescado` | The directory states: “Somos artesanos de la gamba blanca , sin ningún tipo de intermediario, con posibilidad de reparto a todo territorio…” | [Directory](https://www.proveedores.com/proveedores/mariscos-carrillo/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Mariscos Hernández | Huelva | `Pescado` | The directory states: “Contamos actualmente con las más modernas instalaciones y salas de elaboración de la provincia de Huelva, con una…” | [Directory](https://www.proveedores.com/proveedores/mariscos-hernandez/) | <https://mariscoshernandez.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Mariscos Maremagnum | Huelva | `Pescado` | The directory states: “Mariscos Maremagnum es una empresa que se especializa en el sector de proveedores de mariscos” | [Directory](https://www.proveedores.com/proveedores/mariscos-maremagnum/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
-| Mariscos Méndez | Huelva | `Pescado` | The directory states: “Contamos con la única sala blanca de elaboración de la provincia de Huelva donde preparamos nuestros productos…” | [Directory](https://www.proveedores.com/proveedores/mariscos-mendez/) | <https://mariscosmendez.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Ole marisco | Huelva | `Pescado` | The directory states: “La empresa abre sus puertas ofreciendo y dando a conocer al publico el producto que nos da el mar, resaltando el…” | [Directory](https://www.proveedores.com/proveedores/ole-marisco/) | <https://olemarisco.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Pescado y Marisco de Huelva | Huelva | `Pescado` | The directory states: “Somos proveedores de la gran mayoría de géneros los cuales se pescan de forma artesanal como: calamares, pulpo…” | [Directory](https://www.proveedores.com/proveedores/pescado-y-marisco-de-huelva/) | <https://www.instagram.com/pescaderiaelpitu/> | Confirm the productive workshop and that it is currently active. |
 | Pescados y Mariscos Costa Atlántico | San Juan del Puerto | `Pescado` | The directory states: “Contamos con sala de elaboración propia de productos del mar, especializándonos en cefalopodos como pulpo y sepia…” | [Directory](https://www.proveedores.com/proveedores/pescados-y-mariscos-costa-atlantico/) |  | Confirm an own offer that stays attributable to this producer through sale. |
@@ -111,23 +80,11 @@ Target CSV: `data/csv/es/andalucia/huelva.csv`
 
 ## RGSEAA ice-cream elaborators — 2026-09-03
 
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 28 "Helados", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 724 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals an ice-cream producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 lead falls in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
-
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | HELADOS ARTESANOS MAZAGON S.L. | Mazagon | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.02243/H | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POL. IND. LOS PINOS, NAVES 57-58". |
 
 ## RGSEAA condiment and spice elaborators — 2026-09-03
-
-- Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 24 "Condimentos y especias", category 1 "Fabricación o Elaboración o Transformación".
-- Search date: 2026-09-03.
-- Scope: all 651 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a condiment or spice producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
-- Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
