@@ -32,9 +32,18 @@
 - The Catalan *venda de proximitat* register accredits a named operator to sell
   its own output by direct sale or short circuit, and publishes the
   accreditation, holder, declared trade name, municipality and declared
-  products. One record therefore carries identity, own productive output, offer
-  and municipality, and can admit a row on its own at `pendiente`. It does not
-  establish current activity, a first-party channel or online sales.
+  products. One record carries identity, own productive output and offer, and
+  can admit a row on its own at `pendiente`. It does not establish current
+  activity, a first-party channel or online sales. Two limits bound it. Its
+  address and municipality are the accreditation holder's declared address, not
+  the productive unit, so a city address places no grove, vineyard or flock and
+  leaves the placement question open. And a livestock accreditation is a
+  permission to sell meat rather than evidence that butchered product reaches
+  consumers: sixteen such rows in Barcelona were purged as `out-of-scope` once
+  the municipal establishment census showed only a stockbreeding holding, so
+  check that census before admitting a meat or raw-milk holder on the register
+  alone. Prefer the live open dataset over the published PDF listing, whose
+  entries can be a decade old.
 - The CCPAE *guia d'operadors* is a Catalonia-wide organic certification
   register, not a provincial producer directory. One record supports the
   operator, its certified activity class and the municipality it publishes;

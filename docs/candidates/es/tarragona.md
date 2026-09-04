@@ -929,7 +929,8 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 - Scope: all 2,410 accredited producers, de-duplicated against the area CSVs on four keys — published phone, own email domain, name and municipality, industrial address and municipality — and against the leads already open in these notes. 1,284 resolved to something already held, which leaves 299 open Level 1 leads in this area.
 - Cutoff: the register as published on 2026-09-04; its rows were last updated on 2026-07-03. Fourteen accreditations covering only ornamental plants or nursery stock were dropped as non-food, and nine fall outside the four Catalan provinces.
 - Why this source is stronger than the registers above: accreditation is granted for selling the producer's **own** output directly, so unlike RIAAC or the RGSEAA it speaks to the own-offer criterion rather than only to a productive step. It still does not establish current activity, and the accreditation year on each row is the only currency signal the register gives.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register publishes the accreditation holder's declared address, not the productive unit, so its municipality does not place a grove, vineyard or flock on its own.
+- One further lead was routed here from the Barcelona note, where the holder's city address had placed it.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
@@ -1232,6 +1233,7 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | JOSEP TORT (TORT MONTSERRAT, JOSEP) | Arboç | `Vino` | Accredited for venda directa of its own output, VP/P/2422/2016; declares “Vins, caves i vinagres” | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi) |  | Confirm the winery and its current published range. |
 | MON PARE, MAS DE SOTORRES, ELS COSTUMS (LES VINYES DEL CONVENT, SLU) | Gandesa | `Vino` | Accredited for venda directa and venda circuit curt of its own output, VP/P/3662/2021; declares “Vins, caves i vinagres” | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi) |  | Confirm the winery and its current published range. |
 | UN SOL CEL (LLUCH JUNCOSA, PERE) | Sant Jaume dels Domenys | `Vino` | Accredited for venda directa of its own output, VP/P/3480/2020; declares “Vins, caves i vinagres” | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi) |  | Confirm the winery and its current published range. |
+| Tritruf (Explotacions Agropecuaria Rupit) | El Pont d'Armentera | `Setas` | Accredited for venda de proximitat, VP/P/4394/2024; declares “TÒFONA”. Its own site places a black-truffle plantation, planted in 2009 on former vineyard, at El Pont d'Armentera. | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi); [Tritruf](https://www.tritruf.es/sobre-nosotros/) | <https://www.tritruf.es/> | Confirm the current own offer and whether truffle reaches the market under this identity. Routed from the Barcelona note, where the register's Barcelona city address had placed it; that placement is closed as `reject:other-area`. |
 
 ## HelloBo platform discovery pass — 2026-09-04
 

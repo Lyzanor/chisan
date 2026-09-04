@@ -539,7 +539,8 @@
 - Scope: all 2,410 accredited producers, de-duplicated against the area CSVs on four keys — published phone, own email domain, name and municipality, industrial address and municipality — and against the leads already open in these notes. 1,284 resolved to something already held, which leaves 412 open Level 1 leads in this area.
 - Cutoff: the register as published on 2026-09-04; its rows were last updated on 2026-07-03. Fourteen accreditations covering only ornamental plants or nursery stock were dropped as non-food, and nine fall outside the four Catalan provinces.
 - Why this source is stronger than the registers above: accreditation is granted for selling the producer's **own** output directly, so unlike RIAAC or the RGSEAA it speaks to the own-offer criterion rather than only to a productive step. It still does not establish current activity, and the accreditation year on each row is the only currency signal the register gives.
-- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings.
+- Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register publishes the accreditation holder's declared address, not the productive unit, so its municipality does not place a grove, vineyard or flock on its own.
+- One further lead was routed here from the Barcelona note, where the holder's city address had placed it.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
@@ -953,6 +954,7 @@
 | PANE BALCELLS, TERESA | Preixana | `Vino` | Accredited for venda circuit curt of its own output, VP/P/4240/2023; declares “Vins, caves i vinagres” | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi) |  | Confirm the winery and its current published range. The accreditation carries identity, declared products and municipality by itself, so what is left open is current activity; the row would publish the holder's personal name. |
 | RUBIO DE SÒLS (SOGAS SANCHEZ, JUDIT ÀNGELA) | Balaguer | `Vino` | Accredited for venda directa and venda circuit curt of its own output, VP/P/2291/2016; declares “Vins, caves i vinagres” | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi) |  | Confirm the winery and its current published range. |
 | SERRAT DE SIMBOI (AIFALISLI, SL) | Esterri d'Àneu | `Vino` | Accredited for venda directa of its own output, VP/P/4516/2025; declares “Vins, caves i vinagres” | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi) |  | Confirm the winery and its current published range. |
+| Molí la Vansa (Matella) | Boada, Vilanova de Meià | `Vino` | Accredited for venda de proximitat, VP/P/4255/2023; declares “Vins, caves i vinagres”. Gastroteca places the mill and winery at Boada and describes own olive oil and DO Costers del Segre wine. | [Register](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Productors-adherits-a-la-venda-de-proximitat/xmyy-7xqi); [Gastroteca](https://www.gastroteca.cat/en/on-comprar/moli-la-vansa/) | <https://www.molilavansa.com/> | Confirm the current own offer and settle whether wine or olive oil is the defining output. Routed from the Barcelona note, where the register's Barcelona city address had placed it; that placement is closed as `reject:other-area`. |
 
 ## HelloBo platform discovery pass — 2026-09-04
 
