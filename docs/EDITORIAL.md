@@ -87,6 +87,7 @@ qualify; a polished profile that fails one scope criterion does not.
 | Brand, label, holding company or private-label seller | Include only the qualifying productive unit when public evidence gives it productive responsibility and place; the commercial name alone is not a producer |
 | Company with several productive sites | Use one row per independently identifiable qualifying productive unit; do not add a parent-company row merely to group them |
 | Home-based or address-private producer | It may qualify when the productive municipality and activity are supportable; leave the exact address and coordinates empty when they are not public |
+| Producer identified only by a natural person's name | A natural person is a valid producer identity, but a register's holder field is an administrative attribution, not by itself a public one. The name becomes the row's identity only when the source that names the person also publishes what reaches the market under it. Publish the declared trade name instead whenever the source carries one, and then leave the personal name out of the row |
 | Shop, headquarters, tasting room or visitor centre separate from production | It may be a contact or visiting fact, but it neither determines catalog placement nor proves the productive location |
 | Washing, peeling, cutting, bagging or freezing fresh produce | Handling is not elaboration, whatever the format, atmosphere or gama it is sold as. A grower qualifies through its own growing; a unit that starts from others' produce qualifies only through a further transforming step such as cooking, roasting, fermenting, curing or preserving |
 | Tea, herb or botanical packer | Roasting, drying, fermenting, infusing or extracting on the unit's own premises is elaboration, as it is for coffee. Blending and packing leaf or botanicals bought ready-processed is not |
@@ -263,6 +264,12 @@ generation contract lives in `docs/CSV_CONTRACT.md`.
   by itself.
 - Registry absence, search failure, timeout, blocking, TLS/DNS error or a broken
   checkout is uncertainty, not proof of nonexistence, closure or no sale.
+- Registers differ in what they publish. One that authorizes a named operator to
+  market its own output also publishes an offer, and can carry a whole admission
+  by itself. One that records an establishment and its activity class publishes
+  neither an offer nor a public identity, and never admits a row alone. Neither
+  kind establishes current activity, so an admission resting on a register is
+  `pendiente`.
 - Verified ownership authorizes a proposal; it does not prove the proposed
   public fact. Apply the same source, currentness and scope tests, and never copy
   private claim material into public evidence.
