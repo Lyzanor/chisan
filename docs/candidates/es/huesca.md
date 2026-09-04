@@ -110,14 +110,13 @@ The other 54 members reconciled: 51 matched published Huesca rows, "Miel del Pir
 
 - Discovery source: the [RGSEAA public search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp), key 23 "Azúcares, derivados, miel y productos relacionados con la producción de miel", category 1 "Fabricación o Elaboración o Transformación".
 - Search date: 2026-09-03.
-- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 2 open Level 1 leads fall in this area.
+- Scope: all 1023 establishments the register returns for that key and category across Spain, reduced to those whose registered name publicly signals a honey or confectionery producer identity, then de-duplicated against the current area CSVs and this note by name and municipality. 1 open Level 1 leads fall in this area.
 - Cutoff: the register as queried on 2026-09-03. No first-party site, brand, denomination council or shop was consulted in this pass.
 - Source ceiling: see `data/csv/es/AGENTS.md` § Source ceilings. The register supports the legal entity, its registered activity class and the industrial address it publishes, and its `localidad` may be a pedanía rather than the official municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | PASTELERIA F PUYET S.L | Graus | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.005045/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. A second establishment of the same company appears in this area, so confirm they are distinct productive units. Resolve the official municipality from the registered address "Calle ANGEL SAMBLANCAT, 34 LOCAL - BAJO DERECHA". |
-| PASTELERIA F PUYET S.L | Graus | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01375/HU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. A second establishment of the same company appears in this area, so confirm they are distinct productive units. Resolve the official municipality from the registered address "Calle ANGEL SAMBLANCAT, 40". |
 
 ## RGSEAA condiment and spice elaborators — 2026-09-03
 

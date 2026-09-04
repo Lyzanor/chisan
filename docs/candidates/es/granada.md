@@ -11,7 +11,7 @@
 | Ntra. Sra. de la Cabeza de Zújar, S. Coop. And. | Zújar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm current own brand/offer and productive-unit identity. |
 | Ntra. Sra. de los Remedios de Campotéjar, S. Coop. And. | Campotéjar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Distinguish this unit from the same-named Iznalloz cooperative and confirm current own offer. |
 | Ntra. Sra. del Pilar, S. Coop. And. | Colomera | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Reconcile the operator with Oleomera and confirm its current own offer. |
-| Olibaza, S.L. | Baza | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm current first-party activity and own offer. |
+| Olibaza, S.L. | Baza | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/); [Directory](https://www.proveedores.com/proveedores/olibaza/); [olibaza.com](https://www.olibaza.com/es/) | Confirm current first-party activity and own offer. |
 | San Ildefonso de Peligros, S. Coop. And. | Peligros | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Reconcile the operator with Ildeoliva and confirm its current own offer. |
 | Santa Mónica de Píñar, S. Coop. And. | Píñar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm current first-party activity and own offer. |
 | Aceites Maeva, S.L. | Escúzar | `Aceite` — DOP Montes de Granada | [Council members](http://domontesdegranada.com/empresas-2/) | Confirm the productive unit, own brands and current offer; distinguish it from group or contract-processing identities. |
@@ -63,7 +63,7 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/granada>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 106 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
+- Scope: 105 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -75,7 +75,6 @@ Review producer-owned domains and brands, then de-duplicate cooperative identiti
 | Dehesa Andaluza | Albolote | `Aceite` | The directory states: “Somos productores por lo que nuestros precios son muy competitivos” | [Directory](https://www.proveedores.com/proveedores/dehesa-andaluza/) |  | Confirm an own oil mill rather than bottling bought oil. |
 | Ferrol, Prado y Navarro Exportaciones | Granada | `Aceite` | The directory states: “Ferrol, Prado y Navarro Exportaciones es una empresa dedicada a la comercialización y exportación de Aceite de Oliva…” | [Directory](https://www.proveedores.com/proveedores/ferrol-prado-y-navarro-exportaciones/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | OLEA ANTICA | Darro | `Aceite` | The directory states: “OLEA ANTICA es una marca que agrupa un grupo de empresas dedicadas a la producción, venta, envasado, comercialización…” | [Directory](https://www.proveedores.com/proveedores/olea-antica/) |  | Confirm an own oil mill rather than bottling bought oil. |
-| Olibaza | Baza | `Aceite` | The directory states: “Producimos y comercializamos aceite de oliva virgen extra y aceite de oliva virgen extra ecológico” | [Directory](https://www.proveedores.com/proveedores/olibaza/) | <https://www.olibaza.com/es/> | Confirm an own oil mill rather than bottling bought oil. |
 | Oroliva | Caniles | `Aceite` | The directory states: “Inaugurada en 1952 con el nombre de Almazara del Convento, Oroliva es una almazara de Caniles (Granda) que se…” | [Directory](https://www.proveedores.com/proveedores/oroliva/) | <http://www.almazaradelconvento.com/> | Confirm an own oil mill rather than bottling bought oil. |
 | Vallés Operé | Granada | `Aceite` | The directory states: “Con sede en la localidad de Campo Cámara (Granada) se encuentra Vallés Operé , empresa familiar especializada en la…” | [Directory](https://www.proveedores.com/proveedores/valles-opere/) | <https://vallesopere.es/> | Confirm an own oil mill rather than bottling bought oil. |
 | Café BOU Granada | Cijuela | `Café` | The directory states: “También prestamos servicio técnico de cafeteras y molinos de café” | [Directory](https://www.proveedores.com/proveedores/cafe-bou-granada/) | <https://cafesbou.com/> | Confirm an own roastery rather than repackaging third-party coffee. |
