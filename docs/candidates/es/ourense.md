@@ -104,3 +104,15 @@ Verify current first-party activity, own market identities and productive respon
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | LA CENTRAL HELADERA ARTESANA DE OURENSE SL | San Cibrao das Viñas | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002703/OU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "POL. IND. C/5 C-15 (2ª FASE SECT. C)". |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 2 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Adega O Cabalín | Vilamartín de Valdeorras | `Vino` — D.O. Valdeorras slate terrace wines | Viticulture project recovering centenary hillside vineyards in Valdeorras. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://adegaocabalin.com/> | Confirm winery address in Vilamartín de Valdeorras. |
+| Bodegas Alebrije | Coles | `Vino` — D.O. Ribeiro artisan wines | Small winery project in Ourense province focused on native treixadura and sousón blends. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.bodegasalebrije.es/> | Confirm winery installation in Coles. |

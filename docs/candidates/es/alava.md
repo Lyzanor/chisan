@@ -117,3 +117,14 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | CONFITERIA BLANCA NIEVES TEJEDOR, S.L. | Vitoria-gasteiz | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02272/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "Venta de la Estrella (Calle/Kalea) , 6 (Pabellones 54, 73 y 74)". |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 1 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Oxer Wines | Oyón-Oion | `Vino` — D.O.Ca. Rioja Alavesa parcel wines | Acclaimed terroir project by Oxer Bastegieta making low-intervention wines from century-old plots. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.oxerwines.com/> | Establish primary cellar address in Oyón / Rioja Alavesa. |

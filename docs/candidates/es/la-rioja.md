@@ -186,3 +186,14 @@ Verify current first-party channels and durable identities before admission. Eig
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | VINAGRERIAS RIOJANAS S.A.(CONDIMENTOS) | Logroño | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00543/LO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "AVENIDA MENDAVIA 8". |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 1 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Jade Gross Wines | San Vicente de la Sonsierra | `Vino` — D.O.Ca. Rioja signature wines | Artisan boutique wine producer in Sonsierra focusing on terroir-driven old vine garnacha and tempranillo. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://jadegrosswines.com/> | Confirm vinification cellar in San Vicente de la Sonsierra. |

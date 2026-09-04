@@ -198,3 +198,16 @@
 | CÁRNICAS TERRABONA 2.005, S.L. | Valladolid | `Carne` | Accredited artisan food business of the Castilla y León register, entry EAA-VA/0342 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) | <https://yacocidoselmolinero.com/> | Decide whether this accreditation is the published Carne T. Marcos row under its trading name. Only if it is a different productive unit does it become a candidate. |
 | CLARA INES ANDRES CARDABA | Portillo | `Miel` | Accredited artisan food business of the Castilla y León register, entry EAA-VA/0459 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) | <https://www.orodelduero.com> | Decide whether this accreditation is the published Miel Sandonís row under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
 | CONRADO PÉREZ RAMOS | Portillo | `Miel` | Accredited artisan food business of the Castilla y León register, entry EAA-VA/0387 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Decide whether this accreditation is the published Miel Sandonís row under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 3 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Barco del Corneta | La Seca | `Vino` — Organic D.O. Rueda / Vino de la Tierra de Castilla y León | Pioneering organic estate project by Beatriz Herranz recovering historic verdejo vinification on lees. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://barcodelcorneta.com/> | Confirm physical cellar address in La Seca and active winery profile. |
+| Bodegas José Pariente | La Seca | `Vino` — D.O. Rueda estate wines | Renowned family winery in La Seca producing premium verdejo, sauvignon blanc and barrel-fermented wines. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://josepariente.com/> | Confirm winery visiting options and direct consumer sales. |
+| Bodega Tr3smano | Peñafiel | `Vino` — D.O. Ribera del Duero wines | Winery situated in the Golden Mile of Ribera del Duero crafting high-end estate tempranillo. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.tresmano.com/> | Confirm winery address in Peñafiel / Padilla de Duero. |

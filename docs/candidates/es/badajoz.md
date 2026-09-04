@@ -162,3 +162,14 @@ Review each linked lead through current first-party or authoritative material. T
 | Gourmet del Monte | Badajoz | `Vino` | The directory states: “Estamos localizados en Badajoz y somos proveedores de productos gourmet seleccionados de las mejores bodegas…” | [Directory](https://www.proveedores.com/proveedores/gourmet-del-monte/) | <https://www.gourmetdelmonte.es/> | Confirm the winery and its current published range. |
 | Viñas de Alange | Alange | `Vino` | The directory states: “Viñas de Alange es una empresa localizada en Córdoba especialista en la producción y distribución de vinos con la más…” | [Directory](https://www.proveedores.com/proveedores/vinas-de-alange/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Vinos Leneus | Almendralejo | `Vino` | The directory states: “Vinos Leneus es una empresa localizada en Extremadura y nos especializamos como productores y proveedores de vinos…” | [Directory](https://www.proveedores.com/proveedores/vinos-leneus/) |  | Confirm the winery and its current published range. |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 1 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Castúo Wines | Villalba de los Barros | `Vino` — D.O. Ribera del Guadiana wines | Independent family winery in Tierra de Barros crafting limited production estate wines. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://castuowines.com/> | Confirm winery facilities in Villalba de los Barros. |

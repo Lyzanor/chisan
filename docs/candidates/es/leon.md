@@ -246,3 +246,15 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | JESUS MONTES RODRIGUEZ | Almanza | `Miel` | Accredited artisan food business of the Castilla y León register, entry EAA-LE/0067 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Decide whether this accreditation is the published Miel El Robledal row under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
 | URBANO JOSE GONZALEZ ESCAPA | Villamejil | `Miel` | Accredited artisan food business of the Castilla y León register, entry EAA-LE/0364 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Decide whether this accreditation is the published Miel Ecológica Urzapa row under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
 | INES LARRAN GARCIA | Vegas del Condado | `Sidra` | Accredited artisan food business of the Castilla y León register, entry EAA-LE/0052 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) | <http://www.sidracarral.com> | Decide whether this accreditation is the published Sidra Carral row under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 2 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Raúl Pérez Bodegas y Viñedos | Valtuille de Abajo | `Vino` — D.O. Bierzo signature wines | Flagship personal winery of legendary winemaker Raúl Pérez in his native village of Valtuille. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | — | Establish exact productive cellar facility in Valtuille de Abajo and direct commercial channels. |
+| Banzao | San Pedro de Olleros | `Vino` — D.O. Bierzo mountain wines | Artisan wine project recovering high-elevation slate slope vineyards in northern Bierzo. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://banzao.es/> | Confirm cellar location and active releases. |

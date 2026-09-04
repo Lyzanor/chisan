@@ -120,3 +120,15 @@ Plausible lead; admission not assessed. Confirm the exact productive-unit link f
 | JESUS MARIA ANDRES HIDALGO | Burgos | `Lácteos y quesos` | Accredited artisan food business of the Castilla y León register, entry EAA-BU/0200 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Decide whether this accreditation is the published Quesera Burgalesa, Quesos La Casona de los Pisones rows under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
 | LACTEOS BUREBANOS S.L. | Grisaleña | `Lácteos y quesos` | Accredited artisan food business of the Castilla y León register, entry EAA-BU/0273 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Decide whether this accreditation is the published La Granja Burebana row under its trading name. Only if it is a different productive unit does it become a candidate. |
 | ANGEL SUBIÑAS ORTEGA | Covarrubias | `Miel` | Accredited artisan food business of the Castilla y León register, entry EAA-BU/0258 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Decide whether this accreditation is the published MielSubiñas row under its trading name. Only if it is a different productive unit does it become a candidate. The register accredits the holder, not a trading identity. |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 2 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Finca Torremilanos (Bodegas Peñalba López) | Aranda de Duero | `Vino` — D.O. Ribera del Duero biodynamic wines | Historic estate in Aranda de Duero with certified Demeter biodynamic vineyards and cooperage. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.torremilanos.com/> | Confirm estate details, visitor program, and direct wine sales. |
+| Casa Lebai | Gumiel de Mercado | `Vino` — D.O. Ribera del Duero family wines | Family cellar project in Gumiel de Mercado farming old vines with limited artisan bottlings. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://casalebai.com/> | Confirm physical cellar address in Gumiel de Mercado. |

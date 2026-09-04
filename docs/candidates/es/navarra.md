@@ -183,3 +183,14 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 |---|---|---|---|---|---|---|
 | Pastelería Larramendi | Navarra | `Dulces y repostería` | Listed under the Alimentos Artesanos de Navarra designation, granted to businesses entered in the regional artisan food register | [Directory](https://reynogourmet.com/denominacion/artesanos/) | <https://reynogourmet.com/empresa/pasteleria-larramendi/> | Decide whether this listing is the published Quesos Larramendi row or a different productive unit, then resolve the municipality from the company page. |
 | La Casa Del Aceite | Navarra | `Otros` | Listed under the Alimentos Artesanos de Navarra designation, granted to businesses entered in the regional artisan food register | [Directory](https://reynogourmet.com/denominacion/artesanos/) | <https://reynogourmet.com/empresa/la-casa-del-aceite/> | Decide whether this listing is the published Aceite el Zaborreau row or a different productive unit, then resolve the municipality from the company page. |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 1 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Bodegas Artazu | Artazu | `Vino` — D.O. Navarra garnacha wines | Artadi family project in Valdizarbe dedicated to reviving old mountain bush-vine garnacha. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.bodegasartazu.com/> | Confirm winery installation in Artazu. |

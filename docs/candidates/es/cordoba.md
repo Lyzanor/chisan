@@ -201,3 +201,14 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | ESPECIAS MORIANA S.L. | Aguilar de la Frontera | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00507/CO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CARRETERA A-3132 KM. 1". |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 1 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Bodegas San Pablo (Antonio Miguel Ojeda Chacón) | Moriles | `Vino` — D.O. Montilla-Moriles traditional wines | Traditional artisan bodega in Moriles Altos elaborating fino, amontillado and Pedro Ximénez. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://bodegassanpablo.com/> | Confirm lagar and bodega address in Moriles. |

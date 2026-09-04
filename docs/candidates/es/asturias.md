@@ -240,3 +240,14 @@ Find a current producer-owned channel for Viña Áurea and check whether the fir
 | ASTURIAS APICOLA, SL | Pola de Allande | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.03359/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "LUGAR FINCA LA ESPINA Nº S/N". |
 | ASTURIAS APÍCOLA, S.L. | Cangas del Narcea | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.003916/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Registered at the same address as the published “Miel La Puela” row (“POLÍGONO INDUSTRIAL DE TEBONGO, Nº15” against “Polígono Industrial de Tebongo, 15, 33816 Cangas del Narcea, Asturias”): decide whether they are one productive unit before creating a row. Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "POLÍGONO INDUSTRIAL DE TEBONGO, Nº15". |
 | BOAL APICOLA SL | Llaviada | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.01887/O | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "LLAVIADA". |
+
+## HelloBo platform discovery pass — 2026-09-04
+
+- Discovery source: `https://app.hellobo.eu/search/products` audited against the area CSV, candidate backlog and closed evidence.
+- Search date: 2026-09-04.
+- Scope: 1 open Level 1 leads with confirmed active products on the HelloBo marketplace.
+- Cutoff: public marketplace listings and host profiles available on 2026-09-04.
+
+| nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Conservas Güeyumar | Ribadesella | `Pescado` — Premium chargrilled canned seafood | World-renowned artisan cannery in Ribadesella grilling fresh seafood over wood before canning in EVOO. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://conservasgueyumar.com/> | Confirm cannery workshop facility in Playa de Vega / Ribadesella. |
