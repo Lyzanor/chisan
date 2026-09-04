@@ -54,7 +54,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/lugo>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 38 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 37 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -87,7 +87,6 @@
 | Embutidos Alcsa | Lugo | `Carne` | The directory states: “Empresa familiar que elabora embutidos desde 1960” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Gutrei Galicia | Bóveda | `Carne` | The directory states: “Selección de vaca, buey y ternera gallega para su comercialización” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Confirm the productive unit in the stated municipality and an own offer attributable through sale. |
 | Cetárea Burela | Burela | `Pescado` | The directory states: “Comercialización online de marisco gallego desde una cetárea” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Confirm the productive workshop and that it is currently active. |
-| Patatas Chousa | Lugo | `Fruta y verdura` | The directory states: “Comercialización y distribución mayorista de patata” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Cristo Galicia | Sarria | `Destilados y licores` | The directory states: “Proveedores de licores de hierbas y bebidas alcohólicas” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Cafés Panela | Chantada | `Café` | The directory states: “Comercialización y distribución de café torrefacto y natural” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Confirm an own roastery rather than repackaging third-party coffee. |
 | Cárnicas Eurogal | Sarria | `Carne` | The directory states: “Fundada en 2018 para llevar la Galicia rural al cliente” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/lugo) |  | Identify the actual product and productive unit before assigning a category. |

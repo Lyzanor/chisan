@@ -66,7 +66,7 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/leon>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 65 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 64 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -125,7 +125,6 @@ Review linked first-party sites as two focused batches, then de-duplicate legal 
 | Alinor | San Andrés del Rabanedo | `Pan y cereal` | The directory states: “Alinor es una empresa con sede en San Andrés Del Rabanedo especializada en la fabricación y distribución de productos…” | [Directory](https://www.proveedores.com/proveedores/alinor/) | <https://www.alinorfrigorifico.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Chus Pan | La Bañeza | `Pan y cereal` | The directory states: “En Chus Pan somos expertos fabricantes y proveedores de empanadas artesanales” | [Directory](https://www.proveedores.com/proveedores/chus-pan/) |  | Confirm the productive workshop and that it is currently active. |
 | Eco Innova Bivanza | Congosto | `Pan y cereal` | The directory states: “Nuestros productos son la harina de castaña y la castaña deshidratada de la variedad castaña de pared o parede, que…” | [Directory](https://www.proveedores.com/proveedores/eco-innova-bivanza/) |  | Confirm an own offer that stays attributable to this producer through sale. |
-| Harinas Nistal | León | `Pan y cereal` | The directory states: “Ubicada en León, Harinas Nistal es una empresa especializada en la distribución de harina” | [Directory](https://www.proveedores.com/proveedores/harinas-nistal/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Lufag | León | `Pan y cereal` | The directory states: “Lufag es una empresa de León que desde su fundación en 1973 se dedica a la fabricación y distribuión al por mayor de…” | [Directory](https://www.proveedores.com/proveedores/lufag/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Malt and Beer | El Burgo Ranero | `Pan y cereal` | The directory states: “Somos proveedores de bebidas sin alcohol , trabajando como micromaltería artesana grannaria” | [Directory](https://www.proveedores.com/proveedores/malt-and-beer/) | <http://grannaria.com/> | Confirm the productive workshop and that it is currently active. |
 | Panadería Desiderio Escalada | Villarejo de Órbigo | `Pan y cereal` | The directory states: “Le ofrecemos una gran variedad de pan y productos panificados deliciosos y elaborados artesanalmente” | [Directory](https://www.proveedores.com/proveedores/panaderia-desiderio-escalada/) |  | Confirm an own offer that stays attributable to this producer through sale. |

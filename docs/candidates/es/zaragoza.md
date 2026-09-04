@@ -58,7 +58,7 @@ The pass stopped at the 10-lead limit, not at the end of the register. Nineteen 
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/zaragoza>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-03.
-- Scope: 83 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
+- Scope: 82 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-03. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -146,7 +146,6 @@ The pass stopped at the 10-lead limit, not at the end of the register. Nineteen 
 | Grandes Vinos y Viñedos | Cariñena | `Vino` | The directory states: “Somos productores de vino de Cariñena de la mejor calidad” | [Directory](https://www.proveedores.com/proveedores/grandes-vinos-y-vinedos/) | <https://www.grandesvinos.com/> | Confirm the winery and its current published range. |
 | Grupo Bodeguero Vitifusión | Zaragoza | `Vino` | The directory states: “Grupo Bodeguero Vitifusión es una empresa localizada en Zaragoza especializada en la elaboración y distribución de…” | [Directory](https://www.proveedores.com/proveedores/grupo-bodeguero-vitifusion/) | <https://www.gbvitifusion.com/> | Publish the specific productive unit, not the parent group. |
 | Vinos Divertidos | Mediana de Aragón | `Vino` | The directory states: “Vinos Divertidos es una compañía localizada en Laguarres (Aragón) especializada en la producción de vinos de…” | [Directory](https://www.proveedores.com/proveedores/vinos-divertidos/) | <https://vinosdivertidos.es/> | Confirm the winery and its current published range. |
-| Vinovid | Zaragoza | `Vino` | The directory states: “Vinovid es una tienda online especializada en la distribución de vinos” | [Directory](https://www.proveedores.com/proveedores/vinovid/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 
 ## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
 

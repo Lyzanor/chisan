@@ -6,7 +6,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/cuenca>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 37 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 36 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -40,7 +40,6 @@
 | Ajoescar | Las Pedroñeras | `Fruta y verdura` | The directory states: “Produce y comercializa ajo y hortalizas desde 1922” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Cárnicas Frivall | Villar de Olalla | `Carne` | The directory states: “Sacrificio, despiece y envasado de derivados del cerdo” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Pasión Manchega | Campillo de Altobuey | `Legumbres` | The directory states: “Legumbres y frutos secos convencionales y ecológicos en varios envases” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive unit in the stated municipality and an own offer attributable through sale. |
-| Harnatur | Minglanilla | `Pan y cereal` | The directory states: “Venta al por mayor de harinas especiales, ecológicas y sin gluten” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Amara Carnes Supremas | Cuenca | `Carne` | The directory states: “Proveedor de carne de ternera con más de 10 años” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the farm behind the declared output. |
 | Jespep | Motilla del Palancar | `Comida preparada` | The directory states: “Producción y distribución de precocinados, conservas, embutidos, lácteos y mieles” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm the productive workshop and that it is currently active. |
 | Big Garlic | Las Pedroñeras | `Fruta y verdura` | The directory states: “Especialista en la comercialización de ajo” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/cuenca) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |

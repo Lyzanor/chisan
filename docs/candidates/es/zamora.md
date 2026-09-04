@@ -30,7 +30,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/zamora>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 27 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 26 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -60,7 +60,6 @@
 | Andrés Ferrero e Hijos | Zamora | `Otros` | The directory states: “Cuarenta y dos años como proveedores, sin producto claro en la ficha” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Identify the actual product and productive unit before assigning a category. |
 | Quesos Campostera | Villalpando | `Lácteos y quesos` | The directory states: “Distribución de queso de cabra” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the dairy and that it is currently active. |
 | Carnicería Kikin | Fuentesaúco | `Carne` | The directory states: “Más de 30 años elaborando carne” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Reconcile the identities the listing gives and choose the durable public name before creating a row. |
-| Legumbres Luisca | Benavente | `Legumbres` | The directory states: “Tres décadas en la venta al por mayor de legumbre” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the productive workshop and that it is currently active. |
 | Cárnicas Mombuey | Mombuey | `Carne` | The directory states: “Proveedores de carne de cerdo en Mombuey” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm a transforming step beyond washing, peeling, cutting and packing; handling alone is not elaboration. |
 | Azúcares Zamora | Zamora | `Otros` | The directory states: “Fabricación y distribución mayorista de azúcar” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/zamora) |  | Confirm the productive workshop and that it is currently active. |
 
