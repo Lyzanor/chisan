@@ -177,7 +177,7 @@
 | S.C.A. Ntra. Sra. de los Remedios | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina | [Council directory](https://www.sierramagina.org/almazaras/) |  | Resolve the productive municipality; the council directory publishes no locality. |
 | S.C.A. Ntra. Sra. Pilar del Andaraje | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina selling picual virgin olive oils | [Council directory](https://www.sierramagina.org/almazaras/) | <https://pilardeandaraje.es/> | Resolve the productive municipality from the cooperative's own site. |
 | S.C.A. San Juan Bautista | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina | [Council directory](https://www.sierramagina.org/almazaras/) |  | Resolve the productive municipality and separate it from the published Puente de Génave cooperative of the same name. |
-| S.C.A. Santa Isabel | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina | [Council directory](https://www.sierramagina.org/almazaras/) |  | Resolve the productive municipality; the council directory publishes no locality. |
+| S.C.A. Santa Isabel | Sierra Mágina (Jaén) | `Aceite` | Registered mill of the DOP Sierra Mágina | [Council directory](https://www.sierramagina.org/almazaras/) |  | Resolve the productive municipality; the council directory publishes no locality. Open leads for the same operator also sit in `burgos` (Burgos): a row belongs to the province of its productive unit, not of a head office, so settle which units qualify before creating rows. |
 
 ## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03
 

@@ -8,7 +8,7 @@
 
 | nombre | municipio / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Aguas Danone — Sigüenza bottling plant | Sigüenza | `Bebidas sin alcohol` — bottled mineral water | Danone’s current Spain locations identify a Sigüenza manantial and bottling plant; this is a high-signal national beverage anchor absent from the area file. | [Danone Spain current locations](https://careers.danone.com/es/es/NEW-ABOUT-US.html) | [Danone Spain current locations](https://careers.danone.com/es/es/NEW-ABOUT-US.html) | Confirm the current brand, exact productive address and legal operator at Sigüenza, distinguishing the plant from Danone offices and group identity. |
+| Aguas Danone — Sigüenza bottling plant | Sigüenza | `Bebidas sin alcohol` — bottled mineral water | Danone’s current Spain locations identify a Sigüenza manantial and bottling plant; this is a high-signal national beverage anchor absent from the area file. | [Danone Spain current locations](https://careers.danone.com/es/es/NEW-ABOUT-US.html) | [Danone Spain current locations](https://careers.danone.com/es/es/NEW-ABOUT-US.html) | Confirm the current brand, exact productive address and legal operator at Sigüenza, distinguishing the plant from Danone offices and group identity. Open leads for the same operator also sit in `girona` (Sant Hilari Sacalm): a row belongs to the province of its productive unit, not of a head office, so settle which units qualify before creating rows. |
 
 ## Remaining work
 
@@ -65,7 +65,7 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| CHOCOLATE ORGÁNIKO, S.L. | Chiloeches | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002548/GU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "C/PILON, 24 - POLIGONO INDUSTRIAL ALBOLLEQUE". |
+| CHOCOLATE ORGÁNIKO, S.L. | Chiloeches | `Chocolate` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.002548/GU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm on-site elaboration and a current offer under a public producer identity; the register names only the legal entity. Resolve the official municipality from the registered address "C/PILON, 24 - POLIGONO INDUSTRIAL ALBOLLEQUE". Open leads for the same operator also sit in `madrid` (Alcalá de Henares): a row belongs to the province of its productive unit, not of a head office, so settle which units qualify before creating rows. |
 
 ## RGSEAA honey and confectionery elaborators — 2026-09-03
 
