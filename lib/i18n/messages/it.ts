@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Questo profilo è stato rivendicato e verificato dal produttore.",
+      "Chisan ha verificato il legame tra questo produttore e chi gestisce questa scheda.",
     saveOrClaimPrompt: "Salva questo produttore o rivendicane la proprietà.",
     signIn: "Accedi",
     createAccount: "Crea un account",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Salva nei preferiti",
     editMyProfile: "Modifica il mio profilo",
     expandProfile: "Amplia il profilo",
-    ownershipVerified: "Verificato dal produttore",
+    ownershipVerified: "Titolarità verificata",
     viewOwnershipClaim: "Visualizza la rivendicazione di proprietà",
     claimProducer: "Rivendica questo produttore",
     descriptionLanguage: {

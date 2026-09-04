@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Porofaele eno e tseilwe mme ya netefadiwa ke motlhagisi.",
+      "Chisan e netefaditse kamano fa gare ga motlhagisi yo le motho yo o tsamaisang porofaele eno.",
     saveOrClaimPrompt: "Boloka modiri yo kgotsa o tseye bong.",
     signIn: "Tsena",
     createAccount: "Tlhama akhaonto",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Boloka se se ratwang",
     editMyProfile: "Baakanya profaele ya me",
     expandProfile: "Atolosa profaele",
-    ownershipVerified: "E netefaditswe ke motlhagisi",
+    ownershipVerified: "Bong bo netefaditswe",
     viewOwnershipClaim: "Bona kopo ya bong",
     claimProducer: "Tseya modiri yo",
     descriptionLanguage: {

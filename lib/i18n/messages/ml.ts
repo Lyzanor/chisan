@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "ഈ പ്രൊഫൈൽ ഉൽപ്പാദകൻ അവകാശപ്പെടുകയും പരിശോധിക്കുകയും ചെയ്തിട്ടുണ്ട്.",
+      "ഈ ഉൽപ്പാദകനും ഈ പ്രൊഫൈൽ കൈകാര്യം ചെയ്യുന്ന വ്യക്തിയും തമ്മിലുള്ള ബന്ധം Chisan സ്ഥിരീകരിച്ചു.",
     saveOrClaimPrompt:
       "ഈ ഉൽപ്പാദകനെ സംരക്ഷിക്കുകയോ ഉടമസ്ഥാവകാശം അവകാശപ്പെടുകയോ ചെയ്യുക.",
     signIn: "സൈൻ ഇൻ ചെയ്യുക",
@@ -30,7 +30,7 @@ const messages = {
     saveFavorite: "പ്രിയപ്പെട്ടവയിൽ സംരക്ഷിക്കുക",
     editMyProfile: "എന്റെ പ്രൊഫൈൽ തിരുത്തുക",
     expandProfile: "പ്രൊഫൈൽ വിപുലീകരിക്കുക",
-    ownershipVerified: "ഉൽപ്പാദകൻ പരിശോധിച്ചത്",
+    ownershipVerified: "ഉടമസ്ഥാവകാശം സ്ഥിരീകരിച്ചു",
     viewOwnershipClaim: "ഉടമസ്ഥാവകാശ അവകാശവാദം കാണുക",
     claimProducer: "ഈ ഉൽപ്പാദകന്റെ ഉടമസ്ഥാവകാശം അവകാശപ്പെടുക",
     descriptionLanguage: {

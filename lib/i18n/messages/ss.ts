@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Le phrofayela ifunwe futsi yaqinisekiswa ngumkhiqizi.",
+      "I-Chisan icinisekise budlelwane emkhatsini walomkhiciti nemuntfu lophetse lephrofayili.",
     saveOrClaimPrompt: "Gcina lomkhiqizi noma ufake sicelo sebunikati.",
     signIn: "Ngena",
     createAccount: "Yakha i-akhawunti",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Gcina lokutsandvwako",
     editMyProfile: "Hlela iphrofayili yami",
     expandProfile: "Nweba iphrofayili",
-    ownershipVerified: "Iqinisekiswe ngumkhiqizi",
+    ownershipVerified: "Bunikati bucinisekisiwe",
     viewOwnershipClaim: "Buka sicelo sebunikati",
     claimProducer: "Faka sicelo salomkhiqizi",
     descriptionLanguage: {

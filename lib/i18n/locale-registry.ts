@@ -1,0 +1,43 @@
+// Shared by the web and Node.js editorial tools. No application dependencies.
+export const SUPPORTED_LOCALES = [
+  "en",
+  "es",
+  "ca",
+  "de",
+  "ja",
+  "fr",
+  "it",
+  "nl",
+  "pt",
+  "af",
+  "as",
+  "bn",
+  "cy",
+  "ga",
+  "gd",
+  "gu",
+  "haw",
+  "hi",
+  "kn",
+  "kok",
+  "ml",
+  "mr",
+  "ne",
+  "nso",
+  "or",
+  "pa",
+  "ss",
+  "st",
+  "ta",
+  "te",
+  "tn",
+  "xh",
+  "zu",
+] as const;
+
+export const DESCRIPTION_SOURCE_LOCALES = [
+  ...SUPPORTED_LOCALES,
+  "gl",
+  "eu",
+] as const;
+export const APPLICATION_DEFAULT_LOCALE = "en" as const;

@@ -585,7 +585,7 @@ function validateSidecar({
     if (row.source_locale !== source.sourceLocale) {
       const message = `source_locale is stale; expected '${source.sourceLocale}'`;
       if (publicationRequirement?.sources.has(pair)) {
-        pushError(result, displayPath, recordNumber, message);
+        result.notices.push(`${displayPath}: record ${recordNumber}: ${message} (omitted from public prose)`);
         addTranslationRemediation(result, {
           action: row.origin === "reviewed" ? "review" : "generate",
           country: classification.country,
@@ -603,7 +603,7 @@ function validateSidecar({
     if (row.source_hash !== expectedHash) {
       const message = `source_hash is stale; expected '${expectedHash}'`;
       if (publicationRequirement?.sources.has(pair)) {
-        pushError(result, displayPath, recordNumber, message);
+        result.notices.push(`${displayPath}: record ${recordNumber}: ${message} (omitted from public prose)`);
         addTranslationRemediation(result, {
           action: row.origin === "reviewed" ? "review" : "generate",
           country: classification.country,
@@ -650,12 +650,7 @@ function validateSidecar({
   for (const source of publicationRequirement?.sources.values() ?? []) {
     const pair = translationPairKey(source.producerId, source.field);
     if (!presentPairs.has(pair)) {
-      pushError(
-        result,
-        displayPath,
-        null,
-        `published area '${source.region}/${source.area}' is missing ${source.field} translation for producer_id '${source.producerId}'`,
-      );
+      result.notices.push(`${displayPath}: published area '${source.region}/${source.area}' is missing ${source.field} translation for producer_id '${source.producerId}' (variant not indexable)`);
       addTranslationRemediation(result, {
         action: "generate",
         country: classification.country,
@@ -755,7 +750,7 @@ export function auditCatalogTranslations({
       repositoryRoot,
       path.join(csvRoot, requirement.country, `translations.${requirement.targetLocale}.csv`),
     );
-    result.errors.push(
+    result.notices.push(
       `${displayPath}: manifest publishes '${requirement.targetLocale}' for ${[
         ...requirement.areas,
       ].sort().join(", ")} but the required translation sidecar is missing`,

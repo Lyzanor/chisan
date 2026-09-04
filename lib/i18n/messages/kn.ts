@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "ಈ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಉತ್ಪಾದಕರು ಕ್ಲೈಮ್ ಮಾಡಿ ಪರಿಶೀಲಿಸಿದ್ದಾರೆ.",
+      "ಈ ಉತ್ಪಾದಕ ಮತ್ತು ಈ ಪ್ರೊಫೈಲ್ ನಿರ್ವಹಿಸುವ ವ್ಯಕ್ತಿಯ ನಡುವಿನ ಸಂಬಂಧವನ್ನು Chisan ಪರಿಶೀಲಿಸಿದೆ.",
     saveOrClaimPrompt: "ಈ ಉತ್ಪಾದಕರನ್ನು ಉಳಿಸಿ ಅಥವಾ ಮಾಲೀಕತ್ವವನ್ನು ಕ್ಲೇಮ್ ಮಾಡಿ.",
     signIn: "ಸೈನ್ ಇನ್ ಮಾಡಿ",
     createAccount: "ಖಾತೆ ರಚಿಸಿ",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "ಮೆಚ್ಚಿನವುಗಳಲ್ಲಿ ಉಳಿಸಿ",
     editMyProfile: "ನನ್ನ ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ",
     expandProfile: "ಪ್ರೊಫೈಲ್ ವಿಸ್ತರಿಸಿ",
-    ownershipVerified: "ಉತ್ಪಾದಕರಿಂದ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    ownershipVerified: "ಮಾಲೀಕತ್ವ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
     viewOwnershipClaim: "ಮಾಲೀಕತ್ವದ ಕ್ಲೇಮ್ ವೀಕ್ಷಿಸಿ",
     claimProducer: "ಈ ಉತ್ಪಾದಕರ ಮಾಲೀಕತ್ವವನ್ನು ಕ್ಲೇಮ್ ಮಾಡಿ",
     descriptionLanguage: {

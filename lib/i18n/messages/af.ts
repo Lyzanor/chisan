@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Hierdie profiel is deur die produsent opgeëis en geverifieer.",
+      "Chisan het die verband tussen hierdie produsent en die persoon wat die profiel bestuur, geverifieer.",
     saveOrClaimPrompt: "Stoor hierdie produsent of eis eienaarskap.",
     signIn: "Meld aan",
     createAccount: "Skep rekening",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Stoor gunsteling",
     editMyProfile: "Wysig my profiel",
     expandProfile: "Brei profiel uit",
-    ownershipVerified: "Deur die produsent geverifieer",
+    ownershipVerified: "Eienaarskap geverifieer",
     viewOwnershipClaim: "Bekyk eienaarskapseis",
     claimProducer: "Eis hierdie produsent",
     descriptionLanguage: {

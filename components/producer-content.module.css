@@ -1,0 +1,80 @@
+.content {
+  display: grid;
+  gap: 32px;
+  min-width: 0;
+}
+.content h3 {
+  margin: 0 0 16px;
+}
+.products {
+  display: grid;
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+.products > li {
+  border-top: 1px solid var(--chisan-color-hairline);
+  padding-top: 16px;
+}
+.products h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.products p {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 24px;
+}
+.gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+.gallery img,
+.productImages img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.gallery figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.productImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.productImages img {
+  width: min(100%, 320px);
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  padding: 0;
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+.content > section {
+  min-width: 0;
+}
+.products h4 {
+  overflow-wrap: anywhere;
+}
+.links li,
+.links a {
+  max-width: 100%;
+}

@@ -1,0 +1,104 @@
+.site-header {
+  width: min(1440px, calc(100% - 1.5rem));
+  min-height: 50px;
+  margin: 0.75rem auto 0;
+  padding: 0.45rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: 0 4px 18px rgba(34, 33, 29, 0.05);
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.site-header__name {
+  font-family: var(--chisan-font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.site-header__tagline {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.site-header nav > a,
+.site-header nav > button {
+  min-height: 34px;
+  padding: 0.38rem 0.62rem;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent-text);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-header nav > a:hover,
+.site-header nav > button:hover {
+  background: var(--surface-muted);
+}
+
+.site-footer {
+  width: min(1440px, calc(100% - 1.5rem));
+  margin: 2rem auto 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, #000000);
+  border-radius: var(--radius);
+  background: var(--accent-text);
+  color: #ffffff;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.site-footer a {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration-color: color-mix(in srgb, #ffffff 55%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.site-footer a:hover {
+  text-decoration-color: #ffffff;
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.site-footer .site-footer__brand-link {
+  margin-right: auto;
+  font-family: var(--chisan-font-sans);
+  font-size: 1.45rem;
+  text-decoration: none;
+}

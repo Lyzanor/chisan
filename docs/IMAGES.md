@@ -4,6 +4,13 @@ This guide owns image sourcing and human review; `docs/CSV_CONTRACT.md` owns the
 published `imagen` field. Images are optional. Confirm identity, `producer_id`
 and `slug` first: an empty cell is better than the wrong brand.
 
+The workflow below prepares the primary `imagen`. Gallery and product pictures
+use the paths, formats and dimensions in `docs/PRODUCER_CONTENT.md`. For those,
+prefer photographs showing the producer's actual work or products and preserve
+their useful aspect ratio. Use producer-supplied or licensed material with
+permission for reuse, and retain required attribution. A gallery does not need
+the primary image's logo composition.
+
 Automated discovery inspects only the published official `web`; attributed
 official social or institutional material may enter through the manual source
 workflow. Ranking orders candidates but proves neither ownership nor identity.
@@ -29,7 +36,7 @@ graphics, or an unreviewed top-ranked result. A parent, group or appellation
 brand is not automatically the producer; leave `imagen` empty when attribution
 is unclear.
 
-## Output format
+## Primary-image output format
 
 - New asset: WebP, **1600×1200** (4:3), quality 90.
 - Canonical path:

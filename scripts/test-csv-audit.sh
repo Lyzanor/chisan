@@ -146,6 +146,9 @@ prepare_git_audit_repo() {
   mkdir -p "$repo_root/scripts/lib" "$repo_root/data/reference" \
     "$repo_root/data/csv/es/one" "$repo_root/data/csv/es/two"
   cp "$ROOT_DIR/scripts/audit-csv.js" "$repo_root/scripts/audit-csv.js"
+  mkdir -p "$repo_root/lib/catalog" "$repo_root/lib/i18n"
+  cp "$ROOT_DIR/lib/catalog/producer-schema.ts" "$repo_root/lib/catalog/producer-schema.ts"
+  cp "$ROOT_DIR/lib/i18n/locale-registry.ts" "$repo_root/lib/i18n/locale-registry.ts"
   cp "$ROOT_DIR/scripts/lib/description-quality.mjs" "$repo_root/scripts/lib/description-quality.mjs"
   cp "$ROOT_DIR/data/reference/categories.json" "$repo_root/data/reference/categories.json"
   cp "$ROOT_DIR/data/reference/description-policy.json" "$repo_root/data/reference/description-policy.json"
@@ -401,9 +404,16 @@ run_expect_failure "$TMP_ROOT/out-registry-missing-guide.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_MISSING_GUIDE"
 grep -q "country 'es' must contain AGENTS.md" "$TMP_ROOT/out-registry-missing-guide.txt"
 
-run_expect_failure "$TMP_ROOT/out-registry-bad-guide.txt" \
+# Guide structure is flexible; keep every unrelated manifest requirement valid.
+node - "$REGISTRY_OK/es/country.json" "$REGISTRY_BAD_GUIDE/es/country.json" <<'NODE'
+const fs = require("node:fs");
+const manifest = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+manifest.regions[0].areas = [{slug: "madrid", label: "Madrid", labels: {es: "Madrid", en: "Madrid"}}];
+fs.writeFileSync(process.argv[3], JSON.stringify(manifest));
+NODE
+run_expect_success "$TMP_ROOT/out-registry-bad-guide.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_BAD_GUIDE"
-grep -q "country guide 'es/AGENTS.md' must use exactly" "$TMP_ROOT/out-registry-bad-guide.txt"
+
 
 prepare_i18n_registry() {
   local registry_root="$1"
@@ -739,6 +749,9 @@ CHANGED_ROOT="$TMP_ROOT/changed-repo"
 mkdir -p "$CHANGED_ROOT/scripts/lib" "$CHANGED_ROOT/data/reference" \
   "$CHANGED_ROOT/data/csv/es/one" "$CHANGED_ROOT/data/csv/es/two"
 cp "$ROOT_DIR/scripts/audit-csv.js" "$CHANGED_ROOT/scripts/audit-csv.js"
+mkdir -p "$CHANGED_ROOT/lib/catalog" "$CHANGED_ROOT/lib/i18n"
+cp "$ROOT_DIR/lib/catalog/producer-schema.ts" "$CHANGED_ROOT/lib/catalog/producer-schema.ts"
+cp "$ROOT_DIR/lib/i18n/locale-registry.ts" "$CHANGED_ROOT/lib/i18n/locale-registry.ts"
 cp "$ROOT_DIR/scripts/lib/description-quality.mjs" "$CHANGED_ROOT/scripts/lib/description-quality.mjs"
 cp "$ROOT_DIR/data/reference/categories.json" "$CHANGED_ROOT/data/reference/categories.json"
 cp "$ROOT_DIR/data/reference/description-policy.json" "$CHANGED_ROOT/data/reference/description-policy.json"

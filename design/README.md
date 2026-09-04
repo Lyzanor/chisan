@@ -1,8 +1,8 @@
 # Chisan design
 
 The visual system: rules, tokens, brand assets, and the web mapping.
-Nothing here reads catalog data, accounts or infrastructure — and nothing there
-carries visual decisions.
+This guide owns the visual system. Components consume its tokens while their
+product contracts own data, permissions and meaning.
 
 The active release is **v0.3 — The Passage**. Its philosophy is quiet
 precision: the producer, place and evidence lead; the interface connects them
@@ -16,7 +16,7 @@ references/              decision boards and inspiration (never imported)
 qa/design-qa.md          what was decided and rejected, per surface
 ```
 
-## Boundary — read this first
+## Ownership and working defaults
 
 `app/_components/site-root-shell.tsx` imports, in this order:
 
@@ -31,7 +31,7 @@ such as errors and verification states, remain with their product contract.
 
 `adapters/web.css` currently styles the header, footer, account and language
 menu, category chips, location onboarding, wordmark and map. Most remaining
-catalog, profile, account and admin presentation is still `app/globals.css` or
+catalog, profile, account and admin presentation is still `app/globals.css` (ordered imports from `app/styles/`) or
 a page-owned CSS module. Those files consume the mapped tokens and remain in
 scope for design work even though they live outside this folder.
 
@@ -41,10 +41,14 @@ scope for design work even though they live outside this folder.
 pnpm check:design
 ```
 
-Eight rules, each with a baseline: the violation count on the day the rule was
-written. The check fails when a count rises, so the app can only move toward the
-system. Fix a violation, then lower its baseline — the script tells you the
-number. `--list <rule>` prints the offending lines.
+The checker reports style drift and catches narrow mechanical accessibility
+regressions. Style choices are defaults, not permanent prohibitions. Use
+`--list <rule>` to inspect locations; judge contrast, focus and responsive
+behavior in the browser. A count alone cannot prove accessibility.
+
+Preserve readable contrast, keyboard operation, clear focus, honest maps and
+reduced-motion support. The palette, type scale, shapes and map density are
+current product decisions. A justified change may revise them with visual QA.
 
 ## Colour
 
@@ -73,8 +77,8 @@ tinted shadows, saturated fields or colour-coded card sets. Status colours
 
 ## Type
 
-One family: **Noto Sans**, with the Noto or system fallback per script. No serif
-anywhere in a fallback chain.
+One family: **Noto Sans**, with the Noto or system fallback per script. Prefer sans-serif fallbacks; choose a script-appropriate fallback when it
+better preserves legibility.
 
 | Role      | Weight | Size    | Line height   |
 | --------- | ------ | ------- | ------------- |
@@ -84,15 +88,15 @@ anywhere in a fallback chain.
 | Interface | 500    | 14–16px | 1.35–1.5      |
 | Metadata  | 500    | 12–13px | 1.4, `0.04em` |
 
-`next/font` loads 400, 500 and 700. CSS uses only 400 and 500 — hierarchy comes
-from size, position and space, never from weight. 700 belongs to `<strong>` and
+`next/font` loads 400, 500 and 700. The current CSS defaults to 400 and 500, using size, position and space
+for hierarchy. A different weight is a design decision to evaluate in context. 700 belongs to `<strong>` and
 `<b>`, where the browser applies it and the meaning is in the markup. Nothing
 under 12px. Reading column 58–64 characters.
 
 ## Space, shape, line
 
-- Base 4px. Scale `4 8 12 16 24 32 48 64 96 128`. Every padding, margin and gap
-  lands on a step.
+- Base 4px. Scale `4 8 12 16 24 32 48 64 96 128`. Prefer these steps for padding, margin and gaps; optical corrections and
+  responsive dimensions may use other values when justified.
 - Shell up to 1440px, gutters 20–40px. Discovery is asymmetric 5/7 or 4/8; data
   tools use strict grids.
 - Radius: `0` structural, `4px` control, `8px` compact object.
@@ -105,8 +109,10 @@ under 12px. Reading column 58–64 characters.
 
 ## Map
 
-One point per producer, at its exact coordinate. No clustering, jitter, offset
-or heatmaps — ever.
+One point per producer, at its exact coordinate. The current map uses individual points without clustering. Keep source
+coordinates unchanged; a future density treatment may group their presentation
+when navigation, counts and access to each producer remain clear. Never change
+coordinates just to improve appearance.
 
 - Area overviews use exact-coordinate 6px `moss-dark` points below zoom 11;
   from zoom 11, each producer uses its existing colourful category pictogram
@@ -240,7 +246,9 @@ stronger evidence.
 - [ ] No horizontal overflow at 390px.
 - [ ] Checked in one long or non-Latin locale.
 
-Log the decision in [`qa/design-qa.md`](qa/design-qa.md).
+Record material decisions and browser evidence in [`qa/design-qa.md`](qa/design-qa.md).
+Routine edits that preserve the system need only the verification relevant to
+the change. Avoid duplicating the same design rule in product contracts.
 
 ## Regenerating the brand assets
 

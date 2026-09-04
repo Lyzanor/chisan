@@ -7,7 +7,7 @@ import {
   type CatalogLocalePolicy,
 } from "./i18n/catalog-scope";
 import { CATALOG_HREFLANG_BY_LOCALE, type Locale } from "./i18n/locales";
-import { SITE_NAME, SITE_ORIGIN } from "./site";
+import { isPublicDiscoveryEnabled, SITE_NAME, SITE_ORIGIN } from "./site";
 
 export { CATALOG_HREFLANG_BY_LOCALE } from "./i18n/locales";
 
@@ -57,6 +57,7 @@ function getOpenGraphLocale(locale: Locale): string {
 type CatalogMetadataTargetBase = {
   country: CatalogCountryPolicy;
   localePolicy: Pick<CatalogLocalePolicy, "publishedLocales">;
+  indexableLocales?: readonly Locale[];
 };
 
 export type CatalogMetadataTarget =
@@ -80,6 +81,7 @@ export type CatalogAlternateVariant = {
 };
 
 export type CatalogAlternateSet = {
+  indexable?: boolean;
   canonical: string;
   languages: Record<string, string>;
   variants: CatalogAlternateVariant[];
@@ -121,23 +123,23 @@ export function buildCatalogAlternateSet(
     );
   }
 
-  const variants = publishedLocales.map((locale) => ({
-    locale,
-    hreflang: CATALOG_HREFLANG_BY_LOCALE[locale],
-    href: absoluteSiteUrl(buildCatalogTargetPath(target, locale)),
-  }));
-  const canonical = variants.find(
-    ({ locale }) => locale === currentLocale,
-  )?.href;
-
-  if (!canonical) {
-    throw new Error(
-      `Missing canonical catalog variant for locale '${currentLocale}'.`,
-    );
-  }
+  const variants = publishedLocales
+    .filter(
+      (locale) =>
+        !target.indexableLocales || target.indexableLocales.includes(locale),
+    )
+    .map((locale) => ({
+      locale,
+      hreflang: CATALOG_HREFLANG_BY_LOCALE[locale],
+      href: absoluteSiteUrl(buildCatalogTargetPath(target, locale)),
+    }));
+  const canonical = absoluteSiteUrl(
+    buildCatalogTargetPath(target, currentLocale),
+  );
 
   return {
     canonical,
+    indexable: variants.some((variant) => variant.locale === currentLocale),
     languages: Object.fromEntries(
       variants.map(({ hreflang, href }) => [hreflang, href]),
     ),
@@ -181,6 +183,9 @@ export function buildLocalizedMetadata({
   return {
     title,
     description,
+    ...(alternates.indexable === false
+      ? { robots: { index: false, follow: isPublicDiscoveryEnabled() } }
+      : {}),
     alternates: {
       canonical: alternates.canonical,
       languages: alternates.languages,

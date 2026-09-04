@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "આ પ્રોફાઇલનો ઉત્પાદકે દાવો કર્યો છે અને તેની ચકાસણી થઈ છે.",
+      "Chisan એ આ ઉત્પાદક અને આ પ્રોફાઇલ સંચાલિત કરનાર વ્યક્તિ વચ્ચેનો સંબંધ ચકાસ્યો છે.",
     saveOrClaimPrompt: "આ ઉત્પાદકને સાચવો અથવા માલિકીનો દાવો કરો.",
     signIn: "સાઇન ઇન કરો",
     createAccount: "ખાતું બનાવો",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "મનપસંદમાં સાચવો",
     editMyProfile: "મારી પ્રોફાઇલ સંપાદિત કરો",
     expandProfile: "પ્રોફાઇલ વિસ્તારો",
-    ownershipVerified: "ઉત્પાદક દ્વારા ચકાસાયેલ",
+    ownershipVerified: "માલિકી ચકાસાયેલ",
     viewOwnershipClaim: "માલિકીના દાવા જુઓ",
     claimProducer: "આ ઉત્પાદક પર દાવો કરો",
     descriptionLanguage: {

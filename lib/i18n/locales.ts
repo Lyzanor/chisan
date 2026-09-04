@@ -1,38 +1,5 @@
-export const SUPPORTED_LOCALES = [
-  "en",
-  "es",
-  "ca",
-  "de",
-  "ja",
-  "fr",
-  "it",
-  "nl",
-  "pt",
-  "af",
-  "as",
-  "bn",
-  "cy",
-  "ga",
-  "gd",
-  "gu",
-  "haw",
-  "hi",
-  "kn",
-  "kok",
-  "ml",
-  "mr",
-  "ne",
-  "nso",
-  "or",
-  "pa",
-  "ss",
-  "st",
-  "ta",
-  "te",
-  "tn",
-  "xh",
-  "zu",
-] as const;
+import { DESCRIPTION_SOURCE_LOCALES,SUPPORTED_LOCALES } from "./locale-registry";
+export { APPLICATION_DEFAULT_LOCALE,DESCRIPTION_SOURCE_LOCALES,SUPPORTED_LOCALES } from "./locale-registry";
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
@@ -76,17 +43,12 @@ export const LOCALE_NATIVE_NAMES = {
 // yet publish as interface or catalog-route locales. Keep this registry
 // separate so accepting source prose never activates a route, cookie, manifest
 // label requirement or message dictionary.
-export const DESCRIPTION_SOURCE_LOCALES = [
-  ...SUPPORTED_LOCALES,
-  "gl",
-  "eu",
-] as const;
 
 export type DescriptionSourceLocale = (typeof DESCRIPTION_SOURCE_LOCALES)[number];
 
 // The neutral selector and private application shell remain English. Catalog
 // defaults are always declared explicitly in each country manifest.
-export const APPLICATION_DEFAULT_LOCALE: Locale = "en";
+
 
 // Keep the public locale token separate from the BCP-47 tag used by HTML and
 // Intl APIs. A locale may use a more specific display tag without changing its

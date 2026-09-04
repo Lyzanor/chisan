@@ -2,14 +2,16 @@
 
 ## Boundary and sources of truth
 
-Chisan has two persistence domains with an explicit boundary:
+The catalog, account workflows and authentication have distinct owners:
 
-- `data/csv/**` remains the canonical, public producer catalog. The app never
-  publishes a database overlay over a CSV row.
+- `data/csv/**` owns the producer registry and base facts; `data/content/**`
+  holds reviewed related content for those producers. The app never publishes
+  a database overlay over either source.
 - PostgreSQL is canonical for accounts, external identities, favorites,
   producer claims, producer memberships, change requests, audit events and
   entitlements, including the commercial request state for expanded producer
-  profiles. It never stores a second copy of public producer facts.
+  profiles. It may store proposal snapshots for review and audit. Public producer facts
+  are resolved from the approved catalog, never from those snapshots.
 - Clerk owns credentials, verified sign-in identifiers and sessions. A Clerk
   subject is linked to an internal user through `auth_identities`; email is
   never an authorization key.
@@ -222,7 +224,8 @@ short-lived read URLs, retention limits and a separate artifact table.
 The expanded profile is a producer-scoped capability, not a subscription or a
 property of a user account. Its only authorization key is an active
 `producer.profile.premium` entitlement for `(country, producer_id)`. It permits
-proposal and presentation of the premium CSV field set; it never grants
+proposal and presentation of the premium CSV field set and presentation of
+reviewed related content; it never grants
 ownership, verification, ranking or publication without review.
 
 That editable set is `video`, `visitas guiadas`, `mensaje a la comunidad` plus
@@ -231,6 +234,10 @@ the two highlighted links. `fecha ultimo cambio` is displayed with that block
 but is not editable: the materializer derives its UTC `YYYY-MM-DD` value from
 the request's `reviewed_at` timestamp after approval.
 
+Products, gallery items and named links use `docs/PRODUCER_CONTENT.md` under the
+same entitlement. They currently enter through its local editorial workflow;
+the deployed base-field proposal form does not accept these collections.
+
 The printable producer QR is an optional presentation feature within that same
 capability. It is hidden by default and renders only while the entitlement is
 active and its `profileQrEnabled` metadata flag is `true`. Only the exact active
@@ -238,10 +245,9 @@ owner may change that flag from the producer profile controls. The preference
 does not enter the CSV, does not change the producer route or identity, and an
 entitlement revocation hides the QR immediately without deleting catalog data.
 
-`docs/CSV_CONTRACT.md` section **Public producer-profile rendering and
-structured data** owns the public HTML, locale, canonical identity, indexing and
+`docs/CATALOG_WEB.md` owns the public HTML, locale, canonical identity, indexing and
 JSON-LD contract for both base and expanded profiles. The entitlement changes
-only whether reviewed premium CSV fields may render. It never creates a second
+only whether reviewed expanded content may render. It never creates a second
 public entity, locale-dependent account key, database content overlay or
 structured-data verification signal.
 
@@ -321,7 +327,7 @@ and disabled. Its SDK, Checkout orchestration and signed webhook live under the
 payment integration boundary; replacing it means adding another adapter and
 dispatching by `payment_provider`, not changing CSV, routes, review or the
 entitlement key. Stripe resources, events, activation and incident procedures
-live only in `docs/OPERATIONS.md`.
+live in `docs/STRIPE_RUNBOOK.md`.
 
 ## Producer profile changes
 
@@ -351,8 +357,8 @@ truth of any requested public field. Private claim material and author notes do
 not become public evidence; the reviewer applies `docs/EDITORIAL.md`, and
 records only suitable public sources under `data/evidence/**`.
 
-An exact active owner membership may be presented publicly as `Verificado por
-el productor`. That label is derived from PostgreSQL at request time and means
+An exact active owner membership may be presented publicly as `Titularidad
+verificada`. That label is derived from PostgreSQL at request time and means
 only that the ownership claim was approved. It never writes the CSV
 `verificacion` cell, upgrades editorial evidence or certifies producer facts.
 
@@ -371,131 +377,11 @@ predates this column is a schema conflict and must be resubmitted; it is never
 silently widened. Editorial work performed outside this owner-proposal workflow
 does not alter the date.
 
-```bash
-# 1. Apply one approved request locally and validate its CSV.
-npx pnpm producer:change materialize <change-request-uuid>
-
-# 2. Inspect the diff, resolve affected translations, add public evidence, and run the gate.
-npx pnpm check:translations:changed
-npx pnpm verify:data
-git add <csv-evidence-and-required-translation-sidecar-files>
-git commit -m "data: apply reviewed producer profile change"
-
-# 3. Bind the request to the commit that contains its CSV.
-npx pnpm producer:change finalize <change-request-uuid> <full-40-char-commit-sha>
-
-# 4. Push main; GitHub/Vercel then make the committed CSV public.
-git push origin main
-```
-
-When the approved patch changes `descripcion`, `quien hay detras`, `historia`
-or any of their paired source-locale columns, the changed translation check
-prints bounded generation commands for missing or stale machine rows. A stale
-`reviewed` row must be reviewed again and is never replaced automatically. The
-request's CSV and every sidecar required by the area's effective published
-locales form one atomic commit.
-
-Materialization refuses stale base hashes, missing producers, revoked membership
-or required entitlement, non-allowlisted fields, invalid values and a dirty
-target CSV. Before writing,
-it acquires a durable execution lease unique to the request, producer and CSV;
-that lease fences separate agent worktrees, while advisory locks serialize its
-acquisition. The request stays `approved` until the local atomic write and CSV
-audit succeed, then the execution becomes `materialized` and the request becomes
-`applying`. A clean CSV that already contains the exact patch is audited too;
-only the same live execution may resume its own exact dirty post-write snapshot
-after a crash. Finalization proves that the supplied commit shares history with
-the execution's recorded source `HEAD`, that the commit itself introduced the
-approved producer-row hash relative to its first parent, and that the current
-`HEAD` still contains that exact row at the fenced CSV path. It never trusts an
-uncommitted working tree. The `applied` state therefore means committed to the
-canonical CSV and still present at finalization time, not yet deployed.
-
-### Staff operations workspace and agent reads
-
-`/admin` is the staff operations workspace. Its producer-change registry is a
-durable view over every `producer_change_requests` state, not only the review
-queue. `/admin/cambios/<change-request-uuid>` is the stable operational permalink
-for one request and shows its actors, timestamps, requested diff, current CSV
-comparison, notes, applied commit and targeted audit timeline. The request row is
-the current state; `audit_events` explains recorded transitions and must not be
-used as a reconstructed replacement for that row.
-
-`/admin/premium` owns the entitlement registry and audited gift controls;
-`/admin/pagos` owns the current payment-adapter incident queue and safety
-history. Both require an exact active admin, neither writes CSV, and neither may
-override the other domain. Their full semantics are defined above.
-
-The workspace and local automation share the status vocabulary in
-`lib/accounts/producer-change-workflow.ts` and the read model in
-`lib/admin/producer-change-requests.ts`. Agents read requests through the
-versioned, read-only JSON commands instead of scraping HTML or querying tables
-directly:
-
-```bash
-npx pnpm producer:change list --status approved --json
-npx pnpm producer:change show <change-request-uuid> --json
-```
-
-List output excludes private notes and full snapshots; `show` includes them for
-an operator with database access. The versioned `show --json` schema currently
-uses version `2` and includes the active execution (or latest attempt), its
-durable IDs and timestamps, and the calculated recovery-eligibility time.
-Neither command mutates request state or the catalog. Each capability uses a
-separate Neon identity and never falls back to the application's `DATABASE_URL`
-or the migration owner:
-
-- `CHISAN_ADMIN_READ_DATABASE_URL`, loaded locally from
-  `.env.admin-read.local`, is accepted only for `list`, `show` and read access
-  diagnostics.
-- `CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL`, loaded locally from
-  `.env.producer-change-operator.local`, is accepted only for `materialize`,
-  `finalize` and operator diagnostics.
-- `CHISAN_PRODUCER_CHANGE_RECOVERY_DATABASE_URL`, loaded locally from
-  `.env.producer-change-recovery.local`, is accepted only for supervised
-  recovery and recovery diagnostics.
-- All three files are local secrets, ignored by Git and never configured in the
-  deployed Vercel application.
-
-The reader has explicit column-level `SELECT` grants and sees audit rows only
-through the producer-change-targeted audit view. The operator inherits those
-reads but cannot enumerate memberships or account status directly and has no
-direct `UPDATE`, `INSERT`, `DELETE`, DDL or ownership. It may execute only the
-versioned `SECURITY DEFINER` producer-change functions;
-their `NOLOGIN` owner has the internal table permissions, a fixed safe
-`search_path`, and records `session_user` as the actor. Check the boundary before
-automation runs:
-
-```bash
-npx pnpm producer:change doctor --access read --json
-npx pnpm producer:change doctor --access operator --json
-npx pnpm producer:change doctor --access recovery --json
-```
-
-An agent may select only `approved` requests and invoke `materialize` and
-`finalize`, but it must run in a controlled Git worktree outside the deployed
-Vercel application. Every attempt records its execution UUID, SQL operator,
-opaque worktree key, source `HEAD`, expected row hash, CSV and timestamps.
-Unfinished pre-write leases expire after fifteen minutes and can be superseded;
-a `materialized` execution remains fenced until exact finalization so another
-worktree cannot duplicate a possibly committed change. Recovery of an abandoned
-materialized execution is a separate staff capability, never an operator
-capability or an automatic timeout. PostgreSQL rejects recovery during the first
-24 hours after materialization. After that quarantine, staff must identify the
-exact execution and record a substantive reason from a clean, audited Git state:
-
-```bash
-npx pnpm producer:change recover <change-request-uuid> <execution-uuid> \
-  --reason "Original operator worktree was retired after incident review."
-```
-
-Recovery only cancels that fence and returns the request to `approved`. It never
-adopts, edits or finalizes a CSV; a normal operator credential must run
-`materialize` again, which either reapplies the reviewed patch or validates the
-exact already-present state. The recovery login inherits read access but cannot
-execute the five normal operator functions, and the operator cannot execute
-recovery. Revoking producer access conflicts every unpublished request and
-cancels each live execution in the same producer-locked transaction.
+The operator workflow, credentials, execution recovery and publication commands
+are in `docs/OPERATIONS.md` under **Reviewed producer publication**. Approval,
+commit and deployment are distinct states: `approved` authorizes local work,
+`applying` has a prepared local result, and `applied` records the Git commit.
+Deployment is checked separately.
 
 ## Catalog row lifecycle
 
@@ -526,8 +412,9 @@ resolve them explicitly:
   require a live catalog row.
 
 The data-only validator cannot query Production and does not prove this handoff.
-Until a dedicated inspection command exists, it is an explicit operator check
-and the merge/purge must not ship without it. Historic claims and audits are
+Run `pnpm producer:inspect <country> <producer_id>` for the current catalog,
+related-content and account-reference inventory before planning retirement.
+Resolve every reported reference through the audited domain operations. Historic claims and audits are
 never rewritten merely to make the retired producer appear current. Do not
 repair references with ad hoc Production SQL; if an audited operation is not
 available, defer the row retirement.

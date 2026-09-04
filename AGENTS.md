@@ -1,170 +1,101 @@
 # Chisan Agent Guide
 
-Chisan is a startup building the shared discovery layer for local food. Its
-promise is **Connecting local food.** Chisan is one trustworthy product for
-discovering and understanding place-based food and drink producers across
-regions and countries.
+**Connecting local food.** Chisan helps people discover place-based food and
+drink producers, understand their work and contribute reliable improvements.
+Discovery, participation and trust are equally part of the product.
 
-This is the shared product and engineering context for every AI agent working in
-Chisan. The `README.md` is the human landing page; this file describes the
-direction of the product, how its layers fit together, and which source owns each
-kind of state.
+## Core philosophy
 
-Read this first. For producer-data work, also read the target country's
-`data/csv/<country>/AGENTS.md` and the canonical document that owns the task.
-Scoped guides may narrow local interpretation but never override this file or a
-canonical contract.
+Publish what the evidence supports. Preserve the identity of producers and
+places. Make participation useful and the public experience understandable.
+Prefer a small working capability over speculative infrastructure. A validator
+checks consistency; people remain responsible for editorial judgement.
 
-## Product direction
+Three kinds of guidance have different weight:
 
-Chisan is more than a map and more than a data-maintenance project. It brings
-together three product capabilities:
+- **Invariants** protect identity, factual authority, privacy and authorization.
+  A change to one needs an explicit design and migration of affected consumers.
+- **Defaults** are the normal way to work. Use judgement when another approach
+  better serves the task, and explain a material deviation in the change.
+- **Current decisions** describe today's product. They may evolve when a concrete
+  need warrants it; update their owner and verify affected behavior together.
 
-- **Discovery:** a public web experience for exploring producers by place and
-  category through maps, lists, and durable profiles.
-- **Participation:** accounts, favorites, ownership claims, and structured ways
-  for producers and communities to propose improvements.
-- **Trust:** a reviewed, traceable catalog whose public facts remain portable and
-  inspectable.
+## Invariants and authority
 
-Build toward a coherent platform that can expand country by country. Reuse
-shared product primitives, preserve local context, and treat the web experience
-and contribution flows as first-class parts of Chisan rather than utilities
-around a data process.
+| Source | Owns |
+|---|---|
+| `data/csv/<country>/<region>/<area>.csv` | Producer registry, stable identity and approved base facts |
+| `data/csv/<country>/country.json` | Labels, ordering, aliases, languages and public/standby state |
+| `data/csv/<country>/translations.<locale>.csv` | Derived localized base prose tied to its source |
+| `data/content/<country>/<producer_id>.json` | Approved products, gallery items and links belonging to an existing producer |
+| `data/evidence/**` | Public sources behind editorial decisions and closed exclusions |
+| `docs/candidates/**` | Unresolved research; removed after its handoff |
+| PostgreSQL | Accounts, memberships, proposals, entitlements and audit |
+| Clerk | Credentials and sessions; mapped to Chisan's internal account ID |
+| `data/reference/**` | Shared vocabularies, reviewed geometry and source metadata |
+| Git | Authorship, changes and recoverable earlier states |
 
-## System shape
+One producer is one qualifying productive unit or governed collective. Its key
+is `(country, producer_id)`; area and slug form its stable public route. Locale
+is presentation, never identity or permission. Row location columns mirror the
+CSV path. Related content cannot register a producer or override its base facts.
 
-```text
-research + contributions ──> review ──> area CSV catalog ──> public web
-                                └─────> evidence             └─> discovery
+Reviewed publication enters Git; deployed requests do not modify catalog files.
+Read models, APIs, indexes, translations and proposal snapshots are allowed when
+their source is explicit and they cannot become independently editable catalog
+authorities. A snapshot used for review is not a second published catalog.
 
-Clerk session ──> PostgreSQL account workflows ──> reviewed proposal ──> CSV
-```
+Account actions recheck exact active permissions on the server. Payment and
+ownership do not prove facts or bypass review. Private material stays private.
+Device position remains transient browser input. Preserve routes, account
+references and content references when renaming, merging or retiring a producer.
 
-- The public app reads producer facts from area files under `data/csv/**`.
-  Checked-in country translation sidecars may supply localized presentation,
-  but never replace or override an area row. The folder tree defines the
-  countries, regions, areas, and producer pages; every row's required
-  `country`, `region` and `area` cells mirror that exact path for portability.
-- Candidate notes are temporary research. Evidence records the sources behind
-  closed decisions. Neither is a runtime producer overlay.
-- Clerk owns credentials and sessions. PostgreSQL owns Chisan account state,
-  claims, memberships, reviewed requests, and audit; it never owns producer
-  catalog state.
-- The web, localization, discovery, and account flows may evolve around the
-  catalog, but they must not create a hidden second producer registry.
+## Find the owner
 
-The CSV catalog is the core of the product, not the whole product. Editorial
-priority is factual correctness, traceability, URL stability, then mechanical
-consistency. Product work should make that trusted core more useful and easier
-to participate in. Validators prove structure, not truth.
+Read the document for the actual task, not every contract. Producer research
+also uses the country's `data/csv/<country>/AGENTS.md` and relevant area note.
 
-Out of scope are producer-catalog API layers, hidden runtime producer sources
-outside `data/csv/**`, direct CSV writes from deployed requests, database
-overlays, and one-off generators that become an alternative source of truth.
+| Task | Owner |
+|---|---|
+| Eligibility, research and editorial decisions | `docs/EDITORIAL.md` |
+| Base field meanings and CSV representation | `docs/CSV_CONTRACT.md` |
+| Products, gallery and links | `docs/PRODUCER_CONTENT.md` |
+| Public routes, localization, HTML and metadata | `docs/CATALOG_WEB.md` |
+| Sources and exclusions | `docs/EVIDENCE_CONTRACT.md` |
+| Producer coordinates or images | `docs/PRODUCER_GEOLOCATION.md`, `docs/IMAGES.md` |
+| Visitor location | `docs/VISITOR_LOCATION_ROUTING.md` |
+| Accounts, permissions and proposals | `docs/ACCOUNT_SYSTEM.md` |
+| Publication, recovery, environment and deployment | `docs/OPERATIONS.md` |
+| Stripe activation and incidents | `docs/STRIPE_RUNBOOK.md` |
+| Visual presentation | `design/README.md` |
 
-## Authority map
+## Working defaults
 
-| Layer | Owns | Never owns |
-|---|---|---|
-| `data/csv/<country>/<region>/<area>.csv` | Published producer state and the catalog registry | Research provenance or account state |
-| `data/csv/<country>/translations.<locale>.csv` | Materialized localized presentation of translatable canonical fields | Producer facts, evidence, routing identity, or account state |
-| `data/csv/<country>/country.json` | Country labels, level names, ordering, and aliases | Producer or editorial decisions |
-| `data/csv/<country>/AGENTS.md` | Local priorities, durable country rules, and source ceilings | General workflow or live area queues |
-| `data/evidence/<country>/<region>/<area>.jsonl` | Decision sources and `reject`/`purge`/`merge` tombstones | Published field values or review authorship |
-| `docs/candidates/<country>/<area>.md` | Temporary unresolved discovery work | Durable producer state or decisions |
-| `data/reference/catalog-area-boundaries/**` | Reviewed source geometry and licence metadata for optional client-side area resolution | Producer coordinates, catalog membership, language choice, or device position |
-| `public/generated/catalog-geography/**` | Deterministic deployable output built from the reviewed boundary source | Editable boundary authority or stored user location |
-| PostgreSQL | Accounts, favorites, claims, memberships, requests, and audit | Producer catalog state |
-| Git | Authorship and previous states | Current producer state |
+1. Inspect Git status and intended differences. Work directly on `main` unless
+   the user requests a branch; preserve unrelated changes and existing work.
+2. Make a coherent change at its owning boundary. Prefer shared definitions
+   over repeated constants, and behavior tests over exact source-code spelling.
+3. Keep modules near their responsibility. Preserve stable entry points during
+   extraction; avoid a repository-wide rename merely for visual uniformity.
+4. Review the intended diff and run the matching checks before committing.
+   Stage and push only the authorized scope. CI does not replace local review.
 
-A country guide contains exactly `Operating state`, `Country rules`, and
-`Source ceilings`. Live counts, area indexes, batch progress, and general
-workflow do not belong there. Rules and source interpretations do not transfer
-automatically between countries.
+Maintained documentation is English. Preserve official names and source text.
+Country guides normally describe operating scope, local rules and source limits;
+use additional explanatory structure when useful. Keep derived counts and live
+queues in tools and candidate notes rather than policy. Temporary experiments
+and scripts need not become permanent infrastructure.
 
-## Cross-project invariants
+## Verification
 
-- The CSV tree is the registry: adding a country, region, or area is a data
-  change, not a code registration task.
-- `country`, `region` and `area` are required path mirrors on every producer
-  row. They never override the tree and publication fails when they disagree
-  with `data/csv/<country>/<region>/<area>.csv`.
-- One row represents one productive unit. Its durable key is
-  `(<country>, producer_id)`; its public identity is the stable `slug` at
-  `/<country>/<area>/<slug>`.
-- The public area key is `(<country>, <area>)`. Folder names and public paths
-  move together; stable query parameters are `category` and `highlight`.
-- A catalog scope and locale are presentation state. Short default routes and
-  composite alternate-language routes resolve to the same country, area, row,
-  and durable producer key; no account-domain key contains a locale or path.
-- Canonical prose remains in the area row with its source locale. A translation
-  sidecar is a versioned presentation cache tied to that prose, not a second
-  producer record or source of editorial facts.
-- Device position is transient browser input for optional area routing. It is
-  never catalog data or account state, and only a derived catalog area may be
-  retained as described by `docs/LOCATION_ROUTING.md`.
-- A deployed request never writes `data/csv/**`. Ownership authorizes a
-  proposal, not its facts; only reviewed local materialization changes the CSV.
-- The CSV stores public decisions, evidence stores sources, and Git stores who
-  reviewed the change.
-- A repository-wide CSV schema change is atomic. Public slug changes, merges,
-  and purges follow the owning contracts and preserve routing and account
-  integrity.
-- Account profile type is presentation, never authorization. Producer actions
-  require exact active membership; staff actions require an active grant.
+- Prose, links or organization with no behavior change: `pnpm check:docs`.
+- Data and reviewed related content: `pnpm verify:data`; use changed-data checks
+  while iterating.
+- Code, schema, permissions or policy affecting behavior: `pnpm verify:ai`.
+- Visual changes also need a browser check at narrow and wide widths and a
+  concise record in `design/qa/design-qa.md` for material decisions.
+- Deployment and account migrations follow the Operations preflight.
 
-## Implementation map
-
-| Work | Read | Final gate |
-|---|---|---|
-| Producer eligibility, verification, online sales, or candidates | Country guide, `docs/EDITORIAL.md`, CSV and evidence contracts | `npx pnpm verify:data` |
-| CSV fields, categories, identity, routing, links, or validators | `docs/CSV_CONTRACT.md` and the affected policy | `npx pnpm verify:ai` for behavior/schema; otherwise `verify:data` |
-| Evidence records or actions | `docs/EVIDENCE_CONTRACT.md` | `npx pnpm verify:data` |
-| Coordinates or Google Maps | `docs/GEOLOCATION.md` | `npx pnpm verify:data` |
-| Producer images | `docs/IMAGES.md` | `npx pnpm verify:data` |
-| Localized descriptions or translation sidecars | `docs/CSV_CONTRACT.md` and `docs/EDITORIAL.md` | `npx pnpm verify:data` for data-only batches; `verify:ai` for manifest, routing, policy or behavior |
-| Device-location onboarding or catalog-area boundaries | `docs/LOCATION_ROUTING.md` | `npx pnpm verify:ai` |
-| Public user profiles and their producer selections | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
-| Accounts, ownership, memberships, entitlements, gifts, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
-| Payment-adapter implementation or activation | `docs/ACCOUNT_SYSTEM.md`, then `docs/OPERATIONS.md` | `npx pnpm verify:ai`, then the Operations preflight |
-| Environment, secrets, deploy, rollback, or backups | `docs/OPERATIONS.md` | Follow its preflight and smoke checks |
-| Visual identity, design tokens, brand assets, web presentation, or visual QA | `design/README.md` | `npx pnpm check:design`, `pnpm verify`, and a record in `design/qa/design-qa.md` |
-| Code, scripts, documentation, policy, or behavior | Owning contract | `npx pnpm verify:ai` |
-
-While iterating on data, use `npx pnpm check:csv:changed` and
-`npx pnpm check:evidence:changed`; add `npx pnpm check:translations:changed`
-when canonical prose or sidecars change, and `npx pnpm check:images` when assets
-change. Finish a data batch with `npx pnpm verify:data`. `check:defects` is an
-advisory worklist, not stored state or a publication gate. Use
-`npx pnpm list:producers <area>` for an area-scoped roster and de-duplication
-pass.
-
-## Working safely
-
-1. Inspect `git status --short`, `git diff --name-status`, and `git diff --stat`.
-   Treat a dirty worktree as shared context and preserve unrelated work.
-2. Classify the task and read only its owning document. For producer work, also
-   read the country guide and current area note.
-3. Inspect narrowly with `rg`, small line windows, and area-scoped commands;
-   avoid loading whole CSVs or JSONL ledgers for one entity.
-4. Make one coherent change. For area work, reconcile the CSV, evidence,
-   candidate note, and image folder as applicable. Before merging or purging a
-   row, follow `docs/ACCOUNT_SYSTEM.md` § Catalog row lifecycle.
-5. Review only the intended diff and run the matching gate. Keep unrelated
-   files unstaged and every authorized commit or push limited to the task.
-
-## Repository rules
-
-- Work directly on `main`; create or switch branches only when the user asks.
-- Prefer deleting or tightening documentation over adding repeated policy,
-  manual indexes, or derived status. Improve a validator or error message when
-  that makes prose unnecessary.
-- Write maintained documentation and reusable guides in English. Prefer English
-  for new area notes, but do not translate temporary historical notes as a
-  standalone task. Preserve official names, source text, URLs, and controlled
-  tokens in their canonical form.
-- Use temporary scripts for mechanical one-off work; retain them only when they
-  become broadly reusable and documented.
-- Keep `main` deployable and run the local gate before any commit. CI reports
-  after a push; it does not replace local validation.
+The full gate remains the release and CI safety net. During iteration, run the
+smallest meaningful test that exercises the changed behavior, then the final
+gate. A warning is work to assess, not a demand to invent missing facts.

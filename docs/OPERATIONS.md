@@ -160,9 +160,9 @@ review; they do not prove full publication readiness.
 2. Run the translation checks for the changed scope and then the repository
    gate. Every non-empty translatable profile field rendered by the locale must
    have either canonical prose in that locale or a current sidecar row for that
-   exact field whose source locale and source hash match. Stale reviewed rows
-   block release and are never
-   replaced automatically. The gate reapplies exact numeric-token, ordered
+   exact field whose source locale and source hash match. Missing or stale rows are omitted from that language and exclude the
+   incomplete producer variant from indexing; they do not block canonical
+   corrections. Reviewed rows are never replaced automatically. The gate reapplies exact numeric-token, ordered
    quantitative-fact, URL, protected-term, length and unchanged-source
    invariants to current machine and reviewed rows; a current machine row that
    fails them is never reused by the generator.
@@ -179,9 +179,9 @@ review; they do not prove full publication readiness.
    effective manifest policy rather than a manual release list.
 6. Run `npx pnpm verify:ai` for manifest, routing, contract or behavior changes.
    A sidecar-only data batch may close with `npx pnpm verify:data`; use
-   changed-only translation checks while iterating. Commit each canonical CSV
-   change together with every sidecar required by its effective published
-   locales.
+   changed-only translation checks while iterating. Commit any regenerated sidecars with their canonical source change.
+   When translation work remains, inspect the notices and the affected
+   indexing coverage before closing the change.
 
 Before selecting or changing the automatic translation engine, build a fresh
 source-only benchmark plan and generate candidates into an ignored local path:
@@ -212,7 +212,7 @@ and glossary versions may those identifiers be used to materialize sidecars.
 Location-boundary activation is a separate release decision. When included,
 confirm the source date and redistribution licence, validate the reference
 geometry and deterministic browser assets, exercise ambiguity fixtures, and
-follow `docs/LOCATION_ROUTING.md`. Locale completeness never compensates for
+follow `docs/VISITOR_LOCATION_ROUTING.md`. Locale completeness never compensates for
 missing geometry, and geometry never authorizes a new locale.
 
 ### Producer-change freeze for an atomic CSV schema migration
@@ -259,230 +259,11 @@ drain row-hash-dependent requests before deployment, then re-enable producer
 changes only after the widened catalog, validators, form and public premium
 block pass the production smoke check together.
 
-### Deferred Stripe adapter activation and future launch
+### Payment adapter operations
 
-**Current state: deliberately deferred, with no launch date.**
-
-The application code, migration `0006`, widened CSV schema, entitlement model
-and admin operations may be deployed while Stripe remains unprovisioned. Stripe
-is a replaceable adapter for issuing and reconciling a producer-scoped
-entitlement; it is not the authority for premium CSV fields, editorial review or
-public presentation. Replacing it later must preserve entitlement provenance and
-commercial history without changing the CSV contract or reinterpreting historic
-Stripe references. A replacement receives its own configuration, provenance and
-operational runbook. `docs/ACCOUNT_SYSTEM.md` owns the provider-neutral semantics;
-this section owns only the dormant Stripe adapter's future provisioning,
-activation and incident procedure.
-
-Until the business owner explicitly schedules a payment launch:
-
-- remain deferred and unprovisioned as defined above;
-- do not advertise or promise paid profile upgrades;
-- use only the separately audited `/admin/premium` gift workflow when Chisan
-  deliberately grants an expanded profile without payment.
-
-#### Decisions required before provisioning
-
-Before creating any Stripe resource, record and approve:
-
-- the legal entity and country that will contract with Stripe and receive funds;
-- whether EUR 49 is the final customer price including VAT or a pre-tax price;
-- whether Stripe Tax is used and how the customer location is determined;
-- receipt versus invoice handling, numbering and accounting handoff;
-- refund, withdrawal, exception and support policy;
-- the immutable terms URL and its corresponding code version;
-- the monitored billing support address;
-- accepted payment methods;
-- whether a Live purchase/refund rehearsal is necessary and its approved plan.
-
-Code and Checkout copy must not guess these business, fiscal or legal choices.
-
-#### Future resource inventory
-
-Activation requires all of the following, created only after those decisions:
-
-- a verified Stripe business account and settlement bank account;
-- separate Test and Live one-time Products/Prices for exactly `4900 eur`, never
-  recurring;
-- separate Test and Live secret keys;
-- separate Test and Live `/api/webhooks/stripe` endpoints and signing secrets;
-- an isolated test environment using Clerk Test, an isolated PostgreSQL
-  database and Stripe Test;
-- published versioned terms, a monitored support email and the approved
-  tax/invoicing configuration;
-- environment variables stored only in the deployment secret manager, with no
-  value copied into Git, documentation, logs or chat.
-
-#### Future activation sequence
-
-1. Approve the commercial, fiscal, legal, refund and support decisions above.
-2. Verify migration `0006`, the canonical widened CSV schema and compatible
-   application code are deployed while Checkout remains false.
-3. Create only the Stripe Test resources.
-4. Configure an isolated Preview or test deployment; leave Production
-   untouched.
-5. Enable Checkout only there and complete the isolated Test sequence below.
-6. Test `/admin/premium` inventory, gift, gift revocation and safe coexistence
-   with payment-adapter entitlements issued through Stripe and open commercial
-   requests.
-7. Create and inspect Live resources while the Production flag remains false.
-8. Take a recoverable backup, then complete the preflight and smoke checks for
-   the intended release.
-9. Record an explicit go/no-go decision with named operational owners.
-10. Only after go, set the Production flag to `true` and create a new Production
-    deployment. A configuration change does not alter an existing deployment.
-
-#### Stripe resource and offer contract
-
-Create one active, one-time Stripe Price with unit amount `4900` and currency
-`eur` in Test, then a separate equivalent Price in Live. The application
-retrieves and rejects a Price that is inactive, recurring, has another amount or
-currency, or belongs to the wrong Stripe mode. Archive a retired Price only
-after the environment points to its replacement; an already-created request
-retains the Price to which its Checkout was bound.
-
-Treat `CHISAN_PROFILE_UPGRADE_TERMS_URL` as an immutable legal artifact for its
-corresponding code `PRODUCER_PROFILE_UPGRADE_TERMS_VERSION`. Every request stores
-both values as accepted. Any material text change requires a new version and a
-new durable URL; keep earlier URLs available for support and audit. Never point
-an existing version at replacement content. Rotate the code version and URL
-together, and include any Price change in the same reviewed release. An
-unattached request whose stored offer no longer matches is auditably expired and
-replaced with a new request UUID, so Stripe idempotency cannot return a Session
-for an earlier offer. An attached Session keeps its original Price and accepted
-terms and may be resumed while new sales are paused; never rewrite it or demand
-acceptance of a different version.
-
-Register the environment's endpoint at `/api/webhooks/stripe` for exactly:
-
-- `checkout.session.completed`;
-- `checkout.session.async_payment_succeeded`;
-- `checkout.session.async_payment_failed`;
-- `checkout.session.expired`;
-- `charge.refunded`;
-- `charge.dispute.created`;
-- `charge.dispute.updated`;
-- `charge.dispute.closed`;
-- `refund.created`;
-- `refund.updated`;
-- `refund.failed`.
-
-The handler verifies Stripe's signature against the unmodified raw body and
-rejects Test/Live event mismatches. It durably leases each event ID and returns a
-success response only after processing is recorded; a failure or superseded
-lease returns a retryable non-2xx response. Stripe may deliver duplicate or
-out-of-order events, so never replace this with redirect-based fulfilment or an
-in-memory deduplication flag. The handler does not compare event timestamps to
-choose a winner: under the producer lock it retrieves the current Charge and
-aggregates all of that Charge's Refunds and Disputes before every decision.
-Stripe documents both
-[webhook-backed Checkout fulfilment](https://docs.stripe.com/checkout/fulfillment)
-and the [raw-body signature requirement](https://docs.stripe.com/webhooks/signature?lang=node).
-
-#### Isolated activation test
-
-Before enabling Preview Checkout, complete this isolated Test sequence:
-
-1. apply migration `0006`, run `npx pnpm db:assert-current`, configure the Test
-   Price and endpoint, and leave Production untouched;
-2. claim a fixture producer with an authorized test account and accept the
-   displayed versioned offer;
-3. complete hosted Test Checkout and verify that a signed event moves one
-   request from `pending` to `paid`, creates exactly one producer entitlement,
-   and enables all currently configured premium edit controls;
-4. resend the same event and revisit the success page; verify no second request
-   or entitlement appears and the return query alone cannot grant access. Pause
-   new sales and confirm a bound open Session can resume only while the signed
-   webhook configuration remains ready;
-5. submit expanded fields, review them, materialize them into the CSV and verify
-   the public expanded block renders only while the entitlement is active;
-6. exercise an expired/failed Checkout, pending/failed/partial/full refunds,
-   multiple disputes on one Charge, an update and won/lost closure with Stripe
-   Test tooling. Confirm a pending refund suspends display without conflicting
-   the proposal, a failed refund restores only after full reconciliation, and a
-   succeeded refund or adverse dispute suspends display without deleting CSV
-   cells. Deliver events again out of order and confirm the current Stripe
-   aggregate still wins;
-7. with an exact active admin grant, open `/admin/premium` and `/admin/pagos`;
-   verify the paginated entitlement inventory, gift provenance, current owner,
-   paid buyer and commercial-safety history. Prove gift/revoke cannot mutate a
-   paid entitlement issued through Stripe or bypass an open request, and prove a
-   safe payment retry re-fetches Stripe while an amount, Price, mode or binding
-   mismatch offers no override;
-8. inspect webhook receipts and runtime logs for retries, conflicts, 5xx errors
-   and any unmatched paid Checkout or commercial event.
-
-#### Go/no-go gate
-
-Go only when all commercial, fiscal, invoice, refund and terms decisions are
-approved; the isolated test covers payment, duplicate and out-of-order events,
-expiry, refund and dispute; webhook reconciliation leaves no unexplained
-incident; both admin workspaces show the expected access and provenance; support
-and incident owners are named; Preview shares no credential with Production;
-every Price and secret belongs to the expected mode; and the Checkout kill
-switch has been rehearsed without breaking settlement. Any missing condition is
-no-go and the flag stays false.
-
-Repeat the resource checks with the Live Price and Live endpoint before an
-approved launch, but do not create a real charge merely as a smoke test without
-an approved test purchase and refund plan. Deploy and verify with Checkout still
-false, then follow step 10 above.
-
-### Stripe adapter incident handling
-
-Use the admin-only `/admin/pagos` as the first read-only view. `paid_unfulfilled`
-means Chisan has evidence of captured money but refused to grant or keep the
-right. Retry only when the page offers the server-side reconciliation action;
-it fetches the bound Checkout and Charge again and repeats every immutable
-check. Price, requested amount, captured amount, currency, mode, line-item or
-identity mismatches are never overridden. The incident row preserves both the
-expected EUR 49 offer and Stripe's actual `Charge.amount_captured`/currency. A
-deliberate full refund is terminal when succeeded refunds equal that captured
-amount, including for an anomalous amount or currency; this closes the incident
-without ever granting the premium right. Both the current queue and commercial
-safety history are paginated. The latter is append-only audit, not a local
-resolution ledger: it records unmatched paid Checkouts, failed Session
-expiration and signed commercial events whose PaymentIntent declares the Chisan
-metadata kind but whose request is missing or already bound to another
-PaymentIntent. Genuinely unrelated Stripe objects remain ignored. Resolve money
-in Stripe and retain Chisan's audit row.
-
-For a non-retryable mismatch or unmatched paid Checkout:
-
-1. compare the Chisan request UUID and displayed Stripe IDs with the matching
-   object in the correct Test/Live Dashboard;
-2. do not edit the commercial row or entitlement with ad hoc SQL;
-3. if the purchase cannot safely be reconciled, issue the deliberate refund in
-   Stripe under the approved policy and wait for the signed refund webhook;
-4. confirm `/admin/pagos` and the producer page reflect the resulting state, and
-   preserve the audit trail for support and accounting.
-
-For a dispute, manage evidence and the financial case in Stripe. Chisan suspends
-the expanded block while any current dispute is adverse. A lost dispute becomes
-terminal `dispute_lost` so a new owner purchase is possible; a fully refunded
-request stays terminal `refunded` even if a later dispute notification arrives.
-Only when every current dispute is won, prevented or warning-closed does the
-same Stripe reconciliation path consider restoration. It uses the fresh Charge,
-not the Charge embedded in an earlier webhook; staff must not reactivate the
-entitlement directly.
-
-Refund lifecycle is also Stripe-authoritative. `pending` and `requires_action`
-suspend the entitlement but preserve unpublished proposals. Only `succeeded`
-amounts count toward partial/full refund state and conflict those proposals.
-`failed` or `canceled` never cause permanent revocation; the corresponding
-update triggers a complete Charge/refund/dispute reconciliation before any
-restoration.
-
-### Payment-adapter replacement or retirement
-
-Replacing the payment service never changes CSV fields, producer identity or
-the `producer.profile.premium` capability. First stop new sessions for the
-outgoing adapter. Keep its code path, credentials, signed webhook and
-reconciliation available while any request, attached session, refund, dispute
-or provider event remains open. Historical commercial rows and their
-`payment_provider`-scoped references stay immutable. Activate the replacement
-through its own reviewed adapter and provenance; retire old secrets only after
-all settlement is reconciled and the approved retention window has elapsed.
+Stripe provisioning, launch decisions, offer configuration, isolated tests,
+incidents and retirement are owned by `docs/STRIPE_RUNBOOK.md`. Follow that
+runbook only for payment work. Ordinary catalog releases do not activate Stripe.
 
 ## Database and deployment order
 
@@ -769,3 +550,149 @@ There is no self-service Chisan erasure flow in the current release. Do not
 simulate one with ad hoc SQL or by deleting only the Clerk user; preserve the
 request and escalate it to an audited implementation that can redact PII,
 revoke resources and retain only the minimum integrity history coherently.
+
+## Reviewed producer publication
+
+```bash
+# 1. Apply one approved request locally and validate its CSV.
+npx pnpm producer:change materialize <change-request-uuid>
+
+# 2. Inspect the diff, inspect translation notices, add public evidence, and run the gate.
+npx pnpm check:translations:changed
+npx pnpm verify:data
+git add <csv-evidence-and-required-translation-sidecar-files>
+git commit -m "data: apply reviewed producer profile change"
+
+# 3. Bind the request to the commit that contains its CSV.
+npx pnpm producer:change finalize <change-request-uuid> <full-40-char-commit-sha>
+
+# 4. Push main; GitHub/Vercel then make the committed CSV public.
+git push origin main
+```
+
+When the approved patch changes `descripcion`, `quien hay detras`, `historia`
+or any of their paired source-locale columns, the changed translation check
+prints bounded generation commands for missing or stale machine rows. A stale
+`reviewed` row must be reviewed again and is never replaced automatically. The
+request's CSV and any regenerated sidecars may be committed together. Missing or stale
+translations are omitted from public prose and indexing until regenerated;
+they do not block the canonical correction.
+
+Materialization refuses stale base hashes, missing producers, revoked membership
+or required entitlement, non-allowlisted fields, invalid values and a dirty
+target CSV. Before writing,
+it acquires a durable execution lease unique to the request, producer and CSV;
+that lease fences separate agent worktrees, while advisory locks serialize its
+acquisition. The request stays `approved` until the local atomic write and CSV
+audit succeed, then the execution becomes `materialized` and the request becomes
+`applying`. A clean CSV that already contains the exact patch is audited too;
+only the same live execution may resume its own exact dirty post-write snapshot
+after a crash. Finalization proves that the supplied commit shares history with
+the execution's recorded source `HEAD`, that the commit itself introduced the
+approved producer-row hash relative to its first parent, and that the current
+`HEAD` still contains that exact row at the fenced CSV path. It never trusts an
+uncommitted working tree. The `applied` state therefore means committed to the
+canonical CSV and still present at finalization time, not yet deployed.
+
+### Staff operations workspace and agent reads
+
+`/admin` is the staff operations workspace. Its producer-change registry is a
+durable view over every `producer_change_requests` state, not only the review
+queue. `/admin/cambios/<change-request-uuid>` is the stable operational permalink
+for one request and shows its actors, timestamps, requested diff, current CSV
+comparison, notes, applied commit and targeted audit timeline. The request row is
+the current state; `audit_events` explains recorded transitions and must not be
+used as a reconstructed replacement for that row.
+
+`/admin/premium` owns the entitlement registry and audited gift controls;
+`/admin/pagos` owns the current payment-adapter incident queue and safety
+history. Both require an exact active admin, neither writes CSV, and neither may
+override the other domain. Their full semantics are defined above.
+
+The workspace and local automation share the status vocabulary in
+`lib/accounts/producer-change-workflow.ts` and the read model in
+`lib/admin/producer-change-requests.ts`. Agents read requests through the
+versioned, read-only JSON commands instead of scraping HTML or querying tables
+directly:
+
+```bash
+npx pnpm producer:change list --status approved --json
+npx pnpm producer:change show <change-request-uuid> --json
+```
+
+List output excludes private notes and full snapshots; `show` includes them for
+an operator with database access. The versioned `show --json` schema currently
+uses version `2` and includes the active execution (or latest attempt), its
+durable IDs and timestamps, and the calculated recovery-eligibility time.
+Neither command mutates request state or the catalog. Each capability uses a
+separate Neon identity and never falls back to the application's `DATABASE_URL`
+or the migration owner:
+
+- `CHISAN_ADMIN_READ_DATABASE_URL`, loaded locally from
+  `.env.admin-read.local`, is accepted only for `list`, `show` and read access
+  diagnostics.
+- `CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL`, loaded locally from
+  `.env.producer-change-operator.local`, is accepted only for `materialize`,
+  `finalize` and operator diagnostics.
+- `CHISAN_PRODUCER_CHANGE_RECOVERY_DATABASE_URL`, loaded locally from
+  `.env.producer-change-recovery.local`, is accepted only for supervised
+  recovery and recovery diagnostics.
+- All three files are local secrets, ignored by Git and never configured in the
+  deployed Vercel application.
+
+The reader has explicit column-level `SELECT` grants and sees audit rows only
+through the producer-change-targeted audit view. The operator inherits those
+reads but cannot enumerate memberships or account status directly and has no
+direct `UPDATE`, `INSERT`, `DELETE`, DDL or ownership. It may execute only the
+versioned `SECURITY DEFINER` producer-change functions;
+their `NOLOGIN` owner has the internal table permissions, a fixed safe
+`search_path`, and records `session_user` as the actor. Check the boundary before
+automation runs:
+
+```bash
+npx pnpm producer:change doctor --access read --json
+npx pnpm producer:change doctor --access operator --json
+npx pnpm producer:change doctor --access recovery --json
+```
+
+An agent may select only `approved` requests and invoke `materialize` and
+`finalize`, but it must run in a controlled Git worktree outside the deployed
+Vercel application. Every attempt records its execution UUID, SQL operator,
+opaque worktree key, source `HEAD`, expected row hash, CSV and timestamps.
+Unfinished pre-write leases expire after fifteen minutes and can be superseded;
+a `materialized` execution remains fenced until exact finalization so another
+worktree cannot duplicate a possibly committed change. Recovery of an abandoned
+materialized execution is a separate staff capability, never an operator
+capability or an automatic timeout. PostgreSQL rejects recovery during the first
+24 hours after materialization. After that quarantine, staff must identify the
+exact execution and record a substantive reason from a clean, audited Git state:
+
+```bash
+npx pnpm producer:change recover <change-request-uuid> <execution-uuid> \
+  --reason "Original operator worktree was retired after incident review."
+```
+
+Recovery only cancels that fence and returns the request to `approved`. It never
+adopts, edits or finalizes a CSV; a normal operator credential must run
+`materialize` again, which either reapplies the reviewed patch or validates the
+exact already-present state. The recovery login inherits read access but cannot
+execute the five normal operator functions, and the operator cannot execute
+recovery. Revoking producer access conflicts every unpublished request and
+cancels each live execution in the same producer-locked transaction.
+
+
+## Producer retirement inspection
+
+Run `pnpm producer:inspect <country> <producer_id>` before a retirement or merge.
+Supply `CHISAN_CATALOG_INSPECT_DATABASE_URL` explicitly in that process, using a
+connection with SELECT access to favorites, claims, memberships, change requests,
+executions, entitlements and commercial requests. This purpose-specific input
+never falls back to `DATABASE_URL` or another local environment file. The command
+uses a read-only transaction and reports counts without private row content.
+
+`--catalog-only` is useful for local planning, but explicitly leaves account
+references unchecked. Missing access or a query failure cannot establish that
+there are no references. A completed inventory is not retirement approval:
+resolve live resources through audited account operations, retain needed history,
+and migrate/remove related content with the canonical row. No inspection command
+changes a database or CSV.

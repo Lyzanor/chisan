@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Profaele ye e tserwe ebile e netefaditšwe ke motšweletši.",
+      "Chisan e netefaditše kamano magareng ga motšweletši yo le motho yo a laolago profaele ye.",
     saveOrClaimPrompt: "Boloka motšweletši yo goba o tseke beng.",
     signIn: "Tsena",
     createAccount: "Hlama akhaonte",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Boloka tše di ratwago",
     editMyProfile: "Lokiša profaele ya ka",
     expandProfile: "Atološa profaele",
-    ownershipVerified: "E netefaditšwe ke motšweletši",
+    ownershipVerified: "Bong bo netefaditšwe",
     viewOwnershipClaim: "Bona tseko ya beng",
     claimProducer: "Tseka motšweletši yo",
     descriptionLanguage: {

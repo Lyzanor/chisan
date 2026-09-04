@@ -1,3 +1,4 @@
+import { TRANSLATABLE_FIELD_SPECS } from "../catalog/producer-schema";
 import { createHash } from "node:crypto";
 
 import {
@@ -7,18 +8,11 @@ import {
 } from "./locales";
 
 export const TRANSLATABLE_DESCRIPTION_FIELD = "descripcion" as const;
-export const TRANSLATABLE_PRODUCER_FIELDS = [
-  TRANSLATABLE_DESCRIPTION_FIELD,
-  "quien hay detras",
-  "historia",
-] as const;
-export type TranslatableProducerField = (typeof TRANSLATABLE_PRODUCER_FIELDS)[number];
-
-export const TRANSLATABLE_PRODUCER_FIELD_LOCALES = {
-  descripcion: "descripcion_locale",
-  "quien hay detras": "quien_hay_detras_locale",
-  historia: "historia_locale",
-} as const satisfies Record<TranslatableProducerField, string>;
+export const TRANSLATABLE_PRODUCER_FIELDS = TRANSLATABLE_FIELD_SPECS.map(({ field }) => field);
+export type TranslatableProducerField = (typeof TRANSLATABLE_FIELD_SPECS)[number]["field"];
+export const TRANSLATABLE_PRODUCER_FIELD_LOCALES = Object.fromEntries(
+  TRANSLATABLE_FIELD_SPECS.map(({ field, localeField }) => [field, localeField]),
+) as Record<TranslatableProducerField, string>;
 
 const TRANSLATABLE_PRODUCER_FIELD_SET = new Set<string>(TRANSLATABLE_PRODUCER_FIELDS);
 

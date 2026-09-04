@@ -22,7 +22,7 @@ const messages = {
     contactLink: "お問い合わせ",
   },
   accountActions: {
-    ownershipVerifiedDescription: "このプロフィールは生産者本人が申請し、確認済みです。",
+    ownershipVerifiedDescription: "Chisanは、このプロフィールの管理者と生産者との関係を確認しました。",
     saveOrClaimPrompt: "この生産者を保存するか、所有権を申請してください。",
     signIn: "ログイン",
     createAccount: "アカウントを作成",
@@ -30,7 +30,7 @@ const messages = {
     saveFavorite: "お気に入りに保存",
     editMyProfile: "プロフィールを編集",
     expandProfile: "プロフィールを拡張",
-    ownershipVerified: "生産者本人による確認済み",
+    ownershipVerified: "管理権限確認済み",
     viewOwnershipClaim: "所有権申請を表示",
     claimProducer: "この生産者の所有権を申請",
     descriptionLanguage: {

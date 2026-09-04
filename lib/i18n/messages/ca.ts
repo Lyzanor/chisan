@@ -23,7 +23,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Aquest perfil ha estat reclamat i verificat pel productor.",
+      "Chisan ha verificat el vincle entre aquest productor i qui gestiona aquesta fitxa.",
     saveOrClaimPrompt: "Desa aquest productor o reclama'n la propietat.",
     signIn: "Inicia sessió",
     createAccount: "Crea un compte",
@@ -31,7 +31,7 @@ const messages = {
     saveFavorite: "Desa als preferits",
     editMyProfile: "Edita el meu perfil",
     expandProfile: "Amplia el perfil",
-    ownershipVerified: "Verificat pel productor",
+    ownershipVerified: "Titularitat verificada",
     viewOwnershipClaim: "Mostra la reclamació de propietat",
     claimProducer: "Reclama aquest productor",
     descriptionLanguage: {

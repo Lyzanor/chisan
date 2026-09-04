@@ -29,6 +29,7 @@ import {
 } from "@/lib/catalog-routing";
 import {
   findProducerBySlug,
+  listIndexableProducerLocales,
   getLocalizedCatalogLabel,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
@@ -124,12 +125,13 @@ export async function generateMetadata({
       categories: formatCategoryList(producer.categories, locale),
     });
 
+  const indexableLocales = (await listIndexableProducerLocales(country.slug, area, areaOption.publishedLocales)).get(producer.producerId) ?? [];
   return buildLocalizedMetadata({
     title: producer.name,
     description,
     locale,
     alternates: buildCatalogAlternateSet(
-      { kind: "producer", country, localePolicy: areaOption, area, producer },
+      { kind: "producer", country, localePolicy: areaOption, area, producer, indexableLocales },
       locale,
     ),
     image: {

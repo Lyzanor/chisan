@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "এই প্ৰ'ফাইলটো উৎপাদকজনে দাবী কৰি পৰীক্ষা কৰিছে।",
+      "Chisan-এ এই উৎপাদক আৰু এই প্ৰফাইল পৰিচালনা কৰা ব্যক্তিৰ মাজৰ সম্পৰ্ক পৰীক্ষা কৰিছে।",
     saveOrClaimPrompt: "এই উৎপাদকক সংৰক্ষণ কৰক বা মালিকীস্বত্ব দাবী কৰক।",
     signIn: "ছাইন ইন",
     createAccount: "একাউণ্ট সৃষ্টি কৰক",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "প্ৰিয়ত সংৰক্ষণ কৰক",
     editMyProfile: "মোৰ প্ৰফাইল সম্পাদনা কৰক",
     expandProfile: "প্ৰফাইল বিস্তাৰ কৰক",
-    ownershipVerified: "উৎপাদকৰ দ্বাৰা পৰীক্ষিত",
+    ownershipVerified: "মালিকীস্বত্ব পৰীক্ষিত",
     viewOwnershipClaim: "মালিকীস্বত্বৰ দাবী চাওক",
     claimProducer: "এই উৎপাদকৰ মালিকীস্বত্ব দাবী কৰক",
     descriptionLanguage: {

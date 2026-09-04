@@ -60,7 +60,7 @@ test("public handles normalize once and reject unsafe route identities", () => {
 });
 
 test("public handle writes use an atomic assignment guard", async () => {
-  const source = await readFile("app/(application)/cuenta/actions.ts", "utf8");
+  const source = await readFile("app/(application)/cuenta/actions/profile.ts", "utf8");
 
   assert.match(source, /const publicHandleGuard = account\.publicHandle/);
   assert.match(

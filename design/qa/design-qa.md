@@ -477,3 +477,28 @@ prose measure without introducing new tokens or CSS. YouTube stays an explicit
 external link rather than an embedded player, avoiding an automatic third-party
 request. Empty values leave no placeholders, and the entire set still fails
 closed with the producer entitlement so base-profile layout is unchanged.
+
+## 2026-09-04 — Project organization and related producer content
+
+Reviewed locally in Chrome at 1440×1000 and 390×844. The ordered stylesheets
+retain the existing home, catalog and producer layouts. `/es/barcelona` keeps
+its roster visible on mobile without document overflow. Hover and selection
+preserve the roster order; selection updates `highlight`, Escape clears it,
+and searching `penedes` highlights the original `Penedès` text.
+
+Products, gallery and named links reuse the expanded-profile section and tokens.
+A temporary local fixture exercised the actual component with fictional text,
+long labels, an imageless product and generic images. Product previews stay at
+most 320px wide; gallery images keep their aspect ratio and become one column
+on mobile. Images loaded, links measured at least 44px high, and both viewport
+widths had no horizontal overflow. The fixture route was removed after review;
+no example producer facts or entitlement were published.
+
+The ordinary Brot Agrològic profile still renders its base description and
+server JSON-LD in Spanish and Catalan, without an expanded block in the local
+account configuration. Public entitlement logic is retained; this check did
+not activate a paid account. Browser checks found no uncaught page errors.
+Development-only notices included unavailable local Vercel analytics, the
+existing selection-image dimension warning and the fixture's lazy-image LCP
+notice. Captures are local `.tmp/reorg-area-{wide,mobile}.png` and
+`.tmp/reorg-content-{wide,mobile}.png`.

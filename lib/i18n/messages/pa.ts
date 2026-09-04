@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "ਇਸ ਪ੍ਰੋਫਾਈਲ ਉੱਤੇ ਉਤਪਾਦਕ ਨੇ ਦਾਅਵਾ ਕੀਤਾ ਹੈ ਅਤੇ ਇਸਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ ਹੈ।",
+      "Chisan ਨੇ ਇਸ ਉਤਪਾਦਕ ਅਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਦਾ ਪ੍ਰਬੰਧ ਕਰਨ ਵਾਲੇ ਵਿਅਕਤੀ ਵਿਚਕਾਰ ਸੰਬੰਧ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਹੈ।",
     saveOrClaimPrompt: "ਇਸ ਉਤਪਾਦਕ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ ਜਾਂ ਮਲਕੀਅਤ ਦਾ ਦਾਅਵਾ ਕਰੋ।",
     signIn: "ਸਾਈਨ ਇਨ ਕਰੋ",
     createAccount: "ਖਾਤਾ ਬਣਾਓ",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "ਮਨਪਸੰਦ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਕਰੋ",
     editMyProfile: "ਮੇਰੀ ਪ੍ਰੋਫ਼ਾਈਲ ਸੋਧੋ",
     expandProfile: "ਪ੍ਰੋਫ਼ਾਈਲ ਦਾ ਵਿਸਤਾਰ ਕਰੋ",
-    ownershipVerified: "ਉਤਪਾਦਕ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਕੀਤੀ",
+    ownershipVerified: "ਮਾਲਕੀ ਦੀ ਪੁਸ਼ਟੀ ਹੋਈ",
     viewOwnershipClaim: "ਮਲਕੀਅਤ ਦਾ ਦਾਅਵਾ ਵੇਖੋ",
     claimProducer: "ਇਸ ਉਤਪਾਦਕ ਉੱਤੇ ਦਾਅਵਾ ਕਰੋ",
     descriptionLanguage: {

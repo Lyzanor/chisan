@@ -1,0 +1,197 @@
+.producer-account-actions {
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.producer-account-actions > span {
+  flex: 1 1 100%;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.producer-account-actions form {
+  display: contents;
+}
+.profile-qr {
+  --profile-qr-accent: var(--chisan-color-ink);
+
+  margin-block: var(--chisan-space-4);
+}
+
+.profile-qr--producer {
+  --profile-qr-accent: var(--chisan-color-moss);
+}
+
+.profile-qr > summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--chisan-space-3);
+  align-items: center;
+  min-height: 64px;
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-left: var(--chisan-space-1) solid var(--profile-qr-accent);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.profile-qr > summary::-webkit-details-marker {
+  display: none;
+}
+
+.profile-qr > summary:hover {
+  background: var(--chisan-color-surface-muted);
+}
+
+.profile-qr > summary:focus-visible,
+.profile-qr__actions button:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.profile-qr__mark {
+  width: var(--chisan-space-6);
+}
+
+.profile-qr > summary strong,
+.profile-qr > summary small {
+  display: block;
+}
+
+.profile-qr > summary strong {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.profile-qr > summary small {
+  margin-top: var(--chisan-space-1);
+  color: var(--chisan-color-stone);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.profile-qr__disclosure {
+  color: var(--profile-qr-accent);
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform var(--chisan-motion-component) var(--chisan-ease);
+}
+
+.profile-qr[open] .profile-qr__disclosure {
+  transform: rotate(45deg);
+}
+
+.profile-qr__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: var(--chisan-space-8);
+  align-items: center;
+  padding: var(--chisan-space-8);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-top: 0;
+  background: var(--chisan-color-surface);
+}
+
+.profile-qr__copy h2,
+.profile-qr__copy p {
+  margin: 0;
+}
+
+.profile-qr__copy h2 {
+  margin-top: var(--chisan-space-2);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.profile-qr__copy > p:not(.profile-qr__eyebrow):not(.profile-qr__status) {
+  max-width: 58ch;
+  margin-top: var(--chisan-space-3);
+  color: var(--chisan-color-stone);
+  line-height: 1.55;
+}
+
+.profile-qr__eyebrow {
+  color: var(--profile-qr-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.profile-qr__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--chisan-space-2);
+  margin-top: var(--chisan-space-6);
+}
+
+.profile-qr__actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--chisan-space-2) var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--profile-qr-accent);
+  border-radius: var(--chisan-radius-control);
+  background: var(--profile-qr-accent);
+  color: var(--chisan-color-surface);
+  cursor: pointer;
+  font: 500 0.875rem/1.4 var(--chisan-font-sans);
+}
+
+.profile-qr__actions button:hover {
+  filter: brightness(0.94);
+}
+
+.profile-qr__actions .profile-qr__action--secondary {
+  background: transparent;
+  color: var(--profile-qr-accent);
+}
+
+.profile-qr__copy-label {
+  display: grid;
+  place-items: center;
+}
+
+.profile-qr__copy-label > span {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  gap: var(--chisan-space-1);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.profile-qr__copy-label > span.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-qr__copy > small,
+.profile-qr__status {
+  display: block;
+  color: var(--chisan-color-stone);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.profile-qr__copy > small {
+  margin-top: var(--chisan-space-3);
+}
+
+.profile-qr__status {
+  min-height: 1.25rem;
+  margin-top: var(--chisan-space-2);
+}

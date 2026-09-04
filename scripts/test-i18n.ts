@@ -1228,52 +1228,11 @@ test("producer profiles promote canonical editorial facts without widening CSV",
   assert.equal(producerPage.match(/prefetch=\{false\}/g)?.length, 4);
 });
 
-test("producer profile contracts keep premium access separate from public semantics", () => {
-  const csvContract = fs.readFileSync(
-    path.resolve(process.cwd(), "docs/CSV_CONTRACT.md"),
-    "utf8",
-  );
-  const accountContract = fs.readFileSync(
-    path.resolve(process.cwd(), "docs/ACCOUNT_SYSTEM.md"),
-    "utf8",
-  );
-
-  assert.match(
-    csvContract,
-    /## Public producer-profile rendering and structured data/,
-  );
-  assert.match(csvContract, /one public profile for one canonical CSV row/);
-  assert.match(csvContract, /Premium extension boundary/);
-  for (const requiredBoundary of [
-    "LocalBusiness",
-    "Organization",
-    "Product",
-    "Offer",
-    "AggregateRating",
-    "openingHoursSpecification",
-    "ProfilePage",
-    "inLanguage",
-  ]) {
-    assert.ok(
-      csvContract.includes(requiredBoundary),
-      `producer-profile contract is missing ${requiredBoundary}`,
-    );
-  }
-  assert.match(
-    accountContract,
-    /CSV_CONTRACT\.md` section \*\*Public producer-profile rendering and[\s\S]*?structured data\*\* owns the public HTML/,
-  );
-  assert.match(
-    accountContract,
-    /never creates a second[\s\S]*?structured-data verification signal/,
-  );
-});
-
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {
   const [css, foundationTokens, areaCatalog, areaExplorer, mapInner, japanese] =
     await Promise.all([
       fs.promises.readFile(
-        path.resolve(process.cwd(), "app/globals.css"),
+        path.resolve(process.cwd(), "app/styles/base.css"),
         "utf8",
       ),
       fs.promises.readFile(

@@ -23,7 +23,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Dieses Profil wurde vom Erzeuger beansprucht und verifiziert.",
+      "Chisan hat die Verbindung zwischen diesem Erzeuger und der Person bestätigt, die dieses Profil verwaltet.",
     saveOrClaimPrompt: "Diesen Erzeuger speichern oder Eigentümerschaft beanspruchen.",
     signIn: "Anmelden",
     createAccount: "Konto erstellen",
@@ -31,7 +31,7 @@ const messages = {
     saveFavorite: "Als Favorit speichern",
     editMyProfile: "Mein Profil bearbeiten",
     expandProfile: "Profil erweitern",
-    ownershipVerified: "Vom Erzeuger verifiziert",
+    ownershipVerified: "Inhaberschaft bestätigt",
     viewOwnershipClaim: "Eigentumsantrag anzeigen",
     claimProducer: "Diesen Erzeuger beanspruchen",
     descriptionLanguage: {

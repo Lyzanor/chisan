@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     middleware: ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]": ["./data/csv/**/*.csv"],
-    "/\\[catalog\\]/\\[area\\]/\\[segment\\]": ["./data/csv/**/*.csv"],
+    "/\\[catalog\\]/\\[area\\]/\\[segment\\]": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/robots.txt": ["./data/csv/**/*.csv"],
     "/sitemap/**": ["./data/csv/**/*.csv"],
     "/cuenta": ["./data/csv/**/*.csv"],

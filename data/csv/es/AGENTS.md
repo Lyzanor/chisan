@@ -23,8 +23,9 @@
 ## Source ceilings
 - Denomination councils, certification registers and autonomous or provincial
   producer directories support only the membership, product, identity or
-  location they publish. They do not by themselves prove current activity, a
-  public own offer or online sales.
+  location they publish. Their claims depend on the exact register. The explicit admission exception
+  below uses a currently maintained authorization as indirect evidence; a generic
+  certification or establishment record is insufficient.
 - Municipal markets, food routes and fair rosters are discovery sources and may
   list retailers, hospitality, associations or sales points rather than
   qualifying producers.
@@ -43,10 +44,9 @@
   to recent entries, and it publishes no open dataset. Query it by certified
   elaboration activity, or by comarca keeping only the elaboration rows, rather
   than sweeping the register; its annual *Guia d'Operadors* PDF is the
-  parseable alternative. The subset that carries a brand and a sellable own
-  offer already reaches the catalog through the *venda de proximitat* register,
-  Xarxa Productes de la Terra, Gastroteca and mercats de pagès, which carry the
-  same organic distinction.
+  parseable alternative. Cross-check plausible identities against the catalog and sources such as
+  *venda de proximitat*, Xarxa Productes de la Terra, Gastroteca and mercats de
+  pagès before adding leads. Coverage in those sources is not assumed complete.
 - RIAAC records an establishment and its registered activity class. Like the
   RGSEAA it supports the entity, that activity class and the registered address
   only; it never admits a row by itself, whatever the activity class says.

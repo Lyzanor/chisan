@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "इस प्रोफ़ाइल पर उत्पादक ने दावा किया है और इसे सत्यापित किया गया है।",
+      "Chisan ने इस उत्पादक और इस प्रोफ़ाइल को प्रबंधित करने वाले व्यक्ति के बीच संबंध सत्यापित किया है।",
     saveOrClaimPrompt: "इस उत्पादक को सहेजें या स्वामित्व का दावा करें।",
     signIn: "साइन इन करें",
     createAccount: "खाता बनाएँ",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "पसंदीदा में सहेजें",
     editMyProfile: "मेरी प्रोफ़ाइल संपादित करें",
     expandProfile: "प्रोफ़ाइल का विस्तार करें",
-    ownershipVerified: "उत्पादक द्वारा सत्यापित",
+    ownershipVerified: "स्वामित्व सत्यापित",
     viewOwnershipClaim: "स्वामित्व दावा देखें",
     claimProducer: "इस उत्पादक पर दावा करें",
     descriptionLanguage: {

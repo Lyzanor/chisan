@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "D'éiligh an táirgeoir an phróifíl seo agus fíoraíodh í.",
+      "Tá an nasc idir an táirgeoir seo agus bainisteoir na próifíle seo fíoraithe ag Chisan.",
     saveOrClaimPrompt: "Sábháil an táirgeoir seo nó éiligh úinéireacht air.",
     signIn: "Logáil isteach",
     createAccount: "Cruthaigh cuntas",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Sábháil mar cheanán",
     editMyProfile: "Cuir mo phróifíl in eagar",
     expandProfile: "Leathnaigh an phróifíl",
-    ownershipVerified: "Fíoraithe ag an táirgeoir",
+    ownershipVerified: "Úinéireacht fíoraithe",
     viewOwnershipClaim: "Féach ar éileamh úinéireachta",
     claimProducer: "Éiligh an táirgeoir seo",
     descriptionLanguage: {

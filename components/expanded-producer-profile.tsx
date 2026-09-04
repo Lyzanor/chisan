@@ -1,5 +1,11 @@
 import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
 import { getAccountSystemConfiguration } from "@/lib/accounts/config";
+import { loadProducerContent } from "@/lib/catalog/content";
+import {
+  emptyProducerContent,
+  hasProducerContent,
+} from "@/lib/catalog/content-schema";
+import { ProducerContent } from "@/components/producer-content";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
 import {
@@ -15,7 +21,10 @@ type ExpandedProducerProfileProps = {
   producerId: number;
 };
 
-function fieldValue(fields: Readonly<Record<string, string>>, key: string): string {
+function fieldValue(
+  fields: Readonly<Record<string, string>>,
+  key: string,
+): string {
   return fields[key]?.trim() ?? "";
 }
 
@@ -34,6 +43,17 @@ export async function ExpandedProducerProfile({
   messages,
   producerId,
 }: ExpandedProducerProfileProps) {
+  if (!getAccountSystemConfiguration().databaseConfigured) return null;
+
+  const content = await loadProducerContent(country, producerId, locale).catch(
+    () => {
+      console.error("Related producer content is temporarily unavailable.", {
+        country,
+        producerId,
+      });
+      return emptyProducerContent(country, producerId);
+    },
+  );
   const guidedVisits = fieldValue(fields, "visitas guiadas");
   const video = fieldValue(fields, "video");
   const communityMessage = fieldValue(fields, "mensaje a la comunidad");
@@ -43,8 +63,27 @@ export async function ExpandedProducerProfile({
   const history = fieldValue(fields, "historia");
   const historyLocale = fieldValue(fields, "historia_locale");
   const lastApprovedChange = fieldValue(fields, "fecha ultimo cambio");
-  const highlightedLink1 = fieldValue(fields, "enlace destacado 1");
-  const highlightedLink2 = fieldValue(fields, "enlace destacado 2");
+  const contentUrls = new Set(
+    content.links.map((link) => new URL(link.url).href),
+  );
+  const highlightedLinks = [
+    {
+      href: fieldValue(fields, "enlace destacado 1"),
+      label: messages.fieldLabels.highlightedLink1,
+    },
+    {
+      href: fieldValue(fields, "enlace destacado 2"),
+      label: messages.fieldLabels.highlightedLink2,
+    },
+  ].filter(({ href }, index, links) => {
+    if (!href || links.findIndex((link) => link.href === href) !== index)
+      return false;
+    try {
+      return !contentUrls.has(new URL(href).href);
+    } catch {
+      return false;
+    }
+  });
   if (
     !video &&
     !guidedVisits &&
@@ -52,18 +91,17 @@ export async function ExpandedProducerProfile({
     !behindProducer &&
     !history &&
     !lastApprovedChange &&
-    !highlightedLink1 &&
-    !highlightedLink2
+    !highlightedLinks.length &&
+    !hasProducerContent(content)
   ) {
     return null;
   }
 
-  // Producer facts stay in CSV. PostgreSQL supplies only the producer-scoped
+  // Reviewed facts stay in catalog files. PostgreSQL supplies only the producer-scoped
   // presentation right, and a database incident must not break the base profile.
-  if (!getAccountSystemConfiguration().databaseConfigured) return null;
-
   try {
-    if (!(await hasActiveProducerPremiumEntitlement(country, producerId))) return null;
+    if (!(await hasActiveProducerPremiumEntitlement(country, producerId)))
+      return null;
   } catch (error) {
     console.error("Expanded producer profile is temporarily unavailable.", {
       errorName: error instanceof Error ? error.name : "UnknownError",
@@ -83,6 +121,7 @@ export async function ExpandedProducerProfile({
         {messages.producer.expandedProfile}
       </p>
       <h2 id="detail-expanded-title">{messages.producer.expandedProfile}</h2>
+      <ProducerContent content={content} locale={locale} />
       {video ? (
         <a href={video} target="_blank" rel="noreferrer">
           {formatProducerFieldLabel("video", locale, messages)} · YouTube
@@ -90,7 +129,9 @@ export async function ExpandedProducerProfile({
       ) : null}
       {behindProducer ? (
         <div className="detail-expanded-profile__message">
-          <h3>{formatProducerFieldLabel("quien hay detras", locale, messages)}</h3>
+          <h3>
+            {formatProducerFieldLabel("quien hay detras", locale, messages)}
+          </h3>
           <p lang={behindProducerLocale || undefined}>{behindProducer}</p>
         </div>
       ) : null}
@@ -119,7 +160,9 @@ export async function ExpandedProducerProfile({
       ) : null}
       {lastApprovedChange ? (
         <p>
-          <strong>{formatProducerFieldLabel("fecha ultimo cambio", locale, messages)}:</strong>{" "}
+          <strong>
+            {formatProducerFieldLabel("fecha ultimo cambio", locale, messages)}:
+          </strong>{" "}
           {formatProducerFieldValue(
             "fecha ultimo cambio",
             lastApprovedChange,
@@ -128,18 +171,13 @@ export async function ExpandedProducerProfile({
           )}
         </p>
       ) : null}
-      {highlightedLink1 || highlightedLink2 ? (
+      {highlightedLinks.length ? (
         <div className="detail-expanded-profile__links">
-          {highlightedLink1 ? (
-            <a href={highlightedLink1} target="_blank" rel="noreferrer">
-              {messages.fieldLabels.highlightedLink1} · {linkHostname(highlightedLink1)}
+          {highlightedLinks.map(({ href, label }) => (
+            <a key={href} href={href} target="_blank" rel="noreferrer">
+              {label} · {linkHostname(href)}
             </a>
-          ) : null}
-          {highlightedLink2 ? (
-            <a href={highlightedLink2} target="_blank" rel="noreferrer">
-              {messages.fieldLabels.highlightedLink2} · {linkHostname(highlightedLink2)}
-            </a>
-          ) : null}
+          ))}
         </div>
       ) : null}
     </section>

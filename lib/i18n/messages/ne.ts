@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "यो प्रोफाइल उत्पादकले दाबी गरी प्रमाणित गरेको छ।",
+      "Chisan ले यस उत्पादक र यो प्रोफाइल व्यवस्थापन गर्ने व्यक्तिबीचको सम्बन्ध प्रमाणित गरेको छ।",
     saveOrClaimPrompt:
       "यस उत्पादकलाई सुरक्षित गर्नुहोस् वा स्वामित्व दाबी गर्नुहोस्।",
     signIn: "साइन इन",
@@ -30,7 +30,7 @@ const messages = {
     saveFavorite: "मनपर्नेमा सुरक्षित गर्नुहोस्",
     editMyProfile: "मेरो प्रोफाइल सम्पादन गर्नुहोस्",
     expandProfile: "प्रोफाइल विस्तार गर्नुहोस्",
-    ownershipVerified: "उत्पादकद्वारा प्रमाणित",
+    ownershipVerified: "स्वामित्व प्रमाणित",
     viewOwnershipClaim: "स्वामित्व दाबी हेर्नुहोस्",
     claimProducer: "यस उत्पादकको स्वामित्व दाबी गर्नुहोस्",
     descriptionLanguage: {

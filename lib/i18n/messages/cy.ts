@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Mae'r proffil hwn wedi'i hawlio a'i ddilysu gan y cynhyrchydd.",
+      "Mae Chisan wedi dilysu’r cysylltiad rhwng y cynhyrchydd hwn a’r sawl sy’n rheoli’r proffil hwn.",
     saveOrClaimPrompt: "Cadwch y cynhyrchydd hwn neu hawliwch berchnogaeth.",
     signIn: "Mewngofnodi",
     createAccount: "Creu cyfrif",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Cadw ffefryn",
     editMyProfile: "Golygu fy mhroffil",
     expandProfile: "Ehangu'r proffil",
-    ownershipVerified: "Wedi'i ddilysu gan y cynhyrchydd",
+    ownershipVerified: "Perchnogaeth wedi’i dilysu",
     viewOwnershipClaim: "Gweld hawliad perchnogaeth",
     claimProducer: "Hawlio'r cynhyrchydd hwn",
     descriptionLanguage: {

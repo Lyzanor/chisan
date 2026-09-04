@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "ह्या प्रोफायलाचेर उत्पादकान दावो करून ताची तपासणी केल्या.",
+      "Chisan हाणें ह्या उत्पादकाचो आनी हें प्रोफायल सांबाळपी व्यक्तीचो संबंद तपासला.",
     saveOrClaimPrompt: "हो उत्पादक जतन करात वा मालकीचो दावो करात.",
     signIn: "साइन इन करात",
     createAccount: "खातें तयार करात",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "आवडींत जतन करात",
     editMyProfile: "म्हजें प्रोफाइल संपादित करात",
     expandProfile: "प्रोफाइल विस्तार करात",
-    ownershipVerified: "उत्पादकान तपासिल्लें",
+    ownershipVerified: "मालकी तपासिल्ली",
     viewOwnershipClaim: "मालकीचो दावो पळोवात",
     claimProducer: "ह्या उत्पादकाचो दावो करात",
     descriptionLanguage: {

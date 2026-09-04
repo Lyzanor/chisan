@@ -23,7 +23,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "This profile has been claimed and verified by the producer.",
+      "Chisan has verified the connection between this producer and the person managing this profile.",
     saveOrClaimPrompt: "Save this producer or claim ownership.",
     signIn: "Sign in",
     createAccount: "Create account",
@@ -31,7 +31,7 @@ const messages = {
     saveFavorite: "Save favorite",
     editMyProfile: "Edit my profile",
     expandProfile: "Expand profile",
-    ownershipVerified: "Verified by the producer",
+    ownershipVerified: "Ownership verified",
     viewOwnershipClaim: "View ownership claim",
     claimProducer: "Claim this producer",
     descriptionLanguage: {

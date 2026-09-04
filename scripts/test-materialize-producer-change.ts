@@ -514,7 +514,7 @@ test("finalize validates the exact commit blob and requires it to be in HEAD his
   await writeFile(csvPath, expectedCsv, "utf8");
   assert.throws(
     () => assertGitPathClean(relativeCsvPath, repository),
-    /staged or unstaged changes/i,
+    /staged.*unstaged.*changes/i,
   );
   git(repository, ["add", relativeCsvPath]);
   git(repository, ["commit", "-qm", "materialize producer"]);

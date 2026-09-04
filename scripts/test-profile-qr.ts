@@ -64,7 +64,7 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
     path.join(ROOT, "components/profile-qr-label.tsx"),
     "utf8",
   );
-  const styles = fs.readFileSync(path.join(ROOT, "app/globals.css"), "utf8");
+  const styles = fs.readFileSync(path.join(ROOT, "app/styles/profile-tools.css"), "utf8");
   const producerPage = fs.readFileSync(
     path.join(ROOT, "app/(catalog)/[catalog]/[area]/[segment]/page.tsx"),
     "utf8",
@@ -97,7 +97,7 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
     "utf8",
   );
   const accountActions = fs.readFileSync(
-    path.join(ROOT, "app/(application)/cuenta/actions.ts"),
+    path.join(ROOT, "app/(application)/cuenta/actions/qr.ts"),
     "utf8",
   );
 

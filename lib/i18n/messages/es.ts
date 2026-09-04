@@ -23,7 +23,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Este perfil ha sido reclamado y verificado por el productor.",
+      "Chisan ha verificado el vínculo entre este productor y quien gestiona esta ficha.",
     saveOrClaimPrompt: "Guarda este productor o reclama su propiedad.",
     signIn: "Iniciar sesión",
     createAccount: "Crear cuenta",
@@ -31,7 +31,7 @@ const messages = {
     saveFavorite: "Guardar en favoritos",
     editMyProfile: "Editar mi perfil",
     expandProfile: "Ampliar perfil",
-    ownershipVerified: "Verificado por el productor",
+    ownershipVerified: "Titularidad verificada",
     viewOwnershipClaim: "Ver reclamación de propiedad",
     claimProducer: "Reclamar este productor",
     descriptionLanguage: {

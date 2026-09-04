@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Le phrofayela ifunwe futhi yaqinisekiswa ngumkhiqizi.",
+      "I-Chisan iqinisekise ubudlelwano phakathi kwalo mkhiqizi nomuntu ophethe le phrofayela.",
     saveOrClaimPrompt:
       "Londoloza lo mkhiqizi noma ufake isimangalo sobunikazi.",
     signIn: "Ngena",
@@ -30,7 +30,7 @@ const messages = {
     saveFavorite: "Londoloza kokuthandwayo",
     editMyProfile: "Hlela iphrofayela yami",
     expandProfile: "Nweba iphrofayela",
-    ownershipVerified: "Iqinisekiswe ngumkhiqizi",
+    ownershipVerified: "Ubunikazi buqinisekisiwe",
     viewOwnershipClaim: "Buka isimangalo sobunikazi",
     claimProducer: "Faka isimangalo ngalo mkhiqizi",
     descriptionLanguage: {

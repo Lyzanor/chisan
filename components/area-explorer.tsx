@@ -44,6 +44,7 @@ import {
 } from "@/lib/location/location-onboarding";
 import { selectNearbyProducerKeys } from "@/lib/location/nearby-producer-focus";
 import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
+import { includeSelectedProducer, prioritizeProducerItems } from "@/lib/catalog/producer-list";
 
 const VISIBLE_PRODUCER_LIMIT = 400;
 const PRODUCER_RESULTS_ID = "catalog-producer-results";
@@ -335,45 +336,22 @@ function AreaExplorerView({
   );
   const { keys: nearbyMapFocusKeys, consume: consumeNearbyMapFocus } =
     useNearbyMapFocusKeys(model.scope.country, model.area, mapPoints);
-  const itemsBySlug = useMemo(
-    () => new Map(items.map((item) => [item.slug, item])),
-    [items],
-  );
   const prioritizedProducerKeys =
     prioritizedProducerScope?.category === category
       ? prioritizedProducerScope.keys
       : null;
-  const prioritizedItems = useMemo(
-    () =>
-      prioritizedProducerKeys === null
-        ? mappedItems.slice(0, VISIBLE_PRODUCER_LIMIT)
-        : prioritizedProducerKeys.flatMap((key) => {
-            const item = itemsBySlug.get(key);
-            return item ? [item] : [];
-          }),
-    [itemsBySlug, mappedItems, prioritizedProducerKeys],
+  const orderedItems = useMemo(
+    () => prioritizeProducerItems(mappedItems, prioritizedProducerKeys ?? []),
+    [mappedItems, prioritizedProducerKeys],
   );
-  const orderedItems = useMemo(() => {
-    const prioritizedKeys = new Set(prioritizedItems.map(({ slug }) => slug));
-    return [
-      ...prioritizedItems,
-      ...mappedItems.filter(({ slug }) => !prioritizedKeys.has(slug)),
-    ];
-  }, [mappedItems, prioritizedItems]);
   const baseVisibleItems = useMemo(
     () => orderedItems.slice(0, VISIBLE_PRODUCER_LIMIT),
     [orderedItems],
   );
-  const visibleItems = useMemo(() => {
-    if (
-      !selectedItem ||
-      baseVisibleItems.some(({ slug }) => slug === selectedItem.slug)
-    ) {
-      return baseVisibleItems;
-    }
-
-    return [...baseVisibleItems, selectedItem];
-  }, [baseVisibleItems, selectedItem]);
+  const visibleItems = useMemo(
+    () => includeSelectedProducer(baseVisibleItems, selectedItem),
+    [baseVisibleItems, selectedItem],
+  );
   const languageOptions = useMemo(
     () =>
       model.languageOptions.map((option) => ({

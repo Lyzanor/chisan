@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Profaele ena e tsekiloe le ho netefatsoa ke mohlahisi.",
+      "Chisan e netefalitse kamano pakeng tsa mohlahisi enoa le motho ea laolang profaele ena.",
     saveOrClaimPrompt: "Boloka mohlahisi enoa kapa u tseke botho.",
     signIn: "Kena",
     createAccount: "Theha akhaonto",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Boloka seo ke se ratang",
     editMyProfile: "Fetola profaele ea ka",
     expandProfile: "Atolosa profaele",
-    ownershipVerified: "E netefalitsoe ke mohlahisi",
+    ownershipVerified: "Beng bo netefalitsoe",
     viewOwnershipClaim: "Sheba tseko ea botho",
     claimProducer: "Tseka mohlahisi enoa",
     descriptionLanguage: {

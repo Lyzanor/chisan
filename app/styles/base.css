@@ -1,0 +1,77 @@
+:root {
+  --danger: #9d2b22;
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:lang(ja) body {
+  line-break: strict;
+}
+
+:lang(ja) button,
+:lang(ja) select,
+:lang(ja) .catalog-chip,
+:lang(ja) .leaflet-popup-content {
+  overflow-wrap: anywhere;
+}
+
+body {
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--chisan-font-sans);
+}
+
+/* Headings carry hierarchy by size, not by an unloaded bold weight. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+  font-weight: 500;
+}
+
+/* These uses of strong are compact interface labels, not prose emphasis. */
+.account-stat-card strong,
+.admin-agent-panel--stacked > strong,
+.admin-filter-tabs a strong,
+.admin-metric > strong,
+.admin-page-heading__meta strong,
+.admin-sidebar__operator strong,
+.admin-workflow strong,
+.admin-workspace__identity strong,
+.auth-profile-list strong,
+.country-card strong,
+.producer-compact-link strong {
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+}

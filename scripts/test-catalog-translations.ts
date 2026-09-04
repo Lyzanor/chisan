@@ -793,7 +793,7 @@ test("source-only locales resolve through sidecars without becoming translation 
   assert.ok(result.errors.some((error) => error.includes("unsupported target locale 'gl'")));
 });
 
-test("published locales require current sidecar rows for every populated profile prose field", (context) => {
+test("published locales report missing prose translations without blocking canonical edits", (context) => {
   const target = fixture(context);
   const description = "Produce miel en la finca.";
   const behind = "Ana y Luis dirigen la explotación.";
@@ -837,7 +837,7 @@ test("published locales require current sidecar rows for every populated profile
     }),
   ]);
   assert.ok(
-    audit(target).errors.some(
+    audit(target).notices.some(
       (error) =>
         error.includes("missing historia translation") &&
         error.includes("producer_id '1'"),
@@ -879,10 +879,10 @@ test("checker accepts a complete current sidecar and detects only the edited sou
     { producerId: "3", text: "Text canònic", locale: "ca" },
   ]);
   const stale = audit(target);
+  assert.deepEqual(stale.errors, []);
   assert.equal(stale.stats.stale, 1);
   assert.equal(stale.stats.current, 1);
-  assert.ok(stale.errors.some((error) => error.includes("source_hash is stale")));
-  assert.ok(!stale.errors.some((error) => error.includes("producer_id '2'")));
+  assert.ok(stale.notices.some((error) => error.includes("source_hash is stale")));
 });
 
 test("checker applies content preservation invariants to current machine and reviewed rows", (context) => {
@@ -951,12 +951,12 @@ test("checker rejects overlong, contaminated or generic localized descriptions",
   );
 });
 
-test("an explicitly published locale requires a current complete sidecar", (context) => {
+test("an explicitly published locale reports a missing sidecar and a repair command", (context) => {
   const target = fixture(context);
   writeArea(target, [{ producerId: "1", text: "Descripción publicada." }]);
 
   const result = audit(target);
-  assert.ok(result.errors.some((error) => error.includes("required translation sidecar is missing")));
+  assert.ok(result.notices.some((error) => error.includes("translation sidecar is missing")));
   assert.equal(result.stats.missing, 1);
   assert.deepEqual(buildTranslationRemediationPlan(result.remediations), [
     {
@@ -1021,7 +1021,7 @@ test("a valid preparatory sidecar may be incomplete before its locale is publish
   assert.equal(result.stats.missing, 0);
 });
 
-test("stale and missing rows block only areas that explicitly publish the target", (context) => {
+test("translation notices distinguish preparatory scopes from published areas", (context) => {
   const target = fixture(context);
   const otherAreaPath = path.join(path.dirname(target.areaPath), "other.csv");
   writeArea(target, [{ producerId: "1", text: "Descripción del área publicada." }]);
@@ -1074,11 +1074,12 @@ test("stale and missing rows block only areas that explicitly publish the target
     `${JSON.stringify(manifest(true), null, 2)}\n`,
   );
   const published = audit(target);
-  assert.ok(published.errors.some((error) => error.includes("source_hash is stale")));
-  assert.ok(published.errors.some((error) => error.includes("producer_id '3'")));
+  assert.deepEqual(published.errors, []);
+  assert.ok(published.notices.some((error) => error.includes("source_hash is stale")));
+  assert.ok(published.notices.some((error) => error.includes("producer_id '3'")));
 });
 
-test("checker rejects missing, unsorted, duplicate, orphaned, cross-locale and stale-version rows", (context) => {
+test("checker rejects malformed rows while reporting stale source locales", (context) => {
   const target = fixture(context);
   const sourceOne = "Descripción suficientemente larga 10.";
   const sourceTwo = "Segunda descripción suficientemente larga 20.";
@@ -1107,7 +1108,7 @@ test("checker rejects missing, unsorted, duplicate, orphaned, cross-locale and s
   assert.match(joined, /origin must be 'machine' or 'reviewed'/);
   assert.match(joined, /prompt_version is stale/);
   assert.match(joined, /glossary_version is stale/);
-  assert.match(joined, /source_locale is stale/);
+  assert.match(result.notices.join("\n"), /source_locale is stale/);
   assert.match(joined, /obsolete machine translation row/);
 });
 
@@ -1730,7 +1731,7 @@ test("stale reviewed rows are retained byte-for-field and never submitted", asyn
   assert.deepEqual(result.staleReviewed, ["1"]);
   assert.equal(adapter.calls.length, 0);
   assert.deepEqual(readTranslationSidecar(target.sidecarPath), [reviewed]);
-  assert.ok(audit(target).errors.some((error) => error.includes("source_hash is stale")));
+  assert.ok(audit(target).notices.some((error) => error.includes("source_hash is stale")));
 });
 
 test("reviewed rows remain current across prompt and glossary evolution", async (context) => {

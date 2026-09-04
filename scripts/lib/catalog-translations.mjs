@@ -5,73 +5,14 @@ import path from "node:path";
 import { parse } from "csv-parse/sync";
 import { stringify } from "csv-stringify/sync";
 
-export const SUPPORTED_TRANSLATION_TARGET_LOCALES = Object.freeze([
-  "en",
-  "es",
-  "ca",
-  "de",
-  "ja",
-  "fr",
-  "it",
-  "nl",
-  "pt",
-  "af",
-  "as",
-  "bn",
-  "cy",
-  "ga",
-  "gd",
-  "gu",
-  "haw",
-  "hi",
-  "kn",
-  "kok",
-  "ml",
-  "mr",
-  "ne",
-  "nso",
-  "or",
-  "pa",
-  "ss",
-  "st",
-  "ta",
-  "te",
-  "tn",
-  "xh",
-  "zu",
-]);
-export const SUPPORTED_TRANSLATION_TARGET_LOCALE_SET = new Set(
-  SUPPORTED_TRANSLATION_TARGET_LOCALES,
-);
-export const SUPPORTED_DESCRIPTION_SOURCE_LOCALES = Object.freeze([
-  ...SUPPORTED_TRANSLATION_TARGET_LOCALES,
-  "gl",
-  "eu",
-]);
-export const SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET = new Set(
-  SUPPORTED_DESCRIPTION_SOURCE_LOCALES,
-);
+import { SUPPORTED_LOCALES, DESCRIPTION_SOURCE_LOCALES } from "../../lib/i18n/locale-registry.ts";
+import { TRANSLATABLE_FIELD_SPECS } from "../../lib/catalog/producer-schema.ts";
+export const SUPPORTED_TRANSLATION_TARGET_LOCALES = SUPPORTED_LOCALES;
+export const SUPPORTED_TRANSLATION_TARGET_LOCALE_SET = new Set(SUPPORTED_LOCALES);
+export const SUPPORTED_DESCRIPTION_SOURCE_LOCALES = DESCRIPTION_SOURCE_LOCALES;
+export const SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET = new Set(DESCRIPTION_SOURCE_LOCALES);
 export const TRANSLATION_FIELD = "descripcion";
-export const TRANSLATION_FIELD_SPECS = Object.freeze([
-  Object.freeze({
-    field: TRANSLATION_FIELD,
-    localeField: "descripcion_locale",
-    canonicalMaxCharacters: 400,
-    translatedMaxCharacters: 500,
-  }),
-  Object.freeze({
-    field: "quien hay detras",
-    localeField: "quien_hay_detras_locale",
-    canonicalMaxCharacters: 2000,
-    translatedMaxCharacters: 2500,
-  }),
-  Object.freeze({
-    field: "historia",
-    localeField: "historia_locale",
-    canonicalMaxCharacters: 4000,
-    translatedMaxCharacters: 5000,
-  }),
-]);
+export const TRANSLATION_FIELD_SPECS = TRANSLATABLE_FIELD_SPECS;
 export const TRANSLATION_FIELDS = Object.freeze(
   TRANSLATION_FIELD_SPECS.map(({ field }) => field),
 );

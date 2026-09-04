@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Chaidh am pròifil seo a thagradh agus a dhearbhadh leis an riochdaire.",
+      "Tha Chisan air an ceangal eadar an riochdaire seo agus an neach a tha a’ stiùireadh na pròifil seo a dhearbhadh.",
     saveOrClaimPrompt: "Sàbhail an riochdaire seo no tagair seilbh air.",
     signIn: "Clàraich a-steach",
     createAccount: "Cruthaich cunntas",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Sàbhail mar fhear as fheàrr leat",
     editMyProfile: "Deasaich mo phròifil",
     expandProfile: "Leudaich a' phròifil",
-    ownershipVerified: "Air a dhearbhadh leis an riochdaire",
+    ownershipVerified: "Seilbh air a dearbhadh",
     viewOwnershipClaim: "Faic tagradh na seilbhe",
     claimProducer: "Tagair an riochdaire seo",
     descriptionLanguage: {

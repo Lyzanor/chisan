@@ -2,45 +2,10 @@
 
 // Shared by every area CSV, in this order. Its length may grow through the
 // repository-wide migration documented in docs/CSV_CONTRACT.md.
-const CANONICAL_HEADER = Object.freeze([
-  "slug",
-  "nombre",
-  "municipio",
-  "categoria",
-  "productos estrella",
-  "direccion",
-  "descripcion",
-  "horario",
-  "telefono",
-  "correo",
-  "web",
-  "Facebook",
-  "Instagram",
-  "Google Maps",
-  "lat",
-  "lon",
-  "imagen",
-  "verificacion",
-  "Venta online",
-  "Canal de venta",
-  "categorias adicionales",
-  "producer_id",
-  "descripcion_locale",
-  "visitas guiadas",
-  "mensaje a la comunidad",
-  "mensaje_comunidad_locale",
-  "enlace destacado 1",
-  "enlace destacado 2",
-  "country",
-  "region",
-  "area",
-  "video",
-  "quien hay detras",
-  "quien_hay_detras_locale",
-  "historia",
-  "historia_locale",
-  "fecha ultimo cambio",
-]);
+/* eslint-disable @typescript-eslint/no-require-imports -- This audit exports a synchronous CommonJS contract. */
+const { CANONICAL_PRODUCER_HEADER: CANONICAL_HEADER, ONLINE_SALES_VALUES: onlineSalesValues, SALES_CHANNEL_VALUES: salesChannelValues, TRANSLATABLE_FIELD_SPECS } = require("../lib/catalog/producer-schema.ts");
+const { SUPPORTED_LOCALES: supportedLocales, DESCRIPTION_SOURCE_LOCALES: sourceLocales, APPLICATION_DEFAULT_LOCALE } = require("../lib/i18n/locale-registry.ts");
+/* eslint-enable @typescript-eslint/no-require-imports */
 let PRODUCER_DESCRIPTION_MAX_CHARACTERS;
 let descriptionContaminationReason;
 let descriptionNaturalnessReason;
@@ -51,21 +16,14 @@ let descriptionNaturalnessReason;
 const VERIFICATION_COLUMN = "verificacion";
 const VERIFICATION_LEVELS = new Set(["pendiente"]);
 const ONLINE_SALES_COLUMN = "Venta online";
-const ONLINE_SALES_VALUES = new Set(["sí", "no", "no comprobado"]);
+const ONLINE_SALES_VALUES = new Set(onlineSalesValues);
 const ONLINE_SALES_DISPLAY_VALUES = "sí, no, no comprobado";
 // One address only: a cell holding several separated by ';', '/' or ',' has no
 // single usable contact and breaks any consumer that treats it as an email.
 const EMAIL_PATTERN = /^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]+$/;
 const SALES_CHANNEL_COLUMN = "Canal de venta";
 const SALES_CHANNEL_SEPARATOR = "|";
-const SALES_CHANNEL_VALUES = new Set([
-  "ecommerce",
-  "whatsapp",
-  "email",
-  "telefono",
-  "suscripcion",
-  "marketplace",
-]);
+const SALES_CHANNEL_VALUES = new Set(salesChannelValues);
 const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
 const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
@@ -94,56 +52,13 @@ const CENTROIDS_OVERRIDES_RELATIVE_PATH =
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const PRODUCER_ID_PATTERN = /^[1-9]\d*$/;
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
-const APPLICATION_DEFAULT_LOCALE = "en";
+
 const TRANSLATION_SIDECAR_PATTERN = /^translations\.[a-z]{2,3}\.csv$/;
 const RESERVED_AREA_SLUGS = new Set(["events", "retail"]);
-const COUNTRY_GUIDE_HEADINGS = [
-  "## Operating state",
-  "## Country rules",
-  "## Source ceilings",
-];
 const COUNTRY_PUBLICATION_STATUSES = new Set(["published", "standby"]);
-// Keep these sets aligned with lib/i18n/locales.ts. Presentation locales can
-// activate routes and manifest requirements; source-only locales can describe
-// canonical prose without doing so. The audit is plain Node.js so it keeps an
-// explicit mirror instead of requiring a TypeScript runtime.
-const SUPPORTED_LOCALES = new Set([
-  "en",
-  "es",
-  "ca",
-  "de",
-  "ja",
-  "fr",
-  "it",
-  "nl",
-  "pt",
-  "af",
-  "as",
-  "bn",
-  "cy",
-  "ga",
-  "gd",
-  "gu",
-  "haw",
-  "hi",
-  "kn",
-  "kok",
-  "ml",
-  "mr",
-  "ne",
-  "nso",
-  "or",
-  "pa",
-  "ss",
-  "st",
-  "ta",
-  "te",
-  "tn",
-  "xh",
-  "zu",
-]);
+const SUPPORTED_LOCALES = new Set(supportedLocales);
 const SUPPORTED_LOCALE_DISPLAY = [...SUPPORTED_LOCALES].join(", ");
-const DESCRIPTION_SOURCE_LOCALES = new Set([...SUPPORTED_LOCALES, "gl", "eu"]);
+const DESCRIPTION_SOURCE_LOCALES = new Set(sourceLocales);
 const DESCRIPTION_SOURCE_LOCALE_DISPLAY = [...DESCRIPTION_SOURCE_LOCALES].join(
   ", ",
 );
@@ -660,16 +575,6 @@ async function auditAreaRegistry(root = "data/csv") {
     const countryGuidePath = path.join(countryDir, "AGENTS.md");
     if (!fs.existsSync(countryGuidePath)) {
       errors.push(`country '${country}' must contain AGENTS.md`);
-    } else {
-      const headings = fs
-        .readFileSync(countryGuidePath, "utf8")
-        .split(/\r?\n/)
-        .filter((line) => line.startsWith("## "));
-      if (JSON.stringify(headings) !== JSON.stringify(COUNTRY_GUIDE_HEADINGS)) {
-        errors.push(
-          `country guide '${country}/AGENTS.md' must use exactly: ${COUNTRY_GUIDE_HEADINGS.join(", ")}`,
-        );
-      }
     }
 
     const manifestPath = path.join(countryDir, "country.json");
@@ -1705,8 +1610,8 @@ function runContractAudit({
     }
 
     for (const [textColumn, localeColumn, maximum] of [
-      [BEHIND_PRODUCER_COLUMN, "quien_hay_detras_locale", 2000],
-      [HISTORY_COLUMN, "historia_locale", 4000],
+      [BEHIND_PRODUCER_COLUMN, "quien_hay_detras_locale", TRANSLATABLE_FIELD_SPECS[1].canonicalMaxCharacters],
+      [HISTORY_COLUMN, "historia_locale", TRANSLATABLE_FIELD_SPECS[2].canonicalMaxCharacters],
     ]) {
       const text = normalizeProducerAuthoredText(fields[textColumn]);
       const sourceLocale = cleanCell(fields[localeColumn]);

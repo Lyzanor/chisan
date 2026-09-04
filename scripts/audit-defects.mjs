@@ -556,7 +556,7 @@ export const CHECKS = [
     kind: "senal",
     stage: "verification",
     label: "sin `lat`/`lon`: la fila no aparece en el mapa",
-    hint: "docs/GEOLOCATION.md; el punto es la unidad productiva, y una celda vacía es mejor que un punto convincente y equivocado",
+    hint: "docs/PRODUCER_GEOLOCATION.md; el punto es la unidad productiva, y una celda vacía es mejor que un punto convincente y equivocado",
     // Both cells: a half-filled pair is a blocking contract error and belongs to
     // check:csv, not to an advisory coverage count.
     run: ({ rows }) => rows.filter((r) => !r.lat && !r.lon),

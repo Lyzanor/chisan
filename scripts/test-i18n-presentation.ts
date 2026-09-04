@@ -298,11 +298,11 @@ test("verification presentation shows only pending or verified producer ownershi
   assert.equal(presentProducerVerification("", false, "es", spanish), null);
   assert.equal(
     presentProducerVerification("", true, "es", spanish)?.displayValue,
-    "Verificado por el productor",
+    "Titularidad verificada",
   );
   assert.equal(
     presentProducerVerification("pendiente", true, "es", spanish)?.displayValue,
-    "Verificado por el productor",
+    "Titularidad verificada",
   );
 });
 
@@ -318,7 +318,7 @@ test("expanded profile source keeps every public entitlement check fail-closed",
   );
   assert.match(
     source,
-    /if \(!\(await hasActiveProducerPremiumEntitlement\(country, producerId\)\)\) return null;/,
+    /if \(!\(await hasActiveProducerPremiumEntitlement\(country, producerId\)\)\)\s*return null;/,
   );
   assert.match(source, /catch \(error\) \{[\s\S]*?return null;\n  \}/);
 });

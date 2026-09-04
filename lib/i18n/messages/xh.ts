@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Le profayile ibangiwe yaza yaqinisekiswa ngumvelisi.",
+      "I-Chisan iqinisekise unxibelelwano phakathi kwalo mvelisi nomntu olawula le profayile.",
     saveOrClaimPrompt: "Gcina lo mvelisi okanye ubange ubunini.",
     signIn: "Ngena",
     createAccount: "Yenza iakhawunti",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Gcina kwizithandwayo",
     editMyProfile: "Hlela iprofayile yam",
     expandProfile: "Yandisa iprofayile",
-    ownershipVerified: "Iqinisekiswe ngumvelisi",
+    ownershipVerified: "Ubunini buqinisekisiwe",
     viewOwnershipClaim: "Jonga ibango lobunini",
     claimProducer: "Banga lo mvelisi",
     descriptionLanguage: {

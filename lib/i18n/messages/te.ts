@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "ఈ ప్రొఫైల్‌ను ఉత్పత్తిదారు క్లెయిమ్ చేసి ధృవీకరించారు.",
+      "ఈ ఉత్పత్తిదారుకు, ఈ ప్రొఫైల్‌ను నిర్వహించే వ్యక్తికి మధ్య సంబంధాన్ని Chisan ధృవీకరించింది.",
     saveOrClaimPrompt:
       "ఈ ఉత్పత్తిదారును భద్రపరచండి లేదా యాజమాన్యాన్ని క్లెయిమ్ చేయండి.",
     signIn: "సైన్ ఇన్ చేయండి",
@@ -30,7 +30,7 @@ const messages = {
     saveFavorite: "ఇష్టమైన వాటిలో భద్రపరచండి",
     editMyProfile: "నా ప్రొఫైల్‌ను సవరించండి",
     expandProfile: "ప్రొఫైల్‌ను విస్తరించండి",
-    ownershipVerified: "ఉత్పత్తిదారుచే ధృవీకరించబడింది",
+    ownershipVerified: "యాజమాన్యం ధృవీకరించబడింది",
     viewOwnershipClaim: "యాజమాన్య క్లెయిమ్‌ను చూడండి",
     claimProducer: "ఈ ఉత్పత్తిదారు యాజమాన్యాన్ని క్లెయిమ్ చేయండి",
     descriptionLanguage: {

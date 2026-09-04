@@ -55,6 +55,9 @@ Apply the scope above as eight questions, in this order:
    source that proves only one of them cannot silently prove the others.
 7. **Is it currently active?** Current public evidence supports ongoing
    activity or an offer, and there is no reliable permanent-closure evidence.
+   A currently maintained authorization to sell own output may serve as indirect
+   evidence at admission when the country guide documents that source limit;
+   mark the admitted row `pendiente` until activity is directly confirmed.
    Historical material alone does not establish current activity; there is no
    universal source-age cutoff.
 8. **Is this unit already represented?** Search the current country catalog by
@@ -249,8 +252,8 @@ unsupported claims about third parties.
 The area row remains the factual decision: correct factual or source-locale
 errors there, never only in a translation. Translation sidecars are versioned
 presentation, not evidence, and must preserve every supported fact and proper
-name without adding claims. Missing or stale variants remain unpublished rather
-than falling back to prose in another language. The complete locale, sidecar and
+name without adding claims. Missing or stale prose is omitted in that language and reported for follow-up;
+canonical corrections remain publishable. Indexing follows `docs/CATALOG_WEB.md`. The complete locale, sidecar and
 generation contract lives in `docs/CSV_CONTRACT.md`.
 
 ## Evidence principles
@@ -267,9 +270,10 @@ generation contract lives in `docs/CSV_CONTRACT.md`.
 - Registers differ in what they publish. One that authorizes a named operator to
   market its own output also publishes an offer, and can carry a whole admission
   by itself. One that records an establishment and its activity class publishes
-  neither an offer nor a public identity, and never admits a row alone. Neither
-  kind establishes current activity, so an admission resting on a register is
-  `pendiente`.
+  neither an offer nor a public identity, and never admits a row alone. A currently maintained authorization is sufficient indirect activity evidence
+  for admission at `pendiente` only when the country guide explicitly identifies
+  it as such. An old or undated establishment record alone leaves the activity
+  answer unknown and the candidate on hold.
 - Verified ownership authorizes a proposal; it does not prove the proposed
   public fact. Apply the same source, currentness and scope tests, and never copy
   private claim material into public evidence.
@@ -366,7 +370,7 @@ in `docs/ACCOUNT_SYSTEM.md`; PostgreSQL never becomes a catalog overlay.
 sets it from the approval timestamp when an owner proposal is approved and
 applied; editors do not set it during ordinary catalog research or maintenance.
 
-The public label `Verificado por el productor` is derived only from an exact
+The public label `Titularidad verificada` is derived only from an exact
 active owner membership created by an approved claim. It verifies who controls
 the producer profile, not the truth of the CSV facts, and never writes or clears
 `verificacion`.

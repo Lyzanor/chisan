@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "ଏହି ପ୍ରୋଫାଇଲ୍‌କୁ ଉତ୍ପାଦକ ଦାବି କରି ଯାଞ୍ଚ କରିଛନ୍ତି।",
+      "Chisan ଏହି ଉତ୍ପାଦକ ଏବଂ ଏହି ପ୍ରୋଫାଇଲ୍ ପରିଚାଳନା କରୁଥିବା ବ୍ୟକ୍ତିଙ୍କ ମଧ୍ୟରେ ସମ୍ପର୍କ ଯାଞ୍ଚ କରିଛି।",
     saveOrClaimPrompt:
       "ଏହି ଉତ୍ପାଦକଙ୍କୁ ସଞ୍ଚୟ କରନ୍ତୁ କିମ୍ବା ମାଲିକାନା ଦାବି କରନ୍ତୁ।",
     signIn: "ସାଇନ୍ ଇନ୍",
@@ -30,7 +30,7 @@ const messages = {
     saveFavorite: "ପସନ୍ଦରେ ସଞ୍ଚୟ କରନ୍ତୁ",
     editMyProfile: "ମୋ ପ୍ରୋଫାଇଲ୍ ସମ୍ପାଦନ କରନ୍ତୁ",
     expandProfile: "ପ୍ରୋଫାଇଲ୍ ବିସ୍ତାର କରନ୍ତୁ",
-    ownershipVerified: "ଉତ୍ପାଦକଙ୍କ ଦ୍ୱାରା ଯାଞ୍ଚିତ",
+    ownershipVerified: "ମାଲିକାନା ଯାଞ୍ଚିତ",
     viewOwnershipClaim: "ମାଲିକାନା ଦାବି ଦେଖନ୍ତୁ",
     claimProducer: "ଏହି ଉତ୍ପାଦକଙ୍କ ମାଲିକାନା ଦାବି କରନ୍ତୁ",
     descriptionLanguage: {

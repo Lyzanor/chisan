@@ -13,12 +13,12 @@ const messages = {
     navigation: "Navigatie in de voettekst", aboutLink: "Hoe Chisan werkt", catalogLink: "Producentencatalogus",
     contactLink: "Contact", },
   accountActions: {
-    ownershipVerifiedDescription: "Dit profiel is door de producent geclaimd en geverifieerd.",
+    ownershipVerifiedDescription: "Chisan heeft de band tussen deze producent en de beheerder van dit profiel geverifieerd.",
     saveOrClaimPrompt: "Sla deze producent op of claim het eigenaarschap.",
     signIn: "Inloggen", createAccount: "Account aanmaken", removeFavorite: "Uit favorieten verwijderen",
     saveFavorite: "Aan favorieten toevoegen", editMyProfile: "Mijn profiel bewerken",
     expandProfile: "Profiel uitbreiden",
-    ownershipVerified: "Geverifieerd door de producent", viewOwnershipClaim: "Eigenaarsclaim bekijken",
+    ownershipVerified: "Eigenaarschap geverifieerd", viewOwnershipClaim: "Eigenaarsclaim bekijken",
     claimProducer: "Deze producent claimen",
     descriptionLanguage: {
       none: "Geen beschrijvingstaal",

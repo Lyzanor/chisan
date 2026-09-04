@@ -21,7 +21,7 @@ const messages = {
   },
   accountActions: {
     ownershipVerifiedDescription:
-      "Ce profil a été revendiqué et vérifié par le producteur.",
+      "Chisan a vérifié le lien entre ce producteur et la personne qui gère cette fiche.",
     saveOrClaimPrompt: "Enregistrez ce producteur ou revendiquez-en la propriété.",
     signIn: "Se connecter",
     createAccount: "Créer un compte",
@@ -29,7 +29,7 @@ const messages = {
     saveFavorite: "Ajouter aux favoris",
     editMyProfile: "Modifier mon profil",
     expandProfile: "Enrichir le profil",
-    ownershipVerified: "Vérifié par le producteur",
+    ownershipVerified: "Titularité vérifiée",
     viewOwnershipClaim: "Voir la revendication de propriété",
     claimProducer: "Revendiquer ce producteur",
     descriptionLanguage: {

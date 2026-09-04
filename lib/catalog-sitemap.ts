@@ -7,7 +7,8 @@ import {
 } from "./catalog-metadata";
 import {
   listPublishedCountries,
-  listProducerRouteParams,
+  listIndexableProducerLocales,
+  loadCsvRows,
   type AreaLocation,
   type Country,
 } from "./csv-catalog";
@@ -17,10 +18,6 @@ export const SITEMAP_SHARD_URL_LIMIT = 40_000;
 export const SITEMAP_GOOGLE_URL_LIMIT = 50_000;
 
 export type CatalogSitemapEntry = MetadataRoute.Sitemap[number];
-
-function areaRegistryKey(country: string, area: string): string {
-  return `${country}/${area}`;
-}
 
 function listCountryAreas(country: Country): AreaLocation[] {
   return country.regions.flatMap((region) =>
@@ -38,7 +35,9 @@ function appendCatalogTarget(
 ): void {
   const currentLocale = target.localePolicy.publishedLocales[0];
   if (!currentLocale) {
-    throw new Error("A sitemap catalog target has no effective published locale.");
+    throw new Error(
+      "A sitemap catalog target has no effective published locale.",
+    );
   }
 
   const alternates = buildCatalogAlternateSet(target, currentLocale);
@@ -52,11 +51,6 @@ function appendCatalogTarget(
 
 async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
   const countries = listPublishedCountries();
-  const countryBySlug = new Map(countries.map((country) => [country.slug, country]));
-  const areas = countries.flatMap(listCountryAreas);
-  const areaByKey = new Map(
-    areas.map((area) => [areaRegistryKey(area.countrySlug, area.slug), area]),
-  );
   const entries: CatalogSitemapEntry[] = [];
   const homeAlternates = buildHomeAlternateSet();
 
@@ -94,33 +88,37 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
         localePolicy: area,
         area: area.slug,
       });
+      const [producers, indexableLocales] = await Promise.all([
+        loadCsvRows(country.slug, area.slug),
+        listIndexableProducerLocales(
+          country.slug,
+          area.slug,
+          area.publishedLocales,
+        ),
+      ]);
+      for (const producer of producers) {
+        appendCatalogTarget(entries, {
+          kind: "producer",
+          country,
+          localePolicy: area,
+          area: area.slug,
+          producer,
+          indexableLocales: indexableLocales.get(producer.producerId) ?? [],
+        });
+      }
     }
-  }
-
-  for (const route of await listProducerRouteParams(countries)) {
-    const country = countryBySlug.get(route.country);
-    const area = areaByKey.get(areaRegistryKey(route.country, route.area));
-    if (!country || !area) {
-      throw new Error(
-        `Producer sitemap route '${route.country}/${route.area}/${route.slug}' is outside the catalog registry.`,
-      );
-    }
-
-    appendCatalogTarget(entries, {
-      kind: "producer",
-      country,
-      localePolicy: area,
-      area: route.area,
-      producer: { slug: route.slug },
-    });
   }
 
   return entries;
 }
 
-let catalogSitemapEntriesPromise: Promise<readonly CatalogSitemapEntry[]> | null = null;
+let catalogSitemapEntriesPromise: Promise<
+  readonly CatalogSitemapEntry[]
+> | null = null;
 
-export function listCatalogSitemapEntries(): Promise<readonly CatalogSitemapEntry[]> {
+export function listCatalogSitemapEntries(): Promise<
+  readonly CatalogSitemapEntry[]
+> {
   if (catalogSitemapEntriesPromise) return catalogSitemapEntriesPromise;
 
   const pending = buildCatalogSitemapEntries();
@@ -138,7 +136,11 @@ export function shardCatalogSitemapEntries(
   entries: readonly CatalogSitemapEntry[],
   limit: number = SITEMAP_SHARD_URL_LIMIT,
 ): CatalogSitemapEntry[][] {
-  if (!Number.isSafeInteger(limit) || limit < 1 || limit >= SITEMAP_GOOGLE_URL_LIMIT) {
+  if (
+    !Number.isSafeInteger(limit) ||
+    limit < 1 ||
+    limit >= SITEMAP_GOOGLE_URL_LIMIT
+  ) {
     throw new Error(
       `Sitemap shard limit must be an integer below ${SITEMAP_GOOGLE_URL_LIMIT}.`,
     );
@@ -152,9 +154,14 @@ export function shardCatalogSitemapEntries(
   return shards;
 }
 
-export async function listCatalogSitemapDescriptors(): Promise<{ id: number }[]> {
+export async function listCatalogSitemapDescriptors(): Promise<
+  { id: number }[]
+> {
   const entries = await listCatalogSitemapEntries();
-  const shardCount = Math.max(1, Math.ceil(entries.length / SITEMAP_SHARD_URL_LIMIT));
+  const shardCount = Math.max(
+    1,
+    Math.ceil(entries.length / SITEMAP_SHARD_URL_LIMIT),
+  );
 
   return Array.from({ length: shardCount }, (_, id) => ({ id }));
 }
