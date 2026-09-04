@@ -290,4 +290,4 @@ Verify current first-party activity, own market identities and productive respon
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| GOLOSINAS MININOLAS, S.L. | Nigran | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004955/PO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "R/ MADANELA, 2, P.E. PTO DE MOLLE, N3A". |
+| GOLOSINAS MININOLAS, S.L. | Nigrán | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004955/PO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "R/ MADANELA, 2, P.E. PTO DE MOLLE, N3A". |

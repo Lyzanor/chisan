@@ -125,7 +125,7 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| HELADERIA GRAN VIA SOCIEDAD LIMITADA | Hellin | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002945/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ NUESTRA SEÑORA DE LOURDES Nº: 24". |
+| HELADERIA GRAN VIA SOCIEDAD LIMITADA | Hellín | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.002945/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ NUESTRA SEÑORA DE LOURDES Nº: 24". |
 | HELADEROS ALBACETE SOCIEDAD LIMITADA | Albacete | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.01951/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "C/ C, Nº 61 NAVE 2 (P. I. CAMPOLLANO)". |
 
 ## RGSEAA honey and confectionery elaborators — 2026-09-03

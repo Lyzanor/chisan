@@ -91,8 +91,8 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| INDUSTRIA DE CAFÉ DEL NORTE, S.A. | Vitoria-gasteiz | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00195/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "Ctra. Gamarra, 41". |
-| Malco Tea & and Coffee | Vitoria-gasteiz | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00900/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "Zubibarri (Calle/Kalea) , Num: 3-I - I". |
+| INDUSTRIA DE CAFÉ DEL NORTE, S.A. | Vitoria-Gasteiz | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00195/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "Ctra. Gamarra, 41". |
+| Malco Tea & and Coffee | Vitoria-Gasteiz | `Café` | RGSEAA registers it under key 25 for manufacturing or elaboration, entry 25.00900/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own roastery rather than repackaging third-party coffee, and a current offer under this identity. Resolve the official municipality from the registered address "Zubibarri (Calle/Kalea) , Num: 3-I - I". |
 
 ## RGSEAA ice-cream elaborators — 2026-09-03
 
@@ -104,7 +104,7 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| HELADOS PLAZA SL | Vitoria-gasteiz | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00580/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "Beato Tomás de Zumarraga (Calle/Kalea) , Num: 11". |
+| HELADOS PLAZA SL | Vitoria-Gasteiz | `Helados` | RGSEAA registers it under key 28 for manufacturing or elaboration, entry 28.00580/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Separate a take-home offer made on the unit’s own premises from a parlour that only serves; a heladería qualifies through its own elaboration, not through counter service. Resolve the official municipality from the registered address "Beato Tomás de Zumarraga (Calle/Kalea) , Num: 11". |
 
 ## RGSEAA honey and confectionery elaborators — 2026-09-03
 
@@ -116,7 +116,7 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| CONFITERIA BLANCA NIEVES TEJEDOR, S.L. | Vitoria-gasteiz | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02272/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "Venta de la Estrella (Calle/Kalea) , 6 (Pabellones 54, 73 y 74)". |
+| CONFITERIA BLANCA NIEVES TEJEDOR, S.L. | Vitoria-Gasteiz | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.02272/VI | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "Venta de la Estrella (Calle/Kalea) , 6 (Pabellones 54, 73 y 74)". |
 
 ## HelloBo platform discovery pass — 2026-09-04
 
