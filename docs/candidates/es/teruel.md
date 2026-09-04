@@ -1,15 +1,6 @@
 # Teruel — candidates
 
 - Target CSV: `data/csv/es/aragon/teruel.csv`
-- Discovery source: [RestaurantesMadrid cheese and dairy directory](https://restaurantesmadrid.com/directorioweb/quesos.php).
-- Search date: 2026-08-31.
-- Scope: directory identities absent from the current CSV and candidate backlog after name, domain, alias and productive-unit reconciliation.
-- Cutoff: public pages available on 2026-08-31; later changes and private records are out of scope.
-- Source ceiling: the directory is discovery only. The current producer site and Aragón artisan register support the lead but do not replace admission review.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Quesos El Aljibe / Queso Artesano El Ródeno | Ródenas | `Lácteos y quesos` — artisan cheese | The current producer site exposes its cheese range and Ródenas address, and the 2025 Aragón artisan register lists the cheesemaker as active. | [Directory](https://restaurantesmadrid.com/directorioweb/quesos.php) | <https://www.quesoselaljibe.es/> | Reconcile the El Ródeno and El Aljibe identities, then confirm the productive address and current own offer before admission. |
 
 ## Michelin Green Star own-production lead pass — 2026-08-31
 
@@ -97,7 +88,7 @@ row spells the municipality `Villarluego`.
 
 - Discovery source: Concurso de Calidad de la Feria del Jamón de Teruel (<https://jamondeteruel.com>) and FITRUF Sarrión (Feria Internacional de la Trufa, <https://sarrion.es>).
 - Search date: 2026-09-03.
-- Scope: 5 unresolved Level 1 leads in Teruel, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Scope: 3 unresolved Level 1 leads in Teruel, after de-duplication against the current area CSV, candidate backlog and closed evidence.
 - Cutoff: published competition award records, DOP registries and fair records available on 2026-09-03.
 - Source ceiling: competition awards and fair participant records establish registered operator status, category and local holding; they do not by themselves prove full catalog admission or autonomous physical workshop.
 
@@ -105,8 +96,6 @@ row spells the municipality `Villarluego`.
 |---|---|---|---|---|---|---|
 | Soincar (Jamones Arcoiris) | Monroyo / Valderrobres | `Carne` — DOP Jamón de Teruel dry-cured ham | Leading Matarraña curing house and livestock cooperative; back-to-back Gold Medal winner (2024 and 2025) for Best DOP Jamón de Teruel. | [Feria del Jamón](https://jamondeteruel.com) | <https://arcoiris.coop/> | Confirm curing facility address in Monroyo, pig farm suppliers and current retail points. |
 | Airesano Food (Valverde Airesano 1929) | La Puebla de Valverde | `Carne` — high-altitude DOP Jamón de Teruel | High-altitude natural curing facility situated in La Puebla de Valverde; Silver Medal winner at the 2025 Concurso de Calidad del Jamón de Teruel. | [Feria del Jamón](https://jamondeteruel.com) | <https://airesano.com/> | Verify physical curing plant in La Puebla de Valverde, sanitary register and direct brand offer. |
-| Sierra de Mora (Moraviejo) | Mora de Rubielos | `Carne` — DOP Jamón de Teruel dry-cured ham | Traditional family curing facility in Mora de Rubielos (Sierra de Gúdar); Bronze Medal winner at the 2025 Concurso de Calidad del Jamón de Teruel. | [Feria del Jamón](https://jamondeteruel.com) | <https://sierrademora.com/> | Confirm natural curing cellar address in Mora de Rubielos and continuous commercial distribution. |
-| Jamones Castelfrío (Jamones Perfecto) | Cedrillas | `Carne` — DOP Jamón de Teruel natural cured ham | Natural curing facility located at 1,364 meters altitude in Cedrillas; Silver Medal winner at the 2024 Concurso de Calidad del Jamón de Teruel. | [Feria del Jamón](https://jamondeteruel.com) | <https://castelfrio.com/> | Verify curing facilities in Cedrillas, altitude drying regime and current bottled/sliced lineup. |
 | Trufas La Valbona | Valbona / Sarrión | `Setas` — fresh black winter truffle (*Tuber melanosporum*) | Family truffle-growing enterprise based in Valbona and Sarrión (Gúdar-Javalambre) harvesting with trained dogs; regular exhibitor at FITRUF Sarrión. | [FITRUF](https://sarrion.es) | <https://trufaslavalbona.com/> | Confirm agricultural plantation holdings in Valbona, cleaning/shipping workshop and fresh season offer. |
 
 ## RGSEAA ice-cream elaborators — 2026-09-03

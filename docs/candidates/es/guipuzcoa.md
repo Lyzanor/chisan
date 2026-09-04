@@ -87,7 +87,7 @@
 
 - Discovery source: <https://euskalsagardoa.eus/sagardotegiak/>, the list of sagardotegiak registered in the DO Euskal Sagardoa.
 - Search date: 2026-09-03.
-- Scope: all 48 cider houses published by the council across Araba, Bizkaia and Gipuzkoa, de-duplicated against the current area CSVs by name and municipality. The 9 below are open Level 1 leads, all in Gipuzkoa.
+- Scope: all 48 cider houses published by the council across Araba, Bizkaia and Gipuzkoa, de-duplicated against the current area CSVs by name and municipality. The 7 below are open Level 1 leads, all in Gipuzkoa.
 - Cutoff: the council list as published on 2026-09-03. No first-party site was consulted beyond the URL the council itself links.
 - Source ceiling: the council register supports membership, product and the identity and locality it publishes. It does not by itself establish current activity, a public own offer or online sales, and a sagardotegi's hospitality service is not the qualifying activity.
 
@@ -95,11 +95,9 @@
 |---|---|---|---|---|---|---|
 | Añota | Azpeitia | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://www.sidreriaanota.com/> | Separate the bottled cider offer from the sagardotegi restaurant service before placing the row. |
 | Eguskitza | Tolosa | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <https://www.sidreriaeguzkitza.com/> | Reconcile the two published spellings, Eguskitza and Eguzkitza, and choose the durable public name. |
-| Eula | Urnieta | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://eulasagardotegia.com/> | Separate the bottled cider offer from the sagardotegi restaurant service before placing the row. |
 | Irigoien-Herrero | Astigarraga | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://www.irigoiensagardotegia.com/> | Separate the bottled cider offer from the sagardotegi restaurant service before placing the row. |
 | Iruretxiki | Zestoa | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) |  | Confirm the productive unit and a current own offer; the council publishes no site for it. |
 | Larrarte | Astigarraga | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://larrarte.net/> | Separate the bottled cider offer from the sagardotegi restaurant service before placing the row. |
-| Ola | Irun | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://olasagardotegia.eus/> | Confirm the productive unit in Irun; the short name collides with unrelated published rows. |
 | Otatza | Zerain | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://www.sidreriaotatza.com> | Confirm it is distinct from the published `Otatza Gaztak` dairy row in Ordizia. |
 | Txindurriturri | Deba | `Sidra` | Cider house registered in the DO Euskal Sagardoa, bottling under the denomination seal | [Council register](https://euskalsagardoa.eus/sagardotegiak/) | <http://www.txindurri.com> | Separate the bottled cider offer from the sagardotegi restaurant service before placing the row. |
 

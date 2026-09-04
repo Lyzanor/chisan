@@ -54,7 +54,7 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/cantabria>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 45 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 44 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -92,7 +92,6 @@ Verify current activity, exact municipality/address, legal producer identity, ow
 | Panadería Manso Calvo | Castro-Urdiales | `Pan y cereal` | The directory states: “Panadería Manso Calvo es una empresa ubicada en la Ulloa gallega (Lugo), dedicada a la fabricación y distribución de…” | [Directory](https://www.proveedores.com/proveedores/panaderia-manso-calvo/) |  | Confirm the productive workshop and that it is currently active. |
 | 5Ñ Conservas La Santoñesa | Santoña | `Pescado` | The directory states: “Contáctanos por este medio gratuito para más información de nuestras conservas” | [Directory](https://www.proveedores.com/proveedores/5n-conservas-la-santonesa/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Blanco Abascal | Santoña | `Pescado` | The directory states: “Situada en Santoña (Cantabria), Blanco Abascal es una empresa conservera que se dedica a la fabricación de filetes de…” | [Directory](https://www.proveedores.com/proveedores/blanco-abascal/) | <https://www.mundivia.es/> | Confirm an own offer that stays attributable to this producer through sale. |
-| Conservera Castreña | Castro-Urdiales | `Pescado` | The directory states: “Ubicada en Castro Urdiales (Cantabria) y con una amplia experiencia en el sector, Conservera Castreña es una empresa…” | [Directory](https://www.proveedores.com/proveedores/conservera-castrena/) |  | Confirm an own offer that stays attributable to this producer through sale. |
 | Froxa | Cartes | `Pescado` | The directory states: “Somos productores y distribuidores de preparados , pescados y mariscos de todo tipo” | [Directory](https://www.proveedores.com/proveedores/froxa/) | <https://froxa.com/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Grupo Consorcio | Santoña | `Pescado` | The directory states: “Localizada en Santoña (Cantabria) y con una dilatada experiencia en el sector de hace más de seis décadas, Grupo…” | [Directory](https://www.proveedores.com/proveedores/grupo-consorcio/) |  | Publish the specific productive unit, not the parent group. |
 | Mª Asun Velar | Castro-Urdiales | `Pescado` | The directory states: “Mª Asun Velar es una compañía localizada en Cantabria especialista en la elaboración de productos en conserva , su…” | [Directory](https://www.proveedores.com/proveedores/m-asun-velar/) |  | Confirm an own offer that stays attributable to this producer through sale. |

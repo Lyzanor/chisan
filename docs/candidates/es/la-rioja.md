@@ -55,7 +55,7 @@ Verify current first-party channels and durable identities before admission. Eig
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/la-rioja>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 104 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 103 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -163,7 +163,6 @@ Verify current first-party channels and durable identities before admission. Eig
 | Señorío de Líbano | Sajazarra | `Vino` | The directory states: “Fue inaugurada en el año 1973 la empresa Señorío de Líbano , dedicada a la elaboración y comercialización de bebidas…” | [Directory](https://www.proveedores.com/proveedores/senorio-de-libano/) |  | Confirm the winery and its current published range. |
 | Señorío de Somalo | Bobadilla | `Vino` | The directory states: “Disponemos de una bodega con los recursos suficientes para adaptarnos a las exigencias de nuestros clientes teniendo…” | [Directory](https://www.proveedores.com/proveedores/senorio-de-somalo/) |  | Confirm the winery and its current published range. |
 | Solorioja.com | Logroño | `Vino` | The directory states: “Lo invitamos a conocer más de nuestra variedad de vinos ingresando a nuestra página web o contactándonos…” | [Directory](https://www.proveedores.com/proveedores/solorioja-com/) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
-| Viñedos de Alfaro | Aldeanueva de Ebro | `Vino` | The directory states: “Somos productores y distribuidores de vino blanco, vino rosado y vino tinto” | [Directory](https://www.proveedores.com/proveedores/vinedos-de-alfaro/) |  | Confirm the winery and its current published range. |
 | Vintae | Logroño | `Vino` | The directory states: “En Vintae , somos una empresa afincada en La Rioja y tras varios años de presencia en el sector, somos productores y…” | [Directory](https://www.proveedores.com/proveedores/vintae/) | <https://vintae.com/> | Confirm the winery and its current published range. |
 
 ## RGSEAA coffee, cocoa and infusion elaborators — 2026-09-03

@@ -18,13 +18,12 @@ Target CSV: `data/csv/es/pais-vasco/vizcaya.csv`
 
 - Discovery source: Feria del Último Lunes de Gernika / Urriko Azken Astelehena official competition records (<https://www.gernika-lumo.eus>).
 - Search date: 2026-09-03.
-- Scope: 5 unresolved Level 1 leads in Bizkaia, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Scope: 4 unresolved Level 1 leads in Bizkaia, after de-duplication against the current area CSV, candidate backlog and closed evidence.
 - Cutoff: published agricultural fair records and first-party pages available on 2026-09-03.
 - Source ceiling: fair awards records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Erdikoetxe Upeltegia | Lezama | `Vino` — Bizkaiko Txakolina | Family txakoli winery in the Txorierri valley cultivating Hondarrabi Zuri and Beltza; 1st prize txakoli at Gernika 2024 and 2025. | [Gernika 2025](https://www.gernika-lumo.eus) | <https://www.erdikoetxe.com/> | Confirm estate winery address in Lezama, vineyard holdings and active bottled offer. |
 | Baskones Eztia | Karrantza Harana / Valle de Carranza | `Miel` — heather and mountain honey | Mountain beekeeping holding in the Karrantza valley (Enkarterri); 1st prize heather honey at Gernika 2025. | [Gernika 2025](https://www.gernika-lumo.eus) | — | Confirm active apiaries, extraction unit in Karrantza and stable direct distribution. |
 | Caserío Goreko | Maruri-Jatabe | `Fruta y verdura` — certified organic vegetables | Certified organic vegetable farmstead holding in Maruri-Jatabe (Uribe Kosta); 1st prize vegetables at Gernika 2024. | [Gernika 2024](https://www.gernika-lumo.eus) | <https://goreko.com/> | Verify holding location in Maruri-Jatabe, own cultivation and direct sales channels. |
 | Bihortxatxu Baserria | Arrieta | `Fruta y verdura` — farmstead vegetables | Traditional baserri holding in Arrieta (Busturialdea) specializing in diversified garden produce; 1st prize vegetables at Gernika 2025. | [Gernika 2025](https://www.gernika-lumo.eus) | — | Confirm farmstead address in Arrieta, own garden cultivation and market presence. |

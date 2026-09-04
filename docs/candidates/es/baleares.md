@@ -67,33 +67,31 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 
 - Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
 - Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in Baleares, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Scope: 1 unresolved Level 1 lead in Baleares, after de-duplication against the current area CSV, candidate backlog and closed evidence.
 - Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
 - Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | S’Hort de Sant Patrici | Ferreries (Menorca) | `Lácteos y quesos` / `Vino` — Mahón-Menorca cheese and estate wine | Estate dairy and winery in Ferreries (Menorca) elaborating artisan raw cow milk DOP Mahón-Menorca cheeses; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://santpatrici.es/es/quesos-sant-patrici> | Verify estate holding address in Ferreries, dairy facilities and continuous commercial availability. |
-| S’Arangi | Es Mercadal (Menorca) | `Lácteos y quesos` — artisan Mahón-Menorca cheese | Traditional Menorcan farmstead dairy in Es Mercadal crafting raw-milk Mahón-Menorca cheese; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | — | Confirm farmstead workshop premises in Es Mercadal, sanitary registration and retail cheese offer. |
 
 ## Dijous Bo (Inca) — 2026-09-03
 
 - Discovery source: Dijous Bo (Inca, Mallorca) official agricultural and craft fairs records (<https://incaciutat.com>).
 - Search date: 2026-09-03.
-- Scope: 2 unresolved Level 1 leads in Illes Balears, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Scope: 1 unresolved Level 1 lead in Illes Balears, after de-duplication against the current area CSV, candidate backlog and closed evidence.
 - Cutoff: published traditional fair directories and first-party pages available on 2026-09-03.
 - Source ceiling: fair participant registers establish regular artisan presence, category and geographical clue; they do not by themselves prove full catalog admission or autonomous physical workshop.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Formatges Sa Talaia | Ciutadella de Menorca | `Lácteos y quesos` — artisan raw-milk DOP Mahón-Menorca cheese | Farmstead dairy at Lloc Sa Talaia (Ciutadella) processing raw milk from its own herd of indigenous Vermella Menorquina cows; regular island craft fair exhibitor. | [Dijous Bo](https://incaciutat.com) | — | Confirm dedicated farmstead dairy address in Ciutadella, livestock herd registration and commercial distribution. |
-| Embotits Sa Caldera | Sant Joan (Mallorca) | `Carne` — IGP Sobrassada de Mallorca de Porc Negre | Family-run traditional charcuterie house founded in 1988 in Sant Joan crafting certified Black Pig Sobrassada and cured meats; regular participant at Dijous Bo. | [Dijous Bo](https://incaciutat.com) | <https://sacaldera.com/> | Verify physical workshop premises in Sant Joan, Porc Negre supply and current direct retail offer. |
 
 ## Proveedores.com directory sweep — 2026-09-03
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/islas-baleares>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-03.
-- Scope: 90 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
+- Scope: 89 open Level 1 leads, after de-duplication against the current area CSV by official domain, published phone, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-03. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -167,7 +165,6 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 | Gelats Jop | Campos | `Helados` | The directory states: “Gelats Jop es una empresa afincada en Mallorca, especializada en la elaboración de helados de la más alta calidad…” | [Directory](https://www.proveedores.com/proveedores/gelats-jop/) | <https://www.gelatsjop.com/> | Confirm the productive workshop and that it is currently active. |
 | Gelats Paco | Palma de Mallorca | `Helados` | The directory states: “Elaboramos helados con base de leche y con base de agua y contamos con más de cuarenta sabores de helados y cinco…” | [Directory](https://www.proveedores.com/proveedores/gelats-paco/) | <https://gelatspaco.es/> | Confirm an own offer that stays attributable to this producer through sale. |
 | Capri Gelatos | Palma de Mallorca | `Lácteos y quesos` | The directory states: “Capri Gelatos es un empresa familiar fundada en 1979 en la Isla de Mallorca dedicada a la fabricación de los mejores…” | [Directory](https://www.proveedores.com/proveedores/capri-gelatos/) | <https://caprigelatos.com/> | Confirm the dairy and that it is currently active. |
-| Formatges CM | Ciutadella de Menorca | `Lácteos y quesos` | The directory states: “Ubicada en Ciutadella (Islas Baleares), Formatges CM es una empresa familiar menorquina dedicada a la elaboración de…” | [Directory](https://www.proveedores.com/proveedores/formatges-cm/) |  | Confirm the dairy and that it is currently active. |
 | Quesería Menorquina | Mahón | `Lácteos y quesos` | The directory states: “Desde 1930 nos hemos especializado en la elaboración de quesos con la más tradicional y artesanal receta” | [Directory](https://www.proveedores.com/proveedores/queseria-menorquina/) | <https://www.queseriamenorquina.com/> | Confirm the dairy and that it is currently active. |
 | Queso Llanero La Coromoto | Mahón | `Lácteos y quesos` | The directory states: “En Queso Llanero La Coromoto somos fabricantes del riquísimo queso llanero venezolano, su textura y sabor nos reclama…” | [Directory](https://www.proveedores.com/proveedores/queso-llanero-la-coromoto/) |  | Confirm the dairy and that it is currently active. |
 | Son Sivineta | Ciutadella de Menorca | `Lácteos y quesos` | The directory states: “Mimamos nuestras fincas para que alimenten a nuestros animales sin necesidad de abusar de las tierras y biodiversidad” | [Directory](https://www.proveedores.com/proveedores/son-sivineta/) | <https://sivineta.com/> | Confirm the dairy and that it is currently active. |
@@ -194,14 +191,12 @@ Resolve only the blockers above. Do not admit a row until its productive respons
 
 - Discovery source: <https://sobrasadademallorca.org/elaboradores-certificados/>, the certified-elaborator list published by the Consell Regulador IGP Sobrassada de Mallorca.
 - Search date: 2026-09-03.
-- Scope: all 15 elaborators published by the council, de-duplicated against the current area CSV by name. Ten were already represented; the 5 below are open Level 1 leads.
+- Scope: all 15 elaborators published by the council, de-duplicated against the current area CSV by name. Twelve were already represented; the 3 below are open Level 1 leads.
 - Cutoff: the council list as published on 2026-09-03. The council publishes names and logos only, without addresses, so no municipality is available for these leads.
 - Source ceiling: the council register supports membership, product and the elaborator identity it publishes. It does not by itself establish current activity, a public own offer, online sales or the productive municipality.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Bon Gust | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality and separate it from the unrelated `Xips Ve de Gust` row in Barcelona. |
-| Ca Na Paulina | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality; the council register publishes no locality. |
 | Sezavi | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality and the durable public name behind the company. |
 | Aplicacions Tècniques Insulars | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Confirm a qualifying own offer under a public producer identity; the registered name is a service company. |
 | TuCarn | Mallorca | `Carne` | Certified elaborator of the IGP Sobrassada de Mallorca | [Council register](https://sobrasadademallorca.org/elaboradores-certificados/) |  | Resolve the productive municipality and confirm elaboration rather than butchery retail. |

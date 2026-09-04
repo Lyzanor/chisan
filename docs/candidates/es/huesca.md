@@ -84,13 +84,12 @@ The other 54 members reconciled: 51 matched published Huesca rows, "Miel del Pir
 
 - Discovery source: Concurso de Quesos de Otoño de la Feria de Otoño de Biescas (<https://www.biescas.es>).
 - Search date: 2026-09-03.
-- Scope: 3 unresolved Level 1 leads in Huesca, after de-duplication against the current area CSV, candidate backlog and closed evidence.
+- Scope: 2 unresolved Level 1 leads in Huesca, after de-duplication against the current area CSV, candidate backlog and closed evidence.
 - Cutoff: published agricultural fair records and first-party pages available on 2026-09-03.
 - Source ceiling: fair records establish competition participation, category and holding origin; they do not by themselves prove full catalog admission or autonomous physical workshop.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Quesos de Guara | Bierge (Lasbellas) | `Lácteos y quesos` — Sierra de Guara artisan goat cheese | Traditional craft dairy in Lasbellas (Bierge, Parque Natural de la Sierra y Cañones de Guara) processing goat milk; finalist at Biescas Autumn Fair. | [Feria de Biescas](https://www.biescas.es) | <https://quesosdeguara.com/> | Confirm dedicated dairy workshop address in Bierge, milk source and commercial retail channels. |
 | Quesería Benabarre | Benabarre | `Lácteos y quesos` — Ribagorza artisan goat cheese | Family goat holding and farmstead dairy in Benabarre (La Ribagorza) crafting raw and pasteurized goat milk cheeses; regular exhibitor at Biescas. | [Feria de Biescas](https://www.biescas.es) | <https://quesosbenabarre.es/> | Verify on-farm dairy holding in Benabarre, flock size and active commercial lineup. |
 | Quesería Casa Mayor | Berdún | `Lácteos y quesos` — Jacetania artisan sheep cheese | Craft sheep cheese workshop located in Berdún (Canal de Berdún, Jacetania); regular participant in Pyrenean cheese fairs. | [Feria de Biescas](https://www.biescas.es) | — | Confirm dedicated dairy premises in Berdún, sanitary registration and current cheese range. |
 

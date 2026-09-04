@@ -27,7 +27,7 @@
 
 - Discovery source: <https://www.proveedores.com/alimentacion-y-bebidas/albacete>, a B2B supplier directory whose listings are written by the companies themselves.
 - Search date: 2026-09-02.
-- Scope: 69 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
+- Scope: 68 open Level 1 leads, after de-duplication against the current area CSV by official domain, name and municipality.
 - Cutoff: the directory listing as published on 2026-09-02. No first-party source, sanitary register or denomination council was consulted in this pass.
 - Source ceiling: this directory supports identity, contact and a location clue only. It does not establish producer activity, a current own offer, online sales or the productive municipality.
 
@@ -90,7 +90,6 @@
 | Minaya Legumbres y Cereales | Minaya | `Legumbres` | The directory states: “Empresa productora de legumbre centrada en la calidad” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm own cultivation on an identifiable holding rather than buying to resell. |
 | Turrones y Caramelos de Hellín | Hellín | `Dulces y repostería` | The directory states: “Siglo y medio elaborando golosinas en Hellín” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm the productive workshop and that it is currently active. |
 | Franfer | Albacete | `Helados` | The directory states: “Elaboración de helado, horchata, granizado y hielo” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Separate the own productive activity from the trading arm before placing the row. |
-| Bodegas Atalaya | Almansa | `Vino` | The directory states: “Bodega de Almansa creada en 2007 dentro de Gil Family Estates” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm this is an independently identifiable productive unit and not the row already published. |
 | Legumbres López Pelayo | Abengibre | `Legumbres` | The directory states: “Selección, almacenamiento y empaquetado de legumbre fina desde hace 40 años” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm the productive workshop and that it is currently active. |
 | Almendras Hellín | Hellín | `Frutos secos` | The directory states: “Proveedores de almendra con y sin cáscara” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | The listing declares trade: confirm an own productive step before treating it as a producer. |
 | Aquadeus | Robledo | `Bebidas sin alcohol` | The directory states: “Agua mineral con manantial en la Sierra de Alcaraz” | [Directory](https://www.proveedores.com/alimentacion-y-bebidas/albacete) |  | Confirm the productive workshop and that it is currently active. |

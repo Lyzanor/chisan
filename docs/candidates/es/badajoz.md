@@ -37,19 +37,6 @@ Review each linked lead through current first-party or authoritative material. T
 
 - Examined: 10 DOP index entries. Already-published matches: 7 (Primitivo Sánchez, Quesos Atalaya, Serena Pura / Parada Real, Covica / El Rabadamir–Oro Noble, Quesos Sánchez Hidalgo, Lácteos de Castuera / La Castuereña, and Quesería García Risco / El Genuino). Retained: 3. Tombstone matches, routed leads and discarded leads: 0.
 
-## FROMAGO Cheese Experience — 2026-09-03
-
-- Discovery source: FROMAGO Cheese Experience 2026 official exhibitor directory (<https://fromago.info/expositores/>).
-- Search date: 2026-09-03.
-- Scope: 1 unresolved Level 1 lead in Badajoz, after de-duplication against the current area CSV (El Señorío de Monesterio already cataloged), candidate backlog and closed evidence.
-- Cutoff: published exhibitor directories and first-party pages available on 2026-09-03.
-- Source ceiling: a fair exhibitor directory establishes participation, contact and product line; it does not by itself prove full catalog admission or autonomous physical workshop.
-
-| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
-|---|---|---|---|---|---|---|
-| Quesería Buena Vista | Ribera del Fresno | `Lácteos y quesos` — artisan goat and sheep cheese | Family-run cheese dairy in Ribera del Fresno (Tierra de Barros) crafting raw milk cheeses; confirmed exhibitor at Fromago 2026. | [Fromago 2026](https://fromago.info/expositores/) | <https://www.queseriabuenavista.com/es/> | Confirm dedicated dairy workshop address in Ribera del Fresno and current cheese lineup. |
-
-
 ## Feria Internacional Ganadera (FIG) de Zafra — 2026-09-03
 
 - Discovery source: Feria Internacional Ganadera (FIG) de Zafra (<https://fig.zafra.es>) official commercial exhibitor records.
