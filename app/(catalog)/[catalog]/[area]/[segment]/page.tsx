@@ -7,6 +7,8 @@ import { ArrowUpRightIcon, ClockIcon, EnvelopeSimpleIcon, FacebookLogoIcon, Glob
 import { ProducerContact } from "@/components/producer-contact";
 import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 
+import { ProducerProfileView } from "@/components/analytics/producer-profile-view";
+import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { GuideHighlights } from "@/components/guides/guide-highlights";
@@ -302,6 +304,7 @@ export default async function ProducerPage({
 
   return (
     <main className="detail-page">
+      {isProducerStatsEnabled() ? <ProducerProfileView country={country.slug} producerId={producer.producerId} /> : null}
       <script
         id="producer-structured-data"
         type="application/ld+json"
@@ -540,6 +543,7 @@ export default async function ProducerPage({
 
         <Suspense fallback={null}>
           <ProducerAccountActions
+            locale={locale}
             country={country.slug}
             producerId={producer.producerId}
             returnTo={buildProducerHref(producer, {

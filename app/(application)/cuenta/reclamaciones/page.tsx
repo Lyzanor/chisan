@@ -8,6 +8,8 @@ import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { findProducersByIds } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { producerClaims, producerMemberships } from "@/lib/db/schema";
+import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
+import { APPLICATION_DEFAULT_LOCALE } from "@/lib/i18n/locales";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
 
 const CLAIM_LABELS: Record<string, string> = {
@@ -91,6 +93,11 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                       >
                         Public profile
                       </Link>
+                      {membership.role === "owner" ? (
+                        <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/estadisticas`} className="account-button account-button--secondary">
+                          {getProducerStatsLabels(explicitLocale ?? APPLICATION_DEFAULT_LOCALE).link}
+                        </Link>
+                      ) : null}
                       <Link
                         href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`}
                         className="account-button"

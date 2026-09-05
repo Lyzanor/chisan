@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
+import { isProducerStatsFeatureEnabled } from "../lib/producer-stats/policy";
 import { isAccountFeatureEnabled } from "../lib/accounts/config";
 import {
   accountDatabaseStatusProblem,
@@ -26,14 +27,14 @@ async function main(): Promise<void> {
     );
   }
   loadEnvironmentFiles();
-  if (!isAccountFeatureEnabled()) {
-    process.stdout.write("Accounts are disabled; database migration assertion skipped.\n");
+  if (!isAccountFeatureEnabled() && !isProducerStatsFeatureEnabled()) {
+    process.stdout.write("Accounts and producer statistics are disabled; database migration assertion skipped.\n");
     return;
   }
 
   const runtimeConnectionString = process.env.DATABASE_URL?.trim();
   if (!runtimeConnectionString) {
-    throw new Error("DATABASE_URL is required when CHISAN_ACCOUNTS_ENABLED=true.");
+    throw new Error("DATABASE_URL is required when accounts or producer statistics are enabled.");
   }
 
   const client = postgres(runtimeConnectionString, {

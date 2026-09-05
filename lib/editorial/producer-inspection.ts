@@ -11,6 +11,7 @@ const REFERENCE_TABLES = [
   ["producer_change_executions", "country"],
   ["entitlements", "producer_country"],
   ["producer_profile_upgrade_requests", "country"],
+  ["producer_daily_stats", "country"],
 ] as const;
 
 /** Aggregate references only: no private notes, account identifiers or payment IDs. */

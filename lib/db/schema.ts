@@ -4,6 +4,7 @@ import {
   bigint,
   boolean,
   check,
+  date,
   foreignKey,
   index,
   integer,
@@ -21,6 +22,24 @@ import {
 
 const timestampWithTimezone = (name: string) =>
   timestamp(name, { mode: "date", withTimezone: true });
+
+// Private operational measurement, keyed by the immutable catalog identity.
+// Receipts identify a single page display; they never identify a visitor.
+export const producerDailyStats = pgTable("producer_daily_stats", {
+  country: varchar("country", { length: 2 }).notNull(),
+  producerId: bigint("producer_id", { mode: "number" }).notNull(),
+  day: date("day", { mode: "string" }).notNull(),
+  views: bigint("views", { mode: "number" }).notNull().default(0),
+}, (table) => [
+  primaryKey({ columns: [table.country, table.producerId, table.day] }),
+  check("producer_daily_stats_count_check", sql`${table.views} >= 0`),
+  check("producer_daily_stats_identity_check", sql`${table.country} ~ '^[a-z]{2}$' AND ${table.producerId} > 0`),
+]);
+
+export const producerStatsReceipts = pgTable("producer_stats_receipts", {
+  eventId: uuid("event_id").primaryKey(),
+  day: date("day", { mode: "string" }).notNull(),
+}, (table) => [index("producer_stats_receipts_day_idx").on(table.day)]);
 
 export const userProfileKind = pgEnum("user_profile_kind", ["user", "producer"]);
 export const userStatus = pgEnum("user_status", ["active", "suspended", "deleted"]);

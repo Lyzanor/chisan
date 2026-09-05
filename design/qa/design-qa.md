@@ -750,3 +750,36 @@ renderer behavior outside the guide integration was not changed.
   image/description card at both widths.
 - Evidence: [desktop](guides-map-card-desktop.png),
   [mobile](guides-map-card-mobile.png).
+
+## 2026-09-06 — Private producer visit statistics
+
+The premium owner's statistics use four aligned figures (all recorded visits,
+today, seven days and 30 days), a quiet moss bar chart and native disclosures for
+the daily table and counting rules. Mobile uses a two-column number grid. Counts
+are explicitly visits, including repeat openings, with no claim of unique people.
+Access links sit beside the existing producer management actions.
+
+Browser QA used the actual statistics and collector components in an isolated
+React Strict Mode fixture with the application styles and built Noto Sans fonts,
+using synthetic figures rather than a Production account. Checked 1440 × 1000
+and 390 × 844, Spanish populated state and Catalan empty state. Neither width
+had horizontal overflow; the daily disclosure exposed 30 rows plus its header.
+No component runtime errors occurred. The first fixture load's missing favicon
+and unhandled POST were fixture setup issues; subsequent runs used a local icon
+and intercepted the collector endpoint.
+
+The collector emitted one request on opening under Strict Mode, none on a plain
+re-render, a second on remount and a third on reload, all with different event
+IDs. A hidden document emitted nothing until visible and did not count repeated
+visibility notifications. Do Not Track emitted no request. Each body contained
+only country, producer ID and the per-display event ID. Isolated PGlite tests
+cover transport replay, concurrent increments, exact premium/owner checks,
+revocation/expiry, missing producers, UTC windows and private SQL grants.
+
+- [Desktop statistics](producer-statistics-desktop.png)
+- [Mobile statistics](producer-statistics-mobile.png)
+- [Catalan empty state](producer-statistics-empty-ca-mobile.png)
+
+Production migration, activation and an authenticated Production smoke check
+remain deployment work; these screenshots are not live traffic or production
+account evidence.

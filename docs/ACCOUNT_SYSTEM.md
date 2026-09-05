@@ -356,6 +356,22 @@ dispatching by `payment_provider`, not changing CSV, routes, review or the
 entitlement key. Stripe resources, events, activation and incident procedures
 live in `docs/STRIPE_RUNBOOK.md`.
 
+## Internal producer statistics
+
+An exact active owner with an active `producer.profile.premium` entitlement may
+read their producer's private visit totals at
+`/cuenta/productores/<country>/<producer_id>/estadisticas`. The aggregate query
+rechecks account status, ownership and the producer-scoped entitlement in one SQL
+statement. Editors, other owners, staff roles and user premium do not confer
+access. Revocation or expiry removes access without deleting historical totals.
+
+PostgreSQL owns these operational aggregates, keyed by `(country, producer_id)`;
+they are never catalog facts, CSV fields, public ranking signals or evidence.
+Collection covers published producer profiles independently of premium status.
+[Producer statistics](PRODUCER_STATISTICS.md) owns measurement, privacy,
+collection and extension semantics. Deployment follows
+[Operations](OPERATIONS.md#producer-statistics-activation).
+
 ## Producer profile changes
 
 An active producer member may propose the fields in
@@ -438,6 +454,8 @@ resolve them explicitly:
   be expired through an audited operation. An attached checkout, captured
   payment, refund, dispute or active entitlement must be resolved through the
   supported commercial workflow before the row retires;
+- inspect retained daily statistics and decide explicitly whether a true merge
+  combines those aggregates; the current retirement inventory reports their rows;
 - for a true merge, migrate favorites to the surviving key; never transfer an
   owner membership automatically unless the same-unit ownership has been
   reviewed for the target;

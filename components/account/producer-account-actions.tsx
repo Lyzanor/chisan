@@ -17,6 +17,8 @@ import {
   producerMemberships,
   producerProfileUpgradeRequests,
 } from "@/lib/db/schema";
+import type { Locale } from "@/lib/i18n/locales";
+import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
 import type { Messages } from "@/lib/i18n/messages";
 import { getStripeProfileUpgradeConfiguration } from "@/lib/payments/stripe-profile-upgrade-config";
 
@@ -25,6 +27,7 @@ type ProducerAccountActionsProps = {
   producerId: number;
   returnTo: string;
   messages: Messages["accountActions"];
+  locale: Locale;
 };
 
 export async function ProducerAccountActions({
@@ -32,11 +35,12 @@ export async function ProducerAccountActions({
   producerId,
   returnTo,
   messages,
+  locale,
 }: ProducerAccountActionsProps) {
   if (!isAccountSystemConfigured()) return null;
 
   try {
-    return await renderProducerAccountActions({ country, producerId, returnTo, messages });
+    return await renderProducerAccountActions({ country, producerId, returnTo, messages, locale });
   } catch (error) {
     // Account storage is deliberately optional for the public CSV catalog.
     // A provider or database incident must not make a producer page unavailable.
@@ -52,6 +56,7 @@ async function renderProducerAccountActions({
   producerId,
   returnTo,
   messages,
+  locale,
 }: ProducerAccountActionsProps) {
   const safeReturnTo = safeReturnPath(returnTo, "/");
   const database = getDatabase();
@@ -137,6 +142,11 @@ async function renderProducerAccountActions({
           <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>
             {messages.editMyProfile}
           </Link>
+          {membership.role === "owner" ? (
+            <Link href={`/cuenta/productores/${country}/${producerId}/estadisticas`}>
+              {getProducerStatsLabels(locale).link}
+            </Link>
+          ) : null}
           {canOfferProfileUpgrade ? (
             <Link href={`/cuenta/productores/${country}/${producerId}/ampliar`}>
               {messages.expandProfile}

@@ -320,6 +320,28 @@ revocation. Do not switch `DATABASE_URL` to a distinct SQL identity until a
 dedicated account-runtime role migration covers the full existing account DML;
 the narrow agent roles below are never a runtime substitute.
 
+## Producer statistics activation
+
+Apply the additive `0011_producer_statistics` migration and run the normal
+migration assertion before deploying the collector. It creates private daily
+view totals and temporary random event receipts. It grants no access to the
+producer-change SQL roles. Preserve the existing schema-owner runtime role.
+
+`CHISAN_PRODUCER_STATS_ENABLED=true` enables collection and reporting, and requires
+`DATABASE_URL`. It defaults off. Keep it off in Preview/Development unless the
+database and account configuration are isolated from Production. Before enabling
+Production, verify an anonymous profile opening, a second opening counted as a
+second visit, transport deduplication, signed-in team exclusion, and the premium
+owner's private totals. Confirm a non-owner and an expired premium owner cannot
+read totals, and a database outage leaves public profiles usable.
+
+Set the flag false to pause collection/reporting without altering retained data.
+There is no historical backfill. Existing Vercel Analytics figures are separate
+and are not imported. Random event receipts older than yesterday are pruned on
+collection and authorized reads; idle receipts remain until the next operation.
+Daily aggregate totals contain no visitor identities and are retained. See
+[Producer statistics](PRODUCER_STATISTICS.md) for the measurement contract.
+
 ## Neon access for producer-change agents
 
 Agent access is database authority, not an application environment variable.

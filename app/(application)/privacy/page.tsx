@@ -28,7 +28,7 @@ export default function PrivacyPage() {
       <article className={styles.article} aria-labelledby="privacy-title">
         <p className="catalog-kicker">{SITE_NAME}</p>
         <h1 id="privacy-title">Privacy and advertising</h1>
-        <p className={styles.updated}>Last updated: 30 August 2026</p>
+        <p className={styles.updated}>Last updated: 6 September 2026</p>
 
         <p>
           This notice explains the information Chisan and its service providers
@@ -61,6 +61,20 @@ export default function PrivacyPage() {
             Web Analytics privacy documentation
           </a>
           .
+        </p>
+
+        <p>
+          Chisan also records aggregate daily visits to public producer profiles
+          in its own database. A repeat opening counts as another visit; this
+          measurement does not identify unique people or store IP addresses,
+          browser identifiers, referrers or account IDs. It adds no cookies or
+          browser storage. A random identifier for each page opening prevents
+          duplicate delivery; receipts older than yesterday are removed on the
+          next collection or statistics read. Daily totals are retained for the
+          producer’s history. Only the verified producer owner with active premium
+          access can consult these figures. Signed-in producer team visits,
+          recognized automated traffic and preloads are excluded. The collector
+          honors Do Not Track and Global Privacy Control.
         </p>
 
         <h2>Accounts and contributions</h2>

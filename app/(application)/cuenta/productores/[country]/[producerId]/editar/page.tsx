@@ -44,6 +44,7 @@ import { getStripeProfileUpgradeConfiguration } from "@/lib/payments/stripe-prof
 import { loadProducerContent } from "@/lib/catalog/content";
 import { PRODUCER_CONTENT_LIMITS } from "@/lib/catalog/content-schema";
 import { hashProducerContent } from "@/lib/accounts/producer-content-change";
+import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
 import { getProducerEditorLabels } from "@/lib/i18n/producer-editor";
 import { isProfileQrEnabled } from "@/lib/profile-qr";
 
@@ -180,6 +181,11 @@ export default async function EditProducerPage({
   const publicHref = buildAccountProducerHref(producer, presentation.explicitLocale);
   const premiumActive = Boolean(premiumEntitlement);
   const producerQrEnabled = isProfileQrEnabled(premiumEntitlement?.metadata);
+  const statisticsLink = owner ? (
+    <Link href={`/cuenta/productores/${country}/${producerId}/estadisticas`} className="account-button account-button--secondary">
+      {getProducerStatsLabels(presentation.locale).link}
+    </Link>
+  ) : null;
   const producerQrSettings =
     premiumActive && owner ? (
       <ProducerQrSettings
@@ -210,6 +216,7 @@ export default async function EditProducerPage({
             </Link>
           </div>
         </div>
+        {statisticsLink}
         {producerQrSettings}
       </div>
     );
@@ -230,6 +237,7 @@ export default async function EditProducerPage({
             {labels.publicProfile}
           </Link>
         </div>
+        {statisticsLink}
         {producerQrSettings}
       </div>
     );
@@ -337,9 +345,12 @@ export default async function EditProducerPage({
             {producer.city} · {producer.country.toUpperCase()} / {producer.area}
           </p>
         </div>
-        <Link href={publicHref} className="account-button account-button--secondary">
-          {labels.publicProfile}
-        </Link>
+        <div className="account-inline-actions">
+          {statisticsLink}
+          <Link href={publicHref} className="account-button account-button--secondary">
+            {labels.publicProfile}
+          </Link>
+        </div>
       </header>
 
       <div className="account-callout">
