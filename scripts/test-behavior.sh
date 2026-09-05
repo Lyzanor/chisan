@@ -333,9 +333,11 @@ assert_html_lang "/es" "es" "$HTML_ES"
 if [[
   "$HTML_ES" != *"Elige una provincia"* ||
   "$HTML_ES" != *"Barcelona"* ||
-  "$HTML_ES" != *"Abrir zona"*
+  "$HTML_ES" != *'href="/es/barcelona"'* ||
+  "$HTML_ES" == *"Abrir zona"* ||
+  "$HTML_ES" == *'class="area-selector-select"'*
 ]]; then
-  echo "Error: /es should list Spanish provinces in Spanish." >&2
+  echo "Error: /es should link directly to Spanish provinces without a redundant selector or submit step." >&2
   exit 1
 fi
 

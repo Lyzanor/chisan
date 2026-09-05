@@ -229,7 +229,7 @@ const CategoryProducerMarker = memo(function CategoryProducerMarker({
         onPreviewEnd: previewEnd,
       })}
     >
-      {interactive ? (
+      {markerInteraction === "popup" ? (
         <Tooltip
           className="producer-map-tooltip"
           direction="top"
@@ -364,16 +364,7 @@ const OverviewProducerMarker = memo(function OverviewProducerMarker({
             onPreview: preview,
             onPreviewEnd: previewEnd,
           })}
-        >
-          <Tooltip
-            className="producer-map-tooltip"
-            direction="top"
-            offset={[0, -8]}
-            opacity={0.98}
-          >
-            <ProducerTooltipContent point={point} />
-          </Tooltip>
-        </CircleMarker>
+        />
       ) : null}
     </Fragment>
   );
@@ -634,10 +625,10 @@ function BoundsAwareMarkers({
     if (!point) return;
 
     if (focusRequest.behavior === "preview") {
-      map.panInside([point.latitude, point.longitude], {
+      map.stop();
+      map.panTo([point.latitude, point.longitude], {
         animate: !motionIsReduced(),
         duration: 0.2,
-        padding: [48, 48],
       });
       return;
     }

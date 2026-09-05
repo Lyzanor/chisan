@@ -1,5 +1,5 @@
 /*
- * Chisan v0.3 foundations.
+ * Chisan v0.4 foundations.
  *
  * The --chisan-* properties are canonical. The final block maps them onto the
  * existing web surface; product-semantic state such as errors stays outside
@@ -34,17 +34,18 @@
   --chisan-space-32: 8rem;
 
   --chisan-radius-structural: 0;
-  --chisan-radius-control: 4px;
-  --chisan-radius-object: 8px;
+  --chisan-radius-control: 12px;
+  --chisan-radius-object: 16px;
+  --chisan-radius-panel: 24px;
   --chisan-line: 1px;
   --chisan-focus-ring: 2px;
-  --chisan-shadow-overlay: 0 16px 40px rgb(29 32 27 / 10%);
+  --chisan-shadow-overlay: 0 16px 48px rgb(29 32 27 / 12%);
   --chisan-motion-immediate: 140ms;
   --chisan-motion-component: 200ms;
-  --chisan-motion-page: 320ms;
+  --chisan-motion-page: 240ms;
   --chisan-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  /* Existing web visual names mapped to the v0.3 foundation. */
+  /* Existing web visual names mapped to the v0.4 foundation. */
   --page-bg: var(--chisan-color-rice-paper);
   --surface: var(--chisan-color-surface);
   --surface-muted: var(--chisan-color-surface-muted);

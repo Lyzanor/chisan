@@ -22,7 +22,6 @@ export function ProducerMapSelectionCard({
         ref={linkRef}
         className="producer-map-selection-card__link"
         href={producer.href}
-        prefetch={false}
       >
         <span className="producer-map-selection-card__media">
           <Image

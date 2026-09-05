@@ -4,13 +4,14 @@ The visual system: rules, tokens, brand assets, and the web mapping.
 This guide owns the visual system. Components consume its tokens while their
 product contracts own data, permissions and meaning.
 
-The active release is **v0.3 — The Passage**. Its philosophy is quiet
-precision: the producer, place and evidence lead; the interface connects them
-without flattening their differences.
+The active design is **v0.4 — Fluent discovery**. The producer, place and
+evidence lead, with a persistent navigation bar, clearer hierarchy, more spacious
+surfaces and brief motion that makes interactions easier to follow.
 
 ```
 foundations/tokens.css   colour, type, space, shape, motion tokens
 adapters/web.css         maps those tokens onto the web surface
+adapters/experience.css  shared navigation, discovery, profile and account polish
 brand/assets/            the two approved logo rasters
 references/              decision boards and inspiration (never imported)
 qa/design-qa.md          what was decided and rejected, per surface
@@ -22,6 +23,7 @@ qa/design-qa.md          what was decided and rejected, per surface
 
 ```
 app/globals.css  →  foundations/tokens.css  →  adapters/web.css
+                →  adapters/experience.css
 ```
 
 `tokens.css` is the only place brand colours, spacing and radii are declared. It
@@ -29,8 +31,9 @@ also publishes the older `--accent` / `--radius` names that `globals.css` still
 consumes, so `globals.css` cannot render without it. Semantic product colours,
 such as errors and verification states, remain with their product contract.
 
-`adapters/web.css` currently styles the header, footer, account and language
-menu, category chips, location onboarding, wordmark and map. Most remaining
+`adapters/web.css` styles the wordmark, map primitives and original web mapping.
+`adapters/experience.css` owns the v0.4 presentation of navigation, menu motion,
+landing pages, discovery, producer profiles and account surfaces. Most remaining
 catalog, profile, account and admin presentation is still `app/globals.css` (ordered imports from `app/styles/`) or
 a page-owned CSS module. Those files consume the mapped tokens and remain in
 scope for design work even though they live outside this folder.
@@ -99,12 +102,16 @@ under 12px. Reading column 58–64 characters.
   responsive dimensions may use other values when justified.
 - Shell up to 1440px, gutters 20–40px. Discovery is asymmetric 5/7 or 4/8; data
   tools use strict grids.
-- Radius: `0` structural, `4px` control, `8px` compact object.
+- Radius: `0` structural, `12px` control, `16px` compact object, `24px` large
+  surface. Large map and profile surfaces use the panel token; small screens
+  use the object token where space is limited.
 - `999px` is for filters and tags only — things you can toggle or remove. Never
   navigation, buttons, badges or links.
 - Border 1px `hairline`; selected 1px `moss`. Focus is a 2px `moss` `outline`
   with 2px offset, on every interactive element.
-- No shadow. Overlays alone may use `0 16px 40px rgb(29 32 27 / 10%)`.
+- Overlays alone may use the shared soft shadow. Navigation can use a lightly
+  translucent rice-paper background with blur; an opaque fill remains usable
+  when backdrop filtering is unavailable.
 - A card exists only when its content is one selectable, reusable object.
 
 ## Map
@@ -133,7 +140,11 @@ coordinates just to improve appearance.
   introducing another catalog source or changing the URL.
 - Hovering or focusing a list row previews the exact producer on the map and
   linked producer surface. A restrained `moss-pale` row treatment preserves
-  the connection; clicking remains the durable URL selection.
+  the connection. In area discovery, clicking or pressing Enter opens the
+  producer profile; pointer dwell (120 ms) or keyboard focus centers its map
+  preview without changing the URL. Marker activation remains the durable
+  URL selection. The large selected surface is the only map preview: synchronized
+  maps do not also show a producer tooltip.
 - On small area-discovery screens, the producer list is an always-visible,
   attached roster below the map. Profile producer selections may use an
   attached non-modal disclosure; its open state uses `moss-pale` and a `moss`
@@ -170,11 +181,12 @@ synchronized map and list, `popup` for a standalone browsing map, and `static`
 for contextual location. Controllers normally infer `select` from their
 selection callback; detail pages state `static` explicitly.
 
-On a multi-producer map, marker and list activation select and focus the same
-exact point, paint only that point above its neighbours, and expose the shared
-linked name-description-image surface. Pointer hover and keyboard focus may
-preview that same linked state without writing `highlight`; only activation
-creates durable URL selection.
+On a multi-producer map, marker activation selects and focuses its exact point,
+paints it above its neighbours and exposes the shared linked
+name-description-image surface. In area discovery, pointer hover and keyboard
+focus preview that same surface without writing `highlight`, and list links
+open the profile directly. Explicit account selection maps retain their
+selection controller and exact chosen membership.
 The `highlight` query records selection; Escape, outside activation and browser
 Back/Forward clear or restore it. Initial and nearby framing never imply
 selection. Items without coordinates remain ordinary profile links rather than
@@ -188,12 +200,21 @@ overview zooms. Fixed detail points are non-essential map context.
 
 ## Producer profile
 
-The breadcrumb provides the profile's catalog context; the page does not repeat
-it with a sticky Map / Categories / Information bar. Website, directions,
-telephone, Instagram, Facebook and public email use the same compact action
-treatment, with email labelled as a contact action rather than exposing the
-address as the primary call to action. Account and ownership actions sit after
-the location map and before related-category discovery.
+The breadcrumb provides the profile's catalog context. Reviewed opening hours
+are prominent in the hero, as source text, without an inferred open/closed
+status. The website has a dedicated link showing its public URL. Telephone and
+social links have identifiable icons and accessible names.
+
+Address, Google Maps directions and the opt-in distance calculation belong to
+the location map. When a public email exists, the adjacent contact composer
+prepares a message in the visitor's email application. It does not submit,
+store or send a message through Chisan, and states this before the action.
+
+Expanded profiles group reviewed products into responsive cards and keep
+gallery, links and producer stories in named sections. Empty sections are
+omitted; visibility continues to depend on the existing entitlement loader.
+Account and ownership actions remain after the location and factual details,
+before related discovery.
 
 ## Brand
 
@@ -223,9 +244,34 @@ empty alt text when its link already has an accessible name.
 
 ## Motion, voice, access
 
-Motion orients, it does not perform: 140ms feedback, 200ms components, 320ms
-map and page changes, easing `cubic-bezier(0.2, 0.8, 0.2, 1)`. Opacity and
-4–8px only. Honour `prefers-reduced-motion`.
+Motion orients: 140ms feedback, 200ms components, 240ms page arrival, easing
+`cubic-bezier(0.2, 0.8, 0.2, 1)`. Use opacity, short translations and small
+image emphasis. Honour `prefers-reduced-motion`, including changes made while
+the page is open. Never animate thousands of result rows or delay navigation.
+
+The account menu is a native disclosure with progressive open/close motion,
+an explicit chevron and bounded scrolling. Escape returns focus to the open
+menu's trigger; outside pointer or focus movement closes it. Closed menus never
+capture Escape from another control. The account tabs mark the current page.
+
+Page arrival does not remount its children or intercept browser navigation.
+`NavigationLink` retains Next.js Link semantics, prefetching and modified clicks;
+its pending indicator follows the actual router state. The historical
+`ViewTransitionLink` entry point delegates to it. Only the presented map card prefetches a producer profile; the large result
+roster and category filter links keep prefetch disabled. Province links open
+directly in the compact country overview, with no duplicate selector. The
+account menu's quick province switch navigates on selection, without a submit
+button. The search field expands into available desktop space on focus.
+
+The footer uses a single row on wide screens and a deliberate grid at narrower
+widths; it never relies on an orphaned link wrapping onto another row.
+Area filters and producer selection update the URL through Next.js-integrated
+browser history, using the already loaded area model. Back, Forward and shared
+URLs retain the same meaning without fetching the area on every interaction.
+The search index is derived once per model and language from the same public
+fields; typing does not repeatedly normalize every producer's prose. Deferred
+result updates keep the input responsive, memoized rows avoid rerendering the
+whole roster on hover, and cancelled pointer previews do not queue map movement.
 
 Photography is documentary — real production, people and places in available
 light. Nothing staged, nothing implying an unsupported fact.

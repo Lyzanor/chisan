@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
 import Link from "next/link";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
+import { NavigationLink } from "@/components/navigation-link";
 
 import { LocationOnboarding } from "@/components/location-onboarding";
 import {
@@ -78,7 +80,7 @@ function ProjectSummary({
     : messages.home.chooseCountry;
 
   return (
-    <main className="catalog-start-page">
+    <main className="catalog-start-page catalog-start-page--home">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -95,21 +97,6 @@ function ProjectSummary({
             <h1 id="home-summary-title">{messages.siteHeader.tagline}</h1>
           </div>
         </div>
-        <div id="about" className="home-about">
-          <div>
-            <p className="catalog-kicker">{SITE_NAME}</p>
-          </div>
-          <div className="home-about__copy">
-            <p>{messages.home.aboutDescription}</p>
-            <p>{messages.home.aboutCatalogDescription}</p>
-            <p>
-              <Link className="back-link" href="/how-we-work">
-                {messages.siteFooter.aboutLink}
-              </Link>
-            </p>
-          </div>
-        </div>
-
         <section className="home-catalog" aria-labelledby="country-start-title">
           <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
             <div>
@@ -162,7 +149,7 @@ function ProjectSummary({
               );
 
               return (
-                <Link
+                <NavigationLink
                   key={country.slug}
                   href={buildCatalogHref({
                     scope: buildCatalogScope(country, destinationLocale),
@@ -176,11 +163,23 @@ function ProjectSummary({
                       regions: regionCount,
                     })}
                   </small>
-                </Link>
+                  <ArrowUpRightIcon className="country-card__arrow" size={28} aria-hidden="true" />
+                </NavigationLink>
               );
             })}
           </div>
         </section>
+        <div id="about" className="home-about">
+          <div className="home-about__copy">
+            <p>{messages.home.aboutDescription}</p>
+            <p>{messages.home.aboutCatalogDescription}</p>
+            <p>
+              <Link className="back-link" href="/how-we-work">
+                {messages.siteFooter.aboutLink}
+              </Link>
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   );
