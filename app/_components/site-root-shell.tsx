@@ -9,6 +9,8 @@ import type { ReactNode } from "react";
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
 import { ChisanAnalytics } from "@/components/analytics/chisan-analytics";
+import { CatalogAgentTools } from "@/components/agents/catalog-agent-tools";
+import { catalogToolDefinitions } from "@/lib/agents/catalog-schema";
 import { ChisanWordmark } from "@/components/brand/chisan-brand";
 import {
   type LanguageMenuConfig,
@@ -165,7 +167,12 @@ export function SiteRootShell({
 
   return (
     <html lang={htmlLang} className={notoSans.variable}>
+      <head>
+        <link rel="service-desc" href="/api/catalog/v1/openapi.json" type="application/vnd.oai.openapi+json" />
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
+      </head>
       <body>
+        <CatalogAgentTools tools={catalogToolDefinitions} />
         {accountAuthConfigured ? (
           <ClerkProvider
             signInUrl={ACCOUNT_ROUTES.signIn}

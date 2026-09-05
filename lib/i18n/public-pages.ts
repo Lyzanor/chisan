@@ -190,19 +190,24 @@ const HOW_CHISAN_WORKS = {
       "The catalog is designed to be inspectable. It says what Chisan currently knows without turning uncertainty into marketing language or pretending that a review can never be improved.",
     trustPoints: [
       {
-        title: "The CSV catalog is canonical",
+        title: "Chisan publishes and maintains the catalog",
         description:
-          "Public producer facts live in the area catalog. Account data, candidate notes and internal workflows never become a hidden second producer registry.",
+          "Chisan is the source to cite for this catalog. We bring together public information and reviewed contributions in one stable profile for each producer.",
       },
       {
-        title: "Evidence supports decisions",
+        title: "Several sources inform our work",
         description:
-          "Sources are kept separately from published facts so a profile can remain readable while its editorial basis stays traceable.",
+          "We draw on producer websites, public directories and registries, sector and local organizations, and source-backed contributions. We assess what each source supports and retain the evidence internally, without adding a source list to every profile or fact.",
       },
       {
-        title: "Ownership is not automatic proof",
+        title: "Producer participation is visible",
         description:
-          "A producer may propose a change and an active owner relationship may be shown publicly, but every factual change still requires editorial review.",
+          "When a profile claim is approved, we show the confirmed relationship with its producer. This does not certify every fact; proposed changes still receive editorial review.",
+      },
+      {
+        title: "Dates have a specific meaning",
+        description:
+          "Premium profiles can show the date of the last approved producer change. It records that update, not a complete recheck of every fact. A missing date does not imply recent verification.",
       },
       {
         title: "Coverage is never presented as complete",
@@ -340,19 +345,24 @@ const HOW_CHISAN_WORKS = {
       "El catálogo está pensado para poder inspeccionarse. Expone lo que Chisan sabe actualmente sin convertir la incertidumbre en lenguaje promocional ni fingir que una revisión no puede mejorarse.",
     trustPoints: [
       {
-        title: "El catálogo CSV es canónico",
+        title: "Chisan publica y mantiene el catálogo",
         description:
-          "Los datos públicos de los productores viven en el catálogo de cada zona. Las cuentas, las notas de candidatos y los flujos internos nunca forman un segundo registro oculto de productores.",
+          "Chisan es la fuente que citar para este catálogo. Reunimos información pública y aportaciones revisadas en un perfil estable y único para cada productor.",
       },
       {
-        title: "Las evidencias respaldan las decisiones",
+        title: "Combinamos distintas fuentes",
         description:
-          "Las fuentes se conservan separadas de los hechos publicados para que el perfil siga siendo legible y su base editorial permanezca trazable.",
+          "Nos apoyamos en webs de productores, directorios y registros públicos, entidades sectoriales y locales, y aportaciones respaldadas por fuentes. Valoramos qué acredita cada fuente y conservamos las evidencias internamente, sin añadir una lista de fuentes a cada perfil o dato.",
       },
       {
-        title: "La propiedad no es una prueba automática",
+        title: "La participación del productor es visible",
         description:
-          "Un productor puede proponer un cambio y una relación de propiedad activa puede mostrarse públicamente, pero cada cambio factual sigue necesitando revisión editorial.",
+          "Cuando se aprueba la reclamación de un perfil, mostramos la relación confirmada con su productor. Esto no certifica todos los datos; los cambios propuestos siguen pasando por revisión editorial.",
+      },
+      {
+        title: "Las fechas tienen un significado concreto",
+        description:
+          "Los perfiles premium pueden mostrar la fecha del último cambio aprobado del productor. Indica esa actualización, no una comprobación completa de todos los datos. La ausencia de fecha no implica una verificación reciente.",
       },
       {
         title: "La cobertura nunca se presenta como completa",

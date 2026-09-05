@@ -172,7 +172,7 @@ async function main() {
   if (
     publicRules.length !== 1 ||
     publicRule?.userAgent !== "*" ||
-    publicRule?.allow !== "/" ||
+    JSON.stringify(publicRule?.allow) !== JSON.stringify(["/", "/api/catalog/v1/", "/api/catalog/v1$"]) ||
     expectedPrivatePaths.some((path) => !disallowed.includes(path)) ||
     JSON.stringify(advertisedSitemaps) !== JSON.stringify(expectedSitemapUrls) ||
     publicProduction.host !== "https://chisan.app"
@@ -275,7 +275,8 @@ if [[
   "$HTML_PURPOSE" != *'Who can be part of Chisan'* ||
   "$HTML_PURPOSE" != *'What does not prove production'* ||
   "$HTML_PURPOSE" != *'Review, correction and removal'* ||
-  "$HTML_PURPOSE" != *'The CSV catalog is canonical'* ||
+  "$HTML_PURPOSE" != *'Chisan publishes and maintains the catalog'* ||
+  "$HTML_PURPOSE" != *'Dates have a specific meaning'* ||
   "$HTML_PURPOSE" != *'Public discovery remains open'* ||
   "$HTML_PURPOSE" != *'"@type":"AboutPage"'*
 ]]; then
@@ -308,7 +309,9 @@ if [[
   "$LLMS_TEXT" != *'# Chisan'* ||
   "$LLMS_TEXT" != *'## When to use Chisan'* ||
   "$LLMS_TEXT" != *'https://chisan.app/how-we-work'* ||
-  "$LLMS_TEXT" != *'does not currently expose a public producer-catalog API'*
+  "$LLMS_TEXT" != *'https://chisan.app/api/catalog/v1/openapi.json'* ||
+  "$LLMS_TEXT" != *'chisan_get_producer'* ||
+  "$LLMS_TEXT" != *'There is no remote MCP server endpoint in this version'*
 ]]; then
   echo "Error: /llms.txt should explain when agents should use Chisan and its technical limits." >&2
   exit 1

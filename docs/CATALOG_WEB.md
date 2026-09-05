@@ -6,6 +6,13 @@ rights; `docs/PRODUCER_CONTENT.md` owns repeated content. All public views resol
 the same producer identity. The current public operating scope is Spain, as
 selected by country manifests; other countries remain available internally.
 
+Public agent reads use the same identity, publication and localization policy.
+[Agent access](AGENT_ACCESS.md) owns the versioned JSON API, generated OpenAPI,
+browser WebMCP tools, public projection and compatibility checks. Every producer
+profile advertises its ID-based JSON representation. Expanded content visibility
+is resolved by a shared loader for HTML and agent reads; new adapters cannot
+publish a broader catalog or turn ownership into factual certification.
+
 ## Progressive localization
 
 A canonical correction can be published before its translations are ready.

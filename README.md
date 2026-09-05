@@ -50,6 +50,7 @@ Moving or translating a page does not change its account or content identity.
 | Producer registry and base facts | `data/csv/`, `lib/catalog/producer-schema.ts`, `lib/catalog/producers.ts` | [CSV contract](docs/CSV_CONTRACT.md) |
 | Countries, labels and publication | `country.json`, `lib/catalog/registry.ts` | [Catalog web](docs/CATALOG_WEB.md) |
 | Localized producer prose | `lib/catalog/localization.ts`, `lib/i18n/` | [Catalog web](docs/CATALOG_WEB.md) |
+| Public agent discovery | `lib/agents/`, `/api/catalog/v1`, `/llms.txt` | [Agent access and WebMCP](docs/AGENT_ACCESS.md) |
 | Products, gallery and links | `data/content/`, `lib/catalog/content-schema.ts` | [Producer content](docs/PRODUCER_CONTENT.md) |
 | Editorial decisions and sources | `docs/candidates/`, `data/evidence/`, `lib/editorial/` | [Editorial](docs/EDITORIAL.md), [evidence](docs/EVIDENCE_CONTRACT.md) |
 | Accounts and contributions | `lib/accounts/`, `app/(application)/cuenta/actions/` | [Account system](docs/ACCOUNT_SYSTEM.md) |

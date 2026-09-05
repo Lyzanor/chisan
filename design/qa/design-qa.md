@@ -4,6 +4,30 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-05 — Public agent access without a new visual control
+
+final result: passed
+
+Reviewed the existing Granja La Pasiega profile at 1440 × 1000 and 390 × 844.
+The page retains its profile, map and contact presentation with no horizontal
+overflow; the agent adapter renders no widget or additional interaction target.
+Browsers without WebMCP retain the same public page and JSON discovery links.
+The updated How we work trust section also fits both widths: Chisan is the
+public catalog source, supporting sources are explained globally, and ownership
+confirmation stays distinct from the premium last-approved-change date.
+
+Chrome 152 with `--enable-features=WebMCP` registered all three native tools.
+Coverage, a Barcelona cheese search and an ID-based detail lookup completed
+against the local production build. The detail kept the search result's exact
+identity. On a same-document navigation from how-we-work to contact, the tools
+went from three to zero. The only browser console error was the existing local
+404 for Vercel Analytics, which is not served by `next start`.
+
+Kept the integration independent of layout and account DOM. Visibility checks
+are shared by HTML and the API; lifecycle, cancellation and disclosure boundaries
+are covered by `scripts/test-webmcp.ts`, `scripts/test-public-expanded.ts` and
+`scripts/test-catalog-agents.ts`. The full `pnpm verify:ai` gate passed.
+
 ## 2026-09-03 — Catalog microinteractions and feedback states
 
 final result: passed

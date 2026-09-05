@@ -26,7 +26,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      allow: ["/", "/api/catalog/v1/", "/api/catalog/v1$"],
       disallow: PRIVATE_PATHS,
     },
     sitemap: sitemapUrls,
