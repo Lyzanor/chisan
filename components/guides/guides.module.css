@@ -264,6 +264,7 @@
   text-align: left;
 }
 .map {
+  position: relative;
   height: 420px;
   overflow: hidden;
   border-radius: var(--chisan-radius-panel);

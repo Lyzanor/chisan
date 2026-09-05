@@ -168,6 +168,7 @@ components/map/producer-map-selection-card.tsx   linked selected surface
 components/map/use-dismissible-producer-map-selection.ts  outside/Escape dismissal
 components/area-explorer.tsx                     area filters and URL state
 components/producer-selection-explorer.tsx       explicit selection and URL state
+components/guides/guide-map.tsx                  progressive editorial selections
 ```
 
 Every marker crosses the public boundary with one opaque key. Area maps use the
@@ -189,8 +190,9 @@ open the profile directly. Explicit account selection maps retain their
 selection controller and exact chosen membership.
 The `highlight` query records selection; Escape, outside activation and browser
 Back/Forward clear or restore it. Initial and nearby framing never imply
-selection. Items without coordinates remain ordinary profile links rather than
-pretending to select a missing point.
+selection. Embedded guide maps keep this state local to each widget and use the
+same linked card, point focus and dismissal controller. Items without coordinates
+remain ordinary profile links rather than pretending to select a missing point.
 
 A producer-detail map renders its sole producer in fixed selected state and
 keeps that contextual point non-interactive. It does not repeat the selected

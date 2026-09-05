@@ -734,3 +734,19 @@ The development shell still reports the existing WebMCP/Zod server-to-client
 serialization warnings; the screenshots show its development issue badge.
 No guide-specific rendering or map error was observed. Account, contact and map
 renderer behavior outside the guide integration was not changed.
+
+
+## 2026-09-06 — Guide map selection cards
+
+- Guide markers now use the shared area-map selection card, canonical image and
+  description, point focus request and outside/Escape dismissal. Selection remains
+  local to each progressive widget; its reviewed membership is unchanged.
+- Reused the shared overlay positioning rule outside the catalog page wrapper;
+  guide frames retain their 420px desktop and 340px mobile heights.
+- Browser QA at 1440 × 1000 and 390 × 844: three cheese-guide markers, image and
+  description visible, no legacy Leaflet popup or horizontal overflow, Escape
+  returns focus to the map, outside activation clears selection, and the card
+  opens the canonical Rey Silo profile. The Asturias area map retains the same
+  image/description card at both widths.
+- Evidence: [desktop](guides-map-card-desktop.png),
+  [mobile](guides-map-card-mobile.png).

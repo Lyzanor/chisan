@@ -619,7 +619,7 @@
   flex-direction: column;
 }
 
-.catalog-page .producer-map-selection-surface {
+.producer-map-selection-surface {
   position: absolute;
   right: 1rem;
   bottom: 1rem;

@@ -58,7 +58,10 @@ The initial presentation uses typography and article context. Documentary
 photography can be added with an explicit article image and provenance. Maps load
 on request through the shared producer-map renderer and contain exactly the selected
 producers with published coordinates. Unmapped producers keep their article entry
-and profile link. Neither map position nor payment determines membership.
+and profile link. Marker activation uses the shared name-description-image card,
+point focus and outside/Escape dismissal used by area maps. Selection stays local
+to each embedded map, so several article maps do not overwrite one another.
+Neither map position nor payment determines membership.
 
 The homepage and footer expose the section. Producer profiles derive their
 “Aparece en estas guías” links from article identity references. There is no
