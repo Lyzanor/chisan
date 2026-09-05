@@ -14,6 +14,20 @@
         "region": "aragon"
       }
     ],
+    "almenar": [
+      {
+        "lat": 41.7975,
+        "lon": 0.5686,
+        "label": "Almenar (Segrià, Lleida)",
+        "region": "catalunya"
+      },
+      {
+        "lat": 41.68222,
+        "lon": -2.19972,
+        "label": "Almenar de Soria",
+        "region": "castilla-y-leon"
+      }
+    ],
     "antigua": [
       {
         "lat": 28.4196,
