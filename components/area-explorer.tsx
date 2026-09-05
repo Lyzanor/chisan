@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { CatalogRadiusFilter } from "@/components/catalog-radius-filter";
+import { isWithinRadius, type RadiusFilter } from "@/lib/location/radius-search";
 import { useSearchParams } from "next/navigation";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import {
@@ -288,6 +290,7 @@ function AreaExplorerView({
   selectedSlug: string;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [radiusFilter, setRadiusFilter] = useState<RadiusFilter | null>(null);
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const previewTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [previewedSlug, setPreviewedSlug] = useState("");
@@ -336,12 +339,11 @@ function AreaExplorerView({
     [model.producers, normalizedCategory],
   );
   const items = useMemo(() => {
-    if (!normalizedSearchQuery) return categoryItems;
-
     return categoryItems.filter((producer) =>
-      searchableProducers.get(producer.producerId)?.includes(normalizedSearchQuery),
+      (!radiusFilter || isWithinRadius(producer, radiusFilter)) &&
+      (!normalizedSearchQuery || searchableProducers.get(producer.producerId)?.includes(normalizedSearchQuery)),
     );
-  }, [categoryItems, searchableProducers, normalizedSearchQuery]);
+  }, [categoryItems, searchableProducers, normalizedSearchQuery, radiusFilter]);
   const selectedItem = useMemo(
     () =>
       selectedSlug
@@ -744,13 +746,26 @@ function AreaExplorerView({
             role="region"
             aria-label={model.catalogMessages.producers}
           >
-            <div className="catalog-viewer-head">
-              <h2>{model.catalogMessages.producers}</h2>
-              <p className="visually-hidden" aria-live="polite">
-                {screenReaderSummary}
-                {visibleItems[0] ? `: ${visibleItems[0].name}` : ""}
-              </p>
-            </div>
+            <CatalogRadiusFilter
+              heading={model.catalogMessages.producers}
+              locale={model.locale}
+              area={model.areaLabel}
+              value={radiusFilter}
+              count={items.length}
+              onChange={(filter) => {
+                cancelPendingPreview();
+                setPreviewedSlug("");
+                consumeNearbyMapFocus();
+                setMapFocusRequest(undefined);
+                listOrderLockedCategoryRef.current = null;
+                setPrioritizedProducerScope(null);
+                setRadiusFilter(filter);
+              }}
+            />
+            <p className="visually-hidden" aria-live="polite">
+              {screenReaderSummary}
+              {visibleItems[0] ? `: ${visibleItems[0].name}` : ""}
+            </p>
 
             {items.length === 0 ? (
               <p className="catalog-empty">
@@ -799,6 +814,7 @@ function AreaExplorerFromSearchParams({
 
   return (
     <AreaExplorerView
+      key={`${model.scope.country}/${model.area}/${model.locale}`}
       adSlot={adSlot}
       model={model}
       category={category}

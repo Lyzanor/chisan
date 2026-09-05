@@ -230,3 +230,22 @@ locale-aware approximate kilometre result, missing producer coordinates and
 permission, timeout or unavailable failures. Network, storage, analytics and
 account inspection must confirm that no raw coordinate crossed the client
 boundary.
+
+## Explicit catalog radius filter
+
+The area explorer offers an icon-triggered distance disclosure in the producer-list header. A visitor may
+request one device position using the existing normal-accuracy options, or enter
+latitude and longitude manually. It filters the loaded province, intersecting
+text and category filters, at an inclusive straight-line radius of 5, 10, 25,
+50, 100, 250 or 500 km. Missing or invalid producer coordinates never qualify.
+An empty result does not assert that no producers exist nearby.
+
+The active centre remains only in component memory while filtering. It is not
+sent to the API, analytics, URL, storage or accounts. Removing the filter or
+leaving the area discards it; category changes retain the explicit filter.
+Reloads and shared URLs do not restore it. Failed requests retain any prior
+active filter and show an error. Removal, manual replacement and unmount ignore
+late location callbacks. Neither automatic map framing nor device permission
+implicitly activates a distance filter. Exact producer points remain unchanged.
+The public API also supports explicit radius inputs under `AGENT_ACCESS.md`;
+that is a separate server-facing caller contract.

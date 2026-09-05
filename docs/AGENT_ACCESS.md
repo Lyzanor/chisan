@@ -50,7 +50,14 @@ profiles advertise their JSON counterpart via `rel=alternate`. The shared HTML
 head and API `Link` header advertise OpenAPI and `/llms.txt`.
 
 Search accepts country, region, area, municipality, category, online-sales state,
-query text and locale. Region/area require country; category tokens and area
+query text and locale. Optional `lat`, `lon` and `radius_km` must be supplied
+together. Latitude is −90 to 90, longitude −180 to 180 and radius is greater
+than zero through 500 km. The inclusive great-circle radius excludes missing
+coordinates and intersects every other filter, across published areas when no
+area is specified. It is approximate straight-line distance, not travel distance.
+Spatial results retain country/ID ordering and pagination; `next` preserves the
+centre and radius. API callers explicitly provide the centre; unlike the browser
+filter, these query coordinates are sent to the server. Region/area require country; category tokens and area
 languages come from discovery. Categories include additional categories. Text
 search matches every accent-insensitive term across the public name, municipality,
 categories, featured-product summary and current localized base description.
@@ -177,9 +184,9 @@ to a non-catalog application page removed the tools. See the
 3. **Remote MCP:** expose these same services through an official MCP SDK and
    Streamable HTTP for clients without a browser, with transport conformance,
    request budgets, observability and explicit public-read semantics.
-4. **Spatial discovery:** coordinate/radius or bounding-box queries over reviewed
-   producer locations, with clear distance semantics and explicit transient
-   user-provided location. No implicit device-position collection.
+4. **Spatial discovery:** radius queries are available; bounding-box queries
+   remain a possible increment. Preserve explicit location input and clear
+   straight-line distance semantics.
 5. **Synchronization and scale:** versioned exports, tombstones, change feeds,
    cache invalidation, quotas and indexed derived search when measured traffic
    warrants them. CSV/JSON publication remains the catalog authority.

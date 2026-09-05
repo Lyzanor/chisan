@@ -136,3 +136,18 @@ test("producer distance copy is localized for Spain and has a safe fallback", ()
   );
   assert.equal(getProducerDistanceMessages("zu").title, "Distance from me");
 });
+
+test("radius filtering includes its boundary and excludes missing or invalid points", async () => {
+  const { isWithinRadius } = await import("../lib/location/radius-search");
+  const centre = { latitude: 0, longitude: 0 };
+  const point = { latitude: 0, longitude: 1 };
+  const radiusKm = producerDistanceKm(centre, point);
+  assert.equal(isWithinRadius(point, { ...centre, radiusKm }), true);
+  assert.equal(isWithinRadius(point, { ...centre, radiusKm: radiusKm - 0.001 }), false);
+  for (const invalid of [{ latitude: null, longitude: 0 }, { latitude: 91, longitude: 0 }, { latitude: NaN, longitude: 0 }]) {
+    assert.equal(isWithinRadius(invalid, { ...centre, radiusKm: 25 }), false);
+  }
+  assert.equal(isWithinRadius(centre, { ...centre, radiusKm: 0 }), false);
+  assert.equal(isWithinRadius({ latitude: 0, longitude: -179.9 }, { latitude: 0, longitude: 179.9, radiusKm: 25 }), true);
+  assert.ok(Number.isFinite(producerDistanceKm({ latitude: 45, longitude: 0 }, { latitude: -45, longitude: 180 })));
+});

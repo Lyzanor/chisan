@@ -264,3 +264,36 @@ test("discovery policy keeps previews closed and allows only the public API on l
     else process.env.CHISAN_PUBLIC_DISCOVERY_ENABLED = previous.discovery;
   }
 });
+
+test("spatial queries validate the complete triple and decimal ranges", async () => {
+  for (const query of ["lat=0", "lon=0&radius_km=1", "lat=0&lon=0", "lat=91&lon=0&radius_km=1", "lat=0&lon=-181&radius_km=1", "lat=0&lon=0&radius_km=0", "lat=0&lon=0&radius_km=501", "lat=&lon=0&radius_km=1", "lat=NaN&lon=0&radius_km=1", "lat=0&lat=1&lon=0&radius_km=1"]) {
+    assert.equal((await search(request(`/producers?${query}`))).status, 400, query);
+  }
+  const empty = await search(request("/producers?lat=0&lon=-0.5&radius_km=.1"));
+  assert.equal(empty.status, 200);
+  assert.equal((await empty.json()).total, 0);
+});
+
+test("spatial results combine filters, respect distance and preserve pagination", async () => {
+  const { producerDistanceKm } = await import("../lib/location/nearby-producer-focus");
+  const query = "/producers?country=es&area=barcelona&lat=41.39&lon=2.17&radius_km=25&limit=1";
+  const response = await search(request(query));
+  assert.equal(response.status, 200);
+  const first = await response.json();
+  assert.ok(first.total > 1);
+  const secondResponse = await search(new Request(first.next));
+  assert.equal(secondResponse.status, 200);
+  const second = await secondResponse.json();
+  assert.equal(first.total, second.total);
+  assert.notEqual(first.producers[0].producer_id, second.producers[0].producer_id);
+  assert.equal(new URL(first.next).searchParams.get("radius_km"), "25");
+  for (const producer of [...first.producers, ...second.producers]) {
+    assert.equal(producer.area.slug, "barcelona");
+    assert.ok(producerDistanceKm({ latitude: 41.39, longitude: 2.17 }, producer.coordinates) <= 25);
+  }
+  const category = first.producers[0].categories[0].token;
+  const filtered = await search(request(`${query}&category=${encodeURIComponent(category)}`));
+  const filteredBody = await filtered.json();
+  assert.ok(filteredBody.total <= first.total);
+  assert.ok(filteredBody.producers.every((p: { categories: { token: string }[] }) => p.categories.some((c) => c.token === category)));
+});

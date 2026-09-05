@@ -136,6 +136,9 @@ coordinates just to improve appearance.
 - Marker activation highlights and reveals the matching producer row. When the
   selected producer falls outside the bounded base roster, append that one row
   without reordering the existing results, then scroll it into view.
+- The distance icon in the producer-list header opens a disclosure that filters the current province by an explicit browser
+  position or manual coordinates. It intersects text and category, uses kilometres
+  in a straight line, and keeps the centre out of URLs and persistent storage.
 - Searching filters producer name, locality, category and description without
   introducing another catalog source or changing the URL.
 - Hovering or focusing a list row previews the exact producer on the map and

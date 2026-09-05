@@ -1,4 +1,5 @@
 import "server-only";
+import { isWithinRadius } from "../location/radius-search";
 import { createHash } from "node:crypto";
 import type { z } from "zod";
 
@@ -298,6 +299,13 @@ async function publicIndex(locale?: Locale) {
 export async function searchPublicProducers(
   input: z.infer<typeof searchInputSchema>,
 ) {
+  const spatialValues = [input.lat, input.lon, input.radius_km];
+  if (spatialValues.some((value) => value !== undefined) && !spatialValues.every((value) => value !== undefined)) {
+    throw new CatalogRequestError(400, "invalid_query", "Supply lat, lon and radius_km together.");
+  }
+  const radius = input.lat !== undefined && input.lon !== undefined && input.radius_km !== undefined
+    ? { latitude: input.lat, longitude: input.lon, radiusKm: input.radius_km }
+    : null;
   const country = input.country ? findPublishedCountry(input.country) : null;
   if (input.country && !country)
     throw new CatalogRequestError(
@@ -363,6 +371,7 @@ export async function searchPublicProducers(
     );
   const results = index.entries.filter(
     ({ producer: p, search }) =>
+      (!radius || (p.coordinates !== null && isWithinRadius(p.coordinates, radius))) &&
       (!input.country || p.country === input.country) &&
       (!input.region || p.region.slug === input.region) &&
       (!input.area || p.area.slug === input.area) &&

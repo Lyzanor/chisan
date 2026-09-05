@@ -32,7 +32,7 @@ export function producerDistanceKm(
       Math.cos(endLatitude) *
       Math.sin(longitudeDelta / 2) ** 2;
 
-  return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(haversine));
+  return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(Math.min(1, Math.max(0, haversine))));
 }
 
 export function selectNearbyProducerKeys(

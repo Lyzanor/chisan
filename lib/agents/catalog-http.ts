@@ -7,6 +7,7 @@ import { CatalogRequestError } from "./public-catalog";
 export function readCatalogQuery(
   request: Request,
   numericKeys: readonly string[] = [],
+  decimalKeys: readonly string[] = [],
 ) {
   if (request.url.length > 4096)
     throw new CatalogRequestError(
@@ -29,7 +30,11 @@ export function readCatalogQuery(
         "invalid_query",
         "Repeated query parameters are not supported.",
       );
-    if (numericKeys.includes(key)) {
+    if (decimalKeys.includes(key)) {
+      if (!/^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(value) || !Number.isFinite(Number(value)))
+        throw new CatalogRequestError(400, "invalid_query", `${key} must be a finite decimal number.`);
+      values[key] = Number(value);
+    } else if (numericKeys.includes(key)) {
       if (!/^\d+$/.test(value))
         throw new CatalogRequestError(
           400,

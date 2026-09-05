@@ -783,3 +783,44 @@ revocation/expiry, missing producers, UTC windows and private SQL grants.
 Production migration, activation and an authenticated Production smoke check
 remain deployment work; these screenshots are not live traffic or production
 account evidence.
+
+## 2026-09-06 — Catalog radius search
+
+- Added a native distance disclosure below the area search toolbar. The current
+  province remains the explicit scope. Manual coordinates or an opt-in device
+  position combine with category and text; no visitor position enters a URL or
+  persistent storage. The map and roster consume the same filtered producer set.
+- Chromium against the local production build, Spanish at 1440×1000 and 390×844,
+  plus English at 390×844: no horizontal overflow; controls remain labelled and
+  at least 44px high. Screenshots: `output/playwright/radius-wide.png`,
+  `output/playwright/radius-mobile.png`, `output/playwright/radius-mobile-en.png`.
+- Barcelona centre 41.39, 2.17: 25 km returned 926 catalog matches; 5 km combined
+  with `queso` returned 6. These are QA observations, not maintained counts.
+  A 0,0 centre returned no rows; removal restored matching rows. Invalid latitude
+  was rejected. Browser geolocation was emulated for success, denial and a late
+  callback after cancellation; cancellation did not reactivate the filter.
+- TypeScript, lint, production build, design checks, API tests (including spatial
+  validation/pagination) and geography tests passed. `verify:ai` reached behavior
+  checks but its new dev server could not acquire the existing dev lock. Behavior
+  passed when rerun with `BASE_URL=http://localhost:3000`; remaining content,
+  agent and guide suites passed separately. Other preceding gate stages passed.
+- Browser console contained the expected local Vercel Analytics script 404 and
+  stylesheet preload warnings; no radius-filter runtime errors were observed.
+
+### Producer-list placement refinement
+
+The final control lives in the producer-list header, replacing the full-width
+search-toolbar disclosure above. An 18px sliders icon and small chevron use a
+44px button with an accessible distance label, expanded state and controlled
+panel. The active radius remains visible while collapsed. Escape closes the
+panel and restores trigger focus. Options expand within the list rather than
+covering the map.
+
+Verified on the local production build at 1440×1000 and 390×844: opening,
+manual-coordinate filtering, active-radius display, collapse and Escape; no
+horizontal overflow. Evidence: `output/playwright/radius-list-wide-open.png`,
+`output/playwright/radius-list-wide-closed.png`,
+`output/playwright/radius-list-mobile-open.png` and
+`output/playwright/radius-list-mobile-closed.png`.
+The final full gate passed with `BASE_URL=http://localhost:3000 pnpm verify:ai`,
+using the production server for behavior tests to preserve the other dev session.

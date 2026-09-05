@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { MAX_SEARCH_RADIUS_KM } from "../location/radius-search";
 
 import {
   contentLinkSchema,
@@ -56,6 +57,9 @@ export const searchInputSchema = z.strictObject({
     .describe(
       "All search terms must match public name, municipality, categories, featured-products text or localized base description. Does not search expanded content.",
     ),
+  lat: z.number().min(-90).max(90).optional().describe("Search centre latitude. Supply lat, lon and radius_km together."),
+  lon: z.number().min(-180).max(180).optional().describe("Search centre longitude. Supply lat, lon and radius_km together."),
+  radius_km: z.number().positive().max(MAX_SEARCH_RADIUS_KM).optional().describe("Inclusive approximate straight-line radius in kilometres (maximum 500). Requires lat and lon. Excludes unmapped producers; combines with all other filters. Results retain country/ID order."),
   online_sales: z.enum(ONLINE_SALES_VALUES).optional(),
   locale: locale
     .optional()
