@@ -22,33 +22,39 @@ export async function updatePublicProfileQrAction(
   const account = await requireCurrentAccount("/cuenta/perfil");
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
 
+  const enabled = formString(formData, "profileQrEnabled") === "yes";
+  if (enabled && formString(formData, "reviewed") !== "yes") {
+    redirectWithMessage(
+      "/cuenta/seleccion",
+      "error",
+      "Review your selection before activating its QR.",
+    );
+  }
   const result = await updateUserProfileQrPreference({
-    enabled: formString(formData, "profileQrEnabled") === "yes",
+    enabled,
     userId: account.id,
+    previewRevision: formString(formData, "previewRevision"),
   });
-  if (result === "profile_not_public") {
-    redirectWithMessage(
-      "/cuenta/perfil",
-      "error",
-      "Make the public profile visible before enabling its QR label.",
-    );
-  }
-  if (result !== "updated") {
-    redirectWithMessage(
-      "/cuenta/perfil",
-      "error",
-      "An active Premium profile is required to change the QR label.",
-    );
-  }
-
+  const errors = {
+    profile_not_public:
+      "Make the selection Unlisted or Public in profile settings before enabling its QR.",
+    selection_empty:
+      "Choose at least one published producer before enabling the Selection QR.",
+    preview_changed:
+      "Your selection has changed. Review the current preview before enabling its QR.",
+    not_entitled:
+      "An active Premium profile is required to change the Selection QR.",
+    not_authorized: "You cannot change this Selection QR.",
+  };
+  if (result !== "updated")
+    redirectWithMessage("/cuenta/seleccion", "error", errors[result]);
   revalidatePath("/cuenta/perfil");
+  revalidatePath("/cuenta/seleccion");
   if (account.publicHandle) revalidatePath(`/u/${account.publicHandle}`);
   redirectWithMessage(
-    "/cuenta/perfil",
+    "/cuenta/seleccion",
     "notice",
-    formString(formData, "profileQrEnabled") === "yes"
-      ? "Profile QR enabled."
-      : "Profile QR disabled.",
+    enabled ? "Selection QR enabled." : "Selection QR disabled.",
   );
 }
 

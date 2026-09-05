@@ -37,10 +37,10 @@ language variants therefore finds one existing account-domain record and cannot
 create locale duplicates.
 
 A public user profile may store one explicit base location as
-`(country, area, municipality)` for presentation and proximity grouping. This
+`(country, area, municipality)` as profile context. This
 voluntary profile setting is not device position and is never part of a
 favorite, claim, membership, change request or authorization key. Changing it
-only changes how that user's shared favorites are ordered and framed.
+does not add, group, order or frame the explicitly selected producers.
 
 A localized path may be carried only as validated same-site `returnTo`
 navigation state. It grants no authority and is not persisted as producer
@@ -109,7 +109,7 @@ producer entitlements.
 A non-private public profile may present and download a Chisan QR label for its
 stable `/u/<public_handle>` URL only while the account has the exact active
 user-scoped `user.profile.premium` entitlement and has explicitly enabled the
-label from `/cuenta/perfil`. The opt-in is `false` by default and is stored as
+label from the authenticated preview at `/cuenta/seleccion`. The opt-in is `false` by default and is stored as
 the presentation flag `profileQrEnabled` in that entitlement's metadata. An
 inactive entitlement fails closed and hides the label; a later entitlement
 starts disabled again. The QR and generated image are presentation of the
@@ -133,16 +133,39 @@ The public page is a read model over those keys, not a second persistence
 model. The account domain owns visibility and which favorites are shared; the
 shared renderer owns the list-and-map composition, current producer links,
 empty state and accessible marker labels. The list follows the area-map content
-pattern and includes the current catalog description. It separates favorites
-into the same base municipality, the rest of the same country and area, and all
-remaining areas, in that order. The map initially frames the nearest group that
-has valid coordinates while retaining every mapped favorite for exploration.
-It supports producers from multiple areas or countries. A producer without
-valid coordinates remains in the list and is omitted only from the map.
+pattern and includes the current catalog description. It preserves favorite
+creation order, newest first, with durable country/producer keys as tie-breakers.
+Neither profile location, visitor position, category nor map movement changes
+membership or order. The map initially frames every selected producer with valid
+coordinates, across all published areas; unmapped producers remain in the list.
+
+The owner may provide a selection title (160 characters) and description (600
+characters) in `/cuenta/perfil`. These optional plain-text fields belong to
+PostgreSQL `users`, are not producer facts, and fall back to the account display
+name/handle and neutral selection copy. They do not classify a business or
+certify a supply relationship, stock, endorsement or verification.
+
+`/cuenta/seleccion` requires the current active account and previews only that
+account's explicit selection, even while its public visibility is private. It
+uses the same catalog resolver and map/list renderer as `/u/<public_handle>`;
+private preview links and highlight state stay on the authenticated route.
+Activation requires a non-private handle, active account Premium, an explicit
+preview acknowledgement and at least one selected producer still published in
+the catalog. A server-generated revision covers the owner, handle, displayed
+context and resolved producer keys; the mutation rechecks it against current
+state, rejecting a stale preview. This revision grants no authority. Selection,
+profile and QR preference writes share the account lock; the QR mutation also
+locks the active account row and rechecks the entitlement inside the transaction.
+
+Existing enabled labels retain their opt-in. If the selection is later emptied,
+its printed URL remains valid and shows an honest empty state. Disabling the QR
+hides the downloadable label; making the profile private makes the public URL
+return 404. Neither action can erase an already printed label. A fresh activation
+requires a nonempty preview again. Changing the selection never requires a new QR.
 
 The Next.js page resolves account state and current CSV rows in a Server
 Component. A narrow selection explorer crosses into a Client Component with
-only plain serializable items, groups, marker coordinates and resolved public
+only plain serializable items, marker coordinates and resolved public
 links. Its `highlight` query is transient presentation state keyed by the exact
 `country:producer_id`; it is never written to PostgreSQL and an unknown key is
 ignored. The client explorer never receives or exposes the profile owner's
@@ -244,6 +267,9 @@ active and its `profileQrEnabled` metadata flag is `true`. Only the exact active
 owner may change that flag from the producer profile controls. The preference
 does not enter the CSV, does not change the producer route or identity, and an
 entitlement revocation hides the QR immediately without deleting catalog data.
+Both producer and selection labels encode only the stable same-origin canonical
+URL, without query parameters, tracking or a presentation locale. An already
+printed producer QR still opens the base profile after premium access ends.
 
 `docs/CATALOG_WEB.md` owns the public HTML, locale, canonical identity, indexing and
 JSON-LD contract for both base and expanded profiles. The entitlement changes

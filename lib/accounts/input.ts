@@ -23,6 +23,8 @@ export const producerKeySchema = z.object({
 });
 
 export const publicProfileUpdateSchema = z.object({
+  selectionTitle: z.string().trim().max(160).default(""),
+  selectionDescription: z.string().trim().max(600).default(""),
   publicHandle: z.string().trim().max(80),
   visibility: z.enum(PUBLIC_PROFILE_VISIBILITIES),
   baseLocation: z

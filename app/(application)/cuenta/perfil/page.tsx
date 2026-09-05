@@ -13,11 +13,8 @@ import {
   type AccountMessageParams,
 } from "@/components/account/account-message";
 import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
-import { ProfileQrLabel } from "@/components/profile-qr-label";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
-import {
-  getActiveUserProfilePremiumEntitlement,
-} from "@/lib/accounts/profile-qr-entitlements";
+import { getActiveUserProfilePremiumEntitlement } from "@/lib/accounts/profile-qr-entitlements";
 import { publicProfileBaseLocationKey } from "@/lib/accounts/public-profile-location";
 import {
   getLocalizedCatalogLabel,
@@ -60,7 +57,8 @@ export default async function AccountProfilePage({
     publicProfilePremiumEntitlement?.metadata,
   );
   const publicProfileVisible =
-    Boolean(account.publicHandle) && account.publicProfileVisibility !== "private";
+    Boolean(account.publicHandle) &&
+    account.publicProfileVisibility !== "private";
 
   const publishedCountries = listPublishedCountries();
   const locationAreas = listEnabledLocationAreas({
@@ -90,18 +88,21 @@ export default async function AccountProfilePage({
           <div>
             <h2 id="account-profile-title">Profile</h2>
             <p>
-              This information belongs to your {SITE_NAME} account. Sign-in email, password and
-              authentication factors are managed securely through Clerk.
+              This information belongs to your {SITE_NAME} account. Sign-in
+              email, password and authentication factors are managed securely
+              through Clerk.
             </p>
           </div>
         </header>
         <div className="account-callout">
           <strong>
-            Profile type: {account.profileKind === "producer" ? "Producer" : "User"}
+            Profile type:{" "}
+            {account.profileKind === "producer" ? "Producer" : "User"}
           </strong>
           <p>
-            Every account starts as User. Submitting a producer ownership claim changes this
-            automatically to Producer; profile type is not a selectable setting.
+            Every account starts as User. Submitting a producer ownership claim
+            changes this automatically to Producer; profile type is not a
+            selectable setting.
           </p>
         </div>
         <form action={updateAccountProfileAction} className="account-form">
@@ -126,10 +127,10 @@ export default async function AccountProfilePage({
           <div>
             <h2 id="saved-area-title">Saved catalog area</h2>
             <p>
-              {SITE_NAME} can remember one catalog area in this browser so the home
-              page opens it directly. The preference belongs to this browser only:
-              it is never stored with your account, and your device position is
-              never sent to {SITE_NAME}.
+              {SITE_NAME} can remember one catalog area in this browser so the
+              home page opens it directly. The preference belongs to this
+              browser only: it is never stored with your account, and your
+              device position is never sent to {SITE_NAME}.
             </p>
           </div>
         </header>
@@ -147,10 +148,11 @@ export default async function AccountProfilePage({
       <section aria-labelledby="public-profile-title">
         <header className="account-section-heading">
           <div>
-            <h2 id="public-profile-title">Public producer map</h2>
+            <h2 id="public-profile-title">Public producer selection</h2>
             <p>
-              Publish a shareable page containing only the favorites you explicitly choose.
-              Producer facts and links continue to come from the current CSV catalog.
+              Publish a shareable page containing only the favorites you
+              explicitly choose. Give your selection a name and context for your
+              shop, event or personal choices.
             </p>
           </div>
           {publicProfileVisible && account.publicHandle ? (
@@ -158,11 +160,33 @@ export default async function AccountProfilePage({
               href={`/u/${account.publicHandle}`}
               className="account-button account-button--secondary"
             >
-              Open public profile
+              Open public selection
             </Link>
           ) : null}
         </header>
         <form action={updatePublicProfileAction} className="account-form">
+          <label className="account-field">
+            <span>Selection title (optional)</span>
+            <input
+              name="selectionTitle"
+              maxLength={160}
+              defaultValue={account.selectionTitle ?? ""}
+              placeholder="Producers at our autumn market"
+            />
+          </label>
+          <label className="account-field">
+            <span>Selection description (optional)</span>
+            <textarea
+              name="selectionDescription"
+              maxLength={600}
+              rows={3}
+              defaultValue={account.selectionDescription ?? ""}
+            />
+            <small>
+              Explain your choice. This text appears publicly with the
+              selection.
+            </small>
+          </label>
           <label className="account-field">
             <span>Public handle</span>
             <input
@@ -177,7 +201,8 @@ export default async function AccountProfilePage({
               aria-describedby="public-handle-help"
             />
             <small id="public-handle-help">
-              Your permanent URL will be /u/handle. Use lowercase letters, numbers and hyphens.
+              Your permanent URL will be /u/handle. Use lowercase letters,
+              numbers and hyphens.
             </small>
           </label>
           <label className="account-field">
@@ -186,7 +211,8 @@ export default async function AccountProfilePage({
               name="baseLocation"
               required
               defaultValue={
-                account.publicProfileBaseCountry && account.publicProfileBaseArea
+                account.publicProfileBaseCountry &&
+                account.publicProfileBaseArea
                   ? publicProfileBaseLocationKey({
                       country: account.publicProfileBaseCountry,
                       area: account.publicProfileBaseArea,
@@ -212,8 +238,8 @@ export default async function AccountProfilePage({
               ))}
             </select>
             <small id="public-base-area-help">
-              This defines which shared producers belong to your area. It does not
-              change catalog identity or permissions.
+              Your profile location does not add, group or order the producers
+              in your selection.
             </small>
           </label>
           <label className="account-field">
@@ -230,7 +256,7 @@ export default async function AccountProfilePage({
             />
             <small id="public-base-municipality-help">
               Use a municipality that appears in the selected catalog area. Your
-              public map uses it to show nearby producers first.
+              selection always shows exactly the producers you choose.
             </small>
           </label>
           <label className="account-field">
@@ -244,58 +270,34 @@ export default async function AccountProfilePage({
               <option value="public">Public — eligible for indexing</option>
             </select>
             <small>
-              Favorites remain hidden until you enable them individually from your favorites page.
+              Favorites remain hidden until you enable them individually from
+              your favorites page.
             </small>
           </label>
           <button type="submit" className="account-button">
             Save public profile
           </button>
         </form>
-        {publicProfilePremiumEntitlement ? (
-          <div className="account-callout account-form-section--premium">
-            <strong>Premium QR label</strong>
-            <p>
-              The QR label is optional. It appears on your public profile only after you enable
-              it here, and only while Premium remains active.
-            </p>
+        <div className="account-callout">
+          <strong>Selection QR</strong>
+          <p>
+            Choose producers from your favorites, review the complete map and
+            activate your QR from the preview.
+          </p>
+          <Link href="/cuenta/seleccion" className="account-button">
+            Preview selection and QR
+          </Link>
+          {publicProfilePremiumEntitlement && profileQrEnabled ? (
             <form action={updatePublicProfileQrAction} className="account-form">
-              <label className="account-field">
-                <span>QR label</span>
-                <span>
-                  <input
-                    type="checkbox"
-                    name="profileQrEnabled"
-                    value="yes"
-                    defaultChecked={profileQrEnabled}
-                  />{" "}
-                  Show and enable the downloadable QR label
-                </span>
-                {!publicProfileVisible ? (
-                  <small>
-                    {profileQrEnabled
-                      ? "The private profile hides this label. You can disable the stored preference here."
-                      : "Make this profile Unlisted or Public and save it first."}
-                  </small>
-                ) : null}
-              </label>
               <button
                 type="submit"
-                className="account-button"
-                disabled={!publicProfileVisible && !profileQrEnabled}
+                className="account-button account-button--secondary"
               >
-                Save QR preference
+                Disable Selection QR
               </button>
             </form>
-          </div>
-        ) : null}
-        {profileQrEnabled && publicProfileVisible && account.publicHandle ? (
-          <ProfileQrLabel
-            kind="selection"
-            locale={ACCOUNT_LOCALE}
-            name={account.displayName || `@${account.publicHandle}`}
-            path={`/u/${account.publicHandle}`}
-          />
-        ) : null}
+          ) : null}
+        </div>
       </section>
     </div>
   );

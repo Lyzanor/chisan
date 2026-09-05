@@ -138,6 +138,10 @@ coordinates just to improve appearance.
   attached roster below the map. Profile producer selections may use an
   attached non-modal disclosure; its open state uses `moss-pale` and a `moss`
   edge, never a floating shadow.
+- Public selections and their private previews show exactly the chosen producers.
+  Fit the whole mapped set on opening and preserve one stable roster, including
+  unmapped profile links. Geography never groups or ranks a selection. Keep the
+  map above the optional QR disclosure; title and description provide context.
 - A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
   map points never preload producer imagery.
 
@@ -152,7 +156,7 @@ components/map/producers-map-inner.tsx           private Leaflet renderer
 components/map/producer-map-selection-card.tsx   linked selected surface
 components/map/use-dismissible-producer-map-selection.ts  outside/Escape dismissal
 components/area-explorer.tsx                     area filters and URL state
-components/producer-selection-explorer.tsx       profile groups and URL state
+components/producer-selection-explorer.tsx       explicit selection and URL state
 ```
 
 Every marker crosses the public boundary with one opaque key. Area maps use the

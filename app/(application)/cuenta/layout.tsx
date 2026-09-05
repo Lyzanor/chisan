@@ -51,6 +51,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
           <Link href="/cuenta">Overview</Link>
           <Link href="/cuenta/perfil">Profile</Link>
           <Link href="/cuenta/favoritos">Favorites</Link>
+          <Link href="/cuenta/seleccion">Selection QR</Link>
           <Link href="/cuenta/reclamaciones">Claims</Link>
           <Link href="/cuenta/cambios">Profile changes</Link>
           {staff ? <Link href="/admin">Review</Link> : null}

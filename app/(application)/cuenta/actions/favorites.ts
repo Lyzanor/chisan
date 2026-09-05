@@ -1,6 +1,6 @@
 "use server";
 
-import { and, eq } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 import { requireCurrentAccount } from "@/lib/accounts/auth";
@@ -49,6 +49,9 @@ export async function setFavoritePublicVisibilityAction(
   }
 
   const updated = await getDatabase().transaction(async (transaction) => {
+    await transaction.execute(
+      sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${account.id}`}))`,
+    );
     const rows = await transaction
       .update(favorites)
       .set({ showOnPublicProfile })
@@ -124,45 +127,51 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
     );
   }
 
-  const database = getDatabase();
-  const [existing] = await database
-    .select({ userId: favorites.userId })
-    .from(favorites)
-    .where(
-      and(
-        eq(favorites.userId, account.id),
-        eq(favorites.country, parsed.data.country),
-        eq(favorites.producerId, parsed.data.producerId),
-      ),
-    )
-    .limit(1);
-
-  if (existing) {
-    await database
-      .delete(favorites)
+  const removed = await getDatabase().transaction(async (database) => {
+    await database.execute(
+      sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${account.id}`}))`,
+    );
+    const [existing] = await database
+      .select({ userId: favorites.userId })
+      .from(favorites)
       .where(
         and(
           eq(favorites.userId, account.id),
           eq(favorites.country, parsed.data.country),
           eq(favorites.producerId, parsed.data.producerId),
         ),
-      );
-  } else {
-    await database
-      .insert(favorites)
-      .values({
-        userId: account.id,
-        country: parsed.data.country,
-        producerId: parsed.data.producerId,
-      })
-      .onConflictDoNothing();
-  }
+      )
+      .limit(1);
+
+    if (existing) {
+      await database
+        .delete(favorites)
+        .where(
+          and(
+            eq(favorites.userId, account.id),
+            eq(favorites.country, parsed.data.country),
+            eq(favorites.producerId, parsed.data.producerId),
+          ),
+        );
+    } else {
+      await database
+        .insert(favorites)
+        .values({
+          userId: account.id,
+          country: parsed.data.country,
+          producerId: parsed.data.producerId,
+        })
+        .onConflictDoNothing();
+    }
+
+    return Boolean(existing);
+  });
 
   revalidatePath(returnTo.split("?")[0] || "/");
   if (account.publicHandle) revalidatePath(`/u/${account.publicHandle}`);
   redirectWithMessage(
     returnTo,
     "notice",
-    existing ? "Removed from favorites." : "Added to favorites.",
+    removed ? "Removed from favorites." : "Added to favorites.",
   );
 }

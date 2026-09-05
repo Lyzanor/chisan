@@ -3,16 +3,16 @@ import {
   ProfileQrLabel,
   type ProfileQrLabelProps,
 } from "@/components/profile-qr-label";
-import type {
-  ProducerSelectionExplorerModel,
-  ProducerSelectionPageModel,
+import {
+  hasProducerSelectionCoordinates,
+  type ProducerSelectionExplorerModel,
+  type ProducerSelectionPageModel,
 } from "@/lib/producer-selections";
 
 export type ProducerSelectionPageMessages = {
   producerCount: (count: number) => string;
   mappedCount: (count: number) => string;
   producers: string;
-  emptyGroup: string;
   map: {
     loading: string;
     emptyCoordinates: string;
@@ -25,41 +25,35 @@ export function ProducerSelectionPage({
   selection,
   messages,
   profileQr,
+  embedded = false,
 }: {
   selection: ProducerSelectionPageModel;
   messages: ProducerSelectionPageMessages;
   profileQr?: ProfileQrLabelProps;
+  embedded?: boolean;
 }) {
   const mappedCount = selection.items.filter(
-    (item) =>
-      item.latitude !== null &&
-      item.longitude !== null &&
-      !(item.latitude === 0 && item.longitude === 0),
+    hasProducerSelectionCoordinates,
   ).length;
-  const countLabels = Object.fromEntries(
-    [...new Set([
+  const countLabels = {
+    [String(selection.items.length)]: messages.producerCount(
       selection.items.length,
-      ...selection.sections.map((section) => section.items.length),
-    ])].map((count) => [String(count), messages.producerCount(count)]),
-  );
+    ),
+  };
   const explorerSelection = {
     canonicalPath: selection.canonicalPath,
     items: selection.items,
-    sections: selection.sections.map(({ key, title, summary, items }) => ({
-      key,
-      title,
-      summary,
-      itemKeys: items.map((item) => item.key),
-    })),
     initialFocusKeys: selection.initialFocusKeys,
   } satisfies ProducerSelectionExplorerModel;
 
+  const Container = embedded ? "section" : "main";
+  const Heading = embedded ? "h2" : "h1";
   return (
-    <main className="catalog-page catalog-page--simple producer-selection-page">
+    <Container className="catalog-page catalog-page--simple producer-selection-page">
       <header className="catalog-simple-header">
         <div>
           <p className="catalog-kicker">{selection.eyebrow}</p>
-          <h1>{selection.title}</h1>
+          <Heading>{selection.title}</Heading>
           <p>{selection.description}</p>
         </div>
         {selection.items.length ? (
@@ -70,14 +64,11 @@ export function ProducerSelectionPage({
         ) : null}
       </header>
 
-      {profileQr ? <ProfileQrLabel {...profileQr} /> : null}
-
       {selection.items.length ? (
         <ProducerSelectionExplorer
           selection={explorerSelection}
           messages={{
             producers: messages.producers,
-            emptyGroup: messages.emptyGroup,
             countLabels,
             map: messages.map,
           }}
@@ -85,6 +76,7 @@ export function ProducerSelectionPage({
       ) : (
         <p className="catalog-empty">{selection.emptyMessage}</p>
       )}
-    </main>
+      {profileQr ? <ProfileQrLabel {...profileQr} /> : null}
+    </Container>
   );
 }

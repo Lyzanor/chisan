@@ -20,6 +20,7 @@ import { ProducerMapSelectionCard } from "@/components/map/producer-map-selectio
 import { useDismissibleProducerMapSelection } from "@/components/map/use-dismissible-producer-map-selection";
 import {
   buildProducerSelectionHighlightHref,
+  hasProducerSelectionCoordinates,
   resolveProducerSelectionItem,
   type ProducerMapMarker,
   type ProducerSelectionExplorerModel,
@@ -29,7 +30,6 @@ const PRODUCER_SELECTION_LIST_ID = "profile-producer-selection-list";
 
 export type ProducerSelectionExplorerMessages = {
   producers: string;
-  emptyGroup: string;
   countLabels: Record<string, string>;
   map: MapMessages & {
     producerMap: string;
@@ -72,8 +72,7 @@ function ProducerSelectionExplorerView({
   const markers = useMemo(
     () =>
       selection.items.flatMap((item): ProducerMapMarker[] => {
-        if (item.latitude === null || item.longitude === null) return [];
-        if (item.latitude === 0 && item.longitude === 0) return [];
+        if (!hasProducerSelectionCoordinates(item)) return [];
 
         return [
           {
@@ -93,10 +92,6 @@ function ProducerSelectionExplorerView({
   const mappedKeys = useMemo(
     () => new Set(markers.map(({ key }) => key)),
     [markers],
-  );
-  const itemsByKey = useMemo(
-    () => new Map(selection.items.map((item) => [item.key, item])),
-    [selection.items],
   );
   const selectedItem = useMemo(() => {
     const item = resolveProducerSelectionItem(selection.items, selectedKey);
@@ -173,7 +168,7 @@ function ProducerSelectionExplorerView({
   useEffect(() => {
     if (!isMobileListOpen) return;
 
-    function closeListFromOutside(event: PointerEvent) {
+    function closeListFromOutside(event: MouseEvent) {
       const target = event.target;
       if (!(target instanceof Node)) return;
       if (viewerRef.current?.contains(target)) return;
@@ -186,10 +181,12 @@ function ProducerSelectionExplorerView({
       listToggleRef.current?.focus();
     }
 
-    document.addEventListener("pointerdown", closeListFromOutside);
+    // Finish the outside activation before collapsing the roster: otherwise
+    // controls below it move away between pointerdown and click.
+    document.addEventListener("click", closeListFromOutside);
     document.addEventListener("keydown", closeListFromKeyboard);
     return () => {
-      document.removeEventListener("pointerdown", closeListFromOutside);
+      document.removeEventListener("click", closeListFromOutside);
       document.removeEventListener("keydown", closeListFromKeyboard);
     };
   }, [isMobileListOpen]);
@@ -254,93 +251,54 @@ function ProducerSelectionExplorerView({
             <p>{messages.countLabels[String(selection.items.length)]}</p>
           </div>
 
-          <div className="producer-selection-groups">
-            {selection.sections.map((section) => {
-              const sectionItems = section.itemKeys.flatMap((key) => {
-                const item = itemsByKey.get(key);
-                return item ? [item] : [];
-              });
+          <ul className="producer-compact-list">
+            {selection.items.map((item) => {
+              const isMapped = mappedKeys.has(item.key);
+              const href = isMapped
+                ? buildProducerSelectionHighlightHref(
+                    selection.canonicalPath,
+                    item.key,
+                  )
+                : item.href;
 
               return (
-                <section
-                  key={section.key}
-                  className="producer-selection-group"
-                  aria-labelledby={`producer-selection-${section.key}`}
-                >
-                  <header className="producer-selection-group__heading">
-                    <div>
-                      <h3 id={`producer-selection-${section.key}`}>
-                        {section.title}
-                      </h3>
-                      <p>{section.summary}</p>
-                    </div>
-                    <span>
-                      {messages.countLabels[String(sectionItems.length)]}
+                <li key={item.key}>
+                  <Link
+                    href={href}
+                    prefetch={false}
+                    scroll={isMapped ? false : undefined}
+                    onNavigate={
+                      isMapped
+                        ? (event) => {
+                            event.preventDefault();
+                            selectProducer(item.key, true);
+                          }
+                        : undefined
+                    }
+                    className="producer-compact-link"
+                    aria-current={
+                      selectedItem?.key === item.key ? true : undefined
+                    }
+                  >
+                    <span className="producer-compact-icon" aria-hidden="true">
+                      {item.icon}
                     </span>
-                  </header>
-                  {sectionItems.length ? (
-                    <ul className="producer-compact-list">
-                      {sectionItems.map((item) => {
-                        const isMapped = mappedKeys.has(item.key);
-                        const href = isMapped
-                          ? buildProducerSelectionHighlightHref(
-                              selection.canonicalPath,
-                              item.key,
-                            )
-                          : item.href;
-
-                        return (
-                          <li key={item.key}>
-                            <Link
-                              href={href}
-                              prefetch={false}
-                              scroll={isMapped ? false : undefined}
-                              onNavigate={
-                                isMapped
-                                  ? (event) => {
-                                      event.preventDefault();
-                                      selectProducer(item.key, true);
-                                    }
-                                  : undefined
-                              }
-                              className="producer-compact-link"
-                              aria-current={
-                                selectedItem?.key === item.key
-                                  ? true
-                                  : undefined
-                              }
-                            >
-                              <span
-                                className="producer-compact-icon"
-                                aria-hidden="true"
-                              >
-                                {item.icon}
-                              </span>
-                              <span>
-                                <strong>{item.name}</strong>
-                                {item.city ? (
-                                  <small className="producer-compact-location">
-                                    {item.city}
-                                  </small>
-                                ) : null}
-                                {item.description ? (
-                                  <small>{item.description}</small>
-                                ) : null}
-                              </span>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  ) : (
-                    <p className="producer-selection-group__empty">
-                      {messages.emptyGroup}
-                    </p>
-                  )}
-                </section>
+                    <span>
+                      <strong>{item.name}</strong>
+                      {item.city ? (
+                        <small className="producer-compact-location">
+                          {item.city}
+                        </small>
+                      ) : null}
+                      {item.description ? (
+                        <small>{item.description}</small>
+                      ) : null}
+                    </span>
+                  </Link>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </aside>
     </section>

@@ -5,7 +5,10 @@ import {
   setFavoritePublicVisibilityAction,
   toggleFavoriteAction,
 } from "@/app/(application)/cuenta/actions";
-import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
+import {
+  AccountMessage,
+  type AccountMessageParams,
+} from "@/components/account/account-message";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { findProducersByIds } from "@/lib/csv-catalog";
@@ -18,10 +21,13 @@ type FavoritesPageProps = {
   searchParams: Promise<AccountMessageParams>;
 };
 
-export default async function FavoritesPage({ searchParams }: FavoritesPageProps) {
+export default async function FavoritesPage({
+  searchParams,
+}: FavoritesPageProps) {
   const account = await requireCurrentAccount("/cuenta/favoritos");
   const publicProfileVisible =
-    Boolean(account.publicHandle) && account.publicProfileVisibility !== "private";
+    Boolean(account.publicHandle) &&
+    account.publicProfileVisibility !== "private";
   const database = getDatabase();
   const [saved, params, presentation] = await Promise.all([
     database
@@ -42,22 +48,31 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
       <header className="account-section-heading">
         <div>
           <h2>Favorite producers</h2>
-          <p>Favorites use each producer’s immutable catalog identity.</p>
+          <p>
+            Keep favorites privately, then add individual producers to your
+            public selection.
+          </p>
         </div>
         <div className="account-inline-actions">
+          <Link
+            href="/cuenta/seleccion"
+            className="account-button account-button--secondary"
+          >
+            Preview selection and QR
+          </Link>
           {publicProfileVisible && account.publicHandle ? (
             <Link
               href={`/u/${account.publicHandle}`}
               className="account-button account-button--secondary"
             >
-              Open public profile
+              Open public selection
             </Link>
           ) : (
             <Link
               href="/cuenta/perfil"
               className="account-button account-button--secondary"
             >
-              Set up public profile
+              Set up selection
             </Link>
           )}
           <Link href="/" className="account-button account-button--secondary">
@@ -75,7 +90,9 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
             return (
               <li key={`${favorite.country}:${favorite.producerId}`}>
                 <div>
-                  <strong>{producer?.name ?? "Producer no longer published"}</strong>
+                  <strong>
+                    {producer?.name ?? "Producer no longer published"}
+                  </strong>
                   <p>
                     {producer
                       ? `${producer.city} · ${formatProducerFieldValue(
@@ -98,7 +115,7 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
                     {favorite.showOnPublicProfile
                       ? publicProfileVisible
                         ? "Shown publicly"
-                        : "Selected for profile"
+                        : "Selected; page private"
                       : "Private"}
                   </span>
                   {producer ? (
@@ -113,9 +130,21 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
                     </Link>
                   ) : null}
                   <form action={setFavoritePublicVisibilityAction}>
-                    <input type="hidden" name="country" value={favorite.country} />
-                    <input type="hidden" name="producerId" value={favorite.producerId} />
-                    <input type="hidden" name="returnTo" value="/cuenta/favoritos" />
+                    <input
+                      type="hidden"
+                      name="country"
+                      value={favorite.country}
+                    />
+                    <input
+                      type="hidden"
+                      name="producerId"
+                      value={favorite.producerId}
+                    />
+                    <input
+                      type="hidden"
+                      name="returnTo"
+                      value="/cuenta/favoritos"
+                    />
                     <input
                       type="hidden"
                       name="show"
@@ -126,15 +155,30 @@ export default async function FavoritesPage({ searchParams }: FavoritesPageProps
                       className="account-button account-button--secondary"
                     >
                       {favorite.showOnPublicProfile
-                        ? "Remove from profile"
-                        : "Show on public profile"}
+                        ? "Remove from selection"
+                        : "Add to selection"}
                     </button>
                   </form>
                   <form action={toggleFavoriteAction}>
-                    <input type="hidden" name="country" value={favorite.country} />
-                    <input type="hidden" name="producerId" value={favorite.producerId} />
-                    <input type="hidden" name="returnTo" value="/cuenta/favoritos" />
-                    <button type="submit" className="account-button account-button--danger">
+                    <input
+                      type="hidden"
+                      name="country"
+                      value={favorite.country}
+                    />
+                    <input
+                      type="hidden"
+                      name="producerId"
+                      value={favorite.producerId}
+                    />
+                    <input
+                      type="hidden"
+                      name="returnTo"
+                      value="/cuenta/favoritos"
+                    />
+                    <button
+                      type="submit"
+                      className="account-button account-button--danger"
+                    >
                       Remove
                     </button>
                   </form>

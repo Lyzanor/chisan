@@ -19,6 +19,8 @@ import { favorites, users } from "@/lib/db/schema";
 export type PublicUserProfile = {
   id: string;
   displayName: string | null;
+  selectionTitle: string | null;
+  selectionDescription: string | null;
   publicHandle: string;
   profileQrEnabled: boolean;
   visibility: PublicProfileVisibility;
@@ -33,12 +35,15 @@ function canReadPublicProfiles(): boolean {
 export const findPublicUserProfile = cache(
   async (rawHandle: string): Promise<PublicUserProfile | null> => {
     const publicHandle = normalizePublicHandle(rawHandle);
-    if (!canReadPublicProfiles() || publicHandleProblem(publicHandle)) return null;
+    if (!canReadPublicProfiles() || publicHandleProblem(publicHandle))
+      return null;
 
     const [profile] = await getDatabase()
       .select({
         id: users.id,
         displayName: users.displayName,
+        selectionTitle: users.selectionTitle,
+        selectionDescription: users.selectionDescription,
         publicHandle: users.publicHandle,
         visibility: users.publicProfileVisibility,
         baseCountry: users.publicProfileBaseCountry,
@@ -68,6 +73,8 @@ export const findPublicUserProfile = cache(
     return {
       id: profile.id,
       displayName: profile.displayName,
+      selectionTitle: profile.selectionTitle,
+      selectionDescription: profile.selectionDescription,
       publicHandle: profile.publicHandle,
       profileQrEnabled: await isPublicUserProfileQrEnabled(profile.id),
       visibility: profile.visibility,
@@ -94,5 +101,9 @@ export async function listPublicProfileFavoriteIdentities(
         eq(favorites.showOnPublicProfile, true),
       ),
     )
-    .orderBy(desc(favorites.createdAt));
+    .orderBy(
+      desc(favorites.createdAt),
+      favorites.country,
+      favorites.producerId,
+    );
 }

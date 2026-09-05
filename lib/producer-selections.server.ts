@@ -9,6 +9,8 @@ import { getCategoryIcon, getCategoryLabel } from "@/lib/i18n/categories";
 import type { Locale } from "@/lib/i18n/locales";
 import {
   producerSelectionItemKey,
+  getProducerSelectionInitialFocusKeys,
+  type ProducerSelectionPageModel,
   type ProducerSelectionItem,
 } from "@/lib/producer-selections";
 
@@ -59,4 +61,33 @@ export function buildProducerSelectionItems(
       },
     ];
   });
+}
+
+export function buildAccountSelectionPage(
+  profile: {
+    publicHandle: string | null;
+    displayName: string | null;
+    selectionTitle: string | null;
+    selectionDescription: string | null;
+  },
+  items: ProducerSelectionItem[],
+  canonicalPath = `/u/${profile.publicHandle}`,
+): ProducerSelectionPageModel {
+  const owner =
+    profile.displayName ||
+    (profile.publicHandle ? `@${profile.publicHandle}` : "Chisan");
+  return {
+    kind: "account-selection",
+    canonicalPath,
+    eyebrow: profile.publicHandle
+      ? `Selection by @${profile.publicHandle}`
+      : "Producer selection",
+    title: profile.selectionTitle || owner,
+    description:
+      profile.selectionDescription ||
+      `A selection of producers chosen by ${owner}.`,
+    emptyMessage: "This selection has no producers at the moment.",
+    items,
+    initialFocusKeys: getProducerSelectionInitialFocusKeys(items),
+  };
 }

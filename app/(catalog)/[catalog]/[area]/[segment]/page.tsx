@@ -232,7 +232,10 @@ export default async function ProducerPage({
   const relatedAreaHref = buildCatalogHref({ scope, area });
   const actionLabels = getProducerActionLabels(locale);
   const distanceMessages = getProducerDistanceMessages(locale);
-  const profileQrPath = buildProducerHref(producer, { scope, area });
+  const profileQrPath = buildProducerHref(producer, {
+    scope: buildCatalogScope(country),
+    area,
+  });
   const mapMessages = {
     loading: messages.map.loading,
     emptyCoordinates: messages.map.emptyCoordinates,

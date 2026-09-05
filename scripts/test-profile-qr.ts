@@ -64,7 +64,10 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
     path.join(ROOT, "components/profile-qr-label.tsx"),
     "utf8",
   );
-  const styles = fs.readFileSync(path.join(ROOT, "app/styles/profile-tools.css"), "utf8");
+  const styles = fs.readFileSync(
+    path.join(ROOT, "app/styles/profile-tools.css"),
+    "utf8",
+  );
   const producerPage = fs.readFileSync(
     path.join(ROOT, "app/(catalog)/[catalog]/[area]/[segment]/page.tsx"),
     "utf8",
@@ -122,7 +125,7 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
   assert.match(publicProfiles, /isPublicUserProfileQrEnabled/);
   assert.match(accountProfilePage, /publicProfilePremiumEntitlement/);
   assert.match(accountProfilePage, /updatePublicProfileQrAction/);
-  assert.match(accountProfilePage, /defaultChecked=\{profileQrEnabled\}/);
+  assert.match(accountProfilePage, /cuenta\/seleccion/);
   assert.match(producerAccountPage, /premiumActive && owner/);
   assert.match(producerAccountPage, /updateProducerProfileQrAction/);
   assert.match(producerAccountPage, /defaultChecked=\{enabled\}/);

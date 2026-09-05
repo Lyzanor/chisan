@@ -70,7 +70,7 @@ function ProducerQrSettings({
 }) {
   return (
     <section className="account-callout account-form-section--premium">
-      <strong>Premium QR label</strong>
+      <strong>Producer QR</strong>
       <p>
         The producer QR is optional. It appears publicly only after the verified owner enables
         it here, and only while the expanded-profile entitlement remains active.
@@ -182,7 +182,7 @@ export default async function EditProducerPage({
         enabled={producerQrEnabled}
         locale={presentation.locale}
         name={producer.name}
-        path={publicHref}
+        path={buildAccountProducerHref(producer, null)}
         producerId={producerId}
       />
     ) : null;

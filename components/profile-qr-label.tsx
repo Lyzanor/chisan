@@ -124,6 +124,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
   const description = isProducer
     ? labels.producerDescription
     : labels.selectionDescription;
+  const scanLabel = isProducer ? labels.scan : labels.selectionDescription;
   const labelType = isProducer ? labels.producerLabel : labels.selectionLabel;
 
   useEffect(
@@ -250,7 +251,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       <summary>
         <ChisanMark alt="" className="profile-qr__mark" />
         <span>
-          <strong>{labels.title}</strong>
+          <strong>{isProducer ? labels.title : labels.selectionTitle}</strong>
           <small>{description}</small>
         </span>
         <span className="profile-qr__disclosure" aria-hidden="true">
@@ -260,7 +261,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       <div className="profile-qr__body">
         <div className="profile-qr__copy">
           <p className="profile-qr__eyebrow">{labelType}</p>
-          <h2>{labels.scan}</h2>
+          <h2>{scanLabel}</h2>
           <p>{description}</p>
           <div className="profile-qr__actions">
             <button type="button" onClick={handleDownload}>
@@ -306,7 +307,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
               marginSize={4}
               bgColor={LABEL_COLORS.surface}
               fgColor={LABEL_COLORS.ink}
-              title={`${labels.scan}: ${name}`}
+              title={`${scanLabel}: ${name}`}
               style={{ height: "auto", width: "100%" }}
             />
           </div>

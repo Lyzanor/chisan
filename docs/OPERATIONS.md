@@ -399,6 +399,17 @@ Protect the Neon Production branch before enabling Preview branching; otherwise
 child branches may copy Production role passwords. Every Preview worker still
 requires its own isolated branch and credentials.
 
+## Selection QR release
+
+Apply the additive `0009_selection_context` migration before deploying code that
+reads the optional `users.selection_title` and `users.selection_description`
+columns. Follow the account migration preflight and confirm `db:assert-current`;
+no handles, sharing flags, entitlements or producer facts are migrated.
+Use an isolated account environment to verify favorite selection, private preview,
+visibility, activation, download, producer navigation and sharing revocation.
+Existing printed `/u/<public_handle>` and producer URLs keep their destinations.
+Do not test these writes using Production credentials in Local or Preview.
+
 ## Production smoke check
 
 Use a real authorized account only where authentication is required. Do not
@@ -679,7 +690,6 @@ exact already-present state. The recovery login inherits read access but cannot
 execute the five normal operator functions, and the operator cannot execute
 recovery. Revoking producer access conflicts every unpublished request and
 cancels each live execution in the same producer-locked transaction.
-
 
 ## Producer retirement inspection
 

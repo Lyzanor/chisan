@@ -100,6 +100,8 @@ export const users = pgTable(
     status: userStatus("status").notNull().default("active"),
     displayName: varchar("display_name", { length: 160 }),
     publicHandle: varchar("public_handle", { length: 40 }),
+    selectionTitle: varchar("selection_title", { length: 160 }),
+    selectionDescription: varchar("selection_description", { length: 600 }),
     publicProfileVisibility: publicProfileVisibility("public_profile_visibility")
       .notNull()
       .default("private"),

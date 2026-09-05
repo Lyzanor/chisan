@@ -1,6 +1,6 @@
 "use server";
 
-import { and, eq, isNull, or } from "drizzle-orm";
+import { and, eq, isNull, or, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -116,11 +116,11 @@ export async function updateAccountProfileAction(
 function isPublicHandleConflict(error: unknown): boolean {
   return Boolean(
     error &&
-      typeof error === "object" &&
-      "code" in error &&
-      error.code === "23505" &&
-      "constraint_name" in error &&
-      error.constraint_name === "users_public_handle_uidx",
+    typeof error === "object" &&
+    "code" in error &&
+    error.code === "23505" &&
+    "constraint_name" in error &&
+    error.constraint_name === "users_public_handle_uidx",
   );
 }
 
@@ -133,6 +133,8 @@ export async function updatePublicProfileAction(
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
 
   const parsed = publicProfileUpdateSchema.safeParse({
+    selectionTitle: formString(formData, "selectionTitle"),
+    selectionDescription: formString(formData, "selectionDescription"),
     publicHandle: formString(formData, "publicHandle"),
     visibility: formString(formData, "visibility"),
     baseLocation: formString(formData, "baseLocation"),
@@ -219,6 +221,9 @@ export async function updatePublicProfileAction(
   const now = new Date();
   try {
     await getDatabase().transaction(async (transaction) => {
+      await transaction.execute(
+        sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${account.id}`}))`,
+      );
       const publicHandleGuard = account.publicHandle
         ? eq(users.publicHandle, account.publicHandle)
         : publicHandle
@@ -228,6 +233,8 @@ export async function updatePublicProfileAction(
         .update(users)
         .set({
           publicHandle,
+          selectionTitle: parsed.data.selectionTitle || null,
+          selectionDescription: parsed.data.selectionDescription || null,
           publicProfileVisibility: parsed.data.visibility,
           publicProfileBaseCountry: baseCountry.slug,
           publicProfileBaseArea: baseArea.slug,
@@ -246,6 +253,8 @@ export async function updatePublicProfileAction(
         targetId: account.id,
         metadata: {
           fields: [
+            "selectionTitle",
+            "selectionDescription",
             "publicHandle",
             "publicProfileVisibility",
             "publicProfileBaseCountry",

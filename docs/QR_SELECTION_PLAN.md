@@ -1,10 +1,11 @@
 # QR Profiles and Producer Selections
 
-Status: product plan; implementation deferred. Decision date: 2026-09-03.
+Status: first delivery implemented. Decision date: 2026-09-03; implemented
+2026-09-04. Production migration `0009` applied on 2026-09-05.
 
-`docs/ACCOUNT_SYSTEM.md` and `design/README.md` describe the shipped behavior.
-This plan guides the next iteration; it does not change routes, account state
-or entitlements. Related producer content is implemented independently under
+`docs/ACCOUNT_SYSTEM.md` and `design/README.md` own the implemented behavior.
+This document records the QR product scope. Account behavior is owned by
+`docs/ACCOUNT_SYSTEM.md`. Related producer content is implemented independently under
 `docs/PRODUCER_CONTENT.md`.
 
 ## Product intent
@@ -20,9 +21,9 @@ relationship, stock, sale, endorsement or producer verification. Favorites stay
 private unless the owner explicitly shares each producer. Publishing a profile
 never publishes all favorites automatically.
 
-## Next delivery
+## First delivery
 
-Make the current single public selection at `/u/<public_handle>` clearer:
+The current single public selection at `/u/<public_handle>` now provides:
 
 - Keep profile visibility, account entitlement, QR opt-in and per-favorite
   sharing decisions intact.
@@ -37,10 +38,18 @@ Make the current single public selection at `/u/<public_handle>` clearer:
 - Preserve the shared map behavior, language support, keyboard access, readable
   print layout and a scan destination without tracking parameters.
 
-Acceptance is an end-to-end journey: choose shared producers, preview, activate,
+Acceptance follows this journey: choose shared producers, preview, activate,
 download, scan, open their profiles and revoke sharing. Private/disabled states
 must remain private. Existing printed URLs must keep their documented behavior.
-Update the owning contracts and test this journey when implementing the phase.
+The account contract and design guide own these implemented rules.
+
+The owner chooses producers at `/cuenta/favoritos`, edits optional title and
+description at `/cuenta/perfil`, then reviews and activates the label at
+`/cuenta/seleccion`. Activation rejects empty or stale previews on the server.
+The additive `0009_selection_context` migration adds only the two optional
+account presentation fields; it leaves existing handles, favorites, entitlements
+and QR opt-ins intact. Production migration and deployment are separate release
+steps under `docs/OPERATIONS.md`.
 
 ## Options after that
 

@@ -3,9 +3,16 @@ import "server-only";
 import { and, eq, gt, isNull, lte, or, sql } from "drizzle-orm";
 
 import { activeProducerPremiumEntitlementCondition } from "@/lib/accounts/producer-premium-entitlements";
-import { getDatabase } from "@/lib/db";
+import {
+  findProducersByIds,
+  findPublishedCountry,
+  type ProducerIdentity,
+} from "@/lib/csv-catalog";
+import { selectionPreviewRevision } from "@/lib/accounts/selection-preview";
+import { getDatabase, type Database } from "@/lib/db";
 import {
   auditEvents,
+  favorites,
   entitlements,
   producerMemberships,
   users,
@@ -21,7 +28,9 @@ export type ProfileQrPreferenceUpdateResult =
   | "updated"
   | "not_entitled"
   | "not_authorized"
-  | "profile_not_public";
+  | "profile_not_public"
+  | "selection_empty"
+  | "preview_changed";
 
 export function activeUserProfilePremiumEntitlementCondition(
   userId: string,
@@ -47,7 +56,9 @@ export async function getActiveUserProfilePremiumEntitlement(userId: string) {
   return entitlement ?? null;
 }
 
-export async function isPublicUserProfileQrEnabled(userId: string): Promise<boolean> {
+export async function isPublicUserProfileQrEnabled(
+  userId: string,
+): Promise<boolean> {
   const entitlement = await getActiveUserProfilePremiumEntitlement(userId);
   return isProfileQrEnabled(entitlement?.metadata);
 }
@@ -74,62 +85,118 @@ function enabledMetadata(enabled: boolean) {
   )`;
 }
 
-export async function updateUserProfileQrPreference(input: {
+type UserQrPreferenceInput = {
   enabled: boolean;
   userId: string;
-}): Promise<ProfileQrPreferenceUpdateResult> {
-  return getDatabase().transaction(async (transaction) => {
-    await transaction.execute(
-      sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${input.userId}`}))`,
-    );
+  previewRevision?: string;
+};
 
-    const [profile] = await transaction
-      .select({
-        id: users.id,
-        visibility: users.publicProfileVisibility,
-      })
-      .from(users)
-      .where(
-        and(
-          eq(users.id, input.userId),
-          eq(users.status, "active"),
-          sql`${users.publicHandle} IS NOT NULL`,
-        ),
-      )
-      .limit(1);
-    if (
-      !profile ||
-      (input.enabled &&
-        profile.visibility !== "unlisted" &&
-        profile.visibility !== "public")
-    ) {
-      return "profile_not_public";
-    }
+export function createUserProfileQrPreferenceService({
+  database,
+  resolvePublishedIdentities,
+}: {
+  database: Database;
+  resolvePublishedIdentities: (
+    identities: ProducerIdentity[],
+  ) => Promise<ProducerIdentity[]>;
+}) {
+  return async (
+    input: UserQrPreferenceInput,
+  ): Promise<ProfileQrPreferenceUpdateResult> =>
+    database.transaction(async (transaction) => {
+      await transaction.execute(
+        sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${input.userId}`}))`,
+      );
 
-    const now = new Date();
-    const [updated] = await transaction
-      .update(entitlements)
-      .set({
-        metadata: enabledMetadata(input.enabled),
-        updatedAt: now,
-      })
-      .where(activeUserProfilePremiumEntitlementCondition(input.userId, now))
-      .returning({ id: entitlements.id });
-    if (!updated) return "not_entitled";
+      const [profile] = await transaction
+        .select({
+          id: users.id,
+          publicHandle: users.publicHandle,
+          displayName: users.displayName,
+          selectionTitle: users.selectionTitle,
+          selectionDescription: users.selectionDescription,
+          visibility: users.publicProfileVisibility,
+        })
+        .from(users)
+        .where(
+          and(
+            eq(users.id, input.userId),
+            eq(users.status, "active"),
+            sql`${users.publicHandle} IS NOT NULL`,
+          ),
+        )
+        .limit(1)
+        .for("update");
+      if (
+        !profile ||
+        (input.enabled &&
+          profile.visibility !== "unlisted" &&
+          profile.visibility !== "public")
+      ) {
+        return "profile_not_public";
+      }
 
-    await transaction.insert(auditEvents).values({
-      actorKind: "user",
-      actorUserId: input.userId,
-      action: "profile_qr.preference_updated",
-      targetType: "entitlement",
-      targetId: updated.id,
-      metadata: {
-        enabled: input.enabled,
-        subjectKind: "user",
-      },
+      if (input.enabled) {
+        const shared = await transaction
+          .select({
+            country: favorites.country,
+            producerId: favorites.producerId,
+          })
+          .from(favorites)
+          .where(
+            and(
+              eq(favorites.userId, input.userId),
+              eq(favorites.showOnPublicProfile, true),
+            ),
+          );
+        const published = await resolvePublishedIdentities(shared);
+        if (!published.length) return "selection_empty";
+        if (
+          !input.previewRevision ||
+          input.previewRevision !== selectionPreviewRevision(profile, published)
+        ) {
+          return "preview_changed";
+        }
+      }
+
+      const now = new Date();
+      const [updated] = await transaction
+        .update(entitlements)
+        .set({
+          metadata: enabledMetadata(input.enabled),
+          updatedAt: now,
+        })
+        .where(activeUserProfilePremiumEntitlementCondition(input.userId, now))
+        .returning({ id: entitlements.id });
+      if (!updated) return "not_entitled";
+
+      await transaction.insert(auditEvents).values({
+        actorKind: "user",
+        actorUserId: input.userId,
+        action: "profile_qr.preference_updated",
+        targetType: "entitlement",
+        targetId: updated.id,
+        metadata: {
+          enabled: input.enabled,
+          subjectKind: "user",
+        },
+      });
+      return "updated";
     });
-    return "updated";
-  });
+}
+
+export async function updateUserProfileQrPreference(
+  input: UserQrPreferenceInput,
+) {
+  return createUserProfileQrPreferenceService({
+    database: getDatabase(),
+    resolvePublishedIdentities: async (identities) =>
+      (await findProducersByIds(identities)).flatMap((producer) =>
+        producer && findPublishedCountry(producer.country)
+          ? [{ country: producer.country, producerId: producer.producerId }]
+          : [],
+      ),
+  })(input);
 }
 
 export async function updateProducerProfileQrPreference(input: {

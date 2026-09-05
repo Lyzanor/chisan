@@ -502,3 +502,47 @@ Development-only notices included unavailable local Vercel analytics, the
 existing selection-image dimension warning and the fixture's lazy-image LCP
 notice. Captures are local `.tmp/reorg-area-{wide,mobile}.png` and
 `.tmp/reorg-content-{wide,mobile}.png`.
+
+
+## 2026-09-04 — Producer QR and explicit selection QR
+
+Reviewed the shared selection renderer in a temporary local fixture at
+1280×633 and 390×844 with account writes disabled. Synthetic map coordinates
+exercised widely separated points; no catalog rows were changed for this QA.
+The map framed both points, the stable roster retained all three selected
+producers including the unmapped one, and document width stayed within the
+viewport. Selecting a row changed only `highlight`; Escape cleared it without
+reordering the roster. An unmapped row opened its current producer profile.
+Empty selections and selections with no coordinates retained honest messages
+and usable producer links. The mobile roster kept its attached disclosure.
+
+The QR disclosure follows the map so the selection remains the primary surface.
+Outside roster dismissal now happens on click: collapsing it on pointerdown
+moved a QR control below the roster before that control received its click.
+Verified that opening the QR from an expanded roster succeeds in one click.
+No new visual tokens, marker design or business classification were introduced.
+
+Both label downloads were inspected and decoded using macOS Vision. Each PNG
+is 1200×1600 and decodes to the expected canonical `https://chisan.app` path,
+without query, fragment or alternate-language prefix. Selection labels use the
+optional selection title; producer labels retain their existing presentation.
+Artifacts remain local under `output/playwright/qr-selection-*.png`,
+`output/playwright/selection-label.png` and `output/playwright/producer-label.png`.
+The fixture route was removed. Browser checks found no uncaught page errors;
+the local Vercel analytics endpoint returned the existing development-only 404.
+The base producer page remained usable while account-dependent QR and ownership
+blocks reported their controlled unavailable state.
+
+Account migrations and the activation lifecycle were tested in isolated PGlite:
+private and suspended accounts, private favorites, retired and standby rows,
+stale previews, empty selections, entitlement expiry/revocation, metadata
+preservation and audited disable actions. This is not an authenticated
+Production browser test: the new migration and release smoke check remain
+Operations preflight requirements.
+
+Release preflight on 2026-09-05: the exact QR change passed `pnpm verify:ai`
+in an isolated checkout based on `cbc69b98`. A seven-day Neon schema-and-data
+branch, `backup-qr-selection-0009-20260905`, was created from Production main.
+Migration `0009` succeeded in a transaction rolled back on that branch, then
+committed on Production main. A fresh query confirmed ten migrations, the exact
+new migration hash, and nullable title/description columns of 160/600 characters.

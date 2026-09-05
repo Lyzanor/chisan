@@ -2,6 +2,7 @@ import type { Locale } from "@/lib/i18n/locales";
 
 export type ProfileQrLabels = Readonly<{
   title: string;
+  selectionTitle: string;
   producerDescription: string;
   selectionDescription: string;
   scan: string;
@@ -17,6 +18,7 @@ export type ProfileQrLabels = Readonly<{
 
 const PROFILE_QR_LABELS = {
   en: {
+    selectionTitle: "Selection QR",
     title: "Profile QR",
     producerDescription: "Open this producer's permanent Chisan profile.",
     selectionDescription: "Open this local producer selection on Chisan.",
@@ -31,6 +33,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "Print-ready PNG · 1200 × 1600 px",
   },
   es: {
+    selectionTitle: "QR de selección",
     title: "QR del perfil",
     producerDescription: "Abre el perfil permanente de este productor en Chisan.",
     selectionDescription: "Abre esta selección de productores locales en Chisan.",
@@ -45,6 +48,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG listo para imprimir · 1200 × 1600 px",
   },
   ca: {
+    selectionTitle: "QR de selecció",
     title: "QR del perfil",
     producerDescription: "Obre el perfil permanent d'aquest productor a Chisan.",
     selectionDescription: "Obre aquesta selecció de productors locals a Chisan.",
@@ -59,6 +63,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG llest per imprimir · 1200 × 1600 px",
   },
   de: {
+    selectionTitle: "Auswahl-QR-Code",
     title: "Profil-QR-Code",
     producerDescription: "Öffnet das dauerhafte Chisan-Profil dieses Erzeugers.",
     selectionDescription: "Öffnet diese Auswahl lokaler Erzeuger auf Chisan.",
@@ -73,6 +78,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "Druckfertiges PNG · 1200 × 1600 px",
   },
   ja: {
+    selectionTitle: "セレクションQR",
     title: "プロフィールQR",
     producerDescription: "この生産者のChisan固定プロフィールを開きます。",
     selectionDescription: "Chisanでこの地域生産者セレクションを開きます。",
@@ -87,6 +93,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "印刷用PNG · 1200 × 1600 px",
   },
   fr: {
+    selectionTitle: "QR de sélection",
     title: "QR du profil",
     producerDescription: "Ouvre le profil Chisan permanent de ce producteur.",
     selectionDescription: "Ouvre cette sélection de producteurs locaux sur Chisan.",
@@ -101,6 +108,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG prêt à imprimer · 1200 × 1600 px",
   },
   it: {
+    selectionTitle: "QR della selezione",
     title: "QR del profilo",
     producerDescription: "Apre il profilo Chisan permanente di questo produttore.",
     selectionDescription: "Apre questa selezione di produttori locali su Chisan.",
@@ -115,6 +123,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG pronto per la stampa · 1200 × 1600 px",
   },
   nl: {
+    selectionTitle: "Selectie-QR",
     title: "Profiel-QR",
     producerDescription: "Opent het vaste Chisan-profiel van deze producent.",
     selectionDescription: "Opent deze selectie van lokale producenten op Chisan.",
@@ -129,6 +138,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "Drukklaar PNG · 1200 × 1600 px",
   },
   pt: {
+    selectionTitle: "QR da seleção",
     title: "QR do perfil",
     producerDescription: "Abre o perfil Chisan permanente deste produtor.",
     selectionDescription: "Abre esta seleção de produtores locais no Chisan.",
@@ -143,6 +153,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG pronto a imprimir · 1200 × 1600 px",
   },
   af: {
+    selectionTitle: "Keuse-QR",
     title: "Profiel-QR",
     producerDescription: "Maak hierdie produsent se permanente Chisan-profiel oop.",
     selectionDescription: "Maak hierdie keuse van plaaslike produsente op Chisan oop.",
@@ -157,6 +168,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "Drukgereed PNG · 1200 × 1600 px",
   },
   as: {
+    selectionTitle: "নিৰ্বাচনৰ QR",
     title: "প্ৰ'ফাইল QR",
     producerDescription: "এই উৎপাদকৰ স্থায়ী Chisan প্ৰ'ফাইল খোলক।",
     selectionDescription: "Chisan-ত স্থানীয় উৎপাদকৰ এই নিৰ্বাচন খোলক।",
@@ -171,6 +183,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "প্ৰিণ্টৰ বাবে PNG · 1200 × 1600 px",
   },
   bn: {
+    selectionTitle: "নির্বাচনের QR",
     title: "প্রোফাইল QR",
     producerDescription: "এই উৎপাদকের স্থায়ী Chisan প্রোফাইল খুলুন।",
     selectionDescription: "Chisan-এ স্থানীয় উৎপাদকদের এই নির্বাচন খুলুন।",
@@ -185,6 +198,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "প্রিন্টের জন্য PNG · 1200 × 1600 px",
   },
   cy: {
+    selectionTitle: "QR detholiad",
     title: "QR y proffil",
     producerDescription: "Yn agor proffil Chisan parhaol y cynhyrchydd hwn.",
     selectionDescription: "Yn agor y detholiad hwn o gynhyrchwyr lleol ar Chisan.",
@@ -199,6 +213,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG parod i'w argraffu · 1200 × 1600 px",
   },
   ga: {
+    selectionTitle: "QR roghnúcháin",
     title: "QR próifíle",
     producerDescription: "Osclaíonn sé próifíl bhuan Chisan an táirgeora seo.",
     selectionDescription: "Osclaíonn sé an rogha seo de tháirgeoirí áitiúla ar Chisan.",
@@ -213,6 +228,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG réidh le priontáil · 1200 × 1600 px",
   },
   gd: {
+    selectionTitle: "QR taghaidh",
     title: "QR na pròifil",
     producerDescription: "Fosglaidh seo pròifil mhaireannach Chisan an riochdaire seo.",
     selectionDescription: "Fosglaidh seo an taghadh de riochdairean ionadail air Chisan.",
@@ -227,6 +243,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG deiseil airson clò · 1200 × 1600 px",
   },
   gu: {
+    selectionTitle: "પસંદગીનો QR",
     title: "પ્રોફાઇલ QR",
     producerDescription: "આ ઉત્પાદકની કાયમી Chisan પ્રોફાઇલ ખોલે છે.",
     selectionDescription: "Chisan પર સ્થાનિક ઉત્પાદકોની આ પસંદગી ખોલે છે.",
@@ -241,6 +258,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "પ્રિન્ટ માટે તૈયાર PNG · 1200 × 1600 px",
   },
   haw: {
+    selectionTitle: "QR koho",
     title: "QR pili moʻolelo",
     producerDescription: "Wehe i ka moʻolelo Chisan paʻa o kēia mea hana.",
     selectionDescription: "Wehe i kēia koho mea hana kūloko ma Chisan.",
@@ -255,6 +273,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG mākaukau no ka paʻi · 1200 × 1600 px",
   },
   hi: {
+    selectionTitle: "चयन का QR",
     title: "प्रोफ़ाइल QR",
     producerDescription: "इस उत्पादक की स्थायी Chisan प्रोफ़ाइल खोलता है।",
     selectionDescription: "Chisan पर स्थानीय उत्पादकों का यह चयन खोलता है।",
@@ -269,6 +288,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "प्रिंट के लिए तैयार PNG · 1200 × 1600 px",
   },
   kn: {
+    selectionTitle: "ಆಯ್ಕೆಯ QR",
     title: "ಪ್ರೊಫೈಲ್ QR",
     producerDescription: "ಈ ಉತ್ಪಾದಕರ ಶಾಶ್ವತ Chisan ಪ್ರೊಫೈಲ್ ತೆರೆಯುತ್ತದೆ.",
     selectionDescription: "Chisan ನಲ್ಲಿ ಸ್ಥಳೀಯ ಉತ್ಪಾದಕರ ಈ ಆಯ್ಕೆಯನ್ನು ತೆರೆಯುತ್ತದೆ.",
@@ -283,6 +303,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "ಮುದ್ರಣಕ್ಕೆ ಸಿದ್ಧ PNG · 1200 × 1600 px",
   },
   kok: {
+    selectionTitle: "निवडीचो QR",
     title: "प्रोफायल QR",
     producerDescription: "ह्या उत्पादकाचें कायम Chisan प्रोफायल उगडटा.",
     selectionDescription: "Chisan-चेर थळाव्या उत्पादकांची ही निवड उगडटा.",
@@ -297,6 +318,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "छापपाक तयार PNG · 1200 × 1600 px",
   },
   ml: {
+    selectionTitle: "തിരഞ്ഞെടുപ്പിന്റെ QR",
     title: "പ്രൊഫൈൽ QR",
     producerDescription: "ഈ ഉത്പാദകന്റെ സ്ഥിരമായ Chisan പ്രൊഫൈൽ തുറക്കുന്നു.",
     selectionDescription: "Chisan-ൽ പ്രാദേശിക ഉത്പാദകരുടെ ഈ തിരഞ്ഞെടുപ്പ് തുറക്കുന്നു.",
@@ -311,6 +333,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "പ്രിന്റിന് തയ്യാറായ PNG · 1200 × 1600 px",
   },
   mr: {
+    selectionTitle: "निवडीचा QR",
     title: "प्रोफाइल QR",
     producerDescription: "या उत्पादकाचे कायमचे Chisan प्रोफाइल उघडते.",
     selectionDescription: "Chisan वरील स्थानिक उत्पादकांची ही निवड उघडते.",
@@ -325,6 +348,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "प्रिंटसाठी तयार PNG · 1200 × 1600 px",
   },
   ne: {
+    selectionTitle: "छनोटको QR",
     title: "प्रोफाइल QR",
     producerDescription: "यस उत्पादकको स्थायी Chisan प्रोफाइल खोल्छ।",
     selectionDescription: "Chisan मा स्थानीय उत्पादकहरूको यो चयन खोल्छ।",
@@ -339,6 +363,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "प्रिन्टका लागि तयार PNG · 1200 × 1600 px",
   },
   nso: {
+    selectionTitle: "QR ya kgetho",
     title: "QR ya profaele",
     producerDescription: "E bula profaele ya sa ruri ya Chisan ya motšweletši yo.",
     selectionDescription: "E bula kgetho ye ya batšweletši ba lefelong leo go Chisan.",
@@ -353,6 +378,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG yeo e loketšego go gatišwa · 1200 × 1600 px",
   },
   or: {
+    selectionTitle: "ଚୟନର QR",
     title: "ପ୍ରୋଫାଇଲ୍ QR",
     producerDescription: "ଏହି ଉତ୍ପାଦକଙ୍କ ସ୍ଥାୟୀ Chisan ପ୍ରୋଫାଇଲ୍ ଖୋଲେ।",
     selectionDescription: "Chisan ରେ ସ୍ଥାନୀୟ ଉତ୍ପାଦକଙ୍କ ଏହି ଚୟନ ଖୋଲେ।",
@@ -367,6 +393,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "ପ୍ରିଣ୍ଟ ପାଇଁ PNG · 1200 × 1600 px",
   },
   pa: {
+    selectionTitle: "ਚੋਣ ਦਾ QR",
     title: "ਪ੍ਰੋਫਾਈਲ QR",
     producerDescription: "ਇਸ ਉਤਪਾਦਕ ਦੀ ਸਥਾਈ Chisan ਪ੍ਰੋਫਾਈਲ ਖੋਲ੍ਹਦਾ ਹੈ।",
     selectionDescription: "Chisan ਉੱਤੇ ਸਥਾਨਕ ਉਤਪਾਦਕਾਂ ਦੀ ਇਹ ਚੋਣ ਖੋਲ੍ਹਦਾ ਹੈ।",
@@ -381,6 +408,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "ਪ੍ਰਿੰਟ ਲਈ ਤਿਆਰ PNG · 1200 × 1600 px",
   },
   ss: {
+    selectionTitle: "I-QR yekukhetsa",
     title: "I-QR yephrofayela",
     producerDescription: "Ivula iphrofayela ye-Chisan yalomkhiqizi lehlala njalo.",
     selectionDescription: "Ivula lolukhetfo lwebakhiqizi bendzawo ku-Chisan.",
@@ -395,6 +423,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "I-PNG lelungiselelwe kuphrintwa · 1200 × 1600 px",
   },
   st: {
+    selectionTitle: "QR ea khetho",
     title: "QR ya profaele",
     producerDescription: "E bula profaele ya Chisan ya ka mehla ya mohlahisi enwa.",
     selectionDescription: "E bula kgetho ena ya bahlahisi ba lehae ho Chisan.",
@@ -409,6 +438,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG e loketseng ho hatiswa · 1200 × 1600 px",
   },
   ta: {
+    selectionTitle: "தேர்வின் QR",
     title: "சுயவிவர QR",
     producerDescription: "இந்த உற்பத்தியாளரின் நிலையான Chisan சுயவிவரத்தைத் திறக்கும்.",
     selectionDescription: "Chisan இல் உள்ளூர் உற்பத்தியாளர்களின் இந்தத் தேர்வைத் திறக்கும்.",
@@ -423,6 +453,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "அச்சுக்குத் தயாரான PNG · 1200 × 1600 px",
   },
   te: {
+    selectionTitle: "ఎంపిక QR",
     title: "ప్రొఫైల్ QR",
     producerDescription: "ఈ ఉత్పత్తిదారు శాశ్వత Chisan ప్రొఫైల్‌ను తెరుస్తుంది.",
     selectionDescription: "Chisanలో స్థానిక ఉత్పత్తిదారుల ఈ ఎంపికను తెరుస్తుంది.",
@@ -437,6 +468,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "ప్రింట్‌కు సిద్ధమైన PNG · 1200 × 1600 px",
   },
   tn: {
+    selectionTitle: "QR ya tlhopho",
     title: "QR ya porofaele",
     producerDescription: "E bula porofaele ya Chisan ya leruri ya motlhagisi yo.",
     selectionDescription: "E bula tlhopho eno ya batlhagisi ba selegae mo Chisan.",
@@ -451,6 +483,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "PNG e e siametseng kgatiso · 1200 × 1600 px",
   },
   xh: {
+    selectionTitle: "I-QR yokhetho",
     title: "I-QR yeprofayile",
     producerDescription: "Ivula iprofayile esisigxina ye-Chisan yalo mvelisi.",
     selectionDescription: "Ivula olu khetho lwabavelisi basekuhlaleni kwi-Chisan.",
@@ -465,6 +498,7 @@ const PROFILE_QR_LABELS = {
     fileNote: "I-PNG elungele ukuprintwa · 1200 × 1600 px",
   },
   zu: {
+    selectionTitle: "I-QR yokukhetha",
     title: "I-QR yephrofayela",
     producerDescription: "Ivula iphrofayela ye-Chisan yalo mkhiqizi ehlala njalo.",
     selectionDescription: "Ivula lolu khetho lwabakhiqizi bendawo ku-Chisan.",
