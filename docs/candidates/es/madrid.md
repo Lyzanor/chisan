@@ -1,7 +1,7 @@
 # Madrid — candidate holds
 
 - Target CSV: `data/csv/es/madrid/madrid.csv`
-- Editorial review: 2026-09-04; 308 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-05; 308 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.

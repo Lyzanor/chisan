@@ -1,7 +1,7 @@
 # Barcelona — candidate holds
 
 - Target CSV: `data/csv/es/catalunya/barcelona.csv`
-- Editorial review: 2026-09-04; 1442 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-05; 1443 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -1548,3 +1548,12 @@
 | Lectores Vini | Barcelona | `Vino` — Low-intervention Mediterranean wines | Winegrower project by Fredi Torres and Marc Lecha making wines in Montsant and Conca de Barberà. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.lectoresvini.com/> | The linked official page did not provide usable admission evidence in this pass. Determine physical cellar location versus administrative headquarters in Barcelona. |
 | The Buttery | Sant Cugat del Vallès | `Otros` — Artisan nut butters and seeds | Small-batch artisan nut butter obrador in Sant Cugat crafting natural peanut and almond butters. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.thebutterygroup.com/> | The current site proves own nut-butter and granola production near Barcelona and gives a Sant Cugat contact address. Confirm that the productive roastery itself is in Sant Cugat, rather than assigning the contact address as its origin. |
 | Forn Can Girabent | Aiguafreda | `Pan y cereal` — Artisan bakery and traditional breads | Traditional bakery obrador in Osona crafting daily artisan loaves with local flours. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.cangirabent.cat/> | The current site covers several shops and the municipal register identifies an Aiguafreda workshop, but the catalog already contains Pa i Pastissos Can Girabent in Figaró-Montmany. Establish whether that row represents this same workshop before admitting a second unit. |
+
+## Alimentos de España 2025 — source-led discovery, 2026-09-05
+
+- Source: [MAPA award booklet](https://www.alimentosdespana.es/dam/ade/contenido/premios/entrega-premios/2025/folleto-pae-2025.pdf), read on 2026-09-05. Scope and cutoff: the named award recipients in this single booklet; no wider directory sweep.
+- Deduplication: checked Spanish canonical rows, existing candidate notes and evidence by public/legal name, website and location. This is a Level 1 handoff; remaining admission work is recorded below.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| D’ins / D’ins a Casa — Formació i Treball | Barcelona shop: Carrer de Tamarit, 160; Sant Adrià de Besòs kitchen is a separate clue | `Comida preparada` | The live own D’ins a Casa page confirms an attributable take-home range including meatballs, cod, vegetable creams and cannelloni; the foundation describes central cooking and prepared meals. | [MAPA award booklet](https://www.alimentosdespana.es/dam/ade/contenido/premios/entrega-premios/2025/folleto-pae-2025.pdf) | <https://dinsescola.org/es/restaurants/dins-a-casa/> | Reviewed 2026-09-05: identify the actual productive kitchen supplying this own take-home range and its municipality. The shop address and the generic Sant Adrià footer do not establish that link. The own offer is now supported; do not reject for hospitality alone or place production at the foundation headquarters. Supporting source: <https://www.formacioitreball.org/dins-a-casa-arriba-a-barcelona-amb-una-botiga-gestionada-per-persones-en-risc-dexclusio-social/>. |
