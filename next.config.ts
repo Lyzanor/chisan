@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
   // routes that resolve producer rows instead of attaching every CSV to every
   // function; automatic tracing still handles their ordinary dependencies.
   outputFileTracingIncludes: {
+    "/api/catalog/v1/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     middleware: ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]": ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]/\\[segment\\]": ["./data/csv/**/*.csv", "./data/content/**/*.json"],

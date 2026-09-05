@@ -10,6 +10,7 @@ const CLERK_PATH_PREFIXES = [
 ] as const;
 
 const INTERNAL_CATALOG_REDIRECT = "/api/catalog-redirect";
+const PUBLIC_CATALOG_API = "/api/catalog/v1";
 
 export function catalogPathSegments(pathname: string): string[] | null {
   const segments = pathname.split("/").filter(Boolean);
@@ -19,7 +20,9 @@ export function catalogPathSegments(pathname: string): string[] | null {
 export function needsClerkRequestContext(pathname: string): boolean {
   if (
     pathname === INTERNAL_CATALOG_REDIRECT ||
-    pathname.startsWith(`${INTERNAL_CATALOG_REDIRECT}/`)
+    pathname.startsWith(`${INTERNAL_CATALOG_REDIRECT}/`) ||
+    pathname === PUBLIC_CATALOG_API ||
+    pathname.startsWith(`${PUBLIC_CATALOG_API}/`)
   ) {
     return false;
   }

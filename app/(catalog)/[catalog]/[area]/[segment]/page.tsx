@@ -11,6 +11,7 @@ import { ProducersMap } from "@/components/map/producers-map";
 import { ProducerDistance } from "@/components/producer-distance";
 import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
 import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
+import { CATALOG_API_PATH } from "@/lib/agents/catalog-schema";
 import {
   absoluteSiteUrl,
   buildCatalogAlternateSet,
@@ -126,7 +127,7 @@ export async function generateMetadata({
     });
 
   const indexableLocales = (await listIndexableProducerLocales(country.slug, area, areaOption.publishedLocales)).get(producer.producerId) ?? [];
-  return buildLocalizedMetadata({
+  const metadata = buildLocalizedMetadata({
     title: producer.name,
     description,
     locale,
@@ -141,6 +142,15 @@ export async function generateMetadata({
       }),
     },
   });
+  return {
+    ...metadata,
+    alternates: {
+      ...metadata.alternates,
+      types: {
+        "application/json": `${CATALOG_API_PATH}/producers/${country.slug}/${producer.producerId}?locale=${locale}`,
+      },
+    },
+  };
 }
 
 export default async function ProducerPage({

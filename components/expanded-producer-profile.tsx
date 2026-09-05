@@ -1,10 +1,5 @@
-import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
-import { getAccountSystemConfiguration } from "@/lib/accounts/config";
-import { loadProducerContent } from "@/lib/catalog/content";
-import {
-  emptyProducerContent,
-  hasProducerContent,
-} from "@/lib/catalog/content-schema";
+import { hasProducerContent } from "@/lib/catalog/content-schema";
+import { loadPublicExpandedContent, publicHighlightedLinks } from "@/lib/catalog/public-expanded";
 import { ProducerContent } from "@/components/producer-content";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
@@ -43,17 +38,8 @@ export async function ExpandedProducerProfile({
   messages,
   producerId,
 }: ExpandedProducerProfileProps) {
-  if (!getAccountSystemConfiguration().databaseConfigured) return null;
-
-  const content = await loadProducerContent(country, producerId, locale).catch(
-    () => {
-      console.error("Related producer content is temporarily unavailable.", {
-        country,
-        producerId,
-      });
-      return emptyProducerContent(country, producerId);
-    },
-  );
+  const content = await loadPublicExpandedContent(country, producerId, locale);
+  if (!content) return null;
   const guidedVisits = fieldValue(fields, "visitas guiadas");
   const video = fieldValue(fields, "video");
   const communityMessage = fieldValue(fields, "mensaje a la comunidad");
@@ -63,27 +49,10 @@ export async function ExpandedProducerProfile({
   const history = fieldValue(fields, "historia");
   const historyLocale = fieldValue(fields, "historia_locale");
   const lastApprovedChange = fieldValue(fields, "fecha ultimo cambio");
-  const contentUrls = new Set(
-    content.links.map((link) => new URL(link.url).href),
-  );
-  const highlightedLinks = [
-    {
-      href: fieldValue(fields, "enlace destacado 1"),
-      label: messages.fieldLabels.highlightedLink1,
-    },
-    {
-      href: fieldValue(fields, "enlace destacado 2"),
-      label: messages.fieldLabels.highlightedLink2,
-    },
-  ].filter(({ href }, index, links) => {
-    if (!href || links.findIndex((link) => link.href === href) !== index)
-      return false;
-    try {
-      return !contentUrls.has(new URL(href).href);
-    } catch {
-      return false;
-    }
-  });
+  const highlightedLinks = publicHighlightedLinks(fields, content.links).map(({ key, href }) => ({
+    href,
+    label: key === "enlace destacado 1" ? messages.fieldLabels.highlightedLink1 : messages.fieldLabels.highlightedLink2,
+  }));
   if (
     !video &&
     !guidedVisits &&
@@ -94,20 +63,6 @@ export async function ExpandedProducerProfile({
     !highlightedLinks.length &&
     !hasProducerContent(content)
   ) {
-    return null;
-  }
-
-  // Reviewed facts stay in catalog files. PostgreSQL supplies only the producer-scoped
-  // presentation right, and a database incident must not break the base profile.
-  try {
-    if (!(await hasActiveProducerPremiumEntitlement(country, producerId)))
-      return null;
-  } catch (error) {
-    console.error("Expanded producer profile is temporarily unavailable.", {
-      errorName: error instanceof Error ? error.name : "UnknownError",
-      country,
-      producerId,
-    });
     return null;
   }
 

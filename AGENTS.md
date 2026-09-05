@@ -61,6 +61,7 @@ also uses the country's `data/csv/<country>/AGENTS.md` and relevant area note.
 | Base field meanings and CSV representation | `docs/CSV_CONTRACT.md` |
 | Products, gallery and links | `docs/PRODUCER_CONTENT.md` |
 | Public routes, localization, HTML and metadata | `docs/CATALOG_WEB.md` |
+| Public JSON API, OpenAPI and browser WebMCP tools | `docs/AGENT_ACCESS.md` |
 | Sources and exclusions | `docs/EVIDENCE_CONTRACT.md` |
 | Producer coordinates or images | `docs/PRODUCER_GEOLOCATION.md`, `docs/IMAGES.md` |
 | Visitor location | `docs/VISITOR_LOCATION_ROUTING.md` |

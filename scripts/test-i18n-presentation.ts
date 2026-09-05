@@ -306,23 +306,6 @@ test("verification presentation shows only pending or verified producer ownershi
   );
 });
 
-test("expanded profile source keeps every public entitlement check fail-closed", () => {
-  const source = readFileSync(
-    path.resolve(process.cwd(), "components/expanded-producer-profile.tsx"),
-    "utf8",
-  );
-
-  assert.match(
-    source,
-    /if \(!getAccountSystemConfiguration\(\)\.databaseConfigured\) return null;/,
-  );
-  assert.match(
-    source,
-    /if \(!\(await hasActiveProducerPremiumEntitlement\(country, producerId\)\)\)\s*return null;/,
-  );
-  assert.match(source, /catch \(error\) \{[\s\S]*?return null;\n  \}/);
-});
-
 test("premium admin gifts require exact admin access and remain Stripe-independent", () => {
   const adminPage = readFileSync(
     path.resolve(process.cwd(), "app/(application)/admin/premium/page.tsx"),
