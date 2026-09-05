@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 
-import { AreaSelector } from "@/components/area-selector";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import {
   buildCatalogAlternateSet,
@@ -20,7 +19,6 @@ import {
   listPublishedCountries,
 } from "@/lib/csv-catalog";
 import { buildCatalogScope, resolveDestinationLocale } from "@/lib/i18n/catalog-scope";
-import type { Locale } from "@/lib/i18n/locales";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 import { SITE_NAME } from "@/lib/site";
 
@@ -31,10 +29,6 @@ type CountryPageProps = {
 
 export function generateStaticParams() {
   return listPublishedCountries().map(({ slug: catalog }) => ({ catalog }));
-}
-
-function capitalizeLabel(value: string, locale: Locale): string {
-  return value.charAt(0).toLocaleUpperCase(locale) + value.slice(1);
 }
 
 export async function generateMetadata({ params }: CountryPageProps): Promise<Metadata> {
@@ -127,17 +121,8 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
       }),
     })),
   );
-  const selectorMessages = {
-    label: capitalizeLabel(
-      formatMessage(messages.areaSelector.label, { unit: unit.one }),
-      locale,
-    ),
-    placeholder: formatMessage(messages.areaSelector.placeholder, { unit: unit.one }),
-    submit: messages.areaSelector.submit,
-  };
-
   return (
-    <main className="catalog-start-page">
+    <main className="catalog-start-page catalog-start-page--country">
       <section className="catalog-start-shell" aria-labelledby="area-start-title">
         <div className="catalog-start-head">
           <div>
@@ -150,13 +135,6 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
             <h1 id="area-start-title">
               {formatMessage(messages.country.chooseUnit, { unit: unit.one })}
             </h1>
-          </div>
-          <div className="catalog-header-controls">
-            <AreaSelector
-              country={{ regions: localizedRegions }}
-              currentArea=""
-              messages={selectorMessages}
-            />
           </div>
         </div>
 
@@ -173,7 +151,7 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
               className="region-group-section"
               aria-labelledby={`region-group-${region.slug}`}
             >
-              <h3 id={`region-group-${region.slug}`}>{region.label}</h3>
+              <h2 id={`region-group-${region.slug}`}>{region.label}</h2>
               <div className="area-link-list">
                 {region.areas.map((area) => (
                   <Link

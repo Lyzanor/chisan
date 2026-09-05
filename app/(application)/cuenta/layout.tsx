@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NavigationLink } from "@/components/navigation-link";
 import type { Metadata } from "next";
 
 import { hasStaffAccess, requireCurrentAccount } from "@/lib/accounts/auth";
@@ -48,12 +49,12 @@ export default async function AccountLayout({ children }: { children: React.Reac
           </span>
         </header>
         <nav className="account-nav" aria-label="Account sections">
-          <Link href="/cuenta">Overview</Link>
-          <Link href="/cuenta/perfil">Profile</Link>
-          <Link href="/cuenta/favoritos">Favorites</Link>
-          <Link href="/cuenta/seleccion">Selection QR</Link>
-          <Link href="/cuenta/reclamaciones">Claims</Link>
-          <Link href="/cuenta/cambios">Profile changes</Link>
+          <NavigationLink href="/cuenta" activePath="/cuenta">Overview</NavigationLink>
+          <NavigationLink href="/cuenta/perfil" activePath="/cuenta/perfil">Profile</NavigationLink>
+          <NavigationLink href="/cuenta/favoritos" activePath="/cuenta/favoritos">Favorites</NavigationLink>
+          <NavigationLink href="/cuenta/seleccion" activePath="/cuenta/seleccion">Selection QR</NavigationLink>
+          <NavigationLink href="/cuenta/reclamaciones" activePath="/cuenta/reclamaciones">Claims</NavigationLink>
+          <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Profile changes</NavigationLink>
           {staff ? <Link href="/admin">Review</Link> : null}
         </nav>
         {children}

@@ -3,6 +3,7 @@ import { loadPublicExpandedContent, publicHighlightedLinks } from "@/lib/catalog
 import { ProducerContent } from "@/components/producer-content";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
+import { getProducerContentLabels } from "@/lib/i18n/producer-content";
 import {
   formatProducerFieldLabel,
   formatProducerFieldValue,
@@ -40,6 +41,7 @@ export async function ExpandedProducerProfile({
 }: ExpandedProducerProfileProps) {
   const content = await loadPublicExpandedContent(country, producerId, locale);
   if (!content) return null;
+  const contentLabels = getProducerContentLabels(locale);
   const guidedVisits = fieldValue(fields, "visitas guiadas");
   const video = fieldValue(fields, "video");
   const communityMessage = fieldValue(fields, "mensaje a la comunidad");
@@ -72,16 +74,21 @@ export async function ExpandedProducerProfile({
       className="detail-expanded-profile"
       aria-labelledby="detail-expanded-title"
     >
-      <p className="detail-expanded-profile__badge" aria-hidden="true">
-        {messages.producer.expandedProfile}
-      </p>
       <h2 id="detail-expanded-title">{messages.producer.expandedProfile}</h2>
+      {hasProducerContent(content) ? (
+        <nav className="detail-expanded-profile__nav" aria-label={messages.producer.expandedProfile}>
+          {content.products.length ? <a href="#producer-content-products">{contentLabels.products}</a> : null}
+          {content.gallery.length ? <a href="#producer-content-gallery">{contentLabels.gallery}</a> : null}
+          {content.links.length ? <a href="#producer-content-links">{contentLabels.links}</a> : null}
+        </nav>
+      ) : null}
       <ProducerContent content={content} locale={locale} />
       {video ? (
         <a href={video} target="_blank" rel="noreferrer">
           {formatProducerFieldLabel("video", locale, messages)} · YouTube
         </a>
       ) : null}
+      {behindProducer || history || communityMessage ? <div className="detail-expanded-profile__stories">
       {behindProducer ? (
         <div className="detail-expanded-profile__message">
           <h3>
@@ -102,6 +109,7 @@ export async function ExpandedProducerProfile({
           <p lang={communityMessageLocale || undefined}>{communityMessage}</p>
         </div>
       ) : null}
+      </div> : null}
       {guidedVisits ? (
         <p>
           <strong>{messages.fieldLabels.guidedVisits}:</strong>{" "}

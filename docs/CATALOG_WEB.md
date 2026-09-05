@@ -43,6 +43,14 @@ claim documents, payment state, entitlement history, review notes, audit data
 or unpublished CSV values. A producer membership or payment may control which
 reviewed block is visible, but never proves or upgrades a fact.
 
+The profile presents reviewed hours in the hero, the website as a direct URL,
+and directions beside the address, map and transient distance tool. A contact
+composer is available only for an existing public `correo`. It prepares a
+`mailto:` message in the visitor's email application, explicitly leaving review
+and sending to that application. It neither stores messages nor adds a Chisan
+inbox or delivery promise. The public email remains an ordinary accessible
+contact link. Layout and motion are owned by [design](../design/README.md).
+
 ### Public graph and factual mapping
 
 Each localized response exposes one linked `@graph` containing `WebSite`,

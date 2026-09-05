@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
+import { ArrowUpRightIcon, ClockIcon, EnvelopeSimpleIcon, FacebookLogoIcon, GlobeIcon, InstagramLogoIcon, MapPinIcon, NavigationArrowIcon, PhoneIcon } from "@phosphor-icons/react/ssr";
+import { ProducerContact } from "@/components/producer-contact";
+import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
@@ -79,10 +82,6 @@ function splitFieldValues(value: string, separator: "," | "|"): string[] {
 }
 
 const PRACTICAL_FIELD_KEYS = new Set([
-  "direccion",
-  "horario",
-  "telefono",
-  "correo",
   "Venta online",
   "Canal de venta",
 ]);
@@ -203,6 +202,7 @@ export default async function ProducerPage({
   const facebook = getFieldValue(producer.fields, "Facebook");
   const verification = getFieldValue(producer.fields, "verificacion");
   const address = getFieldValue(producer.fields, "direccion");
+  const openingHours = getFieldValue(producer.fields, "horario");
   const description = getFieldValue(producer.fields, "descripcion");
   const featuredProducts = splitFieldValues(
     getFieldValue(producer.fields, "productos estrella"),
@@ -232,6 +232,7 @@ export default async function ProducerPage({
       getCategoryLabel(pointCategory, locale),
     ),
   }));
+  const hasLocation = Boolean(address || maps || mapPoints.length);
   const countryLabel = getLocalizedCatalogLabel(country, locale);
   const areaLabel = getLocalizedCatalogLabel(areaOption, locale);
   const primaryCategory = producer.categories[0];
@@ -242,6 +243,7 @@ export default async function ProducerPage({
   const relatedAreaHref = buildCatalogHref({ scope, area });
   const actionLabels = getProducerActionLabels(locale);
   const distanceMessages = getProducerDistanceMessages(locale);
+  const contactMessages = getProducerContactMessages(locale);
   const profileQrPath = buildProducerHref(producer, {
     scope: buildCatalogScope(country),
     area,
@@ -345,43 +347,45 @@ export default async function ProducerPage({
               </div>
             </div>
             {description ? <p className="detail-intro">{description}</p> : null}
+            {openingHours ? (
+              <section className="detail-opening-hours" aria-labelledby="detail-hours-title">
+                <ClockIcon size={22} aria-hidden="true" />
+                <div>
+                  <h2 id="detail-hours-title">{messages.fieldLabels.openingHours}</h2>
+                  <p>{openingHours}</p>
+                </div>
+              </section>
+            ) : null}
+            {website ? (
+              <a className="detail-website" href={website} target="_blank" rel="noreferrer">
+                <GlobeIcon size={24} aria-hidden="true" />
+                <span>
+                  <small>{canBuyOnline ? actionLabels.buyOnline : messages.producer.website}</small>
+                  <strong>{website.replace(/^https?:\/\//, "").replace(/\/$/, "")}</strong>
+                </span>
+                <ArrowUpRightIcon size={22} aria-hidden="true" />
+              </a>
+            ) : null}
             <div className="detail-actions">
-              {website ? (
-                <a
-                  href={website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={canBuyOnline ? "detail-action--primary" : undefined}
-                >
-                  {canBuyOnline
-                    ? actionLabels.buyOnline
-                    : messages.producer.website}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ) : null}
-              {maps ? (
-                <a href={maps} target="_blank" rel="noreferrer">
-                  {actionLabels.directions}
-                  <span aria-hidden="true">↗</span>
+              {email ? (
+                <a href="#detail-contact" className="detail-action--primary">
+                  <EnvelopeSimpleIcon size={20} aria-hidden="true" />{contactMessages.title}
                 </a>
               ) : null}
               {phone && phoneHref ? (
-                <a href={phoneHref}>{actionLabels.call}</a>
+                <a href={phoneHref} aria-label={actionLabels.call + " · " + phone}>
+                  <PhoneIcon size={20} aria-hidden="true" />{phone}
+                </a>
               ) : null}
               {instagram ? (
-                <a href={instagram} target="_blank" rel="noreferrer">
-                  {messages.fieldLabels.instagram}
-                  <span aria-hidden="true">↗</span>
+                <a href={instagram} target="_blank" rel="noreferrer" aria-label={messages.fieldLabels.instagram} title={messages.fieldLabels.instagram}>
+                  <InstagramLogoIcon size={22} aria-hidden="true" />
                 </a>
               ) : null}
               {facebook ? (
-                <a href={facebook} target="_blank" rel="noreferrer">
-                  {messages.fieldLabels.facebook}
-                  <span aria-hidden="true">↗</span>
+                <a href={facebook} target="_blank" rel="noreferrer" aria-label={messages.fieldLabels.facebook} title={messages.fieldLabels.facebook}>
+                  <FacebookLogoIcon size={22} aria-hidden="true" />
                 </a>
-              ) : null}
-              {email ? (
-                <a href={`mailto:${email}`}>{actionLabels.contact}</a>
               ) : null}
             </div>
             {onlineSales === "sí" ? (
@@ -455,6 +459,51 @@ export default async function ProducerPage({
           />
         </Suspense>
 
+        {hasLocation || email ? <div className="detail-visit-contact">
+          {hasLocation ? <section
+            id="detail-location"
+            className="detail-map-card"
+            aria-labelledby="detail-location-title"
+          >
+            <div className="detail-location-heading">
+              <div>
+                <h2 id="detail-location-title"><MapPinIcon size={24} aria-hidden="true" />{messages.producer.location}</h2>
+                {address ? <p className="detail-address">{address}</p> : null}
+              </div>
+              {maps ? (
+                <a className="detail-directions" href={maps} target="_blank" rel="noreferrer" aria-label={actionLabels.directions + " · Google Maps"}>
+                  <NavigationArrowIcon size={20} aria-hidden="true" />
+                  <span>{actionLabels.directions}<small>Google Maps</small></span>
+                  <ArrowUpRightIcon size={18} aria-hidden="true" />
+                </a>
+              ) : null}
+            </div>
+            {mapPoints.length ? <div
+              className="detail-producer-map"
+              aria-label={formatMessage(messages.producer.mapAria, { producer: producer.name })}
+            >
+              <ProducersMap
+                points={mapPoints}
+                scope={scope}
+                area={area}
+                selectedSlug={producer.slug}
+                markerInteraction="static"
+                singlePointZoom={16}
+                messages={mapMessages}
+              />
+            </div> : null}
+            {producer.latitude !== null && producer.longitude !== null ? (
+              <ProducerDistance
+                latitude={producer.latitude}
+                longitude={producer.longitude}
+                locale={locale}
+                messages={distanceMessages}
+              />
+            ) : null}
+          </section> : null}
+          {email ? <ProducerContact email={email} name={producer.name} messages={contactMessages} /> : null}
+        </div> : null}
+
         <section id="detail-info" className="detail-table-card">
           <h2>{messages.producer.details}</h2>
           <div className="table-wrap">
@@ -479,51 +528,12 @@ export default async function ProducerPage({
                   <tr key={field.key}>
                     <td>{field.label}</td>
                     <td>
-                      {field.key === "telefono" && phoneHref ? (
-                        <a href={phoneHref}>{field.displayValue}</a>
-                      ) : field.key === "correo" && email ? (
-                        <a href={`mailto:${email}`}>{field.displayValue}</a>
-                      ) : (
-                        field.displayValue
-                      )}
+                      {field.displayValue}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
-        </section>
-
-        {producer.latitude !== null && producer.longitude !== null ? (
-          <ProducerDistance
-            latitude={producer.latitude}
-            longitude={producer.longitude}
-            locale={locale}
-            messages={distanceMessages}
-          />
-        ) : null}
-
-        <section
-          id="detail-location"
-          className="detail-map-card"
-          aria-labelledby="detail-location-title"
-        >
-          <h2 id="detail-location-title">{messages.producer.location}</h2>
-          <div
-            className="detail-producer-map"
-            aria-label={formatMessage(messages.producer.mapAria, {
-              producer: producer.name,
-            })}
-          >
-            <ProducersMap
-              points={mapPoints}
-              scope={scope}
-              area={area}
-              selectedSlug={producer.slug}
-              markerInteraction="static"
-              singlePointZoom={16}
-              messages={mapMessages}
-            />
           </div>
         </section>
 
@@ -539,6 +549,7 @@ export default async function ProducerPage({
             messages={messages.accountActions}
           />
         </Suspense>
+
 
         <section className="detail-related" aria-labelledby="detail-related-title">
           <p className="detail-eyebrow">{messages.producer.categories}</p>

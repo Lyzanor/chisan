@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useTransition } from "react";
+import { useId, useTransition } from "react";
 
 export type AreaOption = {
   slug: string;
@@ -39,11 +39,10 @@ export function AreaSelector({
   onNavigate,
 }: AreaSelectorProps) {
   const router = useRouter();
+  const selectId = useId();
   const [isPending, startTransition] = useTransition();
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const area = String(new FormData(event.currentTarget).get("area") ?? "");
+  function navigateToArea(area: string) {
     if (!area) {
       return;
     }
@@ -59,18 +58,19 @@ export function AreaSelector({
   }
 
   return (
-    <form className="area-selector" onSubmit={handleSubmit}>
-      <label htmlFor="area-select" className="area-selector-label">
+    <div className="area-selector" aria-busy={isPending}>
+      <label htmlFor={selectId} className="area-selector-label">
         {messages.label}
       </label>
       <select
         key={currentArea}
-        id="area-select"
+        id={selectId}
         name="area"
         defaultValue={currentArea}
         required
         disabled={isPending}
         className="area-selector-select"
+        onChange={(event) => navigateToArea(event.target.value)}
       >
         <option value="" disabled>
           {messages.placeholder}
@@ -85,9 +85,6 @@ export function AreaSelector({
           </optgroup>
         ))}
       </select>
-      <button type="submit" className="area-selector-submit" disabled={isPending}>
-        {messages.submit}
-      </button>
-    </form>
+    </div>
   );
 }

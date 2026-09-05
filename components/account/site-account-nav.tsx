@@ -1,6 +1,7 @@
 "use client";
 
 import { Show, SignOutButton } from "@clerk/nextjs";
+import { CaretDownIcon, UserCircleIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -65,19 +66,31 @@ export function AccountMenu({
     }
 
     function closeFromKeyboard(event: KeyboardEvent) {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && detailsRef.current?.open) {
         detailsRef.current?.removeAttribute("open");
         detailsRef.current?.querySelector("summary")?.focus();
       }
     }
 
+    function closeFromFocus(event: FocusEvent) {
+      if (!detailsRef.current?.contains(event.target as Node)) {
+        detailsRef.current?.removeAttribute("open");
+      }
+    }
+
     document.addEventListener("pointerdown", closeFromOutside);
     document.addEventListener("keydown", closeFromKeyboard);
+    document.addEventListener("focusin", closeFromFocus);
     return () => {
       document.removeEventListener("pointerdown", closeFromOutside);
       document.removeEventListener("keydown", closeFromKeyboard);
+      document.removeEventListener("focusin", closeFromFocus);
     };
   }, []);
+
+  useEffect(() => {
+    detailsRef.current?.removeAttribute("open");
+  }, [pathname]);
 
   const summary =
     signedIn && accountDisplayName
@@ -107,7 +120,11 @@ export function AccountMenu({
 
   return (
     <details className="site-account-menu" ref={detailsRef}>
-      <summary>{summary}</summary>
+      <summary>
+        <UserCircleIcon size={22} aria-hidden="true" />
+        <span>{summary}</span>
+        <CaretDownIcon className="site-account-menu__chevron" size={14} aria-hidden="true" />
+      </summary>
       <div
         className="site-account-menu__panel"
         onClickCapture={(event) => {

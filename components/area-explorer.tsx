@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import {
   Suspense,
+  memo,
+  useDeferredValue,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
   type ReactNode,
+  type Ref,
 } from "react";
 
 import { SiteCatalogControlsRegistration } from "@/components/account/site-catalog-controls-context";
@@ -48,6 +51,12 @@ import { includeSelectedProducer, prioritizeProducerItems } from "@/lib/catalog/
 
 const VISIBLE_PRODUCER_LIMIT = 400;
 const PRODUCER_RESULTS_ID = "catalog-producer-results";
+
+function pushAreaQuery(href: string) {
+  if (`${window.location.pathname}${window.location.search}` !== href) {
+    window.history.pushState(null, "", href);
+  }
+}
 
 type AreaExplorerProducer = {
   producerId: number;
@@ -136,6 +145,47 @@ function SearchMatch({ text, query }: { text: string; query: string }) {
     </>
   );
 }
+
+const ProducerRosterRow = memo(function ProducerRosterRow({
+  item, href, query, categories, active, itemRef, onPreview, onPreviewEnd,
+}: {
+  item: AreaExplorerProducer;
+  href: string;
+  query: string;
+  categories: ReadonlyMap<string, CategoryPresentation>;
+  active: boolean;
+  itemRef?: Ref<HTMLLIElement>;
+  onPreview: (slug: string, immediate?: boolean) => void;
+  onPreviewEnd: (slug: string) => void;
+}) {
+  const matchingCategories = query
+    ? item.categories.map((token) => categories.get(token)?.label ?? token)
+        .filter((label) => findCatalogSearchMatch(label, query)).join(" · ")
+    : "";
+  return (
+    <li ref={itemRef} className={active ? "is-active" : undefined}>
+      <Link
+        href={href}
+        prefetch={false}
+        onMouseEnter={() => onPreview(item.slug)}
+        onMouseLeave={() => onPreviewEnd(item.slug)}
+        onFocus={() => onPreview(item.slug, true)}
+        onBlur={() => onPreviewEnd(item.slug)}
+        className="producer-compact-link"
+      >
+        <span className="producer-compact-icon" aria-hidden="true">
+          {categories.get(item.category)?.icon ?? "🧺"}
+        </span>
+        <span>
+          <strong><SearchMatch text={item.name} query={query} /></strong>
+          {item.city ? <small className="producer-compact-location"><SearchMatch text={item.city} query={query} /></small> : null}
+          {matchingCategories ? <small><SearchMatch text={matchingCategories} query={query} /></small> : null}
+          {item.description ? <small><SearchMatch text={item.description} query={query} /></small> : null}
+        </span>
+      </Link>
+    </li>
+  );
+});
 
 function useNearbyMapFocusKeys(
   country: string,
@@ -237,8 +287,9 @@ function AreaExplorerView({
   category: string;
   selectedSlug: string;
 }) {
-  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
+  const deferredSearchQuery = useDeferredValue(searchQuery);
+  const previewTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [previewedSlug, setPreviewedSlug] = useState("");
   const [prioritizedProducerScope, setPrioritizedProducerScope] = useState<{
     category: string;
@@ -255,10 +306,22 @@ function AreaExplorerView({
   const selectedListItemRef = useRef<HTMLLIElement>(null);
   const scrollSelectedListItemAfterMapSelectionRef = useRef(false);
   const normalizedCategory = normalizeCatalogSearch(category);
-  const normalizedSearchQuery = normalizeCatalogSearch(searchQuery);
+  const normalizedSearchQuery = normalizeCatalogSearch(deferredSearchQuery);
   const categoryPresentations = useMemo(
     () => new Map(model.categories.map((item) => [item.token, item])),
     [model.categories],
+  );
+  const searchableProducers = useMemo(
+    () => new Map(model.producers.map((producer) => [
+      producer.producerId,
+      normalizeCatalogSearch([
+        producer.name,
+        producer.city,
+        ...producer.categories.map((token) => categoryPresentations.get(token)?.label ?? token),
+        producer.description,
+      ].join(" ")),
+    ])),
+    [model.producers, categoryPresentations],
   );
   const categoryItems = useMemo(
     () =>
@@ -276,20 +339,9 @@ function AreaExplorerView({
     if (!normalizedSearchQuery) return categoryItems;
 
     return categoryItems.filter((producer) =>
-      normalizeCatalogSearch(
-        [
-          producer.name,
-          producer.city,
-          ...producer.categories.map(
-            (producerCategory) =>
-              categoryPresentations.get(producerCategory)?.label ??
-              producerCategory,
-          ),
-          producer.description,
-        ].join(" "),
-      ).includes(normalizedSearchQuery),
+      searchableProducers.get(producer.producerId)?.includes(normalizedSearchQuery),
     );
-  }, [categoryItems, categoryPresentations, normalizedSearchQuery]);
+  }, [categoryItems, searchableProducers, normalizedSearchQuery]);
   const selectedItem = useMemo(
     () =>
       selectedSlug
@@ -407,8 +459,8 @@ function AreaExplorerView({
   const clearProducerSelection = useCallback(() => {
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
-    router.replace(clearSelectionHref, { scroll: false });
-  }, [clearSelectionHref, consumeNearbyMapFocus, router]);
+    window.history.replaceState(null, "", clearSelectionHref);
+  }, [clearSelectionHref, consumeNearbyMapFocus]);
 
   useEffect(() => {
     if (!selectedItem || previousSelectedSlug.current === selectedItem.slug) {
@@ -470,9 +522,11 @@ function AreaExplorerView({
       setPreviewedSlug("");
       consumeNearbyMapFocus();
       requestProducerFocus(slug, "select");
-      router.push(href, { scroll: false });
+      // This model already contains the area's producers. Next's history
+      // integration updates useSearchParams without fetching the same area.
+      pushAreaQuery(href);
     },
-    [category, consumeNearbyMapFocus, requestProducerFocus, router],
+    [category, consumeNearbyMapFocus, requestProducerFocus],
   );
 
   const selectMapProducer = useCallback(
@@ -490,25 +544,39 @@ function AreaExplorerView({
   );
 
   function selectCategory(href: string) {
+    cancelPendingPreview();
     setPreviewedSlug("");
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
     listOrderLockedCategoryRef.current = null;
     setPrioritizedProducerScope(null);
-    router.push(href, { scroll: false });
+    pushAreaQuery(href);
   }
 
-  function previewProducer(slug: string) {
-    if (previewedSlug === slug) return;
-    listOrderLockedCategoryRef.current = category;
-    consumeNearbyMapFocus();
-    setPreviewedSlug(slug);
-    requestProducerFocus(slug, "preview");
-  }
+  const cancelPendingPreview = useCallback(() => {
+    if (previewTimerRef.current !== null) clearTimeout(previewTimerRef.current);
+    previewTimerRef.current = null;
+  }, []);
+
+  useEffect(() => cancelPendingPreview, [cancelPendingPreview, category]);
+
+  const previewProducer = useCallback((slug: string, immediate = false) => {
+    cancelPendingPreview();
+    const showPreview = () => {
+      listOrderLockedCategoryRef.current = category;
+      consumeNearbyMapFocus();
+      setPreviewedSlug(slug);
+      requestProducerFocus(slug, "preview");
+    };
+    // Crossing rows while scrolling must not launch a series of map flights.
+    if (immediate) showPreview();
+    else previewTimerRef.current = setTimeout(showPreview, 120);
+  }, [cancelPendingPreview, category, consumeNearbyMapFocus, requestProducerFocus]);
 
   const clearProducerPreview = useCallback((slug: string) => {
+    cancelPendingPreview();
     setPreviewedSlug((current) => (current === slug ? "" : current));
-  }, []);
+  }, [cancelPendingPreview]);
 
   const previewMapProducer = useCallback(
     (slug: string) => {
@@ -532,43 +600,46 @@ function AreaExplorerView({
         options={languageOptions}
       />
 
-      <header className="catalog-simple-header">
-        <div>
-          <p className="catalog-kicker">
-            <Link href="/" className="country-back-link">
-              {model.siteName}
-            </Link>{" "}
-            ·{" "}
-            <Link href={model.countryHref} className="country-back-link">
-              {model.countryLabel}
-            </Link>{" "}
-            · <span>{model.areaLabel}</span>
-          </p>
-          <h1>{model.catalogMessages.title}</h1>
+      <div className="catalog-discovery-toolbar">
+        <header className="catalog-simple-header">
+          <div>
+            <p className="catalog-kicker">
+              <Link href="/" className="country-back-link">
+                {model.siteName}
+              </Link>{" "}
+              ·{" "}
+              <Link href={model.countryHref} className="country-back-link">
+                {model.countryLabel}
+              </Link>{" "}
+              · <span>{model.areaLabel}</span>
+            </p>
+            <h1>{model.catalogMessages.title}</h1>
+          </div>
+        </header>
+
+        <div className="catalog-discovery-tools">
+          <label className="catalog-producer-search">
+            <span className="visually-hidden">
+              {model.catalogMessages.searchPlaceholder}
+            </span>
+            <MagnifyingGlassIcon aria-hidden="true" size={20} />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => {
+                cancelPendingPreview();
+                setSearchQuery(event.target.value);
+                setPreviewedSlug("");
+                listOrderLockedCategoryRef.current = null;
+                setPrioritizedProducerScope(null);
+              }}
+              placeholder={model.catalogMessages.searchPlaceholder}
+              autoComplete="off"
+            />
+          </label>
         </div>
-      </header>
 
-      <div className="catalog-discovery-tools">
-        <label className="catalog-producer-search">
-          <span className="visually-hidden">
-            {model.catalogMessages.searchPlaceholder}
-          </span>
-          <MagnifyingGlassIcon aria-hidden="true" size={20} />
-          <input
-            type="search"
-            value={searchQuery}
-            onChange={(event) => {
-              setSearchQuery(event.target.value);
-              setPreviewedSlug("");
-              listOrderLockedCategoryRef.current = null;
-              setPrioritizedProducerScope(null);
-            }}
-            placeholder={model.catalogMessages.searchPlaceholder}
-            autoComplete="off"
-          />
-        </label>
       </div>
-
       <nav
         className="catalog-simple-categories"
         aria-label={model.catalogMessages.categories}
@@ -688,95 +759,20 @@ function AreaExplorerView({
                 })}
               </p>
             ) : visibleItems.length > 0 ? (
-              <ul id={PRODUCER_RESULTS_ID} className="producer-compact-list">
-                {visibleItems.map((item) => {
-                  const href = buildCatalogHref({
-                    scope: model.scope,
-                    area: model.area,
-                    category,
-                    highlight: item.slug,
-                  });
-                  const matchingCategoryText = normalizedSearchQuery
-                    ? item.categories
-                        .map(
-                          (itemCategory) =>
-                            categoryPresentations.get(itemCategory)?.label ??
-                            itemCategory,
-                        )
-                        .filter((categoryLabel) =>
-                          findCatalogSearchMatch(categoryLabel, searchQuery),
-                        )
-                        .join(" · ")
-                    : "";
-
-                  return (
-                    <li
-                      key={item.producerId}
-                      ref={
-                        selectedItem?.slug === item.slug
-                          ? selectedListItemRef
-                          : undefined
-                      }
-                      className={
-                        presentedItem?.slug === item.slug
-                          ? "is-active"
-                          : undefined
-                      }
-                    >
-                      <Link
-                        href={href}
-                        prefetch={false}
-                        scroll={false}
-                        onNavigate={(event) => {
-                          event.preventDefault();
-                          selectProducer(item.slug, href);
-                        }}
-                        onMouseEnter={() => previewProducer(item.slug)}
-                        onMouseLeave={() => clearProducerPreview(item.slug)}
-                        onFocus={() => previewProducer(item.slug)}
-                        onBlur={() => clearProducerPreview(item.slug)}
-                        className="producer-compact-link"
-                        aria-current={
-                          selectedItem?.slug === item.slug ? true : undefined
-                        }
-                      >
-                        <span
-                          className="producer-compact-icon"
-                          aria-hidden="true"
-                        >
-                          {categoryPresentations.get(item.category)?.icon ??
-                            "🧺"}
-                        </span>
-                        <span>
-                          <strong>
-                            <SearchMatch text={item.name} query={searchQuery} />
-                          </strong>
-                          {item.city ? (
-                            <small className="producer-compact-location">
-                              <SearchMatch text={item.city} query={searchQuery} />
-                            </small>
-                          ) : null}
-                          {matchingCategoryText ? (
-                            <small>
-                              <SearchMatch
-                                text={matchingCategoryText}
-                                query={searchQuery}
-                              />
-                            </small>
-                          ) : null}
-                          {item.description ? (
-                            <small>
-                              <SearchMatch
-                                text={item.description}
-                                query={searchQuery}
-                              />
-                            </small>
-                          ) : null}
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
+              <ul id={PRODUCER_RESULTS_ID} className="producer-compact-list" aria-busy={searchQuery !== deferredSearchQuery}>
+                {visibleItems.map((item) => (
+                  <ProducerRosterRow
+                    key={item.producerId}
+                    item={item}
+                    href={buildProducerHref(item, { scope: model.scope, area: model.area, category })}
+                    query={deferredSearchQuery}
+                    categories={categoryPresentations}
+                    active={presentedItem?.slug === item.slug}
+                    itemRef={selectedItem?.slug === item.slug ? selectedListItemRef : undefined}
+                    onPreview={previewProducer}
+                    onPreviewEnd={clearProducerPreview}
+                  />
+                ))}
               </ul>
             ) : (
               <p id={PRODUCER_RESULTS_ID} className="catalog-empty">

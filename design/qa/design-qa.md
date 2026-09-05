@@ -593,3 +593,110 @@ checkboxes inheriting full input width; compact checkbox sizing now keeps labels
 within the form. Product names, descriptions and language controls remain usable
 at the narrow width. No browser console errors were observed. This check proves
 the isolated editing flow, not authenticated Production publication.
+
+## 2026-09-05 — Fluent discovery and navigation
+
+Implemented the requested modernization on the existing application. Inspected
+the initial home and Barcelona explorer, then the updated home, province
+selector, explorer, account dropdown and Abadal profile in the in-app browser.
+Wide checks used 1440×1000 (with initial captures at 1265×712); narrow checks
+used 390×844. The inspected pages have no horizontal document overflow.
+
+The headline and entry into the catalog now share the first desktop view. On
+mobile, catalog entry precedes the explanatory copy. The sticky header keeps
+catalog and account controls reachable; the desktop search shares the explorer
+heading row. Surface radii distinguish controls, compact objects and panels.
+The mobile map retains its attached, always-visible roster. A first pass made
+the map too tall; the final 44svh treatment reveals the roster beneath it while
+keeping the map primary. Documentary images, category pictograms, producer
+coordinates and URL identities retain their meaning.
+
+Verified search for Abadal, linked list/map selection, opening its actual
+profile, category changes, Back/Forward restoring All/Wine, language switching
+from Spanish to English while retaining `category=Vino`, and changing Barcelona
+to Girona while retaining that filter and English. The account disclosure
+closes on Escape and restores summary focus; it closes after language or area
+navigation. No account mutation, geolocation permission or Production write
+was needed. Signed-in account pages were not browser-tested because this local
+environment has no configured authentication; their existing authorization
+checks remain in place.
+
+Category and selection updates use the already loaded model through the
+[Next.js native history integration](https://nextjs.org/docs/app/getting-started/linking-and-navigating#native-history-api).
+Repeated activation of the same URL does not add history entries. Search text
+is normalized once per model and language. Prefetch is bounded to the displayed
+producer card and chosen province; lists do not request hundreds of profiles.
+Navigation indicators use router pending state and page arrival never delays
+the route or remounts its children. Reduced-motion CSS and the Web Animations
+preference guard were reviewed; OS preference emulation was not run.
+
+Existing development-console warnings from catalog-agent schema serialization
+and the local Vercel analytics script were present before the redesign and
+remain outside this visual change. The first full gate reached the browser
+behavior stage but could not start a second Next dev instance while the preview
+held its lock; the preview was stopped before rerunning the complete gate.
+The complete `pnpm verify:ai` rerun passed, including the browser-independent
+HTTP behavior suite, account and catalog tests, build and data validation.
+Follow-up documentation, design and TypeScript checks also passed. No release
+or deployment was performed for this change.
+
+## 2026-09-06 — Direct discovery and practical producer profiles
+
+Follow-up to Fluent discovery, using the existing map and producer contracts.
+
+- The country overview uses three compact flowing columns at wide widths and
+  one on mobile. Each province is a direct link; its duplicate selector and
+  submit button are removed. The account menu retains a quick province switch,
+  navigating immediately when a province is chosen.
+- Country entry spacing is reduced, including the empty location-status row.
+  Desktop search expands on focus (384 px to 512 px observed at the tested
+  width); narrow search already fills its available width.
+- Area roster links open the producer profile, retaining category context and
+  normal browser navigation. Pointer dwell previews after 120 ms; keyboard
+  focus previews immediately. Preview centers the exact map point without
+  changing the URL. Synchronized maps keep one large card and no duplicate
+  producer tooltip; map activation still writes the durable highlight.
+- Search has a derived normalized index and deferred result updates. Memoized
+  rows retain stable callbacks so preview does not rerender every row. Rapid
+  pointer exits cancel pending previews. Existing roster bounds, selected-row
+  inclusion and disabled bulk prefetch remain.
+- Profile hours are visible in the hero, preserving the published free text.
+  Website URL, telephone and labelled social icons have distinct treatments.
+  Address, Google Maps directions and opt-in distance share one location block.
+  A public-email contact composer prepares a message in the visitor's email
+  app, with an explicit explanation before its action. No sending service,
+  stored message, new account permission or response-time promise was added.
+- Expanded content uses responsive product cards, section links and grouped
+  producer stories. Missing hours, website, contact or location omit their
+  modules. Existing facts, source languages and visibility rules are retained.
+- The footer has one row at 1280 px (all nine links measured at the same top
+  coordinate), with deliberate grids on narrower screens.
+
+Browser evidence: in-app Browser at 1280 x 800 and 390 x 844; country overview,
+area discovery, Abadal, the complete 0% Gluten Granollers profile and sparse
+180º El Masnou profile. No horizontal overflow observed. Search returned Abadal,
+keyboard focus showed one card and zero tooltips without a highlight URL, and
+clicking the roster opened its profile. Marker activation and Escape wrote and
+cleared highlight. Clearing search with the keyboard restored 400 rows; the
+Wine filter showed 279 and Back restored 400. English and Girona selection
+preserved the locale and closed the account menu without a submit step.
+
+The contact field was filled without sending or opening an external mail app.
+Approved fictional products from ES #12439 were rendered in a temporary
+development-only visual fixture at both widths; that fixture was removed.
+Authenticated premium visibility was not enabled or changed. Gallery semantics
+and escaping were covered by the related-content render tests. Reduced-motion
+guards were reviewed; the OS preference was not emulated.
+
+Validation: TypeScript, scoped lint, design and the focused roster/content
+tests passed. The full verify:ai run passed through the data, permissions and
+geography suites; its HTTP test still expected the removed “Abrir zona” button.
+That assertion now checks direct province links and absence of the redundant
+selector. HTTP behavior and the remaining content, agent and guide suites then
+passed. The final sparse-profile change received TypeScript/lint and another
+HTTP behavior check. Existing development console warnings about agent-tool
+serialization and localhost analytics were already present before this work.
+
+Release verification: the isolated design-only tree passed frozen-lockfile
+installation and the complete pnpm verify:ai gate on 2026-09-06. Parallel guide
+and producer-data changes were excluded from this release.

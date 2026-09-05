@@ -5,6 +5,9 @@ import type { Metadata, Viewport } from "next";
 import { Noto_Sans } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CompassIcon } from "@phosphor-icons/react/ssr";
+import { NavigationLink } from "@/components/navigation-link";
+import { PageMotion } from "@/components/page-motion";
 
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
@@ -36,6 +39,7 @@ import {
 import "../globals.css";
 import "../../design/foundations/tokens.css";
 import "../../design/adapters/web.css";
+import "../../design/adapters/experience.css";
 
 const adsenseAccountId = getAdSenseAccountId();
 
@@ -133,15 +137,24 @@ export function SiteRootShell({
             <ChisanWordmark alt="" />
             <span className="site-header__tagline">{localizedTagline}</span>
           </Link>
+          <nav className="site-primary-nav" aria-label={SITE_NAME}>
+            <NavigationLink href={MANUAL_AREA_SELECTION_HREF} className="site-primary-nav__catalog">
+              <CompassIcon size={20} aria-hidden="true" />
+              <span>{footerMessages.catalogLink}</span>
+            </NavigationLink>
+            <NavigationLink href="/how-we-work" activePath="/how-we-work" className="site-primary-nav__about">
+              {footerMessages.aboutLink}
+            </NavigationLink>
+          </nav>
           <SiteAccountNav
             authConfigured={accountAuthConfigured}
             messages={accountMessages ?? headerMessages}
           />
         </header>
-        {children}
+        <PageMotion>{children}</PageMotion>
         <footer className="site-footer">
           <nav className="site-footer__links" aria-label={footerMessages.navigation}>
-            <Link href="/" className="site-footer__brand-link">
+            <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>
               <ChisanWordmark alt="" reverse />
             </Link>
             <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
