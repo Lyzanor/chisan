@@ -1,7 +1,7 @@
 # Pontevedra — candidate holds
 
 - Target CSV: `data/csv/es/galicia/pontevedra.csv`
-- Editorial review: 2026-09-04; 206 unresolved candidate entries remain.
+- Editorial review: 2026-09-06; 205 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -11,7 +11,6 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Tupana Obrador, S.L. | Nigrán | `Dulces y repostería` — IGP Tarta de Santiago | The current IGP register lists the manufacturer at the Porto do Molle industrial estate with telephone, email and first-party domain. | [IGP active manufacturers](https://tartadesantiago.org/es/fabricantes-activos/) | <https://tupanaobrador.com/> | Current own bakery identity and Nigrán industrial/shop addresses are supported; distinguish actual current workshop from retail. |
 | Besada Distribuciones del Noroeste, S.L.U. | Pontevedra | `Fruta y verdura` — IXP Pataca de Galicia | The current IXP directory lists this company as a certified operator at San Caetano, Alba. | [IXP certified operators](https://patacadegalicia.es/operadores/) | — | Dossier review only: no current producer-owned page was listed for this lead. Confirm productive responsibility, an identifiable own human-food offer and the actual productive municipality. Recorded blocker: Determine whether the unit grows, governs or materially handles an own protected offer rather than acting only as a distributor. |
 | Adega Castro Celta, S.L. | Ribadumia | `Destilados y licores` — Castrocelta protected spirits | The current council profile lists the operator at Sisán, Ribadumia, and names its Castrocelta Orujo, herbal and coffee liqueurs. | [Council operator profile](https://orujodegalicia.org/project/adega-castrocelta-s-l/) | <http://www.castrocelta.com/> | The listed public source could not be retrieved (<urlopen error [Errno 8] nodename nor servname provided, or not known>). Locate an accessible current producer-owned or institutional source. Recorded blocker: Confirm current own offer and reconcile this unit with Destilerías Candamio and other linked Castrocelta operators. |
 | Adega Castrobrey, S.L. | Vila de Cruces | `Destilados y licores` — Bocabajo Castrobrey protected spirits | The current council profile lists the Camanzo unit with three own protected products and a first-party domain. | [Council operator profile](https://orujodegalicia.org/project/adegas-castrobrey-s-l/) | <https://www.castrobrey.com/> | Current producing winery is supported at Ulla valley level; confirm exact municipality. |
