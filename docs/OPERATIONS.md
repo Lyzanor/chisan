@@ -564,6 +564,24 @@ revoke resources and retain only the minimum integrity history coherently.
 
 ## Reviewed producer publication
 
+Product proposals use the same commands and review boundary as base profile
+changes. The v2 execution functions bind both the canonical CSV row hash and the
+approved content-package hash. Run the current operator after migration `0010`;
+v1 functions deliberately refuse requests with `content_change`. Include the
+JSON package and any CSV change in the same reviewed Git commit. A product-only
+change whose approval date is already in the CSV may commit only its JSON.
+Finalization checks both approved states at that commit and at HEAD.
+
+Materialization acquires a local content lock, validates references/assets and
+writes both files before completing its database receipt. On a known failure it
+restores only files still matching its own write; uncertain database completion
+or concurrent file changes require inspection and preserve recoverable output.
+An abandoned `.json.lock` needs the same process/worktree investigation as the
+local content workflow. Recovery additionally checks that the clean package is
+exactly the reviewed base or approved result. Never finalize only the CSV for a
+proposal that also contains products.
+
+
 ```bash
 # 1. Apply one approved request locally and validate its CSV.
 npx pnpm producer:change materialize <change-request-uuid>

@@ -546,3 +546,26 @@ branch, `backup-qr-selection-0009-20260905`, was created from Production main.
 Migration `0009` succeeded in a transaction rolled back on that branch, then
 committed on Production main. A fresh query confirmed ten migrations, the exact
 new migration hash, and nullable title/description columns of 160/600 characters.
+
+
+## 2026-09-05 — Producer product editor
+
+Reviewed the real profile form at 1440×1000 and 390×844 in the in-app browser.
+A temporary local route used the actual submission service with an isolated
+PGlite database and synthetic authenticated member; Production database writes
+were disabled. The route was removed after verification.
+
+Products appear before the base fields, with existing typography, borders and
+spacing tokens. Add focuses the new name; keyboard-accessible 44px controls
+change order and remove an item, with an undo action. Verified adding a product,
+reordering, undoing removal, saving without a review note, reloading the saved
+draft, and submitting with a note. The resulting review shows the added item
+and the changed positions separately. Invalid names preserve input and focus a
+Spanish error summary. Pending requests disable fields, and the status separates
+unsaved changes, saved drafts and submission for review.
+
+Both widths have no document overflow. The mobile check exposed existing base
+checkboxes inheriting full input width; compact checkbox sizing now keeps labels
+within the form. Product names, descriptions and language controls remain usable
+at the narrow width. No browser console errors were observed. This check proves
+the isolated editing flow, not authenticated Production publication.

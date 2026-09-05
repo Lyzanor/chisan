@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
-import { updateProducerProfileQrAction } from "@/app/(application)/cuenta/actions";
+import { submitProducerChangeAction, updateProducerProfileQrAction } from "@/app/(application)/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import {
   ProducerChangeForm,
@@ -41,6 +41,10 @@ import {
   getDescriptionLocaleOptions,
 } from "@/lib/i18n/producer-fields";
 import { getStripeProfileUpgradeConfiguration } from "@/lib/payments/stripe-profile-upgrade-config";
+import { loadProducerContent } from "@/lib/catalog/content";
+import { PRODUCER_CONTENT_LIMITS } from "@/lib/catalog/content-schema";
+import { hashProducerContent } from "@/lib/accounts/producer-content-change";
+import { getProducerEditorLabels } from "@/lib/i18n/producer-editor";
 import { isProfileQrEnabled } from "@/lib/profile-qr";
 
 export const metadata: Metadata = {
@@ -172,6 +176,7 @@ export default async function EditProducerPage({
       .limit(1),
   ]);
 
+  const labels = getProducerEditorLabels(presentation.locale);
   const publicHref = buildAccountProducerHref(producer, presentation.explicitLocale);
   const premiumActive = Boolean(premiumEntitlement);
   const producerQrEnabled = isProfileQrEnabled(premiumEntitlement?.metadata);
@@ -186,23 +191,22 @@ export default async function EditProducerPage({
         producerId={producerId}
       />
     ) : null;
-  if (openChange) {
+  if (openChange && (openChange.status !== "draft" || (openChange.requiredEntitlementKey && !premiumActive))) {
     return (
       <div className="account-content account-content--narrow">
         <AccountMessage params={query} />
         <h2>{producer.name}</h2>
         <div className="account-callout">
-          <strong>An open proposal already exists.</strong>
+          <strong>{openChange.status === "draft" ? labels.premiumPaused : labels.sent}</strong>
           <p>
-            Wait for review or withdraw the current request before creating another proposal for
-            this producer.
+            {openChange.status === "draft" ? labels.premiumPausedHelp : labels.sentHelp}
           </p>
           <div className="account-inline-actions">
             <Link href="/cuenta/cambios" className="account-button">
-              View request
+              {labels.viewRequest}
             </Link>
             <Link href={publicHref} className="account-button account-button--secondary">
-              Public profile
+              {labels.publicProfile}
             </Link>
           </div>
         </div>
@@ -223,7 +227,7 @@ export default async function EditProducerPage({
             reviewers, and this form will reopen after the migration is deployed.
           </p>
           <Link href={publicHref} className="account-button account-button--secondary">
-            Public profile
+            {labels.publicProfile}
           </Link>
         </div>
         {producerQrSettings}
@@ -231,6 +235,8 @@ export default async function EditProducerPage({
     );
   }
 
+  const draft = openChange?.status === "draft" ? openChange : null;
+  const content = premiumActive ? await loadProducerContent(country, producerId) : null;
   const descriptionLocaleOptions = getDescriptionLocaleOptions(
     presentation.messages,
     presentation.locale,
@@ -291,7 +297,7 @@ export default async function EditProducerPage({
     }
     return {
       help: presentation.messages.ownerProducerFieldHelp[field.key] ?? field.help,
-      initialValue: producer.fields[field.key] ?? "",
+      initialValue: draft?.patch[field.key] ?? producer.fields[field.key] ?? "",
       key: field.key,
       kind: field.kind,
       label: formatProducerFieldLabel(
@@ -325,29 +331,28 @@ export default async function EditProducerPage({
       <AccountMessage params={query} />
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">Propose CSV changes</p>
+          <p className="catalog-kicker">{labels.editor}</p>
           <h2>{producer.name}</h2>
           <p>
             {producer.city} · {producer.country.toUpperCase()} / {producer.area}
           </p>
         </div>
         <Link href={publicHref} className="account-button account-button--secondary">
-          Public profile
+          {labels.publicProfile}
         </Link>
       </header>
 
       <div className="account-callout">
-        <strong>Changes are not published immediately.</strong>
+        <strong>{labels.process}</strong>
         <p>
-          A reviewer checks the identity, source and CSV contract. Immutable IDs, routing slugs,
-          verification state and image paths remain editorial-only.
+          {draft ? labels.draftHelp : labels.reviewHelp}
         </p>
       </div>
 
       <div className="account-callout">
         <strong>
           {premiumActive
-            ? "Expanded profile fields are active."
+            ? labels.active
             : upgradePending
               ? "Expanded profile payment is pending."
               : upgradeNeedsReconciliation
@@ -358,7 +363,7 @@ export default async function EditProducerPage({
         </strong>
         <p>
           {premiumActive
-            ? "A YouTube video, guided visits, producer story, team introduction and highlighted links can be proposed below."
+            ? labels.activeHelp
             : upgradePending
               ? "Stripe has not yet confirmed the open Checkout request. Premium fields remain unavailable until the signed webhook succeeds."
               : upgradeNeedsReconciliation
@@ -384,7 +389,17 @@ export default async function EditProducerPage({
       {producerQrSettings}
 
       <ProducerChangeForm
-        baseRowHash={hashProducerFields(producer.fields)}
+        action={submitProducerChangeAction}
+        baseRowHash={draft?.baseRowHash ?? hashProducerFields(producer.fields)}
+        locale={presentation.locale}
+        products={content ? {
+          gallery: content.gallery, links: content.links,
+          products: draft?.contentChange?.products ?? content.products,
+          baseHash: draft?.contentChange?.baseHash ?? hashProducerContent(content),
+          limit: PRODUCER_CONTENT_LIMITS.products,
+        } : undefined}
+        languageOptions={descriptionLocaleOptions}
+        draft={draft ? { id: draft.id, lockVersion: draft.lockVersion, authorNote: draft.authorNote ?? "" } : undefined}
         country={producer.country}
         premiumFields={premiumFields}
         producerId={producer.producerId}

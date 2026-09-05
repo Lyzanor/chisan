@@ -17,11 +17,14 @@ import {
   type CatalogSitemapEntry,
 } from "../lib/catalog-sitemap";
 import {
+  loadCsvRows,
   listCountries,
   listPublishedCountries,
   listProducerRouteParams,
   type AreaOption,
 } from "../lib/csv-catalog";
+
+import { listIndexableProducerLocales } from "../lib/catalog/producers";
 
 const SPAIN = { slug: "es", defaultLocale: "es" as const };
 
@@ -136,7 +139,10 @@ test("sitemap count matches effective locale policies and every alternate is rec
     listProducerRouteParams(listPublishedCountries()),
   ]);
   const countries = listPublishedCountries();
-  assert.deepEqual(countries.map(({ slug }) => slug), ["es"]);
+  assert.deepEqual(
+    countries.map(({ slug }) => slug),
+    ["es"],
+  );
   const areaPolicies = listAreaPolicies();
   const countryCount = countries.reduce(
     (count, country) => count + country.publishedLocales.length,
@@ -146,10 +152,31 @@ test("sitemap count matches effective locale policies and every alternate is rec
     (count, area) => count + area.publishedLocales.length,
     0,
   );
+  const indexableByArea = new Map(
+    await Promise.all(
+      [...areaPolicies].map(async ([key, area]) => {
+        const [country, slug] = key.split("/");
+        const [rows, locales] = await Promise.all([
+          loadCsvRows(country, slug),
+          listIndexableProducerLocales(country, slug, area.publishedLocales),
+        ]);
+        return [
+          key,
+          new Map(
+            rows.map((row) => [row.slug, locales.get(row.producerId) ?? []]),
+          ),
+        ] as const;
+      }),
+    ),
+  );
   const producerCount = producerRoutes.reduce((count, route) => {
     const area = areaPolicies.get(`${route.country}/${route.area}`);
     assert.ok(area, `Missing area policy for ${route.country}/${route.area}`);
-    return count + area.publishedLocales.length;
+    const locales = indexableByArea
+      .get(`${route.country}/${route.area}`)
+      ?.get(route.slug);
+    assert.ok(locales, `Missing producer readiness for ${route.slug}`);
+    return count + locales.length;
   }, 0);
   const expectedCount = 4 + countryCount + areaCount + producerCount;
 
@@ -197,9 +224,10 @@ test("sitemap count matches effective locale policies and every alternate is rec
     .filter((slug) => slug !== "es")) {
     assert.ok(
       entries.every(
-        ({ url }) => !new URL(url).pathname.match(
-          new RegExp(`^/(?:[a-z]{2,3}-)?${countrySlug}(?:/|$)`),
-        ),
+        ({ url }) =>
+          !new URL(url).pathname.match(
+            new RegExp(`^/(?:[a-z]{2,3}-)?${countrySlug}(?:/|$)`),
+          ),
       ),
       `Standby country '${countrySlug}' leaked into the sitemap.`,
     );
@@ -258,4 +286,27 @@ test("sitemap sharding keeps a growth margin below the protocol limit", () => {
       shardCatalogSitemapEntries(syntheticEntries, SITEMAP_GOOGLE_URL_LIMIT),
     /below 50000/,
   );
+});
+
+test("producer metadata excludes incomplete translations without hiding the source profile", () => {
+  const target = {
+    kind: "producer" as const,
+    country: SPAIN,
+    localePolicy: { publishedLocales: ["es", "ca", "en"] as const },
+    area: "barcelona",
+    producer: { slug: "test-profile" },
+    indexableLocales: ["es"] as const,
+  };
+  const source = buildCatalogAlternateSet(target, "es");
+  assert.deepEqual(source.languages, {
+    es: "https://chisan.app/es/barcelona/test-profile",
+  });
+  assert.equal(source.indexable, true);
+  const incomplete = buildCatalogAlternateSet(target, "ca");
+  assert.equal(incomplete.indexable, false);
+  assert.equal(
+    incomplete.canonical,
+    "https://chisan.app/ca-es/barcelona/test-profile",
+  );
+  assert.deepEqual(incomplete.languages, source.languages);
 });

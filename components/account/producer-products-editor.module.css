@@ -1,0 +1,85 @@
+.editor {
+  min-width: 0;
+  scroll-margin-top: var(--chisan-space-6);
+}
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--chisan-space-3);
+}
+.heading strong {
+  overflow-wrap: anywhere;
+}
+.heading small {
+  color: var(--muted);
+}
+.list {
+  padding: 0;
+  margin: var(--chisan-space-6) 0;
+  list-style: none;
+}
+.product {
+  display: grid;
+  gap: var(--chisan-space-4);
+  border-top: 1px solid var(--line);
+  padding: var(--chisan-space-6) 0;
+}
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--chisan-space-2);
+}
+.tools button {
+  min-height: 44px;
+  padding: var(--chisan-space-2) var(--chisan-space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.tools button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.tools button:focus-visible,
+.attachments summary:focus-visible,
+.preview summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.attachments summary,
+.preview summary {
+  padding: var(--chisan-space-3) 0;
+  cursor: pointer;
+}
+.attachments fieldset {
+  border: 0;
+  margin: var(--chisan-space-4) 0;
+  padding: 0;
+}
+.attachment {
+  display: flex;
+  align-items: center;
+  gap: var(--chisan-space-3);
+  padding: var(--chisan-space-2) 0;
+}
+.attachment img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+.preview {
+  border-top: 1px solid var(--line);
+  margin-top: var(--chisan-space-6);
+}
+.preview ul {
+  padding-left: var(--chisan-space-6);
+}
+.preview p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

@@ -29,9 +29,9 @@ const nextConfig: NextConfig = {
     "/robots.txt": ["./data/csv/**/*.csv"],
     "/sitemap/**": ["./data/csv/**/*.csv"],
     "/cuenta": ["./data/csv/**/*.csv"],
-    "/cuenta/**": ["./data/csv/**/*.csv"],
+    "/cuenta/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/admin": ["./data/csv/**/*.csv"],
-    "/admin/**": ["./data/csv/**/*.csv"],
+    "/admin/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/u/**": ["./data/csv/**/*.csv"],
   },
 };

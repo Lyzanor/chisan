@@ -1,36 +1,59 @@
 import { spawnSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
-import {
-readFile
-} from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import {
+  prepareContentPublication,
+  ProducerContentConflictError,
+  readOptionalContent,
+} from "../lib/editorial/producer-content-publication";
+import {
+  hashProducerContent,
+  resolveProducerContentChange,
+} from "../lib/accounts/producer-content-change";
+import {
+  emptyProducerContent,
+  producerContentSchema,
+} from "../lib/catalog/content-schema";
+import { producerContentPath } from "../lib/catalog/content";
 import { atomicWriteUtf8 } from "../lib/editorial/atomic-file";
-import { assertFinalizationGitState,assertGitPathClean,materializationGitContext,readCommitBlob,repoRelativePath } from "../lib/editorial/git-state";
-import { ProducerCsvRowNotFoundError,applyProducerPatchToCsv,readProducerFieldsFromCsv,resolveExpectedProducerChange,type ExpectedProducerChange,type ProducerCsvPatchResult } from "../lib/editorial/producer-csv";
+import {
+  assertFinalizationGitState,
+  assertGitPathClean,
+  materializationGitContext,
+  readCommitBlob,
+  repoRelativePath,
+} from "../lib/editorial/git-state";
+import {
+  ProducerCsvRowNotFoundError,
+  applyProducerPatchToCsv,
+  readProducerFieldsFromCsv,
+  resolveExpectedProducerChange,
+  type ExpectedProducerChange,
+  type ProducerCsvPatchResult,
+} from "../lib/editorial/producer-csv";
 export { atomicWriteUtf8 } from "../lib/editorial/atomic-file";
 export * from "../lib/editorial/git-state";
 export * from "../lib/editorial/producer-csv";
 
-import { eq,sql } from "drizzle-orm";
-import { drizzle,type PostgresJsDatabase } from "drizzle-orm/postgres-js";
-import postgres,{ type Sql } from "postgres";
+import { eq, sql } from "drizzle-orm";
+import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
+import postgres, { type Sql } from "postgres";
 
+import { hashProducerFields } from "../lib/accounts/producer-fields";
 import {
-hashProducerFields
-} from "../lib/accounts/producer-fields";
-import {
-PRODUCER_CHANGE_AGENT_SCHEMA_VERSION,
-normalizeAdminProducerChangeListOptions,
-queryAdminProducerChangeById,
-queryAdminProducerChanges,
-serializeProducerChangeDetail,
-serializeProducerChangeListItem,
+  PRODUCER_CHANGE_AGENT_SCHEMA_VERSION,
+  normalizeAdminProducerChangeListOptions,
+  queryAdminProducerChangeById,
+  queryAdminProducerChanges,
+  serializeProducerChangeDetail,
+  serializeProducerChangeListItem,
 } from "../lib/admin/producer-change-requests";
 import * as databaseSchema from "../lib/db/schema";
 import {
-producerChangeRequests,
-type ProducerChangeRequest,
+  producerChangeRequests,
+  type ProducerChangeRequest,
 } from "../lib/db/schema";
 import { loadProducerChangeDatabaseUrl } from "./producer-change-access";
 
@@ -69,9 +92,18 @@ export type ProducerChangeCliArguments =
     }
   | { command: "show"; changeId: string; json: boolean }
   | { command: "materialize"; changeId: string }
-  | { command: "recover"; changeId: string; executionId: string; reason: string }
+  | {
+      command: "recover";
+      changeId: string;
+      executionId: string;
+      reason: string;
+    }
   | { command: "finalize"; changeId: string; commitSha: string }
-  | { command: "doctor"; access: "read" | "operator" | "recovery"; json: boolean };
+  | {
+      command: "doctor";
+      access: "read" | "operator" | "recovery";
+      json: boolean;
+    };
 
 const CLI_USAGE =
   "Usage: pnpm producer:change materialize <change-id> | finalize <change-id> <commit-sha>\n" +
@@ -83,7 +115,10 @@ const CLI_USAGE =
 const CHANGE_REQUEST_ID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-function parsePositiveIntegerOption(flag: string, value: string | undefined): number {
+function parsePositiveIntegerOption(
+  flag: string,
+  value: string | undefined,
+): number {
   if (!value || !/^[1-9][0-9]*$/.test(value)) {
     throw new Error(`${flag} requires a positive integer.`);
   }
@@ -128,7 +163,9 @@ export function parseProducerChangeCliArguments(
       throw new Error("Recover requires a valid change-request UUID.");
     }
     if (!CHANGE_REQUEST_ID_PATTERN.test(executionId ?? "")) {
-      throw new Error("Recover requires the exact materialized execution UUID.");
+      throw new Error(
+        "Recover requires the exact materialized execution UUID.",
+      );
     }
     return {
       command,
@@ -197,16 +234,13 @@ export function parseProducerChangeCliArguments(
       if (!token.startsWith("--")) {
         throw new Error(`Unexpected list argument '${token}'.`);
       }
-      if (![
-        "--status",
-        "--query",
-        "--limit",
-        "--page",
-        "--json",
-      ].includes(token)) {
+      if (
+        !["--status", "--query", "--limit", "--page", "--json"].includes(token)
+      ) {
         throw new Error(`Unknown list option '${token}'.`);
       }
-      if (seen.has(token)) throw new Error(`${token} may only be specified once.`);
+      if (seen.has(token))
+        throw new Error(`${token} may only be specified once.`);
       seen.add(token);
 
       if (token === "--json") {
@@ -244,7 +278,9 @@ export function parseProducerChangeCliArguments(
 }
 
 function errorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message.trim() ? error.message : fallback;
+  return error instanceof Error && error.message.trim()
+    ? error.message
+    : fallback;
 }
 
 type ProducerChangeExecutionReceipt = {
@@ -263,6 +299,7 @@ export type ActiveProducerChangeExecution = {
   worktreeKey: string;
   sourceHeadSha: string;
   expectedRowHash: string;
+  expectedContentHash?: string | null;
   leaseExpiresAt: Date;
   csvPath: string;
 };
@@ -281,7 +318,8 @@ export function canResumeExactDirtyMaterialization(
       execution.sourceHeadSha === gitContext.sourceHeadSha &&
       execution.expectedRowHash === expectedRowHash &&
       execution.csvPath === csvPath &&
-      (execution.status === "materialized" || execution.leaseExpiresAt.getTime() > now),
+      (execution.status === "materialized" ||
+        execution.leaseExpiresAt.getTime() > now),
   );
 }
 
@@ -305,10 +343,14 @@ function isTransientDatabaseConnectionError(error: unknown): boolean {
     typeof error === "object" && error && "code" in error
       ? String((error as { code?: unknown }).code ?? "")
       : "";
-  return code.startsWith("08") || ["ECONNRESET", "ETIMEDOUT", "EPIPE"].includes(code);
+  return (
+    code.startsWith("08") || ["ECONNRESET", "ETIMEDOUT", "EPIPE"].includes(code)
+  );
 }
 
-async function retryDatabaseReceipt<T>(operation: () => Promise<T>): Promise<T> {
+async function retryDatabaseReceipt<T>(
+  operation: () => Promise<T>,
+): Promise<T> {
   try {
     return await operation();
   } catch (error) {
@@ -330,6 +372,7 @@ async function activeProducerChangeExecution(
       worktree_key as "worktreeKey",
       source_head_sha as "sourceHeadSha",
       expected_row_hash as "expectedRowHash",
+      expected_content_hash as "expectedContentHash",
       lease_expires_at as "leaseExpiresAt",
       csv_path as "csvPath"
     from public.producer_change_executions
@@ -353,6 +396,7 @@ async function finalizationProducerChangeExecution(
       worktree_key as "worktreeKey",
       source_head_sha as "sourceHeadSha",
       expected_row_hash as "expectedRowHash",
+      expected_content_hash as "expectedContentHash",
       lease_expires_at as "leaseExpiresAt",
       csv_path as "csvPath",
       applied_commit_sha as "appliedCommitSha"
@@ -379,6 +423,7 @@ async function recoveryProducerChangeExecution(
       worktree_key as "worktreeKey",
       source_head_sha as "sourceHeadSha",
       expected_row_hash as "expectedRowHash",
+      expected_content_hash as "expectedContentHash",
       lease_expires_at as "leaseExpiresAt",
       csv_path as "csvPath"
     from public.producer_change_executions
@@ -399,23 +444,27 @@ async function beginProducerChangeExecution(
     csvPath: string;
     sourceHeadSha: string;
     expectedRowHash: string;
+    expectedContentHash?: string | null;
   },
 ): Promise<ProducerChangeExecutionReceipt> {
-  const [receipt] = await retryDatabaseReceipt(() =>
-    client<ProducerChangeExecutionReceipt[]>`
+  const [receipt] = await retryDatabaseReceipt(
+    () =>
+      client<ProducerChangeExecutionReceipt[]>`
       select *
-      from public.chisan_begin_producer_change_execution_v1(
+      from public.chisan_begin_producer_change_execution_v2(
         ${input.executionId}::uuid,
         ${input.changeId}::uuid,
         ${input.worktreeKey},
         ${input.csvPath},
         ${input.sourceHeadSha},
         ${input.expectedRowHash},
-        900
+        900,
+        ${input.expectedContentHash ?? null}
       )
     `,
   );
-  if (!receipt) throw new Error("The database did not return an execution receipt.");
+  if (!receipt)
+    throw new Error("The database did not return an execution receipt.");
   return receipt;
 }
 
@@ -425,14 +474,17 @@ async function completeProducerChangeExecution(
   expectedRowHash: string,
   fields: string[],
   alreadyPresent: boolean,
+  expectedContentHash: string | null = null,
 ): Promise<void> {
-  await retryDatabaseReceipt(() =>
-    client`
-      select public.chisan_complete_producer_change_execution_v1(
+  await retryDatabaseReceipt(
+    () =>
+      client`
+      select public.chisan_complete_producer_change_execution_v2(
         ${executionId}::uuid,
         ${expectedRowHash},
         ${client.array(fields)}::text[],
-        ${alreadyPresent}
+        ${alreadyPresent},
+        ${expectedContentHash}
       )
     `,
   );
@@ -475,15 +527,18 @@ async function finalizeProducerChangeExecution(
     commitSha: string;
     csvPath: string;
     expectedRowHash: string;
+    expectedContentHash?: string | null;
   },
 ): Promise<string> {
-  const [receipt] = await retryDatabaseReceipt(() =>
-    client<{ executionId: string }[]>`
-      select public.chisan_finalize_producer_change_execution_v1(
+  const [receipt] = await retryDatabaseReceipt(
+    () =>
+      client<{ executionId: string }[]>`
+      select public.chisan_finalize_producer_change_execution_v2(
         ${input.changeId}::uuid,
         ${input.commitSha},
         ${input.csvPath},
-        ${input.expectedRowHash}
+        ${input.expectedRowHash},
+        ${input.expectedContentHash ?? null}
       ) as "executionId"
     `,
   );
@@ -501,18 +556,21 @@ async function recoverProducerChangeExecution(
     worktreeKey: string;
     sourceHeadSha: string;
     observedRowHash: string;
+    observedContentHash?: string | null;
     reason: string;
   },
 ): Promise<string> {
-  const [receipt] = await retryDatabaseReceipt(() =>
-    client<{ executionId: string }[]>`
-      select public.chisan_recover_producer_change_execution_v1(
+  const [receipt] = await retryDatabaseReceipt(
+    () =>
+      client<{ executionId: string }[]>`
+      select public.chisan_recover_producer_change_execution_v2(
         ${input.changeId}::uuid,
         ${input.executionId}::uuid,
         ${input.worktreeKey},
         ${input.sourceHeadSha},
         ${input.observedRowHash},
-        ${input.reason}
+        ${input.reason},
+        ${input.observedContentHash ?? null}
       ) as "executionId"
     `,
   );
@@ -522,7 +580,11 @@ async function recoverProducerChangeExecution(
   return receipt.executionId;
 }
 
-function csvPathFor(producer: { country: string; region: string; area: string }): string {
+function csvPathFor(producer: {
+  country: string;
+  region: string;
+  area: string;
+}): string {
   return path.resolve(
     process.cwd(),
     "data/csv",
@@ -538,7 +600,9 @@ function auditCsv(csvPath: string): void {
     encoding: "utf8",
   });
   if (audit.status !== 0) {
-    throw new Error((audit.stderr || audit.stdout || "CSV audit failed.").trim());
+    throw new Error(
+      (audit.stderr || audit.stdout || "CSV audit failed.").trim(),
+    );
   }
 }
 
@@ -577,26 +641,26 @@ async function inspectProducerChangeDatabaseAccess(
       (
         select bool_and(coalesce(has_function_privilege(session_user, signature, 'execute'), false))
         from unnest(array[
-          to_regprocedure('public.chisan_begin_producer_change_execution_v1(uuid,uuid,text,text,text,text,integer)'),
-          to_regprocedure('public.chisan_complete_producer_change_execution_v1(uuid,text,text[],boolean)'),
+          to_regprocedure('public.chisan_begin_producer_change_execution_v2(uuid,uuid,text,text,text,text,integer,text)'),
+          to_regprocedure('public.chisan_complete_producer_change_execution_v2(uuid,text,text[],boolean,text)'),
           to_regprocedure('public.chisan_fail_producer_change_execution_v1(uuid,text,text)'),
           to_regprocedure('public.chisan_fail_producer_change_preflight_v1(uuid,text,text)'),
-          to_regprocedure('public.chisan_finalize_producer_change_execution_v1(uuid,text,text,text)')
+          to_regprocedure('public.chisan_finalize_producer_change_execution_v2(uuid,text,text,text,text)')
         ]) as workflow(signature)
       ) as "canExecuteAllOperatorWorkflow",
       (
         select bool_or(coalesce(has_function_privilege(session_user, signature, 'execute'), false))
         from unnest(array[
-          to_regprocedure('public.chisan_begin_producer_change_execution_v1(uuid,uuid,text,text,text,text,integer)'),
-          to_regprocedure('public.chisan_complete_producer_change_execution_v1(uuid,text,text[],boolean)'),
+          to_regprocedure('public.chisan_begin_producer_change_execution_v2(uuid,uuid,text,text,text,text,integer,text)'),
+          to_regprocedure('public.chisan_complete_producer_change_execution_v2(uuid,text,text[],boolean,text)'),
           to_regprocedure('public.chisan_fail_producer_change_execution_v1(uuid,text,text)'),
           to_regprocedure('public.chisan_fail_producer_change_preflight_v1(uuid,text,text)'),
-          to_regprocedure('public.chisan_finalize_producer_change_execution_v1(uuid,text,text,text)')
+          to_regprocedure('public.chisan_finalize_producer_change_execution_v2(uuid,text,text,text,text)')
         ]) as workflow(signature)
       ) as "canExecuteAnyOperatorWorkflow",
       has_function_privilege(
         session_user,
-        'public.chisan_recover_producer_change_execution_v1(uuid,uuid,text,text,text,text)',
+        'public.chisan_recover_producer_change_execution_v2(uuid,uuid,text,text,text,text,text)',
         'execute'
       ) as "canExecuteRecovery",
       has_any_column_privilege(session_user, 'public.users', 'update')
@@ -608,7 +672,8 @@ async function inspectProducerChangeDatabaseAccess(
         or has_table_privilege(session_user, 'public.producer_change_requests', 'truncate')
         as "canWriteAccountTables"
   `;
-  if (!probe) throw new Error("Could not inspect the producer-change database role.");
+  if (!probe)
+    throw new Error("Could not inspect the producer-change database role.");
   return probe;
 }
 
@@ -618,20 +683,30 @@ function producerChangeAccessProblems(
 ): string[] {
   const problems: string[] = [];
   if (!probe.member) {
-    problems.push(`session user is not a member of ${PRODUCER_CHANGE_DATABASE_ROLES[access]}`);
+    problems.push(
+      `session user is not a member of ${PRODUCER_CHANGE_DATABASE_ROLES[access]}`,
+    );
   }
   if (!probe.schemaUsage) problems.push("USAGE on schema public is missing");
-  if (!probe.canReadChanges) problems.push("producer-change read access is missing");
-  if (probe.schemaCreate) problems.push("unexpected CREATE privilege on schema public");
-  if (probe.canUpdateChanges) problems.push("unexpected direct UPDATE on change requests");
-  if (probe.canDeleteChanges) problems.push("unexpected DELETE on change requests");
-  if (probe.canInsertAudit) problems.push("unexpected direct INSERT on audit events");
-  if (probe.canWriteAccountTables) problems.push("unexpected direct account-table writes");
+  if (!probe.canReadChanges)
+    problems.push("producer-change read access is missing");
+  if (probe.schemaCreate)
+    problems.push("unexpected CREATE privilege on schema public");
+  if (probe.canUpdateChanges)
+    problems.push("unexpected direct UPDATE on change requests");
+  if (probe.canDeleteChanges)
+    problems.push("unexpected DELETE on change requests");
+  if (probe.canInsertAudit)
+    problems.push("unexpected direct INSERT on audit events");
+  if (probe.canWriteAccountTables)
+    problems.push("unexpected direct account-table writes");
   if (access === "operator" && !probe.canExecuteAllOperatorWorkflow) {
     problems.push("producer-change workflow functions are not executable");
   }
   if (access !== "operator" && probe.canExecuteAnyOperatorWorkflow) {
-    problems.push(`${access} credential unexpectedly executes operator workflow functions`);
+    problems.push(
+      `${access} credential unexpectedly executes operator workflow functions`,
+    );
   }
   if (access === "recovery" && !probe.canExecuteRecovery) {
     problems.push("producer-change recovery function is not executable");
@@ -649,7 +724,9 @@ async function readOnlyDatabaseOperation<T>(
   return database.transaction(async (transaction) => {
     await transaction.execute(sql`set transaction read only`);
     await transaction.execute(sql`set local statement_timeout = '15s'`);
-    await transaction.execute(sql`set local idle_in_transaction_session_timeout = '20s'`);
+    await transaction.execute(
+      sql`set local idle_in_transaction_session_timeout = '20s'`,
+    );
     return operation(transaction as unknown as Database);
   });
 }
@@ -781,7 +858,9 @@ async function runCli(): Promise<void> {
       queryAdminProducerChangeById(transaction, cliArguments.changeId),
     );
     if (!detail) {
-      throw new Error(`Change request '${cliArguments.changeId}' was not found.`);
+      throw new Error(
+        `Change request '${cliArguments.changeId}' was not found.`,
+      );
     }
     const data = serializeProducerChangeDetail(detail);
 
@@ -808,7 +887,8 @@ async function runCli(): Promise<void> {
       `Catalog: ${data.catalog.state}${data.producer.publicPath ? ` · ${data.producer.publicPath}` : ""}\n`,
     );
     for (const field of data.diff) {
-      const current = field.current === null ? "missing" : JSON.stringify(field.current);
+      const current =
+        field.current === null ? "missing" : JSON.stringify(field.current);
       process.stdout.write(
         `${field.key}: ${JSON.stringify(field.before)} -> ${JSON.stringify(field.requested)} ` +
           `(current: ${current})\n`,
@@ -819,7 +899,9 @@ async function runCli(): Promise<void> {
       process.stdout.write(`Command: ${data.operatorCommands.materialize}\n`);
     }
     if (data.operatorCommands.finalizeTemplate) {
-      process.stdout.write(`Command: ${data.operatorCommands.finalizeTemplate}\n`);
+      process.stdout.write(
+        `Command: ${data.operatorCommands.finalizeTemplate}\n`,
+      );
     }
   }
 
@@ -887,6 +969,7 @@ async function runCli(): Promise<void> {
         initialChange.baseRowHash,
         initialChange.patch,
         initialChange.reviewedAt,
+        Boolean(initialChange.contentChange),
       );
     } catch (error) {
       return terminalPreflight(
@@ -909,7 +992,38 @@ async function runCli(): Promise<void> {
     const csvPath = csvPathFor(producer);
     const relativeCsvPath = repoRelativePath(csvPath, process.cwd());
     const gitContext = materializationGitContext();
-    const activeExecution = await activeProducerChangeExecution(client, changeId);
+    const activeExecution = await activeProducerChangeExecution(
+      client,
+      changeId,
+    );
+    let contentPublication: Awaited<
+      ReturnType<typeof prepareContentPublication>
+    > | null = null;
+    if (initialChange.contentChange) {
+      try {
+        const resumeSource =
+          activeExecution &&
+          activeExecution.sameOperator &&
+          activeExecution.worktreeKey === gitContext.worktreeKey &&
+          activeExecution.expectedRowHash === expected.hash &&
+          activeExecution.expectedContentHash ===
+            initialChange.contentChange.requestedHash &&
+          (activeExecution.status === "materialized" ||
+            activeExecution.leaseExpiresAt.getTime() > Date.now())
+            ? activeExecution.sourceHeadSha
+            : null;
+        contentPublication = await prepareContentPublication(
+          initialChange.contentChange,
+          initialChange.country,
+          initialChange.producerId,
+          resumeSource,
+        );
+      } catch (error) {
+        if (error instanceof ProducerContentConflictError)
+          return terminalPreflight("conflict", error.message);
+        throw error;
+      }
+    }
     let gitPathError: unknown = null;
     try {
       assertGitPathClean(csvPath);
@@ -920,7 +1034,10 @@ async function runCli(): Promise<void> {
     let currentFields: Record<string, string>;
     try {
       original = await readFile(csvPath, "utf8");
-      currentFields = readProducerFieldsFromCsv(original, initialChange.producerId);
+      currentFields = readProducerFieldsFromCsv(
+        original,
+        initialChange.producerId,
+      );
     } catch (error) {
       return terminalPreflight(
         error instanceof ProducerCsvRowNotFoundError ? "conflict" : "failed",
@@ -992,15 +1109,24 @@ async function runCli(): Promise<void> {
     if (activeExecution?.status === "materialized") {
       if (
         activeExecution.expectedRowHash !== expected.hash ||
+        (activeExecution.expectedContentHash ?? null) !==
+          (initialChange.contentChange?.requestedHash ?? null) ||
         activeExecution.csvPath !== relativeCsvPath
       ) {
         throw new Error(
           `Materialized execution ${activeExecution.id} does not match the current request preflight.`,
         );
       }
+      if (contentPublication && !contentPublication.alreadyPresent)
+        throw new Error(
+          "The materialized execution is missing its approved products.",
+        );
+      await contentPublication?.assertCurrent();
       auditCsv(csvPath);
       if ((await readFile(csvPath, "utf8")) !== original) {
-        throw new Error("The target CSV changed during materialization receipt recovery.");
+        throw new Error(
+          "The target CSV changed during materialization receipt recovery.",
+        );
       }
       process.stdout.write(
         `Change request is already materialized in execution ${activeExecution.id}; finalize its exact commit. If its original operator or worktree is abandoned, recovery staff may run 'pnpm producer:change recover ${changeId} ${activeExecution.id} --reason "<documented reason>"' after the recovery quarantine.\n`,
@@ -1013,6 +1139,8 @@ async function runCli(): Promise<void> {
       activeExecution.worktreeKey === gitContext.worktreeKey &&
       activeExecution.sourceHeadSha === gitContext.sourceHeadSha &&
       activeExecution.expectedRowHash === expected.hash &&
+      (activeExecution.expectedContentHash ?? null) ===
+        (initialChange.contentChange?.requestedHash ?? null) &&
       activeExecution.csvPath === relativeCsvPath &&
       activeExecution.leaseExpiresAt.getTime() > Date.now()
         ? activeExecution
@@ -1036,9 +1164,13 @@ async function runCli(): Promise<void> {
         csvPath: relativeCsvPath,
         sourceHeadSha: gitContext.sourceHeadSha,
         expectedRowHash: expected.hash,
+        expectedContentHash: initialChange.contentChange?.requestedHash ?? null,
       });
     } catch (error) {
-      const reason = errorMessage(error, "Could not acquire a materialization lease.");
+      const reason = errorMessage(
+        error,
+        "Could not acquire a materialization lease.",
+      );
       if (
         /author no longer has active access|entitlement required by this change is no longer active/i.test(
           reason,
@@ -1050,7 +1182,10 @@ async function runCli(): Promise<void> {
     }
 
     let wroteCsv = false;
+    let releaseContentLock: (() => Promise<void>) | undefined;
     try {
+      releaseContentLock = await contentPublication?.lock();
+      await contentPublication?.write();
       if (patched) {
         const beforeWrite = await readFile(csvPath, "utf8");
         if (beforeWrite !== original) {
@@ -1065,15 +1200,22 @@ async function runCli(): Promise<void> {
       auditCsv(csvPath);
       const auditedCsv = await readFile(csvPath, "utf8");
       if (auditedCsv !== (patched?.csv ?? original)) {
-        throw new Error("The target CSV changed again before its audit completed.");
+        throw new Error(
+          "The target CSV changed again before its audit completed.",
+        );
       }
 
+      await contentPublication?.assertCurrent();
       await completeProducerChangeExecution(
         client,
         execution.executionId,
         expected.hash,
-        Object.keys(expected.patch).sort((left, right) => left.localeCompare(right)),
-        alreadyPresent,
+        Object.keys(expected.patch).sort((left, right) =>
+          left.localeCompare(right),
+        ),
+        alreadyPresent &&
+          (!contentPublication || contentPublication.alreadyPresent),
+        contentPublication?.hash ?? null,
       );
     } catch (error) {
       let reason = errorMessage(error, "CSV materialization failed.");
@@ -1087,7 +1229,10 @@ async function runCli(): Promise<void> {
         }
       }
       const outcome: ProducerChangeFailureOutcome =
-        error instanceof ProducerCsvRowNotFoundError ? "conflict" : "failed";
+        error instanceof ProducerCsvRowNotFoundError ||
+        error instanceof ProducerContentConflictError
+          ? "conflict"
+          : "failed";
       try {
         // Close and fence this run before touching the CSV again. If another process
         // completed it first, the database function rejects the failure transition.
@@ -1127,8 +1272,11 @@ async function runCli(): Promise<void> {
           storedExecution?.status === "expired" ||
           storedExecution?.status === "failed"
         ) {
+          await contentPublication?.restore();
           if (canRestoreCsv && patched) {
-            const currentCsv = await readFile(csvPath, "utf8").catch(() => null);
+            const currentCsv = await readFile(csvPath, "utf8").catch(
+              () => null,
+            );
             if (currentCsv === patched.csv) {
               await atomicWriteUtf8(csvPath, original);
             } else {
@@ -1143,6 +1291,7 @@ async function runCli(): Promise<void> {
         );
       }
 
+      await contentPublication?.restore();
       if (canRestoreCsv && patched) {
         const currentCsv = await readFile(csvPath, "utf8").catch(() => null);
         if (currentCsv === patched.csv) {
@@ -1152,8 +1301,14 @@ async function runCli(): Promise<void> {
         }
       }
       throw new Error(reason);
+    } finally {
+      await releaseContentLock?.();
     }
 
+    if (contentPublication)
+      process.stdout.write(
+        `Products: ${contentPublication.relativePath}. Include the JSON in the same reviewed commit.\n`,
+      );
     const message = alreadyPresent
       ? `CSV already contains the approved patch and passed its audit in execution ${execution.executionId}. Run pnpm verify:data, then finalize with the exact commit that introduced the approved state.`
       : `Updated ${relativeCsvPath} in execution ${execution.executionId}. Review the diff, run pnpm verify:data, commit it, then finalize with the commit SHA.`;
@@ -1175,6 +1330,7 @@ async function runCli(): Promise<void> {
       initialChange.baseRowHash,
       initialChange.patch,
       initialChange.reviewedAt,
+      Boolean(initialChange.contentChange),
     );
     const execution = await recoveryProducerChangeExecution(
       client,
@@ -1182,25 +1338,37 @@ async function runCli(): Promise<void> {
       cliArguments.executionId,
     );
     if (!execution) {
-      throw new Error("The exact materialized or recovered execution was not found.");
+      throw new Error(
+        "The exact materialized or recovered execution was not found.",
+      );
     }
     const pendingRecovery =
-      initialChange.status === "applying" && execution.status === "materialized";
+      initialChange.status === "applying" &&
+      execution.status === "materialized";
     const idempotentRecovery =
-      (initialChange.status === "approved" || initialChange.status === "conflict") &&
+      (initialChange.status === "approved" ||
+        initialChange.status === "conflict") &&
       execution.status === "cancelled";
     if (!pendingRecovery && !idempotentRecovery) {
       throw new Error(
         `Request '${initialChange.status}' and execution '${execution.status}' do not form a recoverable or idempotent receipt.`,
       );
     }
-    if (execution.expectedRowHash !== expected.hash) {
-      throw new Error("The materialized execution does not match the approved patch.");
+    if (
+      execution.expectedRowHash !== expected.hash ||
+      (execution.expectedContentHash ?? null) !==
+        (initialChange.contentChange?.requestedHash ?? null)
+    ) {
+      throw new Error(
+        "The materialized execution does not match the approved patch.",
+      );
     }
 
     const csvPath = path.resolve(process.cwd(), execution.csvPath);
     if (repoRelativePath(csvPath, process.cwd()) !== execution.csvPath) {
-      throw new Error("The materialized execution contains a non-canonical CSV path.");
+      throw new Error(
+        "The materialized execution contains a non-canonical CSV path.",
+      );
     }
     assertGitPathClean(csvPath);
     const gitContext = materializationGitContext();
@@ -1210,10 +1378,15 @@ async function runCli(): Promise<void> {
       throw new Error("The target CSV changed during recovery preflight.");
     }
     if (
-      readCommitBlob(gitContext.sourceHeadSha, execution.csvPath, process.cwd()) !==
-      currentCsv
+      readCommitBlob(
+        gitContext.sourceHeadSha,
+        execution.csvPath,
+        process.cwd(),
+      ) !== currentCsv
     ) {
-      throw new Error("The clean target CSV does not match the captured Git HEAD.");
+      throw new Error(
+        "The clean target CSV does not match the captured Git HEAD.",
+      );
     }
 
     const observedRowHash = hashProducerFields(
@@ -1228,12 +1401,39 @@ async function runCli(): Promise<void> {
       );
     }
 
+    let observedContentHash: string | null = null;
+    if (initialChange.contentChange) {
+      const { change } = resolveProducerContentChange(
+        initialChange.contentChange,
+        initialChange.country,
+        initialChange.producerId,
+      );
+      const contentPath = producerContentPath(
+        initialChange.country,
+        initialChange.producerId,
+      );
+      const raw = await readOptionalContent(contentPath);
+      assertGitPathClean(contentPath, process.cwd(), raw === null);
+      observedContentHash = hashProducerContent(
+        raw === null
+          ? emptyProducerContent(
+              initialChange.country,
+              initialChange.producerId,
+            )
+          : producerContentSchema.parse(JSON.parse(raw)),
+      );
+      if (
+        ![change.baseHash, change.requestedHash].includes(observedContentHash)
+      )
+        throw new Error("Recovery refused: the product package has diverged.");
+    }
     const recoveredExecutionId = await recoverProducerChangeExecution(client, {
       changeId,
       executionId: execution.id,
       worktreeKey: gitContext.worktreeKey,
       sourceHeadSha: gitContext.sourceHeadSha,
       observedRowHash,
+      observedContentHash,
       reason: cliArguments.reason,
     });
     const recoveredChange = await getChange(changeId);
@@ -1253,7 +1453,8 @@ async function runCli(): Promise<void> {
   }
 
   async function finalize(): Promise<void> {
-    if (!commitSha) throw new Error("Finalize requires the materializing commit SHA.");
+    if (!commitSha)
+      throw new Error("Finalize requires the materializing commit SHA.");
     const normalizedCommit = commitSha.toLowerCase();
     const initialChange = await getChange(changeId);
     const idempotentFinalize =
@@ -1269,10 +1470,16 @@ async function runCli(): Promise<void> {
       initialChange.baseRowHash,
       initialChange.patch,
       initialChange.reviewedAt,
+      Boolean(initialChange.contentChange),
     );
-    const execution = await finalizationProducerChangeExecution(client, changeId);
+    const execution = await finalizationProducerChangeExecution(
+      client,
+      changeId,
+    );
     if (!execution) {
-      throw new Error("No materialized execution owns this producer change request.");
+      throw new Error(
+        "No materialized execution owns this producer change request.",
+      );
     }
     if (!execution.sameOperator) {
       throw new Error(
@@ -1281,10 +1488,14 @@ async function runCli(): Promise<void> {
     }
     if (
       execution.expectedRowHash !== expected.hash ||
+      (execution.expectedContentHash ?? null) !==
+        (initialChange.contentChange?.requestedHash ?? null) ||
       (execution.status === "finalized" &&
         execution.appliedCommitSha !== normalizedCommit)
     ) {
-      throw new Error("The stored execution does not match this finalization request.");
+      throw new Error(
+        "The stored execution does not match this finalization request.",
+      );
     }
 
     const currentGitContext = materializationGitContext();
@@ -1299,6 +1510,24 @@ async function runCli(): Promise<void> {
       execution.csvPath,
       initialChange.producerId,
       expected.hash,
+      process.cwd(),
+      initialChange.contentChange
+        ? {
+            baseRowHash: initialChange.baseRowHash,
+            relativePath: repoRelativePath(
+              producerContentPath(
+                initialChange.country,
+                initialChange.producerId,
+              ),
+              process.cwd(),
+            ),
+            hash: resolveProducerContentChange(
+              initialChange.contentChange,
+              initialChange.country,
+              initialChange.producerId,
+            ).change.requestedHash,
+          }
+        : undefined,
     );
     const finalGitContext = materializationGitContext();
     if (
@@ -1306,11 +1535,15 @@ async function runCli(): Promise<void> {
       finalGitContext.sourceHeadSha !== commitState.headCommit ||
       finalGitContext.worktreeKey !== execution.worktreeKey
     ) {
-      throw new Error("The current HEAD changed during finalization preflight.");
+      throw new Error(
+        "The current HEAD changed during finalization preflight.",
+      );
     }
 
     if (idempotentFinalize) {
-      process.stdout.write("Change request was already finalized with this commit.\n");
+      process.stdout.write(
+        "Change request was already finalized with this commit.\n",
+      );
       return;
     }
 
@@ -1321,9 +1554,13 @@ async function runCli(): Promise<void> {
         commitSha: commitState.commit,
         csvPath: commitState.relativeCsvPath,
         expectedRowHash: expected.hash,
+        expectedContentHash: initialChange.contentChange?.requestedHash ?? null,
       });
     } catch (error) {
-      const reason = errorMessage(error, "Could not finalize the producer change.");
+      const reason = errorMessage(
+        error,
+        "Could not finalize the producer change.",
+      );
       if (/author no longer has active access/i.test(reason)) {
         await failProducerChangePreflight(client, changeId, "conflict", reason);
       }

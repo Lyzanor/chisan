@@ -569,7 +569,7 @@ test("producer-change workflow covers every durable status exactly once", () => 
 test("producer-change filters normalize views, exact statuses and pagination", () => {
   assert.deepEqual(resolveProducerChangeStatusSelection("CSV"), {
     key: "csv",
-    label: "CSV workflow",
+    label: "Publication",
     statuses: ["approved", "applying"],
     kind: "view",
   });
@@ -610,6 +610,7 @@ test("producer-change detail exposes a stable durable execution record", () => {
       baseSnapshot: { nombre: "Before" },
       patch: { nombre: "After" },
       requiredEntitlementKey: null,
+      contentChange: null,
       authorNote: null,
       lockVersion: 3,
       reviewerUserId: "00000000-0000-4000-8000-000000000104",

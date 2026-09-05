@@ -414,7 +414,14 @@
 
 .account-check input {
   flex: 0 0 auto;
+  width: auto;
+  padding: 0;
   margin-top: 0.2rem;
+}
+
+.account-check span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .account-check--compact {
@@ -547,3 +554,9 @@
   line-height: 1.5;
   white-space: pre-wrap;
 }
+
+/* The profile editor keeps product cards and base fields in one reviewed draft. */
+.producer-editor-fields { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: var(--chisan-space-6); }
+.producer-editor-fields:disabled { opacity: .7; }
+.producer-editor-progress { padding: var(--chisan-space-4); background: var(--chisan-color-moss-pale); color: var(--chisan-color-moss-dark); border-left: 2px solid var(--accent); }
+.producer-editor-progress p { margin-bottom: 0; }

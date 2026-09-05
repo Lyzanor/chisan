@@ -5,8 +5,12 @@ import path from "node:path";
 export async function atomicWriteUtf8(
   filePath: string,
   contents: string,
+  allowNew = false,
 ): Promise<void> {
-  const fileStats = await stat(filePath);
+  const fileStats = await stat(filePath).catch((error) => {
+    if (allowNew && error.code === "ENOENT") return { mode: 0o644 };
+    throw error;
+  });
   const directory = path.dirname(filePath);
   const temporaryPath = path.join(
     directory,

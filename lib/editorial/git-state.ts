@@ -1,6 +1,8 @@
 import { spawnSync, type SpawnSyncReturns } from "node:child_process";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { hashProducerContent } from "../accounts/producer-content-change";
+import { producerContentSchema } from "../catalog/content-schema";
 import { hashProducerFields } from "../accounts/producer-fields";
 import {
   ProducerCsvRowNotFoundError,
@@ -293,10 +295,12 @@ export function assertCommitContainsProducerState(
   producerId: number,
   expectedHash: string,
   cwd = process.cwd(),
+  hasContentChange = false,
 ): CommitProducerState {
   const normalizedCommit = validateCommitAncestor(commit, cwd);
   const relativeCsvPath = repoRelativePath(csvPath, cwd);
-  assertCommitModifiesPath(normalizedCommit, relativeCsvPath, cwd);
+  if (!hasContentChange)
+    assertCommitModifiesPath(normalizedCommit, relativeCsvPath, cwd);
   const fields = readProducerFieldsFromCsv(
     readCommitBlob(normalizedCommit, relativeCsvPath, cwd),
     producerId,
@@ -322,6 +326,7 @@ export function assertFinalizationGitState(
   producerId: number,
   expectedHash: string,
   cwd = process.cwd(),
+  content?: { relativePath: string; hash: string; baseRowHash: string },
 ): FinalizationGitState {
   const commitState = assertCommitContainsProducerState(
     commit,
@@ -329,14 +334,16 @@ export function assertFinalizationGitState(
     producerId,
     expectedHash,
     cwd,
+    Boolean(content && content.baseRowHash === expectedHash),
   );
-  assertCommitIntroducesProducerState(
-    commitState.commit,
-    commitState.relativeCsvPath,
-    producerId,
-    expectedHash,
-    cwd,
-  );
+  if (!content || content.baseRowHash !== expectedHash)
+    assertCommitIntroducesProducerState(
+      commitState.commit,
+      commitState.relativeCsvPath,
+      producerId,
+      expectedHash,
+      cwd,
+    );
   const sourceHeadCommit = validateStoredCommit(
     sourceHeadSha,
     cwd,
@@ -382,6 +389,43 @@ export function assertFinalizationGitState(
     assertExpectedProducerHash(sourceFields, expectedHash);
   }
 
+  if (content) {
+    assertGitPathClean(path.resolve(cwd, content.relativePath), cwd);
+    const contentHashAt = (revision: string) =>
+      hashProducerContent(
+        producerContentSchema.parse(
+          JSON.parse(readCommitBlob(revision, content.relativePath, cwd)),
+        ),
+      );
+    assertCommitModifiesPath(commitState.commit, content.relativePath, cwd);
+    if (
+      contentHashAt(commitState.commit) !== content.hash ||
+      contentHashAt(headCommit) !== content.hash ||
+      (!sourcePrecedesCommit &&
+        contentHashAt(sourceHeadCommit) !== content.hash)
+    ) {
+      throw new Error(
+        "The commit and current HEAD must contain the exact approved product package.",
+      );
+    }
+    const parent = gitOutput(
+      ["rev-list", "--parents", "-n", "1", commitState.commit],
+      cwd,
+      "Could not inspect the product commit parent.",
+    ).split(/\s+/)[1];
+    if (parent) {
+      const blob = runGit(["show", `${parent}:${content.relativePath}`], cwd);
+      if (
+        blob.status === 0 &&
+        hashProducerContent(
+          producerContentSchema.parse(JSON.parse(blob.stdout)),
+        ) === content.hash
+      )
+        throw new Error(
+          "The supplied commit did not introduce the approved products.",
+        );
+    }
+  }
   const headFields = readProducerFieldsFromCsv(
     readCommitBlob(headCommit, commitState.relativeCsvPath, cwd),
     producerId,

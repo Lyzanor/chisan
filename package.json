@@ -37,7 +37,7 @@
     "test:audit-defects": "node --test scripts/test-catalog-operation-scope.mjs && node scripts/test-audit-defects.mjs",
     "test:check-links": "node scripts/test-check-links.mjs",
     "test:i18n": "tsx --test scripts/test-i18n.ts scripts/test-profile-qr.ts",
-    "test:accounts": "tsx --test scripts/test-account-database-status.ts scripts/test-account-domain.ts scripts/test-account-i18n.ts scripts/test-account-migration.ts scripts/test-i18n-presentation.ts scripts/test-materialize-producer-change.ts scripts/test-profile-upgrade-domain.ts scripts/test-public-profiles.ts && node --conditions=react-server --import tsx --test scripts/test-profile-gifts-service.ts scripts/test-producer-selections.ts scripts/test-selection-qr-service.ts",
+    "test:accounts": "tsx --test scripts/test-account-database-status.ts scripts/test-account-domain.ts scripts/test-account-i18n.ts scripts/test-account-migration.ts scripts/test-i18n-presentation.ts scripts/test-materialize-producer-change.ts scripts/test-producer-editor-workflow.ts scripts/test-profile-upgrade-domain.ts scripts/test-public-profiles.ts && node --conditions=react-server --import tsx --test scripts/test-profile-gifts-service.ts scripts/test-producer-selections.ts scripts/test-selection-qr-service.ts",
     "test:catalog-geography": "tsx --test scripts/test-area-explorer-ui.ts scripts/test-catalog-area-boundaries.mjs scripts/test-location-onboarding.ts scripts/test-nearby-producer-focus.ts scripts/test-resolve-catalog-area.ts",
     "test:translations": "tsx --test scripts/test-catalog-translations.ts scripts/test-audit-description-locales.mjs",
     "test:vercel-deploy": "node --test scripts/test-vercel-ignore-build.mjs",
@@ -57,7 +57,7 @@
     "check:content": "tsx scripts/check-producer-content.ts",
     "producer:content": "tsx scripts/producer-content.ts",
     "producer:inspect": "tsx scripts/inspect-producer.ts",
-    "test:content": "tsx --test scripts/test-producer-content.ts scripts/test-producer-inspection.ts scripts/test-producer-content-render.ts"
+    "test:content": "tsx --test scripts/test-producer-content.ts scripts/test-producer-inspection.ts scripts/test-producer-content-render.ts scripts/test-producer-product-changes.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "7.7.9",

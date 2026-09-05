@@ -1,3 +1,4 @@
+import { ProducerProductChanges } from "@/components/account/producer-product-changes";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -212,7 +213,7 @@ export default async function AdminChangeDetailPage({
         <section className="admin-panel" aria-labelledby="execution-record-title">
           <div className="admin-section-heading">
             <div>
-              <h3 id="execution-record-title">Durable CSV execution</h3>
+              <h3 id="execution-record-title">Durable profile publication</h3>
               <p>
                 The active execution is shown first; otherwise this is the latest recorded attempt.
               </p>
@@ -291,6 +292,10 @@ export default async function AdminChangeDetailPage({
         </section>
       ) : null}
 
+      {detail.change.contentChange ? <section className="admin-panel">
+        <ProducerProductChanges change={detail.change.contentChange} />
+        <p>Products in this build: {detail.catalog.products?.state.replaceAll("_", " ")}</p>
+      </section> : null}
       <section className="admin-panel" aria-labelledby="requested-diff-title">
         <div className="admin-section-heading">
           <div>

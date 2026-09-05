@@ -247,8 +247,8 @@ short-lived read URLs, retention limits and a separate artifact table.
 The expanded profile is a producer-scoped capability, not a subscription or a
 property of a user account. Its only authorization key is an active
 `producer.profile.premium` entitlement for `(country, producer_id)`. It permits
-proposal and presentation of the premium CSV field set and presentation of
-reviewed related content; it never grants
+proposal and presentation of the premium CSV field set, product proposals and
+presentation of reviewed related content; it never grants
 ownership, verification, ranking or publication without review.
 
 That editable set is `video`, `visitas guiadas`, `mensaje a la comunidad` plus
@@ -258,8 +258,9 @@ but is not editable: the materializer derives its UTC `YYYY-MM-DD` value from
 the request's `reviewed_at` timestamp after approval.
 
 Products, gallery items and named links use `docs/PRODUCER_CONTENT.md` under the
-same entitlement. They currently enter through its local editorial workflow;
-the deployed base-field proposal form does not accept these collections.
+same entitlement. The account editor accepts a dedicated typed product proposal
+beside the base-field patch. Gallery, links and translations are preserved from
+the reviewed package and maintained through the local editorial workflow.
 
 The printable producer QR is an optional presentation feature within that same
 capability. It is hidden by default and renders only while the entitlement is
@@ -357,8 +358,9 @@ live in `docs/STRIPE_RUNBOOK.md`.
 
 ## Producer profile changes
 
-An active producer member may propose only the fields in
-`lib/accounts/producer-fields.ts`. The server ignores arbitrary form fields and
+An active producer member may propose the fields in
+`lib/accounts/producer-fields.ts` and, with premium access, the products in
+`docs/PRODUCER_CONTENT.md`. The server ignores arbitrary form fields and
 never accepts changes to `producer_id`, `slug`, `country`, `region`, `area`,
 `verificacion` or `imagen`. The three location columns are immutable mirrors of
 the canonical CSV path and change only through a reviewed routing migration.
@@ -366,9 +368,19 @@ Every proposal stores:
 
 - the canonical row hash at edit time;
 - the complete base-row snapshot;
-- the allowlisted patch;
+- the allowlisted CSV patch;
+- an optional typed product proposal with its reviewed base and independent
+  base/requested content hashes;
 - the producer's explanation/public source;
 - review and application state with an optimistic lock version.
+
+The editor saves structurally valid drafts without requiring the final review
+note. A draft is resumed by its exact author with an optimistic lock version;
+updates from another window are rejected with the submitted values preserved.
+Only an actual field or product change can be submitted. The server rechecks
+membership and any required premium right inside the write transaction. There
+are at most ten open proposals per account, 25 submissions and 100 draft saves
+per day. The submitted identity and payload are immutable in PostgreSQL.
 
 The configured premium field set additionally requires an active
 `producer.profile.premium` entitlement. The server reads them only when that

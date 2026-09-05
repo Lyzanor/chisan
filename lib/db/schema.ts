@@ -1,4 +1,5 @@
 import { sql } from "drizzle-orm";
+import type { ProducerContentChange } from "../accounts/producer-content-change";
 import {
   bigint,
   boolean,
@@ -397,6 +398,7 @@ export const producerChangeRequests = pgTable(
       .$type<Record<string, string>>()
       .notNull(),
     patch: jsonb("patch").$type<Record<string, string>>().notNull().default(sql`'{}'::jsonb`),
+    contentChange: jsonb("content_change").$type<ProducerContentChange>(),
     requiredEntitlementKey: varchar("required_entitlement_key", { length: 120 }),
     authorNote: text("author_note"),
     lockVersion: integer("lock_version").notNull().default(1),
@@ -445,13 +447,17 @@ export const producerChangeRequests = pgTable(
     ),
     check("producer_change_requests_patch_check", sql`jsonb_typeof(${table.patch}) = 'object'`),
     check(
+      "producer_change_requests_content_check",
+      sql`${table.contentChange} IS NULL OR (jsonb_typeof(${table.contentChange}) = 'object' AND ${table.requiredEntitlementKey} IS NOT DISTINCT FROM 'producer.profile.premium' AND (${table.contentChange}->>'version') = '1' AND (${table.contentChange}->>'baseHash') ~ '^[a-f0-9]{64}$' AND (${table.contentChange}->>'requestedHash') ~ '^[a-f0-9]{64}$' AND jsonb_typeof(${table.contentChange}->'products') = 'array' AND (${table.contentChange}->'base'->>'country') = ${table.country} AND (${table.contentChange}->'base'->>'producer_id') = ${table.producerId}::text) IS TRUE`,
+    ),
+    check(
       "producer_change_requests_entitlement_key_check",
       sql`${table.requiredEntitlementKey} IS NULL OR length(btrim(${table.requiredEntitlementKey})) > 0`,
     ),
     check("producer_change_requests_lock_version_check", sql`${table.lockVersion} > 0`),
     check(
       "producer_change_requests_submission_check",
-      sql`${table.status} IN ('draft', 'withdrawn', 'conflict', 'failed') OR (${table.submittedAt} IS NOT NULL AND ${table.patch} <> '{}'::jsonb)`,
+      sql`${table.status} IN ('draft', 'withdrawn', 'conflict', 'failed') OR (${table.submittedAt} IS NOT NULL AND (${table.patch} <> '{}'::jsonb OR ${table.contentChange} IS NOT NULL))`,
     ),
     check(
       "producer_change_requests_review_check",
@@ -482,6 +488,7 @@ export const producerChangeExecutions = pgTable(
     worktreeKey: varchar("worktree_key", { length: 64 }).notNull(),
     sourceHeadSha: varchar("source_head_sha", { length: 40 }).notNull(),
     expectedRowHash: varchar("expected_row_hash", { length: 64 }).notNull(),
+    expectedContentHash: varchar("expected_content_hash", { length: 64 }),
     leaseExpiresAt: timestampWithTimezone("lease_expires_at").notNull(),
     csvPath: varchar("csv_path", { length: 512 }).notNull(),
     materializedAt: timestampWithTimezone("materialized_at"),
@@ -549,6 +556,7 @@ export const producerChangeExecutions = pgTable(
       "producer_change_executions_expected_hash_check",
       sql`${table.expectedRowHash} ~ '^[0-9a-f]{64}$'`,
     ),
+    check("producer_change_executions_content_hash_check", sql`${table.expectedContentHash} IS NULL OR ${table.expectedContentHash} ~ '^[a-f0-9]{64}$'`),
     check(
       "producer_change_executions_commit_sha_check",
       sql`${table.appliedCommitSha} IS NULL OR ${table.appliedCommitSha} ~ '^[0-9a-f]{40}$'`,

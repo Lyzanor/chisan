@@ -123,15 +123,53 @@ pricing, availability or search-engine rich-result claim.
    assets and evidence together. Apply the normal release procedure.
 
 `apply` is an editorial tool, not a producer authorization bypass. It neither
-changes entitlements nor publishes directly to Production. Related-content
-changes currently use this local review workflow; the deployed base-field
-proposal form does not accept arrays or private upload data. Integrate a future
-account editor through a dedicated typed proposal, preserving this same package
-and review boundary.
+changes entitlements nor publishes directly to Production. Gallery items, named links and translations use this local review workflow.
+Product members also have the account editor described below. Neither workflow
+accepts private upload material as approved public content.
 
 If a process dies with a `.json.lock` file, identify that process/worktree and
 inspect the target and temporary files before removing the abandoned lock. A
 new attempt must use the current revision; no timeout adopts an unknown edit.
+
+## Producer product editor
+
+An active producer member with the exact `producer.profile.premium` entitlement
+can add, edit, reorder and remove products in the existing profile editor. The
+form exposes names, descriptions, original languages and references to that
+producer's already reviewed photos and links. It has a preview, removal undo,
+explicit draft saving and submission for review. New image uploads, link
+creation, gallery editing and translation editing remain local editorial work.
+
+The server stores `content_change` alongside the existing CSV patch in
+`producer_change_requests`. This strict, versioned proposal contains the complete
+reviewed base package, its semantic SHA-256, the requested ordered products and
+the resulting package SHA-256. Object-key ordering does not affect these hashes;
+array ordering does. It is a review snapshot, never a second published catalog.
+The server copies gallery, links and translations from the canonical base and
+rejects unknown references. Retiring a product also removes its translation
+records. Changed source text leaves old translations stale; the existing loader
+renders source text until a reviewed translation is current.
+
+Draft updates require the same author, producer and lock version. Submission
+requires an actual field or product change and the author's explanation. Saved
+drafts must satisfy the structural contract; an unnamed product is reported as
+an error with its input retained. After submission the reviewed payload is
+immutable. The editor, reviewer and publication workflow recheck exact access;
+premium expiry keeps approved content and drafts intact while blocking further
+premium edits and publication.
+
+Approval allows `pnpm producer:change materialize <id>` to prepare the JSON and
+CSV together. A product-only proposal is valid; it also receives the approved
+change date in the CSV. If that date is already current, only the JSON needs a
+Git change. The v2 publication receipt records independent CSV and content
+hashes. Finalization requires the exact approved package in the same commit as
+any changed CSV row and still present at HEAD. A stale file, competing draft,
+invalid asset, revoked right or concurrent edit cannot be silently overwritten.
+The v1 operator functions reject requests containing product changes.
+
+The short CSV `productos estrella` summary remains a separately reviewed base
+field: product edits never silently rewrite it. The public profile reads the
+approved CSV and package after the normal Git release and deployment.
 
 ## Visibility and lifecycle
 

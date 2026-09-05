@@ -1,3 +1,8 @@
+import { loadProducerContent } from "@/lib/catalog/content";
+import {
+  hashProducerContent,
+  resolveProducerContentChange,
+} from "@/lib/accounts/producer-content-change";
 import {
   and,
   asc,
@@ -22,6 +27,7 @@ import {
 import {
   hashProducerFields,
   PRODUCER_EDITABLE_FIELDS,
+  PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD,
 } from "@/lib/accounts/producer-fields";
 import {
   findProducerById,
@@ -39,7 +45,7 @@ import {
   type ProducerChangeRequest,
 } from "@/lib/db/schema";
 
-export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 2;
+export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 3;
 export const ADMIN_PRODUCER_CHANGE_PAGE_SIZE = 25;
 export const ADMIN_PRODUCER_CHANGE_MAX_PAGE_SIZE = 100;
 export const PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS = 24 * 60 * 60 * 1_000;
@@ -83,6 +89,7 @@ export type AdminProducerChangeListRow = {
   producerId: number;
   status: ProducerChangeStatus;
   patch: Record<string, string>;
+  hasProductChanges?: boolean;
   historicProducerName: string | null;
   reviewerUserId: string | null;
   appliedCommitSha: string | null;
@@ -169,10 +176,20 @@ export type AdminProducerChangeDetail = {
     state: ProducerChangeCatalogState;
     currentHash: string | null;
     requestedHash: string;
+    products?: {
+      state: ProducerChangeCatalogState;
+      currentHash: string;
+      baseHash: string;
+      requestedHash: string;
+    } | null;
   };
 };
 
-function positiveInteger(value: number | undefined, fallback: number, maximum: number): number {
+function positiveInteger(
+  value: number | undefined,
+  fallback: number,
+  maximum: number,
+): number {
   if (!Number.isSafeInteger(value) || !value || value < 1) return fallback;
   return Math.min(value, maximum);
 }
@@ -192,10 +209,14 @@ export function normalizeAdminProducerChangeListOptions(
   };
 }
 
-function listConditions(options: NormalizedAdminProducerChangeListOptions): SQL[] {
+function listConditions(
+  options: NormalizedAdminProducerChangeListOptions,
+): SQL[] {
   const conditions: SQL[] = [];
   if (options.selection.key !== "all") {
-    conditions.push(inArray(producerChangeRequests.status, [...options.selection.statuses]));
+    conditions.push(
+      inArray(producerChangeRequests.status, [...options.selection.statuses]),
+    );
   }
   if (options.query) {
     const pattern = `%${options.query}%`;
@@ -228,7 +249,10 @@ export async function queryAdminProducerChanges(
     producerId: producerChangeRequests.producerId,
     status: producerChangeRequests.status,
     patch: producerChangeRequests.patch,
-    historicProducerName: sql<string | null>`${producerChangeRequests.baseSnapshot}->>'nombre'`,
+    hasProductChanges: sql<boolean>`${producerChangeRequests.contentChange} IS NOT NULL`,
+    historicProducerName: sql<
+      string | null
+    >`${producerChangeRequests.baseSnapshot}->>'nombre'`,
     reviewerUserId: producerChangeRequests.reviewerUserId,
     appliedCommitSha: producerChangeRequests.appliedCommitSha,
     submittedAt: producerChangeRequests.submittedAt,
@@ -244,17 +268,32 @@ export async function queryAdminProducerChanges(
     database
       .select(selection)
       .from(producerChangeRequests)
-      .innerJoin(authorUsers, eq(producerChangeRequests.authorUserId, authorUsers.id))
-      .leftJoin(reviewerUsers, eq(producerChangeRequests.reviewerUserId, reviewerUsers.id))
+      .innerJoin(
+        authorUsers,
+        eq(producerChangeRequests.authorUserId, authorUsers.id),
+      )
+      .leftJoin(
+        reviewerUsers,
+        eq(producerChangeRequests.reviewerUserId, reviewerUsers.id),
+      )
       .where(where)
-      .orderBy(desc(producerChangeRequests.updatedAt), desc(producerChangeRequests.id))
+      .orderBy(
+        desc(producerChangeRequests.updatedAt),
+        desc(producerChangeRequests.id),
+      )
       .limit(options.pageSize)
       .offset(offset),
     database
       .select({ value: count() })
       .from(producerChangeRequests)
-      .innerJoin(authorUsers, eq(producerChangeRequests.authorUserId, authorUsers.id))
-      .leftJoin(reviewerUsers, eq(producerChangeRequests.reviewerUserId, reviewerUsers.id))
+      .innerJoin(
+        authorUsers,
+        eq(producerChangeRequests.authorUserId, authorUsers.id),
+      )
+      .leftJoin(
+        reviewerUsers,
+        eq(producerChangeRequests.reviewerUserId, reviewerUsers.id),
+      )
       .where(where),
   ]);
 
@@ -271,6 +310,7 @@ export async function queryAdminProducerChanges(
         producerId: row.producerId,
         status: row.status,
         patch: row.patch,
+        hasProductChanges: row.hasProductChanges,
         historicProducerName: row.historicProducerName,
         reviewerUserId: row.reviewerUserId,
         appliedCommitSha: row.appliedCommitSha,
@@ -285,9 +325,14 @@ export async function queryAdminProducerChanges(
       reviewer: row.reviewerUserId
         ? { id: row.reviewerUserId, displayName: row.reviewerDisplayName }
         : null,
-      changedFields: Object.keys(row.patch).sort((left, right) => left.localeCompare(right)),
+      changedFields: [
+        ...Object.keys(row.patch),
+        ...(row.hasProductChanges ? ["products"] : []),
+      ].sort((left, right) => left.localeCompare(right)),
       producerName:
-        producer?.name || row.historicProducerName || `Producer #${row.producerId}`,
+        producer?.name ||
+        row.historicProducerName ||
+        `Producer #${row.producerId}`,
       publicPath: producer ? buildAdminProducerPublicPath(producer) : null,
     };
   });
@@ -301,13 +346,17 @@ export async function queryAdminProducerChanges(
   };
 }
 
-export async function queryProducerChangeCounts(database: Database): Promise<ProducerChangeCounts> {
+export async function queryProducerChangeCounts(
+  database: Database,
+): Promise<ProducerChangeCounts> {
   const rows = await database
     .select({ status: producerChangeRequests.status, value: count() })
     .from(producerChangeRequests)
     .groupBy(producerChangeRequests.status);
   const allStatuses = resolveProducerChangeStatusSelection("all").statuses;
-  const counts = Object.fromEntries(allStatuses.map((status) => [status, 0])) as ProducerChangeCounts;
+  const counts = Object.fromEntries(
+    allStatuses.map((status) => [status, 0]),
+  ) as ProducerChangeCounts;
   for (const row of rows) counts[row.status] = Number(row.value);
   return counts;
 }
@@ -317,10 +366,16 @@ function fieldDiff(
   producer: LocatedProducerCsvRow | null,
 ): AdminProducerChangeFieldDiff[] {
   const definitions = new Map<string, string>(
-    PRODUCER_EDITABLE_FIELDS.map((definition) => [definition.key, definition.label]),
+    PRODUCER_EDITABLE_FIELDS.map((definition) => [
+      definition.key,
+      definition.label,
+    ]),
   );
   const order = new Map<string, number>(
-    PRODUCER_EDITABLE_FIELDS.map((definition, index) => [definition.key, index]),
+    PRODUCER_EDITABLE_FIELDS.map((definition, index) => [
+      definition.key,
+      index,
+    ]),
   );
   return Object.entries(change.patch)
     .sort(([left], [right]) => {
@@ -341,7 +396,11 @@ export async function queryAdminProducerChangeById(
   database: Database,
   id: string,
 ): Promise<AdminProducerChangeDetail | null> {
-  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
+  if (
+    !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
+      id,
+    )
+  ) {
     return null;
   }
 
@@ -352,8 +411,14 @@ export async function queryAdminProducerChangeById(
       reviewerDisplayName: reviewerUsers.displayName,
     })
     .from(producerChangeRequests)
-    .innerJoin(authorUsers, eq(producerChangeRequests.authorUserId, authorUsers.id))
-    .leftJoin(reviewerUsers, eq(producerChangeRequests.reviewerUserId, reviewerUsers.id))
+    .innerJoin(
+      authorUsers,
+      eq(producerChangeRequests.authorUserId, authorUsers.id),
+    )
+    .leftJoin(
+      reviewerUsers,
+      eq(producerChangeRequests.reviewerUserId, reviewerUsers.id),
+    )
     .where(eq(producerChangeRequests.id, id))
     .limit(1);
   if (!row) return null;
@@ -378,7 +443,10 @@ export async function queryAdminProducerChangeById(
       )
       .where(
         and(
-          eq(producerChangeRequestAuditEvents.targetType, "producer_change_request"),
+          eq(
+            producerChangeRequestAuditEvents.targetType,
+            "producer_change_request",
+          ),
           eq(producerChangeRequestAuditEvents.targetId, row.change.id),
         ),
       )
@@ -414,7 +482,15 @@ export async function queryAdminProducerChangeById(
       )
       .limit(1),
   ]);
-  const requestedHash = hashProducerFields(requestedProducerFields(row.change));
+  const requestedFields = requestedProducerFields(row.change);
+  if (
+    row.change.reviewedAt &&
+    ["approved", "applying", "applied"].includes(row.change.status)
+  ) {
+    requestedFields[PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD] =
+      row.change.reviewedAt.toISOString().slice(0, 10);
+  }
+  const requestedHash = hashProducerFields(requestedFields);
   const currentHash = producer ? hashProducerFields(producer.fields) : null;
   const catalogState: ProducerChangeCatalogState = !producer
     ? "missing"
@@ -424,12 +500,37 @@ export async function queryAdminProducerChangeById(
         ? "matches_base"
         : "diverged";
 
+  let products: AdminProducerChangeDetail["catalog"]["products"] = null;
+  if (row.change.contentChange) {
+    const { change } = resolveProducerContentChange(
+      row.change.contentChange,
+      row.change.country,
+      row.change.producerId,
+    );
+    const contentHash = hashProducerContent(
+      await loadProducerContent(row.change.country, row.change.producerId),
+    );
+    products = {
+      currentHash: contentHash,
+      baseHash: change.baseHash,
+      requestedHash: change.requestedHash,
+      state: !producer
+        ? "missing"
+        : contentHash === change.requestedHash
+          ? "matches_requested"
+          : contentHash === change.baseHash
+            ? "matches_base"
+            : "diverged",
+    };
+  }
   return {
     change: row.change,
     execution: execution ?? null,
     producer,
     producerName:
-      producer?.name || row.change.baseSnapshot.nombre || `Producer #${row.change.producerId}`,
+      producer?.name ||
+      row.change.baseSnapshot.nombre ||
+      `Producer #${row.change.producerId}`,
     publicPath: producer ? buildAdminProducerPublicPath(producer) : null,
     author: { id: row.change.authorUserId, displayName: row.authorDisplayName },
     reviewer: row.change.reviewerUserId
@@ -437,7 +538,7 @@ export async function queryAdminProducerChangeById(
       : null,
     audit: events,
     diff: fieldDiff(row.change, producer),
-    catalog: { state: catalogState, currentHash, requestedHash },
+    catalog: { state: catalogState, currentHash, requestedHash, products },
   };
 }
 
@@ -449,11 +550,15 @@ export function producerChangeRecoveryEligibleAt(
   materializedAt: Date | null,
 ): Date | null {
   return materializedAt
-    ? new Date(materializedAt.getTime() + PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS)
+    ? new Date(
+        materializedAt.getTime() + PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS,
+      )
     : null;
 }
 
-export function serializeProducerChangeListItem(item: AdminProducerChangeListItem) {
+export function serializeProducerChangeListItem(
+  item: AdminProducerChangeListItem,
+) {
   const status = getProducerChangeStatusDefinition(item.change.status);
   return {
     id: item.change.id,
@@ -510,13 +615,19 @@ const SAFE_AUDIT_METADATA_KEYS = new Set([
   "sourceHeadSha",
 ]);
 
-function safeAuditMetadata(metadata: Record<string, unknown>): Record<string, unknown> {
+function safeAuditMetadata(
+  metadata: Record<string, unknown>,
+): Record<string, unknown> {
   return Object.fromEntries(
-    Object.entries(metadata).filter(([key]) => SAFE_AUDIT_METADATA_KEYS.has(key)),
+    Object.entries(metadata).filter(([key]) =>
+      SAFE_AUDIT_METADATA_KEYS.has(key),
+    ),
   );
 }
 
-export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail) {
+export function serializeProducerChangeDetail(
+  detail: AdminProducerChangeDetail,
+) {
   return {
     ...serializeProducerChangeListItem({
       change: {
@@ -538,7 +649,10 @@ export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail)
       producer: detail.producer,
       author: detail.author,
       reviewer: detail.reviewer,
-      changedFields: detail.diff.map(({ key }) => key),
+      changedFields: [
+        ...detail.diff.map(({ key }) => key),
+        ...(detail.change.contentChange ? ["products"] : []),
+      ],
       producerName: detail.producerName,
       publicPath: detail.publicPath,
     }),
@@ -546,6 +660,7 @@ export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail)
       baseRowHash: detail.change.baseRowHash,
       baseSnapshot: detail.change.baseSnapshot,
       patch: detail.change.patch,
+      contentChange: detail.change.contentChange,
       authorNote: detail.change.authorNote,
       decisionNote: detail.change.decisionNote,
       failureReason: detail.change.failureReason,
@@ -588,7 +703,8 @@ export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail)
     })),
     operatorCommands: {
       materialize:
-        detail.change.status === "approved" || detail.change.status === "applying"
+        detail.change.status === "approved" ||
+        detail.change.status === "applying"
           ? `npx pnpm producer:change materialize ${detail.change.id}`
           : null,
       finalizeTemplate:
@@ -596,7 +712,8 @@ export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail)
           ? `npx pnpm producer:change finalize ${detail.change.id} <full-commit-sha>`
           : null,
       recoverTemplate:
-        detail.change.status === "applying" && detail.execution?.status === "materialized"
+        detail.change.status === "applying" &&
+        detail.execution?.status === "materialized"
           ? `npx pnpm producer:change recover ${detail.change.id} ${detail.execution.id} --reason "<documented reason>"`
           : null,
     },

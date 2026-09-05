@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 12439,
+  "products": [
+    {
+      "id": "cerveza-rubia-chisan",
+      "name": "Cerveza rubia Chisan (ejemplo)",
+      "description": "Ejemplo ficticio para el perfil de pruebas: cerveza rubia de estilo pale ale, con notas cítricas y amargor suave, en botella de 33 cl. No es un producto a la venta.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": []
+    },
+    {
+      "id": "queso-fresco-chisan",
+      "name": "Queso fresco Chisan (ejemplo)",
+      "description": "Ejemplo ficticio para el perfil de pruebas: queso fresco de leche de cabra, de textura tierna y sabor suave, en pieza de 250 g. No es un producto a la venta.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": []
+    },
+    {
+      "id": "vino-blanco-sin-alcohol-chisan",
+      "name": "Vino blanco sin alcohol Chisan (ejemplo)",
+      "description": "Ejemplo ficticio para el perfil de pruebas: vino blanco sin alcohol, de perfil afrutado con notas de manzana y cítricos, en botella de 75 cl. No es un producto a la venta.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": []
+    }
+  ],
+  "gallery": [],
+  "links": [],
+  "translations": []
+}

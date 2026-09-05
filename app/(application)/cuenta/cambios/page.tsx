@@ -1,3 +1,5 @@
+import { ProducerProductChanges } from "@/components/account/producer-product-changes";
+import { getProducerEditorLabels, producerProposalStatusLabel, producerEditorMessage } from "@/lib/i18n/producer-editor";
 import { desc, eq } from "drizzle-orm";
 import Link from "next/link";
 
@@ -30,18 +32,19 @@ export default async function ChangesPage({ searchParams }: ChangesPageProps) {
     changes.map(({ country, producerId }) => ({ country, producerId })),
   );
 
+  const labels = getProducerEditorLabels(presentation.locale);
   return (
     <div className="account-content">
-      <AccountMessage params={params} />
+      <AccountMessage params={{ ...params, notice: typeof params.notice === "string" ? producerEditorMessage(presentation.locale, params.notice) : params.notice }} />
       <header className="account-section-heading">
         <div>
-          <h2>Producer profile changes</h2>
-          <p>Every proposal is reviewed and materialized into the canonical CSV through Git.</p>
+          <h2>{labels.changes}</h2>
+          <p>{labels.changesHelp}</p>
         </div>
       </header>
 
       {changes.length === 0 ? (
-        <p className="account-empty">No profile changes have been submitted.</p>
+        <p className="account-empty">{labels.noChanges}</p>
       ) : (
         <ul className="account-record-list">
           {changes.map((change, index) => {
@@ -50,13 +53,13 @@ export default async function ChangesPage({ searchParams }: ChangesPageProps) {
               <li key={change.id} className="account-record-list__stacked">
                 <div className="account-record-heading">
                   <div>
-                    <strong>{producer?.name ?? "Producer no longer published"}</strong>
+                    <strong>{producer?.name ?? labels.unavailable}</strong>
                     <p>
                       {change.country.toUpperCase()} · #{change.producerId}
                     </p>
                   </div>
                   <span className={`account-status account-status--${change.status}`}>
-                    {getProducerChangeStatusDefinition(change.status).label}
+                    {producerProposalStatusLabel(presentation.locale, change.status, getProducerChangeStatusDefinition(change.status).label)}
                   </span>
                 </div>
                 <dl className="account-diff-list">
@@ -70,29 +73,31 @@ export default async function ChangesPage({ searchParams }: ChangesPageProps) {
                     return (
                       <div key={presented.key}>
                         <dt>{presented.label}</dt>
-                        <dd>{value ? presented.displayValue : "(remove current value)"}</dd>
+                        <dd>{value ? presented.displayValue : labels.removeValue}</dd>
                       </div>
                     );
                   })}
                 </dl>
+                {change.contentChange ? <ProducerProductChanges change={change.contentChange} locale={presentation.locale} /> : null}
                 {change.decisionNote ? <p>{change.decisionNote}</p> : null}
                 {change.failureReason ? (
-                  <p className="account-message account-message--error">{change.failureReason}</p>
+                  <p className="account-message account-message--error">{producerEditorMessage(presentation.locale, change.failureReason)}</p>
                 ) : null}
                 <div className="account-inline-actions">
+                  {producer && change.status === "draft" ? <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`} className="account-button">{labels.continue}</Link> : null}
                   {producer && ["conflict", "rejected", "withdrawn", "failed"].includes(change.status) ? (
                     <Link
                       href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`}
                       className="account-button account-button--secondary"
                     >
-                      Start a new proposal
+                      {labels.newProposal}
                     </Link>
                   ) : null}
                   {["draft", "submitted", "needs_changes"].includes(change.status) ? (
                     <form action={withdrawProducerChangeAction}>
                       <input type="hidden" name="changeId" value={change.id} />
                       <button type="submit" className="account-link-button">
-                        Withdraw request
+                        {labels.withdraw}
                       </button>
                     </form>
                   ) : null}

@@ -155,10 +155,10 @@ async function assertAccessSchema(admin: Sql): Promise<void> {
       to_regrole(${OPERATOR_GROUP_ROLE}) is not null as "operatorRole",
       to_regrole(${RECOVERY_GROUP_ROLE}) is not null as "recoveryRole",
       to_regprocedure(
-        'public.chisan_begin_producer_change_execution_v1(uuid,uuid,text,text,text,text,integer)'
+        'public.chisan_begin_producer_change_execution_v2(uuid,uuid,text,text,text,text,integer,text)'
       ) is not null
       and to_regprocedure(
-        'public.chisan_complete_producer_change_execution_v1(uuid,text,text[],boolean)'
+        'public.chisan_complete_producer_change_execution_v2(uuid,text,text[],boolean,text)'
       ) is not null
       and to_regprocedure(
         'public.chisan_fail_producer_change_execution_v1(uuid,text,text)'
@@ -167,10 +167,10 @@ async function assertAccessSchema(admin: Sql): Promise<void> {
         'public.chisan_fail_producer_change_preflight_v1(uuid,text,text)'
       ) is not null
       and to_regprocedure(
-        'public.chisan_recover_producer_change_execution_v1(uuid,uuid,text,text,text,text)'
+        'public.chisan_recover_producer_change_execution_v2(uuid,uuid,text,text,text,text,text)'
       ) is not null
       and to_regprocedure(
-        'public.chisan_finalize_producer_change_execution_v1(uuid,text,text,text)'
+        'public.chisan_finalize_producer_change_execution_v2(uuid,text,text,text,text)'
       ) is not null as "apiReady"
   `;
   if (!state?.readRole || !state.operatorRole || !state.recoveryRole || !state.apiReady) {
@@ -327,26 +327,26 @@ async function inspectAccess(
         (
           select bool_and(coalesce(has_function_privilege(session_user, signature, 'execute'), false))
           from unnest(array[
-            to_regprocedure('public.chisan_begin_producer_change_execution_v1(uuid,uuid,text,text,text,text,integer)'),
-            to_regprocedure('public.chisan_complete_producer_change_execution_v1(uuid,text,text[],boolean)'),
+            to_regprocedure('public.chisan_begin_producer_change_execution_v2(uuid,uuid,text,text,text,text,integer,text)'),
+            to_regprocedure('public.chisan_complete_producer_change_execution_v2(uuid,text,text[],boolean,text)'),
             to_regprocedure('public.chisan_fail_producer_change_execution_v1(uuid,text,text)'),
             to_regprocedure('public.chisan_fail_producer_change_preflight_v1(uuid,text,text)'),
-            to_regprocedure('public.chisan_finalize_producer_change_execution_v1(uuid,text,text,text)')
+            to_regprocedure('public.chisan_finalize_producer_change_execution_v2(uuid,text,text,text,text)')
           ]) as workflow(signature)
         ) as "executeAllOperatorWorkflow",
         (
           select bool_or(coalesce(has_function_privilege(session_user, signature, 'execute'), false))
           from unnest(array[
-            to_regprocedure('public.chisan_begin_producer_change_execution_v1(uuid,uuid,text,text,text,text,integer)'),
-            to_regprocedure('public.chisan_complete_producer_change_execution_v1(uuid,text,text[],boolean)'),
+            to_regprocedure('public.chisan_begin_producer_change_execution_v2(uuid,uuid,text,text,text,text,integer,text)'),
+            to_regprocedure('public.chisan_complete_producer_change_execution_v2(uuid,text,text[],boolean,text)'),
             to_regprocedure('public.chisan_fail_producer_change_execution_v1(uuid,text,text)'),
             to_regprocedure('public.chisan_fail_producer_change_preflight_v1(uuid,text,text)'),
-            to_regprocedure('public.chisan_finalize_producer_change_execution_v1(uuid,text,text,text)')
+            to_regprocedure('public.chisan_finalize_producer_change_execution_v2(uuid,text,text,text,text)')
           ]) as workflow(signature)
         ) as "executeAnyOperatorWorkflow",
         has_function_privilege(
           session_user,
-          'public.chisan_recover_producer_change_execution_v1(uuid,uuid,text,text,text,text)',
+          'public.chisan_recover_producer_change_execution_v2(uuid,uuid,text,text,text,text,text)',
           'execute'
         ) as "executeRecovery",
         has_schema_privilege(session_user, 'public', 'create') as "schemaCreate",

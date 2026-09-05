@@ -197,6 +197,7 @@ export function resolveExpectedProducerChange(
   baseRowHash: string,
   patch: unknown,
   reviewedAt: unknown,
+  hasContentChange = false,
 ): ExpectedProducerChange {
   if (!isStringRecord(baseSnapshot)) {
     throw new Error("The stored base snapshot is not a string-valued object.");
@@ -207,7 +208,7 @@ export function resolveExpectedProducerChange(
   if (hashProducerFields(baseSnapshot) !== baseRowHash) {
     throw new Error("The stored base snapshot does not match its row hash.");
   }
-  if (!isProducerPatch(patch) || Object.keys(patch).length === 0) {
+  if (!isProducerPatch(patch) || (!hasContentChange && Object.keys(patch).length === 0)) {
     throw new Error(
       "The stored patch is empty or contains a non-editable field.",
     );
@@ -227,7 +228,7 @@ export function resolveExpectedProducerChange(
       Object.values(validation.errors)[0] ?? "Stored patch is invalid.",
     );
   }
-  if (Object.keys(validation.patch).length === 0) {
+  if (!hasContentChange && Object.keys(validation.patch).length === 0) {
     throw new Error("The stored patch does not change the base snapshot.");
   }
 
