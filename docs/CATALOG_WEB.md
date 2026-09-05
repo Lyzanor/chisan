@@ -6,6 +6,11 @@ rights; `docs/PRODUCER_CONTENT.md` owns repeated content. All public views resol
 the same producer identity. The current public operating scope is Spain, as
 selected by country manifests; other countries remain available internally.
 
+[Editorial guides](GUIDES.md) owns `/guias`, its Spanish articles, reviewed
+producer references and update workflow. Published guides join the sitemap,
+homepage and footer; mentioned producers expose reverse links by stable identity.
+Guide text does not replace canonical producer facts or imply translated articles.
+
 Public agent reads use the same identity, publication and localization policy.
 [Agent access](AGENT_ACCESS.md) owns the versioned JSON API, generated OpenAPI,
 browser WebMCP tools, public projection and compatibility checks. Every producer

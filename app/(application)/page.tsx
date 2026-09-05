@@ -5,6 +5,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { NavigationLink } from "@/components/navigation-link";
 
 import { LocationOnboarding } from "@/components/location-onboarding";
+import { GuideHighlights } from "@/components/guides/guide-highlights";
 import {
   buildHomeAlternateSet,
   buildLocalizedMetadata,
@@ -180,6 +181,7 @@ function ProjectSummary({
             </p>
           </div>
         </div>
+        <GuideHighlights />
       </section>
     </main>
   );

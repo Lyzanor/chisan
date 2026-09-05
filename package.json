@@ -51,14 +51,16 @@
     "producer:access": "tsx scripts/provision-producer-change-access.ts",
     "producer:ids:locked": "node scripts/with-producer-id-lock.mjs",
     "test:producer-id-lock": "node --test scripts/test-producer-id-lock.mjs",
-    "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm check:content",
-    "verify:ai": "pnpm check:docs && pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior && pnpm test:content && pnpm test:agents",
+    "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm check:content && pnpm check:guides",
+    "verify:ai": "pnpm check:docs && pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior && pnpm test:content && pnpm test:agents && pnpm test:guides",
     "test:agents": "node --conditions=react-server --import tsx --test scripts/test-catalog-agents.ts scripts/test-public-expanded.ts scripts/test-webmcp.ts",
     "check:docs": "node scripts/check-docs.mjs",
     "check:content": "tsx scripts/check-producer-content.ts",
     "producer:content": "tsx scripts/producer-content.ts",
     "producer:inspect": "tsx scripts/inspect-producer.ts",
-    "test:content": "tsx --test scripts/test-producer-content.ts scripts/test-producer-inspection.ts scripts/test-producer-content-render.ts scripts/test-producer-product-changes.ts"
+    "test:content": "tsx --test scripts/test-producer-content.ts scripts/test-producer-inspection.ts scripts/test-producer-content-render.ts scripts/test-producer-product-changes.ts",
+    "check:guides": "tsx scripts/check-guides.ts",
+    "test:guides": "tsx --test scripts/test-guides.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "7.7.9",
@@ -74,13 +76,18 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-leaflet": "^5.0.0",
+    "react-markdown": "^10.1.0",
+    "remark-parse": "^11.0.0",
     "server-only": "0.0.1",
     "stripe": "22.5.0",
+    "unified": "^11.0.5",
+    "yaml": "^2.9.0",
     "zod": "4.4.3"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.5",
     "@types/leaflet": "^1.9.21",
+    "@types/mdast": "^4.0.4",
     "@types/node": "^24.13.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",

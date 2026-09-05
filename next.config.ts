@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
   // routes that resolve producer rows instead of attaching every CSV to every
   // function; automatic tracing still handles their ordinary dependencies.
   outputFileTracingIncludes: {
+    // The shared navigation and profile backlinks read the small guide library.
+    "/*": ["./data/guides/es/*.md"],
+    "/guias": ["./data/csv/es/**/*.csv"],
+    "/guias/**": ["./data/csv/es/**/*.csv"],
     "/api/catalog/v1/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     middleware: ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]": ["./data/csv/**/*.csv"],

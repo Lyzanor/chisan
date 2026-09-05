@@ -25,6 +25,7 @@ import {
 } from "../lib/csv-catalog";
 
 import { listIndexableProducerLocales } from "../lib/catalog/producers";
+import { listGuideSitemapEntries } from "../lib/guides/metadata";
 
 const SPAIN = { slug: "es", defaultLocale: "es" as const };
 
@@ -178,7 +179,7 @@ test("sitemap count matches effective locale policies and every alternate is rec
     assert.ok(locales, `Missing producer readiness for ${route.slug}`);
     return count + locales.length;
   }, 0);
-  const expectedCount = 4 + countryCount + areaCount + producerCount;
+  const expectedCount = 4 + listGuideSitemapEntries().length + countryCount + areaCount + producerCount;
 
   assert.equal(entries.length, expectedCount);
 

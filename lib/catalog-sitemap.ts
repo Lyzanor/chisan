@@ -13,6 +13,7 @@ import {
   type Country,
 } from "./csv-catalog";
 import { SITE_ORIGIN } from "./site";
+import { listGuideSitemapEntries } from "./guides/metadata";
 
 export const SITEMAP_SHARD_URL_LIMIT = 40_000;
 export const SITEMAP_GOOGLE_URL_LIMIT = 50_000;
@@ -52,6 +53,7 @@ function appendCatalogTarget(
 async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
   const countries = listPublishedCountries();
   const entries: CatalogSitemapEntry[] = [];
+  entries.push(...listGuideSitemapEntries());
   const homeAlternates = buildHomeAlternateSet();
 
   entries.push({

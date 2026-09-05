@@ -9,6 +9,7 @@ import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
+import { GuideHighlights } from "@/components/guides/guide-highlights";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import { ProducersMap } from "@/components/map/producers-map";
 import { ProducerDistance } from "@/components/producer-distance";
@@ -550,6 +551,7 @@ export default async function ProducerPage({
           />
         </Suspense>
 
+        <GuideHighlights producer={{ country: country.slug, producerId: producer.producerId }} />
 
         <section className="detail-related" aria-labelledby="detail-related-title">
           <p className="detail-eyebrow">{messages.producer.categories}</p>

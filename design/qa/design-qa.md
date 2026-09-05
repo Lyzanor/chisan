@@ -700,3 +700,37 @@ serialization and localhost analytics were already present before this work.
 Release verification: the isolated design-only tree passed frozen-lockfile
 installation and the complete pnpm verify:ai gate on 2026-09-06. Parallel guide
 and producer-data changes were excluded from this release.
+
+## 2026-09-06 — Markdown guide library
+
+Scope: 31 Spanish editorial guides, `/guias`, article reading, exact producer
+selections, progressive maps, homepage highlights, header/footer links and
+producer-profile reverse links. The source of each article is a Markdown document
+with YAML metadata in `data/guides/es/`; prose and producer commentary remain in
+the document body. No JSON article copy or administration editor is published.
+
+Reviewed at 1440 × 1000 and 390 × 844 against the isolated release checkout,
+including the published design update and the Lleida/Tarragona coordinate release.
+The index groups all 31 entries under six topic anchors. Homepage highlights keep
+the cheese, wine and honey introductions deliberately selected. Narrow layouts
+retain readable headings, a single column and no horizontal overflow.
+
+The sheep-cheese article loaded three exact producer markers on demand. A marker
+opened its popup and its profile link reached La Antigua; the profile showed its
+four matching guide links. Text links remain available before loading the map.
+Source links, Markdown paragraphs and the editorial-criteria section rendered in
+server HTML. The HTTP contract checks every published guide and its profile links.
+The unmapped-producer case remains covered by the wine guide and model tests.
+
+Evidence:
+
+- [Desktop library](guides-library-desktop.png)
+- [Mobile library](guides-library-mobile.png)
+- [Mobile Markdown selection map](guides-markdown-map-mobile.png)
+- [Mobile producer reverse links](guides-related-profile-mobile.png)
+- [Desktop homepage highlights](guides-home-library-desktop.png)
+
+The development shell still reports the existing WebMCP/Zod server-to-client
+serialization warnings; the screenshots show its development issue badge.
+No guide-specific rendering or map error was observed. Account, contact and map
+renderer behavior outside the guide integration was not changed.

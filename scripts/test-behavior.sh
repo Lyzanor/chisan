@@ -2,6 +2,10 @@
 set -euo pipefail
 
 PORT="${PORT:-3210}"
+# An explicit URL lets browser checks share an already running development
+# server without trying to acquire its .next/dev lock or stopping that server.
+START_TEST_SERVER="${BASE_URL:+false}"
+START_TEST_SERVER="${START_TEST_SERVER:-true}"
 BASE_URL="${BASE_URL:-http://127.0.0.1:$PORT}"
 
 if ! command -v curl >/dev/null 2>&1; then
@@ -202,11 +206,15 @@ main().catch((error) => {
 });
 '
 
-VERCEL_ENV=production CHISAN_PUBLIC_DISCOVERY_ENABLED=false NEXT_PUBLIC_APP_URL=https://chisan.app \
-  ./node_modules/.bin/next dev --port "$PORT" >/tmp/chisan-test-dev.log 2>&1 &
-DEV_PID=$!
+if [[ "$START_TEST_SERVER" == "true" ]]; then
+  VERCEL_ENV=production CHISAN_PUBLIC_DISCOVERY_ENABLED=false NEXT_PUBLIC_APP_URL=https://chisan.app \
+    ./node_modules/.bin/next dev --port "$PORT" >/tmp/chisan-test-dev.log 2>&1 &
+  DEV_PID=$!
+fi
 
 wait_for_app
+
+BASE_URL="$BASE_URL" ./node_modules/.bin/tsx --test scripts/test-guide-routes.ts
 
 HTML_HOME="$(curl -fsS "$BASE_URL/")"
 HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"

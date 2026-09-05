@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from "next";
 import { Noto_Sans } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { GuidesLink } from "@/components/guides/guides-link";
 import { CompassIcon } from "@phosphor-icons/react/ssr";
 import { NavigationLink } from "@/components/navigation-link";
 import { PageMotion } from "@/components/page-motion";
@@ -142,6 +143,7 @@ export function SiteRootShell({
               <CompassIcon size={20} aria-hidden="true" />
               <span>{footerMessages.catalogLink}</span>
             </NavigationLink>
+            <GuidesLink className="site-primary-nav__guides" />
             <NavigationLink href="/how-we-work" activePath="/how-we-work" className="site-primary-nav__about">
               {footerMessages.aboutLink}
             </NavigationLink>
@@ -158,6 +160,7 @@ export function SiteRootShell({
               <ChisanWordmark alt="" reverse />
             </Link>
             <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
+            <GuidesLink />
             <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
             <Link href="/privacy">
               {htmlLang.toLowerCase().startsWith("es")
