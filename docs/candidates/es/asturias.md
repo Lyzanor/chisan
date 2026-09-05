@@ -1,7 +1,7 @@
 # Asturias — candidates
 
 - Target CSV: `data/csv/es/asturias/asturias.csv`
-- Editorial review: 2026-09-04; 113 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; 114 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -169,3 +169,11 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Viña Áurea | Ibias | `Vino` — young Albarín Blanco, Verdejo Negro and Mencía wines | The council describes a family company created in 2014, a winery built in 2023 in San Antolín de Ibias, first market release from that vintage and DOP certification for the 2024 harvest. | [DOP Cangas winery directory](https://docangas.es/las-bodegas/) | — | Dossier review only: no current producer-owned page was listed for this lead. Confirm productive responsibility, an identifiable own human-food offer and the actual productive municipality. Recorded blocker: Confirm current first-party activity and own offer, exact productive address and legal identity before materialization. |
+
+## Spanish cheese-catalogue coverage cross-check — 2026-09-05
+
+Scope: varieties of the MAPA *Catálogo electrónico de quesos de España* whose production zone falls in this area and had no dairy producer in the catalog, plus the Formaje Spanish-cheese range. Queso Genestoso (Cangas del Narcea) remains an unresolved zone: the reviewed sources describe artisan makers organising as a cooperative but name no elaborator, so no candidate is recorded for it.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Quesería La Corte | Tanes locality, Caso; Parque Natural de Redes | `Lácteos y quesos` — Queso Casín DOP | One of the three dairies inside the Casín DOP, making Casín since 2013 from raw milk of Casina and Asturiana de los Valles cattle; the catalog already holds the other two, Ca Llechi and Redes. | [Quesos Asturianos](https://www.quesosasturianos.com/es/blog/post/el-queso-casin-dop-la-corte); [Formaje](https://formaje.com/collections/quesos-espanoles) | <https://www.quesoslacorte.es/> | Confirm the productive dairy and a current first-party own offer from the producer's own site. Tanes is a locality, so place the row under the municipality of Caso. |
