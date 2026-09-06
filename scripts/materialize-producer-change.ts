@@ -37,7 +37,7 @@ export { atomicWriteUtf8 } from "../lib/editorial/atomic-file";
 export * from "../lib/editorial/git-state";
 export * from "../lib/editorial/producer-csv";
 
-import { eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import postgres, { type Sql } from "postgres";
 
@@ -53,6 +53,7 @@ import {
 import * as databaseSchema from "../lib/db/schema";
 import {
   producerChangeRequests,
+  producerMediaUploads,
   type ProducerChangeRequest,
 } from "../lib/db/schema";
 import { loadProducerChangeDatabaseUrl } from "./producer-change-access";
@@ -1017,6 +1018,16 @@ async function runCli(): Promise<void> {
           initialChange.country,
           initialChange.producerId,
           resumeSource,
+          process.cwd(),
+          async reference => {
+            const [image] = await database.select({ bytes: producerMediaUploads.bytes }).from(producerMediaUploads).where(and(
+              eq(producerMediaUploads.id, reference.uploadId), eq(producerMediaUploads.country, initialChange.country),
+              eq(producerMediaUploads.producerId, initialChange.producerId), eq(producerMediaUploads.authorUserId, initialChange.authorUserId),
+              eq(producerMediaUploads.sha256, reference.sha256),
+            )).limit(1);
+            if (!image) throw new Error("The approved image upload is missing.");
+            return Buffer.from(image.bytes);
+          },
         );
       } catch (error) {
         if (error instanceof ProducerContentConflictError)
@@ -1307,7 +1318,7 @@ async function runCli(): Promise<void> {
 
     if (contentPublication)
       process.stdout.write(
-        `Products: ${contentPublication.relativePath}. Include the JSON in the same reviewed commit.\n`,
+        `Products: ${contentPublication.relativePath}. Include the JSON and all referenced image assets in the same reviewed commit.\n`,
       );
     const message = alreadyPresent
       ? `CSV already contains the approved patch and passed its audit in execution ${execution.executionId}. Run pnpm verify:data, then finalize with the exact commit that introduced the approved state.`
@@ -1513,6 +1524,7 @@ async function runCli(): Promise<void> {
       process.cwd(),
       initialChange.contentChange
         ? {
+            assets: initialChange.contentChange.version === 2 ? initialChange.contentChange.uploads.map(image => ({ relativePath: `public/productores/${initialChange.country}/content/${initialChange.producerId}/${image.sha256}.webp`, sha256: image.sha256 })) : [],
             baseRowHash: initialChange.baseRowHash,
             relativePath: repoRelativePath(
               producerContentPath(

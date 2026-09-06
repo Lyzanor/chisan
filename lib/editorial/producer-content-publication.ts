@@ -1,3 +1,4 @@
+import { prepareMediaPublication, type PreparedImageReader } from "./producer-media-publication";
 import { mkdir, open, readFile, realpath, unlink } from "node:fs/promises";
 import path from "node:path";
 
@@ -38,13 +39,15 @@ export async function prepareContentPublication(
   producerId: number,
   resumeSource: string | null = null,
   root = process.cwd(),
+  readUpload?: PreparedImageReader,
 ) {
   const { change, requested } = resolveProducerContentChange(
     value,
     country,
     producerId,
   );
-  await validateContentAssets(requested, root);
+  const media = await prepareMediaPublication(country, producerId, change.version === 2 ? change.uploads : [], readUpload, root, Boolean(resumeSource));
+  await validateContentAssets(requested, root, media.prepared);
   const target = producerContentPath(country, producerId, root);
   const relativePath = repoRelativePath(target, root);
   const original = await readOptionalContent(target);
@@ -87,6 +90,7 @@ export async function prepareContentPublication(
     serialized,
     requested,
     hash: change.requestedHash,
+    assets: media.paths,
     alreadyPresent: currentHash === change.requestedHash,
     async lock() {
       await mkdir(path.dirname(target), { recursive: true });
@@ -109,12 +113,14 @@ export async function prepareContentPublication(
         throw new ProducerContentConflictError(
           "The product package changed before writing.",
         );
+      await media.write();
       if (currentHash !== change.requestedHash) {
         await atomicWriteUtf8(target, serialized, original === null);
         wrote = true;
       }
     },
     async assertCurrent() {
+      await media.assertCurrent();
       if (
         (await readOptionalContent(target)) !== (wrote ? serialized : original)
       )
@@ -124,13 +130,14 @@ export async function prepareContentPublication(
       await validateContentAssets(requested, root);
     },
     async restore() {
-      if (!wrote) return;
+      if (!wrote) { await media.restore(); return; }
       if ((await readOptionalContent(target)) !== serialized)
         throw new Error(
           "Product restoration refused because the package changed concurrently.",
         );
       if (original === null) await unlink(target);
       else await atomicWriteUtf8(target, original);
+      await media.restore();
     },
   };
 }

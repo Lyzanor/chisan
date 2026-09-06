@@ -5,6 +5,7 @@ import {
   boolean,
   check,
   date,
+  customType,
   foreignKey,
   index,
   integer,
@@ -467,7 +468,7 @@ export const producerChangeRequests = pgTable(
     check("producer_change_requests_patch_check", sql`jsonb_typeof(${table.patch}) = 'object'`),
     check(
       "producer_change_requests_content_check",
-      sql`${table.contentChange} IS NULL OR (jsonb_typeof(${table.contentChange}) = 'object' AND ${table.requiredEntitlementKey} IS NOT DISTINCT FROM 'producer.profile.premium' AND (${table.contentChange}->>'version') = '1' AND (${table.contentChange}->>'baseHash') ~ '^[a-f0-9]{64}$' AND (${table.contentChange}->>'requestedHash') ~ '^[a-f0-9]{64}$' AND jsonb_typeof(${table.contentChange}->'products') = 'array' AND (${table.contentChange}->'base'->>'country') = ${table.country} AND (${table.contentChange}->'base'->>'producer_id') = ${table.producerId}::text) IS TRUE`,
+      sql`${table.contentChange} IS NULL OR (jsonb_typeof(${table.contentChange}) = 'object' AND ${table.requiredEntitlementKey} IS NOT DISTINCT FROM 'producer.profile.premium' AND (${table.contentChange}->>'version') IN ('1', '2') AND (${table.contentChange}->>'baseHash') ~ '^[a-f0-9]{64}$' AND (${table.contentChange}->>'requestedHash') ~ '^[a-f0-9]{64}$' AND jsonb_typeof(${table.contentChange}->'products') = 'array' AND (${table.contentChange}->'base'->>'country') = ${table.country} AND (${table.contentChange}->'base'->>'producer_id') = ${table.producerId}::text) IS TRUE`,
     ),
     check(
       "producer_change_requests_entitlement_key_check",
@@ -888,3 +889,25 @@ export type ProducerChangeExecution = typeof producerChangeExecutions.$inferSele
 export type Entitlement = typeof entitlements.$inferSelect;
 export type ProducerProfileUpgradeRequest =
   typeof producerProfileUpgradeRequests.$inferSelect;
+
+
+const privateImageBytes = customType<{ data: Buffer; driverData: Buffer }>({
+  dataType() { return "bytea"; },
+});
+// Immutable, private review inputs. Published images are static assets referenced by Git JSON.
+export const producerMediaUploads = pgTable("producer_media_uploads", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  authorUserId: uuid("author_user_id").notNull().references(() => users.id, { onDelete: "restrict" }),
+  country: varchar("country", { length: 2 }).notNull(),
+  producerId: bigint("producer_id", { mode: "number" }).notNull(),
+  sha256: varchar("sha256", { length: 64 }).notNull(),
+  width: integer("width").notNull(), height: integer("height").notNull(),
+  bytes: privateImageBytes("bytes").notNull(),
+  rightsConfirmedAt: timestampWithTimezone("rights_confirmed_at").notNull().defaultNow(),
+  createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+}, table => [
+  uniqueIndex("producer_media_uploads_owner_digest_idx").on(table.authorUserId, table.country, table.producerId, table.sha256),
+  index("producer_media_uploads_producer_idx").on(table.country, table.producerId),
+  check("producer_media_uploads_identity_check", sql`${table.country} ~ '^[a-z]{2}$' AND ${table.producerId} > 0`),
+  check("producer_media_uploads_image_check", sql`${table.width} BETWEEN 200 AND 1600 AND ${table.height} BETWEEN 200 AND 1600 AND octet_length(${table.bytes}) BETWEEN 1 AND 524288 AND ${table.sha256} = encode(sha256(${table.bytes}), 'hex')`),
+]);

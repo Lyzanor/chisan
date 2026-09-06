@@ -258,9 +258,12 @@ but is not editable: the materializer derives its UTC `YYYY-MM-DD` value from
 the request's `reviewed_at` timestamp after approval.
 
 Products, gallery items and named links use `docs/PRODUCER_CONTENT.md` under the
-same entitlement. The account editor accepts a dedicated typed product proposal
-beside the base-field patch. Gallery, links and translations are preserved from
-the reviewed package and maintained through the local editorial workflow.
+same entitlement. The account editor accepts a dedicated typed product/gallery
+proposal beside the base-field patch. Private, normalized image uploads are
+immutable inputs in `producer_media_uploads`; reviewed publication copies their
+verified bytes to Git assets. Upload metadata, previews, bounds and retention
+follow `docs/PRODUCER_CONTENT.md`. Links and translations are preserved from the
+reviewed package and maintained through the local editorial workflow.
 
 The printable producer QR is an optional presentation feature within that same
 capability. It is hidden by default and renders only while the entitlement is

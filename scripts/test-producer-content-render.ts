@@ -43,6 +43,7 @@ test("related content renders semantic, localized and escaped public records", a
       height: 600,
       credit: "Example",
     });
+    content.gallery.push({ ...content.gallery[0], id: "gallery-only", src: "/productores/es/content/1/gallery.webp", alt: "Standalone photo" });
     content.links.push({
       id: "details",
       label: "Detalles",
@@ -56,7 +57,8 @@ test("related content renders semantic, localized and escaped public records", a
       assert.ok(html.includes(label));
     assert.match(html, /lang="en">Example &amp; Co/);
     assert.match(html, /&lt;script&gt;literal&lt;\/script&gt;/);
-    assert.match(html, /alt="Reviewed image"/);
+    assert.equal((html.match(/alt="Reviewed image"/g) ?? []).length, 1, "product photo is not repeated in the gallery");
+    assert.match(html, /alt="Standalone photo"/);
     assert.match(html, /loading="lazy"/);
     assert.match(
       html,

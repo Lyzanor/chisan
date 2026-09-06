@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { ProducerMediaEditor } from "./producer-media-editor";
+import { preparedMediaSrc, privateMediaSrc, type PreparedMediaReference } from "@/lib/accounts/producer-media-policy";
+import { getProducerMediaLabels } from "@/lib/i18n/producer-media";
 import { useRef, useState } from "react";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
 import type { Locale } from "@/lib/i18n/locales";
@@ -11,22 +14,39 @@ type Product = ProducerContent["products"][number];
 export type ProductEditorData = Pick<
   ProducerContent,
   "products" | "gallery" | "links"
-> & { baseHash: string; limit: number };
+> & { baseHash: string; limit: number; publishedGallery?: ProducerContent["gallery"]; uploads?: PreparedMediaReference[] };
 
 export function ProducerProductsEditor({
   content,
   initialProducts,
+  initialGallery,
+  country,
+  producerId,
+  onBusy,
   locale,
   languageOptions,
   onChange,
 }: {
   content: ProductEditorData;
   initialProducts: Product[];
+  initialGallery?: ProducerContent["gallery"];
+  country: string; producerId: number; onBusy: (busy: boolean) => void;
   locale: Locale;
   languageOptions: readonly { value: string; label: string }[];
   onChange: () => void;
 }) {
   const labels = getProducerEditorLabels(locale);
+  const mediaWords = getProducerMediaLabels(locale);
+  const [gallery, setGallery] = useState(initialGallery ?? content.gallery);
+  const [uploads, setUploads] = useState(content.uploads ?? []);
+  const [target, setTarget] = useState("");
+  const published = content.publishedGallery ?? content.gallery;
+  const [removedMedia, setRemovedMedia] = useState<{ item: ProducerContent["gallery"][number]; index: number; assignments: { id: string; index: number }[] } | null>(null);
+  const mediaSource = (item: ProducerContent["gallery"][number]) => {
+    if (published.some(p => p.src === item.src)) return item.src;
+    const upload = uploads.find(u => preparedMediaSrc(country, producerId, u.sha256) === item.src);
+    return upload ? privateMediaSrc(upload.uploadId) : item.src;
+  };
   const [products, setProducts] = useState(initialProducts);
   const [removed, setRemoved] = useState<{
     product: Product;
@@ -60,6 +80,8 @@ export function ProducerProductsEditor({
       <p>{labels.productsHelp}</p>
       <input type="hidden" name="baseContentHash" value={content.baseHash} />
       <input type="hidden" name="products" value={JSON.stringify(products)} />
+      <input type="hidden" name="gallery" value={JSON.stringify(gallery)} />
+      <input type="hidden" name="uploads" value={JSON.stringify(uploads.filter(u => gallery.some(item => item.src === preparedMediaSrc(country, producerId, u.sha256) && !published.some(p => p.id === item.id && p.src === item.src))))} />
       <div className={styles.heading}>
         <span>
           {products.length} / {content.limit} {labels.count}
@@ -106,6 +128,7 @@ export function ProducerProductsEditor({
                 </button>
               </div>
             </div>
+            <button type="button" className="account-link-button" onClick={() => { setTarget(product.id); document.getElementById("media-target")?.focus(); document.getElementById("producer-change-gallery")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>{mediaWords.productPhoto}</button>
             <label
               className="account-field"
               htmlFor={`product-name-${product.id}`}
@@ -162,13 +185,13 @@ export function ProducerProductsEditor({
                   ))}
               </select>
             </label>
-            {content.gallery.length || content.links.length ? (
+            {gallery.length || content.links.length ? (
               <details className={styles.attachments}>
                 <summary>{labels.assets}</summary>
-                {content.gallery.length ? (
+                {gallery.length ? (
                   <fieldset>
                     <legend>{labels.media}</legend>
-                    {content.gallery.map((item) => (
+                    {gallery.map((item) => (
                       <label key={item.id} className={styles.attachment}>
                         <input
                           type="checkbox"
@@ -183,7 +206,7 @@ export function ProducerProductsEditor({
                             })
                           }
                         />
-                        <Image src={item.src} alt="" width={64} height={64} />
+                        <Image src={mediaSource(item)} alt="" width={64} height={64} unoptimized={mediaSource(item).startsWith("/api/")} />
                         <span lang={item.locale}>{item.alt}</span>
                       </label>
                     ))}
@@ -229,7 +252,7 @@ export function ProducerProductsEditor({
               next.splice(
                 Math.min(removed.index, next.length),
                 0,
-                removed.product,
+                { ...removed.product, media_ids: removed.product.media_ids.filter(id => gallery.some(item => item.id === id)) },
               );
               update(next);
               setRemoved(null);
@@ -279,6 +302,31 @@ export function ProducerProductsEditor({
           </ul>
         </details>
       ) : null}
+      <ProducerMediaEditor country={country} producerId={producerId} gallery={gallery} products={products} uploads={uploads}
+        published={published} locale={locale} languageOptions={languageOptions} target={target} onTarget={setTarget} onBusy={onBusy}
+        onAdd={(media, upload, productId) => {
+          setUploads(previous => previous.some(u => u.uploadId === upload.uploadId) ? previous : [...previous, upload]);
+          setGallery(previous => previous.some(item => item.src === media.src) ? previous : [...previous, media]);
+          if (productId) setProducts(previous => previous.map(p => p.id === productId && !p.media_ids.includes(media.id) ? { ...p, media_ids: [...p.media_ids, media.id] } : p));
+          onChange();
+        }}
+        onEdit={(id, patch) => { setGallery(previous => previous.map(item => item.id === id ? { ...item, ...patch } : item)); onChange(); }}
+        onMove={(index, step) => { setGallery(previous => { const next = [...previous]; [next[index], next[index + step]] = [next[index + step], next[index]]; return next; }); onChange(); }}
+        onRemove={id => {
+          const index = gallery.findIndex(item => item.id === id);
+          setRemovedMedia({ item: gallery[index], index, assignments: products.filter(p => p.media_ids.includes(id)).map(p => ({ id: p.id, index: p.media_ids.indexOf(id) })) });
+          setGallery(previous => previous.filter(item => item.id !== id));
+          setProducts(previous => previous.map(p => ({ ...p, media_ids: p.media_ids.filter(key => key !== id) })));
+          onChange();
+        }}
+        canUndo={Boolean(removedMedia) && gallery.length < Math.max(20, published.length)}
+        onUndo={() => {
+          if (!removedMedia) return;
+          const { item, index, assignments } = removedMedia;
+          setGallery(previous => { if (previous.some(m => m.id === item.id)) return previous; const next = [...previous]; next.splice(Math.min(index, next.length), 0, item); return next; });
+          setProducts(previous => previous.map(p => { const assignment = assignments.find(a => a.id === p.id); if (!assignment || p.media_ids.includes(item.id)) return p; const ids = [...p.media_ids]; ids.splice(Math.min(assignment.index, ids.length), 0, item.id); return { ...p, media_ids: ids }; }));
+          setRemovedMedia(null); onChange();
+        }} />
     </fieldset>
   );
 }

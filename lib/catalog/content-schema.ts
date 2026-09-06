@@ -262,3 +262,9 @@ export function hasProducerContent(content: ProducerContent): boolean {
     content.products.length || content.gallery.length || content.links.length,
   );
 }
+
+/** Assigned images are displayed with their products; the standalone gallery avoids repeats. */
+export function standaloneProducerGallery(content: Pick<ProducerContent, "products" | "gallery">) {
+  const assigned = new Set(content.products.flatMap(product => product.media_ids));
+  return content.gallery.filter(image => !assigned.has(image.id));
+}

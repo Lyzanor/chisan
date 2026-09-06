@@ -88,7 +88,7 @@ verifies actual format/dimensions, existence and containment inside `public/`.
 Follow `docs/IMAGES.md` for sourcing, rights and visual review. The existing
 main-image composition is not mandatory for a gallery: preserve the image's
 honest aspect ratio. A model-generated product or production scene is not
-producer evidence. There is no remote image fetch or deployed filesystem upload.
+producer evidence. There is no remote image fetch or deployed catalog-filesystem upload. The private account upload workflow below accepts local files.
 Keep originals and private permissions outside the public package.
 
 ## Localization
@@ -123,9 +123,7 @@ pricing, availability or search-engine rich-result claim.
    assets and evidence together. Apply the normal release procedure.
 
 `apply` is an editorial tool, not a producer authorization bypass. It neither
-changes entitlements nor publishes directly to Production. Gallery items, named links and translations use this local review workflow.
-Product members also have the account editor described below. Neither workflow
-accepts private upload material as approved public content.
+changes entitlements nor publishes directly to Production. Named links and translations use this local review workflow. Products and gallery items also have the account editor described below. Private upload material becomes public only after review and Git publication.
 
 If a process dies with a `.json.lock` file, identify that process/worktree and
 inspect the target and temporary files before removing the abandoned lock. A
@@ -135,19 +133,23 @@ new attempt must use the current revision; no timeout adopts an unknown edit.
 
 An active producer member with the exact `producer.profile.premium` entitlement
 can add, edit, reorder and remove products in the existing profile editor. The
-form exposes names, descriptions, original languages and references to that
-producer's already reviewed photos and links. It has a preview, removal undo,
-explicit draft saving and submission for review. New image uploads, link
-creation, gallery editing and translation editing remain local editorial work.
+form exposes names, descriptions, original languages, photos and references to
+reviewed links. Images can be uploaded, described, credited, assigned to products,
+reordered and removed with undo. It has a preview, explicit draft saving and
+submission for review. Link creation and translation editing remain local
+editorial work.
 
 The server stores `content_change` alongside the existing CSV patch in
 `producer_change_requests`. This strict, versioned proposal contains the complete
 reviewed base package, its semantic SHA-256, the requested ordered products and
 the resulting package SHA-256. Object-key ordering does not affect these hashes;
 array ordering does. It is a review snapshot, never a second published catalog.
-The server copies gallery, links and translations from the canonical base and
-rejects unknown references. Retiring a product also removes its translation
-records. Changed source text leaves old translations stale; the existing loader
+Version 1 proposals retain the product-only contract. Version 2 also carries the
+requested ordered gallery and an immutable prepared-upload manifest. The server
+copies links and retained translations from the canonical base and rejects
+unknown references, changed binary paths without prepared uploads, and uploads
+belonging to another author or producer. Retiring a product or image removes its
+translation records. Changed source text leaves old translations stale; the existing loader
 renders source text until a reviewed translation is current.
 
 Draft updates require the same author, producer and lock version. Submission
@@ -170,6 +172,70 @@ The v1 operator functions reject requests containing product changes.
 The short CSV `productos estrella` summary remains a separately reviewed base
 field: product edits never silently rewrite it. The public profile reads the
 approved CSV and package after the normal Git release and deployment.
+
+## Private image uploads
+
+The premium editor accepts JPEG, PNG and WebP files up to 3 MiB each. It requires
+an explicit declaration of permission to publish. The server checks the active
+member and exact producer premium entitlement before preparation and again under
+transaction locks before persistence. The request requires the same origin;
+neither arbitrary URLs nor client-chosen storage paths are accepted.
+
+Preparation checks actual file signatures, decodes pixels, rejects animation,
+limits input to 24 million pixels and 10,000 px per edge, corrects EXIF orientation,
+and strips metadata including GPS. It preserves aspect ratio without enlarging,
+outputs WebP at up to 1,600 px per edge and 512 KiB, and requires at least
+200 × 200 px after resizing. SHA-256 identifies the exact prepared bytes.
+The source file and its original filename are not stored.
+
+For this bounded first version, `producer_media_uploads` in PostgreSQL is a
+private proposal inbox: normalized binary bytes plus author, producer identity,
+dimensions, digest, rights declaration time and creation time. It is not a public
+media store or an editable published catalog. It uses the existing private account
+infrastructure; no additional object-storage service or token is required.
+A future object-store adapter can move the bytes without changing the public
+JSON/CSV authority or the review manifest.
+
+The profile editor accepts up to 20 images in total, including product pictures.
+Previously reviewed larger packages remain editable at their current size. The
+inbox permits at most 60 prepared images per producer and 30 upload attempts per
+account per day; attempts with invalid files also count. Identical bytes from the
+same author and producer reuse their prepared record. Saving/submitting is
+blocked while files are uploading. Errors retain completed images and entered
+text, and recent uploads can be recovered when reopening the editor.
+
+Private preview responses are authenticated, same-origin, `no-store` and excluded
+from image optimization. Only the uploader with active membership can preview
+unsubmitted images; authorized staff can preview submitted proposal attachments.
+Premium expiry does not delete saved proposals. Upload bytes and identity are
+immutable, and referenced files cannot be deleted during an open proposal or
+within 90 days of a terminal review/publication outcome. On subsequent uploads,
+the inbox cleans unreferenced files older than 30 days and expired terminal
+attachments. Original files never enter the database, JSON, Git or public URLs.
+
+The reviewer sees both gallery snapshots, captions, credits, order and product
+assignments. The existing publication lease prepares images and JSON together.
+The operator copies verified bytes to
+`public/productores/<country>/content/<producer_id>/<sha256>.webp` before writing
+the package. Writes are atomic, do not overwrite a competing asset, and rollback
+removes only the execution's own unchanged files. Finalization proves that the
+reviewed image bytes exist in the materializing commit and at current HEAD.
+Commit the images, JSON and any changed CSV row together, then deploy normally.
+
+The JSON `gallery` is the shared image collection. Images referenced by products
+appear with those products, including caption and credit; unassigned images form
+the standalone gallery without duplicates. Removing an image from a proposal
+also removes its product references in the same change. Removing approved media
+from a package does not immediately delete historical Git assets.
+
+### Chisan demonstration fixture
+
+Only `(es, 12439)` is the declared test producer. Its three fictional products
+have three generated illustrations; five additional generated scenes exercise
+the standalone gallery. Every image is visibly credited and captioned as
+fictional demonstration material. This exception does not permit generated
+imagery as evidence or visual identity for real producers. See
+[demo image provenance](CHISAN_DEMO_MEDIA.md).
 
 ## Visibility and lifecycle
 

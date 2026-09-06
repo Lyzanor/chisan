@@ -847,3 +847,26 @@ horizontal overflow. Evidence: `output/playwright/radius-list-wide-open.png`,
 `output/playwright/radius-list-mobile-closed.png`.
 The final full gate passed with `BASE_URL=http://localhost:3000 pnpm verify:ai`,
 using the production server for behavior tests to preserve the other dev session.
+
+## 2026-09-06 — Premium producer image editor and demo gallery
+
+- Browser verification used the production form, media HTTP handlers, proposal
+  service and renderer in an isolated local fixture with all account migrations.
+  Its temporary authentication and PostgreSQL fixture are not release files.
+- At 1440×1000 and 390×844: upload target selection, permission acknowledgement,
+  private preview, descriptions and captions, save/reload, reorder, remove/undo
+  and submission to review worked. The submitted comparison loaded the private
+  image. The mobile editor had no horizontal overflow and image actions remained
+  at least 44px high. New images explicitly say they are pending review.
+- Browser testing caught Next.js normalizing the request URL to localhost. The
+  same-origin guard now compares the browser Origin with the actual Host and
+  scheme; a regression test also rejects a forged forwarded host.
+- The public renderer showed three product images and five standalone gallery
+  images, each loaded once, without horizontal overflow at either width. Every
+  demo image has a visible fictional/AI caption and credit. The images use the
+  same preparation pipeline as producer uploads.
+- Automated tests cover decoding and metadata removal, exact producer premium
+  permission, private previews, draft persistence, immutable submitted media,
+  ownership validation in PostgreSQL, and image bytes bound to the publication
+  commit. A real Neon backup branch passed the additive migration rehearsal
+  inside a rolled-back transaction.

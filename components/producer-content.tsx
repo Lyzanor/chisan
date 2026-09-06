@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 
 import type { ProducerContent as Content } from "@/lib/catalog/content-schema";
 import type { Locale } from "@/lib/i18n/locales";
@@ -15,6 +16,7 @@ export function ProducerContent({
 }) {
   const labels = getProducerContentLabels(locale);
   const media = new Map(content.gallery.map((item) => [item.id, item]));
+  const gallery = standaloneProducerGallery(content);
   const links = new Map(content.links.map((item) => [item.id, item]));
   return (
     <div className={styles.content}>
@@ -33,8 +35,8 @@ export function ProducerContent({
                     {product.media_ids.map((id) => {
                       const item = media.get(id);
                       return item ? (
+                        <figure key={id}>
                         <Image
-                          key={id}
                           src={item.src}
                           alt={item.alt}
                           lang={item.locale}
@@ -43,6 +45,8 @@ export function ProducerContent({
                           sizes="(max-width: 600px) 80vw, 320px"
                           loading="lazy"
                         />
+                        {item.caption || item.credit ? <figcaption lang={item.locale}>{item.caption}{item.caption && item.credit ? " · " : ""}{item.credit}</figcaption> : null}
+                        </figure>
                       ) : null;
                     })}
                   </div>
@@ -71,11 +75,11 @@ export function ProducerContent({
           </ul>
         </section>
       ) : null}
-      {content.gallery.length ? (
+      {gallery.length ? (
         <section aria-labelledby="producer-content-gallery">
           <h3 id="producer-content-gallery">{labels.gallery}</h3>
           <div className={styles.gallery}>
-            {content.gallery.map((item) => (
+            {gallery.map((item) => (
               <figure key={item.id} id={`media-${item.id}`}>
                 <Image
                   src={item.src}

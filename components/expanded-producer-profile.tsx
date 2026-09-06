@@ -1,3 +1,4 @@
+import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 import { hasProducerContent } from "@/lib/catalog/content-schema";
 import { loadPublicExpandedContent, publicHighlightedLinks } from "@/lib/catalog/public-expanded";
 import { ProducerContent } from "@/components/producer-content";
@@ -78,7 +79,7 @@ export async function ExpandedProducerProfile({
       {hasProducerContent(content) ? (
         <nav className="detail-expanded-profile__nav" aria-label={messages.producer.expandedProfile}>
           {content.products.length ? <a href="#producer-content-products">{contentLabels.products}</a> : null}
-          {content.gallery.length ? <a href="#producer-content-gallery">{contentLabels.gallery}</a> : null}
+          {standaloneProducerGallery(content).length ? <a href="#producer-content-gallery">{contentLabels.gallery}</a> : null}
           {content.links.length ? <a href="#producer-content-links">{contentLabels.links}</a> : null}
         </nav>
       ) : null}

@@ -8,7 +8,9 @@
       "name": "Cerveza rubia Chisan (ejemplo)",
       "description": "Ejemplo ficticio para el perfil de pruebas: cerveza rubia de estilo pale ale, con notas cítricas y amargor suave, en botella de 33 cl. No es un producto a la venta.",
       "locale": "es",
-      "media_ids": [],
+      "media_ids": [
+        "demo-beer"
+      ],
       "link_ids": []
     },
     {
@@ -16,7 +18,9 @@
       "name": "Queso fresco Chisan (ejemplo)",
       "description": "Ejemplo ficticio para el perfil de pruebas: queso fresco de leche de cabra, de textura tierna y sabor suave, en pieza de 250 g. No es un producto a la venta.",
       "locale": "es",
-      "media_ids": [],
+      "media_ids": [
+        "demo-cheese"
+      ],
       "link_ids": []
     },
     {
@@ -24,11 +28,94 @@
       "name": "Vino blanco sin alcohol Chisan (ejemplo)",
       "description": "Ejemplo ficticio para el perfil de pruebas: vino blanco sin alcohol, de perfil afrutado con notas de manzana y cítricos, en botella de 75 cl. No es un producto a la venta.",
       "locale": "es",
-      "media_ids": [],
+      "media_ids": [
+        "demo-wine"
+      ],
       "link_ids": []
     }
   ],
-  "gallery": [],
+  "gallery": [
+    {
+      "id": "demo-beer",
+      "src": "/productores/es/content/12439/5fe09470649bfaa2ed12ba63324927796dc72bcdca6a60c51be36c8304f933c8.webp",
+      "alt": "Ilustración de una cerveza rubia Chisan de ejemplo",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-cheese",
+      "src": "/productores/es/content/12439/e57957045f6db33239996ee4ff2f8ed193b9bef1754f44c040565b1239261e05.webp",
+      "alt": "Ilustración de un queso fresco Chisan de ejemplo",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-wine",
+      "src": "/productores/es/content/12439/19359fd792f765f360cd55012f61e08ba02600fcb9d005a82466d0ef14cfb19f.webp",
+      "alt": "Ilustración de vino blanco sin alcohol Chisan de ejemplo",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-orchard",
+      "src": "/productores/es/content/12439/99da5d0e325164622a9d83f0853323f5138c9e91f525601a30c28c2d5bfea8f8.webp",
+      "alt": "Huerto imaginario de demostración",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-workshop",
+      "src": "/productores/es/content/12439/2ef34a1b4267f9e1727c75961d190c46f648d95f29200c740d8b1dc27cfff868.webp",
+      "alt": "Obrador imaginario de demostración",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-harvest",
+      "src": "/productores/es/content/12439/04827cef50bb0a6086e320e3121260bcd0f9bf33451bc08a4938404fdc7db17a.webp",
+      "alt": "Cosecha ilustrada de demostración",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-tasting",
+      "src": "/productores/es/content/12439/c49dc92df0111db347449bb4b17b982c92895fbe9ab30caac0f1e72a21fa5306.webp",
+      "alt": "Mesa de degustación imaginaria",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    },
+    {
+      "id": "demo-landscape",
+      "src": "/productores/es/content/12439/08430d2fd5963507dcded9368c508c250ea9edcc5e949c5a7c7b23dae05ee268.webp",
+      "alt": "Paisaje mediterráneo imaginario",
+      "caption": "Ilustración generada para el perfil de pruebas de Chisan. Escena y productos ficticios.",
+      "locale": "es",
+      "width": 1448,
+      "height": 1086,
+      "credit": "Chisan · imagen de demostración generada con IA"
+    }
+  ],
   "links": [],
   "translations": []
 }

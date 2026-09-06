@@ -746,3 +746,24 @@ there are no references. A completed inventory is not retirement approval:
 resolve live resources through audited account operations, retain needed history,
 and migrate/remove related content with the canonical row. No inspection command
 changes a database or CSV.
+
+
+## Premium image inbox release
+
+Apply additive migration `0012_producer_media_uploads` after a recoverable backup
+and an isolated rehearsal, then run `db:assert-current` before pushing the image
+editor. Existing v1 product proposals remain valid. V2 content proposals add gallery
+metadata and a manifest of immutable private uploads; the existing v2 operator
+receipt still binds the resulting complete content hash.
+
+The account runtime uses the existing schema-owner connection. The operator role
+receives read access to prepared bytes, with no direct insert/update/delete grant.
+There are no new object-storage credentials. Private bytes remain in the account
+inbox until reviewed publication copies them into Git; see the bounds and
+retention rules in `docs/PRODUCER_CONTENT.md`.
+
+For image proposals, materialize, validate and commit all listed assets with the
+JSON and any changed CSV row before finalization. The CLI verifies image digests
+in both the materializing commit and current HEAD. Do not publish only the JSON,
+edit prepared bytes or substitute a different image after approval. If an asset
+changes during rollback, preserve it and investigate the exact execution.

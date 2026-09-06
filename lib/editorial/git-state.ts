@@ -326,7 +326,7 @@ export function assertFinalizationGitState(
   producerId: number,
   expectedHash: string,
   cwd = process.cwd(),
-  content?: { relativePath: string; hash: string; baseRowHash: string },
+  content?: { relativePath: string; hash: string; baseRowHash: string; assets?: { relativePath: string; sha256: string }[] },
 ): FinalizationGitState {
   const commitState = assertCommitContainsProducerState(
     commit,
@@ -397,6 +397,14 @@ export function assertFinalizationGitState(
           JSON.parse(readCommitBlob(revision, content.relativePath, cwd)),
         ),
       );
+    for (const asset of content.assets ?? []) {
+      assertGitPathClean(path.resolve(cwd, asset.relativePath), cwd);
+      for (const revision of [commitState.commit, headCommit, ...(!sourcePrecedesCommit ? [sourceHeadCommit] : [])]) {
+        const blob = spawnSync("git", ["show", `${revision}:${asset.relativePath}`], { cwd, maxBuffer: 1024 * 1024 });
+        if (blob.status !== 0 || createHash("sha256").update(blob.stdout).digest("hex") !== asset.sha256)
+          throw new Error("The commit and current HEAD must include the exact reviewed image bytes.");
+      }
+    }
     assertCommitModifiesPath(commitState.commit, content.relativePath, cwd);
     if (
       contentHashAt(commitState.commit) !== content.hash ||

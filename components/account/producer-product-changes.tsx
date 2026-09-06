@@ -1,3 +1,4 @@
+import { ProducerMediaChanges } from "./producer-media-changes";
 import type { ProducerContentChange } from "@/lib/accounts/producer-content-change";
 import { productChanges } from "@/lib/catalog/product-diff";
 import type { Locale } from "@/lib/i18n/locales";
@@ -75,7 +76,7 @@ export function ProducerProductChanges({
                               {product.media_ids
                                 .map(
                                   (id) =>
-                                    change.base.gallery.find(
+                                    (side === "requested" && change.version === 2 ? change.gallery : change.base.gallery).find(
                                       (media) => media.id === id,
                                     )?.alt ?? id,
                                 )
@@ -107,6 +108,7 @@ export function ProducerProductChanges({
           </li>
         ))}
       </ul>
+      <ProducerMediaChanges change={change} locale={locale} />
     </section>
   );
 }

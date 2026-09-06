@@ -85,3 +85,6 @@
 .links a {
   max-width: 100%;
 }
+
+.productImages figure { margin: 0; min-width: 0; max-width: 320px; }
+.productImages figcaption { margin-top: var(--chisan-space-2); font-size: .875rem; overflow-wrap: anywhere; }

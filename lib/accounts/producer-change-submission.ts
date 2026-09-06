@@ -40,8 +40,11 @@ import { loadProducerContent } from "@/lib/catalog/content";
 import {
   hashProducerContent,
   proposeProducerProducts,
+  proposeProducerMedia,
   type ProducerContentChange,
 } from "@/lib/accounts/producer-content-change";
+
+import { assertProducerMediaReferences } from "./producer-media";
 
 const CHANGE_MAX_OPEN_PER_ACCOUNT = 10;
 const CHANGE_MAX_SUBMISSIONS_PER_DAY = 25;
@@ -90,6 +93,8 @@ function readSubmittedProducerChangeValues(
     }),
   );
   values.products = formString(formData, "products").slice(0, 250_000);
+  values.gallery = formString(formData, "gallery").slice(0, 250_000);
+  values.uploads = formString(formData, "uploads").slice(0, 20_000);
   values.authorNote = formString(formData, "authorNote").slice(0, 8_000);
   return values;
 }
@@ -239,7 +244,7 @@ export function createProducerChangeSubmissionService(
     );
     if (
       !premiumActive &&
-      (submittedPremiumFields || formData.has("products"))
+      (submittedPremiumFields || formData.has("products") || formData.has("gallery") || formData.has("uploads"))
     ) {
       return producerChangeFormError(
         previousState,
@@ -266,7 +271,7 @@ export function createProducerChangeSubmissionService(
       );
     }
     let contentChange: ProducerContentChange | null = null;
-    if (formData.has("products")) {
+    if (formData.has("products") || formData.has("gallery")) {
       const content = await loadProducerContent(
         parsed.data.country,
         parsed.data.producerId,
@@ -286,18 +291,20 @@ export function createProducerChangeSubmissionService(
         const rawProducts = formString(formData, "products");
         if (rawProducts.length > 250_000)
           throw new Error("The product proposal is too large.");
-        contentChange = proposeProducerProducts(
-          content,
-          JSON.parse(rawProducts),
-        );
+        const rawGallery = formString(formData, "gallery");
+        const rawUploads = formString(formData, "uploads");
+        if (rawGallery.length > 250_000 || rawUploads.length > 20_000) throw new Error("The image proposal is too large.");
+        contentChange = formData.has("gallery")
+          ? proposeProducerMedia(content, JSON.parse(rawProducts), JSON.parse(rawGallery), JSON.parse(rawUploads || "[]"))
+          : proposeProducerProducts(content, JSON.parse(rawProducts));
       } catch {
         return producerChangeFormError(
           previousState,
           submittedValues,
-          "Revisa los productos antes de guardar.",
+          "Revisa los productos y las imágenes antes de guardar.",
           {
             products:
-              "Cada producto necesita un nombre y un idioma. Puedes añadir hasta 50 productos, con nombres de hasta 160 caracteres y descripciones de hasta 2000 caracteres; las fotos y los enlaces deben pertenecer a este perfil.",
+              "Cada producto necesita un nombre y un idioma. Puedes añadir hasta 50 productos, con nombres de hasta 160 caracteres y descripciones de hasta 2000 caracteres; las imágenes necesitan un texto alternativo y deben haberse subido desde este perfil; los enlaces deben pertenecer a este perfil.",
           },
         );
       }
@@ -425,6 +432,7 @@ export function createProducerChangeSubmissionService(
         )
           return "daily-limit";
 
+        await assertProducerMediaReferences(transaction, { userId: account.id, ...parsed.data }, contentChange);
         const values = {
           status: savingDraft ? ("draft" as const) : ("submitted" as const),
           baseRowHash: currentHash,
@@ -486,7 +494,7 @@ export function createProducerChangeSubmissionService(
             producerId: parsed.data.producerId,
             fields: [
               ...Object.keys(validation.patch),
-              ...(contentChange ? ["products"] : []),
+              ...(contentChange ? ["products", ...(contentChange.version === 2 ? ["gallery"] : [])] : []),
             ],
           },
         });

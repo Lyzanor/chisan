@@ -161,3 +161,18 @@ sources. It is the only pass that sees what was actually published.
 `check:images` blocks unsafe, missing or unrecognizable assets and reports
 non-canonical or suspicious files. Duplicate hashes are review signals, not
 automatic decisions, and do not catch unique junk.
+
+
+## Premium producer uploads and the declared demo
+
+The account editor accepts private image proposals using the preparation,
+permissions and retention contract in `docs/PRODUCER_CONTENT.md`. Producers must
+confirm permission to publish; staff still review identity, rights, captions and
+attribution before Git publication. A valid decoder result is not editorial
+approval. Product assignment preserves image credits in the public product card.
+
+The explicitly fictional Chisan test producer `(es, 12439)` uses generated
+illustrations solely to exercise its three product pictures and five gallery
+pictures. Their captions and credits identify them as demonstrations. This
+exception never establishes evidence or visual identity for a real producer;
+`docs/CHISAN_DEMO_MEDIA.md` records the prompt set.

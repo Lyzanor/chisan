@@ -1,3 +1,4 @@
+import { listProducerMediaUploads } from "@/lib/accounts/producer-media";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -243,6 +244,7 @@ export default async function EditProducerPage({
 
   const draft = openChange?.status === "draft" ? openChange : null;
   const content = premiumActive ? await loadProducerContent(country, producerId) : null;
+  const uploads = content ? await listProducerMediaUploads(getDatabase(), { userId: account.id, country, producerId }) : [];
   const descriptionLocaleOptions = getDescriptionLocaleOptions(
     presentation.messages,
     presentation.locale,
@@ -402,7 +404,8 @@ export default async function EditProducerPage({
         baseRowHash={draft?.baseRowHash ?? hashProducerFields(producer.fields)}
         locale={presentation.locale}
         products={content ? {
-          gallery: content.gallery, links: content.links,
+          gallery: draft?.contentChange?.version === 2 ? draft.contentChange.gallery : content.gallery, links: content.links,
+          publishedGallery: content.gallery, uploads,
           products: draft?.contentChange?.products ?? content.products,
           baseHash: draft?.contentChange?.baseHash ?? hashProducerContent(content),
           limit: PRODUCER_CONTENT_LIMITS.products,

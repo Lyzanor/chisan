@@ -261,6 +261,8 @@ export function ProducerChangeForm({
     ]),
   );
   initialValues.authorNote = draft?.authorNote ?? "";
+  initialValues.gallery = JSON.stringify(products?.gallery ?? []);
+  initialValues.uploads = JSON.stringify(products?.uploads ?? []);
   initialValues.products = JSON.stringify(products?.products ?? []);
   const initialState: ProducerChangeFormState = {
     fieldErrors: {},
@@ -271,6 +273,7 @@ export function ProducerChangeForm({
     draftId: draft?.id,
     draftVersion: draft?.lockVersion,
   };
+  const [uploading, setUploading] = useState(false);
   const [dirty, setDirty] = useState(false);
   const [state, formAction] = useActionState(
     async (previousState: ProducerChangeFormState, data: FormData) => {
@@ -317,7 +320,7 @@ export function ProducerChangeForm({
       key={state.revision}
       ref={formRef}
       onChange={() => setDirty(true)}
-      onSubmit={() => setDirty(false)}
+      onSubmit={event => { if (uploading) event.preventDefault(); else setDirty(false); }}
       action={formAction}
       className="account-form account-form--wide"
     >
@@ -414,7 +417,9 @@ export function ProducerChangeForm({
         </div>
         {products ? (
           <ProducerProductsEditor
-            content={products}
+            content={{ ...products, uploads: (() => { try { const values = JSON.parse(state.values.uploads); return [...(products.uploads ?? []), ...values].filter((item, index, all) => all.findIndex(u => u.uploadId === item.uploadId) === index); } catch { return products.uploads; } })() }}
+            country={country} producerId={producerId} onBusy={setUploading}
+            initialGallery={(() => { try { return JSON.parse(state.values.gallery); } catch { return products.gallery; } })()}
             initialProducts={(() => {
               try {
                 return JSON.parse(state.values.products);
@@ -488,7 +493,7 @@ export function ProducerChangeForm({
 
         <p>{labels.reviewHelp}</p>
         <SubmitProducerChangeButton
-          blocked={state.reloadRequired}
+          blocked={state.reloadRequired || uploading}
           locale={locale}
         />
       </PendingFields>

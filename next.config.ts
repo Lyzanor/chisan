@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
     "/*": ["./data/guides/es/*.md"],
     "/guias": ["./data/csv/es/**/*.csv"],
     "/guias/**": ["./data/csv/es/**/*.csv"],
+    "/api/producer-media": ["./data/csv/**/*.csv"],
     "/api/producer-stats/**": ["./data/csv/**/*.csv"],
     "/api/catalog/v1/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     middleware: ["./data/csv/**/*.csv"],
