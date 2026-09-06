@@ -767,3 +767,42 @@ JSON and any changed CSV row before finalization. The CLI verifies image digests
 in both the materializing commit and current HEAD. Do not publish only the JSON,
 edit prepared bytes or substitute a different image after approval. If an asset
 changes during rollback, preserve it and investigate the exact execution.
+
+## Google login and account-photo rollout
+
+Before releasing account photos and producer favorite attribution:
+
+1. Apply the normal database backup and migration preflight, then apply
+   `0013_user_presentation` and run `pnpm db:assert-current` with the runtime role.
+   This additive migration creates no public opt-ins and changes no favorites.
+2. In the **Chisan production** Clerk instance, open Configure → SSO connections
+   → Google. Configure a Google Cloud OAuth **Web application** client for
+   `https://chisan.app` with the exact redirect URI shown by Clerk
+   (`https://clerk.chisan.app/v1/oauth_callback` for the inspected instance).
+3. The operator enters the Client ID and Client Secret directly in Clerk.
+   Enable sign-up/sign-in, preserve the email flow, and request only the default
+   OpenID, email and profile scopes. Keep email-subaddress protection enabled.
+   Set the Google application's audience/publishing state appropriately for
+   public production access; test users alone do not establish public readiness.
+4. Verify `/registro` and `/acceso` both offer Google, complete a real Google
+   login, and confirm the account retains its internal identity and favorites.
+   Verify first-photo import, upload, replacement, removal and attribution opt-in.
+   Confirm private/unlisted handles do not leak through producer rosters.
+
+Clerk controls the provider's availability; deploying the frontend alone does
+not activate Google. No Google secret belongs in a Next.js public environment
+variable or this repository. Follow the official
+[Google connection setup](https://clerk.com/docs/guides/configure/auth-strategies/social-connections/google).
+
+Use the **Chisan** Google Auth project owned by `chisanapp@gmail.com`, also its
+support and developer contact. Its authorized domain is `chisan.app` and its
+privacy link is `https://chisan.app/privacy`. Google OAuth does not require
+activating Cloud billing. Keep the integration in the Chisan account rather
+than a personal project.
+
+On 2026-09-06 the Google audience was set to production and the operator saved
+the client credentials directly in Clerk. The Google social connection is
+enabled for sign-up/sign-in with email-subaddress protection and the three
+default scopes. The public sign-in and sign-up pages offer Google, and the
+authorization redirect reaches Google's account selector. This provider setup
+is independent of the photo/attribution code and migration `0013`.

@@ -13,6 +13,10 @@ import {
   type AccountMessageParams,
 } from "@/components/account/account-message";
 import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
+import { AvatarEditor } from "@/components/account/avatar-editor";
+import { updateFavoritesAttributionAction } from "@/app/(application)/cuenta/actions/profile";
+import { getUserPresentation } from "@/lib/accounts/user-presentation";
+import { getDatabase } from "@/lib/db";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { getActiveUserProfilePremiumEntitlement } from "@/lib/accounts/profile-qr-entitlements";
 import { publicProfileBaseLocationKey } from "@/lib/accounts/public-profile-location";
@@ -50,6 +54,7 @@ export default async function AccountProfilePage({
     headers(),
   ]);
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
+  const profilePresentation = await getUserPresentation(getDatabase(), account.id);
 
   const publicProfilePremiumEntitlement =
     await getActiveUserProfilePremiumEntitlement(account.id);
@@ -101,6 +106,7 @@ export default async function AccountProfilePage({
             Todas las cuentas comienzan como usuario. Al enviar una solicitud de propiedad, el tipo cambia automáticamente a productor; no se elige manualmente.
           </p>
         </div>
+        <AvatarEditor name={account.displayName || "Usuario de Chisan"} initialUrl={profilePresentation.avatarUrl} />
         <form action={updateAccountProfileAction} className="account-form">
           <label className="account-field">
             <span>Nombre visible</span>
@@ -115,6 +121,22 @@ export default async function AccountProfilePage({
           <button type="submit" className="account-button">
             Guardar perfil
           </button>
+        </form>
+      </section>
+
+      <section aria-labelledby="favorite-attribution-title">
+        <header className="account-section-heading"><div>
+          <h2 id="favorite-attribution-title">Aparecer en los favoritos de productores</h2>
+          <p>Elige si otras personas pueden ver que has guardado un productor.</p>
+        </div></header>
+        <form action={updateFavoritesAttributionAction} className="account-form">
+          <label className="account-check" style={{ minHeight: 44, alignItems: "center" }}>
+            <input type="checkbox" name="enabled" value="yes" defaultChecked={profilePresentation.favoritesAttributionEnabled} />
+            <span>Mostrar mi nombre y foto en «Guardado en favoritos por».</span>
+          </label>
+          <p>Se aplica a todos tus favoritos actuales y futuros, aunque no tengas un perfil público. Si tu perfil es público, añadimos un enlace a su mapa. Los perfiles privados y no listados no se enlazan.</p>
+          <p>Puedes desactivarlo cuando quieras. Esta opción no añade productores a tu selección pública.</p>
+          <button type="submit" className="account-button">Guardar visibilidad</button>
         </form>
       </section>
 

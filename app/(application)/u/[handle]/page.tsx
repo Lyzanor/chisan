@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ProducerSelectionPage } from "@/components/producer-selection-page";
+import { getUserPresentation } from "@/lib/accounts/user-presentation";
+import { getDatabase } from "@/lib/db";
 import { isPublicProfileIndexable } from "@/lib/accounts/public-profile-policy";
 import {
   findPublicUserProfile,
@@ -66,9 +68,10 @@ export default async function PublicUserProfilePage({
   const profile = await findPublicUserProfile(handle);
   if (!profile) notFound();
 
-  const [identities, presentation] = await Promise.all([
+  const [identities, presentation, accountPresentation] = await Promise.all([
     listPublicProfileFavoriteIdentities(profile.id),
     loadApplicationPresentation(),
+    getUserPresentation(getDatabase(), profile.id),
   ]);
   const producers = await findProducersByIds(identities, presentation.locale);
   const items = buildProducerSelectionItems(producers, presentation);
@@ -77,6 +80,7 @@ export default async function PublicUserProfilePage({
   return (
     <ProducerSelectionPage
       selection={selection}
+      profileAvatar={{ name: profile.displayName || profile.publicHandle, src: accountPresentation.avatarUrl }}
       messages={selectionPageMessages}
       profileQr={
         profile.profileQrEnabled

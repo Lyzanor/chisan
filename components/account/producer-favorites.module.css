@@ -1,0 +1,110 @@
+.section {
+  margin-block: 1.5rem;
+  border-block: 1px solid var(--chisan-color-hairline);
+}
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  min-height: 80px;
+  padding: 1rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summary:focus-visible,
+.person:focus-visible {
+  outline: 2px solid var(--chisan-color-moss);
+  outline-offset: 4px;
+}
+.copy {
+  display: grid;
+  gap: 0.25rem;
+  margin-right: auto;
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+}
+.title {
+  color: var(--chisan-color-ink);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.stack {
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+}
+.stack > span {
+  display: flex;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  margin-left: -0.75rem;
+}
+.stack .count {
+  min-width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.5rem;
+  color: var(--chisan-color-ink);
+  background: var(--surface-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.chevron {
+  color: var(--chisan-color-moss);
+}
+.section details[open] .chevron {
+  transform: rotate(180deg);
+}
+.content {
+  padding-bottom: 1rem;
+}
+.note {
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 1.5rem;
+}
+.person {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  color: var(--chisan-color-ink);
+  text-decoration: none;
+}
+.person > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.person strong {
+  font-weight: 600;
+}
+.person small {
+  display: block;
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+}
+a.person:hover strong {
+  text-decoration: underline;
+}
+@media (max-width: 640px) {
+  .list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .summary {
+    gap: 0.75rem;
+  }
+}

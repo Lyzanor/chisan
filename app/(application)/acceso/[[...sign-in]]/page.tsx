@@ -40,6 +40,7 @@ export default function SignInPage() {
         </div>
         <div className="auth-widget">
           <SignIn
+            appearance={{ options: { socialButtonsVariant: "blockButton", socialButtonsPlacement: "top" } }}
             routing="path"
             path={ACCOUNT_ROUTES.signIn}
             signUpUrl={ACCOUNT_ROUTES.signUp}

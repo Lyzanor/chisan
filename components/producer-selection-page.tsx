@@ -1,4 +1,5 @@
 import { ProducerSelectionExplorer } from "@/components/producer-selection-explorer";
+import { UserAvatar } from "@/components/account/user-avatar";
 import {
   ProfileQrLabel,
   type ProfileQrLabelProps,
@@ -26,11 +27,13 @@ export function ProducerSelectionPage({
   messages,
   profileQr,
   embedded = false,
+  profileAvatar,
 }: {
   selection: ProducerSelectionPageModel;
   messages: ProducerSelectionPageMessages;
   profileQr?: ProfileQrLabelProps;
   embedded?: boolean;
+  profileAvatar?: { name: string; src: string | null };
 }) {
   const mappedCount = selection.items.filter(
     hasProducerSelectionCoordinates,
@@ -52,6 +55,7 @@ export function ProducerSelectionPage({
     <Container className="catalog-page catalog-page--simple producer-selection-page">
       <header className="catalog-simple-header">
         <div>
+          {profileAvatar ? <UserAvatar name={profileAvatar.name} src={profileAvatar.src} size={64} /> : null}
           <p className="catalog-kicker">{selection.eyebrow}</p>
           <Heading>{selection.title}</Heading>
           <p>{selection.description}</p>

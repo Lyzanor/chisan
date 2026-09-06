@@ -28,6 +28,8 @@ type ClerkUserPayload = {
   first_name?: string | null;
   last_name?: string | null;
   username?: string | null;
+  image_url?: string | null;
+  has_image?: boolean;
   primary_email_address_id?: string | null;
   email_addresses?: ClerkEmailAddress[];
   updated_at?: number | null;
@@ -75,6 +77,7 @@ function identityFromWebhook(
     email,
     emailVerified: primary?.verification?.status === "verified",
     displayName,
+    imageUrl: data.has_image ? data.image_url : null,
     providerUpdatedAt: clerkUpdatedAt(data.updated_at) ?? eventOccurredAt,
     providerEventId: eventId,
   };

@@ -36,6 +36,7 @@ const nextConfig: NextConfig = {
     "/guias/**": ["./data/csv/es/**/*.csv"],
     "/api/producer-media": ["./data/csv/**/*.csv"],
     "/api/producer-stats/**": ["./data/csv/**/*.csv"],
+    "/api/producer-favorites": ["./data/csv/**/*.csv"],
     "/api/catalog/v1/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     middleware: ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]": ["./data/csv/**/*.csv"],

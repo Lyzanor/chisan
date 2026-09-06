@@ -10,6 +10,7 @@ import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 import { ProducerProfileView } from "@/components/analytics/producer-profile-view";
 import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
+import { ProducerFavorites } from "@/components/account/producer-favorites";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { GuideHighlights } from "@/components/guides/guide-highlights";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
@@ -574,6 +575,7 @@ export default async function ProducerPage({
         </section>
 
         <Suspense fallback={null}>
+          <ProducerFavorites country={country.slug} producerId={producer.producerId} />
           <ProducerAccountActions
             locale={locale}
             country={country.slug}

@@ -894,6 +894,19 @@ export type ProducerProfileUpgradeRequest =
 const privateImageBytes = customType<{ data: Buffer; driverData: Buffer }>({
   dataType() { return "bytea"; },
 });
+
+// Account-owned presentation, deliberately separate from credentials and catalog media.
+export const userPresentation = pgTable("user_presentation", {
+  userId: uuid("user_id").primaryKey().references(() => users.id, { onDelete: "cascade" }),
+  avatarId: uuid("avatar_id").notNull().defaultRandom(),
+  avatarBytes: privateImageBytes("avatar_bytes"),
+  avatarInitialized: boolean("avatar_initialized").notNull().default(false),
+  favoritesAttributionEnabled: boolean("favorites_attribution_enabled").notNull().default(false),
+  updatedAt: timestampWithTimezone("updated_at").notNull().defaultNow(),
+}, (table) => [
+  uniqueIndex("user_presentation_avatar_uidx").on(table.avatarId),
+  check("user_presentation_avatar_size_check", sql`${table.avatarBytes} IS NULL OR octet_length(${table.avatarBytes}) <= 131072`),
+]);
 // Immutable, private review inputs. Published images are static assets referenced by Git JSON.
 export const producerMediaUploads = pgTable("producer_media_uploads", {
   id: uuid("id").primaryKey().defaultRandom(),

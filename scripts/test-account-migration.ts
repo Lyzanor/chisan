@@ -209,6 +209,7 @@ test("account migration creates constraints and durable producer keys", async ()
         "producer_profile_upgrade_requests",
         "producer_stats_receipts",
         "staff_grants",
+        "user_presentation",
         "users",
         "webhook_receipts",
       ],
@@ -377,6 +378,7 @@ test("account migration creates constraints and durable producer keys", async ()
       { table_name: "staff_grants", column_name: "granted_by_user_id" },
       { table_name: "staff_grants", column_name: "revoked_by_user_id" },
       { table_name: "staff_grants", column_name: "user_id" },
+      { table_name: "user_presentation", column_name: "user_id" },
     ]);
 
     const created = await database.query<{ id: string; profile_kind: string }>(

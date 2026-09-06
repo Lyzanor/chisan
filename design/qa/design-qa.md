@@ -941,3 +941,32 @@ using the production server for behavior tests to preserve the other dev session
 - The temporary `/youtube-qa` route and generated test layout were removed after
   verification. The production component remains inside the existing premium
   visibility gate; profiles without a reviewed video render no player or gap.
+
+## 2026-09-06 — Account photos and producer favorite attribution
+
+- Added a row of up to five overlapping circular avatars and a remaining count,
+  following the supplied reference within Chisan's existing palette. One native
+  disclosure opens the paginated roster; there is no automatic scrolling or
+  animation. The whole summary is an accessible pointer/keyboard target.
+- The roster names only active accounts with explicit attribution opt-in. Only
+  public profiles are linked; private and unlisted profiles show a name/photo
+  without exposing their handle. An honest zero state and retry state are
+  included. Public selection maps retain their existing explicit membership.
+- Chrome at 1440 × 1000 and 390 × 844 verified stacked avatars, opening, 24-to-30
+  pagination, opening/closing with Enter, opt-out reducing the count and removing the name, image upload,
+  replacement/removal, the initials fallback and the linked public map/avatar.
+  The narrow roster and public profile have no horizontal overflow. The new
+  preference label has a 44px minimum height; list links and buttons meet the
+  same target. A Japanese display name was included without truncation.
+- Tests used fictitious accounts and synthetic silhouette images in a separate
+  local PGlite fixture with the real migration, query, upload/read handlers and
+  components. Fixture authentication and routes are not release files. Webpack
+  development emitted existing WebMCP schema-serialization warnings; the
+  application production build and account behavior checks passed.
+- All stages of `verify:ai` passed in the isolated validation copy after updating
+  the migration inventory. Google was then enabled in the production Clerk
+  instance with sign-up/sign-in and email-subaddress protection. Both `/registro`
+  and `/acceso` show Google alongside email. Clicking Google opens the account
+  selector for `chisan.app` with the configured client and exact callback, without
+  an OAuth error. The final account choice/consent and first-photo import remain
+  a separate check; migration `0013` and the photo/roster code are not deployed.

@@ -64,6 +64,7 @@ export const ACCOUNT_DATABASE_MIGRATION_CONTRACT = [
     folderMillis: 1788648093432,
   },
   { hash: "0ab681d2cc75757fdf9a7af838ddd83fa025344f4c6a58aa6df89c8e0e9a9dcc", folderMillis: 1788653705984 },
+  { hash: "7b1be80822f37d97a1f8940e3f1ebc92d2d29183232004d49b0292141a7a9d4d", folderMillis: 1788725474244 },
 ] as const;
 
 export type AccountDatabaseStatus = {

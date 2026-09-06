@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { updateFavoritesAttribution } from "@/lib/accounts/user-presentation";
 import {
   firstValidationMessage,
   formString,
@@ -27,6 +28,15 @@ import { getDatabase } from "@/lib/db";
 import { auditEvents, users } from "@/lib/db/schema";
 
 import { redirectWithMessage } from "./navigation";
+
+export async function updateFavoritesAttributionAction(formData: FormData): Promise<void> {
+  const account = await requireCurrentAccount("/cuenta/perfil");
+  if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
+  await updateFavoritesAttribution(getDatabase(), account.id, formString(formData, "enabled") === "yes");
+  revalidatePath("/cuenta/perfil");
+  revalidatePath("/", "layout");
+  redirectWithMessage("/cuenta/perfil", "notice", "Visibilidad en favoritos actualizada.");
+}
 export async function completeOnboardingAction(
   formData: FormData,
 ): Promise<void> {

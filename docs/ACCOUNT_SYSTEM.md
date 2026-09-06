@@ -584,3 +584,46 @@ activation, incidents, replacement and retirement are owned by
   Infrastructure IP limits, MFA/step-up for sensitive changes and private claim
   artifacts are required before higher-risk evidence uploads or operation at an
   abuse level the current text-only, manually reviewed flow cannot safely absorb.
+
+## Account photos and favorite attribution
+
+Google is an additional OAuth connection in Clerk, alongside the existing email
+flow. `/acceso` and `/registro` use Clerk's configured connections, preserving
+its verified account-linking and session behavior. Chisan continues to map the
+Clerk subject to one internal UUID; it never links accounts by email itself.
+Production Google OAuth requires the application's own Google client credentials
+in Clerk (see the Operations setup). Credentials never enter the catalog or Git.
+
+`user_presentation` owns one bounded avatar and a separate
+`favorites_attribution_enabled` opt-in for each internal user. Missing rows mean
+no photo and no attribution. Uploaded JPG, PNG and WebP images are decoded,
+oriented, cropped to 256 × 256 WebP and stripped of original metadata. Inputs are
+limited to 4 MiB and 25 million pixels, stored output to 128 KiB, and uploads to
+20 attempts per account per day. A replacement or removal rotates the opaque
+image URL. Explicit removal also prevents future provider seeding.
+
+Verified Clerk profile images can seed the photo once, including when an
+existing account connects Google. Later webhooks cannot overwrite a local photo
+or undo its removal. Imports accept only HTTPS Clerk/Google image hosts, bounded
+responses and no redirects. The local bytes are canonical; visitors never load
+an external provider's tracking URL. Provider import failure does not fail login.
+
+The profile editor explains and saves attribution independently of profile
+visibility and the per-favorite public-selection flag. Opting in publishes the
+user's display name and photo beside **all current and future favorites**. It
+does not add any producer to their public selection. This is an explicit
+exception to the default private favorite relationship, not a bulk migration of
+existing users. The producer page and paginated read endpoint count only active
+accounts that opted in. Accounts without public profiles can appear without a
+link; only `public` handles are linked. `unlisted` handles remain undiscoverable
+from the roster. UUIDs, email addresses, external subjects and private counts
+never enter that response.
+
+Avatar reads require an active account and either its owner's current session,
+attribution opt-in or a visible public/unlisted profile. Responses use private
+no-store caching and recheck visibility on every request. Turning attribution
+off, suspending an account or removing a favorite removes its roster entry on
+the next read. Already displayed images cannot be recalled from a visitor's
+screen. A database outage omits this optional producer section while the CSV
+catalog remains available. Public selections display the same local avatar and
+retain their existing explicit membership and map behavior.

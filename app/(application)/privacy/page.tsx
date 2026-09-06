@@ -101,6 +101,17 @@ export default function PrivacyPage() {
           directamente en YouTube mediante el enlace disponible junto al
           reproductor.
         </p>
+        <p>
+          Puedes añadir una foto de perfil; si accedes con Google, su imagen puede
+          utilizarse como foto inicial. Guardamos una copia reducida sin los
+          metadatos originales, que puedes sustituir o quitar desde tu perfil.
+          La foto se muestra en tu perfil cuando lo haces visible. Si activas
+          «Guardado en favoritos por», tu nombre y foto aparecerán en todos los
+          productores que guardes, incluidos los favoritos anteriores. Esta opción
+          está desactivada por defecto y puedes retirarla en cualquier momento.
+          Solo enlazamos tu mapa si el perfil es público; la selección de ese mapa
+          sigue dependiendo de los productores que elijas compartir.
+        </p>
         <h2>Publicidad programática</h2>
         <p>
           Chisan puede utilizar temporalmente Google AdSense en determinadas

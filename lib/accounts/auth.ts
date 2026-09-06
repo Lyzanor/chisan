@@ -15,6 +15,7 @@ import {
   buildActiveProducerOwnerAccessLookup,
 } from "@/lib/accounts/producer-access";
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
+import { seedProviderAvatar } from "@/lib/accounts/user-presentation";
 import { getDatabase, type Database } from "@/lib/db";
 import {
   auditEvents,
@@ -38,6 +39,7 @@ export type ClerkIdentityInput = {
   email: string | null;
   emailVerified: boolean;
   displayName: string | null;
+  imageUrl?: string | null;
   providerUpdatedAt?: Date | null;
   providerEventId?: string | null;
 };
@@ -150,7 +152,7 @@ export async function syncClerkIdentity(
   const email = normalizeEmail(input.email);
   const displayName = normalizeDisplayName(input.displayName);
 
-  return database.transaction(async (transaction) => {
+  const result = await database.transaction(async (transaction) => {
     // Serialize first-use races for one external identity without coupling the
     // schema to a provider-specific user ID.
     await transaction.execute(
@@ -256,6 +258,11 @@ export async function syncClerkIdentity(
     await ensureBootstrapAdmin(transaction, account);
     return account;
   });
+  if (result?.status === "active" && input.imageUrl) {
+    try { await seedProviderAvatar(database, result.id, input.imageUrl); }
+    catch { console.error("Provider avatar import is temporarily unavailable."); }
+  }
+  return result;
 }
 
 function clerkDisplayName(user: Awaited<ReturnType<typeof currentUser>>): string | null {
@@ -292,6 +299,7 @@ const getCurrentAccountForRequest = cache(async (): Promise<AccountUser | null> 
     email: primaryEmail?.emailAddress ?? null,
     emailVerified: primaryEmail?.verification?.status === "verified",
     displayName: clerkDisplayName(clerkUser),
+    imageUrl: clerkUser.hasImage ? clerkUser.imageUrl : null,
     providerUpdatedAt: new Date(clerkUser.updatedAt),
   });
   if (account?.status !== "active") return null;
