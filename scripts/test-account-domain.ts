@@ -9,6 +9,8 @@ import {
   isProducerChangeSubmissionEnabled,
 } from "../lib/accounts/config";
 import {
+  firstValidationMessage,
+  claimSubmissionSchema,
   profileUpgradeGiftGrantSchema,
   profileUpgradeGiftRevokeSchema,
 } from "../lib/accounts/input";
@@ -716,4 +718,17 @@ test("catalog identity lookup follows country plus immutable producer ID", async
   assert.equal(batch[0]?.producerId, 232);
   assert.equal(batch[1], null);
   assert.equal(batch[2], null);
+});
+
+
+test("account validation can use Spanish without changing the admin default", () => {
+  const result = claimSubmissionSchema.safeParse({ country: "es", producerId: 1, method: "website", contactEmail: "", proof: "short" });
+  assert.equal(result.success, false);
+  if (result.success) return;
+  assert.match(firstValidationMessage(result.error), /Too small/);
+  assert.match(firstValidationMessage(result.error, "es"), /Demasiado pequeño/);
+  const proposal = validateProducerProposal({}, {}, PRODUCER_EDITABLE_FIELDS, "es");
+  assert.equal(proposal.ok, false);
+  assert.equal(proposal.errors.nombre, "Este campo es obligatorio.");
+  assert.equal(proposal.errors.categoria, "Elige una categoría del catálogo.");
 });

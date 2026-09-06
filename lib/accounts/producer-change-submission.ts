@@ -157,7 +157,7 @@ export function createProducerChangeSubmissionService(
       return redirectWithMessage(
         "/cuenta/cambios",
         "notice",
-        "Profile change submissions are temporarily paused for catalog maintenance.",
+        "El envío de cambios de perfil está temporalmente pausado por mantenimiento del catálogo.",
       );
     }
     const parsed = producerKeySchema.safeParse({
@@ -168,7 +168,7 @@ export function createProducerChangeSubmissionService(
       return redirectWithMessage(
         "/cuenta",
         "error",
-        firstValidationMessage(parsed.error),
+        firstValidationMessage(parsed.error, "es"),
       );
     }
 
@@ -186,7 +186,7 @@ export function createProducerChangeSubmissionService(
       return redirectWithMessage(
         "/cuenta/reclamaciones",
         "error",
-        "An approved producer membership is required for this profile.",
+        "Necesitas un acceso aprobado al productor para editar este perfil.",
       );
     }
     const producer = await findProducerById(
@@ -197,7 +197,7 @@ export function createProducerChangeSubmissionService(
       return redirectWithMessage(
         editPath,
         "error",
-        "That producer is no longer in the catalog.",
+        "Ese productor ya no está en el catálogo.",
       );
     }
     const submittedValues = readSubmittedProducerChangeValues(formData);
@@ -213,7 +213,7 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "This draft changed. Reload it before saving.",
+        "Este borrador ha cambiado. Recárgalo antes de guardar.",
         {},
         true,
       );
@@ -224,7 +224,7 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "The catalog row changed while you were editing. Review the latest values and try again.",
+        "La ficha del catálogo ha cambiado mientras editabas. Revisa los valores actuales e inténtalo de nuevo.",
         {},
         true,
       );
@@ -244,7 +244,7 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "The expanded-profile right changed while this form was open. Reload the latest profile before submitting.",
+        "El acceso al perfil ampliado ha cambiado mientras el formulario estaba abierto. Recarga el perfil antes de enviarlo.",
         {},
         true,
       );
@@ -255,12 +255,13 @@ export function createProducerChangeSubmissionService(
       readProducerProposalForm(formData, editableFields),
       producer.fields,
       editableFields,
+      "es",
     );
     if (!validation.ok) {
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "Review the highlighted fields and submit again.",
+        "Revisa los campos señalados y vuelve a enviarlo.",
         validation.errors,
       );
     }
@@ -276,7 +277,7 @@ export function createProducerChangeSubmissionService(
         return producerChangeFormError(
           previousState,
           submittedValues,
-          "The products changed while you were editing. Your input is preserved; review the latest profile before continuing.",
+          "Los productos han cambiado mientras editabas. Se conservan tus datos; revisa el perfil actual antes de continuar.",
           {},
           true,
         );
@@ -293,10 +294,10 @@ export function createProducerChangeSubmissionService(
         return producerChangeFormError(
           previousState,
           submittedValues,
-          "Review the products before saving.",
+          "Revisa los productos antes de guardar.",
           {
             products:
-              "Each product needs a name and language. Use up to 50 products, names up to 160 characters and descriptions up to 2,000 characters; photos and links must belong to this profile.",
+              "Cada producto necesita un nombre y un idioma. Puedes añadir hasta 50 productos, con nombres de hasta 160 caracteres y descripciones de hasta 2000 caracteres; las fotos y los enlaces deben pertenecer a este perfil.",
           },
         );
       }
@@ -309,7 +310,7 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "Change at least one field before submitting.",
+        "Cambia al menos un campo antes de enviar.",
       );
     }
     const requiredEntitlementKey =
@@ -322,10 +323,10 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "Explain the change and its public source in 20–4,000 characters.",
+        "Explica el cambio y su fuente pública en entre 20 y 4000 caracteres.",
         {
           authorNote:
-            "Explain the change and its public source in 20–4,000 characters.",
+            "Explica el cambio y su fuente pública en entre 20 y 4000 caracteres.",
         },
       );
     }
@@ -496,7 +497,7 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "We could not save the proposal. Your input is preserved; try again shortly.",
+        "No hemos podido guardar la propuesta. Se conservan tus datos; inténtalo de nuevo en unos momentos.",
       );
     }
 
@@ -504,14 +505,14 @@ export function createProducerChangeSubmissionService(
       return redirectWithMessage(
         editPath,
         "error",
-        "Your producer access changed before this proposal was saved.",
+        "Tu acceso al productor ha cambiado antes de guardar la propuesta.",
       );
     }
     if (changeResult === "entitlement-revoked") {
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "The expanded-profile right changed before this proposal was saved.",
+        "El acceso al perfil ampliado ha cambiado antes de guardar la propuesta.",
         {},
         true,
       );
@@ -521,15 +522,15 @@ export function createProducerChangeSubmissionService(
         previousState,
         submittedValues,
         changeResult === "open-limit"
-          ? "Resolve an existing profile proposal before submitting another."
-          : "The daily profile-change limit has been reached. Try again later.",
+          ? "Resuelve una propuesta de perfil existente antes de enviar otra."
+          : "Has alcanzado el límite diario de cambios de perfil. Inténtalo más tarde.",
       );
     }
     if (changeResult === "stale-draft") {
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "This draft changed in another window. Your input is preserved; reload the saved draft before continuing.",
+        "Este borrador ha cambiado en otra ventana. Se conservan tus datos; recarga el borrador guardado antes de continuar.",
         {},
         true,
       );
@@ -538,7 +539,7 @@ export function createProducerChangeSubmissionService(
       return producerChangeFormError(
         previousState,
         submittedValues,
-        "You already have an open change request for this producer.",
+        "Ya tienes una solicitud de cambio abierta para este productor.",
       );
     }
     revalidatePath("/cuenta/cambios");
@@ -553,13 +554,13 @@ export function createProducerChangeSubmissionService(
         draftId: changeResult.id,
         draftVersion: changeResult.lockVersion,
         notice:
-          "Draft saved. You can continue later; it has not been sent for review.",
+          "Borrador guardado. Puedes continuar más tarde; todavía no se ha enviado para revisión.",
       };
     }
     return redirectWithMessage(
       "/cuenta/cambios",
       "notice",
-      "Changes submitted for editorial review.",
+      "Cambios enviados para revisión editorial.",
     );
   };
 }

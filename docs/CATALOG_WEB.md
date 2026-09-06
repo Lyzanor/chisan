@@ -18,6 +18,23 @@ profile advertises its ID-based JSON representation. Expanded content visibility
 is resolved by a shared loader for HTML and agent reads; new adapters cannot
 publish a broader catalog or turn ownership into factual certification.
 
+## Current public language
+
+The public website and account presentation use Spanish, including the home page,
+public information, authentication, shared selections and producer profiles.
+Spain publishes only `es` at country, region and area level. Other dictionaries,
+translation sidecars and standby country data remain available internally for a
+future publication decision. Documentation and administration remain English. Administration uses a separate
+root layout so client navigation cannot retain the public language shell.
+Old locale cookies and browser preferences cannot change the public interface;
+the language selector is hidden when there is only one published option.
+Unpublished locale routes return a Spanish 404 with a published parent link and
+are excluded from navigation, sitemap and hreflang. Stable Spanish routes and
+producer identities do not change. Proper names and reviewed source-language
+fields retain the factual and translation rules below.
+
+The following localization architecture remains available for future activation.
+
 ## Progressive localization
 
 A canonical correction can be published before its translations are ready.

@@ -21,7 +21,7 @@ export async function withdrawProducerChangeAction(
   const account = await requireCurrentAccount("/cuenta/cambios");
   const changeId = formString(formData, "changeId");
   if (!/^[0-9a-f-]{36}$/i.test(changeId)) {
-    redirectWithMessage("/cuenta/cambios", "error", "Invalid change request.");
+    redirectWithMessage("/cuenta/cambios", "error", "Solicitud de cambio no válida.");
   }
 
   const withdrawn = await getDatabase().transaction(async (transaction) => {
@@ -60,7 +60,7 @@ export async function withdrawProducerChangeAction(
     "/cuenta/cambios",
     withdrawn ? "notice" : "error",
     withdrawn
-      ? "Change request withdrawn."
-      : "This request can no longer be withdrawn.",
+      ? "Solicitud de cambio retirada."
+      : "Esta solicitud ya no se puede retirar.",
   );
 }

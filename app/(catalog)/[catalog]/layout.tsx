@@ -27,9 +27,9 @@ export default async function CatalogRootLayout({
 
   // The root recognizes only publicly visible country scopes. Descendants still
   // enforce locale publication at their own depth; invalid or standby scopes use
-  // a deterministic English fallback before the page returns 404.
-  const locale = scope?.locale ?? "en";
-  const htmlLang = scope?.htmlLang ?? "en";
+  // a deterministic Spanish fallback before the page returns 404.
+  const locale = scope?.locale ?? "es";
+  const htmlLang = scope?.htmlLang ?? "es";
   const messages = await loadMessages(locale);
 
   return (

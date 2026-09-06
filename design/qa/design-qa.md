@@ -4,6 +4,29 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-06 — Spanish public presentation
+
+final result: passed with local verification limits
+
+The public shell, home, information pages, accounts and shared producer selections
+use Spanish. Spain publishes only Spanish at every catalog depth. The single-option
+language selector is hidden; administration has an independent English root layout
+so navigation cannot retain the other surface's language. Existing translated
+resources, source-authored producer facts and stable Spanish URLs are retained.
+
+Reviewed the home at 1440 × 1000 and 390 × 844 with browser screenshots. The longer
+Spanish headline and province summary wrap within their surfaces. Reviewed
+`/es/cantabria/panaderia-la-pasiega` at the same widths through its rendered DOM:
+Spanish navigation, category, location, distance, detail and related-producer
+labels, with no horizontal overflow. The canonical address retains its original
+source wording. Profile raster capture timed out; DOM and viewport checks passed.
+
+Local production previews report the expected missing Vercel Analytics script.
+The development preview also reported WebMCP schema serialization warnings from
+unchanged agent-tool code. Authentication was disabled locally, so account and
+admin authorization are covered by automated tests rather than a live signed-in
+browser session. No production deployment was performed.
+
 ## 2026-09-05 — Public agent access without a new visual control
 
 final result: passed

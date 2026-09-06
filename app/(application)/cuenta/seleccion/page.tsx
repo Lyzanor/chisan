@@ -22,7 +22,7 @@ import {
 import { isProfileQrEnabled } from "@/lib/profile-qr";
 
 export const metadata: Metadata = {
-  title: "Preview your selection",
+  title: "Vista previa de tu selección",
   robots: { index: false, follow: false },
 };
 
@@ -59,15 +59,14 @@ export default async function SelectionPreviewPage({
       <AccountMessage params={params} />
       <header className="account-section-heading">
         <div>
-          <h2>Preview your selection</h2>
+          <h2>Vista previa de tu selección</h2>
           <p>
-            Only the producers you explicitly choose appear here. Saving a
-            favorite keeps it private.
+            Aquí solo aparecen los productores que eliges expresamente. Guardar un favorito lo mantiene privado.
           </p>
           <p>
             {visible
-              ? "This selection is already visible through its public link."
-              : "This preview is private. Your selection is not published."}
+              ? "Esta selección ya es visible mediante su enlace público."
+              : "Esta vista previa es privada. Tu selección no está publicada."}
           </p>
         </div>
         <div className="account-inline-actions">
@@ -75,13 +74,13 @@ export default async function SelectionPreviewPage({
             href="/cuenta/favoritos"
             className="account-button account-button--secondary"
           >
-            Choose producers
+            Elegir productores
           </Link>
           <Link
             href="/cuenta/perfil"
             className="account-button account-button--secondary"
           >
-            Title and visibility
+            Título y visibilidad
           </Link>
         </div>
       </header>
@@ -101,24 +100,21 @@ export default async function SelectionPreviewPage({
         }
       />
       <section className="account-callout" aria-labelledby="selection-qr-title">
-        <h2 id="selection-qr-title">Selection QR</h2>
+        <h2 id="selection-qr-title">QR de selección</h2>
         <p>
-          Use it for your shop, event or personal selection. You can change the
-          chosen producers without printing a new QR.
+          Utilízalo para tu tienda, evento o selección personal. Puedes cambiar los productores elegidos sin imprimir otro QR.
         </p>
         <p>
-          A selection expresses your choice; it does not certify stock, supply
-          relationships or producer verification.
+          Una selección expresa tu elección; no certifica existencias, relaciones de suministro ni la verificación de los productores.
         </p>
         {!visible ? (
           <p>
-            Save a public handle and set visibility to Unlisted or Public in
-            profile settings before activation.
+            Guarda un identificador público y elige la visibilidad Sin listar o Público en los ajustes del perfil antes de activar el QR.
           </p>
         ) : null}
         {!items.length ? (
           <p>
-            Choose at least one published producer before activating the QR.
+            Elige al menos un productor publicado antes de activar el QR.
           </p>
         ) : null}
         {entitlement ? (
@@ -137,7 +133,7 @@ export default async function SelectionPreviewPage({
               <label className="account-field">
                 <span>
                   <input type="checkbox" name="reviewed" value="yes" required />{" "}
-                  I have reviewed this selection and want to enable its QR.
+                  He revisado esta selección y quiero activar su QR.
                 </span>
               </label>
             ) : null}
@@ -146,13 +142,12 @@ export default async function SelectionPreviewPage({
               className="account-button"
               disabled={!enabled && !canEnable}
             >
-              {enabled ? "Disable Selection QR" : "Activate Selection QR"}
+              {enabled ? "Desactivar QR de selección" : "Activar QR de selección"}
             </button>
           </form>
         ) : (
           <p>
-            Selection QR requires active account Premium access. You can still
-            preview and share your selection using its link.
+            El QR de selección requiere acceso premium activo en la cuenta. Puedes seguir viendo y compartiendo tu selección mediante su enlace.
           </p>
         )}
         {visible && account.publicHandle ? (
@@ -160,7 +155,7 @@ export default async function SelectionPreviewPage({
             href={`/u/${account.publicHandle}`}
             className="account-text-link"
           >
-            Open public selection
+            Abrir selección pública
           </Link>
         ) : null}
       </section>

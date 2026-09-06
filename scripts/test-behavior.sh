@@ -220,14 +220,14 @@ HTML_HOME="$(curl -fsS "$BASE_URL/")"
 HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"
 HTML_HOME_BEFORE_H1="${HTML_HOME_CLEAN%%id=\"home-summary-title\"*}"
 
-assert_html_lang "/" "en" "$HTML_HOME_CLEAN"
+assert_html_lang "/" "es" "$HTML_HOME_CLEAN"
 
 if [[ "$HTML_HOME_BEFORE_H1" == *"<h2"* ]]; then
   echo "Error: the home page should expose its H1 before any H2." >&2
   exit 1
 fi
 
-if [[ "$HTML_HOME_CLEAN" != *'id="country-start-title">Spain</h2>'* ]]; then
+if [[ "$HTML_HOME_CLEAN" != *'id="country-start-title">España</h2>'* ]]; then
   echo "Error: home page should present Spain as the active catalog." >&2
   exit 1
 fi
@@ -252,16 +252,16 @@ for STANDBY_HREF in '/ar' '/be' '/de' '/fr' '/gb' '/ie' '/in' '/it' '/jp' '/mx' 
 done
 
 if [[
-  "$HTML_HOME_CLEAN" != *"<title>Chisan · Connecting local food.</title>"* ||
-  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Connecting local food."'* ||
+  "$HTML_HOME_CLEAN" != *"<title>Chisan · Conectando la alimentación local.</title>"* ||
+  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Conectando la alimentación local."'* ||
   "$HTML_HOME_CLEAN" != *'class="chisan-wordmark"'* ||
-  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Connecting local food.</span>'* ||
-  "$HTML_HOME_CLEAN" != *'id="home-summary-title">Connecting local food.</h1>'* ||
-  "$HTML_HOME_CLEAN" != *'id="country-start-title">Spain</h2>'* ||
+  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Conectando la alimentación local.</span>'* ||
+  "$HTML_HOME_CLEAN" != *'id="home-summary-title">Conectando la alimentación local.</h1>'* ||
+  "$HTML_HOME_CLEAN" != *'id="country-start-title">España</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
-  "$HTML_HOME_CLEAN" != *'href="/how-we-work">How Chisan works</a>'* ||
-  "$HTML_HOME_CLEAN" != *'href="/#choose-country">Producer catalog</a>'* ||
-  "$HTML_HOME_CLEAN" != *'href="/contact">Contact</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/how-we-work">Cómo funciona Chisan</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/#choose-country">Catálogo de productores</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/contact">Contacto</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
   "$HTML_HOME_CLEAN" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||
@@ -276,16 +276,16 @@ fi
 
 HTML_PURPOSE="$(curl -fsS "$BASE_URL/how-we-work" | sed 's/<!-- -->//g')"
 if [[
-  "$HTML_PURPOSE" != *'<title>How Chisan works | Chisan</title>'* ||
-  "$HTML_PURPOSE" != *'id="how-chisan-works-title">How Chisan works</h1>'* ||
-  "$HTML_PURPOSE" != *'Local food systems are full of value, but too often fragmented.'* ||
-  "$HTML_PURPOSE" != *'From a possible producer to a stable public profile'* ||
-  "$HTML_PURPOSE" != *'Who can be part of Chisan'* ||
-  "$HTML_PURPOSE" != *'What does not prove production'* ||
-  "$HTML_PURPOSE" != *'Review, correction and removal'* ||
-  "$HTML_PURPOSE" != *'Chisan publishes and maintains the catalog'* ||
-  "$HTML_PURPOSE" != *'Dates have a specific meaning'* ||
-  "$HTML_PURPOSE" != *'Public discovery remains open'* ||
+  "$HTML_PURPOSE" != *'<title>Cómo funciona Chisan | Chisan</title>'* ||
+  "$HTML_PURPOSE" != *'id="how-chisan-works-title">Cómo funciona Chisan</h1>'* ||
+  "$HTML_PURPOSE" != *'Los sistemas alimentarios locales están llenos de valor, pero con demasiada frecuencia están fragmentados.'* ||
+  "$HTML_PURPOSE" != *'De posible productor a perfil público estable'* ||
+  "$HTML_PURPOSE" != *'Quién puede formar parte de Chisan'* ||
+  "$HTML_PURPOSE" != *'Lo que no demuestra producción'* ||
+  "$HTML_PURPOSE" != *'Revisión, corrección y retirada'* ||
+  "$HTML_PURPOSE" != *'Chisan publica y mantiene el catálogo'* ||
+  "$HTML_PURPOSE" != *'Las fechas tienen un significado concreto'* ||
+  "$HTML_PURPOSE" != *'El descubrimiento público permanece abierto'* ||
   "$HTML_PURPOSE" != *'"@type":"AboutPage"'*
 ]]; then
   echo "Error: /how-we-work should render the complete catalog explanation and metadata." >&2
@@ -302,9 +302,9 @@ done
 
 HTML_CONTACT="$(curl -fsS "$BASE_URL/contact" | sed 's/<!-- -->//g')"
 if [[
-  "$HTML_CONTACT" != *'<title>Contact Chisan | Chisan</title>'* ||
-  "$HTML_CONTACT" != *'id="contact-title">Contact Chisan</h1>'* ||
-  "$HTML_CONTACT" != *'Catalog corrections'* ||
+  "$HTML_CONTACT" != *'<title>Contactar con Chisan | Chisan</title>'* ||
+  "$HTML_CONTACT" != *'id="contact-title">Contactar con Chisan</h1>'* ||
+  "$HTML_CONTACT" != *'Correcciones del catálogo'* ||
   "$HTML_CONTACT" != *'chisanapp@gmail.com'* ||
   "$HTML_CONTACT" != *'"@type":"ContactPage"'*
 ]]; then
@@ -362,11 +362,11 @@ fi
 
 HTML_UNKNOWN_COUNTRY="$(curl -sS "$BASE_URL/zz" | sed 's/<!-- -->//g')"
 if [[
-  "$HTML_UNKNOWN_COUNTRY" != *'Connecting local food.'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'Conectando la alimentación local.'* ||
   "$HTML_UNKNOWN_COUNTRY" != *'/how-we-work'* ||
-  "$HTML_UNKNOWN_COUNTRY" != *'How Chisan works'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'Cómo funciona Chisan'* ||
   "$HTML_UNKNOWN_COUNTRY" != *'/contact'* ||
-  "$HTML_UNKNOWN_COUNTRY" != *'Sitemap'*
+  "$HTML_UNKNOWN_COUNTRY" != *'Mapa del sitio'*
 ]]; then
   echo "Error: unknown public routes should return a useful, crawlable 404." >&2
   exit 1
@@ -410,9 +410,9 @@ HTML_UNPUBLISHED_AREA_LOCALE_PRODUCER="$(curl -sS "$BASE_URL/ca-es/barcelona/not
 UNPUBLISHED_AREA_LOCALE_PRODUCER_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/ca-es/barcelona/not-a-producer")"
 if [[
   "$UNPUBLISHED_AREA_LOCALE_PRODUCER_STATUS" != "404" ||
-  "$HTML_UNPUBLISHED_AREA_LOCALE_PRODUCER" != *'href="/ca-es/barcelona"'*
+  "$HTML_UNPUBLISHED_AREA_LOCALE_PRODUCER" != *'href="/es/barcelona"'*
 ]]; then
-  echo "Error: a localized producer 404 should link to its published Catalan area parent." >&2
+  echo "Error: a localized producer 404 should link to its published Spanish area parent." >&2
   exit 1
 fi
 
@@ -468,22 +468,22 @@ if [[ "$HTML_NO_MATCH_CLEAN" != *"No hay productores de esta categoría"* ]]; th
 fi
 
 UNPUBLISHED_AREA_LOCALE_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/ca-es/barcelona")"
-HTML_CATALAN_AREA="$(curl -fsS "$BASE_URL/ca-es/barcelona" | sed 's/<!-- -->//g')"
-assert_html_lang "/ca-es/barcelona" "ca" "$HTML_CATALAN_AREA"
-if [[
-  "$UNPUBLISHED_AREA_LOCALE_STATUS" != "200" ||
-  "$HTML_CATALAN_AREA" != *"Mapa de productors"* ||
-  "$HTML_CATALAN_AREA" != *">Com funciona Chisan</a>"* ||
-  "$HTML_CATALAN_AREA" != *">Catàleg de productors</a>"* ||
-  "$HTML_CATALAN_AREA" != *">Contacte</a>"* ||
-  "$HTML_CATALAN_AREA" != *'href="https://www.instagram.com/chisanapp/" rel="me">Instagram</a>'* ||
-  "$HTML_CATALAN_AREA" != *'href="https://x.com/chisanapp" rel="me">X</a>'* ||
-  "$HTML_CATALAN_AREA" != *'href="mailto:chisanapp@gmail.com">chisanapp@gmail.com</a>'* ||
-  "$HTML_CATALAN_AREA" == *'github.com/Lyzanor/chisan'*
-]]; then
-  echo "Error: the published Catalan Barcelona locale should render, got '$UNPUBLISHED_AREA_LOCALE_STATUS'." >&2
+HTML_CATALAN_AREA="$(curl -sS "$BASE_URL/ca-es/barcelona" | sed 's/<!-- -->//g')"
+assert_html_lang "/ca-es/barcelona" "es" "$HTML_CATALAN_AREA"
+if [[ "$UNPUBLISHED_AREA_LOCALE_STATUS" != "404" || "$HTML_CATALAN_AREA" != *'href="/es/barcelona"'* ]]; then
+  echo "Error: an unpublished locale must return a Spanish 404 with a published parent." >&2
   exit 1
 fi
+
+# Stale preferences never change the current Spanish public presentation.
+for PUBLIC_PATH in / /how-we-work /contact /privacy /es/barcelona; do
+  HTML_SPANISH="$(curl -fsS -H 'Cookie: chisan_locale=en' -H 'Accept-Language: en,ca;q=0.9' "$BASE_URL$PUBLIC_PATH" | sed 's/<!-- -->//g')"
+  assert_html_lang "$PUBLIC_PATH" "es" "$HTML_SPANISH"
+  if [[ "$HTML_SPANISH" == *'class="site-account-menu__language"'* ]]; then
+    echo "Error: single-language public pages must not offer an inactive language selector." >&2
+    exit 1
+  fi
+done
 
 REDUNDANT_AREA_RESPONSE="$(curl -sS -o /dev/null --write-out '%{http_code}|%{redirect_url}' --get "$BASE_URL/es-es/barcelona" \
   --data-urlencode "category=Aceite" \

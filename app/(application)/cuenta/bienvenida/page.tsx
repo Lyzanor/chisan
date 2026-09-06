@@ -7,7 +7,7 @@ import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Set up your account",
+  title: "Configura tu cuenta",
   robots: { index: false, follow: false },
 };
 
@@ -26,14 +26,13 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
     <div className="account-content account-content--narrow">
       <AccountMessage params={params} />
       <section>
-        <h2>Set up your {SITE_NAME} account</h2>
+        <h2>Configura tu cuenta de {SITE_NAME}</h2>
         <p>
-          Every account starts with a user profile. If you submit a producer ownership claim,
-          your profile becomes a producer profile automatically.
+          Cada cuenta comienza con un perfil de usuario. Si envías una solicitud de propiedad de un productor, tu perfil pasa automáticamente a ser de productor.
         </p>
         <form action={completeOnboardingAction} className="account-form">
           <label className="account-field">
-            <span>Display name</span>
+            <span>Nombre visible</span>
             <input
               type="text"
               name="displayName"
@@ -43,18 +42,17 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
             />
           </label>
           <div className="account-callout">
-            <strong>Profile type: User</strong>
-            <p>Profile type follows your account activity and is not a selectable setting.</p>
+            <strong>Tipo de perfil: usuario</strong>
+            <p>El tipo de perfil depende de tu actividad en la cuenta y no se elige manualmente.</p>
           </div>
           <label className="account-check">
             <input type="checkbox" name="acknowledgeReview" value="yes" required />
             <span>
-              I understand that producer claims and profile changes are reviewed, and that
-              submitted information must be accurate and authorized for publication.
+              Entiendo que las solicitudes de propiedad y los cambios de perfil se revisan, y que la información enviada debe ser correcta y estar autorizada para su publicación.
             </span>
           </label>
           <button type="submit" className="account-button">
-            Create my profile
+            Crear mi perfil
           </button>
         </form>
       </section>

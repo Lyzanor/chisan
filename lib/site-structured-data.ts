@@ -34,7 +34,7 @@ export function buildHomeStructuredData() {
         url: SITE_ORIGIN,
         description: SITE_DESCRIPTION,
         publisher: { "@id": SITE_ORGANIZATION_ID },
-        inLanguage: "en",
+        inLanguage: "es",
       },
     ],
   };

@@ -1,17 +1,16 @@
 import type { ProducerSelectionPageMessages } from "@/components/producer-selection-page";
 
-// The application shell uses English; catalog links and producer prose retain
-// the visitor's explicit presentation locale.
+// Public selections share the Spanish public interface.
 export const selectionPageMessages: ProducerSelectionPageMessages = {
   producerCount: (count) =>
-    `${count} ${count === 1 ? "producer" : "producers"}`,
-  mappedCount: (count) => `${count} on the map`,
-  producers: "Selected producers",
+    `${count} ${count === 1 ? "productor" : "productores"}`,
+  mappedCount: (count) => `${count} en el mapa`,
+  producers: "Productores seleccionados",
   map: {
-    loading: "Loading map…",
+    loading: "Cargando mapa…",
     emptyCoordinates:
-      "These producers do not have mapped locations yet. You can open their profiles from the list.",
-    producerMap: "Selected producer map",
-    openProfile: "Open producer profile",
+      "Estos productores todavía no tienen una ubicación en el mapa. Puedes abrir sus perfiles desde la lista.",
+    producerMap: "Mapa de productores seleccionados",
+    openProfile: "Abrir perfil del productor",
   },
 };

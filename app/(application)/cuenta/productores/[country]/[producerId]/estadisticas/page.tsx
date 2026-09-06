@@ -15,7 +15,7 @@ import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
 import { getProducerStatsService } from "@/lib/producer-stats/service";
 
 export const metadata: Metadata = {
-  title: "Profile statistics",
+  title: "Estadísticas del perfil",
   robots: { index: false, follow: false },
 };
 
@@ -61,7 +61,7 @@ export default async function ProducerStatisticsPage({
         userId: account.id,
       });
     } catch {
-      console.error("Producer statistics are temporarily unavailable.");
+      console.error("Las estadísticas del productor no están disponibles temporalmente.");
       message = labels.unavailable;
     }
     // The query rechecks owner, account and entitlement in the same statement.

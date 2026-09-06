@@ -167,7 +167,9 @@ export function validateProducerProposal(
   rawProposal: Partial<Record<ProducerEditableFieldKey, unknown>>,
   currentFields: Record<string, string>,
   editableFields: readonly ProducerEditableField[] = PRODUCER_EDITABLE_FIELDS,
+  locale: "en" | "es" = "en",
 ): ProposalValidationResult {
+  const message = (en: string, es: string) => locale === "es" ? es : en;
   const errors: Record<string, string> = {};
   const editableKeys = new Set(editableFields.map(({ key }) => key));
   const candidate = Object.fromEntries(
@@ -183,12 +185,12 @@ export function validateProducerProposal(
   for (const field of PRODUCER_EDITABLE_FIELDS) {
     const value = candidate[field.key];
     if (field.required && !value) {
-      errors[field.key] = `${field.label} is required.`;
+      errors[field.key] = message(`${field.label} is required.`, "Este campo es obligatorio.");
       continue;
     }
     const valueLength = Array.from(value).length;
     if (valueLength > field.maxLength) {
-      errors[field.key] = `${field.label} is too long (maximum ${field.maxLength} characters).`;
+      errors[field.key] = message(`${field.label} is too long (maximum ${field.maxLength} characters).`, `Este campo admite como máximo ${field.maxLength} caracteres.`);
       continue;
     }
     if (
@@ -196,12 +198,12 @@ export function validateProducerProposal(
       !["url", "tel", "coordinate"].includes(field.kind) &&
       hasSpreadsheetFormulaPrefix(value)
     ) {
-      errors[field.key] = `${field.label} cannot start with a spreadsheet formula marker.`;
+      errors[field.key] = message(`${field.label} cannot start with a spreadsheet formula marker.`, "Este campo no puede comenzar con un marcador de fórmula de hoja de cálculo.");
     }
   }
 
   if (!CATEGORY_SET.has(candidate.categoria)) {
-    errors.categoria = "Choose a category from the catalog registry.";
+    errors.categoria = message("Choose a category from the catalog registry.", "Elige una categoría del catálogo.");
   }
 
   const additionalCategories = normalizeDelimitedValues([
@@ -209,17 +211,17 @@ export function validateProducerProposal(
   ]).split("|").filter(Boolean);
   candidate["categorias adicionales"] = additionalCategories.join("|");
   if (additionalCategories.some((category) => !CATEGORY_SET.has(category))) {
-    errors["categorias adicionales"] = "Every additional category must use a catalog value.";
+    errors["categorias adicionales"] = message("Every additional category must use a catalog value.", "Todas las categorías adicionales deben pertenecer al catálogo.");
   } else if (additionalCategories.includes(candidate.categoria)) {
-    errors["categorias adicionales"] = "The primary category cannot be repeated.";
+    errors["categorias adicionales"] = message("The primary category cannot be repeated.", "No se puede repetir la categoría principal.");
   }
 
   if (candidate.telefono && !/^\+[1-9]\d{6,14}$/.test(candidate.telefono)) {
-    errors.telefono = "Use international E.164 format, for example +34600112233.";
+    errors.telefono = message("Use international E.164 format, for example +34600112233.", "Utiliza el formato internacional E.164, por ejemplo +34600112233.");
   }
 
   if (!validateEmail(candidate.correo)) {
-    errors.correo = "Enter a valid public email address.";
+    errors.correo = message("Enter a valid public email address.", "Introduce una dirección de correo público válida.");
   }
 
   for (const key of [
@@ -232,26 +234,26 @@ export function validateProducerProposal(
     "video",
   ] as const) {
     if (!validateUrl(candidate[key])) {
-      errors[key] = "Enter a complete HTTP(S) URL without embedded credentials.";
+      errors[key] = message("Enter a complete HTTP(S) URL without embedded credentials.", "Introduce una URL HTTP(S) completa sin credenciales incluidas.");
     }
   }
   if (candidate.video && !isYouTubeVideoUrl(candidate.video)) {
-    errors.video = "Enter a complete HTTPS YouTube video URL.";
+    errors.video = message("Enter a complete HTTPS YouTube video URL.", "Introduce una URL HTTPS completa de un vídeo de YouTube.");
   }
 
   const latitude = normalizeCoordinate(candidate.lat, -90, 90);
   const longitude = normalizeCoordinate(candidate.lon, -180, 180);
-  if (latitude === null) errors.lat = "Latitude must be between -90 and 90.";
-  if (longitude === null) errors.lon = "Longitude must be between -180 and 180.";
+  if (latitude === null) errors.lat = message("Latitude must be between -90 and 90.", "La latitud debe estar entre -90 y 90.");
+  if (longitude === null) errors.lon = message("Longitude must be between -180 and 180.", "La longitud debe estar entre -180 y 180.");
   if ((latitude === "") !== (longitude === "")) {
-    errors.lat = errors.lat ?? "Latitude and longitude must be supplied together.";
-    errors.lon = errors.lon ?? "Latitude and longitude must be supplied together.";
+    errors.lat = errors.lat ?? message("Latitude and longitude must be supplied together.", "La latitud y la longitud deben indicarse juntas.");
+    errors.lon = errors.lon ?? message("Latitude and longitude must be supplied together.", "La latitud y la longitud deben indicarse juntas.");
   }
   if (latitude !== null) candidate.lat = latitude;
   if (longitude !== null) candidate.lon = longitude;
 
   if (!ONLINE_SALES_SET.has(candidate["Venta online"])) {
-    errors["Venta online"] = "Choose a valid online-sales state.";
+    errors["Venta online"] = message("Choose a valid online-sales state.", "Elige un estado válido de venta online.");
   }
 
   const salesChannels = normalizeDelimitedValues([candidate["Canal de venta"]])
@@ -259,37 +261,37 @@ export function validateProducerProposal(
     .filter(Boolean);
   candidate["Canal de venta"] = salesChannels.join("|");
   if (salesChannels.some((channel) => !SALES_CHANNEL_SET.has(channel))) {
-    errors["Canal de venta"] = "Every sales channel must use a catalog value.";
+    errors["Canal de venta"] = message("Every sales channel must use a catalog value.", "Todos los canales de venta deben pertenecer al catálogo.");
   } else if (candidate["Venta online"] !== "sí" && salesChannels.length > 0) {
-    errors["Canal de venta"] = "Sales channels are only valid when online sales is yes.";
+    errors["Canal de venta"] = message("Sales channels are only valid when online sales is yes.", "Los canales de venta solo se indican cuando hay venta online.");
   }
 
   if (!candidate.descripcion && candidate.descripcion_locale) {
-    errors.descripcion_locale = "Leave the description language empty when the description is empty.";
+    errors.descripcion_locale = message("Leave the description language empty when the description is empty.", "Deja el idioma vacío cuando no hay descripción.");
   } else if (
     candidate.descripcion &&
     !DESCRIPTION_LOCALE_SET.has(candidate.descripcion_locale)
   ) {
-    errors.descripcion_locale = "Choose the source language of the description.";
+    errors.descripcion_locale = message("Choose the source language of the description.", "Elige el idioma original de la descripción.");
   }
   if (candidate["visitas guiadas"] && !["sí", "no"].includes(candidate["visitas guiadas"])) {
-    errors["visitas guiadas"] = "Choose yes, no or leave guided visits unpublished.";
+    errors["visitas guiadas"] = message("Choose yes, no or leave guided visits unpublished.", "Elige sí, no o deja las visitas guiadas sin publicar.");
   }
   if (!candidate["mensaje a la comunidad"] && candidate.mensaje_comunidad_locale) {
     errors.mensaje_comunidad_locale =
-      "Leave the community-message language empty when the message is empty.";
+      message("Leave the community-message language empty when the message is empty.", "Deja el idioma vacío cuando no hay mensaje.");
   } else if (
     candidate["mensaje a la comunidad"] &&
     !DESCRIPTION_LOCALE_SET.has(candidate.mensaje_comunidad_locale)
   ) {
-    errors.mensaje_comunidad_locale = "Choose the source language of the community message.";
+    errors.mensaje_comunidad_locale = message("Choose the source language of the community message.", "Elige el idioma original del mensaje a la comunidad.");
   }
   const communityMessageContamination = getProducerAuthoredTextContaminationReason(
     candidate["mensaje a la comunidad"],
   );
   if (communityMessageContamination) {
     errors["mensaje a la comunidad"] =
-      `Community message cannot contain ${communityMessageContamination}.`;
+      message(`Community message cannot contain ${communityMessageContamination}.`, "El mensaje no puede incluir HTML, enlaces, referencias de fuentes, formato de hoja de cálculo ni textos ajenos al productor.");
   }
   for (const [textKey, localeKey, label] of [
     ["quien hay detras", "quien_hay_detras_locale", "who-is-behind text"],
@@ -298,22 +300,22 @@ export function validateProducerProposal(
     const text = candidate[textKey];
     const sourceLocale = candidate[localeKey];
     if (!text && sourceLocale) {
-      errors[localeKey] = `Leave the ${label} language empty when the ${label} is empty.`;
+      errors[localeKey] = message(`Leave the ${label} language empty when the ${label} is empty.`, "Deja el idioma vacío cuando no hay texto.");
     } else if (text && !DESCRIPTION_LOCALE_SET.has(sourceLocale)) {
-      errors[localeKey] = `Choose the source language of the ${label}.`;
+      errors[localeKey] = message(`Choose the source language of the ${label}.`, "Elige el idioma original del texto.");
     }
     const contamination = getProducerAuthoredTextContaminationReason(text);
     if (contamination) {
-      errors[textKey] = `${label.charAt(0).toUpperCase()}${label.slice(1)} cannot contain ${contamination}.`;
+      errors[textKey] = message(`${label.charAt(0).toUpperCase()}${label.slice(1)} cannot contain ${contamination}.`, "El texto no puede incluir HTML, enlaces, referencias de fuentes, formato de hoja de cálculo ni textos ajenos al productor.");
     }
   }
   if (candidate["enlace destacado 2"] && !candidate["enlace destacado 1"]) {
-    errors["enlace destacado 2"] = "Fill highlighted link 1 before link 2.";
+    errors["enlace destacado 2"] = message("Fill highlighted link 1 before link 2.", "Completa el enlace destacado 1 antes del enlace 2.");
   } else if (candidate["enlace destacado 1"] && candidate["enlace destacado 2"]) {
     const highlightedLink1 = readHttpUrl(candidate["enlace destacado 1"]);
     const highlightedLink2 = readHttpUrl(candidate["enlace destacado 2"]);
     if (highlightedLink1 && highlightedLink1.href === highlightedLink2?.href) {
-      errors["enlace destacado 2"] = "Highlighted links must be different.";
+      errors["enlace destacado 2"] = message("Highlighted links must be different.", "Los enlaces destacados deben ser diferentes.");
     }
   }
 

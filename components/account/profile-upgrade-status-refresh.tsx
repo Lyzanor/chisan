@@ -44,9 +44,9 @@ function ActiveProfileUpgradeStatusRefresh() {
 
   const statusMessage = automaticChecksComplete
     ? isPending
-      ? "Checking payment status…"
-      : "Automatic checks have stopped. You can check the payment status manually."
-    : "Checking payment status automatically…";
+      ? "Consultando el estado del pago…"
+      : "Las consultas automáticas han terminado. Puedes consultar el estado del pago manualmente."
+    : "Consultando automáticamente el estado del pago…";
 
   return (
     <div className="account-form">
@@ -60,7 +60,7 @@ function ActiveProfileUpgradeStatusRefresh() {
           disabled={isPending}
           onClick={refreshStatus}
         >
-          Check payment status
+          Consultar estado del pago
         </button>
       </div>
     </div>

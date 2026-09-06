@@ -308,11 +308,11 @@ test("verification presentation shows only pending or verified producer ownershi
 
 test("premium admin gifts require exact admin access and remain Stripe-independent", () => {
   const adminPage = readFileSync(
-    path.resolve(process.cwd(), "app/(application)/admin/premium/page.tsx"),
+    path.resolve(process.cwd(), "app/(admin)/admin/premium/page.tsx"),
     "utf8",
   );
   const adminActions = readFileSync(
-    path.resolve(process.cwd(), "app/(application)/admin/actions.ts"),
+    path.resolve(process.cwd(), "app/(admin)/admin/actions.ts"),
     "utf8",
   );
   const giftService = readFileSync(

@@ -90,6 +90,12 @@ export function formString(formData: FormData, key: string): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
-export function firstValidationMessage(error: z.ZodError): string {
-  return error.issues[0]?.message ?? "The submitted data is invalid.";
+export function firstValidationMessage(error: z.ZodError, locale: "en" | "es" = "en"): string {
+  const issue = error.issues[0];
+  if (locale === "es") {
+    if (!issue) return "Los datos enviados no son válidos.";
+    const translated = z.locales.es().localeError({ ...issue, input: undefined });
+    return typeof translated === "string" ? translated : translated?.message ?? "Revisa los datos enviados.";
+  }
+  return issue?.message ?? "The submitted data is invalid.";
 }

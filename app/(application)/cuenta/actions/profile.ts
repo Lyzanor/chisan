@@ -39,14 +39,14 @@ export async function completeOnboardingAction(
     redirectWithMessage(
       "/cuenta/bienvenida",
       "error",
-      "You must confirm the review and publication notice.",
+      "Debes aceptar el aviso de revisión y publicación.",
     );
   }
   if (displayName.length > 160) {
     redirectWithMessage(
       "/cuenta/bienvenida",
       "error",
-      "The display name is too long.",
+      "El nombre visible es demasiado largo.",
     );
   }
 
@@ -85,7 +85,7 @@ export async function updateAccountProfileAction(
     redirectWithMessage(
       "/cuenta/perfil",
       "error",
-      "The display name is too long.",
+      "El nombre visible es demasiado largo.",
     );
   }
 
@@ -110,7 +110,7 @@ export async function updateAccountProfileAction(
 
   revalidatePath("/cuenta");
   revalidatePath("/cuenta/perfil");
-  redirectWithMessage("/cuenta/perfil", "notice", "Profile updated.");
+  redirectWithMessage("/cuenta/perfil", "notice", "Perfil actualizado.");
 }
 
 function isPublicHandleConflict(error: unknown): boolean {
@@ -144,7 +144,7 @@ export async function updatePublicProfileAction(
     redirectWithMessage(
       "/cuenta/perfil",
       "error",
-      firstValidationMessage(parsed.error),
+      firstValidationMessage(parsed.error, "es"),
     );
   }
 
@@ -157,20 +157,20 @@ export async function updatePublicProfileAction(
     redirectWithMessage(
       "/cuenta/perfil",
       "error",
-      "A published handle is stable and cannot be changed from the profile form.",
+      "Un identificador publicado es permanente y no se puede cambiar desde el formulario del perfil.",
     );
   }
 
   const publicHandle = account.publicHandle ?? (submittedHandle || null);
   if (publicHandle) {
-    const problem = publicHandleProblem(publicHandle);
+    const problem = publicHandleProblem(publicHandle, "es");
     if (problem) redirectWithMessage("/cuenta/perfil", "error", problem);
   }
   if (isPublicProfileVisible(parsed.data.visibility) && !publicHandle) {
     redirectWithMessage(
       "/cuenta/perfil",
       "error",
-      "Choose a public handle before making the profile visible.",
+      "Elige un identificador público antes de hacer visible el perfil.",
     );
   }
 
@@ -181,7 +181,7 @@ export async function updatePublicProfileAction(
     redirectWithMessage(
       "/cuenta/perfil",
       "error",
-      "Choose a catalog area for your public profile.",
+      "Elige una zona del catálogo para tu perfil público.",
     );
   }
   const baseCountry = findPublishedCountry(baseLocation.country);
@@ -192,7 +192,7 @@ export async function updatePublicProfileAction(
     redirectWithMessage(
       "/cuenta/perfil",
       "error",
-      "Choose a published catalog area for your public profile.",
+      "Elige una zona publicada del catálogo para tu perfil público.",
     );
   }
 
@@ -275,14 +275,14 @@ export async function updatePublicProfileAction(
       redirectWithMessage(
         "/cuenta/perfil",
         "error",
-        "Your public handle was set in another request. Reload the page to continue.",
+        "Tu identificador público se ha establecido en otra solicitud. Recarga la página para continuar.",
       );
     }
     if (isPublicHandleConflict(error)) {
       redirectWithMessage(
         "/cuenta/perfil",
         "error",
-        "That public handle is already in use.",
+        "Ese identificador público ya está en uso.",
       );
     }
     throw error;
@@ -293,6 +293,6 @@ export async function updatePublicProfileAction(
   redirectWithMessage(
     "/cuenta/perfil",
     "notice",
-    "Public profile settings updated.",
+    "Ajustes del perfil público actualizados.",
   );
 }

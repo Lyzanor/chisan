@@ -1,23 +1,15 @@
 import "server-only";
 
-import { cookies } from "next/headers";
-
-import {
-  EXPLICIT_LOCALE_COOKIE,
-  parseExplicitLocale,
-} from "@/lib/i18n/catalog-scope";
-import { APPLICATION_DEFAULT_LOCALE } from "@/lib/i18n/locales";
 import { loadMessages } from "@/lib/i18n/messages";
 
+// Public and account presentation is Spanish while Chisan focuses on Spain.
+// Stored language preferences cannot override this publication decision.
 export async function readApplicationLocalePreference() {
-  const cookieStore = await cookies();
-  return parseExplicitLocale(cookieStore.get(EXPLICIT_LOCALE_COOKIE)?.value);
+  return "es" as const;
 }
 
 export async function loadApplicationPresentation() {
-  const explicitLocale = await readApplicationLocalePreference();
-  const locale = explicitLocale ?? APPLICATION_DEFAULT_LOCALE;
+  const locale = await readApplicationLocalePreference();
   const messages = await loadMessages(locale);
-
-  return { explicitLocale, locale, messages };
+  return { explicitLocale: locale, locale, messages };
 }

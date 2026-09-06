@@ -392,7 +392,7 @@ test("manifest declarations cannot create regions or areas outside the CSV tree"
   );
 });
 
-test("Spain keeps Spanish as default while Catalunya publishes three locales", () => {
+test("Spain publishes only Spanish throughout its public catalog", () => {
   const spain = loadCountries().find(({ slug }) => slug === "es");
   assert.ok(spain);
   assert.equal(spain.defaultLocale, "es");
@@ -414,6 +414,12 @@ test("Spain keeps Spanish as default while Catalunya publishes three locales", (
     ca: { one: "comunitat autònoma", many: "comunitats autònomes" },
   });
 
+  for (const region of spain.regions) {
+    for (const area of region.areas) {
+      assert.deepEqual(area.publishedLocales, ["es"]);
+      assert.equal(resolveDestinationLocale(area, { explicitLocale: "en", browserLocales: ["ca", "en"] }), "es");
+    }
+  }
   const catalunya = spain.regions.find(({ slug }) => slug === "catalunya");
   assert.ok(catalunya);
   assert.deepEqual(catalunya.labels, {
@@ -421,13 +427,13 @@ test("Spain keeps Spanish as default while Catalunya publishes three locales", (
     es: "Cataluña",
     ca: "Catalunya",
   });
-  assert.deepEqual(catalunya.publishedLocales, ["ca", "es", "en"]);
+  assert.deepEqual(catalunya.publishedLocales, ["es"]);
   for (const areaSlug of ["barcelona", "girona", "lleida", "tarragona"]) {
     const area: AreaOption | undefined = catalunya.areas.find(
       ({ slug }) => slug === areaSlug,
     );
     assert.ok(area);
-    assert.deepEqual(area.publishedLocales, ["ca", "es", "en"]);
+    assert.deepEqual(area.publishedLocales, ["es"]);
     assert.deepEqual(area.labels, {
       en: area.label,
       es: area.label,

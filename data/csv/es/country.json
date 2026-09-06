@@ -1102,11 +1102,9 @@
         "ca": "Catalunya"
       },
       "i18n": {
-        "preferredLocale": "ca",
+        "preferredLocale": "es",
         "publishedLocales": [
-          "ca",
-          "es",
-          "en"
+          "es"
         ]
       }
     },

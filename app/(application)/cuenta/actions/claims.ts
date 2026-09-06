@@ -31,7 +31,7 @@ export async function submitProducerClaimAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      "Verify your sign-in email before claiming a producer.",
+      "Verifica tu correo de acceso antes de reclamar un productor.",
     );
   }
   if (!account.termsAcceptedAt) {
@@ -49,7 +49,7 @@ export async function submitProducerClaimAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      firstValidationMessage(parsed.error),
+      firstValidationMessage(parsed.error, "es"),
     );
   }
 
@@ -61,7 +61,7 @@ export async function submitProducerClaimAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      "That producer is no longer in the catalog.",
+      "Ese productor ya no está en el catálogo.",
     );
   }
   const database = getDatabase();
@@ -162,14 +162,14 @@ export async function submitProducerClaimAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "notice",
-      "You already have access to this producer.",
+      "Ya tienes acceso a este productor.",
     );
   }
   if (claimResult === "already-claimed") {
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      "This producer already has a verified owner and cannot be claimed again.",
+      "Este productor ya tiene un titular verificado y no se puede volver a reclamar.",
     );
   }
   if (claimResult === "open-limit" || claimResult === "daily-limit") {
@@ -177,21 +177,21 @@ export async function submitProducerClaimAction(
       "/cuenta/reclamaciones",
       "error",
       claimResult === "open-limit"
-        ? "Resolve an existing ownership claim before submitting another."
-        : "The daily ownership-claim limit has been reached. Try again later.",
+        ? "Resuelve una solicitud de propiedad existente antes de enviar otra."
+        : "Has alcanzado el límite diario de solicitudes de propiedad. Inténtalo más tarde.",
     );
   }
   if (claimResult === "duplicate") {
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "notice",
-      "You already have an open claim for this producer.",
+      "Ya tienes una solicitud abierta para este productor.",
     );
   }
   redirectWithMessage(
     "/cuenta/reclamaciones",
     "notice",
-    "Claim submitted for manual verification.",
+    "Solicitud enviada para verificación manual.",
   );
 }
 
@@ -201,7 +201,7 @@ export async function withdrawProducerClaimAction(
   const account = await requireCurrentAccount("/cuenta/reclamaciones");
   const claimId = formString(formData, "claimId");
   if (!/^[0-9a-f-]{36}$/i.test(claimId)) {
-    redirectWithMessage("/cuenta/reclamaciones", "error", "Invalid claim.");
+    redirectWithMessage("/cuenta/reclamaciones", "error", "Solicitud no válida.");
   }
 
   const withdrawn = await getDatabase().transaction(async (transaction) => {
@@ -235,6 +235,6 @@ export async function withdrawProducerClaimAction(
   redirectWithMessage(
     "/cuenta/reclamaciones",
     withdrawn ? "notice" : "error",
-    withdrawn ? "Claim withdrawn." : "This claim can no longer be withdrawn.",
+    withdrawn ? "Solicitud retirada." : "Esta solicitud ya no se puede retirar.",
   );
 }

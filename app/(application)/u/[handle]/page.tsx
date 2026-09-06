@@ -29,7 +29,7 @@ export async function generateMetadata({
   const profile = await findPublicUserProfile(handle);
   if (!profile) {
     return {
-      title: "Profile not found",
+      title: "Perfil no encontrado",
       robots: { index: false, follow: false },
     };
   }
@@ -38,7 +38,7 @@ export async function generateMetadata({
     profile.selectionTitle || profile.displayName || `@${profile.publicHandle}`;
   const description =
     profile.selectionDescription ||
-    `A selection of producers shared by ${title} on ${SITE_NAME}.`;
+    `Una selección de productores compartida por ${title} en ${SITE_NAME}.`;
   const canonicalPath = `/u/${profile.publicHandle}`;
   const discoveryEnabled = isPublicDiscoveryEnabled();
   const indexable =

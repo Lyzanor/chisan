@@ -153,13 +153,13 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
     actingOwner = other.id;
     await assert.rejects(
       save(second, form(second)),
-      /access\+changed|membership/i,
+      /REDIRECT:.*editar\?error=/,
       "transaction rechecks membership even after the page guard",
     );
     actingOwner = owner.id;
     await assert.rejects(
       save(second, form(second, "submit")),
-      /REDIRECT:.*Changes\+submitted/,
+      /REDIRECT:.*Cambios\+enviados/,
     );
     const [submitted] = await db
       .select()

@@ -35,13 +35,13 @@ export function normalizePublicHandle(value: string): string {
   return value.trim().toLowerCase();
 }
 
-export function publicHandleProblem(value: string): string | null {
+export function publicHandleProblem(value: string, locale: "en" | "es" = "en"): string | null {
   const handle = normalizePublicHandle(value);
   if (!PUBLIC_HANDLE_PATTERN.test(handle)) {
-    return "Use 3–40 lowercase letters, numbers or hyphens, starting and ending with a letter or number.";
+    return locale === "es" ? "Utiliza entre 3 y 40 letras minúsculas, números o guiones, empezando y terminando con una letra o un número." : "Use 3–40 lowercase letters, numbers or hyphens, starting and ending with a letter or number.";
   }
   if (RESERVED_PUBLIC_HANDLES.has(handle)) {
-    return "That public handle is reserved.";
+    return locale === "es" ? "Ese identificador público está reservado." : "That public handle is reserved.";
   }
   return null;
 }

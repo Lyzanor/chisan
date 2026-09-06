@@ -15,7 +15,6 @@ import {
   MANUAL_AREA_SELECTION_ID,
 } from "@/lib/catalog-navigation";
 import {
-  CATALOG_UNIT,
   getLocalizedCatalogLabel,
   getLocalizedCatalogUnit,
   listPublishedCountries,
@@ -42,13 +41,13 @@ import {
 } from "@/lib/site-structured-data";
 import { SITE_NAME } from "@/lib/site";
 
-const HOME_LOCALE = "en" as const;
+const HOME_LOCALE = "es" as const;
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await loadMessages(HOME_LOCALE);
   const title = formatMessage(messages.metadata.homeTitle, { site: SITE_NAME });
   const description = formatMessage(messages.metadata.homeDescription, {
-    unit: CATALOG_UNIT.one,
+    unit: "provincia",
   });
 
   return buildLocalizedMetadata({

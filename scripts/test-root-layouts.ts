@@ -22,6 +22,7 @@ test("application and catalog routes live under separate root layout groups", ()
 
   const expectedFiles = [
     "app/(application)/layout.tsx",
+    "app/(admin)/layout.tsx",
     "app/(application)/page.tsx",
     "app/(application)/about/page.tsx",
     "app/(application)/contact/page.tsx",
@@ -31,7 +32,7 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/(application)/acceso/[[...sign-in]]/page.tsx",
     "app/(application)/registro/[[...sign-up]]/page.tsx",
     "app/(application)/cuenta/layout.tsx",
-    "app/(application)/admin/layout.tsx",
+    "app/(admin)/admin/layout.tsx",
     "app/(application)/api/webhooks/clerk/route.ts",
     "app/(application)/api/account/me/route.ts",
     "app/(catalog)/[catalog]/layout.tsx",
@@ -110,9 +111,11 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
     assert.match(rootLayout, /footerMessages=\{messages\.siteFooter\}/);
   }
 
-  assert.match(applicationRoot, /htmlLang="en"/);
-  assert.match(applicationRoot, /accountMessages=\{presentation\.messages\.siteHeader\}/);
-  assert.match(applicationRoot, /SUPPORTED_LOCALES\.map/);
+  assert.match(applicationRoot, /htmlLang=\{locale\}/);
+  assert.match(applicationRoot, /const locale = "es"/);
+  assert.match(readRepositoryFile("app/(admin)/layout.tsx"), /const locale = "en"/);
+  assert.match(applicationRoot, /accountMessages=\{messages\.siteHeader\}/);
+  assert.doesNotMatch(applicationRoot, /SUPPORTED_LOCALES\.map/);
 });
 
 test("the shared account menu keeps identity, language and account actions separate", () => {
@@ -151,7 +154,7 @@ test("the catalog root derives document language only from the async URL scope",
     catalogRoot,
     /parseCatalogScope\(catalog, listPublishedCountries\(\)\)/,
   );
-  assert.match(catalogRoot, /scope\?\.htmlLang \?\? "en"/);
+  assert.match(catalogRoot, /scope\?\.htmlLang \?\? "es"/);
   assert.doesNotMatch(
     catalogRoot,
     /accept-language|Accept-Language|cookies\(|headers\(|EXPLICIT_LOCALE_COOKIE/,
@@ -183,7 +186,7 @@ test("the static catalog not-found boundary avoids request-bound APIs", () => {
     "app/(catalog)/[catalog]/not-found.tsx",
   );
 
-  assert.match(notFoundBoundary, /loadMessages\("en"\)/);
+  assert.match(notFoundBoundary, /loadMessages\("es"\)/);
   assert.match(notFoundBoundary, /backHref="\/"/);
   assert.doesNotMatch(
     notFoundBoundary,

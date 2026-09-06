@@ -26,7 +26,7 @@ import { STRIPE_PAYMENT_PROVIDER } from "@/lib/payments/payment-provider";
 import { getStripeProfileUpgradeConfiguration } from "@/lib/payments/stripe-profile-upgrade-config";
 
 export const metadata: Metadata = {
-  title: "Expand producer profile",
+  title: "Ampliar perfil del productor",
   robots: { index: false, follow: false },
 };
 
@@ -36,39 +36,45 @@ type UpgradePageProps = {
 };
 
 const UPGRADE_MESSAGE_COPY = {
-  accept_terms: ["error", "Accept the versioned profile-upgrade offer before paying."],
-  already_active: ["notice", "This producer already has an expanded profile."],
+  accept_terms: ["error", "Acepta la versión vigente de la oferta de ampliación del perfil antes de pagar."],
+  already_active: ["notice", "Este productor ya tiene un perfil ampliado."],
   another_owner_pending: [
     "error",
-    "Another owner already started a payment request for this producer.",
+    "Otro titular ya ha iniciado una solicitud de pago para este productor.",
   ],
-  catalog_missing: ["error", "That producer is no longer in the catalog."],
-  checkout_expired: ["notice", "The previous Checkout expired. Start a new one."],
-  current_status: ["notice", "Review the current payment status below."],
-  owner_changed: ["error", "Your owner access changed before Checkout started."],
-  owner_required: ["error", "Only the verified owner can purchase this profile upgrade."],
-  payment_confirming: ["notice", "The payment provider is confirming the payment."],
+  catalog_missing: ["error", "Ese productor ya no está en el catálogo."],
+  checkout_expired: ["notice", "El proceso de pago anterior ha caducado. Inicia uno nuevo."],
+  current_status: ["notice", "Revisa el estado actual del pago a continuación."],
+  owner_changed: ["error", "Tu acceso como titular cambió antes de iniciar el pago."],
+  owner_required: ["error", "Solo el titular verificado puede comprar esta ampliación del perfil."],
+  payment_confirming: ["notice", "El proveedor de pagos está confirmando el pago."],
   recheck_failed: [
     "error",
-    "The payment provider could not be checked safely. No new payment was started; try again later.",
+    "No se ha podido consultar el proveedor de pagos de forma segura. No se ha iniciado ningún pago nuevo; inténtalo más tarde.",
   ],
-  stripe_no_url: ["error", "Stripe did not return a Checkout URL."],
-  unavailable: ["error", "Profile upgrades are not available right now."],
+  stripe_no_url: ["error", "Stripe no ha devuelto un enlace de pago."],
+  unavailable: ["error", "Las ampliaciones de perfil no están disponibles en este momento."],
+} as const;
+
+const STATUS_LABELS = {
+  pending: "Pendiente", paid: "Pagado", paid_unfulfilled: "Pagado, pendiente de activación",
+  payment_failed: "Pago fallido", expired: "Caducado", partially_refunded: "Devuelto parcialmente",
+  refunded: "Devuelto", disputed: "En disputa", dispute_lost: "Cargo devuelto tras disputa",
 } as const;
 
 const STATUS_COPY = {
-  pending: "A Checkout request is open. Payment has not been confirmed yet.",
-  paid: "The payment provider confirmed this purchase.",
+  pending: "Hay un proceso de pago abierto. El pago todavía no se ha confirmado.",
+  paid: "El proveedor de pagos ha confirmado esta compra.",
   paid_unfulfilled:
-    "The payment provider recorded a payment, but Chisan could not safely activate it. Support must reconcile or refund it.",
-  payment_failed: "The asynchronous payment failed. You can start a new request.",
-  expired: "The previous Checkout expired without a confirmed payment.",
+    "El proveedor ha registrado un pago, pero Chisan no ha podido activar el perfil de forma segura. Soporte debe revisar el pago o devolverlo.",
+  payment_failed: "El pago diferido ha fallado. Puedes iniciar una nueva solicitud.",
+  expired: "El proceso de pago anterior ha caducado sin que se confirmara el pago.",
   partially_refunded:
-    "This payment was partially refunded. The expanded profile is suspended pending review.",
-  refunded: "This payment was refunded and its expanded-profile right was revoked.",
-  disputed: "This payment is disputed. The expanded profile is suspended.",
+    "Se ha devuelto parte de este pago. El perfil ampliado está suspendido a la espera de revisión.",
+  refunded: "Este pago ha sido devuelto y se ha revocado el acceso al perfil ampliado.",
+  disputed: "Este pago está en disputa. El perfil ampliado está suspendido.",
   dispute_lost:
-    "The dispute was lost, the charge was reversed and the expanded-profile right was revoked. The producer is eligible for a new purchase.",
+    "La disputa se ha resuelto con la devolución del cargo y se ha revocado el acceso al perfil ampliado. El productor puede realizar una nueva compra.",
 } as const;
 
 export default async function UpgradeProducerProfilePage({
@@ -174,18 +180,18 @@ export default async function UpgradeProducerProfilePage({
       ) : null}
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">Expanded producer profile</p>
+          <p className="catalog-kicker">Perfil ampliado del productor</p>
           <h2>{producer.name}</h2>
           <p>
             {premiumActive
-              ? "Expanded access active"
+              ? "Acceso ampliado activo"
               : checkoutReady || latestUsesStripe
-                ? "One-time payment · €49"
-                : "Producer-scoped access"}
+                ? "Pago único · 49 €"
+                : "Acceso vinculado al productor"}
           </p>
         </div>
         <Link href={publicHref} className="account-button account-button--secondary">
-          Public profile
+          Perfil público
         </Link>
       </header>
 
@@ -193,31 +199,31 @@ export default async function UpgradeProducerProfilePage({
       query.checkout === "cancelled" &&
       latestRequest?.status === "pending" ? (
         <div className="account-callout" role="status">
-          <strong>Checkout was cancelled.</strong>
-          <p>No profile right is granted until Stripe confirms a paid Checkout.</p>
+          <strong>Se ha cancelado el proceso de pago.</strong>
+          <p>El acceso al perfil ampliado no se concede hasta que Stripe confirma el pago.</p>
         </div>
       ) : null}
       {latestUsesStripe &&
       query.checkout === "success" &&
       latestRequest?.status === "pending" ? (
         <div className="account-callout" role="status">
-          <strong>Stripe is confirming the payment.</strong>
-          <p>The return URL is not proof of payment. The signed webhook updates this page.</p>
+          <strong>Stripe está confirmando el pago.</strong>
+          <p>Volver a esta página no confirma el pago. La página se actualizará cuando Stripe lo confirme.</p>
           <ProfileUpgradeStatusRefresh enabled />
         </div>
       ) : null}
 
       {premiumActive ? (
         <div className="account-callout account-callout--success" role="status">
-          <strong>Expanded profile active</strong>
+          <strong>Perfil ampliado activo</strong>
           <p>
-            Premium fields are now available in the normal reviewed CSV proposal form.
+            Los campos premium ya están disponibles en el formulario habitual de propuestas para revisión.
           </p>
           <Link
             href={`/cuenta/productores/${country}/${producerId}/editar`}
             className="account-button"
           >
-            Edit expanded profile
+            Editar perfil ampliado
           </Link>
         </div>
       ) : null}
@@ -228,55 +234,53 @@ export default async function UpgradeProducerProfilePage({
           aria-live={premiumActive ? undefined : "polite"}
           aria-atomic="true"
         >
-          <p className="catalog-kicker">Latest request</p>
-          <h3>{latestRequest.status.replaceAll("_", " ")}</h3>
+          <p className="catalog-kicker">Última solicitud</p>
+          <h3>{STATUS_LABELS[latestRequest.status]}</h3>
           <p>{STATUS_COPY[latestRequest.status]}</p>
           <small>
-            Request {latestRequest.id} · Offer{" "}
+            Solicitud {latestRequest.id} · Oferta{" "}
             {formatMinorCurrencyAmount(
               latestRequest.amountMinor,
               latestRequest.currency,
+              "es-ES",
             )}
             {latestRequest.amountCapturedMinor !== null && latestRequest.capturedCurrency
-              ? ` · Captured ${formatMinorCurrencyAmount(
+              ? ` · Cobrado ${formatMinorCurrencyAmount(
                   latestRequest.amountCapturedMinor,
                   latestRequest.capturedCurrency,
+                  "es-ES",
                 )}`
               : ""}
             {latestRequest.amountRefundedMinor > 0
-              ? ` · Refunded ${formatMinorCurrencyAmount(
+              ? ` · Devuelto ${formatMinorCurrencyAmount(
                   latestRequest.amountRefundedMinor,
                   latestRequest.capturedCurrency ?? latestRequest.currency,
+                  "es-ES",
                 )}`
               : ""}
-            {` · Provider ${latestRequest.paymentProvider}`}
+            {` · Proveedor ${latestRequest.paymentProvider}`}
           </small>
         </section>
       ) : null}
 
       {!premiumActive && (checkoutReady || latestUsesStripe) ? (
         <section className="account-card">
-          <h3>What the €49 payment unlocks</h3>
+          <h3>Qué incluye el pago de 49 €</h3>
           <ul>
-            <li>Guided-visits availability.</li>
-            <li>A producer-authored message to the community.</li>
-            <li>Two highlighted external links.</li>
+            <li>Disponibilidad de visitas guiadas.</li>
+            <li>Un mensaje del productor a la comunidad.</li>
+            <li>Dos enlaces externos destacados.</li>
           </ul>
           <p>
-            This is a one-time capability attached to this producer while its catalog row remains
-            published, unless the payment is refunded or disputed. It does not guarantee a
-            permanent listing and does not buy verification, ranking or automatic publication.
-            Every factual change remains subject to editorial review, and ordinary corrections
-            remain free.
+            Es una función de pago único vinculada a este productor mientras su ficha siga publicada, salvo devolución o disputa del pago. No garantiza una presencia permanente ni compra verificación, posición o publicación automática. Todos los cambios de datos siguen sujetos a revisión editorial y las correcciones habituales continúan siendo gratuitas.
           </p>
           {displayedTermsUrl ? (
             <p>
-              Read the versioned{" "}
+              Lee la versión vigente de la{" "}
               <a href={displayedTermsUrl} target="_blank" rel="noreferrer">
-                profile-upgrade offer and conditions
+                oferta y condiciones de ampliación del perfil
               </a>{" "}
-              before paying. They define the fiscal treatment, support and refund process for
-              this €49 purchase. <small>Offer {displayedTermsVersion}</small>
+              antes de pagar. Definen el tratamiento fiscal, el soporte y el proceso de devolución de esta compra de 49 €. <small>Oferta {displayedTermsVersion}</small>
             </p>
           ) : null}
 
@@ -300,31 +304,29 @@ export default async function UpgradeProducerProfilePage({
                 <label className="account-check">
                   <input type="checkbox" name="acceptUpgradeTerms" value="yes" required />
                   <span>
-                    I have read and accept the{" "}
+                    He leído y acepto la{" "}
                     <a href={displayedTermsUrl} target="_blank" rel="noreferrer">
-                      profile-upgrade offer and conditions (offer {displayedTermsVersion})
+                      oferta y condiciones de ampliación del perfil (oferta {displayedTermsVersion})
                     </a>
-                    . I understand the editorial review requirement and that a refund or dispute
-                    suspends the expanded profile.
+                    . Entiendo que se requiere revisión editorial y que una devolución o disputa suspende el perfil ampliado.
                   </span>
                 </label>
               ) : null}
               <button type="submit" className="account-button">
-                {canResumeCheckout ? "Continue secure Checkout" : "Expand profile for €49"}
+                {canResumeCheckout ? "Continuar con el pago seguro" : "Ampliar perfil por 49 €"}
               </button>
-              <small>Payment is completed securely on Stripe Checkout.</small>
+              <small>El pago se realiza de forma segura en Stripe Checkout.</small>
             </form>
           ) : !owner ? (
             <div className="account-callout">
-              <strong>Owner authorization required</strong>
-              <p>Editors may maintain an active expanded profile, but only its verified owner can purchase it.</p>
+              <strong>Se requiere autorización del titular</strong>
+              <p>Los editores pueden mantener un perfil ampliado activo, pero solo su titular verificado puede comprarlo.</p>
             </div>
           ) : pendingFromAnotherOwner && latestUsesStripe ? (
             <div className="account-callout">
-              <strong>An earlier owner&apos;s Checkout is still open.</strong>
+              <strong>El proceso de pago de un titular anterior sigue abierto.</strong>
               <p>
-                Do not start another payment. This producer-bound request must be completed or
-                expire before the current owner can begin a new Checkout.
+                No inicies otro pago. Esta solicitud vinculada al productor debe completarse o caducar antes de que el titular actual pueda iniciar otro proceso de pago.
               </p>
               {paymentConfiguration.webhookReady ? (
                 <form action={recheckProducerProfileUpgradeCheckout} className="account-form">
@@ -332,33 +334,32 @@ export default async function UpgradeProducerProfilePage({
                   <input type="hidden" name="producerId" value={producerId} />
                   <input type="hidden" name="requestId" value={latestRequest.id} />
                   <button type="submit" className="account-button account-button--secondary">
-                    Recheck previous Checkout
+                    Consultar el pago anterior
                   </button>
                   <small>
-                    This only asks Stripe for the existing Session status. It cannot transfer
-                    or create a payment.
+                    Esta acción solo consulta a Stripe el estado del proceso existente. No transfiere ni crea un pago.
                   </small>
                 </form>
               ) : null}
             </div>
           ) : !checkoutReady ? (
             <div className="account-callout">
-              <strong>New purchases are temporarily unavailable.</strong>
-              <p>Existing expanded profiles and payment webhooks remain active.</p>
+              <strong>Las nuevas compras no están disponibles temporalmente.</strong>
+              <p>Los perfiles ampliados existentes y las confirmaciones de pago siguen activos.</p>
             </div>
           ) : latestRequest?.status === "paid_unfulfilled" ||
             latestRequest?.status === "paid" ||
             latestRequest?.status === "partially_refunded" ||
             latestRequest?.status === "disputed" ? (
             <div className="account-callout">
-              <strong>Manual reconciliation required</strong>
-              <p>Do not start another payment. Contact Chisan support with the request ID above.</p>
+              <strong>Se requiere una revisión manual del pago</strong>
+              <p>No inicies otro pago. Contacta con soporte de Chisan e indica el identificador de solicitud anterior.</p>
               {paymentConfiguration.supportEmail ? (
                 <a
-                  href={`mailto:${paymentConfiguration.supportEmail}?subject=${encodeURIComponent(`Profile upgrade ${latestRequest.id}`)}`}
+                  href={`mailto:${paymentConfiguration.supportEmail}?subject=${encodeURIComponent(`Ampliación de perfil ${latestRequest.id}`)}`}
                   className="account-button account-button--secondary"
                 >
-                  Contact billing support
+                  Contactar con soporte de facturación
                 </a>
               ) : null}
             </div>
@@ -366,10 +367,9 @@ export default async function UpgradeProducerProfilePage({
         </section>
       ) : !premiumActive ? (
         <section className="account-card">
-          <h3>Expanded-profile purchases are not open yet</h3>
+          <h3>Las compras de perfiles ampliados todavía no están habilitadas</h3>
           <p>
-            Chisan keeps this capability separate from the public catalog and has not activated
-            its payment adapter. Standard profile corrections remain available without payment.
+            Chisan todavía no ha activado la compra de esta función. Las correcciones del perfil básico siguen disponibles de forma gratuita.
           </p>
         </section>
       ) : null}

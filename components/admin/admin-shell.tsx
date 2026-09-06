@@ -13,7 +13,7 @@ export function AdminShell({
   children: React.ReactNode;
 }) {
   return (
-    <main className="admin-page">
+    <main className="admin-page" lang="en">
       <section className="admin-shell">
         <aside className="admin-sidebar">
           <Link href="/admin" className="admin-sidebar__brand">

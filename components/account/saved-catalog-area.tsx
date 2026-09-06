@@ -38,17 +38,16 @@ export function SavedCatalogArea({
   if (!savedArea) {
     return (
       <div className="account-callout">
-        <strong>No saved area in this browser</strong>
+        <strong>No hay ninguna zona guardada en este navegador</strong>
         <p>
-          The home page asks for a catalog area the first time. Choose one manually,
-          or let the browser resolve it from your device location.
+          La portada solicita una zona la primera vez. Elígela manualmente o permite que el navegador la determine a partir de tu ubicación.
         </p>
         <div className="account-inline-actions">
           <Link
             href={MANUAL_AREA_SELECTION_HREF}
             className="account-button account-button--secondary"
           >
-            Choose an area
+            Elegir una zona
           </Link>
         </div>
       </div>
@@ -57,31 +56,30 @@ export function SavedCatalogArea({
 
   return (
     <div className="account-callout">
-      <strong>Saved area: {savedArea.label}</strong>
+      <strong>Zona guardada: {savedArea.label}</strong>
       <p>
-        The home page now opens {savedArea.label} directly. Forgetting it here does
-        not change your language, favorites or claims.
+        La portada ahora abre {savedArea.label} directamente. Olvidarla aquí no cambia tus favoritos ni tus solicitudes de propiedad.
       </p>
       <div className="account-inline-actions">
         <Link
           href={buildLocationAreaHref(savedArea, explicitLocale, browserLocales)}
           className="account-button account-button--secondary"
         >
-          Open {savedArea.label}
+          Abrir {savedArea.label}
         </Link>
         <Link
           href={MANUAL_AREA_SELECTION_HREF}
           className="account-button account-button--secondary"
           onClick={forgetSavedLocationArea}
         >
-          Choose a different area
+          Elegir otra zona
         </Link>
         <button
           type="button"
           className="account-button account-button--secondary"
           onClick={forgetSavedLocationArea}
         >
-          Forget saved area
+          Olvidar zona guardada
         </button>
       </div>
     </div>

@@ -133,7 +133,7 @@ export function AccountMenu({
           }
         }}
       >
-        <label className="site-account-menu__language">
+        {languageMenu.options.length > 1 && <label className="site-account-menu__language">
           <span>{languageMenu.label}</span>
           <select
             value={languageMenu.currentLocale}
@@ -145,7 +145,7 @@ export function AccountMenu({
               </option>
             ))}
           </select>
-        </label>
+        </label>}
 
         {catalogControls ? (
           <section className="site-account-menu__catalog">

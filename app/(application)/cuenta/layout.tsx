@@ -18,14 +18,13 @@ export default async function AccountLayout({ children }: { children: React.Reac
     return (
       <main className="page-shell account-page">
         <section className="panel account-setup-panel">
-          <p className="catalog-kicker">{SITE_NAME} accounts</p>
-          <h1>Account system not configured</h1>
+          <p className="catalog-kicker">Cuentas de {SITE_NAME}</p>
+          <h1>Las cuentas no están disponibles</h1>
           <p>
-            The public producer catalog remains available. This environment still needs Clerk
-            credentials and a PostgreSQL connection before registration can be used.
+            Puedes seguir consultando el catálogo público de productores. El registro de cuentas todavía no está habilitado.
           </p>
           <Link href="/" className="account-button account-button--secondary">
-            Back to the catalog
+            Volver al catálogo
           </Link>
         </section>
       </main>
@@ -40,22 +39,22 @@ export default async function AccountLayout({ children }: { children: React.Reac
       <section className="panel account-shell">
         <header className="account-header">
           <div>
-            <p className="catalog-kicker">{SITE_NAME} account</p>
-            <h1>{account.displayName || "Your account"}</h1>
-            <p>{account.email || "Authenticated account"}</p>
+            <p className="catalog-kicker">Cuenta de {SITE_NAME}</p>
+            <h1>{account.displayName || "Tu cuenta"}</h1>
+            <p>{account.email || "Cuenta autenticada"}</p>
           </div>
           <span className="account-profile-badge">
-            {account.profileKind === "producer" ? "Producer profile" : "User profile"}
+            {account.profileKind === "producer" ? "Perfil de productor" : "Perfil de usuario"}
           </span>
         </header>
-        <nav className="account-nav" aria-label="Account sections">
-          <NavigationLink href="/cuenta" activePath="/cuenta">Overview</NavigationLink>
-          <NavigationLink href="/cuenta/perfil" activePath="/cuenta/perfil">Profile</NavigationLink>
-          <NavigationLink href="/cuenta/favoritos" activePath="/cuenta/favoritos">Favorites</NavigationLink>
-          <NavigationLink href="/cuenta/seleccion" activePath="/cuenta/seleccion">Selection QR</NavigationLink>
-          <NavigationLink href="/cuenta/reclamaciones" activePath="/cuenta/reclamaciones">Claims</NavigationLink>
-          <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Profile changes</NavigationLink>
-          {staff ? <Link href="/admin">Review</Link> : null}
+        <nav className="account-nav" aria-label="Secciones de la cuenta">
+          <NavigationLink href="/cuenta" activePath="/cuenta">Resumen</NavigationLink>
+          <NavigationLink href="/cuenta/perfil" activePath="/cuenta/perfil">Perfil</NavigationLink>
+          <NavigationLink href="/cuenta/favoritos" activePath="/cuenta/favoritos">Favoritos</NavigationLink>
+          <NavigationLink href="/cuenta/seleccion" activePath="/cuenta/seleccion">QR de selección</NavigationLink>
+          <NavigationLink href="/cuenta/reclamaciones" activePath="/cuenta/reclamaciones">Solicitudes de propiedad</NavigationLink>
+          <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Cambios de perfil</NavigationLink>
+          {staff ? <Link href="/admin">Revisión</Link> : null}
         </nav>
         {children}
       </section>

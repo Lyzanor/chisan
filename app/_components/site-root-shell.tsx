@@ -1,5 +1,6 @@
 import "server-only";
 
+import { esES } from "@clerk/localizations";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans } from "next/font/google";
@@ -143,7 +144,7 @@ export function SiteRootShell({
               <CompassIcon size={20} aria-hidden="true" />
               <span>{footerMessages.catalogLink}</span>
             </NavigationLink>
-            <GuidesLink className="site-primary-nav__guides" />
+            <GuidesLink locale={htmlLang === "en" ? "en" : "es"} className="site-primary-nav__guides" />
             <NavigationLink href="/how-we-work" activePath="/how-we-work" className="site-primary-nav__about">
               {footerMessages.aboutLink}
             </NavigationLink>
@@ -160,7 +161,7 @@ export function SiteRootShell({
               <ChisanWordmark alt="" reverse />
             </Link>
             <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
-            <GuidesLink />
+            <GuidesLink locale={htmlLang === "en" ? "en" : "es"} />
             <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
             <Link href="/privacy">
               {htmlLang.toLowerCase().startsWith("es")
@@ -191,6 +192,7 @@ export function SiteRootShell({
         <CatalogAgentTools tools={catalogToolDefinitions} />
         {accountAuthConfigured ? (
           <ClerkProvider
+            localization={htmlLang === "es" ? esES : undefined}
             signInUrl={ACCOUNT_ROUTES.signIn}
             signUpUrl={ACCOUNT_ROUTES.signUp}
             signInFallbackRedirectUrl={ACCOUNT_ROUTES.afterAuthentication}

@@ -1,6 +1,6 @@
 import { asc, eq, inArray } from "drizzle-orm";
 
-import { reviewProducerClaimAction } from "@/app/(application)/admin/actions";
+import { reviewProducerClaimAction } from "@/app/(admin)/admin/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { requireStaffAccount } from "@/lib/accounts/auth";
 import { findProducersByIds } from "@/lib/csv-catalog";

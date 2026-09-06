@@ -13,13 +13,13 @@ import { APPLICATION_DEFAULT_LOCALE } from "@/lib/i18n/locales";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
 
 const CLAIM_LABELS: Record<string, string> = {
-  draft: "Draft",
-  pending: "Pending review",
-  needs_info: "More information needed",
-  approved: "Approved",
-  rejected: "Rejected",
-  withdrawn: "Withdrawn",
-  revoked: "Revoked",
+  draft: "Borrador",
+  pending: "Pendiente de revisión",
+  needs_info: "Se necesita más información",
+  approved: "Aprobada",
+  rejected: "Rechazada",
+  withdrawn: "Retirada",
+  revoked: "Revocada",
 };
 
 type ClaimsPageProps = {
@@ -60,21 +60,20 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
       <AccountMessage params={params} />
       <header className="account-section-heading">
         <div>
-          <h2>Producer ownership</h2>
+          <h2>Titularidad de productores</h2>
           <p>
-            Claims are verified manually; each producer has one verified owner and may have
-            additional authorized editors.
+            Las solicitudes se verifican manualmente. Cada productor tiene un titular verificado y puede tener otros editores autorizados.
           </p>
         </div>
         <Link href="/" className="account-button account-button--secondary">
-          Find a producer to claim
+          Buscar un productor para reclamar
         </Link>
       </header>
 
       <section>
-        <h3>Managed producers</h3>
+        <h3>Productores que gestionas</h3>
         {memberships.length === 0 ? (
-          <p className="account-empty">No producer access has been approved yet.</p>
+          <p className="account-empty">Todavía no se ha aprobado ningún acceso a productores.</p>
         ) : (
           <ul className="account-record-list">
             {memberships.map((membership, index) => {
@@ -82,8 +81,8 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
               return (
                 <li key={membership.id}>
                   <div>
-                    <strong>{producer?.name ?? "Producer no longer published"}</strong>
-                    <p>{membership.role === "owner" ? "Owner" : "Editor"} access</p>
+                    <strong>{producer?.name ?? "Productor ya no publicado"}</strong>
+                    <p>Acceso de {membership.role === "owner" ? "titular" : "editor"}</p>
                   </div>
                   {producer ? (
                     <div className="account-inline-actions">
@@ -91,7 +90,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                         href={buildAccountProducerHref(producer, explicitLocale)}
                         className="account-button account-button--secondary"
                       >
-                        Public profile
+                        Perfil público
                       </Link>
                       {membership.role === "owner" ? (
                         <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/estadisticas`} className="account-button account-button--secondary">
@@ -102,7 +101,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                         href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`}
                         className="account-button"
                       >
-                        Propose changes
+                        Proponer cambios
                       </Link>
                     </div>
                   ) : null}
@@ -114,9 +113,9 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
       </section>
 
       <section>
-        <h3>Claim history</h3>
+        <h3>Historial de solicitudes</h3>
         {claims.length === 0 ? (
-          <p className="account-empty">You have not submitted a producer claim.</p>
+          <p className="account-empty">Todavía no has enviado ninguna solicitud de propiedad.</p>
         ) : (
           <ul className="account-record-list">
             {claims.map((claim, index) => {
@@ -128,7 +127,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                 <li key={claim.id} className="account-record-list__stacked">
                   <div className="account-record-heading">
                     <div>
-                      <strong>{producer?.name ?? "Producer no longer published"}</strong>
+                      <strong>{producer?.name ?? "Productor ya no publicado"}</strong>
                       <p>
                         {claim.country.toUpperCase()} · #{claim.producerId}
                       </p>
@@ -145,14 +144,14 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                           href={buildAccountProducerHref(producer, explicitLocale)}
                           className="account-button account-button--secondary"
                         >
-                          Public profile
+                          Perfil público
                         </Link>
                       ) : null}
                       {canWithdraw ? (
                         <form action={withdrawProducerClaimAction}>
                           <input type="hidden" name="claimId" value={claim.id} />
                           <button type="submit" className="account-link-button">
-                            Withdraw claim
+                            Retirar solicitud
                           </button>
                         </form>
                       ) : null}

@@ -6,7 +6,7 @@ export default async function CatalogNotFoundPage() {
   // catalog pages. Keep it free of request-bound APIs so an on-demand static
   // page never changes rendering modes at runtime.
   // The proxy sends ordinary invalid public URLs to the localized global 404.
-  const messages = await loadMessages("en");
+  const messages = await loadMessages("es");
 
   return <NotFoundContent backHref="/" messages={messages} />;
 }

@@ -27,7 +27,7 @@ export async function updatePublicProfileQrAction(
     redirectWithMessage(
       "/cuenta/seleccion",
       "error",
-      "Review your selection before activating its QR.",
+      "Revisa tu selección antes de activar su QR.",
     );
   }
   const result = await updateUserProfileQrPreference({
@@ -37,14 +37,14 @@ export async function updatePublicProfileQrAction(
   });
   const errors = {
     profile_not_public:
-      "Make the selection Unlisted or Public in profile settings before enabling its QR.",
+      "Elige la visibilidad Sin listar o Público en los ajustes del perfil antes de activar el QR.",
     selection_empty:
-      "Choose at least one published producer before enabling the Selection QR.",
+      "Elige al menos un productor publicado antes de activar el QR de selección.",
     preview_changed:
-      "Your selection has changed. Review the current preview before enabling its QR.",
+      "Tu selección ha cambiado. Revisa la vista previa actual antes de activar su QR.",
     not_entitled:
-      "An active Premium profile is required to change the Selection QR.",
-    not_authorized: "You cannot change this Selection QR.",
+      "Necesitas un perfil premium activo para cambiar el QR de selección.",
+    not_authorized: "No puedes cambiar este QR de selección.",
   };
   if (result !== "updated")
     redirectWithMessage("/cuenta/seleccion", "error", errors[result]);
@@ -54,7 +54,7 @@ export async function updatePublicProfileQrAction(
   redirectWithMessage(
     "/cuenta/seleccion",
     "notice",
-    enabled ? "Selection QR enabled." : "Selection QR disabled.",
+    enabled ? "QR de selección activado." : "QR de selección desactivado.",
   );
 }
 
@@ -72,7 +72,7 @@ export async function updateProducerProfileQrAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      firstValidationMessage(parsed.error),
+      firstValidationMessage(parsed.error, "es"),
     );
   }
 
@@ -82,7 +82,7 @@ export async function updateProducerProfileQrAction(
     parsed.data.producerId,
   );
   if (!producer) {
-    redirectWithMessage(path, "error", "The producer is no longer published.");
+    redirectWithMessage(path, "error", "El productor ya no está publicado.");
   }
 
   const enabled = formString(formData, "profileQrEnabled") === "yes";
@@ -96,14 +96,14 @@ export async function updateProducerProfileQrAction(
     redirectWithMessage(
       path,
       "error",
-      "Only the verified owner can change the producer QR label.",
+      "Solo el titular verificado puede cambiar la etiqueta QR del productor.",
     );
   }
   if (result !== "updated") {
     redirectWithMessage(
       path,
       "error",
-      "An active expanded-profile entitlement is required to change the QR label.",
+      "Necesitas acceso activo al perfil ampliado para cambiar la etiqueta QR.",
     );
   }
 
@@ -111,6 +111,6 @@ export async function updateProducerProfileQrAction(
   redirectWithMessage(
     path,
     "notice",
-    enabled ? "Producer QR enabled." : "Producer QR disabled.",
+    enabled ? "QR del productor activado." : "QR del productor desactivado.",
   );
 }

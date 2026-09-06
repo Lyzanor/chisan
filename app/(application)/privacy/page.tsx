@@ -5,9 +5,9 @@ import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 
 import styles from "./privacy.module.css";
 
-const title = "Privacy and advertising";
+const title = "Privacidad y publicidad";
 const description =
-  "How Chisan handles privacy, cookies, account data and temporary programmatic advertising.";
+  "Cómo trata Chisan la privacidad, las cookies, los datos de cuenta y la publicidad programática temporal.";
 const canonicalUrl = new URL("/privacy", SITE_ORIGIN).toString();
 
 export const metadata: Metadata = {
@@ -27,115 +27,105 @@ export default function PrivacyPage() {
     <main className={styles.page}>
       <article className={styles.article} aria-labelledby="privacy-title">
         <p className="catalog-kicker">{SITE_NAME}</p>
-        <h1 id="privacy-title">Privacy and advertising</h1>
-        <p className={styles.updated}>Last updated: 6 September 2026</p>
-
+        <h1 id="privacy-title">Privacidad y publicidad</h1>
+        <p className={styles.updated}>Última actualización: 6 de septiembre de 2026</p>
         <p>
-          This notice explains the information Chisan and its service providers
-          process when you browse the catalog, choose a language, use an account,
-          or view a page that is eligible for advertising.
+          Este aviso explica qué información tratan Chisan y sus proveedores cuando
+          consultas el catálogo, utilizas una cuenta o visitas una página que puede mostrar publicidad.
         </p>
-
-        <h2>Catalog browsing</h2>
+        <h2>Consulta del catálogo</h2>
         <p>
-          You can browse the public producer catalog without creating an account.
-          Chisan does not send your device location to its servers. If you ask the
-          browser to use your location, it is resolved on your device only to
-          suggest a catalog area.
+          Puedes consultar el catálogo público sin crear una cuenta. Chisan no envía
+          la ubicación de tu dispositivo a sus servidores. Si solicitas al navegador
+          que utilice tu ubicación, esta se procesa únicamente en tu dispositivo para
+          sugerir una zona del catálogo.
         </p>
         <p>
-          The optional <code>chisan_locale</code> cookie stores an explicit
-          language choice. Essential infrastructure may also process IP address,
-          request, device and security information in ordinary server logs to
-          deliver and protect the website.
+          La web pública se presenta actualmente en español. La cookie opcional
+          <code>chisan_locale</code> puede conservar una elección de idioma anterior,
+          pero no cambia el idioma público actual. La infraestructura esencial también
+          puede tratar direcciones IP e información de solicitudes, dispositivos y seguridad
+          en los registros habituales del servidor para ofrecer y proteger la web.
         </p>
-
-        <h2>Privacy-friendly site measurement</h2>
+        <h2>Medición de visitas respetuosa con la privacidad</h2>
         <p>
-          Chisan uses Vercel Web Analytics on public pages to understand aggregate
-          visits and improve the catalog. This measurement does not use analytics
-          cookies. Chisan removes query parameters before sending a page view and
-          does not load Analytics on sign-in, registration, account,
-          administration or API routes. Read more in Vercel&apos;s {" "}
-          <a href="https://vercel.com/docs/analytics/privacy-policy">
-            Web Analytics privacy documentation
-          </a>
-          .
-        </p>
-
-        <p>
-          Chisan also records aggregate daily visits to public producer profiles
-          in its own database. A repeat opening counts as another visit; this
-          measurement does not identify unique people or store IP addresses,
-          browser identifiers, referrers or account IDs. It adds no cookies or
-          browser storage. A random identifier for each page opening prevents
-          duplicate delivery; receipts older than yesterday are removed on the
-          next collection or statistics read. Daily totals are retained for the
-          producer’s history. Only the verified producer owner with active premium
-          access can consult these figures. Signed-in producer team visits,
-          recognized automated traffic and preloads are excluded. The collector
-          honors Do Not Track and Global Privacy Control.
-        </p>
-
-        <h2>Accounts and contributions</h2>
-        <p>
-          When account features are enabled, Clerk handles authentication. Chisan
-          stores the account profile, favorites, ownership workflows and submitted
-          catalog proposals needed to provide those features and keep an audit
-          trail. If you create a public producer map, the profile also stores the
-          catalog area and municipality you choose and shows that location as the
-          basis for grouping shared favorites. The public CSV catalog remains
-          separate from account data.
-        </p>
-
-        <h2>Programmatic advertising</h2>
-        <p>
-          Chisan may temporarily use Google AdSense on selected public area pages.
-          There are no programmatic ads on the home page, producer profiles,
-          account or administration pages, error pages, or this notice. Advertising
-          never determines whether a producer is included, verified, ranked or
-          described in the catalog.
+          Chisan utiliza Vercel Web Analytics en páginas públicas para conocer las visitas
+          agregadas y mejorar el catálogo. Esta medición no utiliza cookies de analítica.
+          Chisan elimina los parámetros de consulta antes de enviar una visita y no carga
+          Analytics en las rutas de acceso, registro, cuenta, administración o API.
+          Puedes consultar la <a href="https://vercel.com/docs/analytics/privacy-policy">
+            documentación de privacidad de Web Analytics
+          </a>.
         </p>
         <p>
-          If advertising is active, Google and its approved advertising partners
-          may use cookies, IP address, device identifiers and similar technologies
-          to deliver, measure and protect ads. Where required, Chisan asks for your
-          choices through Google&apos;s certified consent platform before those uses.
-          Without consent, Google may show only limited ads or no ad.
+          Chisan también registra visitas diarias agregadas a los perfiles públicos de
+          productores en su propia base de datos. Cada nueva apertura cuenta como otra
+          visita; esta medición no identifica personas únicas ni guarda direcciones IP,
+          identificadores del navegador, páginas de procedencia o identificadores de cuenta.
+          No añade cookies ni almacenamiento en el navegador. Un identificador aleatorio
+          por apertura evita entregas duplicadas; los registros de entrega anteriores a
+          ayer se eliminan en la siguiente recogida o consulta de estadísticas. Los totales
+          diarios se conservan como historial del productor. Solo el titular verificado
+          del productor con acceso premium activo puede consultar estas cifras. Se excluyen
+          las visitas del equipo del productor con sesión iniciada, el tráfico automatizado
+          reconocido y las precargas. La recogida respeta Do Not Track y Global Privacy Control.
+        </p>
+        <h2>Cuentas y aportaciones</h2>
+        <p>
+          Cuando las funciones de cuenta están habilitadas, Clerk gestiona la autenticación.
+          Chisan guarda el perfil de cuenta, los favoritos, las solicitudes de propiedad y
+          las propuestas de cambios necesarias para prestar estas funciones y conservar
+          un historial de auditoría. Si creas un mapa público de productores, el perfil
+          también guarda la zona del catálogo y el municipio que eliges. Solo se publican
+          los productores que seleccionas expresamente. El catálogo público en CSV se
+          mantiene separado de los datos de cuenta.
+        </p>
+        <h2>Publicidad programática</h2>
+        <p>
+          Chisan puede utilizar temporalmente Google AdSense en determinadas páginas públicas
+          de provincias. No se muestra publicidad programática en la portada, los perfiles
+          de productores, las páginas de cuenta o administración, las páginas de error ni
+          este aviso. La publicidad nunca determina la inclusión, verificación, orden o
+          descripción de un productor en el catálogo.
+        </p>
+        <p>
+          Si la publicidad está activa, Google y sus socios publicitarios autorizados pueden
+          utilizar cookies, direcciones IP, identificadores de dispositivo y tecnologías
+          similares para ofrecer, medir y proteger los anuncios. Cuando es necesario,
+          Chisan solicita tus preferencias mediante la plataforma de consentimiento
+          certificada de Google antes de estos usos. Sin consentimiento, Google puede
+          mostrar únicamente anuncios limitados o no mostrar anuncios.
         </p>
         <ul>
           <li>
-            Read how Google uses information from sites that use its services in
-            Google&apos;s {" "}
-            <a href="https://policies.google.com/technologies/partner-sites">
-              partner-sites notice
-            </a>
-            .
+            Consulta cómo utiliza Google la información de las webs que emplean sus servicios
+            en su <a href="https://policies.google.com/technologies/partner-sites">
+              aviso sobre sitios asociados
+            </a>.
           </li>
           <li>
-            Review or change Google advertising personalization in {" "}
-            <a href="https://adssettings.google.com/">Google Ad Settings</a>.
+            Revisa o cambia la personalización publicitaria en la <a href="https://adssettings.google.com/">
+              configuración de anuncios de Google
+            </a>.
           </li>
           <li>
-            Reopen the privacy choices supplied with Google&apos;s consent message on
-            any Chisan page where advertising is enabled.
+            Puedes volver a abrir las opciones de privacidad del mensaje de consentimiento
+            de Google en cualquier página de Chisan donde la publicidad esté habilitada.
           </li>
         </ul>
-
-        <h2>Your choices and requests</h2>
+        <h2>Tus opciones y solicitudes</h2>
         <p>
-          You can remove the language cookie in your browser, decline optional
-          advertising purposes, or ask about access, correction or deletion of
-          account information where applicable. Use the{" "}
-          <Link href="/contact">Chisan contact page</Link> to choose the appropriate
-          channel, and do not send sensitive personal information through social
-          media.
+          Puedes eliminar la cookie de idioma desde el navegador, rechazar los fines
+          publicitarios opcionales o consultar sobre el acceso, rectificación o eliminación
+          de los datos de cuenta cuando corresponda. Utiliza la <Link href="/contact">
+            página de contacto de Chisan
+          </Link> para elegir el canal adecuado y no envíes información personal sensible
+          a través de las redes sociales.
         </p>
-
-        <h2>Changes</h2>
+        <h2>Cambios</h2>
         <p>
-          Chisan will update this notice when its providers or data uses materially
-          change. The date above identifies the published version.
+          Chisan actualizará este aviso cuando cambien sustancialmente sus proveedores o
+          los usos de los datos. La fecha anterior identifica la versión publicada.
         </p>
       </article>
     </main>

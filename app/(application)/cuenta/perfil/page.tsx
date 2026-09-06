@@ -29,10 +29,10 @@ import { listEnabledLocationAreas } from "@/lib/location/enabled-location-areas.
 import { isProfileQrEnabled } from "@/lib/profile-qr";
 import { SITE_NAME } from "@/lib/site";
 
-const ACCOUNT_LOCALE = "en" as const;
+const ACCOUNT_LOCALE = "es" as const;
 
 export const metadata: Metadata = {
-  title: "Account profile",
+  title: "Perfil de cuenta",
   robots: { index: false, follow: false },
 };
 
@@ -86,28 +86,24 @@ export default async function AccountProfilePage({
       <section aria-labelledby="account-profile-title">
         <header className="account-section-heading">
           <div>
-            <h2 id="account-profile-title">Profile</h2>
+            <h2 id="account-profile-title">Perfil</h2>
             <p>
-              This information belongs to your {SITE_NAME} account. Sign-in
-              email, password and authentication factors are managed securely
-              through Clerk.
+              Esta información pertenece a tu cuenta de {SITE_NAME}. El correo de acceso, la contraseña y los factores de autenticación se gestionan de forma segura mediante Clerk.
             </p>
           </div>
         </header>
         <div className="account-callout">
           <strong>
-            Profile type:{" "}
-            {account.profileKind === "producer" ? "Producer" : "User"}
+            Tipo de perfil:{" "}
+            {account.profileKind === "producer" ? "Productor" : "Usuario"}
           </strong>
           <p>
-            Every account starts as User. Submitting a producer ownership claim
-            changes this automatically to Producer; profile type is not a
-            selectable setting.
+            Todas las cuentas comienzan como usuario. Al enviar una solicitud de propiedad, el tipo cambia automáticamente a productor; no se elige manualmente.
           </p>
         </div>
         <form action={updateAccountProfileAction} className="account-form">
           <label className="account-field">
-            <span>Display name</span>
+            <span>Nombre visible</span>
             <input
               type="text"
               name="displayName"
@@ -117,7 +113,7 @@ export default async function AccountProfilePage({
             />
           </label>
           <button type="submit" className="account-button">
-            Save profile
+            Guardar perfil
           </button>
         </form>
       </section>
@@ -125,12 +121,9 @@ export default async function AccountProfilePage({
       <section aria-labelledby="saved-area-title">
         <header className="account-section-heading">
           <div>
-            <h2 id="saved-area-title">Saved catalog area</h2>
+            <h2 id="saved-area-title">Zona del catálogo guardada</h2>
             <p>
-              {SITE_NAME} can remember one catalog area in this browser so the
-              home page opens it directly. The preference belongs to this
-              browser only: it is never stored with your account, and your
-              device position is never sent to {SITE_NAME}.
+              {SITE_NAME} puede recordar una zona del catálogo en este navegador para abrirla directamente desde la portada. La preferencia solo se guarda en este navegador, nunca en tu cuenta, y la ubicación de tu dispositivo nunca se envía a {SITE_NAME}.
             </p>
           </div>
         </header>
@@ -148,11 +141,9 @@ export default async function AccountProfilePage({
       <section aria-labelledby="public-profile-title">
         <header className="account-section-heading">
           <div>
-            <h2 id="public-profile-title">Public producer selection</h2>
+            <h2 id="public-profile-title">Selección pública de productores</h2>
             <p>
-              Publish a shareable page containing only the favorites you
-              explicitly choose. Give your selection a name and context for your
-              shop, event or personal choices.
+              Publica una página para compartir únicamente los favoritos que elijas expresamente. Añade un nombre y explica tu selección para tu tienda, evento o preferencias personales.
             </p>
           </div>
           {publicProfileVisible && account.publicHandle ? (
@@ -160,22 +151,22 @@ export default async function AccountProfilePage({
               href={`/u/${account.publicHandle}`}
               className="account-button account-button--secondary"
             >
-              Open public selection
+              Abrir selección pública
             </Link>
           ) : null}
         </header>
         <form action={updatePublicProfileAction} className="account-form">
           <label className="account-field">
-            <span>Selection title (optional)</span>
+            <span>Título de la selección (opcional)</span>
             <input
               name="selectionTitle"
               maxLength={160}
               defaultValue={account.selectionTitle ?? ""}
-              placeholder="Producers at our autumn market"
+              placeholder="Productores de nuestro mercado de otoño"
             />
           </label>
           <label className="account-field">
-            <span>Selection description (optional)</span>
+            <span>Descripción de la selección (opcional)</span>
             <textarea
               name="selectionDescription"
               maxLength={600}
@@ -183,12 +174,11 @@ export default async function AccountProfilePage({
               defaultValue={account.selectionDescription ?? ""}
             />
             <small>
-              Explain your choice. This text appears publicly with the
-              selection.
+              Explica tu elección. Este texto aparece públicamente junto a la selección.
             </small>
           </label>
           <label className="account-field">
-            <span>Public handle</span>
+            <span>Identificador público</span>
             <input
               type="text"
               name="publicHandle"
@@ -201,12 +191,11 @@ export default async function AccountProfilePage({
               aria-describedby="public-handle-help"
             />
             <small id="public-handle-help">
-              Your permanent URL will be /u/handle. Use lowercase letters,
-              numbers and hyphens.
+              Tu dirección permanente será /u/identificador. Utiliza letras minúsculas, números y guiones.
             </small>
           </label>
           <label className="account-field">
-            <span>Base catalog area</span>
+            <span>Zona de referencia</span>
             <select
               name="baseLocation"
               required
@@ -222,7 +211,7 @@ export default async function AccountProfilePage({
               aria-describedby="public-base-area-help"
             >
               <option value="" disabled>
-                Choose an area
+                Elegir una zona
               </option>
               {publicProfileAreaGroups.map((group) => (
                 <optgroup key={group.key} label={group.label}>
@@ -238,12 +227,11 @@ export default async function AccountProfilePage({
               ))}
             </select>
             <small id="public-base-area-help">
-              Your profile location does not add, group or order the producers
-              in your selection.
+              La ubicación de tu perfil no añade, agrupa ni ordena los productores de tu selección.
             </small>
           </label>
           <label className="account-field">
-            <span>Base municipality</span>
+            <span>Municipio de referencia</span>
             <input
               type="text"
               name="baseMunicipality"
@@ -255,37 +243,34 @@ export default async function AccountProfilePage({
               aria-describedby="public-base-municipality-help"
             />
             <small id="public-base-municipality-help">
-              Use a municipality that appears in the selected catalog area. Your
-              selection always shows exactly the producers you choose.
+              Utiliza un municipio de la zona elegida. Tu selección siempre muestra exactamente los productores que elijas.
             </small>
           </label>
           <label className="account-field">
-            <span>Visibility</span>
+            <span>Visibilidad</span>
             <select
               name="visibility"
               defaultValue={account.publicProfileVisibility}
             >
-              <option value="private">Private</option>
-              <option value="unlisted">Unlisted — anyone with the link</option>
-              <option value="public">Public — eligible for indexing</option>
+              <option value="private">Privado</option>
+              <option value="unlisted">Sin listar: accesible mediante el enlace</option>
+              <option value="public">Público: puede aparecer en buscadores</option>
             </select>
             <small>
-              Favorites remain hidden until you enable them individually from
-              your favorites page.
+              Los favoritos permanecen ocultos hasta que los actives individualmente desde la página de favoritos.
             </small>
           </label>
           <button type="submit" className="account-button">
-            Save public profile
+            Guardar perfil público
           </button>
         </form>
         <div className="account-callout">
-          <strong>Selection QR</strong>
+          <strong>QR de selección</strong>
           <p>
-            Choose producers from your favorites, review the complete map and
-            activate your QR from the preview.
+            Elige productores de tus favoritos, revisa el mapa completo y activa el QR desde la vista previa.
           </p>
           <Link href="/cuenta/seleccion" className="account-button">
-            Preview selection and QR
+            Vista previa de la selección y el QR
           </Link>
           {publicProfilePremiumEntitlement && profileQrEnabled ? (
             <form action={updatePublicProfileQrAction} className="account-form">
@@ -293,7 +278,7 @@ export default async function AccountProfilePage({
                 type="submit"
                 className="account-button account-button--secondary"
               >
-                Disable Selection QR
+                Desactivar QR de selección
               </button>
             </form>
           ) : null}

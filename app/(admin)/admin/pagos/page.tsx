@@ -1,7 +1,7 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
 import Link from "next/link";
 
-import { retryProducerProfileUpgradeAction } from "@/app/(application)/admin/actions";
+import { retryProducerProfileUpgradeAction } from "@/app/(admin)/admin/actions";
 import { formatAdminDate } from "@/components/admin/producer-change-table";
 import { requireAdminAccount } from "@/lib/accounts/auth";
 import { producerProfileUpgradeIncidentCondition } from "@/lib/admin/producer-profile-upgrade-incidents";

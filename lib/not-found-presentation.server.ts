@@ -37,13 +37,12 @@ function publishedParentHref(pathname: string, catalog: string) {
 export async function loadNotFoundPresentation() {
   const pathname = (await headers()).get(CHISAN_REQUEST_PATH_HEADER) ?? "/";
   const catalog = pathname.split("/").filter(Boolean)[0] ?? "";
-  const scope = parseCatalogScope(catalog, listPublishedCountries());
-  const locale = scope?.locale ?? "en";
+  const locale = "es" as const;
   const messages = await loadMessages(locale);
 
   return {
     backHref: publishedParentHref(pathname, catalog),
-    htmlLang: scope?.htmlLang ?? "en",
+    htmlLang: "es",
     locale,
     messages,
   };

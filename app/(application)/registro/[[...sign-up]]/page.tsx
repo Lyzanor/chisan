@@ -8,8 +8,8 @@ import { SITE_NAME } from "@/lib/site";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Create account",
-  description: `Create a ${SITE_NAME} user or producer profile.`,
+  title: "Crear cuenta",
+  description: `Crea un perfil de usuario o productor en ${SITE_NAME}.`,
   robots: { index: false, follow: false },
 };
 
@@ -19,12 +19,11 @@ export default function SignUpPage() {
       <main className="auth-page">
         <section className="auth-shell" aria-labelledby="account-auth-unavailable-title">
           <div className="auth-copy">
-          <h1 id="account-auth-unavailable-title">Registration is not configured</h1>
+          <h1 id="account-auth-unavailable-title">El registro no está disponible</h1>
           <p>
-            Account registration is not enabled in this environment. The producer catalog
-            remains available without an account.
+            El registro no está habilitado. Puedes consultar el catálogo de productores sin una cuenta.
           </p>
-          <Link href="/" className="account-button account-button--secondary">Back to the catalog</Link>
+          <Link href="/" className="account-button account-button--secondary">Volver al catálogo</Link>
           </div>
         </section>
       </main>
@@ -35,17 +34,17 @@ export default function SignUpPage() {
     <main className="auth-page">
       <section className="auth-shell">
         <div className="auth-copy">
-          <p className="catalog-kicker">Join {SITE_NAME}</p>
-          <h1>One account, two clear profiles</h1>
-          <p>Choose how you use {SITE_NAME} after creating your secure sign-in.</p>
+          <p className="catalog-kicker">Únete a {SITE_NAME}</p>
+          <h1>Una cuenta, dos tipos de perfil</h1>
+          <p>Elige cómo quieres utilizar {SITE_NAME} después de crear tu acceso seguro.</p>
           <div className="auth-profile-list">
             <article>
-              <strong>User</strong>
-              <span>Save favorite producers; personal maps can be added later as an entitlement.</span>
+              <strong>Usuario</strong>
+              <span>Guarda tus productores favoritos y crea tu propia selección.</span>
             </article>
             <article>
-              <strong>Producer</strong>
-              <span>Claim productive units and propose reviewed updates to their catalog profiles.</span>
+              <strong>Productor</strong>
+              <span>Reclama tu unidad productiva y propón actualizaciones de su perfil para revisión.</span>
             </article>
           </div>
         </div>

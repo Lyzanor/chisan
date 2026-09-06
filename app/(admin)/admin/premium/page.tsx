@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   grantProducerPremiumGiftAction,
   revokeProducerPremiumGiftAction,
-} from "@/app/(application)/admin/actions";
+} from "@/app/(admin)/admin/actions";
 import { formatAdminDate } from "@/components/admin/producer-change-table";
 import { requireAdminAccount } from "@/lib/accounts/auth";
 import {

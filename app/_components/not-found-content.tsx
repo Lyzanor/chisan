@@ -27,7 +27,7 @@ export function NotFoundContent({
             {messages.siteFooter.contactLink}
           </Link>{" "}
           <a href="/sitemap/0.xml" className="back-link">
-            Sitemap
+            Mapa del sitio
           </a>
         </nav>
       </section>

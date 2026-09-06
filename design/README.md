@@ -281,8 +281,8 @@ whole roster on hover, and cancelled pointer previews do not queue map movement.
 Photography is documentary — real production, people and places in available
 light. Nothing staged, nothing implying an unsupported fact.
 
-Write with exact nouns and plain uncertainty. Keep **Connecting local food.**
-exact, including the period. Layouts expand for translation rather than
+Write with exact nouns and plain uncertainty. The current Spanish public tagline is **Conectando la alimentación local.**
+The English tagline **Connecting local food.** remains available for English surfaces. Layouts expand for translation rather than
 truncate; no locale is a variant of another.
 
 Pointer targets at least 44×44px, except for the documented dense-map point

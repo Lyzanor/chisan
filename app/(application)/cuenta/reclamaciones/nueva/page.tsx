@@ -13,7 +13,7 @@ import { producerMemberships } from "@/lib/db/schema";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
 
 export const metadata: Metadata = {
-  title: "Claim a producer",
+  title: "Reclamar un productor",
   robots: { index: false, follow: false },
 };
 
@@ -65,10 +65,10 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
     return (
       <div className="account-content account-content--narrow">
         <AccountMessage params={params} />
-        <h2>Choose a producer first</h2>
-        <p>Claims start from an existing public producer profile.</p>
+        <h2>Elige primero un productor</h2>
+        <p>Las solicitudes de propiedad se inician desde un perfil público de productor existente.</p>
         <Link href="/" className="account-button">
-          Explore producers
+          Explorar productores
         </Link>
       </div>
     );
@@ -80,27 +80,27 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
       <div className="account-content account-content--narrow">
         <AccountMessage params={params} />
         <section>
-          <p className="catalog-kicker">Ownership verified</p>
+          <p className="catalog-kicker">Titularidad verificada</p>
           <h2>
             {currentAccountOwnsProducer
-              ? `You already manage ${producer.name}`
-              : `${producer.name} already has a verified owner`}
+              ? `Ya gestionas ${producer.name}`
+              : `${producer.name} ya tiene un titular verificado`}
           </h2>
           <p>
             {currentAccountOwnsProducer
-              ? "Use your producer dashboard to manage this profile."
-              : "A producer with an active confirmed owner cannot be claimed again."}
+              ? "Utiliza tu área de productor para gestionar este perfil."
+              : "Un productor con un titular confirmado activo no se puede volver a reclamar."}
           </p>
           <div className="account-inline-actions">
             <Link
               href={buildAccountProducerHref(producer, explicitLocale)}
               className="account-button account-button--secondary"
             >
-              Public profile
+              Perfil público
             </Link>
             {currentAccountOwnsProducer ? (
               <Link href="/cuenta/reclamaciones" className="account-button">
-                Managed producers
+                Productores que gestionas
               </Link>
             ) : null}
           </div>
@@ -114,7 +114,7 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
       <AccountMessage params={params} />
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">Ownership claim</p>
+          <p className="catalog-kicker">Solicitud de propiedad</p>
           <h2>{producer.name}</h2>
           <p>
             {producer.city} · {producer.area}
@@ -124,16 +124,14 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
           href={buildAccountProducerHref(producer, explicitLocale)}
           className="account-button account-button--secondary"
         >
-          Public profile
+          Perfil público
         </Link>
       </header>
 
       <div className="account-callout">
-        <strong>Ownership is never automatic.</strong>
+        <strong>La titularidad nunca se concede automáticamente.</strong>
         <p>
-          A reviewer will compare the claim with public identity and contact information. Do not
-          submit identity documents in this first form; staff will request them through a private
-          channel only if needed.
+          El equipo revisará la solicitud con la identidad y los datos de contacto públicos. No envíes documentos de identidad en este primer formulario; solo se solicitarán por un canal privado si son necesarios.
         </p>
       </div>
 
@@ -141,17 +139,17 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
         <input type="hidden" name="country" value={producer.country} />
         <input type="hidden" name="producerId" value={producer.producerId} />
         <label className="account-field">
-          <span>Best verification method</span>
+          <span>Método de verificación preferido</span>
           <select name="method" required defaultValue="business_email">
-            <option value="business_email">Official business email</option>
-            <option value="website">Producer website</option>
-            <option value="phone">Published business phone</option>
-            <option value="document">Private business document (requested later)</option>
-            <option value="other">Other</option>
+            <option value="business_email">Correo oficial del negocio</option>
+            <option value="website">Web del productor</option>
+            <option value="phone">Teléfono público del negocio</option>
+            <option value="document">Documento privado del negocio (se solicitará después)</option>
+            <option value="other">Otro</option>
           </select>
         </label>
         <label className="account-field">
-          <span>Business contact email</span>
+          <span>Correo de contacto del negocio</span>
           <input
             type="email"
             name="contactEmail"
@@ -159,21 +157,21 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
             defaultValue={account.email ?? ""}
             autoComplete="email"
           />
-          <small>Use an address connected to the producer when possible.</small>
+          <small>Utiliza una dirección vinculada al productor siempre que sea posible.</small>
         </label>
         <label className="account-field">
-          <span>How can we verify your relationship?</span>
+          <span>¿Cómo podemos verificar tu relación con el productor?</span>
           <textarea
             name="proof"
             required
             minLength={20}
             maxLength={4_000}
             rows={7}
-            placeholder="Explain your role and point to public contact details or a safe way for staff to verify it."
+            placeholder="Explica tu función e indica datos de contacto públicos o una forma segura de verificarla."
           />
         </label>
         <button type="submit" className="account-button">
-          Submit claim for review
+          Enviar solicitud para revisión
         </button>
       </form>
     </div>

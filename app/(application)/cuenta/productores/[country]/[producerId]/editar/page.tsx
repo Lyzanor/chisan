@@ -49,7 +49,7 @@ import { getProducerEditorLabels } from "@/lib/i18n/producer-editor";
 import { isProfileQrEnabled } from "@/lib/profile-qr";
 
 export const metadata: Metadata = {
-  title: "Edit producer profile",
+  title: "Editar perfil del productor",
   robots: { index: false, follow: false },
 };
 
@@ -75,16 +75,15 @@ function ProducerQrSettings({
 }) {
   return (
     <section className="account-callout account-form-section--premium">
-      <strong>Producer QR</strong>
+      <strong>QR del productor</strong>
       <p>
-        The producer QR is optional. It appears publicly only after the verified owner enables
-        it here, and only while the expanded-profile entitlement remains active.
+        El QR del productor es opcional. Solo aparece públicamente cuando el titular verificado lo activa aquí y mientras su acceso al perfil ampliado siga activo.
       </p>
       <form action={updateProducerProfileQrAction} className="account-form">
         <input type="hidden" name="country" value={country} />
         <input type="hidden" name="producerId" value={producerId} />
         <label className="account-field">
-          <span>QR label</span>
+          <span>Etiqueta QR</span>
           <span>
             <input
               type="checkbox"
@@ -92,11 +91,11 @@ function ProducerQrSettings({
               value="yes"
               defaultChecked={enabled}
             />{" "}
-            Show and enable the downloadable QR label
+            Mostrar y permitir descargar la etiqueta QR
           </span>
         </label>
         <button type="submit" className="account-button">
-          Save QR preference
+          Guardar preferencia del QR
         </button>
       </form>
       {enabled ? (
@@ -228,10 +227,9 @@ export default async function EditProducerPage({
         <AccountMessage params={query} />
         <h2>{producer.name}</h2>
         <div className="account-callout">
-          <strong>Profile change submissions are temporarily paused.</strong>
+          <strong>El envío de cambios de perfil está temporalmente pausado.</strong>
           <p>
-            Chisan is completing catalog maintenance. Existing requests remain available to
-            reviewers, and this form will reopen after the migration is deployed.
+            Chisan está realizando tareas de mantenimiento del catálogo. Las solicitudes existentes siguen disponibles para revisión y este formulario volverá a abrirse al terminar.
           </p>
           <Link href={publicHref} className="account-button account-button--secondary">
             {labels.publicProfile}
@@ -365,25 +363,25 @@ export default async function EditProducerPage({
           {premiumActive
             ? labels.active
             : upgradePending
-              ? "Expanded profile payment is pending."
+              ? "El pago del perfil ampliado está pendiente."
               : upgradeNeedsReconciliation
-                ? "Expanded profile requires billing review."
+                ? "El perfil ampliado requiere una revisión de facturación."
                 : checkoutReady
-                  ? "Expanded profile available."
-                  : "Expanded profile purchases are temporarily unavailable."}
+                  ? "Perfil ampliado disponible."
+                  : "Las compras de perfiles ampliados no están disponibles temporalmente."}
         </strong>
         <p>
           {premiumActive
             ? labels.activeHelp
             : upgradePending
-              ? "Stripe has not yet confirmed the open Checkout request. Premium fields remain unavailable until the signed webhook succeeds."
+              ? "Stripe todavía no ha confirmado el pago pendiente. Los campos premium estarán disponibles cuando se confirme el pago."
               : upgradeNeedsReconciliation
-                ? "Do not start another payment. The verified owner should review the billing status and contact support if requested."
+                ? "No inicies otro pago. El titular verificado debe revisar el estado de facturación y contactar con soporte si se solicita."
                 : !checkoutReady
-                  ? "Standard profile corrections remain available. New expanded-profile purchases will return when billing is ready."
+                  ? "Las correcciones del perfil básico siguen disponibles. Las compras de perfiles ampliados volverán cuando se reactive la facturación."
                 : owner
-                  ? "You can unlock a video, guided visits, producer story, team introduction and highlighted links with one €49 payment."
-                  : "The verified owner can unlock a video, guided visits, producer story, team introduction and highlighted links with one €49 payment."}
+                  ? "Puedes añadir un vídeo, visitas guiadas, la historia del productor, una presentación del equipo y enlaces destacados con un pago único de 49 €."
+                  : "El titular verificado puede añadir un vídeo, visitas guiadas, la historia del productor, una presentación del equipo y enlaces destacados con un pago único de 49 €."}
         </p>
         {canOpenUpgrade ? (
           <Link
@@ -391,8 +389,8 @@ export default async function EditProducerPage({
             className="account-button account-button--secondary"
           >
             {premiumActive || upgradePending || upgradeNeedsReconciliation
-              ? "View upgrade status"
-              : "Expand profile"}
+              ? "Ver estado de la ampliación"
+              : "Ampliar perfil"}
           </Link>
         ) : null}
       </div>

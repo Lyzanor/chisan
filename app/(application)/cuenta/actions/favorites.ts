@@ -32,7 +32,7 @@ export async function setFavoritePublicVisibilityAction(
     redirectWithMessage(
       returnTo,
       "error",
-      firstValidationMessage(parsed.error),
+      firstValidationMessage(parsed.error, "es"),
     );
   }
 
@@ -44,7 +44,7 @@ export async function setFavoritePublicVisibilityAction(
     redirectWithMessage(
       returnTo,
       "error",
-      "That producer is no longer in the catalog.",
+      "Ese productor ya no está en el catálogo.",
     );
   }
 
@@ -79,7 +79,7 @@ export async function setFavoritePublicVisibilityAction(
     redirectWithMessage(
       returnTo,
       "error",
-      "Save the producer before sharing it.",
+      "Guarda el productor antes de compartirlo.",
     );
   }
 
@@ -90,9 +90,9 @@ export async function setFavoritePublicVisibilityAction(
     "notice",
     showOnPublicProfile
       ? isPublicProfileVisible(account.publicProfileVisibility)
-        ? "Producer added to your public profile."
-        : "Producer selected for your profile; the profile remains private."
-      : "Producer hidden from your public profile.",
+        ? "Productor añadido a tu perfil público."
+        : "Productor seleccionado para tu perfil; el perfil sigue siendo privado."
+      : "Productor oculto en tu perfil público.",
   );
 }
 
@@ -111,7 +111,7 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
     redirectWithMessage(
       returnTo,
       "error",
-      firstValidationMessage(parsed.error),
+      firstValidationMessage(parsed.error, "es"),
     );
   }
 
@@ -123,7 +123,7 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
     redirectWithMessage(
       returnTo,
       "error",
-      "That producer is no longer in the catalog.",
+      "Ese productor ya no está en el catálogo.",
     );
   }
 
@@ -172,6 +172,6 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
   redirectWithMessage(
     returnTo,
     "notice",
-    removed ? "Removed from favorites." : "Added to favorites.",
+    removed ? "Eliminado de favoritos." : "Añadido a favoritos.",
   );
 }

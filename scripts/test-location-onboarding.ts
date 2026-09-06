@@ -489,7 +489,7 @@ test("a saved area resumes on the home page while the profile owns forgetting it
   assert.match(savedAreaSection, /forgetSavedLocationArea/);
   assert.match(
     savedAreaSection,
-    /href=\{MANUAL_AREA_SELECTION_HREF\}[\s\S]*?onClick=\{forgetSavedLocationArea\}[\s\S]*?Choose a different area/,
+    /href=\{MANUAL_AREA_SELECTION_HREF\}[\s\S]*?onClick=\{forgetSavedLocationArea\}[\s\S]*?Elegir otra zona/,
   );
   assert.match(
     readFileSync("app/(application)/cuenta/perfil/page.tsx", "utf8"),

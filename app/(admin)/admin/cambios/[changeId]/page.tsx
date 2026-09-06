@@ -2,7 +2,7 @@ import { ProducerProductChanges } from "@/components/account/producer-product-ch
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { reviewProducerChangeAction } from "@/app/(application)/admin/actions";
+import { reviewProducerChangeAction } from "@/app/(admin)/admin/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { formatAdminDate } from "@/components/admin/producer-change-table";
 import { ProducerChangeStatusBadge } from "@/components/admin/producer-change-status";

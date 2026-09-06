@@ -80,13 +80,13 @@ export function buildAccountSelectionPage(
     kind: "account-selection",
     canonicalPath,
     eyebrow: profile.publicHandle
-      ? `Selection by @${profile.publicHandle}`
-      : "Producer selection",
+      ? `Selección de @${profile.publicHandle}`
+      : "Selección de productores",
     title: profile.selectionTitle || owner,
     description:
       profile.selectionDescription ||
-      `A selection of producers chosen by ${owner}.`,
-    emptyMessage: "This selection has no producers at the moment.",
+      `Una selección de productores elegidos por ${owner}.`,
+    emptyMessage: "Esta selección todavía no tiene productores.",
     items,
     initialFocusKeys: getProducerSelectionInitialFocusKeys(items),
   };

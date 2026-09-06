@@ -66,21 +66,21 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   const cards = [
     {
       href: "/cuenta/favoritos",
-      label: "Favorite producers",
+      label: "Productores favoritos",
       value: favoriteCount.value,
-      copy: "Keep a durable list even when a producer's public URL changes.",
+      copy: "Conserva tus favoritos aunque cambie la dirección del perfil de un productor.",
     },
     {
       href: "/cuenta/reclamaciones",
-      label: "Managed producers",
+      label: "Productores que gestionas",
       value: membershipCount.value,
-      copy: `${claimCount.value} claim${claimCount.value === 1 ? "" : "s"} awaiting review.`,
+      copy: `${claimCount.value} ${claimCount.value === 1 ? "solicitud pendiente" : "solicitudes pendientes"} de revisión.`,
     },
     {
       href: "/cuenta/cambios",
-      label: "Open profile changes",
+      label: "Cambios de perfil pendientes",
       value: changeCount.value,
-      copy: "Producer changes are reviewed before they reach the canonical CSV.",
+      copy: "Los cambios de los productores se revisan antes de publicarse en el catálogo.",
     },
   ];
 
@@ -88,7 +88,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
     <div className="account-content">
       <AccountMessage params={params} />
       <section aria-labelledby="account-overview-title">
-        <h2 id="account-overview-title">Overview</h2>
+        <h2 id="account-overview-title">Resumen</h2>
         <div className="account-stat-grid">
           {cards.map((card) => (
             <Link key={card.href} href={card.href} className="account-stat-card">
@@ -101,13 +101,12 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
       </section>
       {account.profileKind === "producer" && membershipCount.value === 0 ? (
         <section className="account-callout">
-          <h2>Claim your producer profile</h2>
+          <h2>Reclama el perfil de tu productor</h2>
           <p>
-            Open the producer’s public page and choose “Claim this producer”. Ownership is
-            checked manually before editing access is granted.
+            Abre el perfil público del productor y elige «Reclamar este productor». La titularidad se comprueba manualmente antes de conceder acceso de edición.
           </p>
           <Link href="/" className="account-button">
-            Find my producer
+            Buscar mi productor
           </Link>
         </section>
       ) : null}

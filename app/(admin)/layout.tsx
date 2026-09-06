@@ -8,13 +8,18 @@ import {
 } from "@/app/_components/site-root-shell";
 import { loadMessages } from "@/lib/i18n/messages";
 
-export const metadata: Metadata = SITE_METADATA;
+export const metadata: Metadata = {
+  ...SITE_METADATA,
+  title: { default: "Operations | Chisan", template: "%s | Chisan" },
+  description: "Internal catalog and account operations.",
+  robots: { index: false, follow: false },
+};
 export const viewport: Viewport = SITE_VIEWPORT;
 
-export default async function ApplicationRootLayout({
+export default async function AdminRootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
-  const locale = "es";
+  const locale = "en";
   const messages = await loadMessages(locale);
 
   return (

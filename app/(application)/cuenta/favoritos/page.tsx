@@ -47,10 +47,9 @@ export default async function FavoritesPage({
       <AccountMessage params={params} />
       <header className="account-section-heading">
         <div>
-          <h2>Favorite producers</h2>
+          <h2>Productores favoritos</h2>
           <p>
-            Keep favorites privately, then add individual producers to your
-            public selection.
+            Guarda favoritos de forma privada y añade los productores que elijas a tu selección pública.
           </p>
         </div>
         <div className="account-inline-actions">
@@ -58,31 +57,31 @@ export default async function FavoritesPage({
             href="/cuenta/seleccion"
             className="account-button account-button--secondary"
           >
-            Preview selection and QR
+            Vista previa de la selección y el QR
           </Link>
           {publicProfileVisible && account.publicHandle ? (
             <Link
               href={`/u/${account.publicHandle}`}
               className="account-button account-button--secondary"
             >
-              Open public selection
+              Abrir selección pública
             </Link>
           ) : (
             <Link
               href="/cuenta/perfil"
               className="account-button account-button--secondary"
             >
-              Set up selection
+              Configurar selección
             </Link>
           )}
           <Link href="/" className="account-button account-button--secondary">
-            Explore the catalog
+            Explorar el catálogo
           </Link>
         </div>
       </header>
 
       {saved.length === 0 ? (
-        <p className="account-empty">You have not saved any producers yet.</p>
+        <p className="account-empty">Todavía no has guardado ningún productor.</p>
       ) : (
         <ul className="account-record-list">
           {saved.map((favorite, index) => {
@@ -91,7 +90,7 @@ export default async function FavoritesPage({
               <li key={`${favorite.country}:${favorite.producerId}`}>
                 <div>
                   <strong>
-                    {producer?.name ?? "Producer no longer published"}
+                    {producer?.name ?? "Productor ya no publicado"}
                   </strong>
                   <p>
                     {producer
@@ -101,7 +100,7 @@ export default async function FavoritesPage({
                           presentation.locale,
                           presentation.messages,
                         )}`
-                      : `${favorite.country.toUpperCase()} · producer ${favorite.producerId}`}
+                      : `${favorite.country.toUpperCase()} · productor ${favorite.producerId}`}
                   </p>
                 </div>
                 <div className="account-inline-actions">
@@ -114,9 +113,9 @@ export default async function FavoritesPage({
                   >
                     {favorite.showOnPublicProfile
                       ? publicProfileVisible
-                        ? "Shown publicly"
-                        : "Selected; page private"
-                      : "Private"}
+                        ? "Visible públicamente"
+                        : "Seleccionado; página privada"
+                      : "Privado"}
                   </span>
                   {producer ? (
                     <Link
@@ -126,7 +125,7 @@ export default async function FavoritesPage({
                       )}
                       className="account-button account-button--secondary"
                     >
-                      Open profile
+                      Abrir perfil
                     </Link>
                   ) : null}
                   <form action={setFavoritePublicVisibilityAction}>
@@ -155,8 +154,8 @@ export default async function FavoritesPage({
                       className="account-button account-button--secondary"
                     >
                       {favorite.showOnPublicProfile
-                        ? "Remove from selection"
-                        : "Add to selection"}
+                        ? "Quitar de la selección"
+                        : "Añadir a la selección"}
                     </button>
                   </form>
                   <form action={toggleFavoriteAction}>
@@ -179,7 +178,7 @@ export default async function FavoritesPage({
                       type="submit"
                       className="account-button account-button--danger"
                     >
-                      Remove
+                      Quitar
                     </button>
                   </form>
                 </div>

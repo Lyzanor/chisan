@@ -8,8 +8,8 @@ import { SITE_NAME } from "@/lib/site";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Sign in",
-  description: `Sign in to your ${SITE_NAME} account.`,
+  title: "Iniciar sesión",
+  description: `Inicia sesión en tu cuenta de ${SITE_NAME}.`,
   robots: { index: false, follow: false },
 };
 
@@ -19,12 +19,11 @@ export default function SignInPage() {
       <main className="auth-page">
         <section className="auth-shell" aria-labelledby="account-auth-unavailable-title">
           <div className="auth-copy">
-          <h1 id="account-auth-unavailable-title">Sign-in is not configured</h1>
+          <h1 id="account-auth-unavailable-title">El acceso no está disponible</h1>
           <p>
-            Account access is not enabled in this environment. The producer catalog remains
-            available without signing in.
+            El acceso a cuentas no está habilitado. Puedes consultar el catálogo de productores sin iniciar sesión.
           </p>
-          <Link href="/" className="account-button account-button--secondary">Back to the catalog</Link>
+          <Link href="/" className="account-button account-button--secondary">Volver al catálogo</Link>
           </div>
         </section>
       </main>
@@ -35,9 +34,9 @@ export default function SignInPage() {
     <main className="auth-page">
       <section className="auth-shell">
         <div className="auth-copy">
-          <p className="catalog-kicker">{SITE_NAME} account</p>
-          <h1>Welcome back</h1>
-          <p>Sign in to manage favorites, ownership claims and producer profile changes.</p>
+          <p className="catalog-kicker">Cuenta de {SITE_NAME}</p>
+          <h1>Te damos la bienvenida</h1>
+          <p>Inicia sesión para gestionar favoritos, solicitudes de propiedad y cambios en los perfiles de productores.</p>
         </div>
         <div className="auth-widget">
           <SignIn
