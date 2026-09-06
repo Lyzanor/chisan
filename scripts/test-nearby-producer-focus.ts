@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
+import {
+  SIMILAR_PRODUCERS_MAX_DISTANCE_KM,
+  selectSimilarNearbyProducers,
+  type SimilarProducerCandidate,
+} from "../lib/catalog/similar-producers";
 import { getProducerDistanceMessages } from "../lib/i18n/producer-distance";
+import { getSimilarProducersMessages } from "../lib/i18n/similar-producers";
 import {
   NEARBY_PRODUCER_FALLBACK_RADIUS_KM,
   NEARBY_PRODUCER_FOCUS_LIMIT,
@@ -15,6 +21,24 @@ import {
 import { LOCATION_REQUEST_OPTIONS } from "../lib/location/location-onboarding";
 
 const SANTA_COLOMA = { latitude: 41.4511, longitude: 2.2081 };
+
+function producer(
+  producerId: number,
+  latitudeOffset: number,
+  categories: string[],
+): SimilarProducerCandidate {
+  return {
+    producerId,
+    slug: `producer-${producerId}`,
+    name: `Producer ${producerId}`,
+    city: "Santa Coloma",
+    area: "barcelona",
+    categories,
+    imageSrc: "/productores/generica.webp",
+    latitude: SANTA_COLOMA.latitude + latitudeOffset,
+    longitude: SANTA_COLOMA.longitude,
+  };
+}
 
 function point(key: string, latitudeOffset: number, longitudeOffset = 0) {
   return {
@@ -135,6 +159,60 @@ test("producer distance copy is localized for Spain and has a safe fallback", ()
     "Aproximadament a {distance} km en línia recta.",
   );
   assert.equal(getProducerDistanceMessages("zu").title, "Distance from me");
+});
+
+test("similar producers share a category and are ordered by distance", () => {
+  const current = producer(1, 0, ["quesos", "lacteos"]);
+  const selected = selectSimilarNearbyProducers(current, [
+    producer(4, 0.03, ["quesos"]),
+    producer(2, 0.01, ["lacteos"]),
+    producer(3, 0.02, ["vino"]),
+    current,
+  ]);
+
+  assert.deepEqual(
+    selected.map(({ producerId, sharedCategory }) => ({ producerId, sharedCategory })),
+    [
+      { producerId: 2, sharedCategory: "lacteos" },
+      { producerId: 4, sharedCategory: "quesos" },
+    ],
+  );
+});
+
+test("similar producers are capped at three and exclude unsupported distances", () => {
+  const current = producer(1, 0, ["quesos"]);
+  const selected = selectSimilarNearbyProducers(current, [
+    producer(5, 0.04, ["quesos"]),
+    producer(4, 0.03, ["quesos"]),
+    producer(3, 0.02, ["quesos"]),
+    producer(2, 0.01, ["quesos"]),
+    producer(6, 1, ["quesos"]),
+  ]);
+
+  assert.deepEqual(selected.map(({ producerId }) => producerId), [2, 3, 4]);
+  assert.ok(
+    selected.every(
+      ({ distanceKm }) => distanceKm <= SIMILAR_PRODUCERS_MAX_DISTANCE_KM,
+    ),
+  );
+  assert.deepEqual(
+    selectSimilarNearbyProducers(
+      { ...current, latitude: null },
+      [producer(2, 0.01, ["quesos"])],
+    ),
+    [],
+  );
+});
+
+test("similar-producer copy keeps the requested Spanish heading", () => {
+  assert.equal(
+    getSimilarProducersMessages("es").title,
+    "Productores similares cerca",
+  );
+  assert.equal(
+    getSimilarProducersMessages("zu").title,
+    "Similar producers nearby",
+  );
 });
 
 test("radius filtering includes its boundary and excludes missing or invalid points", async () => {

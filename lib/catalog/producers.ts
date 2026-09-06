@@ -483,6 +483,18 @@ export async function findProducerById(
   return index.get(producerId) ?? null;
 }
 
+export async function listCountryProducers(
+  country: string,
+): Promise<readonly LocatedProducerCsvRow[]> {
+  const catalogCountry = findCountry(country);
+  if (!catalogCountry) {
+    return [];
+  }
+
+  const index = await loadCountryProducerIndex(catalogCountry);
+  return [...index.values()];
+}
+
 export async function findProducersByIds(
   identities: readonly ProducerIdentity[],
   locale?: Locale,

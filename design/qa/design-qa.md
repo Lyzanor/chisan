@@ -904,6 +904,22 @@ using the production server for behavior tests to preserve the other dev session
   `scratch/product-commerce/editor-desktop.png`. Temporary QA routes, fixture
   database and server configuration are excluded from the release.
 
+## 2026-09-06 — Similar nearby producers on producer profiles
+
+- Added a final profile section headed “Productores similares cerca”, with up
+  to three linked producer cards ordered by straight-line distance among
+  published producers sharing a canonical category.
+- The card exposes the reviewed image, name, municipality, shared category and
+  distance. It uses three columns at wide widths and one column at narrow
+  widths; unsupported coordinates or matches beyond 100 km are omitted rather
+  than represented as nearby.
+- Browser QA on `/es/barcelona/abadal-avinyo` at 390×844 and 1440×1000 showed
+  exactly three cards, no horizontal overflow, one 324px mobile column and
+  three equal 353px desktop columns. The first recommendation navigated to the
+  expected canonical Celler Sanmartí profile. No Next.js error overlay was
+  present; existing local account/content fallbacks and WebMCP serialization
+  warnings remained unrelated to this section.
+
 ## 2026-09-06 — Click-to-load producer video
 
 - Replaced the expanded profile's external-only YouTube link with a responsive

@@ -221,6 +221,13 @@ omitted; visibility continues to depend on the existing entitlement loader.
 Account and ownership actions remain after the location and factual details,
 before related discovery.
 
+The profile ends with up to three nearby producers that share a canonical
+category. Each recommendation is one linked card with the reviewed image,
+producer name, municipality, shared category and straight-line distance. The
+cards collapse to one column on narrow screens. Missing coordinates or nearby
+matches omit unsupported cards; the layout never invents proximity to fill a
+row.
+
 ## Brand
 
 The lower-case wordmark **chisan** is the logo, shipped as a raster. The compact

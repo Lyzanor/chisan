@@ -17,12 +17,14 @@ import { ProducersMap } from "@/components/map/producers-map";
 import { ProducerDistance } from "@/components/producer-distance";
 import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
 import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
+import { SimilarProducers } from "@/components/similar-producers";
 import { CATALOG_API_PATH } from "@/lib/agents/catalog-schema";
 import {
   absoluteSiteUrl,
   buildCatalogAlternateSet,
   buildLocalizedMetadata,
 } from "@/lib/catalog-metadata";
+import { selectSimilarNearbyProducers } from "@/lib/catalog/similar-producers";
 import {
   buildCatalogHref,
   buildProducerHref,
@@ -36,6 +38,7 @@ import {
 } from "@/lib/catalog-routing";
 import {
   findProducerBySlug,
+  listCountryProducers,
   listIndexableProducerLocales,
   getLocalizedCatalogLabel,
   toProducerMapPoints,
@@ -48,11 +51,13 @@ import { buildCatalogScope } from "@/lib/i18n/catalog-scope";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 import { getProducerActionLabels } from "@/lib/i18n/producer-action-labels";
 import { getProducerDistanceMessages } from "@/lib/i18n/producer-distance";
+import { getSimilarProducersMessages } from "@/lib/i18n/similar-producers";
 import {
   formatProducerFieldValue,
   presentPublicProducerFields,
 } from "@/lib/i18n/producer-fields";
 import { getCategoryIcon } from "@/lib/get-category-icon";
+import { formatProducerDistanceKm } from "@/lib/location/producer-distance";
 import {
   buildProducerStructuredData,
   serializeStructuredData,
@@ -169,9 +174,10 @@ export default async function ProducerPage({
 
   const { country, area, areaOption, scope, isProducerRouteAlias } = resolved;
   const locale = scope.locale;
-  const [producer, messages] = await Promise.all([
+  const [producer, messages, countryProducers] = await Promise.all([
     findProducerBySlug(resolved.producer.slug, country.slug, area, locale),
     loadMessages(locale),
+    listCountryProducers(country.slug),
   ]);
 
   if (!producer) {
@@ -246,6 +252,7 @@ export default async function ProducerPage({
   const relatedAreaHref = buildCatalogHref({ scope, area });
   const actionLabels = getProducerActionLabels(locale);
   const distanceMessages = getProducerDistanceMessages(locale);
+  const similarMessages = getSimilarProducersMessages(locale);
   const contactMessages = getProducerContactMessages(locale);
   const profileQrPath = buildProducerHref(producer, {
     scope: buildCatalogScope(country),
@@ -301,6 +308,30 @@ export default async function ProducerPage({
     categories: localizedCategories,
     featuredProducts,
   });
+  const publishedAreas = new Set(
+    country.regions.flatMap((region) =>
+      region.areas
+        .filter((candidateArea) => candidateArea.publishedLocales.includes(locale))
+        .map((candidateArea) => candidateArea.slug),
+    ),
+  );
+  const similarProducers = selectSimilarNearbyProducers(
+    { ...producer, area },
+    countryProducers.filter((candidate) => publishedAreas.has(candidate.area)),
+  ).map((candidate) => ({
+    producerId: candidate.producerId,
+    href: buildProducerHref(candidate, { scope, area: candidate.area }),
+    name: candidate.name,
+    city: candidate.city,
+    category: getCategoryLabel(candidate.sharedCategory, locale),
+    distance: formatMessage(similarMessages.distance, {
+      distance: formatProducerDistanceKm(candidate.distanceKm, locale),
+    }),
+    imageSrc: candidate.imageSrc,
+    accessibleLabel: formatMessage(similarMessages.openProfile, {
+      producer: candidate.name,
+    }),
+  }));
 
   return (
     <main className="detail-page">
@@ -574,6 +605,11 @@ export default async function ProducerPage({
             </Link>
           </div>
         </section>
+
+        <SimilarProducers
+          title={similarMessages.title}
+          producers={similarProducers}
+        />
       </article>
     </main>
   );

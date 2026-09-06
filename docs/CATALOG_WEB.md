@@ -71,7 +71,11 @@ composer is available only for an existing public `correo`. It prepares a
 `mailto:` message in the visitor's email application, explicitly leaving review
 and sending to that application. It neither stores messages nor adds a Chisan
 inbox or delivery promise. The public email remains an ordinary accessible
-contact link. Layout and motion are owned by [design](../design/README.md).
+contact link. At the end of the profile, nearby discovery may show up to three
+other published producers within 100 km that share at least one canonical
+category. It uses reviewed producer coordinates, orders by straight-line
+distance and omits candidates without the required evidence rather than
+inferring proximity. Layout and motion are owned by [design](../design/README.md).
 
 ### Public graph and factual mapping
 
