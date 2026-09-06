@@ -34,3 +34,23 @@ export function youtubeVideoId(value: string): string | null {
 export function isYouTubeVideoUrl(value: string): boolean {
   return youtubeVideoId(value) !== null;
 }
+
+/** Build an embed from the reviewed video ID only, discarding source query data. */
+export function youtubePrivacyEmbedUrl(value: string): string | null {
+  const videoId = youtubeVideoId(value);
+  if (!videoId) return null;
+  const url = new URL(`https://www.youtube-nocookie.com/embed/${videoId}`);
+  url.searchParams.set("autoplay", "1");
+  url.searchParams.set("playsinline", "1");
+  return url.toString();
+}
+
+export function youtubeThumbnailUrl(
+  value: string,
+  quality: "maxresdefault" | "hqdefault" = "maxresdefault",
+): string | null {
+  const videoId = youtubeVideoId(value);
+  return videoId
+    ? `https://i.ytimg.com/vi/${videoId}/${quality}.jpg`
+    : null;
+}

@@ -1,7 +1,11 @@
 import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 import { hasProducerContent } from "@/lib/catalog/content-schema";
-import { loadPublicExpandedContent, publicHighlightedLinks } from "@/lib/catalog/public-expanded";
+import {
+  loadPublicExpandedContent,
+  publicHighlightedLinks,
+} from "@/lib/catalog/public-expanded";
 import { ProducerContent } from "@/components/producer-content";
+import { YoutubePlayer } from "@/components/youtube-player";
 import { buildProductStructuredData } from "@/lib/catalog/product-structured-data";
 import { serializeStructuredData } from "@/lib/producer-structured-data";
 import type { Locale } from "@/lib/i18n/locales";
@@ -50,6 +54,7 @@ export async function ExpandedProducerProfile({
   const structuredData = buildProductStructuredData(content, canonicalUrl);
   const guidedVisits = fieldValue(fields, "visitas guiadas");
   const video = fieldValue(fields, "video");
+  const videoLabel = formatProducerFieldLabel("video", locale, messages);
   const communityMessage = fieldValue(fields, "mensaje a la comunidad");
   const communityMessageLocale = fieldValue(fields, "mensaje_comunidad_locale");
   const behindProducer = fieldValue(fields, "quien hay detras");
@@ -57,10 +62,15 @@ export async function ExpandedProducerProfile({
   const history = fieldValue(fields, "historia");
   const historyLocale = fieldValue(fields, "historia_locale");
   const lastApprovedChange = fieldValue(fields, "fecha ultimo cambio");
-  const highlightedLinks = publicHighlightedLinks(fields, content.links).map(({ key, href }) => ({
-    href,
-    label: key === "enlace destacado 1" ? messages.fieldLabels.highlightedLink1 : messages.fieldLabels.highlightedLink2,
-  }));
+  const highlightedLinks = publicHighlightedLinks(fields, content.links).map(
+    ({ key, href }) => ({
+      href,
+      label:
+        key === "enlace destacado 1"
+          ? messages.fieldLabels.highlightedLink1
+          : messages.fieldLabels.highlightedLink2,
+    }),
+  );
   if (
     !video &&
     !guidedVisits &&
@@ -81,42 +91,61 @@ export async function ExpandedProducerProfile({
       aria-labelledby="detail-expanded-title"
     >
       <h2 id="detail-expanded-title">{messages.producer.expandedProfile}</h2>
-      {structuredData ? <script id="producer-products-structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} /> : null}
+      {structuredData ? (
+        <script
+          id="producer-products-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeStructuredData(structuredData),
+          }}
+        />
+      ) : null}
       {hasProducerContent(content) ? (
-        <nav className="detail-expanded-profile__nav" aria-label={messages.producer.expandedProfile}>
-          {content.products.length ? <a href="#producer-content-products">{contentLabels.products}</a> : null}
-          {standaloneProducerGallery(content).length ? <a href="#producer-content-gallery">{contentLabels.gallery}</a> : null}
-          {content.links.length ? <a href="#producer-content-links">{contentLabels.links}</a> : null}
+        <nav
+          className="detail-expanded-profile__nav"
+          aria-label={messages.producer.expandedProfile}
+        >
+          {content.products.length ? (
+            <a href="#producer-content-products">{contentLabels.products}</a>
+          ) : null}
+          {standaloneProducerGallery(content).length ? (
+            <a href="#producer-content-gallery">{contentLabels.gallery}</a>
+          ) : null}
+          {content.links.length ? (
+            <a href="#producer-content-links">{contentLabels.links}</a>
+          ) : null}
         </nav>
       ) : null}
       <ProducerContent content={content} locale={locale} />
       {video ? (
-        <a href={video} target="_blank" rel="noreferrer">
-          {formatProducerFieldLabel("video", locale, messages)} · YouTube
-        </a>
+        <YoutubePlayer videoUrl={video} label={videoLabel} locale={locale} />
       ) : null}
-      {behindProducer || history || communityMessage ? <div className="detail-expanded-profile__stories">
-      {behindProducer ? (
-        <div className="detail-expanded-profile__message">
-          <h3>
-            {formatProducerFieldLabel("quien hay detras", locale, messages)}
-          </h3>
-          <p lang={behindProducerLocale || undefined}>{behindProducer}</p>
+      {behindProducer || history || communityMessage ? (
+        <div className="detail-expanded-profile__stories">
+          {behindProducer ? (
+            <div className="detail-expanded-profile__message">
+              <h3>
+                {formatProducerFieldLabel("quien hay detras", locale, messages)}
+              </h3>
+              <p lang={behindProducerLocale || undefined}>{behindProducer}</p>
+            </div>
+          ) : null}
+          {history ? (
+            <div className="detail-expanded-profile__message">
+              <h3>{formatProducerFieldLabel("historia", locale, messages)}</h3>
+              <p lang={historyLocale || undefined}>{history}</p>
+            </div>
+          ) : null}
+          {communityMessage ? (
+            <div className="detail-expanded-profile__message">
+              <h3>{messages.fieldLabels.communityMessage}</h3>
+              <p lang={communityMessageLocale || undefined}>
+                {communityMessage}
+              </p>
+            </div>
+          ) : null}
         </div>
       ) : null}
-      {history ? (
-        <div className="detail-expanded-profile__message">
-          <h3>{formatProducerFieldLabel("historia", locale, messages)}</h3>
-          <p lang={historyLocale || undefined}>{history}</p>
-        </div>
-      ) : null}
-      {communityMessage ? (
-        <div className="detail-expanded-profile__message">
-          <h3>{messages.fieldLabels.communityMessage}</h3>
-          <p lang={communityMessageLocale || undefined}>{communityMessage}</p>
-        </div>
-      ) : null}
-      </div> : null}
       {guidedVisits ? (
         <p>
           <strong>{messages.fieldLabels.guidedVisits}:</strong>{" "}

@@ -903,3 +903,25 @@ using the production server for behavior tests to preserve the other dev session
   `scratch/product-commerce/editor-mobile.png`, and
   `scratch/product-commerce/editor-desktop.png`. Temporary QA routes, fixture
   database and server configuration are excluded from the release.
+
+## 2026-09-06 — Click-to-load producer video
+
+- Replaced the expanded profile's external-only YouTube link with a responsive
+  integrated player. The initial state shows the video's official YouTube
+  thumbnail beneath a restrained ink overlay, a native button, visible focus
+  and concise disclosure that the thumbnail comes from YouTube.
+- The profile loads that thumbnail from `i.ytimg.com` but receives no YouTube
+  iframe on initial render. One explicit click
+  creates a privacy-enhanced `youtube-nocookie.com` iframe from the validated
+  11-character video ID and starts playback in place. Source tracking and time
+  query parameters are not forwarded. A 44 px direct YouTube link remains as a
+  fallback for JavaScript, embedding or player failures.
+- Verified in the in-app Chromium browser at 1440 × 1000 and 390 × 844. The
+  official 1280 × 720 thumbnail loaded before interaction. The desktop player
+  measured 880 × 495; mobile measured 310 × 200, satisfying the
+  embedded-player minimum while keeping document width equal to 390 px. Both
+  sizes loaded the real test video, exposed a descriptive iframe title and
+  fullscreen permission, and produced no console errors.
+- The temporary `/youtube-qa` route and generated test layout were removed after
+  verification. The production component remains inside the existing premium
+  visibility gate; profiles without a reviewed video render no player or gap.

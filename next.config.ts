@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
     // Producer assets are already checked and stored in deployable formats.
     // Serving them directly avoids spending Vercel image transformations.
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/vi/**",
+      },
+    ],
   },
   rewrites: () => ({
     beforeFiles: buildCatalogNormalizationRewritesFromManifests(),

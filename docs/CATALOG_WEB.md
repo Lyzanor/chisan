@@ -156,8 +156,15 @@ it is public, visible on the same response, reviewed, normalized for its schema
 type, localized under the preceding contract and covered by tests. Entitlement
 activation alone never makes a field eligible.
 
-`video`, `quien hay detras`, `historia` and `fecha ultimo cambio` currently
-render only in the visible expanded-profile HTML. They have no JSON-LD mapping;
+`video` renders as a responsive click-to-load YouTube player with its official
+thumbnail and a direct-link fallback. Opening the profile loads the thumbnail
+from `i.ytimg.com`; the iframe uses the privacy-enhanced host and exists only
+after an explicit play action. The reviewed URL remains the API value; the
+client derives the thumbnail and embed from its video ID without retaining
+query parameters. `video`, `quien hay detras`, `historia` and `fecha ultimo
+cambio` have no JSON-LD mapping because the catalog does not own the title and
+publication metadata needed for a complete video
+record. The latter three render only in the visible expanded-profile HTML;
 the approval date is workflow context, not `dateModified` for the whole page or
 an ownership/verification signal.
 
