@@ -968,5 +968,19 @@ using the production server for behavior tests to preserve the other dev session
   instance with sign-up/sign-in and email-subaddress protection. Both `/registro`
   and `/acceso` show Google alongside email. Clicking Google opens the account
   selector for `chisan.app` with the configured client and exact callback, without
-  an OAuth error. The final account choice/consent and first-photo import remain
-  a separate check; migration `0013` and the photo/roster code are not deployed.
+  an OAuth error. This was the pre-deployment authentication check; importing a
+  real Google photo remains unverified.
+- Production follow-up: a seven-day Neon backup and successful transactional
+  rehearsal/rollback preceded migration `0013`. The exact committed DDL was
+  applied through the authenticated SQL editor with an advisory lock and
+  canonical registry fingerprint checks, since direct migration credentials
+  were unavailable locally. Existing account/favorite counts were preserved.
+  This additive empty-table release used the database snapshot; it did not
+  export Clerk identities or introduce a global account-write outage.
+- Release `0c0cf476` passed the full `verify:ai` gate and the public/disabled-account
+  Preview checks. Its Git-triggered production deployment reached READY. The
+  authenticated runtime reports 14/14 migrations and healthy permissions. The
+  profile photo control and unchecked attribution preference render, and the
+  real producer roster expands to its accurate empty opt-in state without
+  console errors. The production account retained its initials; no real user
+  photo, favorite or visibility preference was changed for testing.
