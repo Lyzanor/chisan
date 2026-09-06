@@ -1,3 +1,5 @@
+import { PRODUCT_FACT_FIELDS } from "./product-commerce";
+
 import type { ProducerContent } from "./content-schema";
 
 type Product = ProducerContent["products"][number];
@@ -17,7 +19,7 @@ export function productChanges(before: Product[], after: Product[]) {
       previous &&
       requested &&
       (
-        ["name", "description", "locale", "media_ids", "link_ids"] as const
+        [...PRODUCT_FACT_FIELDS, "updated_on"] as const
       ).some(
         (key) =>
           JSON.stringify(previous[key]) !== JSON.stringify(requested[key]),

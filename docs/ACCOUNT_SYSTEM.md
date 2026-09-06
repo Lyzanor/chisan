@@ -257,6 +257,12 @@ the two highlighted links. `fecha ultimo cambio` is displayed with that block
 but is not editable: the materializer derives its UTC `YYYY-MM-DD` value from
 the request's `reviewed_at` timestamp after approval.
 
+The premium product editor also accepts an optional external purchase URL and
+EUR price. The server sets product dates only when actual product changes are
+submitted; drafts preserve published dates. All three values follow the same
+reviewed JSON proposal and Git publication flow, without CSV columns or a new
+database authority.
+
 Products, gallery items and named links use `docs/PRODUCER_CONTENT.md` under the
 same entitlement. The account editor accepts a dedicated typed product/gallery
 proposal beside the base-field patch. Private, normalized image uploads are

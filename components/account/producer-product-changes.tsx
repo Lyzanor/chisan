@@ -1,3 +1,5 @@
+import { formatProductPrice, getProductCommerceLabels } from "@/lib/i18n/product-commerce";
+
 import { ProducerMediaChanges } from "./producer-media-changes";
 import type { ProducerContentChange } from "@/lib/accounts/producer-content-change";
 import { productChanges } from "@/lib/catalog/product-diff";
@@ -12,6 +14,7 @@ export function ProducerProductChanges({
   locale?: Locale;
 }) {
   const labels = getProducerEditorLabels(locale);
+  const commerce = getProductCommerceLabels(locale);
   const words =
     locale === "es"
       ? {
@@ -63,6 +66,9 @@ export function ProducerProductChanges({
                         <>
                           <strong lang={product.locale}>{product.name}</strong>
                           <p lang={product.locale}>{product.description}</p>
+                          <p>{commerce.price}: {product.price ? formatProductPrice(product.price, locale) : commerce.empty}</p>
+                          <p>{commerce.purchaseUrl}: {product.purchase_url ? <a href={product.purchase_url} target="_blank" rel="noopener noreferrer">{product.purchase_url}</a> : commerce.empty}</p>
+                          <p>{commerce.date}: {product.updated_on ? <time dateTime={product.updated_on}>{product.updated_on}</time> : commerce.pendingDate}</p>
                           <small>
                             {labels.language}: {product.locale} ·{" "}
                             {words.position}:{" "}

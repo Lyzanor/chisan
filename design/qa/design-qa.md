@@ -870,3 +870,36 @@ using the production server for behavior tests to preserve the other dev session
   ownership validation in PostgreSQL, and image bytes bound to the publication
   commit. A real Neon backup branch passed the additive migration rehearsal
   inside a rolled-back transaction.
+
+
+## 2026-09-06 — Product purchase details and update dates
+
+- Added optional shop URL and EUR price to the premium product editor, with
+  decimal keyboard input, comma normalization, explicit field labels and a
+  server-owned product date. Public cards show the price, relative update label,
+  shop hostname and an external-link button; exact dates remain in semantic
+  `time` elements with an accessible label and tooltip.
+- The requested Spanish labels are “Actualizado esta semana”, “Actualizado este
+  mes” and “Actualizado en el último año”, followed by exact dates for older
+  records. Week/month boundaries use UTC, with Monday as the week's start.
+- Chrome checks at 390 × 844 and 1440 × 1000 covered public cards and the real
+  editor components using an isolated local PostgreSQL-compatible fixture. No
+  horizontal overflow; shop buttons were 72 px high at the narrow width and
+  retained visible keyboard focus. Catalan labels and source-language fallback
+  were checked on the narrow public view.
+- Browser flow: enter `3,85`, normalize to `3.85`, reject a non-HTTP(S) URL with a
+  specific product/field message while preserving input, correct and save,
+  reload the draft, remove optional price/URL, inspect preview, then submit and
+  inspect before/after review. A fresh editor load had no console errors. An
+  earlier development hydration warning came from toggling the native preview
+  disclosure before hydration during rapid reload; fresh-load verification did
+  not reproduce it. Fixture-only image-LCP advice does not apply to below-fold
+  profile product images.
+- Chisan ES12439 has three clearly fictional prices (3.80, 6.50, 9.90 EUR), dated
+  2026-09-06, with example buttons linking to its own profile. Clicking a demo
+  button opened a separate tab. The public API marks the demo explicitly, and
+  its JSON-LD contains no offers. The real account's pending proposal was kept.
+- Local screenshots: `scratch/product-commerce/public-mobile.png`,
+  `scratch/product-commerce/editor-mobile.png`, and
+  `scratch/product-commerce/editor-desktop.png`. Temporary QA routes, fixture
+  database and server configuration are excluded from the release.

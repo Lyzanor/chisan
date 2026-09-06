@@ -55,6 +55,9 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
       {
         id: "workflow-test",
         name: "Queso de prueba",
+        price: { amount: "8.75", currency: "EUR" },
+        purchase_url: "https://chisan.app/es/barcelona/chisan",
+        updated_on: "2099-01-01",
         description: "Producto ficticio para las pruebas aisladas.",
         locale: "es",
         media_ids: [],
@@ -139,10 +142,16 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
       "invalid input survives the response",
     );
     const staleContent = form();
+    const invalidShop = form();
+    invalidShop.set("products", JSON.stringify([{ ...products[0], purchase_url: "javascript:alert(1)" }]));
+    const shopResult = await save(empty, invalidShop);
+    assert.match(shopResult.fieldErrors.products!, /Producto 1: el enlace de compra/);
+    assert.equal(shopResult.values.products, invalidShop.get("products"), "shop errors preserve the complete product input");
     staleContent.set("baseContentHash", "a".repeat(64));
     assert.equal((await save(empty, staleContent)).reloadRequired, true);
     const first = await save(empty, form());
     assert.ok(first.draftId, first.formError ?? "draft id missing");
+    assert.equal(JSON.parse(first.values.products!).at(-1).updated_on, undefined, "draft strips forged dates");
     const second = await save(first, form(first));
     assert.equal(second.draftVersion, first.draftVersion! + 1);
     assert.equal(
@@ -166,6 +175,9 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
       .from(schema.producerChangeRequests)
       .where(eq(schema.producerChangeRequests.id, first.draftId));
     assert.equal(submitted.status, "submitted");
+    assert.equal(submitted.contentChange?.products.at(-1)?.updated_on, new Date().toISOString().slice(0, 10));
+    assert.deepEqual(submitted.contentChange?.products.at(-1)?.price, { amount: "8.75", currency: "EUR" });
+    assert.equal(submitted.contentChange?.products.at(-1)?.purchase_url, "https://chisan.app/es/barcelona/chisan");
     assert.deepEqual(submitted.patch, {});
     assert.equal(
       submitted.contentChange?.products.at(-1)?.name,
@@ -205,6 +217,7 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
       .from(schema.producerChangeRequests)
       .where(eq(schema.producerChangeRequests.id, submitted.id));
     assert.equal(approved.status, "approved");
+    assert.deepEqual(approved.contentChange, submitted.contentChange, "review freezes commerce and dates with the rest of the proposal");
     const expected = approved.contentChange!.requestedHash;
     const execution = "00000000-0000-4000-8000-000000012439";
     await pg.exec(

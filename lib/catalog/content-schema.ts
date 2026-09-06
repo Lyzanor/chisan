@@ -1,6 +1,10 @@
 import { createHash } from "node:crypto";
 import { z } from "zod";
 
+import { publicContentUrl } from "./public-content-url";
+export { publicContentUrl } from "./public-content-url";
+import { productPriceSchema, productUpdateDateSchema } from "./product-commerce";
+
 import { DESCRIPTION_SOURCE_LOCALES } from "../i18n/locale-registry";
 
 // Resource bounds, not editorial quotas. Adjust here when a real use case needs it.
@@ -30,21 +34,7 @@ const title = text(160).refine(
   "A public label is required.",
 );
 const locale = z.enum(DESCRIPTION_SOURCE_LOCALES);
-export const publicContentUrl = z
-  .string()
-  .max(2048)
-  .refine((value) => {
-    try {
-      const url = new URL(value);
-      return (
-        ["https:", "http:"].includes(url.protocol) &&
-        !url.username &&
-        !url.password
-      );
-    } catch {
-      return false;
-    }
-  }, "Use a complete public HTTP(S) URL without credentials.");
+
 
 export const contentProductSchema = z.strictObject({
   id,
@@ -53,6 +43,9 @@ export const contentProductSchema = z.strictObject({
   locale,
   media_ids: z.array(id).max(20).default([]),
   link_ids: z.array(id).max(20).default([]),
+  purchase_url: publicContentUrl.optional().describe("Reviewed product page in an external shop. Follow it to purchase; Chisan does not process orders."),
+  price: productPriceSchema.optional(),
+  updated_on: productUpdateDateSchema.optional(),
 });
 export const contentMediaSchema = z.strictObject({
   id,

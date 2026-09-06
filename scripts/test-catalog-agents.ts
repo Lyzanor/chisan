@@ -198,6 +198,16 @@ test("explicit output projection excludes private, unknown, premium and generic-
   });
   const expanded = publicExpanded(sample.fields, content)!;
   assert.equal(expanded.products[0].id, "cheese");
+  assert.equal(expanded.is_demo, false);
+  content.producer_id = 12439;
+  content.products[0].price = { amount: "3.50", currency: "EUR" };
+  content.products[0].purchase_url = "https://chisan.app/es/barcelona/chisan";
+  content.products[0].updated_on = "2026-09-06";
+  const commerce = publicExpanded(sample.fields, content)!;
+  assert.equal(commerce.is_demo, true);
+  assert.deepEqual(commerce.products[0].price, content.products[0].price);
+  assert.equal(commerce.products[0].purchase_url, content.products[0].purchase_url);
+  assert.equal(commerce.products[0].updated_on, "2026-09-06");
   assert.equal("translations" in expanded, false);
 });
 

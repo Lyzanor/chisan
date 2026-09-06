@@ -1,5 +1,9 @@
 "use client";
 
+import { ProductCommerceFields } from "./product-commerce-fields";
+import { ProductPurchaseDetails } from "../product-purchase-details";
+import { isDemoProducer, normalizeProductPriceInput } from "@/lib/catalog/product-commerce";
+
 import Image from "next/image";
 import { ProducerMediaEditor } from "./producer-media-editor";
 import { preparedMediaSrc, privateMediaSrc, type PreparedMediaReference } from "@/lib/accounts/producer-media-policy";
@@ -79,7 +83,7 @@ export function ProducerProductsEditor({
       <legend>{labels.products}</legend>
       <p>{labels.productsHelp}</p>
       <input type="hidden" name="baseContentHash" value={content.baseHash} />
-      <input type="hidden" name="products" value={JSON.stringify(products)} />
+      <input type="hidden" name="products" value={JSON.stringify(products.map(p => ({ ...p, ...(p.price ? { price: { ...p.price, amount: normalizeProductPriceInput(p.price.amount) } } : {}), ...(p.purchase_url ? { purchase_url: p.purchase_url.trim() } : {}) })))} />
       <input type="hidden" name="gallery" value={JSON.stringify(gallery)} />
       <input type="hidden" name="uploads" value={JSON.stringify(uploads.filter(u => gallery.some(item => item.src === preparedMediaSrc(country, producerId, u.sha256) && !published.some(p => p.id === item.id && p.src === item.src))))} />
       <div className={styles.heading}>
@@ -185,6 +189,7 @@ export function ProducerProductsEditor({
                   ))}
               </select>
             </label>
+            <ProductCommerceFields product={product} locale={locale} onChange={patch => change(product.id, patch)} />
             {gallery.length || content.links.length ? (
               <details className={styles.attachments}>
                 <summary>{labels.assets}</summary>
@@ -297,6 +302,7 @@ export function ProducerProductsEditor({
               <li key={product.id} lang={product.locale}>
                 <strong>{product.name || labels.newProduct}</strong>
                 <p>{product.description}</p>
+                <ProductPurchaseDetails product={product} locale={locale} demo={isDemoProducer(country, producerId)} />
               </li>
             ))}
           </ul>

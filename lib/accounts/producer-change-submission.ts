@@ -12,6 +12,7 @@ import {
 } from "drizzle-orm";
 
 import { isProducerChangeSubmissionEnabled } from "@/lib/accounts/config";
+import { ZodError } from "zod";
 import {
   firstValidationMessage,
   formString,
@@ -43,6 +44,9 @@ import {
   proposeProducerMedia,
   type ProducerContentChange,
 } from "@/lib/accounts/producer-content-change";
+
+import { dateSubmittedProducts } from "./product-update-dates";
+import { producerContentSchema } from "../catalog/content-schema";
 
 import { assertProducerMediaReferences } from "./producer-media";
 
@@ -294,17 +298,28 @@ export function createProducerChangeSubmissionService(
         const rawGallery = formString(formData, "gallery");
         const rawUploads = formString(formData, "uploads");
         if (rawGallery.length > 250_000 || rawUploads.length > 20_000) throw new Error("The image proposal is too large.");
+        const submittedProducts = producerContentSchema.shape.products.parse(JSON.parse(rawProducts));
+        const requestedGallery = formData.has("gallery") ? producerContentSchema.shape.gallery.parse(JSON.parse(rawGallery)) : content.gallery;
+        const datedProducts = dateSubmittedProducts(content, { ...content, products: submittedProducts, gallery: requestedGallery }, savingDraft ? undefined : new Date().toISOString().slice(0, 10));
         contentChange = formData.has("gallery")
-          ? proposeProducerMedia(content, JSON.parse(rawProducts), JSON.parse(rawGallery), JSON.parse(rawUploads || "[]"))
-          : proposeProducerProducts(content, JSON.parse(rawProducts));
-      } catch {
+          ? proposeProducerMedia(content, datedProducts, requestedGallery, JSON.parse(rawUploads || "[]"))
+          : proposeProducerProducts(content, datedProducts);
+        submittedValues.products = JSON.stringify(datedProducts);
+      } catch (error) {
+        const commerceIssue = error instanceof ZodError
+          ? error.issues.find(issue => issue.path.includes("purchase_url") || issue.path.includes("price"))
+          : undefined;
+        const productNumber = commerceIssue?.path.find(part => typeof part === "number");
+        const commerceError = commerceIssue
+          ? `Producto ${typeof productNumber === "number" ? productNumber + 1 : ""}: ${commerceIssue.path.includes("purchase_url") ? "el enlace de compra debe ser una URL completa que empiece por https:// o http://, sin usuario ni contraseña." : "indica el precio en euros con hasta dos decimales (por ejemplo, 3,50)."}`
+          : null;
         return producerChangeFormError(
           previousState,
           submittedValues,
           "Revisa los productos y las imágenes antes de guardar.",
           {
-            products:
-              "Cada producto necesita un nombre y un idioma. Puedes añadir hasta 50 productos, con nombres de hasta 160 caracteres y descripciones de hasta 2000 caracteres; las imágenes necesitan un texto alternativo y deben haberse subido desde este perfil; los enlaces deben pertenecer a este perfil.",
+            products: commerceError ??
+              "Cada producto necesita un nombre y un idioma. Puedes añadir hasta 50 productos, con nombres de hasta 160 caracteres y descripciones de hasta 2000 caracteres. Las imágenes necesitan un texto alternativo y deben haberse subido desde este perfil; los enlaces deben pertenecer a este perfil.",
           },
         );
       }

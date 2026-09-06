@@ -4,7 +4,8 @@
 
 An expanded producer profile can show products, a gallery and named links.
 These are reviewed editorial records about what the producer makes and does.
-They are not live inventory, price offers or a checkout.
+Products can include a recorded price and a link to the product in an external
+shop. Chisan does not provide live inventory, guaranteed quotes or checkout.
 
 `data/content/<country>/<producer_id>.json` holds one atomic package for an
 existing `(country, producer_id)`. The area CSV still owns identity, base facts
@@ -33,7 +34,10 @@ The following is a fictional format example, not a catalog decision:
       "description": "Texto revisado sobre este queso.",
       "locale": "es",
       "media_ids": ["cheese"],
-      "link_ids": ["cheese-details"]
+      "link_ids": ["cheese-details"],
+      "purchase_url": "https://example.org/shop/cheese",
+      "price": { "amount": "8.50", "currency": "EUR" },
+      "updated_on": "2026-09-06"
     }
   ],
   "gallery": [
@@ -77,6 +81,55 @@ The current resource bounds are 50 products, 100 gallery images, 50 links and
 1 MiB per package. These limits control payload size and can be revised in the
 shared schema for a demonstrated need. They are not editorial targets.
 
+## Purchase links, prices and product dates
+
+Optional `purchase_url` is the complete HTTP(S) product URL in the shop, without
+credentials. It is distinct from editorial `link_ids`; producers can edit it
+directly. The public button names the shop destination and opens it separately.
+Payment, order handling and current terms belong to that shop.
+
+Optional `price` contains `amount` as decimal text with exactly two digits after
+the dot (0.00 to 999999.99) and `currency: "EUR"`. The editor accepts a comma or
+dot and normalizes valid input before submission. This Spain-first release
+supports EUR only. The price describes the product and format in its text;
+there is no inferred unit, tax treatment, shipping cost, discount, availability
+or validity period. A missing price or link is omitted, never inferred as zero
+or unavailable. The public UI asks visitors to confirm current shop conditions.
+
+`updated_on` is an exact ISO calendar day in UTC. For producer proposals, the
+server dates each changed/new product when submitted for review. This records
+the latest accepted edit's submission day; it is not the approval/deployment day
+or a price guarantee. Name, description, language, price, URL, attachments and
+changes to referenced image/link content count. Reordering products, unrelated
+gallery changes and producer base edits do not. Client-supplied dates are
+ignored; drafts keep the published date (new draft products remain undated).
+Approval freezes that snapshot and publication retains it. Local editorial
+changes must set the actual reviewed edit day. Publication rejects future dates
+and commerce records without a date. Older records without commerce remain
+valid without dates; optional fields have no defaults, preserving legacy hashes.
+
+The UI shows “Actualizado esta semana” for the current Monday-to-Sunday UTC week,
+then “Actualizado este mes” for the current UTC month, then “Actualizado en el
+último año” for the preceding calendar-year interval. Older records show the
+exact date. Every date also has an ISO `time[datetime]`, exact accessible label
+and tooltip. Equivalent Catalan and English labels share these boundaries.
+
+Public JSON-LD has an ordered `ItemList` of identity-bound `Product` nodes. A
+real product with both a price and shop URL may have an `Offer` with only the
+recorded price, currency and destination. Dates belong to the describing
+`WebPageElement.dateModified`, not directly to `Product`. No stock, checkout,
+ratings or search-engine rich-result eligibility is inferred. See
+[Product](https://schema.org/Product), [Offer](https://schema.org/Offer) and
+[dateModified](https://schema.org/dateModified). These multi-product profile
+pages do not promise Google's [single-product rich results](https://developers.google.com/search/docs/appearance/structured-data/product-snippet).
+
+The public API and WebMCP expose these optional typed values with the same
+visibility and `is_demo` flag. Only `(es, 12439)` is a demonstration: its prices
+and profile URLs are explicitly fictional in the UI/API, and no `Offer` is
+emitted for them. The three examples exercise 3.80, 6.50 and 9.90 EUR, with all
+purchase links targeting its own Chisan profile. This is not a pricing source
+or a commercial exception for any other producer.
+
 ## Images
 
 Use reviewed WebP, JPEG or PNG under
@@ -103,8 +156,9 @@ A translation cannot change URLs, asset paths, item identity or relationships.
 Rendering prefers the current reviewed translation, then the item's original
 text with its explicit HTML `lang`. Product names and producer speech remain
 usable before every language is translated. Stale translations are retained for
-review but never rendered. These collections add no Product/Offer JSON-LD,
-pricing, availability or search-engine rich-result claim.
+review but never rendered. Prices, purchase URLs and dates are language-neutral;
+a price-only change does not invalidate a prose translation. Public product
+structured data follows the visibility boundary below.
 
 ## Editing and publication
 
@@ -133,8 +187,8 @@ new attempt must use the current revision; no timeout adopts an unknown edit.
 
 An active producer member with the exact `producer.profile.premium` entitlement
 can add, edit, reorder and remove products in the existing profile editor. The
-form exposes names, descriptions, original languages, photos and references to
-reviewed links. Images can be uploaded, described, credited, assigned to products,
+form exposes names, descriptions, original languages, photos, references to
+reviewed links, an optional shop URL and an optional EUR price. Images can be uploaded, described, credited, assigned to products,
 reordered and removed with undo. It has a preview, explicit draft saving and
 submission for review. Link creation and translation editing remain local
 editorial work.
@@ -243,7 +297,8 @@ The existing `producer.profile.premium` entitlement controls the complete
 expanded block. Inactive entitlement or unavailable account state hides these
 collections while keeping approved files intact. Base profiles remain public.
 Rendering is on the server, pictures load lazily, and no hidden content enters
-base metadata or JSON-LD.
+base metadata or JSON-LD. The same entitlement-gated server component renders
+the visible product JSON-LD; it disappears with the expanded block.
 
 An area/slug move preserves the content path. Before a producer retirement or
 merge, inspect related content and account references with `pnpm producer:inspect`.

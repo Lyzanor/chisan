@@ -2,6 +2,8 @@ import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 import { hasProducerContent } from "@/lib/catalog/content-schema";
 import { loadPublicExpandedContent, publicHighlightedLinks } from "@/lib/catalog/public-expanded";
 import { ProducerContent } from "@/components/producer-content";
+import { buildProductStructuredData } from "@/lib/catalog/product-structured-data";
+import { serializeStructuredData } from "@/lib/producer-structured-data";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
 import { getProducerContentLabels } from "@/lib/i18n/producer-content";
@@ -11,6 +13,7 @@ import {
 } from "@/lib/i18n/producer-fields";
 
 type ExpandedProducerProfileProps = {
+  canonicalUrl: string;
   country: string;
   fields: Readonly<Record<string, string>>;
   locale: Locale;
@@ -34,6 +37,7 @@ function linkHostname(value: string): string {
 }
 
 export async function ExpandedProducerProfile({
+  canonicalUrl,
   country,
   fields,
   locale,
@@ -43,6 +47,7 @@ export async function ExpandedProducerProfile({
   const content = await loadPublicExpandedContent(country, producerId, locale);
   if (!content) return null;
   const contentLabels = getProducerContentLabels(locale);
+  const structuredData = buildProductStructuredData(content, canonicalUrl);
   const guidedVisits = fieldValue(fields, "visitas guiadas");
   const video = fieldValue(fields, "video");
   const communityMessage = fieldValue(fields, "mensaje a la comunidad");
@@ -76,6 +81,7 @@ export async function ExpandedProducerProfile({
       aria-labelledby="detail-expanded-title"
     >
       <h2 id="detail-expanded-title">{messages.producer.expandedProfile}</h2>
+      {structuredData ? <script id="producer-products-structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} /> : null}
       {hasProducerContent(content) ? (
         <nav className="detail-expanded-profile__nav" aria-label={messages.producer.expandedProfile}>
           {content.products.length ? <a href="#producer-content-products">{contentLabels.products}</a> : null}

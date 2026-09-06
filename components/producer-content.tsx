@@ -1,3 +1,6 @@
+import { ProductPurchaseDetails } from "./product-purchase-details";
+import { isDemoProducer } from "@/lib/catalog/product-commerce";
+
 import Image from "next/image";
 import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 
@@ -51,6 +54,7 @@ export function ProducerContent({
                     })}
                   </div>
                 ) : null}
+                <ProductPurchaseDetails product={product} locale={locale} demo={isDemoProducer(content.country, content.producer_id)} />
                 {product.link_ids.length ? (
                   <ul className={styles.links}>
                     {product.link_ids.map((id) => {

@@ -94,9 +94,10 @@ continue to use the locale-independent durable producer key.
 - Localized country, area, category and breadcrumb labels must match the visible
   HTML. Concrete `productos estrella` and category labels may be represented as
   `WebPage.about`; this does not turn them into independent commercial entities.
-- Do not emit `Product` or `Offer` until a public item has a normalized product
-  identity and visible, current price, currency, availability and purchase
-  semantics owned by an explicit schema and UI contract.
+- Reviewed typed products may emit `Product`; a real product with a recorded
+  price, currency and purchase URL may emit `Offer` under
+  `docs/PRODUCER_CONTENT.md`. Never infer availability or price validity.
+  Demo products are explicitly fictional and have no `Offer`.
 - Do not emit `AggregateRating`, reviews or testimonials without genuine
   first-party user input, visible supporting content and a dedicated moderation
   contract. Editorial selection, ownership approval and premium status are not
@@ -144,7 +145,11 @@ the correct `lang` only where the owning content contract permits it.
 ### Premium extension boundary
 
 Products, gallery items and links follow `docs/PRODUCER_CONTENT.md`. Their
-source-language fallback is explicit and they currently have no JSON-LD mapping.
+source-language fallback is explicit. The visible products have an ordered
+`ItemList`/`Product` graph and conditional external `Offer` nodes. The exact
+product update day maps to its describing `WebPageElement.dateModified`, not the
+producer or whole page. This graph is rendered inside the same entitlement gate
+as the HTML, with safely serialized text and locale-aware canonical anchors.
 Other future premium content needs an equally clear localization and structured-
 data contract. A new premium field may enter JSON-LD only when
 it is public, visible on the same response, reviewed, normalized for its schema

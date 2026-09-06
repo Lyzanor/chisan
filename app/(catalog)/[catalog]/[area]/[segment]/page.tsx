@@ -455,6 +455,7 @@ export default async function ProducerPage({
 
         <Suspense fallback={null}>
           <ExpandedProducerProfile
+            canonicalUrl={canonicalUrl}
             country={country.slug}
             producerId={producer.producerId}
             fields={producer.fields}

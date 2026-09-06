@@ -11,7 +11,13 @@
       "media_ids": [
         "demo-beer"
       ],
-      "link_ids": []
+      "link_ids": [],
+      "purchase_url": "https://chisan.app/es/barcelona/chisan",
+      "price": {
+        "amount": "3.80",
+        "currency": "EUR"
+      },
+      "updated_on": "2026-09-06"
     },
     {
       "id": "queso-fresco-chisan",
@@ -21,7 +27,13 @@
       "media_ids": [
         "demo-cheese"
       ],
-      "link_ids": []
+      "link_ids": [],
+      "purchase_url": "https://chisan.app/es/barcelona/chisan",
+      "price": {
+        "amount": "6.50",
+        "currency": "EUR"
+      },
+      "updated_on": "2026-09-06"
     },
     {
       "id": "vino-blanco-sin-alcohol-chisan",
@@ -31,7 +43,13 @@
       "media_ids": [
         "demo-wine"
       ],
-      "link_ids": []
+      "link_ids": [],
+      "purchase_url": "https://chisan.app/es/barcelona/chisan",
+      "price": {
+        "amount": "9.90",
+        "currency": "EUR"
+      },
+      "updated_on": "2026-09-06"
     }
   ],
   "gallery": [

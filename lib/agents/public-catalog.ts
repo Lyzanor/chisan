@@ -1,3 +1,4 @@
+import { isDemoProducer } from "../catalog/product-commerce";
 import "server-only";
 import { isWithinRadius } from "../location/radius-search";
 import { createHash } from "node:crypto";
@@ -133,6 +134,7 @@ export function publicExpanded(
     ({ href }) => href,
   );
   const expanded = {
+    is_demo: isDemoProducer(content.country, content.producer_id),
     video_url: absent(fields.video),
     guided_visits: (["sí", "no"].includes(fields["visitas guiadas"])
       ? fields["visitas guiadas"]
@@ -152,13 +154,16 @@ export function publicExpanded(
     highlighted_links: highlighted,
     // Deliberately exclude translation history and its source hashes.
     products: content.products.map(
-      ({ id, name, description, locale, media_ids, link_ids }) => ({
+      ({ id, name, description, locale, media_ids, link_ids, purchase_url, price, updated_on }) => ({
         id,
         name,
         description,
         locale,
         media_ids,
         link_ids,
+        ...(purchase_url ? { purchase_url } : {}),
+        ...(price ? { price: { amount: price.amount, currency: price.currency } } : {}),
+        ...(updated_on ? { updated_on } : {}),
       }),
     ),
     gallery: content.gallery.map(

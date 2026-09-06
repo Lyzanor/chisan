@@ -72,7 +72,7 @@ test("product proposals preserve producer identity, reviewed assets and source t
     /snapshots/,
   );
   assert.throws(
-    () => proposeProducerProducts(base, [{ ...product, price: 3 }]),
+    () => proposeProducerProducts(base, [{ ...product, stock: 3 }]),
     /Unrecognized/,
   );
   assert.throws(

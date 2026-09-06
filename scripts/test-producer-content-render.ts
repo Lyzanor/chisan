@@ -27,6 +27,9 @@ test("related content renders semantic, localized and escaped public records", a
     const content = emptyProducerContent("es", 1);
     content.products.push({
       id: "example",
+      price: { amount: "3.50", currency: "EUR" },
+      purchase_url: "https://shop.example.org/product",
+      updated_on: "2026-09-06",
       name: "Example & Co",
       description: "<script>literal</script>",
       locale: "en",
@@ -64,6 +67,16 @@ test("related content renders semantic, localized and escaped public records", a
       html,
       /<figcaption[^>]*>Source caption · Example<\/figcaption>/,
     );
+    assert.match(html, /3,50/);
+    assert.match(html, /Ver en la tienda/);
+    assert.match(html, /shop.example.org/);
+    assert.match(html, /dateTime="2026-09-06"/);
+    assert.match(html, /aria-label="Actualizado el 6 de septiembre de 2026"/);
+    content.producer_id = 12439;
+    const demo = renderToStaticMarkup(createElement(ProducerContent, { content, locale: "es" }));
+    assert.match(demo, /Probar enlace de ejemplo/);
+    assert.match(demo, /precio y enlace ficticios/);
+    assert.doesNotMatch(demo, /Ver en la tienda/);
     assert.match(html, /href="https:\/\/example.org\/details"/);
     assert.doesNotMatch(html, /application\/ld\+json|<script>/);
     const empty = renderToStaticMarkup(
