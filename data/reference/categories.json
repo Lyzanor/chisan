@@ -1125,7 +1125,10 @@
     "pasteleria y panaderia": "Pan y cereal",
     "dulces y panaderia": "Pan y cereal",
     "pan y reposteria": "Pan y cereal",
-    "pan y bolleria": "Pan y cereal"
+    "pan y bolleria": "Pan y cereal",
+    "pasteleria": "Dulces y repostería",
+    "reposteria": "Dulces y repostería",
+    "confiteria": "Dulces y repostería"
   },
   "retiredCategories": {
     "Aceite y bodega": "Aceite",
