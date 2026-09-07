@@ -1,6 +1,7 @@
 "use server";
 
 import { createProducerChangeReviewService } from "@/lib/admin/review-producer-change";
+import { createProducerSuggestionReviewService } from "@/lib/admin/review-producer-suggestion";
 
 import { and, eq, inArray, ne, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
@@ -468,4 +469,8 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
 
 export async function reviewProducerChangeAction(formData: FormData): Promise<void> {
   return createProducerChangeReviewService({ getDatabase, requireStaffAccount, adminRedirect })(formData);
+}
+
+export async function reviewProducerSuggestionAction(formData: FormData): Promise<void> {
+  return createProducerSuggestionReviewService({ getDatabase, requireStaffAccount, adminRedirect })(formData);
 }

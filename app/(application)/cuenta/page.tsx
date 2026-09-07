@@ -4,12 +4,14 @@ import { redirect } from "next/navigation";
 
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { OPEN_PRODUCER_SUGGESTION_STATUSES } from "@/lib/accounts/producer-suggestion-workflow";
 import { getDatabase } from "@/lib/db";
 import {
   favorites,
   producerChangeRequests,
   producerClaims,
   producerMemberships,
+  producerSuggestions,
 } from "@/lib/db/schema";
 
 type AccountPageProps = {
@@ -21,8 +23,14 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
 
   const database = getDatabase();
-  const [[favoriteCount], [membershipCount], [claimCount], [changeCount], params] =
-    await Promise.all([
+  const [
+    [favoriteCount],
+    [membershipCount],
+    [claimCount],
+    [changeCount],
+    [suggestionCount],
+    params,
+  ] = await Promise.all([
       database
         .select({ value: count() })
         .from(favorites)
@@ -60,6 +68,17 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
             ]),
           ),
         ),
+      database
+        .select({ value: count() })
+        .from(producerSuggestions)
+        .where(
+          and(
+            eq(producerSuggestions.authorUserId, account.id),
+            inArray(producerSuggestions.status, [
+              ...OPEN_PRODUCER_SUGGESTION_STATUSES,
+            ]),
+          ),
+        ),
       searchParams,
     ]);
 
@@ -81,6 +100,12 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
       label: "Cambios de perfil pendientes",
       value: changeCount.value,
       copy: "Los cambios de los productores se revisan antes de publicarse en el catálogo.",
+    },
+    {
+      href: "/cuenta/sugerencias",
+      label: "Sugerencias abiertas",
+      value: suggestionCount.value,
+      copy: "Correcciones que has propuesto para productores sin titular verificado.",
     },
   ];
 

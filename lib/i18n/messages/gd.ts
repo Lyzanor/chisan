@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Seilbh air a dearbhadh",
     viewOwnershipClaim: "Faic tagradh na seilbhe",
     claimProducer: "Tagair an riochdaire seo",
+    suggestChanges: "Mol atharraichean",
+    viewMySuggestions: "Seall na molaidhean agam",
     descriptionLanguage: {
       none: "Gun chànan tuairisgeul",
       names: {

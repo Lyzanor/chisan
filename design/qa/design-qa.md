@@ -4,6 +4,104 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-07 — Community suggestions for unclaimed producers
+
+final result: authenticated local QA passed; production release pending
+
+A reader who is signed in may correct a producer nobody has claimed. The entry
+point is one more control in the existing `.producer-account-actions` row on the
+public profile, next to «Reclamar este productor», so account and ownership
+actions stay in one block after the location and factual details, as the profile
+section contract requires. It is offered only while the producer has no verified
+owner; a verified owner keeps the row exactly as it was.
+
+Rejected: per-section «sugerir» links scattered through the profile. They would
+have added an interactive control to sections that exist only when their CSV
+value does, and the profile already carries one place where account actions live.
+The section choice moved into the flow instead: `/cuenta/sugerencias/nueva` first
+asks which part of the ficha to correct, then renders only that part's fields.
+That keeps the form small, avoids a client-side section switcher, and means the
+form can never blank a field it does not show.
+
+The account and operations surfaces reuse existing classes only — no new CSS.
+`account-content`, `account-section-heading`, `account-callout`,
+`account-record-list`, `account-form--wide`, `account-form-grid`,
+`account-field`, `account-field-error`, `account-inline-actions`,
+`account-status--<status>` and, in `/admin/sugerencias`, `admin-filter-tabs`,
+`admin-search-form`, `admin-pagination` and `account-review-list`. Suggestion
+statuses deliberately reuse the existing producer-change vocabulary
+(`pending`, `approved`, `rejected`, `withdrawn`, `applied`) so the status chips
+already have their tone and no new colour enters the system.
+
+Checked at 1440 x 1000 and 390 x 844. No horizontal overflow at either width.
+The field grid is two columns wide and one column narrow. Every control on the
+new account and operations pages measures 44px tall through `.account-button`.
+
+Authenticated evidence: checked with the existing Clerk Development instance and
+an isolated PostgreSQL 16 Docker database on 2026-09-07. All 15 migrations were
+applied with `pnpm db:migrate`; `pnpm db:assert-current` matched the repository.
+No Production database was migrated or used for these writes.
+
+The public anonymous suggestion link returned through Google/Clerk to the exact
+producer section selector after sign-in with an onboarded account. A first-time
+local account instead required the existing welcome acknowledgement, then opened
+the account dashboard; automatic continuation through first-time onboarding is
+not claimed by this check. The selector exposed seven sections. Contact submitted
+only a `web` patch; unrelated fields stayed intact. Description exposed its paired
+source-language selector. Unchanged values, non-HTTP(S) websites and short source
+notes were rejected, with invalid form values preserved. Invalid and absent
+producer keys showed the catalog escape route.
+
+The browser exercised submission, withdrawal, acceptance, rejection of a short
+review note, rejection of an invalid commit SHA, and a simulated publication
+using a 40-character fixture SHA in the isolated database. Acceptance left
+`applied_at` empty and created no memberships. An accepted suggestion blocked a
+second submission for the same section; publication unlocked it. Both pending
+and accepted states count as open; accepted rows have no withdrawal control.
+Local owner fixtures hid suggestions with and without a session, and a member
+opening the form directly reached the producer editor. The owner fixture was
+revoked after verification. Search matched producer name, suggestion UUID,
+section and country; 28 isolated rows exercised both pages and state filters.
+Publication fixtures are test data, not claims that catalog edits were published.
+The service tests cover attempts to publish a pending suggestion.
+
+Responsive browser evidence (full-page captures, viewport sizes 1440 x 1000 and
+390 x 844): [profile wide](2026-09-07-suggestions/profile-1440.png),
+[profile narrow](2026-09-07-suggestions/profile-390.png),
+[selector wide](2026-09-07-suggestions/selector-1440.png),
+[selector narrow](2026-09-07-suggestions/selector-390.png),
+[contact wide](2026-09-07-suggestions/contact-1440.png),
+[contact narrow](2026-09-07-suggestions/contact-390.png),
+[operations wide](2026-09-07-suggestions/admin-1440.png), and
+[operations narrow](2026-09-07-suggestions/admin-390.png).
+The signed-in header initially overflowed to 428px on the 390px viewport. Allowing
+the account navigation and menu to shrink in the mobile adapter keeps the full
+page at 390px, while retaining the full accessible account label. All four
+surfaces now match their viewport width. Account navigation, queue filters and
+the four-column diff use their existing local horizontal scroll containers.
+The screenshots retain the development indicator; it is not production UI.
+
+Known deviation, not introduced here: `app/styles/accounts.css` gives
+`.producer-account-actions a` and `.producer-account-actions button` a 38px
+`min-height` and a `999px` radius, which conflicts with the 44px target rule and
+with pills being reserved for filters and tags.
+`design/adapters/experience.css` already upgrades `.account-button`,
+`.back-link` and `.detail-actions a` but not these descendant selectors, so the
+favourite, claim and new suggestion controls all measure 38px. The new control
+matches its siblings rather than introducing a second treatment inside one row;
+bringing the whole block to 44px is a deliberate change to existing controls and
+was left for its own decision. `pnpm check:design` is unaffected: `small-target`
+counts the existing rule once and stays at its baseline of 7.
+
+Verification commands: `pnpm db:migrate`, `pnpm db:assert-current`, and the
+`pnpm verify:ai` stages. The initial gate passed through the behavior stage's
+unit checks but could not start a second dev server while local QA owned the
+Next.js dev lock. Resumed with `BASE_URL=http://localhost:3000 pnpm test:behavior`
+and then `pnpm test:content`, `pnpm test:agents`, `pnpm test:guides`; all passed.
+`pnpm check:docs` passed again after recording this evidence. The ignored local
+`scratch/` directory was parked outside the repository during the build and
+restored afterward.
+
 ## 2026-09-06 — Spanish public presentation
 
 final result: passed with local verification limits
@@ -941,7 +1039,6 @@ using the production server for behavior tests to preserve the other dev session
 - The temporary `/youtube-qa` route and generated test layout were removed after
   verification. The production component remains inside the existing premium
   visibility gate; profiles without a reviewed video render no player or gap.
-
 ## 2026-09-06 — Account photos and producer favorite attribution
 
 - Added a row of up to five overlapping circular avatars and a remaining count,

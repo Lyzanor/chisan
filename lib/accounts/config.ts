@@ -76,6 +76,17 @@ export function isProducerChangeSubmissionEnabled(
   return configured === undefined ? true : configured.trim() === "true";
 }
 
+// Community suggestions arrive from accounts with no verified relationship to
+// the producer, so they get their own switch: staff can close the open queue
+// without also freezing verified owners. It follows the producer-change
+// switch: missing keeps it enabled, any other configured value fails closed.
+export function isProducerSuggestionEnabled(
+  environment: AccountAuthEnvironment = process.env,
+): boolean {
+  const configured = environment.CHISAN_PRODUCER_SUGGESTIONS_ENABLED;
+  return configured === undefined ? true : configured.trim() === "true";
+}
+
 export function getAccountAuthConfiguration(
   environment: AccountAuthEnvironment = process.env,
 ): AccountAuthConfiguration {

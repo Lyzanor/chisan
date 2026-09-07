@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Ua hōʻoia ʻia ke kuleana",
     viewOwnershipClaim: "Nānā i ke koi kuleana",
     claimProducer: "Koi i kēia mea hana",
+    suggestChanges: "E noi i nā hoʻololi",
+    viewMySuggestions: "E nānā i kaʻu mau manaʻo",
     descriptionLanguage: {
       none: "ʻAʻohe ʻōlelo wehewehe",
       names: {

@@ -33,6 +33,8 @@ const messages = {
     ownershipVerified: "管理権限確認済み",
     viewOwnershipClaim: "所有権申請を表示",
     claimProducer: "この生産者の所有権を申請",
+    suggestChanges: "変更を提案",
+    viewMySuggestions: "自分の提案を見る",
     descriptionLanguage: {
       none: "説明文の言語なし",
       names: {

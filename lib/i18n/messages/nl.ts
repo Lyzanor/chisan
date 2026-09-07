@@ -20,6 +20,8 @@ const messages = {
     expandProfile: "Profiel uitbreiden",
     ownershipVerified: "Eigenaarschap geverifieerd", viewOwnershipClaim: "Eigenaarsclaim bekijken",
     claimProducer: "Deze producent claimen",
+    suggestChanges: "Wijzigingen voorstellen",
+    viewMySuggestions: "Mijn suggesties bekijken",
     descriptionLanguage: {
       none: "Geen beschrijvingstaal",
       names: {

@@ -34,6 +34,8 @@ const messages = {
     ownershipVerified: "Inhaberschaft bestätigt",
     viewOwnershipClaim: "Eigentumsantrag anzeigen",
     claimProducer: "Diesen Erzeuger beanspruchen",
+    suggestChanges: "Änderungen vorschlagen",
+    viewMySuggestions: "Meine Vorschläge ansehen",
     descriptionLanguage: {
       none: "Keine Beschreibungssprache",
       names: {

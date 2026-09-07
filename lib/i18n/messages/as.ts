@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "মালিকীস্বত্ব পৰীক্ষিত",
     viewOwnershipClaim: "মালিকীস্বত্বৰ দাবী চাওক",
     claimProducer: "এই উৎপাদকৰ মালিকীস্বত্ব দাবী কৰক",
+    suggestChanges: "সালসলনি প্ৰস্তাৱ কৰক",
+    viewMySuggestions: "মোৰ প্ৰস্তাৱসমূহ চাওক",
     descriptionLanguage: {
       none: "বিৱৰণৰ ভাষা নাই",
       names: {

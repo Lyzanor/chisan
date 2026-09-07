@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "মালিকানা যাচাইকৃত",
     viewOwnershipClaim: "মালিকানার দাবি দেখুন",
     claimProducer: "এই উৎপাদকের মালিকানা দাবি করুন",
+    suggestChanges: "পরিবর্তনের প্রস্তাব দিন",
+    viewMySuggestions: "আমার প্রস্তাবগুলি দেখুন",
     descriptionLanguage: {
       none: "বিবরণের ভাষা নেই",
       names: {

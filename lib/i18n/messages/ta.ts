@@ -33,6 +33,8 @@ const messages = {
     ownershipVerified: "உரிமை சரிபார்க்கப்பட்டது",
     viewOwnershipClaim: "உரிமைக் கோரிக்கையைப் பார்க்க",
     claimProducer: "இந்த உற்பத்தியாளரின் உரிமையைக் கோருக",
+    suggestChanges: "மாற்றங்களைப் பரிந்துரைக்கவும்",
+    viewMySuggestions: "எனது பரிந்துரைகளைப் பார்க்க",
     descriptionLanguage: {
       none: "விவரிப்பு மொழி இல்லை",
       names: {

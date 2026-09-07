@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Eienaarskap geverifieer",
     viewOwnershipClaim: "Bekyk eienaarskapseis",
     claimProducer: "Eis hierdie produsent",
+    suggestChanges: "Stel wysigings voor",
+    viewMySuggestions: "Bekyk my voorstelle",
     descriptionLanguage: {
       none: "Geen beskrywingstaal nie",
       names: {

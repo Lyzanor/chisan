@@ -491,6 +491,8 @@ body { min-height: 100svh; }
     white-space: nowrap;
   }
   .site-header .site-primary-nav__catalog { min-width: 44px; justify-content: center; }
+  .site-header .site-account-nav { min-width: 0; }
+  .site-account-menu { min-width: 0; max-width: 100%; }
   .site-account-menu > summary { min-height: 44px; }
   .site-account-menu > summary > span { max-width: 7.5rem; }
   .site-account-menu::details-content { width: min(24rem, calc(100vw - 2rem)); }

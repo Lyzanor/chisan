@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Bunikati bucinisekisiwe",
     viewOwnershipClaim: "Buka sicelo sebunikati",
     claimProducer: "Faka sicelo salomkhiqizi",
+    suggestChanges: "Phakamisa lushintjo",
+    viewMySuggestions: "Buka tiphakamiso tami",
     descriptionLanguage: {
       none: "Alukho lulwimi lwencazelo",
       names: {

@@ -33,6 +33,8 @@ const messages = {
     ownershipVerified: "యాజమాన్యం ధృవీకరించబడింది",
     viewOwnershipClaim: "యాజమాన్య క్లెయిమ్‌ను చూడండి",
     claimProducer: "ఈ ఉత్పత్తిదారు యాజమాన్యాన్ని క్లెయిమ్ చేయండి",
+    suggestChanges: "మార్పులను సూచించండి",
+    viewMySuggestions: "నా సూచనలను చూడండి",
     descriptionLanguage: {
       none: "వివరణ భాష లేదు",
       names: {

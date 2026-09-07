@@ -60,6 +60,20 @@ export const changeReviewSchema = z.object({
   note: z.string().trim().max(4_000),
 });
 
+export const suggestionReviewSchema = z.object({
+  suggestionId: z.uuid(),
+  decision: z.enum(["approved", "rejected", "applied"]),
+  note: z.string().trim().max(4_000),
+  commitSha: z.union([
+    z.literal(""),
+    z
+      .string()
+      .trim()
+      .toLowerCase()
+      .regex(/^([0-9a-f]{40}|[0-9a-f]{64})$/, "Enter a full Git commit SHA."),
+  ]),
+});
+
 export const profileUpgradeRetrySchema = z.object({
   requestId: z.uuid(),
 });

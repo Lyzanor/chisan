@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Perchnogaeth wedi’i dilysu",
     viewOwnershipClaim: "Gweld hawliad perchnogaeth",
     claimProducer: "Hawlio'r cynhyrchydd hwn",
+    suggestChanges: "Awgrymu newidiadau",
+    viewMySuggestions: "Gweld fy awgrymiadau",
     descriptionLanguage: {
       none: "Dim iaith disgrifiad",
       names: {

@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "मालकी पडताळलेली",
     viewOwnershipClaim: "मालकीचा दावा पहा",
     claimProducer: "या उत्पादकावर दावा करा",
+    suggestChanges: "बदल सुचवा",
+    viewMySuggestions: "माझ्या सूचना पाहा",
     descriptionLanguage: {
       none: "वर्णनाची भाषा नाही",
       names: {

@@ -54,6 +54,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
           <NavigationLink href="/cuenta/seleccion" activePath="/cuenta/seleccion">QR de selección</NavigationLink>
           <NavigationLink href="/cuenta/reclamaciones" activePath="/cuenta/reclamaciones">Solicitudes de propiedad</NavigationLink>
           <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Cambios de perfil</NavigationLink>
+          <NavigationLink href="/cuenta/sugerencias" activePath="/cuenta/sugerencias">Sugerencias</NavigationLink>
           {staff ? <Link href="/admin">Revisión</Link> : null}
         </nav>
         {children}

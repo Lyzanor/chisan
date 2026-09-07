@@ -34,6 +34,8 @@ const messages = {
     ownershipVerified: "Ownership verified",
     viewOwnershipClaim: "View ownership claim",
     claimProducer: "Claim this producer",
+    suggestChanges: "Suggest changes",
+    viewMySuggestions: "View my suggestions",
     descriptionLanguage: {
       none: "No description language",
       names: {

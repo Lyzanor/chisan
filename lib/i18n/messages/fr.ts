@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Titularité vérifiée",
     viewOwnershipClaim: "Voir la revendication de propriété",
     claimProducer: "Revendiquer ce producteur",
+    suggestChanges: "Suggérer des modifications",
+    viewMySuggestions: "Voir mes suggestions",
     descriptionLanguage: {
       none: "Aucune langue de description",
       names: {

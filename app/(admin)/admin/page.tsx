@@ -9,6 +9,7 @@ import {
   queryProducerChangeCounts,
 } from "@/lib/admin/producer-change-requests";
 import { producerProfileUpgradeIncidentCondition } from "@/lib/admin/producer-profile-upgrade-incidents";
+import { queryProducerSuggestionCounts } from "@/lib/admin/producer-suggestions";
 import { queryAdminUserProfileCounts } from "@/lib/admin/user-profiles";
 import { getDatabase } from "@/lib/db";
 import {
@@ -26,6 +27,7 @@ export default async function AdminPage() {
     changeCounts,
     recentChanges,
     [claimCount],
+    suggestionCounts,
     profileCounts,
     [paymentIncidentCount],
     [premiumAccessCount],
@@ -36,6 +38,7 @@ export default async function AdminPage() {
       .select({ value: count() })
       .from(producerClaims)
       .where(inArray(producerClaims.status, ["pending", "needs_info"])),
+    queryProducerSuggestionCounts(database),
     queryAdminUserProfileCounts(database, { status: "active" }),
     canManagePayments
       ? database
@@ -91,6 +94,13 @@ export default async function AdminPage() {
       copy: "Identity and productive-unit control checks.",
       href: "/admin/reclamaciones",
       tone: claimCount?.value ? "warning" : "neutral",
+    },
+    {
+      label: "Community suggestions",
+      value: suggestionCounts.pending,
+      copy: `${suggestionCounts.approved} accepted and awaiting publication.`,
+      href: "/admin/sugerencias?status=review",
+      tone: suggestionCounts.pending ? "warning" : "neutral",
     },
     {
       label: "User profiles",

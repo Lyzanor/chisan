@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Bong bo netefaditšwe",
     viewOwnershipClaim: "Bona tseko ya beng",
     claimProducer: "Tseka motšweletši yo",
+    suggestChanges: "Šišinya diphetogo",
+    viewMySuggestions: "Lebelela ditšhišinyo tša ka",
     descriptionLanguage: {
       none: "Ga go na polelo ya tlhalošo",
       names: {

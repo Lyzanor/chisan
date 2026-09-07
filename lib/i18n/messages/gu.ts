@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "માલિકી ચકાસાયેલ",
     viewOwnershipClaim: "માલિકીના દાવા જુઓ",
     claimProducer: "આ ઉત્પાદક પર દાવો કરો",
+    suggestChanges: "ફેરફારો સૂચવો",
+    viewMySuggestions: "મારાં સૂચનો જુઓ",
     descriptionLanguage: {
       none: "વર્ણનની ભાષા નથી",
       names: {

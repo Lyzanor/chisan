@@ -223,7 +223,10 @@ configuration while leaving accounts enabled, then create and verify a new
 Production deployment from the currently approved commit. Changing a Vercel
 environment variable does not alter the deployment already serving traffic.
 Confirm that new profile-change submissions are blocked before continuing;
-existing requests and staff review remain available. Then use the dedicated
+existing requests and staff review remain available. Set
+`CHISAN_PRODUCER_SUGGESTIONS_ENABLED=false` in the same step: community
+suggestions store the same row hash and would be invalidated by the widened
+column. Then use the dedicated
 read-only command to inventory every page of `draft`, `submitted`,
 `needs_changes`, `approved` and `applying` requests. Drain or explicitly resolve
 each one, and do not widen the CSV while any `applying` execution remains.

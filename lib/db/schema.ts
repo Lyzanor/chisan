@@ -79,6 +79,13 @@ export const producerChangeRequestStatus = pgEnum("producer_change_request_statu
   "conflict",
   "failed",
 ]);
+export const producerSuggestionStatus = pgEnum("producer_suggestion_status", [
+  "pending",
+  "approved",
+  "rejected",
+  "withdrawn",
+  "applied",
+]);
 export const producerChangeExecutionStatus = pgEnum(
   "producer_change_execution_status",
   ["leased", "materialized", "finalized", "failed", "expired", "cancelled"],
@@ -494,6 +501,88 @@ export const producerChangeRequests = pgTable(
   ],
 );
 
+// Community corrections for producers nobody has claimed. A suggestion is an
+// editorial input, never an authorization: it cannot publish a catalog value.
+export const producerSuggestions = pgTable(
+  "producer_suggestions",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    authorUserId: uuid("author_user_id")
+      .notNull()
+      .references(() => users.id),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    status: producerSuggestionStatus("status").notNull().default("pending"),
+    section: varchar("section", { length: 40 }).notNull(),
+    baseRowHash: varchar("base_row_hash", { length: 64 }).notNull(),
+    baseSnapshot: jsonb("base_snapshot").$type<Record<string, string>>().notNull(),
+    patch: jsonb("patch").$type<Record<string, string>>().notNull(),
+    authorNote: text("author_note").notNull(),
+    reviewerUserId: uuid("reviewer_user_id").references(() => users.id),
+    decisionNote: text("decision_note"),
+    appliedCommitSha: varchar("applied_commit_sha", { length: 64 }),
+    lockVersion: integer("lock_version").notNull().default(1),
+    submittedAt: timestampWithTimezone("submitted_at").notNull().defaultNow(),
+    reviewedAt: timestampWithTimezone("reviewed_at"),
+    appliedAt: timestampWithTimezone("applied_at"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("producer_suggestions_open_author_producer_uidx")
+      .on(table.authorUserId, table.country, table.producerId, table.section)
+      .where(sql`${table.status} IN ('pending', 'approved')`),
+    index("producer_suggestions_review_queue_idx").on(table.status, table.submittedAt),
+    index("producer_suggestions_producer_idx").on(
+      table.country,
+      table.producerId,
+      table.createdAt,
+    ),
+    index("producer_suggestions_author_idx").on(table.authorUserId, table.createdAt),
+    check(
+      "producer_suggestions_identity_check",
+      sql`${table.country} ~ '^[a-z]{2}$' AND ${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check(
+      "producer_suggestions_section_check",
+      sql`length(btrim(${table.section})) > 0`,
+    ),
+    check(
+      "producer_suggestions_base_hash_check",
+      sql`${table.baseRowHash} ~ '^[0-9a-f]{64}$'`,
+    ),
+    check(
+      "producer_suggestions_snapshot_check",
+      sql`jsonb_typeof(${table.baseSnapshot}) = 'object'`,
+    ),
+    // A suggestion exists only to request a concrete change.
+    check(
+      "producer_suggestions_patch_check",
+      sql`jsonb_typeof(${table.patch}) = 'object' AND ${table.patch} <> '{}'::jsonb`,
+    ),
+    check(
+      "producer_suggestions_note_check",
+      sql`length(btrim(${table.authorNote})) > 0`,
+    ),
+    check("producer_suggestions_lock_version_check", sql`${table.lockVersion} > 0`),
+    check(
+      "producer_suggestions_review_check",
+      sql`${table.status} NOT IN ('approved', 'rejected', 'applied') OR (${table.reviewerUserId} IS NOT NULL AND ${table.reviewedAt} IS NOT NULL)`,
+    ),
+    check(
+      "producer_suggestions_applied_check",
+      sql`(${table.status} = 'applied' AND ${table.appliedAt} IS NOT NULL) OR (${table.status} <> 'applied' AND ${table.appliedAt} IS NULL)`,
+    ),
+    check(
+      "producer_suggestions_commit_sha_check",
+      sql`${table.appliedCommitSha} IS NULL OR ${table.appliedCommitSha} ~ '^([0-9a-f]{40}|[0-9a-f]{64})$'`,
+    ),
+  ],
+);
+
 export const producerChangeExecutions = pgTable(
   "producer_change_executions",
   {
@@ -885,6 +974,7 @@ export type Favorite = typeof favorites.$inferSelect;
 export type ProducerClaim = typeof producerClaims.$inferSelect;
 export type ProducerMembership = typeof producerMemberships.$inferSelect;
 export type ProducerChangeRequest = typeof producerChangeRequests.$inferSelect;
+export type ProducerSuggestion = typeof producerSuggestions.$inferSelect;
 export type ProducerChangeExecution = typeof producerChangeExecutions.$inferSelect;
 export type Entitlement = typeof entitlements.$inferSelect;
 export type ProducerProfileUpgradeRequest =

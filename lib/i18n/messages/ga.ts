@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Úinéireacht fíoraithe",
     viewOwnershipClaim: "Féach ar éileamh úinéireachta",
     claimProducer: "Éiligh an táirgeoir seo",
+    suggestChanges: "Mol athruithe",
+    viewMySuggestions: "Féach ar mo mholtaí",
     descriptionLanguage: {
       none: "Gan teanga tuairisce",
       names: {

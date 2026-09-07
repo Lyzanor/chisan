@@ -21,6 +21,11 @@ const ADMIN_NAVIGATION = [
     description: "Identity and control review",
   },
   {
+    href: "/admin/sugerencias",
+    label: "Community suggestions",
+    description: "Reader corrections for unclaimed producers",
+  },
+  {
     href: "/admin/perfiles",
     label: "User profiles",
     description: "Visibility and shared selections",

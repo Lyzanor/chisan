@@ -10,12 +10,17 @@ import {
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
 import { isProducerOwnershipVerified } from "@/lib/accounts/producer-ownership";
 import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
+import {
+  OPEN_PRODUCER_SUGGESTION_STATUSES,
+  newProducerSuggestionPath,
+} from "@/lib/accounts/producer-suggestion-workflow";
 import { getDatabase } from "@/lib/db";
 import {
   favorites,
   producerClaims,
   producerMemberships,
   producerProfileUpgradeRequests,
+  producerSuggestions,
 } from "@/lib/db/schema";
 import type { Locale } from "@/lib/i18n/locales";
 import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
@@ -65,6 +70,10 @@ async function renderProducerAccountActions({
     isProducerOwnershipVerified(country, producerId),
   ]);
 
+  // Only an unclaimed producer accepts community corrections: once ownership is
+  // verified, its holder maintains the profile through the producer editor.
+  const suggestionPath = newProducerSuggestionPath(country, producerId);
+
   if (!account) {
     const redirectQuery = encodeURIComponent(safeReturnTo);
     return (
@@ -80,11 +89,18 @@ async function renderProducerAccountActions({
         <Link href={`${ACCOUNT_ROUTES.signUp}?redirect_url=${redirectQuery}`}>
           {messages.createAccount}
         </Link>
+        {activeOwner ? null : (
+          <Link
+            href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(suggestionPath)}`}
+          >
+            {messages.suggestChanges}
+          </Link>
+        )}
       </div>
     );
   }
 
-  const [[favorite], [membership], [claim]] = await Promise.all([
+  const [[favorite], [membership], [claim], [openSuggestion]] = await Promise.all([
     database
       .select({ userId: favorites.userId })
       .from(favorites)
@@ -117,6 +133,20 @@ async function renderProducerAccountActions({
           eq(producerClaims.country, country),
           eq(producerClaims.producerId, producerId),
           inArray(producerClaims.status, ["draft", "pending", "needs_info", "approved"]),
+        ),
+      )
+      .limit(1),
+    database
+      .select({ id: producerSuggestions.id })
+      .from(producerSuggestions)
+      .where(
+        and(
+          eq(producerSuggestions.authorUserId, account.id),
+          eq(producerSuggestions.country, country),
+          eq(producerSuggestions.producerId, producerId),
+          inArray(producerSuggestions.status, [
+            ...OPEN_PRODUCER_SUGGESTION_STATUSES,
+          ]),
         ),
       )
       .limit(1),
@@ -158,11 +188,18 @@ async function renderProducerAccountActions({
       ) : claim ? (
         <Link href="/cuenta/reclamaciones">{messages.viewOwnershipClaim}</Link>
       ) : (
-        <Link
-          href={`/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`}
-        >
-          {messages.claimProducer}
-        </Link>
+        <>
+          <Link
+            href={`/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`}
+          >
+            {messages.claimProducer}
+          </Link>
+          <Link href={openSuggestion ? "/cuenta/sugerencias" : suggestionPath}>
+            {openSuggestion
+              ? messages.viewMySuggestions
+              : messages.suggestChanges}
+          </Link>
+        </>
       )}
     </div>
   );

@@ -33,6 +33,8 @@ const messages = {
     ownershipVerified: "स्वामित्व प्रमाणित",
     viewOwnershipClaim: "स्वामित्व दाबी हेर्नुहोस्",
     claimProducer: "यस उत्पादकको स्वामित्व दाबी गर्नुहोस्",
+    suggestChanges: "परिवर्तन सुझाव दिनुहोस्",
+    viewMySuggestions: "मेरा सुझावहरू हेर्नुहोस्",
     descriptionLanguage: {
       none: "विवरणको भाषा छैन",
       names: {

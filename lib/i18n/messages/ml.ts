@@ -33,6 +33,8 @@ const messages = {
     ownershipVerified: "ഉടമസ്ഥാവകാശം സ്ഥിരീകരിച്ചു",
     viewOwnershipClaim: "ഉടമസ്ഥാവകാശ അവകാശവാദം കാണുക",
     claimProducer: "ഈ ഉൽപ്പാദകന്റെ ഉടമസ്ഥാവകാശം അവകാശപ്പെടുക",
+    suggestChanges: "മാറ്റങ്ങൾ നിർദ്ദേശിക്കുക",
+    viewMySuggestions: "എന്റെ നിർദ്ദേശങ്ങൾ കാണുക",
     descriptionLanguage: {
       none: "വിവരണത്തിന്റെ ഭാഷയില്ല",
       names: {

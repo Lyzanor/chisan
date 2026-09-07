@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "ಮಾಲೀಕತ್ವ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
     viewOwnershipClaim: "ಮಾಲೀಕತ್ವದ ಕ್ಲೇಮ್ ವೀಕ್ಷಿಸಿ",
     claimProducer: "ಈ ಉತ್ಪಾದಕರ ಮಾಲೀಕತ್ವವನ್ನು ಕ್ಲೇಮ್ ಮಾಡಿ",
+    suggestChanges: "ಬದಲಾವಣೆಗಳನ್ನು ಸೂಚಿಸಿ",
+    viewMySuggestions: "ನನ್ನ ಸಲಹೆಗಳನ್ನು ನೋಡಿ",
     descriptionLanguage: {
       none: "ವಿವರಣೆಯ ಭಾಷೆ ಇಲ್ಲ",
       names: {

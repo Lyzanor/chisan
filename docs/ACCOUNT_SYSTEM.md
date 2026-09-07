@@ -8,8 +8,8 @@ The catalog, account workflows and authentication have distinct owners:
   holds reviewed related content for those producers. The app never publishes
   a database overlay over either source.
 - PostgreSQL is canonical for accounts, external identities, favorites,
-  producer claims, producer memberships, change requests, audit events and
-  entitlements, including the commercial request state for expanded producer
+  producer claims, producer memberships, change requests, community
+  suggestions, audit events and entitlements, including the commercial request state for expanded producer
   profiles. It may store proposal snapshots for review and audit. Public producer facts
   are resolved from the approved catalog, never from those snapshots.
 - Clerk owns credentials, verified sign-in identifiers and sessions. A Clerk
@@ -56,8 +56,9 @@ editorial operator materializes into Git.
 
 The production release includes local profiles, favorites, opt-in public user
 profiles with explicitly shared favorites, manual ownership claims, owner
-memberships, staff review, reviewed producer-change requests, producer-scoped
-expanded-profile entitlements and an admin-only gift workflow.
+memberships, staff review, reviewed producer-change requests, community
+suggestions for unclaimed producers, producer-scoped expanded-profile
+entitlements and an admin-only gift workflow.
 The Stripe payment adapter is implemented but deliberately deferred and
 unprovisioned. Do not launch or advertise paid upgrades until the activation
 gate in `docs/OPERATIONS.md` is completed.
@@ -241,6 +242,59 @@ The initial flow is deliberately manual:
 The public evidence ledgers under `data/evidence/**` are not storage for private
 ownership documents. If document upload is added, use private object storage,
 short-lived read URLs, retention limits and a separate artifact table.
+
+## Community suggestions
+
+A producer nobody has claimed is described entirely from editorial research and
+public sources, so the readers who know it are often the first to notice a stale
+phone number or a moved address. Any active account with a verified email may
+propose a correction from the public profile. This is an editorial input, never
+an authorization:
+
+- It is offered only while the producer has no active `owner` membership. Public
+  UI and the server mutation both check that, and the mutation rechecks it under
+  the same per-producer transaction lock a claim uses. An account that already
+  has a membership is sent to its producer editor instead.
+- Submitting one never creates a claim, a membership or an entitlement, and
+  never changes `users.profile_kind`. Accepting one publishes nothing.
+- It cannot touch the expanded field set or reviewed related content: those
+  require the producer entitlement an unclaimed producer cannot hold.
+
+`producer_suggestions` is a separate table from `producer_change_requests`
+because the two carry different authority. An owner proposal is authorized by a
+verified membership and feeds the two-phase CSV materialization workflow; a
+suggestion is unverified evidence that an editor assesses by hand. Reusing the
+owner table would attach community text to a workflow whose approval step means
+"authorized for publication".
+
+A suggestion is scoped to one visible part of the profile. The sections in
+`lib/accounts/producer-suggestion-sections.ts` partition the standard editable
+fields so the author corrects what they actually saw, the form cannot blank a
+field it does not render, and the reviewer reads the request in the same terms.
+Each row stores the section, the canonical row hash at the time, the complete
+base-row snapshot, the allowlisted patch and the author's public source. The
+submitted identity and payload are immutable in PostgreSQL. A suggestion counts
+as open while it is `pending` or `approved`: an accepted correction is still
+outstanding editorial work until the catalog carries it. There are at most ten
+open suggestions per account, twenty submissions per day, and one open
+suggestion per account, producer and section, so a second correction cannot
+silently supersede one an operator is already preparing to publish.
+
+The reviewer works in `/admin/sugerencias`, alongside ownership claims and
+producer changes. `pending` awaits a decision; `approved` records that editorial
+review accepted the correction; `rejected` closes it; `withdrawn` is the author
+closing their own request; `applied` records that the correction reached the
+published catalog, optionally with the Git commit that carried it. Acceptance
+and publication stay separate states because a suggestion has no materializer:
+the operator publishes it through the normal editorial workflow in
+`docs/EDITORIAL.md` and then records the result. The reviewer is shown whether
+the catalog row still matches the values the reader was looking at.
+
+Suggestion text is private review material like a claim: it is not written to
+logs and does not become public evidence under `data/evidence/**`.
+`CHISAN_PRODUCER_SUGGESTIONS_ENABLED` freezes new submissions without also
+freezing verified owners; missing keeps them enabled and any other value fails
+closed.
 
 ## Expanded-profile capability
 
@@ -565,8 +619,12 @@ activation, incidents, replacement and retirement are owned by
   revocation conflicts every unpublished request under the same producer lock.
   A future internal erasure flow must do the same; a Clerk `user.deleted` event
   alone intentionally does not alter domain resources.
-- Treat claims and producer notes as private; do not write them to logs or
-  public evidence files.
+- Treat claims, community suggestions and producer notes as private; do not
+  write them to logs or public evidence files.
+- Recheck the absence of an active owner membership at suggestion submission,
+  inside the same producer transaction lock. A community suggestion never
+  creates a claim, membership, entitlement or profile-kind change, and its
+  acceptance never writes the catalog.
 - Keep public pages usable when auth or database configuration is absent.
 - Keep provider unlinking separate from internal account deletion. A future
   explicit Chisan erasure flow must remove favorites, revoke access and

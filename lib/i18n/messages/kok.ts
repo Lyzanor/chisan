@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "मालकी तपासिल्ली",
     viewOwnershipClaim: "मालकीचो दावो पळोवात",
     claimProducer: "ह्या उत्पादकाचो दावो करात",
+    suggestChanges: "बदल सुचयात",
+    viewMySuggestions: "म्हजीं सुचोवण्यो पळयात",
     descriptionLanguage: {
       none: "वर्णनाची भास ना",
       names: {

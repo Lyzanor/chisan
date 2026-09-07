@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Beng bo netefalitsoe",
     viewOwnershipClaim: "Sheba tseko ea botho",
     claimProducer: "Tseka mohlahisi enoa",
+    suggestChanges: "Sisinya diphetoho",
+    viewMySuggestions: "Sheba ditshisinyo tsa ka",
     descriptionLanguage: {
       none: "Ha ho puo ea tlhaloso",
       names: {

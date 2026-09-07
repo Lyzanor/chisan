@@ -32,6 +32,8 @@ const messages = {
     ownershipVerified: "Ubunini buqinisekisiwe",
     viewOwnershipClaim: "Jonga ibango lobunini",
     claimProducer: "Banga lo mvelisi",
+    suggestChanges: "Cebisa utshintsho",
+    viewMySuggestions: "Jonga iingcebiso zam",
     descriptionLanguage: {
       none: "Akukho lwimi lwenkcazelo",
       names: {

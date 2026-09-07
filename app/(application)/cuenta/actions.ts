@@ -5,3 +5,5 @@ export { setFavoritePublicVisibilityAction, toggleFavoriteAction } from "./actio
 export { submitProducerClaimAction, withdrawProducerClaimAction } from "./actions/claims";
 export { submitProducerChangeAction, withdrawProducerChangeAction } from "./actions/changes";
 export type { ProducerChangeFormState } from "./actions/changes";
+export { submitProducerSuggestionAction, withdrawProducerSuggestionAction } from "./actions/suggestions";
+export type { ProducerSuggestionFormState } from "./actions/suggestions";

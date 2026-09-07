@@ -39,6 +39,8 @@ export type Messages = {
     ownershipVerified: string;
     viewOwnershipClaim: string;
     claimProducer: string;
+    suggestChanges: string;
+    viewMySuggestions: string;
     descriptionLanguage: {
       none: string;
       names: Partial<Record<DescriptionSourceLocale, string>>;

@@ -33,6 +33,8 @@ const messages = {
     ownershipVerified: "ମାଲିକାନା ଯାଞ୍ଚିତ",
     viewOwnershipClaim: "ମାଲିକାନା ଦାବି ଦେଖନ୍ତୁ",
     claimProducer: "ଏହି ଉତ୍ପାଦକଙ୍କ ମାଲିକାନା ଦାବି କରନ୍ତୁ",
+    suggestChanges: "ପରିବର୍ତ୍ତନ ପ୍ରସ୍ତାବ ଦିଅନ୍ତୁ",
+    viewMySuggestions: "ମୋର ପ୍ରସ୍ତାବ ଦେଖନ୍ତୁ",
     descriptionLanguage: {
       none: "ବିବରଣୀର ଭାଷା ନାହିଁ",
       names: {
