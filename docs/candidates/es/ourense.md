@@ -1,7 +1,7 @@
 # Ourense — candidate holds
 
 - Target CSV: `data/csv/es/galicia/ourense.csv`
-- Editorial review: 2026-09-04; 51 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-08; 52 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -82,3 +82,11 @@
 |---|---|---|---|---|---|---|
 | Adega O Cabalín | Vilamartín de Valdeorras | `Vino` — D.O. Valdeorras slate terrace wines | Viticulture project recovering centenary hillside vineyards in Valdeorras. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://adegaocabalin.com/> | Current own Valdeorras wines are supported; establish actual productive winery in Vilamartín rather than contact alone. |
 | Bodegas Alebrije | Coles | `Vino` — D.O. Ribeiro artisan wines | Small winery project in Ourense province focused on native treixadura and sousón blends. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.bodegasalebrije.es/> | Current winery project and own wines are supported; confirm actual current winery/production premises in Coles. |
+
+## AUTENTICA Premium Food 2026 exhibitor directory — 2026-09-08
+
+Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 2026 (Sevilla), cross-checked against the Spanish catalog and the existing candidate queues. The directory establishes a current public identity, a declared sector and, where quoted, a marketed product; it does not establish the productive unit, the productive municipality or productive responsibility. Municipalities below come from the producer-owned page or a company register named in each row and still need confirmation against the actual productive unit.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| A Pulpeira | O Carballiño | `Pescado` — cooked octopus | The exhibitor text states: “Pata de pulpo cocida en vacío, con su propio jugo, a vapor. Marca: A Pulpeira.” Trade catalogues place the plant at Polígono Industrial Uceira, 32500 O Carballiño. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.apulpeira.gal/> | Confirm the cooking and packing premises are its own and that the octopus offer reaches the market under this identity rather than private label. |

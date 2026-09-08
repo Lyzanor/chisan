@@ -1,7 +1,7 @@
 # Badajoz — candidate holds
 
 - Target CSV: `data/csv/es/extremadura/badajoz.csv`
-- Editorial review: 2026-09-04; 102 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-08; 103 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -128,3 +128,11 @@
 | Gourmet del Monte | Badajoz | `Vino` | The directory states: “Estamos localizados en Badajoz y somos proveedores de productos gourmet seleccionados de las mejores bodegas…” | [Directory](https://www.proveedores.com/proveedores/gourmet-del-monte/) | <https://www.gourmetdelmonte.es/> | Confirm the winery and its current published range. |
 | Viñas de Alange | Alange | `Vino` | The directory states: “Viñas de Alange es una empresa localizada en Córdoba especialista en la producción y distribución de vinos con la más…” | [Directory](https://www.proveedores.com/proveedores/vinas-de-alange/) |  | Resolve the productive municipality; the address the directory gives does not settle it. |
 | Vinos Leneus | Almendralejo | `Vino` | The directory states: “Vinos Leneus es una empresa localizada en Extremadura y nos especializamos como productores y proveedores de vinos…” | [Directory](https://www.proveedores.com/proveedores/vinos-leneus/) |  | Confirm the winery and its current published range. |
+
+## AUTENTICA Premium Food 2026 exhibitor directory — 2026-09-08
+
+Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 2026 (Sevilla), cross-checked against the Spanish catalog and the existing candidate queues. The directory establishes a current public identity, a declared sector and, where quoted, a marketed product; it does not establish the productive unit, the productive municipality or productive responsibility. Municipalities below come from the producer-owned page or a company register named in each row and still need confirmation against the actual productive unit.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Gourmetruz | Fuente de Cantos | `Carne` — fresh meat and Iberian products | The exhibitor text states: “Marca: Gourmetruz. Categoría: Carne fresca.” Its own site gives C. Mártires 15, 06240 Fuente de Cantos. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://gourmetruz.es/> | Confirm an own productive step, since the listed address is a shop front, and de-duplicate against the Iberian producers already published in Fuente de Cantos. |

@@ -1,7 +1,7 @@
 # Navarra — candidate holds
 
 - Target CSV: `data/csv/es/navarra/navarra.csv`
-- Editorial review: 2026-09-04; 54 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-08; 55 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -110,3 +110,11 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Bodegas Artazu | Artazu | `Vino` — D.O. Navarra garnacha wines | Artadi family project in Valdizarbe dedicated to reviving old mountain bush-vine garnacha. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.bodegasartazu.com/> | Current own Artazu/San Martín de Unx viticulture and wines are supported; establish exact productive winery municipality. |
+
+## AUTENTICA Premium Food 2026 exhibitor directory — 2026-09-08
+
+Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 2026 (Sevilla), cross-checked against the Spanish catalog and the existing candidate queues. The directory establishes a current public identity, a declared sector and, where quoted, a marketed product; it does not establish the productive unit, the productive municipality or productive responsibility. Municipalities below come from the producer-owned page or a company register named in each row and still need confirmation against the actual productive unit.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Ensalandia | Lodosa | `Conservas` — vegetable preserves | Listed under CONSERVAS with the brand “Ensalandia Professional”; its own site registers the company at Pol. Ind. El Ramal, C/ El Calderín 1, 31580 Lodosa. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://ensalandia.es/> | The public product text is thin. Confirm an own transforming step rather than washing, cutting and packing bought produce, which does not qualify as elaboration. |

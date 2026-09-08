@@ -1,7 +1,7 @@
 # Pontevedra — candidate holds
 
 - Target CSV: `data/csv/es/galicia/pontevedra.csv`
-- Editorial review: 2026-09-06; 205 unresolved candidate entries remain.
+- Editorial review: 2026-09-06; queue updated 2026-09-08; 207 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -241,3 +241,12 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | GOLOSINAS MININOLAS, S.L. | Nigrán | `Dulces y repostería` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004955/PO | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Dossier review only: no current producer-owned page was listed for this lead. Confirm productive responsibility, an identifiable own human-food offer and the actual productive municipality. Recorded blocker: Confirm an own obrador and a current offer under this identity rather than resale of third-party confectionery. Resolve the official municipality from the registered address "R/ MADANELA, 2, P.E. PTO DE MOLLE, N3A". |
+
+## AUTENTICA Premium Food 2026 exhibitor directory — 2026-09-08
+
+Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 2026 (Sevilla), cross-checked against the Spanish catalog and the existing candidate queues. The directory establishes a current public identity, a declared sector and, where quoted, a marketed product; it does not establish the productive unit, the productive municipality or productive responsibility. Municipalities below come from the producer-owned page or a company register named in each row and still need confirmation against the actual productive unit.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Conservas Artesanas Gallegas — Maruxaina | Vilagarcía de Arousa | `Conservas` — artisan seafood cannery | Listed under CONSERVAS and PESCADOS Y MARISCOS; its own site gives Arealonga 27, 36600 Vilagarcía de Arousa. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.maruxaina.es/> | Confirm the cannery is its own productive unit and de-duplicate against the canneries already published in this area. |
+| O Percebeiro | Marín | `Pescado` — cooked octopus and shellfish | The exhibitor text states: “El pulpo de Peixoto se selecciona en origen, se envasa en crudo y se cuece al vacío dentro de su propio envase.” Its own site gives Puerto Pesquero, Almacén 5154, 36900 Marín. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.opercebeiro.com/> | The quoted text describes selecting third-party octopus. Confirm an own cooking and packing step in Marín, and disregard the Madrid delegation the same page lists for placement. |

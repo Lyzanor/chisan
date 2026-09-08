@@ -1,7 +1,7 @@
 # Sevilla — candidates
 
 - Target CSV: `data/csv/es/andalucia/sevilla.csv`
-- Editorial review: 2026-09-04; 201 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-08; 203 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -242,3 +242,12 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | SALINA DE VALCARGADO S.L. | Utrera | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00299/SE | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CTRA. N-IV, APARTADO 14". |
+
+## AUTENTICA Premium Food 2026 exhibitor directory — 2026-09-08
+
+Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 2026 (Sevilla), cross-checked against the Spanish catalog and the existing candidate queues. The directory establishes a current public identity, a declared sector and, where quoted, a marketed product; it does not establish the productive unit, the productive municipality or productive responsibility. Municipalities below come from the producer-owned page or a company register named in each row and still need confirmation against the actual productive unit.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| AOVE Casa de Abuelo | La Puebla de Cazalla | `Aceite` — early-harvest arbequina EVOO | The exhibitor text states: “Aceite de Oliva Virgen Extra Arbequina, edición elaborada en los primeros días de cosecha con aceitunas de los olivos cultivados en el pago del Gordillo de Puebla de Cazalla.” Its own site gives Hacienda Ntra. Sra. de los Dolores, Ctra. de Osuna km 69, 41540 La Puebla de Cazalla. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.aovecasadeabuelo.com/> | Confirm the milling step is its own rather than milling at a third-party almazara, and de-duplicate against the producers already published in this municipality. |
+| Horno Los Abuelos | Carmona (Pol. El Pilero) | `Dulces y repostería` — artisan pastry and bakery | Listed under PANADERÍA, SNACKS Y MUNDO DULCE; local trade sources place its central obrador at Calle Ebanista 1, Polígono El Pilero, Carmona, supplying hospitality since 2005. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://hornolosabuelos.es/> | Separate the Carmona obrador from the Bormujos café, and confirm a take-home offer attributable to the producer rather than hospitality service. |
