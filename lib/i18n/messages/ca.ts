@@ -12,7 +12,7 @@ const messages = {
     register: "Registra't",
     myAccount: "El meu compte",
     greeting: "Hola, {name}",
-    favorites: "Preferits",
+    favorites: "Seguint",
     signOut: "Tanca la sessió",
   },
   siteFooter: {
@@ -24,11 +24,11 @@ const messages = {
   accountActions: {
     ownershipVerifiedDescription:
       "Chisan ha verificat el vincle entre aquest productor i qui gestiona aquesta fitxa.",
-    saveOrClaimPrompt: "Desa aquest productor o reclama'n la propietat.",
+    saveOrClaimPrompt: "Segueix aquest productor per llegir-ne les novetats o reclama'n la propietat.",
     signIn: "Inicia sessió",
     createAccount: "Crea un compte",
-    removeFavorite: "Elimina dels preferits",
-    saveFavorite: "Desa als preferits",
+    removeFavorite: "Deixa de seguir",
+    saveFavorite: "Segueix el productor",
     editMyProfile: "Edita el meu perfil",
     expandProfile: "Amplia el perfil",
     ownershipVerified: "Titularitat verificada",

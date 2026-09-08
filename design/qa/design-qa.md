@@ -1126,3 +1126,39 @@ using the production server for behavior tests to preserve the other dev session
   its illustrative counters are not shipped or written to production analytics.
   Backend integration tests cover the real authorization and aggregate query;
   this component check is not an authenticated owner end-to-end submission.
+
+## 2026-09-08 — Following and publication-backed community timeline
+
+- Reframed favorites as following throughout the Spanish public/account UI,
+  navigation, privacy controls and producer statistics. Existing selection and
+  attribution choices retain their meanings. The old favorites URL redirects.
+- Added a continuous reading column with dated, identity-linked entries, a
+  clearly marked ownership notice, All/Updates/Activity filters and accessible
+  older-page links. Existing undated CSV messages use native disclosures in a
+  separate section; there is no invented publication date. Producer composition
+  returns to the existing reviewed editor and change-status workflow.
+- Browser QA used an isolated Next.js copy and an in-memory PostgreSQL fixture.
+  Only the fixture authentication/database adapters were replaced; production
+  account pages, follow actions and timeline service were exercised. No live
+  account, entitlement, claim or catalog data was mutated. This is not Clerk or
+  Production authentication certification.
+- Checked 1440×1000 and 390×844. At 390px, the measured document width was 375px
+  with no horizontal page overflow. Checked a long Japanese text stress case
+  in the disclosure (fixture DOM only), full wrapping and native expansion.
+  Fixed the desktop following-count button to keep its label on one line.
+- Verified a 20-item first page and a three-item continuation with zero repeated
+  IDs; Activity showed only the approved claim. Unfollowing through the real
+  action removed all entries and showed zero follows; following again from the
+  producer profile restored the feed. Verified the old URL redirect, current
+  message disclosure and the community route's link to the existing editor.
+- Local evidence: `output/playwright/following-desktop.png`,
+  `output/playwright/following-mobile-activity.png`, and
+  `output/playwright/following-mobile-long-text.png`; fixture and gate log under
+  `scratch/following-qa/`. The development shell logged existing WebMCP schema
+  serialization notices and a local Vercel Analytics script 404 on the catalog
+  page; these are outside the following components and did not block the flows.
+- Validation: `pnpm verify:ai` passed, including database integration covering
+  current publication, review states, premium expiry, ownership revocation,
+  cross-account/country isolation, routing changes and idempotent follow writes.
+  Final focused checks covered TypeScript, i18n, lint, docs and design. Design
+  notices were assessed; no blocking design rule regressed.

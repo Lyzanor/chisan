@@ -84,10 +84,10 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
 
   const cards = [
     {
-      href: "/cuenta/favoritos",
-      label: "Productores favoritos",
+      href: "/cuenta/siguiendo",
+      label: "Productores que sigues",
       value: favoriteCount.value,
-      copy: "Conserva tus favoritos aunque cambie la dirección del perfil de un productor.",
+      copy: "Sus novedades publicadas y los avisos de titularidad se reúnen en tu timeline.",
     },
     {
       href: "/cuenta/reclamaciones",
@@ -112,6 +112,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   return (
     <div className="account-content">
       <AccountMessage params={params} />
+      <section className="account-callout"><h2>Las novedades de tu comunidad</h2><p>Lee los mensajes publicados y los avisos de los productores que sigues.</p><Link href="/cuenta/novedades" className="account-button">Abrir mi timeline</Link></section>
       <section aria-labelledby="account-overview-title">
         <h2 id="account-overview-title">Resumen</h2>
         <div className="account-stat-grid">

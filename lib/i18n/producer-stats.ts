@@ -1,8 +1,8 @@
 import type { Locale } from "./locales";
 
 const en = {
-  favorites: "Saved as a favorite",
-  interest: "Current favorites from active accounts, including private saves. An expression of interest, not orders or purchase commitments. No private identities are disclosed.",
+  favorites: "Followers",
+  interest: "Current followers with active accounts, including private follows. An expression of interest, not orders or purchase commitments. No private identities are disclosed.",
   title: "Profile statistics",
   link: "Statistics",
   premium: "Included in your premium profile",
@@ -34,8 +34,8 @@ const en = {
 };
 type Labels = typeof en;
 const es: Labels = {
-  favorites: "Te tienen en favoritos",
-  interest: "Favoritos actuales de cuentas activas, incluidos los guardados privados. Indican interés, no pedidos ni compromisos de compra. No se revelan identidades privadas.",
+  favorites: "Seguidores",
+  interest: "Seguidores actuales con cuentas activas, incluidos los seguimientos privados. Indican interés, no pedidos ni compromisos de compra. No se revelan identidades privadas.",
   title: "Estadísticas de la ficha",
   link: "Estadísticas",
   premium: "Incluido en tu perfil premium",
@@ -66,8 +66,8 @@ const es: Labels = {
   retry: "Volver a intentar",
 };
 const ca: Labels = {
-  favorites: "Et tenen a favorits",
-  interest: "Favorits actuals de comptes actius, inclosos els desats privats. Indiquen interès, no comandes ni compromisos de compra. No es revelen identitats privades.",
+  favorites: "Seguidors",
+  interest: "Seguidors actuals amb comptes actius, inclosos els seguiments privats. Indiquen interès, no comandes ni compromisos de compra. No es revelen identitats privades.",
   title: "Estadístiques de la fitxa",
   link: "Estadístiques",
   premium: "Inclòs en el teu perfil premium",

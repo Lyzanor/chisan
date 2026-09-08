@@ -50,7 +50,9 @@ export default async function AccountLayout({ children }: { children: React.Reac
         <nav className="account-nav" aria-label="Secciones de la cuenta">
           <NavigationLink href="/cuenta" activePath="/cuenta">Resumen</NavigationLink>
           <NavigationLink href="/cuenta/perfil" activePath="/cuenta/perfil">Perfil</NavigationLink>
-          <NavigationLink href="/cuenta/favoritos" activePath="/cuenta/favoritos">Favoritos</NavigationLink>
+          <NavigationLink href="/cuenta/novedades" activePath="/cuenta/novedades">Novedades</NavigationLink>
+          <NavigationLink href="/cuenta/siguiendo" activePath="/cuenta/siguiendo">Siguiendo</NavigationLink>
+          {account.profileKind === "producer" ? <NavigationLink href="/cuenta/comunidad" activePath="/cuenta/comunidad">Comunidad</NavigationLink> : null}
           <NavigationLink href="/cuenta/seleccion" activePath="/cuenta/seleccion">QR de selección</NavigationLink>
           <NavigationLink href="/cuenta/reclamaciones" activePath="/cuenta/reclamaciones">Solicitudes de propiedad</NavigationLink>
           <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Cambios de perfil</NavigationLink>

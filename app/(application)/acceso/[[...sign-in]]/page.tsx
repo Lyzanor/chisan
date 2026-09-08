@@ -36,7 +36,7 @@ export default function SignInPage() {
         <div className="auth-copy">
           <p className="catalog-kicker">Cuenta de {SITE_NAME}</p>
           <h1>Te damos la bienvenida</h1>
-          <p>Inicia sesión para gestionar favoritos, solicitudes de propiedad y cambios en los perfiles de productores.</p>
+          <p>Inicia sesión para seguir productores, leer sus novedades y gestionar solicitudes de propiedad y cambios en los perfiles de productores.</p>
         </div>
         <div className="auth-widget">
           <SignIn

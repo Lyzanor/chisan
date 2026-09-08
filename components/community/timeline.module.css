@@ -1,0 +1,120 @@
+.timeline {
+  display: grid;
+  gap: var(--chisan-space-6, 24px);
+  max-width: 880px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.followingLink {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.filters a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  color: var(--chisan-color-ink);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.filters a[aria-current="page"] {
+  color: var(--chisan-color-moss-dark);
+  border-color: var(--chisan-color-moss);
+}
+.entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.entry {
+  padding: 24px 0 32px;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.entry h3,
+.empty h3 {
+  margin: 8px 0 16px;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 500;
+}
+.byline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.byline a {
+  color: var(--chisan-color-ink);
+  font-weight: 500;
+}
+.byline small {
+  display: block;
+  margin-top: 4px;
+}
+.byline time,
+.byline small,
+.kind {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.kind {
+  margin: 24px 0 8px;
+}
+.body {
+  max-width: 64ch;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--chisan-color-moss-dark);
+}
+.empty {
+  padding: 32px 0;
+  max-width: 60ch;
+}
+.empty p {
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.currentMessage {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.currentMessage summary {
+  min-height: 44px;
+  cursor: pointer;
+}
+.currentMessage small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.currentMessage summary:focus-visible {
+  outline: 2px solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+.filters a:focus-visible,
+.entry a:focus-visible {
+  outline: 2px solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .byline {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .entry {
+    padding: 24px 0;
+  }
+}

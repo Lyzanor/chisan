@@ -71,7 +71,7 @@ export default async function SelectionPreviewPage({
         </div>
         <div className="account-inline-actions">
           <Link
-            href="/cuenta/favoritos"
+            href="/cuenta/siguiendo"
             className="account-button account-button--secondary"
           >
             Elegir productores

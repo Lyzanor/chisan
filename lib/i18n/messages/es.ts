@@ -12,7 +12,7 @@ const messages = {
     register: "Registrarse",
     myAccount: "Mi cuenta",
     greeting: "Hola, {name}",
-    favorites: "Favoritos",
+    favorites: "Siguiendo",
     signOut: "Cerrar sesión",
   },
   siteFooter: {
@@ -24,11 +24,11 @@ const messages = {
   accountActions: {
     ownershipVerifiedDescription:
       "Chisan ha verificado el vínculo entre este productor y quien gestiona esta ficha.",
-    saveOrClaimPrompt: "Guarda este productor o reclama su propiedad.",
+    saveOrClaimPrompt: "Sigue a este productor para leer sus novedades o reclama su propiedad.",
     signIn: "Iniciar sesión",
     createAccount: "Crear cuenta",
-    removeFavorite: "Quitar de favoritos",
-    saveFavorite: "Guardar en favoritos",
+    removeFavorite: "Dejar de seguir",
+    saveFavorite: "Seguir productor",
     editMyProfile: "Editar mi perfil",
     expandProfile: "Ampliar perfil",
     ownershipVerified: "Titularidad verificada",

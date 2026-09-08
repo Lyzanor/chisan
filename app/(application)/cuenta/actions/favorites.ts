@@ -13,20 +13,22 @@ import { safeReturnPath } from "@/lib/accounts/producer-fields";
 import { isPublicProfileVisible } from "@/lib/accounts/public-profile-policy";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
-import { auditEvents, favorites } from "@/lib/db/schema";
+import { auditEvents, favorites, users } from "@/lib/db/schema";
+
+import { setProducerFollow } from "@/lib/accounts/producer-follows";
 
 import { redirectWithMessage } from "./navigation";
 export async function setFavoritePublicVisibilityAction(
   formData: FormData,
 ): Promise<void> {
-  const account = await requireCurrentAccount("/cuenta/favoritos");
+  const account = await requireCurrentAccount("/cuenta/siguiendo");
   const parsed = producerKeySchema.safeParse({
     country: formString(formData, "country"),
     producerId: formString(formData, "producerId"),
   });
   const returnTo = safeReturnPath(
     formString(formData, "returnTo"),
-    "/cuenta/favoritos",
+    "/cuenta/siguiendo",
   );
   if (!parsed.success) {
     redirectWithMessage(
@@ -52,6 +54,12 @@ export async function setFavoritePublicVisibilityAction(
     await transaction.execute(
       sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${account.id}`}))`,
     );
+    const [active] = await transaction
+      .select({ id: users.id })
+      .from(users)
+      .where(and(eq(users.id, account.id), eq(users.status, "active")))
+      .for("update");
+    if (!active) throw new Error("An active account is required.");
     const rows = await transaction
       .update(favorites)
       .set({ showOnPublicProfile })
@@ -79,11 +87,11 @@ export async function setFavoritePublicVisibilityAction(
     redirectWithMessage(
       returnTo,
       "error",
-      "Guarda el productor antes de compartirlo.",
+      "Sigue al productor antes de añadirlo a tu selección.",
     );
   }
 
-  revalidatePath(returnTo.split("?")[0] || "/cuenta/favoritos");
+  revalidatePath(returnTo.split("?")[0] || "/cuenta/siguiendo");
   if (account.publicHandle) revalidatePath(`/u/${account.publicHandle}`);
   redirectWithMessage(
     returnTo,
@@ -104,7 +112,7 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
   });
   const returnTo = safeReturnPath(
     formString(formData, "returnTo"),
-    "/cuenta/favoritos",
+    "/cuenta/siguiendo",
   );
 
   if (!parsed.success) {
@@ -115,63 +123,40 @@ export async function toggleFavoriteAction(formData: FormData): Promise<void> {
     );
   }
 
-  const producer = await findProducerById(
-    parsed.data.country,
-    parsed.data.producerId,
-  );
-  if (!producer) {
+  const following = formString(formData, "following");
+  if (following !== "yes" && following !== "no") {
     redirectWithMessage(
       returnTo,
       "error",
-      "Ese productor ya no está en el catálogo.",
+      "Recarga el perfil antes de cambiar el seguimiento.",
     );
   }
-
-  const removed = await getDatabase().transaction(async (database) => {
-    await database.execute(
-      sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${account.id}`}))`,
+  try {
+    await setProducerFollow(
+      getDatabase(),
+      account.id,
+      parsed.data,
+      following === "yes",
+      async (key) =>
+        Boolean(await findProducerById(key.country, key.producerId)),
     );
-    const [existing] = await database
-      .select({ userId: favorites.userId })
-      .from(favorites)
-      .where(
-        and(
-          eq(favorites.userId, account.id),
-          eq(favorites.country, parsed.data.country),
-          eq(favorites.producerId, parsed.data.producerId),
-        ),
-      )
-      .limit(1);
-
-    if (existing) {
-      await database
-        .delete(favorites)
-        .where(
-          and(
-            eq(favorites.userId, account.id),
-            eq(favorites.country, parsed.data.country),
-            eq(favorites.producerId, parsed.data.producerId),
-          ),
-        );
-    } else {
-      await database
-        .insert(favorites)
-        .values({
-          userId: account.id,
-          country: parsed.data.country,
-          producerId: parsed.data.producerId,
-        })
-        .onConflictDoNothing();
-    }
-
-    return Boolean(existing);
-  });
-
+  } catch {
+    redirectWithMessage(
+      returnTo,
+      "error",
+      "No se ha podido actualizar el seguimiento. Recarga e inténtalo de nuevo.",
+    );
+  }
   revalidatePath(returnTo.split("?")[0] || "/");
+  revalidatePath("/cuenta/siguiendo");
+  revalidatePath("/cuenta/novedades");
+  revalidatePath("/cuenta");
   if (account.publicHandle) revalidatePath(`/u/${account.publicHandle}`);
   redirectWithMessage(
     returnTo,
     "notice",
-    removed ? "Eliminado de favoritos." : "Añadido a favoritos.",
+    following === "yes"
+      ? "Ahora sigues a este productor."
+      : "Has dejado de seguir a este productor.",
   );
 }

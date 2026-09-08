@@ -1,5 +1,59 @@
 # Chisan Account System
 
+## Following and community timeline
+
+The user-facing favorite is now a producer follow. `/cuenta/siguiendo` manages
+these relationships; `/cuenta/favoritos` remains a redirect for existing links.
+The existing `favorites` table, action entry points and attribution API keep
+their compatibility names. Every existing relation becomes a follow in place,
+preserving its creation time, public-selection opt-in and account-level avatar
+attribution preference. No data migration or automatic public sharing occurs.
+In the older contracts below, "favorite" refers to this same stored relation.
+
+Following and unfollowing submit an explicit desired state, making retries
+idempotent. Mutations lock and recheck the active account and share the existing
+selection lock. Unfollowing also removes that producer from the account's
+public selection. It works for retired producers; following a missing producer
+fails. Following again starts with public selection disabled.
+
+`/cuenta/novedades` is a private, server-rendered read model of the current
+account's follows. It merges two dated sources:
+
+- Approved ownership claims with an active owner membership sourced from that
+  exact claim and an active owner account. Pending, rejected and revoked claims
+  are absent. These notices do not require producer premium. They expose only
+  neutral approval copy and current catalog identity, never the claimant,
+  evidence, review notes or account identifiers.
+- Applied producer profile changes for producers with the exact currently active
+  `producer.profile.premium` entitlement. A commit reference and application
+  timestamp are required. Every patched field must match the deployed CSV;
+  related-content changes must also match the deployed semantic content hash.
+  The visible message comes only from the current canonical CSV, never from a
+  proposal snapshot. Other changes use neutral copy linking to the current
+  profile. Draft, submitted, approved and applying changes remain absent.
+
+Dates are the recorded claim approval or change application time, not an
+invented deployment time. Rows are ordered by timestamp and opaque event ID;
+keyset pagination scans bounded chunks and advances across omitted records.
+Filters distinguish producer updates from ownership activity. Unfollowing
+immediately removes both sources from the next read. Current CSV identity
+resolves links, and retired or unpublished producers are omitted.
+
+Existing premium CSV community messages remain readable in a separate section
+without an invented publication date. `/cuenta/comunidad` leads producers to
+the existing editor and change-status workflow: draft, review, Git publication.
+It does not introduce independent social posts or a database content overlay.
+The feed represents changes still supported by current publication, rather than
+an immutable historical message archive: superseded patches no longer matching
+the catalog disappear. Local editorial changes without an account change
+record do not acquire a dated event, but their current message remains readable.
+Premium expiry hides producer updates and messages; ownership notices remain.
+
+The catalog remains available during account-storage incidents. Timeline errors
+offer a retry and do not claim that the account has no follows. The existing
+public attribution opt-in applies to the renamed follower disclosure; private
+identities never enter the timeline or the public selection automatically.
+
 ## Boundary and sources of truth
 
 The catalog, account workflows and authentication have distinct owners:

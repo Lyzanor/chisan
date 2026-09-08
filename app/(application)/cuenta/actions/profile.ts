@@ -35,7 +35,7 @@ export async function updateFavoritesAttributionAction(formData: FormData): Prom
   await updateFavoritesAttribution(getDatabase(), account.id, formString(formData, "enabled") === "yes");
   revalidatePath("/cuenta/perfil");
   revalidatePath("/", "layout");
-  redirectWithMessage("/cuenta/perfil", "notice", "Visibilidad en favoritos actualizada.");
+  redirectWithMessage("/cuenta/perfil", "notice", "Visibilidad como seguidor actualizada.");
 }
 export async function completeOnboardingAction(
   formData: FormData,

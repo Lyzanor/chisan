@@ -4,7 +4,8 @@ export const ACCOUNT_ROUTES = {
   signIn: "/acceso",
   signUp: "/registro",
   dashboard: "/cuenta",
-  favorites: "/cuenta/favoritos",
+  favorites: "/cuenta/siguiendo",
+  timeline: "/cuenta/novedades",
   onboarding: "/cuenta/bienvenida",
   afterAuthentication: "/cuenta/bienvenida",
 } as const;

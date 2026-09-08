@@ -160,6 +160,7 @@ async function renderProducerAccountActions({
   return (
     <div className="producer-account-actions">
       <form action={toggleFavoriteAction}>
+        <input type="hidden" name="following" value={favorite ? "no" : "yes"} />
         <input type="hidden" name="country" value={country} />
         <input type="hidden" name="producerId" value={producerId} />
         <input type="hidden" name="returnTo" value={safeReturnTo} />

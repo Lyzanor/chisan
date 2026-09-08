@@ -58,7 +58,7 @@ export function SavedCatalogArea({
     <div className="account-callout">
       <strong>Zona guardada: {savedArea.label}</strong>
       <p>
-        La portada ahora abre {savedArea.label} directamente. Olvidarla aquí no cambia tus favoritos ni tus solicitudes de propiedad.
+        La portada ahora abre {savedArea.label} directamente. Olvidarla aquí no cambia los productores que sigues ni tus solicitudes de propiedad.
       </p>
       <div className="account-inline-actions">
         <Link

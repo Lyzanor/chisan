@@ -12,7 +12,7 @@ const messages = {
     register: "Register",
     myAccount: "My account",
     greeting: "Hello, {name}",
-    favorites: "Favorites",
+    favorites: "Following",
     signOut: "Sign out",
   },
   siteFooter: {
@@ -24,11 +24,11 @@ const messages = {
   accountActions: {
     ownershipVerifiedDescription:
       "Chisan has verified the connection between this producer and the person managing this profile.",
-    saveOrClaimPrompt: "Save this producer or claim ownership.",
+    saveOrClaimPrompt: "Follow this producer to read updates or claim ownership.",
     signIn: "Sign in",
     createAccount: "Create account",
-    removeFavorite: "Remove favorite",
-    saveFavorite: "Save favorite",
+    removeFavorite: "Unfollow",
+    saveFavorite: "Follow producer",
     editMyProfile: "Edit my profile",
     expandProfile: "Expand profile",
     ownershipVerified: "Ownership verified",

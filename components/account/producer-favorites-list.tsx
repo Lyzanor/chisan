@@ -57,7 +57,7 @@ export function ProducerFavoritesList({
         <summary className={styles.summary}>
           <span className={styles.copy}>
             <span id="producer-favorites-title" className={styles.title}>
-              Guardado en favoritos por
+              Seguidores de este productor
             </span>
             <span>
               {page.total === 1
@@ -95,7 +95,7 @@ export function ProducerFavoritesList({
                     <UserAvatar name={person.name} src={person.avatarUrl} />
                     <span>
                       <strong>{person.name}</strong>
-                      <small>Ver perfil y mapa de favoritos</small>
+                      <small>Ver perfil y selección</small>
                     </span>
                     <span aria-hidden="true">→</span>
                   </Link>

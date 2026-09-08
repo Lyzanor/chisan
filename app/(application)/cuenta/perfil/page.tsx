@@ -126,15 +126,15 @@ export default async function AccountProfilePage({
 
       <section aria-labelledby="favorite-attribution-title">
         <header className="account-section-heading"><div>
-          <h2 id="favorite-attribution-title">Aparecer en los favoritos de productores</h2>
-          <p>Elige si otras personas pueden ver que has guardado un productor.</p>
+          <h2 id="favorite-attribution-title">Aparecer como seguidor de productores</h2>
+          <p>Elige si otras personas pueden ver que sigues a un productor.</p>
         </div></header>
         <form action={updateFavoritesAttributionAction} className="account-form">
           <label className="account-check" style={{ minHeight: 44, alignItems: "center" }}>
             <input type="checkbox" name="enabled" value="yes" defaultChecked={profilePresentation.favoritesAttributionEnabled} />
-            <span>Mostrar mi nombre y foto en «Guardado en favoritos por».</span>
+            <span>Mostrar mi nombre y foto en «Seguidores de este productor».</span>
           </label>
-          <p>Se aplica a todos tus favoritos actuales y futuros, aunque no tengas un perfil público. Si tu perfil es público, añadimos un enlace a su mapa. Los perfiles privados y no listados no se enlazan.</p>
+          <p>Se aplica a todos los productores que sigues ahora y en el futuro, aunque no tengas un perfil público. Si tu perfil es público, añadimos un enlace a su mapa. Los perfiles privados y no listados no se enlazan.</p>
           <p>Puedes desactivarlo cuando quieras. Esta opción no añade productores a tu selección pública.</p>
           <button type="submit" className="account-button">Guardar visibilidad</button>
         </form>
@@ -165,7 +165,7 @@ export default async function AccountProfilePage({
           <div>
             <h2 id="public-profile-title">Selección pública de productores</h2>
             <p>
-              Publica una página para compartir únicamente los favoritos que elijas expresamente. Añade un nombre y explica tu selección para tu tienda, evento o preferencias personales.
+              Publica una página para compartir únicamente los productores que elijas expresamente. Añade un nombre y explica tu selección para tu tienda, evento o preferencias personales.
             </p>
           </div>
           {publicProfileVisible && account.publicHandle ? (
@@ -279,7 +279,7 @@ export default async function AccountProfilePage({
               <option value="public">Público: puede aparecer en buscadores</option>
             </select>
             <small>
-              Los favoritos permanecen ocultos hasta que los actives individualmente desde la página de favoritos.
+              Los productores que sigues quedan fuera de tu selección pública hasta que los añadas individualmente desde «Siguiendo».
             </small>
           </label>
           <button type="submit" className="account-button">
@@ -289,7 +289,7 @@ export default async function AccountProfilePage({
         <div className="account-callout">
           <strong>QR de selección</strong>
           <p>
-            Elige productores de tus favoritos, revisa el mapa completo y activa el QR desde la vista previa.
+            Elige productores de los que sigues, revisa el mapa completo y activa el QR desde la vista previa.
           </p>
           <Link href="/cuenta/seleccion" className="account-button">
             Vista previa de la selección y el QR

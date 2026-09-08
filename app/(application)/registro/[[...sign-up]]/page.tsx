@@ -40,7 +40,7 @@ export default function SignUpPage() {
           <div className="auth-profile-list">
             <article>
               <strong>Usuario</strong>
-              <span>Guarda tus productores favoritos y crea tu propia selección.</span>
+              <span>Sigue a los productores, lee sus novedades y crea tu propia selección.</span>
             </article>
             <article>
               <strong>Productor</strong>

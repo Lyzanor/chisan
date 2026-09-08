@@ -82,7 +82,7 @@ export default function PrivacyPage() {
         <h2>Cuentas y aportaciones</h2>
         <p>
           Cuando las funciones de cuenta están habilitadas, Clerk gestiona la
-          autenticación. Chisan guarda el perfil de cuenta, los favoritos, las
+          autenticación. Chisan guarda el perfil de cuenta, los seguimientos, las
           solicitudes de propiedad y las propuestas de cambios necesarias para
           prestar estas funciones y conservar un historial de auditoría. Si
           creas un mapa público de productores, el perfil también guarda la zona
@@ -106,8 +106,8 @@ export default function PrivacyPage() {
           utilizarse como foto inicial. Guardamos una copia reducida sin los
           metadatos originales, que puedes sustituir o quitar desde tu perfil.
           La foto se muestra en tu perfil cuando lo haces visible. Si activas
-          «Guardado en favoritos por», tu nombre y foto aparecerán en todos los
-          productores que guardes, incluidos los favoritos anteriores. Esta opción
+          «Seguidores de este productor», tu nombre y foto aparecerán en todos los
+          productores que sigas, incluidos tus antiguos favoritos. Esta opción
           está desactivada por defecto y puedes retirarla en cualquier momento.
           Solo enlazamos tu mapa si el perfil es público; la selección de ese mapa
           sigue dependiendo de los productores que elijas compartir.

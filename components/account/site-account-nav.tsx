@@ -163,6 +163,7 @@ export function AccountMenu({
             {signedIn ? (
               <>
                 <Link href={ACCOUNT_ROUTES.dashboard}>{messages.myAccount}</Link>
+                <Link href={ACCOUNT_ROUTES.timeline}>{languageMenu.currentLocale === "es" ? "Novedades" : languageMenu.currentLocale === "ca" ? "Novetats" : "Updates"}</Link>
                 <Link href={ACCOUNT_ROUTES.favorites}>{messages.favorites}</Link>
                 <SignOutButton>
                   <button type="button" onClick={closeMenu}>
