@@ -9,17 +9,17 @@
 :root {
   color-scheme: light;
 
-  --chisan-color-rice-paper: #f5f1e8;
-  --chisan-color-surface: #fffdf8;
-  --chisan-color-surface-muted: #ece8de;
-  --chisan-color-ink: #1d201b;
-  --chisan-color-stone: #686c66;
-  --chisan-color-hairline: #d7d3c9;
-  --chisan-color-moss: #52614c;
-  --chisan-color-moss-dark: #344237;
-  --chisan-color-moss-pale: #e5e8e1;
+  --chisan-color-rice-paper: #ffffff;
+  --chisan-color-surface: #ffffff;
+  --chisan-color-surface-muted: #f2f2f2;
+  --chisan-color-ink: #171717;
+  --chisan-color-stone: #595959;
+  --chisan-color-hairline: #d4d4d4;
+  --chisan-color-moss: #00563f;
+  --chisan-color-moss-dark: #003d2d;
+  --chisan-color-moss-pale: #f2f2f2;
 
-  --chisan-font-sans: var(--font-chisan-sans), "Hiragino Kaku Gothic ProN",
+  --chisan-font-sans: var(--font-chisan-sans), var(--font-chisan-fallback), "Hiragino Kaku Gothic ProN",
     "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
 
   --chisan-space-1: 0.25rem;
@@ -39,7 +39,7 @@
   --chisan-radius-panel: 24px;
   --chisan-line: 1px;
   --chisan-focus-ring: 2px;
-  --chisan-shadow-overlay: 0 16px 48px rgb(29 32 27 / 12%);
+  --chisan-shadow-overlay: 0 16px 48px rgb(0 0 0 / 12%);
   --chisan-motion-immediate: 140ms;
   --chisan-motion-component: 200ms;
   --chisan-motion-page: 240ms;

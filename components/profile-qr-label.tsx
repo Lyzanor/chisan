@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
-import chisanWordmark from "@/design/brand/assets/chisan-wordmark-ink.png";
+import { CHISAN_MARK_SRC, CHISAN_WORDMARK_SRC, PROFILE_QR_MARK_SIZE } from "@/lib/brand";
 import { getProfileQrLabels } from "@/lib/i18n/profile-qr-labels";
 import type { Locale } from "@/lib/i18n/locales";
 import {
@@ -17,11 +17,11 @@ import {
 } from "@/lib/profile-qr";
 
 const LABEL_COLORS = {
-  background: "#f5f1e8",
-  surface: "#fffdf8",
-  ink: "#1d201b",
-  stone: "#686c66",
-  moss: "#52614c",
+  background: "#ffffff",
+  surface: "#ffffff",
+  ink: "#171717",
+  stone: "#595959",
+  moss: "#00563f",
 } as const;
 const COPY_FEEDBACK_DURATION_MS = 1_500;
 
@@ -178,7 +178,11 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
 
     try {
       await document.fonts?.ready;
-      const wordmark = await loadImage(chisanWordmark.src);
+      const [wordmark, mark] = await Promise.all([
+        loadImage(CHISAN_WORDMARK_SRC),
+        loadImage(CHISAN_MARK_SRC),
+      ]);
+      const fontFamily = getComputedStyle(sourceQr).fontFamily;
       const canvas = document.createElement("canvas");
       canvas.width = PROFILE_QR_LABEL_WIDTH;
       canvas.height = PROFILE_QR_LABEL_HEIGHT;
@@ -203,7 +207,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       );
 
       context.fillStyle = accent;
-      context.font = "500 32px 'Noto Sans', sans-serif";
+      context.font = `500 32px ${fontFamily}`;
       context.textAlign = "center";
       context.textBaseline = "middle";
       context.fillText(labelType.toLocaleUpperCase(locale), canvas.width / 2, 282);
@@ -213,9 +217,24 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       context.fillRect(160, 340, 880, 880);
       context.drawImage(sourceQr, 160, 340, 880, 880);
       context.imageSmoothingEnabled = true;
+      // Paint the loaded mark explicitly: download must not race the QR canvas's
+      // asynchronous image load. The QR renderer excavates this same area.
+      context.fillRect(
+        160 + (880 - PROFILE_QR_MARK_SIZE) / 2,
+        340 + (880 - PROFILE_QR_MARK_SIZE) / 2,
+        PROFILE_QR_MARK_SIZE,
+        PROFILE_QR_MARK_SIZE,
+      );
+      context.drawImage(
+        mark,
+        160 + (880 - PROFILE_QR_MARK_SIZE) / 2,
+        340 + (880 - PROFILE_QR_MARK_SIZE) / 2,
+        PROFILE_QR_MARK_SIZE,
+        PROFILE_QR_MARK_SIZE,
+      );
 
       context.fillStyle = LABEL_COLORS.ink;
-      context.font = "500 56px 'Noto Sans', sans-serif";
+      context.font = `500 56px ${fontFamily}`;
       const nameLines = wrapCanvasText(context, name, 960);
       const firstLineY = nameLines.length === 1 ? 1340 : 1308;
       nameLines.forEach((line, index) => {
@@ -223,7 +242,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       });
 
       context.fillStyle = LABEL_COLORS.stone;
-      context.font = "500 32px 'Noto Sans', sans-serif";
+      context.font = `500 32px ${fontFamily}`;
       context.fillText("chisan.app", canvas.width / 2, 1500);
 
       const link = document.createElement("a");
@@ -306,7 +325,13 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
               level="H"
               marginSize={4}
               bgColor={LABEL_COLORS.surface}
-              fgColor={LABEL_COLORS.ink}
+              fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
+              imageSettings={{
+                src: CHISAN_MARK_SRC,
+                width: PROFILE_QR_MARK_SIZE,
+                height: PROFILE_QR_MARK_SIZE,
+                excavate: true,
+              }}
               title={`${scanLabel}: ${name}`}
               style={{ height: "auto", width: "100%" }}
             />

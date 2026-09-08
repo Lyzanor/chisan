@@ -154,7 +154,7 @@ body { min-height: 100svh; }
 }
 
 .catalog-start-head h1,
-.catalog-start-head h2 { letter-spacing: -0.045em; }
+.catalog-start-head h2 { letter-spacing: -0.02em; }
 .catalog-start-head { padding-bottom: var(--chisan-space-6); }
 
 .catalog-start-page--home { width: min(1280px, calc(100% - 3rem)); }
@@ -176,7 +176,7 @@ body { min-height: 100svh; }
   margin-top: var(--chisan-space-6);
   font-size: clamp(3rem, 5vw, 4.5rem);
   line-height: 1.02;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
   .catalog-start-page--home .home-about {
@@ -277,7 +277,7 @@ body { min-height: 100svh; }
   gap: var(--chisan-space-8);
 }
 .catalog-discovery-toolbar .catalog-simple-header { padding: var(--chisan-space-2) 0; border: 0; background: transparent; }
-.catalog-discovery-toolbar h1 { font-size: clamp(1.75rem, 2.7vw, 2.5rem); letter-spacing: -0.045em; line-height: 1.15; }
+.catalog-discovery-toolbar h1 { font-size: clamp(1.75rem, 2.7vw, 2.5rem); letter-spacing: -0.02em; line-height: 1.15; }
 .catalog-discovery-toolbar .catalog-discovery-tools {
   flex: 0 1 24rem;
   min-width: 0;
@@ -307,7 +307,7 @@ body { min-height: 100svh; }
 .leaflet-container { background: var(--chisan-color-surface-muted); }
 
 .detail-hero { border-radius: var(--chisan-radius-panel); border: 0; padding: clamp(1rem, 3vw, 2rem) 0 var(--chisan-space-8); }
-.detail-hero h1 { font-size: clamp(2rem, 3.8vw, 3.5rem); letter-spacing: -0.05em; line-height: 1.08; text-wrap: balance; }
+.detail-hero h1 { font-size: clamp(2rem, 3.8vw, 3.5rem); letter-spacing: -0.02em; line-height: 1.08; text-wrap: balance; }
 .detail-hero-media { border-radius: var(--chisan-radius-object); }
 .detail-category-icon { width: 3rem; height: 3rem; }
 .detail-actions { gap: var(--chisan-space-3); margin-top: var(--chisan-space-6); }

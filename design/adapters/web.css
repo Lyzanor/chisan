@@ -27,7 +27,7 @@ body {
 .chisan-wordmark {
   display: block;
   width: 7rem;
-  aspect-ratio: 2084 / 754;
+  aspect-ratio: 577.82 / 144;
   flex: 0 0 auto;
   background: var(--chisan-brand-asset) center / contain no-repeat;
 }
@@ -425,7 +425,7 @@ body {
 
 .leaflet-control-attribution {
   border-radius: 2px 0 0;
-  background: rgb(255 253 248 / 90%) !important;
+  background: color-mix(in srgb, var(--chisan-color-surface) 90%, transparent) !important;
   color: var(--chisan-color-stone);
   font-family: var(--chisan-font-sans);
 }

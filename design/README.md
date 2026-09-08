@@ -12,7 +12,8 @@ surfaces and brief motion that makes interactions easier to follow.
 foundations/tokens.css   colour, type, space, shape, motion tokens
 adapters/web.css         maps those tokens onto the web surface
 adapters/experience.css  shared navigation, discovery, profile and account polish
-brand/assets/            the two approved logo rasters
+brand/assets/            raster metadata exports from the approved vectors
+public/brand/            approved C-with-dot SVG masters (repository root)
 references/              decision boards and inspiration (never imported)
 qa/design-qa.md          what was decided and rejected, per surface
 ```
@@ -57,30 +58,33 @@ current product decisions. A justified change may revise them with visual QA.
 
 | Token           |     Value | Role                                    |
 | --------------- | --------: | --------------------------------------- |
-| `rice-paper`    | `#F5F1E8` | Page field                              |
-| `surface`       | `#FFFDF8` | Controls, raised surfaces               |
-| `surface-muted` | `#ECE8DE` | Table headers, quiet fills              |
-| `ink`           | `#1D201B` | Text, wordmark, dark surfaces           |
-| `stone`         | `#686C66` | Secondary text, map labels              |
-| `hairline`      | `#D7D3C9` | Rules, borders, map geometry            |
-| `moss`          | `#52614C` | Primary action, focus, active selection |
-| `moss-dark`     | `#344237` | Text on `moss-pale`                     |
-| `moss-pale`     | `#E5E8E1` | Quiet selected state                    |
+| `rice-paper`    | `#FFFFFF` | Pure white page field                    |
+| `surface`       | `#FFFFFF` | Controls, raised surfaces               |
+| `surface-muted` | `#F2F2F2` | Neutral quiet fills                     |
+| `ink`           | `#171717` | Text, dark surfaces                     |
+| `stone`         | `#595959` | Secondary text, map labels              |
+| `hairline`      | `#D4D4D4` | Decorative rules and borders            |
+| `moss`          | `#00563F` | Forest green action, focus, selection   |
+| `moss-dark`     | `#003D2D` | Dark green text and hover               |
+| `moss-pale`     | `#F2F2F2` | Neutral selected fill                   |
 
-Every other pair meets WCAG AA. These three do not — never use them:
+The palette is pure white, neutral grays and forest green. Legacy token names
+remain stable for consumers: `rice-paper` no longer means a cream tint and
+`moss-pale` is neutral gray, not pastel green. Do not add cream, sage or ochre
+brand backgrounds. Green provides deliberate accents rather than tinted fields.
 
-- `stone` on `surface-muted` (4.37) → use `ink`
-- `stone` on `moss-pale` (4.32) → use `moss-dark`
-- `hairline` on `rice-paper` (1.33) → decorative only; a meaningful edge needs
-  `stone` or darker
+Use `stone` or darker for meaningful control boundaries; `hairline` is
+decorative only. Text uses `ink`, `stone` or `moss-dark` on light surfaces and
+`surface` on green or dark surfaces. Check actual foreground/background pairs.
 
-Moss is functional: less visual area than the content it supports. No gradients,
-tinted shadows, saturated fields or colour-coded card sets. Status colours
+No gradients, tinted shadows or colour-coded card sets. Status colours
 (error, warning, success, verification) belong to their product contract.
+The approved C-with-dot vectors use solid forest green, with no raster texture.
 
 ## Type
 
-One family: **Noto Sans**, with the Noto or system fallback per script. Prefer sans-serif fallbacks; choose a script-appropriate fallback when it
+Primary family: **Outfit**, self-hosted as a variable font. **Noto Sans** remains
+the fallback before the existing script-specific system fonts. Prefer sans-serif fallbacks; choose a script-appropriate fallback when it
 better preserves legibility.
 
 | Role      | Weight | Size    | Line height   |
@@ -91,7 +95,7 @@ better preserves legibility.
 | Interface | 500    | 14–16px | 1.35–1.5      |
 | Metadata  | 500    | 12–13px | 1.4, `0.04em` |
 
-`next/font` loads 400, 500 and 700. The current CSS defaults to 400 and 500, using size, position and space
+`next/font/local` loads Outfit weights 100–900; Noto Sans loads 400, 500 and 700. The current CSS defaults to 400 and 500, using size, position and space
 for hierarchy. A different weight is a design decision to evaluate in context. 700 belongs to `<strong>` and
 `<b>`, where the browser applies it and the meaning is in the markup. Nothing
 under 12px. Reading column 58–64 characters.
@@ -230,26 +234,30 @@ row.
 
 ## Brand
 
-The lower-case wordmark **chisan** is the logo, shipped as a raster. The compact
-`c` is a crop of it, for favicons, avatars and square icons only — never beside
-the wordmark. Short `moss` caps mark both terminals of the compact `c`; the
-wordmark repeats that signature only on the natural terminals of `c` and `s`.
+The standard **Chisan** wordmark includes the rounded-square open **C with its
+separate central square dot**. That C-with-dot is the primary identity element,
+also used alone for the favicon and square affordances. Never omit the dot from
+either the full wordmark or compact symbol; never substitute a QR for the logo.
 
-- Wordmark above 88px of width, glyph below. Minimums: 88px and 16px.
-- Clear space: one glyph stroke width. The primary body is `ink`; the reversed
-  body is `surface`. Both retain the `moss` terminal caps.
-- Tagline stays separate live text. Never redraw the logo in font, CSS or SVG.
-- No containers, outlines, shadows, gradients or colours outside `ink`,
-  `surface` and the approved `moss` caps.
-- No food, leaf, map-pin, seal, torii, ensō, calligraphy, rising-sun or
-  network-node motifs.
+- Use the wordmark above 112px of width and the symbol for square uses.
+- Clear space: one glyph stroke width. The primary SVG is forest green; the reversed wordmark uses the exact same
+  silhouette with a white CSS filter. Legacy raster wordmarks are not UI sources.
+- Preserve aspect ratio and use separate live text for the tagline. Use the approved vector paths; do not approximate the wordmark in live text
+  or independently redraw its symbol.
+- No extra containers, outlines, shadows, gradients or appended motifs.
+- The vector masters are `public/brand/chisan-wordmark.svg` and
+  `public/brand/chisan-mark.svg`. The complete wordmark includes outlined Outfit
+  letters; it does not depend on the live interface font loading.
 
-Profile QR labels keep the code itself in `ink` on `surface`, with its full
-quiet zone and no logo overlay. The producer label has a `moss` outer rule; a
-public user's producer selection has an `ink` rule. Use the wordmark on the
-physical label and the compact `c` only as the square UI affordance that opens
-it. Neither treatment implies verification, ownership, premium status or a
-reviewed restaurant/shop classification.
+Profile QR labels use forest green for producer codes, neutral ink for selection
+codes and a pure white background. Both include the approved C-with-dot at the
+center of a small excavated area, with H error correction and a four-module
+outer quiet zone. Finder patterns remain intact. The 160px mark in an 880px code
+is a maximum visual footprint, not a guarantee for every payload or print size.
+Independently decode representative short and long profile/selection URLs and
+actual downloaded labels before release. Producer labels retain a forest outer
+rule; selection labels retain an ink rule. Neither implies verification,
+ownership or a reviewed restaurant/shop classification.
 
 Sizing and alt text live in `components/brand/chisan-brand.tsx`. Give an image
 empty alt text when its link already has an accessible name.
@@ -314,29 +322,18 @@ the change. Avoid duplicating the same design rule in product contracts.
 
 ## Regenerating the brand assets
 
-From `references/v0.3/chisan-wordmark-first-board.png`, with an image model:
-
-> Isolate and faithfully recreate only **[the lowercase `chisan` wordmark |
-> the compact `c`]** from the board as a crisp, high-resolution transparent PNG
-> with an `ink` `#1D201B` body. Preserve **[the custom lowercase proportions,
-> open `c`, wide geometric rhythm, single-storey `a` and optical spacing | its
-> open circular form, diagonal-cut terminals, weight, aperture and 16px
-> legibility]**. Recolour only **[the four natural terminals of `c` and `s` |
-> the two terminals of `c`]** with equal short `moss` `#52614C` caps. Keep every
-> other pixel and the alpha silhouette unchanged. Include no background,
-> tagline, symbol, container, border, shadow, gradient, labels or extra text.
-
-The terminal-accent references were generated with OpenAI image generation
-from the approved mark and wordmark. The production rasters preserve the prior
-alpha geometry, use only the exact `ink`, `surface` and `moss` colours, and
-remain image assets rather than a live-font, CSS or SVG approximation.
+The exact masters live in `public/brand/`. The mark uses a 128-unit design grid
+with a 40-unit central square dot. Render those SVGs to derive raster metadata
+and favicon exports; never regenerate them with an image model. The inverse
+wordmark consumes the same SVG and changes its rendered color to white.
+Outfit's original font and license live in `app/_fonts/`. QR canvas typography
+uses the resolved interface font stack. Preserve the SVG aspect ratio.
 
 ## References
 
-- `v0.3/chisan-wordmark-first-board.png` — approved direction and source of the
-  production rasters.
-- `v0.3/chisan-terminal-accent-mark-reference.png` — approved two-cap compact mark.
-- `v0.3/chisan-terminal-accent-wordmark-reference.png` — approved restrained
+- `v0.3/chisan-wordmark-first-board.png` — historical direction, superseded by the C-with-dot identity.
+- `v0.3/chisan-terminal-accent-mark-reference.png` — historical two-cap compact mark.
+- `v0.3/chisan-terminal-accent-wordmark-reference.png` — historical restrained
   `c`/`s` treatment.
 - `v0.3/chisan-marker-join-board.png` — The Join marker, superseded by map circles.
 - `v0.2/` — earlier board and functional mark.

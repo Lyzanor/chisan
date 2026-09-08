@@ -1162,3 +1162,32 @@ using the production server for behavior tests to preserve the other dev session
   cross-account/country isolation, routing changes and idempotent follow writes.
   Final focused checks covered TypeScript, i18n, lint, docs and design. Design
   notices were assessed; no blocking design rule regressed.
+
+
+## 2026-09-09 — C-with-dot identity and profile QR labels
+
+- Replaced the UI wordmark and favicon with the approved exact C-with-dot
+  vectors. The same mark is embedded in producer and selection QR codes.
+  Reversed wordmarks retain the same silhouette. Raster metadata derives from
+  the SVG masters; Outfit is self-hosted with its OFL license and Noto/system
+  fallbacks. Headline tracking is -0.02em for readable Outfit spacing.
+- Shared surfaces now use pure white, neutral grays and forest green #00563F.
+  Removed the former cream/sage brand palette. Routes, catalog behavior and
+  account/QR eligibility remain unchanged.
+- Inspected the home, loaded Barcelona map/list and QR disclosure at desktop
+  and 390px widths. The mobile catalog measured 375px document width inside a
+  390px viewport, with no horizontal page overflow. Japanese label text uses
+  the fallback stack and wraps correctly.
+- Downloaded actual 1200x1600 PNGs from ProfileQrLabel for a normal producer,
+  a synthetic long producer URL/name and a Japanese selection label. Apple
+  Vision independently decoded all three to their exact URLs, both at full
+  size and after reducing the QR region to 300px. Codes retain H correction,
+  four quiet modules and a 160px central mark within the 880px canvas. The
+  download explicitly paints the loaded SVG to avoid an image-loading race.
+- The temporary visual fixture called the real component, bypassed no account
+  action and was removed before the release build. No claim of physical print
+  testing or authenticated production-owner QA is made.
+- Local evidence: /tmp/chisan-brand-evidence/ contains home, loaded catalog,
+  QR disclosure screenshots and the three downloaded PNGs. Validation:
+  pnpm verify:ai passed on the isolated release tree, including build, data,
+  account and behavior checks. Existing Node module-type notices were assessed.

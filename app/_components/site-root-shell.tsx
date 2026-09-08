@@ -4,6 +4,7 @@ import { esES } from "@clerk/localizations";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { GuidesLink } from "@/components/guides/guides-link";
@@ -49,6 +50,13 @@ const notoSans = Noto_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "700"],
+  variable: "--font-chisan-fallback",
+});
+
+const outfit = localFont({
+  src: "../_fonts/outfit.ttf",
+  display: "swap",
+  weight: "100 900",
   variable: "--font-chisan-sans",
 });
 
@@ -56,7 +64,7 @@ export const SITE_VIEWPORT: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#52614c",
+  themeColor: "#00563f",
 };
 
 export const SITE_METADATA: Metadata = {
@@ -183,7 +191,7 @@ export function SiteRootShell({
   );
 
   return (
-    <html lang={htmlLang} className={notoSans.variable}>
+    <html lang={htmlLang} className={`${outfit.variable} ${notoSans.variable}`}>
       <head>
         <link rel="service-desc" href="/api/catalog/v1/openapi.json" type="application/vnd.oai.openapi+json" />
         <link rel="describedby" href="/llms.txt" type="text/plain" />

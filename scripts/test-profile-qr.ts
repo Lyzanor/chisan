@@ -106,7 +106,7 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
 
   assert.match(component, /level="H"/);
   assert.match(component, /marginSize=\{4\}/);
-  assert.doesNotMatch(component, /imageSettings=/);
+  // The branded QR overlay is verified by independent decoding of downloaded labels.
   assert.match(component, /COPY_FEEDBACK_DURATION_MS = 1_500/);
   assert.match(component, /copyFeedbackGenerationRef/);
   assert.match(component, /downloadFeedbackGeneration/);

@@ -1,8 +1,6 @@
 import type { CSSProperties } from "react";
 
-import chisanMark from "@/design/brand/assets/chisan-mark-ink.png";
-import chisanWordmark from "@/design/brand/assets/chisan-wordmark-ink.png";
-import chisanWordmarkReverse from "@/design/brand/assets/chisan-wordmark-reverse.png";
+import { CHISAN_MARK_SRC, CHISAN_WORDMARK_SRC } from "@/lib/brand";
 
 type BrandImageProps = Readonly<{
   alt?: string;
@@ -23,16 +21,19 @@ export function ChisanWordmark({
   className,
   reverse = false,
 }: BrandImageProps) {
-  const asset = reverse ? chisanWordmarkReverse : chisanWordmark;
   const style: BrandAssetStyle = {
-    "--chisan-brand-asset": `url("${asset.src}")`,
+    "--chisan-brand-asset": `url("${CHISAN_WORDMARK_SRC}")`,
   };
 
   return (
     <span
       aria-hidden={alt ? undefined : true}
       aria-label={alt || undefined}
-      className={classNames("chisan-wordmark", className)}
+      className={classNames(
+        "chisan-wordmark",
+        reverse && "chisan-wordmark--reverse",
+        className,
+      )}
       role={alt ? "img" : undefined}
       style={style}
     />
@@ -41,7 +42,7 @@ export function ChisanWordmark({
 
 export function ChisanMark({ alt = "chisan", className }: BrandImageProps) {
   const style: BrandAssetStyle = {
-    "--chisan-brand-asset": `url("${chisanMark.src}")`,
+    "--chisan-brand-asset": `url("${CHISAN_MARK_SRC}")`,
   };
 
   return (
