@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3030,
+  "products": [
+    {
+      "id": "semicurat-de-cabra",
+      "name": "Semicurat de cabra",
+      "description": "Queso de leche pasteurizada de cabra, de tipo garrotxa, con pasta prensada y dos meses de maduración. La corteza natural se cepilla a mano.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "semicurat-de-cabra"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "piezas de 480 g, 1 kg y 4 kg"
+    },
+    {
+      "id": "farcell-de-cabra",
+      "name": "Farcell de cabra",
+      "description": "Queso de cabra pasteurizado de pasta semidura, moldeado con un pañuelo. Madura seis semanas y su corteza se lava con salmuera.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "farcell-de-cabra"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "pieza de 1,5 kg"
+    },
+    {
+      "id": "mato-de-cabra",
+      "name": "Mató de cabra",
+      "description": "Queso tierno de leche pasteurizada de cabra, de textura húmeda y sabor ligeramente dulce.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "mato-de-cabra"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "envases de 250 g y 350 g; platos de 1 kg"
+    }
+  ],
+  "gallery": [],
+  "links": [
+    {
+      "id": "semicurat-de-cabra",
+      "label": "Ficha de Semicurat de cabra",
+      "url": "https://www.canxicoy.com/prod/formatge-curat/",
+      "locale": "es"
+    },
+    {
+      "id": "farcell-de-cabra",
+      "label": "Ficha de Farcell de cabra",
+      "url": "https://www.canxicoy.com/prod/formatge-de-farcell/",
+      "locale": "es"
+    },
+    {
+      "id": "mato-de-cabra",
+      "label": "Ficha de Mató de cabra",
+      "url": "https://www.canxicoy.com/prod/mato/",
+      "locale": "es"
+    },
+    {
+      "id": "visitas",
+      "label": "Visitas a la granja y quesería",
+      "url": "https://www.canxicoy.com/visites/",
+      "locale": "es"
+    },
+    {
+      "id": "tienda",
+      "label": "Tienda, lotes y entrega a domicilio",
+      "url": "https://www.canxicoy.com/botiga-2/",
+      "locale": "es"
+    }
+  ],
+  "translations": []
+}

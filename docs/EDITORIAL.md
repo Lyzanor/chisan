@@ -341,6 +341,18 @@ field against the contract that owns it: CSV representation, geolocation,
 images, links, localization or accounts. Do not treat empty `verificacion` or an
 auditor with no warning as proof.
 
+Collect supported information regardless of the producer's subscription or
+current profile visibility. In-scope products, formats, prices, seasonality,
+production methods, history, team, visits, commercial conditions and other
+expanded-profile fields remain useful approved catalog knowledge even when the
+producer has no premium entitlement. Store producer-level fields in the area CSV,
+repeatable products/media/links in the identity-bound content package, and their
+public sources in evidence. Apply the same field, authorship, rights and review
+requirements to every producer; never invent producer speech or infer a
+certification. Premium controls the account editor and current public display,
+not editorial collection or retention. Future autocomplete or wider display must
+reuse these authorities and apply its own review and visibility rules.
+
 A broad pass means **reviewed**, not **filled** or permanently complete. An empty
 optional cell may be the correct result; `pendiente` may be the correct source
 ceiling, and an inaccessible channel may require `no comprobado`. An empty

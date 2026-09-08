@@ -13,6 +13,14 @@ and the producer registry. The package survives area and slug changes. It never
 registers a country, area or producer, and PostgreSQL is not a published-content
 overlay. Sources remain in the producer's evidence ledger; Git records review.
 
+Editorial collection and retention do not require a premium entitlement. Create
+or enrich an approved package for any existing producer when public sources and
+asset rights support it, including products, formats, prices and seasonality
+found during an ordinary review. Preserve that knowledge for future reviewed
+reuse. The account editor and public visibility rules below remain separate;
+stored content neither grants premium nor bypasses either boundary. See
+[verification and enrichment](EDITORIAL.md#level-3--verification-and-enrichment).
+
 The machine contract is `lib/catalog/content-schema.ts`. Additive capabilities
 are introduced there with their consumers and tests, without widening all area
 CSVs. `version` identifies the format. Unknown fields are rejected so misspelt

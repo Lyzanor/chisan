@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3816,
+  "products": [
+    {
+      "id": "montseny-lupulus",
+      "name": "Montseny Lupulus",
+      "description": "Session IPA de 5,1 % vol. y 28 IBU, elaborada con malta de cebada, copos de avena y lúpulos americanos.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "montseny-lupulus"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "botellas y barriles"
+    },
+    {
+      "id": "montseny-ipa",
+      "name": "Montseny IPA",
+      "description": "India Pale Ale de alta fermentación, con 6,4 % vol. y 48 IBU. Combina varias maltas y lúpulos y presenta aromas de frutas tropicales.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "montseny-ipa"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "botellas y barriles"
+    }
+  ],
+  "gallery": [],
+  "links": [
+    {
+      "id": "montseny-lupulus",
+      "label": "Ficha de Montseny Lupulus",
+      "url": "https://www.cervesamontseny.cat/cervesa/montseny-lupulus/",
+      "locale": "es"
+    },
+    {
+      "id": "montseny-ipa",
+      "label": "Ficha de Montseny IPA",
+      "url": "https://www.cervesamontseny.cat/cervesa/montseny-aniversari/",
+      "locale": "es"
+    },
+    {
+      "id": "visitas",
+      "label": "Visitas y catas en la microcervecería",
+      "url": "https://www.cervesamontseny.cat/visites-i-tasts/",
+      "locale": "es"
+    }
+  ],
+  "translations": []
+}

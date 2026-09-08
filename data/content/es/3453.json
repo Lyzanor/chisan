@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3453,
+  "products": [
+    {
+      "id": "crema-carbassa-mango",
+      "name": "Crema ecològica de carbassa i mango",
+      "description": "",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "crema-carbassa-mango"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "envàs de 500 ml"
+    },
+    {
+      "id": "crema-broquil-coliflor",
+      "name": "Crema ecològica de bròquil i coliflor",
+      "description": "",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "crema-broquil-coliflor"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "envàs de 500 ml"
+    },
+    {
+      "id": "vinagreta-nyameres",
+      "name": "Vinagreta de nyàmeres",
+      "description": "",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "vinagreta-nyameres"
+      ],
+      "updated_on": "2026-09-08",
+      "format": "envàs de 200 g"
+    }
+  ],
+  "gallery": [],
+  "links": [
+    {
+      "id": "crema-carbassa-mango",
+      "label": "Ficha de Crema ecològica de carbassa i mango",
+      "url": "https://casabellanatura.eu/producte/crema-ecologica-de-carbassa-i-mango/",
+      "locale": "es"
+    },
+    {
+      "id": "crema-broquil-coliflor",
+      "label": "Ficha de Crema ecològica de bròquil i coliflor",
+      "url": "https://casabellanatura.eu/producte/crema-ecologica-de-broquil-i-coliflor/",
+      "locale": "es"
+    },
+    {
+      "id": "vinagreta-nyameres",
+      "label": "Ficha de Vinagreta de nyàmeres",
+      "url": "https://casabellanatura.eu/producte/vinagreta-de-nyameres/",
+      "locale": "es"
+    },
+    {
+      "id": "cultivo-nyameres",
+      "label": "Productos de nyàmeres de cultivo propio",
+      "url": "https://casabellanatura.eu/categoria-producte/cultiu-propi-nyameres/",
+      "locale": "es"
+    }
+  ],
+  "translations": []
+}

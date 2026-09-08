@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 12727,
+  "products": [
+    {
+      "id": "hummus-de-llenties",
+      "name": "Hummus de Llenties",
+      "description": "Hummus con un 82 % de lentejas cocidas y un 10 % de aceite de oliva virgen extra. Incluye limonada, tahini integral, especias y sal marina.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "hummus-de-llenties"
+      ],
+      "purchase_url": "https://www.casaamella.com/ca/botiga/hummus/hummus-de-llenties-180gr",
+      "price": {
+        "amount": "3.69",
+        "currency": "EUR"
+      },
+      "updated_on": "2026-09-08",
+      "format": "envase de 180 g"
+    },
+    {
+      "id": "crema-remolatxa-bio",
+      "name": "Crema Remolatxa Bio",
+      "description": "Crema elaborada con un 52 % de remolacha, agua de cocción, aceite de oliva virgen extra y sal marina. La remolacha se cocina al vapor.",
+      "locale": "es",
+      "media_ids": [],
+      "link_ids": [
+        "crema-remolatxa-bio"
+      ],
+      "purchase_url": "https://www.casaamella.com/ca/botiga/cremes-de-verdures/crema-remolatxa-bio-500ml",
+      "price": {
+        "amount": "3.99",
+        "currency": "EUR"
+      },
+      "updated_on": "2026-09-08",
+      "format": "envase de 500 ml"
+    }
+  ],
+  "gallery": [],
+  "links": [
+    {
+      "id": "hummus-de-llenties",
+      "label": "Ficha de Hummus de Llenties",
+      "url": "https://www.casaamella.com/ca/botiga/hummus/hummus-de-llenties-180gr",
+      "locale": "es"
+    },
+    {
+      "id": "crema-remolatxa-bio",
+      "label": "Ficha de Crema Remolatxa Bio",
+      "url": "https://www.casaamella.com/ca/botiga/cremes-de-verdures/crema-remolatxa-bio-500ml",
+      "locale": "es"
+    },
+    {
+      "id": "pedidos-envios",
+      "label": "Pedidos, envíos y recogida en el obrador",
+      "url": "https://www.casaamella.com/ca/menu/preguntes-frequents",
+      "locale": "es"
+    }
+  ],
+  "translations": []
+}

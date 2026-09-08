@@ -6,6 +6,11 @@ This is the normative contract for the producer data published by Chisan. An are
 CSV is the current product state: every non-empty cell is a public claim, and an
 empty optional cell is valid incomplete knowledge.
 
+Approved expanded-profile facts may be populated for any producer, regardless of
+premium entitlement. Storage does not itself make a field visible in the public
+profile: rendering and account editing retain their existing permission rules.
+Keep supported values when a producer has no entitlement or it expires.
+
 `docs/CATALOG_WEB.md` owns public rendering, routes and indexing.
 `docs/PRODUCER_CONTENT.md` owns related products, gallery items and links.
 This document owns storage semantics: file shape, field meanings, missing
