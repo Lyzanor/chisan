@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3733,
+  "products": [
+    {
+      "id": "sanmarti-1018-garnatxa-sumoll",
+      "name": "Sanmartí 1018 Garnatxa Sumoll",
+      "description": "Vi negre elaborat amb dues varietats tradicionals del Pla de Bages. La garnatxa aporta fruita, notes florals i maduresa en boca; el sumoll esdevé el contrapunt de rusticitat i acidesa viva.",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "web-vins"
+      ],
+      "format": "ampolla 750 ml"
+    },
+    {
+      "id": "sanmarti-1018-macabeu-picapoll",
+      "name": "Sanmartí 1018 Macabeu Picapoll",
+      "description": "Vi blanc que combina la frescor cítrica del picapoll amb la fruita blanca del macabeu. Treball sobre mares i lleuger pas per bota que aporta volum i cremositat.",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "web-vins"
+      ],
+      "format": "ampolla 750 ml"
+    },
+    {
+      "id": "atles-picapoll",
+      "name": "Atles Picapoll de Vinyes Velles",
+      "description": "Vi blanc monovarietal de picapoll de vinyes velles. Fermentació i criança de sis mesos en bota de roure francès sobre les seves mares, amb notes florals, anisades i gran vivor.",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "web-vins"
+      ],
+      "format": "ampolla 750 ml"
+    },
+    {
+      "id": "atles-macabeu",
+      "name": "Atles Macabeu de Vinyes Velles",
+      "description": "Vi blanc nascut d'una vinya molt vella de macabeu. Aroma potent que combina notes cítriques amb records de poma madura.",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "web-vins"
+      ],
+      "format": "ampolla 750 ml"
+    },
+    {
+      "id": "saltamarges-garnatxa",
+      "name": "Saltamarges Garnatxa",
+      "description": "Vi negre jove monovarietal de garnatxa de mínima intervenció, fresc i expressiu del territori del Bages.",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "web-vins"
+      ],
+      "format": "ampolla 750 ml"
+    },
+    {
+      "id": "saltamarges-macabeu",
+      "name": "Saltamarges Macabeu",
+      "description": "Vi blanc jove de macabeu elaborat amb fermentació a baixa temperatura en dipòsits d'acer inoxidable per preservar la riquesa aromàtica de fruita dolça i herbes aromàtiques.",
+      "locale": "ca",
+      "media_ids": [],
+      "link_ids": [
+        "web-vins"
+      ],
+      "format": "ampolla 750 ml"
+    }
+  ],
+  "gallery": [],
+  "links": [
+    {
+      "id": "web-vins",
+      "label": "Els nostres vins (Celler Sanmartí)",
+      "url": "https://cellersanmarti.cat/vins-sanmarti/",
+      "locale": "ca"
+    },
+    {
+      "id": "reportatge-la-vanguardia",
+      "label": "La bodega catalana milenaria excavada bajo tierra (La Vanguardia)",
+      "url": "https://www.lavanguardia.com/comer/beber/20260908/11629025/bodega-catalana-milenaria-excavada-tierra-mis-antepasados-tenian-sentido-comun-sentido-practico-cdv.html",
+      "locale": "es"
+    }
+  ],
+  "translations": []
+}
