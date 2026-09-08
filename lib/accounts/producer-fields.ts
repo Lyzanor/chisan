@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 
+import { PREMIUM_CONTROLLED_VALUES } from "../catalog/producer-schema";
 import categoriesRegistry from "@/data/reference/categories.json";
 import { DESCRIPTION_SOURCE_LOCALES } from "@/lib/i18n/locales";
 import { isYouTubeVideoUrl } from "@/lib/youtube";
@@ -65,6 +66,7 @@ function normalizeText(value: unknown): string {
 
 const MULTILINE_PRODUCER_FIELD_KEYS = new Set([
   "mensaje a la comunidad",
+  "como producimos",
   "quien hay detras",
   "historia",
 ]);
@@ -116,7 +118,7 @@ export function readProducerProposalForm(
   return Object.fromEntries(
     editableFields.map(({ key, kind }) => {
       const value =
-        kind === "categories" || kind === "sales-channels"
+        kind === "categories" || kind === "sales-channels" || kind === "tokens"
           ? normalizeDelimitedValues(formData.getAll(key))
           : normalizeProducerFieldValue(key, formData.get(key));
 
@@ -202,6 +204,15 @@ export function validateProducerProposal(
     }
   }
 
+  for (const [key, allowed] of Object.entries(PREMIUM_CONTROLLED_VALUES)) {
+    const value = candidate[key as ProducerEditableFieldKey];
+    if (value && (value.split("|").some(token => !allowed.includes(token)) || new Set(value.split("|")).size !== value.split("|").length || (key !== "certificaciones" && value.includes("|")))) errors[key] = message("Choose a reviewed catalog value.", "Elige un valor del catálogo.");
+  }
+  if (Boolean(candidate.certificaciones) !== Boolean(candidate.certificaciones_detalle)) errors.certificaciones_detalle = message("Certifications and their scope must be supplied together.", "Indica los sellos y su alcance juntos.");
+  if (candidate.visita_cita_previa && candidate["visitas guiadas"] !== "sí") errors.visita_cita_previa = message("Booking conditions require guided visits to be yes.", "Las condiciones de visita requieren visitas guiadas: sí.");
+  for (const key of ["certificaciones_detalle", "pedido_minimo", "condiciones_envio"] as const) {
+    if (getProducerAuthoredTextContaminationReason(candidate[key])) errors[key] = message("Use plain producer text without URLs or HTML.", "Utiliza texto del productor sin enlaces ni HTML.");
+  }
   if (!CATEGORY_SET.has(candidate.categoria)) {
     errors.categoria = message("Choose a category from the catalog registry.", "Elige una categoría del catálogo.");
   }
@@ -296,6 +307,7 @@ export function validateProducerProposal(
   for (const [textKey, localeKey, label] of [
     ["quien hay detras", "quien_hay_detras_locale", "who-is-behind text"],
     ["historia", "historia_locale", "history"],
+    ["como producimos", "como_producimos_locale", "production methods"],
   ] as const) {
     const text = candidate[textKey];
     const sourceLocale = candidate[localeKey];
@@ -328,6 +340,7 @@ export function validateProducerProposal(
     ["mensaje a la comunidad", "mensaje_comunidad_locale"],
     ["quien hay detras", "quien_hay_detras_locale"],
     ["historia", "historia_locale"],
+    ["como producimos", "como_producimos_locale"],
   ] as const;
   const changedPairs = pairedFields.filter((pair) =>
     pair.some(

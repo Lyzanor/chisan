@@ -3,7 +3,7 @@
 // Shared by every area CSV, in this order. Its length may grow through the
 // repository-wide migration documented in docs/CSV_CONTRACT.md.
 /* eslint-disable @typescript-eslint/no-require-imports -- This audit exports a synchronous CommonJS contract. */
-const { CANONICAL_PRODUCER_HEADER: CANONICAL_HEADER, ONLINE_SALES_VALUES: onlineSalesValues, SALES_CHANNEL_VALUES: salesChannelValues, TRANSLATABLE_FIELD_SPECS } = require("../lib/catalog/producer-schema.ts");
+const { CANONICAL_PRODUCER_HEADER: CANONICAL_HEADER, ONLINE_SALES_VALUES: onlineSalesValues, SALES_CHANNEL_VALUES: salesChannelValues, TRANSLATABLE_FIELD_SPECS, PREMIUM_CONTROLLED_VALUES, EXTRA_PREMIUM_FIELDS } = require("../lib/catalog/producer-schema.ts");
 const { SUPPORTED_LOCALES: supportedLocales, DESCRIPTION_SOURCE_LOCALES: sourceLocales, APPLICATION_DEFAULT_LOCALE } = require("../lib/i18n/locale-registry.ts");
 /* eslint-enable @typescript-eslint/no-require-imports */
 let PRODUCER_DESCRIPTION_MAX_CHARACTERS;
@@ -36,6 +36,7 @@ const LONG_PROSE_COLUMNS = new Set([
   COMMUNITY_MESSAGE_COLUMN,
   BEHIND_PRODUCER_COLUMN,
   HISTORY_COLUMN,
+  "como producimos",
 ]);
 const CATEGORY_SEPARATOR = "|";
 const CENTROID_MAX_DISTANCE_KM = 15;
@@ -1612,6 +1613,7 @@ function runContractAudit({
     for (const [textColumn, localeColumn, maximum] of [
       [BEHIND_PRODUCER_COLUMN, "quien_hay_detras_locale", TRANSLATABLE_FIELD_SPECS[1].canonicalMaxCharacters],
       [HISTORY_COLUMN, "historia_locale", TRANSLATABLE_FIELD_SPECS[2].canonicalMaxCharacters],
+      ["como producimos", "como_producimos_locale", 2000],
     ]) {
       const text = normalizeProducerAuthoredText(fields[textColumn]);
       const sourceLocale = cleanCell(fields[localeColumn]);
@@ -1651,6 +1653,19 @@ function runContractAudit({
       }
     }
 
+    for (const definition of EXTRA_PREMIUM_FIELDS) {
+      const value = cleanCell(fields[definition.key]);
+      const allowed = PREMIUM_CONTROLLED_VALUES[definition.key];
+      if (codePointLength(value) > definition.maxLength) push("error", line, id, slug, `${definition.key} exceeds ${definition.maxLength} characters`);
+      if (allowed && value && (value.split("|").some(token => !allowed.includes(token)) || new Set(value.split("|")).size !== value.split("|").length || (definition.kind !== "tokens" && value.includes("|")))) push("error", line, id, slug, `${definition.key} requires distinct controlled values`);
+      if (!allowed && value && (producerAuthoredTextContaminationReason(value) || hasSpreadsheetFormulaPrefix(value))) push("error", line, id, slug, `${definition.key} requires plain producer text`);
+    }
+    if (Boolean(cleanCell(fields.certificaciones)) !== Boolean(cleanCell(fields.certificaciones_detalle))) push("error", line, id, slug, "certificaciones and certificaciones_detalle are required together");
+    if (fields.visita_cita_previa && fields["visitas guiadas"] !== "sí") push("error", line, id, slug, "visita_cita_previa requires visitas guiadas: sí");
+    const newsDate = cleanCell(fields["fecha novedades"]);
+    if (newsDate && (!fields[COMMUNITY_MESSAGE_COLUMN]?.trim() || !/^\d{4}-\d{2}-\d{2}$/.test(newsDate) || Number.isNaN(Date.parse(newsDate)) || new Date(newsDate).toISOString().slice(0, 10) !== newsDate || newsDate > new Date().toISOString().slice(0, 10))) {
+      push("error", line, id, slug, "fecha novedades requires a message and an exact non-future YYYY-MM-DD date");
+    }
     const lastApprovedChange = cleanCell(fields["fecha ultimo cambio"]);
     if (lastApprovedChange) {
       const dateMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(lastApprovedChange);

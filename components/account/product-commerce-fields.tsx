@@ -1,5 +1,7 @@
 "use client";
 
+import { producerSeasonLabels, seasonMonthLabel } from "@/lib/i18n/producer-season";
+import styles from "./product-commerce-fields.module.css";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
 import { normalizeProductPriceInput } from "@/lib/catalog/product-commerce";
 import type { Locale } from "@/lib/i18n/locales";
@@ -18,10 +20,25 @@ export function ProductCommerceFields({
   locale: Locale;
   onChange: (patch: Partial<Product>) => void;
 }) {
+  const season = producerSeasonLabels(locale);
   const words = getProductCommerceLabels(locale);
   const prefix = `product-${product.id}`;
   return (
     <>
+      <label className="account-field"><span>{locale === "es" ? "Formato / unidad" : locale === "ca" ? "Format / unitat" : "Format / unit"}</span><input value={product.format ?? ""} maxLength={120} placeholder="botella 750 ml" onChange={event => onChange({ format: event.target.value || undefined })} /></label>
+      <fieldset className={`account-field ${styles.season}`}>
+        <legend>{season.title}</legend>
+        <p>{season.help}</p>
+        <div className={`account-checkbox-grid ${styles.months}`}>
+          {Array.from({ length: 12 }, (_, index) => index + 1).map(month => <label key={month} className="account-check account-check--compact">
+            <input type="checkbox" checked={product.season_months?.includes(month) ?? false} onChange={event => {
+              const months = (event.target.checked ? [...(product.season_months ?? []), month] : (product.season_months ?? []).filter(value => value !== month)).sort((a, b) => a - b);
+              onChange({ season_months: months.length ? months : undefined, ...(!months.length ? { seasonal_special: undefined } : {}) });
+            }} /> <span>{seasonMonthLabel(month, locale)}</span>
+          </label>)}
+        </div>
+        <label className="account-check account-check--compact"><input type="checkbox" disabled={!product.season_months?.length} checked={product.seasonal_special ?? false} onChange={event => onChange({ seasonal_special: event.target.checked || undefined })} /> <span>{season.special}</span></label>
+      </fieldset>
       <label className="account-field" htmlFor={`${prefix}-purchase`}>
         <span id={`${prefix}-purchase-label`}>{words.purchaseUrl}</span>
         <input

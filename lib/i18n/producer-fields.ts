@@ -49,6 +49,10 @@ const GENERIC_TABLE_HIDDEN_FIELD_KEYS = new Set([
   "historia",
   "historia_locale",
   "fecha ultimo cambio",
+  "como producimos",
+  "como_producimos_locale",
+  "fecha novedades",
+  "certificaciones", "certificaciones_detalle", "visita_cita_previa", "venta_profesionales", "pedido_minimo", "condiciones_envio",
   "enlace destacado 1",
   "enlace destacado 2",
 ]);
@@ -116,13 +120,13 @@ export function formatProducerFieldValue(
     normalizedKey === "descripcion_locale" ||
     normalizedKey === "mensaje_comunidad_locale" ||
     normalizedKey === "quien_hay_detras_locale" ||
-    normalizedKey === "historia_locale"
+    normalizedKey === "historia_locale" || normalizedKey === "como_producimos_locale"
   ) {
     return formatDescriptionLocale(value, messages, locale);
   }
   if (!value) return messages.common.unavailable;
 
-  if (normalizedKey === "fecha ultimo cambio" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+  if (["fecha ultimo cambio", "fecha novedades"].includes(normalizedKey) && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
     const parsed = new Date(`${value}T00:00:00.000Z`);
     if (!Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value) {
       return new Intl.DateTimeFormat(getLocaleDisplayTag(locale), {

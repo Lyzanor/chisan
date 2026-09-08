@@ -1,5 +1,7 @@
 import { listProducerMediaUploads } from "@/lib/accounts/producer-media";
 import { and, desc, eq, inArray } from "drizzle-orm";
+import { PREMIUM_CONTROLLED_VALUES } from "@/lib/catalog/producer-schema";
+import { premiumValueLabel } from "@/lib/i18n/producer-premium";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -290,7 +292,9 @@ export default async function EditProducerPage({
   }));
   const toFormField = (field: ProducerEditableField): ProducerChangeFormField => {
     let options: ProducerChangeFormField["options"] = [];
-    if (field.kind === "category" || field.kind === "categories") {
+    if (field.kind === "tokens" || field.kind === "select") {
+      options = [...(field.kind === "select" ? [{ value: "", label: presentation.messages.common.unavailable }] : []), ...PREMIUM_CONTROLLED_VALUES[field.key].map(value => ({ value, label: premiumValueLabel(value, presentation.locale) }))];
+    } else if (field.kind === "category" || field.kind === "categories") {
       options = categoryOptions;
     } else if (field.kind === "online-sales") {
       options = onlineSalesOptions;

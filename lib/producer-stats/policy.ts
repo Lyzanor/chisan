@@ -32,6 +32,7 @@ export function summarizeProducerStats(
   rows: readonly { day: string; views: number }[],
   today: string,
   total = rows.reduce((sum, row) => sum + row.views, 0),
+  favorites = 0,
 ) {
   const counts = new Map(rows.map((row) => [row.day, row.views]));
   const days = Array.from(
@@ -43,6 +44,7 @@ export function summarizeProducerStats(
   );
   return {
     days,
+    favorites,
     today: counts.get(today) ?? 0,
     total,
     last7: days.slice(-7).reduce((sum, row) => sum + row.views, 0),

@@ -4,6 +4,29 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-08 — Guides published inside the Spanish catalog scope
+
+final result: local QA passed; production release pending
+
+The library moved from `/guias` to `/es/guias`. The articles describe Spanish
+producers and link into Spanish provinces, so their URLs now sit in the same
+scope as the pages they send readers to, and the first path segment keeps
+meaning the same thing everywhere on the site. The old paths permanently
+redirect, so published links and the header entry point keep working.
+
+Presentation is unchanged: the pages left their own editorial root layout and
+joined the catalog root layout, which builds the identical header, footer and
+language menu from the same shared shell. Only the language-menu href differs —
+it now points at the country scope rather than at the guide index.
+
+Rejected: a second root layout group holding `/es/guias`. It would have kept the
+old shell duplicated and forced a full document load whenever a reader moved
+between an article and a province listing.
+
+Checked at 1440 x 1000 and 375 x 812 on the index and the cheese article. No
+horizontal overflow at either width; the canonical URL, the `es` document
+language and the topic anchors are unchanged apart from the new prefix.
+
 ## 2026-09-07 — Community suggestions for unclaimed producers
 
 final result: authenticated local QA passed; production release pending
@@ -1081,3 +1104,25 @@ using the production server for behavior tests to preserve the other dev session
   real producer roster expands to its accurate empty opt-in state without
   console errors. The production account retained its initials; no real user
   photo, favorite or visibility preference was changed for testing.
+
+## 2026-09-08 — Premium production, seasonality and commercial details
+
+- Added source-language production methods, independently dated news,
+  certification tokens with explicit issuer/scope text, visit booking, professional
+  sales/contact and direct-order conditions inside the premium visibility boundary.
+  Product cards show usual season and an optional seasonal special, plus format
+  beside the recorded price. Official and private certification are distinguished;
+  the Chisan demo explicitly states that its certification is fictional.
+- The premium owner statistics lead with current favorites from active accounts,
+  including private saves only as an aggregate. Copy explains that this is interest,
+  not orders. Existing public supporter attribution remains separately opt-in.
+- Browser checked the actual local Chisan public profile at 390 and 1440 px using
+  a temporary entitlement in the isolated local QA database. No horizontal overflow.
+  Screenshots: `2026-09-08-premium-fields/profile-390.png` and `profile-1440.png`.
+- A temporary local component fixture exercised the real product controls and
+  statistics with Catalan copy at both widths (`components-390.png`,
+  `components-1440.png`). Clearing every month removed both season fields and
+  disabled the special checkbox; the form stayed within 390 px. The fixture and
+  its illustrative counters are not shipped or written to production analytics.
+  Backend integration tests cover the real authorization and aggregate query;
+  this component check is not an authenticated owner end-to-end submission.

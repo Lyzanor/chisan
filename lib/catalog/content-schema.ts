@@ -46,6 +46,9 @@ export const contentProductSchema = z.strictObject({
   purchase_url: publicContentUrl.optional().describe("Reviewed product page in an external shop. Follow it to purchase; Chisan does not process orders."),
   price: productPriceSchema.optional(),
   updated_on: productUpdateDateSchema.optional(),
+  format: text(120).refine(value => value.trim().length > 0, "Use a format or omit it.").optional(),
+  season_months: z.array(z.number().int().min(1).max(12)).min(1).max(12).refine(months => new Set(months).size === months.length, "Season months must be unique.").optional(),
+  seasonal_special: z.boolean().optional(),
 });
 export const contentMediaSchema = z.strictObject({
   id,
@@ -104,6 +107,7 @@ export const producerContentSchema = z
     const media = new Set(content.gallery.map((item) => item.id));
     const links = new Set(content.links.map((item) => item.id));
     content.products.forEach((product, index) => {
+      if (product.seasonal_special && !product.season_months?.length) add(["products", index, "seasonal_special"], "A seasonal special requires explicit season months.");
       for (const [field, allowed] of [
         ["media_ids", media],
         ["link_ids", links],

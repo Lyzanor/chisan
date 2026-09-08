@@ -6,6 +6,7 @@ import { findProducerById, findPublishedCountry } from "@/lib/csv-catalog";
 import { getDatabase, type Database } from "@/lib/db";
 import {
   entitlements,
+  favorites,
   producerDailyStats,
   producerMemberships,
   producerStatsReceipts,
@@ -97,6 +98,7 @@ export function createProducerStatsService({
       // No public endpoint, staff override or account-scoped premium shortcut.
       const [row] = await database
         .select({
+          favorites: sql<number>`(select count(*) from ${favorites} inner join ${users} as favorite_user on favorite_user.id = ${favorites.userId} where ${favorites.country} = ${input.country} and ${favorites.producerId} = ${input.producerId} and favorite_user.status = 'active')`.mapWith(Number),
           total:
             sql<number>`coalesce(sum(${producerDailyStats.views}), 0)`.mapWith(
               Number,
@@ -143,7 +145,7 @@ export function createProducerStatsService({
         .groupBy(producerMemberships.id);
       if (!row) return null;
       await cleanup(now);
-      return summarizeProducerStats(row.days, today, row.total);
+      return summarizeProducerStats(row.days, today, row.total, row.favorites);
     },
   };
 }

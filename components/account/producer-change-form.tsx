@@ -36,7 +36,9 @@ export type ProducerChangeFormField = Readonly<{
     | "text"
     | "textarea"
     | "url"
-    | "yes-no";
+    | "yes-no"
+    | "tokens"
+    | "select";
   label: string;
   maxLength: number;
   options: readonly ProducerChangeFormOption[];
@@ -71,6 +73,7 @@ function valueSet(value: string): Set<string> {
 const LONG_PROSE_FIELDS = new Set([
   "descripcion",
   "mensaje a la comunidad",
+  "como producimos",
   "quien hay detras",
   "historia",
 ]);
@@ -98,12 +101,12 @@ function ProducerChangeField({
   const error = state.fieldErrors[field.key];
   const describedBy = fieldDescriptionIds(id, Boolean(error));
   const value = state.values[field.key] ?? field.initialValue;
-  const isFullWidth = ["categories", "sales-channels", "textarea"].includes(
+  const isFullWidth = ["categories", "sales-channels", "tokens", "textarea"].includes(
     field.kind,
   );
   const className = `account-field${isFullWidth ? " account-field--full" : ""}`;
 
-  if (field.kind === "categories" || field.kind === "sales-channels") {
+  if (field.kind === "categories" || field.kind === "sales-channels" || field.kind === "tokens") {
     const selected = valueSet(value);
     return (
       <fieldset

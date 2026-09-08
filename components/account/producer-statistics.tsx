@@ -24,6 +24,7 @@ export function ProducerStatistics({
       <dl className="producer-stats__totals">
         {(
           [
+            [labels.favorites, stats.favorites],
             [labels.total, stats.total],
             [labels.today, stats.today],
             [labels.last7, stats.last7],
@@ -36,6 +37,7 @@ export function ProducerStatistics({
           </div>
         ))}
       </dl>
+      <p>{labels.interest}</p>
       {stats.total === 0 ? (
         <p className="account-empty">{labels.empty}</p>
       ) : null}

@@ -1,0 +1,15 @@
+.season {
+  min-inline-size: 0;
+}
+.season label {
+  min-height: 44px;
+  align-items: center;
+}
+.season .months {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 600px) {
+  .season .months {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

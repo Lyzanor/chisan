@@ -1,3 +1,5 @@
+import { ProducerCommercialDetails } from "./producer-commercial-details";
+import { EXTRA_PREMIUM_FIELDS } from "@/lib/catalog/producer-schema";
 import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 import { hasProducerContent } from "@/lib/catalog/content-schema";
 import {
@@ -59,6 +61,8 @@ export async function ExpandedProducerProfile({
   const communityMessageLocale = fieldValue(fields, "mensaje_comunidad_locale");
   const behindProducer = fieldValue(fields, "quien hay detras");
   const behindProducerLocale = fieldValue(fields, "quien_hay_detras_locale");
+  const methods = fieldValue(fields, "como producimos");
+  const newsDate = fieldValue(fields, "fecha novedades");
   const history = fieldValue(fields, "historia");
   const historyLocale = fieldValue(fields, "historia_locale");
   const lastApprovedChange = fieldValue(fields, "fecha ultimo cambio");
@@ -77,6 +81,8 @@ export async function ExpandedProducerProfile({
     !communityMessage &&
     !behindProducer &&
     !history &&
+    !methods &&
+    !EXTRA_PREMIUM_FIELDS.some(field => fields[field.key]) &&
     !lastApprovedChange &&
     !highlightedLinks.length &&
     !hasProducerContent(content)
@@ -120,8 +126,9 @@ export async function ExpandedProducerProfile({
       {video ? (
         <YoutubePlayer videoUrl={video} label={videoLabel} locale={locale} />
       ) : null}
-      {behindProducer || history || communityMessage ? (
+      {behindProducer || history || communityMessage || methods ? (
         <div className="detail-expanded-profile__stories">
+          {methods ? <div className="detail-expanded-profile__message"><h3>{formatProducerFieldLabel("como producimos", locale, messages)}</h3><p lang={fields.como_producimos_locale || undefined}>{methods}</p></div> : null}
           {behindProducer ? (
             <div className="detail-expanded-profile__message">
               <h3>
@@ -138,7 +145,8 @@ export async function ExpandedProducerProfile({
           ) : null}
           {communityMessage ? (
             <div className="detail-expanded-profile__message">
-              <h3>{messages.fieldLabels.communityMessage}</h3>
+              <h3>{formatProducerFieldLabel("mensaje a la comunidad", locale, messages)}</h3>
+              {newsDate ? <time dateTime={newsDate}>{formatProducerFieldValue("fecha novedades", newsDate, locale, messages)}</time> : null}
               <p lang={communityMessageLocale || undefined}>
                 {communityMessage}
               </p>
@@ -146,6 +154,7 @@ export async function ExpandedProducerProfile({
           ) : null}
         </div>
       ) : null}
+      <ProducerCommercialDetails fields={fields} locale={locale} messages={messages} country={country} producerId={producerId} />
       {guidedVisits ? (
         <p>
           <strong>{messages.fieldLabels.guidedVisits}:</strong>{" "}

@@ -201,6 +201,14 @@ test("page visits are atomic, repeatable, private and independent of premium col
       ])
       .returning();
     assert.equal((await read())?.total, 1);
+    await db.insert(schema.favorites).values([
+      { userId: stranger.id, country: "es", producerId: 1, showOnPublicProfile: false },
+      { userId: owner.id, country: "es", producerId: 2 },
+    ]);
+    assert.equal((await read())?.favorites, 1, "private saves count without exposing identities or mixing producers");
+    assert.equal((await read())?.total, 1, "favorite rows do not multiply visits");
+    await db.delete(schema.favorites).where(eq(schema.favorites.userId, stranger.id));
+    assert.equal((await read())?.favorites, 0, "removing a favorite immediately reduces interest");
     await Promise.all(
       Array.from({ length: 8 }, () =>
         service.record({ ...pageView(), viewerId: stranger.id }, now),

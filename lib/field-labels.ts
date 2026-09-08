@@ -64,7 +64,20 @@ export function getFieldLabel(
   labels: Messages["fieldLabels"],
   locale: Locale,
 ): string {
+  const extra: Record<string, readonly string[]> = {
+    certificaciones: ["Certificaciones y sellos", "Certificacions i segells", "Certifications and labels"],
+    certificaciones_detalle: ["Alcance y registro de los sellos", "Abast i registre dels segells", "Certification scope and register"],
+    visita_cita_previa: ["Cita previa para visitas", "Cita prèvia per a visites", "Booking for visits"],
+    venta_profesionales: ["Venta a profesionales", "Venda a professionals", "Sales to professionals"],
+    pedido_minimo: ["Pedido mínimo", "Comanda mínima", "Minimum order"],
+    condiciones_envio: ["Condiciones de envío", "Condicions d’enviament", "Delivery conditions"],
+    "como producimos": ["Cómo producimos", "Com produïm", "How we produce"],
+    "como_producimos_locale": ["Idioma de cómo producimos", "Idioma de com produïm", "Production methods language"],
+    "fecha novedades": ["Fecha de la novedad", "Data de la novetat", "News date"],
+    "mensaje a la comunidad": ["Novedades", "Novetats", "News"],
+  };
   const normalized = normalizeKey(csvColumnName);
+  if (extra[normalized]) return extra[normalized][locale === "es" ? 0 : locale === "ca" ? 1 : 2];
   const labelKey = FIELD_LABEL_KEYS[normalized];
   if (labelKey) {
     return labels[labelKey] ?? OPTIONAL_FIELD_LABEL_FALLBACKS[labelKey] ?? csvColumnName;

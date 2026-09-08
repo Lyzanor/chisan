@@ -1,3 +1,4 @@
+import { CERTIFICATION_VALUES, VISIT_BOOKING_VALUES, PROFESSIONAL_SALES_VALUES } from "../catalog/producer-schema";
 import { z } from "zod";
 import { MAX_SEARCH_RADIUS_KM } from "../location/radius-search";
 
@@ -140,6 +141,14 @@ export const publicProducerSchema = z.strictObject({
       is_demo: z.boolean().describe("True only for the declared demonstration producer. Its products, prices and purchase links are fictional, never real offers."),
       video_url: text,
       guided_visits: z.enum(["sí", "no"]).nullable(),
+      certifications: z.array(z.enum(CERTIFICATION_VALUES)),
+      certification_scope: text,
+      visit_booking: z.enum(VISIT_BOOKING_VALUES).nullable(),
+      professional_sales: z.enum(PROFESSIONAL_SALES_VALUES).nullable(),
+      minimum_order: text,
+      delivery_conditions: text,
+      production_methods: localizedText,
+      news_date: text,
       community_message: localizedText,
       behind_producer: localizedText,
       history: localizedText,

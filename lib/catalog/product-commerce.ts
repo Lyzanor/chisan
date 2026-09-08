@@ -25,6 +25,9 @@ export const PRODUCT_FACT_FIELDS = [
   "link_ids",
   "purchase_url",
   "price",
+  "format",
+  "season_months",
+  "seasonal_special",
 ] as const;
 export function isDemoProducer(country: string, producerId: number) {
   return country === "es" && producerId === 12439;

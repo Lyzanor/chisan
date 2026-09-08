@@ -1,3 +1,21 @@
+// Stable storage tokens. A token is a reviewed claim, never an automatic certification.
+export const CERTIFICATION_VALUES = ["ecologico", "biodinamico_demeter", "dop", "igp", "artesania_alimentaria"] as const;
+export const VISIT_BOOKING_VALUES = ["cita previa obligatoria", "cita previa recomendada", "acceso libre en horario"] as const;
+export const PROFESSIONAL_SALES_VALUES = ["sí", "no", "bajo consulta"] as const;
+export const PREMIUM_CONTROLLED_VALUES: Record<string, readonly string[]> = {
+  certificaciones: CERTIFICATION_VALUES,
+  visita_cita_previa: VISIT_BOOKING_VALUES,
+  venta_profesionales: PROFESSIONAL_SALES_VALUES,
+};
+export const EXTRA_PREMIUM_FIELDS = [
+  { key: "certificaciones", label: "Certifications and labels", kind: "tokens", required: false, maxLength: 120, help: "Select only current certifications supported by a reviewed register or certificate. Demeter is a private certification." },
+  { key: "certificaciones_detalle", label: "Certification scope and register", kind: "textarea", required: false, maxLength: 1000, help: "Name each selected designation, issuer and certified products or activities. Add the operator code when available. Never imply all products are certified." },
+  { key: "visita_cita_previa", label: "Booking for visits", kind: "select", required: false, maxLength: 40, help: "State whether visitors must book. Requires guided visits to be yes." },
+  { key: "venta_profesionales", label: "Sales to professionals", kind: "select", required: false, maxLength: 20, help: "Whether this producer supplies restaurants, hospitality or shops; empty means unpublished." },
+  { key: "pedido_minimo", label: "Minimum order", kind: "text", required: false, maxLength: 120, help: "Brief reviewed order minimum, including quantity or currency, for example Minimum box 10 kg." },
+  { key: "condiciones_envio", label: "Delivery conditions", kind: "text", required: false, maxLength: 120, help: "Brief reviewed delivery area, cost or conditions. Do not promise live delivery estimates." },
+] as const;
+
 import descriptionPolicy from "../../data/reference/description-policy.json" with { type: "json" };
 
 // Formats and presentation metadata. Account permissions are selected separately.
@@ -39,6 +57,10 @@ export const CANONICAL_PRODUCER_HEADER = [
   "historia",
   "historia_locale",
   "fecha ultimo cambio",
+  "como producimos",
+  "como_producimos_locale",
+  "fecha novedades",
+  ...EXTRA_PREMIUM_FIELDS.map(field => field.key),
 ] as const;
 
 export const ONLINE_SALES_VALUES = ["sí", "no", "no comprobado"] as const;
@@ -211,6 +233,9 @@ export const PRODUCER_STANDARD_FIELD_DEFINITIONS = [
 ] as const;
 
 export const PRODUCER_EXPANDED_FIELD_DEFINITIONS = [
+  ...EXTRA_PREMIUM_FIELDS,
+  { key: "como producimos", label: "How we produce", kind: "textarea", required: false, maxLength: 2000, help: "Describe your production methods. Official certifications require reviewed evidence." },
+  { key: "como_producimos_locale", label: "Production methods language", kind: "description-locale", required: false, maxLength: 3, help: "Choose the original language; leave empty when there is no text." },
   {
     key: "video",
     label: "Video",

@@ -154,7 +154,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio,como producimos,como_producimos_locale,fecha novedades,certificaciones,certificaciones_detalle,visita_cita_previa,venta_profesionales,pedido_minimo,condiciones_envio
 ```
 
 The canonical header is defined in `lib/catalog/producer-schema.ts`. The form,
@@ -233,6 +233,17 @@ Presence terms have exact meanings:
 | `historia`                 | optional                 | Reviewed producer-authored account of the origins and development of this productive unit, at most 4,000 Unicode characters | Generic brand copy, HTML, URLs, unsupported claims, copied page boilerplate or private workflow narration             |
 | `historia_locale`          | paired                   | Supported lowercase source-language code for non-empty `historia`                                                           | Interface locale, inferred country language or a value when the text is empty                                         |
 | `fecha ultimo cambio`      | optional, system-managed | UTC calendar date (`YYYY-MM-DD`) of the most recent approved producer change materialized for this row                      | Producer input, ordinary editorial edit date, Git commit date, review timestamp with time or a manually inferred date |
+
+| `como producimos` | optional | Reviewed production methods, at most 2,000 Unicode characters | Unsupported certification claims, HTML, URLs or private information |
+| `como_producimos_locale` | paired | Source language for non-empty production methods | A language when the text is empty |
+| `fecha novedades` | optional, system-managed | Exact non-future UTC approval day of the current notice | Producer input, a date without a notice or dates of unrelated edits |
+
+| `certificaciones` | optional | Distinct reviewed certification tokens joined with `\|` | Inferred or expired certification, or proof of all products being certified |
+| `certificaciones_detalle` | paired | Official names, issuer, certified scope and optional operator codes for all selected tokens, at most 1,000 characters | Missing scope, private data or a claim without selected tokens |
+| `visita_cita_previa` | optional | `cita previa obligatoria`, `cita previa recomendada` or `acceso libre en horario`; requires guided visits yes | A live open status or inferred booking policy |
+| `venta_profesionales` | optional | `sí`, `no` or `bajo consulta` | Inferred wholesale availability or guaranteed professional pricing |
+| `pedido_minimo` | optional | Reviewed minimum order with units or currency, at most 120 characters | An inferred minimum or a zero standing for unknown |
+| `condiciones_envio` | optional | Reviewed delivery scope or conditions, at most 120 characters | Live shipping estimates or unsupported delivery promises |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -736,3 +747,58 @@ commit. Never introduce a country-only column or partially migrate the tree.
 Controlled-value changes likewise update their machine-readable registry,
 consumers and regression tests together. Validation commands and release gates
 live in `AGENTS.md`.
+
+## Production methods and dated news
+
+`como producimos` is optional reviewed producer-authored plain text (maximum
+2,000 Unicode characters), with required `como_producimos_locale` when nonempty.
+Both cells are empty when unpublished. It describes cultivation, husbandry,
+processing or preservation methods; official certification claims require public
+evidence. It is premium-editable and rendered only in the expanded profile,
+in its explicitly marked original language, like the community message.
+
+`mensaje a la comunidad` retains its stored key and 1,000-character limit; the
+public and owner labels are now News. It holds one current reviewed notice.
+`fecha novedades` is an optional exact non-future UTC day, empty without a
+message. Materialization stamps the approval day only when the message or its
+source language changes, and clears it when the message is removed. Older
+undated messages remain valid. Other profile changes never refresh this date.
+The producer cannot submit this system-managed field. Git preserves history;
+this release does not send notifications or implement subscriptions. Future
+notifications must distinguish accepted message revisions, not use the general
+profile change date as an event or treat favorites as notification consent.
+
+The header migration adds these three columns atomically to every area CSV.
+Stored proposals based on an earlier header require a refreshed snapshot before
+publication. Existing producer identity, routes and content references persist.
+Product seasonality remains identity-bound related content; favorite counts
+remain database-derived account state, never CSV cells.
+
+## Certifications, visits and commercial conditions
+
+These fields follow the same reviewed premium owner editor and expanded-profile
+visibility boundary. Empty means unpublished. `certificaciones` accepts only
+`ecologico`, `biodinamico_demeter`, `dop`, `igp`, `artesania_alimentaria`.
+The shared token definitions live in `lib/catalog/producer-schema.ts`.
+Every selection requires `certificaciones_detalle`: name its exact designation,
+issuer and certified activities/products, with operator/registration code when
+available. Multiple labels must each have an identifiable scope. Neither a token
+nor a validator establishes validity. Editorial review requires a current public
+certificate or operator register in the evidence ledger. Payment proves nothing.
+
+Use [REGOE](https://www.mapa.gob.es/es/alimentacion/temas/produccion-eco/regoe/)
+for ecological operator leads, and the relevant competent authority or governing
+body for the operator and scope of a DOP/IGP or regional food artisan register.
+[Demeter](https://demeter.net/certification/) is explicitly a private certification,
+not a government seal or a synonym for self-described biodynamic practice.
+Do not infer whole-farm, whole-catalog or product certification from ingredients,
+a regional label name or an uncertified practice description. Recheck changes,
+expiry and scope before updating the published claim. The Chisan demonstration
+row is visibly fictional and has no real certificate.
+
+Booking policy requires `visitas guiadas: sí`; clearing guided visits requires
+clearing booking policy in the same proposal. `venta_profesionales` yes or on
+request exposes an email contact action with a professional enquiry subject,
+falling back to an existing telephone. No contact is invented and Chisan sends
+nothing. Minimum orders and delivery conditions remain short source text; no
+currency, unit, geography or fee is inferred from an empty value.

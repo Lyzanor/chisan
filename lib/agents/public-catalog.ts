@@ -139,6 +139,14 @@ export function publicExpanded(
     guided_visits: (["sí", "no"].includes(fields["visitas guiadas"])
       ? fields["visitas guiadas"]
       : null) as "sí" | "no" | null,
+    certifications: (fields.certificaciones || "").split("|").filter(Boolean) as NonNullable<PublicProducer["expanded"]>["certifications"],
+    certification_scope: absent(fields.certificaciones_detalle),
+    visit_booking: absent(fields.visita_cita_previa) as NonNullable<PublicProducer["expanded"]>["visit_booking"],
+    professional_sales: absent(fields.venta_profesionales) as NonNullable<PublicProducer["expanded"]>["professional_sales"],
+    minimum_order: absent(fields.pedido_minimo),
+    delivery_conditions: absent(fields.condiciones_envio),
+    production_methods: prose(fields, "como producimos", "como_producimos_locale"),
+    news_date: absent(fields["fecha novedades"]),
     community_message: prose(
       fields,
       "mensaje a la comunidad",
@@ -154,7 +162,7 @@ export function publicExpanded(
     highlighted_links: highlighted,
     // Deliberately exclude translation history and its source hashes.
     products: content.products.map(
-      ({ id, name, description, locale, media_ids, link_ids, purchase_url, price, updated_on }) => ({
+      ({ id, name, description, locale, media_ids, link_ids, purchase_url, price, updated_on, season_months, seasonal_special, format }) => ({
         id,
         name,
         description,
@@ -163,6 +171,9 @@ export function publicExpanded(
         link_ids,
         ...(purchase_url ? { purchase_url } : {}),
         ...(price ? { price: { amount: price.amount, currency: price.currency } } : {}),
+        ...(format ? { format } : {}),
+        ...(season_months ? { season_months } : {}),
+        ...(seasonal_special !== undefined ? { seasonal_special } : {}),
         ...(updated_on ? { updated_on } : {}),
       }),
     ),
@@ -189,6 +200,8 @@ export function publicExpanded(
     highlighted.length ||
     expanded.video_url ||
     expanded.guided_visits ||
+    expanded.certifications.length || expanded.visit_booking || expanded.professional_sales || expanded.minimum_order || expanded.delivery_conditions ||
+    expanded.production_methods ||
     expanded.community_message ||
     expanded.behind_producer ||
     expanded.history ||

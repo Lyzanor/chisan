@@ -1,3 +1,4 @@
+import { EXTRA_PREMIUM_FIELDS } from "../catalog/producer-schema";
 import type { DescriptionSourceLocale, Locale } from "./locales";
 import { getLocaleDisplayTag } from "./locales";
 
@@ -47,6 +48,14 @@ export type Messages = {
     };
   };
   ownerProducerFieldHelp: {
+    certificaciones?: string;
+    certificaciones_detalle?: string;
+    visita_cita_previa?: string;
+    venta_profesionales?: string;
+    pedido_minimo?: string;
+    condiciones_envio?: string;
+    "como producimos"?: string;
+    como_producimos_locale?: string;
     video?: string;
     "quien hay detras"?: string;
     quien_hay_detras_locale?: string;
@@ -264,6 +273,9 @@ const MESSAGE_LOADERS = {
 } satisfies Record<Locale, () => Promise<{ default: Messages }>>;
 
 const PREMIUM_STORY_FIELD_HELP_FALLBACKS = {
+  ...Object.fromEntries(EXTRA_PREMIUM_FIELDS.map(field => [field.key, field.help])),
+  "como producimos": "Describe your production methods. Official certifications require reviewed evidence.",
+  como_producimos_locale: "Choose the original language; leave empty when there is no text.",
   video: "An official HTTPS YouTube URL for one public producer video.",
   "quien hay detras":
     "Reviewed producer-authored text about the owners or team behind this productive unit.",

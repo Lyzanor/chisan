@@ -1,3 +1,4 @@
+import { producerSeasonLabels, seasonMonthLabel } from "@/lib/i18n/producer-season";
 import { ProductPurchaseDetails } from "./product-purchase-details";
 import { isDemoProducer } from "@/lib/catalog/product-commerce";
 
@@ -17,6 +18,7 @@ export function ProducerContent({
   content: Content;
   locale: Locale;
 }) {
+  const season = producerSeasonLabels(locale);
   const labels = getProducerContentLabels(locale);
   const media = new Map(content.gallery.map((item) => [item.id, item]));
   const gallery = standaloneProducerGallery(content);
@@ -30,6 +32,7 @@ export function ProducerContent({
             {content.products.map((product) => (
               <li key={product.id} id={`product-${product.id}`}>
                 <h4 lang={product.locale}>{product.name}</h4>
+                {product.season_months?.length ? <p>{product.seasonal_special ? <strong>{season.special} · </strong> : null}{season.title}: {product.season_months.map(month => seasonMonthLabel(month, locale)).join(", ")}</p> : null}
                 {product.description ? (
                   <p lang={product.locale}>{product.description}</p>
                 ) : null}

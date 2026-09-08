@@ -30,6 +30,9 @@ test("related content renders semantic, localized and escaped public records", a
       price: { amount: "3.50", currency: "EUR" },
       purchase_url: "https://shop.example.org/product",
       updated_on: "2026-09-06",
+      format: "botella 750 ml",
+      season_months: [8, 9],
+      seasonal_special: true,
       name: "Example & Co",
       description: "<script>literal</script>",
       locale: "en",
@@ -96,4 +99,18 @@ test("related content renders semantic, localized and escaped public records", a
   } finally {
     hooks.deregister();
   }
+});
+
+test("commercial sections show certification scope and professional contact without inventing channels", async () => {
+  const { ProducerCommercialDetails } = await import("../components/producer-commercial-details");
+  const { loadMessages } = await import("../lib/i18n/messages");
+  const messages = await loadMessages("es");
+  const fields = { certificaciones: "ecologico", certificaciones_detalle: "Hortalizas; emisor y código revisados.", venta_profesionales: "bajo consulta", correo: "demo@example.org", telefono: "+34600112233", visita_cita_previa: "cita previa obligatoria", pedido_minimo: "Caja 5 kg", condiciones_envio: "Recogida local" };
+  const render = (patch = {}) => renderToStaticMarkup(createElement(ProducerCommercialDetails, { fields: { ...fields, ...patch }, locale: "es", messages, country: "es", producerId: 12439 }));
+  assert.match(render(), /Sin certificación real/);
+  assert.match(render(), /Hortalizas; emisor y código revisados/);
+  assert.match(render(), /mailto:demo@example.org\?subject=Consulta/);
+  assert.match(render({ correo: "" }), /tel:\+34600112233/);
+  assert.doesNotMatch(render({ correo: "", telefono: "" }), /href=/);
+  assert.doesNotMatch(render({ venta_profesionales: "no" }), /href=/);
 });

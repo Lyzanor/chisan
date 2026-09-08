@@ -306,3 +306,27 @@ A merge never silently reassigns content, media or a paid right: review the
 surviving producer, migrate chosen items and references explicitly, and remove
 the retired package in the same catalog change. A missing producer makes a
 package invalid. Delete image assets only after checking all references.
+
+## Product seasonality
+
+Optional `season_months` contains 1–12 distinct integer calendar months (1–12).
+Omission means unspecified, not unavailable; all twelve months means year-round.
+The public profile displays the recorded usual season, without inferring stock
+or current availability. Optional `seasonal_special: true` highlights that exact
+product as a seasonal special and requires months. Both fields are premium
+editable, reviewed with the existing product proposal and publication workflow,
+and count as product changes for server-assigned `updated_on`. Missing fields
+have no defaults so existing snapshot hashes remain stable. Demo producer
+`es:12439` uses explicitly fictional examples, without claims about real stock.
+
+## Product format
+
+Optional `format` is nonempty plain text of at most 120 characters in the
+product source language: e.g. `kg`, `pieza 400 g`, `caja 5 kg`, `botella 750 ml`.
+It describes the quantity/packaging to which the recorded price applies and is
+shown immediately with the price, or on its own when no price is recorded.
+It is editable through the premium product workflow and renews `updated_on`
+on a submitted change. Omission preserves older records without guessing units.
+A format change does not alter the price or derive a per-kilogram rate. The
+public API exposes it with the product; JSON-LD does not invent quantitative
+units from this free text.

@@ -232,7 +232,9 @@ export function resolveExpectedProducerChange(
     throw new Error("The stored patch does not change the base snapshot.");
   }
 
+  const newsChanged = ["mensaje a la comunidad", "mensaje_comunidad_locale"].some(key => key in validation.patch);
   const materializationPatch = {
+    ...(newsChanged ? { "fecha novedades": validation.candidate["mensaje a la comunidad"] ? approvedProducerChangeDate(reviewedAt) : "" } : {}),
     ...validation.patch,
     [PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD]:
       approvedProducerChangeDate(reviewedAt),

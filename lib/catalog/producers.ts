@@ -309,6 +309,7 @@ export function parseProducerCsvRows(
           field === "descripcion" ||
           field === "mensaje a la comunidad" ||
           field === "quien hay detras" ||
+          field === "como producimos" ||
           field === "historia"
             ? String(value ?? "")
             : cleanCell(value),

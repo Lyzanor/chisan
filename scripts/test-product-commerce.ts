@@ -269,3 +269,25 @@ test("JSON-LD exposes only supported visible semantics and never fictional offer
     /<script|<\/script/,
   );
 });
+
+
+test("season months validate and renew product dates only on submitted changes", () => {
+  const base = fixture();
+  for (const months of [[], [0], [13], [1, 1], [1.5]]) {
+    assert.equal(contentProductSchema.safeParse({ ...product, season_months: months }).success, false);
+  }
+  assert.equal(producerContentSchema.safeParse({ ...base, products: [{ ...product, seasonal_special: true }] }).success, false);
+  const requested = producerContentSchema.parse({ ...base, products: [{ ...base.products[0], season_months: [6, 7, 8, 9], seasonal_special: true }] });
+  assert.equal(dateSubmittedProducts(base, requested, "2026-09-08")[0].updated_on, "2026-09-08");
+  assert.equal(dateSubmittedProducts(base, requested)[0].updated_on, "2026-01-01");
+  assert.ok(proposeProducerProducts(base, requested.products));
+});
+
+test("product format stays optional, bounded and part of the reviewed product revision", () => {
+  const base = fixture();
+  assert.equal(contentProductSchema.safeParse({ ...product, format: " " }).success, false);
+  assert.equal(contentProductSchema.safeParse({ ...product, format: "x".repeat(121) }).success, false);
+  const next = { ...base, products: [{ ...base.products[0], format: "botella 750 ml" }] };
+  assert.equal(dateSubmittedProducts(base, next, "2026-09-08")[0].updated_on, "2026-09-08");
+  assert.ok(proposeProducerProducts(base, next.products));
+});

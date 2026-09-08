@@ -685,3 +685,13 @@ the next read. Already displayed images cannot be recalled from a visitor's
 screen. A database outage omits this optional producer section while the CSV
 catalog remains available. Public selections display the same local avatar and
 retain their existing explicit membership and map behavior.
+
+## Producer favorite interest
+
+The premium owner's statistics show the current count of favorites belonging to
+active accounts for that exact producer, including private saves. This scalar
+aggregate exposes no private identities and is not a count of orders, prospective
+buyers or notification subscribers. Removing a favorite or deactivating an
+account reduces the count. The statistics query rechecks active owner and exact
+producer premium access in the same statement; visitor totals are unaffected by
+the favorite aggregation. Public supporter attribution retains its separate opt-in.

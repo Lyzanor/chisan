@@ -54,6 +54,15 @@ const messages = {
     },
   },
   ownerProducerFieldHelp: {
+    certificaciones: "Selecciona solo sellos vigentes respaldados por un registro o certificado revisado. Demeter es una certificación privada.",
+    certificaciones_detalle: "Indica para cada sello el nombre oficial, el emisor y los productos o actividades certificados. Añade el código de operador si existe.",
+    visita_cita_previa: "Indica si es necesario reservar. Requiere visitas guiadas: sí.",
+    venta_profesionales: "Indica si suministras a restaurantes, hostelería o tiendas; vacío significa sin publicar.",
+    pedido_minimo: "Pedido mínimo con cantidad o moneda; por ejemplo, caja mínima de 10 kg. Máximo 120 caracteres.",
+    condiciones_envio: "Zona, coste o condiciones de envío revisadas. Máximo 120 caracteres.",
+
+    "como producimos": "Describe tus métodos de producción. Los sellos oficiales requieren evidencia revisada.",
+    como_producimos_locale: "Elige el idioma original; déjalo vacío cuando no haya texto.",
     nombre: "El nombre público del productor o de la marca.",
     municipio: "El municipio de la unidad productiva, no el de una oficina comercial.",
     categoria: "La principal producción material del productor.",

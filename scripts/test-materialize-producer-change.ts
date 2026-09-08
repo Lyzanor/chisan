@@ -321,6 +321,12 @@ test("the expected state is derived from the base snapshot, stored patch and app
     new Date("2026-09-02T23:45:00Z"),
   );
 
+  const news = resolveExpectedProducerChange(baseSnapshot, baseHash, { "mensaje a la comunidad": "Aviso", mensaje_comunidad_locale: "es" }, new Date("2026-09-08T10:00:00Z"));
+  assert.equal(news.fields["fecha novedades"], "2026-09-08");
+  const unrelated = resolveExpectedProducerChange(news.fields, news.hash, { nombre: "Renamed" }, new Date("2026-09-09T10:00:00Z"));
+  assert.equal(unrelated.fields["fecha novedades"], "2026-09-08");
+  const removed = resolveExpectedProducerChange(news.fields, news.hash, { "mensaje a la comunidad": "", mensaje_comunidad_locale: "" }, new Date("2026-09-09T10:00:00Z"));
+  assert.equal(removed.fields["fecha novedades"], "");
   assert.equal(expected.fields.nombre, "Updated producer");
   assert.equal(expected.fields.municipio, "Madrid");
   assert.equal(expected.fields[PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD], "2026-09-02");

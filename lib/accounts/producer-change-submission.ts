@@ -76,7 +76,7 @@ function readSubmittedProducerChangeValues(
         Math.max(field.maxLength + 100, field.maxLength * 2),
       );
       const value =
-        field.kind === "categories" || field.kind === "sales-channels"
+        field.kind === "categories" || field.kind === "sales-channels" || field.kind === "tokens"
           ? formData
               .getAll(field.key)
               .filter((item): item is string => typeof item === "string")
@@ -88,7 +88,8 @@ function readSubmittedProducerChangeValues(
       const preservedValue = [
         "descripcion",
         "mensaje a la comunidad",
-        "quien hay detras",
+        "como producimos",
+  "quien hay detras",
         "historia",
       ].includes(field.key)
         ? Array.from(value).slice(0, responseLimit).join("")

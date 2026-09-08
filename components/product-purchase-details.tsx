@@ -28,9 +28,10 @@ export function ProductPurchaseDetails({
   const updated = date.success
     ? productUpdatePresentation(date.data, locale)
     : null;
-  if (!price.success && !purchase.success && !updated) return null;
+  if (!price.success && !purchase.success && !updated && !product.format) return null;
   return (
     <div className={styles.purchase}>
+      {product.format ? <p lang={product.locale}>{product.format}</p> : null}
       {price.success ? (
         <p className={styles.price}>
           <span>{words.recordedPrice}</span>

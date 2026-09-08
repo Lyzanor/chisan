@@ -54,6 +54,15 @@ const messages = {
     },
   },
   ownerProducerFieldHelp: {
+    certificaciones: "Selecciona només segells vigents amb registre o certificat revisat. Demeter és una certificació privada.",
+    certificaciones_detalle: "Indica per a cada segell el nom oficial, l’emissor i els productes o activitats certificats. Afegeix el codi d’operador si existeix.",
+    visita_cita_previa: "Indica si cal reservar. Requereix visites guiades: sí.",
+    venta_profesionales: "Indica si subministres a restaurants, hostaleria o botigues; buit significa sense publicar.",
+    pedido_minimo: "Comanda mínima amb quantitat o moneda; per exemple, caixa mínima de 10 kg. Màxim 120 caràcters.",
+    condiciones_envio: "Zona, cost o condicions d’enviament revisades. Màxim 120 caràcters.",
+
+    "como producimos": "Descriu els teus mètodes de producció. Els segells oficials requereixen evidència revisada.",
+    como_producimos_locale: "Tria l’idioma original; deixa’l buit quan no hi hagi text.",
     nombre: "El nom públic del productor o de la marca.",
     municipio: "El municipi de la unitat productiva, no el d'una oficina comercial.",
     categoria: "La producció material principal del productor.",

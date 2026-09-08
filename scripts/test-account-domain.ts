@@ -732,3 +732,21 @@ test("account validation can use Spanish without changing the admin default", ()
   assert.equal(proposal.errors.nombre, "Este campo es obligatorio.");
   assert.equal(proposal.errors.categoria, "Elige una categoría del catálogo.");
 });
+
+test("new premium fields validate scope, controlled values and access without accepting news dates", () => {
+  const base = { ...Object.fromEntries(PRODUCER_EDITABLE_FIELDS.map(field => [field.key, ""])), nombre: "Demo", municipio: "Madrid", categoria: "Otros", "Venta online": "no comprobado" };
+  const proposed = { ...base, "como producimos": "Rotación de parcelas.", como_producimos_locale: "es", certificaciones: "ecologico", certificaciones_detalle: "Emisor y alcance revisados: hortalizas.", "visitas guiadas": "sí", visita_cita_previa: "cita previa obligatoria", venta_profesionales: "bajo consulta", pedido_minimo: "Caja 5 kg" };
+  const result = validateProducerProposal(proposed, base);
+  assert.ok(result.ok);
+  if (result.ok) assert.equal(isPremiumProducerPatch(result.patch), true);
+  const basic = validateProducerProposal(proposed, base, PRODUCER_STANDARD_EDITABLE_FIELDS);
+  assert.ok(basic.ok);
+  if (basic.ok) assert.deepEqual(basic.patch, {});
+  for (const patch of [
+    { certificaciones: "natural" }, { certificaciones: "ecologico|ecologico" },
+    { certificaciones_detalle: "" }, { "visitas guiadas": "no" },
+    { venta_profesionales: "sí|no" }, { pedido_minimo: "x".repeat(121) },
+    { condiciones_envio: "<b>Gratis</b>" }, { como_producimos_locale: "" },
+  ]) assert.equal(validateProducerProposal({ ...proposed, ...patch }, base).ok, false);
+  assert.equal(isProducerPatch({ "fecha novedades": "2026-09-08" }), false);
+});

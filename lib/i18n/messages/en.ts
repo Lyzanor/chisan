@@ -54,6 +54,8 @@ const messages = {
     },
   },
   ownerProducerFieldHelp: {
+    "como producimos": "Describe your production methods. Official certifications require reviewed evidence.",
+    como_producimos_locale: "Choose the original language; leave empty when there is no text.",
     nombre: "The public producer or brand name.",
     municipio: "Municipality of the productive unit, not a sales office.",
     categoria: "The producer's main material output.",
