@@ -40,6 +40,8 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/(catalog)/[catalog]/page.tsx",
     "app/(catalog)/[catalog]/[area]/page.tsx",
     "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
+    "app/(catalog)/[catalog]/guias/page.tsx",
+    "app/(catalog)/[catalog]/guias/[slug]/page.tsx",
     "app/favicon.ico",
     "app/globals.css",
     "app/robots.ts",
@@ -61,6 +63,9 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/[catalog]/page.tsx",
     "app/[catalog]/[area]/page.tsx",
     "app/[catalog]/[area]/[segment]/page.tsx",
+    "app/(editorial)/guias/layout.tsx",
+    "app/(editorial)/guias/page.tsx",
+    "app/(editorial)/guias/[slug]/page.tsx",
   ];
 
   for (const relativePath of retiredRouteFiles) {
@@ -266,6 +271,9 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
     "/how-we-work",
     "/our-purpose",
     "/api/catalog-redirect/es",
+    // The editorial library shares the catalog scope without being an area.
+    "/es/guias",
+    "/es/guias/quesos-de-espana",
   ]) {
     assert.equal(needsClerkRequestContext(pathname), false, pathname);
   }

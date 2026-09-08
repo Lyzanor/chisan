@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 import { buildCatalogNormalizationRewritesFromManifests } from "./lib/catalog-build-rewrites";
+import { GUIDES_PATH, LEGACY_GUIDES_PATH } from "./lib/guides/routes";
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -23,6 +24,20 @@ const nextConfig: NextConfig = {
     afterFiles: [],
     fallback: [],
   }),
+  // The library moved into the catalog scope of the country it describes.
+  // Its first published URLs keep resolving to the same articles.
+  redirects: async () => [
+    {
+      source: LEGACY_GUIDES_PATH,
+      destination: GUIDES_PATH,
+      permanent: true,
+    },
+    {
+      source: `${LEGACY_GUIDES_PATH}/:slug`,
+      destination: `${GUIDES_PATH}/:slug`,
+      permanent: true,
+    },
+  ],
   turbopack: {
     root: process.cwd(),
   },
@@ -32,8 +47,8 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     // The shared navigation and profile backlinks read the small guide library.
     "/*": ["./data/guides/es/*.md"],
-    "/guias": ["./data/csv/es/**/*.csv"],
-    "/guias/**": ["./data/csv/es/**/*.csv"],
+    "/\\[catalog\\]/guias": ["./data/csv/es/**/*.csv"],
+    "/\\[catalog\\]/guias/\\[slug\\]": ["./data/csv/es/**/*.csv"],
     "/api/producer-media": ["./data/csv/**/*.csv"],
     "/api/producer-stats/**": ["./data/csv/**/*.csv"],
     "/api/producer-favorites": ["./data/csv/**/*.csv"],

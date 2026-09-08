@@ -5,11 +5,21 @@ import {
   GUIDE_TOPICS,
   guidePath,
   listPublishedGuides,
+  resolveGuidesScope,
 } from "@/lib/guides/catalog";
 import { buildGuideMetadata } from "@/lib/guides/metadata";
 import styles from "@/components/guides/guides.module.css";
 
 export const metadata = buildGuideMetadata();
+
+// The library belongs to one published catalog scope. Every other scope is
+// unknown at this depth, so no request invents a translated guide route.
+export function generateStaticParams() {
+  const scope = resolveGuidesScope();
+  return scope ? [{ catalog: scope.pathPrefix.slice(1) }] : [];
+}
+
+export const dynamicParams = false;
 
 export default async function GuidesPage() {
   const guides = listPublishedGuides();

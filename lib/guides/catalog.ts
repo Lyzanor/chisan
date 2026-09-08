@@ -10,8 +10,9 @@ import {
   type ProducerIdentity,
 } from "../csv-catalog";
 import { getCategoryIcon } from "../get-category-icon";
-import { buildCatalogScope } from "../i18n/catalog-scope";
+import { buildCatalogScope, type CatalogScope } from "../i18n/catalog-scope";
 import type { ProducerSelectionItem } from "../producer-selections";
+import { GUIDES_COUNTRY, GUIDES_LOCALE, GUIDES_PATH, GUIDES_SEGMENT } from "./routes";
 import type { Guide } from "./schema";
 import { parseGuideMarkdown } from "./markdown";
 
@@ -22,14 +23,19 @@ export function listFeaturedGuides(): Guide[] {
   return FEATURED_GUIDES.flatMap((slug) => guides.filter((guide) => guide.slug === slug));
 }
 
-export const GUIDES_PATH = "/guias";
 export const GUIDES_TITLE = "Guías de productores y alimentos de España";
 export const GUIDES_DESCRIPTION =
   "Quesos, vinos, miel y sus lugares de origen. Guías de Chisan para entender qué hace cada productor, comparar propuestas y explorar el mapa.";
 
-export function guidePath(slug: string): string {
-  return `${GUIDES_PATH}/${slug}`;
-}
+// The public route stays the library's stable entry point for its consumers.
+export {
+  GUIDES_COUNTRY,
+  GUIDES_LOCALE,
+  GUIDES_PATH,
+  GUIDES_SEGMENT,
+  LEGACY_GUIDES_PATH,
+  guidePath,
+} from "./routes";
 
 let publishedReadModel: Guide[] | undefined;
 
@@ -55,6 +61,22 @@ export function readGuides(): Guide[] {
   }
   if (process.env.NODE_ENV === "production") publishedReadModel = guides;
   return guides;
+}
+
+// The catalog scope that owns the published library. Route constants stay
+// literal so the proxy and the build can resolve them without reading the
+// catalog; this is where that literal meets the country manifest.
+export function resolveGuidesScope(): CatalogScope | null {
+  const country = findPublishedCountry(GUIDES_COUNTRY);
+  if (!country || !country.publishedLocales.includes(GUIDES_LOCALE)) return null;
+
+  const scope = buildCatalogScope(country, GUIDES_LOCALE);
+  if (`${scope.pathPrefix}/${GUIDES_SEGMENT}` !== GUIDES_PATH) {
+    throw new Error(
+      `Guides are published at ${GUIDES_PATH}, but '${GUIDES_COUNTRY}' serves '${GUIDES_LOCALE}' at '${scope.pathPrefix}'`,
+    );
+  }
+  return scope;
 }
 
 export function isGuidePublished(guide: Guide): boolean {

@@ -1,3 +1,4 @@
+import { GUIDES_SEGMENT } from "./guides/routes";
 import { isCatalogScopeSegment } from "./i18n/catalog-scope";
 
 const CLERK_PATH_PREFIXES = [
@@ -14,7 +15,11 @@ const PUBLIC_CATALOG_API = "/api/catalog/v1";
 
 export function catalogPathSegments(pathname: string): string[] | null {
   const segments = pathname.split("/").filter(Boolean);
-  return isCatalogScopeSegment(segments[0] ?? "") ? segments : null;
+  if (!isCatalogScopeSegment(segments[0] ?? "")) return null;
+  // The editorial library shares the catalog scope without being an area. Its
+  // own route decides which scope publishes it.
+  if (segments[1] === GUIDES_SEGMENT) return null;
+  return segments;
 }
 
 export function needsClerkRequestContext(pathname: string): boolean {

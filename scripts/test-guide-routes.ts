@@ -4,13 +4,15 @@ import {
   listPublishedGuides,
   resolveGuideProducers,
   guidePath,
+  GUIDES_PATH,
+  LEGACY_GUIDES_PATH,
 } from "../lib/guides/catalog";
 
 const baseUrl = process.env.BASE_URL;
 assert.ok(baseUrl, "BASE_URL is required; run through pnpm test:behavior");
 
 test("guide routes serve Spanish text, canonical metadata and exact producer links before JavaScript", async () => {
-  const index = await fetch(`${baseUrl}/guias`, {
+  const index = await fetch(`${baseUrl}${GUIDES_PATH}`, {
     headers: { "Accept-Language": "en" },
   });
   assert.equal(index.status, 200);
@@ -39,7 +41,31 @@ test("guide routes serve Spanish text, canonical metadata and exact producer lin
     assert.match(profileHtml, /Aparece en estas guías/);
     assert.ok(profileHtml.includes(`href="${route}"`));
   }
-  assert.equal((await fetch(`${baseUrl}/guias/unknown-guide`)).status, 404);
+  assert.equal(
+    (await fetch(`${baseUrl}${GUIDES_PATH}/unknown-guide`)).status,
+    404,
+  );
+
+  // The first published guide URLs keep resolving to the same articles.
+  for (const [legacy, canonical] of [
+    [LEGACY_GUIDES_PATH, GUIDES_PATH],
+    [
+      `${LEGACY_GUIDES_PATH}/${listPublishedGuides()[0].slug}`,
+      guidePath(listPublishedGuides()[0].slug),
+    ],
+  ]) {
+    const moved: Response = await fetch(`${baseUrl}${legacy}`, {
+      redirect: "manual",
+    });
+    const location = moved.headers.get("location");
+    assert.equal(moved.status, 308);
+    assert.ok(location);
+    assert.equal(
+      new URL(location, `${baseUrl}${legacy}`).href,
+      `${baseUrl}${canonical}`,
+    );
+  }
+
   const home = await fetch(`${baseUrl}/`);
   assert.match(await home.text(), /Otra forma de descubrir el origen/);
 });

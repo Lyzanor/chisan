@@ -13,6 +13,9 @@ import {
   resolveGuideProducers,
   guidePath,
   listGuidesForProducer,
+  resolveGuidesScope,
+  GUIDES_PATH,
+  GUIDES_SEGMENT,
 } from "../lib/guides/catalog";
 import { guideSchema } from "../lib/guides/schema";
 import {
@@ -22,6 +25,11 @@ import {
 } from "../lib/guides/metadata";
 import { serializeStructuredData } from "../lib/site-structured-data";
 import { hasProducerSelectionCoordinates } from "../lib/producer-selections";
+import { listPublishedCountries } from "../lib/csv-catalog";
+import {
+  catalogPathSegments,
+  needsClerkRequestContext,
+} from "../lib/proxy-scope";
 
 test("guide content has valid structure, stable related links and publication dates", () => {
   const guides = readGuides();
@@ -143,7 +151,9 @@ test("article metadata, dates and sitemap agree; structured data is safely seria
   const entries = listGuideSitemapEntries();
   const guides = listPublishedGuides();
   assert.equal(entries.length, guides.length + 1);
-  assert.ok(entries.some((entry) => entry.url === "https://chisan.app/guias"));
+  assert.ok(
+    entries.some((entry) => entry.url === `https://chisan.app${GUIDES_PATH}`),
+  );
   for (const guide of guides) {
     const url = `https://chisan.app${guidePath(guide.slug)}`;
     const metadata = buildGuideMetadata(guide);
@@ -185,4 +195,30 @@ test("Markdown is the sole authored body and keeps formatting and exact producer
   assert.throws(() => parseGuideMarkdown(text.replace("## Nuestro criterio editorial {#criterio-editorial}", "## A different section")));
   const safe = renderToStaticMarkup(createElement(GuideMarkdown, null, "[bad](javascript:alert%281%29)\n\n<script>bad</script>"));
   assert.ok(!safe.includes("javascript:") && !safe.includes("<script>"));
+});
+
+test("the library is published inside its country catalog scope, not beside it", () => {
+  const scope = resolveGuidesScope();
+  assert.ok(scope, "Spain publishes the Spanish library");
+  assert.equal(scope.country, "es");
+  assert.equal(scope.locale, "es");
+  assert.equal(GUIDES_PATH, `${scope.pathPrefix}/${GUIDES_SEGMENT}`);
+  assert.equal(GUIDES_PATH, "/es/guias");
+  assert.equal(guidePath("queso"), "/es/guias/queso");
+
+  // The guide segment cannot shadow a published area of any catalog scope.
+  for (const country of listPublishedCountries()) {
+    for (const region of country.regions) {
+      for (const area of region.areas) {
+        assert.notEqual(area.slug, GUIDES_SEGMENT);
+      }
+    }
+  }
+
+  // The proxy leaves guide requests to their own route instead of resolving
+  // them as catalog areas or producers.
+  assert.equal(catalogPathSegments(GUIDES_PATH), null);
+  assert.equal(catalogPathSegments(guidePath("queso")), null);
+  assert.equal(needsClerkRequestContext(guidePath("queso")), false);
+  assert.deepEqual(catalogPathSegments("/es/barcelona"), ["es", "barcelona"]);
 });

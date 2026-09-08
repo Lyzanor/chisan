@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { GuideMarkdown } from "./guide-markdown";
 import { GuideMap } from "./guide-map";
-import { guidePath, type GuideProducer } from "@/lib/guides/catalog";
+import { GUIDES_PATH, guidePath, type GuideProducer } from "@/lib/guides/catalog";
 import { buildGuideStructuredData } from "@/lib/guides/metadata";
 import type { Guide } from "@/lib/guides/schema";
 import { serializeStructuredData } from "@/lib/site-structured-data";
@@ -37,7 +37,7 @@ export function GuideArticle({
       <nav aria-label="Ruta de navegación" className={styles.breadcrumb}>
         <Link href="/">Chisan</Link>
         <span aria-hidden="true">/</span>
-        <Link href="/guias">Guías</Link>
+        <Link href={GUIDES_PATH}>Guías</Link>
         <span aria-hidden="true">/</span>
         <span aria-current="page">{guide.title}</span>
       </nav>

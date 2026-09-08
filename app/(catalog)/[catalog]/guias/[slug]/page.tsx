@@ -1,12 +1,21 @@
 import { notFound } from "next/navigation";
 import { GuideArticle } from "@/components/guides/guide-article";
-import { listPublishedGuides, loadGuide } from "@/lib/guides/catalog";
+import {
+  listPublishedGuides,
+  loadGuide,
+  resolveGuidesScope,
+} from "@/lib/guides/catalog";
 import { buildGuideMetadata } from "@/lib/guides/metadata";
 
 export const dynamicParams = false;
 
+// Articles exist only inside the catalog scope that publishes the library, so
+// an unpublished locale or country never resolves a guide slug.
 export function generateStaticParams() {
-  return listPublishedGuides().map(({ slug }) => ({ slug }));
+  const scope = resolveGuidesScope();
+  if (!scope) return [];
+  const catalog = scope.pathPrefix.slice(1);
+  return listPublishedGuides().map(({ slug }) => ({ catalog, slug }));
 }
 
 export async function generateMetadata({

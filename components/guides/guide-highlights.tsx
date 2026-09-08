@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ProducerIdentity } from "@/lib/csv-catalog";
 import {
+  GUIDES_PATH,
   guidePath,
   listGuidesForProducer,
   listFeaturedGuides,
@@ -25,7 +26,7 @@ export function GuideHighlights({ producer }: { producer?: ProducerIdentity }) {
             ? "Aparece en estas guías"
             : "Otra forma de descubrir el origen"}
         </h2>
-        <Link href="/guias" className={styles.textLink}>
+        <Link href={GUIDES_PATH} className={styles.textLink}>
           Todas las guías <span aria-hidden="true">↗</span>
         </Link>
       </div>

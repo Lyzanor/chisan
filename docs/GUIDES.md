@@ -17,7 +17,13 @@ articles and resolves `(country, producerId)` references; `components/guides/`
 renders them. Guide texts are separate from `data/content/`, which belongs to
 individual producers, and from territorial research instructions.
 
-Public routes are `/guias` and `/guias/<slug>`, with a stable Spanish root layout.
+Public routes are `/es/guias` and `/es/guias/<slug>`: the library is published
+inside the catalog scope of the country it describes and shares that scope's
+Spanish root layout. `lib/guides/routes.ts` owns those constants so the proxy
+and the build resolve the guide segment without reading the catalog, and
+`check:guides` verifies that they agree with the country manifest and that no
+published area uses the segment. The first published root paths `/guias` and
+`/guias/<slug>` permanently redirect to their canonical scope.
 No translated variants are implied. Future translations need explicit language
 routes, reviewed copies and reciprocal alternates before publication.
 
