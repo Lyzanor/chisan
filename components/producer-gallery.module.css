@@ -1,0 +1,154 @@
+.gallery {
+  min-width: 0;
+  display: grid;
+  gap: var(--chisan-space-3);
+}
+.featured {
+  min-width: 0;
+  margin: 0;
+}
+.open {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--chisan-radius-object);
+  overflow: hidden;
+  background: var(--chisan-color-surface-muted);
+  cursor: zoom-in;
+  touch-action: pan-y;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  animation: photo-arrival var(--chisan-motion-component, 200ms) ease-out;
+}
+.enlarge {
+  position: absolute;
+  right: var(--chisan-space-2);
+  bottom: var(--chisan-space-2);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  border-radius: var(--chisan-radius-control);
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--chisan-space-2);
+  margin-top: var(--chisan-space-1);
+  font-size: 0.875rem;
+}
+.controls button,
+.close {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  cursor: pointer;
+}
+.thumbnails {
+  display: flex;
+  gap: var(--chisan-space-2);
+  overflow-x: auto;
+  padding: var(--chisan-space-1);
+}
+.thumbnails button {
+  flex: 0 0 60px;
+  padding: 2px;
+  min-height: 48px;
+  border: 2px solid transparent;
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  cursor: pointer;
+}
+.thumbnails button[aria-pressed="true"] {
+  border-color: var(--chisan-color-moss);
+}
+.thumbnails img {
+  display: block;
+  width: 100%;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.featured figcaption {
+  margin-top: var(--chisan-space-2);
+  color: var(--chisan-color-stone);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.dialog {
+  width: min(1100px, 96vw);
+  max-height: 94dvh;
+  padding: var(--chisan-space-4);
+  border: 0;
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+}
+.dialog::backdrop {
+  background: var(--chisan-color-overlay-backdrop);
+}
+.dialogBody {
+  position: relative;
+}
+.dialogBody > img {
+  display: block;
+  width: 100%;
+  height: 70dvh;
+  object-fit: contain;
+}
+.dialogBody > p {
+  margin: var(--chisan-space-2) 0;
+  font-size: 0.875rem;
+}
+.close {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+}
+.gallery button:focus-visible {
+  outline: 2px solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+@keyframes photo-arrival {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    animation: none;
+  }
+}
+@media (max-width: 600px) {
+  .thumbnails button {
+    flex-basis: 48px;
+  }
+  .featured figcaption {
+    max-height: 4.5em;
+    overflow-y: auto;
+  }
+}
+
+:global(body):has(.dialog[open]) {
+  overflow: hidden;
+}

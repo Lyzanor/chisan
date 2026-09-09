@@ -218,9 +218,11 @@ test("catalog navigation builds every short and composite public path centrally"
     }),
     {
       category: "Miel",
+      municipality: "Barcelona",
       highlight: "producer-1",
     },
   );
+  assert.equal(buildCatalogHref({ country: "es", area: "barcelona", category: "Cerveza", municipality: "Santa Coloma de Gramenet" }), "/es/barcelona?category=Cerveza&municipality=Santa+Coloma+de+Gramenet");
 });
 
 test("historical producer routes preserve decoded NFC Unicode without accepting delimiters", () => {
@@ -1226,7 +1228,7 @@ test("producer profiles promote canonical editorial facts without widening CSV",
   );
   assert.match(
     producerPage,
-    /onlineSales === "sí" && salesChannels\.includes\("ecommerce"\) && Boolean\(website\)/,
+    /onlineSales === "sí"\s*&&\s*salesChannels\.includes\("ecommerce"\)\s*&&\s*Boolean\(website\)/,
   );
   assert.match(producerPage, /getFieldValue\(producer\.fields, "productos estrella"\)/);
   assert.match(producerPage, /className="detail-intro"/);

@@ -13,16 +13,22 @@ import type { Locale } from "./i18n/locales";
  * listing instead of resuming a saved location area.
  */
 export const MANUAL_AREA_SELECTION_ID = "choose-country";
-export const MANUAL_AREA_SELECTION_HASH = `#${MANUAL_AREA_SELECTION_ID}` as const;
-export const MANUAL_AREA_SELECTION_HREF = `/${MANUAL_AREA_SELECTION_HASH}` as const;
+export const MANUAL_AREA_SELECTION_HASH =
+  `#${MANUAL_AREA_SELECTION_ID}` as const;
+export const MANUAL_AREA_SELECTION_HREF =
+  `/${MANUAL_AREA_SELECTION_HASH}` as const;
 
-export type CatalogNavigationScope = Pick<CatalogScope, "country" | "pathPrefix">;
+export type CatalogNavigationScope = Pick<
+  CatalogScope,
+  "country" | "pathPrefix"
+>;
 
 export type CatalogNavigationContext = {
   scope?: CatalogNavigationScope;
   country?: string;
   area?: string;
   category?: string;
+  municipality?: string;
   highlight?: string | number;
 };
 
@@ -38,7 +44,9 @@ export type ApplicationProducerNavigationTarget = {
 
 export type ApplicationProducerNavigationContext = {
   country: CatalogCountryPolicy;
-  localePolicy: Pick<CatalogLocalePolicy, "publishedLocales"> & { slug: string };
+  localePolicy: Pick<CatalogLocalePolicy, "publishedLocales"> & {
+    slug: string;
+  };
   explicitLocale?: Locale | null;
 };
 
@@ -53,7 +61,11 @@ export function readQueryParam(
   return (value ?? "").trim();
 }
 
-function appendParam(params: URLSearchParams, key: string, value?: string | number) {
+function appendParam(
+  params: URLSearchParams,
+  key: string,
+  value?: string | number,
+) {
   if (value === undefined || value === "") {
     return;
   }
@@ -61,10 +73,13 @@ function appendParam(params: URLSearchParams, key: string, value?: string | numb
   params.set(key, String(value));
 }
 
-function buildContextParams(context: CatalogNavigationContext): URLSearchParams {
+function buildContextParams(
+  context: CatalogNavigationContext,
+): URLSearchParams {
   const params = new URLSearchParams();
 
   appendParam(params, "category", context.category);
+  appendParam(params, "municipality", context.municipality);
   appendParam(params, "highlight", context.highlight);
 
   return params;
@@ -72,9 +87,12 @@ function buildContextParams(context: CatalogNavigationContext): URLSearchParams 
 
 export function readCatalogQueryContext(
   params: Record<string, string | string[] | undefined>,
-): Pick<CatalogNavigationContext, "category" | "highlight"> {
+): Pick<CatalogNavigationContext, "category" | "highlight" | "municipality"> {
   return {
     category: readQueryParam(params, "category"),
+    ...(readQueryParam(params, "municipality")
+      ? { municipality: readQueryParam(params, "municipality") }
+      : {}),
     highlight: readQueryParam(params, "highlight"),
   };
 }
@@ -84,10 +102,15 @@ function catalogPathPrefix(context: CatalogNavigationContext): string {
 
   if (context.scope) {
     if (country && country !== context.scope.country) {
-      throw new Error("Catalog navigation country does not match its resolved scope.");
+      throw new Error(
+        "Catalog navigation country does not match its resolved scope.",
+      );
     }
     const segment = context.scope.pathPrefix.slice(1);
-    if (!context.scope.pathPrefix.startsWith("/") || !isCatalogScopeSegment(segment)) {
+    if (
+      !context.scope.pathPrefix.startsWith("/") ||
+      !isCatalogScopeSegment(segment)
+    ) {
       throw new Error("Catalog navigation scope has an invalid path prefix.");
     }
     if (
@@ -142,12 +165,20 @@ export function buildApplicationProducerHref(
   context: ApplicationProducerNavigationContext,
 ): string {
   if (producer.country !== context.country.slug) {
-    throw new Error("Application producer country does not match its catalog policy.");
+    throw new Error(
+      "Application producer country does not match its catalog policy.",
+    );
   }
   if (producer.area !== context.localePolicy.slug) {
-    throw new Error("Application producer area does not match its locale policy.");
+    throw new Error(
+      "Application producer area does not match its locale policy.",
+    );
   }
-  if (!context.localePolicy.publishedLocales.includes(context.country.defaultLocale)) {
+  if (
+    !context.localePolicy.publishedLocales.includes(
+      context.country.defaultLocale,
+    )
+  ) {
     throw new Error(
       `Application producer area must publish the country default locale '${context.country.defaultLocale}'.`,
     );

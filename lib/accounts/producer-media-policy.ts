@@ -5,6 +5,7 @@ export const PRODUCER_MEDIA_LIMITS = {
   pixels: 24_000_000,
   edge: 1600,
   images: 20,
+  freeGalleryImages: 5,
   inbox: 60,
   uploadsPerDay: 30,
 } as const;

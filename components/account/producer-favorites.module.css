@@ -1,5 +1,6 @@
 .section {
-  margin-block: 1.5rem;
+  margin-block: var(--chisan-space-8);
+  padding-block: var(--chisan-space-6);
   border-block: 1px solid var(--chisan-color-hairline);
 }
 .summary {
@@ -29,8 +30,9 @@
 }
 .title {
   color: var(--chisan-color-ink);
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0;
 }
 .stack {
   display: flex;

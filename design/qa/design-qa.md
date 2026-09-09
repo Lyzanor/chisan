@@ -1344,3 +1344,82 @@ using the production server for behavior tests to preserve the other dev session
   no horizontal overflow at either width, and the new link stays a 235px target
   instead of stretching across its column. Development-only WebMCP schema
   warnings are unchanged and outside this change.
+
+## 2026-09-09 — Producer profiles and the free claimed gallery
+
+- The heading now shares its top edge with the photograph. On narrow screens,
+  the photograph stays compact beside the name and the summary follows both.
+  Municipality and categories are links under the name; the repeated category
+  section is removed. Municipality filtering matches the complete normalized
+  municipality, combines with category selection, survives producer navigation
+  and has a visible removal control.
+- The header gallery combines the CSV image with approved standalone images.
+  Thumbnails, previous/next controls, enlargement, arrow keys, Escape and focus
+  restoration were exercised. Synthetic horizontal touch gestures changed the
+  photo without opening the dialog; vertical gestures did not change it.
+  Reduced motion disables the image transition. Product-owned photographs stay
+  in their product cards, and image enlargement preserves the original ratio.
+- Verified means a reviewed producer relationship, explained in the interface;
+  it is separate from the quiet premium green header. Pending editorial records
+  show a caution and expandable public evidence URLs with consultation dates.
+  Unclaimed, non-pending records have no header badge. No private claim material
+  or editorial notes are exposed as evidence.
+- Contact and call actions target the same telephone/email widget beside Details.
+  Website, Instagram, Facebook and the Maps listing display readable URLs;
+  query strings remain in the destinations but are omitted from the link text.
+  Directions use the reviewed destination in the Google Maps directions action.
+  Location and vertical source opening hours share a row; purchase information
+  sits beside featured products. Following is top-right, public opted-in
+  followers have their own section, and claim/suggestion actions close the page.
+- Chromium checks at 1440×1000 and 390×844 covered the controlled Chisan demo
+  profile and the pending Ànima Essències profile. A long mixed Japanese/Spanish
+  title stayed within the 390px viewport. At 390px the demo title and photo both
+  started at y=233px. Telephone/mail links, four public URL links, directions and
+  public evidence were inspected on the real pending record. No horizontal page
+  overflow was observed. Local screenshots are in `output/playwright/` with the
+  `producer-premium-*`, `producer-pending-mobile` and `producer-details-mobile`
+  names.
+- Premium/verified/following presentation and the free editor were exercised
+  with disposable local fixtures, not authenticated production accounts. The
+  editor showed 5/5 standalone photos, disabled adding a sixth, and exposed no
+  premium product or image-assignment controls. Fixtures were removed before
+  the HTTP behavior gate; they never entered the application source tree.
+- PGlite integration covered the complete free draft, submission, review and
+  publication-lease workflow. Server and SQL checks reject a sixth standalone
+  photo, premium product changes, changes to product-owned images and revoked
+  membership. Public-reader tests cover free, premium, expiry and unavailable
+  account state. Migration `0017_claimed_producer_gallery` is tested locally but
+  still needs the Operations preflight and application before deployment.
+- Production build, TypeScript, docs, account/data/content/agent suites and HTTP
+  behavior checks passed. The full `verify:ai` command stops at six existing
+  `no-require-imports` errors in the unrelated, untracked
+  `design/brand/qr-identity/build-qr.cjs`; lint excluding that directory and all
+  remaining gates passed separately. The design checker reported no blocking
+  regression. Existing WebMCP serialization diagnostics and local Vercel
+  Analytics 404s remain visible in development and are outside this change.
+
+
+## 2026-09-09 — Producer profile release and larger mobile photograph
+
+- Follow-up: at widths up to 760px the photograph now spans the content width
+  directly after the name, municipality and categories. The inline counter and
+  previous/next bar are removed at every width; thumbnails and swipe remain.
+  The enlargement viewer retains its keyboard and previous/next controls.
+- The controlled demo at 390×844 showed the heading ending at y=299px and the
+  photograph starting at y=315px, both 292px wide. There was no horizontal page
+  overflow and no visible inline arrow control. This supersedes the compact
+  side-by-side mobile decision recorded above.
+- The complete `pnpm verify:ai` gate passed in an isolated release checkout with
+  frozen-lockfile installation. It excludes all unrelated pending changes,
+  including the separate QR generator that blocked lint in the shared checkout.
+- Rehearsed migration 0017 on Neon branch `backup-gallery-0017-20260909`
+  (`br-small-shape-b2rbr3uo`, expires September 16). The transaction reached the
+  reviewed 18-entry fingerprint and passed five/six-photo checks; rollback
+  restored the backup to 17 entries. Applied the same guarded transaction to
+  Production as `neondb_owner` and verified all 18 migration fingerprints after
+  commit. No producer, account or private message rows were created for this
+  release.
+- Preview `chisan-7ti7qptcp-lyzanors-projects.vercel.app` reached Ready with
+  accounts and statistics disabled. Its producer HTML includes the new layout,
+  contact widget and public sources. Public and disabled-account behavior was
+  checked before pushing the release.

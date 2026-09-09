@@ -1,13 +1,15 @@
 "use client";
 
-import { EnvelopeSimpleIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
+import { EnvelopeSimpleIcon, ArrowUpRightIcon, PhoneIcon } from "@phosphor-icons/react";
 import type { FormEvent } from "react";
 import type { ProducerContactMessages } from "@/lib/i18n/producer-contact";
 
 export function ProducerContact({
-  email, name, messages,
+  email, phone, callLabel, name, messages,
 }: {
   email: string;
+  phone?: string;
+  callLabel?: string;
   name: string;
   messages: ProducerContactMessages;
 }) {
@@ -22,8 +24,9 @@ export function ProducerContact({
     <section id="detail-contact" className="producer-contact" aria-labelledby="producer-contact-title">
       <EnvelopeSimpleIcon size={28} aria-hidden="true" />
       <h2 id="producer-contact-title">{messages.title}</h2>
-      <a className="producer-contact__recipient" href={`mailto:${email}`}>{email}</a>
-      <form onSubmit={composeEmail}>
+      {phone ? <a className="producer-contact__recipient" href={`tel:${phone}`}><PhoneIcon size={20} aria-hidden="true" />{callLabel} · {phone}</a> : null}
+      {email ? <a className="producer-contact__recipient" href={`mailto:${email}`}><EnvelopeSimpleIcon size={20} aria-hidden="true" />{email}</a> : null}
+      {email ? <form onSubmit={composeEmail}>
         <label htmlFor="producer-contact-message">{messages.message}</label>
         <textarea
           id="producer-contact-message"
@@ -38,7 +41,7 @@ export function ProducerContact({
         <button type="submit">
           {messages.action}<ArrowUpRightIcon size={18} aria-hidden="true" />
         </button>
-      </form>
+      </form> : null}
     </section>
   );
 }

@@ -193,6 +193,13 @@ new attempt must use the current revision; no timeout adopts an unknown edit.
 
 ## Producer product editor
 
+An active producer member can upload, edit, reorder and remove up to five
+standalone gallery images for a claimed free profile. Products and all images
+attached to products still require the exact `producer.profile.premium`
+entitlement. A free gallery proposal preserves those product records, their
+dates and attached images unchanged, including after premium expires. The
+server, SQL row constraint and publication workflow enforce this distinction.
+
 An active producer member with the exact `producer.profile.premium` entitlement
 can add, edit, reorder and remove products in the existing profile editor. The
 form exposes names, descriptions, original languages, photos, references to
@@ -237,10 +244,11 @@ approved CSV and package after the normal Git release and deployment.
 
 ## Private image uploads
 
-The premium editor accepts JPEG, PNG and WebP files up to 3 MiB each. It requires
-an explicit declaration of permission to publish. The server checks the active
-member and exact producer premium entitlement before preparation and again under
-transaction locks before persistence. The request requires the same origin;
+The producer editor accepts JPEG, PNG and WebP files up to 3 MiB each. It requires
+an explicit declaration of permission to publish. The server checks exact active
+producer membership before preparation and again under transaction locks before
+persistence. Standalone gallery uploads are available without premium; this does
+not authorize editing products or their images. The request requires the same origin;
 neither arbitrary URLs nor client-chosen storage paths are accepted.
 
 Preparation checks actual file signatures, decodes pixels, rejects animation,
@@ -258,8 +266,11 @@ infrastructure; no additional object-storage service or token is required.
 A future object-store adapter can move the bytes without changing the public
 JSON/CSV authority or the review manifest.
 
-The profile editor accepts up to 20 images in total, including product pictures.
-Previously reviewed larger packages remain editable at their current size. The
+The free profile editor accepts up to five standalone gallery images. Premium
+accepts up to 20 images in total, including product pictures; previously reviewed
+larger premium packages remain editable at their current size. Stored larger
+packages are retained on expiry. Free editing requires reducing the standalone
+gallery to five, while preserving every product-owned image. The
 inbox permits at most 60 prepared images per producer and 30 upload attempts per
 account per day; attempts with invalid files also count. Identical bytes from the
 same author and producer reuse their prepared record. Saving/submitting is
@@ -301,11 +312,20 @@ imagery as evidence or visual identity for real producers. See
 
 ## Visibility and lifecycle
 
-The existing `producer.profile.premium` entitlement controls the complete
-expanded block. Inactive entitlement or unavailable account state hides these
-collections while keeping approved files intact. Base profiles remain public.
-Rendering is on the server, pictures load lazily, and no hidden content enters
-base metadata or JSON-LD. The same entitlement-gated server component renders
+Active producer ownership makes up to five approved standalone gallery images
+visible in the header. Premium makes the full standalone gallery visible and
+controls products, their attached images, named links and expanded CSV prose.
+Inactive ownership and premium, or unavailable account state, hide the gallery
+while keeping approved files intact. Base profiles remain public. Expiry never
+deletes editorial knowledge or turns a product image into a free gallery image.
+
+The header combines the main CSV image with gallery thumbnails. Selecting a
+thumbnail changes the featured view; enlargement supports previous/next, swipe,
+arrow keys, Escape, focus restoration and reduced motion. Product-owned images
+remain with their product cards. HTML and the single-producer API share the same
+standalone-gallery loader; the API exposes it as `gallery`, independently of
+`expanded`. Rendering is on the server, the main picture loads promptly and
+additional pictures load lazily. No hidden content enters base metadata or JSON-LD. The same entitlement-gated server component renders
 the visible product JSON-LD; it disappears with the expanded block.
 
 An area/slug move preserves the content path. Before a producer retirement or

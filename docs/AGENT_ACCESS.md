@@ -204,3 +204,10 @@ Consumers should tolerate new output fields. Removing/renaming fields, changing
 identity, visibility, token meaning or pagination semantics requires a new API
 major version and a consumer migration. New public fields must update projection,
 schema, documentation and behavior tests together.
+
+The single-producer response also exposes top-level `gallery`: the same reviewed
+standalone images visible beside the public profile's main photo. An active
+claimed free profile exposes up to five, premium exposes the complete standalone
+gallery, and unavailable rights fail closed to an empty array. `expanded` retains
+its premium-only products, product images, links and prose. Neither response
+exposes proposal uploads or editorial evidence notes.

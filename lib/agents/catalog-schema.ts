@@ -136,6 +136,7 @@ export const publicProducerSchema = z.strictObject({
     .describe(
       "Confirmed means an active approved owner exists. It does not verify every fact. Not asserted also covers unavailable account state.",
     ),
+  gallery: z.array(contentMediaSchema).describe("Currently visible standalone profile photos: up to five for a claimed free profile; full gallery for premium. Product images remain in expanded content."),
   expanded: z
     .strictObject({
       is_demo: z.boolean().describe("True only for the declared demonstration producer. Its products, prices and purchase links are fictional, never real offers."),

@@ -18,6 +18,7 @@ import {
 } from "../catalog/localization";
 import {
   loadPublicExpandedContent,
+  loadPublicProducerGallery,
   publicHighlightedLinks,
 } from "../catalog/public-expanded";
 import { SALES_CHANNEL_VALUES } from "../catalog/producer-schema";
@@ -446,10 +447,11 @@ export async function getPublicProducer(
       "not_found",
       "Public producer or language not found.",
     );
-  const [translations, content, ownership] = await Promise.all([
+  const [translations, content, ownership, gallery] = await Promise.all([
     loadCountryTranslations(country.slug, locale),
     loadPublicExpandedContent(country.slug, row.producerId, locale),
     isProducerOwnershipVerified(country.slug, row.producerId),
+    loadPublicProducerGallery(country.slug, row.producerId, locale),
   ]);
   const [localized] = localizeProducerFields([row], locale, translations);
   return {
@@ -457,6 +459,7 @@ export async function getPublicProducer(
     producer: {
       ...publicProducerBase(localized, country, area, locale),
       ownership: ownership ? ("confirmed" as const) : ("not_asserted" as const),
+      gallery,
       expanded: publicExpanded(localized.fields, content),
     },
   };

@@ -1,3 +1,4 @@
+import { isFreeProducerGalleryChange } from "./producer-content-change";
 import {
   and,
   count,
@@ -249,7 +250,7 @@ export function createProducerChangeSubmissionService(
     );
     if (
       !premiumActive &&
-      (submittedPremiumFields || formData.has("products") || formData.has("gallery") || formData.has("uploads"))
+      (submittedPremiumFields || formData.has("products"))
     ) {
       return producerChangeFormError(
         previousState,
@@ -299,12 +300,17 @@ export function createProducerChangeSubmissionService(
         const rawGallery = formString(formData, "gallery");
         const rawUploads = formString(formData, "uploads");
         if (rawGallery.length > 250_000 || rawUploads.length > 20_000) throw new Error("The image proposal is too large.");
-        const submittedProducts = producerContentSchema.shape.products.parse(JSON.parse(rawProducts));
+        const submittedProducts = formData.has("products") ? producerContentSchema.shape.products.parse(JSON.parse(rawProducts)) : content.products;
         const requestedGallery = formData.has("gallery") ? producerContentSchema.shape.gallery.parse(JSON.parse(rawGallery)) : content.gallery;
-        const datedProducts = dateSubmittedProducts(content, { ...content, products: submittedProducts, gallery: requestedGallery }, savingDraft ? undefined : new Date().toISOString().slice(0, 10));
+        const datedProducts = premiumActive ? dateSubmittedProducts(content, { ...content, products: submittedProducts, gallery: requestedGallery }, savingDraft ? undefined : new Date().toISOString().slice(0, 10)) : content.products;
         contentChange = formData.has("gallery")
           ? proposeProducerMedia(content, datedProducts, requestedGallery, JSON.parse(rawUploads || "[]"))
           : proposeProducerProducts(content, datedProducts);
+        if (!premiumActive && contentChange && !isFreeProducerGalleryChange(contentChange)) {
+          return producerChangeFormError(previousState, submittedValues,
+            "La galería gratuita admite hasta 5 fotos. Los productos y sus imágenes requieren premium.",
+            { products: "La galería gratuita admite hasta 5 fotos. Los productos y sus imágenes requieren premium." });
+        }
         submittedValues.products = JSON.stringify(datedProducts);
       } catch (error) {
         const commerceIssue = error instanceof ZodError
@@ -337,7 +343,7 @@ export function createProducerChangeSubmissionService(
       );
     }
     const requiredEntitlementKey =
-      isPremiumProducerPatch(validation.patch) || contentChange !== null
+      isPremiumProducerPatch(validation.patch) || (contentChange !== null && !isFreeProducerGalleryChange(contentChange))
         ? PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY
         : null;
 

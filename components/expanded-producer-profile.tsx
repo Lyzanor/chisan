@@ -1,6 +1,5 @@
 import { ProducerCommercialDetails } from "./producer-commercial-details";
 import { EXTRA_PREMIUM_FIELDS } from "@/lib/catalog/producer-schema";
-import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 import { hasProducerContent } from "@/lib/catalog/content-schema";
 import {
   loadPublicExpandedContent,
@@ -114,15 +113,12 @@ export async function ExpandedProducerProfile({
           {content.products.length ? (
             <a href="#producer-content-products">{contentLabels.products}</a>
           ) : null}
-          {standaloneProducerGallery(content).length ? (
-            <a href="#producer-content-gallery">{contentLabels.gallery}</a>
-          ) : null}
           {content.links.length ? (
             <a href="#producer-content-links">{contentLabels.links}</a>
           ) : null}
         </nav>
       ) : null}
-      <ProducerContent content={content} locale={locale} />
+      <ProducerContent content={content} locale={locale} showGallery={false} />
       {video ? (
         <YoutubePlayer videoUrl={video} label={videoLabel} locale={locale} />
       ) : null}

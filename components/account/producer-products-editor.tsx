@@ -1,12 +1,13 @@
 "use client";
 
+import { producerProfileLabels } from "@/lib/i18n/producer-profile";
 import { ProductCommerceFields } from "./product-commerce-fields";
 import { ProductPurchaseDetails } from "../product-purchase-details";
 import { isDemoProducer, normalizeProductPriceInput } from "@/lib/catalog/product-commerce";
 
 import Image from "next/image";
 import { ProducerMediaEditor } from "./producer-media-editor";
-import { preparedMediaSrc, privateMediaSrc, type PreparedMediaReference } from "@/lib/accounts/producer-media-policy";
+import { PRODUCER_MEDIA_LIMITS, preparedMediaSrc, privateMediaSrc, type PreparedMediaReference } from "@/lib/accounts/producer-media-policy";
 import { getProducerMediaLabels } from "@/lib/i18n/producer-media";
 import { useRef, useState } from "react";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
@@ -18,7 +19,7 @@ type Product = ProducerContent["products"][number];
 export type ProductEditorData = Pick<
   ProducerContent,
   "products" | "gallery" | "links"
-> & { baseHash: string; limit: number; publishedGallery?: ProducerContent["gallery"]; uploads?: PreparedMediaReference[] };
+> & { baseHash: string; limit: number; premiumActive?: boolean; publishedGallery?: ProducerContent["gallery"]; uploads?: PreparedMediaReference[] };
 
 export function ProducerProductsEditor({
   content,
@@ -40,6 +41,11 @@ export function ProducerProductsEditor({
   onChange: () => void;
 }) {
   const labels = getProducerEditorLabels(locale);
+  const profileWords = producerProfileLabels(locale);
+  const premiumActive = content.premiumActive !== false;
+  const productMedia = new Set(content.products.flatMap(product => product.media_ids));
+  const unlocked = (items: ProducerContent["gallery"]) => premiumActive ? items : items.filter(image => !productMedia.has(image.id));
+  const imageLimit = premiumActive ? Math.max(PRODUCER_MEDIA_LIMITS.images, content.publishedGallery?.length ?? 0) : PRODUCER_MEDIA_LIMITS.freeGalleryImages;
   const mediaWords = getProducerMediaLabels(locale);
   const [gallery, setGallery] = useState(initialGallery ?? content.gallery);
   const [uploads, setUploads] = useState(content.uploads ?? []);
@@ -80,12 +86,13 @@ export function ProducerProductsEditor({
       ref={root}
       className={`account-form-section ${styles.editor}`}
     >
-      <legend>{labels.products}</legend>
-      <p>{labels.productsHelp}</p>
+      <legend>{premiumActive ? labels.products : profileWords.freeGallery}</legend>
+      <p>{premiumActive ? labels.productsHelp : profileWords.freeGalleryHelp}</p>
       <input type="hidden" name="baseContentHash" value={content.baseHash} />
-      <input type="hidden" name="products" value={JSON.stringify(products.map(p => ({ ...p, ...(p.price ? { price: { ...p.price, amount: normalizeProductPriceInput(p.price.amount) } } : {}), ...(p.purchase_url ? { purchase_url: p.purchase_url.trim() } : {}) })))} />
+      {premiumActive ? <input type="hidden" name="products" value={JSON.stringify(products.map(p => ({ ...p, ...(p.price ? { price: { ...p.price, amount: normalizeProductPriceInput(p.price.amount) } } : {}), ...(p.purchase_url ? { purchase_url: p.purchase_url.trim() } : {}) })))} /> : null}
       <input type="hidden" name="gallery" value={JSON.stringify(gallery)} />
       <input type="hidden" name="uploads" value={JSON.stringify(uploads.filter(u => gallery.some(item => item.src === preparedMediaSrc(country, producerId, u.sha256) && !published.some(p => p.id === item.id && p.src === item.src))))} />
+      {premiumActive ? <>
       <div className={styles.heading}>
         <span>
           {products.length} / {content.limit} {labels.count}
@@ -308,8 +315,9 @@ export function ProducerProductsEditor({
           </ul>
         </details>
       ) : null}
-      <ProducerMediaEditor country={country} producerId={producerId} gallery={gallery} products={products} uploads={uploads}
-        published={published} locale={locale} languageOptions={languageOptions} target={target} onTarget={setTarget} onBusy={onBusy}
+      </> : null}
+      <ProducerMediaEditor galleryOnly={!premiumActive} limit={imageLimit} country={country} producerId={producerId} gallery={unlocked(gallery)} products={premiumActive ? products : []} uploads={uploads}
+        published={unlocked(published)} locale={locale} languageOptions={languageOptions} target={target} onTarget={setTarget} onBusy={onBusy}
         onAdd={(media, upload, productId) => {
           setUploads(previous => previous.some(u => u.uploadId === upload.uploadId) ? previous : [...previous, upload]);
           setGallery(previous => previous.some(item => item.src === media.src) ? previous : [...previous, media]);
@@ -317,7 +325,7 @@ export function ProducerProductsEditor({
           onChange();
         }}
         onEdit={(id, patch) => { setGallery(previous => previous.map(item => item.id === id ? { ...item, ...patch } : item)); onChange(); }}
-        onMove={(index, step) => { setGallery(previous => { const next = [...previous]; [next[index], next[index + step]] = [next[index + step], next[index]]; return next; }); onChange(); }}
+        onMove={(index, step) => { setGallery(previous => { const next = [...previous]; const visible = unlocked(previous); const from = next.findIndex(item => item.id === visible[index].id); const to = next.findIndex(item => item.id === visible[index + step].id); [next[from], next[to]] = [next[to], next[from]]; return next; }); onChange(); }}
         onRemove={id => {
           const index = gallery.findIndex(item => item.id === id);
           setRemovedMedia({ item: gallery[index], index, assignments: products.filter(p => p.media_ids.includes(id)).map(p => ({ id: p.id, index: p.media_ids.indexOf(id) })) });
@@ -325,7 +333,7 @@ export function ProducerProductsEditor({
           setProducts(previous => previous.map(p => ({ ...p, media_ids: p.media_ids.filter(key => key !== id) })));
           onChange();
         }}
-        canUndo={Boolean(removedMedia) && gallery.length < Math.max(20, published.length)}
+        canUndo={Boolean(removedMedia) && unlocked(gallery).length < imageLimit}
         onUndo={() => {
           if (!removedMedia) return;
           const { item, index, assignments } = removedMedia;

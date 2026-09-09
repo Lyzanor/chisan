@@ -14,9 +14,11 @@ import styles from "./producer-content.module.css";
 export function ProducerContent({
   content,
   locale,
+  showGallery = true,
 }: {
   content: Content;
   locale: Locale;
+  showGallery?: boolean;
 }) {
   const season = producerSeasonLabels(locale);
   const labels = getProducerContentLabels(locale);
@@ -82,7 +84,7 @@ export function ProducerContent({
           </ul>
         </section>
       ) : null}
-      {gallery.length ? (
+      {showGallery && gallery.length ? (
         <section aria-labelledby="producer-content-gallery">
           <h3 id="producer-content-gallery">{labels.gallery}</h3>
           <div className={styles.gallery}>

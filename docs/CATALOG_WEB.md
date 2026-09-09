@@ -318,3 +318,17 @@ The interface localizes labels for those fields. Category, verification,
 online-sales and sales-channel tokens also remain exact storage identifiers;
 their visible labels are localized separately. A future source-backed official
 name variant is an editorial identity feature, not an automatic translation.
+
+## Profile gallery and trust presentation
+
+The profile header links municipality and categories to area filters, places
+photography beside the title and exposes ownership separately from premium
+presentation. `pendiente` is editorial uncertainty, never a pending private
+claim. Its optional public-source disclosure includes only the current keep
+record's URLs and consultation dates, without evidence notes or private data.
+The producer route trace includes evidence ledgers for this read.
+
+Standalone gallery visibility follows `PRODUCER_CONTENT.md`: up to five photos
+for an active claimed free producer, full gallery for premium. Neither grants
+new factual authority. Base JSON-LD remains unchanged; hidden premium products
+and images never enter the public structured data.

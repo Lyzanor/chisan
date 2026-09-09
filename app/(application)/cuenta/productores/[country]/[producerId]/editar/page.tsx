@@ -245,7 +245,7 @@ export default async function EditProducerPage({
   }
 
   const draft = openChange?.status === "draft" ? openChange : null;
-  const content = premiumActive ? await loadProducerContent(country, producerId) : null;
+  const content = await loadProducerContent(country, producerId);
   const uploads = content ? await listProducerMediaUploads(getDatabase(), { userId: account.id, country, producerId }) : [];
   const descriptionLocaleOptions = getDescriptionLocaleOptions(
     presentation.messages,
@@ -413,6 +413,7 @@ export default async function EditProducerPage({
           products: draft?.contentChange?.products ?? content.products,
           baseHash: draft?.contentChange?.baseHash ?? hashProducerContent(content),
           limit: PRODUCER_CONTENT_LIMITS.products,
+          premiumActive,
         } : undefined}
         languageOptions={descriptionLocaleOptions}
         draft={draft ? { id: draft.id, lockVersion: draft.lockVersion, authorNote: draft.authorNote ?? "" } : undefined}

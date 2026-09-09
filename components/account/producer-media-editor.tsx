@@ -15,6 +15,8 @@ import styles from "./producer-media-editor.module.css";
 
 type Media = ProducerContent["gallery"][number];
 export function ProducerMediaEditor({
+  limit,
+  galleryOnly = false,
   country,
   producerId,
   gallery,
@@ -33,6 +35,8 @@ export function ProducerMediaEditor({
   canUndo,
   onBusy,
 }: {
+  limit: number;
+  galleryOnly?: boolean;
   country: string;
   producerId: number;
   gallery: Media[];
@@ -61,7 +65,6 @@ export function ProducerMediaEditor({
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const input = useRef<HTMLInputElement>(null);
-  const limit = Math.max(PRODUCER_MEDIA_LIMITS.images, published.length);
   const source = (item: Media) => {
     if (published.some((p) => p.src === item.src)) return item.src;
     const upload = uploads.find(
@@ -100,7 +103,7 @@ export function ProducerMediaEditor({
       return;
     }
     if (files.length + gallery.length > limit) {
-      setError(words.errors.limit);
+      setError(words.errors.limit.replace(/\b20\b/g, String(limit)));
       return;
     }
     const productId = target;
@@ -157,10 +160,10 @@ export function ProducerMediaEditor({
       id="producer-change-gallery"
       disabled={busy}
     >
-      <legend>{words.title}</legend>
-      <p>{words.help}</p>
+      <legend>{galleryOnly ? words.gallery : words.title}</legend>
+      {galleryOnly ? null : <p>{words.help}</p>}
       <div className={styles.upload}>
-        <label className="account-field" htmlFor="media-target">
+        {galleryOnly ? null : <label className="account-field" htmlFor="media-target">
           <span>{words.target}</span>
           <select
             id="media-target"
@@ -174,7 +177,7 @@ export function ProducerMediaEditor({
               </option>
             ))}
           </select>
-        </label>
+        </label>}
         <label className="account-check">
           <input
             type="checkbox"
@@ -202,7 +205,7 @@ export function ProducerMediaEditor({
         >
           {busy ? words.uploading : words.add}
         </button>
-        <small>{words.formats}</small>
+        <small>{words.formats.replace(/\b20\b/g, String(limit))}</small>
       </div>
       {error ? (
         <p role="alert" className="account-field-error">

@@ -71,7 +71,9 @@ current product decisions. A justified change may revise them with visual QA.
 The palette is pure white, neutral grays and forest green. Legacy token names
 remain stable for consumers: `rice-paper` no longer means a cream tint and
 `moss-pale` is neutral gray, not pastel green. Do not add cream, sage or ochre
-brand backgrounds. Green provides deliberate accents rather than tinted fields.
+brand backgrounds. Green provides deliberate accents. Premium producer headers additionally use
+`premium-surface` (`#EDF5F1`), an explicitly requested quiet green field; this
+indicates presentation tier, never verification.
 
 Use `stone` or darker for meaningful control boundaries; `hairline` is
 decorative only. Text uses `ink`, `stone` or `moss-dark` on light surfaces and
@@ -209,23 +211,43 @@ overview zooms. Fixed detail points are non-essential map context.
 
 ## Producer profile
 
-The breadcrumb provides the profile's catalog context. Reviewed opening hours
-are prominent in the hero, as source text, without an inferred open/closed
-status. The website has a dedicated link showing its public URL. Telephone and
-social links have identifiable icons and accessible names.
+The breadcrumb provides catalog context. Municipality and category labels below
+the name link to their corresponding area filters; no separate category-links
+section is repeated. The municipality filter matches the full municipality and
+has a visible removal control, preserving category and search intersections.
 
-Address, Google Maps directions and the opt-in distance calculation belong to
-the location map. When a public email exists, the adjacent contact composer
-prepares a message in the visitor's email application. It does not submit,
-store or send a message through Chisan, and states this before the action.
+The follow action sits at the upper right. The reviewed main photo starts beside
+the title, with small gallery thumbnails and an accessible enlargement viewer.
+On mobile it fills the header width below the name, municipality and categories,
+before the description. The inline gallery uses thumbnails and swipe without a
+counter or arrow bar; previous/next controls remain in the enlargement viewer.
+Premium uses the dedicated green header token independently of ownership.
 
-Expanded profiles group reviewed products into responsive cards and keep
-gallery, links and producer stories in named sections. Empty sections are
-omitted; visibility continues to depend on the existing entitlement loader.
-Account and ownership actions remain after the location and factual details,
-before related discovery.
+Verified ownership receives an explicit badge and explanation. Unclaimed
+profiles have no verification badge. Editorial `pendiente` gets a visible review
+notice, contact advice and an optional disclosure of recorded public source URLs
+and dates. Never expose claim status, claimant identity or private review notes.
 
-The profile ends with up to three nearby producers that share a canonical
+Website, Instagram, Facebook and Google Maps appear as labeled, readable URLs.
+Contact and call actions both lead to the email/telephone widget beside Details;
+telephone-only profiles remain usable. The composer prepares email in the
+visitor's own application and explains that before continuing.
+
+Featured products sit with online purchase and sales-channel information.
+Location and vertical reviewed opening-hours text share a row. Preserve the
+source's days and ranges without inferring open/closed state. Directions uses
+Google Maps' universal directions URL with a reviewed coordinate or address as
+destination and no origin: Google Maps uses device location when available,
+otherwise asks for a starting point. Chisan neither requests nor stores the
+visitor's position for this link. See the [Google Maps URL contract](https://developers.google.com/maps/documentation/urls/get-started#directions-action).
+
+Expanded profiles keep products, links and stories in named sections. The
+standalone gallery is rendered in the hero. Followers have a dedicated section,
+showing only opted-in public attribution and explicitly labeling that count.
+Claiming and community suggestions have a prominent closing section after
+related discovery. Claimed producers keep their existing editor workflow.
+
+Related discovery shows up to three nearby producers that share a canonical
 category. Each recommendation is one linked card with the reviewed image,
 producer name, municipality, shared category and straight-line distance. The
 cards collapse to one column on narrow screens. Missing coordinates or nearby

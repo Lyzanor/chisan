@@ -523,3 +523,60 @@ body { min-height: 100svh; }
   .catalog-start-page--home .home-story-intro { grid-row: 2; }
   .catalog-start-page--home .home-catalog { grid-row: 3; }
 }
+
+/* Producer identity, photographs and participation share one profile hierarchy. */
+.detail-hero--photographic { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; gap: var(--chisan-space-4) var(--chisan-space-8); align-items: start; box-shadow: none; }
+.detail-hero--premium { background: var(--chisan-color-premium-surface); padding: var(--chisan-space-6); }
+.detail-hero-toolbar { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: start; gap: var(--chisan-space-4); min-height: 44px; }
+.detail-status { min-width: 0; }
+.detail-status > span, .detail-status > a { display: inline-flex; align-items: center; gap: var(--chisan-space-2); min-height: 44px; font-size: 0.875rem; }
+.detail-status svg { flex-shrink: 0; }
+.detail-status--verified { color: var(--chisan-color-moss-dark); font-weight: 500; }
+.detail-status--pending { color: var(--chisan-color-stone); text-underline-offset: 4px; }
+.detail-follow { display: inline-flex; justify-content: center; align-items: center; gap: var(--chisan-space-2); min-height: 44px; padding: var(--chisan-space-2) var(--chisan-space-4); border: var(--chisan-line) solid var(--chisan-color-moss); border-radius: var(--chisan-radius-control); background: var(--chisan-color-moss); color: var(--chisan-color-surface); font: 500 0.875rem/1.4 var(--chisan-font-sans); text-decoration: none; cursor: pointer; }
+.detail-follow[aria-pressed="true"] { background: var(--chisan-color-surface); color: var(--chisan-color-moss-dark); }
+.detail-hero--photographic .detail-profile-heading { display: block; grid-column: 1; grid-row: 2; }
+.detail-hero--photographic h1 { margin: 0; overflow-wrap: anywhere; }
+.detail-hero--photographic .detail-subtitle { display: flex; flex-wrap: wrap; column-gap: var(--chisan-space-3); row-gap: 0; margin-top: var(--chisan-space-2); }
+.detail-subtitle a { display: inline-flex; align-items: center; min-height: 44px; color: var(--chisan-color-moss-dark); text-underline-offset: 4px; font-size: 0.875rem; }
+.detail-profile-photos { grid-column: 2; grid-row: 2 / 4; min-width: 0; }
+.detail-hero-summary { grid-column: 1; grid-row: 3; min-width: 0; }
+.detail-hero--photographic .detail-intro { margin-top: 0; font-size: 1.125rem; }
+.detail-social-links { display: grid; gap: var(--chisan-space-1); list-style: none; padding: 0; margin: var(--chisan-space-4) 0 0; }
+.detail-social-links a { display: flex; align-items: center; gap: var(--chisan-space-3); min-height: 44px; padding-block: var(--chisan-space-2); color: var(--chisan-color-moss-dark); text-decoration: none; font-size: 0.875rem; }
+.detail-social-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.detail-social-links svg { flex-shrink: 0; }
+.detail-social-links span { min-width: 0; overflow-wrap: anywhere; }
+.detail-social-links small { display: block; color: var(--chisan-color-stone); font-size: 0.75rem; }
+.detail-buy-link { display: inline-flex; align-items: center; gap: var(--chisan-space-2); min-height: 44px; color: var(--chisan-color-moss-dark); }
+.detail-location-hours, .detail-info-contact { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--chisan-space-8); align-items: start; margin-block: var(--chisan-space-8); padding-top: var(--chisan-space-8); border-top: var(--chisan-line) solid var(--chisan-color-hairline); }
+.detail-location-hours > .detail-map-card, .detail-info-contact > .detail-table-card { min-width: 0; padding: 0; margin: 0; border: 0; }
+.detail-location-hours:not(:has(.detail-opening-hours)), .detail-info-contact:not(:has(.producer-contact)) { grid-template-columns: minmax(0, 1fr); }
+.detail-location-hours .detail-opening-hours { margin: 0; display: block; padding: var(--chisan-space-6); color: var(--chisan-color-ink); }
+.detail-opening-hours h2 { font-size: 1.25rem; margin-block: var(--chisan-space-2) var(--chisan-space-4); }
+.detail-opening-hours p + p { margin-top: var(--chisan-space-3); padding-top: var(--chisan-space-3); border-top: var(--chisan-line) solid var(--chisan-color-hairline); }
+.producer-contact__recipient { display: flex; gap: var(--chisan-space-2); }
+.detail-trust-note, .detail-review-notice { line-height: 1.6; color: var(--chisan-color-stone); }
+.detail-review-notice { padding: var(--chisan-space-4); border-inline-start: 4px solid var(--chisan-color-stone); background: var(--chisan-color-surface-muted); }
+.detail-participate { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--chisan-space-6); padding: var(--chisan-space-8); margin-top: var(--chisan-space-12); border: var(--chisan-line) solid var(--chisan-color-moss); border-radius: var(--chisan-radius-panel); }
+.detail-participate h2 { margin: 0 0 var(--chisan-space-3); }
+.detail-participate p { margin: 0; max-width: 58ch; line-height: 1.6; color: var(--chisan-color-stone); }
+.detail-participate .producer-account-actions { display: flex; flex-direction: column; align-items: stretch; justify-content: center; margin: 0; padding: 0; border: 0; }
+.detail-participate .producer-account-actions a { display: flex; justify-content: center; align-items: center; min-height: 44px; border-radius: var(--chisan-radius-control); }
+.detail-participate .producer-account-actions a:first-of-type { background: var(--chisan-color-moss); color: var(--chisan-color-surface); }
+.detail-municipality-filter { min-height: 44px; padding: var(--chisan-space-2) var(--chisan-space-3); border: var(--chisan-line) solid var(--chisan-color-moss); border-radius: var(--chisan-radius-control); background: var(--chisan-color-surface); color: var(--chisan-color-moss-dark); cursor: pointer; }
+@media (max-width: 760px) {
+  .detail-hero--photographic { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(4, auto); gap: var(--chisan-space-4); }
+  .detail-hero--photographic h1 { font-size: clamp(1.5rem, 5vw, 2.25rem); }
+  .detail-profile-photos { grid-column: 1; grid-row: 3; }
+  .detail-hero-summary { grid-column: 1; grid-row: 4; }
+  .detail-hero--premium { padding: var(--chisan-space-4); }
+  .detail-follow { padding-inline: var(--chisan-space-3); }
+  .detail-location-hours, .detail-info-contact, .detail-participate { grid-template-columns: minmax(0, 1fr); gap: var(--chisan-space-6); }
+  .detail-participate { padding: var(--chisan-space-6); }
+}
+.detail-sources { margin-block: var(--chisan-space-4); font-size: 0.875rem; }
+.detail-sources summary { display: list-item; min-height: 44px; padding-block: var(--chisan-space-3); cursor: pointer; color: var(--chisan-color-moss-dark); }
+.detail-sources ul { display: grid; gap: var(--chisan-space-3); padding-left: var(--chisan-space-4); }
+.detail-sources a { overflow-wrap: anywhere; color: var(--chisan-color-moss-dark); }
+.detail-sources small { display: block; color: var(--chisan-color-stone); }

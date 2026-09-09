@@ -49,6 +49,8 @@ export function ProducerFavoritesList({
       className={styles.section}
       aria-labelledby="producer-favorites-title"
     >
+      <h2 id="producer-favorites-title" className={styles.title}>Seguidores</h2>
+      <p className={styles.note}>Personas que han elegido aparecer públicamente en esta ficha.</p>
       <details
         onToggle={(event) => {
           if (event.currentTarget.open) void refresh();
@@ -56,13 +58,10 @@ export function ProducerFavoritesList({
       >
         <summary className={styles.summary}>
           <span className={styles.copy}>
-            <span id="producer-favorites-title" className={styles.title}>
-              Seguidores de este productor
-            </span>
             <span>
               {page.total === 1
-                ? "1 persona · Ver lista"
-                : `${page.total} personas · Ver lista`}
+                ? "1 seguidor visible · Ver lista"
+                : `${page.total} seguidores visibles · Ver lista`}
             </span>
           </span>
           <span className={styles.stack} aria-hidden="true">
@@ -80,9 +79,6 @@ export function ProducerFavoritesList({
           </span>
         </summary>
         <div className={styles.content}>
-          <p className={styles.note}>
-            Solo aparecen las personas que han elegido mostrarse aquí.
-          </p>
           <ul className={styles.list}>
             {page.items.map((person, index) => (
               <li key={index}>

@@ -1,12 +1,10 @@
-import { and, count, eq, gt, gte, isNull, lte, or, sql } from "drizzle-orm";
+import { and, count, eq, gte, sql } from "drizzle-orm";
 import type { Database } from "@/lib/db";
 import {
   auditEvents,
-  entitlements,
   producerMediaUploads,
   producerMemberships,
 } from "@/lib/db/schema";
-import { PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY } from "./producer-profile-upgrade-policy";
 import {
   PRODUCER_MEDIA_LIMITS,
   type PreparedMediaReference,
@@ -46,27 +44,7 @@ async function lockMediaAccess(tx: Transaction, identity: MediaIdentity) {
     )
     .for("update")
     .limit(1);
-  const [premium] = await tx
-    .select({ id: entitlements.id })
-    .from(entitlements)
-    .where(
-      and(
-        eq(entitlements.subjectKind, "producer"),
-        eq(entitlements.producerCountry, identity.country),
-        eq(entitlements.producerId, identity.producerId),
-        eq(entitlements.key, PRODUCER_PROFILE_PREMIUM_ENTITLEMENT_KEY),
-        eq(entitlements.status, "active"),
-        isNull(entitlements.revokedAt),
-        lte(entitlements.startsAt, new Date()),
-        or(
-          isNull(entitlements.expiresAt),
-          gt(entitlements.expiresAt, new Date()),
-        ),
-      ),
-    )
-    .for("update")
-    .limit(1);
-  if (!member || !premium) throw new MediaAccessError("access");
+  if (!member) throw new MediaAccessError("access");
 }
 
 const uploadMetadata = {

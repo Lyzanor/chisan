@@ -207,3 +207,13 @@ export function resolveProducerContentChange(
   }
   return { change, requested };
 }
+
+/** Free gallery changes preserve premium products and every image attached to them. */
+export function isFreeProducerGalleryChange(change: ProducerContentChange): boolean {
+  if (change.version !== 2 || JSON.stringify(ordered(change.products)) !== JSON.stringify(ordered(change.base.products))) return false;
+  const productMedia = new Set(change.base.products.flatMap(product => product.media_ids));
+  const lockedBefore = change.base.gallery.filter(image => productMedia.has(image.id));
+  const lockedAfter = change.gallery.filter(image => productMedia.has(image.id));
+  return change.gallery.filter(image => !productMedia.has(image.id)).length <= PRODUCER_MEDIA_LIMITS.freeGalleryImages
+    && JSON.stringify(ordered(lockedBefore)) === JSON.stringify(ordered(lockedAfter));
+}

@@ -507,7 +507,7 @@ export const producerChangeRequests = pgTable(
     check("producer_change_requests_patch_check", sql`jsonb_typeof(${table.patch}) = 'object'`),
     check(
       "producer_change_requests_content_check",
-      sql`${table.contentChange} IS NULL OR (jsonb_typeof(${table.contentChange}) = 'object' AND ${table.requiredEntitlementKey} IS NOT DISTINCT FROM 'producer.profile.premium' AND (${table.contentChange}->>'version') IN ('1', '2') AND (${table.contentChange}->>'baseHash') ~ '^[a-f0-9]{64}$' AND (${table.contentChange}->>'requestedHash') ~ '^[a-f0-9]{64}$' AND jsonb_typeof(${table.contentChange}->'products') = 'array' AND (${table.contentChange}->'base'->>'country') = ${table.country} AND (${table.contentChange}->'base'->>'producer_id') = ${table.producerId}::text) IS TRUE`,
+      sql`${table.contentChange} IS NULL OR (jsonb_typeof(${table.contentChange}) = 'object' AND (${table.requiredEntitlementKey} IS NOT DISTINCT FROM 'producer.profile.premium' OR (${table.requiredEntitlementKey} IS NULL AND public.chisan_is_free_gallery_change(${table.contentChange}))) AND (${table.contentChange}->>'version') IN ('1', '2') AND (${table.contentChange}->>'baseHash') ~ '^[a-f0-9]{64}$' AND (${table.contentChange}->>'requestedHash') ~ '^[a-f0-9]{64}$' AND jsonb_typeof(${table.contentChange}->'products') = 'array' AND (${table.contentChange}->'base'->>'country') = ${table.country} AND (${table.contentChange}->'base'->>'producer_id') = ${table.producerId}::text) IS TRUE`,
     ),
     check(
       "producer_change_requests_entitlement_key_check",

@@ -32,7 +32,6 @@ export function createProducerMediaUploadHandler(
   const {
     getCurrentAccount,
     hasProducerAccess,
-    hasActiveProducerPremiumEntitlement,
     isProducerChangeSubmissionEnabled,
     findProducerById,
     getDatabase,
@@ -63,8 +62,7 @@ export function createProducerMediaUploadHandler(
     const account = await getCurrentAccount();
     if (!account) return reply("access", 401);
     if (
-      !(await hasProducerAccess(account.id, country, producerId)) ||
-      !(await hasActiveProducerPremiumEntitlement(country, producerId))
+      !(await hasProducerAccess(account.id, country, producerId))
     )
       return reply("access", 403);
     if (!(await findProducerById(country, producerId)))

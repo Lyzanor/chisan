@@ -40,6 +40,7 @@ import {
 import {
   hashProducerFields,
   PRODUCER_EDITABLE_FIELDS,
+  producerEditableFieldsForPremiumAccess,
 } from "../lib/accounts/producer-fields";
 import { prepareContentPublication } from "../lib/editorial/producer-content-publication";
 import { assertFinalizationGitState } from "../lib/editorial/git-state";
@@ -102,7 +103,7 @@ test("image preparation decodes pixels, strips metadata, bounds sizes and reject
   assert.equal((await prepareProducerImage(source)).sha256, prepared.sha256);
 });
 
-test("media drafts require exact premium access, preserve images on validation errors and freeze submitted attachments", async () => {
+test("media drafts require exact member access, preserve images on validation errors and freeze submitted attachments", async () => {
   const pg = new PGlite();
   const db = drizzle(pg, { schema });
   const database = db as unknown as import("../lib/db").Database;
@@ -122,7 +123,7 @@ test("media drafts require exact premium access, preserve images on validation e
       .insert(schema.producerMemberships)
       .values({ ...identity, role: "owner" });
     await assert.rejects(
-      uploadProducerMedia(database, identity, await png()),
+      uploadProducerMedia(database, { ...identity, userId: other.id }, await png()),
       /access/,
     );
     await db
@@ -136,9 +137,10 @@ test("media drafts require exact premium access, preserve images on validation e
         source: "test",
       });
     await assert.rejects(
-      uploadProducerMedia(database, identity, await png()),
+      uploadProducerMedia(database, { ...identity, userId: other.id }, await png()),
       /access/,
     );
+    assert.ok((await uploadProducerMedia(database, identity, await png())).uploadId, "claimed free membership can upload photos");
     const [entitlement] = await db
       .insert(schema.entitlements)
       .values({
@@ -402,10 +404,9 @@ test("media drafts require exact premium access, preserve images on validation e
       .update(schema.entitlements)
       .set({ revokedAt: new Date(), status: "revoked" })
       .where(eq(schema.entitlements.id, entitlement.id));
-    await assert.rejects(
-      uploadProducerMedia(database, identity, await png("red")),
-      /access/,
-    );
+    assert.ok((await uploadProducerMedia(database, identity, await png("red"))).uploadId, "premium expiry preserves free image uploads");
+    await db.update(schema.producerMemberships).set({ status: "revoked", revokedAt: new Date(), revokedByUserId: owner.id }).where(eq(schema.producerMemberships.userId, owner.id));
+    await assert.rejects(uploadProducerMedia(database, identity, await png("blue")), /access/);
   } finally {
     if (previous === undefined)
       delete process.env.CHISAN_PRODUCER_CHANGES_ENABLED;
@@ -564,4 +565,73 @@ test("publication binds JSON and exact image bytes to Git and restores only its 
     },
   ];
   assert.equal(standaloneProducerGallery(shown).length, 0);
+});
+
+test("free claimed gallery enforces five photos across draft, SQL, review and publication", async () => {
+  const pg = new PGlite();
+  const db = drizzle(pg, { schema });
+  const database = db as unknown as import("../lib/db").Database;
+  const old = process.env.CHISAN_PRODUCER_CHANGES_ENABLED;
+  process.env.CHISAN_PRODUCER_CHANGES_ENABLED = "true";
+  try {
+    for (const file of (await readdir("drizzle")).filter(file => /^\d{4}_.+\.sql$/.test(file)).sort()) await pg.exec(await readFile(`drizzle/${file}`, "utf8"));
+    const [owner, reviewer] = await db.insert(schema.users).values([{ displayName: "Free owner" }, { displayName: "Reviewer" }]).returning();
+    const identity = { userId: owner.id, country: "es", producerId: 12439 };
+    await db.insert(schema.producerMemberships).values({ ...identity, role: "owner" });
+    const producer = (await findProducerById("es", 12439))!;
+    const base = await loadProducerContent("es", 12439);
+    const upload = await uploadProducerMedia(database, identity, await png("green"));
+    const media = metadataFor(upload, "free-photo");
+    const used = new Set(base.products.flatMap(product => product.media_ids));
+    const locked = base.gallery.filter(image => used.has(image.id));
+    const standalone = standaloneProducerGallery(base);
+    const gallery = [...locked, ...standalone.slice(0, 4), media];
+    const empty: ProducerChangeFormState = { fieldErrors: {}, formError: null, reloadRequired: false, revision: 0, values: {} };
+    const form = (state = empty, intent = "draft") => {
+      const data = new FormData();
+      for (const field of producerEditableFieldsForPremiumAccess(false)) {
+        const value = producer.fields[field.key] ?? "";
+        if (field.kind === "categories" || field.kind === "sales-channels") value.split("|").filter(Boolean).forEach(item => data.append(field.key, item));
+        else data.set(field.key, value);
+      }
+      Object.entries({ country: "es", producerId: "12439", baseRowHash: hashProducerFields(producer.fields), baseContentHash: hashProducerContent(base), gallery: JSON.stringify(gallery), uploads: JSON.stringify([upload]), intent, draftId: state.draftId ?? "", draftVersion: String(state.draftVersion ?? ""), authorNote: "Photos of the declared fictional producer, reviewed in isolated tests." }).forEach(([key, value]) => data.set(key, value));
+      return data;
+    };
+    const save = createProducerChangeSubmissionService({ getDatabase: () => database, requireCurrentAccount: async () => ({ id: owner.id }), hasProducerAccess: async () => true, hasActiveProducerPremiumEntitlement: async () => false, revalidatePath() {}, redirectWithMessage: (path, kind, message): never => { throw new Error(`REDIRECT:${path}:${kind}:${message}`); } });
+    const tooMany = form();
+    tooMany.set("gallery", JSON.stringify([...locked, ...standalone, media]));
+    assert.match((await save(empty, tooMany)).formError!, /5 fotos/);
+    const productsAttempt = form(); productsAttempt.set("products", JSON.stringify(base.products));
+    assert.equal((await save(empty, productsAttempt)).reloadRequired, true, "free forms cannot submit products");
+    const lockedAttempt = form(); lockedAttempt.set("gallery", JSON.stringify(gallery.map(image => image.id === locked[0].id ? { ...image, caption: "forged premium edit" } : image)));
+    assert.match((await save(empty, lockedAttempt)).formError!, /5 fotos/);
+    const stale = form(); stale.set("baseContentHash", "f".repeat(64));
+    assert.equal((await save(empty, stale)).reloadRequired, true);
+    const draft = await save(empty, form());
+    assert.ok(draft.draftId, draft.formError ?? "missing free draft");
+    const [stored] = await db.select().from(schema.producerChangeRequests).where(eq(schema.producerChangeRequests.id, draft.draftId));
+    assert.equal(stored.requiredEntitlementKey, null);
+    assert.deepEqual(stored.contentChange!.products, base.products, "product records and dates remain unchanged");
+    const overflow = proposeProducerMedia(base, base.products, [...locked, ...standalone, media], [upload]);
+    await assert.rejects(pg.query("update producer_change_requests set content_change = $1::jsonb where id = $2", [JSON.stringify(overflow), draft.draftId]), /content_check/);
+    const productEdit = proposeProducerMedia(base, base.products.map((product, index) => index === 0 ? { ...product, name: "forged" } : product), gallery, [upload]);
+    await assert.rejects(pg.query("update producer_change_requests set content_change = $1::jsonb where id = $2", [JSON.stringify(productEdit), draft.draftId]), /content_check/);
+    await assert.rejects(save(draft, form(draft, "submit")), /REDIRECT:.*notice/);
+    const { createProducerChangeReviewService } = await import("../lib/admin/review-producer-change");
+    const review = createProducerChangeReviewService({ getDatabase: () => database, requireStaffAccount: async () => ({ id: reviewer.id }), adminRedirect: (path, kind, message): never => { throw new Error(`REDIRECT:${path}:${kind}:${message}`); } });
+    const reviewForm = new FormData(); reviewForm.set("changeId", draft.draftId); reviewForm.set("decision", "approved"); reviewForm.set("note", "Reviewed fictional free gallery.");
+    await assert.rejects(review(reviewForm), /REDIRECT:.*notice/);
+    const [approved] = await db.select().from(schema.producerChangeRequests).where(eq(schema.producerChangeRequests.id, draft.draftId));
+    assert.equal(approved.status, "approved");
+    await pg.exec("create role gallery_test_operator login; grant chisan_producer_change_operator to gallery_test_operator; set session authorization gallery_test_operator");
+    const execution = randomUUID();
+    await pg.query("select * from chisan_begin_producer_change_execution_v2($1::uuid,$2::uuid,repeat('b',64),'data/csv/es/catalunya/barcelona.csv',repeat('c',40),repeat('d',64),900,$3)", [execution, approved.id, approved.contentChange!.requestedHash]);
+    await pg.query("select chisan_complete_producer_change_execution_v2($1::uuid,repeat('d',64),array['gallery'],false,$2)", [execution, approved.contentChange!.requestedHash]);
+    await pg.exec("set session authorization postgres; reset role");
+    await db.update(schema.producerMemberships).set({ status: "revoked", revokedAt: new Date(), revokedByUserId: owner.id }).where(eq(schema.producerMemberships.userId, owner.id));
+    await assert.rejects(uploadProducerMedia(database, identity, await png("orange")), /access/);
+  } finally {
+    if (old === undefined) delete process.env.CHISAN_PRODUCER_CHANGES_ENABLED; else process.env.CHISAN_PRODUCER_CHANGES_ENABLED = old;
+    await pg.close();
+  }
 });

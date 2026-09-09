@@ -371,8 +371,11 @@ submitted; drafts preserve published dates. All three values follow the same
 reviewed JSON proposal and Git publication flow, without CSV columns or a new
 database authority.
 
-Products, gallery items and named links use `docs/PRODUCER_CONTENT.md` under the
-same entitlement. The account editor accepts a dedicated typed product/gallery
+Products and named links use `docs/PRODUCER_CONTENT.md` under the same entitlement.
+Claimed free profiles can propose up to five standalone gallery images through
+the same reviewed workflow. Products and their attached images remain premium;
+free gallery proposals carry no required premium entitlement. SQL and server
+validation preserve those product records and reject a sixth standalone image. The account editor accepts a dedicated typed product/gallery
 proposal beside the base-field patch. Private, normalized image uploads are
 immutable inputs in `producer_media_uploads`; reviewed publication copies their
 verified bytes to Git assets. Upload metadata, previews, bounds and retention

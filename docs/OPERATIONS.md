@@ -809,3 +809,13 @@ enabled for sign-up/sign-in with email-subaddress protection and the three
 default scopes. The public sign-in and sign-up pages offer Google, and the
 authorization redirect reaches Google's account selector. This provider setup
 is independent of the photo/attribution code and migration `0013`.
+
+### Claimed producer gallery release
+
+Apply `0017_claimed_producer_gallery` before releasing the free gallery editor.
+It adds a pure SQL predicate and replaces the content-proposal constraint so a
+five-photo standalone gallery can use the existing review and publication flow
+without premium. Products and their attached images must remain unchanged.
+There is no catalog rewrite or backfill; existing premium proposals retain their
+recorded entitlement requirement. Verify account migration status and exercise a
+free gallery draft/submission before declaring the feature active in Production.

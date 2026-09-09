@@ -1,13 +1,11 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
 import Link from "next/link";
 
-import { toggleFavoriteAction } from "@/app/(application)/cuenta/actions";
 import { getCurrentAccount } from "@/lib/accounts/auth";
 import {
   ACCOUNT_ROUTES,
   isAccountSystemConfigured,
 } from "@/lib/accounts/config";
-import { safeReturnPath } from "@/lib/accounts/producer-fields";
 import { isProducerOwnershipVerified } from "@/lib/accounts/producer-ownership";
 import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-premium-entitlements";
 import {
@@ -16,7 +14,6 @@ import {
 } from "@/lib/accounts/producer-suggestion-workflow";
 import { getDatabase } from "@/lib/db";
 import {
-  favorites,
   producerClaims,
   producerMemberships,
   producerProfileUpgradeRequests,
@@ -59,11 +56,9 @@ export async function ProducerAccountActions({
 async function renderProducerAccountActions({
   country,
   producerId,
-  returnTo,
   messages,
   locale,
 }: ProducerAccountActionsProps) {
-  const safeReturnTo = safeReturnPath(returnTo, "/");
   const database = getDatabase();
   const [account, activeOwner] = await Promise.all([
     getCurrentAccount(),
@@ -75,43 +70,16 @@ async function renderProducerAccountActions({
   const suggestionPath = newProducerSuggestionPath(country, producerId);
 
   if (!account) {
-    const redirectQuery = encodeURIComponent(safeReturnTo);
-    return (
-      <div className="producer-account-actions">
-        <span>
-          {activeOwner
-            ? messages.ownershipVerifiedDescription
-            : messages.saveOrClaimPrompt}
-        </span>
-        <Link href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${redirectQuery}`}>
-          {messages.signIn}
-        </Link>
-        <Link href={`${ACCOUNT_ROUTES.signUp}?redirect_url=${redirectQuery}`}>
-          {messages.createAccount}
-        </Link>
-        {activeOwner ? null : (
-          <Link
-            href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(suggestionPath)}`}
-          >
-            {messages.suggestChanges}
-          </Link>
-        )}
-      </div>
-    );
+    const claimPath = `/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`;
+    return <div className="producer-account-actions">
+      {activeOwner ? <span>{messages.ownershipVerifiedDescription}</span> : <>
+        <Link href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`}>{messages.claimProducer}</Link>
+        <Link href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(suggestionPath)}`}>{messages.suggestChanges}</Link>
+      </>}
+    </div>;
   }
 
-  const [[favorite], [membership], [claim], [openSuggestion]] = await Promise.all([
-    database
-      .select({ userId: favorites.userId })
-      .from(favorites)
-      .where(
-        and(
-          eq(favorites.userId, account.id),
-          eq(favorites.country, country),
-          eq(favorites.producerId, producerId),
-        ),
-      )
-      .limit(1),
+  const [[membership], [claim], [openSuggestion]] = await Promise.all([
     database
       .select({ id: producerMemberships.id, role: producerMemberships.role })
       .from(producerMemberships)
@@ -159,15 +127,6 @@ async function renderProducerAccountActions({
 
   return (
     <div className="producer-account-actions">
-      <form action={toggleFavoriteAction}>
-        <input type="hidden" name="following" value={favorite ? "no" : "yes"} />
-        <input type="hidden" name="country" value={country} />
-        <input type="hidden" name="producerId" value={producerId} />
-        <input type="hidden" name="returnTo" value={safeReturnTo} />
-        <button type="submit">
-          {favorite ? messages.removeFavorite : messages.saveFavorite}
-        </button>
-      </form>
       {membership ? (
         <>
           <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>
