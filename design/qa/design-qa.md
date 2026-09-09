@@ -1317,3 +1317,30 @@ using the production server for behavior tests to preserve the other dev session
 - Measured at 1280, 768 and 375px: two, three and seven rows; 80px, 125px and
   301px of rows; no label wrapped and no horizontal page overflow at any width.
   The counts are server-rendered, so they are present before JavaScript.
+
+## 2026-09-09 — Header reduced to brand and account
+
+- The top bar carried the catalog, guides and «Cómo funciona Chisan» on every
+  page. All three already live in the footer, so the bar now holds only the
+  brand and the account control and stops competing with the page it frames.
+  Nothing became unreachable: the footer keeps the same three links on every
+  route, and the homepage summary now offers the catalog directly.
+- The homepage total gained «Explorar el catálogo de España» immediately under
+  «productores en el catálogo», so the number is now a way in rather than a
+  statement. It resolves the published country and its destination locale
+  through the same helpers the country card uses, and appears only while exactly
+  one country is published; with several, the country choice above it is the
+  honest entry point.
+- Rejected: keeping a catalog link in the bar and dropping only guides and the
+  about page. The bar's compass link pointed at `/#choose-country` — the home
+  anchor for choosing an area — so from any inner page it sent a reader back to
+  the homepage rather than into the catalog they were reading.
+- Removed the primary-nav rules from `design/adapters/experience.css`, including
+  its two mobile treatments and its reduced-motion selector, rather than leaving
+  dead selectors behind. The account control no longer needs its `margin-left`
+  override: the header's `space-between` keeps it on the right edge.
+- Checked at 1280 and 375px on the homepage and on `/es`. The header measures
+  80px and 72px with the brand left and the account control at the right edge,
+  no horizontal overflow at either width, and the new link stays a 235px target
+  instead of stretching across its column. Development-only WebMCP schema
+  warnings are unchanged and outside this change.

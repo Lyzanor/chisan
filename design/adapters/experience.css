@@ -33,10 +33,7 @@ body { min-height: 100svh; }
 }
 
 .site-header__brand { flex-shrink: 0; }
-.site-header .site-primary-nav { margin-left: auto; }
-.site-header .site-account-nav { margin-left: 0; }
 .site-header__tagline { max-width: 15rem; }
-.site-header .site-primary-nav__catalog { color: var(--chisan-color-moss-dark); }
 
 .navigation-link__content {
   position: relative;
@@ -60,11 +57,6 @@ body { min-height: 100svh; }
   opacity: 0.7;
   transform: scaleX(0.9);
   transition: transform 1.5s var(--chisan-ease), opacity var(--chisan-motion-immediate);
-}
-
-.site-primary-nav a[aria-current="page"] {
-  background: var(--chisan-color-moss-pale);
-  color: var(--chisan-color-moss-dark);
 }
 
 .site-account-menu > summary {
@@ -452,7 +444,6 @@ body { min-height: 100svh; }
   .catalog-page .catalog-viewer--persistent .catalog-viewer-head h2 { display: block; }
 }
 @media (max-width: 900px) {
-  .site-header .site-primary-nav__about { display: none; }
   .catalog-start-page--home .catalog-start-shell { gap: var(--chisan-space-8); }
   .catalog-start-page--home .home-catalog { padding: var(--chisan-space-6); }
 }
@@ -481,16 +472,6 @@ body { min-height: 100svh; }
   .page-shell,
   .auth-page,
   .purpose-page { width: calc(100% - 2rem); }
-  .site-header .site-primary-nav__catalog { padding-inline: var(--chisan-space-2); }
-  .site-primary-nav__catalog .navigation-link__content > span:not(.navigation-link__progress) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-  .site-header .site-primary-nav__catalog { min-width: 44px; justify-content: center; }
   .site-header .site-account-nav { min-width: 0; }
   .site-account-menu { min-width: 0; max-width: 100%; }
   .site-account-menu > summary { min-height: 44px; }
@@ -524,8 +505,7 @@ body { min-height: 100svh; }
 @media (prefers-reduced-motion: reduce) {
   .site-content *,
   .site-account-menu *,
-  .site-account-menu::details-content,
-  .site-primary-nav * {
+  .site-account-menu::details-content {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

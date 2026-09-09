@@ -19,9 +19,11 @@ export type HomeCategoryCount = CategoryPresentation & { count: number };
 export function HomeSections({
   producerCount,
   categoryCounts,
+  countryCatalog,
 }: {
   producerCount: number;
   categoryCounts: readonly HomeCategoryCount[];
+  countryCatalog: { label: string; href: string } | null;
 }) {
   const numberFormat = new Intl.NumberFormat("es-ES");
 
@@ -35,6 +37,12 @@ export function HomeSections({
         <p>
           <strong>{numberFormat.format(producerCount)}</strong>
           <span>productores en el catálogo</span>
+          {countryCatalog ? (
+            <Link className={styles.textLink} href={countryCatalog.href}>
+              Explorar el catálogo de {countryCatalog.label}{" "}
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ) : null}
         </p>
         <div>
           <p className="catalog-kicker">Cada ficha, un lugar de origen</p>

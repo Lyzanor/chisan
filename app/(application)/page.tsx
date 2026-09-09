@@ -115,6 +115,19 @@ function ProjectSummary({
   const catalogTitle = onlyCountry
     ? getLocalizedCatalogLabel(onlyCountry, HOME_LOCALE)
     : messages.home.chooseCountry;
+  // With one published country the total belongs to it, so the summary can send
+  // a reader straight into that catalog instead of back to the country choice.
+  const countryCatalog = onlyCountry
+    ? {
+        label: catalogTitle,
+        href: buildCatalogHref({
+          scope: buildCatalogScope(
+            onlyCountry,
+            resolveDestinationLocale(onlyCountry, localePreferences),
+          ),
+        }),
+      }
+    : null;
 
   return (
     <main className="catalog-start-page catalog-start-page--home">
@@ -222,6 +235,7 @@ function ProjectSummary({
       <HomeSections
         producerCount={producerCount}
         categoryCounts={categoryCounts}
+        countryCatalog={countryCatalog}
       />
     </main>
   );

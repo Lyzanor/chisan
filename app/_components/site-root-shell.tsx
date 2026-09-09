@@ -8,8 +8,6 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { GuidesLink } from "@/components/guides/guides-link";
-import { CompassIcon } from "@phosphor-icons/react/ssr";
-import { NavigationLink } from "@/components/navigation-link";
 import { PageMotion } from "@/components/page-motion";
 
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
@@ -151,16 +149,6 @@ export function SiteRootShell({
             <ChisanWordmark alt="" />
             <span className="site-header__tagline">{localizedTagline}</span>
           </Link>
-          <nav className="site-primary-nav" aria-label={SITE_NAME}>
-            <NavigationLink href={MANUAL_AREA_SELECTION_HREF} className="site-primary-nav__catalog">
-              <CompassIcon size={20} aria-hidden="true" />
-              <span>{footerMessages.catalogLink}</span>
-            </NavigationLink>
-            <GuidesLink locale={htmlLang === "en" ? "en" : "es"} className="site-primary-nav__guides" />
-            <NavigationLink href="/how-we-work" activePath="/how-we-work" className="site-primary-nav__about">
-              {footerMessages.aboutLink}
-            </NavigationLink>
-          </nav>
           <SiteAccountNav
             authConfigured={accountAuthConfigured}
             messages={accountMessages ?? headerMessages}

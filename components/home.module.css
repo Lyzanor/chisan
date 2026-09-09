@@ -44,8 +44,11 @@
   font-weight: 500;
   letter-spacing: -0.05em;
 }
-.stats > p span {
+.stats > p > span {
   color: var(--muted);
+}
+.stats > p .textLink {
+  justify-self: start;
 }
 .categories {
   grid-column: 1 / -1;
