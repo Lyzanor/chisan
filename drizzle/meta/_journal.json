@@ -106,6 +106,20 @@
       "when": 1788787313006,
       "tag": "0014_producer_suggestions",
       "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1788859720475,
+      "tag": "0015_whatsapp_assistant",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1788898785480,
+      "tag": "0016_professional_enquiries",
+      "breakpoints": true
     }
   ]
 }

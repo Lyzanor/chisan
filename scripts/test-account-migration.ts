@@ -198,6 +198,10 @@ test("account migration creates constraints and durable producer keys", async ()
         "audit_events",
         "auth_identities",
         "auth_identity_tombstones",
+        "business_enquiries",
+        "business_messages",
+        "business_product_terms",
+        "business_profiles",
         "entitlements",
         "favorites",
         "producer_change_executions",
@@ -213,6 +217,8 @@ test("account migration creates constraints and durable producer keys", async ()
         "user_presentation",
         "users",
         "webhook_receipts",
+        "whatsapp_inbox",
+        "whatsapp_links",
       ],
     );
 
@@ -362,6 +368,10 @@ test("account migration creates constraints and durable producer keys", async ()
     assert.deepEqual(internalUserReferences.rows, [
       { table_name: "audit_events", column_name: "actor_user_id" },
       { table_name: "auth_identities", column_name: "user_id" },
+      { table_name: "business_enquiries", column_name: "requester_id" },
+      { table_name: "business_messages", column_name: "author_id" },
+      { table_name: "business_product_terms", column_name: "updated_by" },
+      { table_name: "business_profiles", column_name: "user_id" },
       { table_name: "entitlements", column_name: "user_id" },
       { table_name: "favorites", column_name: "user_id" },
       { table_name: "producer_change_requests", column_name: "author_user_id" },
@@ -382,6 +392,7 @@ test("account migration creates constraints and durable producer keys", async ()
       { table_name: "staff_grants", column_name: "revoked_by_user_id" },
       { table_name: "staff_grants", column_name: "user_id" },
       { table_name: "user_presentation", column_name: "user_id" },
+      { table_name: "whatsapp_links", column_name: "user_id" },
     ]);
 
     const created = await database.query<{ id: string; profile_kind: string }>(

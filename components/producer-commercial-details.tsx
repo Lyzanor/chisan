@@ -1,3 +1,4 @@
+import { isB2BEnabled, B2B_ROOT } from "@/lib/b2b/policy";
 import { isDemoProducer } from "@/lib/catalog/product-commerce";
 import { formatProducerFieldLabel } from "@/lib/i18n/producer-fields";
 import { premiumValueLabel } from "@/lib/i18n/producer-premium";
@@ -10,7 +11,7 @@ export function ProducerCommercialDetails({ fields, locale, messages, country, p
 }) {
   const label = (key: string) => formatProducerFieldLabel(key, locale, messages);
   const professional = ["sí", "bajo consulta"].includes(fields.venta_profesionales);
-  const contact = fields.correo ? `mailto:${fields.correo}?subject=${encodeURIComponent(premiumValueLabel("subject", locale))}` : fields.telefono ? `tel:${fields.telefono}` : null;
+  const contact = isB2BEnabled() ? `${B2B_ROOT}/consultar/${country}/${producerId}` : fields.correo ? `mailto:${fields.correo}?subject=${encodeURIComponent(premiumValueLabel("subject", locale))}` : fields.telefono ? `tel:${fields.telefono}` : null;
   const keys = ["visita_cita_previa", "venta_profesionales", "pedido_minimo", "condiciones_envio"];
   if (!fields.certificaciones && !keys.some(key => fields[key])) return null;
   return <div className="detail-expanded-profile__stories">

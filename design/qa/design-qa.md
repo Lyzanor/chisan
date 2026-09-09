@@ -1245,3 +1245,47 @@ using the production server for behavior tests to preserve the other dev session
   (#DFE1E5) and dark (#202124) chrome: the mark stays legible on both. The mark
   sits at 400 of 512 units so the 16px frame keeps its counter and dot readable.
   Brand masters under `public/brand/` and `design/brand/` remain transparent.
+
+## 2026-09-08 — Private professional enquiries
+
+- Kept ordinary public email/telephone contact separate from the premium
+  professional CTA, which opens an authenticated supply enquiry when enabled.
+- Account navigation has a dedicated professional channel; private business
+  context and supplier product templates have distinct sections. Product
+  templates use native disclosures and the existing account field/button styles.
+- Real authenticated local browser QA used the isolated PostgreSQL instance on
+  port 55439 and fictional Chisan product/business fixtures. Created a business
+  profile and a product-specific enquiry through the UI; opened a separate
+  received enquiry as its supplier, explicitly attached terms and sent them.
+- Updated the private weekly capacity from 120 to 140 pieces via the supplier
+  form; the dated shared offer still displayed 120. Verified ordinary public
+  mail contact alongside the professional route and no private delivery-area
+  fixture text on the public profile.
+- Reviewed the conversation and private template editor at 390×844 and 1440×1000.
+  Document width matched viewport width at both sizes; text wrapped and native
+  controls remained usable. Replaced initially unstyled inputs with shared
+  account-field styling and folded each product's long form independently.
+- Service tests cover other accounts and staff without membership, revocation,
+  expired premium, suspended accounts, idempotency, stale template versions,
+  product retirement, history snapshots, closure and daily enquiry limits.
+- Existing development warnings about catalog tool inputSchema serialization
+  appeared in the shared app shell; no professional data was involved.
+- This record proves local behavior. Production activation requires the migration
+  chain and feature flag. The preceding WhatsApp migration prepares inactive
+  storage only; its assistant and routes are not part of this release.
+
+## 2026-09-09 — Professional channel activation
+
+- Rehearsed migrations 0015 and 0016 against the recoverable Neon child branch
+  `backup-b2b-0016-20260909` (`br-fancy-mud-b20vhxrq`, expires September 16).
+  The transaction reached 17 registry entries; rollback restored the backup to 15.
+- Applied the same guarded transaction to production before deployment. Verified
+  all 17 migration fingerprints and owner `neondb_owner`; all six new tables have
+  no PUBLIC privileges. No production conversation or private terms were seeded.
+- Enabled `CHISAN_B2B_ENABLED` for the next Production deployment. WhatsApp has
+  no routes, provider configuration or account navigation in this release; its
+  preceding migration only prepares inactive storage required by the stable chain.
+- Preview `chisan-15qkkcn06-lyzanors-projects.vercel.app` built successfully with
+  accounts explicitly disabled. Browser checks confirmed the public homepage and
+  the disabled-account fallback. Authenticated interaction and responsive checks
+  are recorded in the preceding local QA entry.

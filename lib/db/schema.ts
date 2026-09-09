@@ -24,6 +24,38 @@ import {
 const timestampWithTimezone = (name: string) =>
   timestamp(name, { mode: "date", withTimezone: true });
 
+// Inactive storage preparation only; no WhatsApp routes or provider are shipped.
+// Private channel bindings and a durable inbox; neither is published catalog data.
+export const whatsappLinks = pgTable("whatsapp_links", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  userId: uuid("user_id").notNull().references(() => users.id),
+  country: varchar("country", { length: 2 }).notNull(),
+  producerId: bigint("producer_id", { mode: "number" }).notNull(),
+  sender: varchar("sender", { length: 15 }),
+  tokenHash: varchar("token_hash", { length: 64 }).unique(),
+  tokenExpiresAt: timestampWithTimezone("token_expires_at"),
+  expiresAt: timestampWithTimezone("expires_at").notNull(),
+  timeZone: varchar("time_zone", { length: 40 }).notNull(),
+  state: jsonb("state"),
+  createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+}, table => [
+  uniqueIndex("whatsapp_links_sender_uidx").on(table.sender),
+  uniqueIndex("whatsapp_links_user_uidx").on(table.userId),
+  check("whatsapp_links_identity_check", sql`${table.country} = 'es' AND ${table.producerId} > 0`),
+  check("whatsapp_links_sender_check", sql`${table.sender} IS NULL OR ${table.sender} ~ '^[1-9][0-9]{6,14}$'`),
+  check("whatsapp_links_timezone_check", sql`${table.timeZone} IN ('Europe/Madrid', 'Atlantic/Canary')`),
+]);
+
+export const whatsappInbox = pgTable("whatsapp_inbox", {
+  id: varchar("id", { length: 200 }).primaryKey(),
+  sender: varchar("sender", { length: 15 }).notNull(),
+  message: jsonb("message").notNull(),
+  receivedAt: timestampWithTimezone("received_at").notNull().defaultNow(),
+  processedAt: timestampWithTimezone("processed_at"),
+  reply: text("reply"),
+  deliveredAt: timestampWithTimezone("delivered_at"),
+}, table => [index("whatsapp_inbox_pending_idx").on(table.processedAt, table.receivedAt), index("whatsapp_inbox_sender_idx").on(table.sender, table.receivedAt)]);
+
 // Private operational measurement, keyed by the immutable catalog identity.
 // Receipts identify a single page display; they never identify a visitor.
 export const producerDailyStats = pgTable("producer_daily_stats", {
@@ -1014,3 +1046,5 @@ export const producerMediaUploads = pgTable("producer_media_uploads", {
   check("producer_media_uploads_identity_check", sql`${table.country} ~ '^[a-z]{2}$' AND ${table.producerId} > 0`),
   check("producer_media_uploads_image_check", sql`${table.width} BETWEEN 200 AND 1600 AND ${table.height} BETWEEN 200 AND 1600 AND octet_length(${table.bytes}) BETWEEN 1 AND 524288 AND ${table.sha256} = encode(sha256(${table.bytes}), 'hex')`),
 ]);
+
+export { businessProfiles, businessProductTerms, businessEnquiries, businessMessages } from "./b2b-schema";

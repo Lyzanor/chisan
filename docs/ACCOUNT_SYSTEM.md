@@ -765,3 +765,9 @@ The community block degrades to a registration link if accounts are disabled or
 unavailable. Homepage plans describe the free account and premium capabilities
 with a contact route; they do not activate checkout or imply a shared account
 and producer entitlement.
+
+## Private professional enquiries
+
+The separate [professional channel](PROFESSIONAL_ENQUIRIES.md) owns private
+business context, supplier product terms and participant-only enquiries.
+Self-declared business context does not grant producer or staff permissions.

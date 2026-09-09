@@ -1,3 +1,4 @@
+import { isB2BEnabled, B2B_ROOT } from "@/lib/b2b/policy";
 import Link from "next/link";
 import { NavigationLink } from "@/components/navigation-link";
 import type { Metadata } from "next";
@@ -57,6 +58,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
           <NavigationLink href="/cuenta/reclamaciones" activePath="/cuenta/reclamaciones">Solicitudes de propiedad</NavigationLink>
           <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Cambios de perfil</NavigationLink>
           <NavigationLink href="/cuenta/sugerencias" activePath="/cuenta/sugerencias">Sugerencias</NavigationLink>
+          {isB2BEnabled() ? <NavigationLink href={B2B_ROOT} activePath={B2B_ROOT}>Profesional</NavigationLink> : null}
           {staff ? <Link href="/admin">Revisión</Link> : null}
         </nav>
         {children}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone CommonJS asset generator. */
 // Regenerates the shipped browser icons from the canonical mark master.
 // Run with `node design/brand/build-favicon.cjs` from the repository root.
 const fs = require('node:fs');
