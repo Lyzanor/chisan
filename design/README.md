@@ -329,6 +329,16 @@ wordmark consumes the same SVG and changes its rendered color to white.
 Outfit's original font and license live in `app/_fonts/`. QR canvas typography
 uses the resolved interface font stack. Preserve the SVG aspect ratio.
 
+Browser icons are the one place the mark carries its own light ground: a
+transparent mark reads as a dark blob on dark tab chrome and on the black iOS
+composites behind a home-screen icon. `design/brand/build-favicon.cjs` renders
+`public/brand/chisan-mark.svg` onto the white `rice-paper` field and writes
+`app/favicon.ico` (16, 32, 48 and 256px frames) plus the `chisan-icon-light` and
+`chisan-icon-apple` exports that `SITE_METADATA` declares. The tab exports use a
+rounded plate whose corners stay concentric with the mark's own; the Apple export
+is full bleed because the system applies its own mask. This white field is the
+icon's ground, not a container added to the logo elsewhere.
+
 ## References
 
 - `v0.3/chisan-wordmark-first-board.png` — historical direction, superseded by the C-with-dot identity.

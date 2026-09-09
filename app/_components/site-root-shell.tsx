@@ -22,6 +22,8 @@ import {
   type LanguageMenuConfig,
   SiteLanguageMenuProvider,
 } from "@/components/language-menu-context";
+import chisanAppleIcon from "@/design/brand/assets/chisan-icon-apple.png";
+import chisanIcon from "@/design/brand/assets/chisan-icon-light.png";
 import chisanMark from "@/design/brand/assets/chisan-mark-ink.png";
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
 import { MANUAL_AREA_SELECTION_HREF } from "@/lib/catalog-navigation";
@@ -76,8 +78,10 @@ export const SITE_METADATA: Metadata = {
   },
   description: SITE_DESCRIPTION,
   icons: {
-    icon: [{ url: chisanMark.src, type: "image/png" }],
-    apple: [{ url: chisanMark.src, type: "image/png" }],
+    // Browser icons carry the white page field: the transparent mark reads as a dark
+    // blob on dark tab chrome and on the black iOS composites behind home-screen icons.
+    icon: [{ url: chisanIcon.src, type: "image/png", sizes: "512x512" }],
+    apple: [{ url: chisanAppleIcon.src, type: "image/png", sizes: "180x180" }],
   },
   referrer: "strict-origin-when-cross-origin",
   ...(adsenseAccountId

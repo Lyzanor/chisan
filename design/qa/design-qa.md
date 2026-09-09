@@ -1235,3 +1235,13 @@ using the production server for behavior tests to preserve the other dev session
   unprovisioned in the production environment variable inventory.
 - The complete `pnpm verify:ai` gate passed on the isolated release tree, including
   the production build, privacy/revocation integration and public route behavior.
+- Browser icons moved off the transparent ground onto the white page field. The
+  live `rel=icon` and `apple-touch-icon` were a transparent forest mark, so the
+  icon disappeared into dark tab chrome and iOS composited it on black; the
+  `.ico` shared that ground and was in any case overridden by the PNG link.
+  `design/brand/build-favicon.cjs` now derives all three exports from
+  `public/brand/chisan-mark.svg`. Frames served by the development server at
+  16, 32, 48, 180 and 512px were compared against the previous asset on light
+  (#DFE1E5) and dark (#202124) chrome: the mark stays legible on both. The mark
+  sits at 400 of 512 units so the 16px frame keeps its counter and dot readable.
+  Brand masters under `public/brand/` and `design/brand/` remain transparent.
