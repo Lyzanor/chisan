@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
-import Link from "next/link";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { NavigationLink } from "@/components/navigation-link";
 
 import { LocationOnboarding } from "@/components/location-onboarding";
-import { GuideHighlights } from "@/components/guides/guide-highlights";
+import { HomeSections } from "@/components/home-sections";
 import {
   buildHomeAlternateSet,
   buildLocalizedMetadata,
@@ -18,6 +17,7 @@ import {
   getLocalizedCatalogLabel,
   getLocalizedCatalogUnit,
   listPublishedCountries,
+  listCountryProducers,
 } from "@/lib/csv-catalog";
 import {
   buildCatalogScope,
@@ -66,7 +66,9 @@ function ProjectSummary({
   locationAreas,
   explicitLocale,
   browserLocales,
+  producerCount,
 }: {
+  producerCount: number;
   countries: Countries;
   messages: Messages;
   locationAreas: readonly LocationOnboardingArea[];
@@ -100,7 +102,9 @@ function ProjectSummary({
         <section className="home-catalog" aria-labelledby="country-start-title">
           <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
             <div>
-              <p className="catalog-kicker">{messages.siteFooter.catalogLink}</p>
+              <p className="catalog-kicker">
+                {messages.siteFooter.catalogLink}
+              </p>
               <h2 id="country-start-title">{catalogTitle}</h2>
             </div>
           </div>
@@ -163,31 +167,35 @@ function ProjectSummary({
                       regions: regionCount,
                     })}
                   </small>
-                  <ArrowUpRightIcon className="country-card__arrow" size={28} aria-hidden="true" />
+                  <ArrowUpRightIcon
+                    className="country-card__arrow"
+                    size={28}
+                    aria-hidden="true"
+                  />
                 </NavigationLink>
               );
             })}
           </div>
         </section>
-        <div id="about" className="home-about">
-          <div className="home-about__copy">
-            <p>{messages.home.aboutDescription}</p>
-            <p>{messages.home.aboutCatalogDescription}</p>
-            <p>
-              <Link className="back-link" href="/how-we-work">
-                {messages.siteFooter.aboutLink}
-              </Link>
-            </p>
-          </div>
+        <div className="home-story-intro">
+          <p>
+            Conoce a quienes producen lo que comes. Explora sus lugares, guarda
+            tus favoritos y conecta directamente con ellos.
+          </p>
         </div>
-        <GuideHighlights />
       </section>
+      <HomeSections producerCount={producerCount} />
     </main>
   );
 }
 
 export default async function HomePage() {
   const countries = listPublishedCountries();
+  const producerCount = (
+    await Promise.all(
+      countries.map((country) => listCountryProducers(country.slug)),
+    )
+  ).reduce((total, producers) => total + producers.length, 0);
   const locationAreas = listEnabledLocationAreas({
     countries,
     locale: HOME_LOCALE,
@@ -199,6 +207,7 @@ export default async function HomePage() {
   ]);
   return (
     <ProjectSummary
+      producerCount={producerCount}
       countries={countries}
       messages={messages}
       locationAreas={locationAreas}

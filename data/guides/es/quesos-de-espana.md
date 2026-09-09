@@ -9,6 +9,15 @@ slug: quesos-de-espana
 topic: Quesos
 title: "Quesos de España: leches, territorios y productores que conocer"
 description: Una guía para explorar queserías de España a través de la leche, la maduración y el origen, con productores comentados y un mapa para situarlos.
+cover:
+  src: /editorial/guides/queso.webp
+  alt: Queso de corteza blanca con aceitunas sobre papel
+  width: 1600
+  height: 1256
+  credit: R. G / Unsplash
+  sourceUrl: https://unsplash.com/photos/QP7AGEp0Dy4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: norma-quesos
     title: BOE · Norma de calidad para quesos

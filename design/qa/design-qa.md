@@ -1191,3 +1191,47 @@ using the production server for behavior tests to preserve the other dev session
   QR disclosure screenshots and the three downloaded PNGs. Validation:
   pnpm verify:ai passed on the isolated release tree, including build, data,
   account and behavior checks. Existing Node module-type notices were assessed.
+
+## 2026-09-09 — Homepage reading sections and guide covers
+
+- Kept discovery in the opening two-column composition. Removed the redundant
+  manual-choice button; the visible country card and footer catalog anchor
+  remain usable without location permission or JavaScript.
+- Added the CSV-derived published producer total, illustrated guide headlines,
+  producer registration, active-claim/public-profile community cards, free and
+  premium plan descriptions, a QR explanation and a compact chisan-chisho close.
+  No claimed/premium count is fabricated. Premium links to contact while online
+  purchase is inactive; account and producer access remain separate.
+- The user authorized active claimed producers and registered users for the
+  community section, with Santa Coloma de Gramenet preferred. Only explicitly
+  public, active user profiles are discoverable. The server projection exposes
+  no owner identity, email, private profile, account ID or image bytes.
+- Every guide now owns required cover provenance. Eight licensed Unsplash context
+  photographs are shared by related articles, with attribution in the article.
+  The headline is the reading link; the duplicate “Leer la guía” action is gone.
+  Assets live under `/editorial/guides/` to avoid the legacy `/guias` redirect.
+- Sections animate on their first intersection using opacity and a short vertical
+  movement. Content remains visible without animation support or JavaScript;
+  reduced-motion is checked before starting and cancels animations when changed.
+- Browser review at 1440×1000 and 390×844: opening hierarchy, loaded thumbnails,
+  guide headline navigation, article cover and attribution, stacked plans, QR
+  explanation and footer close. Mobile document width stayed at 390px. Returning
+  from a guide via the brand link kept `/` visible with its same-origin referrer.
+- The shared page shell tracks SPA returns; document referrer/navigation type
+  covers root-layout changes and browser history. Unit tests distinguish direct
+  entry, same-origin navigation, external entry, reload and history returns.
+- Community privacy/revocation integration passed against isolated PGlite. The
+  local account database at port 55439 was unavailable, so real member cards and
+  account actions could not be browser-verified. The section showed its usable
+  registration fallback. Existing WebMCP schema-serialization development
+  warnings remain outside this change.
+- Release validation runs in an isolated checkout containing only this scope,
+  outside the system temporary directory (the report-path test rejects ordinary
+  repository paths and assumes the checkout is outside that directory).
+- No database schema or environment change is included. The current production
+  build confirmed its migration registry on 2026-09-09; the available browser
+  session lacks staff access for a fresh system-page assertion. The Git-triggered
+  build repeats the migration assertion before publication. Stripe remains
+  unprovisioned in the production environment variable inventory.
+- The complete `pnpm verify:ai` gate passed on the isolated release tree, including
+  the production build, privacy/revocation integration and public route behavior.

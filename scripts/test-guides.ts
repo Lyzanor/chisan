@@ -222,3 +222,32 @@ test("the library is published inside its country catalog scope, not beside it",
   assert.equal(needsClerkRequestContext(guidePath("queso")), false);
   assert.deepEqual(catalogPathSegments("/es/barcelona"), ["es", "barcelona"]);
 });
+
+test("published guides require an attributable local cover and share it in metadata", () => {
+  const guide = readGuides()[0];
+  assert.equal(
+    guideSchema.safeParse({ ...guide, cover: undefined }).success,
+    false,
+  );
+  assert.equal(
+    guideSchema.safeParse({
+      ...guide,
+      cover: { ...guide.cover, src: "/editorial/guides/../private.webp" },
+    }).success,
+    false,
+  );
+  assert.equal(
+    guideSchema.safeParse({
+      ...guide,
+      cover: { ...guide.cover, sourceUrl: "javascript:alert(1)" },
+    }).success,
+    false,
+  );
+  const metadata = buildGuideMetadata(guide);
+  assert.ok(metadata.twitter && "card" in metadata.twitter);
+  assert.equal(metadata.twitter.card, "summary_large_image");
+  assert.ok(JSON.stringify(metadata.openGraph).includes(guide.cover.src));
+  assert.ok(
+    JSON.stringify(buildGuideStructuredData(guide)).includes(guide.cover.src),
+  );
+});

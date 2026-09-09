@@ -9,6 +9,15 @@ slug: vinos-de-espana-denominaciones-origen
 topic: Vinos
 title: "Vinos de España: cómo explorar sus denominaciones de origen"
 description: Entiende cómo leer las denominaciones de los vinos de España y descubre bodegas del catálogo, con contexto, fuentes y una selección en el mapa.
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: calidad-diferenciada
     title: MAPA · DOP e IGP de vinos y acceso a registros

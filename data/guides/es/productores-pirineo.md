@@ -9,6 +9,15 @@ title: "Qué se produce en el Pirineo: leche, queso y pan en Lleida"
 description: "Una primera mirada al Pirineo de Lleida con Cadí, Tros de Sort y La Original: ganadería, elaboración y productores para seguir."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/huerta.webp
+  alt: Cesta con hortalizas variadas
+  width: 1600
+  height: 1067
+  credit: leonie wise / Unsplash
+  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: cadi
     title: Cadí · Cooperativa y productos

@@ -9,6 +9,15 @@ title: "Bodegas de Jerez: nombres de vino, soleras y casas que conocer"
 description: Acércate a Bodegas Tradición y Urium para leer las referencias de Jerez y preparar preguntas sobre sus vinos y su crianza.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: tradicion
     title: Consejo Regulador de Jerez · Bodegas Tradición

@@ -9,6 +9,15 @@ title: "Priorat y Montsant: dos denominaciones para leer por separado"
 description: Conoce Clos Mogador y Celler Masroig y distingue DOQ Priorat y DO Montsant a través de sus fuentes, vinos y productores.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: mogador
     title: DOQ Priorat · Clos Mogador

@@ -9,6 +9,15 @@ title: "La despensa de Galicia: fabas, vino y conservas con origen"
 description: Explora Terras da Mariña, Terras Gauda y Ramón Peña para conocer tres elaboraciones gallegas y seguir sus productores en el mapa.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/huerta.webp
+  alt: Cesta con hortalizas variadas
+  width: 1600
+  height: 1067
+  credit: leonie wise / Unsplash
+  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: terras-marina
     title: Terras da Mariña · Faba de Lourenzá y verdina

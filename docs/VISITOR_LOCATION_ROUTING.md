@@ -71,20 +71,23 @@ producer-distance calculation.
 The neutral `/` page is the only place that may offer first-visit location
 onboarding. It must:
 
-1. Show a first-party explanation and separate **Use my location** and
-   **Choose manually** actions.
+1. Show a first-party explanation and a **Use my location** action. The visible
+   country listing provides manual navigation without a duplicate button.
 2. Call `navigator.geolocation.getCurrentPosition()` only after the visitor
    activates **Use my location**. Page load, hydration and a language choice
    must not trigger the native permission prompt.
 3. Keep the neutral country listing usable before, during and after the
    request, including when JavaScript or the Geolocation API is unavailable.
-   **Choose manually** links to that listing; it never duplicates it in a
-   separate selector.
+   No extra manual selector or dismissal action is necessary.
 4. Request one normal-accuracy position with `enableHighAccuracy: false`, an
    8-second timeout and a 5-minute `maximumAge`; never use `watchPosition`.
-5. On a later visit to `/`, resume a valid saved area by replacing the neutral
-   page with that area's published URL. Only `/` resumes, and only from the
-   browser that stored the preference.
+5. On a direct document entry to `/`, resume a valid saved area by replacing
+   the neutral page with that area's published URL. Returning to `/` through
+   internal navigation keeps the homepage visible. The shared page shell tracks
+   navigation only in memory, with no coordinates or new persisted preference.
+   Same-origin document referrers cover transitions between root layouts; browser
+   history returns also suppress resume, while an explicit reload may resume.
+   Only `/` resumes, and only from the browser that stored the preference.
 6. Publish one manual entry point that suppresses the resume: the
    `#choose-country` anchor on `/`, which the global footer catalog link uses.
    The account profile owns the control that forgets the saved area.

@@ -9,6 +9,15 @@ title: "Panaderías y molinos: del cereal a la harina y al pan"
 description: "Descubre Molino Ecotambo y La Original para conocer dos trabajos propios: cultivar y moler cereal, y elaborar pan en el obrador."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/pan.webp
+  alt: Pan sobre una tabla de madera
+  width: 1600
+  height: 2397
+  credit: Joanna Stołowicz / Unsplash
+  sourceUrl: https://unsplash.com/photos/VX8HsScDv6U
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: ecotambo
     title: Molino Ecotambo · Cultivo y transformación propios

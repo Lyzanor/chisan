@@ -9,6 +9,15 @@ title: "Queserías con venta directa: cómo elegir y pedir al elaborador"
 description: "Encuentra queserías con canal propio de venta y prepara tu pedido: piezas, cuñas, surtidos y preguntas sobre entrega y conservación."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/queso.webp
+  alt: Queso de corteza blanca con aceitunas sobre papel
+  width: 1600
+  height: 1256
+  credit: R. G / Unsplash
+  sourceUrl: https://unsplash.com/photos/QP7AGEp0Dy4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: antigua
     title: Quesería La Antigua · Elaboraciones y venta propia

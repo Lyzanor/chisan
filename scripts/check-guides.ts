@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import sharp from "sharp";
 import {
   GUIDES_PATH,
   GUIDES_SEGMENT,
@@ -22,6 +24,16 @@ async function main() {
     }
   }
   for (const guide of guides) {
+    const imagePath = `public${guide.cover.src}`;
+    if (!existsSync(imagePath)) throw new Error(`${guide.slug}: missing cover`);
+    const image = await sharp(imagePath).metadata();
+    if (
+      image.width !== guide.cover.width ||
+      image.height !== guide.cover.height
+    )
+      throw new Error(`${guide.slug}: cover dimensions disagree with its file`);
+    if (guide.cover.checkedAt > new Date().toISOString().slice(0, 10))
+      throw new Error(`${guide.slug}: future cover review`);
     // Drafts are checked too, so stale producer references cannot wait until release.
     const references = guide.sections.flatMap((section) =>
       section.type === "producers" ? section.items : [],

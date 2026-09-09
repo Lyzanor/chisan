@@ -9,6 +9,15 @@ title: "Vinos del Bierzo: mencía, godello y trabajo de parcela"
 description: Descubre Losada y el proyecto berciano de Emilio Moro para acercarte a la mencía, la godello y la información de sus viñedos.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: losada
     title: Losada · Altos de Losada Selección de Añada

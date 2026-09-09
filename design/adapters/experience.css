@@ -534,3 +534,12 @@ body { min-height: 100svh; }
   .catalog-chip:active { transform: none; }
   .producer-map-selection-card__link:hover .producer-map-selection-card__image { scale: none; }
 }
+
+/* Home discovery keeps the catalog first; the reading sections follow below. */
+.catalog-start-page--home .home-story-intro { grid-column: 1; max-width: 52ch; font-size: 1.125rem; line-height: 1.7; }
+.catalog-start-page--home .home-story-intro p { margin: 0; }
+.catalog-start-page--home .home-story { width: 100%; }
+@media (max-width: 760px) {
+  .catalog-start-page--home .home-story-intro { grid-row: 2; }
+  .catalog-start-page--home .home-catalog { grid-row: 3; }
+}

@@ -9,6 +9,15 @@ title: "La despensa de Asturias: queso, sidra y conservas con elaborador"
 description: Un recorrido editorial por Rey Silo, Trabanco y Güeyu Mar para conocer tres trabajos de la despensa asturiana, con fichas y mapa.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/huerta.webp
+  alt: Cesta con hortalizas variadas
+  width: 1600
+  height: 1067
+  credit: leonie wise / Unsplash
+  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: rey
     title: Queso Rey Silo · Elaboraciones

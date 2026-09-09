@@ -1,0 +1,227 @@
+.section,
+.stats,
+.producer,
+.qr,
+.about {
+  margin-block: var(--chisan-space-16);
+}
+.section h2,
+.stats h2,
+.producer h2,
+.qr h2,
+.about h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--chisan-space-6);
+  text-wrap: balance;
+}
+.section p,
+.stats p,
+.producer p,
+.qr p,
+.about p {
+  line-height: 1.7;
+  max-width: 62ch;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  align-items: center;
+  gap: var(--chisan-space-12);
+  padding-block: var(--chisan-space-12);
+  border-block: 1px solid var(--line);
+}
+.stats > p {
+  display: grid;
+  margin: 0;
+}
+.stats strong {
+  color: var(--accent);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+.stats span {
+  color: var(--muted);
+}
+.producer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--chisan-space-8);
+  background: var(--chisan-color-surface-muted);
+  padding: var(--chisan-space-12);
+  border-radius: var(--chisan-radius-panel);
+}
+.producer > svg {
+  color: var(--accent);
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--chisan-space-4);
+  min-height: 48px;
+  padding: var(--chisan-space-3) var(--chisan-space-6);
+  background: var(--accent);
+  color: var(--chisan-color-surface);
+  border-radius: var(--chisan-radius-control);
+  text-decoration: none;
+  margin-top: var(--chisan-space-4);
+}
+.button:hover {
+  background: var(--chisan-color-moss-dark);
+}
+.textLink {
+  display: inline-block;
+  color: var(--accent);
+  text-underline-offset: 0.25em;
+  padding-block: var(--chisan-space-3);
+}
+.producer .textLink {
+  margin-inline-start: var(--chisan-space-6);
+}
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--chisan-space-8);
+  margin-top: var(--chisan-space-8);
+}
+.plans article {
+  padding: var(--chisan-space-8);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-panel);
+}
+.plans article:last-child {
+  border-color: var(--accent);
+}
+.plans h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+}
+.plans .price {
+  font-size: 3rem;
+  margin: var(--chisan-space-4) 0;
+  line-height: 1.1;
+}
+.availability {
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+.plans ul {
+  padding-left: var(--chisan-space-6);
+  line-height: 1.65;
+}
+.plans li {
+  margin-block: var(--chisan-space-3);
+}
+.note {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.qr {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  align-items: center;
+  gap: var(--chisan-space-12);
+  padding-block: var(--chisan-space-12);
+  border-block: 1px solid var(--line);
+}
+.qrVisual {
+  display: grid;
+  justify-items: center;
+  gap: var(--chisan-space-6);
+  color: var(--accent);
+  padding: var(--chisan-space-8);
+}
+.qrVisual span {
+  font-size: 1.125rem;
+}
+.about {
+  max-width: 70ch;
+  padding-block: var(--chisan-space-8);
+}
+.about h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+.about h2 a:hover {
+  text-decoration: underline;
+}
+.community {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--chisan-space-6);
+  margin-top: var(--chisan-space-8);
+}
+.community a {
+  display: grid;
+  gap: var(--chisan-space-3);
+  align-content: start;
+  text-decoration: none;
+  color: var(--text);
+}
+.community a:hover strong {
+  text-decoration: underline;
+}
+.community img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface-muted);
+}
+
+.community span {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.section a:focus-visible,
+.producer a:focus-visible,
+.qr a:focus-visible,
+.about a:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--accent);
+  outline-offset: 4px;
+}
+@media (max-width: 700px) {
+  .stats,
+  .qr,
+  .producer,
+  .plans {
+    grid-template-columns: 1fr;
+    gap: var(--chisan-space-6);
+  }
+  .stats,
+  .qr {
+    padding-block: var(--chisan-space-8);
+  }
+  .producer,
+  .plans article {
+    padding: var(--chisan-space-6);
+  }
+  .section,
+  .stats,
+  .producer,
+  .qr,
+  .about {
+    margin-block: var(--chisan-space-12);
+  }
+  .community {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .qrVisual {
+    padding: var(--chisan-space-4);
+  }
+}
+
+.community strong {
+  overflow-wrap: anywhere;
+}
+
+.communityLoading {
+  min-height: 320px;
+}

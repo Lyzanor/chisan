@@ -1,3 +1,4 @@
+import { GuideCover } from "@/components/guides/guide-cover";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -57,26 +58,35 @@ export default async function GuidesPage() {
         </div>
         <nav className={styles.topicNav} aria-label="Temas de las guías">
           {GUIDE_TOPICS.map((topic) => (
-            <a key={topic} href={`#tema-${topic.toLowerCase()}`}>{topic}</a>
+            <a key={topic} href={`#tema-${topic.toLowerCase()}`}>
+              {topic}
+            </a>
           ))}
         </nav>
         {GUIDE_TOPICS.map((topic) => (
-          <section key={topic} id={`tema-${topic.toLowerCase()}`} className={styles.topicSection} aria-labelledby={`titulo-${topic.toLowerCase()}`}>
+          <section
+            key={topic}
+            id={`tema-${topic.toLowerCase()}`}
+            className={styles.topicSection}
+            aria-labelledby={`titulo-${topic.toLowerCase()}`}
+          >
             <h2 id={`titulo-${topic.toLowerCase()}`}>{topic}</h2>
             <div className={styles.cards}>
-          {guides.filter((guide) => guide.topic === topic).map((guide) => (
-            <article key={guide.slug} className={styles.card}>
-              <p className={styles.eyebrow}>{guide.topic} · Guía de origen</p>
-              <h3>
-                <Link href={guidePath(guide.slug)}>{guide.title}</Link>
-              </h3>
-              <p>{guide.description}</p>
-              <Link href={guidePath(guide.slug)} className={styles.textLink}>
-                Leer la guía <span aria-hidden="true">↗</span>
-              </Link>
-            </article>
-          ))}
-        </div>
+              {guides
+                .filter((guide) => guide.topic === topic)
+                .map((guide) => (
+                  <article key={guide.slug} className={styles.card}>
+                    <GuideCover guide={guide} compact />
+                    <p className={styles.eyebrow}>
+                      {guide.topic} · Guía de origen
+                    </p>
+                    <h3>
+                      <Link href={guidePath(guide.slug)}>{guide.title}</Link>
+                    </h3>
+                    <p>{guide.description}</p>
+                  </article>
+                ))}
+            </div>
           </section>
         ))}
       </section>

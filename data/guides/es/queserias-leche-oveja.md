@@ -9,6 +9,15 @@ title: "Queserías de leche de oveja: del queso de corte a la crema"
 description: Conoce queserías de oveja en Zamora, Extremadura y Asturias, con detalles de sus elaboraciones, fichas y mapa de productores.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/queso.webp
+  alt: Queso de corteza blanca con aceitunas sobre papel
+  width: 1600
+  height: 1256
+  credit: R. G / Unsplash
+  sourceUrl: https://unsplash.com/photos/QP7AGEp0Dy4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: antigua
     title: Quesería La Antigua · Elaboraciones y venta propia

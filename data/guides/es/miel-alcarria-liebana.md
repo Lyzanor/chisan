@@ -9,6 +9,15 @@ title: "Miel de La Alcarria y Miel de Liébana: dos nombres de origen"
 description: Conoce estas dos mieles protegidas mediante Valserrano y Colmenares de Vendejo, con referencias de producto y fichas del catálogo.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/miel.webp
+  alt: Miel y cuchara de madera sobre un panal
+  width: 1600
+  height: 1060
+  credit: Alexander Mils / Unsplash
+  sourceUrl: https://unsplash.com/photos/nesUgwNX3u4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: valserrano
     title: Alimentos de Guadalajara · Miel Valserrano DO, Cooperativa Apícola Alcarreña

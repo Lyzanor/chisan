@@ -9,6 +9,15 @@ title: "Miel de romero, azahar y brezo: leer la floración en el tarro"
 description: Explora tres menciones florales con Apícola Cortés y Apícola Laparra y aprende a vincular cada miel a una referencia y una cosecha.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/miel.webp
+  alt: Miel y cuchara de madera sobre un panal
+  width: 1600
+  height: 1060
+  credit: Alexander Mils / Unsplash
+  sourceUrl: https://unsplash.com/photos/nesUgwNX3u4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: cortes
     title: Apícola Cortés · Mieles propias

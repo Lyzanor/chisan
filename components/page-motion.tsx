@@ -1,11 +1,21 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, type ReactNode } from "react";
+import {
+  createContext,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+
+export const InternalNavigationContext = createContext(false);
 
 /** Animate arrival without delaying navigation or remounting page state. */
 export function PageMotion({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const [entry, setEntry] = useState({ pathname, internal: pathname !== "/" });
+  if (entry.pathname !== pathname) setEntry({ pathname, internal: true });
   const surface = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,8 +45,10 @@ export function PageMotion({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   return (
-    <div className="site-content" ref={surface}>
-      {children}
-    </div>
+    <InternalNavigationContext.Provider value={entry.internal}>
+      <div className="site-content" ref={surface}>
+        {children}
+      </div>
+    </InternalNavigationContext.Provider>
   );
 }

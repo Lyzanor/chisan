@@ -9,6 +9,15 @@ title: "Conservas de pescado y marisco: especie, elaboración y origen"
 description: "Explora Ramón Peña y Güeyu Mar para leer el detalle de una conserva: especie, preparación, cobertura y lugar de elaboración."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/conservas.webp
+  alt: Lata abierta de sardinas
+  width: 1600
+  height: 1068
+  credit: Towfiqu barbhuiya / Unsplash
+  sourceUrl: https://unsplash.com/photos/ONQaaWF1EPI
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: ramon
     title: Conservas Ramón Peña · Elaboraciones de pescado y marisco

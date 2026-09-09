@@ -42,8 +42,21 @@ are authored as ordinary CommonMark. There is no parallel JSON text store.
 
 `lib/guides/markdown.ts` parses the document into the validated rendering model in
 `schema.ts`. This in-memory model is derived, never a second editable authority.
-Markdown is rendered without executable MDX or raw HTML. Images require a future
-explicit provenance contract; inline Markdown image embeds are not rendered.
+Markdown is rendered without executable MDX or raw HTML. Inline Markdown image
+embeds are not rendered. Every article requires a `cover` in front matter with
+`src`, `alt`, pixel `width` and `height`, `credit`, HTTPS `sourceUrl` and
+`licenseUrl`, and the actual `checkedAt` date. Local WebP files live under
+`public/editorial/guides/`; the guide gate checks existence and intrinsic dimensions.
+The article displays source and license attribution; cards use the same image
+as a decorative thumbnail beside the linked headline. Metadata includes the
+cover in Article, Open Graph and Twitter output.
+
+Licensed context photography may be shared by related articles. It must fit the
+subject, and its caption must distinguish an illustrative scene from evidence
+about a named producer, denomination or territory. It does not enter producer
+CSV image fields. The current context photographs come from Unsplash under the
+linked Unsplash License, with credits retained in each article. Replace a cover
+with a more specific documentary image when suitable licensed material exists.
 
 Use `## Section title {#stable-anchor}` for a section. The explicit anchor is
 optional, but recommended to preserve incoming links when a heading changes.
@@ -60,8 +73,7 @@ and unknown related guide slugs fail validation. A map includes exactly its
 section's references; multiple selection sections are supported.
 
 Names, images, coordinates and current profile URLs resolve from the CSV catalog.
-The initial presentation uses typography and article context. Documentary
-photography can be added with an explicit article image and provenance. Maps load
+Article covers use the explicit image and provenance fields above. Maps load
 on request through the shared producer-map renderer and contain exactly the selected
 producers with published coordinates. Unmapped producers keep their article entry
 and profile link. Marker activation uses the shared name-description-image card,

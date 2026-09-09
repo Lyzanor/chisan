@@ -1,3 +1,4 @@
+import { isInternalHomeDocumentEntry } from "../lib/location/home-entry";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
@@ -507,4 +508,15 @@ test("area-map centering is silent, permission-gated and same-area only", () => 
   assert.match(explorer, /createCatalogPositionRequest/);
   assert.doesNotMatch(explorer, /watchPosition/);
   assert.doesNotMatch(explorer, /localStorage\.(?:setItem|removeItem)/);
+});
+
+
+test("home resume distinguishes direct entries, reloads and internal document returns", () => {
+  const origin = "https://chisan.app";
+  assert.equal(isInternalHomeDocumentEntry({ origin, referrer: "" }), false);
+  assert.equal(isInternalHomeDocumentEntry({ origin, referrer: "https://example.org/search" }), false);
+  assert.equal(isInternalHomeDocumentEntry({ origin, referrer: `${origin}/es/barcelona`, navigationType: "navigate" }), true);
+  assert.equal(isInternalHomeDocumentEntry({ origin, referrer: `${origin}/es/guias`, navigationType: "navigate" }), true);
+  assert.equal(isInternalHomeDocumentEntry({ origin, referrer: `${origin}/es/barcelona`, navigationType: "reload" }), false);
+  assert.equal(isInternalHomeDocumentEntry({ origin, referrer: "", navigationType: "back_forward" }), true);
 });

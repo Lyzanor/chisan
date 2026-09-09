@@ -9,6 +9,15 @@ title: "Picual, arbequina y hojiblanca: comparar aceites con nombre propio"
 description: Una guía para explorar tres variedades mediante Reserva Familiar de Oro Bailén y Rincón de la Subbética, con productores y mapa.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/aceite.webp
+  alt: Aceite de oliva en una aceitera de cristal
+  width: 1600
+  height: 2220
+  credit: Roberta Sorge / Unsplash
+  sourceUrl: https://unsplash.com/photos/uOBApnN_K7w
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: oro
     title: Oro Bailén · Reserva Familiar Picual y Arbequina

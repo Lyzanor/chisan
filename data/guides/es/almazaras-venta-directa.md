@@ -9,6 +9,15 @@ title: "Almazaras con venta directa: preparar un pedido de aceite"
 description: Encuentra canales propios de Oro Bailén y Almazaras de la Subbética y aprende qué comprobar sobre campaña, formatos y entrega.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/aceite.webp
+  alt: Aceite de oliva en una aceitera de cristal
+  width: 1600
+  height: 2220
+  credit: Roberta Sorge / Unsplash
+  sourceUrl: https://unsplash.com/photos/uOBApnN_K7w
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: tienda-oro
     title: Oro Bailén · Acceso a la tienda propia

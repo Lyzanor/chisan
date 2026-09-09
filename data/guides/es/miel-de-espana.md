@@ -9,6 +9,15 @@ slug: miel-de-espana
 topic: Miel
 title: "Miel de España: origen, floraciones y productores que conocer"
 description: Una guía para conocer la miel a través de su origen, sus floraciones y quienes la producen, con apicultores del catálogo y un mapa para explorarlos.
+cover:
+  src: /editorial/guides/miel.webp
+  alt: Miel y cuchara de madera sobre un panal
+  width: 1600
+  height: 1060
+  credit: Alexander Mils / Unsplash
+  sourceUrl: https://unsplash.com/photos/nesUgwNX3u4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: norma-miel
     title: BOE · Norma de calidad relativa a la miel

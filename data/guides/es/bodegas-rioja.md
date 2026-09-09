@@ -9,6 +9,15 @@ title: "Bodegas de Rioja: dos miradas al vino desde Haro"
 description: Conoce Muga y López de Heredia en Haro y aprende a comparar sus vinos por referencia, elaboración y crianza, con fichas y mapa.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: muga
     title: Bodegas Muga · La bodega

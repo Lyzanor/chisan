@@ -1,8 +1,13 @@
+import { GuideCover } from "./guide-cover";
 import Link from "next/link";
 
 import { GuideMarkdown } from "./guide-markdown";
 import { GuideMap } from "./guide-map";
-import { GUIDES_PATH, guidePath, type GuideProducer } from "@/lib/guides/catalog";
+import {
+  GUIDES_PATH,
+  guidePath,
+  type GuideProducer,
+} from "@/lib/guides/catalog";
 import { buildGuideStructuredData } from "@/lib/guides/metadata";
 import type { Guide } from "@/lib/guides/schema";
 import { serializeStructuredData } from "@/lib/site-structured-data";
@@ -60,6 +65,7 @@ export function GuideArticle({
             </time>
           </p>
         </header>
+        <GuideCover guide={guide} />
         <div className={styles.articleLayout}>
           <aside className={styles.contents}>
             <nav aria-label="En esta guía">

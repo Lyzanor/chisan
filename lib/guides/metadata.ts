@@ -29,10 +29,27 @@ export function buildGuideMetadata(guide?: Guide): Metadata {
       siteName: SITE_NAME,
       locale: "es_ES",
       ...(guide
+        ? {
+            images: [
+              {
+                url: guide.cover.src,
+                alt: guide.cover.alt,
+                width: guide.cover.width,
+                height: guide.cover.height,
+              },
+            ],
+          }
+        : {}),
+      ...(guide
         ? { publishedTime: guide.publishedAt, modifiedTime: guide.updatedAt }
         : {}),
     },
-    twitter: { card: "summary", title, description },
+    twitter: {
+      card: guide ? "summary_large_image" : "summary",
+      title,
+      description,
+      ...(guide ? { images: [guide.cover.src] } : {}),
+    },
   };
 }
 
@@ -71,6 +88,7 @@ export function buildGuideStructuredData(guide: Guide) {
         "@id": `${url}#article`,
         url,
         headline: guide.title,
+        image: new URL(guide.cover.src, SITE_ORIGIN).href,
         description: guide.description,
         inLanguage: guide.locale,
         datePublished: guide.publishedAt,

@@ -6,7 +6,13 @@ import {
   CircleNotchIcon,
   NavigationArrowIcon,
 } from "@phosphor-icons/react";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 
 import { MANUAL_AREA_SELECTION_HASH } from "@/lib/catalog-navigation";
 import type { Locale } from "@/lib/i18n/locales";
@@ -22,9 +28,11 @@ import {
 } from "@/lib/location/location-onboarding";
 import {
   browserLocationStorage,
-  dismissLocationOnboarding,
   useLocationOnboardingState,
 } from "@/lib/location/saved-location-area";
+
+import { isInternalHomeDocumentEntry } from "@/lib/location/home-entry";
+import { InternalNavigationContext } from "./page-motion";
 
 export type LocationOnboardingProps = {
   areas: readonly LocationOnboardingArea[];
@@ -39,7 +47,9 @@ type RequestState =
   | { status: "resolved"; areaLabel: string }
   | { status: "failed"; reason: CatalogLocationFailureReason };
 
-function subscribeToManualSelectionRequest(onStoreChange: () => void): () => void {
+function subscribeToManualSelectionRequest(
+  onStoreChange: () => void,
+): () => void {
   window.addEventListener("hashchange", onStoreChange);
   window.addEventListener("popstate", onStoreChange);
   return () => {
@@ -49,7 +59,17 @@ function subscribeToManualSelectionRequest(onStoreChange: () => void): () => voi
 }
 
 function readManualSelectionRequest(): boolean {
-  return window.location.hash === MANUAL_AREA_SELECTION_HASH;
+  return (
+    window.location.hash === MANUAL_AREA_SELECTION_HASH ||
+    isInternalHomeDocumentEntry({
+      referrer: document.referrer,
+      origin: window.location.origin,
+      navigationType: (
+        performance.getEntriesByType("navigation")[0] as
+          PerformanceNavigationTiming | undefined
+      )?.type,
+    })
+  );
 }
 
 function readServerManualSelectionRequest(): false {
@@ -83,6 +103,7 @@ export function LocationOnboarding({
   browserLocales,
 }: LocationOnboardingProps) {
   const router = useRouter();
+  const internalNavigation = useContext(InternalNavigationContext);
   const [request, setRequest] = useState<RequestState>({ status: "idle" });
   const requestGenerationRef = useRef(0);
   const stored = useLocationOnboardingState();
@@ -92,14 +113,14 @@ export function LocationOnboarding({
     readServerManualSelectionRequest,
   );
 
-  // A saved area resumes on its own; only an explicit manual request keeps the
-  // neutral country listing on screen. Forgetting it belongs to the profile.
+  // Direct entries may resume a saved area; internal returns keep the home readable.
+  // Forgetting a preference still belongs to the account profile.
   const resumeHref = resolveSavedLocationAreaHref({
     stored,
     areas,
     explicitLocale,
     browserLocales,
-    manualSelectionRequested,
+    manualSelectionRequested: manualSelectionRequested || internalNavigation,
   });
   const isLocating = request.status === "locating";
   const isPending = isLocating || request.status === "resolved";
@@ -143,7 +164,8 @@ export function LocationOnboarding({
         if (requestGenerationRef.current !== requestGeneration) return;
         const destination = areas.find(
           (area) =>
-            buildLocationAreaHref(area, explicitLocale, browserLocales) === href,
+            buildLocationAreaHref(area, explicitLocale, browserLocales) ===
+            href,
         );
         setRequest({
           status: "resolved",
@@ -157,19 +179,6 @@ export function LocationOnboarding({
     if (result.status === "failed") {
       setRequest({ status: "failed", reason: result.reason });
     }
-  }
-
-  function handleChooseManually() {
-    requestGenerationRef.current += 1;
-    // The manual home entry never discards a resolved preference. Replacing or
-    // forgetting that preference is an explicit profile action.
-    if (
-      stored?.onboarding !== "resolved" &&
-      request.status !== "resolved"
-    ) {
-      dismissLocationOnboarding();
-    }
-    setRequest({ status: "idle" });
   }
 
   if (resumeHref) return null;
@@ -212,13 +221,6 @@ export function LocationOnboarding({
                 : messages.useLocation}
           </span>
         </button>
-        <a
-          className="location-onboarding__secondary"
-          href={MANUAL_AREA_SELECTION_HASH}
-          onClick={handleChooseManually}
-        >
-          {messages.chooseManually}
-        </a>
       </div>
       <p
         className="location-onboarding__status"
@@ -232,7 +234,7 @@ export function LocationOnboarding({
             ? messages.locating
             : request.status === "resolved"
               ? `${messages.title}: ${request.areaLabel}`
-            : ""}
+              : ""}
       </p>
     </section>
   );

@@ -749,3 +749,19 @@ buyers or notification subscribers. Removing a favorite or deactivating an
 account reduces the count. The statistics query rechecks active owner and exact
 producer premium access in the same statement; visitor totals are unaffected by
 the favorite aggregation. Public supporter attribution retains its separate opt-in.
+
+## Homepage community selection
+
+The homepage may show up to four producers with active owner memberships held
+by active accounts and up to four active users with explicitly public profiles.
+Private and unlisted users never enter this discovery surface. The projection
+contains only producer catalog identity, public names, profile routes and avatar
+routes; owner identity, emails, account IDs and avatar bytes remain server-side.
+Santa Coloma de Gramenet is currently preferred, then stable name/creation order.
+This is a replaceable presentation choice in `lib/accounts/home-community.ts`,
+not editorial eligibility or an endorsement score. Revocation and visibility
+changes apply on the next server render; no persistent homepage cache is used.
+The community block degrades to a registration link if accounts are disabled or
+unavailable. Homepage plans describe the free account and premium capabilities
+with a contact route; they do not activate checkout or imply a shared account
+and producer entitlement.

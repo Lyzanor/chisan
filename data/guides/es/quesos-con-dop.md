@@ -9,6 +9,15 @@ title: "Quesos con DOP: cómo reconocer el origen y encontrar queserías"
 description: Aprende a distinguir el nombre protegido, la quesería y la pieza, con ejemplos de Queso Zamorano y Cabrales enlazados al catálogo.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/queso.webp
+  alt: Queso de corteza blanca con aceitunas sobre papel
+  width: 1600
+  height: 1256
+  credit: R. G / Unsplash
+  sourceUrl: https://unsplash.com/photos/QP7AGEp0Dy4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: mapa
     title: MAPA · Denominaciones de Origen e Indicaciones Geográficas Protegidas

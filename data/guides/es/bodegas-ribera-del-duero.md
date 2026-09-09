@@ -9,6 +9,15 @@ title: "Bodegas de Ribera del Duero: Peñafiel y Pesquera como punto de partida"
 description: Explora Protos y Emilio Moro en Ribera del Duero, con detalles para leer sus vinos, distinguir sedes y preparar una visita informada.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: protos
     title: DO Ribera del Duero · Protos Bodega Ribera Duero de Peñafiel

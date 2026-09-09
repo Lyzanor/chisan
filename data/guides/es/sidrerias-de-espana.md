@@ -9,6 +9,15 @@ title: "Sidrerías de España: seguir la manzana hasta la elaboración"
 description: Conoce Trabanco, Zapiain y Mooma a través de sus sidras y proyectos, con claves para distinguir productor, producto y experiencia de visita.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/manzanas.webp
+  alt: Cesta de manzanas
+  width: 1600
+  height: 2000
+  credit: Clay Banks / Unsplash
+  sourceUrl: https://unsplash.com/photos/5brJoUuOFnU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: trabanco
     title: Sidra Trabanco · Llagar y elaboraciones

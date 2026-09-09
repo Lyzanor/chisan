@@ -9,6 +9,15 @@ title: "Legumbres de España: variedades, cultivo y productores"
 description: Acércate a la Faba de Lourenzá y la mongeta del ganxet a través de Terras da Mariña y Can Casamada, con fichas y mapa.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/huerta.webp
+  alt: Cesta con hortalizas variadas
+  width: 1600
+  height: 1067
+  credit: leonie wise / Unsplash
+  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: terras-marina
     title: Terras da Mariña · Faba de Lourenzá y verdina

@@ -9,6 +9,15 @@ title: "Cava: elaboradores, territorios y detalles de la etiqueta"
 description: Explora Celler Kripta y Codorníu y aprende a separar denominación, dosaje y crianza al conocer un cava y su elaborador.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: kripta-registro
     title: DO Cava · Empresas elaboradoras certificadas, listado de marzo de 2025

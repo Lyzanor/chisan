@@ -9,6 +9,15 @@ title: "Una ruta entre queserías de Cabrales: granja, elaboración y visita"
 description: Prepara una salida a Vega de Tordín y El Cabriteru con actividades de visita documentadas, mapa y preguntas para reservar con cada quesería.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/queso.webp
+  alt: Queso de corteza blanca con aceitunas sobre papel
+  width: 1600
+  height: 1256
+  credit: R. G / Unsplash
+  sourceUrl: https://unsplash.com/photos/QP7AGEp0Dy4
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: vega
     title: Turismo Asturias · Quesería Vega de Tordín

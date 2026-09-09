@@ -9,6 +9,15 @@ title: "Productores de Extremadura: queso y miel para conocer el territorio"
 description: Acércate a Finca Pascualete y Apícola Laparra y sigue dos elaboraciones extremeñas a través de sus productores, fuentes y fichas.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/huerta.webp
+  alt: Cesta con hortalizas variadas
+  width: 1600
+  height: 1067
+  credit: leonie wise / Unsplash
+  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: pascualete
     title: Finca Pascualete · La Retorta

@@ -1,3 +1,4 @@
+import { GuideCover } from "@/components/guides/guide-cover";
 import Link from "next/link";
 import type { ProducerIdentity } from "@/lib/csv-catalog";
 import {
@@ -39,14 +40,12 @@ export function GuideHighlights({ producer }: { producer?: ProducerIdentity }) {
       <div className={styles.highlightGrid}>
         {guides.map((guide) => (
           <article key={guide.slug}>
+            <GuideCover guide={guide} compact />
             <p className={styles.eyebrow}>{guide.topic}</p>
             <h3>
               <Link href={guidePath(guide.slug)}>{guide.title}</Link>
             </h3>
             <p>{guide.description}</p>
-            <Link href={guidePath(guide.slug)} className={styles.textLink}>
-              Leer la guía <span aria-hidden="true">↗</span>
-            </Link>
           </article>
         ))}
       </div>

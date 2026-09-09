@@ -9,6 +9,15 @@ title: "Bodegas de Rías Baixas: albariño y otras variedades que seguir"
 description: Acércate a Terras Gauda y Pazo Señorans para leer variedades, origen y elaboración en Rías Baixas, con fichas de las bodegas y mapa.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-06
+cover:
+  src: /editorial/guides/vino.webp
+  alt: Copa de vino tinto
+  width: 1600
+  height: 2240
+  credit: Marios Gkortsilas / Unsplash
+  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  licenseUrl: https://unsplash.com/license
+  checkedAt: 2026-09-09
 sources:
   - id: terras
     title: Terras Gauda · La bodega y sus vinos
