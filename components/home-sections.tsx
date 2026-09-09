@@ -10,9 +10,21 @@ import { GuideHighlights } from "@/components/guides/guide-highlights";
 import { SectionReveal } from "@/components/section-reveal";
 import { HomeCommunity } from "@/components/home-community";
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
+import type { CategoryPresentation } from "@/lib/i18n/categories";
 import styles from "./home.module.css";
 
-export function HomeSections({ producerCount }: { producerCount: number }) {
+/** A category as the registry presents it, with how many producers lead with it. */
+export type HomeCategoryCount = CategoryPresentation & { count: number };
+
+export function HomeSections({
+  producerCount,
+  categoryCounts,
+}: {
+  producerCount: number;
+  categoryCounts: readonly HomeCategoryCount[];
+}) {
+  const numberFormat = new Intl.NumberFormat("es-ES");
+
   return (
     <SectionReveal>
       <section
@@ -21,9 +33,7 @@ export function HomeSections({ producerCount }: { producerCount: number }) {
         aria-label="Chisan en datos"
       >
         <p>
-          <strong>
-            {new Intl.NumberFormat("es-ES").format(producerCount)}
-          </strong>
+          <strong>{numberFormat.format(producerCount)}</strong>
           <span>productores en el catálogo</span>
         </p>
         <div>
@@ -34,6 +44,22 @@ export function HomeSections({ producerCount }: { producerCount: number }) {
             directamente.
           </p>
         </div>
+        {categoryCounts.length > 0 ? (
+          <ul
+            className={styles.categories}
+            aria-label="Categorías con más productores"
+          >
+            {categoryCounts.map((category) => (
+              <li key={category.token}>
+                <span className={styles.categoryIcon} aria-hidden="true">
+                  {category.icon}
+                </span>
+                <span>{category.label}</span>
+                <b>{numberFormat.format(category.count)}</b>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </section>
       <div data-reveal>
         <GuideHighlights />

@@ -1289,3 +1289,31 @@ using the production server for behavior tests to preserve the other dev session
   accounts explicitly disabled. Browser checks confirmed the public homepage and
   the disabled-account fallback. Authenticated interaction and responsive checks
   are recorded in the preceding local QA entry.
+
+## 2026-09-09 — Featured category counts on the homepage
+
+- The «Chisan en datos» section now carries twelve category counts under the
+  published producer total, drawn with the same registry icons the map uses on
+  its markers. Each producer counts once, under the primary category that also
+  chooses its marker, so no producer is counted twice through its additional
+  categories.
+- Only the most numerous categories appear, and «Otros», «Despensa artesanal»
+  and «Legumbres y cereales» stay out: a catch-all and two tokens that overlap a
+  more specific category and reuse its map icon, which say nothing on their own
+  beside a number. The list is a selection, not a breakdown, so its label reads
+  «Categorías con más productores» and never claims to add up to the total.
+- Rejected: all twenty-nine categories. It read as a taxonomy dump, ran to
+  fifteen rows and 800px at 375px wide, and gave the ambiguous tokens the same
+  weight as «Vino».
+- Rejected: fixed-width columns to align the counts under each other. At every
+  width some cell was narrower than «Dulces y repostería», so the longest labels
+  wrapped and every row in the grid grew with them. The rows now size to their
+  own content and wrap as a group, which keeps each label on one line.
+- Rejected: linking each row into the catalog. The `category` query parameter is
+  carried by the country route but the area listing filters on the client, so a
+  home link could not promise a filtered arrival.
+- Rows are quiet hairline outlines with the count in ink and tabular figures, so
+  the large green total keeps the emphasis in the section.
+- Measured at 1280, 768 and 375px: two, three and seven rows; 80px, 125px and
+  301px of rows; no label wrapped and no horizontal page overflow at any width.
+  The counts are server-rendered, so they are present before JavaScript.

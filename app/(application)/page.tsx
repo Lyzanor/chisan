@@ -4,7 +4,10 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { NavigationLink } from "@/components/navigation-link";
 
 import { LocationOnboarding } from "@/components/location-onboarding";
-import { HomeSections } from "@/components/home-sections";
+import {
+  HomeSections,
+  type HomeCategoryCount,
+} from "@/components/home-sections";
 import {
   buildHomeAlternateSet,
   buildLocalizedMetadata,
@@ -19,6 +22,7 @@ import {
   listPublishedCountries,
   listCountryProducers,
 } from "@/lib/csv-catalog";
+import { getCategoryPresentation } from "@/lib/i18n/categories";
 import {
   buildCatalogScope,
   EXPLICIT_LOCALE_COOKIE,
@@ -42,6 +46,35 @@ import {
 import { SITE_NAME } from "@/lib/site";
 
 const HOME_LOCALE = "es" as const;
+
+// The featured categories describe the catalog's range. A catch-all and the two
+// tokens that overlap a more specific category, reusing its map icon, say
+// nothing on their own, so they stay out of the summary.
+const HOME_SUMMARY_SKIPPED_CATEGORIES = new Set([
+  "Otros",
+  "Despensa artesanal",
+  "Legumbres y cereales",
+]);
+const HOME_SUMMARY_CATEGORY_LIMIT = 12;
+
+/** The most numerous featured categories, each producer counted once. */
+function summarizeFeaturedCategories(
+  producers: readonly { category: string }[],
+): HomeCategoryCount[] {
+  const totals = new Map<string, number>();
+  for (const { category } of producers) {
+    if (HOME_SUMMARY_SKIPPED_CATEGORIES.has(category)) continue;
+    totals.set(category, (totals.get(category) ?? 0) + 1);
+  }
+
+  return [...totals]
+    .sort(([, first], [, second]) => second - first)
+    .slice(0, HOME_SUMMARY_CATEGORY_LIMIT)
+    .map(([category, count]) => ({
+      ...getCategoryPresentation(category, HOME_LOCALE),
+      count,
+    }));
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await loadMessages(HOME_LOCALE);
@@ -67,8 +100,10 @@ function ProjectSummary({
   explicitLocale,
   browserLocales,
   producerCount,
+  categoryCounts,
 }: {
   producerCount: number;
+  categoryCounts: readonly HomeCategoryCount[];
   countries: Countries;
   messages: Messages;
   locationAreas: readonly LocationOnboardingArea[];
@@ -184,18 +219,23 @@ function ProjectSummary({
           </p>
         </div>
       </section>
-      <HomeSections producerCount={producerCount} />
+      <HomeSections
+        producerCount={producerCount}
+        categoryCounts={categoryCounts}
+      />
     </main>
   );
 }
 
 export default async function HomePage() {
   const countries = listPublishedCountries();
-  const producerCount = (
+  const producers = (
     await Promise.all(
       countries.map((country) => listCountryProducers(country.slug)),
     )
-  ).reduce((total, producers) => total + producers.length, 0);
+  ).flat();
+  const producerCount = producers.length;
+  const categoryCounts = summarizeFeaturedCategories(producers);
   const locationAreas = listEnabledLocationAreas({
     countries,
     locale: HOME_LOCALE,
@@ -208,6 +248,7 @@ export default async function HomePage() {
   return (
     <ProjectSummary
       producerCount={producerCount}
+      categoryCounts={categoryCounts}
       countries={countries}
       messages={messages}
       locationAreas={locationAreas}
