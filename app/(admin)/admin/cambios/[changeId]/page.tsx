@@ -1,4 +1,6 @@
 import { ProducerProductChanges } from "@/components/account/producer-product-changes";
+import { ProducerChangeIntakeRecord } from "@/components/admin/producer-change-intake";
+import { readProducerChangeIntake } from "@/lib/accounts/producer-change-intake";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -208,6 +210,8 @@ export default async function AdminChangeDetailPage({
           </dl>
         </section>
       </div>
+
+      <ProducerChangeIntakeRecord intake={readProducerChangeIntake(detail.audit)} />
 
       {detail.execution ? (
         <section className="admin-panel" aria-labelledby="execution-record-title">

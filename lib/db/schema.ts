@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import type { ProducerContentChange } from "../accounts/producer-content-change";
+import type { AssistantState, InboundMessage } from "../whatsapp/domain";
 import {
   bigint,
   boolean,
@@ -24,7 +25,6 @@ import {
 const timestampWithTimezone = (name: string) =>
   timestamp(name, { mode: "date", withTimezone: true });
 
-// Inactive storage preparation only; no WhatsApp routes or provider are shipped.
 // Private channel bindings and a durable inbox; neither is published catalog data.
 export const whatsappLinks = pgTable("whatsapp_links", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -36,7 +36,7 @@ export const whatsappLinks = pgTable("whatsapp_links", {
   tokenExpiresAt: timestampWithTimezone("token_expires_at"),
   expiresAt: timestampWithTimezone("expires_at").notNull(),
   timeZone: varchar("time_zone", { length: 40 }).notNull(),
-  state: jsonb("state"),
+  state: jsonb("state").$type<AssistantState>(),
   createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
 }, table => [
   uniqueIndex("whatsapp_links_sender_uidx").on(table.sender),
@@ -49,7 +49,7 @@ export const whatsappLinks = pgTable("whatsapp_links", {
 export const whatsappInbox = pgTable("whatsapp_inbox", {
   id: varchar("id", { length: 200 }).primaryKey(),
   sender: varchar("sender", { length: 15 }).notNull(),
-  message: jsonb("message").notNull(),
+  message: jsonb("message").$type<InboundMessage>().notNull(),
   receivedAt: timestampWithTimezone("received_at").notNull().defaultNow(),
   processedAt: timestampWithTimezone("processed_at"),
   reply: text("reply"),

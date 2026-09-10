@@ -1423,3 +1423,21 @@ using the production server for behavior tests to preserve the other dev session
   accounts and statistics disabled. Its producer HTML includes the new layout,
   contact widget and public sources. Public and disabled-account behavior was
   checked before pushing the release.
+
+## 2026-09-11 — WhatsApp intake staged without activation
+
+- The producer entry reuses the account layout and explains the pending pilot;
+  proposal provenance reuses the private admin definition list and history table.
+- Verified the disabled-account fallback at `/cuenta/whatsapp` in a local
+  production build at 390×844 and 1440×1000. Text and catalog exit remain legible
+  without horizontal clipping. Screenshots are local artifacts under
+  `output/playwright/whatsapp-disabled-{mobile,desktop}.png`.
+- Preview `chisan-a17oxkp8k-lyzanors-projects.vercel.app` returned the same
+  disabled-account fallback. Its callback returned the exact verification
+  challenge (200), while POST intake remained unavailable (503).
+- The complete `pnpm verify:ai` gate passed, including 13 deterministic WhatsApp
+  tests and isolated review/publication workflow coverage. Production's runtime
+  diagnostic reported 18/18 migrations and valid permissions. No DDL was needed.
+- Authenticated linking, populated admin provenance and live provider intake
+  still require the isolated activation smoke checks. This staged release does
+  not certify the active producer journey or enable inference.

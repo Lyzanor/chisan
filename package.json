@@ -52,7 +52,7 @@
     "producer:ids:locked": "node scripts/with-producer-id-lock.mjs",
     "test:producer-id-lock": "node --test scripts/test-producer-id-lock.mjs",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm check:content && pnpm check:guides",
-    "verify:ai": "pnpm check:docs && pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior && pnpm test:content && pnpm test:agents && pnpm test:guides",
+    "verify:ai": "pnpm check:docs && pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior && pnpm test:content && pnpm test:agents && pnpm test:guides && pnpm test:whatsapp",
     "test:agents": "node --conditions=react-server --import tsx --test scripts/test-catalog-agents.ts scripts/test-public-expanded.ts scripts/test-webmcp.ts",
     "check:docs": "node scripts/check-docs.mjs",
     "check:content": "tsx scripts/check-producer-content.ts",
@@ -60,7 +60,8 @@
     "producer:inspect": "tsx scripts/inspect-producer.ts",
     "test:content": "tsx --test scripts/test-product-commerce.ts scripts/test-producer-content.ts scripts/test-producer-inspection.ts scripts/test-producer-content-render.ts scripts/test-producer-product-changes.ts scripts/test-youtube-player.ts",
     "check:guides": "tsx scripts/check-guides.ts",
-    "test:guides": "tsx --test scripts/test-guides.ts"
+    "test:guides": "tsx --test scripts/test-guides.ts",
+    "test:whatsapp": "node --conditions=react-server --import tsx --test scripts/test-whatsapp.ts"
   },
   "dependencies": {
     "@clerk/localizations": "^4.16.0",

@@ -54,6 +54,10 @@ offer a retry and do not claim that the account has no follows. The existing
 public attribution opt-in applies to the renamed follower disclosure; private
 identities never enter the timeline or the public selection automatically.
 
+The optional [WhatsApp assistant](WHATSAPP_ASSISTANT.md) binds a sender to an
+authenticated, authorized producer account and creates ordinary reviewed product
+proposals. It does not grant ownership, entitlements or publication permission.
+
 ## Boundary and sources of truth
 
 The catalog, account workflows and authentication have distinct owners:
@@ -298,6 +302,9 @@ ownership documents. If document upload is added, use private object storage,
 short-lived read URLs, retention limits and a separate artifact table.
 
 ## Community suggestions
+
+See [Editing intake and publication](EDITING_WORKFLOW.md) for the complete map
+from web, WhatsApp and community input to review and canonical publication.
 
 A producer nobody has claimed is described entirely from editorial research and
 public sources, so the readers who know it are often the first to notice a stale

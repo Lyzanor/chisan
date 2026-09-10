@@ -10,6 +10,11 @@ resource identifiers or secret values into this file.
 
 ## Environment contract
 
+The unprovisioned WhatsApp assistant stays off by default. Its separate Meta,
+OpenAI, migration and recovery-scheduler activation steps are in
+[WhatsApp assistant](WHATSAPP_ASSISTANT.md). These credentials are runtime
+assistant credentials, independent of local editorial translation providers.
+
 Production uses its dedicated Clerk instance and PostgreSQL database. The
 expanded-profile capability and its CSV fields do not depend on a payment
 provider. Stripe is the currently implemented payment adapter, its activation is
@@ -676,7 +681,8 @@ npx pnpm producer:change show <change-request-uuid> --json
 
 List output excludes private notes and full snapshots; `show` includes them for
 an operator with database access. The versioned `show --json` schema currently
-uses version `2` and includes the active execution (or latest attempt), its
+uses version `4` and includes validated submission provenance at `request.intake`
+(or `null` for older records), the active execution (or latest attempt), its
 durable IDs and timestamps, and the calculated recovery-eligibility time.
 Neither command mutates request state or the catalog. Each capability uses a
 separate Neon identity and never falls back to the application's `DATABASE_URL`

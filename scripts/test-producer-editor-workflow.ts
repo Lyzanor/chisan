@@ -4,6 +4,7 @@ import test from "node:test";
 import { PGlite } from "@electric-sql/pglite";
 import { drizzle } from "drizzle-orm/pglite";
 import { eq } from "drizzle-orm";
+import { readProducerChangeIntake } from "../lib/accounts/producer-change-intake";
 import * as schema from "../lib/db/schema";
 import { findProducerById } from "../lib/csv-catalog";
 import { loadProducerContent } from "../lib/catalog/content";
@@ -73,6 +74,7 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
     };
     function form(state = empty, intent = "draft") {
       const result = new FormData();
+      result.set("intake", JSON.stringify({ version: 1, channel: "whatsapp" }));
       for (const field of PRODUCER_EDITABLE_FIELDS) {
         const value = producer!.fields[field.key] ?? "";
         if (field.kind === "categories" || field.kind === "sales-channels")
@@ -184,6 +186,13 @@ test("owner drafts, review and v2 publication preserve products and enforce exac
       "Queso de prueba",
     );
     assert.equal(submitted.requiredEntitlementKey, "producer.profile.premium");
+    const submissionAudit = await db.select().from(schema.auditEvents)
+      .where(eq(schema.auditEvents.targetId, submitted.id));
+    assert.deepEqual(
+      readProducerChangeIntake(submissionAudit),
+      { version: 1, channel: "web" },
+      "form input cannot spoof the server-owned channel",
+    );
     await assert.rejects(
       pg.query(
         "update producer_change_requests set content_change = null where id = $1",

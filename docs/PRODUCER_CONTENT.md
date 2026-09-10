@@ -193,6 +193,11 @@ new attempt must use the current revision; no timeout adopts an unknown edit.
 
 ## Producer product editor
 
+The optional [WhatsApp assistant](WHATSAPP_ASSISTANT.md) is another input channel
+for new product proposals under the same permission and review boundary. Its
+launch dates remain private review notes and its photos are extraction inputs,
+not published gallery assets.
+
 An active producer member can upload, edit, reorder and remove up to five
 standalone gallery images for a claimed free profile. Products and all images
 attached to products still require the exact `producer.profile.premium`

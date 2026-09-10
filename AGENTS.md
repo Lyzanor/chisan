@@ -11,6 +11,12 @@ places. Make participation useful and the public experience understandable.
 Prefer a small working capability over speculative infrastructure. A validator
 checks consistency; people remain responsible for editorial judgement.
 
+Keep Chisan simple, flexible and extensible. Reuse the definitions that own each
+field, make affected consumers easy to find, and isolate external services in
+replaceable adapters. Add abstractions when a concrete capability needs them;
+the catalog and ordinary editing workflow must remain useful without an AI
+provider or messaging channel.
+
 Three kinds of guidance have different weight:
 
 - **Invariants** protect identity, factual authority, privacy and authorization.

@@ -59,6 +59,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
           <NavigationLink href="/cuenta/cambios" activePath="/cuenta/cambios">Cambios de perfil</NavigationLink>
           <NavigationLink href="/cuenta/sugerencias" activePath="/cuenta/sugerencias">Sugerencias</NavigationLink>
           {isB2BEnabled() ? <NavigationLink href={B2B_ROOT} activePath={B2B_ROOT}>Profesional</NavigationLink> : null}
+          <NavigationLink href="/cuenta/whatsapp" activePath="/cuenta/whatsapp">WhatsApp</NavigationLink>
           {staff ? <Link href="/admin">Revisión</Link> : null}
         </nav>
         {children}

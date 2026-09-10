@@ -50,6 +50,10 @@ import { dateSubmittedProducts } from "./product-update-dates";
 import { producerContentSchema } from "../catalog/content-schema";
 
 import { assertProducerMediaReferences } from "./producer-media";
+import {
+  producerChangeIntakeSchema,
+  type ProducerChangeIntake,
+} from "./producer-change-intake";
 
 const CHANGE_MAX_OPEN_PER_ACCOUNT = 10;
 const CHANGE_MAX_SUBMISSIONS_PER_DAY = 25;
@@ -63,6 +67,7 @@ export type ProducerChangeFormState = Readonly<{
   draftId?: string;
   draftVersion?: number;
   notice?: string;
+  submittedId?: string;
 }>;
 
 function readSubmittedProducerChangeValues(
@@ -127,6 +132,8 @@ function producerChangeFormError(
 }
 
 type SubmissionDependencies = {
+  intake?: ProducerChangeIntake;
+  submissionResponse?: "redirect" | "state";
   getDatabase: () => Database;
   requireCurrentAccount: () => Promise<{ id: string }>;
   hasProducerAccess: (
@@ -151,6 +158,9 @@ function producerEditPath(country: string, producerId: number) {
 export function createProducerChangeSubmissionService(
   dependencies: SubmissionDependencies,
 ) {
+  const intake = producerChangeIntakeSchema.parse(
+    dependencies.intake ?? { version: 1, channel: "web" },
+  );
   const {
     getDatabase,
     requireCurrentAccount,
@@ -512,6 +522,7 @@ export function createProducerChangeSubmissionService(
           targetType: "producer_change_request",
           targetId: created.id,
           metadata: {
+            intake,
             country: parsed.data.country,
             producerId: parsed.data.producerId,
             fields: [
@@ -585,6 +596,17 @@ export function createProducerChangeSubmissionService(
         draftVersion: changeResult.lockVersion,
         notice:
           "Borrador guardado. Puedes continuar más tarde; todavía no se ha enviado para revisión.",
+      };
+    }
+    if (dependencies.submissionResponse === "state") {
+      return {
+        fieldErrors: {},
+        formError: null,
+        reloadRequired: false,
+        revision: (previousState?.revision ?? 0) + 1,
+        values: submittedValues,
+        submittedId: changeResult.id,
+        notice: "Cambios enviados para revisión editorial.",
       };
     }
     return redirectWithMessage(

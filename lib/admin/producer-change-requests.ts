@@ -36,6 +36,7 @@ import {
 } from "@/lib/csv-catalog";
 import { buildProducerHref } from "@/lib/catalog-navigation";
 import type { Database } from "@/lib/db";
+import { readProducerChangeIntake } from "@/lib/accounts/producer-change-intake";
 import {
   producerChangeRequestAuditEvents,
   producerChangeExecutions,
@@ -45,7 +46,7 @@ import {
   type ProducerChangeRequest,
 } from "@/lib/db/schema";
 
-export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 3;
+export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 4;
 export const ADMIN_PRODUCER_CHANGE_PAGE_SIZE = 25;
 export const ADMIN_PRODUCER_CHANGE_MAX_PAGE_SIZE = 100;
 export const PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS = 24 * 60 * 60 * 1_000;
@@ -657,6 +658,7 @@ export function serializeProducerChangeDetail(
       publicPath: detail.publicPath,
     }),
     request: {
+      intake: readProducerChangeIntake(detail.audit),
       baseRowHash: detail.change.baseRowHash,
       baseSnapshot: detail.change.baseSnapshot,
       patch: detail.change.patch,
