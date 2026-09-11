@@ -4,6 +4,31 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-11 — Website prominence and clean social/maps links on producer profiles
+
+final result: local QA passed; production release pending
+
+The producer profile (`[segment]/page.tsx`) separates the producer's official
+website from secondary social channels and Google Maps.
+
+The official website receives elevated presence via `.detail-website`: a
+distinct touch-friendly block with a clear Globe icon, uppercase section label,
+prominent legible web address (`strong`, 1.125rem) and external action indicator.
+Instagram, Facebook and Google Maps links are rendered in a compact horizontal
+flex row (`.detail-social-links`), omitting raw URL text and query parameters to
+display only the platform name alongside its brand/service icon.
+
+Rejected: rendering Instagram, Facebook and Google Maps as a vertical list with
+full URLs. Showing long pathnames and query identifiers added visual clutter
+without discovery value.
+Rejected: grouping the website inside the flat social links list without visual
+hierarchy. The primary website represents the producer's direct domain and
+warrants immediate recognition.
+
+Checked at 1440 x 1000 and 390 x 844 viewports. All interactive targets satisfy
+the 44px minimum touch height (`.detail-website` 48px, `.detail-social-links a` 44px).
+Zero horizontal overflow at both widths. Design checker passed with no regressions.
+
 ## 2026-09-08 — Guides published inside the Spanish catalog scope
 
 final result: local QA passed; production release pending

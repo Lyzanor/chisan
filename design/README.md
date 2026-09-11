@@ -228,7 +228,9 @@ profiles have no verification badge. Editorial `pendiente` gets a visible review
 notice, contact advice and an optional disclosure of recorded public source URLs
 and dates. Never expose claim status, claimant identity or private review notes.
 
-Website, Instagram, Facebook and Google Maps appear as labeled, readable URLs.
+The official website appears prominently with its address, while Instagram,
+Facebook and Google Maps appear as labeled external links showing only the
+service name.
 Contact and call actions both lead to the email/telephone widget beside Details;
 telephone-only profiles remain usable. The composer prepares email in the
 visitor's own application and explains that before continuing.

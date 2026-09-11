@@ -311,8 +311,7 @@ export default async function ProducerPage({
   const directionsHref = destination
     ? `https://www.google.com/maps/dir/?${new URLSearchParams({ api: "1", destination })}`
     : "";
-  const publicLinks = [
-    { url: website, label: messages.producer.website, Icon: GlobeIcon },
+  const socialLinks = [
     {
       url: instagram,
       label: messages.fieldLabels.instagram,
@@ -323,7 +322,11 @@ export default async function ProducerPage({
       label: messages.fieldLabels.facebook,
       Icon: FacebookLogoIcon,
     },
-    { url: maps, label: "Google Maps", Icon: MapPinIcon },
+    {
+      url: maps,
+      label: messages.fieldLabels.googleMaps || "Google Maps",
+      Icon: MapPinIcon,
+    },
   ].filter((link) => link.url);
   const profileQrPath = buildProducerHref(producer, {
     scope: buildCatalogScope(country),
@@ -527,20 +530,34 @@ export default async function ProducerPage({
                 </a>
               ) : null}
             </div>
-            {publicLinks.length ? (
+            {website ? (
+              <a
+                className="detail-website"
+                href={website}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GlobeIcon size={22} aria-hidden="true" />
+                <span>
+                  <small>{messages.producer.website}</small>
+                  <strong>
+                    {website
+                      .split(/[?#]/)[0]
+                      .replace(/^https?:\/\//, "")
+                      .replace(/\/$/, "")}
+                  </strong>
+                </span>
+                <ArrowUpRightIcon size={18} aria-hidden="true" />
+              </a>
+            ) : null}
+            {socialLinks.length ? (
               <ul className="detail-social-links">
-                {publicLinks.map(({ url, label, Icon }) => (
+                {socialLinks.map(({ url, label, Icon }) => (
                   <li key={label}>
                     <a href={url} target="_blank" rel="noreferrer">
-                      <Icon size={20} aria-hidden="true" />
-                      <span>
-                        <small>{label}</small>
-                        {url
-                          .split(/[?#]/)[0]
-                          .replace(/^https?:\/\//, "")
-                          .replace(/\/$/, "")}
-                      </span>
-                      <ArrowUpRightIcon size={16} aria-hidden="true" />
+                      <Icon size={18} aria-hidden="true" />
+                      <span>{label}</span>
+                      <ArrowUpRightIcon size={14} aria-hidden="true" />
                     </a>
                   </li>
                 ))}

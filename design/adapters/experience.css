@@ -329,15 +329,19 @@ body { min-height: 100svh; }
   align-items: center;
   gap: var(--chisan-space-3);
   margin-top: var(--chisan-space-4);
-  padding-block: var(--chisan-space-3);
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
   color: var(--chisan-color-moss-dark);
   text-decoration: none;
-  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+  min-height: 48px;
 }
 .detail-website > span { display: grid; flex: 1; gap: var(--chisan-space-1); min-width: 0; }
 .detail-website strong { font-size: 1.125rem; font-weight: 500; overflow-wrap: anywhere; }
-.detail-website small { font-size: 0.8125rem; color: var(--chisan-color-stone); }
+.detail-website small { font-size: 0.75rem; color: var(--chisan-color-stone); text-transform: uppercase; letter-spacing: 0.04em; }
 .detail-website svg { flex-shrink: 0; }
+.detail-website:hover { border-color: var(--chisan-color-moss); background: var(--chisan-color-moss-pale); }
 .detail-website:hover strong { text-decoration: underline; text-underline-offset: 4px; }
 .detail-actions svg { flex-shrink: 0; }
 .detail-visit-contact { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: start; gap: var(--chisan-space-6); margin-block: var(--chisan-space-8); }
@@ -393,7 +397,7 @@ body { min-height: 100svh; }
 .account-field textarea,
 .account-field select { border-radius: var(--chisan-radius-control); }
 
-:is(.area-link, .back-link, .account-button, .detail-actions a, .account-stat-card, .location-onboarding__secondary) {
+:is(.area-link, .back-link, .account-button, .detail-actions a, .detail-website, .account-stat-card, .location-onboarding__secondary) {
   transition: background-color var(--chisan-motion-immediate) var(--chisan-ease), border-color var(--chisan-motion-immediate) var(--chisan-ease), color var(--chisan-motion-immediate) var(--chisan-ease);
 }
 
@@ -542,12 +546,10 @@ body { min-height: 100svh; }
 .detail-profile-photos { grid-column: 2; grid-row: 2 / 4; min-width: 0; }
 .detail-hero-summary { grid-column: 1; grid-row: 3; min-width: 0; }
 .detail-hero--photographic .detail-intro { margin-top: 0; font-size: 1.125rem; }
-.detail-social-links { display: grid; gap: var(--chisan-space-1); list-style: none; padding: 0; margin: var(--chisan-space-4) 0 0; }
-.detail-social-links a { display: flex; align-items: center; gap: var(--chisan-space-3); min-height: 44px; padding-block: var(--chisan-space-2); color: var(--chisan-color-moss-dark); text-decoration: none; font-size: 0.875rem; }
+.detail-social-links { display: flex; flex-wrap: wrap; gap: var(--chisan-space-1) var(--chisan-space-4); list-style: none; padding: 0; margin: var(--chisan-space-3) 0 0; }
+.detail-social-links a { display: inline-flex; align-items: center; gap: var(--chisan-space-2); min-height: 44px; color: var(--chisan-color-moss-dark); text-decoration: none; font-size: 0.875rem; }
 .detail-social-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .detail-social-links svg { flex-shrink: 0; }
-.detail-social-links span { min-width: 0; overflow-wrap: anywhere; }
-.detail-social-links small { display: block; color: var(--chisan-color-stone); font-size: 0.75rem; }
 .detail-buy-link { display: inline-flex; align-items: center; gap: var(--chisan-space-2); min-height: 44px; color: var(--chisan-color-moss-dark); }
 .detail-location-hours, .detail-info-contact { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--chisan-space-8); align-items: start; margin-block: var(--chisan-space-8); padding-top: var(--chisan-space-8); border-top: var(--chisan-line) solid var(--chisan-color-hairline); }
 .detail-location-hours > .detail-map-card, .detail-info-contact > .detail-table-card { min-width: 0; padding: 0; margin: 0; border: 0; }
