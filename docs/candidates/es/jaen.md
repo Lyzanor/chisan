@@ -174,3 +174,34 @@ Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 
 | Mermeladas y Licores Santa Claudia | Alcalá la Real | `Conservas` — seasonal artisanal jams | Listed under ACEITES and CONSERVAS; Degusta Jaén and regional press describe a family workshop making jams without colourants or preservatives, at Avenida de Andalucía 15, 23680 Alcalá la Real. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <http://www.santaclaudia.es/> | Confirm the workshop and that the jams and liqueurs both reach the market under this producer’s own identity. |
 | Licores Riska | Andújar | `Destilados y licores` — liqueurs | Listed under BEBIDAS; company registers place Licores Riska SL at Carretera de la Estación 12, 23747 Andújar, in the factory it has occupied since 1958. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.licoresriska.com/> | The register classifies the company under wholesale trade (CNAE 4634). Confirm an own still or elaboration step rather than bottling and distributing third-party liqueur. |
 | Pago de Espejo | Andújar (Pol. Ind. Vega de Triana) | `Aceite` — extra virgin olive oil | Listed under ACEITES; its own legal notice gives a registered address at PI Vega de Triana, Calle Arcángel San Gabriel 4, 23740 Andújar (Jaén). | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://pagodeespejo.com/> | The registered address is an industrial estate and the brand name points elsewhere. Establish the grove and mill municipality before placing the row. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SCA DEL CAMPO SAN ISIDRO | Fuerte del Rey | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://oleofloroliva.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| SCA DOMINGO SOLÍS | Martos | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.domingosolis.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Secciones de crédito. |
+| SCA JESUS DEL GRAN PODER | Noalejo | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.aceitejesusdelgranpoder.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |
+| SCA NTRA SRA DE LA CABEZA | Campillo de Arenas | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.aceitecampilloarenas.com/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| SCA SAN ISIDRO | Castillo de Locubín | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://aceitestorrevigia.com/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |
+| SCA VIRGEN DE ALHARILLA | Porcuna | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coovihal.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |

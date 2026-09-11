@@ -183,3 +183,30 @@
 | Cerveza Moixa | nomadic activity around Mallorca | `Cerveza` | A current Moixa beer is sold and described as artisanal, but the identity calls itself nomadic. | [merchant page](https://productodeaqui.com/es/asociados/cervesa-moixa) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Establish who brews it and at which productive unit; exclude a contract-only label if no attributable unit exists. |
 | Finca Sa Punta | Sineu | `Vino` — grapes and wine | The listing links local grape production and traditional elaboration to Finca Sa Punta, but exposes no current product. | [merchant page](https://productodeaqui.com/es/asociados/finca-sa-punta) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm a current own wine offer and the productive unit responsible for vinification. |
 | Balealoe - L'Àloeb | Pina, Algaida | `Bebidas sin alcohol` | The producer grows aloe and says it makes both cosmetics and foods, but the current page exposes no own food product. | [merchant page](https://productodeaqui.com/es/asociados/balealoe-laloeb) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm a current drink offer attributable to the Pina unit; if its only current output is another food or cosmetics, recategorize or exclude it rather than widening this placeholder. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| COOP. MALVASIA DE BANYALBUFAR SCL | Banyalbufar | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.malvasiadebanyalbufar.com/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| VIDAUBA SCL | Felanitx | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.vidauba.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |

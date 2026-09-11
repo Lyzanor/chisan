@@ -145,3 +145,59 @@
 | Cooperativa Santiago Apóstol | Moral de Calatrava | `Aceite` — DOP Aceite Campo de Calatrava | The council lists the Moral de Calatrava mill and links it to the Moral Oro producer domain. | [Council directory](https://www.aceitecampodecalatrava.com/almazaras-con-d-o-p/) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm the current productive identity, own market offer and whether Moral Oro is a brand or the durable producer name; do not merge it with the unrelated homonymous cooperative already catalogued in Funes, Navarra. |
 | Cooperativa Agrícola El Santo | Granátula de Calatrava | `Aceite` — DOP Aceite Campo de Calatrava | The council lists the mill in Granátula de Calatrava and publishes a producer-domain contact. | [Council directory](https://www.aceitecampodecalatrava.com/almazaras-con-d-o-p/) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm current first-party activity and own offer; reconcile the directory name with Cooperativa Santo Cristo and its current legal identity. |
 | Baños de Fuensanta, S.L. | Bolaños de Calatrava | `Aceite` — DOP Aceite Campo de Calatrava | The council lists a registered mill at the Bolaños productive address and publishes its own domain. | [Council directory](https://www.aceitecampodecalatrava.com/almazaras-con-d-o-p/) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Establish the public producer identity and current own branded offer rather than relying only on mill registration. |
+
+## Castilla-La Mancha direct-sale register (RVDCLM) pass — 2026-09-11
+
+Scope: the 60 trade-named holders in the 339-record register, de-duplicated by
+holder and against the published area CSVs; 13 were already represented. The
+register accredits a named holder to sell its own declared products and
+publishes the holder, province, municipality, products and sale modalities. It
+does not establish current activity or a first-party channel, and its
+`Modalidades de venta` names authorised channels, so `Venta on line` there is a
+permission and never sets `Venta online`. Company names are truncated at 19
+characters in both the table and the CSV export. The 273 bare personal-name
+holders were not worked in this batch. Source ceiling: `data/csv/es/AGENTS.md`.
+Discovery URL for every row: <https://registroventadirecta.castillalamancha.es/>
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| El Progreso, S.C. d… | Villarrubia de los Ojos | `Vino` — wine, vinegar, beer or spirits | RVDCLM0080 accredits a cooperative's own drink output. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Villarpaz C.B. | Villarta de San Juan | `Frutos secos` — nuts | RVDCLM0082 accredits own nuts. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| S.C CC-Mancha Oleov… | Bolaños de Calatrava | `Aceite` — olive oil | RVDCLM0091 accredits a cooperative's own oil. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| S.C.A de C.L.M Ntra. Señora del Rosario | Alcubillas | `Vino` — wine, vinegar, beer or spirits | RVDCLM0098 accredits a cooperative's own drink output. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| Sdad.Coop.Santiago | Moral de Calatrava | `Aceite` — olive oil | RVDCLM0106 accredits a cooperative's own oil. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Grupo Montes Norte S. Coop. | Malagón | `Aceite` — olive oil | RVDCLM0113 accredits a cooperative's own oil. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| Oleopepillo, S.L. | Valdepeñas | `Aceite` — olive oil | RVDCLM0115 accredits own oil under a trade name. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| El Obrador de la Mancha | Pedro Muñoz | `Comida preparada` — gachas manchegas | RVDCLM0121 accredits an own elaborated dish, which is a transforming step. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| S. Coop. Vitivinícola (Bodegas San …) | Herencia | `Vino` — wine, vinegar, beer or spirits | RVDCLM0143 accredits a cooperative's own drink output. Distinct from the published Bodegas San Gregorio Magno in Navas de Jorquera, Albacete. | Register | — | The register's name cell contains a pasted email instead of the full name; resolve the actual cooperative identity before admission. |
+| Nuezzeco S.L. | Villamayor de Calatrava | `Frutos secos` — walnuts | RVDCLM0176 accredits own walnuts. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| Manolito's Nuts, S.… | La Solana | `Frutos secos` — pistachios | RVDCLM0231 accredits own pistachios. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Ragonor, S.L. | Herencia | `Frutos secos` — nuts | RVDCLM0243 accredits own nuts. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| Villamagna S.A. | Brazatortas | `Miel` — honey and hive products | RVDCLM0289 accredits own honey. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. Distinguish the estate's honey offer from other activities under the same company. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| San Bernabé Apostol S. Coop de CLM | Arenas de San Juan | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cooperativasanbernabe.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |
+| Vinícola de Tomelloso S. Coop de CLM | Tomelloso | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.vinicolatomelloso.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |

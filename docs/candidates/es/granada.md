@@ -171,3 +171,31 @@
 | Aceites Maeva, S.L. | Escúzar | `Aceite` — DOP Montes de Granada | — | [Council members](http://domontesdegranada.com/empresas-2/) | — | Confirm the productive unit, own brands and current offer; distinguish it from group or contract-processing identities. |
 | San Francisco de Asís, S. Coop. And. | Montefrío | `Aceite` — DOP Poniente de Granada | — | [DOP registered brands](https://www.doponientedegranada.com/paginas/Marcas-Inscritas.asp) | — | Confirm current public brand, offer and exact productive address. |
 | Aceites Algarinejo, S. Coop. And. | Algarinejo | `Aceite` — DOP Poniente de Granada | — | [DOP registered brands](https://www.doponientedegranada.com/paginas/Marcas-Inscritas.asp) | — | Confirm current public brand, offer and exact productive address. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| SCA PUERTO LOPE | Moclín | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.scapuertolope.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes, Tiendas. |
+| SCA SAN FRANCISCO DE ASÍS | Montefrío | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.aceitesmontevilla.com/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Suministros a los socios y carburantes. |
+| SCA TEMPLEOLIVA | Ventas de Huelma | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.templeoliva.com/index.htm> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |

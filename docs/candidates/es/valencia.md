@@ -499,3 +499,32 @@
 |---|---|---|---|---|---|---|
 | CONDIMENTOS LUAN, S.L. | Ontinyent | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.002478/V | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Dossier reconciliation: the sanitary record establishes only its registered class and address. Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "C/ DIABLES (DELS) Num. 80 Pol Ind EL PLA". |
 | EL PLA LAS SALINAS DE MANUEL, S.A. | Manuel | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00984/V | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Dossier reconciliation: the sanitary record establishes only its registered class and address. Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CTRA.C.3320 (JATIVA-MANUEL), KM.7". |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ANECOOP S.Coop. | Valencia | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.anecoop.com> | The directory covers first- and second-degree cooperatives; this one reads as a second-degree group, so identify the qualifying productive unit rather than adding the group as a row. Also registered for: Frutas y hortalizas, Secciones de crédito, Suministros a los socios y carburantes. |
+| COARVAL Coop.V. | Picassent | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coarval.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Alimentación animal y Pet foods, Suministros a los socios y carburantes. |
+| Coop. Agrícola de El Villar S.C.V. | Villar del Arzobispo | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.elvillar.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Frutas y hortalizas, Frutos Secos, Suministros a los socios y carburantes. |
+| COVIÑAS, Coop.V. | Requena | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.covinas.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |

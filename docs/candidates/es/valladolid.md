@@ -150,3 +150,31 @@
 |---|---|---|---|---|---|---|
 | Bodegas José Pariente | La Seca | `Vino` — D.O. Rueda estate wines | Renowned family winery in La Seca producing premium verdejo, sauvignon blanc and barrel-fermented wines. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://josepariente.com/> | Current José Pariente winery and La Seca address are supported; inspect producing winery detail and avoid any existing unit duplicate. |
 | Bodega Tr3smano | Peñafiel | `Vino` — D.O. Ribera del Duero wines | Winery situated in the Golden Mile of Ribera del Duero crafting high-end estate tempranillo. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.tresmano.com/> | Current own viticulture/wine is supported; establish exact active winery municipality. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| ACOR, S. COOP | Olmedo | `Otros` — sugar | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.acor.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Suministros a los socios y carburantes, Tiendas. |
+| COCOPE S. COOP. | Peñafiel | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cocope.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Suministros a los socios y carburantes. |
+| PECUARIA TIERRA DE CAMPOS S.COOP. | Medina de Rioseco | `Lácteos y quesos` — cow milk | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.lapecuaria.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Ovino / caprino  (Carnes o vivo), Suministros a los socios y carburantes, Tiendas. |

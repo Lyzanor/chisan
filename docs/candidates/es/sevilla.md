@@ -251,3 +251,29 @@ Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 
 |---|---|---|---|---|---|---|
 | AOVE Casa de Abuelo | La Puebla de Cazalla | `Aceite` — early-harvest arbequina EVOO | The exhibitor text states: “Aceite de Oliva Virgen Extra Arbequina, edición elaborada en los primeros días de cosecha con aceitunas de los olivos cultivados en el pago del Gordillo de Puebla de Cazalla.” Its own site gives Hacienda Ntra. Sra. de los Dolores, Ctra. de Osuna km 69, 41540 La Puebla de Cazalla. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.aovecasadeabuelo.com/> | Confirm the milling step is its own rather than milling at a third-party almazara, and de-duplicate against the producers already published in this municipality. |
 | Horno Los Abuelos | Carmona (Pol. El Pilero) | `Dulces y repostería` — artisan pastry and bakery | Listed under PANADERÍA, SNACKS Y MUNDO DULCE; local trade sources place its central obrador at Calle Ebanista 1, Polígono El Pilero, Carmona, supplying hospitality since 2005. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://hornolosabuelos.es/> | Separate the Carmona obrador from the Bormujos café, and confirm a take-home offer attributable to the producer rather than hospitality service. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| MANZANILLA OLIVE SCA 2º GRAD0 | Utrera | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.manzanillaolive.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Suministros a los socios y carburantes. |

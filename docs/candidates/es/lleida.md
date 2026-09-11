@@ -830,3 +830,31 @@
 | Carnicé Fruits (Carnicé-Fruits SAT 1596 CAT) | Lleida | `Fruta y verdura` — Fruta dulce (fruta de hueso y pepita) | Sociedad Agraria de Transformación de productores frutícolas en Lleida (Ctra. N-240 km 90 / Ctra. de Tarragona km 90) con más de 40 años de trayectoria productiva propia en el Segrià. | [RIAAC Gencat](https://analisi.transparenciacatalunya.cat/resource/p28j-xe65.json); [Carnicé Fruits](https://www.carnicefruits.com/) | <https://www.carnicefruits.com/> | Reviewed 2026-09-07: The own site confirms cultivation but distinguishes Vilanova de Segrià headquarters and a Lleida warehouse. Resolve the farm municipality or governed collective unit. |
 | Arcofrut (Arcofrut, SCCL) | Lleida | `Fruta y verdura` — Fruta dulce (pera, manzana, fruta de hueso de l'Horta) | Cooperativa agrícola histórica que agrupa a 50 familias de payeses de l'Horta de Lleida con sede en Camí de Montcada - Partida Bovà, 4; inscrita en RIAAC (250040182). | [RIAAC Gencat](https://analisi.transparenciacatalunya.cat/resource/p28j-xe65.json); [Horta de Lleida](https://www.paeria.cat/) | — | Reviewed 2026-09-07: June 2026 reporting describes a fire and an expected later reopening. Confirm actual resumed operations and current own offer; do not infer permanent closure. |
 | Olea Drinks SL | Lleida | `Destilados y licores` / `Aceite` — Licores de oliva, cerveza con aceituna, aceite de oliva virgen extra | Empresa agroalimentaria e innovadora fundada por el ingeniero agrónomo Ivan Caelles con sede en Lleida; adherida a Gust de Lleida para la elaboración de licores y aceite de variedades autóctonas. | [Gust de Lleida](https://www.gustdelleida.cat/productor/olea-drinks-sl/); [Olea Drinks](https://www.oleadrinks.com/) | <https://www.oleadrinks.com/> | Reviewed 2026-09-07: The own brand markets drinks and oil, but its urban office does not locate manufacturing. Establish who makes the products and the productive municipality. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Actel, SCCL | Lleida | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.actelgrup.com> | The directory covers first- and second-degree cooperatives; this one reads as a second-degree group, so identify the qualifying productive unit rather than adding the group as a row. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Frutas y hortalizas, Frutos Secos, Suministros a los socios y carburantes. |
+| Arbequina i Secció de Crèdit, SCCL | Arbeca | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.arbequina.coop> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Secciones de crédito, Suministros a los socios y carburantes. |
+| Cooperativa la Granadella i Secció de Crèdit de Sant Antoni Abad, SCCL | Granyanella | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.agroindustrialcatalana.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Frutos Secos, Secciones de crédito, Suministros a los socios y carburantes. |

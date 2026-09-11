@@ -1557,3 +1557,29 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | D’ins / D’ins a Casa — Formació i Treball | Barcelona shop: Carrer de Tamarit, 160; Sant Adrià de Besòs kitchen is a separate clue | `Comida preparada` | The live own D’ins a Casa page confirms an attributable take-home range including meatballs, cod, vegetable creams and cannelloni; the foundation describes central cooking and prepared meals. | [MAPA award booklet](https://www.alimentosdespana.es/dam/ade/contenido/premios/entrega-premios/2025/folleto-pae-2025.pdf) | <https://dinsescola.org/es/restaurants/dins-a-casa/> | Reviewed 2026-09-05: identify the actual productive kitchen supplying this own take-home range and its municipality. The shop address and the generic Sant Adrià footer do not establish that link. The own offer is now supported; do not reject for hospitality alone or place production at the foundation headquarters. Supporting source: <https://www.formacioitreball.org/dins-a-casa-arriba-a-barcelona-amb-una-botiga-gestionada-per-persones-en-risc-dexclusio-social/>. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Agrícola de Vilassar de Mar, SCCL | Vilassar de Mar | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.agricolavilassar.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Frutas y hortalizas, Suministros a los socios y carburantes, Tiendas. |

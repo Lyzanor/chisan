@@ -117,3 +117,25 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | CORPORACION DE OPERADORES DE AZAFRAN ESPAÑOL, S.L. | Petrola | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.01474/AB | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Dossier reconciliation: the sanitary record establishes only its registered class and address. Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "POLIGONO 3, PARCELA 174". |
+
+## Castilla-La Mancha direct-sale register (RVDCLM) pass — 2026-09-11
+
+Scope: the 60 trade-named holders in the 339-record register, de-duplicated by
+holder and against the published area CSVs; 13 were already represented. The
+register accredits a named holder to sell its own declared products and
+publishes the holder, province, municipality, products and sale modalities. It
+does not establish current activity or a first-party channel, and its
+`Modalidades de venta` names authorised channels, so `Venta on line` there is a
+permission and never sets `Venta online`. Company names are truncated at 19
+characters in both the table and the CSV export. The 273 bare personal-name
+holders were not worked in this batch. Source ceiling: `data/csv/es/AGENTS.md`.
+Discovery URL for every row: <https://registroventadirecta.castillalamancha.es/>
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Asoc. para la Promoción de la Nuez de Nerpio | Nerpio | `Frutos secos` — walnuts; also honey and oil | RVDCLM0063 accredits the association to sell declared own output. | Register | — | Decide whether this is a governed producer collective marketing under its own identity or a body that only promotes its members; the latter is `not-producer`. |
+| SAT Agrícola Hori-R… | La Roda | `Fruta y verdura` — vegetables | RVDCLM0096 accredits a SAT's own vegetables. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Bodegas César Velas… | Villarrobledo | `Vino` — wine, vinegar, beer or spirits | RVDCLM0140 accredits own drink output under a winery trade name. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| El Taller del Ebanista S.L. | Albacete | `Miel` — honey and hive products | RVDCLM0155 accredits own honey. | Register | — | The company name does not describe a food activity; confirm the apiary, its public honey identity and the productive municipality before admission. |
+| Agropecuaria El Ret… | La Roda | `Fruta y verdura` — vegetables and potatoes | RVDCLM0331 accredits own vegetables. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Gómez López TC | Nerpio | `Miel` — honey and hive products | RVDCLM0353 accredits own honey. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. Resolve whether `TC` denotes a shared holding rather than a trade name. |

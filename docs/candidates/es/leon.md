@@ -193,3 +193,31 @@ Scope: varieties of the MAPA *Catálogo electrónico de quesos de España* whose
 | Lácteos Siete Lobas (Javier Barrera) | Ardón and Cabreros del Río; Páramo Leonés | `Lácteos y quesos` — Pata de Mulo "Matalobos IPA", Monje Jimeno, Castrocastillo | Raw-milk sheep, cow and goat cheeses matured in an underground Leonese cellar and sold under its own brand through national specialist cheese retail. | [Formaje](https://formaje.com/products/pata-de-mulo-matalobos) | — | The reviewed sources split the unit between an elaboration plant in Cabreros del Río and an aging cellar in Ardón; resolve which is the productive unit before placing the row, and confirm current activity and the own offer. |
 | La Braña | Palacios del Sil; Camino Viejo, s/n (24495) | `Lácteos y quesos` — artisan goat cheese of Babia y Laciana | Listed as an elaborator of Babia y Laciana cheese with its own premises; no dairy producer in the Babia or Laciana valleys is currently published. | [Queso Leonés](https://www.quesoleones.es/otros-quesos-leoneses/de-babia-y-laciana/productores/) | — | The directory publishes only name, address and a landline whose currency is unverified. Confirm the dairy still operates, its own current offer and a public producer identity. |
 | Argimiro Martínez Vega | Peñalba de Cilleros locality; official municipality to confirm (Cabrillanes) | `Lácteos y quesos` — artisan goat cheese of Babia y Laciana | Listed by the same source as an elaborator of Babia y Laciana cheese in the valley itself. | [Queso Leonés](https://www.quesoleones.es/otros-quesos-leoneses/de-babia-y-laciana/productores/) | — | Only a personal name and a landline are published. Confirm a durable public producer identity rather than a private holding, current activity, and resolve the official municipality; Peñalba de Cilleros is a locality of Cabrillanes. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| S. COOP. UCOGAL | Cubillas de los Oteros | `Otros` — sugar | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coreccal.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Suministros a los socios y carburantes, Tiendas. |
+| S. COOP. VEGA ESLA | Toral de los Guzmanes | `Lácteos y quesos` — cow milk | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coovees.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Alimentación animal y Pet foods, Cultivos herbáceos (salvo algodón y forrajes), Ovino / caprino  (Carnes o vivo), Suministros a los socios y carburantes. |
+| VINOS DEL BIERZO, S. COOP. | Cacabelos | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.vinosdelbierzo.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |

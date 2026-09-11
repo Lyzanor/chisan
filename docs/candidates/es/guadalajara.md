@@ -53,3 +53,21 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | SALINAS DE LA OLMEDA, S.L. | La Olmeda de Jadraque | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.001780/GU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Dossier reconciliation: the sanitary record establishes only its registered class and address. Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "FINCA "SALINAS DE LA OLMEDA"". |
+
+## Castilla-La Mancha direct-sale register (RVDCLM) pass — 2026-09-11
+
+Scope: the 60 trade-named holders in the 339-record register, de-duplicated by
+holder and against the published area CSVs; 13 were already represented. The
+register accredits a named holder to sell its own declared products and
+publishes the holder, province, municipality, products and sale modalities. It
+does not establish current activity or a first-party channel, and its
+`Modalidades de venta` names authorised channels, so `Venta on line` there is a
+permission and never sets `Venta online`. Company names are truncated at 19
+characters in both the table and the CSV export. The 273 bare personal-name
+holders were not worked in this batch. Source ceiling: `data/csv/es/AGENTS.md`.
+Discovery URL for every row: <https://registroventadirecta.castillalamancha.es/>
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Alcarria Bee Compan… | Cifuentes | `Miel` — honey and hive products | RVDCLM0138 accredits own honey in an Alcarria honey municipality. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Bee Brothers C.B. | Angón | `Miel` — honey and hive products | RVDCLM0315 accredits own honey. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |

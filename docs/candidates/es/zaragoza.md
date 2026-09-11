@@ -134,3 +134,30 @@
 | Sociedad Cooperativa Agraria San Atilano | Tarazona | `Aceite` — DOP Aceite Sierra del Moncayo | The current council directory identifies one of its five registered mills at the Cunchillos industrial estate in postcode 50500. | [DOP Sierra del Moncayo mills](https://aceitesierradelmoncayo.com/productores-aove-aragoneses/) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm the current public brand, own offer and productive municipality through a producer-owned source. |
 | Cooperativa Santo Cristo de Magallón | Magallón | `Aceite` — DOP Aceite Sierra del Moncayo | The council lists the cooperative as a registered mill in Magallón and links a dedicated producer domain. | [DOP Sierra del Moncayo mills](https://aceitesierradelmoncayo.com/productores-aove-aragoneses/) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm current olive-oil production, own market identity and offer; distinguish it from other Magallón cooperatives and wineries. |
 | Bodegas A. Luis Pablo Uriol | Calatayud | `Vino` — DOP Calatayud wines | The current council directory lists the winery alongside eleven operators already reconciled to the CSV. | [DOP Calatayud wineries](https://www.calatayudwine.com/bodegas/) | — | The current source was screened, but its product navigation, distribution or institutional listing does not by itself establish an own current food offer made by this productive unit. Confirm current first-party activity, productive address, own wine offer and legal/public identity. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Camino del Bosque Soc. CooP.  Ltda. | Almonacid de la Sierra | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.caminodelbosque.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Frutas y hortalizas, Suministros a los socios y carburantes. |
+| Soc. Coop. Agraria San José | Sádaba | `Legumbres y cereales` — rice | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coop-sanjose.es/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Suministros a los socios y carburantes, Tiendas. |

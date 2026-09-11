@@ -115,3 +115,29 @@
 |---|---|---|---|---|---|---|
 | EMBUTIDOS ZAPATERO RAMOS, S.L. | Santibáñez de Vidriales | `Carne` | Accredited artisan food business of the Castilla y León register, entry EAA-ZA/0175 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Dossier review only: no current producer-owned page was listed for this lead. Confirm productive responsibility, an identifiable own human-food offer and the actual productive municipality. Recorded blocker: Decide whether this accreditation is the published Embutidos y Jamones Lema, S.L. row under its trading name. Only if it is a different productive unit does it become a candidate. The register gives the industrial address BODEGAS, 21, SANTIBÁÑEZ DE VIDRIALES. |
 | ISLEVA, S.C. | Olmillos de Castro | `Lácteos y quesos` | Accredited artisan food business of the Castilla y León register, entry EAA-ZA/0111 | [Register](https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/) |  | Dossier review only: no current producer-owned page was listed for this lead. Confirm productive responsibility, an identifiable own human-food offer and the actual productive municipality. Recorded blocker: Decide whether this accreditation is the published Queso Beato de Tábara row under its trading name. Only if it is a different productive unit does it become a candidate. The register gives the industrial address ERA, 1, OLMILLOS DE CASTRO. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| S. COOP. BAJO DUERO (COBADU) | Moraleja del Vino | `Lácteos y quesos` — cow milk | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cobadu.com/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Alimentación animal y Pet foods, Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Ovino / caprino  (Carnes o vivo). |

@@ -59,3 +59,25 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | LAS SALINAS BELINCHON, S.L. | Belinchon | `Condimentos` | RGSEAA registers it under key 24 for manufacturing or elaboration, entry 24.00357/CU | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Dossier reconciliation: the sanitary record establishes only its registered class and address. Confirm an own transforming step — milling, drying, curing, fermenting or acetifying on the unit’s own premises — rather than packing spices bought ready-processed. Resolve the official municipality from the registered address "CAMINO LAS SALINAS, KM. 4,1". |
+
+## Castilla-La Mancha direct-sale register (RVDCLM) pass — 2026-09-11
+
+Scope: the 60 trade-named holders in the 339-record register, de-duplicated by
+holder and against the published area CSVs; 13 were already represented. The
+register accredits a named holder to sell its own declared products and
+publishes the holder, province, municipality, products and sale modalities. It
+does not establish current activity or a first-party channel, and its
+`Modalidades de venta` names authorised channels, so `Venta on line` there is a
+permission and never sets `Venta online`. Company names are truncated at 19
+characters in both the table and the CSV export. The 273 bare personal-name
+holders were not worked in this batch. Source ceiling: `data/csv/es/AGENTS.md`.
+Discovery URL for every row: <https://registroventadirecta.castillalamancha.es/>
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Permedi TC | Cuenca | `Conservas` — table olives; also cereals, stone fruit and nuts | RVDCLM0005 accredits four own product lines. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. Decide the defining activity across four declared lines. |
+| Moraleja, C.B. | Almendros | `Frutos secos` — nuts | RVDCLM0044 accredits own nuts. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |
+| Cuesta de Patas, S.… | Campillo de Altobuey | `Condimentos` — saffron; also pulses and oil | RVDCLM0052 accredits three own lines. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| La Huerta C.B. | Cuenca | `Fruta y verdura` — vegetables and potatoes | RVDCLM0066 accredits own vegetables. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. The name is generic; distinguish it from similarly named units before admission. |
+| Agropecuaria La Olm… | Mota del Cuervo | `Fruta y verdura` — vegetables | RVDCLM0072 accredits own vegetables. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+| Almazara Carvillos | Tébar | `Aceite` — olive oil | RVDCLM0164 accredits own oil; the register appends the holder's personal name to the mill's trade name. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. Publish the mill's trade name, not the personal name. |

@@ -87,3 +87,32 @@
 |---|---|---|---|---|---|---|
 | Finca Torremilanos (Bodegas Peñalba López) | Aranda de Duero | `Vino` — D.O. Ribera del Duero biodynamic wines | Historic estate in Aranda de Duero with certified Demeter biodynamic vineyards and cooperage. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.torremilanos.com/> | Current winery and own vineyards are supported; corroborate exact productive municipality. |
 | Casa Lebai | Gumiel de Mercado | `Vino` — D.O. Ribera del Duero family wines | Family cellar project in Gumiel de Mercado farming old vines with limited artisan bottlings. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://casalebai.com/> | Current source reviewed at entry-page depth; it does not close the remaining specific dossier requirement. Confirm current productive responsibility, own food offer and actual productive municipality before admission. Recorded blocker: Confirm physical cellar address in Gumiel de Mercado. |
+
+
+## Cooperativas Agro-alimentarias directory pass — 2026-09-11
+
+Scope: the federation's national directory, 2,171 cooperatives read from the
+listing endpoint behind its search. Each record carries the name, address,
+postcode, municipality, province, community, phone and the sectors it is
+registered for; only 183 publish a website. 234 cooperatives register no food
+sector at all — supplies and fuel, member shops, credit sections, animal feed,
+fodder, tobacco, cotton, flowers or forestry — and are not producers through
+those activities.
+
+1,303 register an elaborating food sector (oil, wine, table olives, rice, milk,
+sugar or honey); 147 of those are already represented. This batch takes the
+**55 unmatched ones that publish a first-party website**, because the directory
+itself cannot answer the criterion that decides these cases — whether a food
+reaches the market under the cooperative's own identity — and a website is the
+nearest thing to that evidence. The remaining 1,101 unmatched elaborating
+cooperatives, and the raw-production sectors, are deferred.
+
+The directory mixes first- and second-degree cooperatives, and a second-degree
+group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| BODEGA SAN MAMES, S. COOP. | Fuentecén | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.bodegasanmames.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| BODEGAS VILANO, S. COOP. | Pedrosa de Duero | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.vinavilano.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| S. COOP. BODEGAS Y VIÑEDOS RAUDA | Roa | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.vinosderueda.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| S. COOP. VIRGEN DE LA ASUNCIÓN | Horra, La | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.virgendelaasuncion.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
