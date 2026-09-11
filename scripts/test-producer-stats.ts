@@ -8,9 +8,16 @@ import { drizzle } from "drizzle-orm/pglite";
 import type { Database } from "../lib/db";
 import * as schema from "../lib/db/schema";
 import { createProducerStatsService } from "../lib/producer-stats/service";
-import { handleProducerProfileView } from "../lib/producer-stats/ingestion";
+import {
+  handleProducerIntentClick,
+  handleProducerProfileView,
+} from "../lib/producer-stats/ingestion";
 import { acceptsProducerViewRequest } from "../lib/producer-stats/request";
-import { summarizeProducerStats } from "../lib/producer-stats/policy";
+import {
+  PRODUCER_INTENT_ACTIONS,
+  summarizeProducerStats,
+  type ProducerIntentAction,
+} from "../lib/producer-stats/policy";
 
 const now = new Date("2026-09-06T12:00:00Z");
 const started = new Date("2026-01-01T00:00:00Z");
@@ -18,6 +25,10 @@ const pageView = () => ({
   country: "es",
   producerId: 1,
   eventId: randomUUID(),
+});
+const intentClick = (action: ProducerIntentAction = "directions") => ({
+  ...pageView(),
+  action,
 });
 function request(
   body = JSON.stringify(pageView()),
@@ -113,6 +124,73 @@ test("ingestion accepts only a bounded page display and returns no private data"
     },
   );
   assert.equal(failure.status, 204);
+});
+
+test("intent click ingestion accepts only allowlisted actions", async () => {
+  let writes = 0;
+  let authReads = 0;
+  const input = intentClick();
+  const dependencies = {
+    enabled: true,
+    viewerId: async () => {
+      authReads++;
+      return null;
+    },
+    record: async (value: unknown) => {
+      assert.deepEqual(value, { ...input, viewerId: null });
+      writes++;
+      return true;
+    },
+  };
+  const response = await handleProducerIntentClick(
+    request(JSON.stringify(input)),
+    dependencies,
+  );
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get("cache-control"), "private, no-store");
+  assert.equal(await response.text(), "");
+  assert.equal(writes, 1);
+  for (const body of [
+    JSON.stringify(pageView()),
+    JSON.stringify({ ...input, action: "whatsapp" }),
+    JSON.stringify({ ...input, action: "" }),
+    JSON.stringify({ ...input, action: ["call"] }),
+    JSON.stringify({ ...input, action: "call", clicks: 99 }),
+    JSON.stringify({ ...input, eventId: "no" }),
+    JSON.stringify({ ...input, action: "call".padEnd(200, "!") }),
+  ]) {
+    await handleProducerIntentClick(request(body), dependencies);
+  }
+  for (const headers of [
+    { origin: "https://foreign.test" },
+    { "user-agent": "Googlebot" },
+    { dnt: "1" },
+    { "sec-gpc": "1" },
+  ]) {
+    await handleProducerIntentClick(
+      request(JSON.stringify(input), headers),
+      dependencies,
+    );
+  }
+  await handleProducerIntentClick(request(JSON.stringify(input)), {
+    ...dependencies,
+    enabled: false,
+  });
+  assert.equal(writes, 1, "only the allowlisted action reaches the counter");
+  assert.equal(authReads, 1);
+  // Every allowlisted action is accepted, so the collector cannot drift.
+  for (const action of PRODUCER_INTENT_ACTIONS) {
+    const accepted = intentClick(action);
+    await handleProducerIntentClick(request(JSON.stringify(accepted)), {
+      ...dependencies,
+      record: async (value: unknown) => {
+        assert.deepEqual(value, { ...accepted, viewerId: null });
+        writes++;
+        return true;
+      },
+    });
+  }
+  assert.equal(writes, 1 + PRODUCER_INTENT_ACTIONS.length);
 });
 
 test("page visits are atomic, repeatable, private and independent of premium collection", async () => {
@@ -225,6 +303,49 @@ test("page visits are atomic, repeatable, private and independent of premium col
         false,
       );
     assert.equal((await read())?.total, 9);
+    // Intent clicks are a separate counter with the same identity and privacy
+    // limits: one transport delivery, never the producer's own team, never a visit.
+    const repeated = intentClick();
+    const clickRetries = await Promise.all(
+      Array.from({ length: 3 }, () =>
+        service.recordAction({ ...repeated, viewerId: null }, now),
+      ),
+    );
+    assert.equal(clickRetries.filter(Boolean).length, 1);
+    for (const viewerId of [owner.id, editor.id])
+      assert.equal(
+        await service.recordAction({ ...intentClick(), viewerId }, now),
+        false,
+      );
+    assert.equal(
+      await service.recordAction(
+        { ...intentClick(), producerId: 999, viewerId: null },
+        now,
+      ),
+      false,
+    );
+    for (const viewerId of [stranger.id, null])
+      await service.recordAction(
+        { ...intentClick("call"), viewerId },
+        now,
+      );
+    await service.recordAction(
+      { ...intentClick("shop"), producerId: 2, viewerId: null },
+      now,
+    );
+    const clicked = await read();
+    assert.equal(clicked?.total, 9, "a click is never counted as a visit");
+    assert.equal(clicked?.clicks, 3);
+    assert.deepEqual(clicked?.actions, {
+      contact: 0,
+      call: 2,
+      directions: 1,
+      shop: 0,
+      website: 0,
+    });
+    assert.equal(clicked?.month.views, 9);
+    assert.equal(clicked?.month.clicks, 3);
+    assert.equal(clicked?.previousMonth, null);
     for (const userId of [editor.id, stranger.id, randomUUID()]) {
       assert.equal(
         await service.read({ country: "es", producerId: 1, userId }, now),
@@ -245,6 +366,8 @@ test("page visits are atomic, repeatable, private and independent of premium col
     assert.equal(empty?.total, 0);
     assert.equal(empty?.days.length, 30);
     assert.ok(empty?.days.every((day) => day.views === 0));
+    assert.equal(empty?.clicks, 0);
+    assert.equal(empty?.previousMonth, null);
     assert.equal(
       await service.record(
         { ...pageView(), country: "fr", viewerId: null },
@@ -271,6 +394,12 @@ test("page visits are atomic, repeatable, private and independent of premium col
     assert.equal(summary?.last7, 16);
     assert.equal(summary?.last30, 27);
     assert.equal(summary?.days[0].day, "2026-08-08");
+    assert.equal(summary?.month.key, "2026-09");
+    assert.equal(summary?.month.views, 12);
+    assert.equal(summary?.month.clicks, 3);
+    assert.equal(summary?.previousMonth?.key, "2026-08");
+    assert.equal(summary?.previousMonth?.views, 22);
+    assert.equal(summary?.previousMonth?.clicks, 0);
     // Exact capability lifecycle and active internal account are enforced.
     await db
       .update(schema.entitlements)
@@ -316,22 +445,32 @@ test("page visits are atomic, repeatable, private and independent of premium col
       0,
     );
     const privateColumns = await pg.query<{ column_name: string }>(
-      "select column_name from information_schema.columns where table_name in ('producer_daily_stats', 'producer_stats_receipts')",
+      "select column_name from information_schema.columns where table_name in ('producer_daily_stats', 'producer_daily_actions', 'producer_stats_receipts')",
     );
     assert.deepEqual(
       new Set(privateColumns.rows.map((row) => row.column_name)),
-      new Set(["country", "producer_id", "day", "views", "event_id"]),
+      new Set([
+        "country",
+        "producer_id",
+        "day",
+        "views",
+        "action",
+        "clicks",
+        "event_id",
+      ]),
     );
     for (const role of [
       "chisan_admin_read",
       "chisan_producer_change_operator",
       "chisan_producer_change_recovery",
     ]) {
-      const grants = await pg.query<{ allowed: boolean }>(
-        `select has_table_privilege($1, 'producer_daily_stats', 'SELECT') as allowed`,
-        [role],
-      );
-      assert.equal(grants.rows[0].allowed, false);
+      for (const table of ["producer_daily_stats", "producer_daily_actions"]) {
+        const grants = await pg.query<{ allowed: boolean }>(
+          `select has_table_privilege($1, $2, 'SELECT') as allowed`,
+          [role, table],
+        );
+        assert.equal(grants.rows[0].allowed, false);
+      }
     }
   } finally {
     await pg.close();
@@ -345,10 +484,33 @@ test("UTC windows remain correct across month and year boundaries", () => {
       { day: "2026-01-01", views: 4 },
     ],
     "2026-01-01",
+    {
+      actions: [
+        { day: "2025-11-30", action: "call", clicks: 9 },
+        { day: "2025-12-31", action: "call", clicks: 5 },
+        { day: "2026-01-01", action: "shop", clicks: 1 },
+        { day: "2026-01-01", action: "whatsapp", clicks: 4 },
+      ],
+    },
   );
   assert.equal(summary.total, 6);
   assert.equal(summary.last7, 6);
   assert.equal(summary.today, 4);
   assert.equal(summary.days.length, 30);
   assert.equal(summary.days[0].day, "2025-12-03");
+  assert.equal(summary.month.key, "2026-01");
+  assert.equal(summary.month.views, 4);
+  assert.equal(summary.month.clicks, 1);
+  assert.equal(summary.previousMonth?.key, "2025-12");
+  assert.equal(summary.previousMonth?.views, 2);
+  assert.equal(summary.previousMonth?.clicks, 5);
+  // Days before the chart window and actions outside the allowlist are ignored.
+  assert.equal(summary.clicks, 6);
+  assert.deepEqual(summary.actions, {
+    contact: 0,
+    call: 5,
+    directions: 0,
+    shop: 1,
+    website: 0,
+  });
 });

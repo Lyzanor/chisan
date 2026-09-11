@@ -79,6 +79,16 @@ export default function PrivacyPage() {
           reconocido y las precargas. La recogida respeta Do Not Track y Global
           Privacy Control.
         </p>
+        <p>
+          Con la misma medición, Chisan cuenta de forma agregada los clics en los
+          enlaces públicos de contacto, llamada, cómo llegar, compra online y web
+          de la ficha. Solo se guarda qué acción se usó y en qué día: nunca la
+          dirección de destino, el número marcado, la página abierta ni quién
+          hizo clic. Cada acción cuenta como máximo una vez por apertura de la
+          ficha. Estos clics son un contador distinto de las visitas y se rigen
+          por las mismas exclusiones, límites de privacidad y condiciones de
+          acceso que ellas.
+        </p>
         <h2>Cuentas y aportaciones</h2>
         <p>
           Cuando las funciones de cuenta están habilitadas, Clerk gestiona la

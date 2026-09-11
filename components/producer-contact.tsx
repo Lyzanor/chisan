@@ -3,6 +3,7 @@
 import { EnvelopeSimpleIcon, ArrowUpRightIcon, PhoneIcon } from "@phosphor-icons/react";
 import type { FormEvent } from "react";
 import type { ProducerContactMessages } from "@/lib/i18n/producer-contact";
+import { producerIntent } from "@/lib/producer-stats/policy";
 
 export function ProducerContact({
   email, phone, callLabel, name, messages,
@@ -24,8 +25,8 @@ export function ProducerContact({
     <section id="detail-contact" className="producer-contact" aria-labelledby="producer-contact-title">
       <EnvelopeSimpleIcon size={28} aria-hidden="true" />
       <h2 id="producer-contact-title">{messages.title}</h2>
-      {phone ? <a className="producer-contact__recipient" href={`tel:${phone}`}><PhoneIcon size={20} aria-hidden="true" />{callLabel} · {phone}</a> : null}
-      {email ? <a className="producer-contact__recipient" href={`mailto:${email}`}><EnvelopeSimpleIcon size={20} aria-hidden="true" />{email}</a> : null}
+      {phone ? <a className="producer-contact__recipient" href={`tel:${phone}`} {...producerIntent("call")}><PhoneIcon size={20} aria-hidden="true" />{callLabel} · {phone}</a> : null}
+      {email ? <a className="producer-contact__recipient" href={`mailto:${email}`} {...producerIntent("contact")}><EnvelopeSimpleIcon size={20} aria-hidden="true" />{email}</a> : null}
       {email ? <form onSubmit={composeEmail}>
         <label htmlFor="producer-contact-message">{messages.message}</label>
         <textarea
@@ -38,7 +39,7 @@ export function ProducerContact({
           aria-describedby="producer-contact-explanation"
         />
         <p id="producer-contact-explanation">{messages.explanation}</p>
-        <button type="submit">
+        <button type="submit" {...producerIntent("contact")}>
           {messages.action}<ArrowUpRightIcon size={18} aria-hidden="true" />
         </button>
       </form> : null}

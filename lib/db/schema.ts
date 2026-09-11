@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import type { ProducerContentChange } from "../accounts/producer-content-change";
 import type { AssistantState, InboundMessage } from "../whatsapp/domain";
+import { PRODUCER_INTENT_ACTIONS } from "../producer-stats/policy";
 import {
   bigint,
   boolean,
@@ -67,6 +68,22 @@ export const producerDailyStats = pgTable("producer_daily_stats", {
   primaryKey({ columns: [table.country, table.producerId, table.day] }),
   check("producer_daily_stats_count_check", sql`${table.views} >= 0`),
   check("producer_daily_stats_identity_check", sql`${table.country} ~ '^[a-z]{2}$' AND ${table.producerId} > 0`),
+]);
+
+// Intent clicks are a separate counter from visits; the enum is the database's
+// copy of PRODUCER_INTENT_ACTIONS. The stored action never carries its target.
+export const producerIntentAction = pgEnum("producer_intent_action", PRODUCER_INTENT_ACTIONS);
+
+export const producerDailyActions = pgTable("producer_daily_actions", {
+  country: varchar("country", { length: 2 }).notNull(),
+  producerId: bigint("producer_id", { mode: "number" }).notNull(),
+  day: date("day", { mode: "string" }).notNull(),
+  action: producerIntentAction("action").notNull(),
+  clicks: bigint("clicks", { mode: "number" }).notNull().default(0),
+}, (table) => [
+  primaryKey({ columns: [table.country, table.producerId, table.day, table.action] }),
+  check("producer_daily_actions_count_check", sql`${table.clicks} >= 0`),
+  check("producer_daily_actions_identity_check", sql`${table.country} ~ '^[a-z]{2}$' AND ${table.producerId} > 0`),
 ]);
 
 export const producerStatsReceipts = pgTable("producer_stats_receipts", {

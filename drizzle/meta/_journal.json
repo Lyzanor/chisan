@@ -127,6 +127,13 @@
       "when": 1788987464719,
       "tag": "0017_claimed_producer_gallery",
       "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1789078038656,
+      "tag": "0018_producer_intent_clicks",
+      "breakpoints": true
     }
   ]
 }

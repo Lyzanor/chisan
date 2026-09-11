@@ -330,9 +330,10 @@ the narrow agent roles below are never a runtime substitute.
 
 ## Producer statistics activation
 
-Apply the additive `0011_producer_statistics` migration and run the normal
-migration assertion before deploying the collector. It creates private daily
-view totals and temporary random event receipts. It grants no access to the
+Apply the additive `0011_producer_statistics` and `0018_producer_intent_clicks`
+migrations and run the normal migration assertion before deploying the
+collectors. They create private daily view totals, private daily intent-click
+totals and temporary random event receipts. They grant no access to the
 producer-change SQL roles. Preserve the existing schema-owner runtime role.
 
 `CHISAN_PRODUCER_STATS_ENABLED=true` enables collection and reporting, and requires
@@ -340,13 +341,17 @@ producer-change SQL roles. Preserve the existing schema-owner runtime role.
 database and account configuration are isolated from Production. Before enabling
 Production, verify an anonymous profile opening, a second opening counted as a
 second visit, transport deduplication, signed-in team exclusion, and the premium
-owner's private totals. Confirm a non-owner and an expired premium owner cannot
-read totals, and a database outage leaves public profiles usable.
+owner's private totals. Also verify one intent click on a contact, route and
+shop link, that clicking the same action twice in one opening still counts once,
+that a reload allows it to count again, and that clicks never change the visit
+totals. Confirm a non-owner and an expired premium owner cannot read totals, and
+a database outage leaves public profiles usable.
 
-Set the flag false to pause collection/reporting without altering retained data.
-There is no historical backfill. Existing Vercel Analytics figures are separate
-and are not imported. Random event receipts older than yesterday are pruned on
-collection and authorized reads; idle receipts remain until the next operation.
+Set the flag false to pause collection/reporting without altering retained data;
+it governs both counters together. There is no historical backfill. Existing
+Vercel Analytics figures are separate and are not imported. Random event
+receipts older than yesterday are pruned on collection and authorized reads;
+idle receipts remain until the next operation.
 Daily aggregate totals contain no visitor identities and are retained. See
 [Producer statistics](PRODUCER_STATISTICS.md) for the measurement contract.
 

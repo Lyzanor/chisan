@@ -486,7 +486,7 @@ live in `docs/STRIPE_RUNBOOK.md`.
 ## Internal producer statistics
 
 An exact active owner with an active `producer.profile.premium` entitlement may
-read their producer's private visit totals at
+read their producer's private visit and intent-click totals at
 `/cuenta/productores/<country>/<producer_id>/estadisticas`. The aggregate query
 rechecks account status, ownership and the producer-scoped entitlement in one SQL
 statement. Editors, other owners, staff roles and user premium do not confer
@@ -495,6 +495,8 @@ access. Revocation or expiry removes access without deleting historical totals.
 PostgreSQL owns these operational aggregates, keyed by `(country, producer_id)`;
 they are never catalog facts, CSV fields, public ranking signals or evidence.
 Collection covers published producer profiles independently of premium status.
+Visits and intent clicks on public contact, route and shop links are separate
+counters: a click is interest, never a visit, an order or a delivered message.
 [Producer statistics](PRODUCER_STATISTICS.md) owns measurement, privacy,
 collection and extension semantics. Deployment follows
 [Operations](OPERATIONS.md#producer-statistics-activation).
