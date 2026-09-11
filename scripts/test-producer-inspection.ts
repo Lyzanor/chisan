@@ -16,7 +16,6 @@ test("retirement inventory counts exact producer references across every domain 
     "entitlements",
     "producer_profile_upgrade_requests",
     "producer_daily_stats",
-    "producer_daily_actions",
   ]) {
     const column = table === "entitlements" ? "producer_country" : "country";
     await database.exec(
@@ -30,7 +29,7 @@ test("retirement inventory counts exact producer references across every domain 
     async (statement, values) =>
       (await database.query<{ count: string }>(statement, [...values])).rows,
   );
-  assert.equal(Object.keys(counts).length, 9);
+  assert.equal(Object.keys(counts).length, 8);
   assert.ok(Object.values(counts).every((count) => count === 1));
   await database.exec("ROLLBACK");
   await assert.rejects(

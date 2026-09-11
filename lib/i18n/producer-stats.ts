@@ -11,23 +11,6 @@ const en = {
   today: "Today",
   last7: "Last 7 days",
   last30: "Last 30 days",
-  intentTitle: "Intent clicks over the last 30 days",
-  intentTotal: "Intent clicks",
-  intentLabels: {
-    contact: "Contact by email",
-    call: "Call",
-    directions: "Directions",
-    shop: "Buy online",
-    website: "Website",
-  },
-  intentEmpty:
-    "No clicks recorded yet on your contact, route or shop links.",
-  intentMethod:
-    "Each action counts at most once per profile opening: the shortcut at the top and the link it leads to are one intention, not two. Only which action was used is stored, never the number dialled, the address requested, the page reached or who clicked. A click shows interest, not an order or a sale.",
-  monthSummary:
-    "This month your profile was opened {visits} times and received {clicks} clicks on your contact, route and shop links.",
-  previousMonthSummary:
-    "In {month} it was opened {visits} times with {clicks} clicks.",
   about: "How visits are counted",
   evolution: "Visits over the last 30 days",
   daily: "See daily figures",
@@ -61,23 +44,6 @@ const es: Labels = {
   today: "Hoy",
   last7: "Últimos 7 días",
   last30: "Últimos 30 días",
-  intentTitle: "Clics de intención de los últimos 30 días",
-  intentTotal: "Clics de intención",
-  intentLabels: {
-    contact: "Contactar por correo",
-    call: "Llamar",
-    directions: "Cómo llegar",
-    shop: "Comprar online",
-    website: "Web",
-  },
-  intentEmpty:
-    "Todavía no hay clics registrados en tus enlaces de contacto, ruta o tienda.",
-  intentMethod:
-    "Cada acción cuenta como máximo una vez por apertura de la ficha: el acceso directo de arriba y el enlace al que lleva son una sola intención, no dos. Solo se guarda qué acción se usó, nunca el número marcado, la dirección consultada, la página abierta ni quién hizo clic. Un clic indica interés, no un pedido ni una venta.",
-  monthSummary:
-    "Este mes tu ficha se abrió {visits} veces y recibió {clicks} clics en tus enlaces de contacto, ruta y tienda.",
-  previousMonthSummary:
-    "En {month} se abrió {visits} veces con {clicks} clics.",
   about: "Cómo se cuentan las visitas",
   evolution: "Visitas de los últimos 30 días",
   daily: "Ver cifras por día",
@@ -110,23 +76,6 @@ const ca: Labels = {
   today: "Avui",
   last7: "Últims 7 dies",
   last30: "Últims 30 dies",
-  intentTitle: "Clics d’intenció dels últims 30 dies",
-  intentTotal: "Clics d’intenció",
-  intentLabels: {
-    contact: "Contactar per correu",
-    call: "Trucar",
-    directions: "Com arribar-hi",
-    shop: "Comprar en línia",
-    website: "Web",
-  },
-  intentEmpty:
-    "Encara no hi ha clics registrats als teus enllaços de contacte, ruta o botiga.",
-  intentMethod:
-    "Cada acció compta com a màxim una vegada per obertura de la fitxa: l’accés directe de dalt i l’enllaç al qual porta són una sola intenció, no dues. Només es desa quina acció es va fer servir, mai el número marcat, l’adreça consultada, la pàgina oberta ni qui va fer clic. Un clic indica interès, no una comanda ni una venda.",
-  monthSummary:
-    "Aquest mes la teva fitxa es va obrir {visits} vegades i va rebre {clicks} clics als teus enllaços de contacte, ruta i botiga.",
-  previousMonthSummary:
-    "El {month} es va obrir {visits} vegades amb {clicks} clics.",
   about: "Com es compten les visites",
   evolution: "Visites dels últims 30 dies",
   daily: "Veure les xifres per dia",

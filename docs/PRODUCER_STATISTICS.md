@@ -1,15 +1,13 @@
 # Internal producer statistics
 
-Two counters are recorded: **public profile visits** and **intent clicks**. The
-first answers how many times a producer's full profile has been opened, including
-repeat openings by the same person; the second answers how many of those openings
-led someone to act on a contact, route or shop link. Neither estimates unique
-people. Only the exact active owner of that producer with an active
-`producer.profile.premium` entitlement may read either. The public profile,
-account editor and managed-producer list link to the private statistics page. An
-owner without premium sees an explanation, never counts.
+The first metric is **public profile visits**. It answers how many times a
+producer's full profile has been opened, including repeat openings by the same
+person. It does not estimate unique people. Only the exact active owner of that
+producer with an active `producer.profile.premium` entitlement may read totals.
+The public profile, account editor and managed-producer list link to the private
+statistics page. An owner without premium sees an explanation, never counts.
 
-## Visit measurement
+## Measurement
 
 - The public profile mounts a small client collector. It sends a POST only when
   the page is visible, after hydration. Server rendering, link prefetch, map
@@ -36,47 +34,14 @@ include the current, incomplete UTC day. Missing daily rows contribute zero.
 Totals begin at activation with no retroactive history. An unavailable database
 or disabled feature is shown explicitly rather than presented as zero traffic.
 
-## Intent clicks
-
-An intent click is a reader acting on a public link, never a page opening. The
-allowlist is `contact`, `call`, `directions`, `shop` and `website`, defined once
-as `PRODUCER_INTENT_ACTIONS` and enforced by the collector, the ingestion
-endpoint, the `producer_intent_action` database enum and the private report
-alike. An action outside it is discarded, not stored as an unknown value.
-
-- The profile mounts one delegated click collector. The links themselves stay
-  server-rendered and keep working without JavaScript; a marked element carries
-  only `data-producer-intent` with its action name.
-- **An action counts at most once per profile display.** The hero shortcut and
-  the link it leads to are one intention, not two, so the figure is comparable to
-  visits: how many openings led to that action. A restored back/forward
-  navigation is a new display and may count again.
-- The collector sends the immutable country and producer ID, the action name and
-  a fresh random UUID. The server owns the timestamp, UTC day and increment. It
-  never learns the target address, the number dialled, the destination requested,
-  the page reached or who clicked.
-- `/api/producer-stats/action` is a sibling of the page-view endpoint, not a
-  generic event sink: same same-origin JSON allowlist, 224-byte body limit, bot
-  and preload filtering, Do Not Track, Global Privacy Control and signed-in team
-  exclusion, and the same receipt table for transport de-duplication.
-- A click expresses interest. It is not an order, a sale, a delivered message or
-  a reachable phone number, and blockers can undercount it exactly as they can
-  undercount visits.
-
-The page reports the current calendar month and, once one exists with recorded
-activity, the last complete month: openings and intent clicks in one honest
-sentence. The breakdown covers the same rolling 30 days as the visits chart.
-Months use UTC, and the current one is still in progress.
-
 ## Authority and privacy
 
 `producer_daily_stats` holds only `(country, producer_id, day, views)`.
-`producer_daily_actions` holds only `(country, producer_id, day, action, clicks)`.
 `producer_stats_receipts` holds only `(event_id, day)`. Receipts older than
 yesterday are pruned on collection and authorized reads; idle storage is pruned
-on next use. Daily totals are retained for the producer's history. No table
+on next use. Daily totals are retained for the producer's history. Neither table
 stores visitors' account IDs, IPs, user agents, referrers, URLs or locations.
-The current account is consulted only to exclude signed-in team activity.
+The current account is consulted only to exclude signed-in team visits.
 
 Collection includes all published producers, independently of premium access;
 upgrading unlocks the recorded history. Revoking premium or changing ownership
@@ -96,20 +61,13 @@ both mechanisms.
 
 ## Boundaries for later metrics
 
-`lib/producer-stats/` owns ingestion, aggregation and private reads. Each endpoint
-accepts one counter's own bounded payload; neither is a generic client-defined
-event sink. A new metric adds its own allowlist entry or counter definition within
-this boundary, reusing producer identity, privacy limits and premium
-authorization. Never interpret a click as a visit, never merge the counters, and
-never add speculative measurement fields to CSV.
-
-Adding an action means one value in `PRODUCER_INTENT_ACTIONS`, the matching enum
-value in the database, its labels and one `data-producer-intent` attribute on the
-link. `whatsapp` is deliberately absent: the public profile has no WhatsApp link,
-and deriving one from the phone number would publish what the evidence does not
-support. Add the action when the link exists, not before.
+`lib/producer-stats/` owns ingestion, aggregation and private reads. The page-view
+endpoint accepts only profile openings; it is not a generic client-defined event
+sink. Future section clicks should add an explicit event/section allowlist and a
+separate documented counter definition within this boundary, reusing producer
+identity, privacy limits and premium authorization. Do not interpret a click as
+a visit or add speculative click fields to CSV or this first migration.
 
 Activation and migration order are in
 [Operations](OPERATIONS.md#producer-statistics-activation). The behavior tests
-exercise real PostgreSQL-compatible migrations and queries with isolated PGlite,
-including that no producer-change SQL role can read either counter.
+exercise real PostgreSQL-compatible migrations and queries with isolated PGlite.

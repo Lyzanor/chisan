@@ -207,7 +207,6 @@ test("account migration creates constraints and durable producer keys", async ()
         "producer_change_executions",
         "producer_change_requests",
         "producer_claims",
-        "producer_daily_actions",
         "producer_daily_stats",
         "producer_media_uploads",
         "producer_memberships",

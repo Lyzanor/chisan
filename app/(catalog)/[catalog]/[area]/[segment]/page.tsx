@@ -27,12 +27,8 @@ import { ProducerFollowButton } from "@/components/account/producer-follow-butto
 import { ProducerContact } from "@/components/producer-contact";
 import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 
-import { ProducerIntentClicks } from "@/components/analytics/producer-intent-clicks";
 import { ProducerProfileView } from "@/components/analytics/producer-profile-view";
-import {
-  isProducerStatsEnabled,
-  producerIntent,
-} from "@/lib/producer-stats/policy";
+import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import { ProducerFavorites } from "@/components/account/producer-favorites";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
@@ -316,12 +312,7 @@ export default async function ProducerPage({
     ? `https://www.google.com/maps/dir/?${new URLSearchParams({ api: "1", destination })}`
     : "";
   const publicLinks = [
-    {
-      url: website,
-      label: messages.producer.website,
-      Icon: GlobeIcon,
-      intent: "website" as const,
-    },
+    { url: website, label: messages.producer.website, Icon: GlobeIcon },
     {
       url: instagram,
       label: messages.fieldLabels.instagram,
@@ -332,12 +323,7 @@ export default async function ProducerPage({
       label: messages.fieldLabels.facebook,
       Icon: FacebookLogoIcon,
     },
-    {
-      url: maps,
-      label: "Google Maps",
-      Icon: MapPinIcon,
-      intent: "directions" as const,
-    },
+    { url: maps, label: "Google Maps", Icon: MapPinIcon },
   ].filter((link) => link.url);
   const profileQrPath = buildProducerHref(producer, {
     scope: buildCatalogScope(country),
@@ -423,16 +409,10 @@ export default async function ProducerPage({
   return (
     <main className="detail-page">
       {isProducerStatsEnabled() ? (
-        <>
-          <ProducerProfileView
-            country={country.slug}
-            producerId={producer.producerId}
-          />
-          <ProducerIntentClicks
-            country={country.slug}
-            producerId={producer.producerId}
-          />
-        </>
+        <ProducerProfileView
+          country={country.slug}
+          producerId={producer.producerId}
+        />
       ) : null}
       <script
         id="producer-structured-data"
@@ -535,17 +515,13 @@ export default async function ProducerPage({
             {description ? <p className="detail-intro">{description}</p> : null}
             <div className="detail-actions">
               {email ? (
-                <a
-                  href="#detail-contact"
-                  className="detail-action--primary"
-                  {...producerIntent("contact")}
-                >
+                <a href="#detail-contact" className="detail-action--primary">
                   <EnvelopeSimpleIcon size={20} aria-hidden="true" />
                   {actionLabels.contact}
                 </a>
               ) : null}
               {phone ? (
-                <a href="#detail-contact" {...producerIntent("call")}>
+                <a href="#detail-contact">
                   <PhoneIcon size={20} aria-hidden="true" />
                   {actionLabels.call}
                 </a>
@@ -553,14 +529,9 @@ export default async function ProducerPage({
             </div>
             {publicLinks.length ? (
               <ul className="detail-social-links">
-                {publicLinks.map(({ url, label, Icon, intent }) => (
+                {publicLinks.map(({ url, label, Icon }) => (
                   <li key={label}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      {...(intent ? producerIntent(intent) : {})}
-                    >
+                    <a href={url} target="_blank" rel="noreferrer">
                       <Icon size={20} aria-hidden="true" />
                       <span>
                         <small>{label}</small>
@@ -608,7 +579,6 @@ export default async function ProducerPage({
                 href={website}
                 target="_blank"
                 rel="noreferrer"
-                {...producerIntent("shop")}
               >
                 <GlobeIcon size={20} aria-hidden="true" />
                 {actionLabels.buyOnline}
@@ -674,7 +644,6 @@ export default async function ProducerPage({
                       target="_blank"
                       rel="noreferrer"
                       aria-label={actionLabels.directions + " · Google Maps"}
-                      {...producerIntent("directions")}
                     >
                       <NavigationArrowIcon size={20} aria-hidden="true" />
                       <span>
