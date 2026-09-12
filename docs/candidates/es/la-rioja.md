@@ -164,6 +164,7 @@ cooperatives, and the raw-production sectors, are deferred.
 The directory mixes first- and second-degree cooperatives, and a second-degree
 group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
 
+Already open from an earlier pass in this note, so no row was added here and the earlier entry now has a second corroborating source: BODEGAS NAJERILLA, S. COOP. (from Proveedores.com directory sweep — 2026-09-02).
+
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| BODEGAS NAJERILLA, S. COOP. | Arenzana de Abajo | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.bodegasnajerilla.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |

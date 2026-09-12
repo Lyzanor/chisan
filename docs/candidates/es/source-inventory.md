@@ -12,7 +12,8 @@
   rest are qualified only. Durable conclusions that change how we work are folded
   into `data/csv/es/AGENTS.md` § Source ceilings.
 - Editorial and source rules: `docs/EDITORIAL.md`, `docs/EVIDENCE_CONTRACT.md`
-  and `data/csv/es/AGENTS.md`.
+  and `data/csv/es/AGENTS.md`. `REVIEW-GUIDE.md` beside this file is the
+  reviewer's aid for working the batches these sources opened.
 
 This file is a country-level workspace rather than an area note, so it does not
 follow the one-file-per-area rule in `docs/candidates/README.md`. Prune each row
@@ -24,11 +25,12 @@ Claims below are only as strong as the check behind them.
 
 | Depth | Sources |
 |---|---|
-| Worked into a discovery batch: full data read and de-duplicated against the catalog | 8, 16, 19, 20, 22, 24, 28 |
+| Worked into a discovery batch: full data read and de-duplicated against the catalog | 8, 16, 19, 20, 22, 24, 28, 30 |
 | Batch attempted and suspended | 25 |
 | Dataset downloaded and parsed, not yet worked | 1, 13, 15, 33 |
 | Landing or result page read | 2, 3, 4, 5, 6, 7, 21, 23, 27, 31, 32, 34, 37, 38, 41, 44, 46, 50 |
-| HTTP reachability only | 9, 10, 11, 12, 14, 17, 18, 26, 29, 30, 35, 36, 39, 40, 42, 43, 45, 47, 48, 49 |
+| Content inspected on 2026-09-12, previously unopened | 14, 17, 18, 26, 29, 42, 43, 45 |
+| HTTP reachability only | 9, 10, 11, 12, 35, 36, 39, 40, 47, 48, 49 |
 
 A reachability-only row is an open question, not a verdict about content.
 
@@ -74,11 +76,11 @@ was reachable at this date. No change proposed.
 | # | Source | Verdict | What it actually publishes |
 |---|---|---|---|
 | 13 | Andalucía SIVDA | discovery, degraded | CSV/XLS/ODS, but the published file is `od_ventadirecta_mar23` and all 1,137 rows carry a 2022 `FECHA_ACTUALIZACION` — roughly four years stale. 1,039 of 1,137 rows (91%) are natural persons split across name and two surname columns; there is no trade-name field at all. 1,030 personal emails and 1,136 phone numbers. Non-food entities are present (a carpentry firm, plant nurseries, a rural-tourism company). Not admission-capable. |
-| 14 | Andalucía registro sanitario | open question | Reachability only. Expected to carry the same establishment-record ceiling as the RGSEAA. |
+| 14 | Andalucía registro sanitario | cross-check | The procedure page links a downloadable list of registered Andalusian food establishments, updated 2025-12-31. It is the autonomous complement to the RGSEAA and carries the same establishment-record ceiling: an entity, its registered activity class and address, never a public identity or a current own offer. |
 | 15 | Aragón venta local | discovery, small | 2026 XLSX, 98 entries over 12 product sections: number, `Persona Productora`, email, phone, `Municipio`. Municipality is present for every row, but 90 of 98 are plain personal names with no trade name, and the file is mostly personal contact data. 60 distinct municipalities. Honey dominates (56 of 98). |
 | 16 | Castilla-La Mancha RVDCLM | admission-capable, candidate | 339 live records: registration number, `Nombre y apellidos / Razón social`, province, municipality, phones, email, products, sale modalities. A `Descargar` button exports the whole result set as CSV (196 KB, latin-1), so it does have bulk access. Structurally parallel to the Catalan register — an accreditation to sell own output, carrying identity, own productive output and offer. Three limits found: records are **per product line**, so one holder can hold several (RVDCLM0002 and RVDCLM0003 are the same person, and 339 records are 333 holders); `Modalidades de venta` lists `Venta on line` as an *authorised* modality, which is not a channel seen usable and must never set `Venta online=sí`; and company names are **truncated at 19 characters** in both the table and the export, while personal names run to 59. 273 of 333 holders are bare personal names. |
-| 17 | Navarra Local/Tokikoa | open question | Reachability only. Described as covering establishments and markets, so retail is expected to be mixed in. |
-| 18 | Navarra canales cortos | open question | Reachability only. Described as including intermediaries and agrupaciones, which are not producers. |
+| 17 | Navarra Local/Tokikoa | discovery, noisy | It publishes producers **and** the establishments that sell them — shops, restaurants, agritourism — plus fairs and markets, across twelve product categories. Retail and hospitality have to be filtered out entry by entry, unlike Reyno Gourmet which separates them by taxonomy. |
+| 18 | Navarra canales cortos | qualified, available | It does publish its register, as a PDF listing producers **and intermediaries** together; an intermediary is not a producer, so the two must be separated on reading. Not yet worked. |
 
 ## Batch D — organic certifiers and regional seals (19–28)
 
@@ -91,7 +93,7 @@ was reachable at this date. No change proposed.
 | 23 | Galicia Calidade | open question | Reachability only. Brand-oriented, so a listed marca may have no productive unit of its own. |
 | 24 | Madrid M Producto | discovery, clean | 141 certified producers across 14 product categories. The listing pages give name and product category; each producer page adds municipality, phone, email, website and the certified products, so an entry supports the registered products and place but not current activity. Enumerable from 24 listing pages, and the host tolerated a 1.5–2 s serial pace without complaint. The roster mixes in an IGP body and a few distributors, packers and hospitality chains. |
 | 25 | CyL Tierra de Sabor | discovery / cross-check | 664 producer pages, enumerable from `producers-sitemap.xml` (allowed by robots.txt; the WordPress REST API is closed). Each page publishes the name, full street address with postcode and municipality, province, phone, email, website, a description and the individual products with their quality figures — rich enough to carry several admission claims at once. Ten entries are associations or regulatory councils rather than producers. **The host stopped answering during a three-worker crawl on 2026-09-11 and was still refusing connections the next check**, from three independent network paths while other Junta de Castilla y León hosts served normally — so the outage is the host's, not a block on our address, and whether the crawl contributed is unestablished. Fetch it slowly and serially regardless. |
-| 26 | CyL canales alternativos | open question | The inventory points at the generic `tramitacastillayleon.jcyl.es` portal, not at a register listing. |
+| 26 | CyL canales alternativos | unusable as given | The inventory URL is the generic procedure portal, which answers but exposes no register listing. Without a direct address for the register itself there is nothing to read. |
 | 27 | Asturias Alimentos del Paraíso | discovery | 362 `Elaboradores` behind operator, product, certification and locality filters. |
 | 28 | Asturias Open Data | mixed | Only `dataset-alimentos-paraiso.xlsx` names operators: 21 sheets, one per DOP/IGP/APN figure, carrying the declared trade name, phones, email and a `TIENDA ONLINE` flag. `CONCEJO` appears **only on the DOP Cabrales sheet** — 31 of 344 rows — so most entries carry no municipality. The other four datasets (`produccion-ecologica`, `sidra-deriv-manzana`, `denominaciones-calidad`, `comercio-prod-hortofrut`) are statistical aggregates by year with no operator names. |
 
@@ -99,13 +101,13 @@ was reachable at this date. No change proposed.
 
 | # | Source | Verdict | What it actually publishes |
 |---|---|---|---|
-| 29 | Extremadura suministro directo | open question | Reachability only. |
-| 30 | Illes Balears venda directa | open question | Reachability only. |
+| 29 | Extremadura suministro directo | qualified, degraded | The procedure page does publish a `Relación de entidades`, but it is an 18-page **scanned PDF with no text layer** — 6 MB of page images, zero extractable characters — and it is dated 2024-05-29. Reading it needs OCR, and its content would still be roughly two years old. |
+| 30 | Illes Balears venda directa | admission-capable | **Worked 2026-09-12.** The seal's *Operadores de venta directa* section is a browsable register of 87 accredited operators, ten to a page, each with an entity page carrying the name, a street or rural address, opening hours and sometimes products. Like the Catalan register it accredits a named operator to sell its own output. It publishes no municipality field, and its addresses often name a locality rather than the municipality. |
 | 31 | CAECV | **blocked** | States `En ningún supuesto se autoriza su explotación económica o uso comercial.` and publishes NIF/CIF, email, phone, mobile, postcode and municipality. Do not use as a data source. |
 | 32 | Canarias ROPE / ICCA | duplicate | Refers operator consultation to the national REGOE listing, so it is not an independent source from #2. |
 | 33 | País Vasco directorio | unusable | The published CSV/XLSX is `número de establecimientos y personal ocupado` — establishment counts and employment by subsector and province (1,862 establishments in 2024). It contains no company names. |
 | 34 | La Rioja registro industrias | licence-restricted | XLS/XML/CSV/JSON, updated daily (2026-09-11 at this check), but licensed **CC BY-NC 2.0**, non-commercial only. Our La Rioja area already holds 425 rows. |
-| 35 | La Rioja marcas de calidad | inaccessible | HTTP 403 at this date. Inaccessibility is uncertainty, not a negative finding. |
+| 35 | La Rioja marcas de calidad | inaccessible | HTTP 403 on 2026-09-11 and again on 2026-09-12. Inaccessibility is uncertainty, not a negative finding. |
 
 ## Batch F — sector associations (36–41)
 
@@ -126,10 +128,10 @@ carries a productive municipality.
 
 | # | Source | Verdict | Note |
 |---|---|---|---|
-| 42 | Salón Gourmets 2026 | open question | Reachability only. |
-| 43 | Alimentaria Barcelona 2026 | open question | Reachability only. |
+| 42 | Salón Gourmets 2026 | discovery, weak placement | Publicly browsable without login, roughly nine pages of exhibitors. Each entry gives the company name, pavilion, stand and **country** — no region, province or municipality, and no website. It cannot place a productive unit. |
+| 43 | Alimentaria Barcelona 2026 | discovery, weak placement | A browsable exhibitor directory searchable by product category, for an edition expecting some 3,300 companies from 70+ countries. Stand location is published; a Spanish municipality is not. |
 | 44 | Fruit Attraction | empty at check | The catalogue returned no results at this date. |
-| 45 | Barcelona Wine Week | open question | Landing page only. |
+| 45 | Barcelona Wine Week | qualified, available | The exhibitor list lives in a separate e-catalogue on `ecatalogue.firabarcelona.com`, browsable without registration and filterable to exhibitors only. Per-exhibitor fields not yet inspected. |
 | 46 | BioCultura | discovery, noisy | Around 3,300 entries with a province filter, but the directory explicitly spans shops, NGOs, institutions, bioconstruction, textiles and tourism. Heavy filtering required. |
 | 47 | Seafood Expo Global 2026 | inaccessible | HTTP 404 at this date. |
 
@@ -233,8 +235,15 @@ Counts are the rows actually present in the area notes at the closing date.
 | 19 Navarra CPAEN/NNPEK | 200 elaborating of 756 | 47 | 109 | — | 556 raw-production records |
 | 22 Galicia CRAEGA | 242 *Industrias* of ~1,295 | 42 | 172 | — | ~1,000 raw-production records |
 | 8 Cooperativas Agro-alimentarias | 1,303 elaborating of 2,171 | 147 | 55 | — | 1,101 elaborating without own-offer evidence |
+| 30 Illes Balears direct-sale register | 86 of 87 accredited operators | 25 | 60 | — | 1 entry not read |
 | 20 Reyno Gourmet | 116 *Empresas* of 237 entities | 25 + 9 open candidates | 81 | — | 59 *Comercios* and 29 *Hostelería*, a separate section |
-| **Total** | | **453** | **639** | **2** | |
+| **Total** | | **478** | **699** | **2** | |
+
+A review pass on 2026-09-12 removed 44 of those 699 as already open from an
+earlier pass in the same area note, leaving **655**. The batches had been
+de-duplicated against the published CSV but not against the notes' existing
+entries, which is what `docs/candidates/README.md` asks for; each affected batch
+intro now names what was dropped and where it was already open.
 
 Every batch took a slice rather than the whole source, and each deferred slice is
 named above so the next pass knows what was left rather than missed.
@@ -264,21 +273,23 @@ and Regal López (catalog Taboada, register Chantada).
 
 | State | Sources | Note |
 |---|---|---|
-| Worked | 8, 16, 19, 20, 22, 24, 28 | Deferred slices named above |
+| Worked | 8, 16, 19, 20, 22, 24, 28, 30 | Deferred slices named above |
 | Suspended | 25 | Host unreachable; 299 URLs and the slug-level de-duplication are ready |
-| Closed — publishes no producer identity | 5, 21, 32, 33, 47 | Not browsable, statistics only, a pointer to another source, or gone |
+| Closed — publishes no producer identity | 5, 21, 26, 32, 33, 47 | Not browsable, statistics only, a generic portal, a pointer to another source, or gone |
 | Closed — licence or access forbids use | 31, 34, 48 | Two forbid commercial use; one is bot-blocked behind a paid licence |
 | Closed — outside the evidence model | 49, 50 | Paid mercantile databases; mercantile attributes establish none of our claims |
 | Governed by an existing ceiling | 10, 11, 12 | Catalan registers already described in the country guide |
 | Corroboration only, not discovery | 1, 4, 7, 38 | Useful against an existing row; none can find a placeable new unit alone |
 | Second-degree, reaches producers through another source | 9, 36, 39, 40 | Federations and sector associations |
-| Qualified, not yet worked | 2, 3, 6, 13, 15, 23, 27, 37, 41, 46 | Each has a verdict above; none is blocked |
-| Open question, reachability only | 14, 17, 18, 26, 29, 30, 35, 42, 43, 45 | Content never inspected; a verdict would be invention |
+| Qualified, not yet worked | 2, 3, 6, 13, 14, 15, 17, 18, 23, 27, 29, 37, 41, 42, 43, 45, 46 | Each has a verdict above; none is blocked |
+| Open question, reachability only | 35 | Refused access on both checks; a verdict would be invention |
 | Returned nothing at check | 44 | The exhibitor catalogue listed no exhibitors; an empty result is not an absence |
 
-Of the 50: 7 worked, 1 suspended, 10 closed, 3 governed by an existing ceiling,
-8 reaching producers only indirectly, 10 qualified and available, 10 unopened,
-and 1 that returned an empty catalogue.
+Of the 50: 8 worked, 1 suspended, 11 closed, 3 governed by an existing ceiling,
+8 reaching producers only indirectly, 17 qualified and available, 1 still
+refusing access, and 1 that returned an empty catalogue. Nothing now sits
+unexamined: every source has had its content inspected or has a recorded reason
+why it could not be.
 
 The nearest useful work, in order: resume 25 when its host answers; 27 Asturias Alimentos del Paraíso's web directory, which holds 362
 elaboradores behind filters and would corroborate the roster batch already

@@ -154,3 +154,14 @@
   centroids can name a neighbouring municipality, so read the entity page's own
   address before placing a row. Membership records the product type, not current
   activity.
+- The Balearic *venda directa* register accredits a named operator to sell its
+  own output and publishes the operator, a street or rural address, opening hours
+  and sometimes products. Like the Catalan register a record carries identity and
+  own productive output, and like it the register does not establish current
+  activity. It publishes no municipality field, and its addresses frequently name
+  a locality — Sa Ràpita, Son Espanyol, Sant Ferran — rather than the official
+  municipality, so read the address rather than deriving a placement from it.
+  Resolving Balearic addresses against the shared municipality reference is
+  unsafe twice over: that reference carries Castilian exonyms where the source
+  and the country rule use the Catalan form, and a road name in an address can
+  match a municipality the unit does not sit in.
