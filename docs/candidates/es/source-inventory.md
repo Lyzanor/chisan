@@ -24,10 +24,10 @@ Claims below are only as strong as the check behind them.
 
 | Depth | Sources |
 |---|---|
-| Worked into a discovery batch: full data read and de-duplicated against the catalog | 8, 16, 19, 22, 24, 28 |
+| Worked into a discovery batch: full data read and de-duplicated against the catalog | 8, 16, 19, 20, 22, 24, 28 |
 | Batch attempted and suspended | 25 |
 | Dataset downloaded and parsed, not yet worked | 1, 13, 15, 33 |
-| Landing or result page read | 2, 3, 4, 5, 6, 7, 20, 21, 23, 27, 31, 32, 34, 37, 38, 41, 44, 46, 50 |
+| Landing or result page read | 2, 3, 4, 5, 6, 7, 21, 23, 27, 31, 32, 34, 37, 38, 41, 44, 46, 50 |
 | HTTP reachability only | 9, 10, 11, 12, 14, 17, 18, 26, 29, 30, 35, 36, 39, 40, 42, 43, 45, 47, 48, 49 |
 
 A reachability-only row is an open question, not a verdict about content.
@@ -85,7 +85,7 @@ was reachable at this date. No change proposed.
 | # | Source | Verdict | What it actually publishes |
 |---|---|---|---|
 | 19 | CPAEN/NNPEK | discovery | 756 operators, exported whole from `?excel=1` with name, occasional trade name, address, postcode, población, website and declared products by class; the operator-type columns export empty. 581 records declare only untransformed vegetal produce and 200 declare transformed products or wine. Importers, distributors, cold logistics, retail chains, fodder and non-food operators are certified beside producers, and some operators are seated outside Navarra. Publishes a named contact with personal phone and email. |
-| 20 | Reyno Gourmet | discovery | Name, address, phone, email, products, website — but the directory is explicitly `Empresas • Tiendas • Hostelería`, so shops and hospitality are mixed in and must be filtered out. |
+| 20 | Reyno Gourmet | discovery | 237 member entities, readable in three requests from an open WordPress REST API. Its `tipo_de_entidad` taxonomy separates 116 *Empresas* from 59 *Comercios* and 29 *Hostelería*, so shops and hospitality are a distinct section rather than mixed in — the qualification note of 2026-09-11 read the site's navigation as a single mixed directory and was wrong about that. Records carry trade name, product types, quality figures and a map point but no municipality; the entity page carries the address. |
 | 21 | Galicia venta directa / SEVEDI | unusable | Not a public listing of holdings. The page carries the regulation plus a `NIFREAGA` lookup that requires the holding's own code. Cannot be browsed for discovery. |
 | 22 | CRAEGA | discovery | Roughly 1,295 certified operators. The `Descargar listado completo` control builds its CSV client-side from a WordPress AJAX endpoint that accepts a filter and returns the whole matching set, so no crawling is needed, but it refuses an unfiltered query. The export carries identity, address and contact only — **no product or activity column**. By activity: Vegetal 784, Animal 518, Industrias 242, Comercializador 136, Acuicultura 150, Importación 20, Algas 13, and Apicultura returns nothing at all. Port terminals, cold stores, retail chains and input suppliers are certified beside producers. |
 | 23 | Galicia Calidade | open question | Reachability only. Brand-oriented, so a listed marca may have no productive unit of its own. |
@@ -233,7 +233,8 @@ Counts are the rows actually present in the area notes at the closing date.
 | 19 Navarra CPAEN/NNPEK | 200 elaborating of 756 | 47 | 109 | — | 556 raw-production records |
 | 22 Galicia CRAEGA | 242 *Industrias* of ~1,295 | 42 | 172 | — | ~1,000 raw-production records |
 | 8 Cooperativas Agro-alimentarias | 1,303 elaborating of 2,171 | 147 | 55 | — | 1,101 elaborating without own-offer evidence |
-| **Total** | | **419** | **558** | **2** | |
+| 20 Reyno Gourmet | 116 *Empresas* of 237 entities | 25 + 9 open candidates | 81 | — | 59 *Comercios* and 29 *Hostelería*, a separate section |
+| **Total** | | **453** | **639** | **2** | |
 
 Every batch took a slice rather than the whole source, and each deferred slice is
 named above so the next pass knows what was left rather than missed.
@@ -263,7 +264,7 @@ and Regal López (catalog Taboada, register Chantada).
 
 | State | Sources | Note |
 |---|---|---|
-| Worked | 8, 16, 19, 22, 24, 28 | Deferred slices named above |
+| Worked | 8, 16, 19, 20, 22, 24, 28 | Deferred slices named above |
 | Suspended | 25 | Host unreachable; 299 URLs and the slug-level de-duplication are ready |
 | Closed — publishes no producer identity | 5, 21, 32, 33, 47 | Not browsable, statistics only, a pointer to another source, or gone |
 | Closed — licence or access forbids use | 31, 34, 48 | Two forbid commercial use; one is bot-blocked behind a paid licence |
@@ -271,17 +272,15 @@ and Regal López (catalog Taboada, register Chantada).
 | Governed by an existing ceiling | 10, 11, 12 | Catalan registers already described in the country guide |
 | Corroboration only, not discovery | 1, 4, 7, 38 | Useful against an existing row; none can find a placeable new unit alone |
 | Second-degree, reaches producers through another source | 9, 36, 39, 40 | Federations and sector associations |
-| Qualified, not yet worked | 2, 3, 6, 13, 15, 20, 23, 27, 37, 41, 46 | Each has a verdict above; none is blocked |
+| Qualified, not yet worked | 2, 3, 6, 13, 15, 23, 27, 37, 41, 46 | Each has a verdict above; none is blocked |
 | Open question, reachability only | 14, 17, 18, 26, 29, 30, 35, 42, 43, 45 | Content never inspected; a verdict would be invention |
 | Returned nothing at check | 44 | The exhibitor catalogue listed no exhibitors; an empty result is not an absence |
 
-Of the 50: 6 worked, 1 suspended, 10 closed, 3 governed by an existing ceiling,
-8 reaching producers only indirectly, 11 qualified and available, 10 unopened,
+Of the 50: 7 worked, 1 suspended, 10 closed, 3 governed by an existing ceiling,
+8 reaching producers only indirectly, 10 qualified and available, 10 unopened,
 and 1 that returned an empty catalogue.
 
-The nearest useful work, in order: resume 25 when its host answers; 20 Reyno
-Gourmet, which publishes product and certification but mixes in shops and
-hospitality; 27 Asturias Alimentos del Paraíso's web directory, which holds 362
+The nearest useful work, in order: resume 25 when its host answers; 27 Asturias Alimentos del Paraíso's web directory, which holds 362
 elaboradores behind filters and would corroborate the roster batch already
 recorded; and the personal-name slices deferred from 16 and 28, which need a
 public identity resolved per holder before they can carry rows.

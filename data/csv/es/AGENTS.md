@@ -145,3 +145,12 @@
   members' output is not itself a productive unit; place the qualifying unit
   instead. Sectors such as supplies and fuel, member shops, credit sections,
   animal feed, fodder, tobacco, cotton, flowers and forestry are not food.
+- Reyno Gourmet separates its member entities by a `tipo_de_entidad` taxonomy
+  into *Empresas*, *Comercios* and *Hostelería*, so the shops and hospitality it
+  carries are a distinct section rather than a contaminant of the producer list.
+  Its records publish the trade name, product types, the quality figures held and
+  a map point, but no municipality, and its open REST API returns the whole set
+  without crawling. A point is not a placement: resolving it against municipality
+  centroids can name a neighbouring municipality, so read the entity page's own
+  address before placing a row. Membership records the product type, not current
+  activity.
