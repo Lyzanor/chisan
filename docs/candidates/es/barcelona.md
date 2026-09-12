@@ -42,7 +42,6 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| HORCHATAS MONSERRAT, S.L. | L'Hospitalet de Llobregat | `Bebidas sin alcohol` — certified Chufa de Valencia horchata elaborator | The current council directory certifies this entity for horchata elaboration and publishes its location and first-party channel. | [DO Chufa profile](https://chufadevalencia.org/empresas/horchatas-monserrat-s-l/); [Directory](https://www.proveedores.com/proveedores/horchatas-monserrat/) | <http://www.horchatamonserrat.com> | The linked official page did not provide usable admission evidence in this pass. Confirm the exact productive unit, current own offer and catalog eligibility; certification scope does not automatically prove cultivation or an independent producer identity. |
 | CASA PLANELLES | Terrassa | `Bebidas sin alcohol` — certified Chufa de Valencia horchata elaborator | The current council directory certifies this entity for horchata elaboration and publishes its location and first-party channel. | [DO Chufa profile](https://chufadevalencia.org/empresas/casa-planelles/) | <http://www.casaplanelles.com/> | The linked official page did not provide usable admission evidence in this pass. Confirm the exact productive unit, current own offer and catalog eligibility; certification scope does not automatically prove cultivation or an independent producer identity. |
 
 ## Carrefour supplier-directory pass — 2026-08-28
