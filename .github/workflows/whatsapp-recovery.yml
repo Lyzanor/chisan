@@ -1,0 +1,28 @@
+name: WhatsApp recovery
+
+on:
+  schedule:
+    - cron: '2-59/5 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: whatsapp-production-recovery
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    # Keep standard runners free; do not run automatically if made private.
+    if: github.repository == 'Lyzanor/chisan' && github.event.repository.private == false && vars.CHISAN_WHATSAPP_RECOVERY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Recover pending WhatsApp work
+        env:
+          CRON_SECRET: ${{ secrets.CHISAN_WHATSAPP_CRON_SECRET }}
+        run: |
+          test -n "$CRON_SECRET"
+          curl --fail --silent --show-error --max-time 290 \
+            --header "Authorization: Bearer $CRON_SECRET" \
+            https://chisan.app/api/whatsapp/process

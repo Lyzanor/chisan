@@ -150,12 +150,23 @@ the live pilot.
 
 `GET /api/whatsapp/process` requires an exact `Authorization: Bearer` match to a
 nonempty `CRON_SECRET`. It recovers pending work and removes inbox records older
-than seven days and expired bindings. **Configure a scheduler before activation**:
-call this endpoint every five minutes. With a compatible Vercel plan, add a
-`crons` entry for this path with schedule `*/5 * * * *` to `vercel.json` at
-activation. It is intentionally not registered while this integration is
-unprovisioned. Vercel Hobby permits only daily cron; use a suitable existing
-scheduler or plan, rather than deploying an unsupported schedule.
+than seven days and expired bindings. The
+[WhatsApp recovery workflow](../.github/workflows/whatsapp-recovery.yml) requests
+this endpoint every five minutes using a standard GitHub-hosted runner in the
+public repository. Set the same random secret as Production `CRON_SECRET` and
+the GitHub Actions secret `CHISAN_WHATSAPP_CRON_SECRET`, then set repository
+variable `CHISAN_WHATSAPP_RECOVERY_ENABLED=true`. Run it manually and confirm
+success before enabling intake. It neither checks out code nor receives a
+database or model credential. Failed HTTP requests fail the workflow visibly.
+
+GitHub schedules are best effort: runs can be delayed or dropped under load,
+and public-repository schedules are disabled after 60 days without activity.
+Inspect the Actions run history for failures or missed recovery. The incoming
+webhook still triggers immediate processing; this job is its recovery path.
+The workflow skips private repositories to avoid runner billing and can be
+paused by setting the repository variable to `false`. Standard public runners
+are free; Vercel/database usage remains subject to those providers' plans.
+If moving providers, any scheduler can call the same authenticated endpoint.
 
 Keep the recovery job monitored. A 503 means the durable work remains pending;
 inspect database/provider availability without logging phone numbers, messages,

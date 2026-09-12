@@ -29,7 +29,7 @@ export default function PrivacyPage() {
         <p className="catalog-kicker">{SITE_NAME}</p>
         <h1 id="privacy-title">Privacidad y publicidad</h1>
         <p className={styles.updated}>
-          Última actualización: 6 de septiembre de 2026
+          Última actualización: 12 de septiembre de 2026
         </p>
         <p>
           Este aviso explica qué información tratan Chisan y sus proveedores
@@ -89,6 +89,28 @@ export default function PrivacyPage() {
           del catálogo y el municipio que eliges. Solo se publican los
           productores que seleccionas expresamente. El catálogo público en CSV
           se mantiene separado de los datos de cuenta.
+        </p>
+        <h2>Asistente de productores por WhatsApp</h2>
+        <p>
+          Si utilizas el asistente, Meta entrega tus mensajes mediante WhatsApp
+          Business Platform. Chisan vincula tu número con tu cuenta y comprueba
+          tu permiso para gestionar el productor. Los textos, los datos del
+          producto que estés preparando y las fotos que envíes se procesan con
+          OpenAI para preparar una propuesta privada. El equipo de Chisan revisa
+          la propuesta antes de publicarla; la conversación y la foto original
+          no se publican automáticamente.
+        </p>
+        <p>
+          Chisan retira el texto original y las referencias a las fotos de su
+          bandeja tras procesar cada mensaje. Las imágenes se procesan sin sus
+          metadatos originales. La tarea de recuperación elimina los mensajes
+          pendientes y registros de entrega con más de siete días. La
+          vinculación caduca a los treinta días y puedes desconectarla desde
+          tu cuenta; las propuestas ya enviadas conservan su historial de
+          revisión. Estos plazos describen el almacenamiento de Chisan, no la
+          conservación que aplican Meta u OpenAI en sus servicios. Puedes pedir
+          acceso, rectificación o eliminación mediante nuestra página de
+          contacto.
         </p>
         <h2>Vídeos integrados</h2>
         <p>
