@@ -1,4 +1,5 @@
 import { randomBytes } from "node:crypto";
+import { WhatsAppBudgetExhausted } from "./budget";
 import { producerChangeIntakeSchema } from "../accounts/producer-change-intake";
 import {
   and,
@@ -524,7 +525,9 @@ async function handleMessage(
         ? { image: await dependencies.image(message.image) }
         : {}),
     });
-  } catch {
+  } catch (error) {
+    if (error instanceof WhatsAppBudgetExhausted)
+      return "El asistente está temporalmente pausado. Conservo los datos anteriores y puedes continuar desde el editor de Chisan.";
     return "No he podido leer bien este mensaje o foto. Conservo los datos anteriores. Prueba con texto o una foto más clara.";
   }
   if (interpretation.action === "status") return conversationStatus(tx, link);

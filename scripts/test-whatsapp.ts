@@ -68,6 +68,54 @@ import {
 import { whatsappConfig, whatsappEnabled } from "../lib/whatsapp/config";
 import { POST, GET } from "../app/(application)/api/webhooks/whatsapp/route";
 import { GET as recover } from "../app/(application)/api/whatsapp/process/route";
+import {
+  extractionCallLimit,
+  reserveExtraction,
+  WhatsAppBudgetExhausted,
+  withExtractionAllowance,
+} from "../lib/whatsapp/budget";
+
+test("global extraction allowance defaults closed and rejects invalid settings", () => {
+  assert.equal(extractionCallLimit({}), 0);
+  assert.equal(extractionCallLimit({ CHISAN_WHATSAPP_MAX_TOTAL_CALLS: "3" }), 3);
+  for (const value of ["-1", "1.5", "NaN", "Infinity", "9007199254740992"])
+    assert.throws(() => extractionCallLimit({ CHISAN_WHATSAPP_MAX_TOTAL_CALLS: value }));
+});
+
+test("committed global allowance survives provider failures and new workers", async () => {
+  const pg = new PGlite();
+  try {
+    for (const file of (await readdir("drizzle"))
+      .filter((name) => /^\d{4}_.+\.sql$/.test(name)).sort())
+      await pg.exec(await readFile(`drizzle/${file}`, "utf8"));
+    const database = drizzle(pg, { schema }) as unknown as Database;
+    let calls = 0;
+    const provider = {
+      profile: extractionProfile(config),
+      extract: async () => { calls++; throw new Error("Uncertain provider timeout"); },
+    };
+    const input = { text: "Cerveza", previous: emptyCandidate(), at: new Date(), timeZone: "Europe/Madrid" };
+    const worker = () => withExtractionAllowance(provider, () => reserveExtraction(database, 3));
+    const attempts = await Promise.allSettled(
+      Array.from({ length: 9 }, () => worker().extract(input)),
+    );
+    assert.equal(attempts.filter((result) => result.status === "fulfilled").length, 0);
+    assert.equal(attempts.filter((result) => result.status === "rejected" &&
+      result.reason instanceof WhatsAppBudgetExhausted).length, 6);
+    await assert.rejects(worker().extract(input), WhatsAppBudgetExhausted);
+    assert.equal(calls, 3);
+    await assert.rejects(reserveExtraction(database, 0), WhatsAppBudgetExhausted);
+    // Removing inbox/conversation state does not reset this independent ledger.
+    await database.delete(schema.whatsappInbox);
+    await assert.rejects(worker().extract(input), WhatsAppBudgetExhausted);
+    assert.equal(calls, 3);
+    const offline = withExtractionAllowance(provider, async () => { throw new Error("Database unavailable"); });
+    await assert.rejects(offline.extract(input), /Database unavailable/);
+    assert.equal(calls, 3);
+  } finally {
+    await pg.close();
+  }
+});
 
 const complete = (): ProductCandidate => ({
   ...emptyCandidate(),

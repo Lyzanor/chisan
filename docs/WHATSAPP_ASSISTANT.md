@@ -5,6 +5,25 @@ The cross-channel review and publication map is
 
 ## Model and reasoning configuration
 
+`CHISAN_WHATSAPP_MAX_TOTAL_CALLS` is a global lifetime allowance for provider
+attempts, defaulting to **0 (blocked)**. The initial controlled test uses 3.
+Before each model request, a separate PostgreSQL transaction locks the shared
+allowance, counts `whatsapp.extraction_reserved` audit events and commits a
+reservation. Failed, timed-out or rolled-back processing never refunds it.
+Missing configuration or an unavailable ledger prevents model calls. The count
+does not reset on a new day, deployment, conversation or inbox cleanup. Keep
+these audit events; removing them would reset the protection. Increasing the
+allowance requires an explicit operator configuration change. Exhaustion gives
+the producer a pause message and preserves their earlier candidate.
+
+This is a call-count ceiling, not a currency spending limit: input, images,
+output and provider prices determine each call's cost. Use the model and output
+cap below alongside prepaid billing without automatic top-up. This allowance
+only covers this WhatsApp runtime, not other uses of the OpenAI account.
+One worker runs per server instance to leave pool capacity for reservations;
+PostgreSQL serializes reservations across instances. No schema migration is
+needed: the durable audit ledger already exists.
+
 `OPENAI_API_KEY` authenticates the project. It does not select intelligence.
 `CHISAN_WHATSAPP_MODEL` selects the model for each Responses API request;
 `CHISAN_WHATSAPP_REASONING_EFFORT` optionally selects its reasoning effort.
