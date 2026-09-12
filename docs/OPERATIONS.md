@@ -309,6 +309,12 @@ freeze or reactivation above requires a subsequent deployment even when the
 commit is unchanged. The build asserts migration compatibility and fails closed
 when accounts are enabled against an outdated schema.
 
+For a configuration-only redeployment, the ignored-build classifier can cancel
+a Git redeploy of the same commit. From a clean checkout of the verified
+production commit, use `vercel deploy --prod --force` with the existing project
+link, then verify the new deployment is `READY` and serves the production
+domain. Keep the normal build and database compatibility checks enabled.
+
 Every requested push still publishes the complete committed history to GitHub.
 `scripts/vercel-ignore-build.mjs` only suppresses the Vercel build when every
 changed file is deployment-neutral: repository documentation, country agent

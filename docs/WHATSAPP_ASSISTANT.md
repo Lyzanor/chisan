@@ -62,8 +62,9 @@ request when enough information is available. There are no confirmation codes,
 yes/no approval prompts or next-step commands in the product conversation. Editorial review, entitlement checks and Git publication still apply.
 Nothing writes to CSV, public content JSON or public images from a request.
 
-This is an implementation awaiting provider configuration, not an active phone
-number. It is off unless `CHISAN_WHATSAPP_ENABLED=true` and accounts are ready.
+The runtime is off unless `CHISAN_WHATSAPP_ENABLED=true` and accounts are ready.
+Deployment configuration, Meta subscriptions and a real inbound test determine
+operational readiness; the implementation alone does not prove activation.
 
 An explicit launch day is stored as `launchOn` in the private submission audit
 and in the reviewer's author note. It is **not** `updated_on`, a stock claim, a
