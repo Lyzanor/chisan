@@ -70,4 +70,3 @@ Discovery URL for every row: <https://registroventadirecta.castillalamancha.es/>
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Alcarria Bee Compan… | Cifuentes | `Miel` — honey and hive products | RVDCLM0138 accredits own honey in an Alcarria honey municipality. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
-| Bee Brothers C.B. | Angón | `Miel` — honey and hive products | RVDCLM0315 accredits own honey. | Register | — | Confirm the public producer identity, a current own offer and the productive municipality; the accreditation alone does not establish current activity. |

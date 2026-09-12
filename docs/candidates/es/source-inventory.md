@@ -295,3 +295,26 @@ The nearest useful work, in order: resume 25 when its host answers; 27 Asturias 
 elaboradores behind filters and would corroborate the roster batch already
 recorded; and the personal-name slices deferred from 16 and 28, which need a
 public identity resolved per holder before they can carry rows.
+
+## Full candidate disposition pass — 2026-09-13
+
+This pass reviewed every row then present in the Spain candidate notes. The
+8,799 older rows had already been reviewed; their recorded blocker was retained
+unless this pass resolved the row as an exact catalog representation. The
+655-row official-source intake from 2026-09-11/12 was checked individually
+against the current catalog, its source ceiling and current first-party evidence.
+
+- 117 producer identities were admitted to the canonical CSVs;
+  122 candidate rows were removed because several identities
+  appeared in more than one source batch.
+- 123 additional rows were removed as already represented. No new
+  evidence record was created for those queue-only duplicate resolutions.
+- 1 malformed or affirmatively ineligible row was closed with an
+  evidence tombstone.
+- Every remaining row is a hold. Its last column states the unresolved admission
+  test; no row was promoted from a directory, certification or association signal
+  without the evidence required by that source's documented ceiling.
+
+The pass deliberately leaves optional CSV fields blank when no reviewed source
+supports them. Direct-sale registry authorisations do not set online sales, and
+personal registry contact details were not copied into public rows.
