@@ -105,7 +105,7 @@ export async function ExpandedProducerProfile({
           }}
         />
       ) : null}
-      {hasProducerContent(content) ? (
+      {content.products.length && content.links.length ? (
         <nav
           className="detail-expanded-profile__nav"
           aria-label={messages.producer.expandedProfile}

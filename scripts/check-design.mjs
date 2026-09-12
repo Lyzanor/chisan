@@ -39,7 +39,6 @@ const SPACE_SCALE = [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128];
 const RADII = ["0", "999px", "50%", "2px", "4px", "8px"];
 const PILL_ALLOWLIST = [
   ".catalog-chip",
-  ".detail-service-chips",
   ".detail-product-list",
   ".admin-field-tags",
   ".admin-filter-tabs",

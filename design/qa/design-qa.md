@@ -1466,3 +1466,48 @@ using the production server for behavior tests to preserve the other dev session
 - Authenticated linking, populated admin provenance and live provider intake
   still require the isolated activation smoke checks. This staged release does
   not certify the active producer journey or enable inference.
+
+## 2026-09-13 — Compact producer profile
+
+- Requested denser profiles that keep the minimal look. Profile sections share
+  one rhythm: a hairline rule and 24px of vertical space. Shell, hero, hours,
+  contact, distance and expanded-profile padding moved from 32–48px to 12–24px.
+  The name is 28–40px, section headings 28px and card headings 18px. Featured
+  products lost their card and the repeated category eyebrow.
+- The verified badge and the pending review link sit beside the name. Following
+  is one 44px icon target at the end of the name row: hover and keyboard focus
+  unfold its label leftwards over free space while the reserved slot stays 44px,
+  so the name never reflows; a touch screen unfolds it on the first tap and acts
+  on the second. A first iteration used a disclosure menu in the breadcrumb row;
+  review clarified that the request meant an unfolding icon, so it was replaced.
+- Featured products carry one sales-channel row. `ecommerce` is itself the
+  purchase link when `Venta online` is `sí` and a website exists; other channels
+  are labels with icons, and `no` or `no comprobado` remain a quiet status. The
+  Details table that repeated online sales, channels and verification is gone:
+  Details holds its heading, the suggestion action, the trust or review notice
+  and public sources. The closing section only invites a claim, shows a pending
+  claim or lists members' management links; verified profiles show visitors no
+  closing section.
+- Location shares a row with hours and the contact widget; without a map, hours
+  stack under the location card so the contact column does not face an empty
+  area. Directions is the green primary action and distance a white secondary
+  button. Similar producers are compact horizontal cards filling available
+  columns.
+- Checked a local production build (`next start`; the QA account database was
+  unavailable) at 1440×1000, 1440×2200, 1280×900, 390×844 and 375×812 on Ànima
+  Essències (pending, map, hours, telephone and email) and Chisan (no
+  coordinates), plus rendered HTML for A27bakehouse (`Venta online: no`,
+  telephone only) and 0% Gluten Krümcoffee Granollers (editorial note, online
+  shop). Ànima's document at 1280px went from 3273px in production to 2130px.
+  No horizontal overflow. Hover and focus unfolded the follow control from 44px
+  to 161px; a first mobile tap unfolded it without navigating and the second
+  opened `/acceso?redirect_url=…`. Verified and following styles were previewed
+  by DOM substitution because ownership and follows need the account database.
+- Chisan shows no related producers because its row has no `lat`/`lon`, not
+  because of premium: with a Santa Coloma de Gramenet coordinate the selector
+  returns three `Otros` producers within 6.1km.
+- `check:design` (off-scale space 185→182, type-scale notices 91→87),
+  `check:docs`, TypeScript, `test:i18n`, `test:content`, `test:accounts`,
+  `test:agents` and the HTTP behavior suite against the built server passed.
+  Lint reports only the six existing `no-require-imports` errors in the
+  untracked `design/brand/qr-identity/build-qr.cjs`.

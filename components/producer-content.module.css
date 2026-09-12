@@ -1,22 +1,22 @@
 .content {
   display: grid;
-  gap: 32px;
+  gap: var(--chisan-space-6);
   min-width: 0;
 }
 .content h3 {
-  margin: 0 0 16px;
+  margin: 0 0 var(--chisan-space-3);
 }
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: var(--chisan-space-6);
+  gap: var(--chisan-space-4);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .products > li {
   min-width: 0;
-  padding: var(--chisan-space-6);
+  padding: var(--chisan-space-4);
   border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-object);
   background: var(--chisan-color-surface);
@@ -89,7 +89,7 @@
 .productImages figure { margin: 0; min-width: 0; max-width: 320px; }
 .productImages figcaption { margin-top: var(--chisan-space-2); font-size: .875rem; overflow-wrap: anywhere; }
 
-.purchase { display: grid; gap: var(--chisan-space-3); margin-top: var(--chisan-space-4); }
+.purchase { display: grid; gap: var(--chisan-space-2); margin-top: var(--chisan-space-3); }
 .price { display: flex; align-items: baseline; gap: var(--chisan-space-3); flex-wrap: wrap; margin: 0; }
 .price span, .purchase time { color: var(--muted); font-size: .875rem; }
 .price strong { font-size: 1.25rem; color: var(--ink); }

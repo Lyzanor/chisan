@@ -4,6 +4,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
 import {
   ArrowUpRightIcon,
+  ArrowsClockwiseIcon,
   ClockIcon,
   EnvelopeSimpleIcon,
   FacebookLogoIcon,
@@ -13,7 +14,10 @@ import {
   NavigationArrowIcon,
   PhoneIcon,
   SealCheckIcon,
+  ShoppingCartSimpleIcon,
+  StorefrontIcon,
   WarningCircleIcon,
+  WhatsappLogoIcon,
 } from "@phosphor-icons/react/ssr";
 import { loadPublicProducerSources } from "@/lib/catalog/public-evidence";
 import { ProducerGallery } from "@/components/producer-gallery";
@@ -21,6 +25,7 @@ import {
   loadPublicProducerGallery,
   hasPublicProducerPremiumAccess,
 } from "@/lib/catalog/public-expanded";
+import { isAccountSystemConfigured } from "@/lib/accounts/config";
 import { isProducerOwnershipVerified } from "@/lib/accounts/producer-ownership";
 import { producerProfileLabels } from "@/lib/i18n/producer-profile";
 import { ProducerFollowButton } from "@/components/account/producer-follow-button";
@@ -29,7 +34,10 @@ import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 
 import { ProducerProfileView } from "@/components/analytics/producer-profile-view";
 import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
-import { ProducerAccountActions } from "@/components/account/producer-account-actions";
+import {
+  ProducerAccountActions,
+  ProducerSuggestionAction,
+} from "@/components/account/producer-account-actions";
 import { ProducerFavorites } from "@/components/account/producer-favorites";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { GuideHighlights } from "@/components/guides/guide-highlights";
@@ -37,7 +45,6 @@ import { LanguageMenuRegistration } from "@/components/language-menu-registratio
 import { ProducersMap } from "@/components/map/producers-map";
 import { ProducerDistance } from "@/components/producer-distance";
 import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
-import { ProducerVerificationTableRow } from "@/components/producer-verification-table-row";
 import { SimilarProducers } from "@/components/similar-producers";
 import { CATALOG_API_PATH } from "@/lib/agents/catalog-schema";
 import {
@@ -45,6 +52,7 @@ import {
   buildCatalogAlternateSet,
   buildLocalizedMetadata,
 } from "@/lib/catalog-metadata";
+import type { SALES_CHANNEL_VALUES } from "@/lib/catalog/producer-schema";
 import { selectSimilarNearbyProducers } from "@/lib/catalog/similar-producers";
 import {
   buildCatalogHref,
@@ -70,10 +78,7 @@ import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 import { getProducerActionLabels } from "@/lib/i18n/producer-action-labels";
 import { getProducerDistanceMessages } from "@/lib/i18n/producer-distance";
 import { getSimilarProducersMessages } from "@/lib/i18n/similar-producers";
-import {
-  formatProducerFieldValue,
-  presentPublicProducerFields,
-} from "@/lib/i18n/producer-fields";
+import { formatProducerFieldValue } from "@/lib/i18n/producer-fields";
 import { formatProducerDistanceKm } from "@/lib/location/producer-distance";
 import {
   buildProducerStructuredData,
@@ -102,7 +107,20 @@ function splitFieldValues(value: string, separator: "," | "|"): string[] {
     .filter(Boolean);
 }
 
-const PRACTICAL_FIELD_KEYS = new Set(["Venta online", "Canal de venta"]);
+const SALES_CHANNEL_ICONS = {
+  ecommerce: ShoppingCartSimpleIcon,
+  marketplace: StorefrontIcon,
+  email: EnvelopeSimpleIcon,
+  telefono: PhoneIcon,
+  whatsapp: WhatsappLogoIcon,
+  suscripcion: ArrowsClockwiseIcon,
+} satisfies Record<(typeof SALES_CHANNEL_VALUES)[number], typeof PhoneIcon>;
+
+function salesChannelIcon(channel: string) {
+  return Object.hasOwn(SALES_CHANNEL_ICONS, channel)
+    ? SALES_CHANNEL_ICONS[channel as keyof typeof SALES_CHANNEL_ICONS]
+    : null;
+}
 
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 
@@ -251,14 +269,6 @@ export default async function ProducerPage({
     salesChannels.includes("ecommerce") &&
     Boolean(website);
 
-  const practicalFields = presentPublicProducerFields(
-    producer.fields,
-    locale,
-    messages,
-  ).filter(
-    ({ key, value }) =>
-      PRACTICAL_FIELD_KEYS.has(key) && value.trim().length > 0,
-  );
   const localizedCategories = producer.categories.map((producerCategory) =>
     getCategoryLabel(producerCategory, locale),
   );
@@ -409,6 +419,26 @@ export default async function ProducerPage({
     }),
   }));
 
+  const openingHoursSection = openingHours ? (
+    <section
+      className="detail-opening-hours"
+      aria-labelledby="detail-hours-title"
+    >
+      <h2 id="detail-hours-title">
+        <ClockIcon size={20} aria-hidden="true" />
+        {messages.fieldLabels.openingHours}
+      </h2>
+      {openingHours
+        .split(/\n|;|\||\s+·\s+|,(?=\s*\d{1,2}:\d{2})/)
+        .map((line, index) =>
+          line.trim() ? <p key={index}>{line.trim()}</p> : null,
+        )}
+    </section>
+  ) : null;
+  // A location without a map is short: its hours stack beneath it and the
+  // contact widget keeps the side column, so neither column is left empty.
+  const hoursBesideContact = mapPoints.length > 0 || !hasLocation;
+
   return (
     <main className="detail-page">
       {isProducerStatsEnabled() ? (
@@ -453,38 +483,41 @@ export default async function ProducerPage({
           id="detail-hero"
           className={`detail-hero detail-hero--photographic${premiumActive ? " detail-hero--premium" : ""}`}
         >
-          <div className="detail-hero-toolbar">
-            <div className="detail-status">
-              {ownershipVerified ? (
-                <span
-                  className="detail-status--verified"
-                  title={profileWords.verifiedHelp}
-                >
-                  <SealCheckIcon size={22} weight="fill" aria-hidden="true" />
-                  {profileWords.verified}
-                </span>
-              ) : verification === "pendiente" ? (
-                <a href="#detail-info" className="detail-status--pending">
-                  <WarningCircleIcon size={22} aria-hidden="true" />
-                  {profileWords.pending}
-                </a>
-              ) : (
-                <span className="detail-eyebrow">
-                  {messages.producer.profile}
-                </span>
-              )}
-            </div>
-            <Suspense fallback={null}>
-              <ProducerFollowButton
-                country={country.slug}
-                producerId={producer.producerId}
-                returnTo={returnTo}
-                messages={messages.accountActions}
-              />
-            </Suspense>
-          </div>
           <div className="detail-profile-heading">
-            <h1>{producer.name}</h1>
+            <div className="detail-title">
+              <div className="detail-title__name">
+                <h1>{producer.name}</h1>
+                {ownershipVerified ? (
+                  <span
+                    className="detail-status detail-status--verified"
+                    title={profileWords.verifiedHelp}
+                  >
+                    <SealCheckIcon size={20} weight="fill" aria-hidden="true" />
+                    {profileWords.verified}
+                  </span>
+                ) : verification === "pendiente" ? (
+                  <a
+                    href="#detail-info"
+                    className="detail-status detail-status--pending"
+                  >
+                    <WarningCircleIcon size={20} aria-hidden="true" />
+                    {profileWords.pending}
+                  </a>
+                ) : null}
+              </div>
+              {isAccountSystemConfigured() ? (
+                <div className="detail-title__follow">
+                  <Suspense fallback={null}>
+                    <ProducerFollowButton
+                      country={country.slug}
+                      producerId={producer.producerId}
+                      returnTo={returnTo}
+                      messages={messages}
+                    />
+                  </Suspense>
+                </div>
+              ) : null}
+            </div>
             <div className="detail-subtitle">
               <Link href={municipalityHref} prefetch={false}>
                 {producer.city}
@@ -581,45 +614,76 @@ export default async function ProducerPage({
             className="detail-products"
             aria-labelledby="detail-products-title"
           >
-            <p className="detail-eyebrow">{localizedCategories[0]}</p>
             <h2 id="detail-products-title">
-              {messages.fieldLabels.featuredProducts}
+              {featuredProducts.length > 0
+                ? messages.fieldLabels.featuredProducts
+                : messages.fieldLabels.salesChannels}
             </h2>
-            <ul className="detail-product-list">
-              {featuredProducts.map((product, index) => (
-                <li key={`${index}-${product}`}>{product}</li>
-              ))}
-            </ul>
-            {canBuyOnline ? (
-              <a
-                className="detail-buy-link"
-                href={website}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GlobeIcon size={20} aria-hidden="true" />
-                {actionLabels.buyOnline}
-                <ArrowUpRightIcon size={18} aria-hidden="true" />
-              </a>
+            {featuredProducts.length > 0 ? (
+              <ul className="detail-product-list">
+                {featuredProducts.map((product, index) => (
+                  <li key={`${index}-${product}`}>{product}</li>
+                ))}
+              </ul>
             ) : null}
-            {onlineSales === "sí" || salesChannels.length ? (
-              <div
-                className="detail-service-chips"
-                aria-label={messages.fieldLabels.salesChannels}
-              >
-                {!salesChannels.length ? (
-                  <span>{messages.fieldLabels.onlineSales}</span>
+            {salesChannels.length > 0 || onlineSales ? (
+              <div className="detail-purchase">
+                {featuredProducts.length > 0 && salesChannels.length > 0 ? (
+                  <span className="detail-purchase__label">
+                    {messages.fieldLabels.salesChannels}
+                  </span>
                 ) : null}
-                {salesChannels.map((channel) => (
-                  <span key={channel}>
+                {salesChannels.length > 0 || onlineSales === "sí" ? (
+                  <ul className="detail-purchase__channels">
+                    {salesChannels.length > 0 ? (
+                      salesChannels.map((channel) => {
+                        const ChannelIcon = salesChannelIcon(channel);
+                        const channelLabel = formatProducerFieldValue(
+                          "Canal de venta",
+                          channel,
+                          locale,
+                          messages,
+                        );
+                        // The online shop channel is the purchase link itself.
+                        return (
+                          <li key={channel}>
+                            {channel === "ecommerce" && canBuyOnline ? (
+                              <a href={website} target="_blank" rel="noreferrer">
+                                {ChannelIcon ? (
+                                  <ChannelIcon size={18} aria-hidden="true" />
+                                ) : null}
+                                {channelLabel}
+                                <ArrowUpRightIcon size={14} aria-hidden="true" />
+                              </a>
+                            ) : (
+                              <span>
+                                {ChannelIcon ? (
+                                  <ChannelIcon size={18} aria-hidden="true" />
+                                ) : null}
+                                {channelLabel}
+                              </span>
+                            )}
+                          </li>
+                        );
+                      })
+                    ) : (
+                      <li>
+                        <span>{messages.fieldLabels.onlineSales}</span>
+                      </li>
+                    )}
+                  </ul>
+                ) : null}
+                {onlineSales && onlineSales !== "sí" ? (
+                  <span className="detail-purchase__status">
+                    {messages.fieldLabels.onlineSales}:{" "}
                     {formatProducerFieldValue(
-                      "Canal de venta",
-                      channel,
+                      "Venta online",
+                      onlineSales,
                       locale,
                       messages,
                     )}
                   </span>
-                ))}
+                ) : null}
               </div>
             ) : null}
           </section>
@@ -636,165 +700,138 @@ export default async function ProducerPage({
           />
         </Suspense>
 
-        {hasLocation || openingHours ? (
-          <div className="detail-location-hours">
+        {hasLocation || openingHours || email || phone ? (
+          <div className="detail-visit">
             {hasLocation ? (
-              <section
-                id="detail-location"
-                className="detail-map-card"
-                aria-labelledby="detail-location-title"
-              >
-                <div className="detail-location-heading">
-                  <div>
-                    <h2 id="detail-location-title">
-                      <MapPinIcon size={24} aria-hidden="true" />
-                      {messages.producer.location}
-                    </h2>
-                    {address ? (
-                      <p className="detail-address">{address}</p>
+              <div className="detail-visit__main">
+                <section
+                  id="detail-location"
+                  className="detail-map-card"
+                  aria-labelledby="detail-location-title"
+                >
+                  <div className="detail-location-heading">
+                    <div>
+                      <h2 id="detail-location-title">
+                        <MapPinIcon size={20} aria-hidden="true" />
+                        {messages.producer.location}
+                      </h2>
+                      {address ? (
+                        <p className="detail-address">{address}</p>
+                      ) : null}
+                    </div>
+                    {directionsHref ? (
+                      <a
+                        className="detail-directions"
+                        href={directionsHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={actionLabels.directions + " · Google Maps"}
+                      >
+                        <NavigationArrowIcon size={20} aria-hidden="true" />
+                        <span>
+                          {actionLabels.directions}
+                          <small>{profileWords.fromLocation}</small>
+                        </span>
+                        <ArrowUpRightIcon size={18} aria-hidden="true" />
+                      </a>
                     ) : null}
                   </div>
-                  {directionsHref ? (
-                    <a
-                      className="detail-directions"
-                      href={directionsHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={actionLabels.directions + " · Google Maps"}
+                  {mapPoints.length ? (
+                    <div
+                      className="detail-producer-map"
+                      aria-label={formatMessage(messages.producer.mapAria, {
+                        producer: producer.name,
+                      })}
                     >
-                      <NavigationArrowIcon size={20} aria-hidden="true" />
-                      <span>
-                        {actionLabels.directions}
-                        <small>{profileWords.fromLocation}</small>
-                      </span>
-                      <ArrowUpRightIcon size={18} aria-hidden="true" />
-                    </a>
+                      <ProducersMap
+                        points={mapPoints}
+                        scope={scope}
+                        area={area}
+                        selectedSlug={producer.slug}
+                        markerInteraction="static"
+                        singlePointZoom={16}
+                        messages={mapMessages}
+                      />
+                    </div>
                   ) : null}
-                </div>
-                {mapPoints.length ? (
-                  <div
-                    className="detail-producer-map"
-                    aria-label={formatMessage(messages.producer.mapAria, {
-                      producer: producer.name,
-                    })}
-                  >
-                    <ProducersMap
-                      points={mapPoints}
-                      scope={scope}
-                      area={area}
-                      selectedSlug={producer.slug}
-                      markerInteraction="static"
-                      singlePointZoom={16}
-                      messages={mapMessages}
+                  {producer.latitude !== null && producer.longitude !== null ? (
+                    <ProducerDistance
+                      latitude={producer.latitude}
+                      longitude={producer.longitude}
+                      locale={locale}
+                      messages={distanceMessages}
                     />
-                  </div>
-                ) : null}
-                {producer.latitude !== null && producer.longitude !== null ? (
-                  <ProducerDistance
-                    latitude={producer.latitude}
-                    longitude={producer.longitude}
-                    locale={locale}
-                    messages={distanceMessages}
+                  ) : null}
+                </section>
+                {hoursBesideContact ? null : openingHoursSection}
+              </div>
+            ) : null}
+            {(hoursBesideContact && openingHours) || email || phone ? (
+              <div className="detail-visit__aside">
+                {hoursBesideContact ? openingHoursSection : null}
+                {email || phone ? (
+                  <ProducerContact
+                    email={email}
+                    phone={phone}
+                    callLabel={actionLabels.call}
+                    name={producer.name}
+                    messages={contactMessages}
                   />
                 ) : null}
-              </section>
-            ) : null}
-            {openingHours ? (
-              <section
-                className="detail-opening-hours"
-                aria-labelledby="detail-hours-title"
-              >
-                <ClockIcon size={24} aria-hidden="true" />
-                <div>
-                  <h2 id="detail-hours-title">
-                    {messages.fieldLabels.openingHours}
-                  </h2>
-                  {openingHours
-                    .split(/\n|;|\||\s+·\s+|,(?=\s*\d{1,2}:\d{2})/)
-                    .map((line, index) =>
-                      line.trim() ? <p key={index}>{line.trim()}</p> : null,
-                    )}
-                </div>
-              </section>
+              </div>
             ) : null}
           </div>
         ) : null}
 
-        <div className="detail-info-contact">
-          <section id="detail-info" className="detail-table-card">
-            <h2>{messages.producer.details}</h2>
-            <p
-              className={
-                verification === "pendiente" && !ownershipVerified
-                  ? "detail-review-notice"
-                  : "detail-trust-note"
-              }
-            >
-              {ownershipVerified
-                ? profileWords.verifiedHelp
-                : verification === "pendiente"
-                  ? profileWords.pendingHelp
-                  : profileWords.editorial}
-            </p>
-            {sources.length ? (
-              <details className="detail-sources">
-                <summary>{profileWords.sources}</summary>
-                <ul>
-                  {sources.map((source) => (
-                    <li key={source.url}>
-                      <a href={source.url} target="_blank" rel="noreferrer">
-                        {source.url.replace(/^https?:\/\//, "")}
-                      </a>
-                      <small>
-                        {profileWords.checked}{" "}
-                        <time dateTime={source.checkedAt}>
-                          {source.checkedAt}
-                        </time>
-                      </small>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            ) : null}
-            <div className="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>{messages.producer.field}</th>
-                    <th>{messages.producer.value}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <Suspense fallback={null}>
-                    <ProducerVerificationTableRow
-                      country={country.slug}
-                      locale={locale}
-                      messages={messages}
-                      producerId={producer.producerId}
-                      verification={verification}
-                    />
-                  </Suspense>
-                  {practicalFields.map((field) => (
-                    <tr key={field.key}>
-                      <td>{field.label}</td>
-                      <td>{field.displayValue}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {email || phone ? (
-            <ProducerContact
-              email={email}
-              phone={phone}
-              callLabel={actionLabels.call}
-              name={producer.name}
-              messages={contactMessages}
-            />
+        <section
+          id="detail-info"
+          className="detail-info"
+          aria-labelledby="detail-info-title"
+        >
+          <div className="detail-info__heading">
+            <h2 id="detail-info-title">{messages.producer.details}</h2>
+            <Suspense fallback={null}>
+              <ProducerSuggestionAction
+                country={country.slug}
+                producerId={producer.producerId}
+                messages={messages.accountActions}
+              />
+            </Suspense>
+          </div>
+          <p
+            className={
+              verification === "pendiente" && !ownershipVerified
+                ? "detail-review-notice"
+                : "detail-trust-note"
+            }
+          >
+            {ownershipVerified
+              ? profileWords.verifiedHelp
+              : verification === "pendiente"
+                ? profileWords.pendingHelp
+                : profileWords.editorial}
+          </p>
+          {sources.length ? (
+            <details className="detail-sources">
+              <summary>{profileWords.sources}</summary>
+              <ul>
+                {sources.map((source) => (
+                  <li key={source.url}>
+                    <a href={source.url} target="_blank" rel="noreferrer">
+                      {source.url.replace(/^https?:\/\//, "")}
+                    </a>
+                    <small>
+                      {profileWords.checked}{" "}
+                      <time dateTime={source.checkedAt}>
+                        {source.checkedAt}
+                      </time>
+                    </small>
+                  </li>
+                ))}
+              </ul>
+            </details>
           ) : null}
-        </div>
+        </section>
 
         <Suspense fallback={null}>
           <ProducerFavorites
@@ -811,32 +848,14 @@ export default async function ProducerPage({
           title={similarMessages.title}
           producers={similarProducers}
         />
-        <section
-          className="detail-participate"
-          aria-labelledby="detail-participate-title"
-        >
-          <div>
-            <h2 id="detail-participate-title">
-              {ownershipVerified
-                ? profileWords.contribute
-                : profileWords.participate}
-            </h2>
-            <p>
-              {ownershipVerified
-                ? profileWords.contributeHelp
-                : profileWords.participateHelp}
-            </p>
-          </div>
-          <Suspense fallback={null}>
-            <ProducerAccountActions
-              locale={locale}
-              country={country.slug}
-              producerId={producer.producerId}
-              returnTo={returnTo}
-              messages={messages.accountActions}
-            />
-          </Suspense>
-        </section>
+        <Suspense fallback={null}>
+          <ProducerAccountActions
+            locale={locale}
+            country={country.slug}
+            producerId={producer.producerId}
+            messages={messages.accountActions}
+          />
+        </Suspense>
       </article>
     </main>
   );

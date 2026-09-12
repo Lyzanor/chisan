@@ -35,9 +35,9 @@ export function SimilarProducers({
                 <Image
                   src={producer.imageSrc}
                   alt=""
-                  width={360}
-                  height={270}
-                  sizes="(max-width: 720px) calc(100vw - 4rem), (max-width: 1080px) 33vw, 360px"
+                  width={224}
+                  height={168}
+                  sizes="112px"
                   loading="lazy"
                 />
               </span>

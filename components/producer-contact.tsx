@@ -22,8 +22,10 @@ export function ProducerContact({
 
   return (
     <section id="detail-contact" className="producer-contact" aria-labelledby="producer-contact-title">
-      <EnvelopeSimpleIcon size={28} aria-hidden="true" />
-      <h2 id="producer-contact-title">{messages.title}</h2>
+      <h2 id="producer-contact-title">
+        <EnvelopeSimpleIcon size={20} aria-hidden="true" />
+        {messages.title}
+      </h2>
       {phone ? <a className="producer-contact__recipient" href={`tel:${phone}`}><PhoneIcon size={20} aria-hidden="true" />{callLabel} · {phone}</a> : null}
       {email ? <a className="producer-contact__recipient" href={`mailto:${email}`}><EnvelopeSimpleIcon size={20} aria-hidden="true" />{email}</a> : null}
       {email ? <form onSubmit={composeEmail}>
@@ -33,7 +35,7 @@ export function ProducerContact({
           name="message"
           required
           maxLength={2000}
-          rows={5}
+          rows={3}
           placeholder={messages.placeholder}
           aria-describedby="producer-contact-explanation"
         />

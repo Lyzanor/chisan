@@ -15,9 +15,9 @@ const en = {
   participate: "Is this your production?",
   participateHelp:
     "Claim your profile for free, keep your information up to date and add a gallery of up to 5 photos. We review each change before publishing it.",
-  contribute: "Help keep this profile up to date",
+  contribute: "A profile that grows with you",
   contributeHelp:
-    "The producer manages this profile. You can follow their updates here.",
+    "Keep your information up to date. We review each change before publishing it.",
   gallery: "Producer photos",
   enlarge: "Enlarge photo",
   previous: "Previous photo",
@@ -45,7 +45,7 @@ const es: typeof en = {
     "Reclama tu ficha gratis, mantén tu información al día y añade una galería de hasta 5 fotos. Revisamos cada cambio antes de publicarlo.",
   contribute: "Una ficha que crece contigo",
   contributeHelp:
-    "El productor gestiona esta ficha. Puedes seguir sus novedades desde aquí.",
+    "Mantén tu información al día. Revisamos cada cambio antes de publicarlo.",
   gallery: "Fotos del productor",
   enlarge: "Ampliar foto",
   previous: "Foto anterior",
@@ -73,7 +73,7 @@ const ca: typeof en = {
     "Reclama la fitxa de franc, mantén la informació al dia i afegeix una galeria de fins a 5 fotos. Revisem cada canvi abans de publicar-lo.",
   contribute: "Una fitxa que creix amb tu",
   contributeHelp:
-    "El productor gestiona aquesta fitxa. Pots seguir-ne les novetats des d'aquí.",
+    "Mantén la informació al dia. Revisem cada canvi abans de publicar-lo.",
   gallery: "Fotos del productor",
   enlarge: "Amplia la foto",
   previous: "Foto anterior",

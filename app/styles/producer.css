@@ -220,18 +220,12 @@
   flex-shrink: 0;
 }
 
-.detail-service-chips,
 .detail-product-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: var(--chisan-space-2);
 }
 
-.detail-service-chips {
-  margin-top: 0.85rem;
-}
-
-.detail-service-chips span,
 .detail-product-list li {
   padding: 0.35rem 0.65rem;
   border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
@@ -242,15 +236,6 @@
   font-weight: 500;
 }
 
-.detail-products {
-  margin: 1rem 0;
-  padding: clamp(1rem, 3vw, 1.4rem);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.detail-products h2,
 .detail-related h2 {
   margin: 0;
   font-family: var(--chisan-font-sans);
@@ -258,7 +243,7 @@
 }
 
 .detail-product-list {
-  margin: 0.85rem 0 0;
+  margin: var(--chisan-space-3) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -452,19 +437,8 @@
 
 .detail-producer-map .producers-map-canvas,
 .detail-producer-map .map-placeholder {
-  height: 280px;
-  min-height: 280px;
-}
-
-.detail-table-card {
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-}
-
-.detail-table-card td a {
-  color: var(--accent-text);
-  font-weight: 500;
-  text-underline-offset: 0.2em;
+  height: 240px;
+  min-height: 240px;
 }
 
 .detail-related {
@@ -782,7 +756,7 @@ td:first-child {
   }
 
   .detail-producer-map .map-shell > .map-placeholder {
-    min-height: 280px;
+    min-height: 240px;
   }
 
   .detail-hero {
@@ -794,10 +768,6 @@ td:first-child {
   }
 
   .detail-related-links {
-    grid-template-columns: 1fr;
-  }
-
-  .detail-similar-grid {
     grid-template-columns: 1fr;
   }
 }

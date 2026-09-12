@@ -641,8 +641,7 @@
 }
 
 .catalog-viewer-head h2,
-.detail-map-card h2,
-.detail-table-card h2 {
+.detail-map-card h2 {
   margin: 0;
   font-size: 1.05rem;
 }

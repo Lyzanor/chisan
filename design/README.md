@@ -216,45 +216,61 @@ the name link to their corresponding area filters; no separate category-links
 section is repeated. The municipality filter matches the full municipality and
 has a visible removal control, preserving category and search intersections.
 
-The follow action sits at the upper right. The reviewed main photo starts beside
-the title, with small gallery thumbnails and an accessible enlargement viewer.
-On mobile it fills the header width below the name, municipality and categories,
-before the description. The inline gallery uses thumbnails and swipe without a
-counter or arrow bar; previous/next controls remain in the enlargement viewer.
-Premium uses the dedicated green header token independently of ownership.
+The follow action is one icon target at the end of the name row. Pointer hover
+and keyboard focus unfold its label with a short width animation; a touch screen
+unfolds it on the first tap and acts on the second, so the action is never taken
+unseen. The label overlays free space, so the name never reflows. The
+reviewed main photo starts beside the title, with small gallery thumbnails and
+an accessible enlargement viewer. On mobile it fills the header width below the
+name, municipality and categories, before the description. The inline gallery
+uses thumbnails and swipe without a counter or arrow bar; previous/next controls
+remain in the enlargement viewer. Premium uses the dedicated green header token
+independently of ownership.
 
-Verified ownership receives an explicit badge and explanation. Unclaimed
-profiles have no verification badge. Editorial `pendiente` gets a visible review
+Verified ownership receives an explicit badge beside the name and an explanation
+in Details. Unclaimed profiles have no verification badge. Editorial `pendiente`
+places its review link beside the name, and Details holds the visible review
 notice, contact advice and an optional disclosure of recorded public source URLs
 and dates. Never expose claim status, claimant identity or private review notes.
 
 The official website appears prominently with its address, while Instagram,
 Facebook and Google Maps appear as labeled external links showing only the
 service name.
-Contact and call actions both lead to the email/telephone widget beside Details;
-telephone-only profiles remain usable. The composer prepares email in the
-visitor's own application and explains that before continuing.
+Contact and call actions both lead to the email/telephone widget, which sits
+below opening hours beside the location; telephone-only profiles remain usable.
+The composer prepares email in the visitor's own application and explains that
+before continuing.
 
-Featured products sit with online purchase and sales-channel information.
-Location and vertical reviewed opening-hours text share a row. Preserve the
-source's days and ranges without inferring open/closed state. Directions uses
-Google Maps' universal directions URL with a reviewed coordinate or address as
-destination and no origin: Google Maps uses device location when available,
-otherwise asks for a starting point. Chisan neither requests nor stores the
-visitor's position for this link. See the [Google Maps URL contract](https://developers.google.com/maps/documentation/urls/get-started#directions-action).
+Featured products sit with one sales-channel row. The online shop channel is
+itself the purchase link when online sales and the website support it; other
+channels are plain labels, and a `no` or `no comprobado` online-sales value
+remains a quiet status. Details does not repeat those fields. Location shares a
+row with vertical reviewed opening hours and the contact widget. Preserve the
+source's days and ranges without inferring open/closed state. Directions is the
+green primary visit action; the transient distance tool uses a white secondary
+button. Directions uses Google Maps' universal directions URL with a reviewed
+coordinate or address as destination and no origin: Google Maps uses device
+location when available, otherwise asks for a starting point. Chisan neither
+requests nor stores the visitor's position for this link. See the [Google Maps URL contract](https://developers.google.com/maps/documentation/urls/get-started#directions-action).
 
-Expanded profiles keep products, links and stories in named sections. The
-standalone gallery is rendered in the hero. Followers have a dedicated section,
-showing only opted-in public attribution and explicitly labeling that count.
-Claiming and community suggestions have a prominent closing section after
-related discovery. Claimed producers keep their existing editor workflow.
+Profile sections share one compact rhythm: a hairline rule and 24px of vertical
+space, with 28px section headings and 18px card headings. Expanded profiles keep
+products, links and stories in named sections; their jump links appear only when
+both products and links exist. The standalone gallery is rendered in the hero.
+Followers have a dedicated section, showing only opted-in public attribution and
+explicitly labeling that count. Community suggestions sit beside the Details
+heading, next to the editorial notice they correct. The closing section after
+related discovery only addresses the producer: a claim invitation for an
+unverified profile, or its members' editing links. Visitors to a verified
+profile see no closing section. Claimed producers keep their existing editor
+workflow.
 
 Related discovery shows up to three nearby producers that share a canonical
-category. Each recommendation is one linked card with the reviewed image,
-producer name, municipality, shared category and straight-line distance. The
-cards collapse to one column on narrow screens. Missing coordinates or nearby
-matches omit unsupported cards; the layout never invents proximity to fill a
-row.
+category. Each recommendation is one compact linked card with the reviewed image
+beside the producer name, municipality, shared category and straight-line
+distance. Cards fill as many columns as fit and collapse to one on narrow
+screens. Missing coordinates or nearby matches omit unsupported cards; the
+layout never invents proximity to fill a row.
 
 ## Brand
 
