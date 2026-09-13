@@ -318,3 +318,15 @@ against the current catalog, its source ceiling and current first-party evidence
 The pass deliberately leaves optional CSV fields blank when no reviewed source
 supports them. Direct-sale registry authorisations do not set online sales, and
 personal registry contact details were not copied into public rows.
+
+## Barcelona deep candidate review — 2026-09-13
+
+This pass reopened all 1439 rows then present in the Barcelona queue. It checked every linked first-party source that could be reached, reconciled likely identities against the current catalog and RIAAC, and retained unresolved cases as holds.
+
+- 45 producer identities were admitted: 40 in Barcelona and five placed in their evidenced productive areas (two in Tarragona and one each in Jaén, Sevilla and La Rioja).
+- 52 Barcelona queue rows were removed through admission; repeated source records were collapsed into one productive identity.
+- 21 further Barcelona rows were removed as already represented or duplicate research signals. These queue-only resolutions create no evidence record.
+- 7 candidates were excluded with evidence tombstones after current first-party review established distribution, equipment supply, contract-only manufacture or production in another country.
+- 1359 Barcelona rows remain as holds. An unreachable page, registry entry or directory claim was not treated as proof of current own production.
+
+The pass also repaired the producer ID collision introduced when the earlier Spain-wide batch was materialized on a base that already contained Horchatas Monserrat. The 117 affected IDs were advanced under the country lock; Horchatas Monserrat retains ID 13251.
