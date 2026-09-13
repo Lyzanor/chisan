@@ -18,6 +18,8 @@ import { drizzle } from "drizzle-orm/pglite";
 import { eq } from "drizzle-orm";
 import sharp from "sharp";
 import { z } from "zod";
+import { ExtractionFailure, extractionFailureDetails } from "../lib/intake/failure";
+import { newsCandidateHash, type NewsCandidate } from "../lib/intake/news";
 import type { Database } from "../lib/db";
 import * as schema from "../lib/db/schema";
 import {
@@ -638,6 +640,27 @@ test("Responses adapter sends strict schema and inline image without remote stat
     );
 });
 
+test("provider failures expose only safe diagnostics and never retry", async () => {
+  const input = { text: "private-message", previous: emptyCandidate(), at: new Date(), timeZone: "Europe/Madrid" };
+  for (const [body, status, kind, code] of [
+    [{ error: { code: "insufficient_quota", message: "private-key-and-message" } }, 429, "provider_http", "insufficient_quota"],
+    [{ error: { code: "private-key", message: "private-input" } }, 403, "provider_http", undefined],
+    [{ status: "incomplete", incomplete_details: { reason: "max_output_tokens" }, output: [] }, 200, "provider_incomplete", "max_output_tokens"],
+  ] as const) {
+    let calls = 0;
+    await assert.rejects(extractProduct(input, config, async () => {
+      calls++;
+      return Response.json(body, { status, headers: { "x-request-id": "req_1234567890abcdef" } });
+    }), error => {
+      assert.ok(error instanceof ExtractionFailure);
+      assert.deepEqual(extractionFailureDetails(error), { kind, code, status, requestId: "req_1234567890abcdef" });
+      assert.doesNotMatch(JSON.stringify(error), /private/);
+      return true;
+    });
+    assert.equal(calls, 1);
+  }
+});
+
 test("a follow-up after midnight preserves an already resolved launch day", async () => {
   const previous = {
     ...complete(),
@@ -933,6 +956,7 @@ test("isolated workflow: natural intake, automatic submission, corrections, canc
     let nextCandidate = complete();
     let failExtraction = false;
     let nextAction = "product";
+    let nextNews: NewsCandidate | null = null;
     const sent: string[] = [];
     const dependencies: AssistantDependencies = {
       extractor: {
@@ -946,7 +970,7 @@ test("isolated workflow: natural intake, automatic submission, corrections, canc
           if (failExtraction) throw new Error("provider-secret-do-not-show");
           if (input.image)
             assert.equal(input.image.toString(), "normalized-image");
-          return { action: nextAction, candidate: nextCandidate };
+          return { action: nextAction, candidate: nextCandidate, news: nextNews };
         },
       },
       image: async () => {
@@ -1063,6 +1087,9 @@ test("isolated workflow: natural intake, automatic submission, corrections, canc
       (await db.select().from(schema.whatsappLinks))[0].state,
       stateBeforeError.state,
     );
+    const failedAudit = await db.select().from(schema.auditEvents).where(eq(schema.auditEvents.action, "whatsapp.extraction_failed"));
+    assert.equal(failedAudit.at(-1)!.metadata.kind, "processing");
+    assert.doesNotMatch(JSON.stringify(failedAudit), /provider-secret-do-not-show/);
     failExtraction = false;
     // A different provider goes through the same validation boundary.
     nextCandidate = { ...nextCandidate, purchase_url: "javascript:alert(1)" };
@@ -1189,6 +1216,33 @@ test("isolated workflow: natural intake, automatic submission, corrections, canc
       0,
     );
     assert.equal((await db.select().from(schema.whatsappLinks))[0].state, null);
+    nextAction = "news";
+    nextNews = { text: "En octubre tendremos más cerveza rubia", locale: "es" };
+    assert.match((await incoming(nextNews.text)).reply!, /preparado tu novedad/);
+    let newsRequest = (await db.select().from(schema.producerChangeRequests)).find(r => r.status === "submitted")!;
+    assert.equal(newsRequest.patch["mensaje a la comunidad"], nextNews.text);
+    assert.equal(newsRequest.patch.mensaje_comunidad_locale, "es");
+    assert.equal(newsRequest.contentChange, null, "news never mutates products or gallery");
+    assert.equal("fecha novedades" in newsRequest.patch, false, "approval date belongs to materialization");
+    assert.deepEqual(Object.keys(newsRequest.patch).filter(k => !["mensaje a la comunidad", "mensaje_comunidad_locale"].includes(k)), []);
+    const newsAudit = await db.select().from(schema.auditEvents).where(eq(schema.auditEvents.targetId, newsRequest.id));
+    const newsIntake = readProducerChangeIntake(newsAudit);
+    assert.ok(newsIntake?.channel === "whatsapp");
+    assert.equal(newsIntake.launchOn, null);
+    assert.equal(newsIntake.candidateHash, newsCandidateHash(nextNews));
+    const newsCount = (await db.select().from(schema.producerChangeRequests)).length;
+    assert.match((await incoming(nextNews.text)).reply!, /Ya tengo/);
+    assert.equal((await db.select().from(schema.producerChangeRequests)).length, newsCount);
+    nextNews = { text: "En noviembre tendremos más cerveza rubia", locale: "es" };
+    assert.match((await incoming("Perdón, en noviembre")).reply!, /actualizado tu novedad/);
+    assert.equal((await db.select().from(schema.producerChangeRequests).where(eq(schema.producerChangeRequests.id, newsRequest.id)))[0].status, "withdrawn");
+    newsRequest = (await db.select().from(schema.producerChangeRequests)).find(r => r.status === "submitted")!;
+    assert.equal(newsRequest.patch["mensaje a la comunidad"], nextNews.text);
+    nextAction = "cancel";
+    assert.match((await incoming("Mejor descarta la novedad")).reply!, /descartado/);
+    assert.equal((await db.select().from(schema.producerChangeRequests)).filter(r => r.status === "submitted").length, 0);
+    revisionCount += 2;
+    nextNews = null;
     nextAction = "product";
     const confirmed = photo; // Durable receipt retained through disconnection below.
     process.env.CHISAN_PRODUCER_CHANGES_ENABLED = "false";

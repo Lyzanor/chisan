@@ -11,7 +11,7 @@ an input adapter, not a catalog writer or editorial approver.
 | --- | --- |
 | Product field name, type or constraint | `lib/catalog/content-schema.ts` and `lib/catalog/product-commerce.ts`; intake reuses their schemas in `lib/intake/product.ts` |
 | Product field becomes available to the agent | `PRODUCT_INTAKE_FIELD_POLICY` in `lib/intake/product.ts`, candidate schema/mapping, product editor and review diff; the exhaustive policy makes added/renamed canonical fields fail type checking until classified |
-| CSV field or permission | `lib/accounts/producer-fields.ts`, shared submission/review and the CSV contract; WhatsApp does not currently edit base fields |
+| CSV field or permission | `lib/accounts/producer-fields.ts`, shared submission/review and the CSV contract; WhatsApp news uses `lib/intake/news.ts` and the shared expanded-field definitions; other base fields are not exposed |
 | Natural conversation or ambiguity handling | `lib/intake/extractor.ts` owns the provider-neutral interpretation schema, instructions and version; `lib/whatsapp/service.ts` owns conversation state and dispatch |
 | AI provider | Implement `ProductExtractor`; select it in `lib/whatsapp/runtime.ts`, configure its credentials and update the named processing consent and activation tests |
 | OpenAI API/model options | `lib/intake/openai.ts`; provider-specific options do not constrain other extractors or the audit vocabulary |
@@ -37,12 +37,13 @@ There is no provider registry, new queue service or generalized agent framework.
 | Entry | Authority and stored record | Review | Canonical publication |
 | --- | --- | --- | --- |
 | Producer web editor | Active exact membership; premium entitlement for expanded fields/products; `producer_change_requests` | `/admin/cambios` | Existing controlled materializer |
-| WhatsApp text or photo | Expiring account binding, same membership and entitlement checks; automatically extracted new-product candidate becomes `producer_change_requests` | Same `/admin/cambios`, including structured channel and extraction history | Same controlled materializer |
+| WhatsApp text or photo | Expiring account binding, same membership and entitlement checks; automatically extracted product or news candidate becomes `producer_change_requests` | Same `/admin/cambios`, including structured channel and extraction history | Same controlled materializer |
 | Community suggestion | Verified active account, unclaimed producer, scoped standard fields; `producer_suggestions`; no ownership rights | `/admin/sugerencias` | Editorial file edit and release; reviewer records the result afterward |
 | Editorial research | Evidence-backed editorial decision | [Editorial workflow](EDITORIAL.md) | Reviewed file edit, validation, Git and deployment |
 
-The WhatsApp pilot creates **new products only**. It does not yet edit existing
-products or base profile fields. A photo supplies legible facts for review;
+The WhatsApp pilot creates **new products or news proposals**. News maps to
+`mensaje a la comunidad` and its original-language field; the materializer owns
+`fecha novedades`. It does not yet edit existing products or other base fields. A photo supplies legible facts for review;
 publishing the photo itself requires the existing media/rights workflow.
 Community suggestions retain a separate record and manual publication process
 because they do not carry producer authorization.
@@ -96,8 +97,8 @@ and `producer:change show --json` expose the same validated provenance.
 
 | Failure | Result and recovery |
 | --- | --- |
-| Repeated Meta event or unchanged product facts | Durable receipt and candidate fingerprint prevent a second proposal |
-| Incomplete/refused AI output, invalid schema or unreadable photo | Previous candidate remains; producer can retry |
+| Repeated Meta event or unchanged candidate facts | Durable receipt and candidate fingerprint prevent a second proposal |
+| Incomplete/refused AI output, invalid schema or unreadable photo | Previous candidate remains; safe diagnostic category enters audit/logs; no automatic retry or budget refund |
 | Producer corrects a pending version | Withdraw the previous version and create a replacement atomically; retain both in audit |
 | Concurrent web draft or open proposal | Submission is blocked; resolve it in the account first |
 | Changed catalog/content or revoked permission | Stop submission/publication; inspect conflict and prepare a fresh proposal |
@@ -112,7 +113,7 @@ review diffs and behavior tests before exposing them to an agent.
 ## Verification before activation
 
 `pnpm test:whatsapp` exercises natural text/photo intake through automatic
-submission, correction, cancellation, admin review,
+submission, news-only field mapping, correction, cancellation, admin review,
 actual CSV/content preparation, a disposable Git commit and database
 finalization. It checks stale/duplicate input and mismatched publication hashes.
 The shared editor tests also verify that form data cannot spoof the channel.

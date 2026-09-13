@@ -1,3 +1,5 @@
+import { NEWS_FIELD, NEWS_LOCALE_FIELD, newsCandidateHash } from "../intake/news";
+import { extractionFailureDetails } from "../intake/failure";
 import { randomBytes } from "node:crypto";
 import { WhatsAppBudgetExhausted } from "./budget";
 import { producerChangeIntakeSchema } from "../accounts/producer-change-intake";
@@ -191,7 +193,7 @@ async function submitCandidate(
     throw new Error(
       "La ficha ha cambiado mientras hablábamos. No he enviado estos datos; puedes empezar de nuevo con la ficha actual.",
     );
-  const products = appendCandidate(content, state.candidate, state.productId);
+  const products = state.news ? null : appendCandidate(content, state.candidate, state.productId);
   const form = new FormData();
   for (const field of PRODUCER_EDITABLE_FIELDS) {
     const value = producer.fields[field.key] ?? "";
@@ -207,22 +209,27 @@ async function submitCandidate(
     producerId: String(link.producerId),
     baseRowHash: state.baseRowHash,
     baseContentHash: state.baseContentHash,
-    products: JSON.stringify(products),
     intent: "submit",
     authorNote:
-      `WhatsApp producer message, automatically interpreted and submitted for editorial review. No explicit producer confirmation was requested. AI extraction requires editorial verification; no public source or image rights are inferred. Message reference: ${messageId}.\n${candidateSummary(state.candidate)}`.slice(
+      `WhatsApp producer message, automatically interpreted and submitted for editorial review. No explicit producer confirmation was requested. AI extraction requires editorial verification; no public source or image rights are inferred. Message reference: ${messageId}.\n${state.news ? `Novedades: ${state.news.text}` : candidateSummary(state.candidate)}`.slice(
         0,
         4000,
       ),
   }).forEach(([key, value]) => form.set(key, value));
+  if (state.news) {
+    form.set(NEWS_FIELD, state.news.text);
+    form.set(NEWS_LOCALE_FIELD, state.news.locale);
+  } else {
+    form.set("products", JSON.stringify(products));
+  }
   const intake = producerChangeIntakeSchema.safeParse({
     version: 2,
     channel: "whatsapp",
     submittedMessageId: messageId,
     receivedAt: state.lastMessageAt,
     replacesRequestId: state.lastProposalId ?? null,
-    candidateHash: candidateHash(state.candidate),
-    launchOn: state.candidate.launch_on,
+    candidateHash: state.news ? newsCandidateHash(state.news) : candidateHash(state.candidate),
+    launchOn: state.news ? null : state.candidate.launch_on,
     extractions: state.extractions,
   });
   if (!intake.success)
@@ -264,7 +271,7 @@ export type AssistantDependencies = {
   send: (sender: string, reply: string) => Promise<void>;
 };
 const help =
-  "Cuéntame qué producto habéis creado o envíame una foto de la etiqueta. Yo preparo los datos para que el equipo de Chisan los revise. También puedes corregir lo que me has contado o preguntarme cómo va.";
+  "Cuéntame una novedad, qué producto habéis creado o envíame una foto de la etiqueta. Yo preparo los datos para que el equipo de Chisan los revise. También puedes corregir lo que me has contado o preguntarme cómo va.";
 
 // Same lock order as the shared submission service and editorial review.
 async function retirePendingProposal(
@@ -341,7 +348,7 @@ async function cancelConversation(
         .set({ state: null })
         .where(eq(whatsappLinks.id, link.id));
     });
-    return "He descartado este producto y retirado su propuesta pendiente, si la había. Cuéntame cuando tengas otra novedad.";
+    return "He descartado estos datos y retirado su propuesta pendiente, si la había. Cuéntame cuando tengas otra novedad.";
   } catch (error) {
     return error instanceof Error
       ? error.message
@@ -351,7 +358,7 @@ async function cancelConversation(
 
 async function conversationStatus(tx: AccountTransaction, link: Link) {
   if (link.state && !link.state.lastProposalId)
-    return candidateReply(link.state.candidate);
+    return link.state.news ? "Estoy preparando tu novedad para revisión." : candidateReply(link.state.candidate);
   const [proposal] = await tx
     .select({ status: producerChangeRequests.status })
     .from(producerChangeRequests)
@@ -519,6 +526,7 @@ async function handleMessage(
     interpretation = await interpretProductMessage(dependencies.extractor, {
       text,
       previous: current?.candidate ?? emptyCandidate(),
+      previousNews: current?.news ?? null,
       at,
       timeZone: link.timeZone,
       ...(message.image
@@ -528,19 +536,27 @@ async function handleMessage(
   } catch (error) {
     if (error instanceof WhatsAppBudgetExhausted)
       return "El asistente está temporalmente pausado. Conservo los datos anteriores y puedes continuar desde el editor de Chisan.";
-    return "No he podido leer bien este mensaje o foto. Conservo los datos anteriores. Prueba con texto o una foto más clara.";
+    const failure = { ...extractionFailureDetails(error), inputKind: message.image ? "image" : "text" };
+    console.error("whatsapp.extraction_failed", failure);
+    await tx.insert(auditEvents).values({
+      actorKind: "system", actorKey: "whatsapp-assistant", action: "whatsapp.extraction_failed",
+      targetType: "whatsapp_link", targetId: link.id, metadata: failure,
+    });
+    return "Ha fallado la preparación de tu propuesta. Conservo los datos anteriores. Puedes continuar desde el editor de Chisan mientras lo resolvemos.";
   }
   if (interpretation.action === "status") return conversationStatus(tx, link);
   if (interpretation.action === "cancel")
     return cancelConversation(tx, link, message.id);
   if (interpretation.action === "help") return help;
-  const previous = interpretation.action === "new_product" ? null : current;
-  const candidate = interpretation.candidate;
-  const hash = candidateHash(candidate);
+  const news = interpretation.news ?? undefined;
+  const previous = ["new_product", "new_news"].includes(interpretation.action) || !!current?.news !== !!news ? null : current;
+  const candidate = news ? emptyCandidate() : interpretation.candidate;
+  const hash = news ? newsCandidateHash(news) : candidateHash(candidate);
   const changed = previous?.submittedCandidateHash !== hash;
-  const complete = missingQuestions(candidate).length === 0;
+  const complete = !!news || missingQuestions(candidate).length === 0;
   const state: AssistantState = {
     candidate,
+    ...(news ? { news } : {}),
     productId: previous?.productId ?? `wa-${randomBytes(8).toString("hex")}`,
     baseRowHash: previous?.baseRowHash ?? hashProducerFields(producer.fields),
     baseContentHash: previous?.baseContentHash ?? hashProducerContent(content),
@@ -587,6 +603,7 @@ async function handleMessage(
       if (!complete) return candidateReply(candidate);
       if (!changed)
         return `Ya tengo esos datos. ${await conversationStatus(nested, { ...link, state })}`;
+      if (news) return `${previous?.lastProposalId ? "He actualizado tu novedad" : "He preparado tu novedad"}. El equipo de Chisan la revisará antes de publicarla.`;
       const price = candidate.price_amount
         ? `, ${candidate.price_amount.replace(".", ",")} €${candidate.format ? ` (${candidate.format})` : ""}`
         : "";

@@ -1,7 +1,8 @@
 import { z } from "zod";
+import { ExtractionFailure } from "./failure";
 import {
   PRODUCT_EXTRACTION_PROMPT_VERSION,
-  productInterpretationSchema,
+  productInterpretationOutputSchema,
   productExtractionInstructions,
   extractProductCandidate,
   type ProductExtractor,
@@ -92,6 +93,7 @@ export function createOpenAIProductExtractor(
                   type: "input_text",
                   text: JSON.stringify({
                     previous: input.previous,
+                    previousNews: input.previousNews ?? null,
                     message: input.text,
                   }),
                 },
@@ -112,14 +114,25 @@ export function createOpenAIProductExtractor(
               type: "json_schema",
               name: "chisan_product_candidate",
               strict: true,
-              schema: z.toJSONSchema(productInterpretationSchema),
+              schema: z.toJSONSchema(productInterpretationOutputSchema),
             },
           },
         }),
-      });
-      if (!response.ok) throw new Error("Product extraction unavailable");
-      const body = await response.json();
-      if (body.status !== "completed") throw new Error("Incomplete extraction");
+      }).catch(() => { throw new ExtractionFailure("transport"); });
+      const rawId = response.headers.get("x-request-id");
+      const requestId = rawId && /^req_[a-f0-9-]{16,80}$/i.test(rawId) ? rawId : undefined;
+      const body = await response.json().catch(() => null);
+      if (!response.ok) {
+        const knownCodes = ["invalid_api_key", "insufficient_permissions", "insufficient_quota", "rate_limit_exceeded", "model_not_found", "invalid_json_schema", "unsupported_value", "invalid_value"];
+        const code = knownCodes.includes(body?.error?.code) ? body.error.code : undefined;
+        throw new ExtractionFailure("provider_http", response.status, code, requestId);
+      }
+      if (!body || typeof body !== "object") throw new ExtractionFailure("provider_output", response.status, undefined, requestId);
+      if (body.status !== "completed") {
+        const reason = ["max_output_tokens", "content_filter"].includes(body.incomplete_details?.reason) ? body.incomplete_details.reason : undefined;
+        throw new ExtractionFailure("provider_incomplete", response.status, reason, requestId);
+      }
+      if (!Array.isArray(body.output)) throw new ExtractionFailure("provider_output", response.status, undefined, requestId);
       const parts = (body.output ?? [])
         .filter((item: { type: string }) => item.type === "message")
         .flatMap(
@@ -127,13 +140,14 @@ export function createOpenAIProductExtractor(
             item.content,
         );
       if (parts.some((part: { type: string }) => part.type === "refusal"))
-        throw new Error("Extraction refused");
+        throw new ExtractionFailure("provider_refusal", response.status, undefined, requestId);
       const output = parts
         .filter((part: { type: string }) => part.type === "output_text")
         .map((part: { text: string }) => part.text)
         .join("");
 
-      return JSON.parse(output) as unknown;
+      try { return JSON.parse(output) as unknown; }
+      catch { throw new ExtractionFailure("provider_output", response.status, undefined, requestId); }
     },
   };
 }

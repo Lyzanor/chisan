@@ -54,7 +54,7 @@ one place, while shared extraction validation stays in `lib/intake/extractor.ts`
 
 ## Pilot scope
 
-The assistant prepares **one new product at a time**, using text or a JPEG/PNG
+The assistant prepares **one new product or news notice at a time**, using text or a JPEG/PNG
 photo received through Meta's WhatsApp Cloud API. It extracts a public name,
 description, explicit format, EUR price and shop URL, asks for missing or
 ambiguous facts, and automatically submits an existing Chisan producer-change
@@ -76,8 +76,35 @@ resolved day. Product edit dates retain their existing server-owned semantics.
 Photos provide readable label facts for the proposal. The model does not infer
 ingredients, certifications or provenance from appearance, and the binary is
 not attached to the public product. Image publication, audio, multiple-product
-batches, edits/deletions of existing products, base profile edits, reminders,
+batches, edits/deletions of existing products, other base profile edits, reminders,
 inventory, orders and automatic publication are outside this pilot.
+
+### News notices
+
+Announcements and restocking messages such as “en octubre tendremos más cerveza
+rubia” route to News, retaining the original language and imprecise date.
+`lib/intake/news.ts` references the editor-owned `mensaje a la comunidad` field,
+its length limit and the shared source-language registry. Submission uses the
+ordinary change service with only the notice and `mensaje_comunidad_locale`
+changed; products and gallery are not submitted. `fecha novedades` remains
+system-owned and is stamped at editorial materialization, not from the future
+date in the message. A notice replaces the single current reviewed notice only
+after approval and Git publication. Corrections, cancellation, exact producer
+permissions, snapshot conflicts and audit follow the same workflow as products.
+Existing product conversations and version-2 intake provenance remain readable.
+The optional private state `news` identifies the notice; its hash includes the
+news kind, text and source locale. No new database migration is required.
+
+### Extraction failures
+
+Failed preparation no longer blames the producer's text or photo. The runtime
+records `whatsapp.extraction_failed` with an allowlisted failure category,
+HTTP status, known provider code and validated request ID when available.
+These diagnostics exclude source text, phone numbers, images, provider error
+messages and credentials. Failed attempts still consume the lifetime allowance;
+there is no automatic inference retry. Inspect the diagnostic before asking
+for another paid attempt. Responses uses `store:false`, so the earlier generic
+failure cannot be reconstructed from a stored OpenAI response.
 
 ## Producer flow
 
@@ -88,7 +115,7 @@ inventory, orders and automatic publication are outside this pilot.
 2. Accept the explanation of Meta/OpenAI processing. Generate the single-use,
    ten-minute linking URL, open it in WhatsApp and send its prepared message.
    Only its hash is stored in the link table. Do not share this capability URL.
-3. Describe a new product or send a legible photo (JPEG/PNG, up to 5 MiB).
+3. Describe a new product or news notice, or send a legible photo (JPEG/PNG, up to 5 MiB).
    Answer a short question only if a necessary fact is missing. Complete text
    or photo input goes straight to editorial review with a brief receipt.
 4. Continue naturally: “perdón, son 7 euros”, “¿cómo va?” or “mejor descártalo”.

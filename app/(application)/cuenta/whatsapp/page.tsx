@@ -50,7 +50,7 @@ export default async function WhatsAppPage() {
       <section className="account-callout">
         <h2>Tu asistente por WhatsApp</h2>
         <p>
-          Cuéntanos qué producto habéis creado o envía una foto de su etiqueta.
+          Cuéntanos una novedad, qué producto habéis creado o envía una foto de su etiqueta.
           El asistente prepara los datos y solo pregunta lo que falta. La
           propuesta llega automáticamente a Chisan para revisarla antes de
           publicarla.
@@ -63,6 +63,10 @@ export default async function WhatsAppPage() {
       <section>
         <h3>Qué puedes hacer en este piloto</h3>
         <ul>
+          <li>
+            Proponer una novedad para vuestra ficha, como «en octubre tendremos
+            más cerveza rubia», y corregirla antes de que se apruebe.
+          </li>
           <li>
             Preparar un producto nuevo: nombre, descripción, formato, precio en
             euros y enlace de compra.

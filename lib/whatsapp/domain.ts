@@ -7,6 +7,7 @@ import type { ProductCandidate } from "../intake/product";
 export * from "../intake/product";
 
 export type AssistantState = {
+  news?: import("../intake/news").NewsCandidate;
   candidate: ProductCandidate;
   productId: string;
   baseRowHash: string;
