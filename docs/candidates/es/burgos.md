@@ -1,7 +1,7 @@
 # Burgos — Level 1 candidates
 
 - Target CSV: `data/csv/es/castilla-y-leon/burgos.csv`
-- Editorial review: 2026-09-04; 51 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-13; 50 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -85,7 +85,6 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Finca Torremilanos (Bodegas Peñalba López) | Aranda de Duero | `Vino` — D.O. Ribera del Duero biodynamic wines | Historic estate in Aranda de Duero with certified Demeter biodynamic vineyards and cooperage. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://www.torremilanos.com/> | Current winery and own vineyards are supported; corroborate exact productive municipality. |
 | Casa Lebai | Gumiel de Mercado | `Vino` — D.O. Ribera del Duero family wines | Family cellar project in Gumiel de Mercado farming old vines with limited artisan bottlings. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <https://casalebai.com/> | Current source reviewed at entry-page depth; it does not close the remaining specific dossier requirement. Confirm current productive responsibility, own food offer and actual productive municipality before admission. Recorded blocker: Confirm physical cellar address in Gumiel de Mercado. |
 
 

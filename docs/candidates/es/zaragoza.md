@@ -1,7 +1,7 @@
 # Zaragoza — candidates
 
 - Target CSV: `data/csv/es/aragon/zaragoza.csv`
-- Editorial review: 2026-09-04; 93 unresolved candidate entries remain.
+- Editorial review: 2026-09-04; queue updated 2026-09-13; 94 unresolved candidate entries remain.
 - The pass reconciled candidate dossiers with the Spanish catalog, reviewed linked public sources where accessible, and checked the Catalan public registers for the Catalan queues. A dossier or registry check is not proof of current activity.
 - Discovery statements in the tables retain their original source limits. The remaining-work field records what still prevents admission; inaccessible or insufficient sources do not establish an exclusion.
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
@@ -161,3 +161,9 @@ group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
 |---|---|---|---|---|---|---|
 | Camino del Bosque Soc. CooP.  Ltda. | Almonacid de la Sierra | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.caminodelbosque.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Frutas y hortalizas, Suministros a los socios y carburantes. |
 | Soc. Coop. Agraria San José | Sádaba | `Legumbres y cereales` — rice | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coop-sanjose.es/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Suministros a los socios y carburantes, Tiendas. |
+
+## DO Cava certified installations — 2026-09-13
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Bodegas Monasterio de Veruela | Ainzón | `Vino` — certified cava elaboration | The council list includes Bodegas Monasterio de Veruela, S.L. at Bodegas Bajas, s/n; the council directory presents it as the cava project of Bodegas Ruberte. | [DO Cava certified installations, 28/04/2026](https://www.cava.wine/documents/529/20260428_Listado_de_empresas_de_CAVA_certificadas_2026.pdf); [Council profile](https://www.cava.wine/es/bodegas/bodegas-monasterio-de-veruela/) | <https://cavamonasteriodeveruela.es/> | The own site returned a server error and the shop link in the council profile no longer resolves. Confirm a current own offer before admission; do not merge it into the Bodegas Ruberte row in Magallón. |

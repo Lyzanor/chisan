@@ -26,6 +26,15 @@
   location they publish. Their claims depend on the exact register. The explicit admission exception
   below uses a currently maintained authorization as indirect evidence; a generic
   certification or establishment record is insufficient.
+- The Consejo Regulador del Cava publishes a dated list of certified cava-making
+  installations — legal holder, installation address, postcode and municipality —
+  and a separate winery directory with trade names, links, council categories and
+  seals. The list supports certified elaboration at that installation, its holder
+  and its place, and one company may hold several installations. It names no trade
+  name, brand or offer: join it to a public identity through the directory, a legal
+  notice or the same published address, and admit a new row only with a current own
+  offer. The directory covers fewer wineries than the list. Each new edition replaces
+  the previous file URL, so cite the edition actually consulted.
 - Municipal markets, food routes and fair rosters are discovery sources and may
   list retailers, hospitality, associations or sales points rather than
   qualifying producers.

@@ -135,17 +135,26 @@ awards, or put a year in an evergreen slug.
 
 ## Wine denominations
 
-The current `Vino` category is not a normalized denomination registry. The next
-wine pass should assemble an official DOP/IGP reference inventory with exact names,
-official record URLs and review dates. Claim “all” only after reconciling coverage
-against that dated inventory.
+The `Vino` category is not a denomination registry. A producer's membership of a
+wine DOP or IGP is a reviewed certification in its own row: `certificaciones`
+includes `dop` or `igp`, and `certificaciones_detalle` begins with the exact
+protected name (`DOP Cava; …`), followed by the issuer and the certified operator,
+installation or scope published by the governing body. The evidence ledger cites
+that dated register. This is the typed relationship consumers use to select a
+denomination; guide metadata never becomes a second producer registry.
 
-Research producer/product-to-denomination relationships individually. Municipality,
-province, map boundaries and winery names cannot establish membership. A winery
-can make wines with different designations. Until a typed relationship contract
-is needed, keep sourced explanations in the article; do not create an unowned
-producer registry in guide metadata. Publish denomination articles only when each has
-distinct substance and enough supported producer references.
+Research each relationship individually against the governing body's current
+register. Municipality, province, map boundaries, brand names and product prose
+cannot establish membership, and a winery can make wines with different
+designations. A collective brand outside the denomination, such as Corpinnat or
+Clàssic Penedès, is not membership of DOP Cava.
+
+Claim “all” only for a dated register reconciled installation by installation. The
+Cava guide lists every catalog producer whose row records `DOP Cava`. When the
+council publishes a new list, repeat that reconciliation: certify matched rows,
+admit or hold new installations, remove the certification when a producer leaves,
+and update the article in the same change. Publish other denomination articles only
+when each has distinct substance and enough supported producer references.
 
 ## Search and publication
 

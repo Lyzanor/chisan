@@ -795,7 +795,11 @@ visibility boundary. Empty means unpublished. `certificaciones` accepts only
 The shared token definitions live in `lib/catalog/producer-schema.ts`.
 Every selection requires `certificaciones_detalle`: name its exact designation,
 issuer and certified activities/products, with operator/registration code when
-available. Multiple labels must each have an identifiable scope. Neither a token
+available. For `dop` and `igp`, begin with the exact protected name as `DOP <name>`
+or `IGP <name>` and separate designation, issuer and scope with semicolons, for
+example `DOP Cava; Consejo Regulador del Cava; instalación elaboradora de cava
+certificada: <operator> (<address>)`; denomination consumers select on that name.
+Multiple labels must each have an identifiable scope. Neither a token
 nor a validator establishes validity. Editorial review requires a current public
 certificate or operator register in the evidence ledger. Payment proves nothing.
 
