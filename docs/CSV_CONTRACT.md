@@ -674,6 +674,14 @@ renumber existing rows, fill a deleted gap or reuse an allocated ID. A merge
 keeps the target row's ID. Corporate grouping, if needed later, is a separate
 many-to-one identifier.
 
+A previously committed allocation collision requires a documented correction,
+not a redirect between unrelated producers. The bounded historical correction
+record in `data/reference/producer-id-corrections.json` identifies the introducing
+and correcting commits. The route-history check verifies the exact original CSV
+blobs, unchanged row facts, newly admitted identities and corrected row count
+before interpreting those erroneous assignments. It does not authorize future
+renumbering, alter current IDs or replace the canonical CSV registry.
+
 Multi-agent materialization must serialize the complete read-allocate-write
 operation per country. Run the materializer through
 `pnpm producer:ids:locked --countries es,it -- <command>` and calculate the next

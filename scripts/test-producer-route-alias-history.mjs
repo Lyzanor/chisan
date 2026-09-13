@@ -165,7 +165,68 @@ function readCurrentRoutes() {
   return routes;
 }
 
+// A committed correction must prove an ID-only change for the same row.
+// Never infer identity from a reused number, similar name or current route.
+function correctedRowIds(beforeRows, afterRows) {
+  const afterBySlug = new Map(afterRows.map((row) => [row.slug, row]));
+  assert.equal(afterBySlug.size, afterRows.length, "duplicate correction target slug");
+  const corrections = new Map();
+  for (const before of beforeRows) {
+    const after = afterBySlug.get(before.slug);
+    assert.ok(after, `correction removed historical row ${before.slug}`);
+    if (before.producer_id === after.producer_id) continue;
+    const { producer_id: beforeId, ...beforeFacts } = before;
+    const { producer_id: afterId, ...afterFacts } = after;
+    assert.deepEqual(afterFacts, beforeFacts, `identity correction changed facts for ${before.slug}`);
+    assert.match(afterId, /^[1-9][0-9]*$/, "invalid corrected producer_id");
+    assert.ok(Number.isSafeInteger(Number(afterId)), "unsafe corrected producer_id");
+    corrections.set(`${before.slug}/${beforeId}`, Number(afterId));
+  }
+  return corrections;
+}
+
+function readHistoricalIdentityCorrections() {
+  const manifest = JSON.parse(fs.readFileSync(
+    path.join(ROOT, "data/reference/producer-id-corrections.json"), "utf8",
+  ));
+  assert.equal(manifest.version, 1);
+  const corrections = new Map();
+  for (const entry of manifest.corrections) {
+    assert.match(entry.country, /^[a-z]{2}$/);
+    for (const revision of [entry.introducedBy, entry.correctedBy]) {
+      assert.match(revision, /^[a-f0-9]{40}$/);
+      git(["merge-base", "--is-ancestor", revision, "HEAD"]);
+    }
+    assert.equal(git(["rev-parse", `${entry.correctedBy}^`]).trim(), entry.introducedBy);
+    const changes = rawCsvChanges(git([
+      "diff", "--raw", "--abbrev=40", "--no-renames",
+      entry.introducedBy, entry.correctedBy, "--", `data/csv/${entry.country}`,
+    ]));
+    const blobs = readBlobs(changes.flatMap(({ oldOid, newOid }) => [oldOid, newOid]));
+    let count = 0;
+    for (const { oldOid, newOid, file } of changes) {
+      if (!oldOid || /^0+$/.test(oldOid) || /^0+$/.test(newOid)) continue;
+      const before = csvRows(blobs.get(oldOid));
+      if (!before.length || !("producer_id" in before[0]) || !("slug" in before[0])) continue;
+      const ids = correctedRowIds(before, csvRows(blobs.get(newOid)));
+      if (!ids.size) continue;
+      const prior = new Set(csvRows(git(["show", `${entry.introducedBy}^:${file}`])).map(row => row.slug));
+      for (const row of before) {
+        if (!ids.has(`${row.slug}/${row.producer_id}`)) continue;
+        assert.equal(prior.has(row.slug), false, `correction renumbers a previously established row ${row.slug}`);
+      }
+      const key = `${file}/${oldOid}`;
+      assert.equal(corrections.has(key), false, `duplicate historical correction ${key}`);
+      corrections.set(key, ids);
+      count += ids.size;
+    }
+    assert.equal(count, entry.rowCount, "historical correction scope changed");
+  }
+  return corrections;
+}
+
 function derivePostBootstrapAliases(currentRoutes) {
+  const identityCorrections = readHistoricalIdentityCorrections();
   const committedChanges = rawCsvChanges(
     git([
       "log",
@@ -194,8 +255,9 @@ function derivePostBootstrapAliases(currentRoutes) {
     const rows = csvRows(blobs.get(oid));
     if (!rows.length || !("producer_id" in rows[0])) continue;
     const { country, area } = catalogLocation(file);
+    const correctedIds = identityCorrections.get(`${file}/${oid}`);
     for (const row of rows) {
-      const producerId = Number(row.producer_id);
+      const producerId = correctedIds?.get(`${row.slug}/${row.producer_id}`) ?? Number(row.producer_id);
       if (!Number.isSafeInteger(producerId) || producerId <= 0 || !row.slug) continue;
       const identity = `${country}/${producerId}`;
       const routes = historicalRoutes.get(identity) ?? new Set();
@@ -332,4 +394,19 @@ test("producerRouteAliases cover every demonstrable historical route", () => {
     assert.ok(canonicalRoute, `${formerRoute} has no current producer_id destination`);
     assert.notEqual(routeSegments.join("/"), canonicalRoute, `${formerRoute} is canonical`);
   }
+});
+
+
+test("historical ID corrections preserve facts and apply only to the exact old row", () => {
+  const row = { slug: "nueces", producer_id: "10", nombre: "Nueces", municipio: "Nerpio" };
+  const corrected = { ...row, producer_id: "11" };
+  const ids = correctedRowIds([row], [corrected, { ...row, slug: "new", producer_id: "12" }]);
+  assert.deepEqual([...ids], [["nueces/10", 11]]);
+  assert.equal(ids.get("horchatas/10"), undefined);
+  assert.equal(ids.get("nueces/11"), undefined);
+  assert.equal(correctedRowIds([row], [row]).size, 0);
+  assert.throws(() => correctedRowIds([row], [{ ...corrected, nombre: "Other producer" }]), /changed facts/);
+  assert.throws(() => correctedRowIds([row], []), /removed historical row/);
+  assert.throws(() => correctedRowIds([row], [corrected, corrected]), /duplicate correction target/);
+  assert.throws(() => correctedRowIds([row], [{ ...row, producer_id: "011" }]), /invalid corrected/);
 });

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "corrections": [
+    {
+      "country": "es",
+      "introducedBy": "c109c09e19dd4cec299bfeba4a54d7355f837b1e",
+      "correctedBy": "670505b44d8d163733b465a9b99563114d3e4c48",
+      "rowCount": 117,
+      "reason": "The admission batch allocated IDs on a stale base and collided with Horchatas Monserrat (13251). The immediately following correction changed only the IDs of the 117 newly admitted rows. Match exact historical CSV blobs and rows when interpreting these assignments; current producer IDs and public routes remain unchanged."
+    }
+  ]
+}
