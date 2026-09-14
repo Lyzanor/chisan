@@ -222,6 +222,13 @@ hides the downloadable label; making the profile private makes the public URL
 return 404. Neither action can erase an already printed label. A fresh activation
 requires a nonempty preview again. Changing the selection never requires a new QR.
 
+Selection ordering, attributed notes, category sections and print layouts may
+evolve from observed use. Multiple selections per account would need their own
+identity and route while preserving existing printed URLs. Menu or dish-to-producer
+relationships would need separate meaning and freshness rules; current selections
+and producer content imply neither live menus nor inventory. Routes, billing,
+analytics and moderation for such extensions remain undecided.
+
 The Next.js page resolves account state and current CSV rows in a Server
 Component. A narrow selection explorer crosses into a Client Component with
 only plain serializable items, marker coordinates and resolved public

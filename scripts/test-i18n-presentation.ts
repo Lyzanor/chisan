@@ -1,9 +1,14 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
-import path from "node:path";
+import { registerHooks } from "node:module";
 import test from "node:test";
+import { createElement, Fragment } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 
-import { PRODUCER_EDITABLE_FIELDS } from "../lib/accounts/producer-fields";
+import {
+  PRODUCER_EDITABLE_FIELDS,
+  PRODUCER_STANDARD_EDITABLE_FIELDS,
+  PRODUCER_PREMIUM_EDITABLE_FIELDS,
+} from "../lib/accounts/producer-fields";
 import {
   DESCRIPTION_SOURCE_LOCALES,
   SUPPORTED_LOCALES,
@@ -220,16 +225,6 @@ test("owner field help is complete and localized without changing staff definiti
     "El idioma de origen de la descripción canónica; déjalo vacío solo si la descripción está vacía.",
   );
   assert.equal(japanese.ownerProducerFieldHelp["Venta online"], "現在の注文手段が確認済みかどうか。");
-
-  const ownerPage = readFileSync(
-    path.resolve(
-      process.cwd(),
-      "app/(application)/cuenta/productores/[country]/[producerId]/editar/page.tsx",
-    ),
-    "utf8",
-  );
-  assert.match(ownerPage, /messages\.ownerProducerFieldHelp\[field\.key\]/);
-  assert.doesNotMatch(ownerPage, /<small>\{field\.help\}<\/small>/);
 });
 
 test("public field presentation hides internal, locale and expanded-profile fields", async () => {
@@ -306,42 +301,193 @@ test("verification presentation shows only pending or verified producer ownershi
   );
 });
 
-test("premium admin gifts require exact admin access and remain Stripe-independent", () => {
-  const adminPage = readFileSync(
-    path.resolve(process.cwd(), "app/(admin)/admin/premium/page.tsx"),
-    "utf8",
-  );
-  const adminActions = readFileSync(
-    path.resolve(process.cwd(), "app/(admin)/admin/actions.ts"),
-    "utf8",
-  );
-  const giftService = readFileSync(
-    path.resolve(process.cwd(), "lib/accounts/producer-profile-gifts.ts"),
-    "utf8",
-  );
+test("account pages render localized help and enforce gift entry-point permissions", async (t) => {
+  // Exercise the real pages, form and actions with isolated infrastructure.
+  // Gift transactions and races are exercised against PGlite in test-profile-gifts-service.ts.
+  const fixture = {
+    presentation: {
+      locale: "es",
+      explicitLocale: null,
+      messages: await loadMessages("es"),
+    },
+    premium: true,
+    admin: false,
+    databaseReads: 0,
+    adminPaths: [] as string[],
+    giftCalls: [] as Array<{ operation: string; input: unknown }>,
+  };
+  const fixtureGlobal = "__chisanAccountPresentationTest";
+  Object.assign(globalThis, { [fixtureGlobal]: fixture });
+  const fixtureSource = `const fixture = globalThis.${fixtureGlobal};\n`;
+  const unexpected = "() => { throw new Error('Unexpected infrastructure call'); }";
+  const stubs: Record<string, string> = {
+    "server-only": "export {};",
+    "next/navigation": "export function redirect(url) { throw new Error('Redirect: ' + url); } export function notFound() { throw new Error('Not found'); }",
+    "@/lib/accounts/auth": `
+      export async function requireCurrentAccount() { return { id: 'owner' }; }
+      export async function hasProducerAccess() { return true; }
+      export async function hasProducerOwnerAccess() { return false; }
+      export async function requireAdminAccount(path) {
+        fixture.adminPaths.push(path);
+        if (!fixture.admin) throw new Error('Admin access denied');
+        return { id: 'admin' };
+      }
+      export const requireStaffAccount = ${unexpected};`,
+    "@/lib/i18n/application-presentation.server": "export async function loadApplicationPresentation() { return fixture.presentation; }",
+    "@/lib/db": `export function getDatabase() {
+      fixture.databaseReads++;
+      const query = { select: () => query, from: () => query, where: () => query,
+        orderBy: () => query, limit: async () => [] };
+      return query;
+    }`,
+    "@/lib/csv-catalog": `export async function findProducerById() {
+      return { country: 'es', area: 'barcelona', producerId: 1, slug: 'fixture',
+        name: 'Fixture producer', city: 'Barcelona', fields: { categoria: 'Aceite' } };
+    }`,
+    "@/lib/accounts/catalog-links": "export const buildAccountProducerHref = () => '/es/barcelona/fixture';",
+    "@/lib/accounts/config": "export const isProducerChangeSubmissionEnabled = () => true;",
+    "@/lib/accounts/producer-premium-entitlements": "export async function getActiveProducerPremiumEntitlement() { return fixture.premium ? { metadata: {} } : null; }",
+    "@/lib/accounts/producer-media": `export const listProducerMediaUploads = ${unexpected};`,
+    "@/lib/catalog/content": "export async function loadProducerContent() { return null; }",
+    "@/lib/payments/stripe-profile-upgrade-config": "export const getStripeProfileUpgradeConfiguration = () => ({ checkoutReady: false });",
+    "@/app/(application)/cuenta/actions": `export const submitProducerChangeAction = ${unexpected}; export const updateProducerProfileQrAction = ${unexpected};`,
+    "@/lib/admin/review-producer-change": `export const createProducerChangeReviewService = ${unexpected};`,
+    "@/lib/admin/review-producer-suggestion": `export const createProducerSuggestionReviewService = ${unexpected};`,
+    "@/lib/payments/stripe-profile-upgrades": `export const fulfillProducerProfileUpgradeCheckout = ${unexpected};`,
+    "@/lib/admin/producer-profile-access": `export const queryAdminProfileAccess = ${unexpected}; export const queryAdminProfileGiftCandidates = ${unexpected};`,
+    "@/lib/accounts/producer-profile-gifts": `
+      export async function grantProducerPremiumGift(input) {
+        fixture.giftCalls.push({ operation: 'grant', input });
+        return { kind: 'granted' };
+      }
+      export async function revokeProducerPremiumGift(input) {
+        fixture.giftCalls.push({ operation: 'revoke', input });
+        return { kind: 'revoked' };
+      }`,
+  };
+  const hooks = registerHooks({
+    resolve(specifier, context, nextResolve) {
+      if (Object.hasOwn(stubs, specifier)) {
+        return {
+          url: `data:text/javascript,${encodeURIComponent(fixtureSource + stubs[specifier])}`,
+          format: "module",
+          shortCircuit: true,
+        };
+      }
+      return nextResolve(specifier, context);
+    },
+    load(url, context, nextLoad) {
+      if (url.startsWith("data:text/javascript,")) {
+        return {
+          format: "module",
+          source: decodeURIComponent(url.slice("data:text/javascript,".length)),
+          shortCircuit: true,
+        };
+      }
+      if (url.endsWith(".css")) {
+        return { format: "module", source: "export default {};", shortCircuit: true };
+      }
+      return nextLoad(url, context);
+    },
+  });
+  try {
+    await t.test("the rendered producer editor uses translated help and respects premium visibility", async () => {
+      const { default: EditProducerPage } = await import(
+        "../app/(application)/cuenta/productores/[country]/[producerId]/editar/page"
+      );
+      for (const locale of ["es", "ja"] as const) {
+        fixture.presentation = {
+          locale,
+          explicitLocale: null,
+          messages: await loadMessages(locale),
+        };
+        for (const premium of [true, false]) {
+          fixture.premium = premium;
+          const page = await EditProducerPage({
+            params: Promise.resolve({ country: "es", producerId: "1" }),
+            searchParams: Promise.resolve({}),
+          });
+          const html = renderToStaticMarkup(page);
+          const help = [...html.matchAll(/<small\b[^>]*>([\s\S]*?)<\/small>/g)]
+            .map((match) => match[1]);
+          const escaped = (text: string) =>
+            renderToStaticMarkup(createElement(Fragment, null, text));
+          const helpMessages = fixture.presentation.messages.ownerProducerFieldHelp;
+          for (const field of PRODUCER_STANDARD_EDITABLE_FIELDS) {
+            assert.ok(
+              help.includes(escaped(helpMessages[field.key])),
+              `${locale}: ${field.key}`,
+            );
+          }
+          for (const field of PRODUCER_PREMIUM_EDITABLE_FIELDS) {
+            const fieldHelp = helpMessages[field.key];
+            assert.ok(fieldHelp, `${locale}: ${field.key} must have translated help`);
+            assert.equal(
+              help.includes(escaped(fieldHelp)),
+              premium,
+              `${locale}: ${field.key} premium visibility`,
+            );
+          }
+          const staffHelp = PRODUCER_EDITABLE_FIELDS.find(
+            (field) => field.key === "descripcion_locale",
+          )!.help;
+          assert.ok(
+            !help.includes(escaped(staffHelp)),
+            "staff English help must not leak into the translated editor",
+          );
+        }
+      }
+    });
 
-  assert.match(adminPage, /requireAdminAccount\("\/admin\/premium"\)/);
-  assert.match(
-    adminActions,
-    /grantProducerPremiumGiftAction[\s\S]*?requireAdminAccount\("\/admin\/premium"\)/,
-  );
-  assert.match(
-    adminActions,
-    /revokeProducerPremiumGiftAction[\s\S]*?requireAdminAccount\("\/admin\/premium"\)/,
-  );
-  assert.doesNotMatch(giftService, /getStripeClient|STRIPE_SECRET_KEY/);
-  assert.match(giftService, /PRODUCER_PROFILE_UPGRADE_ADMIN_GIFT_ENTITLEMENT_SOURCE/);
-  assert.match(giftService, /PRODUCER_PROFILE_UPGRADE_OPEN_STATUSES/);
-  assert.match(giftService, /eq\(staffGrants\.role, "admin"\)/);
-  assert.match(giftService, /eq\(users\.status, "active"\)/);
-  assert.match(giftService, /lockActiveAdmin\(transaction, input\.adminUserId, now\)/g);
-  assert.match(giftService, /\.for\("update"\)/);
-  assert.match(
-    giftService,
-    /grantProducerPremiumGift[\s\S]*?pg_advisory_xact_lock[\s\S]*?lockActiveAdmin\(transaction, input\.adminUserId, now\)/,
-  );
-  assert.match(
-    giftService,
-    /const country = candidate\.country;[\s\S]*?pg_advisory_xact_lock[\s\S]*?lockActiveAdmin\(transaction, input\.adminUserId, now\)/,
-  );
+    await t.test("gift pages and actions reject unauthorized access before reading or mutating", async () => {
+      const { default: AdminPremiumProfilesPage } = await import(
+        "../app/(admin)/admin/premium/page"
+      );
+      const { grantProducerPremiumGiftAction, revokeProducerPremiumGiftAction } =
+        await import("../app/(admin)/admin/actions");
+      const grant = new FormData();
+      grant.set("country", "es");
+      grant.set("producerId", "1");
+      grant.set("reason", "A reviewed administrative gift for this test producer.");
+      grant.set("adminUserId", "forged-admin");
+      const revoke = new FormData();
+      revoke.set("entitlementId", "10000000-0000-4000-8000-000000000001");
+      revoke.set("reason", "The reviewed administrative gift has ended.");
+      revoke.set("confirmation", "revoke");
+      revoke.set("adminUserId", "forged-admin");
+      fixture.databaseReads = 0;
+      await assert.rejects(
+        AdminPremiumProfilesPage({ searchParams: Promise.resolve({}) }),
+        /Admin access denied/,
+      );
+      await assert.rejects(grantProducerPremiumGiftAction(grant), /Admin access denied/);
+      await assert.rejects(revokeProducerPremiumGiftAction(revoke), /Admin access denied/);
+      assert.equal(fixture.databaseReads, 0);
+      assert.deepEqual(fixture.giftCalls, []);
+      assert.deepEqual(fixture.adminPaths, Array(3).fill("/admin/premium"));
+
+      fixture.admin = true;
+      await assert.rejects(
+        grantProducerPremiumGiftAction(grant),
+        /Redirect: \/admin\/premium\?result=granted/,
+      );
+      await assert.rejects(
+        revokeProducerPremiumGiftAction(revoke),
+        /Redirect: \/admin\/premium\?result=revoked/,
+      );
+      assert.deepEqual(fixture.giftCalls, [
+        {
+          operation: "grant",
+          input: { adminUserId: "admin", country: "es", producerId: 1, reason: grant.get("reason") },
+        },
+        {
+          operation: "revoke",
+          input: { adminUserId: "admin", entitlementId: revoke.get("entitlementId"), reason: revoke.get("reason") },
+        },
+      ]);
+    });
+  } finally {
+    hooks.deregister();
+    Reflect.deleteProperty(globalThis, fixtureGlobal);
+  }
 });

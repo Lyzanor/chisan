@@ -314,7 +314,9 @@ repository-wide checks but do not receive routine discovery or enrichment.
 yet prove admission or complete a future profile.
 
 Start from an explicit public source and bounded scope, then de-duplicate against
-the CSV and area note. Record only the identity, location clue, likely category,
+the CSV and area note. Compare names, municipalities and first-party domains;
+aliases or a shared domain are matching clues, not proof of the same unit.
+Record only the identity, location clue, likely category,
 reason it may qualify, discovery URL, date and visible doubt required for another
 editor to continue. Do not fill gaps or research the whole future profile.
 

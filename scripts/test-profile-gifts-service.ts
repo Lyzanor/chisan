@@ -33,6 +33,16 @@ const OWNER_ID = "00000000-0000-4000-8000-000000000002";
 const NON_ADMIN_ID = "00000000-0000-4000-8000-000000000003";
 const EXPIRED_ADMIN_ID = "00000000-0000-4000-8000-000000000004";
 const INACTIVE_OWNER_ID = "00000000-0000-4000-8000-000000000005";
+const REVIEWER_ID = "00000000-0000-4000-8000-000000000006";
+const SUSPENDED_ADMIN_ID = "00000000-0000-4000-8000-000000000007";
+const REVOKED_ADMIN_ID = "00000000-0000-4000-8000-000000000008";
+const UNAUTHORIZED_ADMIN_IDS = [
+  NON_ADMIN_ID,
+  EXPIRED_ADMIN_ID,
+  REVIEWER_ID,
+  SUSPENDED_ADMIN_ID,
+  REVOKED_ADMIN_ID,
+];
 const GIFT_REASON = "Launch partner selected for the documented Chisan pilot.";
 const REVOCATION_REASON = "The documented administrative pilot period has ended.";
 
@@ -91,6 +101,9 @@ test("administrative premium gifts execute atomically without Stripe authority",
       { id: NON_ADMIN_ID, displayName: "Non-admin account" },
       { id: EXPIRED_ADMIN_ID, displayName: "Expired admin" },
       { id: INACTIVE_OWNER_ID, displayName: "Inactive owner", status: "suspended" },
+      { id: REVIEWER_ID, displayName: "Reviewer" },
+      { id: SUSPENDED_ADMIN_ID, displayName: "Suspended admin", status: "suspended" },
+      { id: REVOKED_ADMIN_ID, displayName: "Revoked admin" },
     ]);
     await database.insert(staffGrants).values([
       {
@@ -107,6 +120,24 @@ test("administrative premium gifts execute atomically without Stripe authority",
         expiresAt: oneHourAgo,
         reason: "Expired operations authority for the test fixture.",
       },
+      {
+        userId: REVIEWER_ID,
+        role: "reviewer",
+        reason: "Review authority without administrative permissions.",
+      },
+      {
+        userId: SUSPENDED_ADMIN_ID,
+        role: "admin",
+        reason: "Administrative grant on a suspended account.",
+      },
+      {
+        userId: REVOKED_ADMIN_ID,
+        role: "admin",
+        grantedAt: twoHoursAgo,
+        revokedAt: oneHourAgo,
+        revokedByUserId: ADMIN_ID,
+        reason: "Revoked administrative grant.",
+      },
     ]);
     await database.insert(producerMemberships).values(
       [1, 2, 3, 5, 6, 7, 8].map((producerId) => ({
@@ -119,12 +150,13 @@ test("administrative premium gifts execute atomically without Stripe authority",
       })),
     );
 
-    assert.deepEqual(await service.grant(grantInput(1, NON_ADMIN_ID)), {
-      kind: "not_admin",
-    });
-    assert.deepEqual(await service.grant(grantInput(6, EXPIRED_ADMIN_ID)), {
-      kind: "not_admin",
-    });
+    for (const adminUserId of UNAUTHORIZED_ADMIN_IDS) {
+      assert.deepEqual(
+        await service.grant(grantInput(1, adminUserId)),
+        { kind: "not_admin" },
+        `Grant must reject ${adminUserId}`,
+      );
+    }
     const concurrentGrantKinds = (
       await Promise.all([service.grant(grantInput(6)), service.grant(grantInput(6))])
     )
@@ -162,14 +194,17 @@ test("administrative premium gifts execute atomically without Stripe authority",
     assert.equal(grantAudit?.actorUserId, ADMIN_ID);
     assert.equal(grantAudit?.action, "producer_profile_upgrade.gift_granted");
 
-    assert.deepEqual(
-      await service.revoke({
-        adminUserId: NON_ADMIN_ID,
-        entitlementId: granted.entitlementId,
-        reason: REVOCATION_REASON,
-      }),
-      { kind: "not_admin" },
-    );
+    for (const adminUserId of UNAUTHORIZED_ADMIN_IDS) {
+      assert.deepEqual(
+        await service.revoke({
+          adminUserId,
+          entitlementId: granted.entitlementId,
+          reason: REVOCATION_REASON,
+        }),
+        { kind: "not_admin" },
+        `Revocation must reject ${adminUserId}`,
+      );
+    }
     const revoked = await service.revoke({
       adminUserId: ADMIN_ID,
       entitlementId: granted.entitlementId,

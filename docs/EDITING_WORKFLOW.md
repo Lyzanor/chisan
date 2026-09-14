@@ -2,8 +2,10 @@
 
 This is the operational map for changes arriving through different channels.
 [Account System](ACCOUNT_SYSTEM.md) owns authorization and proposal contracts;
-[Operations](OPERATIONS.md) owns publication and recovery. An external agent is
-an input adapter, not a catalog writer or editorial approver.
+[Operations](OPERATIONS.md) owns publication and recovery. A deployed AI
+extractor is an input adapter with no catalog-writing or editorial-approval
+authority. Repository contributors doing editorial research follow
+[Editorial](EDITORIAL.md).
 
 ## Where to adapt a change
 

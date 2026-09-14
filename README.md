@@ -82,5 +82,5 @@ permissions. [The content contract](docs/PRODUCER_CONTENT.md) includes an exampl
 
 Pushing `main` triggers Vercel production deployment. Keep unrelated work out of
 a release and follow [preflight and smoke checks](docs/OPERATIONS.md).
-Plans such as [QR selections](docs/QR_SELECTION_PLAN.md) describe future work;
-they do not activate a feature or replace current contracts.
+Producer and selection QR behavior is documented in the
+[account contract](docs/ACCOUNT_SYSTEM.md#public-user-profiles).

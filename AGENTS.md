@@ -11,11 +11,11 @@ places. Make participation useful and the public experience understandable.
 Prefer a small working capability over speculative infrastructure. A validator
 checks consistency; people remain responsible for editorial judgement.
 
-Keep Chisan simple, flexible and extensible. Reuse the definitions that own each
-field, make affected consumers easy to find, and isolate external services in
-replaceable adapters. Add abstractions when a concrete capability needs them;
-the catalog and ordinary editing workflow must remain useful without an AI
-provider or messaging channel.
+Keep Chisan simple and extensible. Define clear domain contracts and observable
+outcomes; leave methods and tools adaptable. Reuse owning definitions and isolate
+external services in replaceable adapters. Add abstractions for concrete needs;
+the catalog and ordinary editing must work without any AI provider or messaging
+channel.
 
 Three kinds of guidance have different weight:
 
@@ -73,26 +73,40 @@ also uses the country's `data/csv/<country>/AGENTS.md` and relevant area note.
 | Producer coordinates or images | `docs/PRODUCER_GEOLOCATION.md`, `docs/IMAGES.md` |
 | Visitor location | `docs/VISITOR_LOCATION_ROUTING.md` |
 | Accounts, permissions and proposals | `docs/ACCOUNT_SYSTEM.md` |
+| Contribution channels and deployed AI intake | `docs/EDITING_WORKFLOW.md` |
 | Publication, recovery, environment and deployment | `docs/OPERATIONS.md` |
 | Stripe activation and incidents | `docs/STRIPE_RUNBOOK.md` |
 | Visual presentation | `design/README.md` |
 
+Load skills only for needed workflow or tool knowledge, with references read on
+demand. A phase boundary does not finish a broader authorized task. Keep reusable
+rules at their owner and one-off instructions in the task.
+
 ## Working defaults
 
 1. Inspect Git status and intended differences. Work directly on `main` unless
-   the user requests a branch; preserve unrelated changes and existing work.
+   the user requests a branch; isolate overlapping work when necessary to
+   preserve unrelated changes and existing work.
 2. Make a coherent change at its owning boundary. Prefer shared definitions
-   over repeated constants, and behavior tests over exact source-code spelling.
-3. Keep modules near their responsibility. Preserve stable entry points during
-   extraction; avoid a repository-wide rename merely for visual uniformity.
-4. Review the intended diff and run the matching checks before committing.
-   Stage and push only the authorized scope. CI does not replace local review.
+   over repeated constants, keep modules near their responsibility and preserve
+   stable entry points during extraction.
+3. Follow the requested outcome through review and matching checks, fixing
+   regressions caused by the change. Resolve routine choices from context;
+   respect analysis-only and stop-for-review requests.
+4. Task instructions override workflow defaults. Reuse existing authorization;
+   ask only for missing decisions affecting correctness, scope or permission.
+   When blocked, cite the exact instruction or missing prerequisite and continue
+   independent work.
+5. Review the intended diff before committing. Stage and push only the
+   authorized scope. CI does not replace local review.
+6. Report the result, checks performed and blockers concisely in the user's
+   language. Distinguish prepared, committed, pushed and deployed work using
+   evidence for the stage claimed.
 
 Maintained documentation is English. Preserve official names and source text.
-Country guides normally describe operating scope, local rules and source limits;
-use additional explanatory structure when useful. Keep derived counts and live
-queues in tools and candidate notes rather than policy. Temporary experiments
-and scripts need not become permanent infrastructure.
+Country guides hold operating scope, local rules and source limits. Keep live
+queues and derived counts in tools and candidate notes; temporary experiments
+need not become permanent infrastructure.
 
 ## Verification
 
@@ -104,6 +118,8 @@ and scripts need not become permanent infrastructure.
   concise record in `design/qa/design-qa.md` for material decisions.
 - Deployment and account migrations follow the Operations preflight.
 
-The full gate remains the release and CI safety net. During iteration, run the
-smallest meaningful test that exercises the changed behavior, then the final
-gate. A warning is work to assess, not a demand to invent missing facts.
+Use focused checks while iterating, then the applicable gate. Test observable
+behavior; repeat or broaden checks only for new changes, failures or unresolved
+risks. Report unrelated failures without expanding scope or claiming success.
+Warnings need judgement, never invented facts. Release preflight and CI retain
+their own gates.

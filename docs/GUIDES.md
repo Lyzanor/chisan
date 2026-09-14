@@ -27,13 +27,12 @@ published area uses the segment. The first published root paths `/guias` and
 No translated variants are implied. Future translations need explicit language
 routes, reviewed copies and reciprocal alternates before publication.
 
-## First edition and article shape
+## Article shape
 
-The first edition contains 31 Spanish articles, grouped into cheese, wine, honey,
-olive oil, pantry and territory themes. Articles combine explanatory prose,
-commented producer selections, an optional map, editorial criteria and sources.
-Their stated scope is introductory; they are not complete inventories or tasting
-reports. Search volumes have not been measured.
+Articles combine explanatory prose, commented producer selections, an optional
+map, editorial criteria and sources. Each states its scope; introductory coverage
+does not establish a complete inventory, a tasting report or measured demand.
+The files in `data/guides/` hold the current library and topic coverage.
 
 Each article is a Markdown document with YAML front matter for identity, title,
 description, publication status, dates, topic, source metadata and related slugs.
@@ -122,11 +121,11 @@ files, with server-side editorial permissions, validation and audit. It must not
 become a second published text store or let producer entitlement purchase editorial
 inclusion. There is no administrative guide editor in the current implementation.
 
-## First-edition library and expansion
+## Library expansion
 
-The 31 articles implement the initial editorial plan. Each has a distinct subject
-and a stated scope. Expand their substantive coverage in place, keeping stable
-slugs, rather than publishing annual duplicates or empty regional variants.
+Each article has a distinct subject and a stated scope. Expand substantive
+coverage in place, keeping stable slugs, rather than publishing annual duplicates
+or empty regional variants.
 
 “Mejores productores de queso” can become an explicit editorial selection after
 criteria and comparative evidence exist. Until then, use a title explaining what
@@ -171,5 +170,5 @@ links remain available without JavaScript.
 Follow Google's [people-first content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content):
 provide original useful detail and accurate titles and attribution; avoid thin
 mass-produced pages and artificial freshness. There are no ranking or rich-result
-promises. Later measure impressions, clicks and guide-to-profile visits alongside
-coverage and factual usefulness.
+promises. Performance assessments need measured impressions, clicks and
+guide-to-profile visits alongside coverage and factual usefulness.

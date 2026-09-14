@@ -48,11 +48,10 @@
   the productive unit, so a city address places no grove, vineyard or flock and
   leaves the placement question open. And a livestock accreditation is a
   permission to sell meat rather than evidence that butchered product reaches
-  consumers: sixteen such rows in Barcelona were purged as `out-of-scope` once
-  the municipal establishment census showed only a stockbreeding holding, so
-  check that census before admitting a meat or raw-milk holder on the register
-  alone. Prefer the live open dataset over the published PDF listing, whose
-  entries can be a decade old.
+  consumers. Check the municipal establishment census before admitting a meat
+  or raw-milk holder on the register alone: a stockbreeding holding does not
+  establish that offer. Prefer the live open dataset over the published PDF
+  listing, whose entries can be a decade old.
 - The CCPAE *guia d'operadors* is a Catalonia-wide organic certification
   register, not a provincial producer directory. One record supports the
   operator, its certified activity class and the municipality it publishes;
@@ -135,16 +134,16 @@
   exports CSV per filter from the site's own AJAX endpoint, but the export
   carries only identity, address and contact: there is no product or activity
   column, so a category cannot be read from it. Query it by the *Industrias*
-  activity, which is its elaboration class and returns roughly a fifth of the
-  register; *Vegetal* and *Animal* are raw production. The *Apicultura* filter
-  returns nothing, which is a register defect rather than an absence. Port
+  activity, which is its elaboration class; *Vegetal* and *Animal* are raw
+  production. The *Apicultura* filter returns nothing, which is a register
+  defect rather than an absence. Port
   terminals, cold stores, logistics operators, retail chains, e-commerce sellers
   and agricultural-input suppliers are certified beside producers, several
   operators are seated outside Galicia, and a single retail chain appears once
   per store.
 - The Cooperativas Agro-alimentarias directory lists the federation's member
   cooperatives nationally with municipality, province and the sectors each is
-  registered for, but it publishes a website for fewer than a tenth of them. A
+  registered for; a first-party website is optional in its records. A
   registered sector is an activity the cooperative is organized for, not proof
   that a food reaches the market under its own name, and that own-offer question
   is what decides a collective: a cooperative that only supplies its members,
