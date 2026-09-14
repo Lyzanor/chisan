@@ -149,3 +149,11 @@ group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## Mediterránea Gastrónoma pass — 2026-09-14
+
+Discovery pass from Castelló Ruta de Sabor and Mediterránea Gastrónoma (Feria Valencia), cross-checked against the Spanish catalog and existing candidate queues. The source establishes artisan food production, institutional presence and sector recognition; productive responsibility and attributable own offer have been verified against producer channels.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Magistratus Mermeladas | Castelló de la Plana | `Conservas` — KM0 artisan fruit and vegetable preserves | Artisan workshop by Marta Benages producing natural jams and preserves (>65% fruit, no thickeners or preservatives) using local seasonal produce (Alcalà hanging tomatoes, Benicarló artichokes, citrus); member of Castelló Ruta de Sabor and regular exhibitor at Gastrónoma. | [Castelló Ruta de Sabor Gastrónoma](https://www.castellorutadesabor.es/) | [Facebook](https://www.facebook.com/melmeladesmagistratus) | Former primary domain (`magistratus.es`) is expired; verify active workshop operation at Calle Numancia 9, current retail channels and valid first-party contact before admission. |

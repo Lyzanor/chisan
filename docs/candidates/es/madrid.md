@@ -420,3 +420,12 @@ group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | SAT 1679 Virgen de la Poveda | Villa del Prado | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.latiendadevino.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Suministros a los socios y carburantes. |
+
+## BioCultura pass — 2026-09-14
+
+Discovery pass from BioCultura Madrid (Asociación Vida Sana) and CAEM (Comité de Agricultura Ecológica de la Comunidad de Madrid), cross-checked against the Spanish catalog and existing candidate queues. The source establishes certified organic production and institutional participation; productive responsibility and attributable own offer have been verified against producer channels.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Miel Antonio Simón | Cobeña | `Miel` — organic raw honey and bee products | CAEM-certified 5th-generation beekeeper with own extraction and packaging facility in Cobeña and own apiaries across Madrid. | [CAEM BioCultura](https://caem.es/) | <https://miel-antoniosimon.com/> | Confirm physical workshop address and verify active direct sales / contact channels before admission. |
+| Bodegas Andrés Morate | Belmonte de Tajo | `Vino` — organic wines under DO Vinos de Madrid | First certified organic winery in the Community of Madrid (1999); own dry-farmed vineyards and on-site vinification/bottling in Belmonte de Tajo. | [CAEM BioCultura](https://caem.es/) | <https://www.andresmorate.com/> | Confirm current commercial vintage availability and visiting/direct sales terms before admission. |

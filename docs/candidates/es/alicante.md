@@ -359,3 +359,27 @@ Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Tomates Lis | Alicante (Finca La Torre) | `Fruta y verdura` — gourmet tomatoes | Listed under VERDURAS Y HORTALIZAS and PRODUCTOS FREE, HEALTHY; company registers give Camino de Borbunyo s/n, Finca La Torre, 03114 Alicante, incorporated 2021 under CNAE 0113 for growing vegetables. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.tomateslis.com/> | Confirm the growing site is the productive unit and that the tomatoes reach the market under this producer’s own identity rather than as an unbranded supplier. |
+
+## BioCultura pass — 2026-09-14
+
+Discovery pass from BioCultura (Asociación Vida Sana) and CAECV (Comité de Agricultura Ecológica de la Comunitat Valenciana), cross-checked against the Spanish catalog and existing candidate queues. The source establishes certified organic production and institutional participation; productive responsibility and attributable own offer have been verified against producer channels.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Bodega La Encina | Villena / La Encina | `Vino` — organic and biodynamic natural wines | Small rural artisan winery with certified organic and biodynamic ungrafted old vines (pie franco) producing natural wines with no added sulfites. | [CAECV BioCultura](https://www.caecv.com/) | <http://www.bodegalaencina.com/> | Confirm active visiting conditions and retail ordering channel before admission. |
+
+## Mediterránea Gastrónoma pass — 2026-09-14
+
+Discovery pass from PROAVA and Mediterránea Gastrónoma (Feria Valencia), cross-checked against the Spanish catalog and existing candidate queues. The source establishes artisan food production, institutional presence and sector recognition; productive responsibility and attributable own offer have been verified against producer channels.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Almazara La Alquería | Muro de Alcoy | `Aceite` — organic monovarietal and coupage extra virgin olive oil (Alfafarenca, Blanqueta, Picual) | Family estate and olive mill in Sierra de Mariola controlling cultivation, cold extraction and bottling on-site (Calle La Borra, 5); Gran Oro Ecológico winner at the VI Concurso Oficial de AOVEs PROAVA 2026; featured in Entreolivos / Gastrónoma. | [PROAVA Gastrónoma](https://proava.org/) | <https://almazaralaalqueria.com/> | Confirm farm store visiting conditions and direct sales schedule before admission. |
+
+## Fruit Attraction pass — 2026-09-14
+
+Discovery pass from Fruit Attraction (IFEMA Madrid) and DOP Uva de Mesa Embolsada del Vinalopó space, cross-checked against the Spanish catalog and existing candidate queues. Excludes pure traders, non-productive packers and wholesale intermediaries.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| El Reclot (Aracil, Martínez y Morillo) | La Romana | `Fruta y verdura` — bagged table grapes under DOP Uva de Mesa Embolsada del Vinalopó | Family grower cultivating own vineyards in the Vinalopó valley and operating an on-site packaging facility in Barrio San Antón 47, La Romana; traditional paper bagging on the vine (Aledo, Red Globe, Ideal); regular exhibitor at Fruit Attraction under the Alicante provincial pavilion. | [Fruit Attraction / DOP Vinalopó](https://www.elreclot.com/do-vinalopo/) | <https://elreclot.com/> | Confirm direct retail purchase or harvest visiting options at the packaging warehouse in La Romana before catalog admission. |

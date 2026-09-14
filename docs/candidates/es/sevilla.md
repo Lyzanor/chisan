@@ -276,3 +276,11 @@ group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+
+## BioCultura pass — 2026-09-14
+
+Discovery pass from BioCultura (Asociación Vida Sana), cross-checked against the Spanish catalog and existing candidate queues. The source establishes certified organic production and fair participation; productive responsibility and attributable own offer have been verified against producer channels.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| La Palmera Bio | Écija | `Aceite` — organic unfiltered estate EVOO | Family-owned olive estate (+300 ha) at Finca La Reina with dedicated on-site mill and packing facility. | [BioCultura](https://biocultura.org/) | <https://www.aceiteecologico.org/> | Verify exact mill coordinates and commercial visiting hours before admission. |

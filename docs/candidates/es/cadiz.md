@@ -166,3 +166,11 @@ Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Artesanos Butrón | Chiclana de la Frontera | `Pan y cereal` — picos, regañás and artisan bread | Listed under PANADERÍA, SNACKS Y MUNDO DULCE; company records place the bakery at Calle de los Pueblos 4, 11130 Chiclana de la Frontera, for “fabricación de pan y de productos frescos de panadería y pastelería”. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://artesanosbutron.com/> | Confirm the obrador and de-duplicate against the Butrón bakery identities already recorded in this area. |
+
+## BioCultura pass — 2026-09-14
+
+Discovery pass from BioCultura (Asociación Vida Sana) and Ecovalia, cross-checked against the Spanish catalog and existing candidate queues. The source establishes certified organic production and fair participation; productive responsibility and attributable own offer have been verified against producer channels.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Soul K | El Puerto de Santa María | `Bebidas sin alcohol` — certified organic live craft kombucha | Dedicated fermentation and bottling brewery in Polígono Industrial Las Salinas, El Puerto de Santa María, crafting organic raw kombucha with marketed brand identity. | [Ecovalia BioCultura](https://www.ecovalia.org/) | <https://soulk.es/> | Reconcile production brewery address with corporate registry in Jerez and verify retail sales channels before admission. |
