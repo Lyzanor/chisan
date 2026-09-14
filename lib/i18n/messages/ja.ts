@@ -133,6 +133,8 @@ const messages = {
     chooseUnit: "{unit}を選択",
   },
   areaSelector: {
+    search: "地域を検索",
+    empty: "一致する地域がありません。",
     label: "{unit}",
     placeholder: "{unit}を選択",
     submit: "地域を開く",

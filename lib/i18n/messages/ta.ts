@@ -146,6 +146,8 @@ const messages = {
   },
   country: { chooseUnit: "ஒரு {unit}-ஐத் தேர்ந்தெடுக்கவும்" },
   areaSelector: {
+    search: "பகுதிகளைத் தேடுங்கள்",
+    empty: "பொருந்தும் பகுதிகள் இல்லை.",
     label: "{unit}",
     placeholder: "ஒரு {unit}-ஐத் தேர்ந்தெடுக்கவும்",
     submit: "பகுதியைத் திறக்கவும்",

@@ -141,6 +141,8 @@ const messages = {
   },
   country: { chooseUnit: "Kgetha {unit}" },
   areaSelector: {
+    search: "Nyaka mafelo",
+    empty: "Ga go na mafelo a go swana.",
     label: "{unit}",
     placeholder: "Kgetha {unit}",
     submit: "Bula lefelo",

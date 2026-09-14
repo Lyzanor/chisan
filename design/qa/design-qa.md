@@ -4,6 +4,53 @@ One entry per reviewed surface: what was decided, what was rejected, and why.
 Not a checklist — that lives in [`../README.md`](../README.md). Reference only
 evidence committed to this repo; local capture paths rot.
 
+## 2026-09-14 — Quiet craft foundations, category paper and map previews
+
+Local visual review passed at 1374 × 938 and 390 × 844. The shared foundation
+uses white, forest green, light Outfit headings, fine rules, smaller radii and
+brief button feedback. The supplied Chisan wordmark stands alone; its initial
+two-square C is the QR mark, while the separate white-on-green icon is the
+favicon. Exports preserve the supplied pixels through the checked-in generator.
+
+Category filters and producer primary categories select a restrained paper tint
+and fibre texture: grape, dairy/linen, leaf, grain, olive, cocoa, marine, earth or
+honey. Reading panels stay clear and action colours retain their shared meaning.
+The unfiltered catalog stays white; row hover does not switch the page theme.
+
+The map has more space. Hover/focus highlights the matching row and point, and
+a single compact preview follows the actual point, bounded by the visible map
+and sticky header. It stays reachable while crossing from the row to the card.
+Marker selection scrolls only the list's contents so the page keeps the map in
+view. Full list/preview unification remains deferred.
+
+Province selection is a compact grouped disclosure with accent-insensitive area
+and region search, an explicit current area and a useful empty state. Escape
+closes the inner picker and restores its trigger; standard focus navigation
+remains available. Custom global shortcuts and a full-screen search palette were
+rejected. Producer search stays inline with stable desktop width.
+
+Checked search/results, category reset, pointer and focus preview without URL
+changes, marker selection, card-to-profile navigation, outside/Escape dismissal,
+zone filtering/navigation, the Chisan reference profile and the Pinullet mobile
+profile. No horizontal overflow at either width. The preview restores Chisan's
+font and ink instead of inheriting Leaflet's defaults. Position tests cover
+corners and above/below placement; reduced-motion CSS removes decorative movement.
+The real selector and shared type/button styles also passed a Japanese component
+fixture at 390px, with 16px search text and no overflow. Its temporary route was
+removed after review.
+
+Four actual QR PNG exports (short/long producer and selection URLs) decoded at
+1200, 600 and 420 pixel label widths: 12/12 correct payloads. This is digital
+decoding, not a physical print/camera test. The temporary export route was removed.
+Existing development warnings about WebMCP schema serialization were observed;
+they precede this design change.
+
+Evidence: [desktop map](foundations-map-desktop.png),
+[mobile map](foundations-map-mobile.png),
+[wine background](foundations-wine-desktop.png),
+[cheese profile](foundations-cheese-profile-mobile.png),
+[mobile zone picker](foundations-zone-mobile.png).
+
 ## 2026-09-11 — Website prominence and clean social/maps links on producer profiles
 
 final result: local QA passed; production release pending

@@ -8,7 +8,7 @@ import {
   type RadiusFilter,
 } from "@/lib/location/radius-search";
 import { useSearchParams } from "next/navigation";
-import { MagnifyingGlassIcon } from "@phosphor-icons/react";
+import { MagnifyingGlassIcon, MapPinIcon } from "@phosphor-icons/react";
 import {
   Suspense,
   memo,
@@ -23,7 +23,7 @@ import {
 } from "react";
 
 import { SiteCatalogControlsRegistration } from "@/components/account/site-catalog-controls-context";
-import type { AreaSelectorCountry } from "@/components/area-selector";
+import type { AreaSelectorCountry, AreaSelectorMessages } from "@/components/area-selector";
 import {
   LanguageMenuRegistration,
   type LanguageMenuRegistrationOption,
@@ -93,11 +93,7 @@ export type AreaExplorerModel = {
   producers: AreaExplorerProducer[];
   languageOptions: LanguageMenuRegistrationOption[];
   areaSelectorCountry: AreaSelectorCountry;
-  selectorMessages: {
-    label: string;
-    placeholder: string;
-    submit: string;
-  };
+  selectorMessages: AreaSelectorMessages;
   languageSwitcherLabel: string;
   catalogMessages: Messages["catalog"];
   mapMessages: Messages["map"];
@@ -215,6 +211,9 @@ const ProducerRosterRow = memo(function ProducerRosterRow({
               <SearchMatch text={item.description} query={query} />
             </small>
           ) : null}
+        </span>
+        <span className="producer-compact-preview" aria-hidden="true">
+          <MapPinIcon size={16} weight="fill" />
         </span>
       </Link>
     </li>
@@ -520,6 +519,9 @@ function AreaExplorerView({
   );
 
   const clearProducerSelection = useCallback(() => {
+    if (previewTimerRef.current !== null) clearTimeout(previewTimerRef.current);
+    previewTimerRef.current = null;
+    setPreviewedSlug("");
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
     window.history.replaceState(null, "", clearSelectionHref);
@@ -553,13 +555,22 @@ function AreaExplorerView({
 
     scrollSelectedListItemAfterMapSelectionRef.current = false;
     const selectedListItem = selectedListItemRef.current;
-    window.requestAnimationFrame(() =>
-      selectedListItem.scrollIntoView({ block: "nearest" }),
-    );
+    window.requestAnimationFrame(() => {
+      const list = selectedListItem.parentElement;
+      if (!list) return;
+      const rowBounds = selectedListItem.getBoundingClientRect();
+      const listBounds = list.getBoundingClientRect();
+      // Reveal the row inside its list without scrolling the map offscreen.
+      if (rowBounds.top < listBounds.top) {
+        list.scrollTop += rowBounds.top - listBounds.top;
+      } else if (rowBounds.bottom > listBounds.bottom) {
+        list.scrollTop += rowBounds.bottom - listBounds.bottom;
+      }
+    });
   }, [selectedItem]);
 
   useDismissibleProducerMapSelection({
-    active: Boolean(selectedItem),
+    active: Boolean(presentedItem),
     selectedSurfaceRef: selectedProducerLinkRef,
     relatedSurfaceRef: viewerRef,
     returnFocusRef: mapSurfaceRef,
@@ -646,9 +657,10 @@ function AreaExplorerView({
   );
 
   const clearProducerPreview = useCallback(
-    (slug: string) => {
+    () => {
+      // Keep the latest preview reachable when crossing from a row/point to its
+      // card. Another producer, outside click or Escape dismisses/replaces it.
       cancelPendingPreview();
-      setPreviewedSlug((current) => (current === slug ? "" : current));
     },
     [cancelPendingPreview],
   );
@@ -663,7 +675,7 @@ function AreaExplorerView({
   );
 
   return (
-    <main className="catalog-page catalog-page--simple">
+    <main className="catalog-page catalog-page--simple" data-category={category}>
       <SiteCatalogControlsRegistration
         country={areaSelectorCountry}
         currentArea={model.area}
@@ -796,6 +808,19 @@ function AreaExplorerView({
               scope={model.scope}
               area={model.area}
               selectedSlug={presentedItem?.slug}
+              selectionContent={presentedItem ? (
+                <div aria-live="polite" aria-atomic="true">
+                  <ProducerMapSelectionCard
+                    linkRef={selectedProducerLinkRef}
+                    producer={{
+                      ...presentedItem,
+                      href: buildProducerHref(presentedItem, {
+                        scope: model.scope, area: model.area, municipality, category,
+                      }),
+                    }}
+                  />
+                </div>
+              ) : null}
               focusRequest={mapFocusRequest}
               nearbyFocusKeys={nearbyMapFocusKeys}
               onNearbyFocusConsumed={consumeNearbyMapFocus}
@@ -805,27 +830,6 @@ function AreaExplorerView({
               onVisibleProducerKeysChange={handleVisibleProducerKeysChange}
               messages={model.mapMessages}
             />
-          </div>
-
-          <div
-            className="producer-map-selection-surface"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            {presentedItem ? (
-              <ProducerMapSelectionCard
-                linkRef={selectedProducerLinkRef}
-                producer={{
-                  ...presentedItem,
-                  href: buildProducerHref(presentedItem, {
-                    scope: model.scope,
-                    area: model.area,
-                    municipality,
-                    category,
-                  }),
-                }}
-              />
-            ) : null}
           </div>
         </div>
 

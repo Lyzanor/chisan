@@ -139,6 +139,8 @@ const messages = {
   },
   country: { chooseUnit: "Kies ’n {unit}" },
   areaSelector: {
+    search: "Soek gebiede",
+    empty: "Geen ooreenstemmende gebiede nie.",
     label: "{unit}",
     placeholder: "Kies ’n {unit}",
     submit: "Maak gebied oop",

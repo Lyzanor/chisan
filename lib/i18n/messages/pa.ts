@@ -130,6 +130,8 @@ const messages = {
   },
   country: { chooseUnit: "ਕੋਈ {unit} ਚੁਣੋ" },
   areaSelector: {
+    search: "ਖੇਤਰ ਖੋਜੋ",
+    empty: "ਕੋਈ ਮੇਲ ਖਾਂਦਾ ਖੇਤਰ ਨਹੀਂ ਮਿਲਿਆ।",
     label: "{unit}",
     placeholder: "ਕੋਈ {unit} ਚੁਣੋ",
     submit: "ਇਲਾਕਾ ਖੋਲ੍ਹੋ",

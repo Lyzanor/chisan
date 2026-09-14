@@ -132,6 +132,8 @@ const messages = {
   },
   country: { chooseUnit: "કોઈ {unit} પસંદ કરો" },
   areaSelector: {
+    search: "વિસ્તાર શોધો",
+    empty: "કોઈ મેળ ખાતા વિસ્તાર નથી.",
     label: "{unit}",
     placeholder: "કોઈ {unit} પસંદ કરો",
     submit: "વિસ્તાર ખોલો",

@@ -139,6 +139,8 @@ const messages = {
   },
   country: { chooseUnit: "Koho i {unit}" },
   areaSelector: {
+    search: "Huli i nā wahi",
+    empty: "ʻAʻohe wahi i loaʻa.",
     label: "{unit}",
     placeholder: "Koho i {unit}",
     submit: "Wehe i ka wahi",

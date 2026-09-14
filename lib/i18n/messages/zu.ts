@@ -139,6 +139,8 @@ const messages = {
   },
   country: { chooseUnit: "Khetha {unit}" },
   areaSelector: {
+    search: "Sesha izindawo",
+    empty: "Azikho izindawo ezifanayo.",
     label: "{unit}",
     placeholder: "Khetha {unit}",
     submit: "Vula indawo",

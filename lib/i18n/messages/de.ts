@@ -138,6 +138,8 @@ const messages = {
     chooseUnit: "{unit} auswählen",
   },
   areaSelector: {
+    search: "Gebiet suchen",
+    empty: "Keine passenden Gebiete.",
     label: "{unit}",
     placeholder: "{unit} auswählen",
     submit: "Gebiet öffnen",

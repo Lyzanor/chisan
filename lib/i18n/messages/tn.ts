@@ -140,6 +140,8 @@ const messages = {
   },
   country: { chooseUnit: "Tlhopha {unit}" },
   areaSelector: {
+    search: "Batla mafelo",
+    empty: "Ga go na mafelo a a tshwanang.",
     label: "{unit}",
     placeholder: "Tlhopha {unit}",
     submit: "Bula lefelo",

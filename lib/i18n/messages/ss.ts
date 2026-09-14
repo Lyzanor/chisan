@@ -138,6 +138,8 @@ const messages = {
   },
   country: { chooseUnit: "Khetsa {unit}" },
   areaSelector: {
+    search: "Funa tindzawo",
+    empty: "Kute tindzawo letihambisanako.",
     label: "{unit}",
     placeholder: "Khetsa {unit}",
     submit: "Vula indzawo",

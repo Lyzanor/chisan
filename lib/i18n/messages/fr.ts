@@ -111,7 +111,9 @@ const messages = {
     },
   },
   country: { chooseUnit: "Choisir une {unit}" },
-  areaSelector: { label: "{unit}", placeholder: "Sélectionner une {unit}", submit: "Ouvrir la zone" },
+  areaSelector: {
+    search: "Rechercher une zone",
+    empty: "Aucune zone correspondante.", label: "{unit}", placeholder: "Sélectionner une {unit}", submit: "Ouvrir la zone" },
   catalog: {
     title: "Carte des producteurs",
     summary: "{area} · {producers} · {mapped}",

@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import {
   buildProducerHref,
@@ -38,6 +38,7 @@ type ProducersMapProps = {
   scope: CatalogNavigationScope;
   area: string;
   selectedSlug?: string;
+  selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
@@ -55,6 +56,7 @@ export function ProducersMap({
   scope,
   area,
   selectedSlug,
+  selectionContent,
   focusRequest,
   nearbyFocusKeys,
   onNearbyFocusConsumed,
@@ -91,6 +93,7 @@ export function ProducersMap({
       key={`${scopeCountry}/${area}`}
       points={markers}
       selectedKey={selectedSlug}
+      selectionContent={selectionContent}
       focusRequest={focusRequest}
       nearbyFocusKeys={nearbyFocusKeys}
       onNearbyFocusConsumed={onNearbyFocusConsumed}
@@ -109,6 +112,7 @@ export function ProducersMap({
 export function ProducerSelectionMap({
   points,
   selectedKey,
+  selectionContent,
   focusRequest,
   initialFocusKeys,
   nearbyFocusKeys,
@@ -124,6 +128,7 @@ export function ProducerSelectionMap({
 }: {
   points: ProducerMapMarker[];
   selectedKey?: string;
+  selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
@@ -158,6 +163,7 @@ export function ProducerSelectionMap({
       <ProducersMapInner
         points={points}
         selectedKey={selectedKey}
+        selectionContent={selectionContent}
         focusRequest={focusRequest}
         initialFocusKeys={initialFocusKeys}
         nearbyFocusKeys={nearbyFocusKeys}

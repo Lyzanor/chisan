@@ -142,6 +142,8 @@ const messages = {
   },
   country: { chooseUnit: "ഒരു {unit} തിരഞ്ഞെടുക്കുക" },
   areaSelector: {
+    search: "പ്രദേശങ്ങൾ തിരയുക",
+    empty: "പൊരുത്തപ്പെടുന്ന പ്രദേശങ്ങളില്ല.",
     label: "{unit}",
     placeholder: "ഒരു {unit} തിരഞ്ഞെടുക്കുക",
     submit: "പ്രദേശം തുറക്കുക",

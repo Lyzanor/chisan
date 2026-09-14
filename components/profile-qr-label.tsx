@@ -19,8 +19,8 @@ import {
 const LABEL_COLORS = {
   background: "#ffffff",
   surface: "#ffffff",
-  ink: "#171717",
-  stone: "#595959",
+  ink: "#18221c",
+  stone: "#59645d",
   moss: "#00563f",
 } as const;
 const COPY_FEEDBACK_DURATION_MS = 1_500;

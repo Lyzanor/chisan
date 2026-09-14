@@ -43,6 +43,7 @@ import "../globals.css";
 import "../../design/foundations/tokens.css";
 import "../../design/adapters/web.css";
 import "../../design/adapters/experience.css";
+import "../../design/adapters/category-themes.css";
 
 const adsenseAccountId = getAdSenseAccountId();
 
@@ -76,8 +77,7 @@ export const SITE_METADATA: Metadata = {
   },
   description: SITE_DESCRIPTION,
   icons: {
-    // Browser icons carry the white page field: the transparent mark reads as a dark
-    // blob on dark tab chrome and on the black iOS composites behind home-screen icons.
+    // The supplied favicon is the separate white C on its forest square.
     icon: [{ url: chisanIcon.src, type: "image/png", sizes: "512x512" }],
     apple: [{ url: chisanAppleIcon.src, type: "image/png", sizes: "180x180" }],
   },

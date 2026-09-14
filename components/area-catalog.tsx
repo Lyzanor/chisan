@@ -157,6 +157,8 @@ export async function AreaCatalog({ country, area, locale, scope }: AreaCatalogP
     languageOptions,
     areaSelectorCountry: { regions: localizedRegions },
     selectorMessages: {
+      search: messages.areaSelector.search,
+      empty: messages.areaSelector.empty,
       label: capitalizeLabel(
         formatMessage(messages.areaSelector.label, { unit: unit.one }),
         locale,

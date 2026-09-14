@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
   type RefObject,
+  type ReactNode,
 } from "react";
 import Link from "next/link";
 import L from "leaflet";
@@ -23,6 +24,7 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { AnchoredMapPreview } from "./anchored-map-preview";
 
 import {
   PRODUCER_SELECTION_MIN_ZOOM,
@@ -463,6 +465,7 @@ function fitProducerPoints(
 function BoundsAwareMarkers({
   points,
   selectedKey,
+  selectionContent,
   focusRequest,
   initialFocusKeys = EMPTY_FOCUS_KEYS,
   nearbyFocusKeys = EMPTY_FOCUS_KEYS,
@@ -477,6 +480,7 @@ function BoundsAwareMarkers({
 }: {
   points: ProducerMapMarker[];
   selectedKey?: string;
+  selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
@@ -676,9 +680,15 @@ function BoundsAwareMarkers({
   }, [onVisibleKeysChange, visibleKeys]);
   const showCategoryMarkers = zoom >= CATEGORY_MARKER_MIN_ZOOM;
   const keyboardAccessible = visible.length <= KEYBOARD_MARKER_LIMIT;
+  const presentedPoint = points.find(({ key }) => key === selectedKey);
 
   return (
     <>
+      {selectionContent && presentedPoint ? (
+        <AnchoredMapPreview point={presentedPoint}>
+          {selectionContent}
+        </AnchoredMapPreview>
+      ) : null}
       {renderedPoints.map((point) => {
         const selected = selectedKey === point.key;
 
@@ -715,6 +725,7 @@ function BoundsAwareMarkers({
 export default function ProducersMapInner({
   points,
   selectedKey,
+  selectionContent,
   focusRequest,
   initialFocusKeys,
   nearbyFocusKeys,
@@ -731,6 +742,7 @@ export default function ProducersMapInner({
 }: {
   points: ProducerMapMarker[];
   selectedKey?: string;
+  selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
@@ -766,6 +778,7 @@ export default function ProducersMapInner({
       <BoundsAwareMarkers
         points={points}
         selectedKey={selectedKey}
+        selectionContent={selectionContent}
         focusRequest={focusRequest}
         initialFocusKeys={initialFocusKeys}
         nearbyFocusKeys={nearbyFocusKeys}

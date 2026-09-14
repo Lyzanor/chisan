@@ -139,6 +139,8 @@ const messages = {
   },
   country: { chooseUnit: "ಒಂದು {unit} ಆಯ್ಕೆಮಾಡಿ" },
   areaSelector: {
+    search: "ಪ್ರದೇಶಗಳನ್ನು ಹುಡುಕಿ",
+    empty: "ಹೊಂದಿಕೆಯಾಗುವ ಪ್ರದೇಶಗಳಿಲ್ಲ.",
     label: "{unit}",
     placeholder: "ಒಂದು {unit} ಆಯ್ಕೆಮಾಡಿ",
     submit: "ಪ್ರದೇಶ ತೆರೆಯಿರಿ",

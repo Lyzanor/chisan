@@ -156,6 +156,8 @@ const messages = {
     chooseUnit: "Tria {unit}",
   },
   areaSelector: {
+    search: "Cerca una zona",
+    empty: "No hi ha coincidències.",
     label: "{unit}",
     placeholder: "Selecciona {unit}",
     submit: "Obre la zona",

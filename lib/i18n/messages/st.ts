@@ -140,6 +140,8 @@ const messages = {
   },
   country: { chooseUnit: "Khetha {unit}" },
   areaSelector: {
+    search: "Batla libaka",
+    empty: "Ha ho libaka tse lumellanang.",
     label: "{unit}",
     placeholder: "Khetha {unit}",
     submit: "Bula sebaka",

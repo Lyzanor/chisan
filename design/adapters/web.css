@@ -27,7 +27,7 @@ body {
 .chisan-wordmark {
   display: block;
   width: 7rem;
-  aspect-ratio: 577.82 / 144;
+  aspect-ratio: 1494 / 397;
   flex: 0 0 auto;
   background: var(--chisan-brand-asset) center / contain no-repeat;
 }

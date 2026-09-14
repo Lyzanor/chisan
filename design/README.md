@@ -4,16 +4,20 @@ The visual system: rules, tokens, brand assets, and the web mapping.
 This guide owns the visual system. Components consume its tokens while their
 product contracts own data, permissions and meaning.
 
-The active design is **v0.4 — Fluent discovery**. The producer, place and
-evidence lead, with a persistent navigation bar, clearer hierarchy, more spacious
-surfaces and brief motion that makes interactions easier to follow.
+The active design is **v0.5 — Quiet craft**. The foundation takes its rhythm from an
+omakase menu: light Outfit headings, fine rules, clear reading surfaces and
+small tactile responses. Producer, place and evidence lead. Ingredient-inspired
+paper colours add warmth to category views without changing the meaning of
+controls, claims or map coordinates.
 
 ```
 foundations/tokens.css   colour, type, space, shape, motion tokens
 adapters/web.css         maps those tokens onto the web surface
 adapters/experience.css  shared navigation, discovery, profile and account polish
-brand/assets/            raster metadata exports from the approved vectors
-public/brand/            approved C-with-dot SVG masters (repository root)
+adapters/category-themes.css  ingredient-inspired background treatments
+brand/chisan-reference.png   supplied identity sheet (pixel source)
+brand/assets/            generated metadata and icon exports
+public/brand/            lossless SVG wrappers for the supplied identity
 references/              decision boards and inspiration (never imported)
 qa/design-qa.md          what was decided and rejected, per surface
 ```
@@ -24,7 +28,7 @@ qa/design-qa.md          what was decided and rejected, per surface
 
 ```
 app/globals.css  →  foundations/tokens.css  →  adapters/web.css
-                →  adapters/experience.css
+                →  adapters/experience.css  →  adapters/category-themes.css
 ```
 
 `tokens.css` is the only place brand colours, spacing and radii are declared. It
@@ -33,7 +37,7 @@ consumes, so `globals.css` cannot render without it. Semantic product colours,
 such as errors and verification states, remain with their product contract.
 
 `adapters/web.css` styles the wordmark, map primitives and original web mapping.
-`adapters/experience.css` owns the v0.4 presentation of navigation, menu motion,
+`adapters/experience.css` owns the shared presentation of navigation, menu motion,
 landing pages, discovery, producer profiles and account surfaces. Most remaining
 catalog, profile, account and admin presentation is still `app/globals.css` (ordered imports from `app/styles/`) or
 a page-owned CSS module. Those files consume the mapped tokens and remain in
@@ -60,28 +64,38 @@ current product decisions. A justified change may revise them with visual QA.
 | --------------- | --------: | --------------------------------------- |
 | `rice-paper`    | `#FFFFFF` | Pure white page field                    |
 | `surface`       | `#FFFFFF` | Controls, raised surfaces               |
-| `surface-muted` | `#F2F2F2` | Neutral quiet fills                     |
-| `ink`           | `#171717` | Text, dark surfaces                     |
-| `stone`         | `#595959` | Secondary text, map labels              |
-| `hairline`      | `#D4D4D4` | Decorative rules and borders            |
+| `surface-muted` | `#F6F7F6` | Quiet neutral fills                     |
+| `ink`           | `#18221C` | Text, dark surfaces                     |
+| `stone`         | `#59645D` | Secondary text, map labels              |
+| `hairline`      | `#D8DFDA` | Decorative rules and borders            |
 | `moss`          | `#00563F` | Forest green action, focus, selection   |
 | `moss-dark`     | `#003D2D` | Dark green text and hover               |
-| `moss-pale`     | `#F2F2F2` | Neutral selected fill                   |
+| `moss-pale`     | `#EDF3EF` | Quiet green selected fill                   |
 
-The palette is pure white, neutral grays and forest green. Legacy token names
-remain stable for consumers: `rice-paper` no longer means a cream tint and
-`moss-pale` is neutral gray, not pastel green. Do not add cream, sage or ochre
-brand backgrounds. Green provides deliberate accents. Premium producer headers additionally use
-`premium-surface` (`#EDF5F1`), an explicitly requested quiet green field; this
-indicates presentation tier, never verification.
+White, soft grays and forest green remain the shared interface palette. The
+`rice-paper` token is white. Ingredient backgrounds are a separate decorative
+layer: wine/merlot, dairy/linen, leaves, grains, olives, cocoa, sea, earth and
+honey. Their paper and pigment values live in `tokens.css`; canonical category
+tokens select them in `adapters/category-themes.css`. The category filter sets
+the catalog ambience; a producer's primary category sets the profile ambience.
+“All categories” keeps the white base. Backgrounds do not react to individual
+row hover, so moving through the map cannot make the page flash between themes.
+
+The paper uses a very low-contrast fibre pattern and a white reading-side wash.
+Text, forms and preview cards retain clear surfaces; interactive selection stays
+forest green. Map tiles retain their geometry and labels, with reduced colour
+saturation. Photographs, markers and controls are not desaturated. Category
+colour never expresses verification, ownership, price or entitlement. Premium
+headers use the same category paper when available; their layout remains intact.
 
 Use `stone` or darker for meaningful control boundaries; `hairline` is
 decorative only. Text uses `ink`, `stone` or `moss-dark` on light surfaces and
 `surface` on green or dark surfaces. Check actual foreground/background pairs.
 
-No gradients, tinted shadows or colour-coded card sets. Status colours
-(error, warning, success, verification) belong to their product contract.
-The approved C-with-dot vectors use solid forest green, with no raster texture.
+Decorative gradients are limited to the soft category-paper wash. Do not add
+tinted control shadows or colour-coded card sets. Status colours belong to their
+product contract. The wordmark and QR C use solid forest green with the supplied
+silhouette; the favicon retains the supplied white-on-green artwork.
 
 ## Type
 
@@ -91,13 +105,13 @@ better preserves legibility.
 
 | Role      | Weight | Size    | Line height   |
 | --------- | ------ | ------- | ------------- |
-| Display   | 500    | 48–88px | 0.98–1.05     |
-| Heading   | 500    | 28–40px | 1.1–1.2       |
+| Display   | 350    | 48–88px | 0.98–1.05     |
+| Heading   | 400    | 28–40px | 1.1–1.2       |
 | Body      | 400    | 16–18px | 1.55–1.7      |
 | Interface | 500    | 14–16px | 1.35–1.5      |
 | Metadata  | 500    | 12–13px | 1.4, `0.04em` |
 
-`next/font/local` loads Outfit weights 100–900; Noto Sans loads 400, 500 and 700. The current CSS defaults to 400 and 500, using size, position and space
+`next/font/local` loads Outfit weights 100–900; Noto Sans loads 400, 500 and 700. Display, heading and interface weights are shared tokens (350, 400 and 500), using size, position and space
 for hierarchy. A different weight is a design decision to evaluate in context. 700 belongs to `<strong>` and
 `<b>`, where the browser applies it and the meaning is in the markup. Nothing
 under 12px. Reading column 58–64 characters.
@@ -108,7 +122,7 @@ under 12px. Reading column 58–64 characters.
   responsive dimensions may use other values when justified.
 - Shell up to 1440px, gutters 20–40px. Discovery is asymmetric 5/7 or 4/8; data
   tools use strict grids.
-- Radius: `0` structural, `12px` control, `16px` compact object, `24px` large
+- Radius: `0` structural, `8px` control, `12px` compact object, `16px` large
   surface. Large map and profile surfaces use the panel token; small screens
   use the object token where space is limited.
 - `999px` is for filters and tags only — things you can toggle or remove. Never
@@ -274,23 +288,23 @@ layout never invents proximity to fill a row.
 
 ## Brand
 
-The standard **Chisan** wordmark includes the rounded-square open **C with its
-separate central square dot**. That C-with-dot is the primary identity element,
-also used alone for the favicon and square affordances. Never omit the dot from
-either the full wordmark or compact symbol; never substitute a QR for the logo.
+The standard logo is **Chisan**, exactly as supplied in
+`brand/chisan-reference.png`. Its initial C contains two detached squares in the
+upper-right opening: the larger square above/right and the smaller one below/left.
+The separate icon at the right of the reference is the favicon, never an appended
+part of the wordmark. The same initial C is extracted for producer and selection QR
+centres. It replaces the earlier central-dot identity.
 
-- Use the wordmark above 112px of width and the symbol for square uses.
-- Clear space: one glyph stroke width. The primary SVG is forest green; the reversed wordmark uses the exact same
-  silhouette with a white CSS filter. Legacy raster wordmarks are not UI sources.
-- Preserve aspect ratio and use separate live text for the tagline. Use the approved vector paths; do not approximate the wordmark in live text
-  or independently redraw its symbol.
-- No extra containers, outlines, shadows, gradients or appended motifs.
-- The vector masters are `public/brand/chisan-wordmark.svg` and
-  `public/brand/chisan-mark.svg`. The complete wordmark includes outlined Outfit
-  letters; it does not depend on the live interface font loading.
+- Use the wordmark above 112px of width and the C for square affordances.
+- Preserve the supplied proportions and both squares; do not redraw or typeset it.
+- Keep the tagline as separate live text and the reversed logo as the same silhouette.
+- No extra containers, motifs or favicon appended to the wordmark.
+- `public/brand/chisan-wordmark.svg` and `chisan-mark.svg` preserve the existing
+  public URLs as lossless embedded-PNG wrappers. These are raster-derived assets,
+  not newly traced vector masters. The supplied pixels remain the authority.
 
 Profile QR labels use forest green for producer codes, neutral ink for selection
-codes and a pure white background. Both include the approved C-with-dot at the
+codes and a pure white background. Both include the approved two-square C at the
 center of a small excavated area, with H error correction and a four-module
 outer quiet zone. Finder patterns remain intact. The 160px mark in an 880px code
 is a maximum visual footprint, not a guarantee for every payload or print size.
@@ -304,7 +318,7 @@ empty alt text when its link already has an accessible name.
 
 ## Motion, voice, access
 
-Motion orients: 140ms feedback, 200ms components, 240ms page arrival, easing
+Motion orients: 150ms feedback, 220ms components, 240ms page arrival, easing
 `cubic-bezier(0.2, 0.8, 0.2, 1)`. Use opacity, short translations and small
 image emphasis. Honour `prefers-reduced-motion`, including changes made while
 the page is open. Never animate thousands of result rows or delay navigation.
@@ -320,8 +334,12 @@ its pending indicator follows the actual router state. The historical
 `ViewTransitionLink` entry point delegates to it. Only the presented map card prefetches a producer profile; the large result
 roster and category filter links keep prefetch disabled. Province links open
 directly in the compact country overview, with no duplicate selector. The
-account menu's quick province switch navigates on selection, without a submit
-button. The search field expands into available desktop space on focus.
+account menu's quick province switch has a bounded, searchable list grouped by
+region, a visible current selection and a recoverable empty state. Matching
+ignores accents and includes region names. Selecting an option navigates; hovering
+an option never navigates. Standard Tab/Enter/Escape operation remains accessible.
+There are no custom global keyboard shortcuts or command palette. Producer search
+keeps a stable, compact footprint and filters the existing map/list inline.
 
 The footer uses a single row on wide screens and a deliberate grid at narrower
 widths; it never relies on an orphaned link wrapping onto another row.
@@ -332,6 +350,15 @@ The search index is derived once per model and language from the same public
 fields; typing does not repeatedly normalize every producer's prose. Deferred
 result updates keep the input responsive, memoized rows avoid rerendering the
 whole roster on hover, and cancelled pointer previews do not queue map movement.
+The active row has a fine green rule, soft fill and map-pin indicator. Its compact
+photo card follows the actual producer point, placed above or below and constrained
+to the visible map and browser viewport, below the sticky header. It no longer sits
+at the bottom of the discovery map. The latest preview remains reachable when the
+pointer crosses to its card; another producer, outside click or Escape replaces or
+dismisses it. Hover/focus does not alter the URL or reorder rows. Marker activation
+retains the existing URL selection; clicking the card or row opens the profile.
+Other maps may retain their existing card placement until reviewed. Combining the
+roster and preview into a single component is deferred.
 
 Photography is documentary — real production, people and places in available
 light. Nothing staged, nothing implying an unsupported fact.
@@ -362,22 +389,17 @@ the change. Avoid duplicating the same design rule in product contracts.
 
 ## Regenerating the brand assets
 
-The exact masters live in `public/brand/`. The mark uses a 128-unit design grid
-with a 40-unit central square dot. Render those SVGs to derive raster metadata
-and favicon exports; never regenerate them with an image model. The inverse
-wordmark consumes the same SVG and changes its rendered color to white.
-Outfit's original font and license live in `app/_fonts/`. QR canvas typography
-uses the resolved interface font stack. Preserve the SVG aspect ratio.
+Run `node design/brand/build-favicon.cjs`. The generator extracts the left
+wordmark, its initial C and the separate right-hand favicon from
+`design/brand/chisan-reference.png`. It preserves the source alpha silhouette,
+applies flat forest/white to wordmark exports, and pads the standalone C for the
+QR quiet area. It writes the public SVG wrappers, metadata PNGs and
+`app/favicon.ico` with 16, 32, 48 and 256px frames. The Apple export is flattened
+on forest green for the system mask. No font tracing or image-model redraw occurs.
 
-Browser icons are the one place the mark carries its own light ground: a
-transparent mark reads as a dark blob on dark tab chrome and on the black iOS
-composites behind a home-screen icon. `design/brand/build-favicon.cjs` renders
-`public/brand/chisan-mark.svg` onto the white `rice-paper` field and writes
-`app/favicon.ico` (16, 32, 48 and 256px frames) plus the `chisan-icon-light` and
-`chisan-icon-apple` exports that `SITE_METADATA` declares. The tab exports use a
-rounded plate whose corners stay concentric with the mark's own; the Apple export
-is full bleed because the system applies its own mask. This white field is the
-icon's ground, not a container added to the logo elsewhere.
+Outfit's font and license live in `app/_fonts/`; QR canvas typography consumes the
+resolved interface font. Review the exports visually and independently decode
+actual short/long producer and selection downloads whenever the mark changes.
 
 ## References
 

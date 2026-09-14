@@ -139,6 +139,8 @@ const messages = {
   },
   country: { chooseUnit: "Dewiswch {unit}" },
   areaSelector: {
+    search: "Chwilio ardaloedd",
+    empty: "Dim ardaloedd cyfatebol.",
     label: "{unit}",
     placeholder: "Dewiswch {unit}",
     submit: "Agor yr ardal",

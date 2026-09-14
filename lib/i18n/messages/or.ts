@@ -136,6 +136,8 @@ const messages = {
   },
   country: { chooseUnit: "ଏକ {unit} ବାଛନ୍ତୁ" },
   areaSelector: {
+    search: "ଅଞ୍ଚଳ ଖୋଜନ୍ତୁ",
+    empty: "କୌଣସି ମେଳ ଖାଉଥିବା ଅଞ୍ଚଳ ନାହିଁ।",
     label: "{unit}",
     placeholder: "ଏକ {unit} ବାଛନ୍ତୁ",
     submit: "ଅଞ୍ଚଳ ଖୋଲନ୍ତୁ",

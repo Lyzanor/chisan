@@ -138,6 +138,8 @@ const messages = {
   },
   country: { chooseUnit: "Khetha {unit}" },
   areaSelector: {
+    search: "Khangela iindawo",
+    empty: "Akukho ndawo ihambelanayo.",
     label: "{unit}",
     placeholder: "Khetha {unit}",
     submit: "Vula indawo",

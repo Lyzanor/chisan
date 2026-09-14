@@ -129,6 +129,8 @@ const messages = {
   },
   country: { chooseUnit: "এটা {unit} বাছক" },
   areaSelector: {
+    search: "অঞ্চল বিচাৰক",
+    empty: "মিল থকা কোনো অঞ্চল নাই।",
     label: "{unit}",
     placeholder: "এটা {unit} বাছক",
     submit: "এলাকা খোলক",

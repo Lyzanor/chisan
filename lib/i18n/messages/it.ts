@@ -128,6 +128,8 @@ const messages = {
   },
   country: { chooseUnit: "Scegli una {unit}" },
   areaSelector: {
+    search: "Cerca una zona",
+    empty: "Nessuna zona corrispondente.",
     label: "{unit}",
     placeholder: "Seleziona una {unit}",
     submit: "Apri l'area",

@@ -82,7 +82,9 @@ const messages = {
     },
   },
   country: { chooseUnit: "Kies een {unit}" },
-  areaSelector: { label: "{unit}", placeholder: "Selecteer een {unit}", submit: "Gebied openen" },
+  areaSelector: {
+    search: "Gebied zoeken",
+    empty: "Geen overeenkomende gebieden.", label: "{unit}", placeholder: "Selecteer een {unit}", submit: "Gebied openen" },
   catalog: {
     title: "Producentenkaart", summary: "{area} · {producers} · {mapped}",
     producersFound: { one: "{count} producent gevonden", other: "{count} producenten gevonden" },

@@ -137,6 +137,8 @@ const messages = {
   },
   country: { chooseUnit: "एउटा {unit} छान्नुहोस्" },
   areaSelector: {
+    search: "क्षेत्र खोज्नुहोस्",
+    empty: "मिल्दो क्षेत्र भेटिएन।",
     label: "{unit}",
     placeholder: "एउटा {unit} छान्नुहोस्",
     submit: "क्षेत्र खोल्नुहोस्",

@@ -142,6 +142,8 @@ const messages = {
   },
   country: { chooseUnit: "ఒక {unit}ను ఎంచుకోండి" },
   areaSelector: {
+    search: "ప్రాంతాలను వెతకండి",
+    empty: "సరిపోలే ప్రాంతాలు లేవు.",
     label: "{unit}",
     placeholder: "ఒక {unit}ను ఎంచుకోండి",
     submit: "ప్రాంతాన్ని తెరవండి",

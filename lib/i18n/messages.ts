@@ -134,6 +134,8 @@ export type Messages = {
     chooseUnit: string;
   };
   areaSelector: {
+    search: string;
+    empty: string;
     label: string;
     placeholder: string;
     submit: string;

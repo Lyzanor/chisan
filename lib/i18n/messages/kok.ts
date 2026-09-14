@@ -130,6 +130,8 @@ const messages = {
   },
   country: { chooseUnit: "एखादो {unit} निवडात" },
   areaSelector: {
+    search: "वाठार सोदात",
+    empty: "जुळपी वाठार मेळूंक ना.",
     label: "{unit}",
     placeholder: "एखादो {unit} निवडात",
     submit: "क्षेत्र उगडात",

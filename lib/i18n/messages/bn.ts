@@ -133,6 +133,8 @@ const messages = {
   },
   country: { chooseUnit: "একটি {unit} বেছে নিন" },
   areaSelector: {
+    search: "অঞ্চল খুঁজুন",
+    empty: "কোনো মিল পাওয়া যায়নি।",
     label: "{unit}",
     placeholder: "একটি {unit} বেছে নিন",
     submit: "এলাকা খুলুন",

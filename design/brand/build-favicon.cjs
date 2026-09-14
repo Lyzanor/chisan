@@ -1,38 +1,31 @@
-/* eslint-disable @typescript-eslint/no-require-imports -- Standalone CommonJS asset generator. */
-// Regenerates the shipped browser icons from the canonical mark master.
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone asset generator. */
+// Deterministic exports from the user-supplied identity sheet. No redrawn glyphs.
 // Run with `node design/brand/build-favicon.cjs` from the repository root.
 const fs = require('node:fs');
 const path = require('node:path');
 const sharp = require('sharp');
-
 const root = path.resolve(__dirname, '..', '..');
-const master = fs.readFileSync(path.join(root, 'public/brand/chisan-mark.svg'), 'utf8');
-
-// The mark master draws its 128-unit geometry inside a -8/144 padded viewBox. The
-// browser icons keep that geometry and set it on the white page field instead of a
-// transparent ground, so the forest mark stays legible on dark browser chrome and on
-// the black that iOS composites behind a transparent home-screen icon.
+const reference = path.join(__dirname, 'chisan-reference.png');
+const FOREST = '#00563F';
 const CANVAS = 512;
-const INSET = 56; // Equal margin on every side; the 128-unit mark renders at 400 px.
-const MARK_SCALE = (CANVAS - 2 * INSET) / 128;
-const PLATE_RADIUS = INSET + 20 * MARK_SCALE; // Concentric with the mark's own 20-unit corners.
-const shapes = master.replace(/^.*<\/title>/s, '').replace('</svg>', '');
-
-// Tab and address-bar icons sit on the browser's own chrome, so the plate is a rounded
-// field. Apple home-screen icons are masked by the system, so that export is full bleed.
-const icon = (radius) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${CANVAS} ${CANVAS}" width="${CANVAS}" height="${CANVAS}">`
-  + `<title>Chisan — C with central dot on the white page field</title>`
-  + `<rect width="${CANVAS}" height="${CANVAS}" rx="${radius}" fill="#FFFFFF"/>`
-  + `<g fill="#00563F" transform="translate(${INSET} ${INSET}) scale(${MARK_SCALE})">${shapes}</g></svg>`;
-
-const render = (svg, size) =>
-  sharp(Buffer.from(svg), { density: (72 * size) / CANVAS })
-    .resize(size, size)
-    .png({ compressionLevel: 9 });
-
-// PNG-framed ICO: 6-byte directory header, one 16-byte entry per frame, then payloads.
 const ICO_SIZES = [16, 32, 48, 256];
+
+// The sheet places the wordmark on the left and a separate favicon on the right.
+// Keep both detached squares of the initial C. The favicon never joins the wordmark.
+const WORDMARK = { left: 107, top: 154, width: 1494, height: 397 };
+const MARK = { left: 107, top: 154, width: 430, height: 394 };
+const FAVICON = { left: 1703, top: 189, width: 362, height: 355 };
+
+async function silhouette(bounds, color) {
+  const alpha = await sharp(reference).extract(bounds).ensureAlpha().extractChannel(3).toBuffer();
+  return sharp({ create: { width: bounds.width, height: bounds.height, channels: 3, background: color } })
+    .joinChannel(alpha).png({ compressionLevel: 9 }).toBuffer();
+}
+
+function svgImage(png, width, height, title) {
+  // Preserve the existing public SVG URLs as lossless wrappers for the approved pixels.
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img"><title>${title}</title><image width="${width}" height="${height}" href="data:image/png;base64,${png.toString('base64')}"/></svg>\n`;
+}
 
 function packIco(frames) {
   const header = Buffer.alloc(6);
@@ -41,7 +34,7 @@ function packIco(frames) {
   let offset = 6 + frames.length * 16;
   const directory = frames.map((frame, index) => {
     const entry = Buffer.alloc(16);
-    entry.writeUInt8(ICO_SIZES[index] % 256, 0); // 256 is stored as 0.
+    entry.writeUInt8(ICO_SIZES[index] % 256, 0);
     entry.writeUInt8(ICO_SIZES[index] % 256, 1);
     entry.writeUInt16LE(1, 4);
     entry.writeUInt16LE(32, 6);
@@ -59,10 +52,23 @@ function packIco(frames) {
     fs.writeFileSync(path.join(root, relativePath), data);
     written.push(relativePath);
   };
+  const wordmark = await silhouette(WORDMARK, FOREST);
+  const reverseWordmark = await silhouette(WORDMARK, '#FFFFFF');
+  const mark = await sharp(await silhouette(MARK, FOREST))
+    .resize(416, 416, { fit: 'contain', background: '#00000000' })
+    .extend({ top: 48, bottom: 48, left: 48, right: 48, background: '#00000000' })
+    .png({ compressionLevel: 9 }).toBuffer();
+  const favicon = await sharp(reference).extract(FAVICON)
+    .resize(CANVAS, CANVAS, { fit: 'contain', background: '#00000000' })
+    .png({ compressionLevel: 9 }).toBuffer();
 
-  write('app/favicon.ico', packIco(await Promise.all(ICO_SIZES.map((size) => render(icon(PLATE_RADIUS), size).toBuffer()))));
-  write('design/brand/assets/chisan-icon-light.png', await render(icon(PLATE_RADIUS), CANVAS).toBuffer());
-  write('design/brand/assets/chisan-icon-apple.png', await render(icon(0), 180).toBuffer());
-
+  write('public/brand/chisan-wordmark.svg', svgImage(wordmark, WORDMARK.width, WORDMARK.height, 'Chisan'));
+  write('public/brand/chisan-mark.svg', svgImage(mark, CANVAS, CANVAS, 'Chisan C with two detached squares'));
+  write('design/brand/assets/chisan-wordmark-ink.png', wordmark);
+  write('design/brand/assets/chisan-wordmark-reverse.png', reverseWordmark);
+  write('design/brand/assets/chisan-mark-ink.png', await sharp(mark).flatten({ background: '#FFFFFF' }).png().toBuffer());
+  write('design/brand/assets/chisan-icon-light.png', favicon);
+  write('design/brand/assets/chisan-icon-apple.png', await sharp(favicon).flatten({ background: FOREST }).resize(180, 180).png().toBuffer());
+  write('app/favicon.ico', packIco(await Promise.all(ICO_SIZES.map((size) => sharp(favicon).resize(size, size).png().toBuffer()))));
   console.log(`Wrote ${written.join(', ')}.`);
-})();
+})().catch((error) => { console.error(error); process.exitCode = 1; });

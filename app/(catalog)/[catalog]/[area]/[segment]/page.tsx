@@ -440,7 +440,7 @@ export default async function ProducerPage({
   const hoursBesideContact = mapPoints.length > 0 || !hasLocation;
 
   return (
-    <main className="detail-page">
+    <main className="detail-page" data-category={producer.category}>
       {isProducerStatsEnabled() ? (
         <ProducerProfileView
           country={country.slug}

@@ -136,6 +136,8 @@ const messages = {
   },
   country: { chooseUnit: "कोई {unit} चुनें" },
   areaSelector: {
+    search: "क्षेत्र खोजें",
+    empty: "कोई मेल खाता क्षेत्र नहीं मिला।",
     label: "{unit}",
     placeholder: "कोई {unit} चुनें",
     submit: "क्षेत्र खोलें",

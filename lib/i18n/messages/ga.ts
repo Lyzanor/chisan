@@ -139,6 +139,8 @@ const messages = {
   },
   country: { chooseUnit: "Roghnaigh {unit}" },
   areaSelector: {
+    search: "Cuardaigh ceantair",
+    empty: "Níor aimsíodh aon cheantar.",
     label: "{unit}",
     placeholder: "Roghnaigh {unit}",
     submit: "Oscail an ceantar",

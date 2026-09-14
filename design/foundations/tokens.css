@@ -1,5 +1,5 @@
 /*
- * Chisan v0.4 foundations.
+ * Chisan v0.5 foundations: quiet, precise and tactile.
  *
  * The --chisan-* properties are canonical. The final block maps them onto the
  * existing web surface; product-semantic state such as errors stays outside
@@ -11,18 +11,41 @@
 
   --chisan-color-rice-paper: #ffffff;
   --chisan-color-surface: #ffffff;
-  --chisan-color-surface-muted: #f2f2f2;
-  --chisan-color-ink: #171717;
-  --chisan-color-stone: #595959;
-  --chisan-color-hairline: #d4d4d4;
+  --chisan-color-surface-muted: #f6f7f6;
+  --chisan-color-ink: #18221c;
+  --chisan-color-stone: #59645d;
+  --chisan-color-hairline: #d8dfda;
   --chisan-color-overlay-backdrop: rgb(0 0 0 / 78%);
   --chisan-color-premium-surface: #EDF5F1;
   --chisan-color-moss: #00563f;
   --chisan-color-moss-dark: #003d2d;
-  --chisan-color-moss-pale: #f2f2f2;
+  --chisan-color-moss-pale: #edf3ef;
+
+  /* Ingredient-inspired ambience. These are decorative, never status colours. */
+  --chisan-color-wine-paper: #f7eef1;
+  --chisan-color-wine-pigment: #805568;
+  --chisan-color-dairy-paper: #faf5e9;
+  --chisan-color-dairy-pigment: #aa9163;
+  --chisan-color-leaf-paper: #f1f5eb;
+  --chisan-color-leaf-pigment: #78875c;
+  --chisan-color-grain-paper: #f8f1e5;
+  --chisan-color-grain-pigment: #a98a5c;
+  --chisan-color-olive-paper: #f5f4e7;
+  --chisan-color-olive-pigment: #899060;
+  --chisan-color-cocoa-paper: #f6efea;
+  --chisan-color-cocoa-pigment: #907360;
+  --chisan-color-marine-paper: #edf4f5;
+  --chisan-color-marine-pigment: #729397;
+  --chisan-color-earth-paper: #f5efeb;
+  --chisan-color-earth-pigment: #a18171;
+  --chisan-color-honey-paper: #faf3e2;
+  --chisan-color-honey-pigment: #b69850;
 
   --chisan-font-sans: var(--font-chisan-sans), var(--font-chisan-fallback), "Hiragino Kaku Gothic ProN",
     "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
+  --chisan-weight-display: 350;
+  --chisan-weight-heading: 400;
+  --chisan-weight-interface: 500;
 
   --chisan-space-1: 0.25rem;
   --chisan-space-2: 0.5rem;
@@ -36,18 +59,18 @@
   --chisan-space-32: 8rem;
 
   --chisan-radius-structural: 0;
-  --chisan-radius-control: 12px;
-  --chisan-radius-object: 16px;
-  --chisan-radius-panel: 24px;
+  --chisan-radius-control: 8px;
+  --chisan-radius-object: 12px;
+  --chisan-radius-panel: 16px;
   --chisan-line: 1px;
   --chisan-focus-ring: 2px;
-  --chisan-shadow-overlay: 0 16px 48px rgb(0 0 0 / 12%);
-  --chisan-motion-immediate: 140ms;
-  --chisan-motion-component: 200ms;
+  --chisan-shadow-overlay: 0 12px 40px rgb(24 34 28 / 9%);
+  --chisan-motion-immediate: 150ms;
+  --chisan-motion-component: 220ms;
   --chisan-motion-page: 240ms;
   --chisan-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  /* Existing web visual names mapped to the v0.4 foundation. */
+  /* Existing web visual names mapped to the current foundation. */
   --page-bg: var(--chisan-color-rice-paper);
   --surface: var(--chisan-color-surface);
   --surface-muted: var(--chisan-color-surface-muted);

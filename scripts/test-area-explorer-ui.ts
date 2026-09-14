@@ -6,6 +6,26 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { ProducerMapSelectionCard } from "../components/map/producer-map-selection-card";
 import { findCatalogSearchMatch } from "../lib/catalog-search";
 import { includeSelectedProducer, prioritizeProducerItems } from "../lib/catalog/producer-list";
+import { positionMapPreview } from "../lib/map-preview-position";
+
+test("map previews stay beside their point and inside the visible map at every edge", () => {
+  const bounds = { left: 12, top: 92, right: 378, bottom: 480 };
+  const size = { width: 336, height: 116 };
+  for (const point of [{ x: 195, y: 320 }, { x: 14, y: 100 }, { x: 375, y: 100 }, { x: 375, y: 470 }, { x: 14, y: 470 }]) {
+    const position = positionMapPreview(point, size, bounds);
+    assert.ok(position.left >= bounds.left);
+    assert.ok(position.top >= bounds.top);
+    assert.ok(position.left + size.width <= bounds.right);
+    assert.ok(position.top + size.height <= bounds.bottom);
+    assert.ok(position.tip >= 12 && position.tip <= size.width - 12);
+  }
+  const above = positionMapPreview({ x: 195, y: 320 }, size, bounds);
+  assert.equal(above.side, "above");
+  assert.equal(above.top + size.height + 20, 320);
+  const below = positionMapPreview({ x: 195, y: 100 }, size, bounds);
+  assert.equal(below.side, "below");
+  assert.equal(below.top, 120);
+});
 
 test("nearby priority preserves the full roster and stable remaining order", () => {
   const items = ["a", "b", "c", "d"].map((slug) => ({ slug }));

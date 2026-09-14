@@ -144,6 +144,8 @@ const messages = {
   },
   country: { chooseUnit: "Tagh {unit}" },
   areaSelector: {
+    search: "Lorg sgìrean",
+    empty: "Cha deach sgìre a lorg.",
     label: "{unit}",
     placeholder: "Tagh {unit}",
     submit: "Fosgail an sgìre",
