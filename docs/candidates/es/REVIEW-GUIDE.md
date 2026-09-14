@@ -73,7 +73,10 @@ names it. Fill only what a source actually supports:
   coordinates.
 
 Then create the `keep` record in `data/evidence/es/<region>/<area>.jsonl` with
-only the sources actually relied on, and delete the candidate row.
+only the sources actually relied on. Collectively they should map `identity`,
+`producer-activity`, `own-offer` and `municipality`; the claim says what a source
+supports, while `pendiente` still communicates a documented source ceiling.
+Delete the candidate row only after the CSV/evidence handoff is complete.
 
 ## Verifying a candidate
 
@@ -109,4 +112,11 @@ npx pnpm check:csv:changed && npx pnpm check:evidence:changed
 
 ```bash
 npx pnpm verify:data
+```
+
+To see the current open-candidate and durable-decision footprint without
+maintaining totals in these notes:
+
+```bash
+npx pnpm report:editorial-work
 ```

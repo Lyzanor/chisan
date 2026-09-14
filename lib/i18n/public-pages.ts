@@ -97,17 +97,17 @@ const HOW_CHISAN_WORKS = {
       {
         title: "Discover",
         description:
-          "Public sources, producer contributions and community suggestions surface possible productive units. A shop, café, sales channel or brand mention on its own is not proof of production.",
+          "Public sources, producer contributions and community suggestions surface possible productive units. Each useful lead remains an area candidate — not a public profile — with its source, place clue and next unanswered question.",
       },
       {
         title: "Review",
         description:
-          "We check the public identity, productive location, own material output and current evidence for each unit. One catalog row represents one productive unit.",
+          "For each candidate we resolve the public identity, productive place, material output, current own offer and overlap with the catalog. We then accept it, keep it in research with one concrete next question, route it, recognize an existing profile or close it with evidence.",
       },
       {
         title: "Publish",
         description:
-          "Reviewed facts are materialized in area CSV files. Those files define public profiles and routes; evidence records the sources and the reasons behind closed decisions.",
+          "Accepted facts are materialized in area CSV files. Decision evidence retains the sources relied on for admissions and closed outcomes; unresolved candidates remain research instead of becoming speculative profiles.",
       },
       {
         title: "Keep current",
@@ -200,6 +200,11 @@ const HOW_CHISAN_WORKS = {
           "We draw on producer websites, public directories and registries, sector and local organizations, and source-backed contributions. We assess what each source supports and retain the evidence internally, without adding a source list to every profile or fact.",
       },
       {
+        title: "Candidate work accumulates",
+        description:
+          "Area by area, open candidates retain the useful source and the next question. Closed exclusions and published-record merges leave a durable trace, while catalog checks prevent duplicate publication, so a new source pass builds on earlier research instead of restarting it.",
+      },
+      {
         title: "Producer participation is visible",
         description:
           "When a profile claim is approved, we show the confirmed relationship with its producer. This does not certify every fact; proposed changes still receive editorial review.",
@@ -252,17 +257,17 @@ const HOW_CHISAN_WORKS = {
       {
         title: "Descubrir",
         description:
-          "Las fuentes públicas, las contribuciones de productores y las sugerencias de la comunidad permiten localizar posibles unidades productivas. Una tienda, cafetería, canal de venta o mención de marca no demuestra por sí sola que exista producción.",
+          "Las fuentes públicas, las contribuciones de productores y las sugerencias de la comunidad permiten localizar posibles unidades productivas. Cada pista útil permanece como candidato de su zona —no como perfil público— con su fuente, indicio de lugar y siguiente pregunta abierta.",
       },
       {
         title: "Revisar",
         description:
-          "Comprobamos la identidad pública, la ubicación productiva, la producción material propia y las evidencias actuales de cada unidad. Una fila del catálogo representa una unidad productiva.",
+          "Para cada candidato resolvemos su identidad pública, lugar productivo, producción material, oferta propia actual y posible solapamiento con el catálogo. Después lo aceptamos, lo mantenemos en investigación con una pregunta concreta, lo trasladamos, lo vinculamos a un perfil existente o lo cerramos con evidencias.",
       },
       {
         title: "Publicar",
         description:
-          "Los hechos revisados se materializan en archivos CSV por zona. Esos archivos definen los perfiles y las rutas públicas; las evidencias conservan las fuentes y los motivos de las decisiones cerradas.",
+          "Los hechos aceptados se materializan en archivos CSV por zona. Las evidencias conservan las fuentes utilizadas para las admisiones y decisiones cerradas; los candidatos no resueltos siguen siendo investigación en vez de perfiles especulativos.",
       },
       {
         title: "Mantener al día",
@@ -353,6 +358,11 @@ const HOW_CHISAN_WORKS = {
         title: "Combinamos distintas fuentes",
         description:
           "Nos apoyamos en webs de productores, directorios y registros públicos, entidades sectoriales y locales, y aportaciones respaldadas por fuentes. Valoramos qué acredita cada fuente y conservamos las evidencias internamente, sin añadir una lista de fuentes a cada perfil o dato.",
+      },
+      {
+        title: "El trabajo con candidatos se acumula",
+        description:
+          "Zona a zona, los candidatos abiertos conservan la fuente útil y la siguiente pregunta. Las exclusiones cerradas y las fusiones de perfiles publicados dejan un rastro duradero, mientras las comprobaciones del catálogo evitan duplicados, de modo que una nueva revisión continúa el trabajo anterior en vez de empezarlo de nuevo.",
       },
       {
         title: "La participación del productor es visible",

@@ -5,7 +5,8 @@
 // row state against HEAD and warns when an editorial decision that the evidence
 // contract expects to be recorded — a new producer, a changed `verificacion` or
 // `Venta online`, or a removed row (purge/merge) — has no matching line touched
-// in the matching area evidence ledger.
+// in the matching area evidence ledger. For a new producer it also warns when
+// the touched `keep` does not map every admission claim.
 // Rows match by stable `producer_id` when both revisions have it, then by slug.
 // During the one-time ID bootstrap, a unique set of unchanged identity/location
 // fields prevents a pure slug cleanup from looking like an add plus a removal.
@@ -23,6 +24,7 @@ import { pathToFileURL } from "node:url";
 import { parse } from "csv-parse/sync";
 
 import { classifyCatalogCsvPath } from "./lib/catalog-translations.mjs";
+import { missingAdmissionEvidenceClaims } from "./check-evidence.mjs";
 
 const CSV_PREFIX = "data/csv/";
 const CSV_ROOT = CSV_PREFIX.slice(0, -1);
@@ -90,13 +92,14 @@ function parseJsonlBySlug(content) {
   content.split(/\r?\n/).forEach((line) => {
     const trimmed = line.trim();
     if (!trimmed) return;
-    let slug = "";
+    let record;
     try {
-      slug = String(JSON.parse(trimmed).slug ?? "").trim();
+      record = JSON.parse(trimmed);
     } catch {
       return;
     }
-    if (slug) map.set(slug, trimmed);
+    const slug = String(record?.slug ?? "").trim();
+    if (slug) map.set(slug, { line: trimmed, record });
   });
   return map;
 }
@@ -116,8 +119,8 @@ function touchedEvidenceSlugs(evidencePath) {
   const head = parseJsonlBySlug(headContent(evidencePath));
   const current = parseJsonlBySlug(currentContent(evidencePath));
   const touched = new Set();
-  for (const [slug, line] of current) {
-    if (head.get(slug) !== line) touched.add(slug);
+  for (const [slug, item] of current) {
+    if (head.get(slug)?.line !== item.line) touched.add(slug);
   }
   return touched;
 }
@@ -188,11 +191,22 @@ function decisionsNeedingEvidence(headRows, currentRows) {
   return needs;
 }
 
+export function findIncompleteNewAdmissions(needs, touched, currentEvidence) {
+  return needs.flatMap((need) => {
+    if (need.reason !== "new producer" || !touched.has(need.slug)) return [];
+    const record = currentEvidence.get(need.slug)?.record;
+    if (record?.action !== "keep") return [];
+    const claims = missingAdmissionEvidenceClaims(record);
+    return claims.length ? [{ ...need, claims }] : [];
+  });
+}
+
 export function auditChangedEvidence() {
   const csvFiles = changedCsvFiles();
   const warnings = [];
   let decisions = 0;
   let missing = 0;
+  let incompleteAdmissions = 0;
 
   for (const csvPath of csvFiles) {
     const evidencePath = `${EVIDENCE_PREFIX}${csvPath.slice(CSV_PREFIX.length)}`.replace(
@@ -208,13 +222,26 @@ export function auditChangedEvidence() {
     decisions += needs.length;
     const touched = touchedEvidenceSlugs(evidencePath);
     const uncovered = needs.filter((need) => !touched.has(need.slug));
-    if (uncovered.length === 0) continue;
+    const currentEvidence = parseJsonlBySlug(currentContent(evidencePath));
+    const incomplete = findIncompleteNewAdmissions(
+      needs,
+      touched,
+      currentEvidence,
+    );
+    if (uncovered.length === 0 && incomplete.length === 0) continue;
 
     missing += uncovered.length;
-    warnings.push({ csvPath, evidencePath, uncovered });
+    incompleteAdmissions += incomplete.length;
+    warnings.push({ csvPath, evidencePath, uncovered, incomplete });
   }
 
-  return { files: csvFiles.length, decisions, missing, warnings };
+  return {
+    files: csvFiles.length,
+    decisions,
+    missing,
+    incompleteAdmissions,
+    warnings,
+  };
 }
 
 function report(result) {
@@ -226,16 +253,32 @@ function report(result) {
   console.log("Changed-evidence audit (warning-only)");
 
   for (const warning of result.warnings) {
-    console.log("");
-    console.log(
-      `WARN ${warning.csvPath}: ${warning.uncovered.length} editorial decision(s) without a matching record in ${warning.evidencePath}`,
-    );
-    warning.uncovered.slice(0, MAX_LINES_PER_FILE).forEach((need) => {
-      console.log(`  - ${need.slug}: ${need.reason}`);
-    });
-    const remaining = warning.uncovered.length - MAX_LINES_PER_FILE;
-    if (remaining > 0) {
-      console.log(`  … and ${remaining} more`);
+    if (warning.uncovered.length) {
+      console.log("");
+      console.log(
+        `WARN ${warning.csvPath}: ${warning.uncovered.length} editorial decision(s) without a matching record in ${warning.evidencePath}`,
+      );
+      warning.uncovered.slice(0, MAX_LINES_PER_FILE).forEach((need) => {
+        console.log(`  - ${need.slug}: ${need.reason}`);
+      });
+      const remaining = warning.uncovered.length - MAX_LINES_PER_FILE;
+      if (remaining > 0) {
+        console.log(`  … and ${remaining} more`);
+      }
+    }
+
+    if (warning.incomplete.length) {
+      console.log("");
+      console.log(
+        `WARN ${warning.csvPath}: ${warning.incomplete.length} new admission(s) with an incomplete claim map in ${warning.evidencePath}`,
+      );
+      warning.incomplete.slice(0, MAX_LINES_PER_FILE).forEach((need) => {
+        console.log(`  - ${need.slug}: missing ${need.claims.join(", ")}`);
+      });
+      const remaining = warning.incomplete.length - MAX_LINES_PER_FILE;
+      if (remaining > 0) {
+        console.log(`  … and ${remaining} more`);
+      }
     }
   }
 
@@ -245,7 +288,10 @@ function report(result) {
   console.log(`- decisions needing evidence: ${result.decisions}`);
   console.log(`- without a matching record: ${result.missing}`);
   console.log(
-    `- status: ${result.missing === 0 ? "OK" : "WARN (non-blocking)"}`,
+    `- new admissions with an incomplete claim map: ${result.incompleteAdmissions}`,
+  );
+  console.log(
+    `- status: ${result.missing === 0 && result.incompleteAdmissions === 0 ? "OK" : "WARN (non-blocking)"}`,
   );
 }
 

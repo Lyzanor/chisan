@@ -284,6 +284,7 @@ if [[
   "$HTML_PURPOSE" != *'Lo que no demuestra producción'* ||
   "$HTML_PURPOSE" != *'Revisión, corrección y retirada'* ||
   "$HTML_PURPOSE" != *'Chisan publica y mantiene el catálogo'* ||
+  "$HTML_PURPOSE" != *'El trabajo con candidatos se acumula'* ||
   "$HTML_PURPOSE" != *'Las fechas tienen un significado concreto'* ||
   "$HTML_PURPOSE" != *'El descubrimiento público permanece abierto'* ||
   "$HTML_PURPOSE" != *'"@type":"AboutPage"'*

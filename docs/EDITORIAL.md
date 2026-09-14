@@ -144,6 +144,15 @@ Route an incidental lead to its productive area when known. Use `other-area`
 only when the proposed placement was checked and disproved, not merely because
 the lead was found elsewhere.
 
+The handoff should leave the decision easy to inspect without becoming a
+dossier. For a newly accepted candidate, evidence sources collectively map the
+public identity, qualifying productive activity, current own offer and
+productive municipality to their corresponding claims. A held candidate keeps
+the best source already found and one next question. A closed exclusion keeps
+only the sources that establish the failed criterion and the short context
+needed to understand it. The exact representation belongs to
+`docs/EVIDENCE_CONTRACT.md`.
+
 ## Category assignment
 
 Categories describe material output made by the qualifying unit, not everything

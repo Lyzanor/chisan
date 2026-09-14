@@ -16,6 +16,12 @@ Evidence uniquely retains:
 - **Decision sources.** Each source records what it supports and when it was
   checked; published producer links remain in the CSV.
 
+Together with the open candidate workspace, this creates one continuous
+decision trail: a plausible lead remains in `docs/candidates/**` while an
+admission answer is unknown, then its relied-on sources move here when the
+decision closes. Evidence is the compact conclusion of that work, not a copied
+research dossier.
+
 ## Retention boundary
 
 Keep enough public context for another editor to understand a decision and avoid
@@ -105,6 +111,30 @@ Owner or community submissions remain private workflow state until review;
 publication copies only accepted public facts into the CSV and, when needed,
 the minimum suitable public decision sources here.
 
+### Candidate decision handoff
+
+For a newly accepted candidate, the `keep` sources should collectively make
+the four decisive admission answers inspectable:
+
+| Admission answer | Evidence claim |
+|---|---|
+| The public identity is resolved | `identity` |
+| The unit performs qualifying material production or elaboration | `producer-activity` |
+| A current resulting product reaches the market under that identity | `own-offer` |
+| The productive unit belongs to the stated municipality | `municipality` |
+
+One source may support several answers, or several sources may divide them.
+Claims describe only what each source actually publishes; a weaker but
+country-approved source ceiling still results in `pendiente` under
+`docs/EDITORIAL.md`. `scope` records an explicit inclusion or exclusion finding
+and is not a shortcut for the four admission claims.
+
+This expectation applies to new admissions and to a row when its admission is
+materially re-reviewed. Historical claim coverage remains advisory: do not
+rewrite thousands of otherwise untouched records merely to add tokens. The
+changed-evidence check warns about an incomplete claim map on a new row without
+turning that warning into automatic editorial truth.
+
 ### Exclusion reasons
 
 | `reason` | Meaning |
@@ -123,6 +153,7 @@ State the reason a reader could not infer from the sources in `notes`.
 |---|---|
 | `identity` | Identifies the entity |
 | `producer-activity` | Shows qualifying production or elaboration, including its material outputs and that they are current |
+| `own-offer` | Shows a current resulting food or drink offered under an identity attributable to this producer |
 | `municipality` | Places the productive unit in the stated municipality |
 | `location` | Supports address or coordinates |
 | `contact` | Publishes a direct contact route or visiting details |
@@ -167,7 +198,7 @@ belong to the account workflow.
 This fictional record illustrates the shape; it is not catalog evidence:
 
 ```json
-{"slug":"example-farm","action":"keep","sources":[{"url":"https://example.org/farm","type":"official-site","checkedAt":"2026-01-10","claims":["identity","producer-activity"],"note":"The producer describes its own cheese production."}]}
+{"slug":"example-farm","action":"keep","sources":[{"url":"https://example.org/farm","type":"official-site","checkedAt":"2026-01-10","claims":["identity","producer-activity","own-offer","municipality"],"note":"The producer describes its current cheese range and the dairy where it is made."}]}
 ```
 
 Use a second source when it contributes another claim or resolves uncertainty.

@@ -6,8 +6,14 @@ import os from "node:os";
 import path from "node:path";
 
 import csvAudit from "./audit-csv.js";
-import { auditEvidence } from "./check-evidence.mjs";
-import { isEvidenceAreaCsvPath } from "./check-evidence-changed.mjs";
+import {
+  auditEvidence,
+  missingAdmissionEvidenceClaims,
+} from "./check-evidence.mjs";
+import {
+  findIncompleteNewAdmissions,
+  isEvidenceAreaCsvPath,
+} from "./check-evidence-changed.mjs";
 
 const { CANONICAL_HEADER } = csvAudit;
 const FORWARD_COMPATIBILITY_COLUMN = "future optional field";
@@ -61,7 +67,7 @@ function validKeep() {
         url: "https://example.com",
         type: "official-site",
         checkedAt: "2026-06-15",
-        claims: ["identity", "producer-activity", "municipality"],
+        claims: ["identity", "producer-activity", "own-offer", "municipality"],
       },
     ],
   };
@@ -158,6 +164,33 @@ function main() {
     assert.equal(result.records, 3);
     assert.equal(result.documentedRows, 1);
     assert.equal(result.tombstones, 2);
+    assert.deepEqual(missingAdmissionEvidenceClaims(validKeep()), []);
+
+    const incompleteAdmission = validKeep();
+    incompleteAdmission.sources[0].claims = ["identity", "producer-activity"];
+    assert.deepEqual(missingAdmissionEvidenceClaims(incompleteAdmission), [
+      "own-offer",
+      "municipality",
+    ]);
+    assert.deepEqual(
+      findIncompleteNewAdmissions(
+        [{ slug: "productor-uno", reason: "new producer" }],
+        new Set(["productor-uno"]),
+        new Map([
+          [
+            "productor-uno",
+            { line: JSON.stringify(incompleteAdmission), record: incompleteAdmission },
+          ],
+        ]),
+      ),
+      [
+        {
+          slug: "productor-uno",
+          reason: "new producer",
+          claims: ["own-offer", "municipality"],
+        },
+      ],
+    );
 
     // The pruned shape is the contract. CSV facts, Git audit, private workflow,
     // research artifacts and copied source content must not become a dossier.

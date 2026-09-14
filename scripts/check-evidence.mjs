@@ -27,6 +27,7 @@ const SOURCE_TYPES = new Set([
 const CLAIMS = new Set([
   "identity",
   "producer-activity",
+  "own-offer",
   "municipality",
   "location",
   "contact",
@@ -54,6 +55,22 @@ const TOP_LEVEL_KEYS = new Set([
   "notes",
 ]);
 const SOURCE_KEYS = new Set(["url", "type", "checkedAt", "claims", "note"]);
+
+export const ADMISSION_EVIDENCE_CLAIMS = Object.freeze([
+  "identity",
+  "producer-activity",
+  "own-offer",
+  "municipality",
+]);
+
+export function missingAdmissionEvidenceClaims(record) {
+  const present = new Set(
+    (Array.isArray(record?.sources) ? record.sources : []).flatMap((source) =>
+      Array.isArray(source?.claims) ? source.claims : [],
+    ),
+  );
+  return ADMISSION_EVIDENCE_CLAIMS.filter((claim) => !present.has(claim));
+}
 
 function parseArgs(argv) {
   const args = {
