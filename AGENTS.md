@@ -17,6 +17,12 @@ external services in replaceable adapters. Add abstractions for concrete needs;
 the catalog and ordinary editing must work without any AI provider or messaging
 channel.
 
+Consider the ongoing maintenance cost of every new field, feature, task and
+process. Prefer existing data and workflows; add something only when a current
+need and its practical use justify keeping it maintained. Keep occasional work
+on demand and temporary artifacts disposable. Do not create standing machinery
+for hypothetical future uses or routines likely to remain unattended.
+
 Three kinds of guidance have different weight:
 
 - **Invariants** protect identity, factual authority, privacy and authorization.
