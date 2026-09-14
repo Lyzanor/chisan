@@ -1,3 +1,4 @@
+import type { CatalogSourceFigures } from "../catalog/source-figures";
 import type { Locale } from "./locales";
 
 export type PublicPageLocale = "en" | "es";
@@ -5,6 +6,131 @@ export type PublicPageLocale = "en" | "es";
 export function resolvePublicPageLocale(locale: Locale | null): PublicPageLocale {
   return locale === "es" ? "es" : "en";
 }
+
+type PublicSource = {
+  name: string;
+  url: string;
+};
+
+/**
+ * Databases named on How Chisan works, grouped by the role they play in
+ * research. Names keep their official spelling; the figures shown beside them
+ * describe this country's catalog.
+ */
+export const HOW_CHISAN_WORKS_SOURCES = {
+  country: "es",
+  groups: {
+    registries: [
+      {
+        name: "Registro General Sanitario de Empresas Alimentarias y Alimentos (AESAN)",
+        url: "https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp",
+      },
+      {
+        name: "Productors adherits a la venda de proximitat (Generalitat de Catalunya)",
+        url: "https://analisi.transparenciacatalunya.cat/d/xmyy-7xqi",
+      },
+      {
+        name: "Indústries agroalimentàries de Catalunya (Generalitat de Catalunya)",
+        url: "https://analisi.transparenciacatalunya.cat/d/p28j-xe65",
+      },
+      {
+        name: "Registro de Venta Directa de Castilla-La Mancha",
+        url: "https://registroventadirecta.castillalamancha.es/",
+      },
+      {
+        name: "Venta directa (Govern de les Illes Balears)",
+        url: "https://www.caib.es/sites/vendadirecta/",
+      },
+      {
+        name: "Registro de Artesanos Alimentarios (Junta de Castilla y León)",
+        url: "https://analisis.datosabiertos.jcyl.es/explore/dataset/registro-de-artesanos-alimentarios/",
+      },
+      {
+        name: "Artesanía alimentaria (Gobierno de Aragón)",
+        url: "https://www.aragon.es/calidad-agroalimentaria/figuras-de-calidad-diferenciada/artesania-alimentaria",
+      },
+      {
+        name: "Boletín Oficial del Registro Mercantil (BORME)",
+        url: "https://www.boe.es/diario_borme/",
+      },
+    ],
+    certification: [
+      { name: "DOCa Rioja", url: "https://riojawine.com/es/" },
+      { name: "D.O. Cava", url: "https://www.cava.wine/es/" },
+      {
+        name: "Consell Regulador de la DOQ Priorat",
+        url: "https://www.doqpriorat.org/",
+      },
+      {
+        name: "IGP Faba Asturiana",
+        url: "https://faba-asturiana.org/comercializacion/productores-de-venta-primaria/",
+      },
+      { name: "COPAE (Asturias)", url: "https://www.copaeastur.org/directorio/" },
+      {
+        name: "CBPAE (Illes Balears)",
+        url: "https://www.cbpae.org/directori-ecologic/",
+      },
+      {
+        name: "CRAEGA (Galicia)",
+        url: "https://www.craega.es/es/buscador-de-productores/",
+      },
+      {
+        name: "TRACES NT (Comisión Europea)",
+        url: "https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index",
+      },
+    ],
+    territory: [
+      {
+        name: "Cooperativas Agro-alimentarias de España",
+        url: "https://www.agro-alimentarias.coop/cooperativas",
+      },
+      {
+        name: "Tierra de Sabor (Castilla y León)",
+        url: "https://www.tierradesabor.es/",
+      },
+      { name: "Reyno Gourmet (Navarra)", url: "https://reynogourmet.com/empresas/" },
+      {
+        name: "Venta directa y de proximidad de Navarra",
+        url: "https://localtokikoa.navarra.es/",
+      },
+      { name: "Gastroteca (Catalunya)", url: "https://www.gastroteca.cat/" },
+      {
+        name: "Pon Aragón en tu mesa",
+        url: "https://ponaragonentumesa.com/directorio/",
+      },
+      {
+        name: "Catálogo de Productores Locales de la Provincia de Badajoz",
+        url: "https://catalogoproductoslocales.dip-badajoz.es/",
+      },
+      {
+        name: "Sabores de la Provincia de Sevilla",
+        url: "https://www.prodetur.es/prodetur/www/sabores/",
+      },
+    ],
+    geography: [
+      {
+        name: "Base de Datos de Límites Jurisdiccionales de España (IGN)",
+        url: "https://centrodedescargas.cnig.es/CentroDescargas/",
+      },
+      { name: "CartoCiudad", url: "https://www.cartociudad.es/" },
+      {
+        name: "Sede Electrónica del Catastro",
+        url: "https://www.sedecatastro.gob.es/",
+      },
+      {
+        name: "Institut Cartogràfic i Geològic de Catalunya",
+        url: "https://www.icgc.cat/ca",
+      },
+      { name: "OpenStreetMap", url: "https://www.openstreetmap.org/" },
+      { name: "Wikidata", url: "https://www.wikidata.org/" },
+    ],
+  },
+} satisfies {
+  country: string;
+  groups: Record<string, PublicSource[]>;
+};
+
+type HowChisanWorksSourceGroup = keyof typeof HOW_CHISAN_WORKS_SOURCES.groups;
 
 type HowChisanWorksCopy = {
   locale: PublicPageLocale;
@@ -21,6 +147,17 @@ type HowChisanWorksCopy = {
     title: string;
     description: string;
   }[];
+  sourcesKicker: string;
+  sourcesTitle: string;
+  sourcesIntroduction: string;
+  sourceFigures: Record<keyof CatalogSourceFigures, string>;
+  sourceFiguresNote: string;
+  sourceGroups: readonly {
+    title: string;
+    description: string;
+    sources?: HowChisanWorksSourceGroup;
+  }[];
+  opensInNewTab: string;
   eligibilityKicker: string;
   eligibilityTitle: string;
   eligibilityIntroduction: string;
@@ -115,6 +252,50 @@ const HOW_CHISAN_WORKS = {
           "Corrections, producer requests and catalog changes are reviewed before publication. No request made on the deployed website writes directly to the public catalog.",
       },
     ],
+    sourcesKicker: "Sources and figures",
+    sourcesTitle: "The databases behind the catalog",
+    sourcesIntroduction:
+      "No Chisan producer comes from a single database. We cross-check official registers, regulatory councils, regional directories and each producer's own channels, recording what each source supports and when we checked it.",
+    sourceFigures: {
+      producers: "published producers",
+      municipalities: "municipalities with at least one producer",
+      sourceReferences: "source references behind our decisions",
+      websites: "distinct websites among those references",
+    },
+    sourceFiguresNote:
+      "Figures for the Spanish catalog, calculated from its published profiles and editorial evidence whenever the website is updated.",
+    sourceGroups: [
+      {
+        title: "Official registers and open data",
+        description:
+          "They confirm identities, authorized activities, addresses and closures. Each register supports only what it publishes: a food-safety registration does not show that a product is on sale today.",
+        sources: "registries",
+      },
+      {
+        title: "Designations of origin and organic production",
+        description:
+          "Regulatory councils and certification bodies publish who is registered and what they certify. They help us discover producers and check what they make.",
+        sources: "certification",
+      },
+      {
+        title: "Regional directories",
+        description:
+          "Regional and provincial quality marks, provincial councils and cooperatives lead us to producers in each district and help confirm where they work.",
+        sources: "territory",
+      },
+      {
+        title: "Maps and geographic references",
+        description:
+          "They place each productive unit in its municipality and on the map. A geocoder suggests locations; publishing a point remains an editorial decision.",
+        sources: "geography",
+      },
+      {
+        title: "Producers, press and community",
+        description:
+          "Each producer's websites, online shops and official social accounts show what it makes and offers today. Press, guides, food fairs and reviewed contributions bring new leads.",
+      },
+    ],
+    opensInNewTab: "(opens in a new tab)",
     eligibilityKicker: "Catalog inclusion",
     eligibilityTitle: "Who can be part of Chisan",
     eligibilityIntroduction:
@@ -197,7 +378,7 @@ const HOW_CHISAN_WORKS = {
       {
         title: "Several sources inform our work",
         description:
-          "We draw on producer websites, public directories and registries, sector and local organizations, and source-backed contributions. We assess what each source supports and retain the evidence internally, without adding a source list to every profile or fact.",
+          "Beyond the databases named on this page, we draw on producer websites and source-backed contributions. We assess what each source supports and retain the evidence internally, without adding a source list to every profile or fact.",
       },
       {
         title: "Candidate work accumulates",
@@ -275,6 +456,50 @@ const HOW_CHISAN_WORKS = {
           "Las correcciones, las solicitudes de productores y los cambios del catálogo se revisan antes de publicarse. Ninguna petición realizada en la web desplegada escribe directamente en el catálogo público.",
       },
     ],
+    sourcesKicker: "Fuentes y cifras",
+    sourcesTitle: "Las bases de datos detrás del catálogo",
+    sourcesIntroduction:
+      "Ningún productor de Chisan procede de una única base de datos. Cruzamos registros oficiales, consejos reguladores, directorios del territorio y los canales de cada productor, y anotamos qué acredita cada fuente y cuándo la consultamos.",
+    sourceFigures: {
+      producers: "productores publicados",
+      municipalities: "municipios con al menos un productor",
+      sourceReferences: "referencias a fuentes que respaldan nuestras decisiones",
+      websites: "sitios web distintos entre esas referencias",
+    },
+    sourceFiguresNote:
+      "Cifras del catálogo de España, calculadas a partir de los perfiles publicados y de sus evidencias editoriales cada vez que se actualiza la web.",
+    sourceGroups: [
+      {
+        title: "Registros oficiales y datos abiertos",
+        description:
+          "Confirman identidades, actividades autorizadas, direcciones y cierres. Cada registro acredita solo lo que publica: una inscripción sanitaria no demuestra que hoy se venda un producto.",
+        sources: "registries",
+      },
+      {
+        title: "Denominaciones de origen y producción ecológica",
+        description:
+          "Los consejos reguladores y los organismos de certificación publican quién está inscrito y qué certifican. Nos ayudan a descubrir productores y a contrastar lo que elaboran.",
+        sources: "certification",
+      },
+      {
+        title: "Directorios del territorio",
+        description:
+          "Las marcas de calidad autonómicas y provinciales, las diputaciones y las cooperativas nos acercan a los productores de cada comarca y ayudan a confirmar dónde trabajan.",
+        sources: "territory",
+      },
+      {
+        title: "Mapas y referencias geográficas",
+        description:
+          "Sitúan cada unidad productiva en su municipio y en el mapa. Un geocodificador propone ubicaciones; publicar un punto sigue siendo una decisión editorial.",
+        sources: "geography",
+      },
+      {
+        title: "Productores, prensa y comunidad",
+        description:
+          "Las webs, tiendas online y redes oficiales de cada productor muestran qué elabora y qué ofrece hoy. La prensa, las guías, las ferias gastronómicas y las aportaciones revisadas aportan nuevas pistas.",
+      },
+    ],
+    opensInNewTab: "(se abre en una pestaña nueva)",
     eligibilityKicker: "Criterios de inclusión",
     eligibilityTitle: "Quién puede formar parte de Chisan",
     eligibilityIntroduction:
@@ -357,7 +582,7 @@ const HOW_CHISAN_WORKS = {
       {
         title: "Combinamos distintas fuentes",
         description:
-          "Nos apoyamos en webs de productores, directorios y registros públicos, entidades sectoriales y locales, y aportaciones respaldadas por fuentes. Valoramos qué acredita cada fuente y conservamos las evidencias internamente, sin añadir una lista de fuentes a cada perfil o dato.",
+          "Además de las bases de datos citadas en esta página, nos apoyamos en webs de productores y aportaciones respaldadas por fuentes. Valoramos qué acredita cada fuente y conservamos las evidencias internamente, sin añadir una lista de fuentes a cada perfil o dato.",
       },
       {
         title: "El trabajo con candidatos se acumula",

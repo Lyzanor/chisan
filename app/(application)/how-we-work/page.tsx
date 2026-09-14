@@ -3,8 +3,15 @@ import Link from "next/link";
 import { cache } from "react";
 
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
+import {
+  loadCatalogSourceFigures,
+  type CatalogSourceFigures,
+} from "@/lib/catalog/source-figures";
 import { loadApplicationPresentation } from "@/lib/i18n/application-presentation.server";
-import { getHowChisanWorksCopy } from "@/lib/i18n/public-pages";
+import {
+  getHowChisanWorksCopy,
+  HOW_CHISAN_WORKS_SOURCES,
+} from "@/lib/i18n/public-pages";
 import {
   buildPublicPageStructuredData,
   serializeStructuredData,
@@ -38,6 +45,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HowChisanWorksPage() {
   const copy = await loadCopy();
+  const figures = await loadCatalogSourceFigures(
+    HOW_CHISAN_WORKS_SOURCES.country,
+  );
+  const figureEntries = Object.entries(figures) as [
+    keyof CatalogSourceFigures,
+    number,
+  ][];
+  const numberFormat = new Intl.NumberFormat(
+    copy.locale === "es" ? "es-ES" : "en-US",
+  );
   const structuredData = buildPublicPageStructuredData({
     type: "AboutPage",
     url: canonicalUrl,
@@ -89,6 +106,54 @@ export default async function HowChisanWorksPage() {
                 </li>
               ))}
             </ol>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="catalog-sources-title">
+          <div className={styles.sectionHeader}>
+            <p className="catalog-kicker">{copy.sourcesKicker}</p>
+            <h2 id="catalog-sources-title">{copy.sourcesTitle}</h2>
+          </div>
+          <div className={styles.sectionBody}>
+            <p className={styles.sectionLead}>{copy.sourcesIntroduction}</p>
+            <ul className={styles.figures} aria-describedby="catalog-figures-note">
+              {figureEntries.map(([figure, value]) => (
+                <li className={styles.figure} key={figure}>
+                  <strong>{numberFormat.format(value)}</strong>
+                  <span>{copy.sourceFigures[figure]}</span>
+                </li>
+              ))}
+            </ul>
+            <p className={styles.figuresNote} id="catalog-figures-note">
+              {copy.sourceFiguresNote}
+            </p>
+            <ul className={styles.principles}>
+              {copy.sourceGroups.map((group) => (
+                <li className={styles.principle} key={group.title}>
+                  <div>
+                    <h3>{group.title}</h3>
+                    <p>{group.description}</p>
+                    {group.sources ? (
+                      <ul className={styles.sourceLinks}>
+                        {HOW_CHISAN_WORKS_SOURCES.groups[group.sources].map(
+                          (source) => (
+                            <li key={source.url}>
+                              <a href={source.url} target="_blank" rel="noreferrer">
+                                {source.name}
+                                <span className="visually-hidden">
+                                  {" "}
+                                  {copy.opensInNewTab}
+                                </span>
+                              </a>
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

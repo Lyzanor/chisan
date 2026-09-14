@@ -1539,3 +1539,32 @@ using the production server for behavior tests to preserve the other dev session
   certification examples remained visible as separate sections. Anonymous local
   preview ran with account login disabled; no Production rights or database
   records were changed by the preview.
+
+## 2026-09-14 — Named databases and live figures on How Chisan works
+
+- Added a "Fuentes y cifras" section directly after the catalog process. It
+  names and links 30 databases in four groups — official registers and open
+  data, designations of origin and organic certification, regional directories,
+  and maps and geographic references — plus an unlinked group for producers,
+  press and community.
+- Four figures (published producers, municipalities with a producer, source
+  references in evidence and the distinct websites behind them) are calculated
+  at build time from the Spanish area CSVs and evidence ledgers, so the route
+  stays statically prerendered. They reuse the home page's large accent numeral
+  over a muted label, in a two-by-two grid separated by hairline rules.
+- Links reuse the page's accent-text link treatment, open in a new tab with a
+  visually hidden notice, keep 44px targets and share the existing focus
+  outline. Lists use two columns at desktop width and one on mobile.
+- Rejected: typed-in figures, which drift from the catalog after every
+  admission. Rejected: logos or a card per database; a named text link keeps
+  the directory scannable without brand assets. Rejected: listing every council
+  or directory cited in evidence; the page names representative sources, and
+  all 30 addresses answered HTTP 200 on 2026-09-14.
+- Checked the built server at 1440×2200 and 390×2400: document width equalled
+  the viewport, figures stayed in two columns at both widths and the shortest
+  link was 44px. The only console errors were the local 404s for
+  `/_vercel/insights/script.js`.
+- `check:design` (no notices from the added rules), `check:docs`, lint,
+  TypeScript, the build, `test:i18n` with the new page test, `verify:data`, the
+  remaining unit suites and the HTTP behavior suite against the built server
+  passed.

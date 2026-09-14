@@ -49,6 +49,7 @@ const nextConfig: NextConfig = {
     "/*": ["./data/guides/es/*.md"],
     "/\\[catalog\\]/guias": ["./data/csv/es/**/*.csv"],
     "/\\[catalog\\]/guias/\\[slug\\]": ["./data/csv/es/**/*.csv"],
+    "/how-we-work": ["./data/csv/es/**/*.csv", "./data/evidence/es/**/*.jsonl"],
     "/api/producer-media": ["./data/csv/**/*.csv"],
     "/api/producer-stats/**": ["./data/csv/**/*.csv"],
     "/api/producer-favorites": ["./data/csv/**/*.csv"],

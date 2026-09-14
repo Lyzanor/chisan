@@ -280,6 +280,8 @@ if [[
   "$HTML_PURPOSE" != *'id="how-chisan-works-title">Cómo funciona Chisan</h1>'* ||
   "$HTML_PURPOSE" != *'Los sistemas alimentarios locales están llenos de valor, pero con demasiada frecuencia están fragmentados.'* ||
   "$HTML_PURPOSE" != *'De posible productor a perfil público estable'* ||
+  "$HTML_PURPOSE" != *'Las bases de datos detrás del catálogo'* ||
+  "$HTML_PURPOSE" != *'href="https://www.boe.es/diario_borme/"'* ||
   "$HTML_PURPOSE" != *'Quién puede formar parte de Chisan'* ||
   "$HTML_PURPOSE" != *'Lo que no demuestra producción'* ||
   "$HTML_PURPOSE" != *'Revisión, corrección y retirada'* ||
