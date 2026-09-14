@@ -1,70 +1,31 @@
-/* A trace of the ingredient on the paper; controls and map coordinates keep
- * Chisan's shared language. Canonical category tokens survive localization. */
-[data-category] {
-  --category-paper: var(--chisan-color-earth-paper);
-  --category-pigment: var(--chisan-color-earth-pigment);
-  --category-grain-angle: 120deg;
-}
-[data-category="Vino"], [data-category="Vermut"], [data-category="Destilados y licores"] {
-  --category-paper: var(--chisan-color-wine-paper);
-  --category-pigment: var(--chisan-color-wine-pigment);
-  --category-grain-angle: 105deg;
-}
-[data-category="Lácteos y quesos"], [data-category="Helados"], [data-category="Huevos"] {
-  --category-paper: var(--chisan-color-dairy-paper);
-  --category-pigment: var(--chisan-color-dairy-pigment);
-  --category-grain-angle: 88deg;
-}
-[data-category="Fruta y verdura"], [data-category="Té e infusiones"], [data-category="Sidra"], [data-category="Bebidas sin alcohol"] {
-  --category-paper: var(--chisan-color-leaf-paper);
-  --category-pigment: var(--chisan-color-leaf-pigment);
-  --category-grain-angle: 145deg;
-}
-[data-category="Pan y cereal"], [data-category="Cerveza"], [data-category="Sake"], [data-category="Legumbres"], [data-category="Legumbres y cereales"], [data-category="Dulces y repostería"], [data-category="Frutos secos"] {
-  --category-paper: var(--chisan-color-grain-paper);
-  --category-pigment: var(--chisan-color-grain-pigment);
-  --category-grain-angle: 65deg;
-}
-[data-category="Aceite"], [data-category="Condimentos"] {
-  --category-paper: var(--chisan-color-olive-paper);
-  --category-pigment: var(--chisan-color-olive-pigment);
-}
-[data-category="Café"], [data-category="Chocolate"] {
-  --category-paper: var(--chisan-color-cocoa-paper);
-  --category-pigment: var(--chisan-color-cocoa-pigment);
-}
-[data-category="Pescado"] {
-  --category-paper: var(--chisan-color-marine-paper);
-  --category-pigment: var(--chisan-color-marine-pigment);
-  --category-grain-angle: 175deg;
-}
-[data-category="Miel"] {
-  --category-paper: var(--chisan-color-honey-paper);
-  --category-pigment: var(--chisan-color-honey-pigment);
-  --category-grain-angle: 60deg;
-}
-
-.site-content:has([data-category]:not([data-category=""])) { position: relative; isolation: isolate; }
-[data-category]:not([data-category=""])::before {
+/* Generic category photography decorates the page margins. Actual producer
+ * photographs remain documentary and belong to their reviewed profile. */
+.site-content:has(main[data-category]) { position: relative; isolation: isolate; }
+main[data-category] { --category-image: none; }
+main[data-category="Lácteos y quesos"] { --category-image: url("/brand/ambient/cheese.webp"); }
+main[data-category="Vino"] { --category-image: url("/brand/ambient/wine.webp"); }
+main[data-category]::before {
   content: "";
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  inset: 15rem 0 0;
   z-index: -1;
   pointer-events: none;
-  background-color: var(--category-paper);
-  background-image:
-    linear-gradient(110deg, var(--chisan-color-surface) 5%, transparent 78%),
-    repeating-linear-gradient(var(--category-grain-angle), transparent 0 3px, color-mix(in srgb, var(--category-pigment) 3%, transparent) 3px 4px);
+  background-image: var(--category-image), var(--category-image);
+  background-size: min(32rem, 42vw), min(28rem, 38vw);
+  background-position: left -14rem top, right -12rem bottom 3rem;
+  background-repeat: no-repeat;
+  opacity: var(--chisan-ambient-opacity);
+  filter: blur(3px);
 }
-[data-category]:not([data-category=""]) .catalog-simple-map {
-  border-color: color-mix(in srgb, var(--category-pigment) 35%, var(--chisan-color-hairline));
-}
-[data-category]:not([data-category=""]) .detail-shell {
-  background: color-mix(in srgb, var(--chisan-color-surface) 93%, var(--category-paper));
-}
-[data-category]:not([data-category=""]) .detail-hero--premium {
-  background: var(--category-paper);
+main[data-category] .detail-shell { background: color-mix(in srgb, var(--chisan-color-surface) 96%, transparent); }
+main[data-category] .detail-hero--premium { background: var(--chisan-color-surface); }
+@media (max-width: 760px) {
+  main[data-category]::before {
+    inset-block-start: 20rem;
+    background-size: 18rem;
+    background-position: left -10rem top, right -10rem bottom 4rem;
+  }
 }
 @media (forced-colors: active) {
-  [data-category]::before { display: none; }
+  main[data-category]::before { display: none; }
 }

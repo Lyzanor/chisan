@@ -1,7 +1,7 @@
 "use client";
 
-import { CheckIcon } from "@phosphor-icons/react";
-import { useEffect, useRef, useState } from "react";
+import { ArrowRightIcon, CheckIcon, CopyIcon, DownloadSimpleIcon, QrCodeIcon, XIcon } from "@phosphor-icons/react";
+import { useEffect, useId, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
@@ -114,6 +114,9 @@ async function copyText(value: string) {
 
 export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps) {
   const qrCanvas = useRef<HTMLCanvasElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const dialogId = useId();
   const copyResetTimerRef = useRef<number | null>(null);
   const copyFeedbackGenerationRef = useRef(0);
   const [status, setStatus] = useState("");
@@ -266,82 +269,114 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
   }
 
   return (
-    <details className={`profile-qr profile-qr--${kind}`}>
-      <summary>
-        <ChisanMark alt="" className="profile-qr__mark" />
+    <div className={`profile-qr profile-qr--${kind}`}>
+      <button
+        ref={trigger}
+        type="button"
+        className="profile-qr__trigger"
+        aria-haspopup="dialog"
+        aria-controls={dialogId}
+        onClick={() => dialog.current?.showModal()}
+      >
+        <span className="profile-qr__identity" aria-hidden="true">
+          <ChisanMark alt="" className="profile-qr__mark" />
+          <QrCodeIcon size={32} />
+        </span>
         <span>
           <strong>{isProducer ? labels.title : labels.selectionTitle}</strong>
           <small>{description}</small>
         </span>
-        <span className="profile-qr__disclosure" aria-hidden="true">
-          +
-        </span>
-      </summary>
-      <div className="profile-qr__body">
-        <div className="profile-qr__copy">
-          <p className="profile-qr__eyebrow">{labelType}</p>
-          <h2>{scanLabel}</h2>
-          <p>{description}</p>
-          <div className="profile-qr__actions">
-            <button type="button" onClick={handleDownload}>
-              {labels.download}
-            </button>
-            <button
-              type="button"
-              className="profile-qr__action--secondary profile-qr__copy-button"
-              aria-label={labels.copy}
-              onClick={handleCopy}
-            >
-              <span className="profile-qr__copy-label" aria-hidden="true">
-                <span className={isCopied ? undefined : "is-visible"}>
-                  {labels.copy}
-                </span>
-                <span className={isCopied ? "is-visible" : undefined}>
-                  <CheckIcon size={16} weight="bold" />
-                  {labels.copied}
-                </span>
-              </span>
-            </button>
-          </div>
-          <small>{labels.fileNote}</small>
-          <p
-            className="profile-qr__status"
-            role="status"
-            aria-live="polite"
-            aria-atomic="true"
+        <ArrowRightIcon className="profile-qr__arrow" size={24} aria-hidden="true" />
+      </button>
+      <dialog
+        ref={dialog}
+        id={dialogId}
+        className="profile-qr__dialog"
+        aria-labelledby={`${dialogId}-title`}
+        onClose={() => {
+          clearCopyFeedback();
+          trigger.current?.focus({ preventScroll: true });
+        }}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) dialog.current?.close();
+        }}
+      >
+        <div className="profile-qr__body">
+          <button
+            type="button"
+            className="profile-qr__close"
+            aria-label={labels.close}
+            onClick={() => dialog.current?.close()}
           >
-            {isCopied ? <span className="visually-hidden">{status}</span> : status}
-          </p>
-        </div>
-
-        <figure className="profile-qr__label">
-          <ChisanWordmark alt="" className="profile-qr__wordmark" />
-          <p>{labelType}</p>
-          <div className="profile-qr__code">
-            <QRCodeCanvas
-              ref={qrCanvas}
-              value={profileUrl}
-              size={880}
-              level="H"
-              marginSize={4}
-              bgColor={LABEL_COLORS.surface}
-              fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
-              imageSettings={{
-                src: CHISAN_MARK_SRC,
-                width: PROFILE_QR_MARK_SIZE,
-                height: PROFILE_QR_MARK_SIZE,
-                excavate: true,
-              }}
-              title={`${scanLabel}: ${name}`}
-              style={{ height: "auto", width: "100%" }}
-            />
+            <XIcon size={24} aria-hidden="true" />
+          </button>
+          <div className="profile-qr__copy">
+            <p className="profile-qr__eyebrow">{labelType}</p>
+            <h2 id={`${dialogId}-title`}>{scanLabel}</h2>
+            <p>{description}</p>
+            <div className="profile-qr__actions">
+              <button type="button" onClick={handleDownload}>
+                <DownloadSimpleIcon size={18} aria-hidden="true" />
+                {labels.download}
+              </button>
+              <button
+                type="button"
+                className="profile-qr__action--secondary profile-qr__copy-button"
+                aria-label={labels.copy}
+                onClick={handleCopy}
+              >
+                <span className="profile-qr__copy-label" aria-hidden="true">
+                  <span className={isCopied ? undefined : "is-visible"}>
+                    <CopyIcon size={18} />
+                    {labels.copy}
+                  </span>
+                  <span className={isCopied ? "is-visible" : undefined}>
+                    <CheckIcon size={16} weight="bold" />
+                    {labels.copied}
+                  </span>
+                </span>
+              </button>
+            </div>
+            <small>{labels.fileNote}</small>
+            <p
+              className="profile-qr__status"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              {isCopied ? <span className="visually-hidden">{status}</span> : status}
+            </p>
           </div>
-          <figcaption>
-            <strong>{name}</strong>
-            <span>chisan.app</span>
-          </figcaption>
-        </figure>
-      </div>
-    </details>
+
+          <figure className="profile-qr__label">
+            <ChisanWordmark alt="" className="profile-qr__wordmark" />
+            <p>{labelType}</p>
+            <div className="profile-qr__code">
+              <QRCodeCanvas
+                ref={qrCanvas}
+                value={profileUrl}
+                size={880}
+                level="H"
+                marginSize={4}
+                bgColor={LABEL_COLORS.surface}
+                fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
+                imageSettings={{
+                  src: CHISAN_MARK_SRC,
+                  width: PROFILE_QR_MARK_SIZE,
+                  height: PROFILE_QR_MARK_SIZE,
+                  excavate: true,
+                }}
+                title={`${scanLabel}: ${name}`}
+                style={{ height: "auto", width: "100%" }}
+              />
+            </div>
+            <figcaption>
+              <strong>{name}</strong>
+              <span>chisan.app</span>
+            </figcaption>
+          </figure>
+        </div>
+      </dialog>
+    </div>
   );
 }

@@ -9,6 +9,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { GuidesLink } from "@/components/guides/guides-link";
 import { PageMotion } from "@/components/page-motion";
+import { FooterLandscape } from "@/components/footer-landscape";
 
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
@@ -158,7 +159,7 @@ export function SiteRootShell({
         <footer className="site-footer">
           <nav className="site-footer__links" aria-label={footerMessages.navigation}>
             <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>
-              <ChisanWordmark alt="" reverse />
+              <ChisanWordmark alt="" />
             </Link>
             <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
             <GuidesLink locale={htmlLang === "en" ? "en" : "es"} />
@@ -177,6 +178,7 @@ export function SiteRootShell({
             </a>
             <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
           </nav>
+          <FooterLandscape />
         </footer>
       </SiteCatalogControlsProvider>
     </SiteLanguageMenuProvider>

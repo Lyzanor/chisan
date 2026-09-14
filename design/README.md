@@ -4,22 +4,23 @@ The visual system: rules, tokens, brand assets, and the web mapping.
 This guide owns the visual system. Components consume its tokens while their
 product contracts own data, permissions and meaning.
 
-The active design is **v0.5 — Quiet craft**. The foundation takes its rhythm from an
-omakase menu: light Outfit headings, fine rules, clear reading surfaces and
-small tactile responses. Producer, place and evidence lead. Ingredient-inspired
-paper colours add warmth to category views without changing the meaning of
-controls, claims or map coordinates.
+The active design is **v0.6 — Product in the light**. Clean white surfaces,
+light Outfit headings and forest-green controls frame documentary producer
+photographs. Generic ingredient photography softly decorates category margins;
+a fine illustrated rural scene closes the page. Small interactions make the
+shared components feel responsive without changing catalog or account meaning.
 
 ```
 foundations/tokens.css   colour, type, space, shape, motion tokens
 adapters/web.css         maps those tokens onto the web surface
 adapters/experience.css  shared navigation, discovery, profile and account polish
-adapters/category-themes.css  ingredient-inspired background treatments
+adapters/category-themes.css  soft ingredient photography in category margins
 brand/chisan-reference.png   supplied identity sheet (pixel source)
 brand/assets/            generated metadata and icon exports
 public/brand/            lossless SVG wrappers for the supplied identity
-references/              decision boards and inspiration (never imported)
-qa/design-qa.md          what was decided and rejected, per surface
+references/              selected image direction and external inspiration
+qa/design-qa.md          current visual verification
+qa/history/              dated historical checks, not current specifications
 ```
 
 ## Ownership and working defaults
@@ -73,26 +74,26 @@ current product decisions. A justified change may revise them with visual QA.
 | `moss-pale`     | `#EDF3EF` | Quiet green selected fill                   |
 
 White, soft grays and forest green remain the shared interface palette. The
-`rice-paper` token is white. Ingredient backgrounds are a separate decorative
-layer: wine/merlot, dairy/linen, leaves, grains, olives, cocoa, sea, earth and
-honey. Their paper and pigment values live in `tokens.css`; canonical category
-tokens select them in `adapters/category-themes.css`. The category filter sets
-the catalog ambience; a producer's primary category sets the profile ambience.
-“All categories” keeps the white base. Backgrounds do not react to individual
-row hover, so moving through the map cannot make the page flash between themes.
+page stays white. Category decoration uses generic high-key ingredient photographs
+with white margins, soft edges and the shared ambient-opacity token. Place them
+in the outer body margins below the header, never as a hero banner or behind
+meaningful text, controls or geography. The first reviewed assets cover
+`Lácteos y quesos` and `Vino`; other categories stay white until they have a
+reviewed matching asset. Do not assign cheese to ice cream or grapes to every
+spirit merely because their former colour tokens shared a family.
 
-The paper uses a very low-contrast fibre pattern and a white reading-side wash.
-Text, forms and preview cards retain clear surfaces; interactive selection stays
-forest green. Map tiles retain their geometry and labels, with reduced colour
-saturation. Photographs, markers and controls are not desaturated. Category
-colour never expresses verification, ownership, price or entitlement. Premium
-headers use the same category paper when available; their layout remains intact.
+The category filter sets the catalog image; a producer's primary category sets
+the profile image. Hover does not change the background. Decoration is contained
+by `.site-content`, so it cannot paint over the footer. The map keeps more of
+its natural colour; its labels and geometry remain authoritative. Photographs,
+markers and controls are not desaturated. Category imagery never conveys
+verification, ownership, price, entitlement or a particular producer's products.
 
 Use `stone` or darker for meaningful control boundaries; `hairline` is
 decorative only. Text uses `ink`, `stone` or `moss-dark` on light surfaces and
 `surface` on green or dark surfaces. Check actual foreground/background pairs.
 
-Decorative gradients are limited to the soft category-paper wash. Do not add
+Keep decorative photography separate from reading surfaces. Do not add
 tinted control shadows or colour-coded card sets. Status colours belong to their
 product contract. The wordmark and QR C use solid forest green with the supplied
 silhouette; the favicon retains the supplied white-on-green artwork.
@@ -120,7 +121,7 @@ under 12px. Reading column 58–64 characters.
 
 - Base 4px. Scale `4 8 12 16 24 32 48 64 96 128`. Prefer these steps for padding, margin and gaps; optical corrections and
   responsive dimensions may use other values when justified.
-- Shell up to 1440px, gutters 20–40px. Discovery is asymmetric 5/7 or 4/8; data
+- Shell up to 1440px, gutters 16–24px on small screens and 80px for wide discovery. Discovery is asymmetric 5/7 or 4/8; data
   tools use strict grids.
 - Radius: `0` structural, `8px` control, `12px` compact object, `16px` large
   surface. Large map and profile surfaces use the panel token; small screens
@@ -175,7 +176,7 @@ coordinates just to improve appearance.
 - Public selections and their private previews show exactly the chosen producers.
   Fit the whole mapped set on opening and preserve one stable roster, including
   unmapped profile links. Geography never groups or ranks a selection. Keep the
-  map above the optional QR disclosure; title and description provide context.
+  map above the optional QR invitation; title and description provide context.
 - A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
   map points never preload producer imagery.
 
@@ -293,7 +294,7 @@ The standard logo is **Chisan**, exactly as supplied in
 upper-right opening: the larger square above/right and the smaller one below/left.
 The separate icon at the right of the reference is the favicon, never an appended
 part of the wordmark. The same initial C is extracted for producer and selection QR
-centres. It replaces the earlier central-dot identity.
+centres. Current exports and their roles are listed in [brand/README.md](brand/README.md).
 
 - Use the wordmark above 112px of width and the C for square affordances.
 - Preserve the supplied proportions and both squares; do not redraw or typeset it.
@@ -341,8 +342,18 @@ an option never navigates. Standard Tab/Enter/Escape operation remains accessibl
 There are no custom global keyboard shortcuts or command palette. Producer search
 keeps a stable, compact footprint and filters the existing map/list inline.
 
-The footer uses a single row on wide screens and a deliberate grid at narrower
-widths; it never relies on an orphaned link wrapping onto another row.
+The white footer has readable forest-green links, arranged in a single row on
+wide screens and a deliberate grid on narrow ones. A separate decorative rural
+panorama follows the links. A small delivery bicycle crosses it once, slowly,
+when the scene first enters view. Only transforms animate; reduced motion keeps
+a static bicycle. The scene and its motion never capture pointer or keyboard input.
+
+The QR invitation uses the supplied C, which crossfades upward into the familiar
+QR icon on hover/focus while its arrow moves slightly right. Activation opens a
+native modal dialog with a brief fade and rise. It keeps focus inside, supports
+Escape and outside dismissal, restores trigger focus and locks background scroll.
+Download and copy remain real actions with local feedback. The producer/selection
+eligibility gates and opt-in settings remain unchanged.
 Area filters and producer selection update the URL through Next.js-integrated
 browser history, using the already loaded area model. Back, Forward and shared
 URLs retain the same meaning without fetching the area on every interaction.
@@ -360,8 +371,14 @@ retains the existing URL selection; clicking the card or row opens the profile.
 Other maps may retain their existing card placement until reviewed. Combining the
 roster and preview into a single component is deferred.
 
-Photography is documentary — real production, people and places in available
-light. Nothing staged, nothing implying an unsupported fact.
+Producer photography is documentary — real production, people and places in
+available light. It remains sharp and truthful. Generic category decoration is
+a separate brand layer: high-key food still lifes, genuine-looking texture,
+natural colour, pure-white margins and very low display opacity. Generated
+category assets must never become a real producer's product photo or evidence.
+The footer uses fine forest-green pen/engraving with sparse gold accents;
+its illustrated places and cyclist are generic. See [imagery.md](imagery.md)
+for the reusable image direction and provenance.
 
 Write with exact nouns and plain uncertainty. The current Spanish public tagline is **Conectando la alimentación local.**
 The English tagline **Connecting local food.** remains available for English surfaces. Layouts expand for translation rather than
@@ -403,12 +420,8 @@ actual short/long producer and selection downloads whenever the mark changes.
 
 ## References
 
-- `v0.3/chisan-wordmark-first-board.png` — historical direction, superseded by the C-with-dot identity.
-- `v0.3/chisan-terminal-accent-mark-reference.png` — historical two-cap compact mark.
-- `v0.3/chisan-terminal-accent-wordmark-reference.png` — historical restrained
-  `c`/`s` treatment.
-- `v0.3/chisan-marker-join-board.png` — The Join marker, superseded by map circles.
-- `v0.2/` — earlier board and functional mark.
+- `references/product-in-the-light.png` — user-selected image direction,
+  refined to keep photography small, soft and in the page background.
 - `inspiration-giftee-home.png` — capture of <https://giftee.co.jp/> on
   2026-08-30; editorial restraint and asymmetric whitespace.
 - `inspiration-sanko-mobilefirst.png` — capture of

@@ -1,5 +1,5 @@
 /*
- * Chisan v0.5 foundations: quiet, precise and tactile.
+ * Chisan v0.6 foundations: light, precise and tactile.
  *
  * The --chisan-* properties are canonical. The final block maps them onto the
  * existing web surface; product-semantic state such as errors stays outside
@@ -7,6 +7,7 @@
  */
 
 :root {
+  --chisan-ambient-opacity: 0.28;
   color-scheme: light;
 
   --chisan-color-rice-paper: #ffffff;
@@ -20,26 +21,6 @@
   --chisan-color-moss: #00563f;
   --chisan-color-moss-dark: #003d2d;
   --chisan-color-moss-pale: #edf3ef;
-
-  /* Ingredient-inspired ambience. These are decorative, never status colours. */
-  --chisan-color-wine-paper: #f7eef1;
-  --chisan-color-wine-pigment: #805568;
-  --chisan-color-dairy-paper: #faf5e9;
-  --chisan-color-dairy-pigment: #aa9163;
-  --chisan-color-leaf-paper: #f1f5eb;
-  --chisan-color-leaf-pigment: #78875c;
-  --chisan-color-grain-paper: #f8f1e5;
-  --chisan-color-grain-pigment: #a98a5c;
-  --chisan-color-olive-paper: #f5f4e7;
-  --chisan-color-olive-pigment: #899060;
-  --chisan-color-cocoa-paper: #f6efea;
-  --chisan-color-cocoa-pigment: #907360;
-  --chisan-color-marine-paper: #edf4f5;
-  --chisan-color-marine-pigment: #729397;
-  --chisan-color-earth-paper: #f5efeb;
-  --chisan-color-earth-pigment: #a18171;
-  --chisan-color-honey-paper: #faf3e2;
-  --chisan-color-honey-pigment: #b69850;
 
   --chisan-font-sans: var(--font-chisan-sans), var(--font-chisan-fallback), "Hiragino Kaku Gothic ProN",
     "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
