@@ -548,9 +548,9 @@ export const CHECKS = [
   // No `geo-sin-check` here on purpose: check:csv already reports it per file
   // as "geo-check skipped", using a centroid lookup with community-aware
   // overrides that this script would have to reimplement. Two tools disagreeing
-  // on one metric is worse than one tool owning it. The centroid-fallback count
-  // stays there for the same reason: check:csv prints it as "centroid fallback
-  // coordinates" off the same lookup.
+  // on one metric is worse than one tool owning it. The centroid-match count
+  // stays there for the same reason, using the same lookup without treating a
+  // coincidence as proof that a point is wrong.
   //
   // What is left is the one geographic state no gate measures at all. A row with
   // both cells empty never reaches that centroid block, so it is not an error,

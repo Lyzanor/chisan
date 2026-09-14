@@ -6,7 +6,7 @@ decision provenance lives in `docs/EVIDENCE_CONTRACT.md`.
 
 Coordinates represent the productive unit in the row: a farm, winery,
 workshop, factory, mill, or equivalent facility. They do not represent a head
-office, shop, distributor, accommodation, or municipality centre by default.
+office, shop, distributor, accommodation, or an approximate locality reference.
 An empty pair is recoverable incomplete knowledge; a plausible but wrong point
 is a false public claim.
 
@@ -26,7 +26,7 @@ catches gross errors but proves neither identity nor exactness.
 
 ## Source order
 
-Stop when the available precision is honest and useful:
+Use the first source that establishes the productive unit's actual point:
 
 1. Coordinates or an unambiguous pin published by the producer for the
    productive unit.
@@ -36,12 +36,12 @@ Stop when the available precision is honest and useful:
    matched to the producer's public identity.
 4. A producer-specific POI matched by address plus a distinctive detail such
    as phone, domain, email, or productive location.
-5. The municipality centroid as an explicitly approximate fallback.
 
 Check normalized addresses and homonyms rather than accepting geocoder output.
 For multi-site, aggregated, dispersed or mobile activity, use only a point whose
-role is supported; otherwise retain the municipality and use an honest fallback
-or no coordinates.
+role is supported; otherwise retain the municipality and supported address and
+leave both coordinates empty. Do not substitute a municipality, postcode,
+street or industrial-estate centre for an unconfirmed producer point.
 
 ## Queries and candidate precision
 
@@ -80,12 +80,13 @@ enough. If no matching listing exists, leave `Google Maps` empty and retain any
 supported coordinates. Canonical URL representation lives in
 `docs/CSV_CONTRACT.md`.
 
-## Municipality fallback and providers
+## Municipality references and providers
 
-When only the municipality is supportable, copy its centroid from
-`data/reference/municipalities.json`. Use the regional override for in-country
-homonyms. There is no fallback when the municipality is missing or ambiguous;
-fix reference data only when its identity is supportable. Use
+When only the municipality is supportable, leave `lat` and `lon` empty.
+`data/reference/municipalities.json` supports geographic consistency checks;
+its centroids are not producer coordinates. A coincidence with a centroid is a
+review signal, not proof that an existing point is wrong. Check its provenance
+before correcting or clearing it. Use
 `data/reference/municipality-overrides.json` for in-country homonyms rather than
 moving correct producer coordinates. Provider output is always a candidate, not
 a hidden source of truth; follow its terms and limits.
@@ -103,6 +104,12 @@ address source receive only the claims they actually support. Keep durable
 conflicts or unusual distances in evidence and queries or rankings in the
 temporary artifact.
 
+Compare the intended changes by `(country, producer_id)` with the publication
+baseline. Explain every cleared point from its sources or recorded provenance,
+and inspect additions, corrections and removals separately. An unavailable
+website or missing historical claim alone does not invalidate an existing point.
+Keep unrelated cells and producer identities unchanged in a location-only pass.
+
 Close the batch under `docs/EDITORIAL.md` and `AGENTS.md`. Recheck identity and
-productive role, inspect only the intended diff, and read fallback and skipped
-counts: a green gate proves neither complete coverage nor exact locations.
+productive role, inspect only the intended diff, and read centroid-match and
+skipped counts: a green gate proves neither complete coverage nor exact locations.

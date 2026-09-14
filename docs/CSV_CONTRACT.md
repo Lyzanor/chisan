@@ -652,11 +652,16 @@ Multiple tokens use `|`, for example `ecommerce|whatsapp`; order has no meaning.
 
 Coordinate sourcing and review live in `docs/PRODUCER_GEOLOCATION.md`.
 
-`lat` and `lon` are either both filled or both empty. They locate the productive
-unit when known. A municipality centroid may be used as an explicit coarse
-fallback, but it must not be represented as an exact farm or workshop location.
-The CSV audit derives and reports the number of rows whose coordinates match
-that fallback; no separate inventory is maintained.
+`lat` and `lon` are either both filled or both empty. A populated pair identifies
+a checked point of the productive unit. When the point cannot be confirmed,
+retain the supported municipality and address and leave both coordinates empty.
+Do not fill them with the centre of a municipality, postcode, street or
+industrial estate. This meaning belongs to the existing pair; no precision
+column is needed.
+
+The CSV audit reports points matching a municipality centroid as review signals.
+A coincidence alone does not prove a fallback or justify deleting coordinates;
+check the point's sources and history before changing it.
 
 The audit compares coordinates with reference centroids scoped first by country
 and, for in-country homonyms, by region through
@@ -666,7 +671,7 @@ and, for in-country homonyms, by region through
 - more than `100 km`: blocking error;
 - municipality absent from the reference data: skipped, not passed or failed.
 
-Always read the skipped and centroid-fallback counts. A green audit does not
+Always read the skipped and centroid-match counts. A green audit does not
 mean every row received a geographic check or has an exact producer location.
 When a correct row conflicts with a bad or ambiguous centroid, fix the reference
 or override; never move correct producer coordinates to satisfy the validator.
@@ -700,9 +705,8 @@ the field empty.
 
 `direccion`, `lat`/`lon` and any `Google Maps` listing must identify the same
 unit and role. Leave `Google Maps` empty when that unit has no reviewed listing,
-including when `lat`/`lon` are exact, and for a centroid, locality-only or
-otherwise approximate point. Constructing a coordinate or textual Maps search
-does not establish that its current result belongs to the producer.
+including when `lat`/`lon` are exact. Constructing a coordinate or textual Maps
+search does not establish that its current result belongs to the producer.
 
 Syntax, an HTTP response or a directory listing does not establish ownership,
 activity or online sales.
@@ -794,10 +798,9 @@ coordinates in the `15–100 km` review band.
 
 The full and changed-only runs load shared references once and report the scope
 that was actually checked: total rows, rows with and without coordinates,
-municipio-centroid matches, skipped lookups and coordinates copied from a
-centroid. A green result proves contract consistency, not geographic coverage
-or exactness. Run the command with one CSV or directory path for detailed
-warnings in that scope.
+municipio-centroid matches and skipped lookups. A green result proves contract
+consistency, not geographic coverage or exactness. Run the command with one CSV
+or directory path for detailed warnings in that scope.
 
 `npx pnpm check:defects` owns the advisory editorial worklist: probable duplicate
 identities and descriptions, category drift, unresolved sales and other defects

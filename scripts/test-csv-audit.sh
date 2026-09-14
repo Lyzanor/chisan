@@ -1154,7 +1154,7 @@ for scoped in jp es; do
     echo "Error: scoped lookup should resolve Chiba/Chiva in its own country" >&2
     exit 1
   fi
-  grep -qF -- "- centroid fallback coordinates: 1" "$TMP_DIR/out-scoped-$scoped.txt"
+  grep -qF -- "- coordinates matching a municipio centroid: 1" "$TMP_DIR/out-scoped-$scoped.txt"
 done
 
 # Canonical descriptions and their source locale are one paired editorial

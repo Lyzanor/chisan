@@ -43,10 +43,10 @@ const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
 // different municipio: a blocking error (wrong lat/lon or wrong municipio).
 const CENTROID_BLOCKING_DISTANCE_KM = 100;
-// Coordinates copied from a municipality centroid are an explicit coarse
-// fallback, not an exact producer location. Count them without emitting one
-// warning per row; the full audit summary keeps the limitation visible.
-const CENTROID_FALLBACK_TOLERANCE_DEG = 1e-5;
+// A centroid coincidence suggests a coarse reference but does not prove how the
+// point was sourced. Count matches for review without rejecting a productive
+// unit that is actually at that location.
+const CENTROID_MATCH_TOLERANCE_DEG = 1e-5;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipalities.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH =
   "data/reference/municipality-overrides.json";
@@ -1770,10 +1770,10 @@ function runContractAudit({
       } else {
         stats.geoChecked += 1;
         if (
-          Math.abs(lat - centroid.lat) <= CENTROID_FALLBACK_TOLERANCE_DEG &&
-          Math.abs(lon - centroid.lon) <= CENTROID_FALLBACK_TOLERANCE_DEG
+          Math.abs(lat - centroid.lat) <= CENTROID_MATCH_TOLERANCE_DEG &&
+          Math.abs(lon - centroid.lon) <= CENTROID_MATCH_TOLERANCE_DEG
         ) {
-          stats.geoFallback += 1;
+          stats.geoCentroidMatches += 1;
         }
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
         if (distance > CENTROID_BLOCKING_DISTANCE_KM) {
@@ -2016,7 +2016,7 @@ function createStats() {
     withoutCoordinates: 0,
     geoChecked: 0,
     geoSkipped: 0,
-    geoFallback: 0,
+    geoCentroidMatches: 0,
   };
 }
 
@@ -2328,7 +2328,7 @@ function printStats(stats) {
   console.log(
     `- geo-check skipped (municipio centroid not uniquely resolved): ${stats.geoSkipped} rows`,
   );
-  console.log(`- centroid fallback coordinates: ${stats.geoFallback}`);
+  console.log(`- coordinates matching a municipio centroid: ${stats.geoCentroidMatches}`);
 }
 
 function printSingleReport(issues, stats) {
