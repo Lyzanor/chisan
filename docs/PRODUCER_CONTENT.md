@@ -2,7 +2,7 @@
 
 ## Purpose and ownership
 
-An expanded producer profile can show products, a gallery and named links.
+An expanded producer profile can show products, a gallery, named links and people.
 These are reviewed editorial records about what the producer makes and does.
 Products can include a recorded price and a link to the product in an external
 shop. Chisan does not provide live inventory, guaranteed quotes or checkout.
@@ -88,6 +88,65 @@ compatible; prefer this collection for newly added repeated links.
 The current resource bounds are 50 products, 100 gallery images, 50 links and
 1 MiB per package. These limits control payload size and can be revised in the
 shared schema for a demonstrated need. They are not editorial targets.
+
+## People behind the producer
+
+Optional `people` is an ordered collection of at most three distinct people
+connected to this productive unit. It is separate from `products`: people have
+no price, purchase URL, stock or product season. Editors may prepare these
+records from public sources before any producer claim or subscription. Current
+visibility is a presentation decision; moving this section to standard profiles
+later does not require changing or relocating its stored records.
+
+Each record has a stable `id`, public `name` (up to 160 characters), actual `role`
+(up to 120), optional `description` (up to 500, empty by default), and source
+`locale`. Roles describe concrete work, such as baking, cultivation, assisting
+production or managing orders. A family or partner relationship is optional
+context only when publicly documented; it is not an inferred job title. Do not
+create unnamed placeholders or treat the three-person maximum as a quota.
+
+Optional `photo` contains one portrait using the existing media fields except
+`id`: `src`, `alt`, `caption`, `locale`, `width`, `height` and `credit`. Caption and
+credit default to empty. It uses the same identity-bound asset directory, format,
+size, dimensions and rights checks as gallery images. Confirm who is shown from
+an attributable source; do not infer identity from facial appearance. A missing
+portrait remains absent, without stock photography or a generated person.
+Portraits belong to the person record and do not enter the standalone gallery
+or the product-image editor. Their text retains its own marked source language;
+portrait captions and alternative text are not translated in this version.
+
+For example, a fictional person without a portrait is:
+
+```json
+{
+  "id": "ana",
+  "name": "Ana",
+  "role": "Responsable del obrador",
+  "description": "Se encarga de la elaboración y del horneado.",
+  "locale": "es"
+}
+```
+
+The existing CSV `quien hay detras` remains an optional collective introduction.
+The public section shows it followed by the individual people. Existing text is
+preserved; no parser guesses names, relationships or roles from older prose.
+Review the introduction when adding people so it does not duplicate their bios.
+
+Translations use `collection: "people"` and exactly `role` and `description` in
+`values` (limits 150 and 625). Names are never translated. The source hash covers
+the source locale, name, role and description; a name correction also makes old
+translations stale. Portrait-only changes do not invalidate biography text.
+The existing source-language fallback applies.
+
+Use the local `producer:content` review/apply workflow to add, reorder, change or
+remove people and their portraits. The account product/gallery editor preserves
+them and their translations; it does not yet provide person editing controls.
+An intervening editorial edit changes the package revision and prevents a stale
+proposal from overwriting it. Commit portrait assets, content and public evidence
+together. Omitted `people` stays omitted so historical proposal hashes remain
+valid; `people: []` explicitly records an empty collection. No account or database
+migration is required. Current HTML and the detail API expose the same people
+only with expanded-content access; no Person or Product JSON-LD is inferred.
 
 ## Purchase links, prices and product dates
 

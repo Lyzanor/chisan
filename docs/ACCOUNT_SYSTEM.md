@@ -373,6 +373,13 @@ proposal and presentation of the premium CSV field set, product proposals and
 presentation of reviewed related content; it never grants
 ownership, verification, ranking or publication without review.
 
+This entitlement governs the current account editor and public presentation,
+not editorial authorship or collection. Chisan editors may prepare all supported
+profile prose and related content before a producer participates. Individual
+people and portraits use the local workflow in `docs/PRODUCER_CONTENT.md`;
+account product/gallery changes preserve those records. Future standard-profile
+visibility can reuse the same content without migrating its factual authority.
+
 That editable set is `video`, `visitas guiadas`, `mensaje a la comunidad` plus
 its locale, `quien hay detras` plus its locale, `historia` plus its locale and
 the two highlighted links. `fecha ultimo cambio` is displayed with that block

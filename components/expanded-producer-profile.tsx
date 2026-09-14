@@ -6,6 +6,7 @@ import {
   publicHighlightedLinks,
 } from "@/lib/catalog/public-expanded";
 import { ProducerContent } from "@/components/producer-content";
+import { ProducerPeople } from "@/components/producer-people";
 import { YoutubePlayer } from "@/components/youtube-player";
 import { buildProductStructuredData } from "@/lib/catalog/product-structured-data";
 import { serializeStructuredData } from "@/lib/producer-structured-data";
@@ -122,17 +123,15 @@ export async function ExpandedProducerProfile({
       {video ? (
         <YoutubePlayer videoUrl={video} label={videoLabel} locale={locale} />
       ) : null}
-      {behindProducer || history || communityMessage || methods ? (
+      <ProducerPeople
+        people={content.people}
+        introduction={behindProducer}
+        introductionLocale={behindProducerLocale}
+        title={formatProducerFieldLabel("quien hay detras", locale, messages)}
+      />
+      {history || communityMessage || methods ? (
         <div className="detail-expanded-profile__stories">
           {methods ? <div className="detail-expanded-profile__message"><h3>{formatProducerFieldLabel("como producimos", locale, messages)}</h3><p lang={fields.como_producimos_locale || undefined}>{methods}</p></div> : null}
-          {behindProducer ? (
-            <div className="detail-expanded-profile__message">
-              <h3>
-                {formatProducerFieldLabel("quien hay detras", locale, messages)}
-              </h3>
-              <p lang={behindProducerLocale || undefined}>{behindProducer}</p>
-            </div>
-          ) : null}
           {history ? (
             <div className="detail-expanded-profile__message">
               <h3>{formatProducerFieldLabel("historia", locale, messages)}</h3>

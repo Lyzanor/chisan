@@ -54,7 +54,7 @@ const messages = {
     },
   },
   ownerProducerFieldHelp: {
-    "como producimos": "Describe your production methods. Official certifications require reviewed evidence.",
+    "como producimos": "Describe concrete production methods from reviewed sources or producer text. Official certifications require reviewed evidence.",
     como_producimos_locale: "Choose the original language; leave empty when there is no text.",
     nombre: "The public producer or brand name.",
     municipio: "Municipality of the productive unit, not a sales office.",
@@ -79,7 +79,7 @@ const messages = {
     "visitas guiadas":
       "Whether this producer currently offers guided visits; leave empty when unpublished.",
     "mensaje a la comunidad":
-      "A producer-authored public message, preserved in its original language and reviewed before publication.",
+      "One current reviewed notice, written from public sources or supplied by the producer; preserve its original language.",
     mensaje_comunidad_locale:
       "The source language of the community message; leave empty only when the message is empty.",
     "enlace destacado 1":

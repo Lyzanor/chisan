@@ -6,8 +6,13 @@ This is the normative contract for the producer data published by Chisan. An are
 CSV is the current product state: every non-empty cell is a public claim, and an
 empty optional cell is valid incomplete knowledge.
 
-Approved expanded-profile facts may be populated for any producer, regardless of
-premium entitlement. Storage does not itself make a field visible in the public
+All descriptive fields may be researched and written by Chisan editors before
+a producer claims or edits a profile, including history, people, production
+methods and news. Use supported public facts and neutral editorial prose; never
+impersonate the producer. Premium is a current presentation choice, not a data
+class, source requirement or restriction on editorial authorship. Approved
+expanded-profile facts may be populated for any producer, regardless of premium
+entitlement. Storage does not itself make a field visible in the public
 profile: rendering and account editing retain their existing permission rules.
 Keep supported values when a producer has no entitlement or it expires.
 
@@ -225,7 +230,7 @@ Presence terms have exact meanings:
 | `producer_id`              | required                 | Immutable positive country-local safe integer allocated under the ID lock                                                   | Row position, reused/deleted ID, leading zeroes or an ID copied from another country as global identity               |
 | `descripcion_locale`       | paired                   | Supported lowercase source-language code for a non-empty `descripcion`                                                      | Interface locale, inferred country language or a value when `descripcion` is empty                                    |
 | `visitas guiadas`          | optional                 | Exact `sí` when explicitly offered, `no` when explicitly reviewed as not offered, otherwise empty                           | Inference from ordinary opening hours, a shop or general public access                                                |
-| `mensaje a la comunidad`   | optional                 | Reviewed producer-authored public message in its original language, at most 1,000 Unicode characters                        | Editor-authored copy, HTML, embedded URLs, source notes, boilerplate, third-party claims or private workflow data     |
+| `mensaje a la comunidad`   | optional                 | Reviewed current editorial notice or producer-authored message, at most 1,000 Unicode characters                        | Invented producer speech, HTML, embedded URLs, source notes, boilerplate or private workflow data     |
 | `mensaje_comunidad_locale` | paired                   | Supported lowercase source-language code for a non-empty community message                                                  | Interface locale or a value when the message is empty                                                                 |
 | `enlace destacado 1`       | optional                 | Relevant public HTTP(S) article, interview or other page about this producer                                                | Replacement for official links, evidence-only source, irrelevant promotion or private page                            |
 | `enlace destacado 2`       | conditional              | Second distinct relevant public HTTP(S) page, only after link 1                                                             | Duplicate/canonical equivalent of link 1 or a value while link 1 is empty                                             |
@@ -233,9 +238,9 @@ Presence terms have exact meanings:
 | `region`                   | required                 | Exact lowercase region directory slug containing the row                                                                    | Display label, municipality, sales territory or another region                                                        |
 | `area`                     | required                 | Exact lowercase `<area>` filename slug containing the row                                                                   | Display label, municipality, nearest area or an area chosen independently of the tree                                 |
 | `video`                    | optional                 | One complete official HTTPS YouTube video URL for this producer                                                             | A channel, playlist, shortener other than `youtu.be`, non-YouTube host, tracking embed or unrelated video             |
-| `quien hay detras`         | optional                 | Reviewed producer-authored description of the owners or team behind this productive unit, at most 2,000 Unicode characters  | Private personal data, HTML, URLs, boilerplate, unsupported third-party claims or editor-invented biography           |
+| `quien hay detras`         | optional                 | Reviewed editorial or producer-authored introduction to the people behind this unit, at most 2,000 Unicode characters  | Private personal data, HTML, URLs, boilerplate, unsupported third-party claims or fabricated biography           |
 | `quien_hay_detras_locale`  | paired                   | Supported lowercase source-language code for non-empty `quien hay detras`                                                   | Interface locale, inferred country language or a value when the text is empty                                         |
-| `historia`                 | optional                 | Reviewed producer-authored account of the origins and development of this productive unit, at most 4,000 Unicode characters | Generic brand copy, HTML, URLs, unsupported claims, copied page boilerplate or private workflow narration             |
+| `historia`                 | optional                 | Reviewed editorial or producer-authored account of this unit's origins and development, at most 4,000 Unicode characters | Generic brand copy, HTML, URLs, unsupported claims, copied page boilerplate or private workflow narration             |
 | `historia_locale`          | paired                   | Supported lowercase source-language code for non-empty `historia`                                                           | Interface locale, inferred country language or a value when the text is empty                                         |
 | `fecha ultimo cambio`      | optional, system-managed | UTC calendar date (`YYYY-MM-DD`) of the most recent approved producer change materialized for this row                      | Producer input, ordinary editorial edit date, Git commit date, review timestamp with time or a manually inferred date |
 
@@ -268,8 +273,8 @@ hours, contacts and online sales require current support. When a value cannot be
 supported, leave it empty or use the defined unknown state; never complete a row
 by inference.
 
-`mensaje a la comunidad`, `quien hay detras` and `historia` are the narrow
-attribution exceptions: they may originate as new first-party speech submitted
+`mensaje a la comunidad`, `quien hay detras` and `historia` additionally allow
+these narrow attribution exceptions: they may originate as new first-party speech submitted
 by an active producer member through the reviewed account workflow, so they
 need not have been published at another public URL first. Their source is the
 attributed submission, whose author, request and review trail remain in
@@ -316,8 +321,9 @@ for a speculative candidate that has not passed admission.
 - `visitas guiadas` records a reviewed explicit offer. Empty means unpublished,
   `sí` means currently offered and `no` means explicitly reviewed as not offered.
   It is not derived from `horario`, a shop opening time or general public access.
-- `mensaje a la comunidad` is attributed to the producer rather than written in
-  Chisan's editorial voice. It remains subject to review, must concern the same
+- `mensaje a la comunidad` can be a neutral editorial notice supported by public
+  sources or the producer's own reviewed message. Editorial authorship must not
+  be presented as a direct quote or first-person producer speech. It concerns the same
   productive unit, and excludes HTML, source notes, page boilerplate,
   embedded URLs and claims about third parties. It must not begin with a
   spreadsheet formula marker (`=`, `+`, `-` or `@`). Internal spaces and LF line
@@ -331,8 +337,8 @@ for a speculative candidate that has not passed admission.
   play action loads only the normalized video ID through YouTube's
   privacy-enhanced `youtube-nocookie.com` player; source query parameters are
   never forwarded.
-- `quien hay detras` and `historia` are producer-authored long-form profile
-  prose. They retain internal spaces and LF line breaks, use their paired source
+- `quien hay detras` and `historia` accept reviewed editorial prose or
+  producer-authored text. They retain internal spaces and LF line breaks, use their paired source
   locales and follow the same HTML, URL, formula-marker, boilerplate and
   third-party-claim exclusions as the community message. Their canonical limits
   are 2,000 and 4,000 Unicode characters; localized sidecar variants may use
@@ -350,6 +356,61 @@ for a speculative candidate that has not passed admission.
   links must remain distinct after standard URL canonicalization (for example,
   `https://example.com` and `https://example.com/` are the same URL), although
   the accepted CSV value keeps its original spelling.
+
+## Editorial purpose of profile text
+
+Each field answers a different visitor question. Length limits are ceilings,
+not targets; a short supported answer is complete enough. Do not distribute one
+generic paragraph across several fields or invent detail to fill them.
+
+| Field | Visitor question | Include | Keep elsewhere or omit |
+| --- | --- | --- | --- |
+| `descripcion` | What makes this producer worth understanding at a glance? | One or two factual sentences identifying its activity and at least one supported distinguishing fact, such as its own raw material, a specific method or a relevant connection to its place | Full chronology, team biographies, temporary announcements, contact details and lists of seals |
+| `quien hay detras` | Who runs and carries out the work today? | Public names when available, roles, family or cooperative organization, and the people's concrete relationship to the productive work | Private biographies, an inferred family relationship, generic praise or a retelling of the whole history |
+| `historia` | How did this productive project begin and develop? | Supported origins, founders, dates or periods, succession and material changes to the productive unit | An invented foundation year, regional history presented as company history, current team listings or temporary news |
+| `como producimos` | How is the food or drink actually produced? | Concrete cultivation, husbandry, sourcing, processing, maturation or preservation practices attributable to this unit | Unexplained claims such as traditional, sustainable or artisanal; practices inferred from a product category; certification inferred from a method |
+| `mensaje a la comunidad` (News) | What does the producer want visitors to know now? | One current editorial or producer-authored notice about a concrete development, seasonal offer, activity or temporary change, with explicit event dates when supplied | Evergreen presentation, a second description, an accumulated news archive or an editor-written announcement presented as producer speech |
+| `certificaciones` + `certificaciones_detalle` | Which recognized designations apply, and to what exactly? | Allowed tokens plus the exact designation, issuer and certified products or activities for each one; public operator codes when available | Awards, directory membership, marketing badges, self-declared practices or certification of the whole catalog inferred from one product |
+
+The description is a selective editorial introduction, not a compressed copy of
+every section. It may briefly mention a distinguishing historical, human or
+production fact; the corresponding section supplies the detail. This useful
+overlap does not justify repeating the same paragraph. For example, in a
+fictional case with supporting evidence, “Elabora quesos con leche de su propio
+rebaño y los madura en la finca” conveys more than “Productor local comprometido
+con la calidad y la tradición”. Examples never supply facts for a real row.
+
+Chisan editors may prepare all these fields from supported public sources,
+including before a producer joins. Use neutral editorial voice for researched
+summaries and preserve authentic producer speech only when attributable to its
+source or reviewed submission. The submission exceptions above do not change
+objective claims into verified facts. Research notes and source citations belong
+in evidence, not in the public text. Empty optional fields remain valid when
+support is unavailable. Neither account editing permissions nor current public
+visibility limits restrict this local editorial work.
+
+`quien hay detras` remains an optional collective introduction. Separate people
+belong in the `people` collection in `docs/PRODUCER_CONTENT.md`: at most three
+records, each with a name, actual role, optional short presentation and optional
+portrait. Do not encode JSON or an invented delimiter in the CSV prose, add
+numbered person columns, or automatically split existing text into identities.
+The introduction and individual records complement each other without becoming
+two independently edited copies of the same biographies.
+
+News keeps the historical CSV key `mensaje a la comunidad`. Its optional
+`fecha novedades` records approval of the current notice, not the date of the
+announced event or an expiry date. State an event's supplied calendar dates in
+the notice instead of relying only on words such as tomorrow or this weekend.
+Do not refresh the approval date to make an old notice look current. The single
+notice and its date do not implement automatic expiry or a public news archive.
+
+Certification details must let a reader match every selected token to its own
+designation, issuer and scope. A useful prose pattern is “Designation — issuer —
+certified products or activities — operator code, if available”, repeated for
+each designation. This is writing guidance, not a new delimiter or parser.
+Use only the existing controlled tokens; a label that does not fit requires a
+separate vocabulary decision, never the nearest plausible token. Source URLs,
+review dates and certificate evidence remain in the evidence ledger.
 
 ## Expanded-profile fields
 
@@ -763,7 +824,7 @@ live in `AGENTS.md`.
 
 ## Production methods and dated news
 
-`como producimos` is optional reviewed producer-authored plain text (maximum
+`como producimos` is optional reviewed editorial or producer-authored plain text (maximum
 2,000 Unicode characters), with required `como_producimos_locale` when nonempty.
 Both cells are empty when unpublished. It describes cultivation, husbandry,
 processing or preservation methods; official certification claims require public
@@ -771,7 +832,7 @@ evidence. It is premium-editable and rendered only in the expanded profile,
 in its explicitly marked original language, like the community message.
 
 `mensaje a la comunidad` retains its stored key and 1,000-character limit; the
-public and owner labels are now News. It holds one current reviewed notice.
+public and owner labels are now News. It holds one current reviewed editorial or producer-authored notice.
 `fecha novedades` is an optional exact non-future UTC day, empty without a
 message. Materialization stamps the approval day only when the message or its
 source language changes, and clears it when the message is removed. Older

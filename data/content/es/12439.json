@@ -18,14 +18,14 @@
         "currency": "EUR"
       },
       "updated_on": "2026-09-08",
+      "format": "botella 330 ml",
       "season_months": [
         6,
         7,
         8,
         9
       ],
-      "seasonal_special": true,
-      "format": "botella 330 ml"
+      "seasonal_special": true
     },
     {
       "id": "queso-fresco-chisan",
@@ -145,5 +145,116 @@
     }
   ],
   "links": [],
-  "translations": []
+  "people": [
+    {
+      "id": "ana-soler",
+      "name": "Ana Soler",
+      "role": "Responsable del obrador",
+      "description": "Personaje ficticio: coordina la elaboración y comprueba cada lote antes de prepararlo para la venta.",
+      "locale": "es",
+      "photo": {
+        "src": "/productores/es/content/12439/113a9f15f9ee7ad802e230831ed8d118c66476012b8e7af973ad8bd249a25ea7.webp",
+        "alt": "Retrato ilustrado de Ana Soler, persona ficticia",
+        "caption": "Persona ficticia de demostración.",
+        "locale": "es",
+        "width": 1254,
+        "height": 1254,
+        "credit": "Chisan · ilustración generada con IA"
+      }
+    },
+    {
+      "id": "pau-ferrer",
+      "name": "Pau Ferrer",
+      "role": "Ayudante de producción",
+      "description": "Personaje ficticio: prepara las materias primas, ayuda en el obrador y organiza el envasado.",
+      "locale": "es",
+      "photo": {
+        "src": "/productores/es/content/12439/d56677729950183fa8c1c65174196be592fb238eca4800da07251ee87a8799a7.webp",
+        "alt": "Retrato ilustrado de Pau Ferrer, persona ficticia",
+        "caption": "Persona ficticia de demostración.",
+        "locale": "es",
+        "width": 1254,
+        "height": 1254,
+        "credit": "Chisan · ilustración generada con IA"
+      }
+    },
+    {
+      "id": "clara-serra",
+      "name": "Clara Serra",
+      "role": "Atención al público y pedidos",
+      "description": "Personaje ficticio: es la pareja de Ana y se ocupa de las consultas, las visitas y la coordinación de pedidos.",
+      "locale": "es",
+      "photo": {
+        "src": "/productores/es/content/12439/b555361e4d62fa8259b163427c7262731e68739ddf173a5ec17cab84b7f4d606.webp",
+        "alt": "Retrato ilustrado de Clara Serra, persona ficticia",
+        "caption": "Persona ficticia de demostración.",
+        "locale": "es",
+        "width": 1254,
+        "height": 1254,
+        "credit": "Chisan · ilustración generada con IA"
+      }
+    }
+  ],
+  "translations": [
+    {
+      "collection": "people",
+      "item_id": "ana-soler",
+      "locale": "ca",
+      "source_hash": "d97d4dbc8d32f47ad8abf6b1d23ca26efaf71dcac37120d8a2acbc9245a4a8ed",
+      "values": {
+        "role": "Responsable de l’obrador",
+        "description": "Personatge fictici: coordina l’elaboració i comprova cada lot abans de preparar-lo per a la venda."
+      }
+    },
+    {
+      "collection": "people",
+      "item_id": "pau-ferrer",
+      "locale": "ca",
+      "source_hash": "7075adb6c3ddd69417f6968358d59ca9bc52150ccdb62a78a6049b3c3f797a9c",
+      "values": {
+        "role": "Ajudant de producció",
+        "description": "Personatge fictici: prepara les matèries primeres, ajuda a l’obrador i organitza l’envasament."
+      }
+    },
+    {
+      "collection": "people",
+      "item_id": "clara-serra",
+      "locale": "ca",
+      "source_hash": "e1847f9d7a7d25f4a6662a1b924e2b51099a58cd1bc6aee508492b170d76fe54",
+      "values": {
+        "role": "Atenció al públic i comandes",
+        "description": "Personatge fictici: és la parella de l’Ana i s’ocupa de les consultes, les visites i la coordinació de comandes."
+      }
+    },
+    {
+      "collection": "people",
+      "item_id": "ana-soler",
+      "locale": "en",
+      "source_hash": "d97d4dbc8d32f47ad8abf6b1d23ca26efaf71dcac37120d8a2acbc9245a4a8ed",
+      "values": {
+        "role": "Workshop manager",
+        "description": "Fictional character: coordinates production and checks each batch before it is prepared for sale."
+      }
+    },
+    {
+      "collection": "people",
+      "item_id": "pau-ferrer",
+      "locale": "en",
+      "source_hash": "7075adb6c3ddd69417f6968358d59ca9bc52150ccdb62a78a6049b3c3f797a9c",
+      "values": {
+        "role": "Production assistant",
+        "description": "Fictional character: prepares raw materials, helps in the workshop and organizes packaging."
+      }
+    },
+    {
+      "collection": "people",
+      "item_id": "clara-serra",
+      "locale": "en",
+      "source_hash": "e1847f9d7a7d25f4a6662a1b924e2b51099a58cd1bc6aee508492b170d76fe54",
+      "values": {
+        "role": "Customer service and orders",
+        "description": "Fictional character: is Ana’s partner and handles enquiries, visits and order coordination."
+      }
+    }
+  ]
 }

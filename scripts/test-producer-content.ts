@@ -199,6 +199,7 @@ test("local publication refuses stale or dirty targets and does not alter other 
     { columns: true },
   ) as { producer_id: string }[];
   const content = emptyProducerContent("es", Number(rows[0].producer_id));
+  content.people = [{ id: "ana", name: "Ana", role: "Panadera", description: "", locale: "es" }];
   content.links.push({
     id: "details",
     label: "Details",
@@ -210,6 +211,7 @@ test("local publication refuses stale or dirty targets and does not alter other 
     JSON.parse(await readFile(target, "utf8")).links[0].id,
     "details",
   );
+  assert.deepEqual(JSON.parse(await readFile(target, "utf8")).people, content.people);
   await assert.rejects(
     applyProducerContent(content, "absent", root),
     /staged|untracked|changed/i,

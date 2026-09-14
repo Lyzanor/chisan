@@ -75,7 +75,7 @@ export function replaceProducerMedia(
     products: nextProducts,
     gallery: nextGallery,
     translations: base.translations.filter(
-      (t) => t.collection === "links" || ids[t.collection].has(t.item_id),
+      (t) => t.collection === "links" || t.collection === "people" || ids[t.collection].has(t.item_id),
     ),
   });
 }

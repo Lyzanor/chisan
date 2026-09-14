@@ -274,15 +274,15 @@ const MESSAGE_LOADERS = {
 
 const PREMIUM_STORY_FIELD_HELP_FALLBACKS = {
   ...Object.fromEntries(EXTRA_PREMIUM_FIELDS.map(field => [field.key, field.help])),
-  "como producimos": "Describe your production methods. Official certifications require reviewed evidence.",
+  "como producimos": "Describe concrete production methods from reviewed sources or producer text. Official certifications require reviewed evidence.",
   como_producimos_locale: "Choose the original language; leave empty when there is no text.",
   video: "An official HTTPS YouTube URL for one public producer video.",
   "quien hay detras":
-    "Reviewed producer-authored text about the owners or team behind this productive unit.",
+    "Reviewed editorial or producer-authored introduction to the people and roles behind this unit.",
   quien_hay_detras_locale:
     "The source language of the who-is-behind text; leave empty only when that text is empty.",
   historia:
-    "Reviewed producer-authored text about the origins and development of this productive unit.",
+    "Reviewed editorial or producer-authored origins and milestones of this productive unit.",
   historia_locale:
     "The source language of the history; leave empty only when the history is empty.",
 } as const;

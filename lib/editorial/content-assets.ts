@@ -1,6 +1,6 @@
 import { readFile, realpath, stat } from "node:fs/promises";
 import path from "node:path";
-import type { ProducerContent } from "../catalog/content-schema";
+import { producerContentImages, type ProducerContent } from "../catalog/content-schema";
 import { detectImage } from "../catalog/image-metadata.mjs";
 import { validateProductCommerce } from "./product-commerce-validation";
 
@@ -11,7 +11,7 @@ export async function validateContentAssets(
 ): Promise<void> {
   validateProductCommerce(content);
   const publicRoot = await realpath(path.join(root, "public"));
-  for (const media of content.gallery) {
+  for (const media of producerContentImages(content)) {
     const ready = prepared.get(media.src);
     const asset = ready ? path.join(publicRoot, media.src.slice(1)) : await realpath(path.join(publicRoot, media.src.slice(1)));
     if (!asset.startsWith(`${publicRoot}${path.sep}`))

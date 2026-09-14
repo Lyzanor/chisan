@@ -199,6 +199,11 @@ test("explicit output projection excludes private, unknown, premium and generic-
   const expanded = publicExpanded(sample.fields, content)!;
   assert.equal(expanded.products[0].id, "cheese");
   assert.equal(expanded.is_demo, false);
+  content.people = [{ id: "ana", name: "Ana", role: "Panadera", description: "Elabora el pan.", locale: "es" }];
+  const team = publicExpanded({}, content)!;
+  assert.deepEqual(team.people, content.people);
+  assert.equal("translations" in team, false);
+  assert.equal(publicExpanded({}, null), null);
   content.producer_id = 12439;
   content.products[0].price = { amount: "3.50", currency: "EUR" };
   content.products[0].purchase_url = "https://chisan.app/es/barcelona/chisan";

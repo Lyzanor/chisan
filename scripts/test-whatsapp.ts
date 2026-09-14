@@ -47,7 +47,7 @@ import {
 } from "../lib/intake/openai";
 import { interpretProductMessage } from "../lib/intake/extractor";
 import { candidateSchema } from "../lib/intake/product";
-import { contentProductSchema } from "../lib/catalog/content-schema";
+import { contentProductSchema, producerContentImages } from "../lib/catalog/content-schema";
 import { readProducerChangeIntake } from "../lib/accounts/producer-change-intake";
 import {
   queryAdminProducerChangeById,
@@ -322,7 +322,7 @@ async function publishReceivedProduct(
     for (const relative of [
       csvPath,
       contentPath,
-      ...content.gallery.map((item) => `public${item.src}`),
+      ...producerContentImages(content).map((item) => `public${item.src}`),
     ]) {
       await mkdir(path.dirname(path.join(root, relative)), { recursive: true });
       await cp(relative, path.join(root, relative));

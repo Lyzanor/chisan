@@ -1511,3 +1511,31 @@ using the production server for behavior tests to preserve the other dev session
   `test:agents` and the HTTP behavior suite against the built server passed.
   Lint reports only the six existing `no-require-imports` errors in the
   untracked `design/brand/qr-identity/build-qr.cjs`.
+
+## 2026-09-14 — Individual people behind a producer
+
+- Added up to three separate people below the optional existing CSV introduction.
+  Each has a name, actual role, short optional presentation and optional portrait.
+  People retain their own collection; no product cards, commerce or product
+  structured data are assigned to them.
+- Checked the actual server-rendered `ProducerPeople` component and its CSS in a
+  local isolated harness through the in-app browser at 1280×900 and 390×844.
+  Three records, long names/roles, a loaded test image and missing portraits were
+  readable with no horizontal overflow (document width equalled viewport width).
+  The mobile layout stacks people; the wide layout uses three columns.
+- Checked a single person without a photo. Missing photos render no placeholder;
+  captions/credits and alt text remain explicit. Fixture names were fictional
+  and the existing demo illustration was labelled as a layout image, not a
+  portrait. No real producer data or image identity was inferred or published.
+- Visibility is still enforced by the existing expanded-content reader; tests
+  cover inactive access, preservation during product/gallery proposals, legacy
+  content hashes, translation freshness and asset containment. This browser
+  check covers component presentation, not a production entitlement session.
+
+- Follow-up: reviewed the complete `/es/barcelona/chisan` profile at 1280×900
+  and 390×844 using a temporary isolated PGlite database with the demo entitlement.
+  All three fictional portraits loaded; desktop showed three columns and mobile
+  one column without horizontal overflow. Products, gallery, history, news and
+  certification examples remained visible as separate sections. Anonymous local
+  preview ran with account login disabled; no Production rights or database
+  records were changed by the preview.

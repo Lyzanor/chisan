@@ -182,6 +182,14 @@ structure and durable producer identity remain unchanged. Reactivation reveals
 the already reviewed CSV values; it does not restore an unreviewed database
 overlay.
 
+The optional related `people` collection renders at most three individual names,
+roles, brief presentations and optional portraits below the CSV team introduction.
+People are separate from products and standalone gallery photos. Missing portraits
+create no placeholder; portrait captions and alternative text retain their source
+language. The shared expanded-content reader gates HTML and API consistently.
+Current visibility does not restrict editorial preparation, and these records
+have no Person or Product JSON-LD mapping.
+
 Verification requires `npx pnpm verify:ai`, a complete-profile case, a sparse-
 profile case and a malicious closing-script serialization case. Before enabling
 new schema types or public indexing, inspect raw server HTML to confirm that the

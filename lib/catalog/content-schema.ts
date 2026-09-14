@@ -12,6 +12,7 @@ export const PRODUCER_CONTENT_LIMITS = {
   products: 50,
   gallery: 100,
   links: 50,
+  people: 3,
   bytes: 1_048_576,
 } as const;
 const id = z
@@ -70,8 +71,21 @@ export const contentLinkSchema = z.strictObject({
   url: publicContentUrl,
   locale,
 });
+export const contentPersonSchema = z.strictObject({
+  id,
+  name: title,
+  role: text(120).refine((value) => value.trim().length > 0, "A public role is required."),
+  description: text(500).default(""),
+  locale,
+  photo: contentMediaSchema.omit({ id: true }).optional(),
+});
+export const localizedContentPersonSchema = contentPersonSchema.extend({
+  role: text(150).refine((value) => value.trim().length > 0, "A public role is required."),
+  description: text(625),
+});
+export const CONTENT_COLLECTIONS = ["products", "gallery", "links", "people"] as const;
 const translationSchema = z.strictObject({
-  collection: z.enum(["products", "gallery", "links"]),
+  collection: z.enum(CONTENT_COLLECTIONS),
   item_id: id,
   locale,
   source_hash: z.string().regex(/^[a-f0-9]{64}$/),
@@ -88,14 +102,16 @@ export const producerContentSchema = z
       .max(PRODUCER_CONTENT_LIMITS.products),
     gallery: z.array(contentMediaSchema).max(PRODUCER_CONTENT_LIMITS.gallery),
     links: z.array(contentLinkSchema).max(PRODUCER_CONTENT_LIMITS.links),
+    // Omission must survive parsing so existing approved snapshot hashes stay valid.
+    people: z.array(contentPersonSchema).max(PRODUCER_CONTENT_LIMITS.people).optional(),
     translations: z.array(translationSchema).max(2000).default([]),
   })
   .superRefine((content, ctx) => {
     const add = (path: (string | number)[], message: string) =>
       ctx.addIssue({ code: "custom", path, message });
-    for (const collection of ["products", "gallery", "links"] as const) {
+    for (const collection of CONTENT_COLLECTIONS) {
       const ids = new Set<string>();
-      content[collection].forEach((item, index) => {
+      content[collection]?.forEach((item, index) => {
         if (ids.has(item.id))
           add(
             [collection, index, "id"],
@@ -149,9 +165,13 @@ export const producerContentSchema = z
         );
       }
     });
+    content.people?.forEach((person, index) => {
+      if (person.photo && !person.photo.src.startsWith(`/productores/${content.country}/content/${content.producer_id}/`))
+        add(["people", index, "photo", "src"], "The portrait must belong to this exact producer identity.");
+    });
     const variants = new Set<string>();
     content.translations.forEach((variant, index) => {
-      const item = content[variant.collection].find(
+      const item = content[variant.collection]?.find(
         (candidate) => candidate.id === variant.item_id,
       );
       if (!item) {
@@ -184,16 +204,21 @@ export const producerContentSchema = z
           ["translations", index, "values"],
           "The translated label cannot be empty.",
         );
+      if (variant.collection === "people") {
+        if ((variant.values.role ?? "").length > 150 || (variant.values.description ?? "").length > 625)
+          add(["translations", index, "values"], "Translated people use at most 150 characters for the role and 625 for the description.");
+      }
     });
   });
 
 export type ProducerContent = z.infer<typeof producerContentSchema>;
-export type ContentCollection = "products" | "gallery" | "links";
+export type ContentCollection = (typeof CONTENT_COLLECTIONS)[number];
 export const CONTENT_TEXT_FIELDS: Record<ContentCollection, readonly string[]> =
   {
     products: ["name", "description"],
     gallery: ["alt", "caption"],
     links: ["label"],
+    people: ["role", "description"],
   };
 
 export function contentSourceHash(
@@ -205,6 +230,8 @@ export function contentSourceHash(
     .update(
       JSON.stringify([
         source.locale,
+        // Names are never translated, but an identity correction invalidates old prose.
+        ...(collection === "people" ? [String(source.name ?? "").normalize("NFC")] : []),
         ...CONTENT_TEXT_FIELDS[collection].map((field) =>
           String(source[field] ?? "")
             .replace(/\r\n?/g, "\n")
@@ -235,7 +262,8 @@ export function localizeProducerContent(
   requestedLocale: string,
 ): ProducerContent {
   const localized = { ...content };
-  for (const collection of ["products", "gallery", "links"] as const) {
+  for (const collection of CONTENT_COLLECTIONS) {
+    if (!content[collection]) continue;
     const items = content[collection].map((item) => {
       if (item.locale === requestedLocale) return item;
       const variant = content.translations.find(
@@ -256,8 +284,13 @@ export function localizeProducerContent(
 
 export function hasProducerContent(content: ProducerContent): boolean {
   return Boolean(
-    content.products.length || content.gallery.length || content.links.length,
+    content.products.length || content.gallery.length || content.links.length || content.people?.length,
   );
+}
+
+/** All public assets, including portraits kept outside the product/gallery editor. */
+export function producerContentImages(content: ProducerContent) {
+  return [...content.gallery, ...(content.people ?? []).flatMap(person => person.photo ? [person.photo] : [])];
 }
 
 /** Assigned images are displayed with their products; the standalone gallery avoids repeats. */

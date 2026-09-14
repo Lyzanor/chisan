@@ -234,7 +234,7 @@ export const PRODUCER_STANDARD_FIELD_DEFINITIONS = [
 
 export const PRODUCER_EXPANDED_FIELD_DEFINITIONS = [
   ...EXTRA_PREMIUM_FIELDS,
-  { key: "como producimos", label: "How we produce", kind: "textarea", required: false, maxLength: 2000, help: "Describe your production methods. Official certifications require reviewed evidence." },
+  { key: "como producimos", label: "How we produce", kind: "textarea", required: false, maxLength: 2000, help: "Describe concrete production methods from reviewed sources or producer text. Official certifications require reviewed evidence." },
   { key: "como_producimos_locale", label: "Production methods language", kind: "description-locale", required: false, maxLength: 3, help: "Choose the original language; leave empty when there is no text." },
   {
     key: "video",
@@ -258,7 +258,7 @@ export const PRODUCER_EXPANDED_FIELD_DEFINITIONS = [
     kind: "textarea",
     required: false,
     maxLength: 1_000,
-    help: "A producer-authored public message, preserved in its original language and reviewed before publication.",
+    help: "One current reviewed notice, written from public sources or supplied by the producer; preserve its original language.",
   },
   {
     key: "mensaje_comunidad_locale",
@@ -274,7 +274,7 @@ export const PRODUCER_EXPANDED_FIELD_DEFINITIONS = [
     kind: "textarea",
     required: false,
     maxLength: PRODUCER_BEHIND_MAX_CHARACTERS,
-    help: "Reviewed producer-authored text about the owners or team behind this productive unit.",
+    help: "Reviewed editorial or producer-authored introduction to the people and roles behind this unit.",
   },
   {
     key: "quien_hay_detras_locale",
@@ -290,7 +290,7 @@ export const PRODUCER_EXPANDED_FIELD_DEFINITIONS = [
     kind: "textarea",
     required: false,
     maxLength: PRODUCER_HISTORY_MAX_CHARACTERS,
-    help: "Reviewed producer-authored text about the origins and development of this productive unit.",
+    help: "Reviewed editorial or producer-authored origins and milestones of this productive unit.",
   },
   {
     key: "historia_locale",

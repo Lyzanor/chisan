@@ -137,7 +137,8 @@ export function auditImages({
   for (const file of walk(contentRoot, (file) => file.endsWith(".json"))) {
     try {
       const content = JSON.parse(fs.readFileSync(file, "utf8"));
-      for (const item of content.gallery ?? []) {
+      const portraits = (content.people ?? []).flatMap(person => person.photo ? [{ ...person.photo, id: `person-${person.id}` }] : []);
+      for (const item of [...(content.gallery ?? []), ...portraits]) {
         if (typeof item.src !== "string") continue;
         const owners = references.get(item.src) ?? [];
         owners.push(`${path.relative(ROOT, file)}:${item.id}`);

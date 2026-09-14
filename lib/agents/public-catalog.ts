@@ -159,6 +159,10 @@ export function publicExpanded(
       "quien_hay_detras_locale",
     ),
     history: prose(fields, "historia", "historia_locale"),
+    people: (content.people ?? []).map(({ id, name, role, description, locale, photo }) => ({
+      id, name, role, description, locale,
+      ...(photo ? { photo: { src: photo.src, alt: photo.alt, caption: photo.caption, locale: photo.locale, width: photo.width, height: photo.height, credit: photo.credit } } : {}),
+    })),
     last_approved_change: absent(fields["fecha ultimo cambio"]),
     highlighted_links: highlighted,
     // Deliberately exclude translation history and its source hashes.

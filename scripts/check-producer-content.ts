@@ -37,7 +37,7 @@ export async function checkProducerContent(root = process.cwd()) {
           throw new Error("File path does not match content identity.");
         await validateProducerContent(content, root);
         for (const variant of content.translations) {
-          const item = content[variant.collection].find(
+          const item = (content[variant.collection] ?? []).find(
             (entry) => entry.id === variant.item_id,
           )!;
           if (

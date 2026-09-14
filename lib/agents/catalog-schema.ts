@@ -6,6 +6,8 @@ import {
   contentLinkSchema,
   contentMediaSchema,
   contentProductSchema,
+  localizedContentPersonSchema,
+  PRODUCER_CONTENT_LIMITS,
 } from "../catalog/content-schema";
 import {
   ONLINE_SALES_VALUES,
@@ -152,6 +154,7 @@ export const publicProducerSchema = z.strictObject({
       news_date: text,
       community_message: localizedText,
       behind_producer: localizedText,
+      people: z.array(localizedContentPersonSchema).max(PRODUCER_CONTENT_LIMITS.people).describe("Up to three reviewed people behind this productive unit. Names are preserved; roles and descriptions use the indicated language."),
       history: localizedText,
       last_approved_change: text.describe(
         "Visible workflow date, not the verification date of every field.",

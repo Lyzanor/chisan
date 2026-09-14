@@ -70,6 +70,7 @@ async function main() {
           products: content.products.length,
           gallery: content.gallery.length,
           links: content.links.length,
+          people: content.people?.length ?? 0,
         },
         accountInspection: references ? "complete" : "not_checked",
         references,

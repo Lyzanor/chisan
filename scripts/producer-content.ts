@@ -10,6 +10,7 @@ import {
 import {
   contentSourceHash,
   emptyProducerContent,
+  CONTENT_COLLECTIONS,
 } from "../lib/catalog/content-schema";
 import { findProducerById } from "../lib/catalog/producers";
 import {
@@ -66,9 +67,9 @@ async function main() {
             revision: await contentRevision(filePath),
             content,
             sourceHashes: Object.fromEntries(
-              (["products", "gallery", "links"] as const).map((collection) => [
+              CONTENT_COLLECTIONS.map((collection) => [
                 collection,
-                content[collection].map((item) => ({
+                (content[collection] ?? []).map((item) => ({
                   id: item.id,
                   source_hash: contentSourceHash(collection, item),
                 })),

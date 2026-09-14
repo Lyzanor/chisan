@@ -33,7 +33,7 @@ Three kinds of guidance have different weight:
 | `data/csv/<country>/<region>/<area>.csv` | Producer registry, stable identity and approved base facts |
 | `data/csv/<country>/country.json` | Labels, ordering, aliases, languages and public/standby state |
 | `data/csv/<country>/translations.<locale>.csv` | Derived localized base prose tied to its source |
-| `data/content/<country>/<producer_id>.json` | Approved products, gallery items and links belonging to an existing producer |
+| `data/content/<country>/<producer_id>.json` | Approved products, gallery items, links and people belonging to an existing producer |
 | `data/evidence/**` | Public sources behind editorial decisions and closed exclusions |
 | `docs/candidates/**` | Unresolved research; removed after its handoff |
 | PostgreSQL | Accounts, memberships, proposals, entitlements and audit |

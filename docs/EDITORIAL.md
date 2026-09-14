@@ -254,7 +254,8 @@ neither `no` nor closure.
 Canonical `descripcion`, `quien hay detras` and `historia` each record their
 actual per-row source language in the paired locale cell. Prefer precise,
 supportable prose over a weaker text written to satisfy a country-wide language
-target. The two long-form premium fields may be first-party producer speech,
+target. History and the team introduction may be editorial summaries from public
+sources or first-party producer speech,
 but review must exclude private personal data, HTML, URLs, boilerplate and
 unsupported claims about third parties.
 
@@ -357,8 +358,11 @@ current profile visibility. In-scope products, formats, prices, seasonality,
 production methods, history, team, visits, commercial conditions and other
 expanded-profile fields remain useful approved catalog knowledge even when the
 producer has no premium entitlement. Store producer-level fields in the area CSV,
-repeatable products/media/links in the identity-bound content package, and their
-public sources in evidence. Apply the same field, authorship, rights and review
+repeatable products/media/links and up to three individual people in the
+identity-bound content package, and their
+public sources in evidence. Editors may author these texts from supported public
+facts before the producer participates; they are not reserved for producer input.
+Use neutral editorial voice for researched summaries. Apply the same field, rights and review
 requirements to every producer; never invent producer speech or infer a
 certification. Premium controls the account editor and current public display,
 not editorial collection or retention. Future autocomplete or wider display must

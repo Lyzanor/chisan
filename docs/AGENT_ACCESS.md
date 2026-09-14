@@ -27,6 +27,13 @@ schemas. `lib/agents/public-catalog.ts` projects an explicit public allowlist.
 Adding a CSV column never automatically exposes it. Browser bundles receive
 tool descriptions and schemas, not CSV rows, Zod or server/database modules.
 
+Detail `expanded.people` contains up to three reviewed person records with `id`,
+`name`, `role`, `description`, `locale` and optional `photo` (reviewed media fields
+without an item ID). It is an additive output field under the existing expanded
+visibility gate. Names are preserved across translations; the photo's source
+language is independent. No private account identity, translation history or
+source hashes are exposed. People never enter product arrays or Product JSON-LD.
+
 ## Read operations
 
 | WebMCP tool / OpenAPI operation | HTTP GET |

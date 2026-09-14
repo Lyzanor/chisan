@@ -26,6 +26,7 @@ test("HTML and agent content loader gates exact producer visibility and fails cl
       return state.content;
     },
   });
+  state.content.people = [{ id: "ana", name: "Ana", role: "Panadera", description: "", locale: "es" }];
   assert.equal(await read("es", 42, "es"), null);
   assert.equal(state.identities.length, 0);
   state.configured = true;
