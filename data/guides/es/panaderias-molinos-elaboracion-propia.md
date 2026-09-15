@@ -6,7 +6,7 @@ country: es
 status: published
 topic: Despensa
 title: "Panaderías y molinos: del cereal a la harina y al pan"
-description: "Del grano cultivado a la muela de piedra y la hogaza crujiente: cómo entender el oficio del pan artesano a través de Molino Ecotambo y La Original."
+description: "Del grano cultivado a la muela de piedra y la hogaza crujiente: cómo entender el oficio del pan artesano a través de cinco proyectos cerealistas ejemplares."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-15
 cover:
@@ -47,9 +47,9 @@ La molienda artesanal a la piedra trabaja a bajas revoluciones y sin calentar el
 
 Fuentes: [Molino Ecotambo · Cultivo y transformación propios](https://molinoecotambo.es/proyecto/).
 
-## Dos maestros del oficio cerealista {#productores}
+## Cinco maestros del oficio cerealista {#productores}
 
-Dos proyectos que reivindican la honestidad desde el campo y el obrador de montaña.
+Cinco proyectos que reivindican la honestidad desde el cultivo del grano hasta el horno de leña y la masa madre.
 
 ### [Molino Ecotambo](producer:es:8906)
 
@@ -58,6 +58,18 @@ En Sádaba (Zaragoza), esta explotación familiar practica una agricultura ecol�
 ### [La Original (Forn del Serafí)](producer:es:7784)
 
 En La Seu d’Urgell (Lleida), este histórico obrador de montaña mantiene encendida la llama de la panadería artesanal pirenaica. Trabajan con masas madre vivas refrescadas a diario y fermentaciones que reposan durante más de 20 horas en bloque antes del horneado. Cada hogaza de La Original despliega una corteza crujiente y caramelizada, y una miga alveolada y jugosa con la acidez justa que se conserva perfecta durante días.
+
+### [Bioartesa](producer:es:1213)
+
+En Castilléjar (Granada), Bioartesa cierra el ciclo cerealista desde la siembra hasta la molienda. Cultivan trigos antiguos y granos ecológicos en el altiplano granadino, moliéndolos a baja temperatura en molino de piedra propio para preservar el germen y la vitalidad nutricional de la harina.
+
+### [Obrador Artesano David Ruano](producer:es:9122)
+
+En Córdoba, el maestro panadero David Ruano lidera un obrador artesanal consagrado al pan de fermentación lenta y masa madre natural. Con harinas seleccionadas y largas horas de reposo en bloque, sus hogazas rústicas ofrecen una corteza tostada, miga esponjosa y una digestibilidad extraordinaria.
+
+### [Pan de mi Pueblo](producer:es:9428)
+
+En Dílar (Granada), a los pies de Sierra Nevada, esta panadería ecológica hornea a diario con leña y harinas de proximidad. Sus panes de masa madre tradicional de fermentación pausada recuperan el sabor del pan de pueblo auténtico, con una durabilidad de varios días sin perder humedad ni tersura.
 
 <!-- mapa -->
 

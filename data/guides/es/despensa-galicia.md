@@ -51,9 +51,9 @@ En el suroeste, las laderas que descienden hacia el río Miño gozan de un encla
 
 Fuentes: [Terras da Mariña · Faba de Lourenzá y verdina](https://www.terrasdamarina.com/) · [Terras Gauda · La bodega y sus vinos](https://terrasgauda.com/) · [Conservas Ramón Peña · Elaboraciones de pescado y marisco](https://conservasramonpena.com/).
 
-## Tres guardianes de la despensa atlántica {#productores}
+## Cinco guardianes de la despensa atlántica {#productores}
 
-Tres firmas gallegas admiradas por su apego al origen y a la excelencia artesanal.
+Cinco firmas gallegas admiradas por su apego al origen y a la excelencia artesanal entre el mar y la tierra.
 
 ### [Terras da Mariña](producer:es:11797)
 
@@ -66,6 +66,14 @@ En O Rosal (Pontevedra), a orillas de la desembocadura del Miño, Terras Gauda e
 ### [Conservas Ramón Peña](producer:es:4343)
 
 En Ribadumia (Pontevedra), la familia Ramón Peña practica desde hace tres generaciones la alta costura conservera. Compran el mejor marisco y pescado en las lonjas gallegas durante las mareas más propicias del año: navajas desarenadas primorosamente a mano, berberechos de calibre excepcional y sardinillas plateadas empacadas una a una con pinzas y cubiertas por aceites de oliva de máxima pureza.
+
+### [Pazo Señorans](producer:es:10106)
+
+En Meis (Pontevedra), en el valle de O Salnés, Pazo de Señoráns demostró la capacidad de envejecimiento del albariño mediante largas crianzas sobre lías. Su Selección de Añada es una cumbre enológica mundial que aúna mineralidad marina, complejidad sutil y textura glicérica profunda.
+
+### [A Pementeira](producer:es:49)
+
+En Padrón (A Coruña), esta sociedad agraria de mujeres productoras defiende la autenticidad del Pemento de Herbón con DOP. Cosechados a mano uno a uno en su punto justo de verdor durante el verano, ofrecen el bocado estival más célebre de Galicia: fritos en aceite virgen extra y sazonados con sal gorda.
 
 <!-- mapa -->
 

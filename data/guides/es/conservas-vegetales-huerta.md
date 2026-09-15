@@ -51,9 +51,9 @@ Lavar los pimientos con agua corriente agiliza el pelado industrial, pero arrast
 
 Fuentes: [D.O.P. Pimiento del Piquillo de Lodosa](https://piquillodelodosa.com/) · [Pedro Luis](https://conservaspedroluis.com/) · [El Navarrico](https://elnavarrico.com/).
 
-## Dos conserveras señeras de la Ribera Navarra {#productores}
+## Cinco conserveras señeras de la huerta {#productores}
 
-Dos sagas familiares de Lodosa y San Adrián consagradas al cultivo ecológico y la conserva vegetal de altísima pureza.
+Cinco sagas familiares consagradas al cultivo de temporada y la conserva vegetal artesanal en las vegas del Ebro, La Rioja y Andalucía.
 
 ### [Conservas Pedro Luis](producer:es:4340)
 
@@ -62,6 +62,18 @@ En Lodosa, la familia de Pedro Luis lleva décadas liderando la producción ecol
 ### [Conservas El Navarrico](producer:es:4280)
 
 En San Adrián, El Navarrico es una de las marcas más queridas por los cocineros profesionales. Desde 1960 embotan tomates pelados a mano, habitas tiernas en aceite de oliva virgen extra y pimientos asados al horno de leña, demostrando que la sencillez de una buena hortaliza bien tratada es la base de la gran cocina.
+
+### [Conservas Gómez Aguirre](producer:es:4297)
+
+En Alcanadre (La Rioja), esta conservera familiar selecciona hortalizas de las huertas del Ebro: espárragos blancos gruesos, pochas frescas de temporada y pimientos del piquillo asados y pelados a mano, elaborados en tiradas cortas sin conservantes añadidos.
+
+### [Centro Sur, S. Coop. And](producer:es:3787)
+
+En Huétor Tájar (Granada), Centro Sur agrupa a agricultores de la vega del Genil dedicados a la protección y cultivo del Espárrago de Huétor Tájar con IGP. Esta variedad verde-morada silvestre, recolectada a mano en primavera, se embota en conserva conservando su textura crujiente y su inconfundible sabor ligeramente amargo.
+
+### [Pronaxa](producer:es:10344)
+
+En Vélez-Málaga (Málaga), esta empresa familiar asa pimientos rojos carnosos con leña de olivo siguiendo métodos ancestrales. Pelados manualmente y envasados en su propio jugo natural sin agua ni acidulantes, conservan un perfume ahumado y una carnosidad dulce extraordinaria.
 
 <!-- mapa -->
 

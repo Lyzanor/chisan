@@ -53,9 +53,9 @@ Al cubrirse de ceniza vegetal o afinarse con levaduras y mohos silvestres (Geotr
 
 Fuentes: [Quesos Elvira García](https://quesoselviragarcia.com/) · [Quesos Los Balanchares](https://losbalanchares.es/) · [El Cabriteru](https://queseriaelcabriteru.com/).
 
-## Tres queserías caprinas ejemplares {#productores}
+## Cinco queserías caprinas ejemplares {#productores}
 
-Tres proyectos donde el rebaño, el pastoreo y la quesería forman un círculo cerrado de excelencia en tres paisajes distintos.
+Cinco proyectos donde el rebaño, el pastoreo y la quesería forman un círculo cerrado de excelencia en cinco paisajes distintos.
 
 ### [Quesos Elvira García](producer:es:10824)
 
@@ -68,6 +68,14 @@ En Zuheros (Córdoba), a la entrada del Parque Natural de las Sierras Subbética
 ### [Quesería El Cabriteru](producer:es:10505)
 
 En Asiego (Cabrales), esta quesería asturiana rompió moldes al apostar por cabras y ovejas en el corazón de los Picos de Europa. Elaboran quesos singulares con leche de cabra y azul que demuestran la ductilidad de esta leche en climas húmedos y verdes.
+
+### [Quesos Ubrique](producer:es:10985)
+
+En Ubrique (Cádiz), al pie del Parque Natural Sierra de Grazalema y Los Alcornocales, esta quesería transforma leche fresca de cabra payoya criada en libertad por pastores serranos. Sus curados en manteca ibérica, salvado de trigo o aceite de oliva despliegan un sabor profundo, limpio y ligeramente mantecoso.
+
+### [Quesería las RRR](producer:es:10584)
+
+En Maracena (Granada), Roberto Rivas elabora quesos artesanos siguiendo antiguas recetas familiares con leche de cabra de raza murciano-granadina. Premiados en certámenes internacionales, sus quesos de pasta prensada y corteza afinada sorprenden por su equilibrio láctico, textura compacta y recuerdos a pasto seco y frutos secos.
 
 <!-- mapa -->
 

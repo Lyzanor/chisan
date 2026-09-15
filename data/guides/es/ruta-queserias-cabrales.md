@@ -47,9 +47,9 @@ Entre Arenas de Cabrales y la aldea mirador de Asiego apenas median unos minutos
 
 Fuentes: [Turismo Asturias · Vega de Tordín](https://www.turismoasturias.es/) · [Quesería El Cabriteru](https://queseriaelcabriteru.com/).
 
-## Dos paradas imprescindibles en el concejo {#productores}
+## Cinco paradas imprescindibles en el concejo {#productores}
 
-Dos proyectos familiares que abren sus puertas al viajero para compartir la verdad de su trabajo.
+Cinco proyectos familiares que abren sus puertas al viajero para compartir la verdad de su trabajo entre majadas y cuevas calizas.
 
 ### [Quesería Vega de Tordín](producer:es:10666)
 
@@ -58,6 +58,18 @@ En Arenas de Cabrales, la familia de Vega de Tordín ofrece una de las visitas m
 ### [Quesería El Cabriteru](producer:es:10505)
 
 En Asiego, El Cabriteru une granja ecológica, rebaño propio y degustación gastronómica. Su propuesta permite conversar con los pastores, conocer a las cabras y ovejas y probar quesos artesanos de autor elaborados con leches mixtas que demuestran la ductilidad quesera del oriente asturiano.
+
+### [Quesería Maín](producer:es:10596)
+
+En Sotres, el pueblo más alto de los Picos de Europa a más de mil metros de altitud, la familia de Maín elabora Cabrales DOP tradicional y lo madura en cuevas de alta montaña de acceso abrupto. Sus piezas atesoran una cremosidad y una potencia aromática que reflejan el aislamiento y la pureza del macizo central.
+
+### [Quesería Ángel Díaz Herrero](producer:es:10412)
+
+En Tielve, esta quesería familiar de larga trayectoria ha sido galardonada repetidamente en el Certamen del Queso Cabrales. Con leche de su propia explotación ganadera, moldean piezas de corteza limpia y veteado azul uniforme con una intensidad elegante.
+
+### [Quesería Asiegu](producer:es:10452)
+
+En Asiegu, la familia Niembro combina pastoreo sostenible y elaboración ecológica de Cabrales DOP. Su dedicación a la biodiversidad local y la recuperación de razas autóctonas produce quesos de leche cruda con un carácter rústico, notas a hierba fresca y un picor balsámico memorable.
 
 <!-- mapa -->
 

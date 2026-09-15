@@ -57,9 +57,9 @@ Para orientarse en la inmensa bodega española, conviene situar los cuatro grand
 
 Fuentes: [Ministerio de Agricultura · DOP](https://www.mapa.gob.es/) · [Bodegas Muga](https://www.bodegasmuga.com/) · [Terras Gauda](https://www.terrasgauda.com/) · [Abadía Retuerta](https://www.abadia-retuerta.com/).
 
-## Tres bodegas para viajar por tres Españas enológicas {#productores}
+## Cinco bodegas para viajar por cinco Españas enológicas {#productores}
 
-Tres casas de referencia que ilustran cómo el terruño, el clima y la visión del elaborador marcan la personalidad de una copa.
+Cinco casas de referencia que ilustran cómo el terruño, el clima y la visión del elaborador marcan la personalidad de una copa.
 
 ### [BODEGAS MUGA](producer:es:2224)
 
@@ -72,6 +72,14 @@ En las Rías Baixas atlánticas, Terras Gauda demuestra que los grandes blancos 
 ### [Abadía Retuerta](producer:es:12500)
 
 En Sardón de Duero, a las puertas de la Ribera en un monasterio del siglo XII, Abadía Retuerta es pionera en el concepto de Vino de Pago: catalogaron más de cincuenta parcelas geológicas distintas para vinificar tempranillos y variedades internacionales con una precisión enológica fascinante.
+
+### [Bodegas Tradición](producer:es:2416)
+
+En el Marco de Jerez, Bodegas Tradición encarna la excelencia de la crianza en soleras del sur. Con vinos clasificados como VOS y VORS de más de veinte y treinta años de vejez media, embotellados en rama sin filtrar ni adulterar, custodian la cumbre de los finos, amontillados, palos cortados y olorosos de albariza.
+
+### [Clos Mogador](producer:es:4094)
+
+En Gratallops, en el corazón indómito del Priorat, René Barbier demostró la grandeza del arco mediterráneo peninsular. Cultivando viñedos en laderas pizarrosas de llicorella con viticultura heroica y biodinámica, entrega tintos de mineralidad profunda, estructura majestuosa y un balance insuperable.
 
 <!-- mapa -->
 

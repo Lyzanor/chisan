@@ -51,9 +51,9 @@ La primera regla de oro al elegir un tarro es buscar el país concreto de recole
 
 Fuentes: [BOE · Norma de calidad de la miel](https://www.boe.es/) · [Apícola Cortés](https://apicolacortes.com/) · [Colmenares de Vendejo](https://mieldeliebana.com/).
 
-## Dos apicultores con nombre y colmenar {#productores}
+## Cinco apicultores con nombre y colmenar {#productores}
 
-Dos proyectos que trabajan con colmenas propias en paisajes de montaña y páramo, demostrando la diferencia entre un producto industrial y la miel viva.
+Cinco proyectos que trabajan con colmenas propias en paisajes de sierra, páramo y campiña, demostrando la diferencia entre un producto industrial y la miel viva.
 
 ### [Apícola Cortés](producer:es:828)
 
@@ -62,6 +62,18 @@ En Guadalajara, en el corazón de la comarca alcarreña, Apícola Cortés practi
 ### [Miel Colmenares De Vendejo - Miel de Liébana - BeeXperience - Turismo apícola](producer:es:8675)
 
 En los valles protegidos de Liébana, a los pies de los Picos de Europa, esta casa familiar cuida colmenas rodeadas de robledales, castaños y brezos de montaña. Su miel con DOP Miel de Liébana es oscura, mineral, rica en antioxidantes y elaborada con un respeto absoluto por el bienestar de la abeja negra ibérica.
+
+### [Campo-museo Miel Rancho Cortesano SCA.](producer:es:2885)
+
+En Jerez de la Frontera, Rancho Cortesano es un proyecto familiar cooperativo consagrado a la divulgación apícola y la miel pura. Cuidan colmenares por toda la provincia de Cádiz, cosechando mieles crudas de azahar, milflores y monte bajo sin ningún tratamiento térmico que altere sus enzimas vivas.
+
+### [Corduba Miel](producer:es:4637)
+
+Desde Córdoba, Corduba Miel extrae miel artesana de las dehesas y montes de Sierra Morena. Sus mieles de encina, romero y eucalipto reflejan la riqueza de la flora silvestre andaluza, envasadas directamente de la colmena con su polen y propóleos naturales intactos.
+
+### [Miel Adalid - Adalid Apícola](producer:es:8655)
+
+En los campos abiertos de La Alcarria, Adalid Apícola practica una apicultura honesta de cosecha propia. Con colmenas ubicadas en parajes sin contaminación, sus tarros ofrecen una miel densa, con cristalización fina y aromas nítidos a lavanda silvestre y romero.
 
 <!-- mapa -->
 

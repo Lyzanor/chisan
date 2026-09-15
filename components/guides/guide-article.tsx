@@ -1,5 +1,6 @@
 import { GuideCover } from "./guide-cover";
 import Link from "next/link";
+import Image from "next/image";
 
 import { GuideMarkdown } from "./guide-markdown";
 import { GuideMap } from "./guide-map";
@@ -114,17 +115,31 @@ export function GuideArticle({
                   <GuideMarkdown>{section.introduction}</GuideMarkdown>
                   <div className={styles.producers}>
                     {items.map((producer) => (
-                      <div key={producer.key} className={styles.producer}>
-                        <div>
+                      <article key={producer.key} className={styles.producer}>
+                        {producer.imageSrc ? (
+                          <div className={styles.producerMedia}>
+                            <Image
+                              src={producer.imageSrc}
+                              alt=""
+                              width={360}
+                              height={225}
+                              sizes="(max-width: 600px) 280px, 340px"
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : null}
+                        <div className={styles.producerBody}>
                           <p className={styles.eyebrow}>
                             {producer.city} · {producer.areaLabel}
                           </p>
                           <h3>
                             <Link href={producer.href}>{producer.name}</Link>
                           </h3>
-                          <GuideMarkdown>{producer.focus}</GuideMarkdown>
+                          <div className={styles.producerFocus}>
+                            <GuideMarkdown>{producer.focus}</GuideMarkdown>
+                          </div>
                         </div>
-                      </div>
+                      </article>
                     ))}
                   </div>
                   {section.showMap ? <GuideMap items={items} /> : null}

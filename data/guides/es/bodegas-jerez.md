@@ -6,7 +6,7 @@ country: es
 status: published
 topic: Vinos
 title: "Bodegas de Jerez: nombres de vino, soleras y casas que conocer"
-description: "Entiende el milagro de la albariza, el velo de flor y el sistema de criaderas y soleras en el Marco de Jerez a través de dos bodegas míticas."
+description: "Entiende el milagro de la albariza, el velo de flor y el sistema de criaderas y soleras en el Marco de Jerez a través de cinco bodegas imprescindibles."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-15
 cover:
@@ -47,9 +47,9 @@ Cuando la flor desaparece —bien de forma natural o por encabezado—, el vino 
 
 Fuentes: [Consejo Regulador de Jerez · Bodegas Tradición](https://www.sherry.wine/es/vinos-de-jerez/bodegas/bodegas-tradici%C3%B3n) · [Consejo Regulador de Jerez · Rocío Ruiz, Bodegas Urium](https://www.sherry.wine/es/vinos-de-jerez/bodegas/meet-the-maker/rocio-ruiz).
 
-## Dos bodegas para enamorarse de Jerez {#productores}
+## Cinco bodegas para enamorarse del Marco de Jerez {#productores}
 
-Dos proyectos que representan la cúspide de la crianza jerezana: la devoción por la vejez extrema sin concesiones y la frescura boutique de un relevo generacional apasionado.
+Cinco proyectos que representan la cúspide de la crianza jerezana y sanluqueña: la devoción por la vejez extrema, la brisa atlántica de la desembocadura y la sensibilidad contemporánea.
 
 ### [Bodegas Tradición](producer:es:2416)
 
@@ -58,6 +58,18 @@ En el barrio de Santiago, Bodegas Tradición fue fundada por Joaquín Rivero con
 ### [Bodegas Urium](producer:es:2422)
 
 La historia de Urium es el sueño de Alonso Ruiz y su hija Rocío: rescataron una pequeña solera de apenas 500 botas en el casco antiguo de Jerez para crear una bodega de autor. Rocío encarna la sensibilidad contemporánea de los vinos de Jerez, mimando sacas limitadísimas de manzanilla pasada, amontillados profundos y un oloroso que encandila a los sumilleres más exigentes del mundo.
+
+### [Bodegas Barbadillo](producer:es:1832)
+
+Fundada en 1821 en Sanlúcar de Barrameda, Barbadillo es un coloso familiar guardián de la manzanilla. Sus bodegas catedralicias como La Arboledilla respiran la brisa viva de la desembocadura del Guadalquivir y Doñana, criando hitos como Solear y reliquias centenarias amontilladas que concentran el pulso marino de dos siglos de historia.
+
+### [Bodega Herederos de Argüeso](producer:es:1471)
+
+En pleno centro sanluqueño, Argüeso custodia desde 1822 soleras de manzanilla de una salinidad vibrante y aristocrática. Su San León, criada bajo velo de flor persistente en botas centenarias de roble americano, es una referencia canónica para entender la influencia del clima atlántico en la crianza biológica.
+
+### [Bodegas Arfe SL.](producer:es:1804)
+
+En Jerez de la Frontera, Luis Arroyo lidera esta bodega de crianza que rinde culto al equilibrio y la precisión del palo cortado. Con su marca De la Cruz de 1767, Arfe trabaja partidas muy selectas criadas con lentitud pausada, destacando por notas envolventes de frutos secos tostados, corteza de naranja amarga y una boca seca e interminable.
 
 <!-- mapa -->
 

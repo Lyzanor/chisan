@@ -62,9 +62,9 @@ La segunda gran frontera es el tratamiento térmico: un queso de leche cruda con
 
 Fuentes: [BOE · Norma de calidad](https://www.boe.es/) · [Ministerio de Agricultura](https://www.mapa.gob.es/) · [Rey Silo](https://reysilo.es/) · [La Antigua](https://queserialaantigua.com/) · [Finca Pascualete](https://fincapascualete.com/).
 
-## Tres templos queseros para iniciar el viaje {#productores}
+## Cinco templos queseros para iniciar el viaje {#productores}
 
-Tres proyectos que encarnan la excelencia quesera española a través de tres leches y tres visiones irrepetibles.
+Cinco proyectos que encarnan la excelencia quesera española a través de diferentes leches y paisajes irrepetibles.
 
 ### [Queso Rey Silo](producer:es:10716)
 
@@ -76,7 +76,15 @@ En Fuentesaúco (Zamora), La Antigua dignifica la leche cruda de oveja churra y 
 
 ### [Quesería Finca Pascualete](producer:es:10528)
 
-En Trujillo (Cáceres), Finca Pascualete elabora quesos con historia desde 1232. Sujoya más codiciada es la Retorta: una crema de leche cruda de oveja merina cuajada con la flor del cardo silvestre de la dehesa. Al retirar la corteza superior con un cuchillo, la pasta fluye untuosa y densa, con un amargor vegetal aristocrático que conquista a los mayores gastrónomos del mundo.
+En Trujillo (Cáceres), Finca Pascualete elabora quesos con historia desde 1232. Su joya más codiciada es la Retorta: una crema de leche cruda de oveja merina cuajada con la flor del cardo silvestre de la dehesa. Al retirar la corteza superior con un cuchillo, la pasta fluye untuosa y densa, con un amargor vegetal aristocrático que conquista a los mayores gastrónomos del mundo.
+
+### [Queso Payoyo](producer:es:10714)
+
+En Villaluenga del Rosario (Cádiz), en el corazón del Parque Natural Sierra de Grazalema, Carlos Ríos y Teodoro Gómez recuperaron la elaboración artesana con leche de cabra payoya autóctona y oveja merina grazalemeña. Sus quesos curados al romero, salvado o manteca ibérica despliegan un sabor profundo, limpio y ligeramente picante que ha situado el queso andaluz en la cumbre internacional.
+
+### [Quesos Sierra de Albarracín](producer:es:10973)
+
+En Albarracín (Teruel), a más de 1.200 metros de altitud en los Montes Universales, esta quesería familiar transforma exclusivamente la leche fresca de su propio rebaño de ovejas. Madurados sobre tablas de madera de sabina en un clima seco y riguroso, elaboraciones como su queso al vino tinto o su pasta prensada de leche cruda ofrecen una firmeza mantecosa y notas elegantes a frutos secos y pastos de montaña.
 
 <!-- mapa -->
 

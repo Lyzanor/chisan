@@ -47,9 +47,9 @@ En las conserveras artesanales de las rías gallegas, las mejores estibadoras co
 
 Fuentes: [Conservas Ramón Peña](https://ramonpena.net/) · [Conservas Güeyumar](https://conservasbrasa.com/).
 
-## Dos conserveras que elevan el mar a la categoría de arte {#productores}
+## Cinco conserveras que elevan el mar a la categoría de arte {#productores}
 
-Dos proyectos que representan el culmen de la conserva marina en la península: el clasicismo impecable de las rías y la revolución audaz de la brasa asturiana.
+Cinco proyectos que representan el culmen de la conserva marina en la península: el clasicismo gallego, la brasa asturiana, el legado cantábrico y la tradición atlántica del sur.
 
 ### [Conservas Ramón Peña](producer:es:4343)
 
@@ -58,6 +58,18 @@ En Vilagarcía de Arousa, Ramón Peña es sinónimo de orfebrería marina desde 
 ### [Conservas Güeyumar](producer:es:12944)
 
 En Ribadesella (Asturias), el chef Abel Álvarez revolucionó el mundo conservero al trasladar la brasa de encina de su restaurante Güeyu Mar al interior de la lata. Sus sardinas, mejillones, navajas y ventresca de bonito se asan primero a la leña antes de cubrirse con un aceite de oliva virgen extra Arbequina exquisito: el resultado es un ahumado crujiente, sutil y mágico que ha fascinado a los mejores cocineros del mundo.
+
+### [Conservas Eutimio](producer:es:4288)
+
+Desde la villa marinera de Llastres (Colunga, Asturias), la familia Eutimio elabora conservas artesanales de pescado capturado en el mar Cantábrico. Con recetas que nacen de su emblemático restaurante, miman platos como el bonito del norte en escabeche suave, huevas de merluza y patés marineros sin conservantes ni aditivos.
+
+### [Conservas Concepción](producer:es:4266)
+
+En Ayamonte (Huelva), en la desembocadura del río Guadiana, esta conservera familiar preserva el arte andaluz de la conserva de pescado azul. Especializados en melva canutera, caballa y atún en aceite de oliva virgen, limpian y envasan a mano cada filete con una textura firme y limpia.
+
+### [Casa Santoña S.L.](producer:es:3443)
+
+Con raíces en la tradición salazonera del Cantábrico, Casa Santoña elabora en su obrador artesanal anchoas sobadas y limpiadas a mano una a una. Su curación lenta en salazón durante meses y su posterior desespinado manual garantizan filetes carnosos, de salinidad equilibrada y textura fundente.
 
 <!-- mapa -->
 

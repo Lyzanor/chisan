@@ -51,9 +51,9 @@ En las últimas décadas, la Ribera ha evolucionado desde los vinos marcados pre
 
 Fuentes: [D.O. Ribera del Duero](https://www.riberadelduero.es/) · [Bodegas Protos](https://www.bodegasprotos.com/) · [Bodegas Emilio Moro](https://www.emiliomoro.com/).
 
-## Dos bodegas emblemáticas de Valladolid {#productores}
+## Cinco bodegas emblemáticas de la Ribera del Duero {#productores}
 
-Dos proyectos que definen el pulso vitivinícola de la Milla de Oro ribereña: la bodega pionera que dio nombre a la denominación y la saga familiar que revolucionó la interpretación del terruño en Pesquera.
+Cinco proyectos que definen el pulso vitivinícola de la Ribera: desde la cuna de Peñafiel y Pesquera hasta los suelos privilegiados de Roa y Pedrosa de Duero.
 
 ### [Bodegas Protos](producer:es:2308)
 
@@ -62,6 +62,18 @@ Fundada en 1927 a la sombra del majestuoso castillo de Peñafiel, Protos fue la 
 ### [Bodegas Emilio Moro](producer:es:1991)
 
 En Pesquera de Duero, la familia Moro lleva tres generaciones unida a la viña. Decidieron eliminar las categorías tradicionales de crianza y reserva para clasificar sus vinos por la personalidad de cada finca (como Malleolus, Valderramiro o Sanchomartín). Sus viñedos viejos de clon propio de tinto fino entregan vinos opulentos, perfumados y de tanino aterciopelado.
+
+### [Bodegas Hnos. Pérez Pascuas – Viña Pedrosa](producer:es:2067)
+
+Fundada en 1980 en Pedrosa de Duero por los hermanos Pérez Pascuas, esta bodega familiar fue artífice directa del nacimiento de la D.O. Ribera del Duero. Elaboran exclusivamente a partir de sus propios viñedos de tinta del país, con cepas de hasta noventa años que alumbran su legendario Viña Pedrosa, arquetipo de elegancia, equilibrio y longevidad castellana.
+
+### [Bodegas López Cristobal, S.L.](producer:es:2138)
+
+En Roa de Duero, la familia López Cristóbal combina tradición vitícola casi centenaria con una interpretación moderna y honesta del terruño. Trabajando parcelas de suelos calizos y arcillosos a más de 800 metros de altitud, sus tintos destacan por una fruta negra pulida, equilibrio fresco y un roble perfectamente integrado.
+
+### [Bodegas Carmelo Rodero](producer:es:1887)
+
+En Pedrosa de Duero, Carmelo Rodero y sus hijas María y Beatriz han construido una de las bodegas familiares más admiradas de la meseta. Gracias a su minuciosa clasificación de parcelas y un sistema de gravedad que mima la uva entera, vinos como Pago de Valtarreña o TSM muestran una concentración sedosa y una elegancia que seduce al instante.
 
 <!-- mapa -->
 

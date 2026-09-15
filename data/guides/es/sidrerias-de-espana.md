@@ -51,9 +51,9 @@ Tras la recolección en otoño, la fruta se lava, se tritura y pasa a la prensa 
 
 Fuentes: [Sidra Trabanco · Llagar y elaboraciones](https://www.sidratrabanco.com/) · [Zapiain · Sidra y elaboraciones de manzana](https://www.zapiain.eus/) · [Mooma · Productor de manzanas y sidra](https://mooma.cat/).
 
-## Tres llagares y sagardotegis de referencia {#productores}
+## Cinco llagares y sagardotegis de referencia {#productores}
 
-Tres casas que interpretan la sidra con maestría desde sus propios manzanos y bodegas.
+Cinco casas que interpretan la sidra con maestría desde sus propios manzanos y bodegas en Asturias, Euskadi y el Mediterráneo.
 
 ### [Sidra Trabanco](producer:es:11547)
 
@@ -66,6 +66,14 @@ En Astigarraga (Gipuzkoa), el apellido Zapiain está ligado a la cultura de la s
 ### [Mooma](producer:es:8956)
 
 En Palau-sator (Girona), la familia fundadora de Mooma aporta una mirada mediterránea fascinante. Tras tres generaciones cuidando manzanos en el corazón del Empordà, transforman sus mejores cosechas en una sidra crujiente, equilibrada y luminosa, demostrando que la fruta de calidad florece con personalidad propia fuera de las fronteras atlánticas.
+
+### [Sidra Contrueces](producer:es:11518)
+
+En las afueras rurales de Gijón, Sidra Contrueces representa la esencia del llagar familiar asturiano. Cuidan pomaradas tradicionales y fermentan en toneles de madera, entregando una sidra de escanciado generoso, *espalme* limpio y una acidez viva y refrescante.
+
+### [Sidra Acebal](producer:es:11513)
+
+Ubicado en Cabueñes (Gijón), Sidra Acebal es uno de los llagares más antiguos de Asturias, activo desde el siglo XIX. Elaboran sidra natural tradicional y sidra amparada bajo la DOP Sidra de Asturias, mimando variedades autóctonas seleccionadas con una persistencia aromática inconfundible.
 
 <!-- mapa -->
 

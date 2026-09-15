@@ -51,9 +51,9 @@ Al mismo tiempo, la maduración en bodega ha roto el mito de que el albariño de
 
 Fuentes: [D.O. Rías Baixas · Variedades](https://doriasbaixas.com/es/variedades/) · [Pazo de Señoráns](https://pazodesenorans.com/) · [Terras Gauda](https://www.terrasgauda.com/).
 
-## Dos visiones maestras del viñedo gallego {#productores}
+## Cinco visiones maestras del viñedo gallego {#productores}
 
-Dos bodegas que representan los dos grandes caminos de Rías Baixas: la riqueza del ensamblaje del Rosal y la aristocrática longevidad del monovarietal de Salnés.
+Cinco bodegas que representan los grandes caminos de Rías Baixas: la riqueza del ensamblaje del Rosal, la aristocrática longevidad del Salnés y el pulso cooperativo que vertebra el territorio.
 
 ### [Terras Gauda](producer:es:11801)
 
@@ -62,6 +62,18 @@ En el valle de O Rosal, junto a la desembocadura del río Miño, Terras Gauda re
 ### [Pazo Señorans](producer:es:10106)
 
 Enclavada en una casona solariega del siglo XVI en Meis, en pleno corazón de O Salnés, la familia de Marisol Bueno demostró al mundo que el albariño podía envejecer con la elegancia de los grandes Borgoñas. Su Selección de Añada, criado durante más de treinta meses sobre lías en depósitos de acero y afinado en botella, es un monumento enológico de mineralidad, hidrocarburos y terciarios inolvidables.
+
+### [Bodegas Martín Códax](producer:es:2181)
+
+Nacida en Cambados en 1986 de la unión de viticultores locales, Martín Códax es el gran embajador cultural y enológico del Salnés. Sus elaboraciones de parcela y lías demuestran cómo la investigación rigurosa y el viñedo minifundista en emparrado pueden alumbrar vinos atlánticos de enorme hondura y nervio mineral.
+
+### [Bodegas Granbazán](producer:es:2046)
+
+En Vilanova de Arousa, Granbazán fue pionera en introducir la maceración pelicular en frío y la crianza en barrica de roble francés para la uva albariño. Sus vinos de finca en Tremoedo aúnan frescura marina, notas de laurel y una textura cremosa que rinde homenaje al microclima del valle de Salnés.
+
+### [Adega Paco & Lola](producer:es:336)
+
+Desde Meaño, esta cooperativa de más de cuatrocientos socios aúna diseño fresco y una viticultura cooperativa impecable en el corazón del Salnés. Sus albariños destacan por una acidez cítrica radiante, recuerdos a manzana verde y un perfil directo y expresivo que captura la esencia más jovial de las rías.
 
 <!-- mapa -->
 

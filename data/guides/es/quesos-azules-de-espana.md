@@ -51,9 +51,9 @@ A pocos kilómetros hacia el occidente asturiano, en el concejo de Illas, Quesos
 
 Fuentes: [D.O.P. Cabrales](https://quesocabrales.org/) · [Vega de Tordín](https://queseriavegadetordin.com/) · [Quesos La Peral](https://quesoslaperal.com/).
 
-## Tres queserías que dominan el afinado azul {#productores}
+## Cinco queserías que dominan el afinado azul {#productores}
 
-Tres casas asturianas que ilustran el espectro completo del queso azul, desde la cueva natural hasta el afinado familiar de alta precisión.
+Cinco casas de la cordillera cantábrica que ilustran el espectro completo del queso azul, desde las cuevas de Cabrales y Valdeón hasta Tresviso e Illas.
 
 ### [Quesería Vega de Tordín](producer:es:10666)
 
@@ -66,6 +66,14 @@ En Asiego, El Cabriteru es pionera en la elaboración de quesos azules artesanos
 ### [Quesos La Peral](producer:es:10880)
 
 Fundada en 1923 en San Jorge de La Peral (Illas), esta quesería centenaria es una institución gastronómica. Su queso azul La Peral, afinado en sus bodegas húmedas, es el favorito de quienes aman la cremosidad mantecosa y un sabor azul envolvente, noble y sumamente elegante.
+
+### [Quesería Picos de Europa](producer:es:10612)
+
+En Posada de Valdeón (León), la familia Alonso madura desde hace décadas el célebre Queso de Valdeón IGP. Elaborado con mezcla de leches de vaca y cabra, madurado en cuevas naturales y presentado en su icónica envoltura, despliega una pasta tierna y mantecosa con vetas azules intensas y un toque sutilmente dulce y especiado.
+
+### [Quesería Javier Campo (Casa Campo)](producer:es:10547)
+
+En la remota aldea de Tresviso (Cantabria), encaramada a más de 900 metros sobre el desfiladero de La Hermida, Javier Campo elabora Picón Bejes-Tresviso DOP siguiendo métodos ancestrales. Su maduración en cueva de montaña entrega un queso azul recio, untuoso, penetrante y de autenticidad sobrecogedora.
 
 <!-- mapa -->
 

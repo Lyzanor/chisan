@@ -51,9 +51,9 @@ Por ejemplo, para que un queso pueda llamarse legalmente Queso Zamorano DOP, la 
 
 Fuentes: [Ministerio de Agricultura · Quesos con DOP](https://www.mapa.gob.es/) · [Quesería La Antigua](https://queserialaantigua.com/) · [Vega de Tordín](https://queseriavegadetordin.com/).
 
-## Dos queserías que dan lustre a su denominación {#productores}
+## Cinco queserías que dan lustre a su denominación {#productores}
 
-Dos obradores que representan el orgullo y la exigencia de elaborar bajo el amparo de un consejo regulador oficial.
+Cinco obradores que representan el orgullo y la exigencia de elaborar bajo el amparo de un consejo regulador oficial en diferentes geografías peninsulares.
 
 ### [Quesería La Antigua de Fuentesaúco](producer:es:10555)
 
@@ -62,6 +62,18 @@ En Fuentesaúco, La Antigua defiende con pasión la D.O.P. Queso Zamorano. Recog
 ### [Quesería Vega de Tordín](producer:es:10666)
 
 En Arenas de Cabrales, la familia de Vega de Tordín elabora su Cabrales DOP siguiendo a rajatabla el método transmitido de abuelos a nietos: cuajado manual, desuerado natural sin prensar mecánicamente y maduración en cueva caliza natural donde la humedad del macizo central de Picos de Europa hace florecer el moho azul salvaje.
+
+### [Cooperativa Cadí](producer:es:4459)
+
+Fundada en 1915 en La Seu d'Urgell (Lleida), Cadí fue la primera entidad quesera de España en obtener una Denominación de Origen Protegida: Formatge de l'Alt Urgell i la Cerdanya. Con leche recogida diariamente de granjas del Pirineo catalán, elaboran quesos tradicionales de corteza lavada y textura mantecosa de reconocimiento mundial.
+
+### [Quesería Javier Campo (Casa Campo)](producer:es:10547)
+
+En Tresviso (Cantabria), Javier Campo defiende la DOP Picón Bejes-Tresviso con un compromiso inquebrantable. Sus quesos azules madurados en las cuevas naturales calizas de los Picos de Europa son uno de los grandes patrimonios de la quesería tradicional cántabra.
+
+### [Quesería El Alto Cidakos](producer:es:10503)
+
+En Arnedillo (La Rioja), esta quesería artesana mantiene vivo el Queso Camerano DOP con leche de cabras que pastan en la sierra del Alto Cidacos. Elaborado con paño de tela y cesto de mimbre tradicional, refleja la herencia pastoril de los valles riojanos.
 
 <!-- mapa -->
 

@@ -55,9 +55,9 @@ En Liébana, el paisaje impone una miel muy diferente: la miel de mielada o miel
 
 Fuentes: [D.O.P. Miel de La Alcarria](https://mieldelaalcarria.org/) · [D.O.P. Miel de Liébana](https://alimentosdecantabria.com/) · [Valserrano](https://mielvalserrano.es/) · [Colmenares de Vendejo](https://mieldeliebana.com/).
 
-## Dos productores guardianes de la denominación {#productores}
+## Cinco productores guardianes de la denominación {#productores}
 
-Dos casas apícolas que custodian el rigor de sus respectivos sellos de calidad diferenciada.
+Cinco casas apícolas que custodian el rigor de sus respectivos sellos de calidad diferenciada entre páramos y cumbres.
 
 ### [Sociedad Cooperativa Apícola Alcarreña - Valserrano](producer:es:11634)
 
@@ -66,6 +66,18 @@ Ubicada en Guadalajara, esta cooperativa reúne a familias apícolas que mantien
 ### [Miel Colmenares De Vendejo - Miel de Liébana - BeeXperience - Turismo apícola](producer:es:8675)
 
 En la aldea lebaniega de Vendejo (Pesaguero), este proyecto familiar protege colmenares tradicionales en bancales rodeados de castañales y brezos. Su Miel de Liébana DOP atrapa la esencia umbría del bosque cantábrico en tarros oscuros de una intensidad balsámica arrolladora.
+
+### [El Colmenar de Valderromero](producer:es:5143)
+
+En Sigüenza (Guadalajara), la familia de Valderromero cuida sus colmenares en los valles altos de la comarca con sello de calidad Miel de La Alcarria. Sus mieles de espliego y romero cosechadas artesanalmente destacan por su aroma penetrante a monte bajo y una textura suave que cristaliza de forma homogénea.
+
+### [Nectarius · Alcarria Esencial Nature](producer:es:9057)
+
+En Cifuentes, en pleno corazón alcarreño, Nectarius elabora miel cruda y sin filtrar amparada por la DOP Miel de La Alcarria. Con un manejo escrupuloso de los panales en asentamientos alejados de cultivos intensivos, ofrecen mieles de tomillo y romero de una pureza floral cristalina.
+
+### [MIEL El Colmenar de las Doñas](producer:es:8715)
+
+En Vega de Liébana, al abrigo de las cumbres de los Picos de Europa, esta pequeña explotación familiar elabora miel artesana y productos de la colmena con su propio obrador. Sus mieles de bosque y brezo condensan notas minerales y tostadas características del valle lebaniego.
 
 <!-- mapa -->
 

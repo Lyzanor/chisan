@@ -5,8 +5,8 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Bodegas de Rioja: dos miradas al vino desde Haro"
-description: "Viaja al mítico Barrio de la Estación de Haro y comprende el diálogo entre el clasicismo centenario y la viticultura de parcela riojana."
+title: "Bodegas de Rioja: cinco miradas al vino desde Haro"
+description: "Viaja al mítico Barrio de la Estación de Haro y comprende el diálogo entre el clasicismo centenario y la viticultura de parcela riojana a través de cinco bodegas de referencia."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-15
 cover:
@@ -51,9 +51,9 @@ Durante su larga estancia en tinas y barricas de roble, el vino sufre trasiegas 
 
 Fuentes: [D.O.Ca. Rioja](https://www.riojawine.com/) · [Bodegas Muga](https://www.bodegasmuga.com/) · [R. López de Heredia](https://www.lopezdeheredia.com/).
 
-## Dos catedrales del Barrio de la Estación {#productores}
+## Cinco catedrales del Barrio de la Estación {#productores}
 
-Dos bodegas vecinas que custodian el alma de Haro con personalidades complementarias: el dominio artesanal de la madera y la fidelidad inquebrantable a una liturgia centenaria.
+Cinco bodegas legendarias que custodian el alma de Haro con personalidades complementarias: el dominio artesanal de la madera, la viticultura de precisión y la fidelidad a una liturgia centenaria.
 
 ### [BODEGAS MUGA](producer:es:2224)
 
@@ -62,6 +62,18 @@ Muga es una de las poquísimas bodegas del mundo que conserva su propia toneler�
 ### [R. LÓPEZ DE HEREDIA VIÑA TONDONIA, S.A.](producer:es:11020)
 
 Fundada en 1877 por don Rafael López de Heredia, Viña Tondonia es un templo vivo de la enología universal. Nada ha cambiado en su forma de elaborar: tinas gigantescas cubiertas de levaduras centenarias, telarañas que protegen el reposo subterráneo y un rechazo total a las modas pasajeras. Sus tintos y blancos de Viña Tondonia y Viña Gravonia son prodigios de finura, acidez vibrante y eternidad en copa.
+
+### [La Rioja Alta, S.A.](producer:es:7840)
+
+Fundada en 1890 por cinco familias viticultoras de Haro y Álava, La Rioja Alta es el estandarte del gran reserva clásico. Con viñedos propios excepcionales en Briñas, Labastida y Rodezno, sus míticos Gran Reserva 890 y Gran Reserva 904 encarnan el arquetipo de la sutileza riojana: notas balsámicas, seda pura en boca y una frescura imbatible.
+
+### [Bodegas Roda](producer:es:2342)
+
+Llegada al Barrio de la Estación a finales de los años ochenta, Roda protagonizó una renovación deslumbrante en Rioja. Con una investigación exhaustiva sobre el comportamiento del tempranillo y la garnacha en distintas añadas, vinos como Roda I y Cirsion deslumbran por su fruta roja y negra pletórica de vida, tanino redondo y pulso contemporáneo.
+
+### [CVNE](producer:es:4721)
+
+La Compañía Vinícola del Norte de España nació en Haro en 1879. Con su famosa nave de barricas diseñada por el estudio de Gustave Eiffel, CVNE ha elaborado algunas de las botellas más gloriosas de la historia española, destacando su icónico Imperial: un tinto de equilibrio imperial y gran nobleza que madura con serenidad durante décadas.
 
 <!-- mapa -->
 

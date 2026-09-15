@@ -53,9 +53,9 @@ España cuenta con sellos de calidad que protegen variedades únicas adaptadas a
 
 Fuentes: [I.G.P. Faba de Lourenzá](https://www.fabadelourenza.org/) · [Terras da Mariña](https://terrasdamarina.org/) · [Can Casamada](https://cancasamada.com/).
 
-## Dos productores dedicados a la tierra y al grano {#productores}
+## Cinco productores dedicados a la tierra y al grano {#productores}
 
-Dos proyectos que miman el cultivo tradicional de legumbres con indicación geográfica protegida en Galicia y Cataluña.
+Cinco proyectos que miman el cultivo tradicional de legumbres con sellos de origen protegido a lo largo de la península.
 
 ### [Terras da Mariña](producer:es:11797)
 
@@ -64,6 +64,18 @@ En Lourenzá (Lugo), esta cooperativa de agricultores cuida las vegas húmedas y
 ### [Can Casamada](producer:es:2915)
 
 En Castellar del Vallès (Barcelona), la masía Can Casamada cultiva la auténtica Mongeta del Ganxet con D.O.P. Mongeta del Ganxet Vallès-Maresme. Sus alubias, cosechadas en secano sobre suelos arenosos, son mundialmente codiciadas por su textura delicada, su piel imperceptible y su finura en ensaladas tibias o salteadas con butifarra.
+
+### [Legumbres El Peregrino](producer:es:8074)
+
+En la comarca de La Bañeza (León), El Peregrino selecciona y envasa alubias amparadas por la I.G.P. Alubia de La Bañeza-León. Con variedades autóctonas como la alubia riñón y la canela, sus legumbres son célebres por su piel tiernísima que no se rompe y un caldo espeso y sabroso.
+
+### [Bernabé Campal](producer:es:1163)
+
+En Pedrosillo el Ralo (Salamanca), esta casa agrícola selecciona y calibra la auténtica Lenteja de La Armuña con I.G.P. Su grano verdoso y moteado destaca por una finura vegetal incomparable, manteniéndose entero durante la cocción sin soltar hollejo.
+
+### [Campo de Tejada S.C.A.](producer:es:2884)
+
+En Escacena del Campo (Huelva), esta cooperativa produce el reputado Garbanzo de Escacena con I.G.P. Cultivado en suelos albarizos de campiña, su grano blanco lechoso de calibre grande ofrece una cremosidad mantecosa y una ausencia total de pellejo al paladar.
 
 <!-- mapa -->
 

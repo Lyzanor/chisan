@@ -47,9 +47,9 @@ A pocos kilómetros, en las estribaciones de La Siberia y las sierras extremeña
 
 Fuentes: [Finca Pascualete · La Retorta](https://www.fincapascualete.com/shop/queso-de-torta) · [Apícola Laparra · Producción y tienda](https://www.apicolalaparra.es/).
 
-## Dos baluartes del sabor extremeño {#productores}
+## Cinco baluartes del sabor extremeño {#productores}
 
-Dos proyectos familiares que encarnan la excelencia agroalimentaria de la dehesa y la sierra.
+Cinco proyectos familiares que encarnan la excelencia agroalimentaria de la dehesa, la comarca de La Vera y la sierra.
 
 ### [Quesería Finca Pascualete](producer:es:10528)
 
@@ -58,6 +58,18 @@ En las dehesas históricas de Trujillo (Cáceres), Finca Pascualete elabora ques
 ### [Apícola Laparra (Miel La Orza)](producer:es:833)
 
 En Fuenlabrada de los Montes (Badajoz), considerada la cuna de la miel en el suroeste peninsular, la familia Laparra ejerce una apicultura artesana y trashumante ejemplar. Sus mieles crudas monoflorales de azahar, romero, jara, brezo y milflores se recolectan a mano y se decantan en frío sin someterse a pasteurización térmica, conservando intactos todos sus enzimas vivos, pólenes naturales y matices resinosos y balsámicos.
+
+### [Pimentón de la Vera Las Hermanas](producer:es:10189)
+
+En Cuacos de Yuste (Cáceres), Las Hermanas preserva la liturgia del Pimentón de la Vera con Denominación de Origen Protegida. El secado artesanal en humeros con leña de encina y roble durante dos semanas confiere a sus variedades dulce, agridulce y picante ese inconfundible aroma ahumado y color rubí que viste la gastronomía de toda la península.
+
+### [Extrem Puro Extremadura](producer:es:5711)
+
+En Herreruela (Cáceres), Extrem elabora jamones y embutidos de cerdos 100% ibéricos criados en régimen extensivo en miles de hectáreas de dehesa propia. Su curación lenta en secaderos naturales con aire de sierra produce jamones de bellota de veteado brillante, aroma profundo a frutos secos y grasa sedosa que se deshace en el paladar.
+
+### [Cremositos del Zújar](producer:es:4681)
+
+En Campanario (Badajoz), en plena comarca de La Serena, Arteserena elabora sus afamados Cremositos del Zújar con leche cruda de oveja merina y cuajo vegetal de cardo. Esta torta cremosa, madurada sobre madera y volteada a diario, ofrece una textura untuosa insuperable con ligeras notas agrias y florales.
 
 <!-- mapa -->
 

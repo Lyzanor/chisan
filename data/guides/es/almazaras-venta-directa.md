@@ -47,9 +47,9 @@ Para el uso diario en cocina caliente, una garrafa de lata oscura o bag-in-box d
 
 Fuentes: [Oro Bailén · Tienda oficial](https://www.orobailen.com/) · [Almazaras de la Subbética · Tienda online](https://almazarasdelasubbetica.com/tienda/).
 
-## Dos almazaras con canal directo ejemplar {#productores}
+## Cinco almazaras con canal directo ejemplar {#productores}
 
-Dos casas que han perfeccionado el servicio directo al consumidor, enviando el aceite con embalajes térmicos seguros y garantizando la trazabilidad de la campaña en curso.
+Cinco casas que han perfeccionado el servicio directo al consumidor, enviando el aceite con embalajes térmicos seguros y garantizando la trazabilidad de la campaña en curso.
 
 ### [Aceites Oro Bailén](producer:es:200)
 
@@ -58,6 +58,18 @@ Desde Villanueva de la Reina, Oro Bailén envía directamente sus afamados aceit
 ### [Almazaras de la Subbética, S.C.A.](producer:es:678)
 
 La cooperativa de Carcabuey ofrece en su canal directo tanto los aceites premiados Rincón de la Subbética y Parqueoliva Serie Oro como formatos de cooperativa ideales para el abastecimiento anual de despensa, respaldando directamente a miles de familias olivareras de montaña.
+
+### [Almazara Adamuz, S.L.U](producer:es:623)
+
+En Sierra Morena cordobesa, la almazara de Adamuz elabora virgen extra procedente de olivares de sierra de la variedad nevado azul y picual. Su tienda y venta directa permite adquirir garrafas y botellas con envío directo a domicilio, conservando la autenticidad rústica y el perfil balsámico de los aceites de media montaña.
+
+### [Olivarera Ntra. Sra. de Guadalupe](producer:es:9270)
+
+En Baena (Córdoba), cuna de la D.O.P. Baena, esta cooperativa histórica facilita pedidos directos de sus aceites virgen extra de campiña. Su gama amparada por denominación combina picudo, lechín y hojiblanca, garantizando frescura y precios ajustados de molino.
+
+### [Oleícola San Francisco](producer:es:9194)
+
+En Begíjar (Jaén), esta centenaria almazara familiar fue pionera en el oleoturismo andaluz y el trato cercano con el cliente. Molturan con tecnología moderna y despachan lotes tempranos monovarietales en estuches cuidados, ofreciendo atención directa sobre variedades y fechas de molienda.
 
 <!-- mapa -->
 

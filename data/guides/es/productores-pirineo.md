@@ -51,9 +51,9 @@ En estos valles conviven dos modelos fascinantes y complementarios: la gran coop
 
 Fuentes: [Cadí · Cooperativa y productos](https://cadi.es/) · [Tros de Sort · Quesos propios y agrobotiga](https://trosdesort.cat/).
 
-## Tres proyectos que dan vida a los valles pirenaicos {#productores}
+## Cinco proyectos que dan vida a los valles pirenaicos {#productores}
 
-Tres iconos de la comarca del Alt Urgell y el Pallars Sobirà que representan la dignidad del territorio.
+Cinco iconos de los valles del Pirineo que representan la dignidad, la artesanía y la gastronomía de altura.
 
 ### [Cooperativa Cadí](producer:es:4459)
 
@@ -66,6 +66,14 @@ En Sort (Pallars Sobirà), esta quesería nació del empeño visionario de ganad
 ### [La Original (Forn del Serafí)](producer:es:7784)
 
 En el centro histórico de La Seu d’Urgell, La Original (Forn del Serafí) custodia el arte de la panadería pirenaica de antaño. En su obrador, las harinas molidas a la piedra se mezclan con agua pura de montaña y masas madre vivas, sometiéndose a fermentaciones en bloque de casi un día entero. Sus panes campesinos de corteza crujiente y miga prieta y jugosa son el vehículo perfecto para disfrutar del queso y la mantequilla local.
+
+### [Bodegas Bal Minuta](producer:es:1829)
+
+En Barbenuta (Huesca), en el corazón del Valle de Tena a más de 1.200 metros de altitud, Bal Minuta recuperó viñedos históricos en bancales de montaña. Sus vinos de altura extrema, como Bodovillo y Nieves, destacan por una acidez cristalina, frescura alpina y recuerdos a flores silvestres y fruta blanca nacida del deshielo.
+
+### [Embutidos Artesanos Melsa](producer:es:5394)
+
+En Graus (Huesca), en la comarca pirenaica de la Ribagorza, la familia Melsa elabora charcutería tradicional desde 1860 a lo largo de cinco generaciones. Su célebre Longaniza de Graus y sus embutidos curados al aire seco del Pirineo son un estandarte indiscutible de la cocina campesina de montaña.
 
 <!-- mapa -->
 

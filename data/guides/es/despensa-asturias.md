@@ -51,9 +51,9 @@ A su vez, las pomaradas de manzanos autóctonos salpican los valles templados, m
 
 Fuentes: [Queso Rey Silo · Elaboraciones](https://www.reysilo.es/) · [Sidra Trabanco · Llagar y elaboraciones](https://www.sidratrabanco.com/) · [Conservas Güeyu Mar · Conservas a la brasa](https://conservasgueyumar.com/es/inicio/).
 
-## Tres creadores que definen la excelencia asturiana {#productores}
+## Cinco creadores que definen la excelencia asturiana {#productores}
 
-Tres casas de referencia que han revolucionado la gastronomía del norte con talento propio.
+Cinco casas de referencia que han revolucionado y preservado la gastronomía del norte con autenticidad propia.
 
 ### [Queso Rey Silo](producer:es:10716)
 
@@ -66,6 +66,14 @@ En Lavandera (Gijón), cuatro generaciones de la familia Trabanco han custodiado
 ### [Conservas Güeyumar](producer:es:12944)
 
 En Ribadesella, el chef Abel Álvarez llevó su devoción por el fuego marino a la lata de conserva. Tras asar pescados y mariscos nobles (sardinas, navajas, calamares o mejillones) a la brasa de encina con un punto milimétrico de cocción, los baña en virgen extra premium de arbequina antes de sellar la conserva. El resultado es una textura tersa y un aroma ahumado embriagador que compite con los mejores platos de alta cocina de nuestro país.
+
+### [Quesería Vega de Tordín](producer:es:10666)
+
+En Arenas de Cabrales, Vega de Tordín representa la pureza del queso azul de montaña. Seis generaciones de pastores y queseros miman vacas de pastoreo libre y afinan sus piezas en cuevas naturales calizas donde la brisa fría de los Picos de Europa forja un Cabrales DOP cremoso, profundo y sin aristas.
+
+### [Casa Bartuelo](producer:es:3376)
+
+En Gozón, junto al cabo Peñas, la casería de Casa Bartuelo lleva cinco generaciones cultivando la tierra al borde del mar. Especializados en Faba Asturiana con IGP y verdinas de recolección manual temprana, sus legumbres son el emblema de la mantecosidad que distingue a los grandes guisos de cuchara asturianos.
 
 <!-- mapa -->
 

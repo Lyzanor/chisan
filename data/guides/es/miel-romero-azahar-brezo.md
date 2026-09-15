@@ -49,9 +49,9 @@ En el extremo opuesto reina el brezo (calluna o erica). Cosechada en las brañas
 
 Fuentes: [Apícola Cortés](https://apicolacortes.com/) · [Apícola Laparra](https://apicolalaparra.com/).
 
-## Dos apicultores para recorrer las floraciones {#productores}
+## Cinco apicultores para recorrer las floraciones {#productores}
 
-Dos proyectos que trabajan en sintonía con las floraciones autóctonas y embotellan en crudo cosechas monovarietales irrepetibles.
+Cinco proyectos que trabajan en sintonía con las floraciones autóctonas y embotellan en crudo cosechas monovarietales irrepetibles.
 
 ### [Apícola Cortés](producer:es:828)
 
@@ -60,6 +60,18 @@ En Guadalajara, Apícola Cortés es una referencia imprescindible en mieles de f
 ### [Apícola Laparra (Miel La Orza)](producer:es:833)
 
 Desde la provincia de Cuenca, esta saga apícola domina tanto las floraciones de matorral como las de montaña. Su miel de brezo cosechada en las cotas más altas de la Serranía de Cuenca es un monumento de fuerza terrosa, color ámbar oscuro y persistencia amarga.
+
+### [Mel Muria](producer:es:8583)
+
+En El Perelló (Tarragona), la familia Muria lleva elaborando mieles artesanas desde 1810 a lo largo de seis generaciones. Son una referencia europea en mieles monoflorales, destacando su azahar sutilísimo recolectado en los cítricos del Baix Ebre y su romero brillante de monte calizo.
+
+### [Mieles Amuza](producer:es:8822)
+
+En Castellón, Mieles Amuza recolecta de forma artesanal miel cruda 100% natural. Sus colmenas situadas en las comarcas levantinas aprovechan tanto el estallido floral del azahar de primavera como el romero silvestre de secano, ofreciendo una cristalización limpia y natural.
+
+### [Miel de Brezo Ecológica](producer:es:8684)
+
+En Mirones (Cantabria), bajo la marca Brezomiel, elaboran miel ecológica de brezo puro cosechada en las laderas montañosas cántabras. Oscura, densa y de marcado fondo amargo y floral, es una de las mayores expresiones de la mielada atlántica del norte.
 
 <!-- mapa -->
 

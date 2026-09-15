@@ -51,9 +51,9 @@ Esa diferencia de suelos se traduce en la copa: los tintos del Priorat destacan 
 
 Fuentes: [D.O.Ca. Priorat](https://www.doqpriorat.org/) · [D.O. Montsant](https://domontsant.com/) · [Clos Mogador](https://www.closmogador.com/).
 
-## Dos proyectos que explican el territorio {#productores}
+## Cinco proyectos que explican el territorio {#productores}
 
-Dos bodegas que encarnan la magia de esta tierra: el visionario que lideró el renacimiento del Priorat y la cooperativa centenaria que es el corazón palpitante de Montsant.
+Cinco bodegas maestras que encarnan la magia de esta tierra: los visionarios del renacimiento de la llicorella, la viticultura ecológica de Montsant y la solidez cooperativa.
 
 ### [Clos Mogador](producer:es:4094)
 
@@ -62,6 +62,18 @@ En Gratallops, René Barbier fue el alma pionera que descubrió el potencial inf
 ### [Celler Masroig](producer:es:3701)
 
 Fundada en 1917 en la comarca del Priorat pero adscrita a la D.O. Montsant, esta bodega cooperativa demuestra la fuerza del trabajo colectivo. Miman más de quinientas hectáreas de viñedo propio donde la cariñena (aquí llamada samsó) y la garnacha tinta entregan vinos vibrantes, frescos y profundamente enraizados en su tierra, accesibles y auténticos.
+
+### [Álvaro Palacios](producer:es:719)
+
+Llegado a Gratallops en 1989 junto al grupo pionero de los «Cinco Magníficos», Álvaro Palacios redefinió el prestigio de los vinos españoles en el mundo. Desde viñas de pendiente extrema en costers de llicorella, crea leyendas enológicas como L'Ermita, Finca Dofí o Les Terrasses, aunando misticismo, espiritualidad y una pureza de garnacha inalcanzable.
+
+### [Vinyes Domènech](producer:es:12299)
+
+En Capçanes, en un paraje protegido rodeado de bosques y sotobosque mediterráneo en la D.O. Montsant, Joan Ignasi Domènech practica una viticultura ecológica y biodinámica ejemplar. Su vino Teixar, elaborado con garnacha peluda sobre suelos calcáreos, es uno de los pocos Vinos de Finca Calificada de Cataluña, deslumbrando por su frescura sedosa y notas de hierbas aromáticas.
+
+### [Venus la Universal](producer:es:12105)
+
+En Falset, Sara Pérez y René Barbier júnior crearon Venus la Universal como un canto a la feminidad, la naturaleza y la agricultura libre. Con viñedos viejos ecológicos cultivados en suelos graníticos y arcillosos de Montsant, sus vinos Venus y Dido encandilan por su sapidez fresca, energía vibrante y textura transparente.
 
 <!-- mapa -->
 

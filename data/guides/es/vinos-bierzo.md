@@ -51,9 +51,9 @@ Junto a la mencía, la uva blanca godello vive su propia edad de oro. Recuperada
 
 Fuentes: [D.O. Bierzo](https://www.crdobierzo.es/) · [Losada Vinos de Finca](https://www.losadavinosdefinca.com/) · [Bodegas Emilio Moro Bierzo](https://www.emiliomoro.com/).
 
-## Dos miradas al terruño berciano {#productores}
+## Cinco miradas al terruño berciano {#productores}
 
-Dos proyectos que ilustran la efervescencia enológica de la comarca: la bodega consagrada a la interpretación de las arcillas históricas y el desembarco apasionado por la frescura del godello.
+Cinco proyectos que ilustran la efervescencia enológica de la comarca: la recuperación de parajes históricos, la viticultura ecológica de ladera y la interpretación singular de la mencía y el godello.
 
 ### [Losada Vinos de Finca S.A.](producer:es:8235)
 
@@ -62,6 +62,18 @@ En Cacabelos, Losada Vinos de Finca apostó desde su nacimiento por los suelos d
 ### [Bodegas Emilio Moro - Bierzo S.L.](producer:es:1992)
 
 Cautivados por el potencial del godello, la prestigiosa bodega ribereña Emilio Moro se instaló en Ponferrada para explorar la vertiente blanca del Bierzo. Con vinos como Polvorete y El Zarzal, han demostrado cómo el trabajo respetuoso con el mosto y las lías resalta la frescura aromática y la personalidad mineral de esta uva atlántica.
+
+### [Bodegas Verónica Ortega](producer:es:2455)
+
+Formada en los mejores dominios de Borgoña y el Ródano, Verónica Ortega se instaló en Valtuille de Abajo para interpretar la mencía vieja con una sensibilidad etérea. Con vinificaciones en ánforas de barro y foudres de madera, tintos como ROC o Quite y su godello CAL son prodigios de finura floral, mineralidad de roca y pureza aromática.
+
+### [Casar de Burbia S.l.](producer:es:3462)
+
+En Valtuille de Arriba, la familia Bello cuida viñedos viejos en laderas de montaña con viticultura ecológica certificada. Sus tintos de paraje bajo la saga Tebaida y su godello fermentado en barrica nacen de suelos pedregosos y de cuarcita, mostrando la faceta más estructurada, profunda y mineral del Bierzo alto.
+
+### [Bodega Cuatro Pasos](producer:es:1366)
+
+Desde Cacabelos, Cuatro Pasos elabora mencías procedentes de cepas centenarias plantadas en las zonas altas de montaña del Bierzo. Comprometida con la protección del hábitat del oso pardo, sus vinos ofrecen una entrada amable, vivaz fruta negra y una frescura atlántica accesible que conecta de inmediato con el paisaje.
 
 <!-- mapa -->
 

@@ -52,9 +52,9 @@ El queso de oveja español se bifurca en dos grandes tradiciones tecnológicas:
 
 Fuentes: [Quesería La Antigua](https://queserialaantigua.com/) · [Finca Pascualete](https://fincapascualete.com/) · [El Cabriteru](https://queseriaelcabriteru.com/).
 
-## Tres queserías ovinas con alma propia {#productores}
+## Cinco queserías ovinas con alma propia {#productores}
 
-Tres proyectos que ilustran la maestría en el trabajo con leche de oveja en Castilla, Extremadura y el norte cantábrico.
+Cinco proyectos que ilustran la maestría en el trabajo con leche de oveja en Castilla, Extremadura, Aragón, Andalucía y el norte cantábrico.
 
 ### [Quesería La Antigua de Fuentesaúco](producer:es:10555)
 
@@ -67,6 +67,14 @@ En Trujillo (Cáceres), Finca Pascualete custodia una historia agrícola iniciad
 ### [Quesería El Cabriteru](producer:es:10505)
 
 En Asiego (Asturias), esta quesería demuestra que la leche de oveja también tiene un papel apasionante en los quesos de montaña y en los azules tradicionales de Picos de Europa, aportando una grasa mantecosa que suaviza la potencia de los mohos silvestres.
+
+### [Quesos Sierra de Albarracín](producer:es:10973)
+
+En Albarracín (Teruel), esta quesería familiar transforma exclusivamente la leche de su propia ganadería ovina en los Montes Universales. Con maduraciones lentas sobre tablas de sabina en un clima frío y seco de alta montaña, sus pastas prensadas destacan por una mantecosidad equilibrada y notas nobles a hierba seca y avellana.
+
+### [Quesería Calaveruela](producer:es:10468)
+
+En Fuente Obejuna (Córdoba), la familia de Calaveruela cuida su propio rebaño de ovejas pastando en la dehesa del Guadiato y Los Pedroches. Elaboran quesos de leche cruda de oveja inolvidables como Montevelao o sus tortas afinadas con flores y moho natural, con una cremosidad láctea y elegancia aromática de primer nivel.
 
 <!-- mapa -->
 

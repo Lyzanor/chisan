@@ -51,9 +51,9 @@ Al comprar directamente en origen, plantéate adquirir piezas enteras de tamaño
 
 Fuentes: [Quesería La Antigua](https://queserialaantigua.com/) · [Finca Pascualete](https://fincapascualete.com/) · [Tros de Sort](https://trosdesort.cat/).
 
-## Tres queserías con venta directa impecable {#productores}
+## Cinco queserías con venta directa impecable {#productores}
 
-Tres obradores que han desarrollado tiendas online ejemplares con envíos refrigerados que garantizan que el queso llegue a tu mesa en perfectas condiciones.
+Cinco obradores que han desarrollado un canal directo ejemplar con envíos refrigerados que garantizan que el queso llegue a tu mesa en perfectas condiciones.
 
 ### [Quesería La Antigua de Fuentesaúco](producer:es:10555)
 
@@ -66,6 +66,14 @@ En Trujillo, Finca Pascualete envía directamente sus afamadas Retortas y quesos
 ### [Tros de Sort](producer:es:11930)
 
 En Sort (Lleida), en pleno Pirineo catalán, cinco ganaderos se unieron para elaborar quesos exclusivamente con la leche cruda de sus propias vacas. En su tienda directa puedes conseguir joyas como el Tupí (queso tradicional macerado con aguardiente), el Tou dels Til·lers o quesos de pasta cocida de larga curación alpina.
+
+### [Quesos Sierra de Albarracín](producer:es:10973)
+
+Desde Albarracín (Teruel), esta quesería familiar de montaña despacha directamente ruedas enteras y cuñas al vacío de sus premiados quesos de oveja. Su logística refrigerada permite disfrutar de sus piezas al romero, afinadas al vino tinto o pasta prensada de leche cruda con la frescura intacta del obrador.
+
+### [Quesería Vega de Tordín](producer:es:10666)
+
+En Arenas de Cabrales (Asturias), Vega de Tordín aúna seis generaciones de oficio ganadero y quesero. Su servicio directo envía cuñas y piezas enteras de Queso Cabrales DOP maduradas pacientemente en cueva natural de los Picos de Europa, con envoltorio aislante y frío controlado.
 
 <!-- mapa -->
 

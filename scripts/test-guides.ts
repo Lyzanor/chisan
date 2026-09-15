@@ -182,7 +182,7 @@ test("Markdown is the sole authored body and keeps formatting and exact producer
   const guide = parseGuideMarkdown(text);
   assert.ok(guide.introduction.includes("Un queso"));
   const selection = guide.sections.find((section) => section.type === "producers")!;
-  assert.deepEqual(selection.items.map((item) => item.producerId), [10716, 10555, 10528]);
+  assert.deepEqual(selection.items.map((item) => item.producerId), [10716, 10555, 10528, 10714, 10973]);
   assert.equal(selection.showMap, true);
   const edited = parseGuideMarkdown(text.replace("Un queso cuenta", "Un **queso** cuenta"));
   const html = renderToStaticMarkup(createElement(GuideMarkdown, null, edited.introduction));

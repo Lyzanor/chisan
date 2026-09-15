@@ -6,7 +6,7 @@ country: es
 status: published
 topic: Aceite
 title: "Aceite de oliva: variedades, almazaras y preguntas para elegir"
-description: "Conoce el aceite de oliva a través de Oro Bailén y Almazaras de la Subbética: variedades identificadas, recolección temprana y oficio molinero."
+description: "Conoce el aceite de oliva a través de cinco almazaras de referencia: variedades identificadas, recolección temprana y oficio molinero en Andalucía."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-15
 cover:
@@ -35,7 +35,7 @@ related:
 
 El aceite de oliva virgen extra no es un ingrediente neutro en el fondo de la sartén: es puro zumo de fruta fresca, el fruto de una cosecha que dura apenas unas semanas y de un oficio de almazara donde cada hora cuenta. Para entender de verdad una botella, conviene conectar tres claves: el nombre de quien cultiva y moltura, la referencia concreta que embotella y la variedad de aceituna que le otorga su carácter aromático.
 
-Esta guía propone adentrarse en ese universo a través de dos de las casas más premiadas y respetadas de Andalucía: Oro Bailén, en las estribaciones de Sierra Morena, y Almazaras de la Subbética, en el corazón calizo y quebrado de Córdoba.
+Esta guía propone adentrarse en ese universo a través de cinco de las casas más premiadas y representativas del sur: desde las estribaciones de Sierra Morena y la campiña cordobesa hasta el paisaje árido de Tabernas.
 
 ## La aceituna en el árbol y el aroma en la copa {#nombres}
 
@@ -47,9 +47,9 @@ En Oro Bailén, su célebre Reserva Familiar Picual estalla en nariz con notas v
 
 Fuentes: [Oro Bailén · Reserva Familiar Picual y Arbequina](https://www.orobailen.com/en/node/311) · [Almazaras de la Subbética · Rincón de la Subbética](https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/).
 
-## Dos almazaras de referencia {#productores}
+## Cinco almazaras de referencia {#productores}
 
-Dos proyectos andaluces que demuestran cómo el cuidado agronómico en el campo y la precisión térmica en el molino transforman cada cosecha en una experiencia sensorial irrepetible.
+Cinco proyectos andaluces que demuestran cómo el cuidado agronómico en el campo y la precisión térmica en el molino transforman cada cosecha en una experiencia sensorial irrepetible.
 
 ### [Aceites Oro Bailén](producer:es:200)
 
@@ -58,6 +58,18 @@ En Villanueva de la Reina, la familia Gálvez-González revolucionó el concepto
 ### [Almazaras de la Subbética, S.C.A.](producer:es:678)
 
 En pleno Parque Natural de las Sierras Subbéticas, esta cooperativa de Carcabuey cuida olivares centenarios y de montaña en pendientes pronunciadas. Su Rincón de la Subbética, elaborado con hojiblanca de recolección ecológica temprana, acumula los mayores reconocimientos internacionales gracias a su equilibrio entre un frutado intenso y una elegancia serena.
+
+### [Cortijo de la Torre](producer:es:4648)
+
+En Arjona (Jaén), la familia Aceituno moldea desde hace generaciones un picual de terruño de excepcional pureza. Su aceite de cosecha temprana sobresale por una intensidad verde limpia, recuerdos aromáticos a higuera y plátano verde, y una persistencia en boca firme, estructurada y balsámica.
+
+### [Palacios Gutiérrez](producer:es:9420)
+
+En Aguilar de la Frontera (Córdoba), esta almazara familiar preserva el mimo artesano en la molienda de hojiblanca y picual de campiña. Sus aceites vírgenes extra destacan por su equilibrio aterciopelado, con suaves notas de manzana verde, alloza y un picante muy comedido y armónico.
+
+### [Oro del Desierto](producer:es:9329)
+
+En el desierto de Tabernas (Almería), la familia Alonso elabora virgen extra ecológico bajo más de tres mil horas de sol al año y un riego solar por goteo de alta precisión. Sus monovarietales y su célebre coupage de hojiblanca, picual y arbequina regalan una personalidad singularísima, donde la aridez del terreno concentra polifenoles y aromas de extraordinaria viveza.
 
 <!-- mapa -->
 
@@ -76,4 +88,4 @@ Para apreciar los matices de cada variedad, basta un plato blanco o una copa peq
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Elegimos almazaras que documentan sus parcelas, variedades y métodos de extracción en frío, priorizando la recolección temprana y la transparencia en el origen. Esta selección no es un ranking comercial, sino una invitación a descubrir el paisaje andaluz a través de dos casas ejemplares.
+Elegimos almazaras que documentan sus parcelas, variedades y métodos de extracción en frío, priorizando la recolección temprana y la transparencia en el origen. Esta selección no es un ranking comercial, sino una invitación a descubrir el paisaje andaluz a través de cinco casas ejemplares.

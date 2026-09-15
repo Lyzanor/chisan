@@ -6,7 +6,7 @@ country: es
 status: published
 topic: Aceite
 title: "Picual, arbequina y hojiblanca: comparar aceites con nombre propio"
-description: "Aprende a diferenciar las tres grandes variedades de aceite español a través de notas de cata, aromas de campo y dos almazaras maestras."
+description: "Aprende a diferenciar las tres grandes variedades de aceite español a través de notas de cata, aromas de campo y cinco almazaras maestras."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-15
 cover:
@@ -47,9 +47,9 @@ La arbequina, originaria de Arbeca en Lleida pero aclimatada con maestría en el
 
 Fuentes: [Oro Bailén · Reserva Familiar](https://www.orobailen.com/en/node/311) · [Almazaras de la Subbética · Rincón de la Subbética](https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/).
 
-## Las casas detrás de las tres variedades {#productores}
+## Cinco casas maestras detrás de las variedades {#productores}
 
-Dos proyectos que han llevado el cultivo de estas variedades a su máxima expresión gastronómica en el momento óptimo de envero.
+Cinco proyectos que han llevado el cultivo y la molienda de estas variedades a su máxima expresión gastronómica en el momento óptimo de envero.
 
 ### [Aceites Oro Bailén](producer:es:200)
 
@@ -58,6 +58,18 @@ En las faldas de Sierra Morena, Oro Bailén es sinónimo de maestría agronómic
 ### [Almazaras de la Subbética, S.C.A.](producer:es:678)
 
 Desde Carcabuey, esta cooperativa cordobesa cuida olivares tradicionales en pendiente donde la hojiblanca encuentra su máxima nobleza. Su referencia Rincón de la Subbética se recolecta en los primeros días de campaña para atrapar una complejidad balsámica única, convirtiéndose en el estándar dorado de esta variedad.
+
+### [Oro del Desierto](producer:es:9329)
+
+En el árido término de Tabernas (Almería), esta almazara familiar ecológica embotella monovarietales de arbequina, hojiblanca y picual cosechados en su momento justo. La insolación extrema y el contraste térmico del desierto moldean unos perfiles sensoriales vibrantes y un coupage temprano de elegancia magistral.
+
+### [Alma de Cántaro](producer:es:615)
+
+En Bujalance (Córdoba), Alma de Cántaro mima olivares familiares de arbequina y picual en plena campiña. Su proceso de recolección nocturna y extracción inmediata da como resultado un arbequina de finísima textura aterciopelada y un picual equilibrado con recuerdos a hierbabuena y almendra fresca.
+
+### [Cortijo de la Torre](producer:es:4648)
+
+En Arjona (Jaén), Cortijo de la Torre exprime la quintaesencia del picual tradicional jiennense. Con aceitunas recolectadas en octubre en parcelas seleccionadas, su virgen extra despliega notas nítidas de tomatera, alcachofa silvestre y un picor noble que perdura en el retrogusto.
 
 <!-- mapa -->
 
