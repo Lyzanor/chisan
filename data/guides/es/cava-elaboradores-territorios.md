@@ -770,30 +770,3 @@ Figura en el listado del consejo como BODEGAS PEÑALBA LOPEZ, S.L.; su instalaci
 ## Nuestro criterio editorial {#criterio-editorial}
 
 Incluimos cada productor del catálogo cuya instalación figura en el listado de instalaciones elaboradoras de cava certificadas que el Consejo Regulador publicó el 28 de abril de 2026. Relacionamos cada razón social del listado con su identidad pública mediante la ficha del consejo, su aviso legal o la misma dirección publicada, y registramos la certificación en la ficha del productor con su fuente. Las bodegas que han dejado la DOP no se incluyen. Las instalaciones pendientes se añadirán cuando una fuente actual confirme su identidad pública y su oferta, y la guía se revisará con cada nueva edición del listado. No incluye catas ni clasificaciones.
-=======
-Fundada por el maestro Agustí Torelló Mata, esta bodega familiar es un símbolo universal de rigor. Elaboran exclusivamente cavas de añada sin adición de azúcar (Brut Nature), vinificando parcelas viejas ecológicas. Su mítico Kripta —en su icónica botella con forma de ánfora romana sin base plana— madura durante más de cinco años en cava subterránea, entregando una textura cremosa, recuerdos a bollería hojaldrada y una mineralidad apabullante.
-
-### [Codorníu (Raventós Codorníu)](producer:es:4108)
-
-En 1872, Josep Raventós Fatjó elaboró las primeras botellas de champán español tras regresar de Francia. Su monumental bodega modernista en Sant Sadurní, diseñada por Josep Puig i Cadafalch y declarada Monumento Histórico-Artístico, alberga más de treinta kilómetros de galerías subterráneas. En sus gamas altas de paraje (como Ars Collecta), Codorníu demuestra la vigencia de sus viñedos históricos y su maestría en la crianza prolongada.
-
-<!-- mapa -->
-
-## Desmontando el mito del azúcar {#etiqueta}
-
-La etiqueta del cava indica con exactitud el nivel de dulzor residual:
-- **Brut Nature**: cero gramos de azúcar añadido tras el degüelle. Es la expresión más pura y transparente de la uva y la añada.
-- **Extra Brut y Brut**: con un toque mínimo de licor de expedición (hasta 6 y 12 g/l), ideales para paladares que buscan una redondez amable sin perder frescura.
-- **Semi-seco y Dulce**: destinados exclusivamente a postres y sobremesas, aunque la tendencia gastronómica actual premia los espumosos secos para acompañar toda la comida.
-
-## El cava como rey de la mesa {#territorios}
-
-El cava no debe esperar al brindis final: es uno de los vinos más versátiles de la gastronomía mundial:
-- **Aperitivos y embutidos ibéricos**: la acidez y el carbónico limpian la grasa del jamón de bellota y despiertan el apetito.
-- **Arroces, fideuàs y paellas**: un cava Gran Reserva con cuerpo sostiene la potencia marina del sofrito y el marisco.
-- **Pescados al horno y aves**: la cremosidad de la burbuja madura armoniza a la perfección con una lubina a la sal o una pularda asada.
-
-## Nuestro criterio editorial {#criterio-editorial}
-
-Respaldamos a elaboradores que apuestan por la viticultura ecológica, las variedades históricas del Penedès y largas crianzas sobre lías. El gran cava español se mide cara a cara con los mejores espumosos del planeta.
->>>>>>> f8fa8a8ec (editorial(guides): elevate guides with storytelling narrative, unique covers and open maps)
