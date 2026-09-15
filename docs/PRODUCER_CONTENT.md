@@ -384,8 +384,8 @@ while keeping approved files intact. Base profiles remain public. Expiry never
 deletes editorial knowledge or turns a product image into a free gallery image.
 
 The header combines the main CSV image with gallery thumbnails. Selecting a
-thumbnail changes the featured view; enlargement supports previous/next, swipe,
-arrow keys, Escape, focus restoration and reduced motion. Product-owned images
+thumbnail changes the featured view, with touch swipe support between photos.
+Product-owned images
 remain with their product cards. HTML and the single-producer API share the same
 standalone-gallery loader; the API exposes it as `gallery`, independently of
 `expanded`. Rendering is on the server, the main picture loads promptly and

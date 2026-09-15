@@ -2,12 +2,6 @@
 
 import Image from "next/image";
 import { useRef, useState, type TouchEvent } from "react";
-import {
-  CaretLeftIcon,
-  CaretRightIcon,
-  CornersOutIcon,
-  XIcon,
-} from "@phosphor-icons/react";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
 import type { Locale } from "@/lib/i18n/locales";
 import { producerProfileLabels } from "@/lib/i18n/producer-profile";
@@ -36,8 +30,6 @@ export function ProducerGallery({
   const [index, setIndex] = useState(0);
   const activeIndex = Math.min(index, photos.length - 1);
   const photo = photos[activeIndex];
-  const dialog = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<HTMLButtonElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const words = producerProfileLabels(locale);
   const step = (by: number) =>
@@ -73,14 +65,10 @@ export function ProducerGallery({
   return (
     <div className={styles.gallery} aria-label={words.gallery}>
       <figure className={styles.featured}>
-        <button
-          ref={trigger}
-          type="button"
-          className={styles.open}
-          aria-label={`${words.enlarge}: ${photo.alt}`}
-          onClick={() => dialog.current?.showModal()}
-          onTouchStart={startSwipe}
-          onTouchEnd={swipe}
+        <div
+          className={styles.frame}
+          onTouchStart={photos.length > 1 ? startSwipe : undefined}
+          onTouchEnd={photos.length > 1 ? swipe : undefined}
         >
           <Image
             key={photo.src}
@@ -94,10 +82,7 @@ export function ProducerGallery({
             loading="eager"
             className={styles.image}
           />
-          <span className={styles.enlarge}>
-            <CornersOutIcon size={20} aria-hidden="true" />
-          </span>
-        </button>
+        </div>
         {photo.caption || photo.credit ? (
           <figcaption lang={photo.locale}>{caption}</figcaption>
         ) : null}
@@ -123,64 +108,6 @@ export function ProducerGallery({
           ))}
         </div>
       ) : null}
-      <dialog
-        ref={dialog}
-        className={styles.dialog}
-        aria-label={words.gallery}
-        onClose={() => trigger.current?.focus()}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) dialog.current?.close();
-        }}
-        onKeyDown={(event) => {
-          if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-            event.preventDefault();
-            step(event.key === "ArrowLeft" ? -1 : 1);
-          }
-        }}
-      >
-        <div className={styles.dialogBody}>
-          <button
-            type="button"
-            className={styles.close}
-            aria-label={words.close}
-            onClick={() => dialog.current?.close()}
-          >
-            <XIcon size={24} />
-          </button>
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            lang={photo.locale}
-            width={photo.width}
-            height={photo.height}
-            sizes="90vw"
-            onTouchStart={startSwipe}
-            onTouchEnd={swipe}
-          />
-          <p lang={photo.locale}>{caption}</p>
-          {photos.length > 1 ? (
-            <div className={styles.controls}>
-              <button
-                type="button"
-                aria-label={words.previous}
-                onClick={() => step(-1)}
-              >
-                <CaretLeftIcon size={24} />
-              </button>
-              <span aria-live="polite">
-                {activeIndex + 1} / {photos.length}
-              </span>
-              <button
-                type="button"
-                aria-label={words.next}
-                onClick={() => step(1)}
-              >
-                <CaretRightIcon size={24} />
-              </button>
-            </div>
-          ) : null}
-        </div>
-      </dialog>
     </div>
   );
 }

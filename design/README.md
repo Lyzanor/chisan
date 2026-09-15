@@ -235,11 +235,10 @@ The follow action is one icon target at the end of the name row. Pointer hover
 and keyboard focus unfold its label with a short width animation; a touch screen
 unfolds it on the first tap and acts on the second, so the action is never taken
 unseen. The label overlays free space, so the name never reflows. The
-reviewed main photo starts beside the title, with small gallery thumbnails and
-an accessible enlargement viewer. On mobile it fills the header width below the
+reviewed main photo starts beside the title, with small gallery thumbnails.
+On mobile it fills the header width below the
 name, municipality and categories, before the description. The inline gallery
-uses thumbnails and swipe without a counter or arrow bar; previous/next controls
-remain in the enlargement viewer. Premium uses the dedicated green header token
+uses thumbnails and swipe without a counter or arrow bar. Premium uses the dedicated green header token
 independently of ownership.
 
 Verified ownership receives an explicit badge beside the name and an explanation

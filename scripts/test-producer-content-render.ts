@@ -114,3 +114,56 @@ test("commercial sections show certification scope and professional contact with
   assert.doesNotMatch(render({ correo: "", telefono: "" }), /href=/);
   assert.doesNotMatch(render({ venta_profesionales: "no" }), /href=/);
 });
+
+test("producer gallery renders native non-clickable images without enlargement buttons or dialogs", async () => {
+  const hooks = registerHooks({
+    load(url, context, nextLoad) {
+      if (new URL(url).pathname.endsWith(".module.css")) {
+        return {
+          format: "module",
+          source: "export default {};",
+          shortCircuit: true,
+        };
+      }
+      return nextLoad(url, context);
+    },
+  });
+  try {
+    const { ProducerGallery } = await import("../components/producer-gallery");
+    const featured = {
+      src: "/productores/es/content/1/main.webp",
+      alt: "Foto principal",
+      width: 640,
+      height: 480,
+    };
+    const gallery = [
+      {
+        src: "/productores/es/content/1/extra.webp",
+        alt: "Foto adicional",
+        width: 640,
+        height: 480,
+        caption: "Campo de olivos",
+      },
+    ];
+
+    const singleHtml = renderToStaticMarkup(
+      createElement(ProducerGallery, { featured, gallery: [], locale: "es" }),
+    );
+    assert.doesNotMatch(singleHtml, /<figure[^>]*><button/);
+    assert.doesNotMatch(singleHtml, /<dialog/);
+    assert.doesNotMatch(singleHtml, /Ampliar foto/);
+
+    const multiHtml = renderToStaticMarkup(
+      createElement(ProducerGallery, { featured, gallery, locale: "es" }),
+    );
+    assert.match(multiHtml, /main\.webp/);
+    assert.match(multiHtml, /extra\.webp/);
+    assert.doesNotMatch(multiHtml, /<figure[^>]*><button/);
+    assert.doesNotMatch(multiHtml, /<dialog/);
+    assert.doesNotMatch(multiHtml, /Ampliar foto/);
+    assert.match(multiHtml, /<button[^>]*aria-label="2\. Foto adicional"/);
+  } finally {
+    hooks.deregister();
+  }
+});
+

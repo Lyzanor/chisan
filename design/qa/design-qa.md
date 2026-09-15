@@ -3,6 +3,16 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-15 — Producer profile photo enlarge button and preview removal
+
+Visual review: **passed** at 1440 × 1024 and 390 × 844.
+
+### Fidelity review and corrections
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Profile photo gallery | Removed the enlarge overlay button and dialog preview on click from both the single photo and multi-photo gallery. Clicking or tapping the photo no longer opens the enlargement modal, preventing accidental triggers during page scroll and mobile touch interaction. Standalone images retain thumbnail switching and touch swipe navigation. Full-size photo viewing remains available directly via native browser context ("open image in new tab"). |
+
 ## 2026-09-14 — Product imagery, illustrated footer and QR invitation
 
 Visual review: **passed** at 1440 × 1024 and 390 × 844. The approved
