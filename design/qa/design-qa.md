@@ -3,6 +3,19 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-16 — Guide article layout: initial table of contents, full-width reading, producer grid and expanded map
+
+Visual review: **passed** at 1440 × 1024 and 390 × 844.
+
+### Fidelity review and corrections
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Table of contents | Relocated the index ("En esta guía") from a sticky 240px sidebar to an opening editorial block at the beginning of the article right after the cover image. Numbered sections are displayed in a responsive auto-fit grid (`minmax(min(100%, 300px), 1fr)`) with clean inline text links and integrated auxiliary links ("Nuestro criterio editorial" and "Fuentes y revisión") on a subtle bottom rule. |
+| Article container | Removed the 2-column sidebar constraint (`.articleLayout`), allowing the article to occupy the full page width (`1216px` at 1440px viewport). Maintained optimal typographic reading measure (`max-width: 68ch`) on body paragraphs and list items. |
+| Producer selection | Replaced the forced horizontal slider (`overflow-x: auto` / `scroll-snap-type`) with a responsive CSS grid (`repeat(auto-fill, minmax(min(100%, 340px), 1fr))`). Producers display 3 cards across desktop without horizontal overflow or hidden cards, 2 cards on medium viewports, and 1 card on mobile viewports. |
+| Guide map | Expanded the interactive map container to full article width (`1216px` on desktop) and increased its height from 420px to 560px on desktop (440px on tablet, 360px on mobile). Markers and interactive cards have ample room across the territory without vertical cramping. |
+
 ## 2026-09-15 — Producer profile photo enlarge button and preview removal
 
 Visual review: **passed** at 1440 × 1024 and 390 × 844.
