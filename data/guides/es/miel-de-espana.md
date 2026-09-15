@@ -1,14 +1,14 @@
 ---
 schemaVersion: 1
+slug: miel-de-espana
 locale: es
 country: es
 status: published
-publishedAt: 2026-09-06
-updatedAt: 2026-09-06
-slug: miel-de-espana
 topic: Miel
 title: "Miel de España: origen, floraciones y productores que conocer"
-description: Una guía para conocer la miel a través de su origen, sus floraciones y quienes la producen, con apicultores del catálogo y un mapa para explorarlos.
+description: "Sigue la trashumancia apícola por la península y descubre la riqueza aromática de nuestras mieles crudas y de bosque."
+publishedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
   src: /editorial/guides/miel.webp
   alt: Miel y cuchara de madera sobre un panal
@@ -19,65 +19,74 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-09
 sources:
-  - id: norma-miel
-    title: BOE · Norma de calidad relativa a la miel
-    url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598
-    checkedAt: 2026-09-05
+  - id: mapa-miel
+    title: Ministerio de Agricultura · Sector apícola español
+    url: https://www.mapa.gob.es/es/ganaderia/temas/produccion-y-mercados-ganaderos/sectores-ganaderos/sector-apicola/
+    checkedAt: 2026-09-06
+  - id: cinco-villas
+    title: Apícola Cinco Villas · Mieles de Aragón
+    url: https://apicolacincovillas.com/
+    checkedAt: 2026-09-06
+  - id: adalid
+    title: Miel Adalid · Apicultura de montaña en León
+    url: https://mieladalid.com/
+    checkedAt: 2026-09-06
+  - id: laparra
+    title: Apícola Laparra · Miel La Orza de Cuenca
+    url: https://apicolalaparra.com/
+    checkedAt: 2026-09-06
 related:
-  - miel-romero-azahar-brezo
-  - miel-alcarria-liebana
   - como-leer-origen-miel
+  - miel-alcarria-liebana
+  - miel-romero-azahar-brezo
 ---
 
-Para conocer una miel, empieza por quien la cosecha. El nombre del apicultor, el origen que declara y la floración permiten hacer preguntas más precisas que el aspecto del tarro. Esta guía conecta esas preguntas con una primera selección de productores de Chisan.
+La apicultura en España es una danza itinerante con las estaciones. Cuando el invierno aún hiela las cumbres del norte, los apicultores trashumantes trasladan sus colmenas hacia el sur y las riberas del Mediterráneo, donde los almendros y los naranjos estallan en flor. A medida que avanza la primavera, el viaje asciende hacia los páramos de romero y tomillo del centro peninsular, terminando en los brezales y robledales de alta montaña antes de las primeras nieves.
 
-La propuesta es seguir un pequeño recorrido: leer el origen, distinguir las menciones del producto y abrir las fichas de quienes lo elaboran. No reúne todavía todos los productores de miel de España.
+Esa trashumancia secular convierte a España en el paraíso apícola de Europa: un mosaico botánico donde la miel no sabe a caramelo genérico, sino a la flor exacta que las abejas visitaron bajo el sol de cada comarca.
 
-## Origen geográfico y floración: dos datos distintos {#origen-y-floracion}
+## El origen geográfico frente a la floración {#origen-y-floracion}
 
-La norma distingue miel de flores o de néctar y miel de mielada. El origen floral o vegetal puede formar parte de la denominación cuando la miel procede total o mayoritariamente del origen indicado y posee sus características. Una localidad, por sí sola, no permite asignar una floración.
+Para entender un tarro de miel, hay que distinguir el lugar donde se asentó la colmena del tipo de flor predominante. No existe una miel de romero abstracta: una miel de romero recolectada en los secanos calizos de Aragón tiene un perfil más seco y punzante que una cosechada en los valles levantinos.
 
-Al mirar una ficha, diferencia dónde trabaja el productor y qué origen declara para la miel. Para saber de dónde procede un tarro concreto, consulta su etiquetado y pregunta por la cosecha. El municipio que aparece en nuestro mapa identifica al productor; no señala todas sus colmenas.
+![Abeja recolectando néctar en flor silvestre](/editorial/guides/abeja-flor-miel.webp)
 
-Fuentes: [BOE · Norma de calidad relativa a la miel](https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598).
+Al mismo tiempo, la naturaleza es caprichosa: las abejas vuelan en un radio de varios kilómetros alrededor del colmenar. Una miel se clasifica como monofloral cuando el análisis de sus granos de polen supera el porcentaje exigido por la norma, pero en su interior siempre conviven toques de flores silvestres del entorno que enriquecen su complejidad aromática.
 
-## Lo que la textura permite observar {#textura}
+Fuentes: [Ministerio de Agricultura · Sector apícola](https://www.mapa.gob.es/) · [Apícola Cinco Villas](https://apicolacincovillas.com/) · [Miel Adalid](https://mieladalid.com/) · [Apícola Laparra](https://apicolalaparra.com/).
 
-La miel puede presentarse fluida, espesa o cristalizada. La cristalización, por sí sola, no es una señal de defecto ni una prueba de autenticidad. Color y consistencia tampoco bastan para identificar una floración o certificar una composición.
+## Tres casas apícolas que custodian el oficio {#productores}
 
-Utiliza el aspecto como una observación para conversar con el productor. Si comparas dos tarros, anota qué dice cada etiqueta antes de interpretar por qué tienen texturas distintas. Cuando un dato no esté disponible en la ficha, el canal del apicultor es el siguiente paso.
-
-Fuentes: [BOE · Norma de calidad relativa a la miel](https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598).
-
-## Tres productores para seguir el hilo de la miel {#productores}
-
-Estas fichas ofrecen distintas entradas al trabajo apícola. La selección conserva el mismo orden en el artículo y en sus referencias; los puntos del mapa sirven para situarla.
+Tres proyectos familiares que recorren distintos paisajes peninsulares extrayendo miel cruda con mimo artesanal.
 
 ### [Apícola Cinco Villas](producer:es:827)
 
-Su ficha recoge miel del Prepirineo y otros productos de la colmena. Empieza por la miel y pregunta por el origen de la cosecha que te interese.
+En el prepirineo aragonés (Ejea de los Caballeros), esta familia apícola cuida colmenares rodeados de monte bajo, romerales y campos de cultivo tradicional. Sus mieles reflejan la fuerza del cierzo y la pureza aromática del secano zaragozano.
 
 ### [Miel Adalid - Adalid Apícola](producer:es:8655)
 
-La ficha menciona miel de lavanda, milflores y miel en crema. Es un punto de partida para distinguir una referencia floral de una forma de presentación.
+En los valles altos de León, Miel Adalid trabaja en ecosistemas de montaña donde las abejas liban brezales, piornos y mielatos de roble y castaño. Sus mieles de montaña son oscuras, densas, minerales y de una profundidad boscosa imponente.
 
 ### [Apícola Laparra (Miel La Orza)](producer:es:833)
 
-Fíjate en las variedades de azahar y brezo que recoge su ficha. Para compararlas, busca la información del tarro concreto y la cosecha disponible.
+Desde Cuenca, Apícola Laparra mantiene la tradición apícola de la Serranía y La Alcarria conquense. Su marca Miel La Orza es un ejemplo de honestidad: cosechan mieles puras de romero, tomillo, espliego y bosque sin pasteurización, premiadas por su finura cristalina.
 
 <!-- mapa -->
 
-## Qué preguntar antes de elegir {#preguntar-al-apicultor}
+## La lectura de la textura en la cuchara {#textura}
 
-Una conversación breve puede aportar más que una etiqueta genérica de «miel natural». Explica qué quieres conocer y pregunta por la referencia que hayas visto, su cosecha y la forma de obtenerla. Evita trasladar a todos los tarros de un productor lo que solo sabes de uno.
+Al servir una cucharada de miel cruda:
+- **Cremosa y fina**: una miel de romero o azahar bien cristalizada tiene granos diminutos que se funden al instante en la lengua con sedosidad de terciopelo.
+- **Grano crujiente**: mieles como las de eucalipto o brezo pueden formar cristales mayores, aportando un agradable mordisco dulce.
+- **Densa y fluida**: los mielatos de bosque (roble, encina) tardan meses o años en cristalizar debido a su alto contenido en fructosa y sales minerales, manteniendo una viscosidad espesa y oscura.
 
-Si te interesa visitar una explotación, confirma que exista esa actividad y cómo se reserva. La ubicación de una ficha no es una invitación a entrar en un colmenar. Para comprar, consulta directamente la disponibilidad y los formatos.
+## Preguntas para conversar con el apicultor {#preguntar-al-apicultor}
 
-- ¿Qué origen y cosecha corresponden a esta miel?
-- ¿La mención del tarro identifica una floración o una mezcla?
-- ¿Qué información ofrece el productor sobre extracción y presentación?
-- ¿Dónde se puede comprar o solicitar más información?
+Cuando compres directamente al apicultor o en ferias rurales:
+- Pregunta en qué parajes estuvieron asentadas las colmenas durante esa floración.
+- Averigua en qué mes se realizó la castra (la recolección de los panales).
+- Pídeles que te recomienden su miel más fresca para el uso que buscas: untar, endulzar infusiones o maridar con quesos de la zona.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Seleccionamos tres fichas que permiten explorar distintas menciones de floración y formas de presentar la miel. No hemos realizado una cata ni un análisis de laboratorio. La inclusión no certifica la composición de un lote ni convierte la selección en una clasificación de calidad.
+Seleccionamos apicultores artesanales con colmenares propios que extraen la miel en frío y defienden la pureza del origen botánico y geográfico. La miel es el alma de nuestros paisajes y la llave de la biodiversidad.

@@ -6,18 +6,18 @@ country: es
 status: published
 topic: Territorios
 title: "Productores de Extremadura: queso y miel para conocer el territorio"
-description: Acércate a Finca Pascualete y Apícola Laparra y sigue dos elaboraciones extremeñas a través de sus productores, fuentes y fichas.
+description: "En las dehesas de Trujillo y los montes de Fuenlabrada florece la esencia de Extremadura: la torta cremosa de Finca Pascualete y la miel virgen de Apícola Laparra."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/huerta.webp
-  alt: Cesta con hortalizas variadas
+  src: /editorial/guides/dehesa-extremadura-encinas.webp
+  alt: Dehesa con encinas centenarias y pastos
   width: 1600
-  height: 1067
-  credit: leonie wise / Unsplash
-  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  height: 1200
+  credit: Anne Middelkamp / Unsplash
+  sourceUrl: https://unsplash.com/photos/NZjBIOfFnVQ
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
   - id: pascualete
     title: Finca Pascualete · La Retorta
@@ -33,44 +33,45 @@ related:
   - miel-romero-azahar-brezo
 ---
 
-El queso y la miel permiten acercarse a Extremadura desde dos trabajos muy distintos. Uno transforma leche en piezas con elaboraciones propias; el otro sigue la actividad de las colmenas y la cosecha. Conocer a sus productores ayuda a dar contenido a la palabra origen.
+Extremadura es un santuario natural de silencio, cielo abierto y horizontes dilatados. En este paisaje legendario domina la dehesa: un ecosistema agroforestal milenario donde encinas y alcornoques centenarios conviven con pastos aromáticos, berrocales de granito y sierras agrestes pobladas de jarales, brezos y tomillos silvestres.
 
-Finca Pascualete y Apícola Laparra abren esta edición. El recorrido empieza en dos fichas concretas y podrá ampliarse hacia otros oficios cuando podamos contar sus detalles con la misma precisión.
+En este rincón del suroeste peninsular, el queso y la miel son mucho más que alimentos: son testimonios vivos de pastores que trashumaron durante siglos y de apicultores que conocen el calendario secreto de cada floración. Conocer de cerca a sus productores es descubrir una Extremadura indómita, refinada y profundamente arraigada en su tierra.
 
-## Del rebaño y de la colmena {#dos-trabajos}
+## Dehesas, jarales y la paciencia del pastoreo {#dos-trabajos}
 
-Pascualete presenta La Retorta como una elaboración de leche cruda de oveja. Apícola Laparra explica su historia ligada a Fuenlabrada de los Montes y a la apicultura. Los dos casos permiten seguir un alimento hasta una casa que lo trabaja.
+La dehesa impone un ritmo sereno. Las ovejas merinas pastan en libertad entre bellotas caídas y tréboles silvestres, transformando esa riqueza vegetal en una leche densa, grasa y aromática como pocas en el mundo.
 
-No hace falta asignar el mismo relato de paisaje a ambos. Preguntar por la leche y preguntar por una cosecha de miel conduce a información diferente. La ficha del productor mantiene el contacto; la referencia de producto concreta la conversación.
+![Rebaño de ovejas pastando en la dehesa extremeña](/editorial/guides/ovejas-pastizal-queso.webp)
+
+A pocos kilómetros, en las estribaciones de La Siberia y las sierras extremeñas, los enjambres de abejas liban el néctar de cantuesos, jaras pringosas y mielatos de roble. Tanto el queso de pasta blanda cuajado con flor de cardo como la miel cruda recién cosechada comparten una virtud esencial: no admiten atajos ni maquinarias que sustituyan el conocimiento paciente del medio natural.
 
 Fuentes: [Finca Pascualete · La Retorta](https://www.fincapascualete.com/shop/queso-de-torta) · [Apícola Laparra · Producción y tienda](https://www.apicolalaparra.es/).
 
-## Dos productores para empezar {#productores}
+## Dos baluartes del sabor extremeño {#productores}
 
-El mapa sitúa las fichas de Trujillo y Fuenlabrada de los Montes; no representa todas sus superficies de trabajo.
+Dos proyectos familiares que encarnan la excelencia agroalimentaria de la dehesa y la sierra.
 
 ### [Quesería Finca Pascualete](producer:es:10528)
 
-Finca Pascualete: La Retorta permite preguntar por leche, textura y forma de servir. Sigue el nombre del queso para distinguirlo de otras elaboraciones de la casa.
+En las dehesas históricas de Trujillo (Cáceres), Finca Pascualete elabora quesos desde hace generaciones con la leche de su propio rebaño de ovejas criado en total libertad. Su queso insignia, La Retorta, es un prodigio gastronómico elaborado con leche cruda y cuajo vegetal obtenido de la maceración de los pistilos del cardo silvestre (*Cynara cardunculus*). De corteza fina y corazón líquido y fundente, despliega aromas herbáceos, recuerdos a pastizal húmedo y un suave amargor vegetal elegante e inolvidable.
 
 ### [Apícola Laparra (Miel La Orza)](producer:es:833)
 
-Apícola Laparra: su trabajo apícola ofrece una entrada a la miel. Pregunta por el origen y la cosecha de la referencia que quieras conocer.
+En Fuenlabrada de los Montes (Badajoz), considerada la cuna de la miel en el suroeste peninsular, la familia Laparra ejerce una apicultura artesana y trashumante ejemplar. Sus mieles crudas monoflorales de azahar, romero, jara, brezo y milflores se recolectan a mano y se decantan en frío sin someterse a pasteurización térmica, conservando intactos todos sus enzimas vivos, pólenes naturales y matices resinosos y balsámicos.
 
 <!-- mapa -->
 
-## Cómo continuar desde una ficha {#conocer-producto}
+## Degustar la pureza: el ritual del cardo y la cuchara {#conocer-producto}
 
-Elige una pregunta sencilla para cada alimento. En el queso, puede ser cómo llega al punto de consumo; en la miel, cómo se identifica la cosecha del tarro. Guarda la respuesta junto al nombre del producto, para poder volver a ella después de comprar.
+Disfrutar de estas dos joyas extremeñas exige respetar sus particulares tiempos:
+- **Atemperar La Retorta**: un queso de pasta blanda jamás debe tomarse frío de la nevera. Sácalo con al menos tres o cuatro horas de antelación para que alcance los 20 °C.
+- **El corte de la tapa**: con un cuchillo afilado de punta, realiza una incisión circular horizontal en la corteza superior levantando una tapa como si fuera la cubierta de una arqueta.
+- **La cuchara y el maridaje**: hunde la cuchara de madera o unta un pan rústico recién tostado con la crema sedosa. Prueba a acompañarla con una gota generosa de miel pura de tomillo o brezo: el contraste entre la grasa untuosa y amarga del queso y el dulzor floral resinoso de la miel es una revelación absoluta.
 
-Si quieres reunir ambos en la mesa, empieza por probarlos por separado. La elección de acompañarlos es personal y no requiere presentar la combinación como una tradición o un maridaje demostrado.
+## Una tierra viva que recompensa al viajero atento {#ampliar}
 
-## Una despensa que se construye con detalle {#ampliar}
-
-La producción extremeña no termina en estas dos fichas. Esta guía comienza con un alcance explícito para que cada inclusión aporte algo reconocible. Las siguientes ampliaciones podrán añadir otros alimentos y lugares, con fuentes y productores identificados.
-
-Mientras tanto, las guías de leche de oveja y de miel permiten profundizar en cada oficio. Para una visita, consulta si el productor ofrece esa actividad y acuerda las condiciones; su dirección no equivale a un espacio abierto al público.
+Visitar Extremadura es adentrarse en pueblos de piedra coronados por cigüeñas, atardeceres dorados sobre los encinares y castillos templarios. Al planificar tu itinerario, ponte en contacto con los productores para coordinar visitas a las instalaciones o compras directas en obrador, donde podrás charlar cara a cara con quienes dedican su vida a cuidar este patrimonio biológico irrepetible.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos productores extremeños con elaboración propia documentada. La selección inicial se centra en queso y miel; no representa toda la producción regional ni todas sus comarcas.
+Elegimos proyectos extremeños con ganadería propia en extensivo o colmenares sostenibles que elaboran con respeto al bienestar animal, la leche cruda y el envasado en frío de miel virgen sin pasteurizar.

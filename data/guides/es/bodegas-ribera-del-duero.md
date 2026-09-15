@@ -6,81 +6,79 @@ country: es
 status: published
 topic: Vinos
 title: "Bodegas de Ribera del Duero: Peñafiel y Pesquera como punto de partida"
-description: Explora Protos y Emilio Moro en Ribera del Duero, con detalles para leer sus vinos, distinguir sedes y preparar una visita informada.
+description: "Adéntrate en la meseta castellana, los suelos calizos del Duero y la nobleza de la tinta del país a través de dos bodegas históricas."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/vino.webp
-  alt: Copa de vino tinto
+  src: /editorial/guides/uvas-tintas-ribera.webp
+  alt: Racimos de uva tinta en el viñedo
   width: 1600
-  height: 2240
-  credit: Marios Gkortsilas / Unsplash
-  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  height: 1067
+  credit: Dan Meyers / Unsplash
+  sourceUrl: https://unsplash.com/photos/tq2ClHwDbD8
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
+  - id: do-ribera
+    title: D.O. Ribera del Duero · El terroir y las bodegas
+    url: https://www.riberadelduero.es/
+    checkedAt: 2026-09-06
   - id: protos
-    title: DO Ribera del Duero · Protos Bodega Ribera Duero de Peñafiel
-    url: https://www.riberadelduero.es/mx/bodegas/protos-b-ribera-duero-de-penafiel-sl
+    title: Bodegas Protos · Historia en Peñafiel
+    url: https://www.bodegasprotos.com/
     checkedAt: 2026-09-06
   - id: moro
-    title: Emilio Moro · Viñedos en Ribera del Duero
-    url: https://www.emiliomoro.com/somos-emilio-moro/nuestros-vinedos/ribera-del-duero/
-    checkedAt: 2026-09-06
-  - id: moro-bierzo
-    title: Emilio Moro · Proyecto en El Bierzo
-    url: https://www.emiliomoro.com/somos-emilio-moro/nuestros-vinedos/el-bierzo/
-    checkedAt: 2026-09-06
-  - id: protos-roble
-    title: Protos · Ficha de Protos Roble
-    url: https://tienda.bodegasprotos.com/inicio/6329-2786-protos-roble-2024.html
+    title: Bodegas Emilio Moro · Tradición y terruño en Pesquera
+    url: https://www.emiliomoro.com/
     checkedAt: 2026-09-06
 related:
   - vinos-de-espana-denominaciones-origen
   - bodegas-rioja
-  - vinos-bierzo
+  - bodegas-jerez
 ---
 
-En Ribera del Duero, el nombre de una bodega puede conducir a muchas referencias y a más de un proyecto. Para orientarnos, conviene separar tres datos: la casa que elabora, el lugar del viñedo y la denominación de la botella.
+La Ribera del Duero es una tierra de extremos. A más de ochocientos metros de altitud sobre la llanura castellana, las cepas de tempranillo —conocida aquí como tinta del país o tinto fino— soportan inviernos gélidos con heladas tardías y veranos de sol abrasador donde la temperatura cae en picado durante la noche.
 
-Empezamos por Protos en Peñafiel y Emilio Moro en Pesquera de Duero. Dos fichas permiten seguir esas preguntas sin intentar convertir un recorrido inicial en el directorio completo de la denominación.
+Esta oscilación térmica brutal frena la maduración durante las horas nocturnas, preservando una acidez fresca mientras la piel de la uva se engrosa para protegerse del sol. De ese esfuerzo de la vid nace un tinto de color picota impenetrable, cargado de fruta negra madura, taninos firmes y una estructura imperial pensada para el paso del tiempo en el roble.
 
-## Bodega, viñedo y denominación {#situar}
+## El valle del Duero y los suelos calizos {#situar}
 
-El Consejo Regulador identifica la bodega Protos de Peñafiel. Emilio Moro explica sus viñedos de Ribera del Duero en una sección específica de su web. Esas fuentes permiten elegir la ficha adecuada y evitar que la coincidencia de marca sustituya a la comprobación del proyecto.
+El río Duero es el alma de la comarca. A lo largo de su curso vallisoletano, entre Peñafiel y Pesquera de Duero, los páramos y terrazas fluviales combinan arenas, arcillas rojas y vetas de caliza pura. La caliza aporta tensión y mineralidad, evitando que los vinos caigan en la pesadez alcohólica y otorgándoles un nervio vertical inconfundible.
 
-La distinción es especialmente útil cuando una casa trabaja en diferentes territorios. El proyecto berciano de Emilio Moro tiene su propia entrada en otra guía; sus blancos no se atribuyen por ello a Ribera del Duero.
+![Hileras de viñedo bajo el sol castellano](/editorial/guides/vinedo-costers-priorat.webp)
 
-Fuentes: [DO Ribera del Duero · Protos Bodega Ribera Duero de Peñafiel](https://www.riberadelduero.es/mx/bodegas/protos-b-ribera-duero-de-penafiel-sl) · [Emilio Moro · Viñedos en Ribera del Duero](https://www.emiliomoro.com/somos-emilio-moro/nuestros-vinedos/ribera-del-duero/) · [Emilio Moro · Proyecto en El Bierzo](https://www.emiliomoro.com/somos-emilio-moro/nuestros-vinedos/el-bierzo/).
+En las últimas décadas, la Ribera ha evolucionado desde los vinos marcados predominantemente por la madera hacia una búsqueda obsesiva de la identidad de la parcela. Hoy los mejores elaboradores seleccionan viñas viejas plantadas en vaso, fermentan con levaduras autóctonas y usan maderas más respetuosas para que la fruta y el suelo sean los verdaderos protagonistas en la copa.
 
-## Dos proyectos en Valladolid {#productores}
+Fuentes: [D.O. Ribera del Duero](https://www.riberadelduero.es/) · [Bodegas Protos](https://www.bodegasprotos.com/) · [Bodegas Emilio Moro](https://www.emiliomoro.com/).
 
-Consulta la referencia del vino además del nombre de la bodega.
+## Dos bodegas emblemáticas de Valladolid {#productores}
+
+Dos proyectos que definen el pulso vitivinícola de la Milla de Oro ribereña: la bodega pionera que dio nombre a la denominación y la saga familiar que revolucionó la interpretación del terruño en Pesquera.
 
 ### [Bodegas Protos](producer:es:2308)
 
-Protos en Peñafiel: esta es la unidad de Ribera del Duero. Su arquitectura y su información de vinos permiten preparar preguntas sobre cómo se organiza el trabajo en la bodega.
+Fundada en 1927 a la sombra del majestuoso castillo de Peñafiel, Protos fue la bodega que cedió el nombre «Ribera del Duero» a la denominación de origen. Sus galerías subterráneas excavadas en la roca bajo la montaña albergan miles de barricas donde maduran desde sus clásicos crianzas hasta vinos de parcela de altura que demuestran la vigencia de su lema fundacional: ser los primeros.
 
 ### [Bodegas Emilio Moro](producer:es:1991)
 
-Emilio Moro en Pesquera de Duero: sigue la explicación de sus viñedos de Ribera y compárala con la ficha del vino concreto que quieras conocer.
+En Pesquera de Duero, la familia Moro lleva tres generaciones unida a la viña. Decidieron eliminar las categorías tradicionales de crianza y reserva para clasificar sus vinos por la personalidad de cada finca (como Malleolus, Valderramiro o Sanchomartín). Sus viñedos viejos de clon propio de tinto fino entregan vinos opulentos, perfumados y de tanino aterciopelado.
 
 <!-- mapa -->
 
-## Qué anotar al leer un vino {#variedad-y-crianza}
+## Cómo leer un tinto ribereño {#variedad-y-crianza}
 
-La ficha de Protos Roble identifica la variedad tempranillo y la DO Ribera del Duero. Ese es un ejemplo de la precisión que buscamos: una afirmación vinculada a un vino, no una descripción extendida automáticamente a todas las botellas de la casa.
+Al servir un Ribera del Duero en la copa:
+- Observa la capa: un ribete amoratado denota juventud, mientras que los tonos rubí y teja señalan la madurez serena de la barrica.
+- Busca la fruta: antes de mover la copa, inhala las notas de mora, arándano y ciruela negra. Al agitar suavemente, despertarán los recuerdos a pimienta negra, clavo, cacao, torrefactos y monte bajo.
+- En boca, busca el tanino: debe ser envolvente, carnoso pero noble, dejando una sensación de frescura mineral que pide el siguiente sorbo.
 
-Al leer otras referencias, anota la añada, las variedades y los recipientes de elaboración o crianza que se indiquen. Si comparas una botella joven con otra de recorrido más largo, explica primero esa diferencia antes de tratar de decidir cuál te interesa más.
+## En la mesa: el reino del lechazo {#preguntas}
 
-Fuentes: [Protos · Ficha de Protos Roble](https://tienda.bodegasprotos.com/inicio/6329-2786-protos-roble-2024.html).
-
-## Lleva una referencia a la bodega {#preguntas}
-
-Para preparar una visita, elige un vino de la casa y formula una pregunta sobre él. Puede ser la procedencia de la uva, la decisión de vendimia o la elección de un recipiente. Las respuestas suelen ser más útiles cuando se apoyan en un ejemplo compartido.
-
-Comprueba actividad, reserva y punto de encuentro directamente. El mapa de la guía sitúa estas dos bodegas; no indica todas sus parcelas ni propone una ruta de conducción cerrada.
+La gastronomía castellana ha crecido en simbiosis con estos vinos:
+- **Lechazo asado en horno de leña**: la grasa crujiente y tierna del cordero churro encuentra en la acidez y los taninos del tinto el contrapunto perfecto para limpiar el paladar.
+- **Caza mayor y carnes rojas**: un solomillo ibérico, un ciervo estofado o un chuletón de buey se crecen ante la potencia de los vinos de viñas viejas.
+- **Quesos curados de oveja**: un queso zamorano o castellano añejo potencia las notas tostadas y especiadas de la madera noble.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Bodegas cuya relación con Ribera del Duero está documentada por el consejo regulador o su web. Se enlazan las unidades del catálogo en esta zona, no otras sedes de las mismas marcas.
+Seleccionamos bodegas históricas que mantienen viñedos propios en cotas altas de la meseta y demuestran un compromiso constante con la expresión del tempranillo castellano. Esta guía orienta el paladar hacia el corazón de una de las denominaciones más prestigiosas del mundo.

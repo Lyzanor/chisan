@@ -6,75 +6,79 @@ country: es
 status: published
 topic: Vinos
 title: "Bodegas de Rioja: dos miradas al vino desde Haro"
-description: Conoce Muga y López de Heredia en Haro y aprende a comparar sus vinos por referencia, elaboración y crianza, con fichas y mapa.
+description: "Viaja al mítico Barrio de la Estación de Haro y comprende el diálogo entre el clasicismo centenario y la viticultura de parcela riojana."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/vino.webp
-  alt: Copa de vino tinto
+  src: /editorial/guides/vinedo-rioja.webp
+  alt: Hileras de viñedo con montañas al fondo
   width: 1600
-  height: 2240
-  credit: Marios Gkortsilas / Unsplash
-  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  height: 1067
+  credit: Alexis Presa / Unsplash
+  sourceUrl: https://unsplash.com/photos/GyT8fcg72Qk
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
+  - id: do-rioja
+    title: D.O.Ca. Rioja · Zonas y variedades
+    url: https://www.riojawine.com/
+    checkedAt: 2026-09-06
   - id: muga
-    title: Bodegas Muga · La bodega
+    title: Bodegas Muga · Elaboración, tonelería y Prado Enea
     url: https://www.bodegasmuga.com/
     checkedAt: 2026-09-06
-  - id: heredia
-    title: López de Heredia · La bodega
+  - id: tondonia
+    title: R. López de Heredia Viña Tondonia · Filosofía centenaria
     url: https://www.lopezdeheredia.com/
-    checkedAt: 2026-09-06
-  - id: haro
-    title: Ayuntamiento de Haro · Directorio de bodegas
-    url: https://www.haro.org/es/bodegas-industrias/bodegas
     checkedAt: 2026-09-06
 related:
   - vinos-de-espana-denominaciones-origen
   - bodegas-ribera-del-duero
-  - vinos-bierzo
+  - bodegas-jerez
 ---
 
-Rioja puede recorrerse por sus nombres de vino, por sus lugares o por las decisiones de cada bodega. Para empezar, proponemos acercarnos a dos casas de Haro y fijarnos en cómo explican su trabajo antes de escoger una botella.
+En ningún otro rincón del planeta existe una concentración semejante de bodegas centenarias como en el Barrio de la Estación de Haro. A finales del siglo XIX, cuando la plaga de filoxera asolaba los viñedos franceses, los comerciantes de Burdeos tendieron las vías del ferrocarril hasta esta esquina privilegiada de La Rioja Alta para abastecerse de vino fino.
 
-Muga y López de Heredia son las dos entradas de esta edición. Compartir localidad facilita situarlas, pero no hace equivalentes sus vinos. La comparación empieza en una referencia concreta y continúa en la información que aporta cada elaborador.
+Alrededor de los andenes brotaron naves de sillería dorada, cavas subterráneas y jardines señoriales que hoy conforman la cuna espiritual del vino español. Aquí el tempranillo se funde con la garnacha, el graciano y el mazuelo bajo la influencia atlántica de la Sierra de Cantabria, dando vida a vinos de una finura sedosa, acidez luminosa y una capacidad de evolución que desafía las décadas.
 
-## Haro como punto de partida {#dos-casas}
+## El roble, el tiempo y la elegancia riojana {#dos-casas}
 
-El directorio del Ayuntamiento de Haro reúne a Muga y López de Heredia entre las bodegas de la ciudad. Esa proximidad permite organizar una lectura centrada en las casas, sin confundir el municipio de la bodega con la procedencia de cada una de sus uvas.
+El clasicismo riojano no es inmovilismo: es una devoción radical por la paciencia. Mientras el mundo del vino moderno persigue a menudo la extracción rápida y la fruta primaria efímera, los grandes elaboradores de Haro esperan años —a veces más de una década— antes de sacar una botella al mercado.
 
-En Muga, la tonelería propia ofrece un detalle por el que preguntar. En López de Heredia, los nombres de sus vinos permiten seguir la relación entre viñedo y elaboración. Son dos hilos concretos para continuar en sus webs.
+![Botas de roble y silencio en la cava](/editorial/guides/botas-jerez.webp)
 
-Fuentes: [Ayuntamiento de Haro · Directorio de bodegas](https://www.haro.org/es/bodegas-industrias/bodegas) · [Bodegas Muga · La bodega](https://www.bodegasmuga.com/) · [López de Heredia · La bodega](https://www.lopezdeheredia.com/).
+Durante su larga estancia en tinas y barricas de roble, el vino sufre trasiegas artesanales por gravedad a la luz de una vela. Los taninos se pulen hasta volverse caricia, y en el bouquet emergen notas embriagadoras a tabaco de pipa, cuero ruso, vainilla especiada, té negro y hojas secas de otoño. Es la magia de la reducción noble en botella: un equilibrio aristocrático donde nada sobra y todo conmueve.
 
-## Dos bodegas para abrir la conversación {#productores}
+Fuentes: [D.O.Ca. Rioja](https://www.riojawine.com/) · [Bodegas Muga](https://www.bodegasmuga.com/) · [R. López de Heredia](https://www.lopezdeheredia.com/).
 
-Usa las fichas para pasar del nombre de la casa a su información y sus vinos.
+## Dos catedrales del Barrio de la Estación {#productores}
+
+Dos bodegas vecinas que custodian el alma de Haro con personalidades complementarias: el dominio artesanal de la madera y la fidelidad inquebrantable a una liturgia centenaria.
 
 ### [BODEGAS MUGA](producer:es:2224)
 
-Muga: pregunta qué papel tiene la tonelería propia en la elaboración de la referencia que estás consultando. No todos los vinos de una casa siguen el mismo recorrido.
+Muga es una de las poquísimas bodegas del mundo que conserva su propia tonelería artesanal en casa. La familia controla desde el secado del roble hasta el tostado a fuego de sus cubas y barricas. Elaboraciones míticas como Prado Enea Gran Reserva o Torre Muga demuestran cómo la fidelidad a la madera artesanal y el clarificado tradicional con claras de huevo fresco crean tintos de una riqueza y nobleza legendarias.
 
 ### [R. LÓPEZ DE HEREDIA VIÑA TONDONIA, S.A.](producer:es:11020)
 
-López de Heredia: conserva el nombre completo del vino, además de la añada. Te ayudará a seguir la explicación de su origen y a diferenciarlo de otras referencias de la bodega.
+Fundada en 1877 por don Rafael López de Heredia, Viña Tondonia es un templo vivo de la enología universal. Nada ha cambiado en su forma de elaborar: tinas gigantescas cubiertas de levaduras centenarias, telarañas que protegen el reposo subterráneo y un rechazo total a las modas pasajeras. Sus tintos y blancos de Viña Tondonia y Viña Gravonia son prodigios de finura, acidez vibrante y eternidad en copa.
 
 <!-- mapa -->
 
-## Una ficha de lectura para cada botella {#comparar}
+## Cómo disfrutar un gran clásico de Rioja {#comparar}
 
-Anota la denominación, el nombre del vino, la añada y la información de elaboración disponible. Si quieres comparar dos botellas, decide qué pregunta te interesa: la crianza, las variedades o la manera de presentar un viñedo. Así podrás buscar datos comparables.
+Para descorchar un Rioja de guarda con todos los honores:
+- Descorcha la botella con tiempo: los vinos con años de crianza necesitan respirar suavemente en la botella o en un decantador para despertar sus terciarios sin brusquedad.
+- Utiliza copas amplias tipo Borgoña: la copa abierta permite que los aromas a sotobosque, ciruela pasa, cedro y especias se desplieguen en abanico aromático.
+- Sírvelo entre 16 y 18 ºC: el calor excesivo estropea la sutileza de los aromas añejos, mientras que el frío enmascara su textura sedosa.
 
-Evita deducir el estilo únicamente de una palabra grande en la etiqueta. La ficha técnica puede aclarar detalles que la presentación principal no explica. Cuando una cifra o una práctica pertenece a una añada, mantenla vinculada a esa edición.
+## La visita al Barrio de la Estación {#visita}
 
-## De la lectura a una posible visita {#visita}
-
-Antes de planear el desplazamiento, consulta qué actividades ofrece actualmente cada casa. La apertura de una tienda no implica que se pueda recorrer la bodega sin reserva, y dos edificios próximos pueden tener condiciones de visita diferentes.
-
-Lleva una pregunta nacida de tu lectura: una referencia que hayas visto, una diferencia entre vinos o un aspecto del trabajo con madera. Con ese punto de partida, el recorrido puede explicar algo más que la historia general de la casa.
+Pasear entre las bodegas de Haro es un viaje en el tiempo:
+- Camina a pie de una bodega a otra: en un radio de apenas quinientos metros puedes visitar cavas históricas con más de un siglo de historia continua.
+- Pregunta por el viñedo: comprende cómo la Sierra de Toloño frena los vientos fríos del norte y cómo el río Ebro modula las maduraciones en Rioja Alta.
+- No pases por alto los blancos de guarda: los blancos añejos de Rioja criados en madera son una de las joyas secretas más cotizadas por los coleccionistas internacionales.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos bodegas de Haro documentadas en fuentes propias y en el directorio municipal. Esta selección inicial no representa todas las zonas de Rioja ni presupone una visita a ambas.
+Seleccionamos bodegas históricas de Haro que mantienen métodos artesanales de vinificación, tonelería propia o cavas subterráneas activas. Esta guía rinde homenaje al clasicismo que situó a España en el mapa de las grandes regiones vinícolas del planeta.

@@ -16,7 +16,7 @@ import {
 import styles from "./guides.module.css";
 
 export function GuideMap({ items }: { items: ProducerSelectionItem[] }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [selectedKey, setSelectedKey] = useState("");
   const [focusRequest, setFocusRequest] = useState<ProducerMapFocusRequest>();
   const focusRequestId = useRef(0);
@@ -106,7 +106,6 @@ export function GuideMap({ items }: { items: ProducerSelectionItem[] }) {
       )}
       <p className={styles.caption}>
         {points.length} de {items.length} productores con ubicación en el mapa.
-        Todas las fichas están enlazadas arriba.
       </p>
     </div>
   );

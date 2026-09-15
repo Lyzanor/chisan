@@ -250,4 +250,12 @@ test("published guides require an attributable local cover and share it in metad
   assert.ok(
     JSON.stringify(buildGuideStructuredData(guide)).includes(guide.cover.src),
   );
+
+  const published = listPublishedGuides();
+  const covers = new Set(published.map((entry) => entry.cover.src));
+  assert.equal(
+    covers.size,
+    published.length,
+    "every published guide must have a distinct cover image",
+  );
 });

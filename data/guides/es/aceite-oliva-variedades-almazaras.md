@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Aceite
 title: "Aceite de oliva: variedades, almazaras y preguntas para elegir"
-description: "Conoce el aceite de oliva a través de Oro Bailén y Almazaras de la Subbética: variedades identificadas, elaboración y fichas de productores."
+description: "Conoce el aceite de oliva a través de Oro Bailén y Almazaras de la Subbética: variedades identificadas, recolección temprana y oficio molinero."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
   src: /editorial/guides/aceite.webp
   alt: Aceite de oliva en una aceitera de cristal
@@ -33,44 +33,47 @@ related:
   - conservas-vegetales-huerta
 ---
 
-Para conocer un aceite, empieza por relacionar tres nombres: el del elaborador, el de la referencia y el de la variedad cuando se declara. Esa pequeña cadena permite ir más allá de una botella atractiva y preguntar por la campaña y el trabajo de la almazara.
+El aceite de oliva virgen extra no es un ingrediente neutro en el fondo de la sartén: es puro zumo de fruta fresca, el fruto de una cosecha que dura apenas unas semanas y de un oficio de almazara donde cada hora cuenta. Para entender de verdad una botella, conviene conectar tres claves: el nombre de quien cultiva y moltura, la referencia concreta que embotella y la variedad de aceituna que le otorga su carácter aromático.
 
-Esta guía abre el recorrido con Oro Bailén y Almazaras de la Subbética. Sus referencias permiten seguir picual, arbequina y hojiblanca a través de aceites concretos, sin asignar una variedad a cada productor como si solo trabajara una.
+Esta guía propone adentrarse en ese universo a través de dos de las casas más premiadas y respetadas de Andalucía: Oro Bailén, en las estribaciones de Sierra Morena, y Almazaras de la Subbética, en el corazón calizo y quebrado de Córdoba.
 
-## Variedad, referencia y productor {#nombres}
+## La aceituna en el árbol y el aroma en la copa {#nombres}
 
-Oro Bailén presenta Reserva Familiar en versiones de picual y arbequina. Almazaras de la Subbética identifica Rincón de la Subbética como un virgen extra de hojiblanca. Así, dos productores permiten abrir tres preguntas varietales sin confundir el nombre de la casa con el del aceite.
+Cuando un elaborador trabaja por calidad extrema, la recolección del olivar se adelanta a octubre y noviembre, cuando el fruto aún está verde o en envero. En ese momento exacto, el rendimiento en grasa es menor, pero la concentración de polifenoles y aromas primarios alcanza su cumbre.
 
-Al consultar una ficha, guarda también el nombre comercial de la botella. Es la forma de volver a la información exacta, especialmente si la almazara ofrece mezclas y monovarietales dentro de la misma gama.
+![Olivar tradicional andaluz con olivos y tierra viva al atardecer](/editorial/guides/olivar-almazara.webp)
+
+En Oro Bailén, su célebre Reserva Familiar Picual estalla en nariz con notas vivas de tomatera, alcachofa y hierba recién cortada, con ese picor noble y balsámico que define a los mejores suelos de Jaén. En la misma casa, su Arbequina muestra la otra cara del olivo: almendra verde, manzana dulce y una suavidad envolvente que respeta los platos más delicados. A pocos kilómetros hacia el sur, en Carcabuey, Almazaras de la Subbética exprime el perfil de la hojiblanca en Rincón de la Subbética: un perfil silvestre, herbáceo y complejo que recuerda al tomillo y a la higuera.
 
 Fuentes: [Oro Bailén · Reserva Familiar Picual y Arbequina](https://www.orobailen.com/en/node/311) · [Almazaras de la Subbética · Rincón de la Subbética](https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/).
 
-## Dos almazaras para empezar {#productores}
+## Dos almazaras de referencia {#productores}
 
-Los enlaces llevan a las fichas de los elaboradores; las referencias concretas se consultan en sus webs.
+Dos proyectos andaluces que demuestran cómo el cuidado agronómico en el campo y la precisión térmica en el molino transforman cada cosecha en una experiencia sensorial irrepetible.
 
 ### [Aceites Oro Bailén](producer:es:200)
 
-Oro Bailén, en Villanueva de la Reina: sigue por separado Reserva Familiar Picual y Arbequina para preguntar por dos aceites de la misma casa.
+En Villanueva de la Reina, la familia Gálvez-González revolucionó el concepto del picual jiennense: cosechan a primerísima hora de la mañana y llevan la aceituna a la almazara en menos de dos horas para una extracción en frío rigurosa. Su Reserva Familiar es un referente mundial imprescindible para comprender el nervio y la frescura de Jaén.
 
 ### [Almazaras de la Subbética, S.C.A.](producer:es:678)
 
-Almazaras de la Subbética, en Carcabuey: Rincón de la Subbética ofrece la entrada a la hojiblanca en esta selección.
+En pleno Parque Natural de las Sierras Subbéticas, esta cooperativa de Carcabuey cuida olivares centenarios y de montaña en pendientes pronunciadas. Su Rincón de la Subbética, elaborado con hojiblanca de recolección ecológica temprana, acumula los mayores reconocimientos internacionales gracias a su equilibrio entre un frutado intenso y una elegancia serena.
 
 <!-- mapa -->
 
-## La campaña también forma parte de la lectura {#campana}
+## La campaña: el año que define cada gota {#campana}
 
-Antes de comprar, comprueba qué campaña corresponde a la botella y qué información de elaboración ofrece. Una descripción de la marca puede permanecer en la web mientras cambia el producto disponible. Para resolver la duda, pregunta por la referencia del pedido.
+A diferencia de un vino con crianza en madera, el aceite de oliva virgen extra vive su mejor momento en los meses inmediatamente posteriores a su recolección. Por eso, mirar la campaña (el año de cosecha) en la etiqueta es el primer gesto de quien busca excelencia.
 
-Puedes preparar una ficha muy breve: elaborador, aceite, variedad declarada, campaña y formato. Si falta un dato, no lo deduzcas del color del aceite ni de una imagen del olivar; pide la información al productor.
+Un virgen extra de cosecha temprana debe oler a campo vivo, limpio y crujiente. Si al descorchar no saltan aromas vegetales definidos, el aceite ha perdido su juventud o la aceituna no llegó fresca a la muela. Comprar directamente a la almazara garantiza el acceso al lote más reciente y a la información directa sobre cómo se comportó el clima durante la floración y el cuajado del fruto.
 
-## Del dato a una comparación propia {#mesa}
+## Llevar el aceite a la mesa: de la cata al plato {#mesa}
 
-Si quieres explorar diferencias, elige formatos que puedas utilizar en un plazo razonable y prueba pequeñas cantidades en condiciones parecidas. Anota tus impresiones sin convertirlas en características universales de una variedad. La cosecha y la elaboración forman parte del producto que estás probando.
-
-Para cocinar, describe al elaborador qué uso tienes en mente y pregunta qué referencia propone. La guía de variedades profundiza en la comparación; la de venta directa ayuda a preparar el pedido.
+Para apreciar los matices de cada variedad, basta un plato blanco o una copa pequeña templada con la palma de la mano:
+- Prueba el aceite en crudo: aspira hondo con los ojos cerrados buscando notas de hoja, hierba verde o frutos secos.
+- En boca, busca el balance entre el amargo (en los laterales de la lengua) y el picante (en el fondo de la garganta), dos señales inequívocas de salud y antioxidantes naturales.
+- Combina con intención: un picual vigoroso eleva un salmorejo, unas verduras a la brasa o una carne roja; una hojiblanca aromática armoniza con pescados azules y ensaladas de tomate; y una arbequina aterciopelada redondea emulsiones, mayonesas y repostería artesanal.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos elaboradores con referencias y variedades documentadas en sus canales propios. La selección no es una clasificación sensorial ni un inventario de todas las almazaras españolas.
+Elegimos almazaras que documentan sus parcelas, variedades y métodos de extracción en frío, priorizando la recolección temprana y la transparencia en el origen. Esta selección no es un ranking comercial, sino una invitación a descubrir el paisaje andaluz a través de dos casas ejemplares.

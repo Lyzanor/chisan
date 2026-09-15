@@ -453,3 +453,9 @@
 .coverCompact img { aspect-ratio: 16 / 9; }
 .cover figcaption { margin-top: var(--chisan-space-3); color: var(--muted); font-size: 0.75rem; line-height: 1.6; }
 @media (max-width: 760px) { .cover img { aspect-ratio: 4 / 3; } }
+
+.reading figure { margin: var(--chisan-space-8) 0; }
+.reading figure img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; border-radius: var(--chisan-radius-object); }
+.reading figure figcaption { margin-top: var(--chisan-space-2); color: var(--muted); font-size: 0.8125rem; line-height: 1.5; font-style: italic; }
+
+

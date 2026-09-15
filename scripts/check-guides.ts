@@ -23,7 +23,13 @@ async function main() {
       }
     }
   }
+  const seenCovers = new Map<string, string>();
   for (const guide of guides) {
+    if (seenCovers.has(guide.cover.src))
+      throw new Error(
+        `Duplicate cover '${guide.cover.src}' shared by '${seenCovers.get(guide.cover.src)}' and '${guide.slug}'`,
+      );
+    seenCovers.set(guide.cover.src, guide.slug);
     const imagePath = `public${guide.cover.src}`;
     if (!existsSync(imagePath)) throw new Error(`${guide.slug}: missing cover`);
     const image = await sharp(imagePath).metadata();

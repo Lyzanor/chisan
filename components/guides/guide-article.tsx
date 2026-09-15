@@ -123,13 +123,6 @@ export function GuideArticle({
                             <Link href={producer.href}>{producer.name}</Link>
                           </h3>
                           <GuideMarkdown>{producer.focus}</GuideMarkdown>
-                          <Link
-                            href={producer.href}
-                            className={styles.textLink}
-                          >
-                            Conocer al productor{" "}
-                            <span aria-hidden="true">↗</span>
-                          </Link>
                         </div>
                       </div>
                     ))}

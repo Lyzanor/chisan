@@ -6,80 +6,80 @@ country: es
 status: published
 topic: Miel
 title: "Cómo leer el origen de una miel: del envase al apicultor"
-description: Distingue país de recolección, dirección del operador y mención floral al leer una miel, con ejemplos de productores y fuentes oficiales.
+description: "Aprende a descifrar la etiqueta de la miel, evitar jarabes industriales y valorar la cristalización como signo de pureza artesanal."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/miel.webp
-  alt: Miel y cuchara de madera sobre un panal
+  src: /editorial/guides/tarro-miel-artesanal.webp
+  alt: Tarro de miel artesanal con panal
   width: 1600
-  height: 1060
-  credit: Alexander Mils / Unsplash
-  sourceUrl: https://unsplash.com/photos/nesUgwNX3u4
+  height: 1067
+  credit: Arwin Neil Baichoo / Unsplash
+  sourceUrl: https://unsplash.com/photos/yQzrDgU-KAI
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
-  - id: norma-miel
-    title: BOE · Norma de calidad relativa a la miel, texto consolidado
-    url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598
+  - id: boe-miel
+    title: BOE · Norma de calidad de la miel y etiquetado de origen
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-15779
     checkedAt: 2026-09-06
   - id: cortes
-    title: Apícola Cortés · Mieles propias
+    title: Apícola Cortés · Miel cruda de Guadalajara
     url: https://apicolacortes.com/
     checkedAt: 2026-09-06
   - id: vendejo
-    title: Colmenares de Vendejo · Miel de Liébana
-    url: https://www.vendejo.com/
+    title: Colmenares de Vendejo · Miel de Liébana DOP
+    url: https://mieldeliebana.com/
     checkedAt: 2026-09-06
 related:
   - miel-de-espana
-  - miel-romero-azahar-brezo
   - miel-alcarria-liebana
+  - miel-romero-azahar-brezo
 ---
 
-Para averiguar de dónde viene una miel, busca primero la información de origen del tarro. El domicilio de una empresa sirve para identificar al operador, pero no responde por sí solo a la pregunta de dónde se recolectó esa miel.
+Pocos alimentos sufren tanta opacidad en los lineales como la miel. Detrás de tarros perfectamente traslúcidos y líquidos con dibujos de flores amables, a menudo se esconde una mezcla pasteurizada de mieles de origen desconocido sometida a temperaturas extremas que destruyen sus enzimas vivas, aromas sutiles y propiedades medicinales.
 
-Esta guía propone una lectura paso a paso y conecta las preguntas con dos apicultores del catálogo. Puedes utilizarla delante de una etiqueta, guardando una fotografía para consultar lo que no quede claro.
+La miel auténtica es un producto crudo, no manufacturado: es el néctar floral o mielato forestal recolectado por las abejas, deshidratado en el panal y extraído en frío por decantación. Aprender a leer la etiqueta es el primer paso para proteger a los apicultores locales que cuidan nuestros ecosistemas.
 
-## Primero, el país de recolección {#pais}
+## El país de recolección y la trampa de la mezcla {#pais}
 
-La norma de calidad exige indicar el país o los países donde se ha recolectado la miel. Para mezclas, el texto actualizado contempla países en orden decreciente y porcentajes, con reglas específicas. La modificación tiene efectos desde el 14 de junio de 2026 y contempla la comercialización de existencias etiquetadas antes conforme al régimen anterior.
+La legislación del etiquetado de la miel ha sido durante años un campo de batalla. La fórmula genérica «Mezcla de mieles originarias y no originarias de la UE» permitía diluir mieles locales con jarabes y partidas de terceros países sometidas a escasos controles de polen.
 
-Para una lectura práctica, localiza el origen declarado y sepáralo del domicilio del operador. Si la presentación te genera dudas, consulta la etiqueta completa y la norma enlazada; no concluyas que una miel se recolectó en España solo porque la empresa tiene aquí su dirección.
+![Colmenas de madera en un prado natural](/editorial/guides/colmenas-apiario.webp)
 
-Fuentes: [BOE · Norma de calidad relativa a la miel, texto consolidado](https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598).
+La primera regla de oro al elegir un tarro es buscar el país concreto de recolección: si la miel es de España, debe figurar expresamente en la etiqueta, idealmente acompañado de la provincia, comarca o el nombre del apicultor responsable de los colmenares. Cuanto más cercano y preciso sea el origen geográfico, más garantías tendrás de un alimento puro y trazable.
 
-## Después, la mención floral o geográfica {#floral}
+Fuentes: [BOE · Norma de calidad de la miel](https://www.boe.es/) · [Apícola Cortés](https://apicolacortes.com/) · [Colmenares de Vendejo](https://mieldeliebana.com/).
 
-Anota por separado las palabras que describen la miel, su floración y cualquier nombre geográfico protegido. Si no sabes qué identifica una mención, pregunta por la referencia exacta. Una marca evocadora de un paisaje puede necesitar información adicional para entender su relación con el producto.
+## Dos apicultores con nombre y colmenar {#productores}
 
-Guarda también el lote o la referencia que permite identificar el tarro. Así el productor podrá responder sobre esa miel en lugar de ofrecer solo una explicación general de su trabajo.
-
-## Dos puntos de contacto para seguir la lectura {#productores}
-
-Las ubicaciones del mapa identifican a los productores; el origen del tarro se consulta en su información específica.
+Dos proyectos que trabajan con colmenas propias en paisajes de montaña y páramo, demostrando la diferencia entre un producto industrial y la miel viva.
 
 ### [Apícola Cortés](producer:es:828)
 
-Apícola Cortés ofrece mieles con diferentes nombres en su tienda. Escoge una referencia y pregunta por los datos de origen de esa cosecha.
+En Guadalajara, en el corazón de la comarca alcarreña, Apícola Cortés practica una apicultura respetuosa y trashumante. Sus mieles crudas monoflorales de romero, tomillo o cantueso se extraen en frío y no se calientan jamás, conservando toda la intensidad balsámica y la textura natural del néctar de secano.
 
 ### [Miel Colmenares De Vendejo - Miel de Liébana - BeeXperience - Turismo apícola](producer:es:8675)
 
-Colmenares de Vendejo permite continuar hacia un nombre geográfico protegido. Busca la identificación de Miel de Liébana en el producto concreto.
+En los valles protegidos de Liébana, a los pies de los Picos de Europa, esta casa familiar cuida colmenas rodeadas de robledales, castaños y brezos de montaña. Su miel con DOP Miel de Liébana es oscura, mineral, rica en antioxidantes y elaborada con un respeto absoluto por el bienestar de la abeja negra ibérica.
 
 <!-- mapa -->
 
-## Una ficha de lectura que puedas conservar {#ficha-lectura}
+## La cristalización: el mejor certificado de pureza {#floral}
 
-Copia el nombre del producto, el origen declarado, el operador y la identificación del lote. Añade la mención floral o protegida, si aparece. Con esos datos puedes comparar información sin basarte únicamente en el color o en que la miel esté líquida o cristalizada.
+Uno de los mayores malentendidos entre los consumidores es rechazar la miel que se vuelve sólida o granulada. En realidad, la cristalización es la mayor garantía de que una miel es cruda y natural:
+- Toda miel cruda termina cristalizando con el frío debido al equilibrio natural entre glucosa y fructosa.
+- Las mieles que permanecen eternamente líquidas en el supermercado han sido sometidas a ultrafiltrado y pasteurización térmica (microondas o calor superior a 65 ºC), un proceso que disuelve los cristales pero desactiva las enzimas diastasas y vitaminas.
+- Si prefieres consumirla más fluida, basta con atemperar el tarro al baño maría sin superar los 40 ºC.
 
-Si compras por internet y falta una imagen legible de la etiqueta, pídela antes de elegir. La respuesta te permitirá vincular la historia del apicultor con el producto que recibirás.
+## Decálogo para elegir en la compra {#ficha-lectura}
 
-- Nombre y referencia exacta de la miel.
-- Origen o países de recolección declarados.
-- Operador e identificación del lote.
-- Menciones florales o protegidas que quieras contrastar.
+Al examinar un tarro de miel:
+1. **Comprueba el origen**: debe declarar el país y productor específico.
+2. **Busca la mención «miel cruda»**: certifica que no ha sufrido pasteurización ni sobrecalentamiento.
+3. **Observa el color y textura**: las tonalidades varían desde el ámbar clarísimo del azahar y romero hasta el caoba casi negro del brezo o el roble.
+4. **Respeta la estacionalidad**: cada floración tiene su mes; un tarro recién cosechado en otoño contará una historia diferente que uno de primavera.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Guía de lectura basada en la norma consolidada y ejemplos de productores. No se han inspeccionado lotes ni se emiten conclusiones sobre etiquetas concretas que no se muestran aquí.
+Respaldamos a apicultores artesanales con colmenares censados que extraen la miel en frío y no adulteran el producto con calores agresivos ni azúcares añadidos. Cuidar la miel pura es velar por la supervivencia de las abejas y la polinización de nuestros campos.

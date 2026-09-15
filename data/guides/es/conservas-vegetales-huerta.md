@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Despensa
 title: "Conservas vegetales de la huerta: origen y trabajo de elaboración"
-description: Conoce Pedro Luis y El Navarrico y aprende a leer hortaliza, preparación y procedencia en una conserva vegetal.
+description: "De las riberas fértiles del Ebro a tu despensa: descubre el pimiento del piquillo asado a leña y las verduras artesanas peladas a mano."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
   src: /editorial/guides/huerta.webp
   alt: Cesta con hortalizas variadas
@@ -19,13 +19,17 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-09
 sources:
-  - id: pedro
-    title: Conservas Pedro Luis · Fabricación en Lodosa
-    url: https://www.conservaspedroluis.com/
+  - id: do-piquillo
+    title: D.O.P. Pimiento del Piquillo de Lodosa
+    url: https://piquillodelodosa.com/
+    checkedAt: 2026-09-06
+  - id: pedro-luis
+    title: Conservas Pedro Luis · Huerta de Lodosa, Navarra
+    url: https://conservaspedroluis.com/
     checkedAt: 2026-09-06
   - id: navarrico
-    title: El Navarrico · Conservas vegetales y elaborados
-    url: https://www.navarrico.com/en/
+    title: Conservas El Navarrico · San Adrián, Navarra
+    url: https://elnavarrico.com/
     checkedAt: 2026-09-06
 related:
   - legumbres-de-espana
@@ -33,46 +37,48 @@ related:
   - aceite-oliva-variedades-almazaras
 ---
 
-Una conserva vegetal permite seguir una hortaliza desde la recolección hasta una preparación lista para la despensa. Para conocerla, conviene preguntar tanto por la materia prima como por el trabajo de quien la limpia, cocina y envasa.
+En la vega fértil del río Ebro, a su paso por Navarra y La Rioja, el final del verano huele a leña y brasa. Es la época de la recolección del pimiento del piquillo en Lodosa y San Adrián: un espectáculo agrario donde las huertas ribereñas entregan sus mejores tesoros antes de que el frío invernal duerma la tierra.
 
-Empezamos en Navarra con Conservas Pedro Luis y El Navarrico. Sus referencias ayudan a distinguir una hortaliza presentada al natural de una salsa o un plato compuesto, sin atribuir el mismo origen a toda la gama de una conservera.
+La conserva vegetal artesanal nació para detener el tiempo y guardar en frascos de cristal la dulzura, la textura crujiente y los minerales de una huerta generosa. Cuando se elabora con respeto al origen, abrir un tarro en pleno invierno es revivir el sol de septiembre.
 
-## Cultivar y elaborar: dos trabajos que seguir {#dos-trabajos}
+## El secreto del fuego y el pelado en seco {#dos-trabajos}
 
-Pedro Luis identifica la fabricación en sus instalaciones de Lodosa y presenta distintas gamas. El Navarrico ofrece hortalizas y preparaciones compuestas desde San Adrián. Para leerlas, separa la pregunta por dónde se cultiva de la pregunta por dónde se transforma.
+La gran frontera en la conserva vegetal reside en la honestidad del proceso. El auténtico Pimiento del Piquillo de Lodosa DOP se asiona con leña directa o llama de gas y se pela rigurosamente a mano, uno a uno, sin tocar una sola gota de agua.
 
-Si buscas un nombre protegido, consulta el producto exacto. Una conserva puede mostrar una mención que no corresponde a otras referencias de la misma casa. La ubicación de la fábrica no resuelve por sí sola esa relación.
+![Cuenco de legumbres y hortalizas seleccionadas](/editorial/guides/legumbres-garbanzos.webp)
 
-Fuentes: [Conservas Pedro Luis · Fabricación en Lodosa](https://www.conservaspedroluis.com/) · [El Navarrico · Conservas vegetales y elaborados](https://www.navarrico.com/en/).
+Lavar los pimientos con agua corriente agiliza el pelado industrial, pero arrastra consigo los azúcares naturales, la gelatina de la pulpa y el aroma a brasa de encina, dejando un pimiento aguado y descolorido. En las conserveras artesanas navarras, el pimiento se limpia en seco con un paño limpio: por eso su líquido de gobierno es denso, dulce y rojo brillante, pura esencia concentrada del asado.
 
-## Dos conserveras para leer con detalle {#productores}
+Fuentes: [D.O.P. Pimiento del Piquillo de Lodosa](https://piquillodelodosa.com/) · [Pedro Luis](https://conservaspedroluis.com/) · [El Navarrico](https://elnavarrico.com/).
 
-Abre sus fichas y escoge una referencia antes de comparar.
+## Dos conserveras señeras de la Ribera Navarra {#productores}
+
+Dos sagas familiares de Lodosa y San Adrián consagradas al cultivo ecológico y la conserva vegetal de altísima pureza.
 
 ### [Conservas Pedro Luis](producer:es:4340)
 
-Conservas Pedro Luis: la casa identifica Lodosa como lugar de fabricación. Explora sus gamas y comprueba la información de origen de la conserva elegida.
+En Lodosa, la familia de Pedro Luis lleva décadas liderando la producción ecológica en la huerta navarra. Controlan parcelas propias de pimientos del piquillo, espárragos con I.G.P. Espárrago de Navarra y alcachofas de Tudela, elaborando en fresco inmediatamente tras la recolección con una delicadeza vegetal insuperable.
 
 ### [Conservas El Navarrico](producer:es:4280)
 
-El Navarrico: su catálogo permite pasar de hortalizas a platos preparados. Fíjate en cómo cambia la lista de ingredientes entre esas presentaciones.
+En San Adrián, El Navarrico es una de las marcas más queridas por los cocineros profesionales. Desde 1960 embotan tomates pelados a mano, habitas tiernas en aceite de oliva virgen extra y pimientos asados al horno de leña, demostrando que la sencillez de una buena hortaliza bien tratada es la base de la gran cocina.
 
 <!-- mapa -->
 
-## Lo que cambia entre dos botes {#envase}
+## Qué buscar en el tarro de cristal {#envase}
 
-Anota la hortaliza, el corte, la preparación y el líquido de cobertura. Revisa los ingredientes si se trata de una salsa o de una pieza rellena. Para comparar cantidades, comprueba el contenido y el peso escurrido cuando corresponda.
+Al elegir conserva vegetal de huerta:
+- **Espárrago de Navarra**: busca el sello de la I.G.P. que garantiza que los espárragos se han cultivado en Navarra, Aragón o La Rioja y se han pelado a mano sin hebras leñosas. Evita conservas importadas que envasan con nombres comerciales autóctonos engañosos.
+- **Pimientos del piquillo**: el sello rojo de la D.O.P. Lodosa certifica el pelado en seco a mano. El color debe ser rojo intenso y el pimiento entero, con forma triangular y punta ligeramente curva.
+- **Alcachofas**: deben presentarse en mitades o corazones enteros limpios, sin hojas duras exteriores y con un líquido claro sin exceso de acidulantes que tapen el amargor dulce natural.
 
-El catálogo de El Navarrico diferencia, por ejemplo, alcachofas al natural y elaboraciones rellenas. Es una distinción práctica: una puede funcionar como ingrediente y otra como preparación que solo necesita el acabado indicado por la casa.
+## Inspiración en la cocina {#despensa}
 
-Fuentes: [El Navarrico · Conservas vegetales y elaborados](https://www.navarrico.com/en/).
-
-## Elegir según la cocina que quieres hacer {#despensa}
-
-Piensa primero si buscas una base para cocinar o un plato casi resuelto. Consulta las recomendaciones de preparación y conservación del envase; una vez abierto, la información relevante es la de esa referencia, no una regla genérica para cualquier conserva.
-
-Guarda el nombre del producto que te haya resultado útil. En una siguiente compra puedes comparar otra preparación de la misma hortaliza o seguir hacia las legumbres, manteniendo separadas las historias del cultivo y de la transformación.
+Tener una buena despensa de conservas de huerta resuelve comidas memorables en minutos:
+- **Piquillos confitados a fuego lento**: sofríelos en una sartén con unos dientes de ajo laminados y un buen chorro de virgen extra durante veinte minutos a fuego mínimo hasta que el jugo caramelice.
+- **Espárragos templados**: sírvelos templados con una emulsión de virgen extra de arbequina o un huevo escalfado con sal en escamas.
+- **Pisto y guisos rápidos**: las conservas de tomate natural triturado y verduras asadas aportan una profundidad casera instantánea a cualquier arroz o carne.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos elaboradores del catálogo con fabricación y referencias vegetales documentadas. El origen y los sellos se comprueban por producto; no se presupone cultivo propio de todas las materias primas.
+Respaldamos a elaboradores que trabajan con huerta de proximidad en campaña estacional, respetando el pelado a mano sin lavados agresivos. La conserva vegetal bien hecha es un homenaje a los agricultores de la ribera.

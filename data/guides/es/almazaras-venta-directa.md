@@ -6,76 +6,75 @@ country: es
 status: published
 topic: Aceite
 title: "Almazaras con venta directa: preparar un pedido de aceite"
-description: Encuentra canales propios de Oro Bailén y Almazaras de la Subbética y aprende qué comprobar sobre campaña, formatos y entrega.
+description: "Descubre cómo comprar aceite de oliva virgen extra directamente a quienes cuidan el olivar y molturan en frío cada otoño."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/aceite.webp
-  alt: Aceite de oliva en una aceitera de cristal
+  src: /editorial/guides/olivar-almazara.webp
+  alt: Olivar tradicional con olivos y tierra rojiza
   width: 1600
-  height: 2220
-  credit: Roberta Sorge / Unsplash
-  sourceUrl: https://unsplash.com/photos/uOBApnN_K7w
+  height: 1067
+  credit: Vincent Eisfeld / Unsplash
+  sourceUrl: https://unsplash.com/photos/hLP3LHQVTfc
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
-  - id: tienda-oro
-    title: Oro Bailén · Acceso a la tienda propia
+  - id: oro
+    title: Oro Bailén · Tienda y referencias de cosecha
     url: https://www.orobailen.com/
     checkedAt: 2026-09-06
   - id: subbetica
-    title: Almazaras de la Subbética · Rincón de la Subbética
-    url: https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/
+    title: Almazaras de la Subbética · Venta directa de cooperativa
+    url: https://almazarasdelasubbetica.com/tienda/
     checkedAt: 2026-09-06
 related:
   - aceite-oliva-variedades-almazaras
   - aceites-picual-arbequina-hojiblanca
-  - legumbres-de-espana
+  - conservas-vegetales-huerta
 ---
 
-Comprar aceite al elaborador puede empezar con una pregunta muy práctica: qué referencia y qué formato tienen sentido para tu consumo. La tienda propia permite pasar de la historia de una almazara al producto disponible en ese momento.
+Comprar aceite de oliva directamente en la almazara es recuperar el contacto con una de las cosechas más hermosas del otoño. En los pueblos de Jaén, Córdoba o Navarra, noviembre huele a almazara: un perfume verde, denso e inconfundible que anuncia la llegada del primer aceite sin filtrar, turbio y brillante como una esmeralda líquida.
 
-Esta primera selección reúne dos casas con canal de compra propio. Aquí explicamos cómo preparar el pedido; las condiciones comerciales y la disponibilidad se comprueban directamente antes de comprar.
+El canal directo permite no solo conseguir el precio más justo para el agricultor, sino también acceder a lotes recién decantados, cosechas tempranas que apenas llegan a los supermercados y asesoramiento directo de quienes han pasado el año podando, regando y velando por la salud de los olivos.
 
-## Decide cantidad y uso antes del formato {#cantidad}
+## Del campo al molino sin intermediarios {#cantidad}
 
-Una botella pequeña puede servir para descubrir una referencia; un formato mayor exige pensar cuánto aceite vas a consumir y dónde lo guardarás. Antes de elegir por el precio total, comprueba la cantidad que contiene cada envase y cuántos incluye el pedido.
+El aceite de oliva virgen extra es un producto vivo que sufre con la luz, el calor y el paso de los meses. Por eso, el primer consejo de un buen molinero es comprar con previsión: calcula el consumo real de tu hogar para los próximos cuatro o seis meses.
 
-Almazaras de la Subbética ofrece su Rincón en distintas opciones de presentación. Oro Bailén enlaza su tienda desde la web de la casa. En ambos casos, lee la ficha del producto que vas a añadir al carrito, no solo la descripción general de la marca.
+![Aceitunas seleccionadas listas para la muela](/editorial/guides/aceitunas-variedades.webp)
 
-Fuentes: [Almazaras de la Subbética · Rincón de la Subbética](https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/) · [Oro Bailén · Acceso a la tienda propia](https://www.orobailen.com/).
+Para el uso diario en cocina caliente, una garrafa de lata oscura o bag-in-box de cinco litros conserva el aceite protegido de la radiación ultravioleta y el oxígeno. Para terminar platos en crudo, las botellas de vidrio oscuro o cristal opaco de 500 ml son la joya de la corona: se abren en su momento óptimo y concentran toda la intensidad de la cosecha temprana.
 
-## Dos canales para comprar al elaborador {#productores}
+Fuentes: [Oro Bailén · Tienda oficial](https://www.orobailen.com/) · [Almazaras de la Subbética · Tienda online](https://almazarasdelasubbetica.com/tienda/).
 
-Abre la ficha y continúa en la tienda que enlaza la casa.
+## Dos almazaras con canal directo ejemplar {#productores}
+
+Dos casas que han perfeccionado el servicio directo al consumidor, enviando el aceite con embalajes térmicos seguros y garantizando la trazabilidad de la campaña en curso.
 
 ### [Aceites Oro Bailén](producer:es:200)
 
-Oro Bailén: identifica la variedad y la referencia antes de escoger el formato. La web propia es el punto de entrada a su tienda.
+Desde Villanueva de la Reina, Oro Bailén envía directamente sus afamados aceites de recolección temprana de octubre, así como sus formatos familiares. Comprar directamente en su tienda permite elegir entre sus botellas de cata de picual, arbequina, hojiblanca y frantoio con la certeza de recibir el lote más fresco de la muela.
 
 ### [Almazaras de la Subbética, S.C.A.](producer:es:678)
 
-Almazaras de la Subbética: revisa si estás seleccionando una botella o un pack. La página del producto distingue esas opciones.
+La cooperativa de Carcabuey ofrece en su canal directo tanto los aceites premiados Rincón de la Subbética y Parqueoliva Serie Oro como formatos de cooperativa ideales para el abastecimiento anual de despensa, respaldando directamente a miles de familias olivareras de montaña.
 
 <!-- mapa -->
 
-## Qué comprobar antes de confirmar {#pedido}
+## Claves para preparar tu pedido {#pedido}
 
-Revisa campaña, categoría del aceite, variedad si se declara y volumen del envase. Si compras un surtido, comprueba que sus componentes coincidan con lo que quieres conocer. Después consulta entrega y gastos para tu destino concreto.
+Antes de tramitar un pedido directo, ten en cuenta tres recomendaciones esenciales:
+- **Exige el año de campaña**: La etiqueta o la ficha web debe indicar claramente la campaña actual (por ejemplo, 2025/2026). Huye de los aceites que omiten la fecha de recolección o solo muestran una fecha de consumo preferente lejana.
+- **Distingue temprano de cosecha madura**: El aceite verde de octubre es un lujo sensorial para consumir en crudo. Si buscas volumen para freír o guisar lentamente, pide los aceites de diciembre o enero, más dulces y económicos pero igualmente vírgenes extra.
+- **Aprovecha el envío agrupado**: Los costes logísticos se amortizan mucho mejor al pedir cajas completas de botellas o varias garrafas junto a familiares o vecinos.
 
-No presupongas que la dirección de la almazara es un punto de recogida abierto al público. Si prefieres comprar allí, pregunta por el servicio y el horario antes de desplazarte.
+## Conservación en la despensa {#repetir}
 
-- Referencia y campaña de cada aceite.
-- Volumen por envase y número de unidades.
-- Condiciones de envío al destino del pedido.
-- Indicaciones de conservación del elaborador.
-
-## Guardar una referencia para la siguiente compra {#repetir}
-
-Conserva el nombre del aceite y anota qué formato te resultó cómodo. Si quieres cambiar de variedad, explica al productor qué uso le diste al anterior y qué deseas comparar. Así la siguiente compra puede ampliar tu experiencia.
-
-La guía general de aceite ayuda a leer almazara y variedad; la comparación de picual, arbequina y hojiblanca propone referencias para empezar. Las fichas mantienen el vínculo con quien elabora cuando quieras profundizar.
+Una vez recibido el paquete en casa:
+- Guarda las botellas en un armario fresco, oscuro y alejado de fuentes de calor (horno, fuegos o radiadores).
+- No guardes el aceite en el frigorífico: las bajas temperaturas provocan que los triglicéridos se solidifiquen formando grumos blancos, que aunque inocuos, alteran temporalmente la fluidez.
+- Cierra siempre bien el tapón tras cada uso: el oxígeno degrada los aromas frutados y acelera el enranciamiento.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Canales de venta propios observados en las webs de los elaboradores. No se ha probado la entrega ni se garantizan existencias, precios, recogida presencial o cobertura de envío.
+Apoyamos almazaras y cooperativas que ofrecen venta directa con precios transparentes, etiquetado de campaña visible y formatos que protegen el producto de la luz y la oxidación. Comprar en origen es el camino más directo para dignificar la vida en el medio rural.

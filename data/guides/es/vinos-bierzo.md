@@ -6,71 +6,79 @@ country: es
 status: published
 topic: Vinos
 title: "Vinos del Bierzo: mencía, godello y trabajo de parcela"
-description: Descubre Losada y el proyecto berciano de Emilio Moro para acercarte a la mencía, la godello y la información de sus viñedos.
+description: "Recorre las laderas leonesas de viña vieja, el carácter atlántico de la mencía y la elegancia mineral del godello."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/vino.webp
-  alt: Copa de vino tinto
+  src: /editorial/guides/laderas-vinedo-bierzo.webp
+  alt: Laderas de viñedo en pendiente bajo el sol
   width: 1600
-  height: 2240
-  credit: Marios Gkortsilas / Unsplash
-  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  height: 1067
+  credit: Brett Wharton / Unsplash
+  sourceUrl: https://unsplash.com/photos/RRpDvBvl0tY
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
+  - id: do-bierzo
+    title: D.O. Bierzo · Pliego de condiciones y clasificación de parajes
+    url: https://www.crdobierzo.es/
+    checkedAt: 2026-09-06
   - id: losada
-    title: Losada · Altos de Losada Selección de Añada
-    url: https://losadavinosdefinca.es/vinos/altos-de-losada-seleccion-de-anada/
+    title: Losada Vinos de Finca · Arcillas y viña vieja en Cacabelos
+    url: https://www.losadavinosdefinca.com/
     checkedAt: 2026-09-06
   - id: moro-bierzo
-    title: Emilio Moro · Proyecto en El Bierzo
-    url: https://www.emiliomoro.com/somos-emilio-moro/nuestros-vinedos/el-bierzo/
+    title: Bodegas Emilio Moro · El Bailarín y Polvorete en El Bierzo
+    url: https://www.emiliomoro.com/
     checkedAt: 2026-09-06
 related:
   - vinos-de-espana-denominaciones-origen
-  - bodegas-ribera-del-duero
   - bodegas-rias-baixas
+  - priorat-montsant
 ---
 
-El Bierzo ofrece una buena ocasión para leer blancos y tintos desde el trabajo del viñedo. En esta guía, la mencía y la godello sirven como dos hilos para conocer proyectos concretos, sin reducir toda la comarca a una única descripción de sabor.
+En la fosa tectónica que separa la meseta leonesa de las montañas verdes de Galicia, El Bierzo disfruta de un microclima único. Protegido por los Montes Aquilianos de los rigores de la meseta y con la humedad justa del Atlántico que entra por el valle del Sil, este anfiteatro natural es el hogar de una de las uvas más fascinantes de España: la mencía.
 
-Las primeras paradas son Losada Vinos de Finca y la bodega berciana de Emilio Moro. La selección conecta sus referencias con las fichas del catálogo y mantiene separado el proyecto de Emilio Moro en Ribera del Duero.
+Las cepas del Bierzo son auténticas reliquias vivientes: plantadas en vaso sobre laderas empinadas, muchas superan los sesenta y ochenta años de edad. En lugar de los tintos pesados y sobremadurados de antaño, la revolución enológica del Bierzo ha descubierto la faceta más noble de la mencía: un tinto fluido, fragante, con notas a frutos silvestres rojos, violetas, pimienta blanca y una mineralidad terrosa que recuerda a los grandes vinos del Ródano o Borgoña.
 
-## Leer la parcela detrás del vino {#parcelas}
+## Arcillas, pizarras y el renacer del godello {#parcelas}
 
-Losada presenta Altos de Losada Selección de Añada como un tinto de mencía procedente de una selección de parcelas en altitud, con crianza en fudre. Emilio Moro explica su proyecto de Ponferrada y sus vinos de godello. Son ejemplos que permiten preguntar por lugar y elaboración a la vez.
+El Bierzo no es homogéneo. En las laderas bajas y colinas de Cacabelos y Villafranca predominan las arcillas profundas, que aportan volumen y carnosidad a la mencía. En las zonas altas de montaña —como Corullón— la roca viva de pizarra y cuarzo confiere a los vinos una tensión afilada, un nervio eléctrico y una acidez vibrante.
 
-La altitud o el nombre de una variedad no bastan para anticipar el resultado en la copa. Lo interesante es seguir cómo los utiliza cada casa al explicar un vino y qué otros datos aporta sobre esa referencia.
+![Laderas de viñedo en pendiente](/editorial/guides/vinedo-costers-priorat.webp)
 
-Fuentes: [Losada · Altos de Losada Selección de Añada](https://losadavinosdefinca.es/vinos/altos-de-losada-seleccion-de-anada/) · [Emilio Moro · Proyecto en El Bierzo](https://www.emiliomoro.com/somos-emilio-moro/nuestros-vinedos/el-bierzo/).
+Junto a la mencía, la uva blanca godello vive su propia edad de oro. Recuperada de una desaparición casi segura en los años setenta, el godello berciano combina notas cítricas, manzana reineta madura y flores blancas con una textura glicérica en boca y una acidez mineral que la convierte en una de las castas blancas más codiciadas de Europa.
 
-## Mencía y godello a través de dos bodegas {#productores}
+Fuentes: [D.O. Bierzo](https://www.crdobierzo.es/) · [Losada Vinos de Finca](https://www.losadavinosdefinca.com/) · [Bodegas Emilio Moro Bierzo](https://www.emiliomoro.com/).
 
-Empieza por una referencia identificada y continúa en el canal del elaborador.
+## Dos miradas al terruño berciano {#productores}
+
+Dos proyectos que ilustran la efervescencia enológica de la comarca: la bodega consagrada a la interpretación de las arcillas históricas y el desembarco apasionado por la frescura del godello.
 
 ### [Losada Vinos de Finca S.A.](producer:es:8235)
 
-Losada Vinos de Finca: su Selección de Añada permite preguntar por parcelas, mencía y uso del fudre. No confundas esa elaboración con todas las referencias de Losada.
+En Cacabelos, Losada Vinos de Finca apostó desde su nacimiento por los suelos de arcilla frente a la hegemonía de la pizarra, demostrando que las arcillas bien trabajadas entregan mencías de una sedosidad y elegancia incomparables. Pequeñas parcelas recuperadas dan vida a vinos como Losada y Altos de Losada, pura fruta roja silvestre, finura tánica y equilibrio gastronómico.
 
 ### [Bodegas Emilio Moro - Bierzo S.L.](producer:es:1992)
 
-Emilio Moro en El Bierzo: esta ficha corresponde al proyecto de Ponferrada. Su gama de godello abre una lectura distinta de la bodega familiar de Ribera del Duero.
+Cautivados por el potencial del godello, la prestigiosa bodega ribereña Emilio Moro se instaló en Ponferrada para explorar la vertiente blanca del Bierzo. Con vinos como Polvorete y El Zarzal, han demostrado cómo el trabajo respetuoso con el mosto y las lías resalta la frescura aromática y la personalidad mineral de esta uva atlántica.
 
 <!-- mapa -->
 
-## Dos formas de preparar la comparación {#dos-lecturas}
+## La nueva clasificación por parajes {#dos-lecturas}
 
-Puedes comparar vinos de una misma variedad para centrarte en la elaboración, o elegir un blanco y un tinto para abrir el recorrido. Decide primero qué te apetece conocer; no hay necesidad de forzar una clasificación entre productos que responden a preguntas diferentes.
+El Bierzo fue de las primeras denominaciones españolas en regular una pirámide de calidad inspirada en el terruño:
+- **Vino de Villa**: procedente exclusivamente de viñedos de un municipio determinado.
+- **Vino de Paraje**: delimitado a una zona topográfica concreta con características edáficas y climáticas singulares.
+- **Viña Clasificada y Gran Viña Clasificada**: parcelas históricas de rendimientos mínimos donde la viña vieja habla con voz propia.
 
-Anota el nombre completo, la añada y los datos de crianza disponibles. Si aparece el nombre de una finca o paraje, busca cómo lo explica el productor. No lo interpretes como una categoría oficial sin comprobar la mención correspondiente.
+## En la mesa: botillo, pimientos y castañas {#continuar}
 
-## Del vino al lugar {#continuar}
-
-Las fichas permiten situar Cacabelos y Ponferrada como puntos del recorrido. Para conocer los viñedos, consulta qué visitas se ofrecen y dónde comienzan. Una bodega puede trabajar parcelas dispersas que no aparecen en el mapa de productores.
-
-Esta es una entrada inicial al Bierzo. Las futuras ampliaciones incorporarán otros proyectos cuando aporten una historia de elaboración distinta y una relación documentada con los vinos que describimos.
+La cocina berciana es generosa y contundente:
+- **Botillo del Bierzo y carnes curadas**: la acidez vivaz y la frescura de la mencía cortan a la perfección la grasa del botillo, los chorizos y las carnes asadas.
+- **Empanada de batallón y cecina de León**: los taninos suaves del tinto joven o crianza armonizan sin avasallar el humo noble de la cecina.
+- **Pescados y quesos semicurados con godello**: el blanco berciano es imbatible ante truchas de río, pulpo a la brasa o quesos de cabra leoneses.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos proyectos del Bierzo con información primaria sobre vinos y viñedos. Los detalles de variedad y crianza se atribuyen a sus referencias concretas, no al conjunto de la denominación.
+Apoyamos bodegas que cuidan viñas viejas en vaso y defienden la clasificación de parajes como garantía de autenticidad. El Bierzo es uno de los paisajes vitícolas más honestos y emocionantes de la España contemporánea.

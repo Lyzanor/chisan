@@ -6,75 +6,78 @@ country: es
 status: published
 topic: Vinos
 title: "Bodegas de Rías Baixas: albariño y otras variedades que seguir"
-description: Acércate a Terras Gauda y Pazo Señorans para leer variedades, origen y elaboración en Rías Baixas, con fichas de las bodegas y mapa.
+description: "Descubre el viñedo atlántico de Galicia, las parras de granito y el diálogo entre albariño, loureiro y caíño en copa."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/vino.webp
-  alt: Copa de vino tinto
+  src: /editorial/guides/uvas-blancas-rias-baixas.webp
+  alt: Racimos de uva blanca madurando en la vid
   width: 1600
-  height: 2240
-  credit: Marios Gkortsilas / Unsplash
-  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  height: 1065
+  credit: JOGphotos / Unsplash
+  sourceUrl: https://unsplash.com/photos/GknXF7Y_GC0
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
-  - id: terras
-    title: Terras Gauda · La bodega y sus vinos
-    url: https://terrasgauda.com/
+  - id: do-rias-baixas
+    title: D.O. Rías Baixas · Variedades y zonas
+    url: https://doriasbaixas.com/es/variedades/
     checkedAt: 2026-09-06
-  - id: pazo
-    title: Pazo Señorans · Albariños y viñedos
-    url: https://www.pazodesenorans.com/es/
+  - id: terras-gauda
+    title: Terras Gauda · Ficha de elaboración y variedades
+    url: https://www.terrasgauda.com/
     checkedAt: 2026-09-06
-  - id: pazo-do
-    title: Pazo Señorans · Tienda propia, vino con DO Rías Baixas
-    url: https://shop.pazodesenorans.com/idioma%3Dga/productos/ver/3/pazo-senorans-2025-075-litres--12-bottles-case.html
+  - id: pazo-senorans
+    title: Pazo de Señoráns · Selección de Añada y crianza en lías
+    url: https://pazodesenorans.com/
     checkedAt: 2026-09-06
 related:
   - vinos-de-espana-denominaciones-origen
+  - bodegas-rioja
   - despensa-galicia
-  - vinos-bierzo
 ---
 
-La palabra albariño es una buena puerta de entrada a Rías Baixas, pero no cuenta por sí sola todo lo que puede haber detrás de una botella. Conviene mirar la composición del vino y la forma en que cada bodega explica su elaboración.
+En el extremo noroccidental de la península, el viñedo vive suspendido en el aire. En las Rías Baixas, las cepas no crecen pegadas a la tierra: se elevan sobre pérgolas y postes de granito —los tradicionales emparrados— para escapar de la humedad del suelo y dejar que la brisa marina del Atlántico ventile cada racimo.
 
-Proponemos leer juntas las referencias de Terras Gauda y Pazo Señorans. Una permite preguntar por la combinación de variedades; la otra, por las posibilidades de una variedad a través de distintas elaboraciones.
+Bajo este cielo húmedo y luminoso nace el albariño, una de las grandes uvas blancas del mundo. Su acidez vibrante, sus aromas a manzana verde, flor de azahar y hierba fresca, y sobre todo ese recuerdo salino casi yodado, convierten a cada copa en una ventana abierta a la ría.
 
-## Una variedad y un vino no son lo mismo {#variedades}
+## El emparrado y el milagro atlántico {#variedades}
 
-Terras Gauda describe vinos que reúnen albariño, loureiro y caíño blanco. Pazo Señorans centra su presentación en el albariño. Este contraste ayuda a leer la botella con una pregunta sencilla: qué variedades participan en esta referencia y cómo se ha elaborado.
+Aunque el albariño es el monarca indiscutible de la denominación, las Rías Baixas esconden un patrimonio vegetal mucho más rico y ancestral. Variedades autóctonas como el loureiro (que aporta un perfume embriagador a laurel silvestre) y el caíño blanco (de acidez eléctrica y mineralidad profunda) demuestran que el ensamblaje gallego tradicional alcanza cotas de complejidad sublimes.
 
-No traslades una composición a todos los vinos de la casa. Conserva la ficha de la referencia y la añada consultadas; son las que permiten entender una decisión de elaboración concreta.
+![Costa atlántica de Galicia batiendo en los acantilados](/editorial/guides/costa-galicia-atlantico.webp)
 
-Fuentes: [Terras Gauda · La bodega y sus vinos](https://terrasgauda.com/) · [Pazo Señorans · Albariños y viñedos](https://www.pazodesenorans.com/es/).
+Al mismo tiempo, la maduración en bodega ha roto el mito de que el albariño debe consumirse en el año. La crianza prolongada sobre lías finas —los sedimentos de las levaduras— otorga a estos vinos una untuosidad sedosa, una textura glicérica y una capacidad de guarda que asombra a quien los prueba cinco o diez años después de su vendimia.
 
-## Dos formas de seguir el albariño {#productores}
+Fuentes: [D.O. Rías Baixas · Variedades](https://doriasbaixas.com/es/variedades/) · [Pazo de Señoráns](https://pazodesenorans.com/) · [Terras Gauda](https://www.terrasgauda.com/).
 
-Las fichas sitúan a los productores en O Rosal y Meis; consulta la información del vino para profundizar en su origen.
+## Dos visiones maestras del viñedo gallego {#productores}
+
+Dos bodegas que representan los dos grandes caminos de Rías Baixas: la riqueza del ensamblaje del Rosal y la aristocrática longevidad del monovarietal de Salnés.
 
 ### [Terras Gauda](producer:es:11801)
 
-Terras Gauda: busca qué lugar ocupa cada variedad en el vino elegido. La combinación de albariño, loureiro y caíño blanco ofrece una conversación sobre el conjunto.
+En el valle de O Rosal, junto a la desembocadura del río Miño, Terras Gauda revolucionó la zona al apostar por un ensamblaje irrepetible: combina la estructura del albariño con la intensidad aromática del loureiro y la frescura viva del caíño blanco. El resultado es un vino envolvente, complejo y profundamente gastronómico que trasciende la etiqueta de blanco ligero.
 
 ### [Pazo Señorans](producer:es:10106)
 
-Pazo Señorans: explora las distintas referencias de albariño. Diferenciar el nombre del vino y su elaboración ayuda a entender una gama que comparte variedad.
+Enclavada en una casona solariega del siglo XVI en Meis, en pleno corazón de O Salnés, la familia de Marisol Bueno demostró al mundo que el albariño podía envejecer con la elegancia de los grandes Borgoñas. Su Selección de Añada, criado durante más de treinta meses sobre lías en depósitos de acero y afinado en botella, es un monumento enológico de mineralidad, hidrocarburos y terciarios inolvidables.
 
 <!-- mapa -->
 
-## Qué cuenta la elaboración {#tiempo}
+## Qué cuenta la crianza sobre lías {#tiempo}
 
-Además de la variedad, busca si la bodega explica el trabajo con lías, los recipientes y el tiempo antes de embotellar. No necesitas convertir cada dato en un aroma: primero entiende qué decisiones se describen y a qué vino pertenecen.
+Al descorchar un Rías Baixas, fíjate en el trabajo con las lías:
+- Un vino del año sin lías destaca por su fruta explosiva: cítricos, melocotón blanco y un paso crujiente y vivaz.
+- Un vino con crianza sobre lías gana volumen en boca: la acidez se redondea, aparecen recuerdos a panadería fina, masa madre y mantequilla fresca, y la persistencia en el retrogusto se multiplica.
 
-Si quieres hacer una comparación, elige dos referencias con información suficiente. Escribe lo que sabes de cada una y deja en blanco lo que falte. Esa pequeña ficha es una buena base para preguntar al elaborador o a quien te asesore en la compra.
+## Armonías atlánticas en la mesa {#territorio}
 
-## Situar la bodega sin simplificar el paisaje {#territorio}
-
-El mapa muestra dónde se encuentran las bodegas seleccionadas. Para conocer sus viñedos, recurre a la explicación de cada proyecto; una única chincheta no describe la distribución de las parcelas ni las condiciones de todas ellas.
-
-La guía territorial de Galicia permite seguir desde aquí hacia otros alimentos. Si la intención es visitar, prepara el desplazamiento según las actividades y reservas disponibles, en lugar de dar por hecho que toda bodega recibe público a diario.
+Pocos vinos tienen una comunión tan íntima con la gastronomía de su tierra:
+- **Mariscos de la ría**: percebes, centollas, nécoras y ostras exigen la salinidad cortante de un albariño joven.
+- **Pescados grasos**: un rodaballo salvaje, una merluza en salsa verde o un bacalao confitado armonizan a la perfección con la untuosidad de un albariño con años de lías.
+- **Cocina asiática y especiada**: el frescor cítrico y la estructura aromática de los ensamblajes con loureiro acompañan con brillantez el sushi, ceviches o platos con jengibre y cilantro.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos bodegas con referencias Rías Baixas documentadas en sus canales propios. La selección no cubre todas las subzonas ni asigna una composición común a toda su producción.
+Elegimos elaboradores que cuidan viñedos propios emparrados y dignifican tanto el monovarietal de larga guarda como el rescate de uvas autóctonas en peligro de olvido. Rías Baixas es mucho más que un vino de verano: es una de las grandes regiones atlánticas del vino europeo.

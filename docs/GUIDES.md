@@ -42,20 +42,20 @@ are authored as ordinary CommonMark. There is no parallel JSON text store.
 `lib/guides/markdown.ts` parses the document into the validated rendering model in
 `schema.ts`. This in-memory model is derived, never a second editable authority.
 Markdown is rendered without executable MDX or raw HTML. Inline Markdown image
-embeds are not rendered. Every article requires a `cover` in front matter with
+embeds render as contextual figures with captions. Every article requires a `cover` in front matter with
 `src`, `alt`, pixel `width` and `height`, `credit`, HTTPS `sourceUrl` and
 `licenseUrl`, and the actual `checkedAt` date. Local WebP files live under
-`public/editorial/guides/`; the guide gate checks existence and intrinsic dimensions.
+`public/editorial/guides/`; the guide gate checks existence, uniqueness and intrinsic dimensions.
 The article displays source and license attribution; cards use the same image
 as a decorative thumbnail beside the linked headline. Metadata includes the
 cover in Article, Open Graph and Twitter output.
 
-Licensed context photography may be shared by related articles. It must fit the
-subject, and its caption must distinguish an illustrative scene from evidence
-about a named producer, denomination or territory. It does not enter producer
-CSV image fields. The current context photographs come from Unsplash under the
-linked Unsplash License, with credits retained in each article. Replace a cover
-with a more specific documentary image when suitable licensed material exists.
+Licensed context photography must fit the subject, and its caption must distinguish
+an illustrative scene from evidence about a named producer, denomination or territory.
+Each published guide uses a distinct cover to avoid visual repetition across the guide
+library. It does not enter producer CSV image fields. The current context photographs
+come from Unsplash under the linked Unsplash License, with credits retained in each article.
+Replace a cover with a more specific documentary image when suitable licensed material exists.
 
 Use `## Section title {#stable-anchor}` for a section. The explicit anchor is
 optional, but recommended to preserve incoming links when a heading changes.

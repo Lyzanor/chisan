@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Despensa
 title: "Sidrerías de España: seguir la manzana hasta la elaboración"
-description: Conoce Trabanco, Zapiain y Mooma a través de sus sidras y proyectos, con claves para distinguir productor, producto y experiencia de visita.
+description: "Descubre el alma atlántica y mediterránea de la manzana de sidra a través de los llagares y sagardotegis de Trabanco, Zapiain y Mooma."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
   src: /editorial/guides/manzanas.webp
   alt: Cesta de manzanas
@@ -37,48 +37,49 @@ related:
   - panaderias-molinos-elaboracion-propia
 ---
 
-Para conocer una sidrería, empieza por la manzana y continúa por lo que elabora. El nombre del establecimiento puede llevar a una sidra, a otros productos de manzana y a una experiencia gastronómica; conviene distinguir cada parte.
+La sidra es mucho más que una bebida refrescante: es el latido cultural de los pueblos del norte peninsular y una de las expresiones fermentadas más puras del territorio. Nace de pomaradas húmedas acariciadas por la bruma, donde conviven decenas de variedades de manzanas autóctonas ácidas, amargas y dulces seleccionadas meticulosamente para lograr el equilibrio perfecto entre tanicidad, frescura y chispa natural.
 
-Esta selección une Trabanco, Zapiain y Mooma. Las tres fichas permiten explorar proyectos de Asturias, Gipuzkoa y Girona, sin presentar tres ejemplos como si agotaran toda la producción de sidra de España.
+Desde los legendarios llagares de Asturias hasta las ruidosas sagardotegis guipuzcoanas o las nuevas propuestas frutícolas del Mediterráneo, la sidra encierra una ceremonia comunitaria de convivencia, fuego y celebración de la cosecha.
 
-## Qué relación mantiene cada casa con la manzana {#del-fruto}
+## La manzana amarga y ácida: el secreto de los llagares {#del-fruto}
 
-Trabanco presenta su trabajo de elaboración desde el llagar. Zapiain permite seguir sidras y otros productos derivados de la manzana. Mooma vincula su proyecto a los manzanos y a la transformación de fruta. Cada relato abre una pregunta diferente sobre producción.
+Hacer sidra natural no es simplemente exprimir manzanas: las variedades de mesa comestibles (dulces y acuosas) producen sidras planas y desequilibradas. El verdadero llagarero busca manzanas autóctonas ricas en taninos y acidez málica (como raxao, regona o collaos en Asturias, y txalaka o goikoetxea en Euskadi).
 
-Antes de elegir, busca el nombre exacto de la bebida. La marca puede reunir sidras con elaboraciones distintas y otros productos; no conviene describirlos todos con una sola fórmula.
+![Niebla matinal sobre las colinas y pomaradas del norte](/editorial/guides/paisaje-asturias-covadonga.webp)
+
+Tras la recolección en otoño, la fruta se lava, se tritura y pasa a la prensa tradicional de madera. El mosto virgen dulce fermenta de forma lenta y espontánea en grandes toneles durante el invierno bajo el frío norteño, transformando los azúcares naturales en alcohol y fino carbónico endógeno sin adición de azúcares ni gas artificial.
 
 Fuentes: [Sidra Trabanco · Llagar y elaboraciones](https://www.sidratrabanco.com/) · [Zapiain · Sidra y elaboraciones de manzana](https://www.zapiain.eus/) · [Mooma · Productor de manzanas y sidra](https://mooma.cat/).
 
-## Tres productores para ampliar el recorrido {#productores}
+## Tres llagares y sagardotegis de referencia {#productores}
 
-El mapa reúne las casas, no sus huertos completos ni una ruta de un solo día.
+Tres casas que interpretan la sidra con maestría desde sus propios manzanos y bodegas.
 
 ### [Sidra Trabanco](producer:es:11547)
 
-Trabanco: la ficha del llagar de Lavandera permite seguir sus elaboraciones de sidra y preguntar por una referencia concreta.
+En Lavandera (Gijón), la familia Trabanco elabora sidra asturiana desde 1925 aunando tradición y pulcritud técnica. Su sidra natural tradicional, nacida de manzanas seleccionadas y toneles de castaño centenarios, es un referente indiscutible del escanciado asturiano: limpia, punzante en nariz, con una apertura en boca vibrante y un regusto persistente que invita a continuar la ronda.
 
 ### [Zapiain](producer:es:12419)
 
-Zapiain: explora el trabajo de la casa de Astigarraga y distingue sus sidras de otros elaborados de manzana.
+En Astigarraga (Gipuzkoa), el apellido Zapiain está ligado a la cultura de la sagardoa desde el siglo XVI. Pioneros en el control microbiológico y en la creación de la Denominación Euskal Sagardoa, combinan la adrenalina festiva del rito del *txotx* frente a las kupelas gigantescas con sidras de autor, sidras espumosas y la singular *sagardoz* (aguardiente de manzana envejecido).
 
 ### [Mooma](producer:es:8956)
 
-Mooma: su proyecto de Palau-sator conecta cultivo de manzanos y transformación. Pregunta por el recorrido de la fruta hacia la sidra elegida.
+En Palau-sator (Girona), la familia fundadora de Mooma aporta una mirada mediterránea fascinante. Tras tres generaciones cuidando manzanos en el corazón del Empordà, transforman sus mejores cosechas en una sidra crujiente, equilibrada y luminosa, demostrando que la fruta de calidad florece con personalidad propia fuera de las fronteras atlánticas.
 
 <!-- mapa -->
 
-## Leer una botella sin dar por hecho el servicio {#botella}
+## El rito de la copa: escanciar, romper y servir {#botella}
 
-Consulta qué tipo de sidra describe el elaborador y cómo recomienda servirla. No presupongas que todas se escancian o que todas forman parte de la misma experiencia de sidrería. La información de la referencia ayuda a preparar la mesa.
+La forma de beber la sidra cambia radicalmente según su tipología y territorio:
+- **La sidra natural asturiana**: exige escanciarse desde lo alto. Al impactar el fino hilo de líquido contra el borde del vaso ancho, el gas carbónico disuelto «despierta», oxigenando la bebida y creando el *espumín* efímero que debe beberse de un solo trago o *culín*.
+- **La sagardoa vasca**: servida con un pequeño escanciado natural o directamente de la kupela al grito de *txotx*, destaca por su marcada acidez cítrica y una sequedad ideal para limpiar la boca entre bocados de chuletón a la brasa.
+- **Sidras de mesa y espumosas**: servidas en copa de vino blanco a entre 8 °C y 10 °C, permitiendo apreciar sus aromas florales, balsámicos y de panadería sin necesidad de agitarlas.
 
-Si aparece un nombre protegido, comprueba a qué producto se aplica. Una bodega o llagar puede elaborar otras bebidas sin esa mención; el sello se sigue en la botella, no se extiende automáticamente a la casa.
+## El llagar como templo gastronómico {#experiencia}
 
-## Visitar y comprar son preguntas distintas {#experiencia}
-
-Una actividad gastronómica puede incluir una explicación del producto sin recorrer toda la elaboración. Si quieres conocer el proceso, pregunta qué se enseña, en qué fechas y cómo se reserva. Para comprar, consulta formatos y disponibilidad del canal propio.
-
-Guarda el nombre de la sidra que hayas conocido y una pregunta pendiente. Así podrás volver al productor con una referencia compartida o continuar por la guía territorial de Asturias.
+Visitar una sidrería en temporada (entre enero y abril en el norte) es una de las mayores experiencias culturales de nuestra gastronomía. Comer en una sagardotegi de pie compartiendo tortilla de bacalao, tacos de bacalao frito con pimientos y chuleta a la brasa, mientras el sidrero abre una barrica tras otra, enseña el verdadero significado de la palabra hospitalidad.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Tres productores de sidra existentes en el catálogo, con elaboración documentada. No se presupone un mismo método, una denominación común ni cultivo propio de toda la manzana en las tres casas.
+Apoyamos llagares y sidrerías con arraigo territorial que defienden la manzana local, los métodos de fermentación natural y la preservación del patrimonio etnográfico de la sidra.

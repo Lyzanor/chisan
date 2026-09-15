@@ -6,18 +6,18 @@ country: es
 status: published
 topic: Vinos
 title: "Cava: elaboradores certificados de la DOP, territorio a territorio"
-description: Recorre las 152 bodegas del catálogo con instalación certificada por la DO Cava, de Sant Sadurní a Requena, y aprende a leer Guarda, Reserva y Paraje Calificado.
+description: "Recorre las 152 bodegas del catálogo con instalación certificada por la DO Cava, de Sant Sadurní a Requena, y aprende a leer Guarda, Reserva y Paraje Calificado."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-13
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/vino.webp
-  alt: Copa de vino tinto
+  src: /editorial/guides/copa-cava-espumoso.webp
+  alt: Copa de vino espumoso con burbujas finas
   width: 1600
-  height: 2240
-  credit: Marios Gkortsilas / Unsplash
-  sourceUrl: https://unsplash.com/photos/hvtZ0nP3ZEU
+  height: 2400
+  credit: Oliver Sherwin / Unsplash
+  sourceUrl: https://unsplash.com/photos/f54dnkSRSMc
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
   - id: listado-instalaciones-2026
     title: DO Cava · Listado de instalaciones elaboradoras de cava certificadas, 28/04/2026
@@ -61,23 +61,27 @@ related:
   - bodegas-jerez
 ---
 
-Detrás de cada botella de cava hay una instalación que el Consejo Regulador certifica. Esta guía reúne las bodegas del catálogo que figuran en el listado oficial de instalaciones elaboradoras de cava certificadas y las ordena por el lugar donde elaboran.
+El sonido festivo del descorche esconde un proceso de paciencia casi monacal. En las colinas del Penedès y en los terruños del Ebro, Requena o Almendralejo, el cava nace en el silencio subterráneo: millones de botellas reposan en posición horizontal —en rima— en cavas excavadas donde la temperatura permanece fresca y constante a lo largo de las cuatro estaciones.
 
-El listado del 28 de abril de 2026 recoge 163 instalaciones de 158 empresas y personas elaboradoras. En Chisan están 152 elaboradores, algunos con más de una instalación; otras ocho instalaciones siguen en revisión hasta que una fuente actual confirme su identidad pública y su oferta.
+Allí, el vino base realiza su segunda fermentación dentro de cada botella individual siguiendo el método tradicional. Las levaduras transforman los azúcares naturales en burbujas diminutas y continuas, y durante meses o años de reposo sobre lías regalan esa finura que corona la copa. Esta guía reúne las 152 bodegas del catálogo cuya instalación elaboradora está oficialmente certificada por el Consejo Regulador, ordenadas territorio a territorio.
+
+El listado oficial del 28 de abril de 2026 recoge 163 instalaciones de 158 empresas y personas elaboradoras. En Chisan están ya identificadas 152 de esas bodegas con su instalación vinculada; otras ocho permanecen en revisión hasta confirmar documentalmente su actividad actual.
 
 ## Qué garantiza la palabra cava {#denominacion}
 
-El pliego de condiciones define el cava como un vino espumoso de calidad obtenido por una segunda fermentación en botella siguiendo el método tradicional, con al menos nueve meses de contacto con las lías en la misma botella. Puede ser blanco o rosado, y su contenido en azúcares se expresa con términos como Brut Nature, Extra Brut, Brut o Semiseco.
+El pliego de condiciones define el cava como un vino espumoso de calidad obtenido por segunda fermentación en botella, con al menos nueve meses de contacto ininterrumpido con las lías en la misma botella. Puede ser blanco o rosado, y su contenido en azúcares se expresa con términos precisos como Brut Nature (sin adición de licor de expedición), Extra Brut, Brut o Semiseco.
 
-La certificación se refiere a la instalación donde se elabora, no a una región dibujada en el mapa ni al nombre de la bodega. Por eso cada ficha de esta guía indica la instalación que aparece en el listado, y una marca elaborada en la instalación de otra empresa figura junto a esa empresa.
+![Cava de maduración con botellas reposando en rima](/editorial/guides/cava-maduracion-quesos.webp)
+
+La certificación oficial ampara a la instalación concreta donde se realiza la vinificación, el tiraje y la crianza, no a una marca flotante en el aire ni a un gentilicio genérico. Por eso cada referencia en esta guía identifica la bodega elaboradora real.
 
 Fuentes: [DOP Cava · Pliego de condiciones](https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf) · [DO Cava · Listado de instalaciones elaboradoras de cava certificadas, 28/04/2026](https://www.cava.wine/documents/529/20260428_Listado_de_empresas_de_CAVA_certificadas_2026.pdf) · [MAPA · Denominación de Origen Protegida «Cava»](https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/detalle/vcprd/dop_cava).
 
 ## Zonas, subzonas y parajes {#territorios}
 
-El pliego divide la zona de producción en cuatro zonas: Comtats de Barcelona, Valle del Ebro, Viñedos de Almendralejo y Requena. Comtats de Barcelona se reparte en las subzonas Valls d'Anoia-Foix, Serra de Mar, Conca del Gaià, Serra de Prades y Pla de Ponent, y el Valle del Ebro en Alto Ebro y Valle del Cierzo. Los parajes calificados son unidades aún más pequeñas, reconocidas una a una.
+El pliego divide la zona de producción en cuatro grandes zonas: Comtats de Barcelona, Valle del Ebro, Viñedos de Almendralejo y Requena. Comtats de Barcelona se reparte en las subzonas Valls d'Anoia-Foix, Serra de Mar, Conca del Gaià, Serra de Prades y Pla de Ponent, y el Valle del Ebro en Alto Ebro y Valle del Cierzo. Los Parajes Calificados son unidades singulares menores, reconocidas viña a viña por su suelo y microclima excepcionales.
 
-Agrupamos las bodegas por el municipio de su ficha. La zona o subzona que puede aparecer en una etiqueta depende del origen de la uva de ese cava concreto, no solo de dónde está la bodega.
+Agrupamos las bodegas por el municipio de su instalación certificada. La zona o subzona que puede lucir una botella depende del origen del viñedo cosechado, garantizando trazabilidad total desde la cepa.
 
 Fuentes: [DOP Cava · Pliego de condiciones](https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf).
 
@@ -766,3 +770,30 @@ Figura en el listado del consejo como BODEGAS PEÑALBA LOPEZ, S.L.; su instalaci
 ## Nuestro criterio editorial {#criterio-editorial}
 
 Incluimos cada productor del catálogo cuya instalación figura en el listado de instalaciones elaboradoras de cava certificadas que el Consejo Regulador publicó el 28 de abril de 2026. Relacionamos cada razón social del listado con su identidad pública mediante la ficha del consejo, su aviso legal o la misma dirección publicada, y registramos la certificación en la ficha del productor con su fuente. Las bodegas que han dejado la DOP no se incluyen. Las instalaciones pendientes se añadirán cuando una fuente actual confirme su identidad pública y su oferta, y la guía se revisará con cada nueva edición del listado. No incluye catas ni clasificaciones.
+=======
+Fundada por el maestro Agustí Torelló Mata, esta bodega familiar es un símbolo universal de rigor. Elaboran exclusivamente cavas de añada sin adición de azúcar (Brut Nature), vinificando parcelas viejas ecológicas. Su mítico Kripta —en su icónica botella con forma de ánfora romana sin base plana— madura durante más de cinco años en cava subterránea, entregando una textura cremosa, recuerdos a bollería hojaldrada y una mineralidad apabullante.
+
+### [Codorníu (Raventós Codorníu)](producer:es:4108)
+
+En 1872, Josep Raventós Fatjó elaboró las primeras botellas de champán español tras regresar de Francia. Su monumental bodega modernista en Sant Sadurní, diseñada por Josep Puig i Cadafalch y declarada Monumento Histórico-Artístico, alberga más de treinta kilómetros de galerías subterráneas. En sus gamas altas de paraje (como Ars Collecta), Codorníu demuestra la vigencia de sus viñedos históricos y su maestría en la crianza prolongada.
+
+<!-- mapa -->
+
+## Desmontando el mito del azúcar {#etiqueta}
+
+La etiqueta del cava indica con exactitud el nivel de dulzor residual:
+- **Brut Nature**: cero gramos de azúcar añadido tras el degüelle. Es la expresión más pura y transparente de la uva y la añada.
+- **Extra Brut y Brut**: con un toque mínimo de licor de expedición (hasta 6 y 12 g/l), ideales para paladares que buscan una redondez amable sin perder frescura.
+- **Semi-seco y Dulce**: destinados exclusivamente a postres y sobremesas, aunque la tendencia gastronómica actual premia los espumosos secos para acompañar toda la comida.
+
+## El cava como rey de la mesa {#territorios}
+
+El cava no debe esperar al brindis final: es uno de los vinos más versátiles de la gastronomía mundial:
+- **Aperitivos y embutidos ibéricos**: la acidez y el carbónico limpian la grasa del jamón de bellota y despiertan el apetito.
+- **Arroces, fideuàs y paellas**: un cava Gran Reserva con cuerpo sostiene la potencia marina del sofrito y el marisco.
+- **Pescados al horno y aves**: la cremosidad de la burbuja madura armoniza a la perfección con una lubina a la sal o una pularda asada.
+
+## Nuestro criterio editorial {#criterio-editorial}
+
+Respaldamos a elaboradores que apuestan por la viticultura ecológica, las variedades históricas del Penedès y largas crianzas sobre lías. El gran cava español se mide cara a cara con los mejores espumosos del planeta.
+>>>>>>> f8fa8a8ec (editorial(guides): elevate guides with storytelling narrative, unique covers and open maps)

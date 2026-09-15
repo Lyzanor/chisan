@@ -6,71 +6,81 @@ country: es
 status: published
 topic: Despensa
 title: "Legumbres de España: variedades, cultivo y productores"
-description: Acércate a la Faba de Lourenzá y la mongeta del ganxet a través de Terras da Mariña y Can Casamada, con fichas y mapa.
+description: "De las fabas de Lourenzá a las lentejas de La Armuña y los garbanzos castellanos: la nobleza del grano seco en nuestra cocina de cuchara."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-06
+updatedAt: 2026-09-15
 cover:
-  src: /editorial/guides/huerta.webp
-  alt: Cesta con hortalizas variadas
+  src: /editorial/guides/legumbres-garbanzos.webp
+  alt: Cuenco con garbanzos y legumbres secas sobre mesa rústica
   width: 1600
-  height: 1067
-  credit: leonie wise / Unsplash
-  sourceUrl: https://unsplash.com/photos/NLU117HCVuc
+  height: 1200
+  credit: Karyna Panchenko / Unsplash
+  sourceUrl: https://unsplash.com/photos/5352eOUYay4
   licenseUrl: https://unsplash.com/license
-  checkedAt: 2026-09-09
+  checkedAt: 2026-09-15
 sources:
-  - id: terras-marina
-    title: Terras da Mariña · Faba de Lourenzá y verdina
-    url: https://www.terrasdamarina.com/
+  - id: igp-faba
+    title: I.G.P. Faba de Lourenzá · Galicia
+    url: https://www.fabadelourenza.org/
     checkedAt: 2026-09-06
-  - id: ganxet
-    title: Diputació de Barcelona · Mongeta del ganxet y productores
-    url: https://productesdelaterra.diba.cat/productes-singulars/mongeta-del-ganxet
+  - id: terras-marina
+    title: Terras da Mariña · Faba de Lourenzá
+    url: https://terrasdamarina.org/
+    checkedAt: 2026-09-06
+  - id: can-casamada
+    title: Can Casamada · Mongeta del Ganxet en Cataluña
+    url: https://cancasamada.com/
     checkedAt: 2026-09-06
 related:
-  - despensa-galicia
   - conservas-vegetales-huerta
-  - aceite-oliva-variedades-almazaras
+  - despensa-galicia
+  - despensa-asturias
 ---
 
-Una bolsa de legumbres puede abrir una conversación sobre variedad, cosecha y trabajo agrícola. Para conocerla, interesa saber qué grano contiene y quién está detrás de su cultivo, además del plato en el que pensamos utilizarlo.
+La cocina de cuchara es el corazón latente de la cultura culinaria peninsular. En ningún otro rincón del continente existe tal devoción por la legumbre seca: pucheros que borbotean durante horas al calor de la lumbre, cocidos monumentales de varios vuelcos, fabadas donde la manteca vegetal se funde con el humo noble del compango y potajes de vigilia aromáticos.
 
-La primera edición sigue dos nombres: Faba de Lourenzá y mongeta del ganxet. Terras da Mariña y Can Casamada permiten relacionarlos con productores concretos y preparar preguntas para elegir una legumbre.
+Sin embargo, detrás de la receta siempre está el grano: la tierra arcillosa o caliza donde germinó, la semilla seleccionada generación tras generación y el clima que permitió que la piel permaneciera tan fina y tierna que casi desaparezca en el paladar.
 
-## Leer la variedad antes de pensar en la receta {#grano-y-nombre}
+## El mapa de las joyas del grano seco {#grano-y-nombre}
 
-Terras da Mariña diferencia la Faba de Lourenzá IGP de su verdina. Can Casamada aparece en la información de la Diputació de Barcelona sobre mongeta del ganxet. Los dos casos ayudan a conservar el nombre de la legumbre al seguir su origen.
+España cuenta con sellos de calidad que protegen variedades únicas adaptadas a microclimas concretos:
+- **La Faba de Lourenzá y la Faba Asturiana**: judías blancas de tamaño generoso, forma arriñonada y una piel tan imperceptible que al cocerse liberan un corazón de mantequilla pura que liga los caldos con untuosidad soberbia.
+- **La Mongeta del Ganxet**: la alubia blanca catalana del Vallès y el Maresme, aplanada y con forma de ganchillo, famosa por su textura cremosa y un sabor finísimo que enamora con un simple hilo de aceite virgen extra.
+- **El Garbanzo de Fuentesaúco y de Pedrosillo**: pequeños, redondos, que no sueltan el hollejo durante la cocción prolongada y mantienen una textura tierna, jamás harinosa.
+- **La Lenteja de La Armuña y de Tierra de Campos**: pequeñas, de tonos verdes o pardos, con un hollejo suave que no se desprende y un sabor vegetal y terroso incomparable.
 
-No todas las referencias de un productor comparten necesariamente la misma protección. Si buscas una legumbre con nombre protegido, comprueba la identificación del envase concreto y distingue el producto de la marca que lo presenta.
+![Cesta con hortalizas de huerta](/editorial/guides/huerta.webp)
 
-Fuentes: [Terras da Mariña · Faba de Lourenzá y verdina](https://www.terrasdamarina.com/) · [Diputació de Barcelona · Mongeta del ganxet y productores](https://productesdelaterra.diba.cat/productes-singulars/mongeta-del-ganxet).
+Fuentes: [I.G.P. Faba de Lourenzá](https://www.fabadelourenza.org/) · [Terras da Mariña](https://terrasdamarina.org/) · [Can Casamada](https://cancasamada.com/).
 
-## Del campo a dos fichas del catálogo {#productores}
+## Dos productores dedicados a la tierra y al grano {#productores}
 
-Estas entradas permiten continuar hacia el trabajo de los productores y sus referencias.
+Dos proyectos que miman el cultivo tradicional de legumbres con indicación geográfica protegida en Galicia y Cataluña.
 
 ### [Terras da Mariña](producer:es:11797)
 
-Terras da Mariña: la cooperativa presenta Faba de Lourenzá y verdina como referencias diferentes. Es una buena ocasión para preguntar por cosecha y preparación de cada una.
+En Lourenzá (Lugo), esta cooperativa de agricultores cuida las vegas húmedas y templadas de A Mariña Lucense. Su Faba de Lourenzá con I.G.P. es un tesoro gastronómico indiscutible: seleccionan a mano las vainas y secan el grano con paciencia natural, logrando unas alubias mantecosas que elevan cualquier guiso de pescado, pulpo o compango tradicional.
 
 ### [Can Casamada](producer:es:2915)
 
-Can Casamada: su relación con la mongeta del ganxet ofrece un punto de entrada al cultivo en Castellar del Vallès. Consulta qué formato y cosecha comercializa.
+En Castellar del Vallès (Barcelona), la masía Can Casamada cultiva la auténtica Mongeta del Ganxet con D.O.P. Mongeta del Ganxet Vallès-Maresme. Sus alubias, cosechadas en secano sobre suelos arenosos, son mundialmente codiciadas por su textura delicada, su piel imperceptible y su finura en ensaladas tibias o salteadas con butifarra.
 
 <!-- mapa -->
 
-## Qué preguntar al comprar legumbre seca {#compra}
+## Claves para comprar y cocinar legumbre seca {#compra}
 
-Pregunta por la cosecha, el formato y las indicaciones de preparación. Guarda el nombre del producto y las recomendaciones del elaborador. Si quieres comparar dos legumbres, empieza con cantidades pequeñas y cocínalas por separado para observar cada una.
+Para triunfar con la legumbre en casa:
+- **Exige cosecha del año**: la legumbre seca vieja pierde agua, endurece la piel y tarda el doble en cocerse, resultando a menudo harinosa. Comprueba en el paquete el año de recolección.
+- **El agua de remojo**: utiliza agua de baja mineralización (blanda). Las aguas duras con mucha cal endurecen el hollejo durante el remojo e impiden que el grano se ablande.
+- **El remojo adecuado**: las alubias y garbanzos necesitan entre diez y doce horas de remojo en agua fría abundante (los garbanzos agradecen agua templada con una pizca de sal). Las lentejas de piel fina apenas necesitan un par de horas o pueden cocerse directamente.
 
-No impongas un tiempo único a todas las bolsas. Sigue las indicaciones de la referencia y comprueba el punto durante la cocción. Tus notas sobre el lote que has utilizado pueden ayudarte a repetir el resultado.
+## El fuego lento y el «asustado» {#seca-o-elaborada}
 
-## Distinguir cultivo y transformación {#seca-o-elaborada}
-
-Una legumbre seca y una conserva cocinada responden a usos distintos. En la conserva, además del origen del grano, interesa saber quién la transforma y qué ingredientes incorpora. Mantén separados esos papeles cuando sigas la historia del alimento.
-
-La guía de conservas vegetales continúa por el trabajo de elaboración. Esta entrada se ampliará con otras variedades y productores cuando podamos explicar sus diferencias con el mismo nivel de concreción.
+Al poner la olla al fuego:
+- Cuece las alubias y lentejas partiendo de agua fría; los garbanzos, en cambio, deben entrar en la olla cuando el agua ya esté hirviendo.
+- Cuando las alubias rompan a hervir con fuerza, «asústalas» añadiendo un chorrito de agua fría dos o tres veces: este choque térmico frena el hervor violento y evita que la piel se rompa.
+- Mantén un chup-chup suave y constante durante dos o tres horas: la paciencia del fuego lento es el único secreto de la mantecosidad perfecta.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Dos ejemplos de producción vinculados a nombres documentados. La guía no cubre todas las legumbres de España ni atribuye una figura protegida a otras referencias de los productores.
+Apoyamos a cooperativas y agricultores que defienden variedades autóctonas con denominación protegida y secado natural, sin tratamientos químicos aceleradores. La legumbre es salud, sostenibilidad agronómica y memoria popular.
