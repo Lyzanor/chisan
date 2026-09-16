@@ -3,6 +3,30 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-16 — Province counts on dense national maps
+
+- Country and nearby maps with more than 200 mapped results over several
+  provinces show one count per province below zoom 8 instead of every exact
+  point. Placement tests with the live catalog found that separate labels for all
+  50 provinces fit only from zoom 7 (95 overlapping pairs at zoom 5), so counts
+  that would touch combine at the larger count and name every province in their
+  tooltip and accessible label. Merging into the nearest instead of the first
+  overlapping count produced no more coherent groups; the deterministic rule stays.
+- Verified the isolated production build at 1440×1000 and 390×844. Spain opened
+  at zoom 5 with 12 counts and no producer layers (previously about 12,200
+  points, each with a visual and a hit-area circle); at 390 px it opened at
+  zoom 4 with 5 counts and no horizontal overflow.
+- Activating the combined Catalonia/Huesca count moved to zoom 7 with all 50
+  province counts separate; Barcelona then opened at zoom 9 with its exact points.
+  Zooming out returned 50 counts at zoom 7 and 31 at zoom 6. A selected producer
+  kept its exact point and anchored card above the counts. Keyboard focus opens
+  a count's tooltip; Enter opened Baleares at zoom 8 (318 points) and kept focus
+  on the map.
+- `queso` (1,361 national results) showed 14 counts, `queso cabrales` (27) kept
+  exact points, and the Barcelona province page kept all 2,371 points at zoom 7.
+  While the national catalog loads, the map now says so instead of reporting
+  invalid coordinates. Console output showed only the local Vercel Analytics 404.
+
 ## 2026-09-16 — Guide article layout: initial table of contents, full-width reading, producer grid and expanded map
 
 Visual review: **passed** at 1440 × 1024 and 390 × 844.

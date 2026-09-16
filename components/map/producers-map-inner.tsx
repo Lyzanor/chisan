@@ -31,9 +31,17 @@ import {
   type ProducerMapMarker,
 } from "@/lib/producer-selections";
 import { NEARBY_PRODUCER_FOCUS_MINIMUM } from "@/lib/location/nearby-producer-focus";
+import {
+  PRODUCER_GROUP_DETAIL_ZOOM,
+  mergeOverlappingProducerGroups,
+  shouldGroupProducerMap,
+  summarizeProducerMapGroups,
+  type ProducerMapGroup,
+} from "@/lib/producer-map-groups";
 
 import type {
   ProducerMapFocusRequest,
+  ProducerMapGroupOverview,
   ProducerMapMarkerInteraction,
 } from "./producers-map";
 
@@ -46,7 +54,10 @@ const PRODUCER_FOCUS_ZOOM = 13;
 const CATEGORY_MARKER_MIN_ZOOM = 11;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
 const EMPTY_FOCUS_KEYS: string[] = [];
+const GROUP_MARKER_HEIGHT = 32;
+const GROUP_MARKER_TARGET = 44;
 const categoryMarkerIconCache = new Map<string, L.DivIcon>();
+const groupMarkerIconCache = new Map<string, L.DivIcon>();
 
 function producerMarkerLabel(point: ProducerMapMarker): string {
   return [point.name, point.city, point.categories[0]].filter(Boolean).join(", ");
@@ -372,6 +383,106 @@ const OverviewProducerMarker = memo(function OverviewProducerMarker({
   );
 });
 
+// 14px tabular figures, 12px side padding and a 1px edge; never below the target.
+function measureGroupMarker(text: string): { width: number; height: number } {
+  return {
+    width: Math.max(GROUP_MARKER_TARGET, Math.ceil(26 + text.length * 8.5)),
+    height: GROUP_MARKER_HEIGHT,
+  };
+}
+
+function getGroupMarkerIcon(text: string): L.DivIcon {
+  const cached = groupMarkerIconCache.get(text);
+  if (cached) return cached;
+
+  const { width } = measureGroupMarker(text);
+  // `text` is a locale-formatted integer, never catalog prose.
+  const markerIcon = L.divIcon({
+    className: "producer-map-group-marker",
+    html: `<span aria-hidden="true" class="producer-map-group-count">${text}</span>`,
+    iconAnchor: [width / 2, GROUP_MARKER_TARGET / 2],
+    iconSize: [width, GROUP_MARKER_TARGET],
+  });
+  groupMarkerIconCache.set(text, markerIcon);
+  return markerIcon;
+}
+
+const ProducerGroupMarker = memo(function ProducerGroupMarker({
+  group,
+  overview,
+  onActivate,
+}: {
+  group: ProducerMapGroup;
+  overview: ProducerMapGroupOverview;
+  onActivate: (group: ProducerMapGroup) => void;
+}) {
+  const map = useMap();
+  const markerRef = useRef<L.Marker>(null);
+  const description = overview.describe(
+    group.members.map(({ label }) => label),
+    group.count,
+  );
+
+  useEffect(() => {
+    const layer = markerRef.current;
+    const element = layer?.getElement();
+    if (!layer || !element) return;
+
+    element.setAttribute("role", "button");
+    element.setAttribute("tabindex", "0");
+    element.setAttribute("aria-label", description.label);
+
+    function handleFocus() {
+      layer?.openTooltip();
+    }
+
+    function handleBlur() {
+      layer?.closeTooltip();
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Enter" && event.key !== " ") return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      onActivate(group);
+      // The count disappears as its points open; keep keyboard focus on the map.
+      map.getContainer().focus({ preventScroll: true });
+    }
+
+    element.addEventListener("focus", handleFocus);
+    element.addEventListener("blur", handleBlur);
+    element.addEventListener("keydown", handleKeyDown);
+    return () => {
+      element.removeEventListener("focus", handleFocus);
+      element.removeEventListener("blur", handleBlur);
+      element.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [description.label, group, map, onActivate]);
+
+  return (
+    <Marker
+      ref={markerRef}
+      position={[group.latitude, group.longitude]}
+      icon={getGroupMarkerIcon(overview.formatCount(group.count))}
+      riseOnHover
+      eventHandlers={{ click: () => onActivate(group) }}
+    >
+      <Tooltip
+        className="producer-map-tooltip"
+        direction="top"
+        offset={[0, -16]}
+        opacity={0.98}
+      >
+        <span className="producer-map-tooltip__content">
+          <strong>{description.areas}</strong>
+          <span>{description.producers}</span>
+        </span>
+      </Tooltip>
+    </Marker>
+  );
+});
+
 function getPointsBounds(
   points: readonly ProducerMapMarker[],
 ): L.LatLngBounds | null {
@@ -476,6 +587,7 @@ function BoundsAwareMarkers({
   onVisibleKeysChange,
   markerInteraction,
   singlePointZoom = 13,
+  groupOverview,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -491,6 +603,7 @@ function BoundsAwareMarkers({
   onVisibleKeysChange?: (keys: string[]) => void;
   markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
+  groupOverview?: ProducerMapGroupOverview;
   messages: {
     openProfile: string;
   };
@@ -648,12 +761,53 @@ function BoundsAwareMarkers({
     });
   }, [focusRequest, map, points]);
 
+  const groups = useMemo(
+    () => (groupOverview ? summarizeProducerMapGroups(points) : []),
+    [groupOverview, points],
+  );
+  const grouped = shouldGroupProducerMap({
+    zoom,
+    pointCount: points.length,
+    groupCount: groups.length,
+  });
+  const placedGroups = useMemo(() => {
+    if (!grouped || !groupOverview) return [];
+
+    return mergeOverlappingProducerGroups(groups, (group) => {
+      const { x, y } = map.project([group.latitude, group.longitude], zoom);
+      return { x, y, ...measureGroupMarker(groupOverview.formatCount(group.count)) };
+    });
+  }, [groupOverview, grouped, groups, map, zoom]);
+  const zoomToGroup = useCallback(
+    (group: ProducerMapGroup) => {
+      const bounds = L.latLngBounds(
+        [group.south, group.west],
+        [group.north, group.east],
+      );
+      // One area opens its exact points; a combined count first separates its areas.
+      const minimumZoom =
+        group.members.length === 1 ? PRODUCER_GROUP_DETAIL_ZOOM : map.getZoom() + 1;
+      const targetZoom = Math.min(
+        Math.max(map.getBoundsZoom(bounds.pad(0.2)), minimumZoom),
+        PRODUCER_FOCUS_ZOOM,
+      );
+      map.stop();
+      if (motionIsReduced()) {
+        map.setView(bounds.getCenter(), targetZoom, { animate: false });
+        return;
+      }
+      map.flyTo(bounds.getCenter(), targetZoom, { animate: true, duration: 0.32 });
+    },
+    [map],
+  );
   const visible = useMemo(
     () =>
-      points.length > VIEWPORT_THRESHOLD
-        ? points.filter((p) => viewBounds.contains([p.latitude, p.longitude]))
-        : points,
-    [points, viewBounds],
+      grouped
+        ? []
+        : points.length > VIEWPORT_THRESHOLD
+          ? points.filter((p) => viewBounds.contains([p.latitude, p.longitude]))
+          : points,
+    [grouped, points, viewBounds],
   );
   const visibleKeys = useMemo(() => {
     const center = map.getCenter();
@@ -688,6 +842,26 @@ function BoundsAwareMarkers({
         <AnchoredMapPreview point={presentedPoint}>
           {selectionContent}
         </AnchoredMapPreview>
+      ) : null}
+      {grouped && groupOverview
+        ? placedGroups.map((group) => (
+            <ProducerGroupMarker
+              key={group.members.map(({ key }) => key).join("\0")}
+              group={group}
+              overview={groupOverview}
+              onActivate={zoomToGroup}
+            />
+          ))
+        : null}
+      {grouped && presentedPoint ? (
+        // Keeps the previewed card anchored while its neighbours are counted.
+        <OverviewProducerMarker
+          point={presentedPoint}
+          selected
+          markerInteraction="static"
+          keyboardAccessible={false}
+          messages={messages}
+        />
       ) : null}
       {renderedPoints.map((point) => {
         const selected = selectedKey === point.key;
@@ -737,6 +911,7 @@ export default function ProducersMapInner({
   markerInteraction,
   singlePointZoom = 13,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
+  groupOverview,
   messages,
   onReady,
 }: {
@@ -754,6 +929,7 @@ export default function ProducersMapInner({
   markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   minZoom?: number;
+  groupOverview?: ProducerMapGroupOverview;
   messages: {
     openProfile: string;
   };
@@ -789,6 +965,7 @@ export default function ProducersMapInner({
         onVisibleKeysChange={onVisibleKeysChange}
         markerInteraction={markerInteraction}
         singlePointZoom={singlePointZoom}
+        groupOverview={groupOverview}
         messages={messages}
       />
     </MapContainer>

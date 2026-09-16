@@ -6,6 +6,7 @@ const en = {
   retry: "Try again", chooseLocation: "Choose a location to see nearby producers.",
   results: "{count} producers · {scope}", more: "Show more", relevance: "Sorted by relevance",
   empty: "No producers match this search in {scope}.",
+  mapProducer: "{count} producer", mapProducers: "{count} producers", mapGroup: "{areas}: {producers}. Zoom in",
 };
 type Messages = { [K in keyof typeof en]: string };
 const messages: Partial<Record<Locale, Messages>> = {
@@ -16,6 +17,7 @@ const messages: Partial<Record<Locale, Messages>> = {
     retry: "Reintentar", chooseLocation: "Elige una ubicación para ver productores cercanos.",
     results: "{count} productores · {scope}", more: "Mostrar más", relevance: "Ordenados por relevancia",
     empty: "No hay productores que coincidan con esta búsqueda en {scope}.",
+    mapProducer: "{count} productor", mapProducers: "{count} productores", mapGroup: "{areas}: {producers}. Acercar el mapa",
   },
   ca: {
     scope: "Cerca a", province: "Província: {area}", nearby: "A prop meu",
@@ -23,6 +25,7 @@ const messages: Partial<Record<Locale, Messages>> = {
     retry: "Torna-ho a provar", chooseLocation: "Tria una ubicació per veure productors propers.",
     results: "{count} productors · {scope}", more: "Mostra'n més", relevance: "Ordenats per rellevància",
     empty: "No hi ha productors que coincideixin amb aquesta cerca a {scope}.",
+    mapProducer: "{count} productor", mapProducers: "{count} productors", mapGroup: "{areas}: {producers}. Apropa el mapa",
   },
 };
 export function getCatalogSearchMessages(locale: Locale): Messages {

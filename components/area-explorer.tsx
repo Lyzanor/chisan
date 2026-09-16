@@ -35,6 +35,7 @@ import {
 import {
   ProducerSelectionMap,
   type ProducerMapFocusRequest,
+  type ProducerMapGroupOverview,
 } from "@/components/map/producers-map";
 import { ProducerMapSelectionCard } from "@/components/map/producer-map-selection-card";
 import { useDismissibleProducerMapSelection } from "@/components/map/use-dismissible-producer-map-selection";
@@ -415,9 +416,27 @@ function AreaExplorerView({
         ),
         latitude: item.latitude,
         longitude: item.longitude,
+        group: { key: item.area, label: item.areaLabel },
       })),
     [categoryPresentations, mappedItems],
   );
+  const mapGroupOverview = useMemo<ProducerMapGroupOverview>(() => {
+    const messages = getCatalogSearchMessages(model.locale);
+    const numbers = new Intl.NumberFormat(model.localeDisplayTag);
+    const plurals = new Intl.PluralRules(model.localeDisplayTag);
+    const lists = new Intl.ListFormat(model.localeDisplayTag, { type: "conjunction" });
+    return {
+      formatCount: (count) => numbers.format(count),
+      describe: (labels, count) => {
+        const areas = lists.format(labels);
+        const producers = formatMessage(
+          plurals.select(count) === "one" ? messages.mapProducer : messages.mapProducers,
+          { count: numbers.format(count) },
+        );
+        return { areas, producers, label: formatMessage(messages.mapGroup, { areas, producers }) };
+      },
+    };
+  }, [model.locale, model.localeDisplayTag]);
   const { keys: nearbyMapFocusKeys, consume: consumeNearbyMapFocus } =
     useNearbyMapFocusKeys(model.scope.country, searchScope === "area" ? model.area : "", mapPoints);
   const prioritizedProducerKeys =
@@ -817,28 +836,34 @@ function AreaExplorerView({
             aria-label={model.mapMessages.producerMap}
             tabIndex={-1}
           >
-            <ProducerSelectionMap
-              key={searchScope}
-              points={mapPoints}
-              minZoom={4}
-              selectedKey={presentedItem?.key}
-              selectionContent={presentedItem ? (
-                <div aria-live="polite" aria-atomic="true">
-                  <ProducerMapSelectionCard
-                    linkRef={selectedProducerLinkRef}
-                    producer={{ ...presentedItem, description: catalogDescriptionPreview(presentedItem.description), href: presentedItem.href }}
-                  />
-                </div>
-              ) : null}
-              focusRequest={mapFocusRequest}
-              nearbyFocusKeys={nearbyMapFocusKeys}
-              onNearbyFocusConsumed={consumeNearbyMapFocus}
-              onSelectKey={selectMapProducer}
-              onPreviewKey={previewMapProducer}
-              onPreviewEndKey={clearProducerPreview}
-              onVisibleKeysChange={handleVisibleProducerKeysChange}
-              messages={model.mapMessages}
-            />
+            {loading ? (
+              // An unloaded national catalog is not a set without coordinates.
+              <div className="map-placeholder">{searchMessages.loading}</div>
+            ) : (
+              <ProducerSelectionMap
+                key={searchScope}
+                points={mapPoints}
+                minZoom={4}
+                selectedKey={presentedItem?.key}
+                selectionContent={presentedItem ? (
+                  <div aria-live="polite" aria-atomic="true">
+                    <ProducerMapSelectionCard
+                      linkRef={selectedProducerLinkRef}
+                      producer={{ ...presentedItem, description: catalogDescriptionPreview(presentedItem.description), href: presentedItem.href }}
+                    />
+                  </div>
+                ) : null}
+                focusRequest={mapFocusRequest}
+                nearbyFocusKeys={nearbyMapFocusKeys}
+                onNearbyFocusConsumed={consumeNearbyMapFocus}
+                onSelectKey={selectMapProducer}
+                onPreviewKey={previewMapProducer}
+                onPreviewEndKey={clearProducerPreview}
+                onVisibleKeysChange={handleVisibleProducerKeysChange}
+                groupOverview={mapGroupOverview}
+                messages={model.mapMessages}
+              />
+            )}
           </div>
 
         </div>

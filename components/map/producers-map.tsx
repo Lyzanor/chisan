@@ -33,6 +33,15 @@ export type ProducerMapFocusRequest = Readonly<{
 
 export type ProducerMapMarkerInteraction = "popup" | "select" | "static";
 
+/** Localized copy for dense discovery maps whose points carry a group. */
+export type ProducerMapGroupOverview = Readonly<{
+  formatCount: (count: number) => string;
+  describe: (
+    labels: readonly string[],
+    count: number,
+  ) => Readonly<{ areas: string; producers: string; label: string }>;
+}>;
+
 type ProducersMapProps = {
   points: ProducerMapPoint[];
   scope: CatalogNavigationScope;
@@ -124,6 +133,7 @@ export function ProducerSelectionMap({
   markerInteraction,
   singlePointZoom,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
+  groupOverview,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -140,6 +150,7 @@ export function ProducerSelectionMap({
   markerInteraction?: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   minZoom?: number;
+  groupOverview?: ProducerMapGroupOverview;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
@@ -175,6 +186,7 @@ export function ProducerSelectionMap({
         markerInteraction={resolvedMarkerInteraction}
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}
+        groupOverview={groupOverview}
         messages={messages}
         onReady={handleReady}
       />

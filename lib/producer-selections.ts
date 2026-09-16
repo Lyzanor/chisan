@@ -45,6 +45,8 @@ export type ProducerMapMarker = Pick<
 > & {
   latitude: number;
   longitude: number;
+  /** Optional presentation group for dense discovery maps; never identity. */
+  group?: Readonly<{ key: string; label: string }>;
 };
 
 export function producerSelectionItemKey(identity: ProducerIdentity): string {

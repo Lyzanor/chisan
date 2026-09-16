@@ -372,7 +372,41 @@ body {
   pointer-events: fill;
 }
 
+/* Dense discovery below province zoom: one count stands for exact points. */
+.producer-map-group-marker {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.producer-map-group-count {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  min-width: 100%;
+  height: var(--chisan-space-8);
+  padding: 0 var(--chisan-space-3);
+  border: var(--chisan-line) solid var(--chisan-color-surface);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-moss-dark);
+  color: var(--chisan-color-surface);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.producer-map-group-marker:hover .producer-map-group-count,
+.producer-map-group-marker:focus-visible .producer-map-group-count {
+  background: var(--chisan-color-moss);
+}
+
 .producer-map-category-marker:focus-visible,
+.producer-map-group-marker:focus-visible,
 .producer-map-hit-area:focus-visible {
   outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
   outline-offset: 2px;
@@ -468,6 +502,7 @@ body {
   .catalog-chip,
   .location-onboarding__primary,
   .producer-map-category-icon,
+  .producer-map-group-count,
   .producer-map-circle {
     transition: none;
   }

@@ -8,6 +8,14 @@ import { buildCatalogSearchDocument, rankCatalogEntries, catalogDescriptionPrevi
 import { buildCatalogHref, readCatalogQueryContext } from "../lib/catalog-navigation";
 import { includeSelectedProducer, prioritizeProducerItems } from "../lib/catalog/producer-list";
 import { positionMapPreview } from "../lib/map-preview-position";
+import {
+  PRODUCER_GROUP_DETAIL_ZOOM,
+  PRODUCER_GROUP_MIN_POINTS,
+  mergeOverlappingProducerGroups,
+  shouldGroupProducerMap,
+  summarizeProducerMapGroups,
+  type ProducerMapGroup,
+} from "../lib/producer-map-groups";
 
 test("map previews stay beside their point and inside the visible map at every edge", () => {
   const bounds = { left: 12, top: 92, right: 378, bottom: 480 };
@@ -82,6 +90,52 @@ test("national map/list identity is stable even when provinces share a slug", ()
   const a = { key: "1", slug: "finca" }, b = { key: "2", slug: "finca" };
   assert.deepEqual(prioritizeProducerItems([a, b], ["2"]), [b, a]);
   assert.deepEqual(includeSelectedProducer([a], b), [a, b]);
+});
+
+test("dense multi-province maps count exact points per province below province zoom", () => {
+  const dense = PRODUCER_GROUP_MIN_POINTS + 1;
+  assert.equal(shouldGroupProducerMap({ zoom: PRODUCER_GROUP_DETAIL_ZOOM - 1, pointCount: dense, groupCount: 2 }), true);
+  assert.equal(shouldGroupProducerMap({ zoom: PRODUCER_GROUP_DETAIL_ZOOM, pointCount: dense, groupCount: 2 }), false);
+  assert.equal(shouldGroupProducerMap({ zoom: 5, pointCount: PRODUCER_GROUP_MIN_POINTS, groupCount: 2 }), false);
+  assert.equal(shouldGroupProducerMap({ zoom: 5, pointCount: dense, groupCount: 1 }), false);
+
+  const point = (key: string, area: string, latitude: number, longitude: number) => ({
+    key, href: `/es/${area}/${key}`, name: key, city: "", icon: "", categories: [], latitude, longitude,
+    group: { key: area, label: area.toUpperCase() },
+  });
+  const islands = [point("mallorca-1", "baleares", 39.6, 2.9), point("ibiza", "baleares", 38.9, 1.43),
+    point("mallorca-2", "baleares", 39.57, 2.65), point("menorca", "baleares", 39.95, 4.1)];
+  const inland = [point("madrid-1", "madrid", 40.42, -3.7), point("madrid-2", "madrid", 40.48, -3.36)];
+  const groups = summarizeProducerMapGroups([...inland, ...islands]);
+  assert.deepEqual(groups.map(({ members, count }) => [members, count]), [
+    [[{ key: "baleares", label: "BALEARES", count: 4 }], 4],
+    [[{ key: "madrid", label: "MADRID", count: 2 }], 2],
+  ]);
+  // The count sits on a real producer coordinate, never an invented midpoint.
+  assert.deepEqual([groups[0].latitude, groups[0].longitude], [39.6, 2.9]);
+  assert.deepEqual([groups[0].south, groups[0].west, groups[0].north, groups[0].east], [38.9, 1.43, 39.95, 4.1]);
+  assert.deepEqual(summarizeProducerMapGroups([...islands].reverse()), summarizeProducerMapGroups(islands));
+  assert.deepEqual(summarizeProducerMapGroups([...inland, { ...islands[0], group: undefined }]), []);
+});
+
+test("province counts that would touch combine without losing or moving producers", () => {
+  const group = (key: string, count: number, x: number): ProducerMapGroup => ({
+    members: [{ key, label: key, count }], count, latitude: 0, longitude: x, south: 0, west: x, north: 0, east: x,
+  });
+  const place = ({ longitude, count }: ProducerMapGroup) => ({
+    x: longitude, y: 0, width: 20 + String(count).length * 10, height: 32,
+  });
+  const separate = mergeOverlappingProducerGroups([group("small", 5, 40), group("large", 900, 0), group("far", 50, 300)], place);
+  assert.deepEqual(separate.map(({ members, count, longitude }) => [members.map(({ key }) => key), count, longitude]), [
+    [["large", "small"], 905, 0],
+    [["far"], 50, 300],
+  ]);
+  // Widening 990 to 1010 reaches a count that touched neither original label.
+  const chained = mergeOverlappingProducerGroups([group("a", 990, 0), group("c", 50, 50), group("b", 20, -40)], place);
+  assert.deepEqual(chained.map(({ members, count, longitude }) => [members.map(({ key }) => key), count, longitude]), [
+    [["a", "c", "b"], 1060, 0],
+  ]);
+  assert.deepEqual([chained[0].west, chained[0].east], [-40, 50]);
 });
 
 test("search URLs preserve text and national scope without carrying device position", () => {

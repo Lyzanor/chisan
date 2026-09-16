@@ -137,11 +137,19 @@ under 12px. Reading column 58–64 characters.
 
 ## Map
 
-One point per producer, at its exact coordinate. The current map uses individual points without clustering. Keep source
-coordinates unchanged; a future density treatment may group their presentation
-when navigation, counts and access to each producer remain clear. Never change
-coordinates just to improve appearance.
+One point per producer, at its exact coordinate. Keep source coordinates
+unchanged; dense discovery may group their presentation only while navigation,
+counts and access to each producer remain clear. Never change coordinates just
+to improve appearance.
 
+- Country and nearby discovery groups by province below zoom 8 when more than
+  200 mapped results span several provinces. Each province shows its count in a
+  32px `moss-dark` label with `surface` figures and a 44px target, placed on its
+  producer point nearest the province median. Counts that would touch combine at
+  the larger count, and their tooltip and accessible name list every province.
+  Activating one zooms towards its producers: a single province opens at zoom 8
+  or closer, a combined count separates its provinces first. A previewed producer keeps its
+  exact point above the counts. Province pages, selections and guides never group.
 - Area overviews use exact-coordinate 6px `moss-dark` points below zoom 11;
   from zoom 11, each producer uses its existing colourful category pictogram
   in a 24px `surface` disc. The active or previewed producer grows above its
