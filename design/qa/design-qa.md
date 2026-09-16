@@ -3,6 +3,18 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-16 — Category ambient backgrounds above the map
+
+Implementation review: **static checks passed; live visual review pending**.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Category decoration | The two ambient image layers now start at the top of the producer profile and are both anchored above the map, including the narrow layout. The map remains a separate readable surface. |
+| Otros | Added the existing rural landscape illustration as the ambient image for the catch-all category, keeping the image generic and free of producer-specific content. |
+
+The local browser review could not run because the sandbox refused the dev-server
+port and the elevated retry was unavailable.
+
 ## 2026-09-16 — Province counts on dense national maps
 
 - Country and nearby maps with more than 200 mapped results over several

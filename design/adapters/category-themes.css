@@ -4,15 +4,16 @@
 main[data-category] { --category-image: none; }
 main[data-category="Lácteos y quesos"] { --category-image: url("/brand/ambient/cheese.webp"); }
 main[data-category="Vino"] { --category-image: url("/brand/ambient/wine.webp"); }
+main[data-category="Otros"] { --category-image: url("/brand/ambient/footer-landscape.webp"); }
 main[data-category]::before {
   content: "";
   position: absolute;
-  inset: 15rem 0 0;
+  inset: 0;
   z-index: -1;
   pointer-events: none;
   background-image: var(--category-image), var(--category-image);
   background-size: min(32rem, 42vw), min(28rem, 38vw);
-  background-position: left -14rem top, right -12rem bottom 3rem;
+  background-position: left -14rem top, right -12rem top 12rem;
   background-repeat: no-repeat;
   opacity: var(--chisan-ambient-opacity);
   filter: blur(3px);
@@ -21,9 +22,9 @@ main[data-category] .detail-shell { background: color-mix(in srgb, var(--chisan-
 main[data-category] .detail-hero--premium { background: var(--chisan-color-surface); }
 @media (max-width: 760px) {
   main[data-category]::before {
-    inset-block-start: 20rem;
+    inset-block-start: 0;
     background-size: 18rem;
-    background-position: left -10rem top, right -10rem bottom 4rem;
+    background-position: left -10rem top, right -10rem top 8rem;
   }
 }
 @media (forced-colors: active) {
