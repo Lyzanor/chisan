@@ -845,76 +845,83 @@ function AreaExplorerView({
         className="catalog-simple-categories"
         aria-label={model.catalogMessages.categories}
       >
-        <Link
-          href={allCategoriesHref}
-          prefetch={false}
-          scroll={false}
-          onNavigate={(event) => {
-            event.preventDefault();
-            selectCategory(allCategoriesHref);
-          }}
-          className={`catalog-chip ${!category ? "is-active" : ""}`}
-          aria-current={!category ? "page" : undefined}
-        >
-          {model.catalogMessages.allCategories}
-        </Link>
-        {baseCategories.map((categoryPresentation) => {
-          const href = buildCatalogHref({
-            scope: model.scope,
-            area: model.area,
-            q: searchQuery,
-            searchScope,
-            municipality,
-            category: categoryPresentation.token,
-          });
-          const isActive =
-            category === categoryPresentation.token ||
-            normalizeCatalogSearch(categoryPresentation.token) === normalizedCategory;
-
-          return (
-            <Link
-              key={categoryPresentation.token}
-              href={href}
-              prefetch={false}
-              scroll={false}
-              onNavigate={(event) => {
-                event.preventDefault();
-                selectCategory(href);
-              }}
-              className={`catalog-chip ${isActive ? "is-active" : ""}`}
-              aria-current={isActive ? "page" : undefined}
-            >
-              <span aria-hidden="true">{categoryPresentation.icon}</span>
-              {categoryPresentation.label}
-            </Link>
-          );
-        })}
-        {otherCategories.length > 0 ? (
-          <button
-            type="button"
-            className="catalog-chip catalog-chip--toggle"
-            onClick={toggleExpandedCategories}
-            aria-expanded={showAllCategories}
-            aria-label={
-              showAllCategories
-                ? searchMessages.fewerCategories
-                : searchMessages.moreCategories
-            }
-            title={
-              showAllCategories
-                ? searchMessages.fewerCategories
-                : searchMessages.moreCategories
-            }
+        <div className="catalog-categories-row">
+          <Link
+            href={allCategoriesHref}
+            prefetch={false}
+            scroll={false}
+            onNavigate={(event) => {
+              event.preventDefault();
+              selectCategory(allCategoriesHref);
+            }}
+            className={`catalog-chip ${!category ? "is-active" : ""}`}
+            aria-current={!category ? "page" : undefined}
           >
-            {showAllCategories ? (
-              <MinusIcon aria-hidden="true" size={16} />
-            ) : (
-              <PlusIcon aria-hidden="true" size={16} />
-            )}
-          </button>
-        ) : null}
-        {showAllCategories
-          ? otherCategories.map((categoryPresentation) => {
+            {model.catalogMessages.allCategories}
+          </Link>
+          {baseCategories.map((categoryPresentation) => {
+            const href = buildCatalogHref({
+              scope: model.scope,
+              area: model.area,
+              q: searchQuery,
+              searchScope,
+              municipality,
+              category: categoryPresentation.token,
+            });
+            const isActive =
+              category === categoryPresentation.token ||
+              normalizeCatalogSearch(categoryPresentation.token) === normalizedCategory;
+
+            return (
+              <Link
+                key={categoryPresentation.token}
+                href={href}
+                prefetch={false}
+                scroll={false}
+                onNavigate={(event) => {
+                  event.preventDefault();
+                  selectCategory(href);
+                }}
+                className={`catalog-chip ${isActive ? "is-active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                <span aria-hidden="true">{categoryPresentation.icon}</span>
+                {categoryPresentation.label}
+              </Link>
+            );
+          })}
+          {otherCategories.length > 0 ? (
+            <button
+              type="button"
+              className="catalog-chip catalog-chip--toggle"
+              onClick={toggleExpandedCategories}
+              aria-expanded={showAllCategories}
+              aria-label={
+                showAllCategories
+                  ? searchMessages.fewerCategories
+                  : searchMessages.moreCategories
+              }
+              title={
+                showAllCategories
+                  ? searchMessages.fewerCategories
+                  : searchMessages.moreCategories
+              }
+            >
+              {showAllCategories ? (
+                <MinusIcon aria-hidden="true" size={16} />
+              ) : (
+                <PlusIcon aria-hidden="true" size={16} />
+              )}
+            </button>
+          ) : null}
+        </div>
+        {showAllCategories && otherCategories.length > 0 ? (
+          <div
+            className="catalog-categories-row catalog-categories-row--secondary"
+            role="group"
+            aria-label={searchMessages.moreCategories}
+          >
+            {otherCategories.map((categoryPresentation) => {
               const href = buildCatalogHref({
                 scope: model.scope,
                 area: model.area,
@@ -944,8 +951,9 @@ function AreaExplorerView({
                   {categoryPresentation.label}
                 </Link>
               );
-            })
-          : null}
+            })}
+          </div>
+        ) : null}
       </nav>
 
       {adSlot}

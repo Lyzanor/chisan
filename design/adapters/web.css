@@ -237,10 +237,23 @@ body {
 }
 
 .catalog-simple-categories {
+  display: flex;
+  flex-direction: column;
   gap: var(--chisan-space-2);
   margin-block: var(--chisan-space-3);
   padding-block: 1px var(--chisan-space-2);
+}
+
+.catalog-categories-row {
+  display: flex;
+  gap: var(--chisan-space-2);
+  overflow-x: auto;
   overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+
+.catalog-categories-row::-webkit-scrollbar {
+  display: none;
 }
 
 .catalog-chip {
@@ -489,6 +502,9 @@ body {
 
   .catalog-simple-categories {
     margin-inline: -0.375rem;
+  }
+
+  .catalog-categories-row {
     padding-inline: var(--chisan-space-3);
   }
 

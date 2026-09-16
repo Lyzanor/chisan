@@ -308,7 +308,10 @@ body { min-height: 100svh; }
 .catalog-search-summary { margin: var(--chisan-space-2) 0; color: var(--chisan-color-stone); font-size: 0.875rem; }
 .catalog-search-more { min-height: 44px; margin-block: var(--chisan-space-3); }
 
-.catalog-simple-categories { padding-block: var(--chisan-space-2) var(--chisan-space-3); scrollbar-width: thin; }
+.catalog-simple-categories { display: flex; flex-direction: column; gap: var(--chisan-space-2); padding-block: var(--chisan-space-2) var(--chisan-space-3); }
+.catalog-categories-row { display: flex; gap: var(--chisan-space-2); overflow-x: auto; scrollbar-width: thin; }
+.catalog-page .catalog-categories-row { scrollbar-width: none; }
+.catalog-page .catalog-categories-row::-webkit-scrollbar { display: none; }
 .catalog-chip { gap: var(--chisan-space-2); min-height: 48px; padding-inline: var(--chisan-space-4); }
 .catalog-chip.is-active { background: var(--chisan-color-moss-dark); border-color: var(--chisan-color-moss-dark); color: var(--chisan-color-surface); }
 .catalog-chip:active { transform: scale(0.98); }

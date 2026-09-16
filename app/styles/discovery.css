@@ -474,19 +474,40 @@
 
 .catalog-simple-categories {
   display: flex;
+  flex-direction: column;
   gap: 0.45rem;
   margin: 0.75rem 0;
+}
+
+.catalog-categories-row {
+  display: flex;
+  gap: 0.45rem;
   overflow-x: auto;
   padding-bottom: 0.15rem;
   scrollbar-width: thin;
 }
 
-.catalog-page .catalog-simple-categories {
+.catalog-page .catalog-categories-row {
   scrollbar-width: none;
 }
 
-.catalog-page .catalog-simple-categories::-webkit-scrollbar {
+.catalog-page .catalog-categories-row::-webkit-scrollbar {
   display: none;
+}
+
+.catalog-categories-row--secondary {
+  animation: catalog-secondary-reveal 150ms ease-out;
+}
+
+@keyframes catalog-secondary-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .catalog-chip {
