@@ -72,8 +72,8 @@ and unknown related guide slugs fail validation. A map includes exactly its
 section's references; multiple selection sections are supported.
 
 Names, images, coordinates and current profile URLs resolve from the CSV catalog.
-Article covers use the explicit image and provenance fields above. Maps load
-on request through the shared producer-map renderer and contain exactly the selected
+Article covers use the explicit image and provenance fields above. Maps open
+with the article through the shared producer-map renderer and contain exactly the selected
 producers with published coordinates. Unmapped producers keep their article entry
 and profile link. Marker activation uses the shared name-description-image card,
 point focus and outside/Escape dismissal used by area maps. Selection stays local

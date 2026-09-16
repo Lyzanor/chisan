@@ -31,7 +31,7 @@ test("guide routes serve Spanish text, canonical metadata and exact producer lin
     assert.match(html, /application\/ld\+json/);
     assert.match(html, /"@type":"Article"/);
     assert.match(html, /Nuestro criterio editorial/);
-    assert.match(html, /Explorar esta selección en el mapa/);
+    assert.match(html, /Mapa de los productores de esta selección/);
     const producers = await resolveGuideProducers(guide);
     for (const producer of producers)
       assert.ok(html.includes(`href="${producer.href}"`));
