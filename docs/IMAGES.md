@@ -53,6 +53,9 @@ is unclear.
 - Target logo long edge: about 960 px.
 - Do not upscale a logo or photograph beyond 3× its source dimensions.
 - Reject sources below 200 px on the long edge.
+- Near-white ink on transparency is tinted dark; the background key removes only
+  an opaque light plate reaching the corners. A logo composition with almost no
+  pixels contrasting with the background is refused, never offered as blank.
 - Do not store originals, contact sheets, or variants under `public/`.
 - Publish at most one primary asset per row. Legacy formats remain valid; files
   above 2 MiB require review and normalization.

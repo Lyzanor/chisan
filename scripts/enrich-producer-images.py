@@ -85,6 +85,12 @@ MAX_ERROR_CHARS = 1000
 
 # Ink at or above this luminance is indistinguishable from the canvas.
 PALE_LUMINANCE = 225
+# A background plate is opaque; an anti-aliased ink edge at a corner is not.
+OPAQUE_PLATE_ALPHA = 250
+# A composition must visibly differ from the empty canvas somewhere. White or
+# erased ink otherwise ships as a blank tile that looks like a valid result.
+INK_DELTA = 48
+MIN_INK_FRACTION = 0.002
 FLOOD_SENTINEL = (255, 0, 255)
 
 USER_AGENT = (
@@ -977,10 +983,19 @@ def chromakey_near_white(image: Image.Image) -> Image.Image:
     width, height = rgb.size
     rgb_pixels, rgba_pixels = rgb.load(), image.load()
 
+    # Transparent pixels usually carry white RGB. Left in, they bridge the
+    # flood from a corner into white ink on a transparent logo (Martelli,
+    # Cervezas Victoria) and erase all of it. Transparency is already
+    # background, so it is a barrier here, and only an opaque plate seeds.
+    for y in range(height):
+        for x in range(width):
+            if rgba_pixels[x, y][3] <= 16:
+                rgb_pixels[x, y] = (0, 0, 0)
+
     filled = False
     for corner in ((0, 0), (width - 1, 0), (0, height - 1), (width - 1, height - 1)):
         red, green, blue = rgb_pixels[corner]
-        if rgba_pixels[corner][3] > 16 and luminance(red, green, blue) > PALE_LUMINANCE:
+        if rgba_pixels[corner][3] >= OPAQUE_PLATE_ALPHA and luminance(red, green, blue) > PALE_LUMINANCE:
             ImageDraw.floodfill(rgb, corner, FLOOD_SENTINEL, thresh=28)
             filled = True
     if not filled:
@@ -1007,7 +1022,9 @@ def tint_low_contrast_logo(image: Image.Image) -> Image.Image:
     whatever it cannot reach is left as designed.
     """
     width, height = image.size
-    if width * height > 2_500_000:
+    # Covers every SVG render (long edge 1600); larger rasters skip the tint
+    # and are left to the visible-ink check.
+    if width * height > 1600 * 1600:
         return image
 
     pixels = image.load()
@@ -1083,6 +1100,7 @@ def contain_logo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
     paste_x = (CANVAS_SIZE[0] - new_width) // 2
     paste_y = (CANVAS_SIZE[1] - new_height) // 2
     canvas.paste(resized, (paste_x, paste_y), resized)
+    require_visible_ink(canvas)
 
     return canvas, {
         "source_width": original_width,
@@ -1093,6 +1111,19 @@ def contain_logo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
         "chromakey_applied": chromakey_applied,
         "low_contrast_tint_applied": low_contrast_tint_applied,
     }
+
+
+def require_visible_ink(canvas: Image.Image) -> None:
+    """Refuse a logo composition that is indistinguishable from the canvas."""
+    background = luminance(*BACKGROUND_RGBA[:3])
+    grey = canvas.convert("L")
+    ink = sum(
+        count
+        for level, count in enumerate(grey.histogram())
+        if abs(level - background) >= INK_DELTA
+    )
+    if ink < MIN_INK_FRACTION * canvas.width * canvas.height:
+        raise ValueError(f"composition has no visible ink ({ink} contrasting pixels)")
 
 
 def cover_photo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:

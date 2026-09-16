@@ -15,7 +15,7 @@ from pathlib import Path
 SCRIPT = Path(__file__).resolve().parent / "enrich-producer-images.py"
 
 try:
-    from PIL import Image
+    from PIL import Image, ImageDraw
 except ModuleNotFoundError:
     print(
         "Skipping enrich:images tests: image tooling not installed "
@@ -508,6 +508,60 @@ check(
     untouched.getpixel((15, 15))[:3],
     (255, 255, 255),
 )
+
+# --- all-white ink on transparency must never compose to a blank tile --------
+# Martelli's PNG and Cervezas Victoria's SVG are white on transparent. The
+# corner flood crossed the transparent pixels (white RGB, zero alpha) and erased
+# the ink, so both composed to the same empty canvas.
+def ink_pixels(image: Image.Image) -> int:
+    background = enrich.luminance(*enrich.BACKGROUND_RGBA[:3])
+    return sum(
+        count
+        for level, count in enumerate(image.convert("L").histogram())
+        if abs(level - background) >= enrich.INK_DELTA
+    )
+
+
+white_png = Image.new("RGBA", (400, 150), (255, 255, 255, 0))
+white_draw = ImageDraw.Draw(white_png)
+white_draw.rectangle((20, 20, 379, 129), outline=(255, 255, 255, 255), width=6)
+# Martelli's frame reaches the bottom corners as partly transparent edge pixels.
+white_draw.line((0, 149, 399, 149), fill=(255, 255, 255, 224), width=1)
+white_draw.rectangle((60, 50, 340, 100), fill=(255, 255, 255, 255))
+white_png_bytes = BytesIO()
+white_png.save(white_png_bytes, format="PNG")
+white_svg = (
+    b'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" viewBox="0 0 1200 1227">'
+    b'<path d="M0 0H300L1200 1227H900Z M900 0H1200L300 1227H0Z" fill="white"/></svg>'
+)
+white_sources = [("white.png", white_png_bytes.getvalue(), "image/png")]
+if enrich.HAS_CAIROSVG:
+    white_sources.append(("white.svg", white_svg, "image/svg+xml"))
+else:
+    failures.append("all-white SVG composition needs cairosvg installed")
+for name, data, content_type in white_sources:
+    source, error = enrich.open_candidate_image(name, data, content_type)
+    check(f"{name} opens", error, None)
+    composed, info = enrich.contain_logo(source)
+    check(f"{name} keeps its white ink out of the background key", info["chromakey_applied"], False)
+    check(f"{name} white ink is tinted", info["low_contrast_tint_applied"], True)
+    check(
+        f"{name} composes with visible ink",
+        ink_pixels(composed) >= enrich.MIN_INK_FRACTION * composed.width * composed.height,
+        True,
+    )
+
+for label, blank in (
+    ("fully transparent source", Image.new("RGBA", (400, 300), (255, 255, 255, 0))),
+    ("plain white plate", Image.new("RGBA", (400, 300), (255, 255, 255, 255))),
+    ("ink matching the canvas", Image.new("RGBA", (400, 300), enrich.BACKGROUND_RGBA)),
+):
+    try:
+        enrich.contain_logo(blank)
+    except ValueError as exc:
+        check(f"{label} is refused", "no visible ink" in str(exc), True)
+    else:
+        failures.append(f"{label} is refused\n    expected ValueError")
 
 # --- a photo is never chromakeyed or tinted ----------------------------------
 photo = Image.new("RGBA", (640, 480), (250, 250, 250, 255))
