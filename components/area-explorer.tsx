@@ -861,6 +861,7 @@ function AreaExplorerView({
                 onPreviewEndKey={clearProducerPreview}
                 onVisibleKeysChange={handleVisibleProducerKeysChange}
                 groupOverview={mapGroupOverview}
+                openOnMainCluster={searchScope === "country"}
                 messages={model.mapMessages}
               />
             )}

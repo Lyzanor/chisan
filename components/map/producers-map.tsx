@@ -134,6 +134,7 @@ export function ProducerSelectionMap({
   singlePointZoom,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   groupOverview,
+  openOnMainCluster,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -151,6 +152,8 @@ export function ProducerSelectionMap({
   singlePointZoom?: number;
   minZoom?: number;
   groupOverview?: ProducerMapGroupOverview;
+  /** Dense sets open on their main connected cluster; distant minorities stay a pan away. */
+  openOnMainCluster?: boolean;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
@@ -187,6 +190,7 @@ export function ProducerSelectionMap({
         singlePointZoom={singlePointZoom}
         minZoom={minZoom}
         groupOverview={groupOverview}
+        openOnMainCluster={openOnMainCluster}
         messages={messages}
         onReady={handleReady}
       />

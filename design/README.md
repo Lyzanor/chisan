@@ -150,6 +150,10 @@ to improve appearance.
   Activating one zooms towards its producers: a single province opens at zoom 8
   or closer, a combined count separates its provinces first. A previewed producer keeps its
   exact point above the counts. Province pages, selections and guides never group.
+- A country view with more than 200 mapped results opens on its main connected
+  cluster (results within about 300 km) with a 24px margin. Farther clusters
+  holding under a tenth of the results, such as the Canary Islands, stay on the
+  map one pan away; results that mainly lie there open there instead.
 - Area overviews use exact-coordinate 6px `moss-dark` points below zoom 11;
   from zoom 11, each producer uses its existing colourful category pictogram
   in a 24px `surface` disc. The active or previewed producer grows above its

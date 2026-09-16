@@ -3,6 +3,24 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-16 — Peninsula opening view for dense national maps
+
+- The national view framed every mapped producer, so the Canary Islands pulled
+  Spain to a corner beside North Africa. Country maps above 200 mapped results
+  now open on their main connected cluster with a 24px margin. Simulating
+  Leaflet's fit with the live catalog showed that dropping the islands alone,
+  with the previous 20% margin, still opened at zoom 5 at 1280 px and zoom 4 on
+  mobile; the pixel margin adds that level at both widths.
+- Isolated production build: Spain opened at zoom 6 at 1440×1000 and 1280×800
+  (31 counts, 20 of them single provinces; before, zoom 5 with 12 counts at
+  1440 px and, in the fit simulation, zoom 4 with 5 at 1280 px) and at zoom 5 at
+  390×844 (12 counts; previously zoom 4 with 5), without horizontal overflow. Only the combined Canary count was outside the view, and
+  one zoom-out step on mobile brought it back.
+- `queso` (1,361 results) opened at zoom 6 with only its 59 Canary producers
+  outside; `gofio` (8, all in the Canaries) kept the full-set framing; the
+  Barcelona province page kept zoom 9 with 2,371 points. Console output showed
+  only the local Vercel Analytics 404s.
+
 ## 2026-09-16 — Category ambient backgrounds above the map
 
 Implementation review: **static checks passed; live visual review pending**.

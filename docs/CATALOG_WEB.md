@@ -369,6 +369,8 @@ Below province zoom, more than 200 mapped results spread over several provinces
 become one count per province, combining counts that would overlap; activating a
 count zooms towards its producers. The counts reflect the same filtered results
 as the list, and province URLs, selections and guides keep individual points.
+A dense country view opens on its main connected cluster of results, so a
+distant minority such as the Canary Islands stays mapped one pan away.
 [Design](../design/README.md#map) owns the thresholds and presentation.
 
 National data loads lazily in bounded public pages, with loading, retry and

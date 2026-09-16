@@ -33,7 +33,9 @@ import {
 import { NEARBY_PRODUCER_FOCUS_MINIMUM } from "@/lib/location/nearby-producer-focus";
 import {
   PRODUCER_GROUP_DETAIL_ZOOM,
+  PRODUCER_GROUP_MIN_POINTS,
   mergeOverlappingProducerGroups,
+  selectOpeningProducerPoints,
   shouldGroupProducerMap,
   summarizeProducerMapGroups,
   type ProducerMapGroup,
@@ -53,6 +55,8 @@ const DEFAULT_MAP_CENTER: [number, number] = [40.42, -3.7];
 const PRODUCER_FOCUS_ZOOM = 13;
 const CATEGORY_MARKER_MIN_ZOOM = 11;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
+// A ratio margin would cost a whole zoom level at country scale.
+const OPENING_VIEW_PADDING = 24;
 const EMPTY_FOCUS_KEYS: string[] = [];
 const GROUP_MARKER_HEIGHT = 32;
 const GROUP_MARKER_TARGET = 44;
@@ -557,6 +561,7 @@ function fitProducerPoints(
   points: readonly ProducerMapMarker[],
   singlePointZoom: number,
   maxZoom?: number,
+  padding?: number,
 ): void {
   if (points.length === 1) {
     map.setView([points[0].latitude, points[0].longitude], singlePointZoom, {
@@ -567,8 +572,9 @@ function fitProducerPoints(
 
   const bounds = getPointsBounds(points);
   if (!bounds) return;
-  map.fitBounds(bounds.pad(0.2), {
+  map.fitBounds(padding === undefined ? bounds.pad(0.2) : bounds, {
     animate: false,
+    ...(padding === undefined ? {} : { padding: [padding, padding] }),
     ...(maxZoom === undefined ? {} : { maxZoom }),
   });
 }
@@ -588,6 +594,7 @@ function BoundsAwareMarkers({
   markerInteraction,
   singlePointZoom = 13,
   groupOverview,
+  openOnMainCluster = false,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -604,6 +611,7 @@ function BoundsAwareMarkers({
   markerInteraction: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
   groupOverview?: ProducerMapGroupOverview;
+  openOnMainCluster?: boolean;
   messages: {
     openProfile: string;
   };
@@ -721,6 +729,16 @@ function BoundsAwareMarkers({
     }
 
     viewModeRef.current = "area";
+    if (openOnMainCluster && points.length > PRODUCER_GROUP_MIN_POINTS) {
+      fitProducerPoints(
+        map,
+        selectOpeningProducerPoints(points),
+        singlePointZoom,
+        10,
+        OPENING_VIEW_PADDING,
+      );
+      return;
+    }
     fitProducerPoints(
       map,
       points,
@@ -732,6 +750,7 @@ function BoundsAwareMarkers({
     map,
     nearbyFocusKeys,
     onNearbyFocusConsumed,
+    openOnMainCluster,
     points,
     singlePointZoom,
   ]);
@@ -912,6 +931,7 @@ export default function ProducersMapInner({
   singlePointZoom = 13,
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   groupOverview,
+  openOnMainCluster,
   messages,
   onReady,
 }: {
@@ -930,6 +950,7 @@ export default function ProducersMapInner({
   singlePointZoom?: number;
   minZoom?: number;
   groupOverview?: ProducerMapGroupOverview;
+  openOnMainCluster?: boolean;
   messages: {
     openProfile: string;
   };
@@ -966,6 +987,7 @@ export default function ProducersMapInner({
         markerInteraction={markerInteraction}
         singlePointZoom={singlePointZoom}
         groupOverview={groupOverview}
+        openOnMainCluster={openOnMainCluster}
         messages={messages}
       />
     </MapContainer>

@@ -12,6 +12,7 @@ import {
   PRODUCER_GROUP_DETAIL_ZOOM,
   PRODUCER_GROUP_MIN_POINTS,
   mergeOverlappingProducerGroups,
+  selectOpeningProducerPoints,
   shouldGroupProducerMap,
   summarizeProducerMapGroups,
   type ProducerMapGroup,
@@ -136,6 +137,25 @@ test("province counts that would touch combine without losing or moving producer
     [["a", "c", "b"], 1060, 0],
   ]);
   assert.deepEqual([chained[0].west, chained[0].east], [-40, 50]);
+});
+
+test("a dense country opens on its main cluster while distant minorities stay mapped", () => {
+  const at = (key: string, latitude: number, longitude: number) => ({ key, latitude, longitude });
+  const keys = (points: readonly { key: string }[]) => points.map(({ key }) => key);
+  const peninsula = Array.from({ length: 208 }, (_, index) =>
+    at(`peninsula-${index}`, 36 + Math.floor(index / 13) * 0.5, -9 + (index % 13)));
+  const balearic = [at("mallorca", 39.6, 2.9), at("menorca", 39.95, 4.1)];
+  const canary = [at("tenerife", 28.3, -16.5), at("lanzarote", 29, -13.6)];
+
+  // Near islands open with the peninsula; a far minority stays out of the opening view.
+  assert.deepEqual(keys(selectOpeningProducerPoints([...canary, ...peninsula, ...balearic])),
+    keys([...peninsula, ...balearic]));
+  // A distant cluster holding at least a tenth of the results stays in the opening view.
+  const fewMainland = [...peninsula.slice(0, 13), ...canary];
+  assert.deepEqual(keys(selectOpeningProducerPoints(fewMainland)), keys(fewMainland));
+  // Results that live on the islands open there.
+  const islands = Array.from({ length: 12 }, (_, index) => at(`canary-${index}`, 28 + index * 0.1, -16 + index * 0.2));
+  assert.deepEqual(keys(selectOpeningProducerPoints([peninsula[0], ...islands])), keys(islands));
 });
 
 test("search URLs preserve text and national scope without carrying device position", () => {
