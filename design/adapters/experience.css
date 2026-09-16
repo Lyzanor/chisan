@@ -312,7 +312,7 @@ body { min-height: 100svh; }
 .catalog-chip { gap: var(--chisan-space-2); min-height: 48px; padding-inline: var(--chisan-space-4); }
 .catalog-chip.is-active { background: var(--chisan-color-moss-dark); border-color: var(--chisan-color-moss-dark); color: var(--chisan-color-surface); }
 .catalog-chip:active { transform: scale(0.98); }
-.catalog-chip--select:focus-within { outline: var(--chisan-focus-ring) solid var(--chisan-color-moss); outline-offset: 2px; }
+.catalog-chip--toggle { padding-inline: var(--chisan-space-4); justify-content: center; }
 .catalog-simple-layout { gap: var(--chisan-space-4); grid-template-columns: minmax(0, 1.85fr) minmax(340px, 0.85fr); }
 .catalog-page .catalog-simple-layout { --catalog-map-height: clamp(32.5rem, calc(100svh - 16rem), 52rem); }
 .catalog-simple-map,

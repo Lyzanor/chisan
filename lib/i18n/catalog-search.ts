@@ -8,6 +8,7 @@ const en = {
   empty: "No producers match this search in {scope}.",
   mapProducer: "{count} producer", mapProducers: "{count} producers", mapGroup: "{areas}: {producers}. Zoom in",
   moreCategories: "More categories",
+  fewerCategories: "Fewer categories",
 };
 type Messages = { [K in keyof typeof en]: string };
 const messages: Partial<Record<Locale, Messages>> = {
@@ -20,6 +21,7 @@ const messages: Partial<Record<Locale, Messages>> = {
     empty: "No hay productores que coincidan con esta búsqueda en {scope}.",
     mapProducer: "{count} productor", mapProducers: "{count} productores", mapGroup: "{areas}: {producers}. Acercar el mapa",
     moreCategories: "Más categorías",
+    fewerCategories: "Menos categorías",
   },
   ca: {
     scope: "Cerca a", province: "Província: {area}", nearby: "A prop meu",
@@ -29,6 +31,7 @@ const messages: Partial<Record<Locale, Messages>> = {
     empty: "No hi ha productors que coincideixin amb aquesta cerca a {scope}.",
     mapProducer: "{count} productor", mapProducers: "{count} productors", mapGroup: "{areas}: {producers}. Apropa el mapa",
     moreCategories: "Més categories",
+    fewerCategories: "Menys categories",
   },
 };
 export function getCatalogSearchMessages(locale: Locale): Messages {

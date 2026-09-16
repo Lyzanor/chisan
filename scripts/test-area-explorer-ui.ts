@@ -214,9 +214,12 @@ test("base category tokens partition the 10 core categories with robust normaliz
   assert.equal(isBaseCategory("Conservas"), false);
   assert.equal(isBaseCategory("Chocolate"), false);
 
-  // Internationalized messages include moreCategories
+  // Internationalized messages include moreCategories and fewerCategories
   assert.equal(getCatalogSearchMessages("es").moreCategories, "Más categorías");
   assert.equal(getCatalogSearchMessages("ca").moreCategories, "Més categories");
   assert.equal(getCatalogSearchMessages("en").moreCategories, "More categories");
+  assert.equal(getCatalogSearchMessages("es").fewerCategories, "Menos categorías");
+  assert.equal(getCatalogSearchMessages("ca").fewerCategories, "Menys categories");
+  assert.equal(getCatalogSearchMessages("en").fewerCategories, "Fewer categories");
 });
 

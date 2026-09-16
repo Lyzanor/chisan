@@ -515,40 +515,10 @@
   font-weight: 500;
 }
 
-.catalog-chip--select {
-  position: relative;
+.catalog-chip--toggle {
+  padding-inline: 0.65rem;
+  justify-content: center;
   cursor: pointer;
-  padding-right: 0.5rem;
-}
-
-.catalog-chip--select:focus-within {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.catalog-chip-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  border: none;
-  color: inherit;
-  font: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  padding-right: 0.25rem;
-}
-
-.catalog-chip-select option {
-  background: var(--surface);
-  color: var(--text);
-}
-
-.catalog-chip-select__icon {
-  pointer-events: none;
-  flex-shrink: 0;
 }
 
 .catalog-page .catalog-simple-layout {

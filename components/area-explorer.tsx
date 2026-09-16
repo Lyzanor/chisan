@@ -13,9 +13,10 @@ import {
 } from "@/lib/location/radius-search";
 import { useSearchParams } from "next/navigation";
 import {
-  CaretDownIcon,
   MagnifyingGlassIcon,
   MapPinIcon,
+  MinusIcon,
+  PlusIcon,
 } from "@phosphor-icons/react";
 import {
   Suspense,
@@ -677,7 +678,14 @@ function AreaExplorerView({
     [category, model.area, model.scope, selectProducer, municipality, searchQuery, searchScope],
   );
 
-  function selectCategory(href: string) {
+  const cancelPendingPreview = useCallback(() => {
+    if (previewTimerRef.current !== null) clearTimeout(previewTimerRef.current);
+    previewTimerRef.current = null;
+  }, []);
+
+  useEffect(() => cancelPendingPreview, [cancelPendingPreview, category]);
+
+  const selectCategory = useCallback((href: string) => {
     cancelPendingPreview();
     setPreviewedSlug("");
     consumeNearbyMapFocus();
@@ -685,14 +693,21 @@ function AreaExplorerView({
     listOrderLockedCategoryRef.current = null;
     setPrioritizedProducerScope(null);
     pushAreaQuery(href);
-  }
+  }, [cancelPendingPreview, consumeNearbyMapFocus]);
 
-  const cancelPendingPreview = useCallback(() => {
-    if (previewTimerRef.current !== null) clearTimeout(previewTimerRef.current);
-    previewTimerRef.current = null;
-  }, []);
+  const [categoriesExpanded, setCategoriesExpanded] = useState(false);
+  const showAllCategories = categoriesExpanded || Boolean(activeOtherCategory);
 
-  useEffect(() => cancelPendingPreview, [cancelPendingPreview, category]);
+  const toggleExpandedCategories = useCallback(() => {
+    if (showAllCategories) {
+      setCategoriesExpanded(false);
+      if (activeOtherCategory) {
+        selectCategory(allCategoriesHref);
+      }
+    } else {
+      setCategoriesExpanded(true);
+    }
+  }, [showAllCategories, activeOtherCategory, selectCategory, allCategoriesHref]);
 
   const previewProducer = useCallback(
     (slug: string, immediate = false) => {
@@ -875,50 +890,62 @@ function AreaExplorerView({
           );
         })}
         {otherCategories.length > 0 ? (
-          <label
-            className={`catalog-chip catalog-chip--select ${
-              activeOtherCategory ? "is-active" : ""
-            }`}
+          <button
+            type="button"
+            className="catalog-chip catalog-chip--toggle"
+            onClick={toggleExpandedCategories}
+            aria-expanded={showAllCategories}
+            aria-label={
+              showAllCategories
+                ? searchMessages.fewerCategories
+                : searchMessages.moreCategories
+            }
+            title={
+              showAllCategories
+                ? searchMessages.fewerCategories
+                : searchMessages.moreCategories
+            }
           >
-            <select
-              aria-label={searchMessages.moreCategories}
-              value={activeOtherCategory?.token ?? ""}
-              onChange={(event) => {
-                const selectedToken = event.target.value;
-                if (selectedToken) {
-                  const href = buildCatalogHref({
-                    scope: model.scope,
-                    area: model.area,
-                    q: searchQuery,
-                    searchScope,
-                    municipality,
-                    category: selectedToken,
-                  });
-                  selectCategory(href);
-                } else {
-                  selectCategory(allCategoriesHref);
-                }
-              }}
-              className="catalog-chip-select"
-            >
-              <option value="">
-                {activeOtherCategory
-                  ? model.catalogMessages.allCategories
-                  : searchMessages.moreCategories}
-              </option>
-              {otherCategories.map((item) => (
-                <option key={item.token} value={item.token}>
-                  {item.icon} {item.label}
-                </option>
-              ))}
-            </select>
-            <CaretDownIcon
-              aria-hidden="true"
-              className="catalog-chip-select__icon"
-              size={12}
-            />
-          </label>
+            {showAllCategories ? (
+              <MinusIcon aria-hidden="true" size={16} />
+            ) : (
+              <PlusIcon aria-hidden="true" size={16} />
+            )}
+          </button>
         ) : null}
+        {showAllCategories
+          ? otherCategories.map((categoryPresentation) => {
+              const href = buildCatalogHref({
+                scope: model.scope,
+                area: model.area,
+                q: searchQuery,
+                searchScope,
+                municipality,
+                category: categoryPresentation.token,
+              });
+              const isActive =
+                category === categoryPresentation.token ||
+                normalizeCatalogSearch(categoryPresentation.token) === normalizedCategory;
+
+              return (
+                <Link
+                  key={categoryPresentation.token}
+                  href={href}
+                  prefetch={false}
+                  scroll={false}
+                  onNavigate={(event) => {
+                    event.preventDefault();
+                    selectCategory(href);
+                  }}
+                  className={`catalog-chip ${isActive ? "is-active" : ""}`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <span aria-hidden="true">{categoryPresentation.icon}</span>
+                  {categoryPresentation.label}
+                </Link>
+              );
+            })
+          : null}
       </nav>
 
       {adSlot}

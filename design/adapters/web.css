@@ -284,39 +284,10 @@ body {
   transform: translateY(var(--chisan-space-1));
 }
 
-.catalog-chip--select {
-  position: relative;
+.catalog-chip--toggle {
+  padding-inline: var(--chisan-space-3);
+  justify-content: center;
   cursor: pointer;
-  padding-inline-end: var(--chisan-space-3);
-}
-
-.catalog-chip--select:focus-within {
-  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
-  outline-offset: 2px;
-}
-
-.catalog-chip-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  padding-inline-end: var(--chisan-space-1);
-}
-
-.catalog-chip-select option {
-  background: var(--chisan-color-surface);
-  color: var(--chisan-color-ink);
-}
-
-.catalog-chip-select__icon {
-  pointer-events: none;
-  flex-shrink: 0;
 }
 
 .site-footer {
