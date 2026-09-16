@@ -59,8 +59,8 @@ export default async function ProducerSuggestionsPage({
         <div>
           <h2>Sugerencias de la comunidad</h2>
           <p>
-            Correcciones que has propuesto para productores que todavía no ha
-            reclamado nadie. Una sugerencia aceptada se publica con el flujo
+            Correcciones que has propuesto para productores cuya titularidad todavía no está
+            verificada. Una sugerencia aceptada se publica con el flujo
             editorial habitual y nunca te concede acceso a la ficha.
           </p>
         </div>

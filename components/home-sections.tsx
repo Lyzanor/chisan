@@ -82,7 +82,7 @@ export function HomeSections({
           <p className="catalog-kicker">Tu trabajo merece conocerse</p>
           <h2 id="home-producer-title">¿Eres productor?</h2>
           <p>
-            Regístrate, encuentra tu ficha y reclámala. Podrás proponer cambios
+            Regístrate, encuentra tu ficha y solicita su verificación. Podrás proponer cambios
             para que quienes te buscan conozcan mejor lo que haces y cómo
             encontrarte.
           </p>
@@ -120,7 +120,7 @@ export function HomeSections({
               <li>Sigue a tus productores favoritos.</li>
               <li>Comparte una selección en tu perfil, si quieres.</li>
               <li>Sugiere mejoras en las fichas.</li>
-              <li>Reclama tu productor y propón cambios.</li>
+              <li>Verifica tu productor y propón cambios.</li>
             </ul>
             <Link className={styles.button} href={ACCOUNT_ROUTES.signUp}>
               Crear mi cuenta

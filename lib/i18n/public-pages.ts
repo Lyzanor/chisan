@@ -592,7 +592,7 @@ const HOW_CHISAN_WORKS = {
       {
         title: "La participación del productor es visible",
         description:
-          "Cuando se aprueba la reclamación de un perfil, mostramos la relación confirmada con su productor. Esto no certifica todos los datos; los cambios propuestos siguen pasando por revisión editorial.",
+          "Cuando se aprueba la solicitud de verificación de un perfil, mostramos la relación confirmada con su productor. Esto no certifica todos los datos; los cambios propuestos siguen pasando por revisión editorial.",
       },
       {
         title: "Las fechas tienen un significado concreto",
@@ -609,7 +609,7 @@ const HOW_CHISAN_WORKS = {
     participationTitle: "Mejorar el catálogo sin debilitarlo",
     participationParagraphs: [
       "Cualquier persona puede señalar una corrección o un productor que merezca revisión. Las propuestas útiles identifican la unidad productiva, explican el cambio solicitado e incluyen fuentes públicas actuales.",
-      "Los productores pueden usar una cuenta para reclamar el perfil correcto y proponer actualizaciones. La propiedad autoriza la participación; no sustituye las evidencias ni la revisión editorial.",
+      "Los productores pueden usar una cuenta para verificar el perfil correcto y proponer actualizaciones. La propiedad autoriza la participación; no sustituye las evidencias ni la revisión editorial.",
     ],
     accessKicker: "Acceso y situación comercial",
     accessTitle: "El descubrimiento público permanece abierto",

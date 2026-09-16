@@ -31,7 +31,7 @@ export async function submitProducerClaimAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      "Verifica tu correo de acceso antes de reclamar un productor.",
+      "Verifica tu correo de acceso antes de iniciar la verificación de un productor.",
     );
   }
   if (!account.termsAcceptedAt) {
@@ -169,7 +169,7 @@ export async function submitProducerClaimAction(
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      "Este productor ya tiene un titular verificado y no se puede volver a reclamar.",
+      "Este productor ya tiene un titular verificado y no se puede volver a verificar.",
     );
   }
   if (claimResult === "open-limit" || claimResult === "daily-limit") {

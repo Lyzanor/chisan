@@ -127,9 +127,9 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
       </section>
       {account.profileKind === "producer" && membershipCount.value === 0 ? (
         <section className="account-callout">
-          <h2>Reclama el perfil de tu productor</h2>
+          <h2>Verifica el perfil de tu productor</h2>
           <p>
-            Abre el perfil público del productor y elige «Reclamar este productor». La titularidad se comprueba manualmente antes de conceder acceso de edición.
+            Abre el perfil público del productor y elige «Verificar productor». La titularidad se comprueba manualmente antes de conceder acceso de edición.
           </p>
           <Link href="/" className="account-button">
             Buscar mi productor

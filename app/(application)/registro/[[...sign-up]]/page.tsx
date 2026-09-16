@@ -44,7 +44,7 @@ export default function SignUpPage() {
             </article>
             <article>
               <strong>Productor</strong>
-              <span>Reclama tu unidad productiva y propón actualizaciones de su perfil para revisión.</span>
+              <span>Verifica tu unidad productiva y propón actualizaciones de su perfil para revisión.</span>
             </article>
           </div>
         </div>

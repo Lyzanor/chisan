@@ -15,7 +15,7 @@ export async function HomeCommunity() {
       <p className="catalog-kicker">Una comunidad que va creciendo</p>
       <h2 id="home-community-title">Confían en nosotros</h2>
       <p>
-        Productores que han reclamado su ficha y personas que comparten su
+        Productores con titularidad verificada y personas que comparten su
         perfil en Chisan.
       </p>
       {members.length ? (

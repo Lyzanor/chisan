@@ -66,7 +66,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
           </p>
         </div>
         <Link href="/" className="account-button account-button--secondary">
-          Buscar un productor para reclamar
+          Buscar un productor para verificar
         </Link>
       </header>
 

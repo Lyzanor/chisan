@@ -31,15 +31,15 @@ const es: typeof en = {
   checked: "Consultada",
   verified: "Productor verificado",
   verifiedHelp:
-    "El productor ha reclamado esta ficha y hemos revisado su vinculación con ella.",
+    "Hemos verificado la vinculación del productor con esta ficha.",
   pending: "Pendiente de revisión",
   pendingHelp:
     "Hay información pendiente de comprobar. Confirma los detalles con el productor antes de visitar o hacer un pedido.",
   editorial:
-    "Información recopilada de fuentes públicas. El productor todavía no ha reclamado esta ficha.",
+    "Información recopilada de fuentes públicas. El productor todavía no ha verificado su vinculación con esta ficha.",
   participate: "¿Eres este productor?",
   participateHelp:
-    "Reclama tu ficha gratis, mantén tu información al día y añade una galería de hasta 5 fotos. Revisamos cada cambio antes de publicarlo.",
+    "Solicita gratis la verificación de tu ficha, mantén tu información al día y añade una galería de hasta 5 fotos. Revisamos cada cambio antes de publicarlo.",
   contribute: "Una ficha que crece contigo",
   contributeHelp:
     "Mantén tu información al día. Revisamos cada cambio antes de publicarlo.",

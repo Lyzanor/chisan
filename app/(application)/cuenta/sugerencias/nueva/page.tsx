@@ -169,7 +169,7 @@ export default async function NewProducerSuggestionPage({
         <div className="account-callout">
           <strong>Corrige lo que has visto en la ficha.</strong>
           <p>
-            Nadie ha reclamado este productor todavía, así que sus datos vienen
+            Nadie ha verificado la titularidad de este productor todavía, así que sus datos vienen
             de la investigación editorial y de fuentes públicas. Elige el
             apartado que quieres corregir; el equipo revisará la propuesta antes
             de publicarla.

@@ -13,7 +13,7 @@ import { producerMemberships } from "@/lib/db/schema";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
 
 export const metadata: Metadata = {
-  title: "Reclamar un productor",
+  title: "Verificar productor",
   robots: { index: false, follow: false },
 };
 
@@ -89,7 +89,7 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
           <p>
             {currentAccountOwnsProducer
               ? "Utiliza tu área de productor para gestionar este perfil."
-              : "Un productor con un titular confirmado activo no se puede volver a reclamar."}
+              : "Un productor con un titular confirmado activo no se puede volver a verificar."}
           </p>
           <div className="account-inline-actions">
             <Link

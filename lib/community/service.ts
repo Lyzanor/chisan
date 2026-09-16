@@ -186,7 +186,7 @@ export function createCommunityService({
               row.kind === "claim" ? "claim" : message ? "message" : "update",
             title:
               row.kind === "claim"
-                ? "Este productor ha reclamado su perfil"
+                ? "Este productor tiene una titularidad verificada"
                 : message
                   ? "Un mensaje para su comunidad"
                   : row.contentHash
