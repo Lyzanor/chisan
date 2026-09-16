@@ -12,7 +12,11 @@ import {
   type RadiusFilter,
 } from "@/lib/location/radius-search";
 import { useSearchParams } from "next/navigation";
-import { MagnifyingGlassIcon, MapPinIcon } from "@phosphor-icons/react";
+import {
+  CaretDownIcon,
+  MagnifyingGlassIcon,
+  MapPinIcon,
+} from "@phosphor-icons/react";
 import {
   Suspense,
   memo,
@@ -63,6 +67,30 @@ import {
   includeSelectedProducer,
   prioritizeProducerItems,
 } from "@/lib/catalog/producer-list";
+
+export const BASE_CATEGORY_TOKENS = new Set([
+  "Café",
+  "Carne",
+  "Cerveza",
+  "Dulces y repostería",
+  "Fruta y verdura",
+  "Helados",
+  "Lácteos y quesos",
+  "Pan y cereal",
+  "Pescado",
+  "Vino",
+]);
+
+const BASE_CATEGORY_NORMALIZED = new Set(
+  Array.from(BASE_CATEGORY_TOKENS, (token) => normalizeCatalogSearch(token)),
+);
+
+export function isBaseCategory(token: string): boolean {
+  return (
+    BASE_CATEGORY_TOKENS.has(token) ||
+    BASE_CATEGORY_NORMALIZED.has(normalizeCatalogSearch(token))
+  );
+}
 
 const VISIBLE_PRODUCER_LIMIT = 400;
 const PRODUCER_RESULTS_ID = "catalog-producer-results";
@@ -366,6 +394,29 @@ function AreaExplorerView({
   const availableCategories = useMemo(() => new Set(
     (producers ?? model.producers).flatMap((producer) => producer.categories),
   ), [producers, model.producers]);
+  const baseCategories = useMemo(
+    () => model.categories.filter((item) => isBaseCategory(item.token)),
+    [model.categories],
+  );
+  const otherCategories = useMemo(
+    () =>
+      model.categories.filter(
+        (item) =>
+          !isBaseCategory(item.token) &&
+          (availableCategories.has(item.token) ||
+            normalizeCatalogSearch(item.token) === normalizedCategory),
+      ),
+    [model.categories, availableCategories, normalizedCategory],
+  );
+  const activeOtherCategory = useMemo(
+    () =>
+      otherCategories.find(
+        (item) =>
+          item.token === category ||
+          normalizeCatalogSearch(item.token) === normalizedCategory,
+      ),
+    [otherCategories, category, normalizedCategory],
+  );
   const items = useMemo(() => {
     if (searchScope === "nearby" && !radiusFilter) return [];
     return rankCatalogEntries(searchableProducers.filter((producer) =>
@@ -792,7 +843,7 @@ function AreaExplorerView({
         >
           {model.catalogMessages.allCategories}
         </Link>
-        {model.categories.filter((item) => availableCategories.has(item.token)).map((categoryPresentation) => {
+        {baseCategories.map((categoryPresentation) => {
           const href = buildCatalogHref({
             scope: model.scope,
             area: model.area,
@@ -801,6 +852,9 @@ function AreaExplorerView({
             municipality,
             category: categoryPresentation.token,
           });
+          const isActive =
+            category === categoryPresentation.token ||
+            normalizeCatalogSearch(categoryPresentation.token) === normalizedCategory;
 
           return (
             <Link
@@ -812,18 +866,59 @@ function AreaExplorerView({
                 event.preventDefault();
                 selectCategory(href);
               }}
-              className={`catalog-chip ${
-                category === categoryPresentation.token ? "is-active" : ""
-              }`}
-              aria-current={
-                category === categoryPresentation.token ? "page" : undefined
-              }
+              className={`catalog-chip ${isActive ? "is-active" : ""}`}
+              aria-current={isActive ? "page" : undefined}
             >
               <span aria-hidden="true">{categoryPresentation.icon}</span>
               {categoryPresentation.label}
             </Link>
           );
         })}
+        {otherCategories.length > 0 ? (
+          <label
+            className={`catalog-chip catalog-chip--select ${
+              activeOtherCategory ? "is-active" : ""
+            }`}
+          >
+            <select
+              aria-label={searchMessages.moreCategories}
+              value={activeOtherCategory?.token ?? ""}
+              onChange={(event) => {
+                const selectedToken = event.target.value;
+                if (selectedToken) {
+                  const href = buildCatalogHref({
+                    scope: model.scope,
+                    area: model.area,
+                    q: searchQuery,
+                    searchScope,
+                    municipality,
+                    category: selectedToken,
+                  });
+                  selectCategory(href);
+                } else {
+                  selectCategory(allCategoriesHref);
+                }
+              }}
+              className="catalog-chip-select"
+            >
+              <option value="">
+                {activeOtherCategory
+                  ? model.catalogMessages.allCategories
+                  : searchMessages.moreCategories}
+              </option>
+              {otherCategories.map((item) => (
+                <option key={item.token} value={item.token}>
+                  {item.icon} {item.label}
+                </option>
+              ))}
+            </select>
+            <CaretDownIcon
+              aria-hidden="true"
+              className="catalog-chip-select__icon"
+              size={12}
+            />
+          </label>
+        ) : null}
       </nav>
 
       {adSlot}

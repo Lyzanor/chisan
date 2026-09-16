@@ -179,3 +179,44 @@ test("a selected producer renders one accessible destination with safe text and 
   } }));
   assert.doesNotMatch(sparse, /<span><\/span>/);
 });
+
+test("base category tokens partition the 10 core categories with robust normalization", async () => {
+  const { BASE_CATEGORY_TOKENS, isBaseCategory } = await import("../components/area-explorer");
+  const { getCatalogSearchMessages } = await import("../lib/i18n/catalog-search");
+
+  const expectedTokens = [
+    "Café",
+    "Carne",
+    "Cerveza",
+    "Dulces y repostería",
+    "Fruta y verdura",
+    "Helados",
+    "Lácteos y quesos",
+    "Pan y cereal",
+    "Pescado",
+    "Vino",
+  ];
+
+  assert.equal(BASE_CATEGORY_TOKENS.size, 10);
+  for (const token of expectedTokens) {
+    assert.ok(BASE_CATEGORY_TOKENS.has(token), `Expected token ${token} in BASE_CATEGORY_TOKENS`);
+    assert.ok(isBaseCategory(token), `Expected isBaseCategory(${token}) to be true`);
+  }
+
+  // Normalized / alternate casing matches
+  assert.ok(isBaseCategory("Pan y Cereal"));
+  assert.ok(isBaseCategory("café"));
+  assert.ok(isBaseCategory("CARNE"));
+
+  // Non-base categories return false
+  assert.equal(isBaseCategory("Aceite"), false);
+  assert.equal(isBaseCategory("Miel"), false);
+  assert.equal(isBaseCategory("Conservas"), false);
+  assert.equal(isBaseCategory("Chocolate"), false);
+
+  // Internationalized messages include moreCategories
+  assert.equal(getCatalogSearchMessages("es").moreCategories, "Más categorías");
+  assert.equal(getCatalogSearchMessages("ca").moreCategories, "Més categories");
+  assert.equal(getCatalogSearchMessages("en").moreCategories, "More categories");
+});
+
