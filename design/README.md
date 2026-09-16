@@ -250,12 +250,15 @@ unseen. The label overlays free space, so the name never reflows. Premium uses
 the dedicated green header token independently of ownership.
 
 The header shows only reviewed material. A landscape gallery photograph becomes
-a low panoramic cover, and the name block cuts into its lower-left edge so name
-and photograph share one level. Concave corners repeat the cover radius, and
-part of the photograph always continues beside the cut. The `imagen` identity
-image sits beside the name on wide screens and above it on narrow ones; without a
-cover, the same block is ordinary page content. A missing cover, identity image
-or gallery leaves no generic, category or placeholder image. The description
+the cover, the page's first and strongest image, and the name row cuts into its
+lower-left edge so name and photograph share one level. Concave corners repeat
+the cover radius, and part of the photograph always continues beside the cut.
+Municipality and categories follow as one compact line below the cover edge,
+truncated rather than wrapped. The `imagen` identity image sits beside the name
+on wide screens and above it on narrow ones; without a cover, the same block is
+ordinary page content. A missing cover, identity image or gallery leaves no
+generic, category or placeholder image. Captions and credits wait behind a small
+info disclosure on each photograph instead of text beneath it. The description
 and the contact, website and social links share two columns on wide screens.
 
 Verified ownership receives an explicit badge beside the name and an explanation

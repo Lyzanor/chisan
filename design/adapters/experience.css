@@ -618,21 +618,38 @@ body { min-height: 100svh; }
 .detail-shell { padding: clamp(1rem, 2.5vw, 2rem); }
 /* Reviewed material only: a landscape gallery photo becomes the cover, the CSV
  * image becomes the identity tile, and a missing asset leaves no placeholder. */
-.detail-hero--identity { --detail-hero-surface: var(--chisan-color-surface); --detail-identity-height: 5.5rem; --detail-cover-overlap: 4.5rem; --detail-cover-radius: var(--chisan-radius-panel); grid-template-columns: minmax(0, 1fr); grid-template-areas: "tab" "summary"; gap: var(--chisan-space-3) var(--chisan-space-6); align-items: start; box-shadow: none; }
-.detail-hero--cover { grid-template-columns: fit-content(40rem) minmax(0, 1fr); grid-template-areas: "cover cover" "tab caption" "summary summary"; }
-.detail-cover { display: contents; }
-.detail-cover__frame { grid-area: cover; justify-self: stretch; min-width: 0; height: clamp(12rem, 22vw, 18rem); overflow: hidden; border-radius: var(--detail-cover-radius); background: var(--chisan-color-surface-muted); }
+.detail-hero--identity { container-type: inline-size; --detail-hero-surface: var(--chisan-color-surface); --detail-identity-height: 5.5rem; --detail-cover-overlap: 3.75rem; --detail-cover-radius: var(--chisan-radius-panel); --detail-meta-offset: 0px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "tab" "summary"; gap: var(--chisan-space-3) var(--chisan-space-6); align-items: start; box-shadow: none; }
+.detail-hero--cover { grid-template-areas: "cover" "tab" "summary"; }
+.detail-cover { grid-area: cover; position: relative; min-width: 0; margin: 0; }
+.detail-cover__frame { height: clamp(14rem, 25vw, 20rem); overflow: hidden; border-radius: var(--detail-cover-radius); background: var(--chisan-color-surface-muted); }
 .detail-cover__frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.detail-cover figcaption { grid-area: caption; min-width: 0; margin: 0; color: var(--chisan-color-stone); font-size: 0.75rem; line-height: 1.5; text-align: end; }
 .detail-hero__tab { grid-area: tab; display: flex; align-items: flex-start; gap: var(--chisan-space-4); min-width: 0; }
 /* The name block cuts into the lower edge of the cover, so name and photograph
  * share one level. Concave corners keep the cut as soft as the photo's radius;
  * each surface reaches one line past the photo edge to avoid a seam. */
-.detail-hero--cover .detail-hero__tab { position: relative; z-index: 1; min-width: 24rem; margin-top: calc(-1 * (var(--detail-cover-overlap) + var(--chisan-space-3))); padding: var(--chisan-space-4) var(--chisan-space-6) 0 0; border-top-right-radius: var(--detail-cover-radius); background: var(--detail-hero-surface); box-shadow: calc(-1 * var(--chisan-line)) 0 0 0 var(--detail-hero-surface); }
+.detail-hero--cover .detail-hero__tab { position: relative; z-index: 1; justify-self: start; max-width: min(40rem, 100%); margin-top: calc(-1 * (var(--detail-cover-overlap) + var(--chisan-space-3))); padding: var(--chisan-space-4) var(--chisan-space-6) 0 0; border-top-right-radius: var(--detail-cover-radius); background: var(--detail-hero-surface); box-shadow: calc(-1 * var(--chisan-line)) 0 0 0 var(--detail-hero-surface); }
 .detail-hero--cover .detail-hero__tab::before,
 .detail-hero--cover .detail-hero__tab::after { content: ""; position: absolute; width: var(--detail-cover-radius); height: var(--detail-cover-radius); background: radial-gradient(circle at 100% 0, transparent calc(var(--detail-cover-radius) - 0.5px), var(--detail-hero-surface) var(--detail-cover-radius)); pointer-events: none; }
 .detail-hero--cover .detail-hero__tab::before { top: calc(-1 * var(--detail-cover-radius)); left: calc(-1 * var(--chisan-line)); width: calc(var(--detail-cover-radius) + var(--chisan-line)); }
 .detail-hero--cover .detail-hero__tab::after { top: calc(var(--detail-cover-overlap) - var(--detail-cover-radius)); left: 100%; height: calc(var(--detail-cover-radius) + var(--chisan-line)); }
+/* Only the name row sits over the photo. Below its edge the one-line municipality
+ * and categories take the full width without widening the cut, from their static
+ * position and in the 44px the heading reserves for them. */
+.detail-hero--cover .detail-profile-heading { padding-bottom: 44px; }
+.detail-hero--cover .detail-subtitle { position: absolute; width: calc(100cqi - var(--detail-meta-offset) + 2 * var(--chisan-space-2)); }
+.detail-hero--cover:has(.detail-identity) { --detail-meta-offset: calc(var(--detail-identity-height) * 4 / 3 + var(--chisan-space-4)); }
+/* Captions and credits wait behind a small info control so the photograph leads. */
+.detail-photo-details { position: absolute; z-index: 1; top: var(--chisan-space-1); right: var(--chisan-space-1); width: 44px; max-width: calc(100% - var(--chisan-space-2)); margin: 0; pointer-events: none; }
+.detail-photo-details:has(details[open]) { width: min(22rem, calc(100% - var(--chisan-space-2))); }
+.detail-photo-details summary { display: grid; place-items: center; width: 44px; height: 44px; margin-left: auto; list-style: none; cursor: pointer; pointer-events: auto; }
+.detail-photo-details summary::-webkit-details-marker { display: none; }
+.detail-photo-details summary > span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: var(--chisan-radius-control); background: color-mix(in srgb, var(--chisan-color-surface) 88%, transparent); color: var(--chisan-color-ink); transition: background-color var(--chisan-motion-immediate) var(--chisan-ease), color var(--chisan-motion-immediate) var(--chisan-ease); }
+.detail-photo-details details[open] summary > span { background: var(--chisan-color-moss); color: var(--chisan-color-surface); }
+.detail-photo-details summary:focus-visible { outline: 2px solid var(--chisan-color-moss); outline-offset: -4px; border-radius: var(--chisan-radius-control); }
+.detail-photo-details p { margin: 0; padding: var(--chisan-space-2) var(--chisan-space-3); border-radius: var(--chisan-radius-control); background: color-mix(in srgb, var(--chisan-color-surface) 94%, transparent); color: var(--chisan-color-ink); font-size: 0.75rem; line-height: 1.5; pointer-events: auto; box-shadow: var(--chisan-shadow-overlay); }
+@media (hover: hover) {
+  .detail-photo-details summary:hover > span { background: var(--chisan-color-moss); color: var(--chisan-color-surface); }
+}
 .detail-identity { flex: none; width: calc(var(--detail-identity-height) * 4 / 3); height: var(--detail-identity-height); overflow: hidden; border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-object); background: var(--chisan-color-surface-muted); }
 .detail-identity img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .detail-hero--premium { --detail-hero-surface: var(--chisan-color-premium-surface); background: var(--chisan-color-premium-surface); padding: var(--chisan-space-6); }
@@ -662,8 +679,11 @@ body { min-height: 100svh; }
   .detail-follow[aria-pressed="true"]:hover { border-color: var(--chisan-color-moss); background: var(--chisan-color-moss-pale); }
   .detail-follow:hover .detail-follow__label { max-width: 12rem; opacity: 1; }
 }
-.detail-hero--identity .detail-subtitle { display: flex; flex-wrap: wrap; column-gap: var(--chisan-space-3); row-gap: 0; margin-top: 0; }
+.detail-hero--identity .detail-subtitle { display: flex; flex-wrap: nowrap; align-items: center; column-gap: var(--chisan-space-2); row-gap: 0; min-width: 0; margin: calc(-1 * var(--chisan-space-2)); padding: var(--chisan-space-2); overflow: hidden; }
 .detail-subtitle a { display: inline-flex; align-items: center; min-height: 44px; color: var(--chisan-color-moss-dark); text-underline-offset: 4px; font-size: 0.875rem; }
+.detail-hero--identity .detail-subtitle a { display: block; min-width: 0; overflow: hidden; font-size: 0.8125rem; line-height: 44px; text-overflow: ellipsis; white-space: nowrap; }
+.detail-hero--identity .detail-subtitle a + a { flex-shrink: 0; }
+.detail-hero--identity .detail-subtitle a + a::before { content: "·" / ""; display: inline-block; margin-inline-end: var(--chisan-space-2); color: var(--chisan-color-stone); }
 .detail-hero-summary { grid-area: summary; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--chisan-space-4) var(--chisan-space-8); align-items: start; min-width: 0; }
 .detail-hero-summary:has(> .detail-intro + .detail-hero-links) { grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 1fr); }
 .detail-hero--identity .detail-intro { margin-top: 0; font-size: 1.125rem; line-height: 1.5; }
@@ -729,11 +749,12 @@ body { min-height: 100svh; }
 @media (max-width: 760px) {
   .detail-hero--identity { --detail-identity-height: 3.75rem; --detail-cover-overlap: 3rem; --detail-cover-radius: var(--chisan-radius-object); }
   .detail-hero__tab { flex-direction: column; gap: var(--chisan-space-3); }
-  .detail-hero--cover { grid-template-columns: minmax(0, 1fr); grid-template-areas: "cover" "tab" "caption" "summary"; }
+  .detail-hero--cover:has(.detail-identity) { --detail-meta-offset: 0px; }
   .detail-hero--identity h1 { font-size: 1.75rem; }
-  .detail-cover__frame { height: 12.5rem; }
-  .detail-cover figcaption { text-align: start; }
-  .detail-hero--cover .detail-hero__tab { justify-self: start; min-width: 0; max-width: calc(100% - var(--chisan-space-12)); padding-right: var(--chisan-space-4); }
+  .detail-cover__frame { height: clamp(13rem, 64vw, 16rem); }
+  .detail-hero--cover .detail-hero__tab { max-width: calc(100% - var(--chisan-space-12)); padding-right: var(--chisan-space-4); }
+  /* With an identity image only the image enters the cut; the name below the photo edge uses the full width. */
+  .detail-hero--cover .detail-hero__tab:has(.detail-identity) .detail-profile-heading { contain: inline-size; align-self: stretch; margin-right: calc(var(--detail-identity-height) * 4 / 3 - 100cqi); }
   .detail-hero-summary:has(> .detail-intro + .detail-hero-links) { grid-template-columns: minmax(0, 1fr); }
   .detail-hero--premium { padding: var(--chisan-space-4); }
   .detail-participate { grid-template-columns: minmax(0, 1fr); padding: var(--chisan-space-4); }

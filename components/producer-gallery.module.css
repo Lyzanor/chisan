@@ -17,6 +17,7 @@
   outline-offset: 2px;
 }
 .photo {
+  position: relative;
   min-width: 0;
   margin: 0;
   scroll-snap-align: start;
@@ -38,15 +39,9 @@
     scale: 1.03;
   }
 }
-.photo figcaption {
-  margin-top: var(--chisan-space-2);
-  color: var(--chisan-color-stone);
-  font-size: 0.75rem;
-  line-height: 1.5;
-}
 @media (max-width: 760px) {
   .strip {
-    --gallery-min-height: 13rem;
+    --gallery-min-height: min(13rem, 55vw);
     --gallery-max-height: 16rem;
   }
 }

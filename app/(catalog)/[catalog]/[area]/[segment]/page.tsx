@@ -490,7 +490,12 @@ export default async function ProducerPage({
           id="detail-hero"
           className={`detail-hero detail-hero--identity${cover ? " detail-hero--cover" : ""}${premiumActive ? " detail-hero--premium" : ""}`}
         >
-          {cover ? <ProducerCover photo={cover} /> : null}
+          {cover ? (
+            <ProducerCover
+              photo={cover}
+              captionLabel={profileWords.photoCaption}
+            />
+          ) : null}
           <div className="detail-hero__tab">
             {identityImageSrc ? (
               <div className="detail-identity">
@@ -810,7 +815,11 @@ export default async function ProducerPage({
           </div>
         ) : null}
 
-        <ProducerGallery photos={photos} title={profileWords.gallery} />
+        <ProducerGallery
+          photos={photos}
+          title={profileWords.gallery}
+          captionLabel={profileWords.photoCaption}
+        />
 
         <section
           id="detail-info"

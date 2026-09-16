@@ -19,10 +19,7 @@ const en = {
   contributeHelp:
     "Keep your information up to date. We review each change before publishing it.",
   gallery: "Producer photos",
-  enlarge: "Enlarge photo",
-  previous: "Previous photo",
-  next: "Next photo",
-  close: "Close gallery",
+  photoCaption: "Photo caption and credit",
   fromLocation: "From your location",
   freeGallery: "Your free gallery · up to 5 photos",
   freeGalleryHelp:
@@ -47,10 +44,7 @@ const es: typeof en = {
   contributeHelp:
     "Mantén tu información al día. Revisamos cada cambio antes de publicarlo.",
   gallery: "Fotos del productor",
-  enlarge: "Ampliar foto",
-  previous: "Foto anterior",
-  next: "Foto siguiente",
-  close: "Cerrar galería",
+  photoCaption: "Pie y créditos de la foto",
   fromLocation: "Desde tu ubicación",
   freeGallery: "Tu galería gratuita · hasta 5 fotos",
   freeGalleryHelp:
@@ -75,10 +69,7 @@ const ca: typeof en = {
   contributeHelp:
     "Mantén la informació al dia. Revisem cada canvi abans de publicar-lo.",
   gallery: "Fotos del productor",
-  enlarge: "Amplia la foto",
-  previous: "Foto anterior",
-  next: "Foto següent",
-  close: "Tanca la galeria",
+  photoCaption: "Peu i crèdits de la foto",
   fromLocation: "Des de la teva ubicació",
   freeGallery: "La teva galeria gratuïta · fins a 5 fotos",
   freeGalleryHelp:

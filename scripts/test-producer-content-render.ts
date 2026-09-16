@@ -152,14 +152,20 @@ test("producer photos use only reviewed material: a landscape cover and an hones
     assert.deepEqual(splitProducerPhotos([portrait, small]), { cover: null, photos: [portrait, small] });
     assert.deepEqual(splitProducerPhotos([]), { cover: null, photos: [] });
 
-    const coverHtml = renderToStaticMarkup(createElement(ProducerCover, { photo: landscape }));
+    const captionLabel = "Pie y créditos de la foto";
+    const coverHtml = renderToStaticMarkup(createElement(ProducerCover, { photo: landscape, captionLabel }));
     assert.match(coverHtml, /<figure class="detail-cover">/);
     assert.match(coverHtml, /alt="Foto landscape"/);
-    assert.match(coverHtml, /<figcaption lang="es">Campo de olivos · Autora<\/figcaption>/);
+    assert.match(
+      coverHtml,
+      /<figcaption class="detail-photo-details"><details><summary aria-label="Pie y créditos de la foto"[^>]*>[\s\S]*<\/summary><p lang="es">Campo de olivos · Autora<\/p><\/details><\/figcaption>/,
+      "caption and credit wait behind a closed disclosure",
+    );
+    assert.doesNotMatch(coverHtml, /<details open/);
 
-    assert.equal(renderToStaticMarkup(createElement(ProducerGallery, { photos: [], title: "Fotos" })), "");
+    assert.equal(renderToStaticMarkup(createElement(ProducerGallery, { photos: [], title: "Fotos", captionLabel })), "");
     const stripHtml = renderToStaticMarkup(
-      createElement(ProducerGallery, { photos: split.photos, title: "Fotos del productor" }),
+      createElement(ProducerGallery, { photos: split.photos, title: "Fotos del productor", captionLabel }),
     );
     assert.match(stripHtml, /<h2 id="detail-gallery-title">Fotos del productor<\/h2>/);
     assert.equal((stripHtml.match(/<img /g) ?? []).length, 3);

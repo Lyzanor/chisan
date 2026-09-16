@@ -3,6 +3,20 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-16 — Stronger cover, caption disclosure and one-line place and category
+
+Visual review: **passed** in an isolated production build at the 350 px browser pane and 1280×900.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Cover | Taller and free of text beneath it: 320 px at 1280 px (was 282) and 224 px at 350 px (was 200). The name row alone overlaps the photograph by 60 px on desktop. |
+| Captions | Caption and credit now sit behind a 44 px info disclosure at the top right of the cover and of each strip photo. Closed by default; a real click in the pane opened and closed it, and the open panel stayed inside the photo (262×88 px on a 270×202 strip photo). |
+| Place and category | Municipality and categories form one 13 px line below the cover edge (`Santa Coloma de Gramenet · Otros`, `Gelida · Vermut · Vino`). At 350 px, "Otros" no longer drops to its own row. With four simulated items the municipality truncates first and categories stay whole; 8 px of room keeps the focus ring unclipped. |
+| Cut width | The line below the cover no longer widens the cut. At 350 px the pending status wraps inside the name block instead of running under the photograph; with an identity image, only the image enters a 96 px cut and a 58-character name uses the full width below the photo. |
+| Strip on narrow screens | Photos are 192 px tall at 350 px so the next one peeks in (257 px photo in a 284 px strip). |
+
+No horizontal overflow at 350 px for the demo, Vins Ollé or `100% Conill (Albert Puig)`.
+
 ## 2026-09-16 — Producer cover, identity image and public photo strip
 
 Visual review: **passed** in an isolated production build at 1280×900 and 375×812.
