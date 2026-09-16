@@ -27,10 +27,49 @@ import {
 import { GET as detail } from "../app/(internal)/api/catalog/v1/producers/[country]/[producerId]/route";
 import { needsClerkRequestContext } from "../lib/proxy-scope";
 import robots from "../app/robots";
+import { GET as explorer } from "../app/(internal)/api/catalog/v1/explorer/route";
+import { explorerSearchFields, type ExplorerCatalogPage } from "../lib/catalog/explorer";
+import { buildCatalogSearchDocument, rankCatalogEntries } from "../lib/catalog-search";
 
 const origin = "https://chisan.app";
 const request = (path = "", init?: RequestInit) =>
   new Request(`${origin}/api/catalog/v1${path}`, init);
+
+test("browser national index and API return the same literal relevance order", async () => {
+  const firstResponse = await explorer(request("/explorer?country=es&locale=es"));
+  assert.equal(firstResponse.status, 200);
+  assert.ok(Buffer.byteLength(await firstResponse.clone().text()) < 2_000_000);
+  const first: ExplorerCatalogPage = await firstResponse.json();
+  const producers = [...first.producers];
+  for (let offset = first.limit; offset < first.total; offset += first.limit) {
+    const page: ExplorerCatalogPage = await (await explorer(request(`/explorer?country=es&locale=es&offset=${offset}&revision=${first.revision}`))).json();
+    assert.equal(page.revision, first.revision);
+    producers.push(...page.producers);
+  }
+  assert.equal(producers.length, first.total);
+  assert.equal(new Set(producers.map((p) => p.producerId)).size, first.total);
+  assert.ok(new Set(producers.map((p) => p.area)).size > 1);
+  assert.ok(producers.every((p) => p.href === `/es/${p.area}/${p.slug}`));
+  assert.ok(producers.every((p) => !("expanded" in p) && !("contact" in p) && !("fields" in p)));
+  const entries = producers.map((p) => ({ ...p, search: buildCatalogSearchDocument(explorerSearchFields(p)) }));
+  for (const q of ["miel", "masa madre", "queso cabra"]) {
+    const browser = rankCatalogEntries(entries, q);
+    const api = await searchPublicProducers(searchInputSchema.parse({ country: "es", locale: "es", q, limit: 50 }));
+    assert.equal(browser.length, api.total, q);
+    assert.deepEqual(browser.slice(0, 50).map((p) => p.producerId), api.producers.map((p) => p.producer_id), q);
+  }
+  assert.equal((await explorer(request(`/explorer?country=es&locale=es&revision=${"0".repeat(64)}`))).status, 409);
+  for (const query of ["country=es&locale=es&lat=41", "country=es&locale=es&offset=-1", "country=es&locale=es&country=es"]) {
+    assert.equal((await explorer(request(`/explorer?${query}`))).status, 400);
+  }
+  assert.equal((await explorer(request("/explorer?country=de&locale=es"))).status, 404);
+});
+
+test("API and browser projection preserve the map's exclusion of placeholder coordinates", async () => {
+  const [row] = await loadCsvRows("es", "barcelona");
+  const base = publicProducerBase({ ...row, latitude: 0, longitude: 0 }, findPublishedCountry("es")!, findArea("es", "barcelona")!, "es");
+  assert.equal(base.coordinates, null);
+});
 
 test("public API and WebMCP use the same operation schemas", () => {
   const api = catalogOpenApi();

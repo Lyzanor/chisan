@@ -6,13 +6,15 @@ import {
   ProgrammaticAreaAd,
   ProgrammaticAreaAdPlaceholder,
 } from "@/components/ads/programmatic-area-ad";
+import categoryRegistry from "@/data/reference/categories.json";
+import { publicProducerBase } from "@/lib/agents/public-catalog";
+import { toExplorerProducer } from "@/lib/catalog/explorer";
 import { buildCatalogHref } from "@/lib/catalog-navigation";
 import {
   type Country,
   getLocalizedCatalogLabel,
   getLocalizedCatalogUnit,
-  hasProducerMapPoint,
-  listCategories,
+  findArea,
   searchProducers,
 } from "@/lib/csv-catalog";
 import {
@@ -41,39 +43,14 @@ type AreaCatalogProps = {
   scope: CatalogScope;
 };
 
-const DESCRIPTION_PREVIEW_MAX_LENGTH = 120;
-
-function getFieldValue(fields: Record<string, string>, key: string): string {
-  const match = Object.entries(fields).find(
-    ([field]) => field.toLocaleLowerCase() === key.toLocaleLowerCase(),
-  );
-
-  return (match?.[1] ?? "").trim();
-}
-
-function getDescriptionPreview(fields: Record<string, string>): string {
-  const description = getFieldValue(fields, "descripcion");
-  const characters = Array.from(description);
-
-  if (characters.length <= DESCRIPTION_PREVIEW_MAX_LENGTH) {
-    return description;
-  }
-
-  return `${characters
-    .slice(0, DESCRIPTION_PREVIEW_MAX_LENGTH - 1)
-    .join("")
-    .trimEnd()}…`;
-}
-
 function capitalizeLabel(value: string, locale: Locale): string {
   return value.charAt(0).toLocaleUpperCase(locale) + value.slice(1);
 }
 
 export async function AreaCatalog({ country, area, locale, scope }: AreaCatalogProps) {
   const countrySlug = scope.country;
-  const [messages, categories, allRows] = await Promise.all([
+  const [messages, allRows] = await Promise.all([
     loadMessages(locale),
-    listCategories(countrySlug, area),
     searchProducers({ municipality: "", category: "" }, countrySlug, area, locale),
   ]);
   const adsConfig = getProgrammaticAdsConfig();
@@ -139,21 +116,12 @@ export async function AreaCatalog({ country, area, locale, scope }: AreaCatalogP
     locale,
     localeDisplayTag: getLocaleDisplayTag(locale),
     siteName: SITE_NAME,
-    categories: categories.map((category) =>
+    categories: categoryRegistry.categories.map((category) =>
       getCategoryPresentation(category, locale),
     ),
-    producers: allRows.map((producer) => ({
-      producerId: producer.producerId,
-      slug: producer.slug,
-      name: producer.name,
-      city: producer.city,
-      category: producer.category,
-      categories: producer.categories,
-      description: getDescriptionPreview(producer.fields),
-      imageSrc: producer.imageSrc,
-      latitude: hasProducerMapPoint(producer) ? producer.latitude : null,
-      longitude: hasProducerMapPoint(producer) ? producer.longitude : null,
-    })),
+    producers: allRows.map((producer) => toExplorerProducer(
+      publicProducerBase(producer, country, findArea(countrySlug, area)!, locale),
+    )),
     languageOptions,
     areaSelectorCountry: { regions: localizedRegions },
     selectorMessages: {

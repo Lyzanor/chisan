@@ -340,3 +340,34 @@ Standalone gallery visibility follows `PRODUCER_CONTENT.md`: up to five photos
 for an active claimed free producer, full gallery for premium. Neither grants
 new factual authority. Base JSON-LD remains unchanged; hidden premium products
 and images never enter the public structured data.
+
+
+## Catalog search scope
+
+The existing province explorer offers country, current province and nearby
+scopes. Province remains the default on a province URL. Country and nearby
+search all areas published in the requested locale. The current province stays
+available as a scope and the existing province selector changes that province.
+Changing scope clears municipality and selected-producer restrictions, while
+retaining text and category. `q` (up to 200 characters) and `search_scope`
+(`country` or `nearby`; omitted for province) survive catalog navigation,
+Back/Forward and shared URLs. A shared nearby URL requires a fresh explicit
+location choice; it never carries coordinates.
+
+Web and API use the same public base fields and literal relevance scorer; see
+[Agent Access](AGENT_ACCESS.md). The full description and existing featured-product
+summary are searchable, independently of the short list preview. Expanded
+products are excluded. Text results retain relevance order when the map moves;
+without text, the map can prioritize visible producers. The list includes
+unmapped producers except during distance filtering and offers additional
+results beyond the initial 400. Map selection uses country-local producer IDs,
+so equal slugs in separate provinces cannot collide. Profile links always use
+the result's actual area and published locale.
+
+National data loads lazily in bounded public pages, with loading, retry and
+empty states. The UI never labels a partial download as national coverage.
+Nearby scope uses the existing explicit geolocation/manual-coordinate control
+and straight-line radius entirely in ephemeral browser memory. It crosses
+provincial borders, excludes unmapped producers, and clears the active location
+when the visitor changes scope. Neither browser transport nor URLs receive
+visitor coordinates; map bounds use only matching producers' public points.

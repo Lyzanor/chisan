@@ -62,7 +62,7 @@ export const searchInputSchema = z.strictObject({
     ),
   lat: z.number().min(-90).max(90).optional().describe("Search centre latitude. Supply lat, lon and radius_km together."),
   lon: z.number().min(-180).max(180).optional().describe("Search centre longitude. Supply lat, lon and radius_km together."),
-  radius_km: z.number().positive().max(MAX_SEARCH_RADIUS_KM).optional().describe("Inclusive approximate straight-line radius in kilometres (maximum 500). Requires lat and lon. Excludes unmapped producers; combines with all other filters. Results retain country/ID order."),
+  radius_km: z.number().positive().max(MAX_SEARCH_RADIUS_KM).optional().describe("Inclusive approximate straight-line radius in kilometres (maximum 500). Requires lat and lon. Excludes unmapped producers; combines with all other filters. Text queries retain relevance order; without text, country/ID order."),
   online_sales: z.enum(ONLINE_SALES_VALUES).optional(),
   locale: locale
     .optional()
@@ -217,7 +217,7 @@ export const catalogOperations = [
   {
     name: "chisan_search_producers",
     description:
-      "Search public local food and drink producers with bounded pagination. Results are ordered by country and stable producer ID, not quality or paid status. Use next to continue and cite profile URLs.",
+      "Search public local food and drink producers with bounded pagination. Text queries are ordered by literal relevance, then country and stable producer ID; without text, by country and ID. Relevance does not measure quality or paid status. Use next to continue and cite profile URLs.",
     path: `${CATALOG_API_PATH}/producers`,
     input: searchInputSchema,
     output: searchOutputSchema,

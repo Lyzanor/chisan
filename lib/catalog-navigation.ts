@@ -30,6 +30,8 @@ export type CatalogNavigationContext = {
   category?: string;
   municipality?: string;
   highlight?: string | number;
+  q?: string;
+  searchScope?: "area" | "country" | "nearby";
 };
 
 type ProducerNavigationContext = CatalogNavigationContext & {
@@ -81,19 +83,24 @@ function buildContextParams(
   appendParam(params, "category", context.category);
   appendParam(params, "municipality", context.municipality);
   appendParam(params, "highlight", context.highlight);
+  appendParam(params, "q", context.q?.slice(0, 200));
+  if (context.searchScope !== "area") appendParam(params, "search_scope", context.searchScope);
 
   return params;
 }
 
 export function readCatalogQueryContext(
   params: Record<string, string | string[] | undefined>,
-): Pick<CatalogNavigationContext, "category" | "highlight" | "municipality"> {
+): Pick<CatalogNavigationContext, "category" | "highlight" | "municipality" | "q" | "searchScope"> {
   return {
     category: readQueryParam(params, "category"),
     ...(readQueryParam(params, "municipality")
       ? { municipality: readQueryParam(params, "municipality") }
       : {}),
     highlight: readQueryParam(params, "highlight"),
+    ...(readQueryParam(params, "q") ? { q: readQueryParam(params, "q").slice(0, 200) } : {}),
+    ...(["country", "nearby"].includes(readQueryParam(params, "search_scope"))
+      ? { searchScope: readQueryParam(params, "search_scope") as "country" | "nearby" } : {}),
   };
 }
 

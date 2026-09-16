@@ -83,3 +83,31 @@ existing public links, rather than the reference's three illustrative links.
 Brand cleanup removes obsolete v0.2/v0.3 references from active resources and
 places dated QA in `history/`. The current identity owner is
 [brand/README.md](../brand/README.md); its wordmark and favicon are separate.
+
+
+## 2026-09-15 — National search in the existing explorer
+
+- Added the country/current-province/nearby selector beside the existing search
+  field. Province URLs retain their province default. Full public base descriptions
+  and featured-product summaries now use the same literal relevance logic as the
+  API; no expanded products, stemming, synonym expansion or new editorial fields.
+- Verified the isolated production build at 1440×1000 and 390×844, including the
+  long Santa Cruz de Tenerife scope label, with no horizontal overflow.
+  Evidence: [desktop](national-search-desktop.png), [mobile](national-search-mobile.png).
+- `miel de brezo` returned 66 national results with the exact-name Cantabria
+  producer first; its list link opened the correct Cantabria profile. Empty
+  queries, Back/Forward, and retained text/scope worked. Existing map-point
+  anchored previews and province navigation were preserved from current main.
+- A 50 km manual radius around the test point (41.2, 1.7) included Barcelona and
+  Tarragona. Selecting nearby did not request geolocation; the explicit action
+  handled a simulated denial and a subsequent successful position. Coordinates
+  remained in browser memory and absent from navigation/transport parameters.
+- A simulated national transport 503 showed retry without partial results;
+  removing the failure and retrying restored the full national search. API tests
+  also verify revision changes, bounded pages, full-text matching and identical
+  browser/API ordering. The list retains unmapped producers outside radius mode.
+- `pnpm install --frozen-lockfile --offline` and the complete `pnpm verify:ai`
+  passed in the isolated release worktree. Local production-build console output
+  included the expected unavailable Vercel Analytics script and CSS preload
+  notices; no search runtime error was observed. Earlier shared-worktree QA had
+  a local server collision; the isolated guide-route and full behavior checks passed.

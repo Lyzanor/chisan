@@ -62,15 +62,32 @@ together. Latitude is −90 to 90, longitude −180 to 180 and radius is greater
 than zero through 500 km. The inclusive great-circle radius excludes missing
 coordinates and intersects every other filter, across published areas when no
 area is specified. It is approximate straight-line distance, not travel distance.
-Spatial results retain country/ID ordering and pagination; `next` preserves the
+Spatial results retain text relevance ordering (country/ID without text) and pagination; `next` preserves the
 centre and radius. API callers explicitly provide the centre; unlike the browser
 filter, these query coordinates are sent to the server. Region/area require country; category tokens and area
 languages come from discovery. Categories include additional categories. Text
 search matches every accent-insensitive term across the public name, municipality,
 categories, featured-product summary and current localized base description.
 It does not search hidden fields or expanded content. Municipality matching is
-accent-insensitive exact matching. Search is lexical, not semantic or a quality
-ranking. Results are ordered by country then numeric producer ID.
+accent-insensitive exact matching. Search is literal and accent-insensitive, with no stemming, plural expansion,
+synonyms or fuzzy matching. Every term must occur in an indexed field. Text
+results use the shared `lib/catalog-search.ts` relevance scorer: name (8),
+featured-product summary (6), municipality/categories (4), description (1),
+plus a complete-phrase bonus (twice the field weight, four times for an exact
+field). Ties use country then numeric producer ID. Without text, results retain
+country/ID order. Relevance is not a quality, verification or payment ranking.
+The index revision includes the ranking policy so deployed scoring changes
+invalidate older pagination revisions.
+
+The existing web explorer uses this same base-field projection and scorer. Its
+internal browser transport, `/api/catalog/v1/explorer`, accepts required country
+and locale, plus optional offset and revision. It returns at most 1,000 compact
+records with total/limit/offset and the public index revision; it is not an
+additional WebMCP operation. It rejects coordinates and unknown parameters,
+uses the same published-language policy, conditional caching and error envelope,
+and exposes neither expanded content nor raw CSV field bags. The browser loads
+all pages before displaying a national result and checks one revision throughout.
+The paginated producer API remains the interface for agent searches.
 
 Responses default to 20 producers and allow at most 50. `next` carries the same
 filters, an offset and a SHA-256 revision of the public base index for the selected

@@ -4,7 +4,8 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 import { ProducerMapSelectionCard } from "../components/map/producer-map-selection-card";
-import { findCatalogSearchMatch } from "../lib/catalog-search";
+import { buildCatalogSearchDocument, rankCatalogEntries, catalogDescriptionPreview, findCatalogSearchMatch } from "../lib/catalog-search";
+import { buildCatalogHref, readCatalogQueryContext } from "../lib/catalog-navigation";
 import { includeSelectedProducer, prioritizeProducerItems } from "../lib/catalog/producer-list";
 import { positionMapPreview } from "../lib/map-preview-position";
 
@@ -53,6 +54,40 @@ test("search highlights preserve original spelling and Unicode ranges", () => {
   assert.deepEqual(findCatalogSearchMatch("Cafe\u0301", "café"), { start: 0, end: 5 });
   assert.equal(findCatalogSearchMatch("Aranjuez", "vino"), null);
   assert.equal(findCatalogSearchMatch("Aranjuez", ""), null);
+});
+
+test("literal search uses complete base text, all terms and relevance with stable ties", () => {
+  const fixture = (producerId: number, fields: Partial<Parameters<typeof buildCatalogSearchDocument>[0]>) => ({
+    country: "es", producerId,
+    search: buildCatalogSearchDocument({ name: "Finca", municipality: "Lugo", categories: ["Otros"], featuredProducts: "", description: "", ...fields }),
+  });
+  const entries = [
+    fixture(1, { description: `${"Texto de contexto. ".repeat(20)}Miel de brezo.` }),
+    fixture(2, { featuredProducts: "Miel de brezo" }),
+    fixture(4, { name: "Miel de brezo" }),
+    fixture(3, { name: "Miel de brezo" }),
+    fixture(5, { name: "Miel", municipality: "Brezo" }),
+  ];
+  assert.deepEqual(rankCatalogEntries(entries, "MIEL de BRÉZO").map((p) => p.producerId), [3, 4, 2, 1]);
+  assert.ok(rankCatalogEntries(entries, "brezo miel").some((p) => p.producerId === 5));
+  assert.deepEqual(rankCatalogEntries(entries, "mieles"), []);
+  assert.deepEqual(rankCatalogEntries(entries, "honey"), []);
+  assert.deepEqual(rankCatalogEntries(entries, "miel inexistente"), []);
+  assert.deepEqual(rankCatalogEntries(entries, "!!!"), []);
+  assert.deepEqual(rankCatalogEntries(entries, ""), entries);
+  assert.match(catalogDescriptionPreview("Contexto. ".repeat(30) + "Miel de brezo", "brezo"), /brezo/);
+});
+
+test("national map/list identity is stable even when provinces share a slug", () => {
+  const a = { key: "1", slug: "finca" }, b = { key: "2", slug: "finca" };
+  assert.deepEqual(prioritizeProducerItems([a, b], ["2"]), [b, a]);
+  assert.deepEqual(includeSelectedProducer([a], b), [a, b]);
+});
+
+test("search URLs preserve text and national scope without carrying device position", () => {
+  const query = readCatalogQueryContext({ q: "miel de brezo", search_scope: "country", lat: "42", lon: "-2" });
+  assert.equal(buildCatalogHref({ country: "es", area: "barcelona", ...query }), "/es/barcelona?q=miel+de+brezo&search_scope=country");
+  assert.equal(readCatalogQueryContext({ search_scope: "invalid" }).searchScope, undefined);
 });
 
 test("a selected producer renders one accessible destination with safe text and a lazy image", () => {

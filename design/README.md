@@ -339,7 +339,13 @@ region, a visible current selection and a recoverable empty state. Matching
 ignores accents and includes region names. Selecting an option navigates; hovering
 an option never navigates. Standard Tab/Enter/Escape operation remains accessible.
 There are no custom global keyboard shortcuts or command palette. Producer search
-keeps a stable, compact footprint and filters the existing map/list inline.
+keeps a compact footprint and filters the existing map/list inline. Its adjacent
+scope selector offers the country, current province and nearby results. Nearby
+opens the existing explicit location controls; loading and failure messages
+must distinguish unavailable national data from an empty search. Full base
+text is indexed independently of short, match-centred list previews. Text
+results retain shared relevance order even when the map moves. Country results
+show each producer's municipality and province and retain its own profile URL.
 
 The white footer has readable forest-green links, arranged in a single row on
 wide screens and a deliberate grid on narrow ones. A separate decorative rural

@@ -7,7 +7,8 @@ import type { z } from "zod";
 import categories from "../../data/reference/categories.json";
 import { isProducerOwnershipVerified } from "../accounts/producer-ownership";
 import { buildProducerHref } from "../catalog-navigation";
-import { normalizeCatalogSearch } from "../catalog-search";
+import { buildCatalogSearchDocument, normalizeCatalogSearch, rankCatalogEntries, type CatalogSearchDocument } from "../catalog-search";
+import { publicCatalogSearchFields, toExplorerProducer } from "../catalog/explorer";
 import {
   type ProducerContent,
   hasProducerContent,
@@ -26,6 +27,7 @@ import {
   findArea,
   findPublishedCountry,
   findProducerById,
+  hasProducerMapPoint,
   listPublishedCountries,
   loadCsvRows,
   type AreaLocation,
@@ -103,7 +105,7 @@ export function publicProducerBase(
     description: prose(fields, "descripcion", "descripcion_locale"),
     address: absent(fields.direccion),
     coordinates:
-      row.latitude !== null && row.longitude !== null
+      hasProducerMapPoint(row)
         ? { latitude: row.latitude, longitude: row.longitude }
         : null,
     image_url:
@@ -242,7 +244,7 @@ const indexes = new Map<
   string,
   Promise<{
     revision: string;
-    entries: { producer: PublicProducerBase; search: string }[];
+    entries: { producer: PublicProducerBase; country: string; producerId: number; search: CatalogSearchDocument }[];
   }>
 >();
 async function publicIndex(locale?: Locale) {
@@ -293,22 +295,14 @@ async function publicIndex(locale?: Locale) {
       );
     return {
       revision: createHash("sha256")
+        .update("literal-relevance-v1")
         .update(JSON.stringify(producers))
         .digest("hex"),
       entries: producers.map((producer) => ({
         producer,
-        search: normalizeCatalogSearch(
-          [
-            producer.name,
-            producer.municipality,
-            producer.featured_products ?? "",
-            producer.description?.text ?? "",
-            ...producer.categories.flatMap(({ token, label }) => [
-              token,
-              label,
-            ]),
-          ].join(" "),
-        ),
+        country: producer.country,
+        producerId: producer.producer_id,
+        search: buildCatalogSearchDocument(publicCatalogSearchFields(producer)),
       })),
     };
   })();
@@ -317,6 +311,27 @@ async function publicIndex(locale?: Locale) {
     if (indexes.get(key) === pending) indexes.delete(key);
   });
   return pending;
+}
+
+export async function readExplorerCatalog(country: string, locale: Locale, offset = 0, revision?: string) {
+  const published = findPublishedCountry(country);
+  if (!published || !published.regions.some((region) => region.areas.some((area) => area.publishedLocales.includes(locale)))) {
+    throw new CatalogRequestError(404, "not_found", "Published country or language not found.");
+  }
+  const index = await publicIndex(locale);
+  if (revision && revision !== index.revision) {
+    throw new CatalogRequestError(409, "catalog_changed", "Catalog changed. Reload the explorer.");
+  }
+  const entries = index.entries.filter((entry) => entry.country === country);
+  const limit = 1000;
+  return {
+    revision: index.revision,
+    total: entries.length,
+    limit,
+    offset,
+    producers: entries.slice(offset, offset + limit)
+      .map(({ producer }) => toExplorerProducer(producer)),
+  };
 }
 
 export async function searchPublicProducers(
@@ -392,8 +407,8 @@ export async function searchPublicProducers(
       "invalid_query",
       "Search requires at least one letter or number.",
     );
-  const results = index.entries.filter(
-    ({ producer: p, search }) =>
+  const results = rankCatalogEntries(index.entries.filter(
+    ({ producer: p }) =>
       (!radius || (p.coordinates !== null && isWithinRadius(p.coordinates, radius))) &&
       (!input.country || p.country === input.country) &&
       (!input.region || p.region.slug === input.region) &&
@@ -403,9 +418,8 @@ export async function searchPublicProducers(
       (!input.municipality ||
         normalizeCatalogSearch(p.municipality) ===
           normalizeCatalogSearch(input.municipality)) &&
-      (!input.online_sales || p.online_sales === input.online_sales) &&
-      terms.every((term) => search.includes(term)),
-  );
+      (!input.online_sales || p.online_sales === input.online_sales),
+  ), input.q ?? "");
   const nextOffset = input.offset + input.limit;
   const query = new URLSearchParams(
     Object.entries({

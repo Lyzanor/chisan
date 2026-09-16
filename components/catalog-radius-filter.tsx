@@ -8,14 +8,15 @@ import { getProducerDistanceMessages } from "@/lib/i18n/producer-distance";
 import { LOCATION_REQUEST_OPTIONS } from "@/lib/location/location-onboarding";
 import { isValidCoordinates, type RadiusFilter } from "@/lib/location/radius-search";
 
-export function CatalogRadiusFilter({ heading, locale, area, value, count, onChange }: {
+export function CatalogRadiusFilter({ heading, locale, area, value, count, onChange, initialOpen = false }: {
   heading: string; locale: Locale; area: string; value: RadiusFilter | null; count: number;
   onChange: (value: RadiusFilter | null) => void;
+  initialOpen?: boolean;
 }) {
   const messages = getRadiusSearchMessages(locale);
   const failures = getProducerDistanceMessages(locale);
   const id = useId();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(initialOpen);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [radius, setRadius] = useState(25);
   const [latitude, setLatitude] = useState("");

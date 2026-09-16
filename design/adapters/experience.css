@@ -301,6 +301,13 @@ body { min-height: 100svh; }
 }
 .catalog-producer-search { min-height: 48px; padding-inline: var(--chisan-space-4); border-radius: var(--chisan-radius-control); border-color: var(--chisan-color-stone); }
 .catalog-producer-search input { min-height: 46px; }
+.catalog-discovery-toolbar .catalog-discovery-tools { flex-basis: 32rem; display: flex; flex-wrap: wrap; gap: var(--chisan-space-2); }
+.catalog-search-scope { flex: 1 1 12rem; min-width: 0; }
+.catalog-search-scope select { width: 100%; min-height: 48px; border: 1px solid var(--chisan-color-stone); border-radius: var(--chisan-radius-control); background: var(--chisan-color-surface); color: var(--chisan-color-ink); padding: var(--chisan-space-2); font: inherit; }
+.catalog-discovery-tools .catalog-producer-search { flex: 2 1 16rem; min-width: 0; }
+.catalog-search-summary { margin: var(--chisan-space-2) 0; color: var(--chisan-color-stone); font-size: 0.875rem; }
+.catalog-search-more { min-height: 44px; margin-block: var(--chisan-space-3); }
+
 .catalog-simple-categories { padding-block: var(--chisan-space-2) var(--chisan-space-3); scrollbar-width: thin; }
 .catalog-chip { gap: var(--chisan-space-2); min-height: 48px; padding-inline: var(--chisan-space-4); }
 .catalog-chip.is-active { background: var(--chisan-color-moss-dark); border-color: var(--chisan-color-moss-dark); color: var(--chisan-color-surface); }
