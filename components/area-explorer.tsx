@@ -62,7 +62,10 @@ import {
   createCatalogPositionRequest,
   type LocationFetch,
 } from "@/lib/location/location-onboarding";
-import { selectNearbyProducerKeys } from "@/lib/location/nearby-producer-focus";
+import {
+  producerDistanceKm,
+  selectNearbyProducerKeys,
+} from "@/lib/location/nearby-producer-focus";
 import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
 import {
   includeSelectedProducer,
@@ -364,6 +367,7 @@ function AreaExplorerView({
   const loading = searchScope !== "area" && !national.catalog && !national.error;
   const scopeLabel = searchScope === "area" ? model.areaLabel : searchScope === "country" ? model.countryLabel : searchMessages.nearby;
   const [radiusFilter, setRadiusFilter] = useState<RadiusFilter | null>(null);
+  const lastCoordinatesRef = useRef<RadiusFilter | null>(null);
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const previewTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [previewedSlug, setPreviewedSlug] = useState("");
@@ -420,11 +424,19 @@ function AreaExplorerView({
   );
   const items = useMemo(() => {
     if (searchScope === "nearby" && !radiusFilter) return [];
-    return rankCatalogEntries(searchableProducers.filter((producer) =>
+    const filtered = searchableProducers.filter((producer) =>
       (!normalizedCategory || producer.categories.some((token) => normalizeCatalogSearch(token) === normalizedCategory)) &&
       (!municipality || normalizeCatalogSearch(producer.city) === normalizeCatalogSearch(municipality)) &&
       (searchScope !== "nearby" || !radiusFilter || isWithinRadius(producer, radiusFilter)),
-    ), deferredSearchQuery);
+    );
+    if (searchScope === "nearby" && radiusFilter && !deferredSearchQuery) {
+      return [...filtered].sort((a, b) => {
+        const da = a.latitude !== null && a.longitude !== null ? producerDistanceKm(radiusFilter, a) : Infinity;
+        const db = b.latitude !== null && b.longitude !== null ? producerDistanceKm(radiusFilter, b) : Infinity;
+        return da - db;
+      });
+    }
+    return rankCatalogEntries(filtered, deferredSearchQuery);
   }, [searchableProducers, deferredSearchQuery, normalizedCategory, municipality, searchScope, radiusFilter]);
   const selectedItem = useMemo(
     () =>
@@ -805,7 +817,7 @@ function AreaExplorerView({
               setPreviewedSlug("");
               consumeNearbyMapFocus();
               setMapFocusRequest(undefined);
-              setRadiusFilter(null);
+              setRadiusFilter(next === "nearby" ? lastCoordinatesRef.current : null);
               setPrioritizedProducerScope(null);
               listOrderLockedCategoryRef.current = null;
               pushAreaQuery(buildCatalogHref({ scope: model.scope, area: model.area, category, q: searchQuery, searchScope: next }));
@@ -1010,7 +1022,6 @@ function AreaExplorerView({
             aria-label={model.catalogMessages.producers}
           >
             {searchScope === "nearby" ? <CatalogRadiusFilter
-              initialOpen
               heading={model.catalogMessages.producers}
               locale={model.locale}
               area={model.countryLabel}
@@ -1023,15 +1034,17 @@ function AreaExplorerView({
                 setMapFocusRequest(undefined);
                 listOrderLockedCategoryRef.current = null;
                 setPrioritizedProducerScope(null);
+                lastCoordinatesRef.current = filter;
                 setRadiusFilter(filter);
               }}
             /> : <div className="catalog-viewer-head"><h2>{model.catalogMessages.producers}</h2></div>}
-            <p className="catalog-search-summary" role="status">
-              {loading ? searchMessages.loading : searchScope !== "area" && national.error ? searchMessages.error
-                : searchScope === "nearby" && !radiusFilter ? searchMessages.chooseLocation
-                : formatMessage(searchMessages.results, { count: formatNumber(model.localeDisplayTag, items.length), scope: scopeLabel })}
-              {normalizedSearchQuery && items.length ? ` · ${searchMessages.relevance}` : ""}
-            </p>
+            {searchScope === "nearby" && !radiusFilter ? null : (
+              <p className="catalog-search-summary" role="status">
+                {loading ? searchMessages.loading : searchScope !== "area" && national.error ? searchMessages.error
+                  : formatMessage(searchMessages.results, { count: formatNumber(model.localeDisplayTag, items.length), scope: scopeLabel })}
+                {normalizedSearchQuery && items.length ? ` · ${searchMessages.relevance}` : ""}
+              </p>
+            )}
             {searchScope !== "area" && national.error ? <button type="button" onClick={national.retry}>{searchMessages.retry}</button> : null}
             <p className="visually-hidden" aria-live="polite">
               {screenReaderSummary}

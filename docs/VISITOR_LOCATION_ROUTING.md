@@ -236,12 +236,12 @@ boundary.
 
 ## Explicit catalog radius filter
 
-The area explorer offers an icon-triggered distance disclosure in the producer-list header. A visitor may
-request one device position using the existing normal-accuracy options, or enter
-latitude and longitude manually. It filters the loaded province, intersecting
-text and category filters, at an inclusive straight-line radius of 5, 10, 25,
-50, 100, 250 or 500 km. Missing or invalid producer coordinates never qualify.
-An empty result does not assert that no producers exist nearby.
+The search nearby scope simplifies discovery to a 5 km straight-line radius
+from the visitor's device position, matching the location onboarding
+experience. When device permission is already granted, it resolves immediately;
+otherwise, it offers a prominent location activation card. Distances other than
+5 km are omitted. Missing or invalid producer coordinates never qualify. An empty
+result does not assert that no producers exist nearby.
 
 The active centre remains only in component memory while filtering. It is not
 sent to the API, analytics, URL, storage or accounts. Removing the filter or

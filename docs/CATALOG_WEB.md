@@ -329,17 +329,17 @@ name variant is an editorial identity feature, not an automatic translation.
 
 ## Profile gallery and trust presentation
 
-The profile header links municipality and categories to area filters, sets
-the name into a reviewed cover photograph when one exists and exposes ownership
-separately from premium presentation. `pendiente` is editorial uncertainty, never a pending private
+The profile header links municipality and categories to area filters, places
+photography beside the title and exposes ownership separately from premium
+presentation. `pendiente` is editorial uncertainty, never a pending private
 claim. Its optional public-source disclosure includes only the current keep
 record's URLs and consultation dates, without evidence notes or private data.
 The producer route trace includes evidence ledgers for this read.
 
-Standalone gallery visibility follows `PRODUCER_CONTENT.md`: every profile
-shows its reviewed standalone gallery. It grants no new factual authority. Base
-JSON-LD remains unchanged; gallery photos and hidden premium products never
-enter the public structured data.
+Standalone gallery visibility follows `PRODUCER_CONTENT.md`: up to five photos
+for an active claimed free producer, full gallery for premium. Neither grants
+new factual authority. Base JSON-LD remains unchanged; hidden premium products
+and images never enter the public structured data.
 
 
 ## Catalog search scope
@@ -364,19 +364,10 @@ results beyond the initial 400. Map selection uses country-local producer IDs,
 so equal slugs in separate provinces cannot collide. Profile links always use
 the result's actual area and published locale.
 
-A dense result map counts producers by province before it shows their points.
-Below province zoom, more than 200 mapped results spread over several provinces
-become one count per province, combining counts that would overlap; activating a
-count zooms towards its producers. The counts reflect the same filtered results
-as the list, and province URLs, selections and guides keep individual points.
-A dense country view opens on its main connected cluster of results, so a
-distant minority such as the Canary Islands stays mapped one pan away.
-[Design](../design/README.md#map) owns the thresholds and presentation.
-
 National data loads lazily in bounded public pages, with loading, retry and
 empty states. The UI never labels a partial download as national coverage.
-Nearby scope uses the existing explicit geolocation/manual-coordinate control
-and straight-line radius entirely in ephemeral browser memory. It crosses
+Nearby scope uses the simplified 5 km straight-line radius from the visitor's
+device position entirely in ephemeral browser memory. It crosses
 provincial borders, excludes unmapped producers, and clears the active location
 when the visitor changes scope. Neither browser transport nor URLs receive
 visitor coordinates; map bounds use only matching producers' public points.
