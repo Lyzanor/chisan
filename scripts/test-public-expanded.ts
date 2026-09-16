@@ -46,20 +46,15 @@ test("HTML and agent content loader gates exact producer visibility and fails cl
   assert.deepEqual(await read("es", 42, "es"), emptyProducerContent("es", 42));
 });
 
-test("claimed free gallery exposes five standalone images, preserves premium gating and fails closed", async () => {
+test("the reviewed standalone gallery is public for every producer and fails closed", async () => {
   const { createPublicProducerGalleryReader } = await import("../lib/catalog/public-expanded");
-  let premium = false, owner = false, fail = false;
+  let fail = false;
   const content = emptyProducerContent("es", 42);
   content.gallery = Array.from({ length: 7 }, (_, index) => ({ id: `photo-${index}`, src: `/productores/es/content/42/photo-${index}.webp`, alt: "Reviewed image", caption: "", credit: "", locale: "es", width: 800, height: 600 }));
   content.products = [{ id: "product", name: "Product", description: "", locale: "es", media_ids: ["photo-0"], link_ids: [] }];
-  const read = createPublicProducerGalleryReader({ databaseConfigured: () => true, hasEntitlement: async () => { if (fail) throw new Error(); return premium; }, hasOwner: async () => owner, loadContent: async () => content });
-  assert.deepEqual(await read("es", 42, "es"), []);
-  owner = true;
-  assert.deepEqual((await read("es", 42, "es")).map(image => image.id), ["photo-1", "photo-2", "photo-3", "photo-4", "photo-5"]);
-  premium = true;
-  assert.equal((await read("es", 42, "es")).length, 6);
-  premium = false;
-  assert.equal(content.gallery.length, 7, "expiry never changes retained content");
+  const read = createPublicProducerGalleryReader({ loadContent: async () => { if (fail) throw new Error("private file path"); return content; } });
+  assert.deepEqual((await read("es", 42, "es")).map(image => image.id), ["photo-1", "photo-2", "photo-3", "photo-4", "photo-5", "photo-6"], "no ownership, premium or five-photo gate; product images stay with products");
+  assert.equal(content.gallery.length, 7, "reading never changes retained content");
   fail = true;
   assert.deepEqual(await read("es", 42, "es"), []);
 });

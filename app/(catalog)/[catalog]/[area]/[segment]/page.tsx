@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
@@ -20,7 +21,11 @@ import {
   WhatsappLogoIcon,
 } from "@phosphor-icons/react/ssr";
 import { loadPublicProducerSources } from "@/lib/catalog/public-evidence";
-import { ProducerGallery } from "@/components/producer-gallery";
+import {
+  ProducerCover,
+  ProducerGallery,
+  splitProducerPhotos,
+} from "@/components/producer-gallery";
 import {
   loadPublicProducerGallery,
   hasPublicProducerPremiumAccess,
@@ -293,6 +298,10 @@ export default async function ProducerPage({
     hasPublicProducerPremiumAccess(country.slug, producer.producerId),
     loadPublicProducerGallery(country.slug, producer.producerId, locale),
   ]);
+  // Only reviewed material is shown: no generic cover, logo or photo fills a gap.
+  const { cover, photos } = splitProducerPhotos(gallery);
+  const identityImageSrc =
+    producer.imageSrc === DEFAULT_PRODUCER_IMAGE_SRC ? "" : producer.imageSrc;
   const sources =
     verification === "pendiente" && !ownershipVerified
       ? await loadPublicProducerSources(
@@ -338,6 +347,7 @@ export default async function ProducerPage({
       Icon: MapPinIcon,
     },
   ].filter((link) => link.url);
+  const hasHeroLinks = Boolean(email || phone || website || socialLinks.length);
   const profileQrPath = buildProducerHref(producer, {
     scope: buildCatalogScope(country),
     area,
@@ -383,10 +393,7 @@ export default async function ProducerPage({
     facebook,
     instagram,
     mapUrl: maps,
-    imageUrl:
-      producer.imageSrc === DEFAULT_PRODUCER_IMAGE_SRC
-        ? undefined
-        : absoluteSiteUrl(producer.imageSrc),
+    imageUrl: identityImageSrc ? absoluteSiteUrl(identityImageSrc) : undefined,
     latitude: producer.latitude,
     longitude: producer.longitude,
     categories: localizedCategories,
@@ -481,122 +488,142 @@ export default async function ProducerPage({
 
         <header
           id="detail-hero"
-          className={`detail-hero detail-hero--photographic${premiumActive ? " detail-hero--premium" : ""}`}
+          className={`detail-hero detail-hero--identity${cover ? " detail-hero--cover" : ""}${premiumActive ? " detail-hero--premium" : ""}`}
         >
-          <div className="detail-profile-heading">
-            <div className="detail-title">
-              <div className="detail-title__name">
-                <h1>{producer.name}</h1>
-                {ownershipVerified ? (
-                  <span
-                    className="detail-status detail-status--verified"
-                    title={profileWords.verifiedHelp}
-                  >
-                    <SealCheckIcon size={20} weight="fill" aria-hidden="true" />
-                    {profileWords.verified}
-                  </span>
-                ) : verification === "pendiente" ? (
-                  <a
-                    href="#detail-info"
-                    className="detail-status detail-status--pending"
-                  >
-                    <WarningCircleIcon size={20} aria-hidden="true" />
-                    {profileWords.pending}
-                  </a>
+          {cover ? <ProducerCover photo={cover} /> : null}
+          <div className="detail-hero__tab">
+            {identityImageSrc ? (
+              <div className="detail-identity">
+                <Image
+                  src={identityImageSrc}
+                  alt={formatMessage(messages.producer.imageAlt, {
+                    producer: producer.name,
+                  })}
+                  width={320}
+                  height={240}
+                  sizes="160px"
+                  priority={!cover}
+                />
+              </div>
+            ) : null}
+            <div className="detail-profile-heading">
+              <div className="detail-title">
+                <div className="detail-title__name">
+                  <h1>{producer.name}</h1>
+                  {ownershipVerified ? (
+                    <span
+                      className="detail-status detail-status--verified"
+                      title={profileWords.verifiedHelp}
+                    >
+                      <SealCheckIcon
+                        size={20}
+                        weight="fill"
+                        aria-hidden="true"
+                      />
+                      {profileWords.verified}
+                    </span>
+                  ) : verification === "pendiente" ? (
+                    <a
+                      href="#detail-info"
+                      className="detail-status detail-status--pending"
+                    >
+                      <WarningCircleIcon size={20} aria-hidden="true" />
+                      {profileWords.pending}
+                    </a>
+                  ) : null}
+                </div>
+                {isAccountSystemConfigured() ? (
+                  <div className="detail-title__follow">
+                    <Suspense fallback={null}>
+                      <ProducerFollowButton
+                        country={country.slug}
+                        producerId={producer.producerId}
+                        returnTo={returnTo}
+                        messages={messages}
+                      />
+                    </Suspense>
+                  </div>
                 ) : null}
               </div>
-              {isAccountSystemConfigured() ? (
-                <div className="detail-title__follow">
-                  <Suspense fallback={null}>
-                    <ProducerFollowButton
-                      country={country.slug}
-                      producerId={producer.producerId}
-                      returnTo={returnTo}
-                      messages={messages}
-                    />
-                  </Suspense>
+              <div className="detail-subtitle">
+                <Link href={municipalityHref} prefetch={false}>
+                  {producer.city}
+                </Link>
+                {producer.categories.map((category) => (
+                  <Link
+                    key={category}
+                    href={buildCatalogHref({ scope, area, category })}
+                    prefetch={false}
+                  >
+                    {getCategoryLabel(category, locale)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+          {description || hasHeroLinks ? (
+            <div className="detail-hero-summary">
+              {description ? (
+                <p className="detail-intro">{description}</p>
+              ) : null}
+              {hasHeroLinks ? (
+                <div className="detail-hero-links">
+                  {email || phone ? (
+                    <div className="detail-actions">
+                      {email ? (
+                        <a
+                          href="#detail-contact"
+                          className="detail-action--primary"
+                        >
+                          <EnvelopeSimpleIcon size={20} aria-hidden="true" />
+                          {actionLabels.contact}
+                        </a>
+                      ) : null}
+                      {phone ? (
+                        <a href="#detail-contact">
+                          <PhoneIcon size={20} aria-hidden="true" />
+                          {actionLabels.call}
+                        </a>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  {website ? (
+                    <a
+                      className="detail-website"
+                      href={website}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <GlobeIcon size={22} aria-hidden="true" />
+                      <span>
+                        <small>{messages.producer.website}</small>
+                        <strong>
+                          {website
+                            .split(/[?#]/)[0]
+                            .replace(/^https?:\/\//, "")
+                            .replace(/\/$/, "")}
+                        </strong>
+                      </span>
+                      <ArrowUpRightIcon size={18} aria-hidden="true" />
+                    </a>
+                  ) : null}
+                  {socialLinks.length ? (
+                    <ul className="detail-social-links">
+                      {socialLinks.map(({ url, label, Icon }) => (
+                        <li key={label}>
+                          <a href={url} target="_blank" rel="noreferrer">
+                            <Icon size={18} aria-hidden="true" />
+                            <span>{label}</span>
+                            <ArrowUpRightIcon size={14} aria-hidden="true" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               ) : null}
             </div>
-            <div className="detail-subtitle">
-              <Link href={municipalityHref} prefetch={false}>
-                {producer.city}
-              </Link>
-              {producer.categories.map((category) => (
-                <Link
-                  key={category}
-                  href={buildCatalogHref({ scope, area, category })}
-                  prefetch={false}
-                >
-                  {getCategoryLabel(category, locale)}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="detail-profile-photos">
-            <ProducerGallery
-              featured={{
-                src: producer.imageSrc,
-                alt: formatMessage(messages.producer.imageAlt, {
-                  producer: producer.name,
-                }),
-                width: 640,
-                height: 480,
-              }}
-              gallery={gallery}
-              locale={locale}
-            />
-          </div>
-          <div className="detail-hero-summary">
-            {description ? <p className="detail-intro">{description}</p> : null}
-            <div className="detail-actions">
-              {email ? (
-                <a href="#detail-contact" className="detail-action--primary">
-                  <EnvelopeSimpleIcon size={20} aria-hidden="true" />
-                  {actionLabels.contact}
-                </a>
-              ) : null}
-              {phone ? (
-                <a href="#detail-contact">
-                  <PhoneIcon size={20} aria-hidden="true" />
-                  {actionLabels.call}
-                </a>
-              ) : null}
-            </div>
-            {website ? (
-              <a
-                className="detail-website"
-                href={website}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GlobeIcon size={22} aria-hidden="true" />
-                <span>
-                  <small>{messages.producer.website}</small>
-                  <strong>
-                    {website
-                      .split(/[?#]/)[0]
-                      .replace(/^https?:\/\//, "")
-                      .replace(/\/$/, "")}
-                  </strong>
-                </span>
-                <ArrowUpRightIcon size={18} aria-hidden="true" />
-              </a>
-            ) : null}
-            {socialLinks.length ? (
-              <ul className="detail-social-links">
-                {socialLinks.map(({ url, label, Icon }) => (
-                  <li key={label}>
-                    <a href={url} target="_blank" rel="noreferrer">
-                      <Icon size={18} aria-hidden="true" />
-                      <span>{label}</span>
-                      <ArrowUpRightIcon size={14} aria-hidden="true" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
+          ) : null}
         </header>
 
         <ProducerProfileQrLabel
@@ -782,6 +809,8 @@ export default async function ProducerPage({
             ) : null}
           </div>
         ) : null}
+
+        <ProducerGallery photos={photos} title={profileWords.gallery} />
 
         <section
           id="detail-info"

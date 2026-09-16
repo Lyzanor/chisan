@@ -19,7 +19,7 @@ main[data-category]::before {
   filter: blur(3px);
 }
 main[data-category] .detail-shell { background: color-mix(in srgb, var(--chisan-color-surface) 96%, transparent); }
-main[data-category] .detail-hero--premium { background: var(--chisan-color-surface); }
+main[data-category] .detail-hero--premium { --detail-hero-surface: var(--chisan-color-surface); background: var(--chisan-color-surface); }
 @media (max-width: 760px) {
   main[data-category]::before {
     inset-block-start: 0;

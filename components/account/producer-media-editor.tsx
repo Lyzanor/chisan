@@ -162,6 +162,7 @@ export function ProducerMediaEditor({
     >
       <legend>{galleryOnly ? words.gallery : words.title}</legend>
       {galleryOnly ? null : <p>{words.help}</p>}
+      <p>{words.galleryHelp}</p>
       <div className={styles.upload}>
         {galleryOnly ? null : <label className="account-field" htmlFor="media-target">
           <span>{words.target}</span>

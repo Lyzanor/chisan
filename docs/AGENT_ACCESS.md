@@ -230,8 +230,9 @@ major version and a consumer migration. New public fields must update projection
 schema, documentation and behavior tests together.
 
 The single-producer response also exposes top-level `gallery`: the same reviewed
-standalone images visible beside the public profile's main photo. An active
-claimed free profile exposes up to five, premium exposes the complete standalone
-gallery, and unavailable rights fail closed to an empty array. `expanded` retains
-its premium-only products, product images, links and prose. Neither response
+standalone images, in the same order, that the public profile shows as its cover
+and photo strip. Every producer exposes its complete standalone gallery,
+independently of ownership, premium or account state; an unreadable package
+yields an empty array. `expanded` retains its premium-only products, product
+images, links and prose. Neither response
 exposes proposal uploads or editorial evidence notes.

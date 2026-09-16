@@ -115,7 +115,7 @@ test("commercial sections show certification scope and professional contact with
   assert.doesNotMatch(render({ venta_profesionales: "no" }), /href=/);
 });
 
-test("producer gallery renders native non-clickable images without enlargement buttons or dialogs", async () => {
+test("producer photos use only reviewed material: a landscape cover and an honest strip", async () => {
   const hooks = registerHooks({
     load(url, context, nextLoad) {
       if (new URL(url).pathname.endsWith(".module.css")) {
@@ -129,41 +129,45 @@ test("producer gallery renders native non-clickable images without enlargement b
     },
   });
   try {
-    const { ProducerGallery } = await import("../components/producer-gallery");
-    const featured = {
-      src: "/productores/es/content/1/main.webp",
-      alt: "Foto principal",
-      width: 640,
-      height: 480,
-    };
-    const gallery = [
-      {
-        src: "/productores/es/content/1/extra.webp",
-        alt: "Foto adicional",
-        width: 640,
-        height: 480,
-        caption: "Campo de olivos",
-      },
-    ];
+    const { ProducerCover, ProducerGallery, splitProducerPhotos } =
+      await import("../components/producer-gallery");
+    const photo = (id: string, width: number, height: number) => ({
+      id,
+      src: `/productores/es/content/1/${id}.webp`,
+      alt: `Foto ${id}`,
+      caption: "",
+      credit: "",
+      locale: "es" as const,
+      width,
+      height,
+    });
+    const portrait = photo("portrait", 1200, 1600);
+    const small = photo("small", 800, 600);
+    const landscape = { ...photo("landscape", 1600, 1067), caption: "Campo de olivos", credit: "Autora" };
+    const square = photo("square", 1400, 1400);
 
-    const singleHtml = renderToStaticMarkup(
-      createElement(ProducerGallery, { featured, gallery: [], locale: "es" }),
-    );
-    assert.doesNotMatch(singleHtml, /<figure[^>]*><button/);
-    assert.doesNotMatch(singleHtml, /<dialog/);
-    assert.doesNotMatch(singleHtml, /Ampliar foto/);
+    const split = splitProducerPhotos([portrait, small, landscape, square]);
+    assert.equal(split.cover, landscape, "the first sharp landscape photo is the cover");
+    assert.deepEqual(split.photos.map(({ id }) => id), ["portrait", "small", "square"]);
+    assert.deepEqual(splitProducerPhotos([portrait, small]), { cover: null, photos: [portrait, small] });
+    assert.deepEqual(splitProducerPhotos([]), { cover: null, photos: [] });
 
-    const multiHtml = renderToStaticMarkup(
-      createElement(ProducerGallery, { featured, gallery, locale: "es" }),
+    const coverHtml = renderToStaticMarkup(createElement(ProducerCover, { photo: landscape }));
+    assert.match(coverHtml, /<figure class="detail-cover">/);
+    assert.match(coverHtml, /alt="Foto landscape"/);
+    assert.match(coverHtml, /<figcaption lang="es">Campo de olivos · Autora<\/figcaption>/);
+
+    assert.equal(renderToStaticMarkup(createElement(ProducerGallery, { photos: [], title: "Fotos" })), "");
+    const stripHtml = renderToStaticMarkup(
+      createElement(ProducerGallery, { photos: split.photos, title: "Fotos del productor" }),
     );
-    assert.match(multiHtml, /main\.webp/);
-    assert.match(multiHtml, /extra\.webp/);
-    assert.doesNotMatch(multiHtml, /<figure[^>]*><button/);
-    assert.doesNotMatch(multiHtml, /<dialog/);
-    assert.doesNotMatch(multiHtml, /Ampliar foto/);
-    assert.match(multiHtml, /<button[^>]*aria-label="2\. Foto adicional"/);
+    assert.match(stripHtml, /<h2 id="detail-gallery-title">Fotos del productor<\/h2>/);
+    assert.equal((stripHtml.match(/<img /g) ?? []).length, 3);
+    assert.equal((stripHtml.match(/loading="lazy"/g) ?? []).length, 3);
+    assert.match(stripHtml, /minmax\(calc\(0\.7500 \* var\(--gallery-min-height\)\), 0\.7500fr\)/, "columns keep each aspect ratio");
+    assert.doesNotMatch(stripHtml, /<button|<dialog|<a /, "photos open nothing");
+    assert.doesNotMatch(stripHtml, /generica\.webp|<figcaption/);
   } finally {
     hooks.deregister();
   }
 });
-

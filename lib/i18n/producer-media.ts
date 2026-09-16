@@ -10,6 +10,8 @@ const es = {
     "Tengo permiso para publicar estas imágenes y autorizo su uso en este perfil.",
   target: "Añadir a",
   gallery: "Galería del perfil",
+  galleryHelp:
+    "Bastan de 3 a 5 fotos reales: la elaboración, las personas, el producto terminado y el lugar. La primera foto horizontal de la galería, de al menos 1200 px de ancho, será la portada del perfil.",
   alt: "Describe qué aparece en la imagen",
   caption: "Pie de foto (opcional)",
   credit: "Autoría o crédito (opcional)",
@@ -61,6 +63,8 @@ const ca: Words = {
     "Tinc permís per publicar aquestes imatges i n'autoritzo l'ús en aquest perfil.",
   target: "Afegir a",
   gallery: "Galeria del perfil",
+  galleryHelp:
+    "N'hi ha prou amb 3 a 5 fotos reals: l'elaboració, les persones, el producte acabat i el lloc. La primera foto horitzontal de la galeria, d'almenys 1200 px d'amplada, serà la portada del perfil.",
   alt: "Descriu què apareix a la imatge",
   caption: "Peu de foto (opcional)",
   credit: "Autoria o crèdit (opcional)",
@@ -111,6 +115,8 @@ const en: Words = {
     "I have permission to publish these images and authorize their use on this profile.",
   target: "Add to",
   gallery: "Profile gallery",
+  galleryHelp:
+    "Three to five real photos are enough: making, the people, the finished product and the place. The first landscape gallery photo at least 1200 px wide becomes the profile cover.",
   alt: "Describe what the image shows",
   caption: "Caption (optional)",
   credit: "Attribution or credit (optional)",

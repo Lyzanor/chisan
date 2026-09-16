@@ -329,17 +329,17 @@ name variant is an editorial identity feature, not an automatic translation.
 
 ## Profile gallery and trust presentation
 
-The profile header links municipality and categories to area filters, places
-photography beside the title and exposes ownership separately from premium
-presentation. `pendiente` is editorial uncertainty, never a pending private
+The profile header links municipality and categories to area filters, sets
+the name into a reviewed cover photograph when one exists and exposes ownership
+separately from premium presentation. `pendiente` is editorial uncertainty, never a pending private
 claim. Its optional public-source disclosure includes only the current keep
 record's URLs and consultation dates, without evidence notes or private data.
 The producer route trace includes evidence ledgers for this read.
 
-Standalone gallery visibility follows `PRODUCER_CONTENT.md`: up to five photos
-for an active claimed free producer, full gallery for premium. Neither grants
-new factual authority. Base JSON-LD remains unchanged; hidden premium products
-and images never enter the public structured data.
+Standalone gallery visibility follows `PRODUCER_CONTENT.md`: every profile
+shows its reviewed standalone gallery. It grants no new factual authority. Base
+JSON-LD remains unchanged; gallery photos and hidden premium products never
+enter the public structured data.
 
 
 ## Catalog search scope

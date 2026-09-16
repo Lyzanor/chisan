@@ -370,7 +370,8 @@ The expanded profile is a producer-scoped capability, not a subscription or a
 property of a user account. Its only authorization key is an active
 `producer.profile.premium` entitlement for `(country, producer_id)`. It permits
 proposal and presentation of the premium CSV field set, product proposals and
-presentation of reviewed related content; it never grants
+presentation of reviewed related content other than the standalone gallery,
+which every profile shows; it never grants
 ownership, verification, ranking or publication without review.
 
 This entitlement governs the current account editor and public presentation,

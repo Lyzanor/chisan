@@ -11,6 +11,13 @@ their useful aspect ratio. Use producer-supplied or licensed material with
 permission for reuse, and retain required attribution. A gallery does not need
 the primary image's logo composition.
 
+Three to five photographs usually tell the story: the product being made, the
+people in their real setting, the finished product and the place, workshop or
+shop. Put a landscape context photograph first when one exists, because the
+profile uses it as the cover. These roles guide collection; they are not a quota.
+A shorter honest gallery is better than one completed with stock, generated or
+another producer's imagery.
+
 Automated discovery inspects only the published official `web`; attributed
 official social or institutional material may enter through the manual source
 workflow. Ranking orders candidates but proves neither ownership nor identity.

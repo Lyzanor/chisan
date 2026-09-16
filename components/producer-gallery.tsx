@@ -1,113 +1,106 @@
-"use client";
-
 import Image from "next/image";
-import { useRef, useState, type TouchEvent } from "react";
+import type { CSSProperties } from "react";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
-import type { Locale } from "@/lib/i18n/locales";
-import { producerProfileLabels } from "@/lib/i18n/producer-profile";
 import styles from "./producer-gallery.module.css";
 
-type Photo = Pick<
-  ProducerContent["gallery"][number],
-  "src" | "alt" | "width" | "height"
-> &
-  Partial<
-    Pick<ProducerContent["gallery"][number], "caption" | "credit" | "locale">
-  >;
-export function ProducerGallery({
-  featured,
-  gallery,
-  locale,
-}: {
-  featured: Photo;
-  gallery: Photo[];
-  locale: Locale;
-}) {
-  const photos = [
-    featured,
-    ...gallery.filter((photo) => photo.src !== featured.src),
-  ];
-  const [index, setIndex] = useState(0);
-  const activeIndex = Math.min(index, photos.length - 1);
-  const photo = photos[activeIndex];
-  const touch = useRef<{ x: number; y: number } | null>(null);
-  const words = producerProfileLabels(locale);
-  const step = (by: number) =>
-    setIndex(
-      (current) =>
-        (Math.min(current, photos.length - 1) + by + photos.length) %
-        photos.length,
-    );
-  function startSwipe(event: TouchEvent) {
-    touch.current = {
-      x: event.touches[0].clientX,
-      y: event.touches[0].clientY,
-    };
-  }
-  function swipe(event: TouchEvent) {
-    if (touch.current !== null) {
-      const delta = event.changedTouches[0].clientX - touch.current.x;
-      const vertical = event.changedTouches[0].clientY - touch.current.y;
-      if (Math.abs(delta) > 50 && Math.abs(delta) > Math.abs(vertical)) {
-        event.preventDefault();
-        step(delta > 0 ? -1 : 1);
-      }
-    }
-    touch.current = null;
-  }
-  const caption = (
-    <>
+type Photo = ProducerContent["gallery"][number];
+
+// A panoramic crop needs a landscape photo with enough pixels to stay sharp.
+const COVER_MIN_WIDTH = 1200;
+const COVER_MIN_RATIO = 1.3;
+
+/** The first reviewed landscape photo becomes the cover; the rest form the strip. */
+export function splitProducerPhotos(gallery: readonly Photo[]) {
+  const cover =
+    gallery.find(
+      (photo) =>
+        photo.width >= COVER_MIN_WIDTH &&
+        photo.width / photo.height >= COVER_MIN_RATIO,
+    ) ?? null;
+  return { cover, photos: gallery.filter((photo) => photo !== cover) };
+}
+
+function PhotoCaption({ photo }: { photo: Photo }) {
+  return photo.caption || photo.credit ? (
+    <figcaption lang={photo.locale}>
       {photo.caption}
       {photo.caption && photo.credit ? " · " : ""}
       {photo.credit}
-    </>
-  );
+    </figcaption>
+  ) : null;
+}
+
+export function ProducerCover({ photo }: { photo: Photo }) {
   return (
-    <div className={styles.gallery} aria-label={words.gallery}>
-      <figure className={styles.featured}>
-        <div
-          className={styles.frame}
-          onTouchStart={photos.length > 1 ? startSwipe : undefined}
-          onTouchEnd={photos.length > 1 ? swipe : undefined}
-        >
-          <Image
-            key={photo.src}
-            src={photo.src}
-            alt={photo.alt}
-            lang={photo.locale}
-            width={photo.width}
-            height={photo.height}
-            sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 980px) 45vw, 560px"
-            priority={activeIndex === 0}
-            loading="eager"
-            className={styles.image}
-          />
-        </div>
-        {photo.caption || photo.credit ? (
-          <figcaption lang={photo.locale}>{caption}</figcaption>
-        ) : null}
-      </figure>
-      {photos.length > 1 ? (
-        <div className={styles.thumbnails}>
-          {photos.map((item, position) => (
-            <button
-              type="button"
-              key={item.src}
-              aria-label={`${position + 1}. ${item.alt}`}
-              aria-pressed={position === activeIndex}
-              onClick={() => setIndex(position)}
-            >
+    <figure className="detail-cover">
+      <div className="detail-cover__frame">
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          lang={photo.locale}
+          width={photo.width}
+          height={photo.height}
+          sizes="100vw"
+          priority
+        />
+      </div>
+      <PhotoCaption photo={photo} />
+    </figure>
+  );
+}
+
+/** One row of photos at their honest aspect ratios. Every photo shares the row
+ * height; narrow screens and long galleries scroll sideways instead of cropping. */
+export function ProducerGallery({
+  photos,
+  title,
+}: {
+  photos: readonly Photo[];
+  title: string;
+}) {
+  if (!photos.length) return null;
+  const ratios = photos.map((photo) => photo.width / photo.height);
+  const strip = {
+    gridTemplateColumns: ratios
+      .map(
+        (ratio) =>
+          `minmax(calc(${ratio.toFixed(4)} * var(--gallery-min-height)), ${ratio.toFixed(4)}fr)`,
+      )
+      .join(" "),
+    maxWidth: `calc(${ratios.reduce((sum, ratio) => sum + ratio, 0).toFixed(4)} * var(--gallery-max-height) + ${photos.length - 1} * var(--gallery-gap))`,
+  } satisfies CSSProperties;
+  return (
+    <section
+      id="detail-gallery"
+      className="detail-gallery"
+      aria-labelledby="detail-gallery-title"
+    >
+      <h2 id="detail-gallery-title">{title}</h2>
+      <div
+        className={styles.strip}
+        style={strip}
+        role="group"
+        aria-labelledby="detail-gallery-title"
+        tabIndex={0}
+      >
+        {photos.map((photo) => (
+          <figure key={photo.id} className={styles.photo}>
+            <div className={styles.frame}>
               <Image
-                src={item.src}
-                alt=""
-                width={96}
-                height={72}
-                sizes="64px"
+                src={photo.src}
+                alt={photo.alt}
+                lang={photo.locale}
+                width={photo.width}
+                height={photo.height}
+                sizes="(max-width: 760px) 80vw, 36rem"
+                loading="lazy"
+                className={styles.image}
               />
-            </button>
-          ))}
-        </div>
-      ) : null}
-    </div>
+            </div>
+            <PhotoCaption photo={photo} />
+          </figure>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -3,6 +3,22 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-16 — Producer cover, identity image and public photo strip
+
+Visual review: **passed** in an isolated production build at 1280×900 and 375×812.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Gallery visibility | Every profile shows its reviewed standalone gallery; ownership and premium no longer gate it. The fictional demo `es:12439` now shows its five standalone photos without account state. |
+| Cover | The first landscape gallery photo of at least 1,200 px becomes a low cover: 282 px tall at 1280 px (previously a 416 px trial) and 200 px on mobile. Portrait, small or missing photos produce no cover. |
+| Name in the cover | The name block cuts into the lower-left edge, so the name shares the photograph's level; the photograph continues to its right. Concave corners repeat the 16 px (desktop) and 12 px (mobile) radius. A coincident-edge seam seen at fractional scaling was removed by extending each white surface one line past the photo edge. |
+| Identity image | Vins Ollé's reviewed logo shows as a 117×88 tile beside the name without a cover. A simulated logo, follow button and a 58-character name inside a cover stayed readable: the tile moves above the name on mobile and 48 px of photograph remains beside the cut. |
+| No filler | `100% Conill (Albert Puig)` has no `imagen` or gallery and renders no header image; the generic placeholder is not used in the header. |
+| Photo strip | Four demo photos share one 202 px row at their own ratio before Details on desktop; on mobile they are 208 px tall and scroll sideways (1,145 px content in a 309 px keyboard-focusable strip). The hover rule scales to 1.03 inside the rounded frame only under `(hover: hover)` and is removed for reduced motion; the pane's synthetic pointer did not trigger `:hover`, so the rule and clipping were checked in computed styles. |
+
+The page had no horizontal overflow at 375 px. Console errors were only the local
+Vercel Analytics 404s.
+
 ## 2026-09-16 — Peninsula opening view for dense national maps
 
 - The national view framed every mapped producer, so the Canary Islands pulled

@@ -376,21 +376,26 @@ imagery as evidence or visual identity for real producers. See
 
 ## Visibility and lifecycle
 
-Active producer ownership makes up to five approved standalone gallery images
-visible in the header. Premium makes the full standalone gallery visible and
-controls products, their attached images, named links and expanded CSV prose.
-Inactive ownership and premium, or unavailable account state, hide the gallery
-while keeping approved files intact. Base profiles remain public. Expiry never
-deletes editorial knowledge or turns a product image into a free gallery image.
+Every profile shows its complete approved standalone gallery, independently of
+ownership, premium or account state. Premium controls products, their attached
+images, named links and expanded CSV prose. Inactive premium or unavailable
+account state hides that expanded block while keeping approved files intact.
+Base profiles remain public. Expiry never deletes editorial knowledge or turns a
+product image into a gallery image. The account editor limits in this document
+govern proposals, not public visibility.
 
-The header combines the main CSV image with gallery thumbnails. Selecting a
-thumbnail changes the featured view, with touch swipe support between photos.
-Product-owned images
+The first standalone photo that is landscape (at least 1.3 times wider than
+tall) and at least 1,200 px wide becomes the profile cover. The remaining
+standalone photos form the photo strip near the end of the profile, in array
+order and at their own aspect ratios. The CSV `imagen` is the identity image
+beside the name. A missing asset leaves its place empty: no generic, category or
+placeholder image fills the cover, identity image or strip. Product-owned images
 remain with their product cards. HTML and the single-producer API share the same
 standalone-gallery loader; the API exposes it as `gallery`, independently of
-`expanded`. Rendering is on the server, the main picture loads promptly and
-additional pictures load lazily. No hidden content enters base metadata or JSON-LD. The same entitlement-gated server component renders
-the visible product JSON-LD; it disappears with the expanded block.
+`expanded`. Rendering is on the server, the cover loads promptly and strip photos
+load lazily. Gallery photos do not enter base metadata or JSON-LD. The
+entitlement-gated server component renders the visible product JSON-LD; it
+disappears with the expanded block.
 
 An area/slug move preserves the content path. Before a producer retirement or
 merge, inspect related content and account references with `pnpm producer:inspect`.

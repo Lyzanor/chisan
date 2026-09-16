@@ -616,12 +616,30 @@ body { min-height: 100svh; }
 
 /* Producer identity, photographs and participation share one profile hierarchy. */
 .detail-shell { padding: clamp(1rem, 2.5vw, 2rem); }
-.detail-hero--photographic { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows: auto 1fr; gap: var(--chisan-space-3) var(--chisan-space-8); align-items: start; box-shadow: none; }
-.detail-hero--premium { background: var(--chisan-color-premium-surface); padding: var(--chisan-space-6); }
-.detail-hero--photographic .detail-profile-heading { display: block; grid-column: 1; grid-row: 1; min-width: 0; }
+/* Reviewed material only: a landscape gallery photo becomes the cover, the CSV
+ * image becomes the identity tile, and a missing asset leaves no placeholder. */
+.detail-hero--identity { --detail-hero-surface: var(--chisan-color-surface); --detail-identity-height: 5.5rem; --detail-cover-overlap: 4.5rem; --detail-cover-radius: var(--chisan-radius-panel); grid-template-columns: minmax(0, 1fr); grid-template-areas: "tab" "summary"; gap: var(--chisan-space-3) var(--chisan-space-6); align-items: start; box-shadow: none; }
+.detail-hero--cover { grid-template-columns: fit-content(40rem) minmax(0, 1fr); grid-template-areas: "cover cover" "tab caption" "summary summary"; }
+.detail-cover { display: contents; }
+.detail-cover__frame { grid-area: cover; justify-self: stretch; min-width: 0; height: clamp(12rem, 22vw, 18rem); overflow: hidden; border-radius: var(--detail-cover-radius); background: var(--chisan-color-surface-muted); }
+.detail-cover__frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.detail-cover figcaption { grid-area: caption; min-width: 0; margin: 0; color: var(--chisan-color-stone); font-size: 0.75rem; line-height: 1.5; text-align: end; }
+.detail-hero__tab { grid-area: tab; display: flex; align-items: flex-start; gap: var(--chisan-space-4); min-width: 0; }
+/* The name block cuts into the lower edge of the cover, so name and photograph
+ * share one level. Concave corners keep the cut as soft as the photo's radius;
+ * each surface reaches one line past the photo edge to avoid a seam. */
+.detail-hero--cover .detail-hero__tab { position: relative; z-index: 1; min-width: 24rem; margin-top: calc(-1 * (var(--detail-cover-overlap) + var(--chisan-space-3))); padding: var(--chisan-space-4) var(--chisan-space-6) 0 0; border-top-right-radius: var(--detail-cover-radius); background: var(--detail-hero-surface); box-shadow: calc(-1 * var(--chisan-line)) 0 0 0 var(--detail-hero-surface); }
+.detail-hero--cover .detail-hero__tab::before,
+.detail-hero--cover .detail-hero__tab::after { content: ""; position: absolute; width: var(--detail-cover-radius); height: var(--detail-cover-radius); background: radial-gradient(circle at 100% 0, transparent calc(var(--detail-cover-radius) - 0.5px), var(--detail-hero-surface) var(--detail-cover-radius)); pointer-events: none; }
+.detail-hero--cover .detail-hero__tab::before { top: calc(-1 * var(--detail-cover-radius)); left: calc(-1 * var(--chisan-line)); width: calc(var(--detail-cover-radius) + var(--chisan-line)); }
+.detail-hero--cover .detail-hero__tab::after { top: calc(var(--detail-cover-overlap) - var(--detail-cover-radius)); left: 100%; height: calc(var(--detail-cover-radius) + var(--chisan-line)); }
+.detail-identity { flex: none; width: calc(var(--detail-identity-height) * 4 / 3); height: var(--detail-identity-height); overflow: hidden; border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-object); background: var(--chisan-color-surface-muted); }
+.detail-identity img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.detail-hero--premium { --detail-hero-surface: var(--chisan-color-premium-surface); background: var(--chisan-color-premium-surface); padding: var(--chisan-space-6); }
+.detail-hero--identity .detail-profile-heading { display: block; flex: 1 1 auto; min-width: 0; }
 .detail-title { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; column-gap: var(--chisan-space-3); }
 .detail-title__name { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--chisan-space-3); min-width: 0; }
-.detail-hero--photographic h1 { margin: 0; overflow-wrap: anywhere; }
+.detail-hero--identity h1 { margin: 0; overflow-wrap: anywhere; }
 .detail-status { display: inline-flex; align-items: center; gap: var(--chisan-space-1); min-height: 44px; font-size: 0.875rem; }
 .detail-status svg { flex-shrink: 0; }
 .detail-status--verified { color: var(--chisan-color-moss-dark); font-weight: 500; }
@@ -644,11 +662,13 @@ body { min-height: 100svh; }
   .detail-follow[aria-pressed="true"]:hover { border-color: var(--chisan-color-moss); background: var(--chisan-color-moss-pale); }
   .detail-follow:hover .detail-follow__label { max-width: 12rem; opacity: 1; }
 }
-.detail-hero--photographic .detail-subtitle { display: flex; flex-wrap: wrap; column-gap: var(--chisan-space-3); row-gap: 0; margin-top: 0; }
+.detail-hero--identity .detail-subtitle { display: flex; flex-wrap: wrap; column-gap: var(--chisan-space-3); row-gap: 0; margin-top: 0; }
 .detail-subtitle a { display: inline-flex; align-items: center; min-height: 44px; color: var(--chisan-color-moss-dark); text-underline-offset: 4px; font-size: 0.875rem; }
-.detail-profile-photos { grid-column: 2; grid-row: 1 / 3; min-width: 0; }
-.detail-hero-summary { grid-column: 1; grid-row: 2; min-width: 0; }
-.detail-hero--photographic .detail-intro { margin-top: 0; font-size: 1.125rem; line-height: 1.5; }
+.detail-hero-summary { grid-area: summary; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--chisan-space-4) var(--chisan-space-8); align-items: start; min-width: 0; }
+.detail-hero-summary:has(> .detail-intro + .detail-hero-links) { grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 1fr); }
+.detail-hero--identity .detail-intro { margin-top: 0; font-size: 1.125rem; line-height: 1.5; }
+.detail-hero-links { min-width: 0; }
+.detail-hero-links > :first-child { margin-top: 0; }
 .detail-social-links { display: flex; flex-wrap: wrap; gap: 0 var(--chisan-space-4); list-style: none; padding: 0; margin: var(--chisan-space-1) 0 0; }
 .detail-social-links a { display: inline-flex; align-items: center; gap: var(--chisan-space-2); min-height: 44px; color: var(--chisan-color-moss-dark); text-decoration: none; font-size: 0.875rem; }
 .detail-social-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -658,9 +678,11 @@ body { min-height: 100svh; }
 .detail-products,
 .detail-expanded-profile,
 .detail-visit,
+.detail-gallery,
 .detail-info,
 .detail-similar { margin: 0; padding-block: var(--chisan-space-6); border: 0; border-top: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: 0; background: transparent; }
 .detail-products h2,
+.detail-gallery h2,
 .detail-similar h2 { margin: 0; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.01em; }
 /* Sales channels form one row; the online shop channel is the purchase link. */
 .detail-purchase { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--chisan-space-4); margin-top: var(--chisan-space-2); }
@@ -705,10 +727,14 @@ body { min-height: 100svh; }
   .detail-visit__aside { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
 }
 @media (max-width: 760px) {
-  .detail-hero--photographic { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(3, auto); gap: var(--chisan-space-3); }
-  .detail-hero--photographic h1 { font-size: 1.75rem; }
-  .detail-profile-photos { grid-column: 1; grid-row: 2; }
-  .detail-hero-summary { grid-column: 1; grid-row: 3; }
+  .detail-hero--identity { --detail-identity-height: 3.75rem; --detail-cover-overlap: 3rem; --detail-cover-radius: var(--chisan-radius-object); }
+  .detail-hero__tab { flex-direction: column; gap: var(--chisan-space-3); }
+  .detail-hero--cover { grid-template-columns: minmax(0, 1fr); grid-template-areas: "cover" "tab" "caption" "summary"; }
+  .detail-hero--identity h1 { font-size: 1.75rem; }
+  .detail-cover__frame { height: 12.5rem; }
+  .detail-cover figcaption { text-align: start; }
+  .detail-hero--cover .detail-hero__tab { justify-self: start; min-width: 0; max-width: calc(100% - var(--chisan-space-12)); padding-right: var(--chisan-space-4); }
+  .detail-hero-summary:has(> .detail-intro + .detail-hero-links) { grid-template-columns: minmax(0, 1fr); }
   .detail-hero--premium { padding: var(--chisan-space-4); }
   .detail-participate { grid-template-columns: minmax(0, 1fr); padding: var(--chisan-space-4); }
   .detail-participate .producer-account-actions { min-width: 0; }

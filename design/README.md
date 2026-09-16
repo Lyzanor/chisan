@@ -246,12 +246,17 @@ has a visible removal control, preserving category and search intersections.
 The follow action is one icon target at the end of the name row. Pointer hover
 and keyboard focus unfold its label with a short width animation; a touch screen
 unfolds it on the first tap and acts on the second, so the action is never taken
-unseen. The label overlays free space, so the name never reflows. The
-reviewed main photo starts beside the title, with small gallery thumbnails.
-On mobile it fills the header width below the
-name, municipality and categories, before the description. The inline gallery
-uses thumbnails and swipe without a counter or arrow bar. Premium uses the dedicated green header token
-independently of ownership.
+unseen. The label overlays free space, so the name never reflows. Premium uses
+the dedicated green header token independently of ownership.
+
+The header shows only reviewed material. A landscape gallery photograph becomes
+a low panoramic cover, and the name block cuts into its lower-left edge so name
+and photograph share one level. Concave corners repeat the cover radius, and
+part of the photograph always continues beside the cut. The `imagen` identity
+image sits beside the name on wide screens and above it on narrow ones; without a
+cover, the same block is ordinary page content. A missing cover, identity image
+or gallery leaves no generic, category or placeholder image. The description
+and the contact, website and social links share two columns on wide screens.
 
 Verified ownership receives an explicit badge beside the name and an explanation
 in Details. Unclaimed profiles have no verification badge. Editorial `pendiente`
@@ -282,7 +287,11 @@ requests nor stores the visitor's position for this link. See the [Google Maps U
 Profile sections share one compact rhythm: a hairline rule and 24px of vertical
 space, with 28px section headings and 18px card headings. Expanded profiles keep
 products, links and stories in named sections; their jump links appear only when
-both products and links exist. The standalone gallery is rendered in the hero.
+both products and links exist. The standalone photos not used as the cover form
+a strip after the visit section and before Details: one row at honest aspect
+ratios that scrolls sideways when the screen is narrow or the gallery is long.
+Pointer hover scales a photo to 1.03 within its frame; the photos open nothing,
+and reduced motion removes the emphasis.
 Followers have a dedicated section, showing only opted-in public attribution and
 explicitly labeling that count. Community suggestions sit beside the Details
 heading, next to the editorial notice they correct. The closing section after
