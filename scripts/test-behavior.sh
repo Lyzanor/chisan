@@ -207,8 +207,8 @@ main().catch((error) => {
 '
 
 if [[ "$START_TEST_SERVER" == "true" ]]; then
-  VERCEL_ENV=production CHISAN_PUBLIC_DISCOVERY_ENABLED=false NEXT_PUBLIC_APP_URL=https://chisan.app \
-    ./node_modules/.bin/next dev --port "$PORT" >/tmp/chisan-test-dev.log 2>&1 &
+  DATABASE_URL="" VERCEL_ENV=production CHISAN_PUBLIC_DISCOVERY_ENABLED=false NEXT_PUBLIC_APP_URL=https://chisan.app \
+    ./node_modules/.bin/next dev --webpack --port "$PORT" >/tmp/chisan-test-dev.log 2>&1 &
   DEV_PID=$!
 fi
 

@@ -41,6 +41,7 @@ import { ProducerProfileView } from "@/components/analytics/producer-profile-vie
 import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
 import {
   ProducerAccountActions,
+  ProducerHeroClaim,
   ProducerSuggestionAction,
 } from "@/components/account/producer-account-actions";
 import { ProducerFavorites } from "@/components/account/producer-favorites";
@@ -628,6 +629,16 @@ export default async function ProducerPage({
                 </div>
               ) : null}
             </div>
+          ) : null}
+          {isAccountSystemConfigured() ? (
+            <Suspense fallback={null}>
+              <ProducerHeroClaim
+                country={country.slug}
+                producerId={producer.producerId}
+                locale={locale}
+                messages={messages.accountActions}
+              />
+            </Suspense>
           ) : null}
         </header>
 

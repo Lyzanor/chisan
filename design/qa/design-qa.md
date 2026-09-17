@@ -3,6 +3,19 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-17 — Producer hero claim CTA for unverified profiles
+
+Visual review: **passed** at 390×844 and 1280×900.
+
+An unverified producer profile now includes a prominent call-to-action block inside the hero section (`.detail-hero-claim`), inviting the producer to verify and claim their listing with clear, immediate incentives (verified producer badge, direct contact control, free 5-photo showcase). No visitor statistics or counters are shown.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Hero claim block | Positioned immediately following the producer title and badge row inside the hero grid. Styled with an earthen tinted container (`rgba(98, 125, 110, 0.08)` / `rgba(98, 125, 110, 0.2)` border), 12px radius, Outfit typography, and a prominent badge icon (`SealCheckIcon`). |
+| Visual hierarchy & contrast | The CTA card provides clear visual distinction from the rest of the hero without overwhelming the identity. In pending state (`.detail-hero-claim--pending`), warm amber tone (`rgba(224, 159, 62, 0.1)`) and `ClockIcon` signal in-review status. |
+| Touch target & responsiveness | The action button/link (`.detail-hero-claim__action`) maintains a minimum height of 44px with 16px horizontal padding. On mobile (390px), the content stacks cleanly with full-width button and no horizontal overflow. On wider viewports (≥32rem container), it aligns in a single row with the action right-aligned. |
+| Conditional rendering | Only rendered for profiles without an active verified owner and where the viewer is not already an active member. Server-side check with fallback ensures no layout shifts or broken profiles if database is unavailable. |
+
 ## 2026-09-17 — Mobile first
 
 Visual review: **passed** in an isolated production build at 390×844 first, then 1280×900.

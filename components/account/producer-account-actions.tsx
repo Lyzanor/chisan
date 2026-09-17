@@ -1,5 +1,10 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
-import { PencilSimpleIcon } from "@phosphor-icons/react/ssr";
+import {
+  ArrowUpRightIcon,
+  ClockIcon,
+  PencilSimpleIcon,
+  SealCheckIcon,
+} from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 import { cache, type ReactNode } from "react";
 
@@ -197,6 +202,65 @@ export async function ProducerAccountActions({
           <Link href={claimPath}>{messages.claimProducer}</Link>
         )}
       </ProducerClosingSection>
+    );
+  });
+}
+
+/**
+ * Prominent claim call-to-action in the hero section for unverified profiles.
+ */
+export async function ProducerHeroClaim({
+  country,
+  producerId,
+  locale,
+}: ProducerAccountActionsProps) {
+  return renderWithAccountFallback(async () => {
+    const { account, activeOwner, membership, claim } =
+      await loadProducerAccountState(country, producerId);
+
+    // If an owner is already verified, or the current user is already a member,
+    // do not show the claim CTA in the hero.
+    if (activeOwner || membership) return null;
+
+    const words = producerProfileLabels(locale);
+    const claimPath = `/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`;
+
+    if (claim) {
+      return (
+        <aside className="detail-hero-claim detail-hero-claim--pending" aria-label={words.heroClaimPendingTitle}>
+          <div className="detail-hero-claim__content">
+            <ClockIcon size={20} aria-hidden="true" className="detail-hero-claim__icon" />
+            <div className="detail-hero-claim__copy">
+              <strong>{words.heroClaimPendingTitle}</strong>
+              <span className="detail-hero-claim__help">{words.heroClaimPendingHelp}</span>
+            </div>
+          </div>
+          <Link href="/cuenta/reclamaciones" className="detail-hero-claim__action">
+            <span>{words.heroClaimPendingAction}</span>
+            <ArrowUpRightIcon size={14} aria-hidden="true" />
+          </Link>
+        </aside>
+      );
+    }
+
+    const href = !account
+      ? `${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`
+      : claimPath;
+
+    return (
+      <aside className="detail-hero-claim" aria-label={words.heroClaimTitle}>
+        <div className="detail-hero-claim__content">
+          <SealCheckIcon size={20} aria-hidden="true" className="detail-hero-claim__icon" />
+          <div className="detail-hero-claim__copy">
+            <strong>{words.heroClaimTitle}</strong>
+            <span className="detail-hero-claim__help">{words.heroClaimHelp}</span>
+          </div>
+        </div>
+        <Link href={href} className="detail-hero-claim__action">
+          <span>{words.heroClaimAction}</span>
+          <ArrowUpRightIcon size={14} aria-hidden="true" />
+        </Link>
+      </aside>
     );
   });
 }
