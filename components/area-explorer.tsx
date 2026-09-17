@@ -8,6 +8,7 @@ import { getCatalogSearchMessages } from "@/lib/i18n/catalog-search";
 import type { ProducerMapMarker } from "@/lib/producer-selections";
 import { CatalogRadiusFilter } from "@/components/catalog-radius-filter";
 import {
+  isValidCoordinates,
   isWithinRadius,
   type RadiusFilter,
 } from "@/lib/location/radius-search";
@@ -431,8 +432,8 @@ function AreaExplorerView({
     );
     if (searchScope === "nearby" && radiusFilter && !deferredSearchQuery) {
       return [...filtered].sort((a, b) => {
-        const da = a.latitude !== null && a.longitude !== null ? producerDistanceKm(radiusFilter, a) : Infinity;
-        const db = b.latitude !== null && b.longitude !== null ? producerDistanceKm(radiusFilter, b) : Infinity;
+        const da = isValidCoordinates(a) ? producerDistanceKm(radiusFilter, a) : Infinity;
+        const db = isValidCoordinates(b) ? producerDistanceKm(radiusFilter, b) : Infinity;
         return da - db;
       });
     }
