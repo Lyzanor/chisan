@@ -368,8 +368,13 @@ test("producerRouteAliases cover every demonstrable historical route", () => {
   assert.deepEqual(bootstrapCounts, BOOTSTRAP_COUNTS);
 
   const currentRoutes = readCurrentRoutes();
+  // A retired producer has no destination, so its former routes cannot remain
+  // aliases; post-bootstrap routes already skip it the same way.
+  const liveBootstrapAliases = [...bootstrapAliases].filter(([formerRoute, producerId]) =>
+    currentRoutes.has(`${formerRoute.split("/")[0]}/${producerId}`),
+  );
   const requiredAliases = new Map([
-    ...bootstrapAliases,
+    ...liveBootstrapAliases,
     ...derivePostBootstrapAliases(currentRoutes),
   ]);
   const mergeAliases = deriveMergeAliases(currentRoutes);
