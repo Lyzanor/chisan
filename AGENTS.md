@@ -2,7 +2,9 @@
 
 **Connecting local food.** Chisan helps people discover place-based food and
 drink producers, understand their work and contribute reliable improvements.
-Discovery, participation and trust are equally part of the product.
+Discovery, participation and trust are equally part of the product. The phone
+is the primary surface: the web is built mobile first and will be the base of a
+future web-based app.
 
 ## Core philosophy
 
@@ -120,8 +122,8 @@ need not become permanent infrastructure.
 - Data and reviewed related content: `pnpm verify:data`; use changed-data checks
   while iterating.
 - Code, schema, permissions or policy affecting behavior: `pnpm verify:ai`.
-- Visual changes also need a browser check at narrow and wide widths and a
-  concise record in `design/qa/design-qa.md` for material decisions.
+- Visual changes also need a browser check at phone width (390px) first, then
+  wide, and a concise record in `design/qa/design-qa.md` for material decisions.
 - Deployment and account migrations follow the Operations preflight.
 
 Use focused checks while iterating, then the applicable gate. Test observable

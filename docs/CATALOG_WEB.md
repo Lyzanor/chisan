@@ -21,6 +21,16 @@ profile advertises its ID-based JSON representation. Expanded content visibility
 is resolved by a shared loader for HTML and agent reads; new adapters cannot
 publish a broader catalog or turn ownership into factual certification.
 
+## Mobile web and future app
+
+The public web serves phones first and will be the base of a future web-based
+app. Public routes are that app's deep links: a shared URL opens the same page,
+language and safe filter state, with no app-only route family. Presentation,
+touch behaviour and safe areas belong to [design](../design/README.md). A web app
+manifest, service worker, offline copy and push notifications wait for the app's
+own contract, which decides standalone navigation, sign-in and freshness. Any
+cached catalog remains a derived read of the published catalog.
+
 ## Current public language
 
 The public website and account presentation use Spanish, including the home page,

@@ -148,6 +148,16 @@ const RULES = [
         .map((m) => ({ at: m.index, text: m[1].trim() })),
   },
   {
+    // Phones are the primary surface: base styles serve them, min-width adds.
+    name: "max-width-query",
+    baseline: 31,
+    describe: "viewport queries capped by max-width instead of min-width",
+    find: (file, css) =>
+      [...css.matchAll(/@media([^{]*)\{/g)]
+        .filter((m) => /max-width|\bwidth\s*</.test(m[1]) && !/min-width|\bwidth\s*>/.test(m[1]))
+        .map((m) => ({ at: m.index, text: m[1].trim() })),
+  },
+  {
     name: "small-target",
     severity: "error",
     baseline: 7,

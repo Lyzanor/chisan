@@ -23,6 +23,27 @@ qa/design-qa.md          current visual verification
 qa/history/              dated historical checks, not current specifications
 ```
 
+## Mobile first
+
+The phone is Chisan's primary surface and the base of a future web-based app.
+Design and review public and account surfaces at 390px first. Wider screens add
+columns, density and side-by-side context, never a capability the phone lacks.
+Administration remains usable on a phone but may favour wide screens.
+
+- Base styles serve the narrow layout and `min-width` queries enhance it.
+  Existing `max-width` rules migrate when their surface is reworked;
+  `pnpm check:design` notes new ones.
+- Touch is the primary input. Every action works by touch alone; hover and
+  pointer-dwell previews only add to it, with hover styles under `(hover: hover)`.
+- Primary content scrolls with the page. Rosters, forms and articles never sit in
+  a bounded scroll box on phones; sideways strips, menus and dialogs may scroll
+  within their own bounds.
+- The viewport covers the display (`viewport-fit=cover`), so sticky and fixed
+  edges add the matching `env(safe-area-inset-*)`.
+- Every screen can be left through its own navigation (header, breadcrumbs or
+  back links) without browser controls. Public routes remain the deep links
+  described in [Catalog web](../docs/CATALOG_WEB.md).
+
 ## Ownership and working defaults
 
 `app/_components/site-root-shell.tsx` imports, in this order:
@@ -182,9 +203,10 @@ to improve appearance.
   URL selection. The large selected surface is the only map preview: synchronized
   maps do not also show a producer tooltip.
 - On small area-discovery screens, the producer list is an always-visible,
-  attached roster below the map. Profile producer selections may use an
-  attached non-modal disclosure; its open state uses `moss-pale` and a `moss`
-  edge, never a floating shadow.
+  attached roster below the map that scrolls with the page. Marker activation
+  keeps the map and its card in view there instead of scrolling to the row.
+  Profile producer selections may use an attached non-modal disclosure; its open
+  state uses `moss-pale` and a `moss` edge, never a floating shadow.
 - Public selections and their private previews show exactly the chosen producers.
   Fit the whole mapped set on opening and preserve one stable roster, including
   unmapped profile links. Geography never groups or ranks a selection. Keep the
@@ -426,7 +448,8 @@ stronger evidence.
 - [ ] Pills only on toggles.
 - [ ] Targets 44×44px, apart from the documented dense-map exception; focus
       visible as an outline.
-- [ ] No horizontal overflow at 390px.
+- [ ] Designed and checked at 390px first, with no horizontal overflow.
+- [ ] Every action works by touch alone; hover only adds.
 - [ ] Checked in one long or non-Latin locale.
 
 Record material decisions and browser evidence in [`qa/design-qa.md`](qa/design-qa.md).

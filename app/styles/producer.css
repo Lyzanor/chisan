@@ -724,9 +724,16 @@ td:first-child {
     background: var(--surface);
   }
 
+  /* The persistent roster scrolls with the page; a bounded box traps touch scrolling. */
   .catalog-page .catalog-viewer--persistent .catalog-viewer-body {
     display: flex;
+    max-height: none;
+    overflow: visible;
     border-top-color: var(--chisan-color-moss);
+  }
+
+  .catalog-page .catalog-viewer--persistent .producer-compact-list {
+    overflow: visible;
   }
 
   .catalog-page .catalog-viewer-head {

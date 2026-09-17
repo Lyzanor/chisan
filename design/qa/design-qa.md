@@ -3,6 +3,25 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-17 — Mobile first
+
+Visual review: **passed** in an isolated production build at 390×844 first, then 1280×900.
+
+The phone is now the primary surface and the base of a future web-based app. An
+audit of home, country, Barcelona discovery, a profile and the guide library at
+390 px found no horizontal overflow; the problems were scrolling and touch
+targets. Account pages need the account database and were not rendered.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Discovery roster | On narrow screens the persistent roster was a 196 px scroll box inside the page (about one and a half rows of 400). It now scrolls with the page (a 44,973 px list with no inner scroller). Activating a map point at scroll 250 kept scroll 250, opened the card above the point, wrote `highlight` and appended the row at the end without reordering. At 1280 px the side column still scrolls on its own (486 px list). |
+| Roster actions | "Mostrar más" rendered as an unstyled native button at every width. It now uses the white secondary button of the profile distance tool (44 px, `moss` edge, 8 px radius, Outfit 500); the national-catalog retry shares the class but was not triggered. The result count aligns with the rows. |
+| Touch targets | The discovery and country breadcrumb links were 15 px tall and now have a 44 px target without changing the line; a point 12 px above or below still hits the link, 30 px below hits the heading. Guide topic links grew from 20 to 44 px tall, the "Más categorías" chip from 42 to 44 px wide and the header wordmark link from 25 to 44 px tall with the mark unchanged. |
+| Safe areas | The sticky header adds `env(safe-area-inset-top)`; header height stayed 72 px at 390 px and 80 px at 1280 px, where the inset is zero. |
+
+`pnpm check:design` now notes new `max-width` viewport queries (baseline 31).
+Console errors were only the local Vercel Analytics 404s.
+
 ## 2026-09-16 — Stronger cover, caption disclosure and one-line place and category
 
 Visual review: **passed** in an isolated production build at the 350 px browser pane and 1280×900.

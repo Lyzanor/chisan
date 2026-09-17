@@ -419,8 +419,20 @@
 }
 
 .country-back-link {
+  position: relative;
   color: inherit;
   text-decoration: none;
+}
+
+/* The compact breadcrumb keeps its line while touch gets a 44px target. */
+.country-back-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 44px);
+  height: 44px;
+  translate: -50% -50%;
 }
 
 .country-back-link:hover {

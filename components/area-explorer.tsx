@@ -1046,7 +1046,7 @@ function AreaExplorerView({
                 {normalizedSearchQuery && items.length ? ` · ${searchMessages.relevance}` : ""}
               </p>
             )}
-            {searchScope !== "area" && national.error ? <button type="button" onClick={national.retry}>{searchMessages.retry}</button> : null}
+            {searchScope !== "area" && national.error ? <button type="button" className="catalog-search-action" onClick={national.retry}>{searchMessages.retry}</button> : null}
             <p className="visually-hidden" aria-live="polite">
               {screenReaderSummary}
               {visibleItems[0] ? `: ${visibleItems[0].name}` : ""}
@@ -1088,7 +1088,7 @@ function AreaExplorerView({
               </p>
             )}
             {orderedItems.length > visibleLimit ? (
-              <button type="button" className="catalog-search-more" onClick={() => setPage({ scope: resultScope, limit: visibleLimit + VISIBLE_PRODUCER_LIMIT })}>
+              <button type="button" className="catalog-search-action" onClick={() => setPage({ scope: resultScope, limit: visibleLimit + VISIBLE_PRODUCER_LIMIT })}>
                 {searchMessages.more}
               </button>
             ) : null}
