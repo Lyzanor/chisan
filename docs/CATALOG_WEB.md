@@ -336,10 +336,12 @@ claim. Its optional public-source disclosure includes only the current keep
 record's URLs and consultation dates, without evidence notes or private data.
 The producer route trace includes evidence ledgers for this read.
 
-Standalone gallery visibility follows `PRODUCER_CONTENT.md`: up to five photos
-for an active claimed free producer, full gallery for premium. Neither grants
-new factual authority. Base JSON-LD remains unchanged; hidden premium products
-and images never enter the public structured data.
+Standalone gallery visibility follows `PRODUCER_CONTENT.md`: every profile shows
+its complete approved standalone gallery, whatever its ownership, premium or
+account state. The five-image limit only bounds what a claimed free profile can
+propose in the account editor. Neither ownership nor premium grants new factual
+authority. Base JSON-LD remains unchanged; hidden premium products and images
+never enter the public structured data.
 
 
 ## Catalog search scope
