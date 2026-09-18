@@ -25,6 +25,14 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { AnchoredMapPreview } from "./anchored-map-preview";
+import { VisitorLocationMarker } from "./visitor-location-marker";
+import { MapLocateControl } from "./map-locate-control";
+import {
+  checkVisitorLocationPermission,
+  requestVisitorPosition,
+  useVisitorPosition,
+  type VisitorPosition,
+} from "@/lib/location/visitor-position";
 
 import {
   PRODUCER_SELECTION_MIN_ZOOM,
@@ -932,6 +940,7 @@ export default function ProducersMapInner({
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   groupOverview,
   openOnMainCluster,
+  visitorPosition: propVisitorPosition,
   messages,
   onReady,
 }: {
@@ -951,6 +960,7 @@ export default function ProducersMapInner({
   minZoom?: number;
   groupOverview?: ProducerMapGroupOverview;
   openOnMainCluster?: boolean;
+  visitorPosition?: VisitorPosition | null;
   messages: {
     openProfile: string;
   };
@@ -958,6 +968,22 @@ export default function ProducersMapInner({
 }) {
   const initialCenter = getInitialCenter(points);
   const initialZoom = points.length === 1 ? singlePointZoom : 10;
+  const detectedPosition = useVisitorPosition();
+  const effectiveVisitorPosition = propVisitorPosition ?? detectedPosition;
+
+  useEffect(() => {
+    if (effectiveVisitorPosition) return;
+    let cancelled = false;
+
+    checkVisitorLocationPermission().then((permissionState) => {
+      if (cancelled || permissionState !== "granted") return;
+      void requestVisitorPosition();
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [effectiveVisitorPosition]);
 
   return (
     <MapContainer
@@ -990,6 +1016,10 @@ export default function ProducersMapInner({
         openOnMainCluster={openOnMainCluster}
         messages={messages}
       />
+      {effectiveVisitorPosition ? (
+        <VisitorLocationMarker position={effectiveVisitorPosition} />
+      ) : null}
+      <MapLocateControl />
     </MapContainer>
   );
 }

@@ -68,6 +68,7 @@ import {
   selectNearbyProducerKeys,
 } from "@/lib/location/nearby-producer-focus";
 import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
+import { setVisitorPosition } from "@/lib/location/visitor-position";
 import {
   includeSelectedProducer,
   prioritizeProducerItems,
@@ -318,6 +319,8 @@ function useNearbyMapFocusKeys(
         ) {
           return;
         }
+
+        setVisitorPosition(result.position);
 
         const nearbyKeys = selectNearbyProducerKeys(
           result.position,

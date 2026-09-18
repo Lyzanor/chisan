@@ -1,6 +1,7 @@
 import { getLocaleDisplayTag, type Locale } from "../i18n/locales";
 import { LOCATION_REQUEST_OPTIONS } from "./location-onboarding";
 import { producerDistanceKm } from "./nearby-producer-focus";
+import { setVisitorPosition } from "./visitor-position";
 
 type Position = Readonly<{
   latitude: number;
@@ -48,6 +49,15 @@ export function requestProducerDistance(
             resolve({ status: "failed", reason: "unavailable" });
             return;
           }
+
+          setVisitorPosition({
+            latitude: coords.latitude,
+            longitude: coords.longitude,
+            accuracyMeters:
+              Number.isFinite(coords.accuracy) && coords.accuracy > 0
+                ? coords.accuracy
+                : undefined,
+          });
 
           resolve({
             status: "resolved",

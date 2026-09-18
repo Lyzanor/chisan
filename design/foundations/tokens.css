@@ -21,6 +21,10 @@
   --chisan-color-moss: #00563f;
   --chisan-color-moss-dark: #003d2d;
   --chisan-color-moss-pale: #edf3ef;
+  --chisan-color-locator: #2563eb;
+  --chisan-color-locator-pulse: rgb(37 99 235 / 24%);
+  --chisan-color-locator-active-bg: rgb(37 99 235 / 8%);
+  --chisan-color-locator-border: rgb(37 99 235 / 35%);
 
   --chisan-font-sans: var(--font-chisan-sans), var(--font-chisan-fallback), "Hiragino Kaku Gothic ProN",
     "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
@@ -46,6 +50,7 @@
   --chisan-line: 1px;
   --chisan-focus-ring: 2px;
   --chisan-shadow-overlay: 0 12px 40px rgb(24 34 28 / 9%);
+  --chisan-shadow-control: 0 1px 4px rgb(24 34 28 / 12%);
   --chisan-motion-immediate: 150ms;
   --chisan-motion-component: 220ms;
   --chisan-motion-page: 240ms;

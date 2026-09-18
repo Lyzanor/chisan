@@ -16,6 +16,7 @@ import {
   isValidCoordinates,
   type RadiusFilter,
 } from "@/lib/location/radius-search";
+import { setVisitorPosition } from "@/lib/location/visitor-position";
 
 export function CatalogRadiusFilter({
   heading,
@@ -63,6 +64,14 @@ export function CatalogRadiusFilter({
             return;
           }
           setPending(false);
+          setVisitorPosition({
+            latitude: coords.latitude,
+            longitude: coords.longitude,
+            accuracyMeters:
+              Number.isFinite(coords.accuracy) && coords.accuracy > 0
+                ? coords.accuracy
+                : undefined,
+          });
           onChange({
             latitude: coords.latitude,
             longitude: coords.longitude,

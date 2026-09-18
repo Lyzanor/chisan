@@ -146,12 +146,15 @@ country may remain versioned and validated, but it cannot become a destination
 until that country's manifest is published again.
 
 The routing flow exposes only the exact derived catalog key to navigation, which
-then uses the central catalog URL builder. The presentation-only map flow may
-hold the validated position only inside its local nearby-producer selection,
-then must discard it. The exact position must never become a map center, bound,
-marker, tile request or URL value; the viewport is calculated only from the
-selected producers' published coordinates. Neither flow assembles a short or
-composite locale path itself.
+then uses the central catalog URL builder. The presentation-only map flow holds
+the validated position in ephemeral client memory. When location is detected or
+requested via the map locate control, the map displays a transient client-side
+locator marker ("blue dot") allowing visitors to orient themselves relative to
+producers. The exact position remains strictly in volatile browser memory: it is
+never persisted to storage, sent to any server, included in tile requests or
+carried in URLs. The initial catalog viewport remains calculated only from
+published producer coordinates unless the visitor explicitly activates the
+locate action. Neither flow assembles a short or composite locale path itself.
 
 ## Language separation
 

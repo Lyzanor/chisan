@@ -3,6 +3,19 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-18 — Map visitor location marker and locate control
+
+Visual review: **passed** at 390×844 and 1280×900.
+
+A transient, client-side locator marker ("blue dot" with animated pulsing halo) indicates the visitor's position on all Leaflet discovery and profile maps once location is detected. A dedicated locate button allows centering on the visitor.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Visitor locator dot | Styled as an elevated blue circle (`#2563eb`, 14px) with crisp 2.5px white border and soft drop shadow. An outer halo ring (32px) animates a gentle pulse (`chisan-locator-pulse`) to provide immediate recognition similar to standard navigation apps. A tooltip displays "Tu ubicación". Under `prefers-reduced-motion: reduce`, the pulse animation is disabled while keeping the static marker visible. |
+| Map locate button | Positioned at top-right of the map with standard 44×44 px minimum interactive target. Uses `@phosphor-icons/react` `NavigationArrowIcon` (or spinner when resolving). When location is already known, tapping pans smoothly to the user position. When inactive, it queries and centers. |
+| Mobile first (390px) | Tested within the catalog area map and producer profile map. The control button does not collide with attribution or floating elements. On touch screens, the 44px target is easily tapped without misclicks. |
+| Privacy invariant | Position coordinates remain strictly in ephemeral React memory (`visitor-position.ts`) and are never written to disk, local storage, URL params or telemetry. |
+
 ## 2026-09-18 — One-square C across logo, app icon and QR
 
 Visual review: **passed** in an isolated production build at the browser pane's

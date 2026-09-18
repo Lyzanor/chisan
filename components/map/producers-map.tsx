@@ -13,6 +13,7 @@ import {
   type ProducerMapMarker,
 } from "@/lib/producer-selections";
 import { getCategoryIcon } from "@/lib/get-category-icon";
+import type { VisitorPosition } from "@/lib/location/visitor-position";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
@@ -23,6 +24,7 @@ export type MapMessages = {
   loading: string;
   emptyCoordinates: string;
   openProfile: string;
+  userLocation?: string;
 };
 
 export type ProducerMapFocusRequest = Readonly<{
@@ -57,6 +59,7 @@ type ProducersMapProps = {
   onVisibleProducerKeysChange?: (keys: string[]) => void;
   markerInteraction?: ProducerMapMarkerInteraction;
   singlePointZoom?: number;
+  visitorPosition?: VisitorPosition | null;
   messages: MapMessages;
 };
 
@@ -75,6 +78,7 @@ export function ProducersMap({
   onVisibleProducerKeysChange,
   markerInteraction,
   singlePointZoom,
+  visitorPosition,
   messages,
 }: ProducersMapProps) {
   const scopeCountry = scope.country;
@@ -112,6 +116,7 @@ export function ProducersMap({
       onVisibleKeysChange={onVisibleProducerKeysChange}
       markerInteraction={markerInteraction}
       singlePointZoom={singlePointZoom}
+      visitorPosition={visitorPosition}
       minZoom={5}
       messages={messages}
     />
@@ -135,6 +140,7 @@ export function ProducerSelectionMap({
   minZoom = PRODUCER_SELECTION_MIN_ZOOM,
   groupOverview,
   openOnMainCluster,
+  visitorPosition,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -154,6 +160,7 @@ export function ProducerSelectionMap({
   groupOverview?: ProducerMapGroupOverview;
   /** Dense sets open on their main connected cluster; distant minorities stay a pan away. */
   openOnMainCluster?: boolean;
+  visitorPosition?: VisitorPosition | null;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
@@ -191,6 +198,7 @@ export function ProducerSelectionMap({
         minZoom={minZoom}
         groupOverview={groupOverview}
         openOnMainCluster={openOnMainCluster}
+        visitorPosition={visitorPosition}
         messages={messages}
         onReady={handleReady}
       />

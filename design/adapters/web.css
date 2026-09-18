@@ -431,6 +431,109 @@ body {
   outline-offset: 2px;
 }
 
+/* Visitor location marker ("blue dot" locator) */
+.chisan-visitor-locator-container {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+}
+
+.chisan-visitor-locator {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.chisan-visitor-locator__pulse {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--chisan-color-locator-pulse);
+  animation: chisan-locator-pulse 2s cubic-bezier(0.2, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+.chisan-visitor-locator__dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--chisan-color-locator);
+  border: 2.5px solid var(--chisan-color-surface);
+  box-shadow: 0 2px 5px var(--chisan-color-locator-border);
+  z-index: 1;
+}
+
+@keyframes chisan-locator-pulse {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.95;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Map locate control button */
+.map-locate-control {
+  margin: var(--chisan-space-3) var(--chisan-space-3) 0 0;
+  box-shadow: var(--chisan-shadow-overlay);
+  border-radius: var(--chisan-radius-control);
+}
+
+.map-locate-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  cursor: pointer;
+  box-shadow: var(--chisan-shadow-control);
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.map-locate-btn:hover {
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-moss);
+}
+
+.map-locate-btn--active {
+  color: var(--chisan-color-locator);
+  border-color: var(--chisan-color-locator-border);
+}
+
+.map-locate-btn--active:hover {
+  background: var(--chisan-color-locator-active-bg);
+  color: var(--chisan-color-locator);
+}
+
+.map-locate-btn:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.map-locate-spinner {
+  animation: chisan-location-spin 800ms linear infinite;
+}
+
 .leaflet-tooltip.producer-map-tooltip {
   padding: 0;
   border: var(--chisan-line) solid var(--chisan-color-hairline);
@@ -525,7 +628,8 @@ body {
   .location-onboarding__primary,
   .producer-map-category-icon,
   .producer-map-group-count,
-  .producer-map-circle {
+  .producer-map-circle,
+  .map-locate-btn {
     transition: none;
   }
 
@@ -536,7 +640,9 @@ body {
   .location-onboarding__spinner,
   .producer-map-circle--selected,
   .producer-map-category-icon--selected,
-  .producer-map-tooltip__content {
+  .producer-map-tooltip__content,
+  .chisan-visitor-locator__pulse,
+  .map-locate-spinner {
     animation: none;
   }
 }
