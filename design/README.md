@@ -117,7 +117,7 @@ decorative only. Text uses `ink`, `stone` or `moss-dark` on light surfaces and
 Keep decorative photography separate from reading surfaces. Do not add
 tinted control shadows or colour-coded card sets. Status colours belong to their
 product contract. The wordmark and QR C use solid forest green with the supplied
-silhouette; the favicon retains the supplied white-on-green artwork.
+silhouette; the app icon reverses that silhouette white on a forest square.
 
 ## Type
 
@@ -335,22 +335,23 @@ layout never invents proximity to fill a row.
 ## Brand
 
 The standard logo is **Chisan**, exactly as supplied in
-`brand/chisan-reference.png`. Its initial C contains two detached squares in the
-upper-right opening: the larger square above/right and the smaller one below/left.
-The separate icon at the right of the reference is the favicon, never an appended
-part of the wordmark. The same initial C is extracted for producer and selection QR
-centres. Current exports and their roles are listed in [brand/README.md](brand/README.md).
+`brand/chisan-reference.png`. Its initial C carries one detached square in the
+upper-right opening; the lower-right arm belongs to the C itself. The sheet supplies
+the wordmark alone, so the app icon reverses that same C on a forest square rather
+than extracting separate artwork. The same initial C is extracted for producer and
+selection QR centres. Current exports and their roles are listed in
+[brand/README.md](brand/README.md).
 
 - Use the wordmark above 112px of width and the C for square affordances.
-- Preserve the supplied proportions and both squares; do not redraw or typeset it.
+- Preserve the supplied proportions and the detached square; do not redraw or typeset it.
 - Keep the tagline as separate live text and the reversed logo as the same silhouette.
-- No extra containers, motifs or favicon appended to the wordmark.
+- No extra containers, motifs or app icon appended to the wordmark.
 - `public/brand/chisan-wordmark.svg` and `chisan-mark.svg` preserve the existing
   public URLs as lossless embedded-PNG wrappers. These are raster-derived assets,
   not newly traced vector masters. The supplied pixels remain the authority.
 
 Profile QR labels use forest green for producer codes, neutral ink for selection
-codes and a pure white background. Both include the approved two-square C at the
+codes and a pure white background. Both include the approved one-square C at the
 center of a small excavated area, with H error correction and a four-module
 outer quiet zone. Finder patterns remain intact. The 160px mark in an 880px code
 is a maximum visual footprint, not a guarantee for every payload or print size.
@@ -458,13 +459,16 @@ the change. Avoid duplicating the same design rule in product contracts.
 
 ## Regenerating the brand assets
 
-Run `node design/brand/build-favicon.cjs`. The generator extracts the left
-wordmark, its initial C and the separate right-hand favicon from
-`design/brand/chisan-reference.png`. It preserves the source alpha silhouette,
-applies flat forest/white to wordmark exports, and pads the standalone C for the
-QR quiet area. It writes the public SVG wrappers, metadata PNGs and
-`app/favicon.ico` with 16, 32, 48 and 256px frames. The Apple export is flattened
-on forest green for the system mask. No font tracing or image-model redraw occurs.
+Run `node design/brand/build-favicon.cjs`. The generator extracts the wordmark
+and its initial C from `design/brand/chisan-reference.png`, deriving the silhouette
+from ink coverage because the sheet is flat forest ink on opaque paper. It applies
+flat forest/white to those silhouettes and pads the standalone C for the QR quiet
+area. The app icon composites the reversed C on a forest rounded square, keeping
+the corner radius and inner inset ratios measured from the earlier supplied icon.
+It writes the public SVG wrappers, metadata PNGs and `app/favicon.ico` with 16, 32,
+48 and 256px frames. The Apple export is flattened on forest green for the system
+mask. The generator refuses a sheet whose dimensions no longer match its measured
+crop boxes. No font tracing or image-model redraw occurs.
 
 Outfit's font and license live in `app/_fonts/`; QR canvas typography consumes the
 resolved interface font. Review the exports visually and independently decode

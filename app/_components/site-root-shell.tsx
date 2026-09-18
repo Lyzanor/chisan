@@ -78,7 +78,7 @@ export const SITE_METADATA: Metadata = {
   },
   description: SITE_DESCRIPTION,
   icons: {
-    // The supplied favicon is the separate white C on its forest square.
+    // The app icon is the supplied C, reversed on the brand forest square.
     icon: [{ url: chisanIcon.src, type: "image/png", sizes: "512x512" }],
     apple: [{ url: chisanAppleIcon.src, type: "image/png", sizes: "180x180" }],
   },

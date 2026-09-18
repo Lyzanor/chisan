@@ -10,16 +10,57 @@ const FOREST = '#00563F';
 const CANVAS = 512;
 const ICO_SIZES = [16, 32, 48, 256];
 
-// The sheet places the wordmark on the left and a separate favicon on the right.
-// Keep both detached squares of the initial C. The favicon never joins the wordmark.
-const WORDMARK = { left: 107, top: 154, width: 1494, height: 397 };
-const MARK = { left: 107, top: 154, width: 430, height: 394 };
-const FAVICON = { left: 1703, top: 189, width: 362, height: 355 };
+// The sheet supplies the wordmark alone on opaque paper. Boxes are the measured
+// ink bounds; the initial C carries one detached square in its upper-right opening.
+const SHEET = { width: 2172, height: 724 };
+const WORDMARK = { left: 344, top: 197, width: 1485, height: 339 };
+const MARK = { left: 344, top: 197, width: 353, height: 334 };
+
+// Flat forest ink on flat paper: red alone separates them. Inset endpoints keep
+// clean plateaus while the ramp between them preserves the antialiased edge.
+const PAPER = 250;
+const INK = 8;
+
+// No favicon artwork is supplied, so the app icon keeps the ratios measured from
+// the earlier supplied icon: a full-bleed forest square holding the same C.
+const ICON_RADIUS_RATIO = 0.1924;
+const ICON_GLYPH_RATIO = 0.6487;
+
+async function inkMask(bounds) {
+  const { data, info } = await sharp(reference)
+    .flatten({ background: '#FFFFFF' })
+    .extract(bounds)
+    .extractChannel('red')
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const alpha = Buffer.allocUnsafe(info.width * info.height);
+  for (let index = 0; index < alpha.length; index += 1) {
+    const coverage = ((PAPER - data[index]) * 255) / (PAPER - INK);
+    alpha[index] = Math.max(0, Math.min(255, Math.round(coverage)));
+  }
+  return { alpha, width: info.width, height: info.height };
+}
 
 async function silhouette(bounds, color) {
-  const alpha = await sharp(reference).extract(bounds).ensureAlpha().extractChannel(3).toBuffer();
-  return sharp({ create: { width: bounds.width, height: bounds.height, channels: 3, background: color } })
-    .joinChannel(alpha).png({ compressionLevel: 9 }).toBuffer();
+  const { alpha, width, height } = await inkMask(bounds);
+  return sharp({ create: { width, height, channels: 3, background: color } })
+    .joinChannel(alpha, { raw: { width, height, channels: 1 } })
+    .png({ compressionLevel: 9 }).toBuffer();
+}
+
+async function appIcon() {
+  const radius = Math.round(CANVAS * ICON_RADIUS_RATIO);
+  const square = Buffer.from(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${CANVAS}" height="${CANVAS}">` +
+      `<rect width="${CANVAS}" height="${CANVAS}" rx="${radius}" ry="${radius}" fill="${FOREST}"/></svg>`,
+  );
+  const glyph = Math.round(CANVAS * ICON_GLYPH_RATIO);
+  const reverseMark = await sharp(await silhouette(MARK, '#FFFFFF'))
+    .resize(glyph, glyph, { fit: 'contain', background: '#00000000' })
+    .toBuffer();
+  return sharp(square)
+    .composite([{ input: reverseMark, gravity: 'centre' }])
+    .png({ compressionLevel: 9 }).toBuffer();
 }
 
 function svgImage(png, width, height, title) {
@@ -36,7 +77,6 @@ function packIco(frames) {
     const entry = Buffer.alloc(16);
     entry.writeUInt8(ICO_SIZES[index] % 256, 0);
     entry.writeUInt8(ICO_SIZES[index] % 256, 1);
-    entry.writeUInt16LE(1, 4);
     entry.writeUInt16LE(32, 6);
     entry.writeUInt32LE(frame.length, 8);
     entry.writeUInt32LE(offset, 12);
@@ -47,6 +87,13 @@ function packIco(frames) {
 }
 
 (async () => {
+  const sheet = await sharp(reference).metadata();
+  if (sheet.width !== SHEET.width || sheet.height !== SHEET.height) {
+    throw new Error(
+      `chisan-reference.png is ${sheet.width}x${sheet.height}; the crop boxes expect ${SHEET.width}x${SHEET.height}. Re-measure the ink bounds before exporting.`,
+    );
+  }
+
   const written = [];
   const write = (relativePath, data) => {
     fs.writeFileSync(path.join(root, relativePath), data);
@@ -58,12 +105,10 @@ function packIco(frames) {
     .resize(416, 416, { fit: 'contain', background: '#00000000' })
     .extend({ top: 48, bottom: 48, left: 48, right: 48, background: '#00000000' })
     .png({ compressionLevel: 9 }).toBuffer();
-  const favicon = await sharp(reference).extract(FAVICON)
-    .resize(CANVAS, CANVAS, { fit: 'contain', background: '#00000000' })
-    .png({ compressionLevel: 9 }).toBuffer();
+  const favicon = await appIcon();
 
   write('public/brand/chisan-wordmark.svg', svgImage(wordmark, WORDMARK.width, WORDMARK.height, 'Chisan'));
-  write('public/brand/chisan-mark.svg', svgImage(mark, CANVAS, CANVAS, 'Chisan C with two detached squares'));
+  write('public/brand/chisan-mark.svg', svgImage(mark, CANVAS, CANVAS, 'Chisan C with one detached square'));
   write('design/brand/assets/chisan-wordmark-ink.png', wordmark);
   write('design/brand/assets/chisan-wordmark-reverse.png', reverseWordmark);
   write('design/brand/assets/chisan-mark-ink.png', await sharp(mark).flatten({ background: '#FFFFFF' }).png().toBuffer());
