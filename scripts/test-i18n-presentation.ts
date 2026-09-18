@@ -74,7 +74,7 @@ test("account presentation messages cover both account action surfaces in every 
   } as const;
   const expectedTaglines = {
     en: "Connecting local food.",
-    es: "Conectando la alimentación local.",
+    es: "Conecta con lo que se produce cerca de ti",
     ca: "Connectant l’alimentació local.",
     de: "Lokale Lebensmittel verbinden.",
     ja: "地域の食をつなぐ。",

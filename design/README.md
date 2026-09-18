@@ -432,7 +432,7 @@ The footer uses fine forest-green pen/engraving with sparse gold accents;
 its illustrated places and cyclist are generic. See [imagery.md](imagery.md)
 for the reusable image direction and provenance.
 
-Write with exact nouns and plain uncertainty. The current Spanish public tagline is **Conectando la alimentación local.**
+Write with exact nouns and plain uncertainty. The current Spanish public tagline is **Conecta con lo que se produce cerca de ti**.
 The English tagline **Connecting local food.** remains available for English surfaces. Layouts expand for translation rather than
 truncate; no locale is a variant of another.
 

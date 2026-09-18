@@ -252,11 +252,11 @@ for STANDBY_HREF in '/ar' '/be' '/de' '/fr' '/gb' '/ie' '/in' '/it' '/jp' '/mx' 
 done
 
 if [[
-  "$HTML_HOME_CLEAN" != *"<title>Chisan · Conectando la alimentación local.</title>"* ||
-  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Conectando la alimentación local."'* ||
+  "$HTML_HOME_CLEAN" != *"<title>Chisan · Conecta con lo que se produce cerca de ti</title>"* ||
+  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Conecta con lo que se produce cerca de ti"'* ||
   "$HTML_HOME_CLEAN" != *'class="chisan-wordmark"'* ||
-  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Conectando la alimentación local.</span>'* ||
-  "$HTML_HOME_CLEAN" != *'id="home-summary-title">Conectando la alimentación local.</h1>'* ||
+  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Conecta con lo que se produce cerca de ti</span>'* ||
+  "$HTML_HOME_CLEAN" != *'id="home-summary-title">Conecta con lo que se produce cerca de ti</h1>'* ||
   "$HTML_HOME_CLEAN" != *'id="country-start-title">España</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
   "$HTML_HOME_CLEAN" != *'href="/how-we-work">Cómo funciona Chisan</a>'* ||
@@ -365,7 +365,7 @@ fi
 
 HTML_UNKNOWN_COUNTRY="$(curl -sS "$BASE_URL/zz" | sed 's/<!-- -->//g')"
 if [[
-  "$HTML_UNKNOWN_COUNTRY" != *'Conectando la alimentación local.'* ||
+  "$HTML_UNKNOWN_COUNTRY" != *'Conecta con lo que se produce cerca de ti'* ||
   "$HTML_UNKNOWN_COUNTRY" != *'/how-we-work'* ||
   "$HTML_UNKNOWN_COUNTRY" != *'Cómo funciona Chisan'* ||
   "$HTML_UNKNOWN_COUNTRY" != *'/contact'* ||

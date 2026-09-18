@@ -617,7 +617,7 @@ const HOW_CHISAN_WORKS = {
       "El catálogo público puede consultarse sin una cuenta. Las cuentas añaden favoritos, flujos de propiedad y participación revisada alrededor del mismo catálogo público.",
       "Cualquier oferta de pago para productores debe publicar su precio, alcance y condiciones antes de activarse. El pago nunca determina la inclusión, el orden, la verificación ni el texto editorial del catálogo.",
     ],
-    closing: "Conectando la alimentación local.",
+    closing: "Conecta con lo que se produce cerca de ti",
     exploreCatalog: "Explorar el catálogo de productores",
     contact: "Contactar con Chisan",
     account: "Usar tu cuenta",

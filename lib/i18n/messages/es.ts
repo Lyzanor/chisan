@@ -6,7 +6,7 @@ const messages = {
     label: "Idioma",
   },
   siteHeader: {
-    tagline: "Conectando la alimentación local.",
+    tagline: "Conecta con lo que se produce cerca de ti",
     accountNavigation: "Cuenta",
     signIn: "Iniciar sesión",
     register: "Registrarse",
@@ -116,9 +116,9 @@ const messages = {
     backToCatalog: "Volver al catálogo",
   },
   metadata: {
-    homeTitle: "{site} · Conectando la alimentación local.",
+    homeTitle: "{site} · Conecta con lo que se produce cerca de ti",
     homeDescription:
-      "Conectando la alimentación local. Descubre productores locales de alimentos y bebidas en un catálogo fiable, organizados por {unit}.",
+      "Conecta con lo que se produce cerca de ti. Descubre productores locales de alimentos y bebidas en un catálogo fiable, organizados por {unit}.",
     countryTitle: "{country} · Productores en {site}",
     countryDescription: "Elige una {unit} de {country} para explorar sus productores locales.",
     areaNotFoundTitle: "Zona no encontrada",
