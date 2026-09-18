@@ -3,6 +3,36 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-18 — One-square C across logo, app icon and QR
+
+Visual review: **passed** in an isolated production build at the browser pane's
+desktop width and at 375×812.
+
+A new identity sheet replaces `brand/chisan-reference.png`. The initial C now
+carries one detached square in its upper-right opening; the lower-right arm
+belongs to the C itself. The sheet is the wordmark alone, with no separate icon
+artwork and no alpha channel, so the export pipeline changed as well as the
+pixels. The previous two-square C is retired; Git preserves it.
+
+| Surface | Decision and observed result |
+| --- | --- |
+| Silhouette source | The sheet is opaque where the old one carried alpha, so `build-favicon.cjs` derives coverage from the red channel (ink 2, paper 254) instead of reading source alpha. One path serves either kind of sheet and keeps the antialiased edge. Wordmark exports still take flat forest `#00563F`, which normalises the sheet's lighter `#026D4D` ink. No glyph is redrawn. |
+| App icon | No icon artwork is supplied any more, so it is composited rather than extracted: the same C reversed on a full-bleed forest square. The corner radius (0.192 of the side, fitted over 54 rows of the old corner) and the glyph inset (0.649) are measured from the earlier supplied icon, so the container keeps its approved proportions. It now uses brand forest `#00563F` where the supplied artwork was `#02593C`, which aligns the icon with `themeColor` and the `moss` token. |
+| Wordmark proportions | The new wordmark is flatter: 1485×339 against the old 1494×397. `.chisan-wordmark` carries the real ratio, so at the unchanged 7rem width the header logo renders 112×25.6 px instead of 112×29.8 — about 14% shorter. The width tokens are deliberately left alone; recovering the earlier optical weight is a separate judgement, not part of adopting the artwork. |
+| Header and footer | Header wordmark read clearly at both widths and the footer wordmark at 96×21.9 px on its light surface. `link[rel=icon]`, the 512 px PNG icon and the 180 px Apple touch icon all resolved, and `/favicon.ico` returned 200. |
+| Profile QR | No code change: the canvas and the download both consume `public/brand/chisan-mark.svg`, so regenerating the asset is enough. The excavated area stays a fixed 160 px box in an 880 px level-H code, so the new silhouette cannot change decodability, but it was decoded anyway. |
+
+The QR dialog needs the account database, authentication and a premium
+entitlement, so it was not driven in the browser. Instead the label was
+reproduced from the component's own props (880 px, level H, `marginSize` 4,
+moss for producer and ink for selection, the mark excavated at 160 px) and
+independently decoded: producer short and long and selection short and long all
+returned their exact URLs, with finder patterns intact. Producer profile pages
+were not rendered in this pass; nothing in the change is route-specific.
+
+`pnpm check:design` reported no blocking regression. `lint`, `check:docs`,
+`test:i18n` and `test:behavior` passed.
+
 ## 2026-09-17 — Producer hero claim CTA for unverified profiles
 
 Visual review: **passed** at 390×844 and 1280×900.
