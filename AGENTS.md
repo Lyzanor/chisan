@@ -92,6 +92,11 @@ rules at their owner and one-off instructions in the task.
 
 ## Working defaults
 
+Current operating mode is local development with GitHub synchronization.
+"Push" means review, validate, commit and push the authorized work to GitHub;
+it does not authorize a Vercel deployment. Check the site locally. Resume public
+deployment only when explicitly requested, following `docs/OPERATIONS.md`.
+
 1. Inspect Git status and intended differences. Work directly on `main` unless
    the user requests a branch; isolate overlapping work when necessary to
    preserve unrelated changes and existing work.

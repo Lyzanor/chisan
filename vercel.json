@@ -1,5 +1,8 @@
 {
   "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": false
+  },
   "installCommand": "pnpm install",
   "buildCommand": "pnpm check:translations && pnpm db:assert-current && pnpm build",
   "ignoreCommand": "node scripts/vercel-ignore-build.mjs"

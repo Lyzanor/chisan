@@ -302,10 +302,35 @@ account smoke check. Accounts are not active again until that second deployment
 is serving traffic. Do not attempt a binary-first deploy with accounts enabled:
 its build must fail closed while `0005` is unapplied.
 
-GitHub triggers the initial Vercel Production build from `main`; do not duplicate
-that initial deployment manually. A verified configuration change is the
-exception: Vercel environment changes apply only to new deployments, so each
-freeze or reactivation above requires a subsequent deployment even when the
+### Current operating mode: local development
+
+Develop and check the site locally with `pnpm dev`. A requested "push" means
+reviewing, validating, committing and synchronizing the authorized work with
+GitHub, without publishing the site. `vercel.json` sets
+`git.deploymentEnabled: false` to disable automatic Git deployments for all
+branches carrying this configuration. Existing branches must include this
+setting before they are pushed. GitHub CI continues to validate changes.
+See [Vercel's Git configuration](https://vercel.com/docs/project-configuration/git-configuration#turning-off-all-automatic-deployments).
+
+Codex, Claude and Gemini use the same repository contracts and local checks.
+Coordinate overlapping edits as usual; separate running checkouts need separate
+server ports. Agents running elsewhere need their own checkout and server:
+`localhost` always refers to the machine running the client. Local account and
+payment tests still require isolated non-Production credentials, as specified
+in the environment contract above.
+
+The Git deployment switch does not prevent manual CLI deployments or deploy
+hooks. Do not use those paths unless public deployment is explicitly requested.
+Changing the hosting plan does not authorize publication or restore automatic
+deployments. When publication resumes, review the accumulated changes and run
+the release preflight. A requested manual deployment can keep this switch off;
+to restore automatic Git deployments, remove the `git.deploymentEnabled: false`
+setting and update this operating mode, `AGENTS.md` and `README.md` together.
+That push can trigger a Production build from `main`; do not duplicate it
+manually. Verify the deployed commit, `READY` state and smoke checks.
+
+Vercel environment changes apply only to new deployments, so each freeze or
+reactivation above requires a subsequent authorized deployment even when the
 commit is unchanged. The build asserts migration compatibility and fails closed
 when accounts are enabled against an outdated schema.
 
@@ -315,8 +340,8 @@ production commit, use `vercel deploy --prod --force` with the existing project
 link, then verify the new deployment is `READY` and serves the production
 domain. Keep the normal build and database compatibility checks enabled.
 
-Every requested push still publishes the complete committed history to GitHub.
-`scripts/vercel-ignore-build.mjs` only suppresses the Vercel build when every
+When automatic Git deployments are enabled, `scripts/vercel-ignore-build.mjs`
+only suppresses the Vercel build when every
 changed file is deployment-neutral: repository documentation, country agent
 guides, editorial evidence, Markdown design records, GitHub workflow files or
 test-only scripts. Any public catalog row or sidecar, image, application source,

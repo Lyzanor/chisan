@@ -80,7 +80,10 @@ permissions. [The content contract](docs/PRODUCER_CONTENT.md) includes an exampl
 
 ## Release
 
-Pushing `main` triggers Vercel production deployment. Keep unrelated work out of
-a release and follow [preflight and smoke checks](docs/OPERATIONS.md).
+Development and site checks currently run locally. Pushing `main` synchronizes
+reviewed work with GitHub and runs CI; automatic Vercel deployments are disabled.
+Public deployment is a separate, explicit action. Follow
+[the operating mode, reactivation steps and release checks](docs/OPERATIONS.md)
+when resuming publication.
 Producer and selection QR behavior is documented in the
 [account contract](docs/ACCOUNT_SYSTEM.md#public-user-profiles).
