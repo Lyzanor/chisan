@@ -60,35 +60,28 @@ test("selection QR journey rechecks the exact account, current selection and ent
       .where(eq(users.id, account.id));
     assert.equal(await service(input), "selection_empty");
     await db.insert(favorites).values([
-      { userId: account.id, country: "es", producerId: 1 },
       {
         userId: account.id,
         country: "es",
         producerId: 999,
-        showOnPublicProfile: true,
       },
       {
         userId: account.id,
         country: "ar",
         producerId: 2,
-        showOnPublicProfile: true,
       },
       {
         userId: other.id,
         country: "es",
         producerId: 2,
-        showOnPublicProfile: true,
       },
     ]);
     assert.equal(
       await service(input),
       "selection_empty",
-      "private, retired, standby and another account's favorites do not qualify",
+      "retired, standby and another account's favorites do not qualify",
     );
-    await db
-      .update(favorites)
-      .set({ showOnPublicProfile: true })
-      .where(eq(favorites.producerId, 1));
+    await db.insert(favorites).values({ userId: account.id, country: "es", producerId: 1 });
     const selected = [{ country: "es", producerId: 1 }];
     const revision = selectionPreviewRevision(account, selected);
     assert.equal(await service(input), "preview_changed");
@@ -121,13 +114,13 @@ test("selection QR journey rechecks the exact account, current selection and ent
       .where(activeUserProfilePremiumEntitlementCondition(account.id));
     assert.equal(isProfileQrEnabled(active.metadata), true);
     assert.equal(active.metadata.preserved, true);
-    const [privateFavorite] = await db
+    const [otherFavorite] = await db
       .select()
       .from(favorites)
       .where(eq(favorites.userId, other.id));
     assert.equal(
-      privateFavorite.showOnPublicProfile,
-      true,
+      otherFavorite.producerId,
+      2,
       "another account's selection is unchanged",
     );
     await db

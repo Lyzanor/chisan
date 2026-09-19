@@ -2,7 +2,6 @@ import { desc, eq } from "drizzle-orm";
 import Link from "next/link";
 
 import {
-  setFavoritePublicVisibilityAction,
   toggleFavoriteAction,
 } from "@/app/(application)/cuenta/actions";
 import {
@@ -49,8 +48,8 @@ export default async function FollowingPage({
         <div>
           <h2>Productores que sigues</h2>
           <p>
-            Lee sus novedades en tu timeline. Seguir es privado; tú decides
-            cuáles forman parte de tu selección pública.
+            Seguir es público: tu nombre y foto aparecen entre los seguidores del productor.
+            Los productores que sigues forman parte de tu perfil y puedes leer sus novedades.
           </p>
         </div>
         <div className="account-inline-actions">
@@ -112,19 +111,6 @@ export default async function FollowingPage({
                   </p>
                 </div>
                 <div className="account-inline-actions">
-                  <span
-                    className={`account-status ${
-                      favorite.showOnPublicProfile && publicProfileVisible
-                        ? "account-status--approved"
-                        : "account-status--pending"
-                    }`}
-                  >
-                    {favorite.showOnPublicProfile
-                      ? publicProfileVisible
-                        ? "Visible públicamente"
-                        : "Seleccionado; página privada"
-                      : "Privado"}
-                  </span>
                   {producer ? (
                     <Link
                       href={buildAccountProducerHref(
@@ -136,36 +122,6 @@ export default async function FollowingPage({
                       Abrir perfil
                     </Link>
                   ) : null}
-                  <form action={setFavoritePublicVisibilityAction}>
-                    <input
-                      type="hidden"
-                      name="country"
-                      value={favorite.country}
-                    />
-                    <input
-                      type="hidden"
-                      name="producerId"
-                      value={favorite.producerId}
-                    />
-                    <input
-                      type="hidden"
-                      name="returnTo"
-                      value="/cuenta/siguiendo"
-                    />
-                    <input
-                      type="hidden"
-                      name="show"
-                      value={favorite.showOnPublicProfile ? "no" : "yes"}
-                    />
-                    <button
-                      type="submit"
-                      className="account-button account-button--secondary"
-                    >
-                      {favorite.showOnPublicProfile
-                        ? "Quitar de la selección"
-                        : "Añadir a la selección"}
-                    </button>
-                  </form>
                   <form action={toggleFavoriteAction}>
                     <input type="hidden" name="following" value="no" />
                     <input

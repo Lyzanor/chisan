@@ -12,7 +12,7 @@ import { selectionShelfEnabled, ShelfError, shelfStatusLabels, shelfSourceMessag
 import { createSelectionShelfService, type ShelfCatalog } from "./service";
 
 const DAY = 86_400_000;
-const help = "Envía una foto de tu estantería. Chisan comprobará primero que la foto es adecuada. Tras admitirla, identificará los productos con IA y revisará los puntos antes de publicarla. ESTADO consulta el último envío; CANCELAR retira la foto pendiente; DESCONECTAR desvincula el número.";
+const help = "Envía una foto de tu estantería. Chisan identificará los productos y preparará una propuesta con sus productores del catálogo. Podrás desmarcar y publicar desde tu cuenta. ESTADO consulta el último envío; CANCELAR retira la foto pendiente; DESCONECTAR desvincula el número.";
 export async function createShelfWhatsAppLink(database: Database, userId: string) {
   if (!selectionShelfEnabled()) throw new ShelfError("access");
   return database.transaction(async (tx) => {
@@ -63,7 +63,7 @@ export function createShelfWhatsAppHandler(deps: { catalog: ShelfCatalog; image:
       return "WhatsApp desconectado. Tus fotos enviadas se conservan; puedes retirarlas o volver a vincular el número desde tu cuenta.";
     }
     // Nested service transactions use savepoints on this same connection. The
-    // photo and inbox receipt commit together. Only staff admission queues AI.
+    // photo and inbox receipt commit together. Inference starts after commit; publication belongs to the owner.
     const service = createSelectionShelfService({ database: tx as unknown as Database, catalog: deps.catalog, enabled: selectionShelfEnabled });
     if (command === "ESTADO") {
       const [latest] = await service.ownerStatus(link.userId);
@@ -71,7 +71,7 @@ export function createShelfWhatsAppHandler(deps: { catalog: ShelfCatalog; image:
     }
     if (command === "CANCELAR") {
       const records = await service.ownerStatus(link.userId);
-      const pending = records.find((record) => ["received", "queued", "processing", "review"].includes(record.status));
+      const pending = records.find((record) => ["received", "queued", "processing", "review", "ready"].includes(record.status));
       if (pending) await service.withdraw(link.userId, pending.id);
       return pending ? "Foto pendiente retirada. La foto ya publicada sigue visible." : "No hay ninguna foto pendiente. Puedes retirar la publicada desde tu cuenta.";
     }
@@ -86,10 +86,9 @@ export function createShelfWhatsAppHandler(deps: { catalog: ShelfCatalog; image:
     }
     try {
       await service.submit(link.userId, image, "whatsapp", message.id);
-      return "Foto recibida, pendiente de admisión por Chisan. Todavía no se ha enviado a la IA. Tras admitirla, identificaremos los productos y revisaremos los puntos antes de publicarla. Tu foto publicada seguirá visible hasta que la nueva esté lista.";
+      return `Foto recibida. Prepararemos una propuesta con los productores identificados. Revisa, desmarca y publica desde ${getAppUrl()}/cuenta/estanteria. Tu foto publicada seguirá visible hasta que publiques la nueva.`;
     } catch (error) {
       if (error instanceof ShelfError) {
-        if (error.code === "selection") return `Elige primero qué productores compartir en ${getAppUrl()}/cuenta/siguiendo (máximo 200). Después envía la foto de nuevo.`;
         if (error.code === "quota") return "Has alcanzado el límite de 10 fotos en 24 horas. Prueba mañana.";
         return "Tu acceso ha cambiado. Revísalo desde tu cuenta de Chisan.";
       }

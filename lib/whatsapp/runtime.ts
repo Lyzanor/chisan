@@ -41,6 +41,6 @@ async function runInbox() {
     image: (image) => downloadImage(image, config),
     send: (sender, reply) => sendReply(sender, reply, config),
   });
-  // Recover one already-admitted job. Receiving a photo never authorizes AI.
+  // One shelf proposal per invocation; duplicate receipts cannot repeat inference.
   await runSelectionShelfQueue();
 }

@@ -6,10 +6,11 @@ import { selectionShelfEnabled } from "@/lib/selection-shelf/policy";
 import { selectionShelfService } from "@/lib/selection-shelf/server";
 import { ShelfReview } from "@/components/selection-shelf/shelf-review";
 
-export default async function ShelfReviewPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ShelfReviewPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ q?: string }> }) {
   const reviewer = await requireStaffAccount();
   const { id } = await params;
   if (!selectionShelfEnabled() || !z.uuid().safeParse(id).success) notFound();
-  const detail = await selectionShelfService().reviewDetail(reviewer.id, id);
-  return <div className="admin-content"><Link href="/admin/estanterias">Back to shelf photos</Link><h2>Review shelf photo</h2><ShelfReview key={`${detail.id}:${detail.version}`} detail={detail} /></div>;
+  const query = (await searchParams).q?.slice(0, 100) ?? "";
+  const detail = await selectionShelfService().reviewDetail(reviewer.id, id, query);
+  return <div className="admin-content"><Link href="/admin/estanterias">Back to shelf photos</Link><h2>Review shelf photo</h2><form className="account-form"><label>Search approved producers<input name="q" maxLength={100} defaultValue={query} /></label><button className="account-button">Search catalog</button><p>Save your review before searching. Up to 50 matches appear in the producer selector.</p></form><ShelfReview key={`${detail.id}:${detail.version}`} detail={detail} /></div>;
 }

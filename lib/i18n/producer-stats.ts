@@ -2,7 +2,7 @@ import type { Locale } from "./locales";
 
 const en = {
   favorites: "Followers",
-  interest: "Current followers with active accounts, including private follows. An expression of interest, not orders or purchase commitments. No private identities are disclosed.",
+  interest: "Current followers with active accounts. An expression of interest, not orders or purchase commitments.",
   title: "Profile statistics",
   link: "Statistics",
   premium: "Included in your premium profile",
@@ -35,7 +35,7 @@ const en = {
 type Labels = typeof en;
 const es: Labels = {
   favorites: "Seguidores",
-  interest: "Seguidores actuales con cuentas activas, incluidos los seguimientos privados. Indican interés, no pedidos ni compromisos de compra. No se revelan identidades privadas.",
+  interest: "Seguidores actuales con cuentas activas. Indican interés, no pedidos ni compromisos de compra.",
   title: "Estadísticas de la ficha",
   link: "Estadísticas",
   premium: "Incluido en tu perfil premium",
@@ -67,7 +67,7 @@ const es: Labels = {
 };
 const ca: Labels = {
   favorites: "Seguidors",
-  interest: "Seguidors actuals amb comptes actius, inclosos els seguiments privats. Indiquen interès, no comandes ni compromisos de compra. No es revelen identitats privades.",
+  interest: "Seguidors actuals amb comptes actius. Indiquen interès, no comandes ni compromisos de compra.",
   title: "Estadístiques de la fitxa",
   link: "Estadístiques",
   premium: "Inclòs en el teu perfil premium",

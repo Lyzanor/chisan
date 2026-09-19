@@ -25,10 +25,9 @@ export async function listProducerFavoriteSupporters(
     eq(favorites.country, identity.country),
     eq(favorites.producerId, identity.producerId),
     eq(users.status, "active"),
-    eq(userPresentation.favoritesAttributionEnabled, true),
   );
-  // One statement keeps count and page on the same snapshot. Private accounts
-  // explicitly opting in appear by name/photo, never by private/unlisted handle.
+  // Following is public. Private/unlisted profile handles remain undisclosed.
+  // A missing presentation row means a text-only supporter, not an opt-out.
   const results = await db
     .select({
       name: users.displayName,
@@ -41,7 +40,7 @@ export async function listProducerFavoriteSupporters(
     })
     .from(favorites)
     .innerJoin(users, eq(users.id, favorites.userId))
-    .innerJoin(userPresentation, eq(userPresentation.userId, users.id))
+    .leftJoin(userPresentation, eq(userPresentation.userId, users.id))
     .where(condition)
     .orderBy(desc(favorites.createdAt), users.id)
     .limit(FAVORITE_SUPPORTERS_PAGE_SIZE)

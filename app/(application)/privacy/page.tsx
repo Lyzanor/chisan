@@ -127,12 +127,11 @@ export default function PrivacyPage() {
           Puedes añadir una foto de perfil; si accedes con Google, su imagen puede
           utilizarse como foto inicial. Guardamos una copia reducida sin los
           metadatos originales, que puedes sustituir o quitar desde tu perfil.
-          La foto se muestra en tu perfil cuando lo haces visible. Si activas
-          «Seguidores de este productor», tu nombre y foto aparecerán en todos los
-          productores que sigas, incluidos tus antiguos favoritos. Esta opción
-          está desactivada por defecto y puedes retirarla en cualquier momento.
-          Solo enlazamos tu mapa si el perfil es público; la selección de ese mapa
-          sigue dependiendo de los productores que elijas compartir.
+          Seguir a un productor es público: tu nombre y foto aparecen entre sus
+          seguidores, incluidos tus antiguos favoritos. Todos los productores que
+          sigues forman parte de tu selección. Puedes dejar de seguirlos cuando
+          quieras. La visibilidad del perfil controla si se puede abrir tu mapa;
+          solo lo enlazamos desde la lista de seguidores si el perfil es público.
         </p>
         <h2>Publicidad programática</h2>
         <p>

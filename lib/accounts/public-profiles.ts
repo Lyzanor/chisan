@@ -95,12 +95,7 @@ export async function listPublicProfileFavoriteIdentities(
   return getDatabase()
     .select({ country: favorites.country, producerId: favorites.producerId })
     .from(favorites)
-    .where(
-      and(
-        eq(favorites.userId, userId),
-        eq(favorites.showOnPublicProfile, true),
-      ),
-    )
+    .where(eq(favorites.userId, userId))
     .orderBy(
       desc(favorites.createdAt),
       favorites.country,

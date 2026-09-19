@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { z } from "zod";
+import { contentItemIdSchema as id } from "./content-identity";
 
 import { publicContentUrl } from "./public-content-url";
 export { publicContentUrl } from "./public-content-url";
@@ -15,10 +16,6 @@ export const PRODUCER_CONTENT_LIMITS = {
   people: 3,
   bytes: 1_048_576,
 } as const;
-const id = z
-  .string()
-  .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
-  .max(80);
 const text = (maximum: number) =>
   z
     .string()

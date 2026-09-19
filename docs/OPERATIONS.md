@@ -133,8 +133,10 @@ the local diff review, semantic review or repository gate.
    secrets and reconciliation path remain operational. Check names, modes and
    scopes without printing values.
 6. For a schema change, take a recoverable database backup and prove the
-   migration in an isolated database before touching Production. Migrations must
-   be expand-first and backward compatible; a build never applies DDL.
+   migration in an isolated database before touching Production. Default to
+   expand-first, backward-compatible migrations; a contraction needs an explicit
+   migration and recovery design, such as `0005` and `0020` below. A build never
+   applies DDL.
 7. Exercise the public change and disabled-account fallback in Preview. Exercise
    account writes there only after proving its resources are isolated from
    Production; otherwise use a purpose-built isolated test environment.
@@ -470,6 +472,21 @@ Use an isolated account environment to verify favorite selection, private previe
 visibility, activation, download, producer navigation and sharing revocation.
 Existing printed `/u/<public_handle>` and producer URLs keep their destinations.
 Do not test these writes using Production credentials in Local or Preview.
+
+## Public follows and shelf proposals migration
+
+Migration `0020_public_follows_shelf_proposals` removes per-favorite sharing and
+account attribution flags. Existing follows become public, preserving keys and
+timestamps; whole-profile visibility, avatars and published shelf photos remain.
+Older pending shelf work moves to manual review without new paid AI attempts.
+This is a coordinated schema/code change: back up first, stop old account workers,
+apply with the migration owner and start matching code before reopening account
+traffic. The old application reads columns that no longer exist. Recovery needs
+the preflight backup and matching old code; re-adding default columns cannot
+recover former privacy preferences. Run `db:assert-current` and verify legacy
+follows, private/unlisted profile routes and the owner publication transaction.
+Test new-photo analysis with a deliberately bounded shared allowance. Do not
+raise/reset the existing ledger or activate public deployment implicitly.
 
 ## Production smoke check
 
@@ -826,7 +843,7 @@ Before releasing account photos and producer favorite attribution:
    public production access; test users alone do not establish public readiness.
 4. Verify `/registro` and `/acceso` both offer Google, complete a real Google
    login, and confirm the account retains its internal identity and favorites.
-   Verify first-photo import, upload, replacement, removal and attribution opt-in.
+   Verify first-photo import, upload, replacement, removal and public follower attribution.
    Confirm private/unlisted handles do not leak through producer rosters.
 
 Clerk controls the provider's availability; deploying the frontend alone does

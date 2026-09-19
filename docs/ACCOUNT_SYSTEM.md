@@ -16,7 +16,7 @@ the producer catalog; admission still follows [Editorial](EDITORIAL.md).
 
 | Family | Free | Pro additions |
 | --- | --- | --- |
-| User | Explore the map, save/follow producers, read their available updates and explicitly share a basic selection. Map discovery and public producer contact also remain available without registration. | Business profile, richer image-led presentation of the selected favorites, a printable selection QR for the venue (for example, “nuestros productores”), and access to the private B2B enquiry channel. |
+| User | Explore the map, save/follow producers, read their available updates and share a basic selection. Map discovery and public producer contact also remain available without registration. | Business profile, richer image-led presentation of the selected favorites, a printable selection QR for the venue (for example, “nuestros productores”), and access to the private B2B enquiry channel. |
 | Producer | Reviewed basic catalog profile with location, contact details and photos; free ownership verification and, once authorized, proposals to maintain those facts and the standalone gallery. All ordinary User capabilities remain available to the account. | Reviewed product catalog with recorded prices and external purchase links, incoming B2B requests and conversations, private statistics, printable producer QR, expanded profile content and access to the producer's WhatsApp assistant. |
 
 The free experience must be useful on its own. Recruiting producers, verifying
@@ -81,8 +81,8 @@ without a payment service, AI provider or WhatsApp connection.
 
 ### Boundaries of the Pro offer
 
-Favorites/follows stay private until explicitly selected for sharing. User Pro
-adds business presentation and a richer visual selection; the basic shareable
+Every favorite/follow is public and belongs to the account selection. Whole-profile
+visibility still controls its route. User Pro adds business presentation and a richer visual selection; the basic shareable
 selection remains free. A venue QR represents exactly the selected producers,
 resolved from the canonical catalog. Its “nuestros productores” context is the
 account's statement, not Chisan verification of a supply relationship, menu or
@@ -161,15 +161,15 @@ The user-facing favorite is now a producer follow. `/cuenta/siguiendo` manages
 these relationships; `/cuenta/favoritos` remains a redirect for existing links.
 The existing `favorites` table, action entry points and attribution API keep
 their compatibility names. Every existing relation becomes a follow in place,
-preserving its creation time, public-selection opt-in and account-level avatar
-attribution preference. No data migration or automatic public sharing occurs.
+preserving its identity and creation time. Migration `0020` removes the per-favorite
+visibility and account attribution flags: all old and new follows are public.
 In the older contracts below, "favorite" refers to this same stored relation.
 
 Following and unfollowing submit an explicit desired state, making retries
 idempotent. Mutations lock and recheck the active account and share the existing
 selection lock. Unfollowing also removes that producer from the account's
 public selection. It works for retired producers; following a missing producer
-fails. Following again starts with public selection disabled.
+fails. Following again immediately includes the producer in the selection.
 
 `/cuenta/novedades` is a private, server-rendered read model of the current
 account's follows. It merges two dated sources:
@@ -205,9 +205,9 @@ record do not acquire a dated event, but their current message remains readable.
 Premium expiry hides producer updates and messages; ownership notices remain.
 
 The catalog remains available during account-storage incidents. Timeline errors
-offer a retry and do not claim that the account has no follows. The existing
-public attribution opt-in applies to the renamed follower disclosure; private
-identities never enter the timeline or the public selection automatically.
+offer a retry and do not claim that the account has no follows. Every follow appears in the producer follower roster with public display name
+and avatar. Only public profile handles are linked; email, account IDs and
+other private identity data remain excluded.
 
 The optional [WhatsApp assistant](WHATSAPP_ASSISTANT.md) binds a sender to an
 authenticated, authorized producer account and creates ordinary reviewed product
@@ -267,8 +267,8 @@ editorial operator materializes into Git.
 
 ## Current scope
 
-The production release includes local profiles, favorites, opt-in public user
-profiles with explicitly shared favorites, manual ownership claims, owner
+Account features include local profiles, public follows, user profiles
+containing those follows, manual ownership claims, owner
 memberships, staff review, reviewed producer-change requests, community
 suggestions for unclaimed producers, producer-scoped expanded-profile
 entitlements and an admin-only gift workflow.
@@ -335,16 +335,16 @@ because its destination intentionally returns `404`. The producer-scoped
 expanded-profile purchase does not grant this user entitlement, and there is no
 self-service user-profile premium purchase flow in the current release.
 
-Favorites remain private by default. A favorite appears on the public profile
-only after the account explicitly enables `show_on_public_profile` for that
-exact `(country, producer_id)`. Enabling a profile never bulk-publishes existing
-or future favorites. Removing the favorite removes it from the public page.
-Public rendering resolves every enabled key against the current CSV, omits
-retired rows and derives the current area, slug, coordinates and localized URL
-without persisting those values in PostgreSQL.
+Every favorite automatically appears in the account selection, including legacy
+favorites previously marked private. There is no per-favorite visibility switch.
+Removing the favorite removes it from the public page and producer follower roster.
+Whole-profile visibility still controls whether `/u/<handle>` can be opened or
+indexed. Public rendering resolves every saved key against the current CSV,
+omits retired rows and derives the current area, slug, coordinates and localized
+URL without persisting those values in PostgreSQL.
 
 The public page is a read model over those keys, not a second persistence
-model. The account domain owns visibility and which favorites are shared; the
+model. The account domain owns whole-profile visibility and favorite membership; the
 shared renderer owns the list-and-map composition, current producer links,
 empty state and accessible marker labels. The list follows the area-map content
 pattern and includes the current catalog description. It preserves favorite
@@ -360,7 +360,7 @@ name/handle and neutral selection copy. They do not classify a business or
 certify a supply relationship, stock, endorsement or verification.
 
 `/cuenta/seleccion` requires the current active account and previews only that
-account's explicit selection, even while its public visibility is private. It
+account's favorites, even while its public visibility is private. It
 uses the same catalog resolver and map/list renderer as `/u/<public_handle>`;
 private preview links and highlight state stay on the authenticated route.
 Activation requires a non-private handle, active account Premium, an explicit
@@ -887,9 +887,8 @@ Clerk subject to one internal UUID; it never links accounts by email itself.
 Production Google OAuth requires the application's own Google client credentials
 in Clerk (see the Operations setup). Credentials never enter the catalog or Git.
 
-`user_presentation` owns one bounded avatar and a separate
-`favorites_attribution_enabled` opt-in for each internal user. Missing rows mean
-no photo and no attribution. Uploaded JPG, PNG and WebP images are decoded,
+`user_presentation` owns one bounded avatar for each internal user. Missing rows
+mean no photo; they do not hide the user from producer follower rosters. Uploaded JPG, PNG and WebP images are decoded,
 oriented, cropped to 256 × 256 WebP and stripped of original metadata. Inputs are
 limited to 4 MiB and 25 million pixels, stored output to 128 KiB, and uploads to
 20 attempts per account per day. A replacement or removal rotates the opaque
@@ -901,98 +900,101 @@ or undo its removal. Imports accept only HTTPS Clerk/Google image hosts, bounded
 responses and no redirects. The local bytes are canonical; visitors never load
 an external provider's tracking URL. Provider import failure does not fail login.
 
-The profile editor explains and saves attribution independently of profile
-visibility and the per-favorite public-selection flag. Opting in publishes the
-user's display name and photo beside **all current and future favorites**. It
-does not add any producer to their public selection. This is an explicit
-exception to the default private favorite relationship, not a bulk migration of
-existing users. The producer page and paginated read endpoint count only active
-accounts that opted in. Accounts without public profiles can appear without a
-link; only `public` handles are linked. `unlisted` handles remain undiscoverable
-from the roster. UUIDs, email addresses, external subjects and private counts
-never enter that response.
+Following publishes the user's display name and avatar beside that producer,
+including existing follows. No separate attribution switch remains. The producer
+page and paginated read endpoint count active accounts with that favorite, even
+without a presentation row. Only `public` handles are linked; private and
+`unlisted` profiles remain undiscoverable from the roster. UUIDs, email addresses,
+external subjects and private account fields never enter the response.
 
 Avatar reads require an active account and either its owner's current session,
-attribution opt-in or a visible public/unlisted profile. Responses use private
-no-store caching and recheck visibility on every request. Turning attribution
-off, suspending an account or removing a favorite removes its roster entry on
-the next read. Already displayed images cannot be recalled from a visitor's
-screen. A database outage omits this optional producer section while the CSV
-catalog remains available. Public selections display the same local avatar and
-retain their existing explicit membership and map behavior.
+at least one follow, or a visible public/unlisted profile. Responses use private
+no-store caching and recheck visibility on every request. Suspending an account
+or removing a favorite removes its roster entry on the next read. Removing the
+last follow makes a private profile's avatar private again. Already displayed
+images cannot be recalled. A database outage omits this optional producer
+section while the CSV catalog remains available.
 
 ## Producer favorite interest
 
 The premium owner's statistics show the current count of favorites belonging to
-active accounts for that exact producer, including private saves. This scalar
-aggregate exposes no private identities and is not a count of orders, prospective
+active accounts for that exact producer. This scalar aggregate exposes no private
+account data and is not a count of orders, prospective
 buyers or notification subscribers. Removing a favorite or deactivating an
 account reduces the count. The statistics query rechecks active owner and exact
 producer premium access in the same statement; visitor totals are unaffected by
-the favorite aggregation. Public supporter attribution retains its separate opt-in.
+the favorite aggregation. The public roster uses the same active-follow relationship.
 
 ## Shelf photos in shared selections
 
 `CHISAN_SELECTION_SHELF_ENABLED` gates an optional photo below the existing
-`/u/<handle>` map. Apply migrations through `0019_selection_shelf_admission`
-before enabling it.
-This is account-owned presentation in PostgreSQL, like selection preferences;
-it does not register a shop as a producer or change CSV/content facts. Private
-business profile data is never reused as public location or presentation.
+`/u/<handle>` map. Apply migrations through `0020_public_follows_shelf_proposals`
+before enabling it. This is account-owned presentation in PostgreSQL, like
+favorites; it does not register a shop or change CSV/content facts. Private
+business data is never reused as public location or presentation.
 
 The owner sends a JPEG/PNG/WebP through `/cuenta/estanteria`, linked from the
-selection preview and premium producer editor, or connects the dedicated shelf
-mode of WhatsApp. Consent covers provider processing and publication **after
-Chisan review**. The owner need not identify products or edit points. Web input
-is limited to 5 MiB, 24 megapixels, 10 attempts per rolling 24 hours; normalization
-strips metadata, corrects orientation and stores at most 2400px / 1.5 MiB WebP.
-WhatsApp uses its existing bounded JPEG/PNG media adapter first.
+selection preview and premium producer editor, or the dedicated WhatsApp shelf
+mode. No favorites need to exist first. Consent covers provider processing and
+preparing a proposal that the owner chooses to publish. Web input is bounded to
+5 MiB, 24 megapixels and 10 attempts per rolling 24 hours; normalization strips
+metadata, corrects orientation and stores at most 2400px / 1.5 MiB WebP.
+WhatsApp first uses its existing bounded JPEG/PNG media adapter.
 
-`lib/selection-shelf/access.ts` is the isolated capability boundary: today an
-active user premium entitlement or an active membership in a premium producer
-qualifies. This is a bridge to the separately owned User/Producer Pro model,
-not a new account kind or an implicit entitlement grant. Server mutations and
-public reads recheck access. Removal remains available after premium expiry.
+`lib/selection-shelf/access.ts` owns the capability: an active user premium
+entitlement or active membership in a premium producer qualifies. This remains
+a bridge to the separately owned User/Producer Pro model, not an entitlement
+grant. Mutations and public reads recheck access. Removal works after expiry.
 
-Only explicitly shared favorites resolve into identification candidates (at
-most 200), with names and reviewed product names from the catalog. Private,
-retired and unpublished-country favorites cannot become matches. AI returns
-normalized point centres, short label text and an allowed producer key or null;
-no stock, exact product SKU or provenance facts are inferred. Every upload starts
-as `received` in `/admin/estanterias`, without an AI request or allowance charge.
-An active reviewer/admin must admit each suitable photo; `admit` records that
-person in audit, moves it to `queued` and starts one bounded AI attempt. Uploads,
-replacements, duplicates and saving manual points cannot bypass admission.
-Failed/budget-blocked analysis remains available for manual review. Reviewers
-can add, move, match and remove points; save, reject, request another analysis
-or publish an admitted photo. A version check rejects stale admission,
-review and analysis results. Publication
-requires a currently visible profile, an active entitlement and at least one
-valid point; AI alone cannot publish. Unknown detections remain private.
+Each new photo enters `queued` and schedules one metered AI attempt. The AI
+transcribes visible producer/product names, label text and normalized point
+centres without receiving existing favorites or catalog IDs. The domain matches
+those observations against all currently published CSV producers and their
+reviewed products. Name normalization tolerates accents, punctuation and common
+producer prefixes; only unambiguous matches become selectable. A product ID is
+attached only for a matching existing reviewed product. Ambiguous, unreadable
+or absent names remain private unmatched observations. No nearest-name guesses,
+new catalog identities, stock or provenance claims are published.
+
+A successful match creates a `ready` proposal in the account, showing the map,
+photo and checked producers. The owner can uncheck any producer, complete the
+permanent handle and canonical area/municipality, then publish. In one locked
+transaction Chisan rechecks ownership, version, active capability, catalog
+identities/products and profile inputs; inserts selected favorites, removes
+existing favorites explicitly unchecked in this proposal, preserves all other
+favorites and publishes the image. A private whole profile becomes public with
+the owner's explicit confirmation; unlisted/public visibility is preserved.
+AI never changes favorites or publishes by itself.
+
+No-match, failed, interrupted or budget-blocked attempts go to `review` in
+`/admin/estanterias`. Active reviewers/admins can search the approved catalog,
+place/correct points, save, reject, prepare a `ready` proposal or explicitly
+request another metered analysis. Staff approval does not publish or add
+favorites on behalf of the owner. Version checks fence stale review and AI
+results. There are no automatic retries of paid failures.
 
 `selection_shelves` permits one pending and one published image per account.
 A replacement supersedes pending work while the last published image stays
-visible until replacement approval. Image bytes, dimensions, ownership and
-channel receipt are immutable. Source message IDs are namespaced by adapter;
-source keys do not encode an exhaustive provider/channel list. Uploading an
-identical current image does not repeat inference. Rejected and superseded
-images older than 30 days are removed on that owner's next upload; active and
-published images are retained until withdrawal or ordinary account retention.
-Migration `0019` returns all older pending photos to `received`, preserving
-points but invalidating running workers so each photo requires staff admission.
+visible until the owner publishes another. Image bytes, dimensions, ownership
+and channel receipt are immutable. Message IDs are namespaced by adapter.
+Identical current images do not repeat inference. Rejected/superseded images
+older than 30 days are removed on the owner's next upload. Migration `0020`
+preserves old favorites and timestamps, drops their obsolete privacy flags,
+and returns older pending photos to manual review while fencing in-flight
+results. It never schedules old photos or changes published images.
 
-`/api/selection-shelf/<id>/image` rechecks visibility and serves `private,
-no-store` bytes; Next image optimization is bypassed. Owners and active staff
-can inspect private inputs. Public viewers receive only the current reviewed
-image and points for currently shared producers. Private/suspended accounts,
-expired premium, withdrawn images and empty/over-limit selections have no public
-shelf. The underlying basic selection keeps its existing behavior.
+`/api/selection-shelf/<id>/image` rechecks access with private no-store caching;
+Next image optimization is bypassed. Owners and active staff can inspect private
+inputs. Public viewers receive only the current published photo, whose points
+must still belong to current favorites and catalog producers. Private/suspended
+accounts, expired premium, withdrawal or an empty resolved selection hide it.
 
-Map and photo share the existing `highlight=country:id` state; all points for a
-producer highlight together. Photo zoom and textual producer links remain
-available on phones. The blue visitor marker uses existing transient browser
-geolocation and permission; it is not an inferred shop address. A reviewed photo
-is dated and explicitly does not promise current stock.
+Map and photo share `highlight=country:id`; all points for a producer highlight
+together. Photo zoom and textual producer links remain available on phones.
+The blue visitor marker uses transient browser geolocation and permission,
+not an inferred shop address. The publication date and snapshot copy do not
+promise current stock. Real-photo recognition quality still needs a controlled
+pilot; fake-provider tests verify workflow and authority, not accuracy.
 
 ## Homepage community selection
 

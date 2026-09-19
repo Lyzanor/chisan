@@ -333,3 +333,31 @@ manual point exists; the owner sees "Pendiente de admisión por Chisan".
   anonymous visitor to sign-in; the Clerk test-instance form rendered. The
   authenticated photo flow remains for the user's test. No public deployment
   was performed.
+
+## 2026-09-19 — Public follows and owner shelf proposals
+
+Checked the proposal, upload and supporting review UI with disposable local
+fixtures at 390×844 first and 1440×1000. Both widths had no horizontal overflow.
+The fixtures used existing local imagery and simulated matches, without account
+writes or paid inference, and were removed after verification.
+
+- Map and photo select each other. Unchecking a producer removes its markers
+  and points from the preview; clearing all choices disables publication.
+- Selected producers, the permanent profile handle and canonical municipality
+  appear in one owner confirmation form. A failed publication keeps choices and
+  inputs and restores the button. Private-profile publication is explained.
+- Ready proposals can be published by the owner. Review state has no publish
+  control. Staff can prepare a proposal and resolve uncertain labels; their
+  screen no longer offers admission or publication on behalf of an owner.
+- Following is public. Per-favorite sharing and account attribution switches
+  are removed, with aligned onboarding, profile and privacy text.
+- Existing development WebMCP schema-serialization notices remain unrelated;
+  no shelf-specific rendering error was observed. Recognition quality and a
+  real authenticated photo upload remain for the user's one-call local pilot.
+- `pnpm verify:ai` passed, including eleven shelf tests and the existing account,
+  WhatsApp, catalog and behavior suites. The migration preserves legacy follows
+  and private/unlisted whole-profile settings in isolated database tests.
+- Applied migration `0020` only to the verified local PostgreSQL instance after
+  validating a recoverable backup. Its runtime registry matches the repository;
+  the shared allowance remains one attempt, with zero consumed. WhatsApp stays
+  disabled locally. No public deployment or paid inference was performed.

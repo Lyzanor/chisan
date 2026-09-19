@@ -30,6 +30,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
         <p>
           Cada cuenta comienza con un perfil de usuario. Si envías una solicitud de propiedad de un productor, tu perfil pasa automáticamente a ser de productor.
         </p>
+        <p>Seguir a un productor es público: tu nombre y foto aparecen entre sus seguidores. Todos los productores que sigas forman parte de tu selección.</p>
         <form action={completeOnboardingAction} className="account-form">
           <label className="account-field">
             <span>Nombre visible</span>

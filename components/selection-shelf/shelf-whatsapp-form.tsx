@@ -6,7 +6,7 @@ import styles from "./shelf.module.css";
 export function ShelfWhatsAppForm({ aiProviderName }: { aiProviderName: string }) {
   const [state, action, busy] = useActionState(linkShelfWhatsApp, {} as LinkState);
   return <form action={action} className="account-form">
-    <label className={styles.consent}><input type="checkbox" name="consent" required /><span>Tengo permiso para usar las fotos que envíe. Autorizo su tratamiento por Meta y {aiProviderName} y su publicación en mi selección tras la revisión de Chisan. Evitaré incluir personas y datos personales.</span></label>
+    <label className={styles.consent}><input type="checkbox" name="consent" required /><span>Tengo permiso para usar las fotos que envíe. Autorizo su tratamiento por Meta y {aiProviderName} y la preparación de una propuesta que revisaré y publicaré desde mi cuenta. Evitaré incluir personas y datos personales.</span></label>
     <p>Esta vinculación dura 30 días y sustituye cualquier vinculación anterior de tu cuenta para enviar novedades o productos. El número quedará dedicado a recibir fotos de tu estantería.</p>
     <button className="account-button" disabled={busy}>{busy ? "Preparando enlace…" : "Vincular WhatsApp a mi estantería"}</button>
     {state.error ? <p role="alert">{state.error}</p> : null}

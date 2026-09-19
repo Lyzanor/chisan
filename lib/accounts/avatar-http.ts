@@ -1,6 +1,6 @@
-import { and, eq, inArray, or } from "drizzle-orm";
+import { and, eq, exists, inArray, or } from "drizzle-orm";
 import type { Database } from "@/lib/db";
-import { userPresentation, users } from "@/lib/db/schema";
+import { favorites, userPresentation, users } from "@/lib/db/schema";
 import {
   AvatarImageError,
   AVATAR_INPUT_BYTES,
@@ -86,7 +86,7 @@ export function createAvatarReadHandler(deps: Dependencies) {
             and(
               identity,
               or(
-                eq(userPresentation.favoritesAttributionEnabled, true),
+                exists(db.select({ userId: favorites.userId }).from(favorites).where(eq(favorites.userId, users.id))),
                 inArray(users.publicProfileVisibility, ["public", "unlisted"]),
                 viewerId ? eq(users.id, viewerId) : undefined,
               ),

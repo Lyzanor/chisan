@@ -5,38 +5,22 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { requireCurrentAccount } from "@/lib/accounts/auth";
-import { updateFavoritesAttribution } from "@/lib/accounts/user-presentation";
 import {
   firstValidationMessage,
   formString,
   publicProfileUpdateSchema,
 } from "@/lib/accounts/input";
-import {
-  normalizeMunicipalityName,
-  parsePublicProfileBaseLocationKey,
-} from "@/lib/accounts/public-profile-location";
+import { resolvePublicProfileBaseLocation } from "@/lib/accounts/public-profile-location.server";
 import {
   isPublicProfileVisible,
   normalizePublicHandle,
   publicHandleProblem,
 } from "@/lib/accounts/public-profile-policy";
-import {
-  findPublishedCountry,
-  listMunicipalitySummaries,
-} from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { auditEvents, users } from "@/lib/db/schema";
 
 import { redirectWithMessage } from "./navigation";
 
-export async function updateFavoritesAttributionAction(formData: FormData): Promise<void> {
-  const account = await requireCurrentAccount("/cuenta/perfil");
-  if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
-  await updateFavoritesAttribution(getDatabase(), account.id, formString(formData, "enabled") === "yes");
-  revalidatePath("/cuenta/perfil");
-  revalidatePath("/", "layout");
-  redirectWithMessage("/cuenta/perfil", "notice", "Visibilidad como seguidor actualizada.");
-}
 export async function completeOnboardingAction(
   formData: FormData,
 ): Promise<void> {
@@ -184,49 +168,8 @@ export async function updatePublicProfileAction(
     );
   }
 
-  const baseLocation = parsePublicProfileBaseLocationKey(
-    parsed.data.baseLocation,
-  );
-  if (!baseLocation) {
-    redirectWithMessage(
-      "/cuenta/perfil",
-      "error",
-      "Elige una zona del catálogo para tu perfil público.",
-    );
-  }
-  const baseCountry = findPublishedCountry(baseLocation.country);
-  const baseArea = baseCountry?.regions
-    .flatMap((region) => region.areas)
-    .find((area) => area.slug === baseLocation.area);
-  if (!baseCountry || !baseArea) {
-    redirectWithMessage(
-      "/cuenta/perfil",
-      "error",
-      "Elige una zona publicada del catálogo para tu perfil público.",
-    );
-  }
-
-  const normalizedMunicipality = normalizeMunicipalityName(
-    parsed.data.baseMunicipality,
-  );
-  const matchingMunicipalities = (
-    await listMunicipalitySummaries(
-      "",
-      Number.MAX_SAFE_INTEGER,
-      baseCountry.slug,
-      baseArea.slug,
-    )
-  ).filter(
-    ({ name }) => normalizeMunicipalityName(name) === normalizedMunicipality,
-  );
-  if (matchingMunicipalities.length !== 1) {
-    redirectWithMessage(
-      "/cuenta/perfil",
-      "error",
-      `Choose a municipality that appears in the ${baseArea.label} catalog area.`,
-    );
-  }
-  const baseMunicipality = matchingMunicipalities[0].name;
+  const baseLocation = await resolvePublicProfileBaseLocation(parsed.data.baseLocation, parsed.data.baseMunicipality);
+  if (!baseLocation) redirectWithMessage("/cuenta/perfil", "error", "Elige una zona publicada y un municipio de su catálogo.");
 
   const now = new Date();
   try {
@@ -246,9 +189,9 @@ export async function updatePublicProfileAction(
           selectionTitle: parsed.data.selectionTitle || null,
           selectionDescription: parsed.data.selectionDescription || null,
           publicProfileVisibility: parsed.data.visibility,
-          publicProfileBaseCountry: baseCountry.slug,
-          publicProfileBaseArea: baseArea.slug,
-          publicProfileBaseMunicipality: baseMunicipality,
+          publicProfileBaseCountry: baseLocation.country,
+          publicProfileBaseArea: baseLocation.area,
+          publicProfileBaseMunicipality: baseLocation.municipality,
           updatedAt: now,
         })
         .where(and(eq(users.id, account.id), publicHandleGuard))
@@ -273,9 +216,9 @@ export async function updatePublicProfileAction(
           ],
           visibility: parsed.data.visibility,
           baseLocation: {
-            country: baseCountry.slug,
-            area: baseArea.slug,
-            municipality: baseMunicipality,
+            country: baseLocation.country,
+            area: baseLocation.area,
+            municipality: baseLocation.municipality,
           },
         },
       });

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { contentItemIdSchema } from "../catalog/content-identity";
 
 export const SHELF_LIMITS = {
   inputBytes: 5 * 1024 * 1024,
@@ -6,7 +7,6 @@ export const SHELF_LIMITS = {
   pixels: 24_000_000,
   edge: 2400,
   hotspots: 80,
-  candidates: 200,
   uploadsPerDay: 10,
 } as const;
 
@@ -18,6 +18,7 @@ export const shelfProducerKeySchema = z.string().regex(/^[a-z]{2}:[1-9]\d{0,14}$
 export const shelfPointSchema = z.object({
   id: z.string().regex(/^[a-zA-Z0-9-]{1,80}$/),
   producerKey: shelfProducerKeySchema,
+  productId: contentItemIdSchema.optional(),
   label: z.string().trim().min(1).max(120),
   x: z.number().finite().min(0).max(1),
   y: z.number().finite().min(0).max(1),
@@ -29,40 +30,66 @@ export type ShelfPoint = z.infer<typeof shelfPointSchema>;
 export const shelfDetectionSchema = z.object({
   points: z.array(z.object({
     producerKey: shelfProducerKeySchema.nullable(),
+    productId: contentItemIdSchema.optional(),
+    producerName: z.string().max(160).optional(),
+    productName: z.string().max(160).optional(),
+    candidateKeys: z.array(shelfProducerKeySchema).max(5).optional(),
     label: z.string().max(120),
     x: z.number().finite().min(0).max(1),
     y: z.number().finite().min(0).max(1),
   }).strict()).max(SHELF_LIMITS.hotspots),
 }).strict();
 export type ShelfDetection = z.infer<typeof shelfDetectionSchema>;
-export type ShelfCandidate = { key: string; name: string; city: string; products: string[] };
+export const shelfObservationSchema = z.object({
+  points: z.array(z.object({
+    producerName: z.string().max(160).nullable(),
+    productName: z.string().max(160).nullable(),
+    label: z.string().max(120),
+    x: z.number().finite().min(0).max(1),
+    y: z.number().finite().min(0).max(1),
+  }).strict()).max(SHELF_LIMITS.hotspots),
+}).strict();
+export type ShelfObservations = z.infer<typeof shelfObservationSchema>;
+export type ShelfCandidate = { key: string; name: string; city: string; products: { id: string; name: string }[] };
 export type PublicSelectionShelf = {
   id: string;
   imageSrc: string;
   width: number;
   height: number;
   updatedOn: string;
+  preview?: boolean;
   points: ShelfPoint[];
 };
 export const shelfReviewSchema = z.object({
   id: z.uuid(),
   version: z.number().int().positive(),
-  action: z.enum(["admit", "save", "publish", "reject", "analyze"]),
+  action: z.enum(["save", "approve", "reject", "analyze"]),
   points: shelfPointsSchema,
   note: z.string().trim().max(600),
 }).strict();
+export const shelfPublishSchema = z.object({
+  id: z.uuid(), version: z.number().int().positive(),
+  producerKeys: z.array(shelfProducerKeySchema).min(1).max(SHELF_LIMITS.hotspots)
+    .refine((keys) => new Set(keys).size === keys.length),
+  profile: z.object({
+    publicHandle: z.string().trim().max(40),
+    baseLocation: z.string().trim().max(100),
+    baseMunicipality: z.string().trim().min(1).max(160),
+  }).strict(),
+}).strict();
 
 export class ShelfError extends Error {
-  constructor(readonly code: "access" | "missing" | "changed" | "selection" | "quota" | "invalid") {
+  constructor(readonly code: "access" | "missing" | "changed" | "selection" | "quota" | "invalid" | "profile") {
     super(code);
   }
 }
 
 export const shelfStatusLabels: Record<string, string> = {
-  received: "Pendiente de admisión por Chisan",
-  queued: "Admitida · pendiente de análisis",
+  received: "Pendiente de preparar propuesta",
+  queued: "Preparando tu propuesta",
   processing: "Identificando productos",
   review: "En revisión por Chisan",
+  ready: "Propuesta lista para publicar",
   published: "Publicada",
   rejected: "Necesita otra foto",
   superseded: "Sustituida",

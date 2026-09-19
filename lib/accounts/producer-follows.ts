@@ -4,7 +4,7 @@ import type { Database } from "@/lib/db";
 import { auditEvents, favorites, users } from "@/lib/db/schema";
 import { producerKeySchema } from "./input";
 
-/** Keep the original relation and opt-ins; following never publishes a selection or an identity. */
+/** Every favorite belongs to the selection; whole-profile visibility controls opening its route. */
 export async function setProducerFollow(
   database: Database,
   userId: string,

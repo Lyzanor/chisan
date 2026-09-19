@@ -25,7 +25,10 @@
 .placeSurface { position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border: 3px solid var(--chisan-color-moss); cursor: crosshair; }
 .editorPanel { display: grid; gap: 16px; align-content: start; min-width: 0; }
 .editorPanel label { display: grid; gap: 4px; }
-.editorPanel input, .editorPanel select, .editorPanel textarea { min-width: 0; width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--chisan-color-stone); border-radius: 4px; background: var(--surface); color: var(--chisan-color-ink); font: inherit; }
+.editorPanel .proposalChoice { display: flex; gap: 12px; align-items: flex-start; min-height: 44px; cursor: pointer; }
+.editorPanel .proposalChoice input { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 4px; accent-color: var(--chisan-color-moss); }
+.proposalChoice span { min-width: 0; overflow-wrap: anywhere; }
+.editorPanel input:not([type="checkbox"]), .editorPanel select, .editorPanel textarea { min-width: 0; width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--chisan-color-stone); border-radius: 4px; background: var(--surface); color: var(--chisan-color-ink); font: inherit; }
 .coordinates { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .consent { display: flex; gap: 12px; align-items: flex-start; min-height: 44px; cursor: pointer; }

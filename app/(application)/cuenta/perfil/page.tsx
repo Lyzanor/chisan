@@ -14,7 +14,6 @@ import {
 } from "@/components/account/account-message";
 import { SavedCatalogArea } from "@/components/account/saved-catalog-area";
 import { AvatarEditor } from "@/components/account/avatar-editor";
-import { updateFavoritesAttributionAction } from "@/app/(application)/cuenta/actions/profile";
 import { getUserPresentation } from "@/lib/accounts/user-presentation";
 import { getDatabase } from "@/lib/db";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
@@ -121,22 +120,6 @@ export default async function AccountProfilePage({
           <button type="submit" className="account-button">
             Guardar perfil
           </button>
-        </form>
-      </section>
-
-      <section aria-labelledby="favorite-attribution-title">
-        <header className="account-section-heading"><div>
-          <h2 id="favorite-attribution-title">Aparecer como seguidor de productores</h2>
-          <p>Elige si otras personas pueden ver que sigues a un productor.</p>
-        </div></header>
-        <form action={updateFavoritesAttributionAction} className="account-form">
-          <label className="account-check" style={{ minHeight: 44, alignItems: "center" }}>
-            <input type="checkbox" name="enabled" value="yes" defaultChecked={profilePresentation.favoritesAttributionEnabled} />
-            <span>Mostrar mi nombre y foto en «Seguidores de este productor».</span>
-          </label>
-          <p>Se aplica a todos los productores que sigues ahora y en el futuro, aunque no tengas un perfil público. Si tu perfil es público, añadimos un enlace a su mapa. Los perfiles privados y no listados no se enlazan.</p>
-          <p>Puedes desactivarlo cuando quieras. Esta opción no añade productores a tu selección pública.</p>
-          <button type="submit" className="account-button">Guardar visibilidad</button>
         </form>
       </section>
 
@@ -279,7 +262,7 @@ export default async function AccountProfilePage({
               <option value="public">Público: puede aparecer en buscadores</option>
             </select>
             <small>
-              Los productores que sigues quedan fuera de tu selección pública hasta que los añadas individualmente desde «Siguiendo».
+              Todos los productores que sigues forman parte de tu selección. Esta visibilidad controla el acceso a tu perfil; tu nombre y foto aparecen entre sus seguidores aunque el perfil sea privado.
             </small>
           </label>
           <button type="submit" className="account-button">
@@ -289,7 +272,7 @@ export default async function AccountProfilePage({
         <div className="account-callout">
           <strong>QR de selección</strong>
           <p>
-            Elige productores de los que sigues, revisa el mapa completo y activa el QR desde la vista previa.
+            Revisa el mapa de tus favoritos y activa el QR desde la vista previa.
           </p>
           <Link href="/cuenta/seleccion" className="account-button">
             Vista previa de la selección y el QR

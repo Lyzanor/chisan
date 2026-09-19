@@ -146,7 +146,6 @@ export function createUserProfileQrPreferenceService({
           .where(
             and(
               eq(favorites.userId, input.userId),
-              eq(favorites.showOnPublicProfile, true),
             ),
           );
         const published = await resolvePublishedIdentities(shared);

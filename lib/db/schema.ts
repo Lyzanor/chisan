@@ -326,7 +326,6 @@ export const favorites = pgTable(
       .references(() => users.id, { onDelete: "cascade" }),
     country: varchar("country", { length: 2 }).notNull(),
     producerId: bigint("producer_id", { mode: "number" }).notNull(),
-    showOnPublicProfile: boolean("show_on_public_profile").notNull().default(false),
     createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
   },
   (table) => [
@@ -1023,7 +1022,6 @@ export const userPresentation = pgTable("user_presentation", {
   avatarId: uuid("avatar_id").notNull().defaultRandom(),
   avatarBytes: privateImageBytes("avatar_bytes"),
   avatarInitialized: boolean("avatar_initialized").notNull().default(false),
-  favoritesAttributionEnabled: boolean("favorites_attribution_enabled").notNull().default(false),
   updatedAt: timestampWithTimezone("updated_at").notNull().defaultNow(),
 }, (table) => [
   uniqueIndex("user_presentation_avatar_uidx").on(table.avatarId),

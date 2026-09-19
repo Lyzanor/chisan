@@ -141,6 +141,13 @@
       "when": 1789826966128,
       "tag": "0019_selection_shelf_admission",
       "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1789830445606,
+      "tag": "0020_public_follows_shelf_proposals",
+      "breakpoints": true
     }
   ]
 }

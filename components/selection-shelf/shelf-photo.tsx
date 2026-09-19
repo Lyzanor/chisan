@@ -38,7 +38,7 @@ export function ShelfPhoto({ shelf, selectedKey, onSelectKey }: {
       <p className={styles.selection} aria-live="polite">
         {selected.length ? [...new Set(selected.map((point) => point.label))].join(" · ") : selectedKey ? "Este productor no tiene productos señalados en esta foto." : "Selecciona un producto para conocer su origen."}
       </p>
-      <p className={styles.hint}>Foto revisada el {shelf.updatedOn}. La foto no indica existencias actuales.</p>
+      <p className={styles.hint}>{shelf.preview ? "Propuesta pendiente de tu confirmación." : `Foto publicada el ${shelf.updatedOn}.`} La foto no indica existencias actuales.</p>
     </section>
   );
 }

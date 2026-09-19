@@ -11,7 +11,6 @@ import {
   getUserPresentation,
   replaceUserAvatar,
   seedProviderAvatar,
-  updateFavoritesAttribution,
 } from "../lib/accounts/user-presentation";
 import { listProducerFavoriteSupporters } from "../lib/accounts/producer-favorites";
 import {
@@ -74,7 +73,7 @@ test("avatar decoding strips metadata, rejects active/oversized images and bound
   );
 });
 
-test("favorites attribution and avatar endpoints preserve opt-in, isolation, revocation and pagination", async () => {
+test("public follows and avatar endpoints preserve profile visibility, isolation, revocation and pagination", async () => {
   const client = new PGlite();
   try {
     for (const file of (await readdir("drizzle"))
@@ -113,7 +112,6 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
         .values({ userId: user.id, country: "es", producerId: 42 });
     assert.deepEqual(await getUserPresentation(db, owner.id), {
       avatarUrl: null,
-      favoritesAttributionEnabled: false,
     });
     assert.equal(
       (
@@ -122,15 +120,13 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
           producerId: 42,
         })
       ).total,
-      0,
+      4,
     );
-    for (const user of [owner, publicUser, unlisted])
-      await updateFavoritesAttribution(db, user.id, true);
     const listed = await listProducerFavoriteSupporters(db, {
       country: "es",
       producerId: 42,
     });
-    assert.equal(listed.total, 3);
+    assert.equal(listed.total, 4);
     assert.equal(
       listed.items.find((row) => row.name === "Public")?.profileHref,
       "/u/public",
@@ -183,7 +179,7 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
       });
     assert.equal((await image()).status, 200);
     assert.match((await image()).headers.get("cache-control")!, /no-store/);
-    await updateFavoritesAttribution(db, owner.id, false);
+    await db.delete(favorites).where(eq(favorites.userId, owner.id));
     assert.equal((await image()).status, 404);
     viewer = { id: hidden.id };
     assert.equal((await image()).status, 404);
@@ -229,7 +225,6 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
       .from(userPresentation)
       .where(eq(userPresentation.userId, owner.id));
     assert.equal(profile.avatarInitialized, true);
-    assert.equal(profile.favoritesAttributionEnabled, false);
 
     let imports = 0;
     globalThis.fetch = async (_url, options) => {
@@ -242,7 +237,6 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
       await seedProviderAvatar(db, hidden.id, "https://img.clerk.com/initial");
       const seeded = await getUserPresentation(db, hidden.id);
       assert.ok(seeded.avatarUrl);
-      assert.equal(seeded.favoritesAttributionEnabled, false);
       await seedProviderAvatar(db, hidden.id, "https://img.clerk.com/later");
       assert.equal(
         (await getUserPresentation(db, hidden.id)).avatarUrl,
@@ -279,7 +273,6 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
 
     for (let i = 0; i < 28; i++) {
       const user = await makeUser(`Person ${i}`);
-      await updateFavoritesAttribution(db, user.id, true);
       await db
         .insert(favorites)
         .values({ userId: user.id, country: "es", producerId: 42 });
@@ -293,13 +286,13 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
       { country: "es", producerId: 42 },
       first.nextOffset!,
     );
-    assert.equal(first.total, 30);
+    assert.equal(first.total, 31);
     assert.equal(first.items.length, 24);
-    assert.equal(second.items.length, 6);
+    assert.equal(second.items.length, 7);
     assert.equal(second.nextOffset, null);
     assert.equal(
       new Set([...first.items, ...second.items].map((row) => row.name)).size,
-      30,
+      31,
     );
     await db
       .update(users)
@@ -312,9 +305,8 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
           producerId: 42,
         })
       ).total,
-      29,
+      30,
     );
-    await assert.rejects(updateFavoritesAttribution(db, publicUser.id, true));
     await assert.rejects(replaceUserAvatar(db, publicUser.id, input));
     await db.delete(favorites).where(eq(favorites.userId, unlisted.id));
     assert.equal(
@@ -324,7 +316,7 @@ test("favorites attribution and avatar endpoints preserve opt-in, isolation, rev
           producerId: 42,
         })
       ).total,
-      28,
+      29,
     );
   } finally {
     await client.close();

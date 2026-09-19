@@ -148,7 +148,7 @@ export async function queryAdminUserProfiles(
         profileKind: users.profileKind,
         favoriteCount: count(favorites.producerId),
         sharedProducerCount:
-          sql<number>`count(${favorites.producerId}) filter (where ${favorites.showOnPublicProfile} = true)`.mapWith(
+          sql<number>`count(${favorites.producerId})`.mapWith(
             Number,
           ),
         createdAt: users.createdAt,

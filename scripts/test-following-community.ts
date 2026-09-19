@@ -56,7 +56,7 @@ test("publication checks require deployed base facts and exact related content",
     assert.equal(decodeTimelineCursor(input), null);
 });
 
-test("following preserves legacy privacy and exposes only followed, published, current changes", async () => {
+test("following preserves legacy identity and exposes only followed, published, current changes", async () => {
   const pg = new PGlite();
   try {
     for (const file of (await readdir("drizzle"))
@@ -110,21 +110,16 @@ test("following preserves legacy privacy and exposes only followed, published, c
       catalog: async (key) =>
         catalog.get(`${key.country}:${key.producerId}`) ?? null,
     });
-    // A favorite predating this feature is already a follow, with its selection opt-in intact.
+    // A favorite predating this feature is already a follow, preserving its original timestamp.
     await db
       .insert(schema.favorites)
       .values({
         userId: reader.id,
         ...keys,
-        showOnPublicProfile: true,
         createdAt: started,
       });
     await setProducerFollow(database, reader.id, keys, true, exists);
     await setProducerFollow(database, reader.id, keys, true, exists);
-    assert.equal(
-      (await db.select().from(schema.favorites))[0].showOnPublicProfile,
-      true,
-    );
     assert.equal(
       (await db.select().from(schema.favorites))[0].createdAt.toISOString(),
       started.toISOString(),
@@ -142,8 +137,8 @@ test("following preserves legacy privacy and exposes only followed, published, c
           .select()
           .from(schema.favorites)
           .where(eq(schema.favorites.userId, stranger.id))
-      )[0].showOnPublicProfile,
-      false,
+      )[0].producerId,
+      1,
     );
     await assert.rejects(
       setProducerFollow(

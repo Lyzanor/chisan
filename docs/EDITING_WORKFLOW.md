@@ -51,15 +51,15 @@ capability)`: the common wrapper reserves from this ledger before every
 request. Low-level adapters are transport boundaries for that factory and tests.
 
 Shelf processing claims and commits work before inference, then applies the
-result only to that same pending version. Uploads only store `received` photos.
-Staff admission from `/admin/estanterias` schedules one bounded attempt and is
-audited with the reviewer identity; ordinary saves never authorize inference.
-WhatsApp can recover one already-admitted shelf job after inbox processing.
-After a stopped worker, staff can save manual points or request analysis from
-the queue; a processing attempt older than two minutes can be recovered by the
-next queue run. There are no automatic retries of failed paid attempts and no
-new recurring worker. Model accuracy still needs a controlled real-photo pilot;
-mock-provider tests do not establish recognition accuracy.
+result only to that same pending version. New uploads enter `queued` and schedule
+one bounded attempt within the shared allowance. WhatsApp can process one queued
+shelf job after inbox handling. The model transcribes labels; catalog resolution
+creates an owner proposal without adding favorites or publishing. The owner
+chooses producers and publishes from `/cuenta/estanteria`. Staff can resolve
+unclear/no-match results in `/admin/estanterias`, prepare a proposal or explicitly
+retry. A processing attempt older than two minutes becomes manual review on the
+next queue run. There are no automatic retries of paid failures or new recurring
+workers. Real-photo accuracy still needs a controlled pilot.
 
 ## Entry points
 
@@ -67,7 +67,7 @@ mock-provider tests do not establish recognition accuracy.
 | --- | --- | --- | --- |
 | Producer web editor | Active exact membership; premium entitlement for expanded fields/products; `producer_change_requests` | `/admin/cambios` | Existing controlled materializer |
 | WhatsApp text or photo | Expiring account binding, same membership and entitlement checks; automatically extracted product or news candidate becomes `producer_change_requests` | Same `/admin/cambios`, including structured channel and extraction history | Same controlled materializer |
-| Shelf photo from web or messaging | Active shelf capability and explicit publication consent; `selection_shelves` | `/admin/estanterias` | Account presentation in PostgreSQL, never catalog facts |
+| Shelf photo from web or messaging | Active shelf capability and explicit publication consent; `selection_shelves` | Owner confirmation in `/cuenta/estanteria`; staff fallback in `/admin/estanterias` | Account presentation in PostgreSQL, never catalog facts |
 | Community suggestion | Verified active account, unclaimed producer, scoped standard fields; `producer_suggestions`; no ownership rights | `/admin/sugerencias` | Editorial file edit and release; reviewer records the result afterward |
 | Editorial research | Evidence-backed editorial decision | [Editorial workflow](EDITORIAL.md) | Reviewed file edit, validation, Git and deployment |
 

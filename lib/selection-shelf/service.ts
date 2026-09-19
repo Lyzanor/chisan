@@ -1,14 +1,17 @@
 import { and, asc, count, desc, eq, gte, inArray, lt, sql } from "drizzle-orm";
 import type { Database } from "../db";
 import { auditEvents, favorites, selectionShelves, users } from "../db/schema";
+import { normalizePublicHandle, publicHandleProblem } from "../accounts/public-profile-policy";
+import type { PublicProfileBaseLocation } from "../accounts/public-profile-location";
 import { prepareImage } from "../accounts/prepare-producer-image";
-import { canManageSelectionShelf, canReviewSelectionShelf, type ShelfReader } from "./access";
-import { SHELF_LIMITS, ShelfError, shelfSourceMessageKey, shelfImageUrl, shelfPointsSchema, shelfReviewSchema, type PublicSelectionShelf, type ShelfCandidate } from "./policy";
+import { canManageSelectionShelf, canReviewSelectionShelf } from "./access";
+import { SHELF_LIMITS, ShelfError, shelfSourceMessageKey, shelfImageUrl, shelfPointsSchema, shelfReviewSchema, shelfPublishSchema, type ShelfPoint, type PublicSelectionShelf, type ShelfCandidate } from "./policy";
 
 type Transaction = Parameters<Parameters<Database["transaction"]>[0]>[0];
 export type ShelfRecord = typeof selectionShelves.$inferSelect;
-export type ShelfCatalog = (identities: { country: string; producerId: number }[]) => Promise<ShelfCandidate[]>;
-const pending = ["received", "queued", "processing", "review"];
+export type ShelfCatalog = (identities?: { country: string; producerId: number }[]) => Promise<ShelfCandidate[]>;
+const pending = ["received", "queued", "processing", "review", "ready"];
+const identitiesFor = (keys: string[]) => [...new Set(keys)].map((key) => { const [country, id] = key.split(":"); return { country, producerId: Number(id) }; });
 
 export async function lockShelfAccount(tx: Transaction, userId: string) {
   await tx.execute(sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${userId}`}))`);
@@ -17,15 +20,15 @@ export async function lockShelfAccount(tx: Transaction, userId: string) {
   return account;
 }
 
-export function createSelectionShelfService(deps: { database: Database; catalog: ShelfCatalog; enabled: () => boolean }) {
+export function createSelectionShelfService(deps: { database: Database; catalog: ShelfCatalog; enabled: () => boolean; location?: (key: string, municipality: string) => Promise<PublicProfileBaseLocation | null> }) {
   const db = deps.database;
   function enabled() { if (!deps.enabled()) throw new ShelfError("access"); }
-  async function candidates(userId: string, reader: ShelfReader = db) {
-    const identities = await reader.select({ country: favorites.country, producerId: favorites.producerId })
-      .from(favorites).where(and(eq(favorites.userId, userId), eq(favorites.showOnPublicProfile, true)))
-      .orderBy(desc(favorites.createdAt), favorites.country, favorites.producerId).limit(SHELF_LIMITS.candidates + 1);
-    if (identities.length > SHELF_LIMITS.candidates) throw new ShelfError("selection");
-    return deps.catalog(identities);
+  async function candidates() { return deps.catalog(); }
+  async function validatePoints(points: ShelfPoint[]) {
+    const choices = await deps.catalog(identitiesFor(points.map((point) => point.producerKey)));
+    const valid = new Map(choices.map((item) => [item.key, item]));
+    if (points.some((point) => !valid.has(point.producerKey) || (point.productId && !valid.get(point.producerKey)!.products.some((item) => item.id === point.productId)))) throw new ShelfError("selection");
+    return choices;
   }
   async function audit(tx: Transaction, actor: string, id: string, action: string, metadata: Record<string, unknown> = {}) {
     await tx.insert(auditEvents).values({ actorKind: "user", actorUserId: actor,
@@ -48,8 +51,6 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
     return db.transaction(async (tx) => {
       await lockShelfAccount(tx, userId);
       if (!(await canManageSelectionShelf(tx, userId))) throw new ShelfError("access");
-      const choices = await candidates(userId, tx);
-      if (!choices.length) throw new ShelfError("selection");
       if (messageId) {
         const [receipt] = await tx.select({ id: selectionShelves.id }).from(selectionShelves)
           .where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.messageId, messageId))).limit(1);
@@ -63,7 +64,7 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
         .where(and(eq(selectionShelves.userId, userId), inArray(selectionShelves.status, pending)));
       await tx.delete(selectionShelves).where(and(eq(selectionShelves.userId, userId),
         inArray(selectionShelves.status, ["superseded", "rejected"]), lt(selectionShelves.updatedAt, new Date(Date.now() - 30 * 86_400_000))));
-      const [created] = await tx.insert(selectionShelves).values({ ...image, userId, channel, messageId, status: "received" }).returning({ id: selectionShelves.id });
+      const [created] = await tx.insert(selectionShelves).values({ ...image, userId, channel, messageId, status: "queued" }).returning({ id: selectionShelves.id });
       await audit(tx, userId, created.id, "received", { channel, sha256: image.sha256, rightsConfirmed: true });
       return created.id;
     });
@@ -77,13 +78,18 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       points: selectionShelves.points, reviewedAt: selectionShelves.reviewedAt }).from(selectionShelves)
       .where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.status, "published"))).limit(1);
     if (!shelf?.reviewedAt) return null;
-    let choices: ShelfCandidate[];
-    try { choices = await candidates(userId); }
-    catch (error) { if (error instanceof ShelfError && error.code === "selection") return null; throw error; }
-    const allowed = new Set(choices.map((item) => item.key));
     const parsed = shelfPointsSchema.safeParse(shelf.points);
     if (!parsed.success) return null;
-    const points = parsed.data.filter((point) => allowed.has(point.producerKey));
+    const following = await db.select({ country: favorites.country, producerId: favorites.producerId }).from(favorites).where(eq(favorites.userId, userId));
+    const saved = new Set(following.map((item) => `${item.country}:${item.producerId}`));
+    const choices = await deps.catalog(identitiesFor(parsed.data.map((point) => point.producerKey)));
+    const allowed = new Map(choices.map((item) => [item.key, item]));
+    const points = parsed.data.filter((point) => saved.has(point.producerKey) && allowed.has(point.producerKey)).map((point) => {
+      if (point.productId && !allowed.get(point.producerKey)!.products.some((product) => product.id === point.productId)) {
+        const current = { ...point }; delete current.productId; return current;
+      }
+      return point;
+    });
     if (!points.length) return null;
     return { id: shelf.id, width: shelf.width, height: shelf.height, points,
       updatedOn: shelf.reviewedAt.toISOString().slice(0, 10), imageSrc: shelfImageUrl(shelf.id) };
@@ -120,7 +126,7 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       .innerJoin(users, eq(users.id, selectionShelves.userId)).where(inArray(selectionShelves.status, pending))
       .orderBy(asc(selectionShelves.createdAt)).limit(50);
   }
-  async function reviewDetail(reviewerId: string, id: string) {
+  async function reviewDetail(reviewerId: string, id: string, query = "") {
     enabled();
     if (!(await canReviewSelectionShelf(db, reviewerId))) throw new ShelfError("access");
     const [row] = await db.select({ id: selectionShelves.id, userId: selectionShelves.userId, version: selectionShelves.version,
@@ -128,11 +134,67 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       suggestions: selectionShelves.suggestions, note: selectionShelves.note, analysisError: selectionShelves.analysisError,
       channel: selectionShelves.channel }).from(selectionShelves).where(eq(selectionShelves.id, id)).limit(1);
     if (!row) throw new ShelfError("missing");
-    const choices = await candidates(row.userId).catch((error) => {
-      if (error instanceof ShelfError && error.code === "selection") return [];
-      throw error;
-    });
+    const keys = [...row.points.map((point) => point.producerKey), ...row.suggestions.points.flatMap((point) => [point.producerKey, ...(point.candidateKeys ?? [])].filter((key): key is string => Boolean(key)))];
+    const selected = await deps.catalog(identitiesFor(keys));
+    const searched = query.trim() ? (await deps.catalog()).filter((item) => item.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())).slice(0, 50) : [];
+    const choices = [...new Map([...selected, ...searched].map((item) => [item.key, item])).values()];
     return { ...row, candidates: choices, imageSrc: shelfImageUrl(row.id) };
+  }
+  async function ownerProposal(userId: string) {
+    enabled();
+    const [row] = await db.select({ id: selectionShelves.id, version: selectionShelves.version, status: selectionShelves.status,
+      points: selectionShelves.points, width: selectionShelves.width, height: selectionShelves.height,
+      suggestions: selectionShelves.suggestions, analysisError: selectionShelves.analysisError }).from(selectionShelves)
+      .where(and(eq(selectionShelves.userId, userId), inArray(selectionShelves.status, pending))).orderBy(desc(selectionShelves.createdAt)).limit(1);
+    if (!row) return null;
+    const catalog = await deps.catalog(identitiesFor(row.points.map((point) => point.producerKey)));
+    const allowed = new Map(catalog.map((item) => [item.key, item]));
+    const points = shelfPointsSchema.parse(row.points).filter((point) => allowed.has(point.producerKey));
+    return { id: row.id, version: row.version, status: row.status, points, width: row.width, height: row.height,
+      imageSrc: shelfImageUrl(row.id), producers: catalog, analysisError: row.analysisError,
+      unmatched: row.suggestions.points.filter((point) => !point.producerKey).length };
+  }
+  async function publish(userId: string, raw: unknown) {
+    enabled();
+    const input = shelfPublishSchema.parse(raw);
+    return db.transaction(async (tx) => {
+      const account = await lockShelfAccount(tx, userId);
+      if (!account.termsAcceptedAt || !(await canManageSelectionShelf(tx, userId))) throw new ShelfError("access");
+      const [row] = await tx.select().from(selectionShelves).where(and(eq(selectionShelves.id, input.id), eq(selectionShelves.userId, userId))).for("update");
+      if (!row) throw new ShelfError("missing");
+      if (row.status !== "ready" || row.version !== input.version) throw new ShelfError("changed");
+      const points = shelfPointsSchema.parse(row.points).filter((point) => input.producerKeys.includes(point.producerKey));
+      if (input.producerKeys.some((key) => !points.some((point) => point.producerKey === key))) throw new ShelfError("selection");
+      await validatePoints(points);
+      const handle = normalizePublicHandle(input.profile.publicHandle);
+      if (publicHandleProblem(handle) || (account.publicHandle && account.publicHandle !== handle)) throw new ShelfError("profile");
+      const location = await deps.location?.(input.profile.baseLocation, input.profile.baseMunicipality);
+      if (!location) throw new ShelfError("profile");
+      const [other] = await tx.select({ id: users.id }).from(users).where(eq(users.publicHandle, handle)).limit(1);
+      if (other && other.id !== userId) throw new ShelfError("profile");
+      await tx.update(users).set({ publicHandle: handle,
+        publicProfileVisibility: account.publicProfileVisibility === "private" ? "public" : account.publicProfileVisibility,
+        publicProfileBaseCountry: location.country, publicProfileBaseArea: location.area, publicProfileBaseMunicipality: location.municipality,
+        updatedAt: new Date() }).where(eq(users.id, userId));
+      // Only this proposal's choices change; favorites outside it are preserved.
+      const removedKeys = [...new Set(row.points.map((point) => point.producerKey))].filter((key) => !input.producerKeys.includes(key));
+      for (const identity of identitiesFor(removedKeys)) {
+        const removed = await tx.delete(favorites).where(and(eq(favorites.userId, userId), eq(favorites.country, identity.country), eq(favorites.producerId, identity.producerId))).returning({ id: favorites.producerId });
+        if (removed.length) await tx.insert(auditEvents).values({ actorKind: "user", actorUserId: userId, action: "producer.unfollowed",
+          targetType: "producer_follow", targetId: `${userId}:${identity.country}:${identity.producerId}`, metadata: { ...identity, source: "shelf", shelfId: row.id } });
+      }
+      for (const identity of identitiesFor(input.producerKeys)) {
+        const added = await tx.insert(favorites).values({ userId, ...identity }).onConflictDoNothing().returning({ id: favorites.producerId });
+        if (added.length) await tx.insert(auditEvents).values({ actorKind: "user", actorUserId: userId, action: "producer.followed",
+          targetType: "producer_follow", targetId: `${userId}:${identity.country}:${identity.producerId}`, metadata: { ...identity, source: "shelf", shelfId: row.id } });
+      }
+      await tx.update(selectionShelves).set({ status: "superseded", updatedAt: new Date(), version: sql`${selectionShelves.version} + 1` })
+        .where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.status, "published")));
+      await tx.update(selectionShelves).set({ status: "published", points, reviewedBy: userId, reviewedAt: new Date(), updatedAt: new Date(), version: row.version + 1 })
+        .where(eq(selectionShelves.id, row.id));
+      await audit(tx, userId, row.id, "published", { producerKeys: input.producerKeys, version: row.version + 1, profilePublished: account.publicProfileVisibility === "private" });
+      return { version: row.version + 1, status: "published", handle };
+    });
   }
   async function review(reviewerId: string, raw: unknown) {
     enabled();
@@ -145,21 +207,14 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       const [record] = await tx.select({ status: selectionShelves.status, version: selectionShelves.version }).from(selectionShelves)
         .where(eq(selectionShelves.id, input.id)).for("update");
       if (!record || record.version !== input.version || !pending.includes(record.status)) throw new ShelfError("changed");
-      if (input.action === "admit" && record.status !== "received") throw new ShelfError("changed");
-      if (input.action === "analyze" && record.status !== "review") throw new ShelfError("changed");
-      if (input.action === "publish" && record.status === "received") throw new ShelfError("changed");
+      if (input.action === "analyze" && !["received", "review", "ready"].includes(record.status)) throw new ShelfError("changed");
       if (input.action !== "reject" && !(await canManageSelectionShelf(tx, initial.userId))) throw new ShelfError("access");
-      const allowed = new Set((input.action === "reject" ? [] : await candidates(initial.userId, tx)).map((item) => item.key));
-      if (input.action !== "reject" && input.points.some((point) => !allowed.has(point.producerKey))) throw new ShelfError("selection");
-      if ((input.action === "admit" || input.action === "analyze") && !allowed.size) throw new ShelfError("selection");
-      if (input.action === "publish" && (!input.points.length || !account.publicHandle || account.publicProfileVisibility === "private")) throw new ShelfError("selection");
+      if (input.action !== "reject") await validatePoints(input.points);
+      if (input.action === "approve" && !input.points.length) throw new ShelfError("selection");
       if (input.action === "reject" && !input.note) throw new ShelfError("invalid");
-      if (input.action === "publish") await tx.update(selectionShelves).set({ status: "superseded", updatedAt: new Date(), version: sql`${selectionShelves.version} + 1` })
-        .where(and(eq(selectionShelves.userId, initial.userId), eq(selectionShelves.status, "published")));
-      // Saving corrections before admission must never authorize inference.
-      const status = { admit: "queued", save: record.status === "received" ? "received" : "review", publish: "published", reject: "rejected", analyze: "queued" }[input.action];
+      const status = { save: "review", approve: "ready", reject: "rejected", analyze: "queued" }[input.action];
       await tx.update(selectionShelves).set({ status, points: input.points, note: input.note, version: record.version + 1,
-        updatedAt: new Date(), ...(input.action === "publish" || input.action === "reject" ? { reviewedBy: reviewerId, reviewedAt: new Date() } : {}) })
+        updatedAt: new Date(), ...(input.action === "approve" || input.action === "reject" ? { reviewedBy: reviewerId, reviewedAt: new Date() } : {}) })
         .where(eq(selectionShelves.id, input.id));
       await audit(tx, reviewerId, input.id, input.action, { version: record.version + 1, pointCount: input.points.length });
       return { version: record.version + 1, status, handle: account.publicHandle };
@@ -175,5 +230,5 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       await audit(tx, userId, id, "withdrawn");
     });
   }
-  return { submit, candidates, publicShelf, readImage, ownerStatus, queue, reviewDetail, review, withdraw };
+  return { submit, candidates, publicShelf, readImage, ownerStatus, ownerProposal, publish, queue, reviewDetail, review, withdraw };
 }

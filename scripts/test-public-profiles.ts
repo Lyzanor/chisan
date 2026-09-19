@@ -178,7 +178,7 @@ test("public profile base location migration backfills existing maps to Barcelon
   }
 });
 
-test("public profiles and shared favorites are private by default", async () => {
+test("whole profiles default private while favorites have no separate visibility", async () => {
   const database = new PGlite();
   try {
     await applyAccountMigrations(database);
@@ -205,13 +205,13 @@ test("public profiles and shared favorites are private by default", async () => 
        values ($1, 'es', 42)`,
       [account.id],
     );
-    const favorite = await database.query<{ show_on_public_profile: boolean }>(
-      `select show_on_public_profile
+    const favorite = await database.query<{ producer_id: number }>(
+      `select producer_id
          from favorites
         where user_id = $1 and country = 'es' and producer_id = 42`,
       [account.id],
     );
-    assert.deepEqual(favorite.rows, [{ show_on_public_profile: false }]);
+    assert.deepEqual(favorite.rows, [{ producer_id: 42 }]);
 
     await assert.rejects(
       database.query(
@@ -254,12 +254,7 @@ test("public profiles and shared favorites are private by default", async () => 
         where id = $1`,
       [account.id],
     );
-    await database.query(
-      `update favorites
-          set show_on_public_profile = true
-        where user_id = $1 and country = 'es' and producer_id = 42`,
-      [account.id],
-    );
+
 
     const secondAccount = await database.query<{ id: string }>(
       `insert into users (display_name) values ('Second owner') returning id`,
@@ -312,8 +307,8 @@ test("admin profile registry reads Chisan account and selection state", async ()
        )`,
     );
     await client.query(
-      `insert into favorites (user_id, country, producer_id, show_on_public_profile)
-       values ($1, 'es', 41, true), ($1, 'es', 42, false), ($2, 'fr', 8, true)`,
+      `insert into favorites (user_id, country, producer_id)
+       values ($1, 'es', 41), ($1, 'es', 42), ($2, 'fr', 8)`,
       [publicAccount.rows[0].id, unlistedAccount.rows[0].id],
     );
 
@@ -329,7 +324,7 @@ test("admin profile registry reads Chisan account and selection state", async ()
         }))
         .sort((left, right) => String(left.handle).localeCompare(String(right.handle))),
       [
-        { handle: "public-map", favorites: 2, shared: 1 },
+        { handle: "public-map", favorites: 2, shared: 2 },
         { handle: "unlisted-map", favorites: 1, shared: 1 },
       ],
     );

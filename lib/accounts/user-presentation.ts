@@ -32,42 +32,13 @@ export async function getUserPresentation(db: Database, userId: string) {
     .select({
       avatarId: userPresentation.avatarId,
       hasAvatar: sql<boolean>`${userPresentation.avatarBytes} is not null`,
-      favoritesAttributionEnabled: userPresentation.favoritesAttributionEnabled,
     })
     .from(userPresentation)
     .where(eq(userPresentation.userId, userId))
     .limit(1);
   return {
     avatarUrl: profile?.hasAvatar ? `/api/avatars/${profile.avatarId}` : null,
-    favoritesAttributionEnabled: profile?.favoritesAttributionEnabled ?? false,
   };
-}
-
-export async function updateFavoritesAttribution(
-  db: Database,
-  userId: string,
-  enabled: boolean,
-) {
-  await db.transaction(async (tx) => {
-    await lockActiveAccount(tx, userId);
-    await tx
-      .insert(userPresentation)
-      .values({ userId, favoritesAttributionEnabled: enabled })
-      .onConflictDoUpdate({
-        target: userPresentation.userId,
-        set: { favoritesAttributionEnabled: enabled, updatedAt: new Date() },
-      });
-    await tx
-      .insert(auditEvents)
-      .values({
-        actorKind: "user",
-        actorUserId: userId,
-        action: "account.favorites_attribution_updated",
-        targetType: "user",
-        targetId: userId,
-        metadata: { enabled },
-      });
-  });
 }
 
 export async function replaceUserAvatar(

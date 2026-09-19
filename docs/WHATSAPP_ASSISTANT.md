@@ -151,19 +151,21 @@ webhook, durable inbox and reply adapter. Generating a link explicitly replaces
 that account's previous channel mode; one phone cannot bind to two accounts or
 modes, including while shelf intake is disabled. Tokens are single-use, expire
 after ten minutes and are stored as hashes; bindings expire after 30 days.
-The linking consent separately authorizes publication of submitted shelf photos
-after Chisan review. Product-mode photo consent never authorizes this use.
+The linking consent authorizes processing submitted shelf photos and preparing
+a proposal for the owner to publish. Product-mode consent does not cover it.
 
-A photo is saved with its namespaced Meta message receipt in the inbox
-transaction as `received`. The sender receives an admission-pending receipt;
-no AI request is made until Chisan staff admit the photo in `/admin/estanterias`.
-AI then runs against explicitly shared favorites and never calls the product
-extractor. Every replacement requires its own admission.
+A photo is saved with its namespaced Meta receipt as `queued`. The sender receives
+a link to `/cuenta/estanteria`; processing reads visible labels and matches all
+approved catalog producers, without requiring existing favorites or calling the
+product extractor. One photo uses at most one automatic attempt; duplicates and
+failed paid attempts cannot automatically spend again. The owner checks the
+proposal, unchecks unwanted producers and publishes from the web account.
 `ESTADO`, `CANCELAR` and `DESCONECTAR` work without AI. Cancelling removes pending
-shelf work; published photo removal is available in the account. Publication
-remains an internal staff decision and no unsolicited outbound notice is sent.
-No photo is published as catalog product media. The complete storage, review and
-visibility contract is in [Account System](ACCOUNT_SYSTEM.md#shelf-photos-in-shared-selections).
+work, including ready proposals; published photo removal is in the account.
+Staff can help with failed or unclear matches. No unsolicited outbound notice
+is sent and no photo becomes catalog product media. See the complete storage,
+review and visibility contract in
+[Account System](ACCOUNT_SYSTEM.md#shelf-photos-in-shared-selections).
 
 ## Runtime and recovery
 

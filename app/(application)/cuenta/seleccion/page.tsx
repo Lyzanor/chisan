@@ -64,7 +64,7 @@ export default async function SelectionPreviewPage({
         <div>
           <h2>Vista previa de tu selección</h2>
           <p>
-            Aquí solo aparecen los productores que eliges expresamente. Guardar un favorito lo mantiene privado.
+            Tus favoritos aparecen aquí automáticamente. Puedes retirarlos desde «Siguiendo» y elegir la visibilidad de todo tu perfil.
           </p>
           <p>
             {visible
