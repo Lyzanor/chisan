@@ -27,14 +27,14 @@ export function ShelfReview({ detail }: { detail: Detail }) {
   const [placing, setPlacing] = useState(false);
   const [publicHandle, setPublicHandle] = useState<string | null>(null);
   const selected = points.find((point) => point.id === selectedId);
-  const editable = ["queued", "processing", "review"].includes(status);
+  const editable = ["received", "queued", "processing", "review"].includes(status);
   function update(values: Partial<ShelfPoint>) { setPoints((previous) => previous.map((point) => point.id === selectedId ? { ...point, ...values } : point)); }
   function add(x = 0.5, y = 0.5, label = "") {
     if (points.length >= SHELF_LIMITS.hotspots) return;
     const id = crypto.randomUUID();
     setPoints([...points, { id, producerKey: "", x, y, label }]); setSelectedId(id);
   }
-  async function act(action: "save" | "publish" | "reject" | "analyze") {
+  async function act(action: "admit" | "save" | "publish" | "reject" | "analyze") {
     if (action !== "reject" && !shelfPointsSchema.safeParse(points).success) { setMessage("Choose a producer and a label for every point; positions must be between 0 and 100%."); return; }
     if (action === "reject" && !note.trim()) { setMessage("Add a review note explaining why the photo cannot be used."); return; }
     setBusy(true); setMessage("");
@@ -44,12 +44,13 @@ export function ShelfReview({ detail }: { detail: Detail }) {
       const result = await response.json();
       if (!response.ok) { setMessage(failures[result.error] ?? "The request failed. Your edits remain here; try again."); return; }
       setVersion(result.version); setStatus(result.status); setPublicHandle(result.handle);
-      setMessage(action === "analyze" ? "Analysis queued. Reload the result in a moment. Every new attempt uses the shared API allowance." : action === "publish" ? "Photo published." : action === "reject" ? "Photo rejected." : "Review saved.");
+      setMessage(action === "admit" || action === "analyze" ? "Photo admitted for analysis. Reload the result in a moment. This attempt uses the shared API allowance; publication still requires your review." : action === "publish" ? "Photo published." : action === "reject" ? "Photo rejected." : "Review saved.");
     } catch { setMessage("Connection failed. Your edits remain here; try again."); }
     finally { setBusy(false); }
   }
   return <>
     <p>Status: <strong>{status}</strong> · Source: {detail.channel}</p>
+    {status === "received" ? <p><strong>Awaiting Chisan admission.</strong> AI analysis is blocked until you admit this photo. Check that this is an appropriate shelf photo with legible labels. Admission starts one AI attempt within the shared allowance.</p> : null}
     {detail.analysisError ? <p>Automatic analysis unavailable ({detail.analysisError}). You can place points manually or request another attempt within the shared allowance.</p> : null}
     <p>Read each visible label and check the matching producer. Remove uncertain points. This photo is a snapshot, not a stock or supplier claim.</p>
     <div className={styles.editor}>
@@ -80,9 +81,10 @@ export function ShelfReview({ detail }: { detail: Detail }) {
         <label>Internal review note<textarea maxLength={600} value={note} onChange={(event) => setNote(event.target.value)} /></label>
         <div className={styles.actions}>
           <button type="button" className="account-button account-button--secondary" onClick={() => void act("save")}>Save review</button>
-          <button type="button" className="account-button" disabled={!points.length} onClick={() => void act("publish")}>Publish reviewed photo</button>
+          {status === "received" ? <button type="button" className="account-button" onClick={() => void act("admit")}>Admit photo and analyze</button> : null}
+          <button type="button" className="account-button" disabled={!points.length || status === "received"} onClick={() => void act("publish")}>Publish reviewed photo</button>
           <button type="button" className="account-button account-button--secondary" onClick={() => void act("reject")}>Reject photo</button>
-          <button type="button" className="account-button account-button--secondary" disabled={status === "processing"} onClick={() => void act("analyze")}>Request AI analysis</button>
+          {status !== "received" ? <button type="button" className="account-button account-button--secondary" disabled={status !== "review"} onClick={() => void act("analyze")}>Request another AI analysis</button> : null}
         </div>
       </fieldset>
     </div>

@@ -306,3 +306,30 @@ The fixture route and SVG were removed after verification.
   local server, including eight shelf integration tests and sixteen WhatsApp
   tests. The migration was exercised in PGlite; no live migration, paid inference
   or production activation was performed.
+
+## 2026-09-19 — Staff admission before shelf analysis
+
+Checked the changed review and upload components with a disposable local
+fixture at 390×844 and 1440×1000. The fixture and schematic image were removed.
+The admission explanation and action fit both layouts without horizontal
+overflow. Publication stays disabled for a received photo even when a valid
+manual point exists; the owner sees "Pendiente de admisión por Chisan".
+
+- Uploads through either channel leave a `received` photo and do not schedule
+  inference. Only an active staff review action admits it. Saving manual points,
+  duplicate submissions and stale admission requests cannot bypass this step.
+- `pnpm verify:ai` passed, including nine shelf integration tests and sixteen
+  WhatsApp tests. Migration coverage confirms that old pending jobs return to
+  admission, retain their points and invalidate in-flight results.
+- Applied the required migrations to the isolated local PostgreSQL database
+  after a backup, checked the migration registry, and enabled shelves locally
+  with one shared AI attempt. No paid inference or WhatsApp delivery was used
+  during verification; recognition quality remains for the user's photo test.
+- The browser fixture retained the existing development Clerk and WebMCP
+  serialization notices; no admission-specific error was observed.
+- Local development requests to account pages stalled, so the final local
+  smoke check used the validated Next build with `pnpm start --hostname
+  localhost --port 3000`. Both account and review routes correctly redirect an
+  anonymous visitor to sign-in; the Clerk test-instance form rendered. The
+  authenticated photo flow remains for the user's test. No public deployment
+  was performed.

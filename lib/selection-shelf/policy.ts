@@ -47,7 +47,7 @@ export type PublicSelectionShelf = {
 export const shelfReviewSchema = z.object({
   id: z.uuid(),
   version: z.number().int().positive(),
-  action: z.enum(["save", "publish", "reject", "analyze"]),
+  action: z.enum(["admit", "save", "publish", "reject", "analyze"]),
   points: shelfPointsSchema,
   note: z.string().trim().max(600),
 }).strict();
@@ -59,7 +59,8 @@ export class ShelfError extends Error {
 }
 
 export const shelfStatusLabels: Record<string, string> = {
-  queued: "Foto recibida",
+  received: "Pendiente de admisión por Chisan",
+  queued: "Admitida · pendiente de análisis",
   processing: "Identificando productos",
   review: "En revisión por Chisan",
   published: "Publicada",

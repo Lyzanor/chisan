@@ -51,8 +51,10 @@ capability)`: the common wrapper reserves from this ledger before every
 request. Low-level adapters are transport boundaries for that factory and tests.
 
 Shelf processing claims and commits work before inference, then applies the
-result only to that same pending version. Each upload schedules one bounded
-attempt. WhatsApp also drains up to four shelf jobs after inbox processing.
+result only to that same pending version. Uploads only store `received` photos.
+Staff admission from `/admin/estanterias` schedules one bounded attempt and is
+audited with the reviewer identity; ordinary saves never authorize inference.
+WhatsApp can recover one already-admitted shelf job after inbox processing.
 After a stopped worker, staff can save manual points or request analysis from
 the queue; a processing attempt older than two minutes can be recovered by the
 next queue run. There are no automatic retries of failed paid attempts and no

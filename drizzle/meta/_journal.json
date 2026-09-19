@@ -134,6 +134,13 @@
       "when": 1789822314158,
       "tag": "0018_selection_shelves",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1789826966128,
+      "tag": "0019_selection_shelf_admission",
+      "breakpoints": true
     }
   ]
 }

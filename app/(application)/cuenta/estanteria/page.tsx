@@ -20,7 +20,7 @@ export default async function ShelfAccountPage() {
   ]);
   return <div className="account-content">
     <Link href="/cuenta/seleccion">Volver a mi selección</Link>
-    <header className="account-section-heading"><div><h2>Tu estantería, conectada con su origen</h2><p>Envía una foto. Chisan identificará los productos de tu selección y revisará los puntos para mostrarlos junto al mapa.</p></div></header>
+    <header className="account-section-heading"><div><h2>Tu estantería, conectada con su origen</h2><p>Envía una foto. Chisan comprobará primero que es adecuada; tras admitirla, identificará los productos con IA y revisará los puntos para mostrarlos junto al mapa.</p></div></header>
     {!candidates.length ? <p><Link href="/cuenta/siguiendo">Elige qué productores compartir</Link> antes de enviar la foto (entre 1 y 200). Los favoritos privados no se utilizan.</p> : null}
     {!account.publicHandle || account.publicProfileVisibility === "private" ? <p>Tu selección es privada. Puedes enviar la foto, pero para publicarla necesitas <Link href="/cuenta/perfil">activar un identificador y la visibilidad Pública o Sin listar</Link>.</p> : null}
     <ShelfUpload aiProviderName={aiProviderLabel()} allowed={allowed && candidates.length > 0} records={records.map((record) => ({ id: record.id, status: record.status, date: record.createdAt.toISOString().slice(0, 10) }))} />

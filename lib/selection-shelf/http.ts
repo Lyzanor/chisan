@@ -48,7 +48,6 @@ export function createShelfMutationHandler(deps: Dependencies, operation: "uploa
       if (operation === "upload") {
         if (request.headers.get("x-chisan-shelf-consent") !== "1") return reply("consent", 422);
         const id = await service.submit(account.id, await readShelfBody(request, SHELF_LIMITS.inputBytes), "web");
-        deps.schedule(id);
         return Response.json({ id }, { status: 202, headers });
       }
       const raw = JSON.parse((await readShelfBody(request, 40_000)).toString("utf8"));
@@ -58,7 +57,7 @@ export function createShelfMutationHandler(deps: Dependencies, operation: "uploa
         return Response.json({ ok: true }, { headers });
       }
       const result = await service.review(account.id, raw);
-      if (raw.action === "analyze") deps.schedule(raw.id);
+      if (raw.action === "admit" || raw.action === "analyze") deps.schedule(raw.id);
       return Response.json(result, { headers });
     } catch (error) {
       if (error instanceof ShelfError) return reply(error.code, ({ access: 403, missing: 404, changed: 409, selection: 422, quota: 429, invalid: 422 })[error.code]);

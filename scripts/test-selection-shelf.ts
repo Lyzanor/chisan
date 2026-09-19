@@ -10,6 +10,7 @@ import { PGlite } from "@electric-sql/pglite";
 import { drizzle } from "drizzle-orm/pglite";
 import { and, eq } from "drizzle-orm";
 import sharp from "sharp";
+import { prepareImage } from "../lib/accounts/prepare-producer-image";
 import type { Database } from "../lib/db";
 import * as schema from "../lib/db/schema";
 import { createSelectionShelfService, type ShelfCatalog } from "../lib/selection-shelf/service";
@@ -27,6 +28,29 @@ const catalog: ShelfCatalog = async (identities) => identities.filter((identity)
   .map((identity) => ({ key: `es:${identity.producerId}`, name: `Producer ${identity.producerId}`, city: "Vilafranca", products: ["Label A"] }));
 const point: ShelfPoint = { id: "bottle-a", producerKey: "es:1", label: "Label A", x: 0.3, y: 0.7 };
 const photo = (color = "red") => sharp({ create: { width: 800, height: 600, channels: 3, background: color } }).withMetadata().jpeg().toBuffer();
+
+test("admission migration fences old queued and running analysis without losing reviewed points", async () => {
+  const pg = new PGlite();
+  try {
+    const migrations = (await readdir("drizzle")).filter((file) => /^\d{4}_.+\.sql$/.test(file)).sort();
+    for (const name of migrations.filter((name) => name < "0019_")) await pg.exec(await readFile(`drizzle/${name}`, "utf8"));
+    const db = drizzle(pg, { schema }) as unknown as Database;
+    const image = await prepareImage(await photo(), SHELF_LIMITS);
+    const accounts = await db.insert(users).values([{}, {}, {}, {}]).returning();
+    for (const [index, status] of ["queued", "processing", "review", "published"].entries()) {
+      await db.insert(selectionShelves).values({ ...image, userId: accounts[index].id, channel: "web", status, version: 4,
+        points: [point], analysisStartedAt: new Date(), ...(status === "published" ? { reviewedBy: accounts[3].id, reviewedAt: new Date() } : {}) });
+    }
+    await pg.exec(await readFile("drizzle/0019_selection_shelf_admission.sql", "utf8"));
+    const migrated = await db.select().from(selectionShelves);
+    assert.equal(migrated.filter((row) => row.status === "received" && row.version === 5 && row.analysisStartedAt === null).length, 3);
+    assert.equal(migrated.filter((row) => row.status === "published" && row.version === 4).length, 1);
+    assert(migrated.every((row) => row.points[0].label === point.label));
+    const [freshAccount] = await db.insert(users).values({}).returning();
+    const [fresh] = await db.insert(selectionShelves).values({ ...image, userId: freshAccount.id, channel: "web" }).returning();
+    assert.equal(fresh.status, "received", "the database also defaults closed to inference");
+  } finally { await pg.close(); }
+});
 
 test("both capabilities accept a different AI adapter and common configuration preserves legacy limits", async () => {
   const names: string[] = [];
@@ -66,7 +90,8 @@ async function fixture() {
   ]);
   const service = createSelectionShelfService({ database: db, catalog, enabled: () => true });
   const row = async (id: string) => (await db.select().from(selectionShelves).where(eq(selectionShelves.id, id)))[0];
-  return { pg, db, owner, reviewer, stranger, service, row };
+  const admit = async (id: string) => service.review(reviewer.id, { id, version: (await row(id)).version, action: "admit", points: (await row(id)).points, note: "Photo admitted by staff" });
+  return { pg, db, owner, reviewer, stranger, service, row, admit };
 }
 
 test("shelf ownership, explicit sharing, human review, replacement and privacy", async () => {
@@ -88,7 +113,9 @@ test("shelf ownership, explicit sharing, human review, replacement and privacy",
     await assert.rejects(service.review(owner.id, review), ShelfError);
     await assert.rejects(service.review(reviewer.id, { ...review, points: [{ ...point, producerKey: "es:2" }] }), ShelfError);
     await assert.rejects(service.review(reviewer.id, { ...review, points: [{ ...point, x: 1.1 }] }));
-    await service.review(reviewer.id, review);
+    await assert.rejects(service.review(reviewer.id, review), (error) => error instanceof ShelfError && error.code === "changed", "a received photo cannot bypass admission");
+    await f.admit(id);
+    await service.review(reviewer.id, { ...review, version: 2 });
     assert.equal((await service.publicShelf(owner.id))?.id, id);
     assert.deepEqual((await service.publicShelf(owner.id))?.points, [point]);
     assert(await service.readImage(id));
@@ -96,7 +123,9 @@ test("shelf ownership, explicit sharing, human review, replacement and privacy",
     assert.equal((await service.publicShelf(owner.id))?.id, id, "previous photo remains visible during replacement review");
     await service.review(reviewer.id, { ...review, id: replacement, action: "save" });
     await assert.rejects(service.review(reviewer.id, { ...review, id: replacement }), (error) => error instanceof ShelfError && error.code === "changed");
-    await service.review(reviewer.id, { ...review, id: replacement, version: 2 });
+    assert.equal((await row(replacement)).status, "received", "saving points does not admit the photo");
+    await f.admit(replacement);
+    await service.review(reviewer.id, { ...review, id: replacement, version: 3 });
     assert.equal((await row(id)).status, "superseded");
     assert.equal(await service.readImage(id), null, "old image URLs do not keep private copies public");
     await db.update(favorites).set({ showOnPublicProfile: false }).where(and(eq(favorites.userId, owner.id), eq(favorites.producerId, 1)));
@@ -124,6 +153,9 @@ test("AI allowance is shared, failed attempts remain spent and stale results can
     let output: unknown = { points: [{ producerKey: "es:1", label: "Label A", x: 0.3, y: 0.7 }, { producerKey: null, label: "Unreadable", x: 0.8, y: 0.2 }] };
     const processor = (limit: number, detect = async () => { calls++; return output; }) => createShelfProcessor({ database: db, service, detector: () => ({ profile: { provider: "test", model: "fake", promptVersion: "1" }, detect: async () => { await reserveExtraction(db, limit); return detect(); } }) });
     const id = await service.submit(owner.id, await photo(), "web");
+    assert.equal(await processor(10)(id), false, "unadmitted photos never reach the provider or allowance");
+    assert.equal((await db.select().from(auditEvents).where(eq(auditEvents.action, "whatsapp.extraction_reserved"))).length, 0);
+    await f.admit(id);
     await processor(0)(id);
     assert.equal(calls, 0); assert.equal((await row(id)).analysisError, "budget");
     await service.review(reviewer.id, { id, version: (await row(id)).version, action: "analyze", points: [], note: "" });
@@ -135,21 +167,25 @@ test("AI allowance is shared, failed attempts remain spent and stale results can
     assert.equal(await service.publicShelf(owner.id), null, "AI can never publish");
     await assert.rejects(reserveExtraction(db, 2), WhatsAppBudgetExhausted);
     const next = await service.submit(owner.id, await photo("green"), "web");
+    await f.admit(next);
     await processor(3, async () => { calls++; throw new Error("provider credential must never be stored"); })(next);
     await assert.rejects(reserveExtraction(db, 3), WhatsAppBudgetExhausted);
     assert.equal(await processor(4)(next), false, "no automatic repeat of failed paid attempts");
     const bad = await service.submit(owner.id, await photo("blue"), "web");
+    await f.admit(bad);
     output = { points: [{ producerKey: "es:2", label: "Private favourite", x: 0.5, y: 0.5 }] };
     await processor(4)(bad);
     assert.equal((await row(bad)).points.length, 0); assert.equal((await row(bad)).analysisError, "validation");
     const stale = await service.submit(owner.id, await photo("orange"), "web");
+    await f.admit(stale);
     let replacement = "";
     await processor(5, async () => {
       replacement = await service.submit(owner.id, await photo("purple"), "web");
       return { points: [{ producerKey: "es:1", label: "Old result", x: 0.2, y: 0.2 }] };
     })(stale);
     assert.equal((await row(stale)).status, "superseded");
-    assert.equal((await row(replacement)).status, "queued");
+    assert.equal((await row(replacement)).status, "received", "replacement photos require their own admission");
+    await f.admit(replacement);
     await processor(6, async () => {
       await service.review(reviewer.id, { id: replacement, version: (await row(replacement)).version, action: "publish", points: [{ ...point, label: "Verified manually" }], note: "Checked while AI was pending" });
       return { points: [{ producerKey: "es:1", label: "Stale AI label", x: 0.1, y: 0.1 }] };
@@ -175,7 +211,7 @@ test("HTTP checks consent, identity, origin, bounded input and uncached image vi
     assert.equal((await upload(request(Buffer.alloc(SHELF_LIMITS.inputBytes + 1)))).status, 413);
     assert.equal((await upload(request(Buffer.from("<svg></svg>")))).status, 422);
     const response = await upload(request(await photo()));
-    assert.equal(response.status, 202); assert.equal(scheduled.length, 1);
+    assert.equal(response.status, 202); assert.equal(scheduled.length, 0, "receiving a photo cannot schedule paid work");
     const { id } = await response.json();
     const read = createShelfImageHandler({ ...deps, account: async () => null });
     assert.equal((await read(request(new Uint8Array()), { params: Promise.resolve({ id }) })).status, 404);
@@ -183,6 +219,20 @@ test("HTTP checks consent, identity, origin, bounded input and uncached image vi
     assert.equal(ownerImage.status, 200); assert.match(ownerImage.headers.get("cache-control")!, /no-store/);
     assert.equal(ownerImage.headers.get("content-type"), "image/webp");
     assert.equal((await read(request(new Uint8Array()), { params: Promise.resolve({ id: "malformed" }) })).status, 404);
+    const reviewRequest = (action: string, version = 1) => request(Buffer.from(JSON.stringify({ id, action, version, points: [], note: "Admission checked" })));
+    const ownerReview = createShelfMutationHandler(deps, "review");
+    assert.equal((await ownerReview(reviewRequest("admit"))).status, 403);
+    const staffReview = createShelfMutationHandler({ ...deps, account: async () => f.reviewer }, "review");
+    assert.equal((await staffReview(reviewRequest("analyze"))).status, 409, "retry cannot bypass first admission");
+    assert.equal((await staffReview(reviewRequest("save"))).status, 200);
+    assert.equal((await f.row(id)).status, "received");
+    assert.equal(scheduled.length, 0);
+    assert.equal((await staffReview(reviewRequest("admit", 2))).status, 200);
+    assert.deepEqual(scheduled, [id]);
+    assert.equal((await staffReview(reviewRequest("admit", 2))).status, 409);
+    assert.equal(scheduled.length, 1, "duplicate admission cannot schedule another request");
+    const admissions = await f.db.select().from(auditEvents).where(and(eq(auditEvents.targetId, id), eq(auditEvents.action, "selection_shelf.admit")));
+    assert.equal(admissions.length, 1); assert.equal(admissions[0].actorUserId, f.reviewer.id);
   } finally { await f.pg.close(); }
 });
 
@@ -210,7 +260,7 @@ test("another messaging adapter can submit photos with independent, idempotent r
     assert.equal((await f.row(first)).messageId, "other-chat:42");
     assert.equal((await f.row(second)).messageId, "whatsapp:42");
     assert.equal(await f.service.submit(f.owner.id, await photo(), "other-chat", "42"), first);
-    assert.equal((await f.row(second)).status, "queued", "a replay from another adapter cannot replace current work");
+    assert.equal((await f.row(second)).status, "received", "a replay from another adapter cannot replace current work");
     await assert.rejects(f.service.submit(f.owner.id, await photo(), "untrusted channel", "42"), ShelfError);
   } finally { await f.pg.close(); }
 });
@@ -242,7 +292,9 @@ test("WhatsApp binding routes shelf photos once, preserves other accounts and ne
     assert.equal(imageReceipt.message.image, undefined, "raw inbox content is removed after receipt");
     await processSender(db, imageReceipt.sender, dependencies);
     assert.equal(images, 1, "a repeated signed event cannot create another photo or paid attempt");
-    assert.equal((await service.ownerStatus(owner.id))[0].status, "queued");
+    assert.equal((await service.ownerStatus(owner.id))[0].status, "received");
+    const processShelf = createShelfProcessor({ database: db, service, detector: () => { throw new Error("Unadmitted WhatsApp photo reached AI"); } });
+    assert.equal(await processShelf(), false);
     assert.equal((await db.select().from(auditEvents).where(eq(auditEvents.action, "whatsapp.extraction_reserved"))).length, 0);
     failImage = true;
     const failedPhoto = await receive(undefined, true);

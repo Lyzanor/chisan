@@ -32,7 +32,7 @@ export function ShelfUpload({ allowed, records, aiProviderName }: { aiProviderNa
       const result = await response.json();
       if (!response.ok) { setMessage(errors[result.error] ?? "No hemos podido recibir la foto. Inténtalo de nuevo."); return; }
       form.reset();
-      setMessage("Foto recibida. Chisan identificará los productos, revisará los puntos y publicará la foto en tu selección.");
+      setMessage("Foto recibida, pendiente de admisión por Chisan. Tras admitirla, identificaremos los productos con IA y revisaremos los puntos antes de publicarla.");
       router.refresh();
     } catch { setMessage("No hemos podido recibir la foto. Comprueba tu conexión."); }
     finally { setBusy(false); }
@@ -58,7 +58,7 @@ export function ShelfUpload({ allowed, records, aiProviderName }: { aiProviderNa
     {records.length ? <ul className={styles.statusList}>{records.map((record) => <li key={record.id}>
       <span><strong>{shelfStatusLabels[record.status] ?? record.status}</strong> · {record.date}</span>
       <a href={shelfImageUrl(record.id)} target="_blank" rel="noreferrer" className="account-button account-button--secondary">Ver foto</a>
-      {["queued", "processing", "review", "published"].includes(record.status) ? <button className="account-button account-button--secondary" type="button" disabled={busy} onClick={() => void withdraw(record.id)}>Retirar foto</button> : null}
+      {["received", "queued", "processing", "review", "published"].includes(record.status) ? <button className="account-button account-button--secondary" type="button" disabled={busy} onClick={() => void withdraw(record.id)}>Retirar foto</button> : null}
     </li>)}</ul> : <p>Todavía no has enviado ninguna foto.</p>}
   </>;
 }

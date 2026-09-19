@@ -934,7 +934,8 @@ the favorite aggregation. Public supporter attribution retains its separate opt-
 ## Shelf photos in shared selections
 
 `CHISAN_SELECTION_SHELF_ENABLED` gates an optional photo below the existing
-`/u/<handle>` map. Apply migration `0018_selection_shelves` before enabling it.
+`/u/<handle>` map. Apply migrations through `0019_selection_shelf_admission`
+before enabling it.
 This is account-owned presentation in PostgreSQL, like selection preferences;
 it does not register a shop as a producer or change CSV/content facts. Private
 business profile data is never reused as public location or presentation.
@@ -957,10 +958,15 @@ Only explicitly shared favorites resolve into identification candidates (at
 most 200), with names and reviewed product names from the catalog. Private,
 retired and unpublished-country favorites cannot become matches. AI returns
 normalized point centres, short label text and an allowed producer key or null;
-no stock, exact product SKU or provenance facts are inferred. Every image goes
-to staff at `/admin/estanterias`, including failed/budget-blocked analysis.
-Reviewers can add, move, match and remove points; save, reject, request analysis
-or publish. A version check rejects stale review/analysis results. Publication
+no stock, exact product SKU or provenance facts are inferred. Every upload starts
+as `received` in `/admin/estanterias`, without an AI request or allowance charge.
+An active reviewer/admin must admit each suitable photo; `admit` records that
+person in audit, moves it to `queued` and starts one bounded AI attempt. Uploads,
+replacements, duplicates and saving manual points cannot bypass admission.
+Failed/budget-blocked analysis remains available for manual review. Reviewers
+can add, move, match and remove points; save, reject, request another analysis
+or publish an admitted photo. A version check rejects stale admission,
+review and analysis results. Publication
 requires a currently visible profile, an active entitlement and at least one
 valid point; AI alone cannot publish. Unknown detections remain private.
 
@@ -972,6 +978,8 @@ source keys do not encode an exhaustive provider/channel list. Uploading an
 identical current image does not repeat inference. Rejected and superseded
 images older than 30 days are removed on that owner's next upload; active and
 published images are retained until withdrawal or ordinary account retention.
+Migration `0019` returns all older pending photos to `received`, preserving
+points but invalidating running workers so each photo requires staff admission.
 
 `/api/selection-shelf/<id>/image` rechecks visibility and serves `private,
 no-store` bytes; Next image optimization is bypassed. Owners and active staff

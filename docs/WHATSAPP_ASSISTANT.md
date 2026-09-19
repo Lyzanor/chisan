@@ -155,8 +155,10 @@ The linking consent separately authorizes publication of submitted shelf photos
 after Chisan review. Product-mode photo consent never authorizes this use.
 
 A photo is saved with its namespaced Meta message receipt in the inbox
-transaction. AI runs after that transaction commits, against explicitly shared
-favorites, and never calls the product extractor. The sender receives a receipt;
+transaction as `received`. The sender receives an admission-pending receipt;
+no AI request is made until Chisan staff admit the photo in `/admin/estanterias`.
+AI then runs against explicitly shared favorites and never calls the product
+extractor. Every replacement requires its own admission.
 `ESTADO`, `CANCELAR` and `DESCONECTAR` work without AI. Cancelling removes pending
 shelf work; published photo removal is available in the account. Publication
 remains an internal staff decision and no unsolicited outbound notice is sent.

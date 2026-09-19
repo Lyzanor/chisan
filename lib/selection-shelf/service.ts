@@ -8,7 +8,7 @@ import { SHELF_LIMITS, ShelfError, shelfSourceMessageKey, shelfImageUrl, shelfPo
 type Transaction = Parameters<Parameters<Database["transaction"]>[0]>[0];
 export type ShelfRecord = typeof selectionShelves.$inferSelect;
 export type ShelfCatalog = (identities: { country: string; producerId: number }[]) => Promise<ShelfCandidate[]>;
-const pending = ["queued", "processing", "review"];
+const pending = ["received", "queued", "processing", "review"];
 
 export async function lockShelfAccount(tx: Transaction, userId: string) {
   await tx.execute(sql`select pg_advisory_xact_lock(hashtext(${`profile-qr:user:${userId}`}))`);
@@ -63,7 +63,7 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
         .where(and(eq(selectionShelves.userId, userId), inArray(selectionShelves.status, pending)));
       await tx.delete(selectionShelves).where(and(eq(selectionShelves.userId, userId),
         inArray(selectionShelves.status, ["superseded", "rejected"]), lt(selectionShelves.updatedAt, new Date(Date.now() - 30 * 86_400_000))));
-      const [created] = await tx.insert(selectionShelves).values({ ...image, userId, channel, messageId }).returning({ id: selectionShelves.id });
+      const [created] = await tx.insert(selectionShelves).values({ ...image, userId, channel, messageId, status: "received" }).returning({ id: selectionShelves.id });
       await audit(tx, userId, created.id, "received", { channel, sha256: image.sha256, rightsConfirmed: true });
       return created.id;
     });
@@ -145,15 +145,19 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       const [record] = await tx.select({ status: selectionShelves.status, version: selectionShelves.version }).from(selectionShelves)
         .where(eq(selectionShelves.id, input.id)).for("update");
       if (!record || record.version !== input.version || !pending.includes(record.status)) throw new ShelfError("changed");
-      if (input.action === "analyze" && record.status === "processing") throw new ShelfError("changed");
+      if (input.action === "admit" && record.status !== "received") throw new ShelfError("changed");
+      if (input.action === "analyze" && record.status !== "review") throw new ShelfError("changed");
+      if (input.action === "publish" && record.status === "received") throw new ShelfError("changed");
       if (input.action !== "reject" && !(await canManageSelectionShelf(tx, initial.userId))) throw new ShelfError("access");
       const allowed = new Set((input.action === "reject" ? [] : await candidates(initial.userId, tx)).map((item) => item.key));
       if (input.action !== "reject" && input.points.some((point) => !allowed.has(point.producerKey))) throw new ShelfError("selection");
+      if ((input.action === "admit" || input.action === "analyze") && !allowed.size) throw new ShelfError("selection");
       if (input.action === "publish" && (!input.points.length || !account.publicHandle || account.publicProfileVisibility === "private")) throw new ShelfError("selection");
       if (input.action === "reject" && !input.note) throw new ShelfError("invalid");
       if (input.action === "publish") await tx.update(selectionShelves).set({ status: "superseded", updatedAt: new Date(), version: sql`${selectionShelves.version} + 1` })
         .where(and(eq(selectionShelves.userId, initial.userId), eq(selectionShelves.status, "published")));
-      const status = { save: "review", publish: "published", reject: "rejected", analyze: "queued" }[input.action];
+      // Saving corrections before admission must never authorize inference.
+      const status = { admit: "queued", save: record.status === "received" ? "received" : "review", publish: "published", reject: "rejected", analyze: "queued" }[input.action];
       await tx.update(selectionShelves).set({ status, points: input.points, note: input.note, version: record.version + 1,
         updatedAt: new Date(), ...(input.action === "publish" || input.action === "reject" ? { reviewedBy: reviewerId, reviewedAt: new Date() } : {}) })
         .where(eq(selectionShelves.id, input.id));

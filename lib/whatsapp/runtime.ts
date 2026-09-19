@@ -14,7 +14,7 @@ let running: Promise<void> | undefined;
 export async function runWhatsAppInbox() {
   if (!whatsappEnabled()) return;
   // Leave pool capacity for the independent, committed allowance reservation.
-  // Cross-instance serialization is provided by PostgreSQL in reserveExtraction.
+  // Cross-instance serialization is provided by PostgreSQL in reserveAIAttempt.
   if (running) return running;
   running = runInbox();
   try {
@@ -41,5 +41,6 @@ async function runInbox() {
     image: (image) => downloadImage(image, config),
     send: (sender, reply) => sendReply(sender, reply, config),
   });
-  for (let index = 0; index < 4; index++) await runSelectionShelfQueue();
+  // Recover one already-admitted job. Receiving a photo never authorizes AI.
+  await runSelectionShelfQueue();
 }
