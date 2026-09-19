@@ -373,9 +373,17 @@ reaches the market under the cooperative's own identity — and a website is the
 nearest thing to that evidence. The remaining 1,101 unmatched elaborating
 cooperatives, and the raw-production sectors, are deferred.
 
-The directory mixes first- and second-degree cooperatives, and a second-degree
-group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+Apply the collective admission test in `docs/EDITORIAL.md`; cooperative degree
+does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| AGRA SCOOP | Calasparra | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cooperativa-agra.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Frutas y hortalizas, Frutos Secos, Suministros a los socios y carburantes. |
+| AGRA SCOOP | Calasparra | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cooperativa-agra.es> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Frutas y hortalizas, Frutos Secos, Suministros a los socios y carburantes. |
+
+## Ice exclusion reviewed — 2026-09-19
+
+The plain-ice rule does not exclude a separately evidenced food or drink range.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Jiménez Hielos y Granizados | Los Alcázares, industrial estate, nave 10A | `Bebidas sin alcohol` — flavoured granizados | Its company-authored supplier profile explicitly describes making lemon, fruit, horchata and milk granizados as well as ice. | [Supplier profile](https://www.proveedores.com/proveedores/jimenez-hielos-y-granizados/) | <https://www.granizadosjimenez.es/> | Confirm the current productive unit and attributable granizado offer through a current verifying source. The official site was unavailable; withdraw the blanket ice rejection without treating the directory address as a proved factory. |

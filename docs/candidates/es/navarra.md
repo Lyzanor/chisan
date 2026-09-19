@@ -236,13 +236,13 @@ reaches the market under the cooperative's own identity — and a website is the
 nearest thing to that evidence. The remaining 1,101 unmatched elaborating
 cooperatives, and the raw-production sectors, are deferred.
 
-The directory mixes first- and second-degree cooperatives, and a second-degree
-group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+Apply the collective admission test in `docs/EDITORIAL.md`; cooperative degree
+does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| AN, S.COOP. | Egüés | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.grupoan.com/> | The directory covers first- and second-degree cooperatives; this one reads as a second-degree group, so identify the qualifying productive unit rather than adding the group as a row. Also registered for: Alimentación animal y Pet foods, Aves y huevos, Cultivos herbáceos (salvo algodón y forrajes), Forrajes. |
-| Baztandarra S.Coop. | Baztan | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.baztangoa.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Alimentación animal y Pet foods, Aves y huevos, Suministros a los socios y carburantes, Tiendas. |
+| AN, S.COOP. | Egüés | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.grupoan.com/> | Establish which locatable productive unit or governed member output this collective represents under its own market identity; its cooperative degree does not decide admission. Also registered for: Alimentación animal y Pet foods, Aves y huevos, Cultivos herbáceos (salvo algodón y forrajes), Forrajes. |
+| Baztandarra S.Coop. | Baztan | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.baztangoa.com> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Alimentación animal y Pet foods, Aves y huevos, Suministros a los socios y carburantes, Tiendas. |
 
 
 ## Reyno Gourmet seal directory pass — 2026-09-12
@@ -304,7 +304,7 @@ Discovery pass from BioCultura (Asociación Vida Sana) and CPAEN (Consejo de la 
 
 ## Fruit Attraction pass — 2026-09-14
 
-Discovery pass from Fruit Attraction (IFEMA Madrid) and Reyno Gourmet pavilion, cross-checked against the Spanish catalog and candidate queues. Excludes pure traders, non-productive packers and second-degree consolidators.
+Discovery pass from Fruit Attraction (IFEMA Madrid) and Reyno Gourmet pavilion, cross-checked against the Spanish catalog and candidate queues. Pure traders and non-productive packers do not qualify. Assess collectives under `docs/EDITORIAL.md`, regardless of cooperative degree.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|

@@ -1035,15 +1035,15 @@ reaches the market under the cooperative's own identity — and a website is the
 nearest thing to that evidence. The remaining 1,101 unmatched elaborating
 cooperatives, and the raw-production sectors, are deferred.
 
-The directory mixes first- and second-degree cooperatives, and a second-degree
-group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+Apply the collective admission test in `docs/EDITORIAL.md`; cooperative degree
+does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 
 Already open from an earlier pass in this note, so no row was added here and the earlier entry now has a second corroborating source: COVILALBA, SCCL, Unió Fruits, SCCL (from DO Catalunya; RIAAC olive-mill, apiary and cheese elaborators — 2026-09-03).
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Olivarera del Baix Ebre, SCCL | Camarles | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.olivarerabaixebre.com> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Frutos Secos, Suministros a los socios y carburantes, Tiendas. |
-| Unió Origen, SCCL | Reus | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.unio.coop> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. |
+| Olivarera del Baix Ebre, SCCL | Camarles | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.olivarerabaixebre.com> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Frutos Secos, Suministros a los socios y carburantes, Tiendas. |
+| Unió Origen, SCCL | Reus | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.unio.coop> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. |
 
 ## DO Cava certified installations — 2026-09-13
 
@@ -1070,7 +1070,7 @@ Follow-up 2026-09-15: Olis Can Català was admitted as `olis-can-catala-roquetes
 
 - Source: Caprabo's [Próximo a ti](https://www.caprabo.com/es/proximo-a-ti/catalunya/home) proximity programme, read on 2026-09-14 through the public JSON endpoints behind its map: `api/productoresComarca.jsp` for each of the 42 comarques, `api/marcasCategoria.jsp` for each product subcategory and `api/productor.jsp` for each supplier, which is the discovery link below. Scope and cutoff: the 202 distinct suppliers listed for Catalonia that day; the Navarra section was not read.
 - Each profile is an undated supplier record: a legal name cut at 30 characters, comarques, brands, subcategories, a short description and sometimes a website, many of which no longer resolve. It shows a retail relationship at some point, not current activity, productive responsibility or a municipality, and a listed comarca can be a point of sale rather than the productive unit. Distributors and packers are listed beside producers.
-- Deduplicated against the catalog, candidate notes and evidence on `origin/main`: 125 suppliers were already represented, 31 already queued, 2 closed by earlier decisions and 11 not queued as distributors, packers, a second-degree cooperative, non-food suppliers or a dissolved company. The remaining 33 leads are split by productive area across the four Catalan notes; this note holds 4.
+- Deduplicated against the catalog, candidate notes and evidence on `origin/main`: 125 suppliers were already represented, 31 already queued, 2 closed by earlier decisions and 11 not queued as distributors, packers, a second-degree cooperative, non-food suppliers or a dissolved company. The cooperative-degree screening in that historical pass is superseded by the collective test in `docs/EDITORIAL.md` and is not a closed exclusion. The remaining 33 leads are split by productive area across the four Catalan notes; this note holds 4.
 - Admission review 2026-09-15: no lead was admitted; the leads below remain on hold with updated blockers.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |

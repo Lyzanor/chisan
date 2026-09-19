@@ -271,8 +271,8 @@ reaches the market under the cooperative's own identity — and a website is the
 nearest thing to that evidence. The remaining 1,101 unmatched elaborating
 cooperatives, and the raw-production sectors, are deferred.
 
-The directory mixes first- and second-degree cooperatives, and a second-degree
-group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+Apply the collective admission test in `docs/EDITORIAL.md`; cooperative degree
+does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|

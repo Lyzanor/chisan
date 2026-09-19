@@ -129,7 +129,7 @@ Scope: varieties of the MAPA *Catálogo electrónico de quesos de España* whose
 
 ## Fruit Attraction pass — 2026-09-14
 
-Discovery pass from Fruit Attraction (IFEMA Madrid) and Plátano de Canarias IGP collective space, cross-checked against the Spanish catalog and candidate queues. Excludes pure commodity traders, second-degree federations and import/export brokers.
+Discovery pass from Fruit Attraction (IFEMA Madrid) and Plátano de Canarias IGP collective space, cross-checked against the Spanish catalog and candidate queues. Pure traders and import/export brokers without own or governed production do not qualify. Assess collectives under `docs/EDITORIAL.md`, regardless of cooperative degree.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|

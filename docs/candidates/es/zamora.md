@@ -135,9 +135,9 @@ reaches the market under the cooperative's own identity — and a website is the
 nearest thing to that evidence. The remaining 1,101 unmatched elaborating
 cooperatives, and the raw-production sectors, are deferred.
 
-The directory mixes first- and second-degree cooperatives, and a second-degree
-group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+Apply the collective admission test in `docs/EDITORIAL.md`; cooperative degree
+does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| S. COOP. BAJO DUERO (COBADU) | Moraleja del Vino | `Lácteos y quesos` — cow milk | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cobadu.com/> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Alimentación animal y Pet foods, Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Ovino / caprino  (Carnes o vivo). |
+| S. COOP. BAJO DUERO (COBADU) | Moraleja del Vino | `Lácteos y quesos` — cow milk | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.cobadu.com/> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Alimentación animal y Pet foods, Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Ovino / caprino  (Carnes o vivo). |

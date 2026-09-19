@@ -517,13 +517,13 @@ reaches the market under the cooperative's own identity — and a website is the
 nearest thing to that evidence. The remaining 1,101 unmatched elaborating
 cooperatives, and the raw-production sectors, are deferred.
 
-The directory mixes first- and second-degree cooperatives, and a second-degree
-group is not a productive unit. Source ceiling: `data/csv/es/AGENTS.md`.
+Apply the collective admission test in `docs/EDITORIAL.md`; cooperative degree
+does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| ANECOOP S.Coop. | Valencia | `Vino` — wine, vinegar or spirits | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.anecoop.com> | The directory covers first- and second-degree cooperatives; this one reads as a second-degree group, so identify the qualifying productive unit rather than adding the group as a row. Also registered for: Frutas y hortalizas, Secciones de crédito, Suministros a los socios y carburantes. |
-| COARVAL Coop.V. | Picassent | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coarval.es> | Confirm that a resulting food or drink reaches the market under the cooperative's own identity; a collective that only supplies members, mills or sells in bulk to bottlers has no own offer and is not a producer. Also registered for: Alimentación animal y Pet foods, Suministros a los socios y carburantes. |
+| ANECOOP S.Coop. / Bouquet | Valencia headquarters; member production dispersed across Spain | `Fruta y verdura` — fruit and vegetables under a collective identity | Its own site describes coordination and marketing of member-grown output; Bouquet provides an attributable collective offer. | [Somos Anecoop](https://anecoop.com/somos-anecoop/) | <https://anecoop.com/nuestra-cosecha/> | Reviewed 2026-09-19: identify a locatable productive unit or governed collective suitable for one row, without duplicating represented members. The Valencia administrative seat cannot locate the dispersed network; second-degree status is not an exclusion. |
+| COARVAL Coop.V. | Picassent | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coarval.es> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Alimentación animal y Pet foods, Suministros a los socios y carburantes. |
 
 ## Mediterránea Gastrónoma pass — 2026-09-14
 
