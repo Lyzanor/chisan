@@ -15,11 +15,11 @@ authority. Repository contributors doing editorial research follow
 | Product field becomes available to the agent | `PRODUCT_INTAKE_FIELD_POLICY` in `lib/intake/product.ts`, candidate schema/mapping, product editor and review diff; the exhaustive policy makes added/renamed canonical fields fail type checking until classified |
 | CSV field or permission | `lib/accounts/producer-fields.ts`, shared submission/review and the CSV contract; WhatsApp news uses `lib/intake/news.ts` and the shared expanded-field definitions; other base fields are not exposed |
 | Natural conversation or ambiguity handling | `lib/intake/extractor.ts` owns the provider-neutral interpretation schema, instructions and version; `lib/whatsapp/service.ts` owns conversation state and dispatch |
-| AI provider | Implement `ProductExtractor`; select it in `lib/whatsapp/runtime.ts`, configure its credentials and update the named processing consent and activation tests |
-| OpenAI API/model options | `lib/intake/openai.ts`; provider-specific options do not constrain other extractors or the audit vocabulary |
+| AI provider | Implement `StructuredAIProvider` in `lib/ai`, select it in `lib/ai/runtime.ts`, and update processing consent and activation tests; product and shelf services retain their own validation |
+| OpenAI API/model options | `lib/ai/openai.ts` (the old intake exports remain compatible); provider-specific options do not constrain other extractors or the audit vocabulary |
 | Meta protocol, media or delivery | `lib/whatsapp/meta.ts`, webhook route and `lib/whatsapp/config.ts`; Meta configuration does not require OpenAI credentials |
 | Channel provenance shown to reviewers | `lib/accounts/producer-change-intake.ts` and `components/admin/producer-change-intake.tsx`; retain older record versions |
-| Publication | Existing shared submission/review and `lib/editorial/**`; no provider-specific publication path |
+| Catalog publication | Existing shared submission/review and `lib/editorial/**`; no provider-specific publication path |
 
 A display-label or layout change does not change a field's identity. Change the
 owning schema first when its meaning or key changes, then inspect its consumers
@@ -32,7 +32,32 @@ adapter and validation, not a rewrite of catalog authority or review. The web
 editor, database proposals and Git publication remain independent of the AI
 provider. The previous `lib/whatsapp/domain.ts` and `extract.ts` exports remain
 compatibility entry points; new shared consumers import from `lib/intake`.
-There is no provider registry, new queue service or generalized agent framework.
+`lib/ai/structured.ts` defines bounded text/image requests and unknown structured
+responses; providers have no database handle or tools. `lib/ai/allowance.ts`
+owns the shared committed call ledger. Product extraction and shelf detection
+build their own prompts/schemas around an injected provider. A channel only
+authenticates and normalizes an input before submitting it to its domain service.
+There is no provider registry, external queue service or generalized agent framework.
+
+Shared `CHISAN_AI_PROVIDER` (currently only `openai`), `CHISAN_AI_MODEL`,
+`CHISAN_AI_REASONING_EFFORT`, `CHISAN_AI_MAX_OUTPUT_TOKENS` and
+`CHISAN_AI_MAX_TOTAL_CALLS` configure the composition boundary. Nonempty shared
+settings override the corresponding legacy `CHISAN_WHATSAPP_*` settings; absent
+settings preserve them. Credentials belong to each adapter (`OPENAI_API_KEY`
+today). The historical ledger action/target/lock stay unchanged, so deployment,
+channel changes or moving configuration cannot reset earlier spending. New
+capabilities obtain a metered provider through `createAIProvider(database,
+capability)`: the common wrapper reserves from this ledger before every
+request. Low-level adapters are transport boundaries for that factory and tests.
+
+Shelf processing claims and commits work before inference, then applies the
+result only to that same pending version. Each upload schedules one bounded
+attempt. WhatsApp also drains up to four shelf jobs after inbox processing.
+After a stopped worker, staff can save manual points or request analysis from
+the queue; a processing attempt older than two minutes can be recovered by the
+next queue run. There are no automatic retries of failed paid attempts and no
+new recurring worker. Model accuracy still needs a controlled real-photo pilot;
+mock-provider tests do not establish recognition accuracy.
 
 ## Entry points
 
@@ -40,6 +65,7 @@ There is no provider registry, new queue service or generalized agent framework.
 | --- | --- | --- | --- |
 | Producer web editor | Active exact membership; premium entitlement for expanded fields/products; `producer_change_requests` | `/admin/cambios` | Existing controlled materializer |
 | WhatsApp text or photo | Expiring account binding, same membership and entitlement checks; automatically extracted product or news candidate becomes `producer_change_requests` | Same `/admin/cambios`, including structured channel and extraction history | Same controlled materializer |
+| Shelf photo from web or messaging | Active shelf capability and explicit publication consent; `selection_shelves` | `/admin/estanterias` | Account presentation in PostgreSQL, never catalog facts |
 | Community suggestion | Verified active account, unclaimed producer, scoped standard fields; `producer_suggestions`; no ownership rights | `/admin/sugerencias` | Editorial file edit and release; reviewer records the result afterward |
 | Editorial research | Evidence-backed editorial decision | [Editorial workflow](EDITORIAL.md) | Reviewed file edit, validation, Git and deployment |
 

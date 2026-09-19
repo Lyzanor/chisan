@@ -1,17 +1,13 @@
 import "server-only";
+import { createShelfWhatsAppHandler } from "../selection-shelf/whatsapp";
+import { runSelectionShelfQueue, shelfCatalog } from "../selection-shelf/server";
 import { getDatabase } from "../db";
 import { whatsappConfig, whatsappEnabled } from "./config";
-import {
-  createOpenAIProductExtractor,
-  openAIProductConfig,
-} from "../intake/openai";
+import { createAIProvider } from "../ai/runtime";
+import { createProductExtractor } from "../intake/extractor";
+import type { ProductExtractor } from "../intake/extractor";
 import { downloadImage, sendReply } from "./meta";
 import { drainInbox } from "./service";
-import {
-  extractionCallLimit,
-  reserveExtraction,
-  withExtractionAllowance,
-} from "./budget";
 
 let running: Promise<void> | undefined;
 
@@ -31,13 +27,19 @@ export async function runWhatsAppInbox() {
 async function runInbox() {
   const config = whatsappConfig();
   const database = getDatabase();
-  const limit = extractionCallLimit();
+  let productExtractor: ProductExtractor | undefined;
+  const configuredExtractor = () => productExtractor ??= createProductExtractor(createAIProvider(database, "producer-intake"));
   await drainInbox(database, {
-    extractor: withExtractionAllowance(
-      createOpenAIProductExtractor(openAIProductConfig()),
-      () => reserveExtraction(database, limit),
-    ),
+    shelf: createShelfWhatsAppHandler({ catalog: shelfCatalog, image: (image) => downloadImage(image, config) }),
+    extractor: {
+      get profile() { return configuredExtractor().profile; },
+      async extract(input) {
+        const extractor = configuredExtractor();
+        return extractor.extract(input);
+      },
+    },
     image: (image) => downloadImage(image, config),
     send: (sender, reply) => sendReply(sender, reply, config),
   });
+  for (let index = 0; index < 4; index++) await runSelectionShelfQueue();
 }

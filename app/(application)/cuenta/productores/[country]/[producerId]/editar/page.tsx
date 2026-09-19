@@ -1,3 +1,4 @@
+import { selectionShelfEnabled } from "@/lib/selection-shelf/policy";
 import { listProducerMediaUploads } from "@/lib/accounts/producer-media";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { PREMIUM_CONTROLLED_VALUES } from "@/lib/catalog/producer-schema";
@@ -210,6 +211,7 @@ export default async function EditProducerPage({
             {openChange.status === "draft" ? labels.premiumPausedHelp : labels.sentHelp}
           </p>
           <div className="account-inline-actions">
+            {premiumActive && selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="account-button account-button--secondary">Foto de mi estantería</Link> : null}
             <Link href="/cuenta/cambios" className="account-button">
               {labels.viewRequest}
             </Link>

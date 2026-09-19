@@ -18,8 +18,11 @@ the producer a pause message and preserves their earlier candidate.
 
 This is a call-count ceiling, not a currency spending limit: input, images,
 output and provider prices determine each call's cost. Use the model and output
-cap below alongside prepaid billing without automatic top-up. This allowance
-only covers this WhatsApp runtime, not other uses of the OpenAI account.
+cap below alongside prepaid billing without automatic top-up. This allowance covers both producer intake and shelf identification through
+`lib/ai/allowance.ts`; unrelated applications using the same provider account
+are outside Chisan's ledger. The shared `CHISAN_AI_*` settings may override the
+legacy names below without resetting accumulated reservations. See
+[Editing intake](EDITING_WORKFLOW.md) for the provider-neutral composition boundary.
 One worker runs per server instance to leave pool capacity for reservations;
 PostgreSQL serializes reservations across instances. No schema migration is
 needed: the durable audit ledger already exists.
@@ -47,9 +50,9 @@ latency and factual errors during that isolated evaluation. Model upgrades are
 configuration changes; new editing capabilities still need schemas, permission
 checks, review diffs and tests. Successful extraction steps preserve the model,
 provider, effort, output budget and versioned prompt in the submission audit trail.
-OpenAI configuration and transport live in `lib/intake/openai.ts`; Meta
+OpenAI configuration and transport live in `lib/ai/openai.ts`; Meta
 configuration is separate. The current environment variable names remain
-compatible with the initial pilot setup. The runtime selects the adapter in
+compatible with the initial pilot setup. The shared `lib/ai/runtime.ts` selects the provider in
 one place, while shared extraction validation stays in `lib/intake/extractor.ts`.
 
 ## Pilot scope
@@ -135,10 +138,30 @@ name and price format. “Se llama Brisa, botella de 75 cl” submits automatica
 never decides editorial approval or publication. Photo text cannot invoke
 status/cancellation/help controls without an accompanying textual request.
 
-One account binds one WhatsApp sender to one producer for 30 days. Generating a
+In producer mode, one account binds one WhatsApp sender to one producer for 30 days. Generating a
 new link replaces its previous binding and pending conversation. Each operation
 rechecks the active account, exact producer membership and premium entitlement;
 knowing a name, catalog telephone or producer ID does not confer authority.
+
+## Account shelf mode
+
+When `CHISAN_SELECTION_SHELF_ENABLED=true`, `/cuenta/estanteria` can instead
+bind the sender to the account's shared selection. It uses the same signed
+webhook, durable inbox and reply adapter. Generating a link explicitly replaces
+that account's previous channel mode; one phone cannot bind to two accounts or
+modes, including while shelf intake is disabled. Tokens are single-use, expire
+after ten minutes and are stored as hashes; bindings expire after 30 days.
+The linking consent separately authorizes publication of submitted shelf photos
+after Chisan review. Product-mode photo consent never authorizes this use.
+
+A photo is saved with its namespaced Meta message receipt in the inbox
+transaction. AI runs after that transaction commits, against explicitly shared
+favorites, and never calls the product extractor. The sender receives a receipt;
+`ESTADO`, `CANCELAR` and `DESCONECTAR` work without AI. Cancelling removes pending
+shelf work; published photo removal is available in the account. Publication
+remains an internal staff decision and no unsolicited outbound notice is sent.
+No photo is published as catalog product media. The complete storage, review and
+visibility contract is in [Account System](ACCOUNT_SYSTEM.md#shelf-photos-in-shared-selections).
 
 ## Runtime and recovery
 

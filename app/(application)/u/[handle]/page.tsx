@@ -1,3 +1,4 @@
+import { selectionShelfService } from "@/lib/selection-shelf/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -68,10 +69,11 @@ export default async function PublicUserProfilePage({
   const profile = await findPublicUserProfile(handle);
   if (!profile) notFound();
 
-  const [identities, presentation, accountPresentation] = await Promise.all([
+  const [identities, presentation, accountPresentation, shelf] = await Promise.all([
     listPublicProfileFavoriteIdentities(profile.id),
     loadApplicationPresentation(),
     getUserPresentation(getDatabase(), profile.id),
+    selectionShelfService().publicShelf(profile.id),
   ]);
   const producers = await findProducersByIds(identities, presentation.locale);
   const items = buildProducerSelectionItems(producers, presentation);
@@ -79,6 +81,7 @@ export default async function PublicUserProfilePage({
 
   return (
     <ProducerSelectionPage
+      shelf={shelf}
       selection={selection}
       profileAvatar={{ name: profile.displayName || profile.publicHandle, src: accountPresentation.avatarUrl }}
       messages={selectionPageMessages}

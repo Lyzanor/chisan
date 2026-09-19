@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const ADMIN_NAVIGATION = [
+  { href: "/admin/estanterias", label: "Shelf photos", description: "Identify, review and publish selection photos" },
   {
     href: "/admin",
     label: "Operations overview",

@@ -1,3 +1,4 @@
+import type { PublicSelectionShelf } from "@/lib/selection-shelf/policy";
 import { ProducerSelectionExplorer } from "@/components/producer-selection-explorer";
 import { UserAvatar } from "@/components/account/user-avatar";
 import {
@@ -28,12 +29,14 @@ export function ProducerSelectionPage({
   profileQr,
   embedded = false,
   profileAvatar,
+  shelf,
 }: {
   selection: ProducerSelectionPageModel;
   messages: ProducerSelectionPageMessages;
   profileQr?: ProfileQrLabelProps;
   embedded?: boolean;
   profileAvatar?: { name: string; src: string | null };
+  shelf?: PublicSelectionShelf | null;
 }) {
   const mappedCount = selection.items.filter(
     hasProducerSelectionCoordinates,
@@ -70,6 +73,7 @@ export function ProducerSelectionPage({
 
       {selection.items.length ? (
         <ProducerSelectionExplorer
+          shelf={shelf}
           selection={explorerSelection}
           messages={{
             producers: messages.producers,

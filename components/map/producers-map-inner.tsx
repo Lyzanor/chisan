@@ -679,6 +679,16 @@ function BoundsAwareMarkers({
     },
   });
 
+  // The shelf layout and responsive panels can resize a map without a window
+  // resize. Keep Leaflet's pixel origin in sync while preserving pan and zoom.
+  useEffect(() => {
+    const resize = () => map.invalidateSize({ animate: false });
+    resize();
+    const observer = new ResizeObserver(resize);
+    observer.observe(map.getContainer());
+    return () => observer.disconnect();
+  }, [map]);
+
   // Fit only when the effective geometry changes. Navigation state such as a
   // selected producer may rebuild props, but must preserve the user's pan
   // and zoom.

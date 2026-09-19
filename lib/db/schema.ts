@@ -1048,3 +1048,4 @@ export const producerMediaUploads = pgTable("producer_media_uploads", {
 ]);
 
 export { businessProfiles, businessProductTerms, businessEnquiries, businessMessages } from "./b2b-schema";
+export { selectionShelves, selectionShelfWhatsAppLinks } from "./selection-shelf-schema";

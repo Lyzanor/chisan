@@ -270,3 +270,39 @@ places dated QA in `history/`. The current identity owner is
   included the expected unavailable Vercel Analytics script and CSS preload
   notices; no search runtime error was observed. Earlier shared-worktree QA had
   a local server collision; the isolated guide-route and full behavior checks passed.
+
+
+## 2026-09-19 — Shared selection shelf photos
+
+Checked the real selection explorer, upload form and staff point editor with a
+local, disposable schematic fixture at 390×844 first, then 1440×1000. No real
+shelf photo, account mutation, provider request or WhatsApp message was used.
+The fixture route and SVG were removed after verification.
+
+- Map above photo, 44px photo buttons, shared selection in both directions and
+  all repeated products highlighted. Zoom doubles the image inside its own
+  horizontal viewport without page overflow. Basic profiles retain their map
+  and roster when no reviewed shelf exists.
+- Compact producer link keeps the selected product's context close to the photo.
+  Fixed incorrect colour-token references found during visual inspection; point
+  numbers and selected rings now have visible contrast. Normalized centres use
+  the actual image ratio, with no cover crop. The existing visitor location
+  control remains; no device position was requested during this check.
+- Added Leaflet container resize observation: all three test producers remain
+  inside the compact map after initial layout and a desktop/mobile resize.
+- Staff can add a point, assign its producer, edit label text and change the
+  percentage position by keyboard. The editor stacks on phones and uses two
+  columns on wide screens. Upload consent uses the entire text label as its
+  touch target. Long unbroken labels and a Japanese producer name do not create
+  horizontal page overflow.
+- Integration tests use migrated PGlite databases for receipt, permissions,
+  review/version conflicts, publication, withdrawal, shared AI allowance and
+  replay protection. This fixture-based browser check does not verify live
+  recognition accuracy or the configured Meta delivery pipeline.
+- The development shell still reports its pre-existing WebMCP input-schema
+  serialization notices and development Clerk warning. No shelf-specific
+  console error remained after correcting the temporary fixture image source.
+- `pnpm verify:ai` passed with external database access disabled and a dedicated
+  local server, including eight shelf integration tests and sixteen WhatsApp
+  tests. The migration was exercised in PGlite; no live migration, paid inference
+  or production activation was performed.

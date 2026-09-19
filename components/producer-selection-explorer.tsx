@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import type { PublicSelectionShelf } from "@/lib/selection-shelf/policy";
+import { ShelfPhoto } from "@/components/selection-shelf/shelf-photo";
+import shelfStyles from "@/components/selection-shelf/shelf.module.css";
 import { useSearchParams } from "next/navigation";
 import {
   Suspense,
@@ -53,10 +56,12 @@ function replaceSelectionState(href: string) {
 function ProducerSelectionExplorerView({
   selection,
   messages,
+  shelf,
   selectedKey,
 }: {
   selection: ProducerSelectionExplorerModel;
   messages: ProducerSelectionExplorerMessages;
+  shelf?: PublicSelectionShelf | null;
   selectedKey: string;
 }) {
   const [isMobileListOpen, setIsMobileListOpen] = useState(false);
@@ -67,6 +72,7 @@ function ProducerSelectionExplorerView({
   const selectedProducerLinkRef = useRef<HTMLAnchorElement>(null);
   const listToggleRef = useRef<HTMLButtonElement>(null);
   const viewerRef = useRef<HTMLElement>(null);
+  const combinedRef = useRef<HTMLElement>(null);
   const mapSurfaceRef = useRef<HTMLDivElement>(null);
   const focusSelectedProducerAfterCloseRef = useRef(false);
   const markers = useMemo(
@@ -95,8 +101,8 @@ function ProducerSelectionExplorerView({
   );
   const selectedItem = useMemo(() => {
     const item = resolveProducerSelectionItem(selection.items, selectedKey);
-    return item && mappedKeys.has(item.key) ? item : undefined;
-  }, [mappedKeys, selectedKey, selection.items]);
+    return item && (mappedKeys.has(item.key) || shelf?.points.some((point) => point.producerKey === item.key)) ? item : undefined;
+  }, [mappedKeys, selectedKey, selection.items, shelf]);
   const clearSelectionHref = buildProducerSelectionHighlightHref(
     selection.canonicalPath,
     "",
@@ -110,7 +116,7 @@ function ProducerSelectionExplorerView({
   useDismissibleProducerMapSelection({
     active: Boolean(selectedItem),
     selectedSurfaceRef: selectedProducerLinkRef,
-    relatedSurfaceRef: viewerRef,
+    relatedSurfaceRef: shelf ? combinedRef : viewerRef,
     returnFocusRef: mapSurfaceRef,
     suspendEscape: isMobileListOpen,
     onDismiss: clearProducerSelection,
@@ -126,10 +132,11 @@ function ProducerSelectionExplorerView({
   }
 
   function selectProducer(key: string, closeMobileList = false) {
-    if (!mappedKeys.has(key)) return;
+    if (!selection.items.some((item) => item.key === key)) return;
 
     previousSelectedKey.current = key;
-    requestProducerFocus(key);
+    if (mappedKeys.has(key)) requestProducerFocus(key);
+    else setMapFocusRequest(undefined);
     pushSelectionState(
       buildProducerSelectionHighlightHref(selection.canonicalPath, key),
     );
@@ -147,8 +154,8 @@ function ProducerSelectionExplorerView({
     }
 
     previousSelectedKey.current = selectedItem.key;
-    requestProducerFocus(selectedItem.key);
-  }, [selectedItem]);
+    if (mappedKeys.has(selectedItem.key)) requestProducerFocus(selectedItem.key);
+  }, [mappedKeys, selectedItem]);
 
   useEffect(() => {
     if (
@@ -192,7 +199,7 @@ function ProducerSelectionExplorerView({
   }, [isMobileListOpen]);
 
   return (
-    <section className="catalog-simple-layout producer-selection-page__layout">
+    <section ref={combinedRef} className={`catalog-simple-layout producer-selection-page__layout ${shelf ? shelfStyles.combined : ""}`}>
       <div className="producer-map-stage">
         <div
           ref={mapSurfaceRef}
@@ -215,7 +222,11 @@ function ProducerSelectionExplorerView({
           aria-live="polite"
           aria-atomic="true"
         >
-          {selectedItem ? (
+          {selectedItem && shelf ? (
+            <Link ref={selectedProducerLinkRef} href={selectedItem.href} className={shelfStyles.selectedProducer}>
+              <strong>{selectedItem.name}</strong><span>Ver productor →</span>
+            </Link>
+          ) : selectedItem ? (
             <ProducerMapSelectionCard
               linkRef={selectedProducerLinkRef}
               producer={selectedItem}
@@ -223,6 +234,8 @@ function ProducerSelectionExplorerView({
           ) : null}
         </div>
       </div>
+
+      {shelf ? <ShelfPhoto shelf={shelf} selectedKey={selectedItem?.key} onSelectKey={selectProducer} /> : null}
 
       <aside
         ref={viewerRef}
@@ -253,7 +266,7 @@ function ProducerSelectionExplorerView({
 
           <ul className="producer-compact-list">
             {selection.items.map((item) => {
-              const isMapped = mappedKeys.has(item.key);
+              const isMapped = mappedKeys.has(item.key) || Boolean(shelf?.points.some((point) => point.producerKey === item.key));
               const href = isMapped
                 ? buildProducerSelectionHighlightHref(
                     selection.canonicalPath,
@@ -308,9 +321,11 @@ function ProducerSelectionExplorerView({
 function ProducerSelectionExplorerFromSearchParams({
   selection,
   messages,
+  shelf,
 }: {
   selection: ProducerSelectionExplorerModel;
   messages: ProducerSelectionExplorerMessages;
+  shelf?: PublicSelectionShelf | null;
 }) {
   const searchParams = useSearchParams();
   const selectedKey = searchParams.get("highlight")?.trim() ?? "";
@@ -319,6 +334,7 @@ function ProducerSelectionExplorerFromSearchParams({
     <ProducerSelectionExplorerView
       selection={selection}
       messages={messages}
+      shelf={shelf}
       selectedKey={selectedKey}
     />
   );
@@ -327,9 +343,11 @@ function ProducerSelectionExplorerFromSearchParams({
 export function ProducerSelectionExplorer({
   selection,
   messages,
+  shelf,
 }: {
   selection: ProducerSelectionExplorerModel;
   messages: ProducerSelectionExplorerMessages;
+  shelf?: PublicSelectionShelf | null;
 }) {
   return (
     <Suspense
@@ -337,11 +355,13 @@ export function ProducerSelectionExplorer({
         <ProducerSelectionExplorerView
           selection={selection}
           messages={messages}
+          shelf={shelf}
           selectedKey=""
         />
       }
     >
       <ProducerSelectionExplorerFromSearchParams
+        shelf={shelf}
         selection={selection}
         messages={messages}
       />

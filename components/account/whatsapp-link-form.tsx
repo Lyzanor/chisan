@@ -8,7 +8,9 @@ import {
 
 export function WhatsAppLinkForm({
   producers,
+  aiProviderName,
 }: {
+  aiProviderName: string;
   producers: { id: number; name: string }[];
 }) {
   const [state, action, pending] = useActionState(
@@ -39,7 +41,7 @@ export function WhatsAppLinkForm({
       </label>
       <label>
         <input type="checkbox" name="consent" required /> Acepto que Meta y
-        OpenAI procesen los mensajes y las fotos que envíe para preparar
+        {aiProviderName} procesen los mensajes y las fotos que envíe para preparar
         propuestas para este productor. Evitaré incluir datos personales de
         otras personas.
       </label>

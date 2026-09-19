@@ -10,7 +10,11 @@ export class ProducerImageError extends Error {
 
 /** Decode actual pixels before accepting anything; never preserve EXIF/GPS or originals. */
 export async function prepareProducerImage(input: Buffer) {
-  if (!input.length || input.length > PRODUCER_MEDIA_LIMITS.inputBytes)
+  return prepareImage(input, PRODUCER_MEDIA_LIMITS);
+}
+
+export async function prepareImage(input: Buffer, limits: { inputBytes: number; pixels: number; edge: number; preparedBytes: number }) {
+  if (!input.length || input.length > limits.inputBytes)
     throw new ProducerImageError("size");
   // Reject SVG and other active/unsupported formats before invoking a decoder.
   const jpeg = input[0] === 0xff && input[1] === 0xd8 && input[2] === 0xff;
@@ -23,7 +27,7 @@ export async function prepareProducerImage(input: Buffer) {
   if (!jpeg && !png && !webp) throw new ProducerImageError("format");
   try {
     const image = sharp(input, {
-      limitInputPixels: PRODUCER_MEDIA_LIMITS.pixels,
+      limitInputPixels: limits.pixels,
       failOn: "warning",
     });
     const metadata = await image.metadata();
@@ -40,8 +44,8 @@ export async function prepareProducerImage(input: Buffer) {
     const { data, info } = await image
       .rotate()
       .resize({
-        width: PRODUCER_MEDIA_LIMITS.edge,
-        height: PRODUCER_MEDIA_LIMITS.edge,
+        width: limits.edge,
+        height: limits.edge,
         fit: "inside",
         withoutEnlargement: true,
       })
@@ -50,7 +54,7 @@ export async function prepareProducerImage(input: Buffer) {
       .toBuffer({ resolveWithObject: true });
     if (info.width < 200 || info.height < 200)
       throw new ProducerImageError("dimensions");
-    if (data.length > PRODUCER_MEDIA_LIMITS.preparedBytes)
+    if (data.length > limits.preparedBytes)
       throw new ProducerImageError("size");
     return {
       bytes: data,

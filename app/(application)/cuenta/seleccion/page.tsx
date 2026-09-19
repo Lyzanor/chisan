@@ -1,3 +1,5 @@
+import { selectionShelfEnabled } from "@/lib/selection-shelf/policy";
+import { selectionShelfService } from "@/lib/selection-shelf/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -33,11 +35,12 @@ export default async function SelectionPreviewPage({
 }) {
   const account = await requireCurrentAccount("/cuenta/seleccion");
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
-  const [identities, entitlement, presentation, params] = await Promise.all([
+  const [identities, entitlement, presentation, params, shelf] = await Promise.all([
     listPublicProfileFavoriteIdentities(account.id),
     getActiveUserProfilePremiumEntitlement(account.id),
     loadApplicationPresentation(),
     searchParams,
+    selectionShelfService().publicShelf(account.id),
   ]);
   const items = buildProducerSelectionItems(
     await findProducersByIds(identities, presentation.locale),
@@ -70,6 +73,7 @@ export default async function SelectionPreviewPage({
           </p>
         </div>
         <div className="account-inline-actions">
+          {selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="account-button">Foto de mi estantería</Link> : null}
           <Link
             href="/cuenta/siguiendo"
             className="account-button account-button--secondary"
@@ -86,6 +90,7 @@ export default async function SelectionPreviewPage({
       </header>
       <ProducerSelectionPage
         embedded
+        shelf={shelf}
         selection={selection}
         messages={selectionPageMessages}
         profileQr={

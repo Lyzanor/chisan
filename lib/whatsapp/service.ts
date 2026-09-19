@@ -25,6 +25,7 @@ import {
   users,
   whatsappInbox,
   whatsappLinks,
+  selectionShelfWhatsAppLinks,
 } from "../db/schema";
 import {
   activeProducerPremiumEntitlementCondition,
@@ -64,7 +65,7 @@ import {
 type Link = typeof whatsappLinks.$inferSelect;
 type DbReader = Pick<Database, "select">;
 const DAY = 86_400_000;
-async function clearSenderData(tx: AccountTransaction, sender: string) {
+export async function clearSenderData(tx: AccountTransaction, sender: string) {
   // Keep message IDs until normal retention expires so a Meta replay cannot
   // resurrect a disconnected conversation or reapply it to another producer.
   await tx
@@ -76,6 +77,13 @@ async function clearSenderData(tx: AccountTransaction, sender: string) {
       deliveredAt: new Date(),
     })
     .where(eq(whatsappInbox.sender, sender));
+}
+// Also protect old bindings while the shelf feature is disabled. This probe
+// keeps the existing channel usable before the optional migration is applied.
+async function hasShelfLinkStorage(tx: AccountTransaction) {
+  const result = await tx.execute(sql`select to_regclass('public.selection_shelf_whatsapp_links') is not null as available`);
+  const rows = Array.isArray(result) ? result : (result as unknown as { rows: { available: boolean }[] }).rows;
+  return Boolean((rows[0] as { available: boolean })?.available);
 }
 export async function channelAccess(
   database: DbReader,
@@ -126,6 +134,10 @@ export async function createLink(
       throw new Error(
         "Necesitas acceso activo al productor y al perfil ampliado.",
       );
+    if (await hasShelfLinkStorage(tx)) {
+      const [shelf] = await tx.delete(selectionShelfWhatsAppLinks).where(eq(selectionShelfWhatsAppLinks.userId, input.userId)).returning();
+      if (shelf?.sender) await clearSenderData(tx, shelf.sender);
+    }
     const token = randomBytes(24).toString("hex");
     const [previous] = await tx
       .delete(whatsappLinks)
@@ -159,6 +171,10 @@ export async function unlink(database: Database, userId: string) {
       .where(eq(whatsappLinks.userId, userId))
       .returning();
     if (link?.sender) await clearSenderData(tx, link.sender);
+    if (await hasShelfLinkStorage(tx)) {
+      const [shelf] = await tx.delete(selectionShelfWhatsAppLinks).where(eq(selectionShelfWhatsAppLinks.userId, userId)).returning();
+      if (shelf?.sender) await clearSenderData(tx, shelf.sender);
+    }
     await tx.insert(auditEvents).values({
       actorKind: "user",
       actorUserId: userId,
@@ -266,6 +282,7 @@ async function submitCandidate(
 }
 
 export type AssistantDependencies = {
+  shelf?: (tx: AccountTransaction, message: InboundMessage) => Promise<string | null>;
   extractor: ProductExtractor;
   image: (image: NonNullable<InboundMessage["image"]>) => Promise<Buffer>;
   send: (sender: string, reply: string) => Promise<void>;
@@ -401,6 +418,8 @@ async function handleMessage(
     Date.now() - at.getTime() >= DAY
   )
     return "Este mensaje ha caducado. Envíalo de nuevo para continuar.";
+  const shelfReply = await dependencies.shelf?.(tx, message);
+  if (shelfReply != null) return shelfReply;
   const text = message.text?.body ?? message.image?.caption ?? "";
   const command = message.type === "text" ? text.trim().toUpperCase() : "";
   const code = /^VINCULAR ([a-f0-9]{48})$/i.exec(text.trim());
@@ -430,6 +449,11 @@ async function handleMessage(
       .limit(1);
     if (other)
       return "Este WhatsApp ya está vinculado. Puedes desconectarlo desde tu cuenta antes de vincularlo de nuevo.";
+    if (await hasShelfLinkStorage(tx)) {
+      const [shelf] = await tx.select({ userId: selectionShelfWhatsAppLinks.userId }).from(selectionShelfWhatsAppLinks)
+        .where(eq(selectionShelfWhatsAppLinks.sender, message.from)).limit(1);
+      if (shelf) return "Este WhatsApp está vinculado a una estantería. Desconéctalo desde esa cuenta antes de vincularlo de nuevo.";
+    }
     const [linked] = await tx
       .update(whatsappLinks)
       .set({ sender: message.from, tokenHash: null, tokenExpiresAt: null })

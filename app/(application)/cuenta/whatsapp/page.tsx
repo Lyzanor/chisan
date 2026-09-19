@@ -1,3 +1,4 @@
+import { aiProviderLabel } from "@/lib/ai/runtime";
 import { and, eq } from "drizzle-orm";
 import Link from "next/link";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
@@ -7,6 +8,7 @@ import { findProducerById } from "@/lib/csv-catalog";
 import { whatsappEnabled } from "@/lib/whatsapp/config";
 import { WhatsAppLinkForm } from "@/components/account/whatsapp-link-form";
 import { unlinkWhatsApp } from "./actions";
+import { selectionShelfEnabled } from "@/lib/selection-shelf/policy";
 
 export default async function WhatsAppPage() {
   const account = await requireCurrentAccount("/cuenta/whatsapp");
@@ -47,6 +49,7 @@ export default async function WhatsAppPage() {
   ).filter((item) => item !== null);
   return (
     <div className="account-content">
+      {selectionShelfEnabled() ? <section className="account-callout"><h2>Fotos de tu estantería</h2><p>Para conectar una foto con el mapa de tu selección, <Link href="/cuenta/estanteria">vincula WhatsApp a tu estantería</Link>. Chisan revisa los puntos y publica la foto. Puedes elegir entre este modo y el asistente de productos de abajo.</p></section> : null}
       <section className="account-callout">
         <h2>Tu asistente por WhatsApp</h2>
         <p>
@@ -107,7 +110,7 @@ export default async function WhatsAppPage() {
               </form>
             </div>
           ) : null}
-          <WhatsAppLinkForm producers={producers} />
+          <WhatsAppLinkForm aiProviderName={aiProviderLabel()} producers={producers} />
         </section>
       ) : (
         <section className="account-callout">
