@@ -16,10 +16,27 @@ analysis, displays the shared attempt allowance and exposes safe API diagnostics
 and reported token usage. Manual point correction and catalog search are secondary
 disclosures. Owner copy confirms receipt and explains stopped analysis without
 asking the owner to place points. `pnpm verify:ai` passed, including automatic
-point creation and usage/error recording with a simulated provider. Live image
-analysis remains unverified: the configured local API key returned
-`invalid_api_key`. The browser review of this stopped attempt did not cover
-pending-state refresh or a successful live result.
+point creation and usage/error recording with a simulated provider.
+
+A subsequent local pilot with a valid API key verified the live pending-to-ready
+refresh, reported usage and owner proposal. Four controlled attempts on one real
+portrait shelf photo exposed misplaced points on other rows and price cards.
+Adding image dimensions alone did not resolve this. A temporary coordinate grid
+on the inference copy improved the observed placement; the displayed original
+remains unchanged. The last inference produced 17 automatic points linked to
+seven catalog producers. Review then excluded two points with an incorrect brand
+attribution, leaving 15 points for six producers with their automatic coordinates
+unchanged. The staff correction was saved as a proposal, without owner publication
+or another model call. Unmatched observations remain excluded.
+
+The final photo was checked at 390×844 first, then 1440×1000: no horizontal
+overflow, points on the corresponding products, and no inference grid shown.
+Photo-to-map and map-to-photo selection worked; unchecking a proposed producer
+removed its points and checking it again restored them. Publication was left to
+the owner. This single-photo pilot does not establish general recognition or
+positioning accuracy; some points remain near label edges, catalog name matching
+leaves legible brands unresolved, and a valid catalog name does not by itself
+prove the model's brand attribution.
 
 ## 2026-09-18 — Map visitor location marker and locate control
 

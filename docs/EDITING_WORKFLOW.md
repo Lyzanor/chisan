@@ -67,7 +67,13 @@ chooses producers and publishes from `/cuenta/estanteria`. Staff can resolve
 unclear/no-match results in `/admin/estanterias`, prepare a proposal or explicitly
 retry. A processing attempt older than two minutes becomes manual review on the
 next queue run. There are no automatic retries of paid failures or new recurring
-workers. Real-photo accuracy still needs a controlled pilot.
+workers. Accuracy needs representative real-photo evaluation before broad rollout.
+For shelf localization, inference receives a temporary copy with a normalized
+coordinate grid and the image dimensions. The grid is a visual aid only: it does
+not place points or identify producers. Both axes keep the original pixel frame;
+the stored and displayed owner photo stays unchanged. The model places hotspots
+on printed product labels, excluding price cards and shop signs. This preprocessing
+belongs to the shelf domain and does not couple another capability to a provider.
 The review page refreshes queued/processing results automatically, shows the
 remaining shared allowance and recent API attempts, and puts manual point editing
 behind optional corrections. The server rejects exhausted-allowance retry requests
