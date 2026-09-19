@@ -98,6 +98,11 @@ Use `merge` only when two records were determined to be the same productive
 unit and one row was removed. A routing-only rename is not a merge; its identity
 rules live in `docs/CSV_CONTRACT.md`.
 
+If that surviving unit is later purged, update its incoming `merge` records to
+the same supported `purge` decision, retaining a short note about the former
+consolidation. Git preserves the earlier merge. Never redirect those records to
+an unrelated replacement merely to retain a live target.
+
 ### Editorial handoff
 
 Choose `accept`, `update`, `hold`, `reject`, `purge`, `merge`, routing or an
@@ -145,7 +150,11 @@ turning that warning into automatic editorial truth.
 | `nonexistent` | The named entity does not resolve to a real unit |
 | `out-of-scope` | Real producer whose output or public identity falls outside the catalog scope |
 
-State the reason a reader could not infer from the sources in `notes`.
+State the reason a reader could not infer from the sources in `notes`. For an
+explicit product-scope exclusion, distinguish the output established by the
+source from the editorial rule that excludes it; do not invent a missing origin
+or lack of production to justify that rule. Clarifying that reasoning does not
+refresh a source's `checkedAt` unless the source was opened again.
 
 ## Claims
 

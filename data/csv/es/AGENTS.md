@@ -15,10 +15,11 @@
 - CartoCiudad may normalize the road type. Accept a candidate only when name,
   number, postcode and municipality match an independently published productive
   address.
-- An *alhóndiga* that auctions members' lots is a marketplace: the produce
-  leaves under the buyer's identity, so it is `not-producer`. A hortofruit
-  cooperative, SAT or commercialiser that puts that same output on the market
-  under its own name or brand is a governed producer collective and qualifies.
+- An *alhóndiga* whose only role is auctioning lots is a marketplace, not a
+  producer. For a hortofruit cooperative, SAT, commercialiser or fishing
+  collective, apply `docs/EDITORIAL.md`: establish the producer members, actual
+  responsibility for their output, an own offer and the productive municipality.
+  A name, common label, guarantee mark or auction venue alone is insufficient.
 
 ## Source ceilings
 - Denomination councils, certification registers and autonomous or provincial
@@ -50,8 +51,10 @@
   permission to sell meat rather than evidence that butchered product reaches
   consumers. Check the municipal establishment census before admitting a meat
   or raw-milk holder on the register alone: a stockbreeding holding does not
-  establish that offer. Prefer the live open dataset over the published PDF
-  listing, whose entries can be a decade old.
+  establish that offer. Nor does the absence of a processing facility disprove
+  it: own rearing may qualify when an attributable food offer is supported and
+  later processing takes place elsewhere. Prefer the live open dataset over
+  the published PDF listing, whose entries can be a decade old.
 - The CCPAE *guia d'operadors* is a Catalonia-wide organic certification
   register, not a provincial producer directory. One record supports the
   operator, its certified activity class and the municipality it publishes;
@@ -145,14 +148,16 @@
   cooperatives nationally with municipality, province and the sectors each is
   registered for; a first-party website is optional in its records. A
   registered sector is an activity the cooperative is organized for, not proof
-  that a food reaches the market under its own name, and that own-offer question
-  is what decides a collective: a cooperative that only supplies its members,
-  runs a shop or a credit section, mills or presses for others, or sells in bulk
-  to bottlers is not a producer. The directory also mixes first- and
-  second-degree cooperatives, and a second-degree group that commercialises
-  members' output is not itself a productive unit; place the qualifying unit
-  instead. Sectors such as supplies and fuel, member shops, credit sections,
-  animal feed, fodder, tobacco, cotton, flowers and forestry are not food.
+  that a food reaches the market under its own name. It does not establish
+  member production, common productive or market responsibility, or the location
+  of that production. It mixes first- and second-degree cooperatives; neither
+  degree decides eligibility. Apply the collective test in `docs/EDITORIAL.md`
+  rather than placing a network at its headquarters. A shop or credit section
+  does not prove production; milling or pressing for others proves a material
+  step but still needs an own offer. A bulk-sale entry alone establishes neither
+  retained public attribution nor its absence. Sectors such as supplies and
+  fuel, member shops, credit sections, animal feed, fodder, tobacco, cotton,
+  flowers and forestry are not food.
 - Reyno Gourmet separates its member entities by a `tipo_de_entidad` taxonomy
   into *Empresas*, *Comercios* and *Hostelería*, so the shops and hospitality it
   carries are a distinct section rather than a contaminant of the producer list.

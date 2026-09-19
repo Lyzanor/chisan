@@ -24,13 +24,40 @@ these are true:
    stated area and municipality.
 3. **Own offer:** at least one resulting food or drink reaches the market under
    a public producer identity that remains attributable through sale.
-4. **Place-based identity:** public evidence connects that identity and product
-   to the unit as their origin or maker, not merely to an interchangeable plant.
+4. **Place-based identity:** public evidence connects the offered product and
+   its producer identity to that unit as its origin or maker. A company address
+   or a list of factories does not attribute every brand product to each site.
 
 “Own” describes responsibility for both production and product identity. It
 does not require ownership of the premises or raw materials, direct-to-consumer
 sales, a particular legal form or a maximum size. Scale and group ownership
 alone neither include nor exclude a producer.
+
+### Responsibility, offer and attribution
+
+Identify the productive unit before choosing its public name. The same entity
+must be responsible for a demonstrated material step and an attributable offer
+from that unit. Buying ingredients, using shared or rented premises, or
+contracting other steps does not disqualify it. Owning a recipe or brand and
+commissioning all production does not establish a material step of its own.
+Local elaboration does not establish local agricultural or ingredient origin.
+
+An own offer is at least one concrete, current food or drink regularly offered
+under the producer's public identity, including seasonal products and products
+for professional culinary use. It needs neither a registered trademark nor
+direct sales. A discontinued reference, a service description or an assortment
+resold from other makers does not establish it. Ingredients sold as identifiable
+products to cooks qualify on the same terms as food sold to households; inputs
+that reach the public only anonymously inside another manufacturer's product do
+not establish an own offer. Attribute only the demonstrated output to the unit,
+not the group's whole range.
+
+For a collective, identify its producer members, its actual responsibility for
+their production or common market identity, and the productive unit represented
+by the row. Cooperative degree is not an admission criterion. A common brand,
+quality seal or representation service alone proves neither productive
+responsibility nor a productive municipality. A dispersed network cannot be
+placed at its administrative headquarters merely to obtain a map location.
 
 ### Human admission test
 
@@ -45,7 +72,8 @@ Apply the scope above as eight questions, in this order:
    not enough.
 3. **Is the output food or drink for people?** An entity whose relevant output
    is animal feed, breeding stock, agricultural inputs, cosmetics, crafts or
-   another non-food product does not qualify through that activity.
+   another non-food product does not qualify through that activity. Apply the
+   explicit product-scope exclusion for plain edible ice below as well.
 4. **Does it have an own current offer?** At least one resulting product reaches
    the public under an identity that remains attributable to this producer.
 5. **Can the productive unit be placed?** Its actual productive activity can be
@@ -84,18 +112,20 @@ qualify; a polished profile that fails one scope criterion does not.
 | Case | Decision rule |
 |---|---|
 | Farm, fisher, apiary, winery, brewery, dairy, bakery, roaster or food workshop | Include when the human test establishes its own output, public identity, productive municipality and current activity |
-| Cooperative or producer collective | Include the collective when it governs the production or market identity of members' output **and** at least one resulting food or drink reaches the market under the collective's own identity; exclude a body that only represents, negotiates, auctions, transports or retails while each member sells under their own identity. Include a member separately only when that member independently passes the full test |
-| Unit that also manufactures for third parties | Include when it has a qualifying own offer; exclude a service-only or contract-only operation |
-| Restaurant, café, shop, hotel or market stall | Hospitality or retail alone is excluded; include only a distinct, durable producer identity and materially produced take-home offer that independently passes the test |
+| Cooperative or producer collective | Apply the responsibility, offer and attribution test above regardless of cooperative degree. Include a member separately only when it independently passes the full test; do not create a parent row merely to group qualifying members |
+| Unit that also manufactures for third parties | Include when it has a qualifying own offer. A demonstrated service-only or contract-only manufacturer is `out-of-scope`, not `not-producer` |
+| Restaurant, café, shop, hotel or market stall | Include a durable production activity and own food range that can be distinguished from meal service or resale and independently passes the test. A separate legal entity or trademark is unnecessary; takeaway, delivery or a kitchen alone is insufficient |
 | Brand, label, holding company or private-label seller | Include only the qualifying productive unit when public evidence gives it productive responsibility and place; the commercial name alone is not a producer |
 | Company with several productive sites | Use one row per independently identifiable qualifying productive unit; do not add a parent-company row merely to group them |
+| Shared workshop or nomadic producer | Rented or shared equipment is compatible with own production. Establish who performs the material step and which current unit makes the attributable offer; residence, recipe development or occasional use of a host's plant does not establish a row there |
+| Farm using an external slaughterhouse, mill or processor | Its own growing or rearing can be the qualifying material step. Establish an attributable food offer from that holding; do not require it to own every processing facility or mistake livestock or breeding-stock sales for an offer of food |
 | Home-based or address-private producer | It may qualify when the productive municipality and activity are supportable; leave the exact address and coordinates empty when they are not public |
 | Producer identified only by a natural person's name | A natural person is a valid producer identity, but a register's holder field is an administrative attribution, not by itself a public one. The name becomes the row's identity only when the source that names the person also publishes what reaches the market under it. Publish the declared trade name instead whenever the source carries one, and then leave the personal name out of the row |
 | Shop, headquarters, tasting room or visitor centre separate from production | It may be a contact or visiting fact, but it neither determines catalog placement nor proves the productive location |
 | Washing, peeling, cutting, bagging or freezing fresh produce | Handling is not elaboration, whatever the format, atmosphere or gama it is sold as. A grower qualifies through its own growing; a unit that starts from others' produce qualifies only through a further transforming step such as cooking, roasting, fermenting, curing or preserving |
 | Tea, herb or botanical packer | Roasting, drying, fermenting, infusing or extracting on the unit's own premises is elaboration, as it is for coffee. Blending and packing leaf or botanicals bought ready-processed is not |
-| Edible input sold only to other manufacturers | An ingredient, culture, casing or additive that reaches the public only inside another company's product has no own offer. The same unit qualifies when it also sells under its own public identity |
-| Edible ice and comparable placeless commodities | Exclude as `out-of-scope`. The output is food, but nothing attaches it to the unit as its origin, so it fails the place-based identity criterion however it is branded |
+| Ingredient producer serving professional kitchens | Include a qualifying own ingredient range attributable to the unit. A professional customer does not make the offer anonymous; a unit making only inputs that lose their identity inside another manufacturer's product remains `out-of-scope` |
+| Unit producing only plain edible ice | Explicit current product-scope exclusion: `out-of-scope`, even when production, identity and municipality are established. This is not a finding that the unit has no origin, nor a general exclusion of commodities. Review any other food or drink line independently |
 
 One row represents one qualifying productive unit through its public producer
 identity, or one governed producer collective, in one area:
@@ -110,11 +140,11 @@ identity, or one governed producer collective, in one area:
 - A unit that produces for third parties still qualifies when it also has an
   own offer; a service-only or contract-only unit does not.
 
-Typical exclusions are pure retailers, hospitality businesses, distributors,
+Typical exclusions are pure retailers, hospitality-only businesses, distributors,
 directories, service providers, product labels without their own unit,
 anonymous group plants and registry entries that identify only a holding,
-facility or certification. The reason is the failed criterion, not the sector
-or business form.
+facility or certification. State the failed criterion or the explicit
+product-scope exclusion; do not infer a decision from size or business form.
 
 ## Candidate gate and lifecycle
 
@@ -193,6 +223,11 @@ Use these exact exclusion reasons only for `reject` and `purge`:
 | Permanent closure reliably established | `closed` |
 | The proposed area was investigated and disproved | `other-area` |
 
+Choose `not-producer` only when the absence of qualifying material production
+is established. Actual production without an own offer, non-food output and an
+explicit product-scope exclusion use `out-of-scope`. An unknown offer is still
+unknown: neither a registry's silence nor a failed search establishes its absence.
+
 Unknown is not false. An unresolved existing row remains published and uses
 `pendiente` only according to the available evidence; `hold` applies to a new
 candidate and is neither an evidence action nor a CSV state. Route an incidental
@@ -205,7 +240,7 @@ Verification depends on three independent claims:
 
 1. **Identity:** the source identifies the row's entity.
 2. **Producer activity:** the entity is active and performs the qualifying
-   production or elaboration.
+   production or elaboration, with a current own offer attributable to the unit.
 3. **Municipality:** the productive unit belongs to the stated municipality.
 
 | Evidence state | `verificacion` |

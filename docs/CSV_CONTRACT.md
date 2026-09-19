@@ -778,7 +778,9 @@ Compatibility routes live in the country's `country.json` under
 numeric value is the row's durable `producer_id`; the redirect destination is
 always derived from that producer's current area and slug in the CSV. Never store
 a destination path or an alias chain, never shadow a current canonical route, and
-never remove a demonstrated former route. Historical segments are stored decoded
+never remove a demonstrated former route while its producer remains published.
+A reviewed purge removes aliases for the retired ID because they have no live
+destination; do not transfer them to a different unit. Historical segments are stored decoded
 and NFC-normalized; unlike current slugs, they may retain demonstrated Unicode,
 but never `/`, `?`, `#`, an empty segment, or a control character. Redirects retain
 the resolved catalog locale and only the public `category` and `highlight` query
