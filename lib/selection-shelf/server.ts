@@ -7,6 +7,7 @@ import { createSelectionShelfService } from "./service";
 import { createShelfDetector, createShelfProcessor } from "./detector";
 import { selectionShelfEnabled } from "./policy";
 import { createAIProvider } from "../ai/runtime";
+import { aiCallLimit, readAIAllowance } from "../ai/allowance";
 import { isAccountSystemConfigured } from "../accounts/config";
 
 export function selectionShelfAvailable() {
@@ -14,14 +15,15 @@ export function selectionShelfAvailable() {
 }
 
 export function selectionShelfService(database: Database = getDatabase()) {
-  return createSelectionShelfService({ database, catalog: shelfCatalog, enabled: selectionShelfAvailable, location: resolvePublicProfileBaseLocation });
+  return createSelectionShelfService({ database, catalog: shelfCatalog, enabled: selectionShelfAvailable,
+    allowance: (reader) => readAIAllowance(reader, aiCallLimit()), location: resolvePublicProfileBaseLocation });
 }
 
 export async function runSelectionShelfQueue(id?: string) {
   if (!selectionShelfAvailable()) return;
   const database = getDatabase();
-  const process = createShelfProcessor({ database, service: selectionShelfService(database),
-    detector: () => createShelfDetector(createAIProvider(database, "shelf-identification")) });
+  const processor = createShelfProcessor({ database, service: selectionShelfService(database),
+    detector: (id) => createShelfDetector(createAIProvider(database, "shelf-identification", process.env, { type: "selection_shelf", id })) });
   // One photo per invocation; staff can process pending work on demand after a restart.
-  await process(id);
+  await processor(id);
 }

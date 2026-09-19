@@ -1,5 +1,7 @@
 import { createOpenAIProvider, openAIConfiguration } from "../lib/ai/openai";
-import { aiCallLimit } from "../lib/ai/allowance";
+import { aiCallLimit, readAIAllowance } from "../lib/ai/allowance";
+import { createAIProvider } from "../lib/ai/runtime";
+import { ExtractionFailure } from "../lib/ai/failure";
 import { createProductExtractor } from "../lib/intake/extractor";
 import { emptyCandidate } from "../lib/intake/product";
 import { withAIAllowance, type StructuredAIProvider } from "../lib/ai/structured";
@@ -69,7 +71,7 @@ test("both capabilities accept a different AI adapter and common configuration p
   const names: string[] = [];
   const provider: StructuredAIProvider = {
     profile: { provider: "alternative-provider", model: "fixture", reasoningEffort: "custom", maxOutputTokens: 2048 },
-    generate: async (request) => { names.push(request.name); return { points: [] }; },
+    generate: async (request) => { names.push(request.name); return { value: { points: [] }, usage: null }; },
   };
   const shelf = createShelfDetector(provider);
   const product = createProductExtractor(provider);
@@ -354,4 +356,72 @@ test("shelf provider uses existing Responses configuration, strict output and no
   assert.match(JSON.stringify(payload?.input), /data:image\/webp;base64/);
   assert.match(JSON.stringify(payload?.text), /"strict":true/);
   assert.equal(payload?.tools, undefined);
+});
+
+test("API diagnostics retain usage, failure reasons and automatic points without exposing private inputs", async (t) => {
+  const f = await fixture();
+  try {
+    const { db, owner, reviewer, row } = f;
+    const service = createSelectionShelfService({ database: db, catalog, enabled: () => true,
+      allowance: (reader) => readAIAllowance(reader, 2) });
+    const environment = { OPENAI_API_KEY: "private-credential", CHISAN_AI_MODEL: "gpt-5-nano", CHISAN_AI_MAX_TOTAL_CALLS: "2" };
+    let fail = false;
+    let calls = 0;
+    t.mock.method(globalThis, "fetch", async () => {
+      calls++;
+      return fail ? Response.json({ error: { code: "invalid_api_key", message: "private-credential and private-image" } }, { status: 401, headers: { "x-request-id": "req_1234567890abcdef" } })
+        : Response.json({ status: "completed", usage: { input_tokens: 2000, output_tokens: 300, total_tokens: 2300,
+          input_tokens_details: { cached_tokens: 1000 }, output_tokens_details: { reasoning_tokens: 50 } },
+          output: [{ type: "message", content: [{ type: "output_text", text: JSON.stringify({ points: [
+            { producerName: "Producer 2", productName: "Label A", label: "Label A", x: 0.32, y: 0.64 },
+          ] }) }] }] }, { headers: { "x-request-id": "req_1234567890abcdef" } });
+    });
+    const process = createShelfProcessor({ database: db, service,
+      detector: (id) => createShelfDetector(createAIProvider(db, "shelf-identification", environment, { type: "selection_shelf", id })) });
+    const id = await service.submit(owner.id, await photo(), "web");
+    await process(id);
+    assert.equal((await row(id)).status, "ready");
+    assert.equal((await row(id)).points[0].x, 0.32);
+    assert.equal((await row(id)).points[0].y, 0.64);
+    assert.equal((await db.select().from(favorites)).length, 0);
+    const detail = await service.reviewDetail(reviewer.id, id);
+    assert.deepEqual(detail.analysisAttempts[0].usage, { inputTokens: 2000, outputTokens: 300, totalTokens: 2300, cachedInputTokens: 1000, reasoningTokens: 50 });
+    assert.equal(detail.analysisAttempts[0].requestId, "req_1234567890abcdef");
+    assert.equal(detail.allowance?.remaining, 1);
+    assert.equal(await process(id), false);
+    fail = true;
+    const failedId = await service.submit(owner.id, await photo("green"), "web");
+    await process(failedId);
+    const failed = await service.reviewDetail(reviewer.id, failedId);
+    assert.equal(failed.analysisAttempts[0].failure?.code, "invalid_api_key");
+    assert.equal(failed.analysisAttempts[0].failure?.status, 401);
+    assert.equal(failed.analysisAttempts[0].usage, null, "missing usage must never be recorded as zero");
+    assert.equal(failed.allowance?.remaining, 0);
+    await assert.rejects(service.review(reviewer.id, { id: failedId, version: failed.version, action: "analyze", points: [], note: "" }),
+      (error) => error instanceof ShelfError && error.code === "budget");
+    assert.equal((await row(failedId)).version, failed.version, "blocked retries leave the saved failure intact");
+    assert.equal(calls, 2);
+    await assert.rejects(service.reviewDetail(f.stranger.id, id), (error) => error instanceof ShelfError && error.code === "access");
+    assert.doesNotMatch(JSON.stringify(await db.select().from(auditEvents)), /private-credential|private-image|image_url/);
+  } finally { await f.pg.close(); }
+});
+
+test("incomplete API output still records reported token usage and never retries", async () => {
+  let calls = 0;
+  const reports: unknown[] = [];
+  const provider = withAIAllowance(createOpenAIProvider({ apiKey: "fake", model: "gpt-5-nano", maxOutputTokens: 1024 }, async () => {
+    calls++;
+    return Response.json({ status: "incomplete", incomplete_details: { reason: "max_output_tokens" },
+      usage: { input_tokens: 1500, output_tokens: 1024, total_tokens: 2524, output_tokens_details: { reasoning_tokens: 800 } }, output: [] });
+  }), async () => {}, async (report) => { reports.push(report); });
+  await assert.rejects(createShelfDetector(provider).detect({ image: await photo() }), (error) => {
+    assert(error instanceof ExtractionFailure);
+    assert.equal(error.code, "max_output_tokens");
+    assert.equal(error.usage?.outputTokens, 1024);
+    assert.equal(error.usage?.cachedInputTokens, null);
+    return true;
+  });
+  assert.equal(calls, 1);
+  assert.equal(reports.length, 1);
+  assert.match(JSON.stringify(reports), /"outputTokens":1024/);
 });

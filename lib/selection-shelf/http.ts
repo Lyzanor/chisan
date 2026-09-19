@@ -61,7 +61,7 @@ export function createShelfMutationHandler(deps: Dependencies, operation: "uploa
       if (operation === "review" && raw.action === "analyze") deps.schedule(raw.id);
       return Response.json(result, { headers });
     } catch (error) {
-      if (error instanceof ShelfError) return reply(error.code, ({ access: 403, missing: 404, changed: 409, selection: 422, quota: 429, invalid: 422, profile: 422 })[error.code]);
+      if (error instanceof ShelfError) return reply(error.code, ({ access: 403, missing: 404, changed: 409, selection: 422, quota: 429, budget: 429, invalid: 422, profile: 422 })[error.code]);
       if (error instanceof ProducerImageError) return reply(error.code, error.code === "size" ? 413 : 422);
       if (error instanceof z.ZodError || error instanceof SyntaxError) return reply("invalid", 422);
       return reply("unavailable", 503);

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { AIUsage } from "./usage";
 
 export type ExtractionFailureKind =
   | "provider_http"
@@ -15,6 +16,7 @@ export class ExtractionFailure extends Error {
     readonly status?: number,
     readonly code?: string,
     readonly requestId?: string,
+    readonly usage?: AIUsage | null,
   ) {
     super(`Extraction failed: ${kind}`);
   }

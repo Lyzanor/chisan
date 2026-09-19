@@ -32,8 +32,9 @@ adapter and validation, not a rewrite of catalog authority or review. The web
 editor, database proposals and Git publication remain independent of the AI
 provider. The previous `lib/whatsapp/domain.ts` and `extract.ts` exports remain
 compatibility entry points; new shared consumers import from `lib/intake`.
-`lib/ai/structured.ts` defines bounded text/image requests and unknown structured
-responses; providers have no database handle or tools. `lib/ai/allowance.ts`
+`lib/ai/structured.ts` defines bounded text/image requests and responses carrying
+an unknown structured value, nullable numeric token usage and an optional request
+identifier; providers have no database handle or tools. `lib/ai/allowance.ts`
 owns the shared committed call ledger. Product extraction and shelf detection
 build their own prompts/schemas around an injected provider. A channel only
 authenticates and normalizes an input before submitting it to its domain service.
@@ -49,6 +50,13 @@ channel changes or moving configuration cannot reset earlier spending. New
 capabilities obtain a metered provider through `createAIProvider(database,
 capability)`: the common wrapper reserves from this ledger before every
 request. Low-level adapters are transport boundaries for that factory and tests.
+The wrapper records `ai.request_completed` or `ai.request_failed` in private audit,
+including capability, provider/model, duration, reported input/output/cache/reasoning
+tokens and allowlisted failure diagnostics. Shelf attempts reference their photo;
+other capabilities retain their capability target. No prompt, image, raw response
+or provider error message enters these events. Missing usage remains unknown,
+including network interruptions; incomplete output can still consume tokens.
+The committed attempt limit counts failures and is not a token or currency budget.
 
 Shelf processing claims and commits work before inference, then applies the
 result only to that same pending version. New uploads enter `queued` and schedule
@@ -60,6 +68,11 @@ unclear/no-match results in `/admin/estanterias`, prepare a proposal or explicit
 retry. A processing attempt older than two minutes becomes manual review on the
 next queue run. There are no automatic retries of paid failures or new recurring
 workers. Real-photo accuracy still needs a controlled pilot.
+The review page refreshes queued/processing results automatically, shows the
+remaining shared allowance and recent API attempts, and puts manual point editing
+behind optional corrections. The server rejects exhausted-allowance retry requests
+without replacing the saved failure or scheduling another attempt. The provider
+reservation still enforces the limit atomically when concurrent work starts.
 
 ## Entry points
 

@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { ExtractionFailure } from "./failure";
 import type { StructuredAIProvider, StructuredAIRequest } from "./structured";
+import { aiUsageSchema } from "./usage";
 
 const reasoningEffortSchema = z.enum([
   "none",
@@ -56,7 +57,7 @@ export async function requestOpenAIStructured(
   configuration: OpenAIConfiguration,
   input: StructuredAIRequest,
   fetcher: typeof fetch = fetch,
-): Promise<unknown> {
+): ReturnType<StructuredAIProvider["generate"]> {
   const response = await fetcher("https://api.openai.com/v1/responses", {
     method: "POST",
     signal: AbortSignal.timeout(30_000),
@@ -105,17 +106,24 @@ export async function requestOpenAIStructured(
   const rawId = response.headers.get("x-request-id");
   const requestId = rawId && /^req_[a-f0-9-]{16,80}$/i.test(rawId) ? rawId : undefined;
   const body = await response.json().catch(() => null);
+  const parsedUsage = aiUsageSchema.safeParse({
+    inputTokens: body?.usage?.input_tokens, outputTokens: body?.usage?.output_tokens,
+    totalTokens: body?.usage?.total_tokens,
+    cachedInputTokens: body?.usage?.input_tokens_details?.cached_tokens ?? null,
+    reasoningTokens: body?.usage?.output_tokens_details?.reasoning_tokens ?? null,
+  });
+  const usage = parsedUsage.success ? parsedUsage.data : null;
   if (!response.ok) {
     const knownCodes = ["invalid_api_key", "insufficient_permissions", "insufficient_quota", "rate_limit_exceeded", "model_not_found", "invalid_json_schema", "unsupported_value", "invalid_value"];
     const code = knownCodes.includes(body?.error?.code) ? body.error.code : undefined;
-    throw new ExtractionFailure("provider_http", response.status, code, requestId);
+    throw new ExtractionFailure("provider_http", response.status, code, requestId, usage);
   }
-  if (!body || typeof body !== "object") throw new ExtractionFailure("provider_output", response.status, undefined, requestId);
+  if (!body || typeof body !== "object") throw new ExtractionFailure("provider_output", response.status, undefined, requestId, usage);
   if (body.status !== "completed") {
     const reason = ["max_output_tokens", "content_filter"].includes(body.incomplete_details?.reason) ? body.incomplete_details.reason : undefined;
-    throw new ExtractionFailure("provider_incomplete", response.status, reason, requestId);
+    throw new ExtractionFailure("provider_incomplete", response.status, reason, requestId, usage);
   }
-  if (!Array.isArray(body.output)) throw new ExtractionFailure("provider_output", response.status, undefined, requestId);
+  if (!Array.isArray(body.output)) throw new ExtractionFailure("provider_output", response.status, undefined, requestId, usage);
   const parts = (body.output ?? [])
     .filter((item: { type: string }) => item.type === "message")
     .flatMap(
@@ -123,12 +131,12 @@ export async function requestOpenAIStructured(
         item.content,
     );
   if (parts.some((part: { type: string }) => part.type === "refusal"))
-    throw new ExtractionFailure("provider_refusal", response.status, undefined, requestId);
+    throw new ExtractionFailure("provider_refusal", response.status, undefined, requestId, usage);
   const output = parts
     .filter((part: { type: string }) => part.type === "output_text")
     .map((part: { text: string }) => part.text)
     .join("");
 
-  try { return JSON.parse(output) as unknown; }
-  catch { throw new ExtractionFailure("provider_output", response.status, undefined, requestId); }
+  try { return { value: JSON.parse(output) as unknown, usage, ...(requestId ? { requestId } : {}) }; }
+  catch { throw new ExtractionFailure("provider_output", response.status, undefined, requestId, usage); }
 }

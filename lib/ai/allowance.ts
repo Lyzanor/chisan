@@ -21,6 +21,12 @@ export function aiCallLimit(
   return Number(raw);
 }
 
+export async function readAIAllowance(database: Pick<Database, "select">, limit: number) {
+  const [used] = await database.select({ value: count() }).from(auditEvents)
+    .where(and(eq(auditEvents.action, action), eq(auditEvents.targetId, targetId)));
+  return { used: used.value, limit, remaining: Math.max(0, limit - used.value) };
+}
+
 /** Commit before calling the provider: failures/rollbacks never refund a slot. */
 export async function reserveAIAttempt(database: Database, limit: number, capability = "producer-intake") {
   if (!/^[a-z][a-z0-9.-]{0,63}$/.test(capability)) throw new Error("Invalid AI capability key");

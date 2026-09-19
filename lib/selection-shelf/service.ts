@@ -5,6 +5,7 @@ import { normalizePublicHandle, publicHandleProblem } from "../accounts/public-p
 import type { PublicProfileBaseLocation } from "../accounts/public-profile-location";
 import { prepareImage } from "../accounts/prepare-producer-image";
 import { canManageSelectionShelf, canReviewSelectionShelf } from "./access";
+import { aiRequestReportSchema } from "../ai/usage";
 import { SHELF_LIMITS, ShelfError, shelfSourceMessageKey, shelfImageUrl, shelfPointsSchema, shelfReviewSchema, shelfPublishSchema, type ShelfPoint, type PublicSelectionShelf, type ShelfCandidate } from "./policy";
 
 type Transaction = Parameters<Parameters<Database["transaction"]>[0]>[0];
@@ -20,7 +21,9 @@ export async function lockShelfAccount(tx: Transaction, userId: string) {
   return account;
 }
 
-export function createSelectionShelfService(deps: { database: Database; catalog: ShelfCatalog; enabled: () => boolean; location?: (key: string, municipality: string) => Promise<PublicProfileBaseLocation | null> }) {
+export function createSelectionShelfService(deps: { database: Database; catalog: ShelfCatalog; enabled: () => boolean;
+  allowance?: (database: Pick<Database, "select">) => Promise<{ used: number; limit: number; remaining: number }>;
+  location?: (key: string, municipality: string) => Promise<PublicProfileBaseLocation | null> }) {
   const db = deps.database;
   function enabled() { if (!deps.enabled()) throw new ShelfError("access"); }
   async function candidates() { return deps.catalog(); }
@@ -138,7 +141,18 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
     const selected = await deps.catalog(identitiesFor(keys));
     const searched = query.trim() ? (await deps.catalog()).filter((item) => item.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())).slice(0, 50) : [];
     const choices = [...new Map([...selected, ...searched].map((item) => [item.key, item])).values()];
-    return { ...row, candidates: choices, imageSrc: shelfImageUrl(row.id) };
+    const [events, allowance] = await Promise.all([
+      db.select({ metadata: auditEvents.metadata, at: auditEvents.occurredAt }).from(auditEvents)
+        .where(and(eq(auditEvents.targetType, "selection_shelf"), eq(auditEvents.targetId, id),
+          inArray(auditEvents.action, ["ai.request_completed", "ai.request_failed"])))
+        .orderBy(desc(auditEvents.occurredAt)).limit(5),
+      deps.allowance?.(db) ?? Promise.resolve(null),
+    ]);
+    const analysisAttempts = events.flatMap((event) => {
+      const parsed = aiRequestReportSchema.safeParse(event.metadata);
+      return parsed.success ? [{ ...parsed.data, at: event.at.toISOString() }] : [];
+    });
+    return { ...row, candidates: choices, imageSrc: shelfImageUrl(row.id), analysisAttempts, allowance, viewerIsOwner: reviewerId === row.userId };
   }
   async function ownerProposal(userId: string) {
     enabled();
@@ -208,13 +222,15 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
         .where(eq(selectionShelves.id, input.id)).for("update");
       if (!record || record.version !== input.version || !pending.includes(record.status)) throw new ShelfError("changed");
       if (input.action === "analyze" && !["received", "review", "ready"].includes(record.status)) throw new ShelfError("changed");
+      if (input.action === "analyze" && (await deps.allowance?.(tx))?.remaining === 0) throw new ShelfError("budget");
       if (input.action !== "reject" && !(await canManageSelectionShelf(tx, initial.userId))) throw new ShelfError("access");
       if (input.action !== "reject") await validatePoints(input.points);
       if (input.action === "approve" && !input.points.length) throw new ShelfError("selection");
       if (input.action === "reject" && !input.note) throw new ShelfError("invalid");
       const status = { save: "review", approve: "ready", reject: "rejected", analyze: "queued" }[input.action];
       await tx.update(selectionShelves).set({ status, points: input.points, note: input.note, version: record.version + 1,
-        updatedAt: new Date(), ...(input.action === "approve" || input.action === "reject" ? { reviewedBy: reviewerId, reviewedAt: new Date() } : {}) })
+        updatedAt: new Date(), ...(input.action === "analyze" ? { analysisError: null } : {}),
+        ...(input.action === "approve" || input.action === "reject" ? { reviewedBy: reviewerId, reviewedAt: new Date() } : {}) })
         .where(eq(selectionShelves.id, input.id));
       await audit(tx, reviewerId, input.id, input.action, { version: record.version + 1, pointCount: input.points.length });
       return { version: record.version + 1, status, handle: account.publicHandle };

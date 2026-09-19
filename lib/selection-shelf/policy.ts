@@ -79,7 +79,7 @@ export const shelfPublishSchema = z.object({
 }).strict();
 
 export class ShelfError extends Error {
-  constructor(readonly code: "access" | "missing" | "changed" | "selection" | "quota" | "invalid" | "profile") {
+  constructor(readonly code: "access" | "missing" | "changed" | "selection" | "quota" | "invalid" | "profile" | "budget") {
     super(code);
   }
 }

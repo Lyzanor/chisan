@@ -45,13 +45,13 @@ export type ProductExtractor = {
 export function createProductExtractor(provider: StructuredAIProvider): ProductExtractor {
   return {
     profile: { ...provider.profile, promptVersion: PRODUCT_EXTRACTION_PROMPT_VERSION },
-    extract: (input) => provider.generate({
+    extract: async (input) => (await provider.generate({
       instructions: productExtractionInstructions(input),
       text: JSON.stringify({ previous: input.previous, previousNews: input.previousNews ?? null, message: input.text }),
       image: input.image ? { bytes: input.image, mimeType: "image/jpeg" } : undefined,
       name: "chisan_product_candidate",
       schema: z.toJSONSchema(productInterpretationOutputSchema),
-    }),
+    })).value,
   };
 }
 

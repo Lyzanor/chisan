@@ -21,6 +21,8 @@
 .combined :global(.catalog-viewer) { width: 100%; min-height: 0; max-height: none; position: static; }
 .combined :global(.producer-map-selection-surface) { position: static; padding: 8px 0 0; }
 .editor { display: grid; gap: 24px; }
+.analysisStatus { margin-block: 24px; padding-block: 16px; border-block: 1px solid var(--chisan-color-hairline); overflow-wrap: anywhere; }
+.analysisStatus summary, .manualCorrections > summary { cursor: pointer; min-height: 44px; padding-block: 12px; font-weight: 500; }
 .editorCanvas { position: relative; touch-action: pan-y; }
 .placeSurface { position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border: 3px solid var(--chisan-color-moss); cursor: crosshair; }
 .editorPanel { display: grid; gap: 16px; align-content: start; min-width: 0; }

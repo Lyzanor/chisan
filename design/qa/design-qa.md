@@ -3,6 +3,24 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-19 — Shelf analysis feedback and usage
+
+Visual review: **passed** at 390×844 first, then 1440×1000, using the authenticated
+local owner and staff pages. Both pages fit without horizontal overflow. Receipt
+and exhausted allowance are visible, the analysis button is disabled at zero
+remaining attempts, and manual correction stays in an optional disclosure. The
+staff diagnostics correctly report missing historical token usage as unknown.
+
+The staff page now leads with receipt/processing/result state, refreshes pending
+analysis, displays the shared attempt allowance and exposes safe API diagnostics
+and reported token usage. Manual point correction and catalog search are secondary
+disclosures. Owner copy confirms receipt and explains stopped analysis without
+asking the owner to place points. `pnpm verify:ai` passed, including automatic
+point creation and usage/error recording with a simulated provider. Live image
+analysis remains unverified: the configured local API key returned
+`invalid_api_key`. The browser review of this stopped attempt did not cover
+pending-state refresh or a successful live result.
+
 ## 2026-09-18 — Map visitor location marker and locate control
 
 Visual review: **passed** at 390×844 and 1280×900.

@@ -48,8 +48,10 @@ export function ShelfProposal({ proposal, items, profile, areas, allowed }: {
   }
   return <section aria-labelledby="shelf-proposal-title">
     <h2 id="shelf-proposal-title">{shelfStatusLabels[proposal.status] ?? "Tu propuesta"}</h2>
-    {preparing ? <p role="status">Estamos leyendo las etiquetas y buscando sus productores en Chisan. Puedes volver más tarde.</p> : null}
-    {proposal.status === "review" || proposal.status === "received" ? <p>La propuesta necesita una revisión de Chisan antes de estar lista. Todavía no hemos añadido favoritos ni publicado la foto.</p> : null}
+    {preparing ? <p role="status">Foto recibida. La IA está leyendo las etiquetas, buscando sus productores y colocando los puntos automáticamente. Esta página se actualizará; también puedes volver más tarde.</p> : null}
+    {proposal.status === "review" || proposal.status === "received" ? <p role="status">{proposal.analysisError === "budget" ? "Foto recibida. El análisis está detenido porque se ha alcanzado el límite de llamadas de IA de Chisan. Chisan debe habilitar otro intento."
+      : proposal.analysisError ? "Foto recibida. El análisis automático ha fallado y Chisan debe revisar la conexión antes de continuar."
+      : "La propuesta necesita una revisión de Chisan antes de estar lista."} No necesitas añadir puntos. Todavía no hemos añadido favoritos ni publicado la foto.</p> : null}
     {proposal.unmatched > 0 ? <p>{proposal.unmatched === 1 ? "1 etiqueta sin una coincidencia clara queda fuera de la propuesta." : `${proposal.unmatched} etiquetas sin una coincidencia clara quedan fuera de la propuesta.`}</p> : null}
     {proposal.points.length > 0 ? <ProducerSelectionExplorer
       selection={{ canonicalPath: "/cuenta/estanteria", items: selectedItems, initialFocusKeys: selectedItems.map((item) => item.key) }}

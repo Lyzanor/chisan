@@ -955,6 +955,11 @@ producer prefixes; only unambiguous matches become selectable. A product ID is
 attached only for a matching existing reviewed product. Ambiguous, unreadable
 or absent names remain private unmatched observations. No nearest-name guesses,
 new catalog identities, stock or provenance claims are published.
+Owners see receipt, automatic processing or a stopped-analysis explanation;
+they do not need to place points. Staff review refreshes pending work and exposes
+the shared attempt allowance, safe API errors and reported token usage. Manual
+point corrections are optional. Exhausted-allowance retries fail before queuing;
+failed API attempts are not refunded. Missing usage is not reported as zero cost.
 
 A successful match creates a `ready` proposal in the account, showing the map,
 photo and checked producers. The owner can uncheck any producer, complete the
