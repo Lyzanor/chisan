@@ -3,9 +3,17 @@
 ## Purpose and boundary
 
 This is the provider-specific operational runbook for Chisan's currently
-implemented Stripe adapter. It owns the business decisions, provisioning,
+implemented Stripe adapter. It owns the adapter's offer decisions, provisioning,
 activation, resource and offer configuration, isolated test, go/no-go gate,
 incident response, replacement and retirement procedure for that adapter.
+
+The [registered account model](ACCOUNT_SYSTEM.md#registered-account-model) owns
+the User and Producer families, their free/Pro capabilities and the separation
+between access and billing. This adapter currently supports only the producer
+EUR 49 one-time offer. That restriction describes implemented checkout, not a
+permanent price or cadence for Pro. A different offer, User Pro checkout,
+subscription or per-use billing requires matching implementation and validation
+before this runbook's activation procedure can be used for it.
 
 `docs/ACCOUNT_SYSTEM.md` owns provider-neutral commercial-request and entitlement
 semantics. `docs/OPERATIONS.md` owns the environment contract, general preflight,

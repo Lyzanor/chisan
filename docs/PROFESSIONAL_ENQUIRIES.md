@@ -14,7 +14,24 @@ product identity, names and public formats. PostgreSQL owns professional account
 context, private per-product terms, enquiries and messages. No private terms are
 added to CSV, content JSON, public HTML, structured data or catalog APIs.
 
-## Working flow
+## Plan boundary
+
+[Registered account model](ACCOUNT_SYSTEM.md#registered-account-model) owns the
+two free/Pro families. The target professional channel requires User Pro for
+buyer interactions and Producer Pro for supplier interactions, together with
+the existing business-context and exact-membership checks. Ordinary public
+contact remains free. “B2B requests” describes enquiries and conversations;
+confirmed orders, payment and stock reservation require a separate scope.
+
+Current enforcement already requires supplier Pro but lets any active account
+with enabled business context initiate and answer buyer enquiries. Introducing
+the User Pro requirement is a pending behavior change: update the shared
+service, entry points, copy and tests together. Preserve authorized access to
+existing conversation history after Pro ends. Business context remains private;
+the planned public User Pro business profile needs explicit public fields and
+visibility choices, rather than exposing these enquiry records.
+
+## Current working flow
 
 1. An active account enables its private business context (name and activity).
    This is self-declared information, not a verified status or permission role.

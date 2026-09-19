@@ -1,5 +1,160 @@
 # Chisan Account System
 
+## Registered account model
+
+Chisan has two user-facing families: **User** (`Usuario`) and **Producer**
+(`Productor`). Both start free and may add **Pro** capabilities. This section
+owns the product definition; the implementation boundary below records what
+still needs to change before the complete offer can be presented as available.
+
+`Usuario` is the umbrella name for people discovering and sharing producers.
+`Consumidor` describes an audience and `Embajador` describes participation;
+neither adds an account type, permission or verification badge. Restaurants,
+shops and other businesses use User Pro for their professional presence. A
+business profile or supplier selection does not register a productive unit in
+the producer catalog; admission still follows [Editorial](EDITORIAL.md).
+
+| Family | Free | Pro additions |
+| --- | --- | --- |
+| User | Explore the map, save/follow producers, read their available updates and explicitly share a basic selection. Map discovery and public producer contact also remain available without registration. | Business profile, richer image-led presentation of the selected favorites, a printable selection QR for the venue (for example, “nuestros productores”), and access to the private B2B enquiry channel. |
+| Producer | Reviewed basic catalog profile with location, contact details and photos; free ownership verification and, once authorized, proposals to maintain those facts and the standalone gallery. All ordinary User capabilities remain available to the account. | Reviewed product catalog with recorded prices and external purchase links, incoming B2B requests and conversations, private statistics, printable producer QR, expanded profile content and access to the producer's WhatsApp assistant. |
+
+The free experience must be useful on its own. Recruiting producers, verifying
+their relationship to an existing or newly reviewed productive unit, and
+completing a useful free profile are the onboarding priority. Basic discovery,
+contact, ownership verification and free profile maintenance must not require
+a purchase. Additional Pro features need a concrete use and an owning contract
+before they become part of the offer.
+
+### One account, separate authority and capabilities
+
+Every person signs in to one internal account. A person may follow producers,
+publish a selection and manage one or more producers through that same account.
+Managing a producer preserves the person's favorites and sharing preferences;
+it does not require a second login or move those relationships onto the producer.
+
+| Concern | Authority |
+| --- | --- |
+| Sign-in and personal account | Internal `users.id`, linked to a replaceable authentication provider. |
+| User/Producer presentation | Existing `users.profile_kind`; it describes the account workflow and grants no access. A pending claim may already display `producer`. |
+| Acting for a producer | Exact active `producer_membership` for `(country, producer_id)` with the role required by the action. |
+| User Pro | Active `user.profile.premium` entitlement scoped to the internal account. |
+| Producer Pro | Active `producer.profile.premium` entitlement scoped to one `(country, producer_id)`. |
+| Review and administration | Separate internal `staff_grant`; these are operational permissions outside the two public families. |
+
+**Pro** is the product name for entitlement-backed features. Existing `premium`
+keys remain stable technical identifiers. Do not add `user_pro`, `producer_pro`
+or `ambassador` roles, a global account `is_pro` flag, or a paid state in CSV.
+Free is the baseline without an active Pro entitlement and needs no separate
+grant. Begin with the two existing Pro bundles; introduce a narrower capability
+only when a real feature needs independent access or sale.
+
+The two entitlements may coexist but never imply each other. Buying User Pro
+does not upgrade any managed producer. Producer Pro belongs to its productive
+unit, so another managed producer remains free and an ownership change does not
+transfer the entitlement to a different unit. The new authorized owner can use
+that unit's active capabilities; the former owner loses management access.
+Each private action still checks the active account, exact subject, required
+membership/role and active entitlement on the server. Public Pro presentation
+checks the subject's entitlement and its publication/visibility rules.
+
+### Free producer onboarding and verification
+
+The intended entry is “Soy productor”: sign in, find the existing productive
+unit and request its management. Reuse known catalog facts and ask only for
+missing facts and the proof needed for review. When no matching producer exists,
+collect a candidate for editorial admission and deduplication first; review and
+publish its stable identity before granting ownership. A sign-up or claim never
+creates a duplicate catalog record or publishes self-declared facts directly.
+
+Keep sign-in identifier verification, evidence for catalog facts, and authority
+to represent the producer separate. An approved claim creates the active owner
+membership; the existing “Verificado por el productor” label reflects that
+relationship. It does not certify every field. Editorial caveats continue to
+follow [Editorial](EDITORIAL.md#core-verification-claims). Neither payment nor
+profile kind removes a caveat or supplies ownership proof.
+
+Once authorized, the producer can maintain base contact facts and propose the
+free gallery through the existing reviewed workflow. Pro is an optional next
+step after the free profile is useful. Onboarding and ordinary editing must work
+without a payment service, AI provider or WhatsApp connection.
+
+### Boundaries of the Pro offer
+
+Favorites/follows stay private until explicitly selected for sharing. User Pro
+adds business presentation and a richer visual selection; the basic shareable
+selection remains free. A venue QR represents exactly the selected producers,
+resolved from the canonical catalog. Its “nuestros productores” context is the
+account's statement, not Chisan verification of a supply relationship, menu or
+current stock. Private business enquiry data never becomes public merely
+because the account adds Pro or enables its public profile.
+
+In the target model, initiating or continuing buyer-side B2B enquiries requires
+User Pro and an enabled business context. Receiving and answering as supplier
+requires Producer Pro and the exact membership, plus the published professional
+availability and product rules in [Professional enquiries](PROFESSIONAL_ENQUIRIES.md).
+Use “solicitudes B2B” for this capability: the current channel does not confirm
+orders, collect payment or reserve stock. Ordinary published contact details
+remain free. A complete order lifecycle needs a separate concrete design.
+
+The producer's WhatsApp assistant means access in that producer's authorized
+context. The current [assistant](WHATSAPP_ASSISTANT.md) submits product and news
+proposals through the shared review workflow. A dedicated telephone number,
+customer-facing sales agent or autonomous order handling is not included in
+that existing capability. The messaging and AI providers remain replaceable
+adapters, with the same authority checks as the web editor.
+
+### Billing and loss of Pro access
+
+An entitlement answers which capability a subject may use and during what
+period. Its source and source reference record why it was granted. The
+commercial offer separately defines price, billing cadence, duration and any
+usage limit. Paid access and an audited administrative gift can grant the same
+capability without changing account identity or ownership.
+
+A subscription may maintain a time-bounded entitlement; a one-time payment may
+grant a defined term or access without an expiry, according to its offer. A
+micropayment may buy a short access period or a separately defined use. These
+choices preserve the account, membership and catalog model. They do not mean
+every billing lifecycle is already implemented: renewals and reconciliation
+need commercial logic, and charging per use needs durable, idempotent usage
+accounting. Add billing state only for the chosen offer; do not build a generic
+credit system or promise that every future billing change needs no migration.
+
+Expiry or revocation returns the affected subject to its free capabilities.
+It does not delete favorites, shared selections, reviewed catalog facts, photos,
+ownership records or commercial history. Expanded content remains retained
+even when its Pro presentation is hidden. Printed QR URLs remain stable and
+follow the destination's ordinary visibility rules. B2B expiry preserves
+authorized access to conversation history while blocking new paid interactions.
+Account suspension and membership revocation remain independent access checks.
+
+### Implementation boundary
+
+This definition does not activate payments or change runtime authorization.
+The detailed contracts below describe current enforcement. The remaining
+differences are explicit:
+
+- Account identity, free follows/sharing, manual ownership claims, free gallery
+  proposals, both entitlement scopes and both QR families already have owning
+  implementations. Producer Pro content, statistics and the optional assistant
+  retain their existing permissions and operational activation requirements.
+- Current business profiles are private enquiry context. The public business
+  profile and richer visual selection need their own implemented presentation
+  and privacy rules; do not publish private business fields by reuse.
+- Current B2B buyer access checks active account and business context, without
+  User Pro. Applying the target Pro boundary requires updating the shared
+  service, navigation, copy and tests together, while preserving existing
+  participants' historical access. Supplier Pro checks already exist.
+- Current claims require an existing catalog producer. A continuous new-producer
+  onboarding flow still needs the candidate-to-publication handoff; editorial
+  admission and ownership review remain distinct decisions.
+- The dormant payment adapter implements one producer-only EUR 49 one-time
+  offer. User Pro checkout, subscriptions and per-use billing are not implemented.
+  The adapter's current offer is not a permanent price or billing constraint on
+  either family. A chosen replacement offer needs matching commercial lifecycle
+  support and the activation gate in [Operations](OPERATIONS.md).
+
 ## Following and community timeline
 
 The user-facing favorite is now a producer follow. `/cuenta/siguiendo` manages
@@ -366,9 +521,10 @@ closed.
 
 ## Expanded-profile capability
 
-The expanded profile is a producer-scoped capability, not a subscription or a
-property of a user account. Its only authorization key is an active
-`producer.profile.premium` entitlement for `(country, producer_id)`. It permits
+Producer Pro (the expanded profile) is a producer-scoped capability independent
+of its billing cadence and the owner's personal account plan. Its authorization
+key is an active `producer.profile.premium` entitlement for
+`(country, producer_id)`. It permits
 proposal and presentation of the premium CSV field set, product proposals and
 presentation of reviewed related content other than the standalone gallery,
 which every profile shows; it never grants
