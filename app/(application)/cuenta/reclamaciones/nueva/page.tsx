@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -7,9 +7,10 @@ import { submitProducerClaimAction } from "@/app/(application)/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { OPEN_PRODUCER_CLAIM_STATUSES } from "@/lib/accounts/producer-claim-policy";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
-import { producerMemberships } from "@/lib/db/schema";
+import { producerClaims, producerMemberships } from "@/lib/db/schema";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
 
 export const metadata: Metadata = {
@@ -42,10 +43,11 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
   const producerId = Number(first(params.producerId));
   const validProducerKey =
     /^[a-z]{2}$/.test(country) && Number.isSafeInteger(producerId) && producerId > 0;
-  const [producer, ownerRows] = await Promise.all([
+  const database = getDatabase();
+  const [producer, ownerRows, accountOwnerRows, accountClaimRows] = await Promise.all([
     validProducerKey ? findProducerById(country, producerId) : Promise.resolve(null),
     validProducerKey
-      ? getDatabase()
+      ? database
           .select({ userId: producerMemberships.userId })
           .from(producerMemberships)
           .where(
@@ -58,8 +60,37 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
           )
           .limit(1)
       : Promise.resolve([]),
+    database
+      .select({
+        country: producerMemberships.country,
+        producerId: producerMemberships.producerId,
+      })
+      .from(producerMemberships)
+      .where(
+        and(
+          eq(producerMemberships.userId, account.id),
+          eq(producerMemberships.role, "owner"),
+          eq(producerMemberships.status, "active"),
+        ),
+      )
+      .limit(1),
+    database
+      .select({
+        country: producerClaims.country,
+        producerId: producerClaims.producerId,
+      })
+      .from(producerClaims)
+      .where(
+        and(
+          eq(producerClaims.claimantUserId, account.id),
+          inArray(producerClaims.status, [...OPEN_PRODUCER_CLAIM_STATUSES]),
+        ),
+      )
+      .limit(1),
   ]);
   const activeOwner = ownerRows[0];
+  const accountOwner = accountOwnerRows[0];
+  const accountClaim = accountClaimRows[0];
 
   if (!producer) {
     return (
@@ -104,6 +135,34 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
               </Link>
             ) : null}
           </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (accountOwner || accountClaim) {
+    const claimIsForThisProducer =
+      accountClaim?.country === country && accountClaim.producerId === producerId;
+    return (
+      <div className="account-content account-content--narrow">
+        <AccountMessage params={params} />
+        <section>
+          <p className="catalog-kicker">Solicitud de propiedad</p>
+          <h2>
+            {accountOwner
+              ? "Ya tienes un productor verificado"
+              : claimIsForThisProducer
+                ? `Ya has solicitado verificar ${producer.name}`
+                : "Ya tienes una solicitud en revisión"}
+          </h2>
+          <p>
+            {accountOwner
+              ? "Cada cuenta de productor puede gestionar una única ficha como titular. Puedes seguir y recomendar otros productores sin reclamarlos."
+              : "Resuelve o retira la solicitud existente antes de verificar otro productor."}
+          </p>
+          <Link href="/cuenta/reclamaciones" className="account-button">
+            Ver mis solicitudes y productor
+          </Link>
         </section>
       </div>
     );

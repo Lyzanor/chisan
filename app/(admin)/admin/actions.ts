@@ -3,7 +3,7 @@
 import { createProducerChangeReviewService } from "@/lib/admin/review-producer-change";
 import { createProducerSuggestionReviewService } from "@/lib/admin/review-producer-suggestion";
 
-import { and, eq, inArray, ne, sql } from "drizzle-orm";
+import { and, eq, inArray, ne, or, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
 
 import { requireAdminAccount, requireStaffAccount } from "@/lib/accounts/auth";
@@ -234,9 +234,12 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
     await transaction.execute(
       sql`select pg_advisory_xact_lock(hashtext(${`producer:${claim.country}:${claim.producerId}`}))`,
     );
+    await transaction.execute(
+      sql`select pg_advisory_xact_lock(hashtext(${`account-claim:${claim.claimantUserId}`}))`,
+    );
 
     if (parsed.data.decision === "approved") {
-      const [[claimant], [existingOwner]] = await Promise.all([
+      const [[claimant], [existingOwner], [claimantOwner]] = await Promise.all([
         transaction
           .select({ status: users.status })
           .from(users)
@@ -256,11 +259,33 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
           )
           .for("update")
           .limit(1),
+        transaction
+          .select({
+            country: producerMemberships.country,
+            producerId: producerMemberships.producerId,
+          })
+          .from(producerMemberships)
+          .where(
+            and(
+              eq(producerMemberships.userId, claim.claimantUserId),
+              eq(producerMemberships.role, "owner"),
+              eq(producerMemberships.status, "active"),
+            ),
+          )
+          .for("update")
+          .limit(1),
       ]);
 
       if (!claimant || claimant.status !== "active") return "inactive-account";
       if (existingOwner && existingOwner.userId !== claim.claimantUserId) {
         return "owner-taken";
+      }
+      if (
+        claimantOwner &&
+        (claimantOwner.country !== claim.country ||
+          claimantOwner.producerId !== claim.producerId)
+      ) {
+        return "claimant-already-owner";
       }
     }
 
@@ -311,32 +336,41 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
         .set({
           status: "rejected",
           reviewerUserId: reviewer.id,
-          decisionReason: "Ownership was verified for another account.",
+          decisionReason: "Ownership was verified through another claim.",
           reviewedAt: now,
           lockVersion: sql`${producerClaims.lockVersion} + 1`,
           updatedAt: now,
         })
         .where(
           and(
-            eq(producerClaims.country, claim.country),
-            eq(producerClaims.producerId, claim.producerId),
             ne(producerClaims.id, claim.id),
             inArray(producerClaims.status, ["pending", "needs_info"]),
+            or(
+              and(
+                eq(producerClaims.country, claim.country),
+                eq(producerClaims.producerId, claim.producerId),
+              ),
+              eq(producerClaims.claimantUserId, claim.claimantUserId),
+            ),
           ),
         )
-        .returning({ id: producerClaims.id });
+        .returning({
+          id: producerClaims.id,
+          country: producerClaims.country,
+          producerId: producerClaims.producerId,
+        });
 
       if (competingClaims.length > 0) {
         await transaction.insert(auditEvents).values(
-          competingClaims.map(({ id }) => ({
+          competingClaims.map(({ id, country, producerId }) => ({
             actorKind: "user" as const,
             actorUserId: reviewer.id,
             action: "producer_claim.rejected",
             targetType: "producer_claim",
             targetId: id,
             metadata: {
-              country: claim.country,
-              producerId: claim.producerId,
+              country,
+              producerId,
               supersededByClaimId: claim.id,
             },
           })),
@@ -451,13 +485,19 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
 
   if (result === "saved") await revalidatePublicProducer(claim.country, claim.producerId);
 
-  if (result === "inactive-account" || result === "owner-taken") {
+  if (
+    result === "inactive-account" ||
+    result === "owner-taken" ||
+    result === "claimant-already-owner"
+  ) {
     adminRedirect(
       "/admin/reclamaciones",
       "error",
       result === "inactive-account"
         ? "The claimant account is not active."
-        : "Another verified owner already controls this producer.",
+        : result === "owner-taken"
+          ? "Another verified owner already controls this producer."
+          : "The claimant already owns another producer profile.",
     );
   }
 

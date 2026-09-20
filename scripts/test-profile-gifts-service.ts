@@ -36,6 +36,11 @@ const INACTIVE_OWNER_ID = "00000000-0000-4000-8000-000000000005";
 const REVIEWER_ID = "00000000-0000-4000-8000-000000000006";
 const SUSPENDED_ADMIN_ID = "00000000-0000-4000-8000-000000000007";
 const REVOKED_ADMIN_ID = "00000000-0000-4000-8000-000000000008";
+const OWNER_2_ID = "00000000-0000-4000-8000-000000000009";
+const OWNER_5_ID = "00000000-0000-4000-8000-000000000010";
+const OWNER_6_ID = "00000000-0000-4000-8000-000000000011";
+const OWNER_7_ID = "00000000-0000-4000-8000-000000000012";
+const OWNER_8_ID = "00000000-0000-4000-8000-000000000013";
 const UNAUTHORIZED_ADMIN_IDS = [
   NON_ADMIN_ID,
   EXPIRED_ADMIN_ID,
@@ -104,6 +109,11 @@ test("administrative premium gifts execute atomically without Stripe authority",
       { id: REVIEWER_ID, displayName: "Reviewer" },
       { id: SUSPENDED_ADMIN_ID, displayName: "Suspended admin", status: "suspended" },
       { id: REVOKED_ADMIN_ID, displayName: "Revoked admin" },
+      { id: OWNER_2_ID, displayName: "Producer 2 owner" },
+      { id: OWNER_5_ID, displayName: "Producer 5 owner" },
+      { id: OWNER_6_ID, displayName: "Producer 6 owner" },
+      { id: OWNER_7_ID, displayName: "Producer 7 owner" },
+      { id: OWNER_8_ID, displayName: "Producer 8 owner" },
     ]);
     await database.insert(staffGrants).values([
       {
@@ -139,10 +149,19 @@ test("administrative premium gifts execute atomically without Stripe authority",
         reason: "Revoked administrative grant.",
       },
     ]);
+    const ownerIdsByProducer = new Map([
+      [1, OWNER_ID],
+      [2, OWNER_2_ID],
+      [3, INACTIVE_OWNER_ID],
+      [5, OWNER_5_ID],
+      [6, OWNER_6_ID],
+      [7, OWNER_7_ID],
+      [8, OWNER_8_ID],
+    ]);
     await database.insert(producerMemberships).values(
-      [1, 2, 3, 5, 6, 7, 8].map((producerId) => ({
+      [...ownerIdsByProducer].map(([producerId, userId]) => ({
         id: `20000000-0000-4000-8000-${String(producerId).padStart(12, "0")}`,
-        userId: producerId === 3 ? INACTIVE_OWNER_ID : OWNER_ID,
+        userId,
         country: "es",
         producerId,
         role: "owner" as const,
@@ -246,7 +265,7 @@ test("administrative premium gifts execute atomically without Stripe authority",
 
     await database.insert(producerProfileUpgradeRequests).values({
       id: "40000000-0000-4000-8000-000000000005",
-      requesterUserId: OWNER_ID,
+      requesterUserId: OWNER_5_ID,
       country: "es",
       producerId: 5,
       amountMinor: 4_900,
@@ -266,7 +285,7 @@ test("administrative premium gifts execute atomically without Stripe authority",
     if (giftBlockedByCommercialState.kind !== "granted") return;
     await database.insert(producerProfileUpgradeRequests).values({
       id: "40000000-0000-4000-8000-000000000008",
-      requesterUserId: OWNER_ID,
+      requesterUserId: OWNER_8_ID,
       country: "es",
       producerId: 8,
       amountMinor: 4_900,
@@ -293,7 +312,7 @@ test("administrative premium gifts execute atomically without Stripe authority",
     const executionId = "60000000-0000-4000-8000-000000000007";
     await database.insert(producerChangeRequests).values({
       id: changeRequestId,
-      authorUserId: OWNER_ID,
+      authorUserId: OWNER_7_ID,
       country: "es",
       producerId: 7,
       baseRowHash: "a".repeat(64),

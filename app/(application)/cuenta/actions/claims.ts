@@ -10,6 +10,10 @@ import {
   formString,
 } from "@/lib/accounts/input";
 import { hashProducerFields } from "@/lib/accounts/producer-fields";
+import {
+  OPEN_PRODUCER_CLAIM_STATUSES,
+  sameProducerIdentity,
+} from "@/lib/accounts/producer-claim-policy";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import {
@@ -20,7 +24,6 @@ import {
 } from "@/lib/db/schema";
 
 import { redirectWithMessage } from "./navigation";
-const CLAIM_MAX_OPEN_PER_ACCOUNT = 5;
 const CLAIM_MAX_SUBMISSIONS_PER_DAY = 10;
 const ONE_DAY_MS = 24 * 60 * 60 * 1_000;
 export async function submitProducerClaimAction(
@@ -73,7 +76,7 @@ export async function submitProducerClaimAction(
       sql`select pg_advisory_xact_lock(hashtext(${`account-claim:${account.id}`}))`,
     );
 
-    const [[activeOwner], [openCount], [recentCount]] = await Promise.all([
+    const [[activeOwner], [accountOwner], [openClaim], [recentCount]] = await Promise.all([
       transaction
         .select({ userId: producerMemberships.userId })
         .from(producerMemberships)
@@ -88,14 +91,34 @@ export async function submitProducerClaimAction(
         .for("update")
         .limit(1),
       transaction
-        .select({ value: count() })
+        .select({
+          country: producerMemberships.country,
+          producerId: producerMemberships.producerId,
+        })
+        .from(producerMemberships)
+        .where(
+          and(
+            eq(producerMemberships.userId, account.id),
+            eq(producerMemberships.role, "owner"),
+            eq(producerMemberships.status, "active"),
+          ),
+        )
+        .for("update")
+        .limit(1),
+      transaction
+        .select({
+          country: producerClaims.country,
+          producerId: producerClaims.producerId,
+        })
         .from(producerClaims)
         .where(
           and(
             eq(producerClaims.claimantUserId, account.id),
-            inArray(producerClaims.status, ["draft", "pending", "needs_info"]),
+            inArray(producerClaims.status, [...OPEN_PRODUCER_CLAIM_STATUSES]),
           ),
-        ),
+        )
+        .for("update")
+        .limit(1),
       transaction
         .select({ value: count() })
         .from(auditEvents)
@@ -113,7 +136,12 @@ export async function submitProducerClaimAction(
         ? "already-owner"
         : "already-claimed";
     }
-    if (openCount.value >= CLAIM_MAX_OPEN_PER_ACCOUNT) return "open-limit";
+    if (accountOwner) return "account-already-owner";
+    if (openClaim) {
+      return sameProducerIdentity(openClaim, parsed.data)
+        ? "duplicate"
+        : "account-open-claim";
+    }
     if (recentCount.value >= CLAIM_MAX_SUBMISSIONS_PER_DAY)
       return "daily-limit";
 
@@ -172,11 +200,18 @@ export async function submitProducerClaimAction(
       "Este productor ya tiene un titular verificado y no se puede volver a verificar.",
     );
   }
-  if (claimResult === "open-limit" || claimResult === "daily-limit") {
+  if (claimResult === "account-already-owner") {
     redirectWithMessage(
       "/cuenta/reclamaciones",
       "error",
-      claimResult === "open-limit"
+      "Ya eres titular de un productor. Cada cuenta de productor puede gestionar una única ficha como titular.",
+    );
+  }
+  if (claimResult === "account-open-claim" || claimResult === "daily-limit") {
+    redirectWithMessage(
+      "/cuenta/reclamaciones",
+      "error",
+      claimResult === "account-open-claim"
         ? "Resuelve una solicitud de propiedad existente antes de enviar otra."
         : "Has alcanzado el límite diario de solicitudes de propiedad. Inténtalo más tarde.",
     );

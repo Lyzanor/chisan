@@ -4,6 +4,7 @@ export type ProducerViewerState = {
   activeOwner: boolean;
   membership: { role: string } | null;
   claim: boolean;
+  canClaimProducer: boolean;
   openSuggestion: boolean;
   canOfferProfileUpgrade: boolean;
 };
@@ -14,6 +15,7 @@ export function guestProducerViewerState(activeOwner: boolean): ProducerViewerSt
     activeOwner,
     membership: null,
     claim: false,
+    canClaimProducer: true,
     openSuggestion: false,
     canOfferProfileUpgrade: false,
   };

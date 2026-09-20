@@ -129,12 +129,13 @@ test("page visits are atomic, repeatable, private and independent of premium col
       database: db as unknown as Database,
       producerExists: async (country, id) => published.has(`${country}:${id}`),
     });
-    const [owner, editor, stranger] = await db
+    const [owner, editor, stranger, emptyProducerOwner] = await db
       .insert(schema.users)
       .values([
         { displayName: "Owner" },
         { displayName: "Editor" },
         { displayName: "Other owner" },
+        { displayName: "Empty producer owner" },
       ])
       .returning();
     await db.insert(schema.producerMemberships).values([
@@ -160,7 +161,7 @@ test("page visits are atomic, repeatable, private and independent of premium col
         grantedAt: started,
       },
       {
-        userId: owner.id,
+        userId: emptyProducerOwner.id,
         country: "es",
         producerId: 3,
         role: "owner",
@@ -239,7 +240,7 @@ test("page visits are atomic, repeatable, private and independent of premium col
       null,
     );
     const empty = await service.read(
-      { country: "es", producerId: 3, userId: owner.id },
+      { country: "es", producerId: 3, userId: emptyProducerOwner.id },
       now,
     );
     assert.equal(empty?.total, 0);

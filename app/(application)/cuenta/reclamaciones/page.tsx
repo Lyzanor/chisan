@@ -5,6 +5,7 @@ import { withdrawProducerClaimAction } from "@/app/(application)/cuenta/actions"
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { OPEN_PRODUCER_CLAIM_STATUSES } from "@/lib/accounts/producer-claim-policy";
 import { findProducersByIds } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { producerClaims, producerMemberships } from "@/lib/db/schema";
@@ -54,6 +55,14 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
       memberships.map(({ country, producerId }) => ({ country, producerId })),
     ),
   ]);
+  const hasOwnedProducer = memberships.some(
+    (membership) => membership.role === "owner",
+  );
+  const hasOpenClaim = claims.some((claim) =>
+    OPEN_PRODUCER_CLAIM_STATUSES.includes(
+      claim.status as (typeof OPEN_PRODUCER_CLAIM_STATUSES)[number],
+    ),
+  );
 
   return (
     <div className="account-content">
@@ -65,9 +74,11 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
             Las solicitudes se verifican manualmente. Cada productor tiene un titular verificado y puede tener otros editores autorizados.
           </p>
         </div>
-        <Link href="/" className="account-button account-button--secondary">
-          Buscar un productor para verificar
-        </Link>
+        {!hasOwnedProducer && !hasOpenClaim ? (
+          <Link href="/" className="account-button account-button--secondary">
+            Buscar un productor para verificar
+          </Link>
+        ) : null}
       </header>
 
       <section>

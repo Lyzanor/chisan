@@ -420,6 +420,9 @@ export const producerMemberships = pgTable(
     uniqueIndex("producer_memberships_active_owner_producer_uidx")
       .on(table.country, table.producerId)
       .where(sql`${table.status} = 'active' AND ${table.role} = 'owner'`),
+    uniqueIndex("producer_memberships_active_owner_user_uidx")
+      .on(table.userId)
+      .where(sql`${table.status} = 'active' AND ${table.role} = 'owner'`),
     uniqueIndex("producer_memberships_source_claim_uidx")
       .on(table.sourceClaimId)
       .where(sql`${table.sourceClaimId} IS NOT NULL`),

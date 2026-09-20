@@ -148,6 +148,13 @@
       "when": 1789830445606,
       "tag": "0020_public_follows_shelf_proposals",
       "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1789944482570,
+      "tag": "0021_single-owner-membership",
+      "breakpoints": true
     }
   ]
 }

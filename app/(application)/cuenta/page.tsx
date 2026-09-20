@@ -125,7 +125,9 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
           ))}
         </div>
       </section>
-      {account.profileKind === "producer" && membershipCount.value === 0 ? (
+      {account.profileKind === "producer" &&
+      membershipCount.value === 0 &&
+      claimCount.value === 0 ? (
         <section className="account-callout">
           <h2>Verifica el perfil de tu productor</h2>
           <p>

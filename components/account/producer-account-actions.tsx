@@ -63,8 +63,14 @@ export function ProducerAccountActions({
 }: ProducerAccountActionsProps) {
   const state = useProducerAccountState();
   if (!state) return null;
-  const { signedIn, activeOwner, membership, claim, canOfferProfileUpgrade } =
-    state;
+  const {
+    signedIn,
+    activeOwner,
+    membership,
+    claim,
+    canClaimProducer,
+    canOfferProfileUpgrade,
+  } = state;
   const words = producerProfileLabels(locale);
 
   if (membership) {
@@ -91,14 +97,23 @@ export function ProducerAccountActions({
   if (activeOwner) return null;
 
   const claimPath = `/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`;
+  if (claim) {
+    return (
+      <ProducerClosingSection title={words.participate} help={words.participateHelp}>
+        <Link prefetch={false} href="/cuenta/reclamaciones">
+          {messages.viewOwnershipClaim}
+        </Link>
+      </ProducerClosingSection>
+    );
+  }
+  if (!canClaimProducer) return null;
+
   return (
     <ProducerClosingSection title={words.participate} help={words.participateHelp}>
       {!signedIn ? (
         <Link prefetch={false} href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`}>
           {messages.claimProducer}
         </Link>
-      ) : claim ? (
-        <Link prefetch={false} href="/cuenta/reclamaciones">{messages.viewOwnershipClaim}</Link>
       ) : (
         <Link prefetch={false} href={claimPath}>{messages.claimProducer}</Link>
       )}
@@ -116,8 +131,7 @@ export function ProducerGalleryAction({
 }: ProducerAccountActionsProps) {
   const state = useProducerAccountState();
   if (!state) return null;
-  const { signedIn, activeOwner, membership, claim } =
-    state;
+  const { signedIn, activeOwner, membership, claim, canClaimProducer } = state;
 
   const words = producerProfileLabels(locale);
   if (membership) {
@@ -158,6 +172,7 @@ export function ProducerGalleryAction({
       </aside>
     );
   }
+  if (!canClaimProducer) return null;
 
   const href = !signedIn
     ? `${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`

@@ -472,6 +472,13 @@ test("account migration creates constraints and durable producer keys", async ()
       ),
       /producer_memberships_active_owner_producer_uidx|duplicate key/i,
     );
+    await assert.rejects(
+      database.query(
+        "insert into producer_memberships (user_id, country, producer_id, role) values ($1, 'es', 8, 'owner')",
+        [userId],
+      ),
+      /producer_memberships_active_owner_user_uidx|duplicate key/i,
+    );
     await database.query(
       "insert into producer_memberships (user_id, country, producer_id, role) values ($1, 'es', 7, 'editor')",
       [secondUserId],
@@ -1405,7 +1412,7 @@ test("staff recovery is quarantined, reset-only and isolated from operator autho
 
     await database.query(
       `insert into producer_memberships (user_id, country, producer_id, role)
-       values ($1, 'es', 207, 'owner')`,
+       values ($1, 'es', 207, 'editor')`,
       [authorId],
     );
     const inactiveChange = await database.query<{ id: string }>(
@@ -1514,7 +1521,7 @@ test("producer-change preflight closes revoked and expired execution fences", as
     async function createApprovedChange(producerId: number): Promise<string> {
       await database.query(
         `insert into producer_memberships (user_id, country, producer_id, role)
-         values ($1, 'es', $2, 'owner')`,
+         values ($1, 'es', $2, 'editor')`,
         [authorId, producerId],
       );
       const result = await database.query<{ id: string }>(

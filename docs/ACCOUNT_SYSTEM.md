@@ -29,9 +29,13 @@ before they become part of the offer.
 ### One account, separate authority and capabilities
 
 Every person signs in to one internal account. A person may follow producers,
-publish a selection and manage one or more producers through that same account.
+publish a selection and manage one producer as its verified owner through that
+same account.
 Managing a producer preserves the person's favorites and sharing preferences;
 it does not require a second login or move those relationships onto the producer.
+An active owner membership or an open ownership claim prevents a second claim.
+Editor memberships remain separate delegated access and do not create another
+owned producer.
 
 | Concern | Authority |
 | --- | --- |
@@ -460,9 +464,10 @@ The initial flow is deliberately manual:
    with the missing proof; there is no private conversation thread.
 5. Approval creates the producer's single active `owner` membership in the same
    database transaction and rejects any competing claims that were already
-   awaiting review. While that membership is active, the producer cannot be
-   claimed again; public UI and the server mutation both enforce this under the
-   same per-producer transaction lock. The schema supports explicit `editor`
+   awaiting review, including other producer claims from that account. While
+   that membership is active, neither the producer nor its owner account can be
+   used for another ownership claim; public UI and server mutations enforce this
+   under the producer and account transaction locks. The schema supports explicit `editor`
    memberships for additional team accounts without weakening ownership
    verification, but the initial release has no self-service invitation flow.
 6. Revocation closes the membership without deleting claim or audit history.
@@ -858,8 +863,11 @@ activation, incidents, replacement and retirement are owned by
   producer, the exact owner membership in every QR preference mutation. A
   client checkbox, profile kind or public route never grants QR access.
 - Re-check ownership at claim submission, approval and materialization. An
-  active owner blocks every later claim submission for that producer. Membership
-  revocation conflicts every unpublished request under the same producer lock.
+  active owner blocks every later claim submission for that producer, and an
+  account may hold only one active owner membership. PostgreSQL enforces both
+  directions with partial unique indexes; the application also serializes claim
+  submission and approval under producer and account locks. Membership revocation
+  conflicts every unpublished request under the same producer lock.
   A future internal erasure flow must do the same; a Clerk `user.deleted` event
   alone intentionally does not alter domain resources.
 - Treat claims, community suggestions and producer notes as private; do not
@@ -881,7 +889,8 @@ activation, incidents, replacement and retirement are owned by
   grant producer-change agents access to commercial rows or provider IDs.
 - Do not fetch submitted URLs synchronously during a request. Future link
   checks need SSRF defenses and an isolated worker.
-- Transactional per-account quotas limit open and daily claims/profile changes.
+- A producer account may have one open ownership claim; transactional per-account
+  quotas also limit daily claims and open profile changes.
   Infrastructure IP limits, MFA/step-up for sensitive changes and private claim
   artifacts are required before higher-risk evidence uploads or operation at an
   abuse level the current text-only, manually reviewed flow cannot safely absorb.

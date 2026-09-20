@@ -2,6 +2,10 @@ import "server-only";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { cache } from "react";
 import { getCurrentAccount } from "./auth";
+import {
+  OPEN_PRODUCER_CLAIM_STATUSES,
+  sameProducerIdentity,
+} from "./producer-claim-policy";
 import { isProducerOwnershipVerified } from "./producer-ownership";
 import { hasActiveProducerPremiumEntitlement } from "./producer-premium-entitlements";
 import { OPEN_PRODUCER_SUGGESTION_STATUSES } from "./producer-suggestion-workflow";
@@ -17,7 +21,13 @@ export const loadProducerViewerState = cache(
     const activeOwner = await isProducerOwnershipVerified(country, producerId);
 
     const database = getDatabase();
-    const [[membership], [claim], [openSuggestion]] = await Promise.all([
+    const [
+      [membership],
+      [claim],
+      [accountOwner],
+      [accountClaim],
+      [openSuggestion],
+    ] = await Promise.all([
       database
         .select({ id: producerMemberships.id, role: producerMemberships.role })
         .from(producerMemberships)
@@ -38,7 +48,34 @@ export const loadProducerViewerState = cache(
             eq(producerClaims.claimantUserId, account.id),
             eq(producerClaims.country, country),
             eq(producerClaims.producerId, producerId),
-            inArray(producerClaims.status, ["draft", "pending", "needs_info", "approved"]),
+            inArray(producerClaims.status, [...OPEN_PRODUCER_CLAIM_STATUSES]),
+          ),
+        )
+        .limit(1),
+      database
+        .select({
+          country: producerMemberships.country,
+          producerId: producerMemberships.producerId,
+        })
+        .from(producerMemberships)
+        .where(
+          and(
+            eq(producerMemberships.userId, account.id),
+            eq(producerMemberships.role, "owner"),
+            eq(producerMemberships.status, "active"),
+          ),
+        )
+        .limit(1),
+      database
+        .select({
+          country: producerClaims.country,
+          producerId: producerClaims.producerId,
+        })
+        .from(producerClaims)
+        .where(
+          and(
+            eq(producerClaims.claimantUserId, account.id),
+            inArray(producerClaims.status, [...OPEN_PRODUCER_CLAIM_STATUSES]),
           ),
         )
         .limit(1),
@@ -63,7 +100,12 @@ export const loadProducerViewerState = cache(
     return {
       signedIn: true, activeOwner,
       membership: membership ? { role: membership.role } : null,
-      claim: Boolean(claim), openSuggestion: Boolean(openSuggestion),
+      claim: Boolean(claim),
+      canClaimProducer:
+        !accountOwner &&
+        (!accountClaim ||
+          sameProducerIdentity(accountClaim, { country, producerId })),
+      openSuggestion: Boolean(openSuggestion),
       canOfferProfileUpgrade,
     } satisfies ProducerViewerState;
   },
