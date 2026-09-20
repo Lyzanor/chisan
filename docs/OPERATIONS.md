@@ -522,6 +522,11 @@ traffic. The old application reads columns that no longer exist. Recovery needs
 the preflight backup and matching old code; re-adding default columns cannot
 recover former privacy preferences. Run `db:assert-current` and verify legacy
 follows, private/unlisted profile routes and the owner publication transaction.
+Vercel's project pause also blocks new builds. For a coordinated contraction,
+use a temporary traffic maintenance rule or the disabled-account freeze above
+while keeping builds enabled. Verify that old requests are blocked before DDL;
+remove the temporary rule only after the matching deployment is `READY` and
+owns the production aliases. Preserve every existing firewall setting.
 Test new-photo analysis with a deliberately bounded shared allowance. Do not
 raise/reset the existing ledger or activate public deployment implicitly.
 
