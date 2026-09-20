@@ -23,6 +23,7 @@ import { fulfillProducerProfileUpgradeCheckout } from "@/lib/payments/stripe-pro
 import { STRIPE_PAYMENT_PROVIDER } from "@/lib/payments/payment-provider";
 import { canRetryPaidUnfulfilledProfileUpgrade } from "@/lib/payments/stripe-profile-upgrade-domain";
 import { findProducerById } from "@/lib/csv-catalog";
+import { revalidatePublicProducer } from "@/lib/catalog/revalidate-producer";
 import { getDatabase } from "@/lib/db";
 import {
   auditEvents,
@@ -447,6 +448,8 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
     });
     return "saved";
   });
+
+  if (result === "saved") await revalidatePublicProducer(claim.country, claim.producerId);
 
   if (result === "inactive-account" || result === "owner-taken") {
     adminRedirect(

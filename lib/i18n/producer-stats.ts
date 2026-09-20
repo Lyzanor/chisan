@@ -26,6 +26,7 @@ const en = {
     "Only you, as the verified owner with an active premium profile, can see these figures.",
   locked: "Statistics are available with an active premium profile.",
   disabled: "Visit recording is not active at the moment.",
+  paused: "New visit recording is paused. The figures show previously recorded visits.",
   unavailable:
     "Statistics are temporarily unavailable. Please try again later.",
   back: "Edit profile",
@@ -59,6 +60,7 @@ const es: Labels = {
     "Solo tú, como titular verificado con un perfil premium activo, puedes consultar estas cifras.",
   locked: "Las estadísticas están disponibles con un perfil premium activo.",
   disabled: "El registro de visitas no está activo en este momento.",
+  paused: "El registro de nuevas visitas está en pausa. Las cifras muestran las visitas registradas anteriormente.",
   unavailable:
     "Las estadísticas no están disponibles temporalmente. Inténtalo de nuevo más tarde.",
   back: "Editar ficha",
@@ -91,6 +93,7 @@ const ca: Labels = {
     "Només tu, com a titular verificat amb un perfil premium actiu, pots consultar aquestes xifres.",
   locked: "Les estadístiques estan disponibles amb un perfil premium actiu.",
   disabled: "El registre de visites no està actiu en aquest moment.",
+  paused: "El registre de noves visites està en pausa. Les xifres mostren les visites registrades anteriorment.",
   unavailable:
     "Les estadístiques no estan disponibles temporalment. Torna-ho a provar més tard.",
   back: "Editar fitxa",

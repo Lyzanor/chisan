@@ -236,6 +236,9 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
   }
 
   for (const pathname of [
+    "/api/catalog/v1",
+    "/api/producer-favorites",
+    "/api/producer-redirect/es/barcelona/old",
     "/",
     "/about",
     "/contact",
@@ -253,7 +256,6 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
   }
 
   for (const pathname of [
-    "/es/barcelona/producer",
     "/acceso",
     "/registro/new",
     "/cuenta",
@@ -267,6 +269,7 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
   for (const pathname of [
     "/es",
     "/ca-es/barcelona",
+    "/es/barcelona/producer",
     "/contact",
     "/how-we-work",
     "/our-purpose",
@@ -276,6 +279,16 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
     "/es/guias/quesos-de-espana",
   ]) {
     assert.equal(needsClerkRequestContext(pathname), false, pathname);
+  }
+
+  assert.equal(needsClerkRequestContext("/api/producer-stats/view"), false,
+    "paused statistics do not initialize authentication for old collectors");
+
+  for (const pathname of ["/", "/es", "/es/barcelona", "/es/barcelona/producer"]) {
+    assert.equal(unstable_doesMiddlewareMatch({
+      config: { matcher }, url: `https://chisan.app${pathname}`,
+      headers: { "next-action": "follow-action" },
+    }), true, `Server Actions retain auth on ${pathname}`);
   }
 
   assert.doesNotMatch(

@@ -64,6 +64,42 @@ Do not replace a factual correction with stale text to keep an index entry.
 
 ## Public producer-profile rendering and structured data
 
+### Shared profile cache
+
+Producer HTML and RSC use on-demand ISR with a one-hour revalidation interval.
+The first request generates the page; subsequent requests reuse it independently
+of cookies or query filters. Public data still comes from Git. Deploying reviewed
+CSV/content changes replaces the route cache. Ownership and Pro presentation
+are refreshed on regeneration; claim review, administrative gifts and Stripe
+reconciliation invalidate the affected producer's published locale routes after
+their database transaction. Expiry and out-of-band account changes are observed
+on the next hourly regeneration. ISR serves stale content while refreshing and
+can retain it during regeneration failures; public presentation is not an
+authorization check or a promise of immediate removal. Urgent withdrawals require
+explicit cache invalidation or a deployment under Operations.
+
+The shared response never reads a viewer session. Signed-in viewers obtain their
+management links from `/api/account/producer` with `private, no-store`; anonymous
+visitors need no account-state request. Every action and private destination
+still checks exact current server permissions. Followers' names, avatars and
+visibility are loaded only when opening the list and never enter cached HTML.
+Safe filter context is applied to language navigation in the browser; canonical
+metadata is independent of those filters. Compatibility URLs use bounded build
+rewrites and a query-aware redirect handler, not a dynamic canonical profile.
+
+`dynamic = "error"` prevents accidental session-dependent profile rendering.
+The routing proxy still validates catalog URLs to retain complete server-rendered
+404s with this Next.js version, but public GET/HEAD requests skip Clerk. This
+proxy has a per-request cost even on a profile cache hit; in-process CSV and
+translation caches deduplicate reads, including concurrent cold reads. Catalog
+API reads and public follower-list reads skip the authentication proxy.
+
+Validate caching with `next build` and `next start`, not the development server:
+repeat a canonical profile with differing cookies/query strings, confirm identical
+public HTML and `x-nextjs-cache: HIT`, check private APIs for `private, no-store`,
+and exercise compatibility redirects and localized 404s. On Vercel, inspect
+`x-vercel-cache` and Function versus Routing Middleware usage separately.
+
 A producer has one public profile for one canonical CSV row and durable
 `(<country>, producer_id)` identity. An expanded or paid profile extends that
 same page; it never creates another producer record, URL family, canonical

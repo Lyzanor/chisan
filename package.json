@@ -38,7 +38,7 @@
     "test:audit-defects": "node --test scripts/test-catalog-operation-scope.mjs && node scripts/test-audit-defects.mjs",
     "test:check-links": "node scripts/test-check-links.mjs",
     "test:i18n": "tsx --test scripts/test-i18n.ts scripts/test-profile-qr.ts scripts/test-how-chisan-works.ts",
-    "test:accounts": "tsx --test scripts/test-account-database-status.ts scripts/test-account-domain.ts scripts/test-account-i18n.ts scripts/test-account-migration.ts scripts/test-i18n-presentation.ts scripts/test-materialize-producer-change.ts scripts/test-producer-editor-workflow.ts scripts/test-producer-media.ts scripts/test-producer-suggestions.ts scripts/test-profile-upgrade-domain.ts scripts/test-public-profiles.ts scripts/test-user-presentation.ts && node --conditions=react-server --import tsx --test scripts/test-profile-gifts-service.ts scripts/test-home-community.ts scripts/test-producer-selections.ts scripts/test-selection-qr-service.ts scripts/test-producer-stats.ts scripts/test-following-community.ts scripts/test-b2b.ts",
+    "test:accounts": "tsx --test scripts/test-producer-viewer-state.ts scripts/test-account-database-status.ts scripts/test-account-domain.ts scripts/test-account-i18n.ts scripts/test-account-migration.ts scripts/test-i18n-presentation.ts scripts/test-materialize-producer-change.ts scripts/test-producer-editor-workflow.ts scripts/test-producer-media.ts scripts/test-producer-suggestions.ts scripts/test-profile-upgrade-domain.ts scripts/test-public-profiles.ts scripts/test-user-presentation.ts && node --conditions=react-server --import tsx --test scripts/test-profile-gifts-service.ts scripts/test-home-community.ts scripts/test-producer-selections.ts scripts/test-selection-qr-service.ts scripts/test-producer-stats.ts scripts/test-following-community.ts scripts/test-b2b.ts",
     "test:catalog-geography": "tsx --test scripts/test-area-explorer-ui.ts scripts/test-catalog-area-boundaries.mjs scripts/test-location-onboarding.ts scripts/test-nearby-producer-focus.ts scripts/test-resolve-catalog-area.ts scripts/test-visitor-location-marker.ts",
     "test:translations": "tsx --test scripts/test-catalog-translations.ts scripts/test-audit-description-locales.mjs",
     "test:vercel-deploy": "node --test scripts/test-vercel-ignore-build.mjs",
@@ -53,7 +53,7 @@
     "producer:ids:locked": "node scripts/with-producer-id-lock.mjs",
     "test:producer-id-lock": "node --test scripts/test-producer-id-lock.mjs",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm check:content && pnpm check:guides",
-    "verify:ai": "pnpm check:docs && pnpm verify && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior && pnpm test:content && pnpm test:agents && pnpm test:guides && pnpm test:whatsapp && pnpm test:selection-shelf",
+    "verify:ai": "pnpm check:docs && pnpm verify && pnpm test:catalog-cache && pnpm check:design && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm verify:data && pnpm test:translations && pnpm test:vercel-deploy && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior && pnpm test:content && pnpm test:agents && pnpm test:guides && pnpm test:whatsapp && pnpm test:selection-shelf",
     "test:agents": "node --conditions=react-server --import tsx --test scripts/test-catalog-agents.ts scripts/test-public-expanded.ts scripts/test-webmcp.ts",
     "check:docs": "node scripts/check-docs.mjs",
     "check:content": "tsx scripts/check-producer-content.ts",
@@ -63,7 +63,8 @@
     "check:guides": "tsx scripts/check-guides.ts",
     "test:guides": "tsx --test scripts/test-guides.ts",
     "test:selection-shelf": "node --conditions=react-server --import tsx --test scripts/test-selection-shelf.ts",
-    "test:whatsapp": "node --conditions=react-server --import tsx --test scripts/test-whatsapp.ts"
+    "test:whatsapp": "node --conditions=react-server --import tsx --test scripts/test-whatsapp.ts",
+    "test:catalog-cache": "node --test scripts/test-producer-cache.mjs"
   },
   "dependencies": {
     "@clerk/localizations": "^4.16.0",

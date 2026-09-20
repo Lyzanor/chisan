@@ -1,5 +1,6 @@
 import { GUIDES_SEGMENT } from "./guides/routes";
 import { isCatalogScopeSegment } from "./i18n/catalog-scope";
+import { PRODUCER_STATS_COLLECTION_PAUSED, PRODUCER_STATS_ENDPOINT } from "./producer-stats/policy";
 
 const CLERK_PATH_PREFIXES = [
   "/acceso",
@@ -23,9 +24,14 @@ export function catalogPathSegments(pathname: string): string[] | null {
 }
 
 export function needsClerkRequestContext(pathname: string): boolean {
+  if (PRODUCER_STATS_COLLECTION_PAUSED && pathname === PRODUCER_STATS_ENDPOINT) {
+    return false;
+  }
   if (
     pathname === INTERNAL_CATALOG_REDIRECT ||
     pathname.startsWith(`${INTERNAL_CATALOG_REDIRECT}/`) ||
+    pathname.startsWith("/api/producer-redirect/") ||
+    pathname === "/api/producer-favorites" ||
     pathname === PUBLIC_CATALOG_API ||
     pathname.startsWith(`${PUBLIC_CATALOG_API}/`)
   ) {
@@ -40,5 +46,5 @@ export function needsClerkRequestContext(pathname: string): boolean {
     return true;
   }
 
-  return catalogPathSegments(pathname)?.length === 3;
+  return false;
 }

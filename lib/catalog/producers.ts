@@ -281,7 +281,7 @@ export type ProducerSearchFilters = {
   category: string;
 };
 
-const csvCache = new Map<string, ProducerCsvRow[]>();
+const csvCache = new Map<string, Promise<ProducerCsvRow[]>>();
 const countryProducerIndexCache = new Map<
   string,
   Promise<ReadonlyMap<number, LocatedProducerCsvRow>>
@@ -387,16 +387,20 @@ export async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvR
   if (!location) {
     throw new Error(`Unknown area '${countrySlug}/${normalizedArea}'.`);
   }
-  const csvPath = resolveAreaCsvPath(countrySlug, normalizedArea);
-  const csvRaw = await readFile(csvPath, "utf8");
-  const rows = parseProducerCsvRows(csvRaw, csvPath, {
-    country: location.countrySlug,
-    region: location.regionSlug,
-    area: location.slug,
+  const pending = (async () => {
+    const csvPath = resolveAreaCsvPath(countrySlug, normalizedArea);
+    const csvRaw = await readFile(csvPath, "utf8");
+    return parseProducerCsvRows(csvRaw, csvPath, {
+      country: location.countrySlug,
+      region: location.regionSlug,
+      area: location.slug,
+    });
+  })();
+  csvCache.set(cacheKey, pending);
+  void pending.catch(() => {
+    if (csvCache.get(cacheKey) === pending) csvCache.delete(cacheKey);
   });
-
-  csvCache.set(cacheKey, rows);
-  return rows;
+  return pending;
 }
 
 async function loadLocalizedCsvRows(

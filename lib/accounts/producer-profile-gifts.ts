@@ -1,4 +1,5 @@
 import "server-only";
+import { revalidatePublicProducer } from "../catalog/revalidate-producer";
 
 import { randomUUID } from "node:crypto";
 
@@ -369,11 +370,20 @@ function productionProducerProfileGiftService() {
 export async function grantProducerPremiumGift(
   input: GrantProducerPremiumGiftInput,
 ): Promise<GrantProducerPremiumGiftResult> {
-  return productionProducerProfileGiftService().grant(input);
+  const result = await productionProducerProfileGiftService().grant(input);
+  await revalidatePublicProducer(input.country, input.producerId);
+  return result;
 }
 
 export async function revokeProducerPremiumGift(
   input: RevokeProducerPremiumGiftInput,
 ): Promise<RevokeProducerPremiumGiftResult> {
-  return productionProducerProfileGiftService().revoke(input);
+  const result = await productionProducerProfileGiftService().revoke(input);
+  const [entitlement] = await getDatabase().select({
+    country: entitlements.producerCountry, producerId: entitlements.producerId,
+  }).from(entitlements).where(eq(entitlements.id, input.entitlementId)).limit(1);
+  if (entitlement?.country && entitlement.producerId) {
+    await revalidatePublicProducer(entitlement.country, entitlement.producerId);
+  }
+  return result;
 }

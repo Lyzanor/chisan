@@ -578,3 +578,19 @@ Final evidence:
 selection/menu adjustments passed `pnpm verify`, the 15 focused map and follow
 tests and browser regression checks. Physical device keyboard/safe-area
 behavior remains the device-level follow-up from the initial map review.
+
+## 2026-09-21 — Public profile ISR and deferred account state
+
+Production-build browser review covered `/es/barcelona/abadal-avinyo` with
+category/highlight query context at 390×844 first, then 1440×900. The title,
+description, follow and contact controls, product summary, location map and
+nearby producers retain their responsive layout. Neither viewport had document
+overflow, and the browser reported no console errors or warnings.
+
+Public HTML is shared across visitors. Account management controls now resolve
+privately after sign-in; follower names and avatars load only when opening the
+list. Statistics collection is paused while its history remains available to
+authorized owners. The browser run disabled accounts and database access;
+isolated database tests cover owner/visitor separation, and the production
+HTTP regression covers shared cache hits, safe redirects and private headers.
+No authenticated browser session or Vercel deployment was exercised.

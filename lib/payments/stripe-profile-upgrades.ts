@@ -1,4 +1,5 @@
 import "server-only";
+import { revalidatePublicProducer } from "../catalog/revalidate-producer";
 
 import { and, eq, inArray, ne, sql } from "drizzle-orm";
 import type Stripe from "stripe";
@@ -907,7 +908,7 @@ export async function fulfillProducerProfileUpgradeCheckout(input: {
 
   const sessionCharge = expandedPaymentCharge(session);
 
-  return database.transaction(async (transaction) => {
+  const result = await database.transaction<"fulfilled" | "ignored" | "incident" | "duplicate">(async (transaction) => {
     await transaction.execute(
       sql`select pg_advisory_xact_lock(hashtext(${`producer:${candidate.country}:${candidate.producerId}`}))`,
     );
@@ -1326,6 +1327,8 @@ export async function fulfillProducerProfileUpgradeCheckout(input: {
     });
     return "fulfilled";
   });
+  await revalidatePublicProducer(candidate.country, candidate.producerId);
+  return result;
 }
 
 export async function closeProducerProfileUpgradeCheckout(input: {

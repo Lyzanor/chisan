@@ -306,5 +306,34 @@ export function buildCatalogNormalizationRewrites(
 export function buildCatalogNormalizationRewritesFromManifests(
   csvRoot?: string,
 ): CatalogNormalizationRewrite[] {
-  return buildCatalogNormalizationRewrites(loadCatalogRedirectCountries(csvRoot));
+  const countries = loadCatalogRedirectCountries(csvRoot);
+  const producerRewrites: CatalogNormalizationRewrite[] = [];
+  for (const country of countries) {
+    const manifest = JSON.parse(fs.readFileSync(path.join(
+      csvRoot ?? path.resolve(process.cwd(), "data/csv"), country.slug, "country.json",
+    ), "utf8")) as { producerRouteAliases?: Record<string, number> };
+    const scopes = [...new Set([
+      ...country.areas.flatMap((area) => area.publishedLocales.map((locale) => catalogScope(country, locale))),
+      `${country.defaultLocale}-${country.slug}`,
+    ])].join("|");
+    // Only compatibility URLs go through a query-aware handler. Group aliases
+    // into bounded patterns instead of producing hundreds of Vercel rules.
+    const byArea = new Map<string, string[]>();
+    const escape = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    for (const route of Object.keys(manifest.producerRouteAliases ?? {})) {
+      const [area, slug] = route.split("/");
+      if (!area || !slug) throw new Error(`Invalid producer route alias '${route}'`);
+      const variants = [...new Set([slug, encodeURIComponent(slug)])].map(escape);
+      byArea.set(area, [...(byArea.get(area) ?? []), ...variants]);
+    }
+    for (const [area, slugs] of byArea) {
+      for (let offset = 0; offset < slugs.length; offset += 30) {
+        producerRewrites.push({
+          source: `/:catalog(${scopes})/${escape(area)}/:segment(${slugs.slice(offset, offset + 30).join("|")})`,
+          destination: `/api/producer-redirect/:catalog/${area}/:segment`,
+        });
+      }
+    }
+  }
+  return [...producerRewrites, ...buildCatalogNormalizationRewrites(countries)];
 }

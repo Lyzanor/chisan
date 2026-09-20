@@ -30,6 +30,7 @@ import {
   loadPublicProducerGallery,
   hasPublicProducerPremiumAccess,
 } from "@/lib/catalog/public-expanded";
+import { ProducerAccountProvider } from "@/components/account/producer-account-provider";
 import { isAccountSystemConfigured } from "@/lib/accounts/config";
 import { isProducerOwnershipVerified } from "@/lib/accounts/producer-ownership";
 import { producerProfileLabels } from "@/lib/i18n/producer-profile";
@@ -38,7 +39,7 @@ import { ProducerContact } from "@/components/producer-contact";
 import { getProducerContactMessages } from "@/lib/i18n/producer-contact";
 
 import { ProducerProfileView } from "@/components/analytics/producer-profile-view";
-import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
+import { isProducerStatsEnabled, PRODUCER_STATS_COLLECTION_PAUSED } from "@/lib/producer-stats/policy";
 import {
   ProducerAccountActions,
   ProducerGalleryAction,
@@ -48,6 +49,7 @@ import { ProducerFavorites } from "@/components/account/producer-favorites";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { GuideHighlights } from "@/components/guides/guide-highlights";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
+import { ProducerLanguageMenu } from "@/components/producer-language-menu";
 import { ProducersMap } from "@/components/map/producers-map";
 import { ProducerDistance } from "@/components/producer-distance";
 import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
@@ -65,7 +67,6 @@ import {
   buildCatalogHref,
   buildProducerHref,
   buildProducerPathSegment,
-  readCatalogQueryContext,
 } from "@/lib/catalog-navigation";
 import {
   isCanonicalCatalogSegment,
@@ -94,10 +95,14 @@ import {
 
 type ProducerPageProps = {
   params: Promise<{ catalog: string; area: string; segment: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export const dynamic = "force-dynamic";
+// Generate once on first access, then serve shared HTML/RSC without session reads.
+// Public account presentation refreshes hourly and after ownership/Pro changes.
+export function generateStaticParams() { return []; }
+export const dynamic = "error";
+export const dynamicParams = true;
+export const revalidate = 3600;
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
@@ -220,12 +225,8 @@ export async function generateMetadata({
 
 export default async function ProducerPage({
   params,
-  searchParams,
 }: ProducerPageProps) {
-  const [{ catalog, area: rawArea, segment }, query] = await Promise.all([
-    params,
-    searchParams,
-  ]);
+  const { catalog, area: rawArea, segment } = await params;
   const resolved = await resolveProducerCatalog(catalog, rawArea, segment);
 
   if (!resolved) notFound();
@@ -242,7 +243,6 @@ export default async function ProducerPage({
     notFound();
   }
 
-  const catalogQuery = readCatalogQueryContext(query);
   const canonicalSegment = buildProducerPathSegment(producer.slug);
 
   if (
@@ -255,8 +255,6 @@ export default async function ProducerPage({
       buildProducerHref(producer, {
         scope,
         area,
-        ...catalogQuery,
-        highlight: catalogQuery.highlight ? producer.slug : undefined,
       }),
     );
   }
@@ -325,7 +323,6 @@ export default async function ProducerPage({
   const returnTo = buildProducerHref(producer, {
     scope,
     area,
-    ...catalogQuery,
   });
   const municipalityHref = buildCatalogHref({
     scope,
@@ -378,8 +375,7 @@ export default async function ProducerPage({
       href: buildProducerHref(producer, {
         scope: buildCatalogScope(country, targetLocale),
         area,
-        ...catalogQuery,
-      }),
+          }),
     })),
   );
   const canonicalUrl = buildCatalogAlternateSet(
@@ -479,8 +475,14 @@ export default async function ProducerPage({
   const hoursBesideContact = mapPoints.length > 0 || !hasLocation;
 
   return (
+    <ProducerAccountProvider
+      enabled={isAccountSystemConfigured()}
+      country={country.slug}
+      producerId={producer.producerId}
+      activeOwner={ownershipVerified}
+    >
     <main className="detail-page" data-category={producer.category}>
-      {isProducerStatsEnabled() ? (
+      {!PRODUCER_STATS_COLLECTION_PAUSED && isProducerStatsEnabled() ? (
         <ProducerProfileView
           country={country.slug}
           producerId={producer.producerId}
@@ -494,11 +496,9 @@ export default async function ProducerPage({
         }}
       />
       <article className="detail-shell">
-        <LanguageMenuRegistration
-          currentLocale={locale}
-          label={messages.languageSwitcher.label}
-          options={languageOptions}
-        />
+        <Suspense fallback={<LanguageMenuRegistration currentLocale={locale} label={messages.languageSwitcher.label} options={languageOptions} />}>
+          <ProducerLanguageMenu currentLocale={locale} label={messages.languageSwitcher.label} options={languageOptions} />
+        </Suspense>
         <nav
           className="detail-breadcrumb"
           aria-label={messages.producer.navigation}
@@ -937,5 +937,6 @@ export default async function ProducerPage({
         </Suspense>
       </article>
     </main>
+    </ProducerAccountProvider>
   );
 }

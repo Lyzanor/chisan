@@ -70,7 +70,7 @@ function getClerkRequestHandler(): NextMiddleware | null {
 }
 
 export default async function proxy(request: NextRequest, event: NextFetchEvent) {
-  if (!needsClerkRequestContext(request.nextUrl.pathname)) {
+  if (!request.headers.has("next-action") && !needsClerkRequestContext(request.nextUrl.pathname)) {
     return continueRequest(request);
   }
 
@@ -89,8 +89,12 @@ export const config = {
     "/cuenta/:path*",
     "/admin/:path*",
     "/api",
-    "/api/((?!catalog-redirect(?:/|$)).*)",
+    "/api/((?!catalog-redirect(?:/|$)|producer-redirect(?:/|$)|catalog/v1(?:/|$)|producer-favorites(?:/|$)).*)",
     "/trpc/:path*",
     "/((?:[a-z]{2}|[a-z]{2,3}-[a-z]{2})(?:/[^/.]+){0,2})",
+    {
+      "source": "/:path*",
+      "has": [{ "type": "header", "key": "next-action" }]
+    }
   ],
 };

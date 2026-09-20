@@ -60,7 +60,8 @@ test("repository manifests produce unique static normalization sources", () => {
     0,
   );
 
-  assert.equal(rewrites.length, countries.length + aliasCount);
+  assert.equal(rewrites.filter(({ destination }) => destination.startsWith("/api/catalog-redirect/")).length, countries.length + aliasCount);
+  assert.ok(rewrites.some(({ destination }) => destination.startsWith("/api/producer-redirect/")));
   assert.deepEqual(
     countries.map(({ slug }) => slug),
     ["es"],

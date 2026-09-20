@@ -7,15 +7,13 @@ import { UserAvatar } from "./user-avatar";
 import styles from "./producer-favorites.module.css";
 
 export function ProducerFavoritesList({
-  initial,
   country,
   producerId,
 }: {
-  initial: ProducerFavoritesPage;
   country: string;
   producerId: number;
 }) {
-  const [page, setPage] = useState(initial);
+  const [page, setPage] = useState<ProducerFavoritesPage | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   async function refresh(offset = 0) {
@@ -33,8 +31,8 @@ export function ProducerFavoritesList({
         offset
           ? {
               ...next,
-              total: next.total || current.total,
-              items: [...current.items, ...next.items],
+              total: next.total || current?.total || 0,
+              items: [...(current?.items ?? []), ...next.items],
             }
           : next,
       );
@@ -59,18 +57,20 @@ export function ProducerFavoritesList({
         <summary className={styles.summary}>
           <span className={styles.copy}>
             <span>
-              {page.total === 1
+              {page === null
+                ? "Ver seguidores"
+                : page.total === 1
                 ? "1 seguidor · Ver lista"
                 : `${page.total} seguidores · Ver lista`}
             </span>
           </span>
           <span className={styles.stack} aria-hidden="true">
-            {page.items.slice(0, 5).map((person, index) => (
+            {page?.items.slice(0, 5).map((person, index) => (
               <span key={index}>
                 <UserAvatar name={person.name} src={person.avatarUrl} />
               </span>
             ))}
-            {page.total > 5 ? (
+            {page && page.total > 5 ? (
               <span className={styles.count}>+{page.total - 5}</span>
             ) : null}
           </span>
@@ -80,7 +80,7 @@ export function ProducerFavoritesList({
         </summary>
         <div className={styles.content}>
           <ul className={styles.list}>
-            {page.items.map((person, index) => (
+            {page?.items.map((person, index) => (
               <li key={index}>
                 {person.profileHref ? (
                   <Link
@@ -107,7 +107,7 @@ export function ProducerFavoritesList({
               </li>
             ))}
           </ul>
-          {!page.items.length && !busy && !error ? (
+          {page && !page.items.length && !busy && !error ? (
             <p>Este productor todavía no tiene seguidores.</p>
           ) : null}
           <div role="status" aria-live="polite">
@@ -122,7 +122,7 @@ export function ProducerFavoritesList({
               Reintentar
             </button>
           ) : null}
-          {page.nextOffset !== null && !error ? (
+          {page && page.nextOffset !== null && !error ? (
             <button
               className="account-button account-button--secondary"
               disabled={busy}

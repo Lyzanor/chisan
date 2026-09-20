@@ -10,6 +10,24 @@ resource identifiers or secret values into this file.
 
 ## Environment contract
 
+### Traffic and cache limits
+
+Producer profiles use the shared ISR policy in [Catalog web](CATALOG_WEB.md#shared-profile-cache).
+Per-visit producer statistics collection is currently paused; retain its database
+history. Before deploying cache changes, verify profile cache hits, absence of
+anonymous account/statistics requests, and unchanged private authorization in a
+production build. Check Vercel Function CPU, Routing Middleware, Edge Requests,
+Fast Data Transfer and ISR usage separately. Cached pages still consume requests
+and bandwidth; ISR cannot guarantee staying inside plan quotas or a fixed latency.
+
+Follow the agreed spending allowance and pause policy in
+[Consumption controls](#consumption-controls), verifying the actual team settings
+in [Spend Management](https://vercel.com/docs/spend-management).
+Review [CDN usage](https://vercel.com/docs/manage-cdn-usage) and applicable Firewall
+rate limits when assessing a traffic spike. Alerts alone do not stop spend, and
+a spend pause trades availability for cost protection. Repository cache settings
+do not configure the dashboard spending limit.
+
 The WhatsApp assistant has a separate activation and lifetime AI-call budget.
 Its Meta, OpenAI, migration and recovery-scheduler activation steps are in
 [WhatsApp assistant](WHATSAPP_ASSISTANT.md). These credentials are runtime
@@ -110,9 +128,7 @@ the local diff review, semantic review or repository gate.
 
 1. Run `git status --short`, `git diff --name-status` and `git diff --stat`.
    Preserve unrelated work and confirm the release contains only the intended
-   scope. When a shared checkout contains overlapping or untracked code, validate
-   an isolated copy of the intended Git snapshot. A build that depends on files
-   omitted from the commit does not validate the deployment.
+   scope.
 2. Run `pnpm install --frozen-lockfile`. Every dependency change and its
    generated `pnpm-lock.yaml` update are one atomic release change; never relax
    frozen-lockfile to hide a mismatch.

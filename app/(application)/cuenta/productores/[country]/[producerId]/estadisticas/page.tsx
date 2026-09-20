@@ -11,7 +11,7 @@ import { hasActiveProducerPremiumEntitlement } from "@/lib/accounts/producer-pre
 import { findProducerById, findPublishedCountry } from "@/lib/csv-catalog";
 import { loadApplicationPresentation } from "@/lib/i18n/application-presentation.server";
 import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
-import { isProducerStatsEnabled } from "@/lib/producer-stats/policy";
+import { isProducerStatsEnabled, PRODUCER_STATS_COLLECTION_PAUSED } from "@/lib/producer-stats/policy";
 import { getProducerStatsService } from "@/lib/producer-stats/service";
 
 export const metadata: Metadata = {
@@ -93,6 +93,9 @@ export default async function ProducerStatisticsPage({
           </Link>
         </div>
       </header>
+      {stats && PRODUCER_STATS_COLLECTION_PAUSED ? (
+        <p className="account-callout">{labels.paused}</p>
+      ) : null}
       {stats ? (
         <ProducerStatistics stats={stats} locale={presentation.locale} />
       ) : (

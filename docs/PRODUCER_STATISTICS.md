@@ -9,6 +9,16 @@ statistics page. An owner without premium sees an explanation, never counts.
 
 ## Measurement
 
+Collection is currently paused to protect hosting quotas. The shared
+`PRODUCER_STATS_COLLECTION_PAUSED` policy prevents the profile from mounting its
+collector and makes the ingestion route return before authentication or database
+work, even if the environment feature flag remains enabled. Historical totals
+are retained and remain permission-checked; the private statistics page labels
+the pause. Resuming collection is a deliberate policy change with an explicit
+traffic budget, not a side effect of enabling accounts or Pro.
+
+When collection is resumed:
+
 - The public profile mounts a small client collector. It sends a POST only when
   the page is visible, after hydration. Server rendering, link prefetch, map
   previews, API reads, category pages and private account pages do not count.

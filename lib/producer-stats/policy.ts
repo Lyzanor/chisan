@@ -1,6 +1,10 @@
 export const PRODUCER_STATS_WINDOW_DAYS = 30;
 export const PRODUCER_STATS_ENDPOINT = "/api/producer-stats/view";
 
+// Pause per-visit writes to protect hosting quotas. Both the public collector
+// and ingestion respect this decision; previously recorded history stays.
+export const PRODUCER_STATS_COLLECTION_PAUSED = true;
+
 export function isProducerStatsFeatureEnabled(
   environment: Record<string, string | undefined> = process.env,
 ): boolean {
