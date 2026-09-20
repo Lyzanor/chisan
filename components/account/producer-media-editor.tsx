@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { CameraIcon } from "@phosphor-icons/react";
 import { useRef, useState } from "react";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
 import {
@@ -65,6 +66,21 @@ export function ProducerMediaEditor({
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const input = useRef<HTMLInputElement>(null);
+  const rightsInput = useRef<HTMLInputElement>(null);
+  const newPhotos = gallery.filter(
+    (item) => !published.some((photo) => photo.src === item.src),
+  ).length;
+  const galleryProgress = words.progress
+    .replace("{count}", String(gallery.length))
+    .replace("{limit}", String(limit));
+  function choosePhotos() {
+    if (!rights) {
+      setError(words.errors.rights);
+      rightsInput.current?.focus();
+      return;
+    }
+    input.current?.click();
+  }
   const source = (item: Media) => {
     if (published.some((p) => p.src === item.src)) return item.src;
     const upload = uploads.find(
@@ -163,6 +179,38 @@ export function ProducerMediaEditor({
       <legend>{galleryOnly ? words.gallery : words.title}</legend>
       {galleryOnly ? null : <p>{words.help}</p>}
       <p>{words.galleryHelp}</p>
+      {galleryOnly ? (
+        <div className={styles.completion}>
+          <strong>{words.completionTitle}</strong>
+          <label htmlFor="gallery-completion">{galleryProgress}</label>
+          <progress id="gallery-completion" value={gallery.length} max={limit}>
+            {galleryProgress}
+          </progress>
+          <p>{words.publicationStatus
+            .replace("{published}", String(published.length))
+            .replace("{new}", String(newPhotos))}</p>
+          <p>{words.reviewHelp}</p>
+          {gallery.length < limit ? (
+            <div className={styles.ideas}>
+              <p>{words.photoIdeas}</p>
+              <div className={styles.slots}>
+                {words.suggestions.slice(0, Math.min(3, limit - gallery.length)).map((suggestion) => (
+                  <button
+                    key={suggestion}
+                    type="button"
+                    className={styles.slot}
+                    onClick={choosePhotos}
+                    aria-label={`${words.add}: ${suggestion}`}
+                  >
+                    <CameraIcon size={24} aria-hidden="true" />
+                    <span>{suggestion}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
       <div className={styles.upload}>
         {galleryOnly ? null : <label className="account-field" htmlFor="media-target">
           <span>{words.target}</span>
@@ -181,9 +229,13 @@ export function ProducerMediaEditor({
         </label>}
         <label className="account-check">
           <input
+            ref={rightsInput}
             type="checkbox"
             checked={rights}
-            onChange={(e) => setRights(e.target.checked)}
+            onChange={(e) => {
+              setRights(e.target.checked);
+              if (error === words.errors.rights) setError("");
+            }}
           />
           <span>{words.rights}</span>
         </label>
@@ -202,7 +254,7 @@ export function ProducerMediaEditor({
           type="button"
           className="account-button account-button--secondary"
           disabled={!rights || gallery.length >= limit}
-          onClick={() => input.current?.click()}
+          onClick={choosePhotos}
         >
           {busy ? words.uploading : words.add}
         </button>
@@ -216,10 +268,8 @@ export function ProducerMediaEditor({
       <p role="status" aria-live="polite">
         {busy ? words.uploading : notice}
       </p>
-      <p>
-        {gallery.length} / {limit}
-      </p>
-      {!gallery.length ? <p className="account-empty">{words.empty}</p> : null}
+      {!galleryOnly ? <p>{gallery.length} / {limit}</p> : null}
+      {!galleryOnly && !gallery.length ? <p className="account-empty">{words.empty}</p> : null}
       <ol className={styles.list}>
         {gallery.map((item, index) => {
           const assigned = products.filter((p) =>

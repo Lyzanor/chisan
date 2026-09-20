@@ -3,6 +3,39 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-20 — Free gallery completion
+
+The free gallery editor was checked at 390×844 first, then 1280×900, in a
+temporary local fixture rendering the actual component without account writes.
+Spanish and Catalan labels were reviewed. The fixture was removed afterward.
+
+- Camera frames stack on mobile and form three columns on wide screens; text
+  remains readable and the mobile document has no horizontal overflow.
+- Zero and two photos show progress and optional photo ideas. At five photos,
+  the frames disappear and upload is disabled. Published and new proposal photos
+  remain distinct; the count is derived locally, without telemetry or storage.
+- Selecting a frame without rights confirmation focuses the checkbox and shows
+  its error. Confirming rights enables the existing upload action. No test image
+  was uploaded and no claim or proposal was submitted.
+- The Pro editor retains its product target selector and does not show the free
+  five-photo progress indicator.
+- The former hero invitation now sits beside the gallery. Its existing viewer
+  checks are retained; members receive a direct link to the gallery editor.
+- Release follow-up: the public Aceites Oro Bailén profile rendered correctly
+  at 390×844 and 1280×900 in an isolated checkout with accounts disabled. The
+  mobile document had no horizontal overflow. The signed-in invitation and
+  authenticated publication were not exercised against a live account.
+
+Validation: lint, TypeScript, production build, docs, design, database schema,
+account/content/data/localization and all remaining unit suites passed. The
+initial `verify:ai` run was interrupted at `test:behavior` by the shared dev
+server lock; its later HTTP retry also hit local proxy errors. Release preflight
+closed that gap: after `pnpm install --frozen-lockfile`, `PORT=3220 pnpm
+test:behavior` passed in an isolated checkout containing the exact application
+changes, including guide-to-producer links, redirects, robots and sitemap. The
+five suites following the HTTP gate had already passed separately. No source
+workaround or production credentials were needed for the retry.
+
 ## 2026-09-19 — Shelf analysis feedback and usage
 
 Visual review: **passed** at 390×844 first, then 1440×1000, using the authenticated

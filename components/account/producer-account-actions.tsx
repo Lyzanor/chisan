@@ -3,7 +3,7 @@ import {
   ArrowUpRightIcon,
   ClockIcon,
   PencilSimpleIcon,
-  SealCheckIcon,
+  CameraIcon,
 } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 import { cache, type ReactNode } from "react";
@@ -207,9 +207,9 @@ export async function ProducerAccountActions({
 }
 
 /**
- * Prominent claim call-to-action in the hero section for unverified profiles.
+ * Gallery invitation, with a direct editing link for the producer’s members.
  */
-export async function ProducerHeroClaim({
+export async function ProducerGalleryAction({
   country,
   producerId,
   locale,
@@ -218,25 +218,40 @@ export async function ProducerHeroClaim({
     const { account, activeOwner, membership, claim } =
       await loadProducerAccountState(country, producerId);
 
-    // If an owner is already verified, or the current user is already a member,
-    // do not show the claim CTA in the hero.
-    if (activeOwner || membership) return null;
-
     const words = producerProfileLabels(locale);
+    if (membership) {
+      return (
+        <aside className="detail-gallery-action" aria-label={words.galleryManageTitle}>
+          <div className="detail-gallery-action__content">
+            <CameraIcon size={20} aria-hidden="true" className="detail-gallery-action__icon" />
+            <div className="detail-gallery-action__copy">
+              <strong>{words.galleryManageTitle}</strong>
+              <span className="detail-gallery-action__help">{words.freeGalleryHelp}</span>
+            </div>
+          </div>
+          <Link href={`/cuenta/productores/${country}/${producerId}/editar#producer-change-gallery`} className="detail-gallery-action__action">
+            <span>{words.galleryManageAction}</span>
+            <ArrowUpRightIcon size={14} aria-hidden="true" />
+          </Link>
+        </aside>
+      );
+    }
+    if (activeOwner) return null;
+
     const claimPath = `/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`;
 
     if (claim) {
       return (
-        <aside className="detail-hero-claim detail-hero-claim--pending" aria-label={words.heroClaimPendingTitle}>
-          <div className="detail-hero-claim__content">
-            <ClockIcon size={20} aria-hidden="true" className="detail-hero-claim__icon" />
-            <div className="detail-hero-claim__copy">
-              <strong>{words.heroClaimPendingTitle}</strong>
-              <span className="detail-hero-claim__help">{words.heroClaimPendingHelp}</span>
+        <aside className="detail-gallery-action detail-gallery-action--pending" aria-label={words.galleryClaimPendingTitle}>
+          <div className="detail-gallery-action__content">
+            <ClockIcon size={20} aria-hidden="true" className="detail-gallery-action__icon" />
+            <div className="detail-gallery-action__copy">
+              <strong>{words.galleryClaimPendingTitle}</strong>
+              <span className="detail-gallery-action__help">{words.galleryClaimPendingHelp}</span>
             </div>
           </div>
-          <Link href="/cuenta/reclamaciones" className="detail-hero-claim__action">
-            <span>{words.heroClaimPendingAction}</span>
+          <Link href="/cuenta/reclamaciones" className="detail-gallery-action__action">
+            <span>{words.galleryClaimPendingAction}</span>
             <ArrowUpRightIcon size={14} aria-hidden="true" />
           </Link>
         </aside>
@@ -248,16 +263,16 @@ export async function ProducerHeroClaim({
       : claimPath;
 
     return (
-      <aside className="detail-hero-claim" aria-label={words.heroClaimTitle}>
-        <div className="detail-hero-claim__content">
-          <SealCheckIcon size={20} aria-hidden="true" className="detail-hero-claim__icon" />
-          <div className="detail-hero-claim__copy">
-            <strong>{words.heroClaimTitle}</strong>
-            <span className="detail-hero-claim__help">{words.heroClaimHelp}</span>
+      <aside className="detail-gallery-action" aria-label={words.galleryClaimTitle}>
+        <div className="detail-gallery-action__content">
+          <CameraIcon size={20} aria-hidden="true" className="detail-gallery-action__icon" />
+          <div className="detail-gallery-action__copy">
+            <strong>{words.galleryClaimTitle}</strong>
+            <span className="detail-gallery-action__help">{words.galleryClaimHelp}</span>
           </div>
         </div>
-        <Link href={href} className="detail-hero-claim__action">
-          <span>{words.heroClaimAction}</span>
+        <Link href={href} className="detail-gallery-action__action">
+          <span>{words.galleryClaimAction}</span>
           <ArrowUpRightIcon size={14} aria-hidden="true" />
         </Link>
       </aside>

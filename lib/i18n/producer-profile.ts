@@ -24,13 +24,15 @@ const en = {
   freeGallery: "Your free gallery · up to 5 photos",
   freeGalleryHelp:
     "Show your work, your place and your products. New photos are reviewed before publication.",
-  heroClaimTitle: "Do you produce here?",
-  heroClaimHelp:
-    "Claim your free profile to add photos, manage your contact details and get the verified badge.",
-  heroClaimAction: "Claim profile",
-  heroClaimPendingTitle: "Verification request submitted",
-  heroClaimPendingHelp: "Your claim is currently under editorial review.",
-  heroClaimPendingAction: "View claim",
+  galleryManageTitle: "Bring your profile to life",
+  galleryManageAction: "Manage photos",
+  galleryClaimTitle: "Is this your project?",
+  galleryClaimHelp:
+    "Add your photos and complete your profile for free. Verify your relationship with this producer to get started.",
+  galleryClaimAction: "Complete my profile",
+  galleryClaimPendingTitle: "Verification request submitted",
+  galleryClaimPendingHelp: "Your claim is currently under editorial review.",
+  galleryClaimPendingAction: "View claim",
 };
 const es: typeof en = {
   removeMunicipality: "Quitar filtro de municipio",
@@ -56,13 +58,15 @@ const es: typeof en = {
   freeGallery: "Tu galería gratuita · hasta 5 fotos",
   freeGalleryHelp:
     "Muestra tu trabajo, tu lugar y tus productos. Las fotos nuevas se revisan antes de publicarse.",
-  heroClaimTitle: "¿Elaboras aquí?",
-  heroClaimHelp:
-    "Verifica gratis tu titularidad para añadir fotos de tu obrador, gestionar tus datos y obtener el distintivo verificado.",
-  heroClaimAction: "Verificar ficha",
-  heroClaimPendingTitle: "Solicitud de verificación enviada",
-  heroClaimPendingHelp: "Tu solicitud está en revisión por el equipo editorial.",
-  heroClaimPendingAction: "Ver solicitud",
+  galleryManageTitle: "Dale vida a tu ficha",
+  galleryManageAction: "Gestionar fotos",
+  galleryClaimTitle: "¿Es tu proyecto?",
+  galleryClaimHelp:
+    "Añade tus fotos y completa la ficha gratis. Verifica tu vinculación con este productor para empezar.",
+  galleryClaimAction: "Completar mi ficha",
+  galleryClaimPendingTitle: "Solicitud de verificación enviada",
+  galleryClaimPendingHelp: "Tu solicitud está en revisión por el equipo editorial.",
+  galleryClaimPendingAction: "Ver solicitud",
 };
 const ca: typeof en = {
   removeMunicipality: "Treu el filtre de municipi",
@@ -88,13 +92,15 @@ const ca: typeof en = {
   freeGallery: "La teva galeria gratuïta · fins a 5 fotos",
   freeGalleryHelp:
     "Mostra la teva feina, el teu lloc i els teus productes. Les fotos noves es revisen abans de publicar-les.",
-  heroClaimTitle: "Elabores aquí?",
-  heroClaimHelp:
-    "Verifica de franc la teva titularitat per afegir fotos del teu obrador, gestionar les teves dades i obtenir el distintiu verificat.",
-  heroClaimAction: "Verificar fitxa",
-  heroClaimPendingTitle: "Sol·licitud de verificació enviada",
-  heroClaimPendingHelp: "La teva sol·licitud està en revisió per l'equip editorial.",
-  heroClaimPendingAction: "Veure sol·licitud",
+  galleryManageTitle: "Dona vida a la teva fitxa",
+  galleryManageAction: "Gestionar fotos",
+  galleryClaimTitle: "És el teu projecte?",
+  galleryClaimHelp:
+    "Afegeix les teves fotos i completa la fitxa de franc. Verifica la teva vinculació amb aquest productor per començar.",
+  galleryClaimAction: "Completar la meva fitxa",
+  galleryClaimPendingTitle: "Sol·licitud de verificació enviada",
+  galleryClaimPendingHelp: "La teva sol·licitud està en revisió per l'equip editorial.",
+  galleryClaimPendingAction: "Veure sol·licitud",
 };
 export function producerProfileLabels(locale: Locale) {
   return locale === "es" ? es : locale === "ca" ? ca : en;

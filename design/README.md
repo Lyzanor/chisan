@@ -317,6 +317,17 @@ a strip after the visit section and before Details: one row at honest aspect
 ratios that scrolls sideways when the screen is narrow or the gallery is long.
 Pointer hover scales a photo to 1.03 within its frame; the photos open nothing,
 and reduced motion removes the emphasis.
+Beside the gallery, a compact invitation offers free profile completion to an
+unclaimed producer and preserves its identity through sign-in. A pending claimant
+sees their request link; active members go directly to the gallery editor. Other
+visitors to a verified producer see no invitation. This replaces the hero claim
+invitation. Public profiles never show empty photo frames or an incompleteness badge.
+The free gallery editor shows its current photo count against the five-photo
+allowance, with published photos and new proposal photos counted separately.
+Up to three camera frames suggest subjects for the next photo; they are optional
+ideas, not claims about missing subject matter. Frames use the existing upload
+and rights confirmation controls and disappear when the allowance is filled.
+Progress is derived from editor state; it creates no stored score or telemetry.
 Followers have a dedicated section, showing only opted-in public attribution and
 explicitly labeling that count. Community suggestions sit beside the Details
 heading, next to the editorial notice they correct. The closing section after
