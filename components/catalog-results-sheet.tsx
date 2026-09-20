@@ -1,6 +1,5 @@
 "use client";
 
-import { CaretDownIcon } from "@phosphor-icons/react";
 import { useEffect, useId, useRef, type ReactNode, type Ref } from "react";
 
 export function CatalogResultsSheet({ children, open, onOpenChange, label, closeLabel, title, viewerRef }: {
@@ -58,10 +57,7 @@ export function CatalogResultsSheet({ children, open, onOpenChange, label, close
         }}
       >
         <span className="catalog-results-sheet__grip" aria-hidden="true" />
-        <span className="catalog-results-sheet__label">
-          {open ? closeLabel : label}
-          <CaretDownIcon className="catalog-results-sheet__chevron" size={16} aria-hidden="true" />
-        </span>
+        {!open ? <span className="catalog-results-sheet__label">{label}</span> : null}
       </button>
       <div className="catalog-viewer-body" id={bodyId} role="region" aria-label={title}>
         {children}

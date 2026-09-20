@@ -594,3 +594,19 @@ authorized owners. The browser run disabled accounts and database access;
 isolated database tests cover owner/visitor separation, and the production
 HTTP regression covers shared cache hits, safe redirects and private headers.
 No authenticated browser session or Vercel deployment was exercised.
+
+## 2026-09-21 — Compact mobile results handle
+
+Browser review covered the discovery map at 390×844 first. The closed results
+sheet is now a 44px handle with the localized producer count and geographic
+scope; Barcelona, Huesca and national search rendered the expected Barcelona,
+Huesca and España labels. No roster row or direction icon remains visible while
+closed. Opening by touch exposes the full roster while the handle keeps only
+its drag bar and a hidden “close list” accessible name.
+
+At 1440×900 the handle remains hidden and the 360px roster stays visible. Both
+widths retained the carousel, map controls and list without document overflow
+or a framework error overlay. Temporary browser captures were not retained in
+the repository. The development console still reports the existing WebMCP
+schema serialization warning and absent local Vercel Analytics script; neither
+originates in this presentation change.

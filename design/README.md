@@ -217,9 +217,10 @@ to improve appearance.
   at most seven neighbouring cards while retaining every result as a destination.
   Its first card highlights a point without forcing a zoom or changing the URL.
   A 44px bottom handle opens the full roster by upward drag, tap or keyboard;
-  downward drag, tap or Escape closes it. The collapsed panel previews one real
-  result when height permits; the remaining rows are hidden and not keyboard
-  reachable. Roomy maps show the roster alongside the map. Safe-area padding and dynamic viewport
+  downward drag, tap or Escape closes it. The collapsed panel identifies the
+  result count and geographic scope without previewing an arbitrary producer;
+  roster rows are hidden and not keyboard reachable until the sheet opens.
+  Roomy maps show the roster alongside the map. Safe-area padding and dynamic viewport
   height keep controls inside the display. Public selections and editorial guide
   maps reuse this same carousel, roster and non-modal sheet inside their page.
 - Responsive composition follows container size, including embedded maps and

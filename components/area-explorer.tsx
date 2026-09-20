@@ -996,7 +996,10 @@ function AreaExplorerView({
           open={listOpen}
           onOpenChange={setListOpen}
           title={model.mapMessages.producers}
-          label={loading ? searchMessages.loading : formatMessage(searchMessages.viewList, { count: formatNumber(model.localeDisplayTag, items.length) })}
+          label={loading ? searchMessages.loading : formatMessage(searchMessages.sheetResults, {
+            count: formatNumber(model.localeDisplayTag, items.length),
+            scope: scopeLabel,
+          })}
           closeLabel={searchMessages.backToMap}
         >
             <div className="catalog-viewer-head"><h2>{model.catalogMessages.producers}</h2></div>
