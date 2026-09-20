@@ -610,3 +610,7 @@ or a framework error overlay. Temporary browser captures were not retained in
 the repository. The development console still reports the existing WebMCP
 schema serialization warning and absent local Vercel Analytics script; neither
 originates in this presentation change.
+
+The compact follow-up removes the remaining white gutter below the collapsed
+count and overlays the open handle's 44px touch target on the roster, leaving
+only the 12px visual allowance required by its drag bar.
