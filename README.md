@@ -80,10 +80,12 @@ permissions. [The content contract](docs/PRODUCER_CONTENT.md) includes an exampl
 
 ## Release
 
-Development and site checks currently run locally. Pushing `main` synchronizes
-reviewed work with GitHub and runs CI; automatic Vercel deployments are disabled.
-Public deployment is a separate, explicit action. Follow
-[the operating mode, reactivation steps and release checks](docs/OPERATIONS.md)
-when resuming publication.
+Production runs on Vercel Pro. Pushing reviewed, validated changes to `main`
+synchronizes GitHub, runs CI and automatically deploys product changes to
+<https://chisan.app>. Documentation, evidence and test-only pushes skip the
+Vercel build. Use local checks while iterating, batch coherent changes into one
+push, and verify the deployed commit and public behavior. Follow
+[the live operating mode and release checks](docs/OPERATIONS.md), including
+database preflight before publishing code that needs a new schema.
 Producer and selection QR behavior is documented in the
 [account contract](docs/ACCOUNT_SYSTEM.md#public-user-profiles).

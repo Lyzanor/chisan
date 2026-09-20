@@ -207,9 +207,14 @@ the live pilot.
 nonempty `CRON_SECRET`. It recovers pending work and removes inbox records older
 than seven days and expired bindings. The
 [WhatsApp recovery workflow](../.github/workflows/whatsapp-recovery.yml) requests
-this endpoint every five minutes using a standard GitHub-hosted runner in the
-public repository. Set the same random secret as Production `CRON_SECRET` and
-the GitHub Actions secret `CHISAN_WHATSAPP_CRON_SECRET`, then set repository
+this endpoint hourly using a standard GitHub-hosted runner in the
+public repository. The gap allows Neon's five-minute idle suspension to save
+compute when there is no other traffic; a five-minute polling loop can keep a
+free database awake continuously. Incoming webhooks still process immediately;
+only fallback recovery waits for the next scheduled run (up to an hour, plus
+GitHub scheduling delay). Manual dispatch remains available for an incident.
+Set the same random secret as Production `CRON_SECRET` and the GitHub Actions
+secret `CHISAN_WHATSAPP_CRON_SECRET`, then set repository
 variable `CHISAN_WHATSAPP_RECOVERY_ENABLED=true`. Run it manually and confirm
 success before enabling intake. It neither checks out code nor receives a
 database or model credential. Failed HTTP requests fail the workflow visibly.

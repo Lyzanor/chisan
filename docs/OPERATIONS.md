@@ -10,8 +10,8 @@ resource identifiers or secret values into this file.
 
 ## Environment contract
 
-The unprovisioned WhatsApp assistant stays off by default. Its separate Meta,
-OpenAI, migration and recovery-scheduler activation steps are in
+The WhatsApp assistant has a separate activation and lifetime AI-call budget.
+Its Meta, OpenAI, migration and recovery-scheduler activation steps are in
 [WhatsApp assistant](WHATSAPP_ASSISTANT.md). These credentials are runtime
 assistant credentials, independent of local editorial translation providers.
 
@@ -304,15 +304,15 @@ account smoke check. Accounts are not active again until that second deployment
 is serving traffic. Do not attempt a binary-first deploy with accounts enabled:
 its build must fail closed while `0005` is unapplied.
 
-### Current operating mode: local development
+### Current operating mode: live on Vercel Pro
 
-Develop and check the site locally with `pnpm dev`. A requested "push" means
-reviewing, validating, committing and synchronizing the authorized work with
-GitHub, without publishing the site. `vercel.json` sets
-`git.deploymentEnabled: false` to disable automatic Git deployments for all
-branches carrying this configuration. Existing branches must include this
-setting before they are pushed. GitHub CI continues to validate changes.
-See [Vercel's Git configuration](https://vercel.com/docs/project-configuration/git-configuration#turning-off-all-automatic-deployments).
+A requested "push" means reviewing, validating, committing and synchronizing the
+authorized work with GitHub. Vercel's native Git integration publishes deployable
+changes on `main` to Production; other branches use protected Preview deployments.
+There is no second deployment workflow in GitHub Actions. Verify the exact Git
+commit, Vercel `READY` state, production alias and smoke checks before reporting
+publication. A successful push or CI run alone does not prove a live release.
+See [Vercel's Git configuration](https://vercel.com/docs/project-configuration/git-configuration).
 
 Codex, Claude and Gemini use the same repository contracts and local checks.
 Coordinate overlapping edits as usual; separate running checkouts need separate
@@ -321,15 +321,15 @@ server ports. Agents running elsewhere need their own checkout and server:
 payment tests still require isolated non-Production credentials, as specified
 in the environment contract above.
 
-The Git deployment switch does not prevent manual CLI deployments or deploy
-hooks. Do not use those paths unless public deployment is explicitly requested.
-Changing the hosting plan does not authorize publication or restore automatic
-deployments. When publication resumes, review the accumulated changes and run
-the release preflight. A requested manual deployment can keep this switch off;
-to restore automatic Git deployments, remove the `git.deploymentEnabled: false`
-setting and update this operating mode, `AGENTS.md` and `README.md` together.
-That push can trigger a Production build from `main`; do not duplicate it
-manually. Verify the deployed commit, `READY` state and smoke checks.
+Use focused local checks while iterating, then the applicable release gate.
+Batch a coherent change into one push, and let the native Git deployment finish
+instead of adding a CLI deployment of the same commit. CI runs independently of
+the native deployment, so required local checks must pass before pushing. Apply
+the database preflight before code with new migrations reaches `main`.
+
+For a deliberate return to local-only operation, set
+`git.deploymentEnabled: false` and update this mode, `AGENTS.md` and `README.md`
+together. That switch does not prevent manual CLI deployments or deploy hooks.
 
 Vercel environment changes apply only to new deployments, so each freeze or
 reactivation above requires a subsequent authorized deployment even when the
@@ -352,6 +352,43 @@ and deploys normally. If the previous successful deployment cannot be resolved
 inside Vercel's shallow clone, the classifier fails open and the build runs.
 GitHub CI remains authoritative and continues to validate every push, including
 ones whose Production build is skipped.
+
+### Consumption controls
+
+Vercel Pro permits billed usage beyond its included credit. Check the team's
+current Usage and Billing pages; the hosting plan is not a spending cap. The
+current agreed allowance is USD 1 of on-demand usage per billing cycle, with
+Spend Management notifications and automatic pause enabled. Do not increase it
+without approval. That pause affects every project in the team and
+can interrupt service. It is checked periodically and excludes seats,
+Marketplace integrations and separate add-ons; do not describe it as an exact
+invoice ceiling. See [Spend Management](https://vercel.com/docs/spend-management).
+
+Keep the existing low-consumption defaults: the ignored-build classifier skips
+deployment-neutral pushes; catalog area pages are static; the public catalog API
+uses short shared caching; validated producer images are served without Vercel
+image transformations; and Fluid Compute is enabled. Functions run in
+Frankfurt (`fra1`), alongside the current Neon database, to avoid cross-Atlantic
+database round trips. Recheck database placement before
+changing this region. Account responses and personalized producer actions must
+remain private and must not acquire shared caching merely to reduce usage.
+Prefer the standard build machine and bounded
+concurrency before paying for faster or parallel builds.
+
+AI, WhatsApp recovery, statistics, advertising and checkout have independent
+feature flags and limits. Going live does not raise AI call allowances, enable
+paid add-ons or activate deferred integrations. Keep Preview account writes
+disabled until its resources are demonstrably isolated. Review CPU, invocations,
+transfer, build minutes and storage after a release or unusual traffic; do not
+add a recurring polling job merely to observe a quiet site.
+
+Keep Clerk and Neon on their free plans while their actual quotas and required
+capabilities fit. Clerk handles sign-in; the catalog does not create an account
+for every visitor. Neon holds account state, not the producer catalog. Keep
+database connections pooled, scale-to-zero enabled and recovery polling spaced
+as specified in `WHATSAPP_ASSISTANT.md`. Check compute hours as well as storage:
+a small database can exhaust its allowance if periodic reads keep it awake.
+Vercel's spending control does not cap Clerk, Neon or AI provider bills.
 
 The current account runtime and migration URLs may use different pooled/direct
 endpoints, but they must authenticate as the same schema-owning PostgreSQL role.

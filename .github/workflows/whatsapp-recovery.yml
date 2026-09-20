@@ -2,7 +2,8 @@ name: WhatsApp recovery
 
 on:
   schedule:
-    - cron: '2-59/5 * * * *'
+    # Webhooks process immediately; spaced recovery lets the database suspend.
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions: {}

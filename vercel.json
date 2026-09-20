@@ -1,9 +1,7 @@
 {
   "framework": "nextjs",
-  "git": {
-    "deploymentEnabled": false
-  },
-  "installCommand": "pnpm install",
+  "regions": ["fra1"],
+  "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm check:translations && pnpm db:assert-current && pnpm build",
   "ignoreCommand": "node scripts/vercel-ignore-build.mjs"
 }
