@@ -237,21 +237,15 @@ permission, timeout or unavailable failures. Network, storage, analytics and
 account inspection must confirm that no raw coordinate crossed the client
 boundary.
 
-## Explicit catalog radius filter
+## Catalog discovery and explicit radius inputs
 
-The search nearby scope simplifies discovery to a 5 km straight-line radius
-from the visitor's device position, matching the location onboarding
-experience. When device permission is already granted, it resolves immediately;
-otherwise, it offers a prominent location activation card. Distances other than
-5 km are omitted. Missing or invalid producer coordinates never qualify. An empty
-result does not assert that no producers exist nearby.
+The immersive explorer offers province and country search scopes. Its floating
+location control centres the map and displays the transient locator; it does
+not activate a distance filter or silently change the set of results. Legacy
+`search_scope=nearby` links open country discovery, as described in
+[Catalog web](CATALOG_WEB.md). Device position still obeys the permission,
+persistence and transport boundaries above.
 
-The active centre remains only in component memory while filtering. It is not
-sent to the API, analytics, URL, storage or accounts. Removing the filter or
-leaving the area discards it; category changes retain the explicit filter.
-Reloads and shared URLs do not restore it. Failed requests retain any prior
-active filter and show an error. Removal, manual replacement and unmount ignore
-late location callbacks. Neither automatic map framing nor device permission
-implicitly activates a distance filter. Exact producer points remain unchanged.
-The public API also supports explicit radius inputs under `AGENT_ACCESS.md`;
-that is a separate server-facing caller contract.
+The public API continues to support explicitly supplied radius inputs under
+[Agent Access](AGENT_ACCESS.md). That is a separate server-facing caller
+contract, not permission for the web to send a visitor's device position.

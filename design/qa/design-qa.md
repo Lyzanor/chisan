@@ -429,3 +429,152 @@ writes or paid inference, and were removed after verification.
   validating a recoverable backup. Its runtime registry matches the repository;
   the shared allowance remains one attempt, with zero consumed. WhatsApp stays
   disabled locally. No public deployment or paid inference was performed.
+
+
+## 2026-09-20 — Immersive mobile catalog map
+
+Final result: passed.
+
+Adapted the user's Fever and Alltrails screenshots to the existing Chisan web
+catalog. This is an interaction/layout adaptation, not a reproduction of their
+brands, content or device chrome. Both supplied images are 574×1280 pixels.
+The comparison removes the Fever status/home chrome (80px top, 38px bottom)
+and the Alltrails browser chrome (170px top), then fits each content crop in a
+390×844 panel beside the Chisan capture. The temporary combined comparison was
+inspected at `/tmp/chisan-map-reference-comparison.png`.
+
+Evidence (browser CSS size and screenshot pixels match at 1×):
+
+- `map-immersive-mobile.png`: 390×844, `/es/barcelona?highlight=55`, Abadal
+  selected, closed sheet. Search and categories end at y=129; the map spans
+  the full 390px width and the remaining 715px, beneath the card and sheet.
+- `map-immersive-mobile-list.png`: 390×844, Café filter and Cafés Soriano
+  selected, open sheet. The matching row is revealed and the list reaches the
+  bottom edge without map controls painting over it.
+- `map-immersive-desktop.png`: 1440×1000, the same Abadal selection, a 360px
+  roster and 1080px map. The active result stays reachable after resizing.
+- Also inspected at 320×568: search, scope, menu, categories, location, card
+  and list handle stay inside the viewport; document width remains 320px.
+
+The full-view comparison confirms the icon/search/menu header and category
+strip from Alltrails, and the overlaid card/expandable roster pattern from
+Fever. Focused inspection of the header, card and sheet verified type wrapping,
+44px targets, visible focus and layer ordering. Chisan keeps Outfit, the forest
+palette, existing category pictograms, reviewed imagery and exact producer
+coordinates. The header and controls use shared colour/shape tokens; card
+photographs retain their supplied content and may include source whitespace.
+App copy describes producers and territory, with no borrowed event/trail copy.
+
+Comparison iterations and fixes:
+
+- P2: map controls appeared above the expanded sheet. Isolated the map stage's
+  stacking context; final open-sheet evidence has no controls over the roster.
+- P2: an inherited 352px list-body cap left unused space in the open sheet.
+  Removed that cap for this viewport surface; the final list fills its panel.
+- P2: releasing a mouse drag over a newly revealed row could change its preview.
+  Pointer hover previews now apply only to the wide roster; opening the phone
+  sheet retains the selection. Touch and keyboard keep their own interactions.
+- P2: a selected row hidden on a phone could remain below the fold after a wide
+  resize. Observe the roster's available size and reveal the pending selection
+  once the row fits, without scrolling the map or changing the producer order.
+  The wide roster has no height transition; the final resize check shows the
+  complete selected row inside its scrollable bounds.
+
+Interaction checks covered native horizontal scroll in both directions,
+previous/next controls, marker-to-card selection, stable ordering, an explicit
+selection beyond the initial list page, upward/downward sheet dragging, tap and
+Escape, category and text filtering, empty results, national loading and scope,
+producer-profile navigation, browser Back and restored selection. The carousel
+mounts at most seven slides while reaching every result; the full roster keeps
+its existing 400-result incremental loading. Profile navigation restores the
+ordinary header, footer and page scrolling.
+
+Validation: `pnpm verify:ai` passed its build, design, account, data, geography
+and editorial gates, then encountered HTTP 500 in the pre-existing development
+server during guide-route checks (server logs: `spawn EBADF` and proxy socket
+hang-ups). Re-ran `test:behavior` against the compiled local server on port 3001;
+it and the remaining content, agent, guide, WhatsApp and shelf suites passed.
+After final interaction fixes, `pnpm verify` and focused catalog/browser checks
+passed again. `check:docs`, `check:design` and `git diff --check` passed.
+Existing style notices remain non-blocking; new map control targets are 44px
+or larger and motion respects reduced-motion preferences.
+
+The clean compiled preview reported no browser console errors. The development
+server retains its earlier WebMCP serialization notices. No native location
+permission was requested during QA; real-device safe-area/keyboard behavior
+remains a device-level follow-up. No account write, catalog change, commit,
+GitHub push or public deployment was performed.
+
+## 2026-09-20 — Compact discovery and shared producer following
+
+Passed after refinement at phone, intermediate, short-wide and desktop sizes.
+
+Refined the immersive map after user review. Category controls keep 44px touch
+areas and equal visible 8px gaps to the search row and map. Inactive categories
+show their existing pictograms; selection, pointer hover and keyboard focus
+unfold the 12px label. Reduced motion disables that transition. The scope filter
+is a small icon opening an animated panel; focusing search opens the same panel.
+Header menus preserve map selection and the account trigger renders immediately.
+Narrow headers use the compact menu icon; roomy headers retain the full account
+trigger with the sign-in label or the existing personalized greeting.
+Roomy discovery containers show every available category in the same row without
+a plus control; overflow remains horizontally scrollable. Narrow ones retain
+the compact primary row and expandable additional categories.
+
+The 44px sheet handle uses concise count/Map copy. In tall maps its collapsed
+132px surface previews a real result, moving the card strip upward with a visible gap; opening
+uses up to 92% of the map. Photo rows have an independent 44px person-plus follow
+control, with person-check for an existing follow. Profiles use the same action
+and visible label. Guests open registration with the current route and filters
+as their return path. Follow state is shared within the session; account reads,
+desired-state writes, pending actions and failures remain server-authorized.
+
+Province/national discovery, public selections, shelf-linked selections and
+guide maps share the carousel, photo roster and sheet. Embedded maps retain
+page context and selections retain their original membership/order. The guide
+check caught inherited prose styles widening the roster; explicit shared column
+layout and width now keep every row and follow action within the map. Single
+producer location maps remain static contextual maps.
+
+Browser checks covered 390px and 320px, Barcelona and Madrid, national search,
+category selection, disclosure/keyboard operation, profile and registration
+navigation, local public-selection swiping and guide-card keyboard navigation.
+An explicit selection beyond the first 400 rows stays visible after closing and
+reopening the sheet and after a wide resize. Header-menu Escape preserves the
+selected marker and card.
+Responsive checks covered 320×568, 390×844, 600×800, 720×840, 640×360,
+740×430, 820×1180, 1024×768 and 1440×880. Containers govern composition;
+header/category transitions are independent of the map's sidebar. The sidebar
+varies from 288px to 360px and cards remain centered, capped at 480px. Short
+maps reduce the collapsed sheet to its handle and omit card descriptions.
+Every checked viewport retained the card and location control inside the map,
+without document overflow or card/location overlap. In narrow map columns,
+attribution sits on the left above the card, clear of carousel navigation.
+Zoom controls use 44px targets even after Leaflet's styles load.
+The local account screenshot was kept temporary; no account photo or private
+account fixture is included in the repository. No real follow/account write,
+registration, migration or public deployment was performed during verification.
+Authenticated follow identity and unavailable state have render tests; the
+existing isolated database suite covers idempotence and active-account checks.
+
+Final evidence:
+
+- `map-refined-mobile.png`: 390×844, Abadal selected, 64px header and 53px
+  category strip, full-width map and compact closed-sheet result preview.
+- `map-refined-mobile-list.png`: 390×844, Café roster with producer photographs
+  and independent person-plus controls.
+- `map-refined-desktop.png`: 1440×880, shared photo roster and selected card.
+  All 28 category icons are directly available in the same 53px strip without
+  the plus control; selecting an additional category updates the URL/results.
+  The strip scrolls internally when needed without widening the document.
+- `map-refined-guide.png`: 375×812, embedded guide map with the same expanded
+  roster, contained row widths and follow controls.
+- `map-responsive-foldable.png`: 720×840, full account label, all categories,
+  centered card and bottom roster in an intermediate near-square window.
+- `map-responsive-landscape.png`: 740×430, 288px roster, shorter card and map
+  controls repositioned to stay clear of the producer content.
+
+`pnpm verify:ai` passed in full against the compiled localhost server. Final
+selection/menu adjustments passed `pnpm verify`, the 15 focused map and follow
+tests and browser regression checks. Physical device keyboard/safe-area
+behavior remains the device-level follow-up from the initial map review.

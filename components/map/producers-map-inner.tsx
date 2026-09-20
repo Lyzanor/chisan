@@ -592,6 +592,7 @@ function BoundsAwareMarkers({
   selectedKey,
   selectionContent,
   focusRequest,
+  focusPaddingBottom = 0,
   initialFocusKeys = EMPTY_FOCUS_KEYS,
   nearbyFocusKeys = EMPTY_FOCUS_KEYS,
   onNearbyFocusConsumed,
@@ -609,6 +610,7 @@ function BoundsAwareMarkers({
   selectedKey?: string;
   selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
+  focusPaddingBottom?: number;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
@@ -778,25 +780,28 @@ function BoundsAwareMarkers({
     const point = points.find(({ key }) => key === focusRequest.key);
     if (!point) return;
 
+    const zoom = focusRequest.behavior === "preview" ? map.getZoom() : Math.max(map.getZoom(), PRODUCER_FOCUS_ZOOM);
+    // Centre the point in the geography left visible above discovery cards.
+    const target = map.unproject(map.project([point.latitude, point.longitude], zoom)
+      .add([0, Math.min(focusPaddingBottom, map.getSize().y / 2) / 2]), zoom);
+    map.stop();
     if (focusRequest.behavior === "preview") {
-      map.stop();
-      map.panTo([point.latitude, point.longitude], {
+      map.panTo(target, {
         animate: !motionIsReduced(),
         duration: 0.2,
       });
       return;
     }
 
-    const zoom = Math.max(map.getZoom(), PRODUCER_FOCUS_ZOOM);
     if (motionIsReduced()) {
-      map.setView([point.latitude, point.longitude], zoom, { animate: false });
+      map.setView(target, zoom, { animate: false });
       return;
     }
-    map.flyTo([point.latitude, point.longitude], zoom, {
+    map.flyTo(target, zoom, {
       animate: true,
       duration: 0.32,
     });
-  }, [focusRequest, map, points]);
+  }, [focusRequest, focusPaddingBottom, map, points]);
 
   const groups = useMemo(
     () => (groupOverview ? summarizeProducerMapGroups(points) : []),
@@ -938,6 +943,7 @@ export default function ProducersMapInner({
   selectedKey,
   selectionContent,
   focusRequest,
+  focusPaddingBottom = 0,
   initialFocusKeys,
   nearbyFocusKeys,
   onNearbyFocusConsumed,
@@ -958,6 +964,7 @@ export default function ProducersMapInner({
   selectedKey?: string;
   selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
+  focusPaddingBottom?: number;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
@@ -1013,6 +1020,7 @@ export default function ProducersMapInner({
         selectedKey={selectedKey}
         selectionContent={selectionContent}
         focusRequest={focusRequest}
+        focusPaddingBottom={focusPaddingBottom}
         initialFocusKeys={initialFocusKeys}
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}

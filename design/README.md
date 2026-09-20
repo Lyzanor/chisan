@@ -15,6 +15,7 @@ foundations/tokens.css   colour, type, space, shape, motion tokens
 adapters/web.css         maps those tokens onto the web surface
 adapters/experience.css  shared navigation, discovery, profile and account polish
 adapters/category-themes.css  soft ingredient photography in category margins
+adapters/map-explorer.css     viewport discovery, header search and results sheet
 brand/chisan-reference.png   supplied identity sheet (pixel source)
 brand/assets/            generated metadata and icon exports
 public/brand/            lossless SVG wrappers for the supplied identity
@@ -35,9 +36,10 @@ Administration remains usable on a phone but may favour wide screens.
   `pnpm check:design` notes new ones.
 - Touch is the primary input. Every action works by touch alone; hover and
   pointer-dwell previews only add to it, with hover styles under `(hover: hover)`.
-- Primary content scrolls with the page. Rosters, forms and articles never sit in
-  a bounded scroll box on phones; sideways strips, menus and dialogs may scroll
-  within their own bounds.
+- Primary content normally scrolls with the page. Forms and articles retain
+  that flow. The immersive discovery map uses the viewport, with a native
+  horizontal card strip and an explicitly opened, independently scrolling
+  results sheet. Menus and dialogs may also scroll within their own bounds.
 - The viewport covers the display (`viewport-fit=cover`), so sticky and fixed
   edges add the matching `env(safe-area-inset-*)`.
 - Every screen can be left through its own navigation (header, breadcrumbs or
@@ -51,6 +53,7 @@ Administration remains usable on a phone but may favour wide screens.
 ```
 app/globals.css  →  foundations/tokens.css  →  adapters/web.css
                 →  adapters/experience.css  →  adapters/category-themes.css
+                →  adapters/map-explorer.css
 ```
 
 `tokens.css` is the only place brand colours, spacing and radii are declared. It
@@ -163,7 +166,7 @@ unchanged; dense discovery may group their presentation only while navigation,
 counts and access to each producer remain clear. Never change coordinates just
 to improve appearance.
 
-- Country and nearby discovery groups by province below zoom 8 when more than
+- Country discovery groups by province below zoom 8 when more than
   200 mapped results span several provinces. Each province shows its count in a
   32px `moss-dark` label with `surface` figures and a 44px target, placed on its
   producer point nearest the province median. Counts that would touch combine at
@@ -180,9 +183,11 @@ to improve appearance.
   in a 24px `surface` disc. The active or previewed producer grows above its
   neighbours, keeps a `moss` edge and retains the same 44px interaction target.
 - Land `rice-paper`, controls `surface`, geometry `hairline`, labels `stone`.
-- All categories stay in one scrollable filter bar, one icon and label each.
-- Result counts remain available to assistive technology; visual density stays
-  visible spatially without a redundant total.
+- Roomy containers show every available category in one scrollable icon row
+  without a disclosure button. Narrow ones keep the primary row and a disclosure
+  for additional categories. Labels unfold on selection, hover or keyboard focus.
+- The results-sheet handle carries the result count. Opening the sheet exposes
+  the scope and full paginated roster without adding a heading above the map.
 - The discovery list uses one continuous mapped roster, with producers near the
   current opening view first and no map-only scope. Once list navigation begins,
   that order stays fixed so map focus cannot move a row beneath the pointer or
@@ -190,11 +195,14 @@ to improve appearance.
 - Marker activation highlights and reveals the matching producer row. When the
   selected producer falls outside the bounded base roster, append that one row
   without reordering the existing results, then scroll it into view.
-- The distance icon in the producer-list header opens a disclosure that filters the current province by an explicit browser
-  position or manual coordinates. It intersects text and category, uses kilometres
-  in a straight line, and keeps the centre out of URLs and persistent storage.
-- Searching filters producer name, locality, category and description without
-  introducing another catalog source or changing the URL.
+- Search and the province/country scope share one field in the site header,
+  between the brand mark and account menu. Location remains an explicit floating
+  map action; there is no separate nearby option in the scope selector.
+  The account menu uses a compact icon in narrow headers and its full sign-in
+  label or personalized greeting when the header has enough room.
+- Searching filters the approved public base fields without introducing another
+  catalog source. Text, category, scope and explicit selection retain their
+  existing shareable URL state.
 - Hovering or focusing a list row previews the exact producer on the map and
   linked producer surface. A restrained `moss-pale` row treatment preserves
   the connection. In area discovery, clicking or pressing Enter opens the
@@ -202,17 +210,32 @@ to improve appearance.
   preview without changing the URL. Marker activation remains the durable
   URL selection. The large selected surface is the only map preview: synchronized
   maps do not also show a producer tooltip.
-- On small area-discovery screens, the producer list is an always-visible,
-  attached roster below the map that scrolls with the page. Marker activation
-  keeps the map and its card in view there instead of scrolling to the row.
-  Profile producer selections may use an attached non-modal disclosure; its open
-  state uses `moss-pale` and a `moss` edge, never a floating shadow.
+- On small area-discovery screens, the map fills the available width and height.
+  The bottom card strip and markers share one selection. Native sideways swipe
+  selects the adjacent result and focuses its exact coordinate; marker activation
+  reveals its card. The order locks when navigation begins. The carousel mounts
+  at most seven neighbouring cards while retaining every result as a destination.
+  Its first card highlights a point without forcing a zoom or changing the URL.
+  A 44px bottom handle opens the full roster by upward drag, tap or keyboard;
+  downward drag, tap or Escape closes it. The collapsed panel previews one real
+  result when height permits; the remaining rows are hidden and not keyboard
+  reachable. Roomy maps show the roster alongside the map. Safe-area padding and dynamic viewport
+  height keep controls inside the display. Public selections and editorial guide
+  maps reuse this same carousel, roster and non-modal sheet inside their page.
+- Responsive composition follows container size, including embedded maps and
+  folded/unfolded windows. Header gutters and sidebar width vary within bounded
+  ranges; cards stay centered and readable. The account label and full category
+  row appear independently when each has room. Short maps use smaller cards and
+  a handle-only collapsed sheet; short, sufficiently wide maps use a sidebar.
+  Controls and attribution move above cards when the remaining map column is
+  narrow. Resizing preserves selection and reveals its row without page jumps.
 - Public selections and their private previews show exactly the chosen producers.
   Fit the whole mapped set on opening and preserve one stable roster, including
   unmapped profile links. Geography never groups or ranks a selection. Keep the
   map above the optional QR invitation; title and description provide context.
-- A selected producer may load one reviewed 4:3 catalog image lazily. Lists and
-  map points never preload producer imagery.
+- A selected producer and its immediate carousel neighbours may load reviewed
+  catalog imagery lazily. Roster rows also show a lazy producer photograph and
+  a separate 44px follow action. No producer imagery is preloaded by map points.
 
 ### Map component contract
 
@@ -223,6 +246,11 @@ or redefine selection styles.
 components/map/producers-map.tsx                 public map boundary
 components/map/producers-map-inner.tsx           private Leaflet renderer
 components/map/producer-map-selection-card.tsx   linked selected surface
+components/map/producer-map-carousel.tsx         bounded native card strip
+components/map/producer-collection-map.tsx       shared embedded selections
+components/map/producer-map-roster-row.tsx       photo, profile link and follow
+components/catalog-search-control.tsx           integrated animated scope menu
+components/catalog-results-sheet.tsx            touch/keyboard roster disclosure
 components/map/use-dismissible-producer-map-selection.ts  outside/Escape dismissal
 components/area-explorer.tsx                     area filters and URL state
 components/producer-selection-explorer.tsx       explicit selection and URL state
@@ -265,11 +293,14 @@ the name link to their corresponding area filters; no separate category-links
 section is repeated. The municipality filter matches the full municipality and
 has a visible removal control, preserving category and search intersections.
 
-The follow action is one icon target at the end of the name row. Pointer hover
-and keyboard focus unfold its label with a short width animation; a touch screen
-unfolds it on the first tap and acts on the second, so the action is never taken
-unseen. The label overlays free space, so the name never reflows. Premium uses
-the dedicated green header token independently of ownership.
+The follow action is a person-plus icon and label beside the producer name;
+compact roster rows use the same person icon with an accessible name. A followed
+producer shows person-check. This represents a relationship with a producer and
+their updates, consistently with Chisan's participation model. It works in one tap.
+Guests always see the action and open registration with their current route as
+the return destination. Signed-in users see one session-backed follow state
+across maps and profiles; pending and unavailable states never pretend to be
+saved or empty. Premium uses its dedicated green header independently of ownership.
 
 The header shows only reviewed material. A landscape gallery photograph becomes
 the cover, the page's first and strongest image, and the name row cuts into its
@@ -389,18 +420,22 @@ capture Escape from another control. The account tabs mark the current page.
 Page arrival does not remount its children or intercept browser navigation.
 `NavigationLink` retains Next.js Link semantics, prefetching and modified clicks;
 its pending indicator follows the actual router state. The historical
-`ViewTransitionLink` entry point delegates to it. Only the presented map card prefetches a producer profile; the large result
-roster and category filter links keep prefetch disabled. Province links open
+`ViewTransitionLink` entry point delegates to it. Map cards, the result roster
+and category filter links keep prefetch disabled. Province links open
 directly in the compact country overview, with no duplicate selector. The
 account menu's quick province switch has a bounded, searchable list grouped by
 region, a visible current selection and a recoverable empty state. Matching
 ignores accents and includes region names. Selecting an option navigates; hovering
 an option never navigates. Standard Tab/Enter/Escape operation remains accessible.
 There are no custom global keyboard shortcuts or command palette. Producer search
-keeps a compact footprint and filters the existing map/list inline. Its adjacent
-scope selector offers the country, current province and nearby results. Nearby
-opens the existing explicit location controls; loading and failure messages
-must distinguish unavailable national data from an empty search. Full base
+keeps a compact footprint and filters the existing map/list inline. A small
+filter icon and search focus open one animated in-place menu for the current
+province or country, with the same surface and motion as account settings.
+There is no native scope select. Location stays in the explicit map control.
+Loading and failure messages distinguish unavailable national data from an empty search.
+The category strip keeps equal visible breathing room above and below its
+44px controls. Compact pictograms reveal their 12px names on selection, keyboard
+focus or pointer hover; touch never depends on hover to identify the active filter. Full base
 text is indexed independently of short, match-centred list previews. Text
 results retain shared relevance order even when the map moves. Country results
 show each producer's municipality and province and retain its own profile URL.
@@ -424,15 +459,13 @@ The search index is derived once per model and language from the same public
 fields; typing does not repeatedly normalize every producer's prose. Deferred
 result updates keep the input responsive, memoized rows avoid rerendering the
 whole roster on hover, and cancelled pointer previews do not queue map movement.
-The active row has a fine green rule, soft fill and map-pin indicator. Its compact
-photo card follows the actual producer point, placed above or below and constrained
-to the visible map and browser viewport, below the sticky header. It no longer sits
-at the bottom of the discovery map. The latest preview remains reachable when the
-pointer crosses to its card; another producer, outside click or Escape replaces or
-dismisses it. Hover/focus does not alter the URL or reorder rows. Marker activation
-retains the existing URL selection; clicking the card or row opens the profile.
-Other maps may retain their existing card placement until reviewed. Combining the
-roster and preview into a single component is deferred.
+The active row has a fine green rule and soft fill. Its photo card sits in the
+shared bottom carousel with a clear gap above the roster. Hover/focus previews
+on the wide area roster do not alter URLs or order. Marker activation and swipe
+retain the existing explicit selection; card and row links open the profile.
+Opening header menus does not dismiss the selected producer. Every multi-producer
+map uses these shared components; single-producer location maps retain their
+static contextual marker.
 
 Producer photography is documentary — real production, people and places in
 available light. It remains sharp and truthful. Generic category decoration is

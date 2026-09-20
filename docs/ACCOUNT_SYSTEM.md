@@ -165,6 +165,14 @@ preserving its identity and creation time. Migration `0020` removes the per-favo
 visibility and account attribution flags: all old and new follows are public.
 In the older contracts below, "favorite" refers to this same stored relation.
 
+Map rosters and producer profiles expose the same follow control. Guests see a
+registration link with their current same-site path as the return destination,
+including when account services are disabled. Signed-in controls share a transient
+session read of the current account's follow keys and submit inline desired-state
+server actions. Loading, failure and pending writes remain distinct; server
+identity and active-account checks still own authorization. No client cache is
+an account or catalog authority.
+
 Following and unfollowing submit an explicit desired state, making retries
 idempotent. Mutations lock and recheck the active account and share the existing
 selection lock. Unfollowing also removes that producer from the account's

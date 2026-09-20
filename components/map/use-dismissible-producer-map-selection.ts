@@ -23,6 +23,7 @@ export function useDismissibleProducerMapSelection({
     function dismissFromOutside(event: PointerEvent) {
       const target = event.target;
       if (!(target instanceof Element)) return;
+      if (target.closest(".site-header")) return;
       if (selectedSurfaceRef.current?.contains(target)) return;
       if (relatedSurfaceRef?.current?.contains(target)) return;
       if (
@@ -36,6 +37,7 @@ export function useDismissibleProducerMapSelection({
     }
 
     function dismissFromKeyboard(event: KeyboardEvent) {
+      if (event.target instanceof Element && event.target.closest(".site-header")) return;
       if (event.key === "Escape" && !suspendEscape) {
         onDismiss();
         window.requestAnimationFrame(() => returnFocusRef?.current?.focus());

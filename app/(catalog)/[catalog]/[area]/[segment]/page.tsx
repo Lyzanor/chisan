@@ -538,18 +538,17 @@ export default async function ProducerPage({
                     </a>
                   ) : null}
                 </div>
-                {isAccountSystemConfigured() ? (
                   <div className="detail-title__follow">
                     <Suspense fallback={null}>
                       <ProducerFollowButton
                         country={country.slug}
                         producerId={producer.producerId}
                         returnTo={returnTo}
-                        messages={messages}
+                        name={producer.name}
+                        locale={locale}
                       />
                     </Suspense>
                   </div>
-                ) : null}
               </div>
               <div className="detail-subtitle">
                 <Link href={municipalityHref} prefetch={false}>

@@ -1,112 +1,21 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
-
-import { ProducerMapSelectionCard } from "@/components/map/producer-map-selection-card";
-import {
-  ProducerSelectionMap,
-  type ProducerMapFocusRequest,
-} from "@/components/map/producers-map";
-import { useDismissibleProducerMapSelection } from "@/components/map/use-dismissible-producer-map-selection";
-import {
-  hasProducerSelectionCoordinates,
-  type ProducerMapMarker,
-  type ProducerSelectionItem,
-} from "@/lib/producer-selections";
+import { useCallback, useState } from "react";
+import { ProducerCollectionMap } from "@/components/map/producer-collection-map";
+import { hasProducerSelectionCoordinates, type ProducerSelectionItem } from "@/lib/producer-selections";
+import type { Locale } from "@/lib/i18n/locales";
 import styles from "./guides.module.css";
 
-export function GuideMap({ items }: { items: ProducerSelectionItem[] }) {
-  const [open, setOpen] = useState(true);
+export function GuideMap({ items, locale = "es" }: { items: ProducerSelectionItem[]; locale?: Locale }) {
   const [selectedKey, setSelectedKey] = useState("");
-  const [focusRequest, setFocusRequest] = useState<ProducerMapFocusRequest>();
-  const focusRequestId = useRef(0);
-  const selectedLinkRef = useRef<HTMLAnchorElement>(null);
-  const mapRef = useRef<HTMLDivElement>(null);
-  const selectedItem = items.find(
-    (item) => item.key === selectedKey && hasProducerSelectionCoordinates(item),
-  );
-  const clearSelection = useCallback(() => {
-    setSelectedKey("");
-    setFocusRequest(undefined);
-  }, []);
-
-  useDismissibleProducerMapSelection({
-    active: Boolean(selectedItem),
-    selectedSurfaceRef: selectedLinkRef,
-    returnFocusRef: mapRef,
-    onDismiss: clearSelection,
-  });
-
-  function selectProducer(key: string) {
-    setSelectedKey(key);
-    setFocusRequest({
-      key,
-      requestId: ++focusRequestId.current,
-      behavior: "select",
-    });
-  }
-
-  const points: ProducerMapMarker[] = items
-    .filter(hasProducerSelectionCoordinates)
-    .map((item) => ({
-      key: item.key,
-      name: item.name,
-      href: item.href,
-      city: item.city,
-      icon: item.icon,
-      categories: item.categories,
-      latitude: item.latitude!,
-      longitude: item.longitude!,
-    }));
-  if (!points.length) return null;
-
-  return (
-    <div className={styles.mapBlock}>
-      {open ? (
-        <div
-          ref={mapRef}
-          tabIndex={-1}
-          className={styles.map}
-          role="region"
-          aria-label="Mapa de los productores de esta selección"
-        >
-          <ProducerSelectionMap
-            points={points}
-            selectedKey={selectedItem?.key}
-            focusRequest={focusRequest}
-            onSelectKey={selectProducer}
-            markerInteraction="select"
-            messages={{
-              loading: "Cargando mapa…",
-              emptyCoordinates: "Todavía no hay coordenadas publicadas.",
-              openProfile: "Ver ficha del productor",
-            }}
-          />
-          <div
-            className="producer-map-selection-surface"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            {selectedItem ? (
-              <ProducerMapSelectionCard
-                producer={selectedItem}
-                linkRef={selectedLinkRef}
-              />
-            ) : null}
-          </div>
-        </div>
-      ) : (
-        <button
-          className={styles.mapButton}
-          type="button"
-          onClick={() => setOpen(true)}
-        >
-          Explorar esta selección en el mapa <span aria-hidden="true">↗</span>
-        </button>
-      )}
-      <p className={styles.caption}>
-        {points.length} de {items.length} productores con ubicación en el mapa.
-      </p>
-    </div>
-  );
+  const clear = useCallback(() => setSelectedKey(""), []);
+  const mapped = items.filter(hasProducerSelectionCoordinates).length;
+  if (!mapped) return null;
+  const english = locale === "en";
+  return <div className={styles.mapBlock}>
+    <ProducerCollectionMap items={items} selectedKey={selectedKey} onSelect={setSelectedKey} onClear={clear} locale={locale}
+      messages={english ? { loading: "Loading map…", emptyCoordinates: "No published coordinates yet.", openProfile: "View producer", producerMap: "Map of the producers in this selection" }
+        : { loading: "Cargando mapa…", emptyCoordinates: "Todavía no hay coordenadas publicadas.", openProfile: "Ver ficha del productor", producerMap: "Mapa de los productores de esta selección" }} />
+    <p className={styles.caption}>{english ? `${mapped} of ${items.length} producers located on the map.` : `${mapped} de ${items.length} productores con ubicación en el mapa.`}</p>
+  </div>;
 }

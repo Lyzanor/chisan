@@ -128,6 +128,7 @@ export function ProducerSelectionMap({
   selectedKey,
   selectionContent,
   focusRequest,
+  focusPaddingBottom,
   initialFocusKeys,
   nearbyFocusKeys,
   onNearbyFocusConsumed,
@@ -147,6 +148,7 @@ export function ProducerSelectionMap({
   selectedKey?: string;
   selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
+  focusPaddingBottom?: number;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
@@ -186,6 +188,7 @@ export function ProducerSelectionMap({
         selectedKey={selectedKey}
         selectionContent={selectionContent}
         focusRequest={focusRequest}
+        focusPaddingBottom={focusPaddingBottom}
         initialFocusKeys={initialFocusKeys}
         nearbyFocusKeys={nearbyFocusKeys}
         onNearbyFocusConsumed={onNearbyFocusConsumed}

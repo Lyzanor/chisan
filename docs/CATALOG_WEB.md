@@ -71,7 +71,10 @@ entity or indexing tier. Premium status is an account-domain capability, not a
 public producer fact.
 
 The page renders semantic HTML and JSON-LD on the server from the same resolved
-public fields. Structured data must follow Google's [general structured-data
+public fields. The profile's localized title combines producer identity with its
+verified category and territorial context (`<producer> · <category> <in> <location>`),
+ensuring search engine results and agents resolve clear geographic intent. Structured
+data must follow Google's [general structured-data
 policies](https://developers.google.com/search/docs/appearance/structured-data/sd-policies):
 it describes only content that is visible on that response and must not expose
 claim documents, payment state, entitlement history, review notes, audit data
@@ -110,7 +113,11 @@ continue to use the locale-independent durable producer key.
   as `Place` without inventing a street address or exact location.
 - Localized country, area, category and breadcrumb labels must match the visible
   HTML. Concrete `productos estrella` and category labels may be represented as
-  `WebPage.about`; this does not turn them into independent commercial entities.
+  `WebPage.about` and `LocalBusiness`/`Organization.knowsAbout`; this does not
+  turn them into independent commercial entities.
+- `WebPage` emits `dateModified` matching the most recent reviewed change,
+  notice or source verification date when present; stale or guessed timestamps
+  are never emitted.
 - Reviewed typed products may emit `Product`; a real product with a recorded
   price, currency and purchase URL may emit `Offer` under
   `docs/PRODUCER_CONTENT.md`. Never infer availability or price validity.
@@ -356,30 +363,43 @@ never enter the public structured data.
 
 ## Catalog search scope
 
-The existing province explorer offers country, current province and nearby
-scopes. Province remains the default on a province URL. Country and nearby
-search all areas published in the requested locale. The current province stays
+The province explorer offers country and current province scopes, integrated
+with text search in the header. The filter icon and search focus open the same
+animated scope panel; province remains the default on a province URL.
+Country searches all areas published in the requested locale. The current province stays
 available as a scope and the existing province selector changes that province.
 Changing scope clears municipality and selected-producer restrictions, while
 retaining text and category. `q` (up to 200 characters) and `search_scope`
-(`country` or `nearby`; omitted for province) survive catalog navigation,
-Back/Forward and shared URLs. A shared nearby URL requires a fresh explicit
-location choice; it never carries coordinates.
+(`country`; omitted for province) survive catalog navigation, Back/Forward and
+shared URLs. Legacy `nearby` links open country discovery. The floating location
+control centres the map using ephemeral device position; it does not silently
+restrict the result set to a radius or persist coordinates.
 
 Web and API use the same public base fields and literal relevance scorer; see
 [Agent Access](AGENT_ACCESS.md). The full description and existing featured-product
 summary are searchable, independently of the short list preview. Expanded
 products are excluded. Text results retain relevance order when the map moves;
 without text, the map can prioritize visible producers. The list includes
-unmapped producers except during distance filtering and offers additional
+unmapped producers and offers additional
 results beyond the initial 400. Map selection uses country-local producer IDs,
 so equal slugs in separate provinces cannot collide. Profile links always use
 the result's actual area and published locale.
 
 National data loads lazily in bounded public pages, with loading, retry and
 empty states. The UI never labels a partial download as national coverage.
-Nearby scope uses the simplified 5 km straight-line radius from the visitor's
-device position entirely in ephemeral browser memory. It crosses
-provincial borders, excludes unmapped producers, and clears the active location
-when the visitor changes scope. Neither browser transport nor URLs receive
-visitor coordinates; map bounds use only matching producers' public points.
+The mobile map fills the viewport below the header and categories. A horizontal
+card carousel synchronizes explicit selection with `highlight` and map focus;
+the compact bottom disclosure previews one photographed row and opens the same
+roster. Each row has an independent follow action, also visible to guests and
+linked to registration with a same-site return path. The carousel renders a bounded
+neighbourhood while allowing navigation through all results. Each map adapts to
+its own width and height, including embedded maps and intermediate/foldable
+windows: roomy or short-wide layouts show a fluid-width roster beside the map;
+short maps reduce the card and collapsed sheet. Producers without coordinates retain their profile
+links without inventing a map point. Neither URLs nor catalog-search requests
+receive visitor coordinates; map bounds use matching producers' public points.
+
+Public selections and guide maps reuse the same carousel, photo roster and sheet
+inside their page. Their membership and original ordering remain explicit; guide
+selection state stays local while profile selections retain `highlight`. A single
+producer location map keeps its static contextual marker.

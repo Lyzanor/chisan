@@ -6,16 +6,14 @@ import { useNationalCatalog } from "@/components/use-national-catalog";
 import { explorerSearchFields, type ExplorerProducer } from "@/lib/catalog/explorer";
 import { getCatalogSearchMessages } from "@/lib/i18n/catalog-search";
 import type { ProducerMapMarker } from "@/lib/producer-selections";
-import { CatalogRadiusFilter } from "@/components/catalog-radius-filter";
-import {
-  isValidCoordinates,
-  isWithinRadius,
-  type RadiusFilter,
-} from "@/lib/location/radius-search";
+import { CatalogSearchControl } from "@/components/catalog-search-control";
+import { ProducerMapRosterRow } from "@/components/map/producer-map-roster-row";
+import { CatalogSearchSlot } from "@/components/catalog-search-slot";
+import { CatalogResultsSheet } from "@/components/catalog-results-sheet";
+import { ProducerMapCarousel } from "@/components/map/producer-map-carousel";
 import { useSearchParams } from "next/navigation";
 import {
-  MagnifyingGlassIcon,
-  MapPinIcon,
+  SquaresFourIcon,
   MinusIcon,
   PlusIcon,
 } from "@phosphor-icons/react";
@@ -43,7 +41,6 @@ import {
   type ProducerMapFocusRequest,
   type ProducerMapGroupOverview,
 } from "@/components/map/producers-map";
-import { ProducerMapSelectionCard } from "@/components/map/producer-map-selection-card";
 import { useDismissibleProducerMapSelection } from "@/components/map/use-dismissible-producer-map-selection";
 import {
   buildCatalogHref,
@@ -64,7 +61,6 @@ import {
   type LocationFetch,
 } from "@/lib/location/location-onboarding";
 import {
-  producerDistanceKm,
   selectNearbyProducerKeys,
 } from "@/lib/location/nearby-producer-focus";
 import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
@@ -108,7 +104,7 @@ function pushAreaQuery(href: string) {
 }
 
 type AreaExplorerProducer = ExplorerProducer;
-type SearchScope = "area" | "country" | "nearby";
+type SearchScope = "area" | "country";
 
 export type AreaExplorerModel = {
   scope: CatalogNavigationScope;
@@ -196,8 +192,10 @@ const ProducerRosterRow = memo(function ProducerRosterRow({
   itemRef,
   onPreview,
   onPreviewEnd,
+  locale,
 }: {
   item: AreaExplorerProducer;
+  locale: Locale;
   href: string;
   query: string;
   categories: ReadonlyMap<string, CategoryPresentation>;
@@ -213,20 +211,17 @@ const ProducerRosterRow = memo(function ProducerRosterRow({
         .join(" · ")
     : "";
   return (
-    <li ref={itemRef} className={active ? "is-active" : undefined}>
-      <Link
-        href={href}
-        prefetch={false}
-        onMouseEnter={() => onPreview(item.key)}
+    <ProducerMapRosterRow item={{ ...item, href }} itemRef={itemRef} active={active} locale={locale}
+        onPointerEnter={(event) => {
+          const sheetHandle = event.currentTarget.closest(".catalog-results-sheet")?.querySelector(".catalog-results-sheet__handle");
+          if (event.pointerType === "mouse" && !event.buttons &&
+            window.matchMedia("(hover: hover)").matches && sheetHandle &&
+            !sheetHandle.getClientRects().length) onPreview(item.key);
+        }}
         onMouseLeave={() => onPreviewEnd(item.key)}
         onFocus={() => onPreview(item.key, true)}
         onBlur={() => onPreviewEnd(item.key)}
-        className="producer-compact-link"
       >
-        <span className="producer-compact-icon" aria-hidden="true">
-          {categories.get(item.category)?.icon ?? "🧺"}
-        </span>
-        <span>
           <strong>
             <SearchMatch text={item.name} query={query} />
           </strong>
@@ -248,12 +243,7 @@ const ProducerRosterRow = memo(function ProducerRosterRow({
               )} query={query} />
             </small>
           ) : null}
-        </span>
-        <span className="producer-compact-preview" aria-hidden="true">
-          <MapPinIcon size={16} weight="fill" />
-        </span>
-      </Link>
-    </li>
+    </ProducerMapRosterRow>
   );
 });
 
@@ -369,9 +359,9 @@ function AreaExplorerView({
   const national = useNationalCatalog(model.scope.country, model.locale, searchScope !== "area");
   const producers = searchScope === "area" ? model.producers : national.catalog?.producers;
   const loading = searchScope !== "area" && !national.catalog && !national.error;
-  const scopeLabel = searchScope === "area" ? model.areaLabel : searchScope === "country" ? model.countryLabel : searchMessages.nearby;
-  const [radiusFilter, setRadiusFilter] = useState<RadiusFilter | null>(null);
-  const lastCoordinatesRef = useRef<RadiusFilter | null>(null);
+  const scopeLabel = searchScope === "area" ? model.areaLabel : model.countryLabel;
+  const [listOpen, setListOpen] = useState(false);
+  const explorerRef = useRef<HTMLElement>(null);
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const previewTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [previewedSlug, setPreviewedSlug] = useState("");
@@ -427,21 +417,12 @@ function AreaExplorerView({
     [otherCategories, category, normalizedCategory],
   );
   const items = useMemo(() => {
-    if (searchScope === "nearby" && !radiusFilter) return [];
     const filtered = searchableProducers.filter((producer) =>
       (!normalizedCategory || producer.categories.some((token) => normalizeCatalogSearch(token) === normalizedCategory)) &&
-      (!municipality || normalizeCatalogSearch(producer.city) === normalizeCatalogSearch(municipality)) &&
-      (searchScope !== "nearby" || !radiusFilter || isWithinRadius(producer, radiusFilter)),
+      (!municipality || normalizeCatalogSearch(producer.city) === normalizeCatalogSearch(municipality)),
     );
-    if (searchScope === "nearby" && radiusFilter && !deferredSearchQuery) {
-      return [...filtered].sort((a, b) => {
-        const da = isValidCoordinates(a) ? producerDistanceKm(radiusFilter, a) : Infinity;
-        const db = isValidCoordinates(b) ? producerDistanceKm(radiusFilter, b) : Infinity;
-        return da - db;
-      });
-    }
     return rankCatalogEntries(filtered, deferredSearchQuery);
-  }, [searchableProducers, deferredSearchQuery, normalizedCategory, municipality, searchScope, radiusFilter]);
+  }, [searchableProducers, deferredSearchQuery, normalizedCategory, municipality]);
   const selectedItem = useMemo(
     () =>
       selectedSlug
@@ -457,7 +438,6 @@ function AreaExplorerView({
         : undefined,
     [items, previewedSlug],
   );
-  const presentedItem = previewedItem ?? selectedItem;
   const mappedItems = useMemo(
     () =>
       items.filter(
@@ -517,7 +497,7 @@ function AreaExplorerView({
     ),
     [items, normalizedSearchQuery, prioritizedProducerKeys],
   );
-  const resultScope = `${searchScope}/${searchQuery}/${category}/${municipality}/${radiusFilter?.radiusKm ?? ""}`;
+  const resultScope = `${searchScope}/${searchQuery}/${category}/${municipality}`;
   const [page, setPage] = useState({ scope: "", limit: VISIBLE_PRODUCER_LIMIT });
   const visibleLimit = page.scope === resultScope ? page.limit : VISIBLE_PRODUCER_LIMIT;
   const baseVisibleItems = useMemo(
@@ -527,6 +507,7 @@ function AreaExplorerView({
     () => includeSelectedProducer(baseVisibleItems, selectedItem),
     [baseVisibleItems, selectedItem],
   );
+  const presentedItem = previewedItem ?? selectedItem ?? visibleItems[0];
   const languageOptions = useMemo(
     () =>
       model.languageOptions.map((option) => ({
@@ -608,6 +589,7 @@ function AreaExplorerView({
     }
 
     previousSelectedSlug.current = selectedItem.key;
+    scrollSelectedListItemAfterMapSelectionRef.current = true;
     listOrderLockedCategoryRef.current = category;
     consumeNearbyMapFocus();
     mapFocusRequestId.current += 1;
@@ -620,18 +602,20 @@ function AreaExplorerView({
 
   useEffect(() => {
     if (
-      !scrollSelectedListItemAfterMapSelectionRef.current ||
       !selectedItem ||
       !selectedListItemRef.current
     ) {
       return;
     }
 
-    scrollSelectedListItemAfterMapSelectionRef.current = false;
     const selectedListItem = selectedListItemRef.current;
-    window.requestAnimationFrame(() => {
-      const list = selectedListItem.parentElement;
-      if (!list) return;
+    scrollSelectedListItemAfterMapSelectionRef.current = true;
+    const list = selectedListItem.closest<HTMLElement>(".catalog-viewer-body");
+    if (!list) return;
+    const reveal = () => {
+      if (!scrollSelectedListItemAfterMapSelectionRef.current ||
+        !selectedListItem.offsetHeight || list.clientHeight < selectedListItem.offsetHeight || !list.clientHeight) return;
+      scrollSelectedListItemAfterMapSelectionRef.current = false;
       const rowBounds = selectedListItem.getBoundingClientRect();
       const listBounds = list.getBoundingClientRect();
       // Reveal the row inside its list without scrolling the map offscreen.
@@ -640,13 +624,22 @@ function AreaExplorerView({
       } else if (rowBounds.bottom > listBounds.bottom) {
         list.scrollTop += rowBounds.bottom - listBounds.bottom;
       }
+    };
+    const frame = window.requestAnimationFrame(reveal);
+    // Keep the selected row visible when the sheet or viewport changes size.
+    const observer = new ResizeObserver(() => {
+      scrollSelectedListItemAfterMapSelectionRef.current = true;
+      reveal();
     });
-  }, [selectedItem]);
+    observer.observe(list);
+    return () => { window.cancelAnimationFrame(frame); observer.disconnect(); };
+  }, [selectedItem, listOpen]);
 
   useDismissibleProducerMapSelection({
-    active: Boolean(presentedItem),
+    active: Boolean(selectedItem || previewedItem),
     selectedSurfaceRef: selectedProducerLinkRef,
-    relatedSurfaceRef: viewerRef,
+    relatedSurfaceRef: explorerRef,
+    suspendEscape: listOpen,
     returnFocusRef: mapSurfaceRef,
     onDismiss: clearProducerSelection,
   });
@@ -689,9 +682,10 @@ function AreaExplorerView({
         highlight: slug,
       });
       scrollSelectedListItemAfterMapSelectionRef.current = true;
+      setListOpen(false);
       selectProducer(slug, href);
     },
-    [category, model.area, model.scope, selectProducer, municipality, searchQuery, searchScope],
+    [category, model.area, model.scope, selectProducer, municipality, searchQuery, searchScope, setListOpen],
   );
 
   const cancelPendingPreview = useCallback(() => {
@@ -706,10 +700,11 @@ function AreaExplorerView({
     setPreviewedSlug("");
     consumeNearbyMapFocus();
     setMapFocusRequest(undefined);
+    setListOpen(false);
     listOrderLockedCategoryRef.current = null;
     setPrioritizedProducerScope(null);
     pushAreaQuery(href);
-  }, [cancelPendingPreview, consumeNearbyMapFocus]);
+  }, [cancelPendingPreview, consumeNearbyMapFocus, setListOpen]);
 
   const [categoriesExpanded, setCategoriesExpanded] = useState(false);
   const showAllCategories = categoriesExpanded || Boolean(activeOtherCategory);
@@ -765,7 +760,7 @@ function AreaExplorerView({
   );
 
   return (
-    <main className="catalog-page catalog-page--simple" data-category={category}>
+    <main className="catalog-page catalog-page--simple catalog-page--immersive" data-category={category}>
       <SiteCatalogControlsRegistration
         country={areaSelectorCountry}
         currentArea={model.area}
@@ -777,86 +772,55 @@ function AreaExplorerView({
         options={languageOptions}
       />
 
-      <div className="catalog-discovery-toolbar">
-        <header className="catalog-simple-header">
-          <div>
-            <p className="catalog-kicker">
-              <Link href="/" className="country-back-link">
-                {model.siteName}
-              </Link>{" "}
-              ·{" "}
-              <Link href={model.countryHref} className="country-back-link">
-                {model.countryLabel}
-              </Link>{" "}
-              · <span>{model.areaLabel}</span>
-            </p>
-            <h1>{model.catalogMessages.title}</h1>
-          </div>
-        </header>
-
-        <div className="catalog-discovery-tools">
-          {municipality ? (
-            <button
-              className="detail-municipality-filter"
-              type="button"
-              aria-label={`${producerProfileLabels(model.locale).removeMunicipality}: ${municipality}`}
-              onClick={() => {
-                const url = new URL(window.location.href);
-                url.searchParams.delete("municipality");
-                window.history.replaceState(
-                  null,
-                  "",
-                  `${url.pathname}${url.search}`,
-                );
-              }}
-            >
-              {municipality} ×
-            </button>
-          ) : null}
-          <label className="catalog-search-scope">
-            <span className="visually-hidden">{searchMessages.scope}</span>
-            <select aria-label={searchMessages.scope} value={searchScope} onChange={(event) => {
-              const next = event.target.value as SearchScope;
-              cancelPendingPreview();
-              setPreviewedSlug("");
-              consumeNearbyMapFocus();
-              setMapFocusRequest(undefined);
-              setRadiusFilter(next === "nearby" ? lastCoordinatesRef.current : null);
-              setPrioritizedProducerScope(null);
-              listOrderLockedCategoryRef.current = null;
-              pushAreaQuery(buildCatalogHref({ scope: model.scope, area: model.area, category, q: searchQuery, searchScope: next }));
-            }}>
-              <option value="country">{model.countryLabel}</option>
-              <option value="area">{formatMessage(searchMessages.province, { area: model.areaLabel })}</option>
-              <option value="nearby">{searchMessages.nearby}</option>
-            </select>
-          </label>
-          <label className="catalog-producer-search">
-            <span className="visually-hidden">
-              {model.catalogMessages.searchPlaceholder}
-            </span>
-            <MagnifyingGlassIcon aria-hidden="true" size={20} />
-            <input
-              type="search"
-              value={searchQuery}
-              onChange={(event) => {
-                cancelPendingPreview();
-                const url = new URL(window.location.href);
-                if (event.target.value) url.searchParams.set("q", event.target.value);
-                else url.searchParams.delete("q");
-                url.searchParams.delete("highlight");
-                window.history.replaceState(null, "", `${url.pathname}${url.search}`);
-                setPreviewedSlug("");
-                listOrderLockedCategoryRef.current = null;
-                setPrioritizedProducerScope(null);
-              }}
-              placeholder={model.catalogMessages.searchPlaceholder}
-              maxLength={200}
-              autoComplete="off"
-            />
-          </label>
-        </div>
-      </div>
+      <h1 className="visually-hidden">{model.catalogMessages.title} · {scopeLabel}</h1>
+      <CatalogSearchSlot>
+        <CatalogSearchControl
+          value={searchQuery}
+          onChange={(value) => {
+            cancelPendingPreview();
+            const url = new URL(window.location.href);
+            if (value) url.searchParams.set("q", value);
+            else url.searchParams.delete("q");
+            url.searchParams.delete("highlight");
+            window.history.replaceState(null, "", `${url.pathname}${url.search}`);
+            setPreviewedSlug("");
+            setMapFocusRequest(undefined);
+            listOrderLockedCategoryRef.current = null;
+            setPrioritizedProducerScope(null);
+          }}
+          scope={searchScope}
+          onScopeChange={(next) => {
+            cancelPendingPreview();
+            setPreviewedSlug("");
+            consumeNearbyMapFocus();
+            setMapFocusRequest(undefined);
+            setPrioritizedProducerScope(null);
+            listOrderLockedCategoryRef.current = null;
+            pushAreaQuery(buildCatalogHref({ scope: model.scope, area: model.area, category, q: searchQuery, searchScope: next }));
+          }}
+          searchLabel={model.catalogMessages.searchPlaceholder}
+          placeholder={searchMessages.searchShort}
+          scopeLabel={searchMessages.scope}
+          filterLabel={searchMessages.filters}
+          areaLabel={model.areaLabel}
+          countryLabel={model.countryLabel}
+        />
+      </CatalogSearchSlot>
+      {municipality ? (
+        <button className="detail-municipality-filter catalog-map-municipality" type="button"
+          aria-label={`${producerProfileLabels(model.locale).removeMunicipality}: ${municipality}`}
+          onClick={() => {
+            const url = new URL(window.location.href);
+            url.searchParams.delete("municipality");
+            url.searchParams.delete("highlight");
+            window.history.replaceState(null, "", `${url.pathname}${url.search}`);
+            setPreviewedSlug("");
+            listOrderLockedCategoryRef.current = null;
+            setPrioritizedProducerScope(null);
+          }}>
+          {municipality} ×
+        </button>
+      ) : null}
       <nav
         className="catalog-simple-categories"
         aria-label={model.catalogMessages.categories}
@@ -872,8 +836,10 @@ function AreaExplorerView({
             }}
             className={`catalog-chip ${!category ? "is-active" : ""}`}
             aria-current={!category ? "page" : undefined}
+            aria-label={model.catalogMessages.allCategories}
           >
-            {model.catalogMessages.allCategories}
+            <SquaresFourIcon size={20} aria-hidden="true" />
+            <span className="catalog-chip__label">{model.catalogMessages.allCategories}</span>
           </Link>
           {baseCategories.map((categoryPresentation) => {
             const href = buildCatalogHref({
@@ -900,9 +866,10 @@ function AreaExplorerView({
                 }}
                 className={`catalog-chip ${isActive ? "is-active" : ""}`}
                 aria-current={isActive ? "page" : undefined}
+                aria-label={categoryPresentation.label}
               >
                 <span aria-hidden="true">{categoryPresentation.icon}</span>
-                {categoryPresentation.label}
+                <span className="catalog-chip__label">{categoryPresentation.label}</span>
               </Link>
             );
           })}
@@ -931,9 +898,10 @@ function AreaExplorerView({
             </button>
           ) : null}
         </div>
-        {showAllCategories && otherCategories.length > 0 ? (
+        {otherCategories.length > 0 ? (
           <div
             className="catalog-categories-row catalog-categories-row--secondary"
+            data-expanded={showAllCategories || undefined}
             role="group"
             aria-label={searchMessages.moreCategories}
           >
@@ -962,9 +930,10 @@ function AreaExplorerView({
                   }}
                   className={`catalog-chip ${isActive ? "is-active" : ""}`}
                   aria-current={isActive ? "page" : undefined}
+                  aria-label={categoryPresentation.label}
                 >
                   <span aria-hidden="true">{categoryPresentation.icon}</span>
-                  {categoryPresentation.label}
+                  <span className="catalog-chip__label">{categoryPresentation.label}</span>
                 </Link>
               );
             })}
@@ -972,9 +941,7 @@ function AreaExplorerView({
         ) : null}
       </nav>
 
-      {adSlot}
-
-      <section className="catalog-simple-layout">
+      <section ref={explorerRef} className={`catalog-simple-layout producer-map-explorer${listOpen ? " is-list-open" : ""}`}>
         <div className="producer-map-stage">
           <div
             ref={mapSurfaceRef}
@@ -982,23 +949,16 @@ function AreaExplorerView({
             aria-label={model.mapMessages.producerMap}
             tabIndex={-1}
           >
-            {loading ? (
+            {loading || national.error && searchScope === "country" || !items.length ? (
               // An unloaded national catalog is not a set without coordinates.
-              <div className="map-placeholder">{searchMessages.loading}</div>
+              <div className="map-placeholder" />
             ) : (
               <ProducerSelectionMap
                 key={searchScope}
                 points={mapPoints}
                 minZoom={4}
                 selectedKey={presentedItem?.key}
-                selectionContent={presentedItem ? (
-                  <div aria-live="polite" aria-atomic="true">
-                    <ProducerMapSelectionCard
-                      linkRef={selectedProducerLinkRef}
-                      producer={{ ...presentedItem, description: catalogDescriptionPreview(presentedItem.description), href: presentedItem.href }}
-                    />
-                  </div>
-                ) : null}
+                focusPaddingBottom={180}
                 focusRequest={mapFocusRequest}
                 nearbyFocusKeys={nearbyMapFocusKeys}
                 onNearbyFocusConsumed={consumeNearbyMapFocus}
@@ -1012,50 +972,47 @@ function AreaExplorerView({
               />
             )}
           </div>
-
+          {loading || national.error && searchScope === "country" || !items.length ? (
+            <div className="catalog-map-status" role="status">
+              <p>{loading ? searchMessages.loading : national.error && searchScope === "country" ? searchMessages.error
+                : formatMessage(searchQuery ? searchMessages.empty : model.catalogMessages.emptyCategory, { area: scopeLabel, scope: scopeLabel })}</p>
+              {national.error && searchScope === "country" ? <button type="button" className="catalog-search-action" onClick={national.retry}>{searchMessages.retry}</button> : null}
+            </div>
+          ) : (
+            <ProducerMapCarousel
+              key={resultScope}
+              items={orderedItems}
+              activeKey={presentedItem?.key}
+              onSelect={selectMapProducer}
+              onInteract={() => { listOrderLockedCategoryRef.current = category; cancelPendingPreview(); }}
+              labels={searchMessages}
+              linkRef={selectedProducerLinkRef}
+            />
+          )}
         </div>
 
-        <aside
-          ref={viewerRef}
-          className="catalog-viewer catalog-viewer--persistent"
-          aria-label={model.mapMessages.producers}
+        <CatalogResultsSheet
+          viewerRef={viewerRef}
+          open={listOpen}
+          onOpenChange={setListOpen}
+          title={model.mapMessages.producers}
+          label={loading ? searchMessages.loading : formatMessage(searchMessages.viewList, { count: formatNumber(model.localeDisplayTag, items.length) })}
+          closeLabel={searchMessages.backToMap}
         >
-          <div
-            className="catalog-viewer-body"
-            role="region"
-            aria-label={model.catalogMessages.producers}
-          >
-            {searchScope === "nearby" ? <CatalogRadiusFilter
-              heading={model.catalogMessages.producers}
-              locale={model.locale}
-              area={model.countryLabel}
-              value={radiusFilter}
-              count={items.length}
-              onChange={(filter) => {
-                cancelPendingPreview();
-                setPreviewedSlug("");
-                consumeNearbyMapFocus();
-                setMapFocusRequest(undefined);
-                listOrderLockedCategoryRef.current = null;
-                setPrioritizedProducerScope(null);
-                lastCoordinatesRef.current = filter;
-                setRadiusFilter(filter);
-              }}
-            /> : <div className="catalog-viewer-head"><h2>{model.catalogMessages.producers}</h2></div>}
-            {searchScope === "nearby" && !radiusFilter ? null : (
-              <p className="catalog-search-summary" role="status">
-                {loading ? searchMessages.loading : searchScope !== "area" && national.error ? searchMessages.error
-                  : formatMessage(searchMessages.results, { count: formatNumber(model.localeDisplayTag, items.length), scope: scopeLabel })}
-                {normalizedSearchQuery && items.length ? ` · ${searchMessages.relevance}` : ""}
-              </p>
-            )}
+            <div className="catalog-viewer-head"><h2>{model.catalogMessages.producers}</h2></div>
+            <p className="catalog-search-summary" role="status">
+              {loading ? searchMessages.loading : searchScope !== "area" && national.error ? searchMessages.error
+                : formatMessage(searchMessages.results, { count: formatNumber(model.localeDisplayTag, items.length), scope: scopeLabel })}
+              {normalizedSearchQuery && items.length ? ` · ${searchMessages.relevance}` : ""}
+            </p>
+            {adSlot}
             {searchScope !== "area" && national.error ? <button type="button" className="catalog-search-action" onClick={national.retry}>{searchMessages.retry}</button> : null}
             <p className="visually-hidden" aria-live="polite">
               {screenReaderSummary}
               {visibleItems[0] ? `: ${visibleItems[0].name}` : ""}
             </p>
 
-            {loading || (searchScope !== "area" && national.error) || (searchScope === "nearby" && !radiusFilter) ? null : items.length === 0 ? (
+            {loading || (searchScope !== "area" && national.error) ? null : items.length === 0 ? (
               <p className="catalog-empty">
                 {formatMessage(searchQuery ? searchMessages.empty : model.catalogMessages.emptyCategory, {
                   area: scopeLabel, scope: scopeLabel,
@@ -1070,6 +1027,7 @@ function AreaExplorerView({
                 {visibleItems.map((item) => (
                   <ProducerRosterRow
                     key={item.producerId}
+                    locale={model.locale}
                     item={item}
                     href={item.href}
                     query={deferredSearchQuery}
@@ -1095,8 +1053,7 @@ function AreaExplorerView({
                 {searchMessages.more}
               </button>
             ) : null}
-          </div>
-        </aside>
+        </CatalogResultsSheet>
       </section>
     </main>
   );
@@ -1122,7 +1079,7 @@ function AreaExplorerFromSearchParams({
       municipality={searchParams.get("municipality")?.trim() ?? ""}
       selectedSlug={selectedSlug}
       searchQuery={searchParams.get("q")?.slice(0, 200) ?? ""}
-      searchScope={searchParams.get("search_scope") === "country" ? "country" : searchParams.get("search_scope") === "nearby" ? "nearby" : "area"}
+      searchScope={searchParams.get("search_scope") === "country" || searchParams.get("search_scope") === "nearby" ? "country" : "area"}
     />
   );
 }

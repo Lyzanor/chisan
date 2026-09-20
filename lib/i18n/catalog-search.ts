@@ -9,6 +9,8 @@ const en = {
   mapProducer: "{count} producer", mapProducers: "{count} producers", mapGroup: "{areas}: {producers}. Zoom in",
   moreCategories: "More categories",
   fewerCategories: "Fewer categories",
+  searchShort: "Search", filters: "Search filters", viewList: "{count} producers", backToMap: "Map",
+  previousProducer: "Previous producer", nextProducer: "Next producer", carousel: "Explore producers",
 };
 type Messages = { [K in keyof typeof en]: string };
 const messages: Partial<Record<Locale, Messages>> = {
@@ -22,6 +24,8 @@ const messages: Partial<Record<Locale, Messages>> = {
     mapProducer: "{count} productor", mapProducers: "{count} productores", mapGroup: "{areas}: {producers}. Acercar el mapa",
     moreCategories: "Más categorías",
     fewerCategories: "Menos categorías",
+    searchShort: "Buscar", filters: "Filtros de búsqueda", viewList: "{count} productores", backToMap: "Mapa",
+    previousProducer: "Productor anterior", nextProducer: "Siguiente productor", carousel: "Explorar productores",
   },
   ca: {
     scope: "Cerca a", province: "Província: {area}", nearby: "A prop meu",
@@ -32,6 +36,8 @@ const messages: Partial<Record<Locale, Messages>> = {
     mapProducer: "{count} productor", mapProducers: "{count} productors", mapGroup: "{areas}: {producers}. Apropa el mapa",
     moreCategories: "Més categories",
     fewerCategories: "Menys categories",
+    searchShort: "Cerca", filters: "Filtres de cerca", viewList: "{count} productors", backToMap: "Mapa",
+    previousProducer: "Productor anterior", nextProducer: "Productor següent", carousel: "Explorar productors",
   },
 };
 export function getCatalogSearchMessages(locale: Locale): Messages {

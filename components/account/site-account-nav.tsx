@@ -1,7 +1,7 @@
 "use client";
 
-import { Show, SignOutButton } from "@clerk/nextjs";
-import { CaretDownIcon, UserCircleIcon } from "@phosphor-icons/react";
+import { useAuth, SignOutButton } from "@clerk/nextjs";
+import { CaretDownIcon, ListIcon, UserCircleIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -95,7 +95,7 @@ export function AccountMenu({
   const summary =
     signedIn && accountDisplayName
       ? formatGreeting(messages.greeting, accountDisplayName)
-      : messages.myAccount;
+      : !signedIn && showAccountLinks ? messages.signIn : messages.myAccount;
 
   function chooseLanguage(locale: Locale) {
     const destination = languageMenu.options.find(
@@ -121,6 +121,7 @@ export function AccountMenu({
   return (
     <details className="site-account-menu" ref={detailsRef}>
       <summary>
+        <ListIcon className="site-account-menu__map-icon" size={24} aria-hidden="true" />
         <UserCircleIcon size={22} aria-hidden="true" />
         <span>{summary}</span>
         <CaretDownIcon className="site-account-menu__chevron" size={14} aria-hidden="true" />
@@ -184,6 +185,11 @@ export function AccountMenu({
   );
 }
 
+function AuthenticatedAccountMenu({ messages }: { messages: Messages["siteHeader"] }) {
+  const { isSignedIn } = useAuth();
+  return <AccountMenu messages={messages} showAccountLinks signedIn={isSignedIn === true} />;
+}
+
 export function SiteAccountNav({
   authConfigured,
   messages,
@@ -195,14 +201,7 @@ export function SiteAccountNav({
   return (
     <nav className="site-account-nav" aria-label={messages.accountNavigation}>
       {authConfigured ? (
-        <Show
-          when="signed-in"
-          fallback={
-            <AccountMenu messages={messages} showAccountLinks signedIn={false} />
-          }
-        >
-          <AccountMenu messages={messages} showAccountLinks signedIn />
-        </Show>
+        <AuthenticatedAccountMenu messages={messages} />
       ) : (
         <AccountMenu
           messages={messages}

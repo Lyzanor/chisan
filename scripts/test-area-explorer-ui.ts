@@ -4,6 +4,9 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 import { ProducerMapSelectionCard } from "../components/map/producer-map-selection-card";
+import { ProducerMapRosterRow } from "../components/map/producer-map-roster-row";
+import { ProducerFollowButton } from "../components/account/producer-follow-button";
+import { ProducerFollowsContext } from "../components/account/producer-follows-context";
 import { buildCatalogSearchDocument, rankCatalogEntries, catalogDescriptionPreview, findCatalogSearchMatch } from "../lib/catalog-search";
 import { buildCatalogHref, readCatalogQueryContext } from "../lib/catalog-navigation";
 import { includeSelectedProducer, prioritizeProducerItems } from "../lib/catalog/producer-list";
@@ -17,6 +20,31 @@ import {
   summarizeProducerMapGroups,
   type ProducerMapGroup,
 } from "../lib/producer-map-groups";
+
+test("guest map rows and profiles expose registration without hiding follow controls", () => {
+  const item = { country: "es", producerId: 55, name: "Abadal", href: "/es/barcelona/abadal-avinyo", imageSrc: "/productores/abadal.webp" };
+  const row = renderToStaticMarkup(createElement(ProducerMapRosterRow, { item }, item.name));
+  assert.match(row, /<img[^>]+loading="lazy"/);
+  assert.match(row, /aria-label="Seguir · Abadal"/);
+  assert.match(row, /href="\/registro\?redirect_url=%2Fes%2Fbarcelona%2Fabadal-avinyo"/);
+  assert.equal((row.match(/<a /g) ?? []).length, 2);
+  assert.ok(row.indexOf("</a>") < row.indexOf('class="producer-follow-button"'));
+  const profile = renderToStaticMarkup(createElement(ProducerFollowButton, { ...item, returnTo: item.href }));
+  assert.match(profile, />Seguir<\/span>/);
+  assert.match(profile, /href="\/registro\?/);
+});
+
+test("follow state uses durable country/id keys and keeps unavailable state distinct", () => {
+  const props = { country: "es", producerId: 55, name: "Abadal", returnTo: "/es/barcelona/abadal-avinyo" };
+  const render = (status: "ready" | "unavailable", keys: string[]) => renderToStaticMarkup(createElement(ProducerFollowsContext.Provider,
+    { value: { status, keys, pending: new Set<string>(), setFollowing: async () => "saved" as const } }, createElement(ProducerFollowButton, props)));
+  assert.match(render("ready", ["es:55"]), /aria-pressed="true"/);
+  assert.match(render("ready", ["fr:55"]), /aria-pressed="false"/);
+  const unavailable = render("unavailable", []);
+  assert.match(unavailable, /disabled=""/);
+  assert.match(unavailable, /No se ha podido cargar el seguimiento/);
+  assert.doesNotMatch(unavailable, /href="\/registro/);
+});
 
 test("map previews stay beside their point and inside the visible map at every edge", () => {
   const bounds = { left: 12, top: 92, right: 378, bottom: 480 };
@@ -266,4 +294,3 @@ test("nearby search radius is 5 km by default and uses location-onboarding card 
   assert.match(htmlActive, /Quitar filtro/);
   assert.doesNotMatch(htmlActive, /<select/);
 });
-

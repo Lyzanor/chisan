@@ -681,23 +681,7 @@ body { min-height: 100svh; }
 .detail-status--verified { color: var(--chisan-color-moss-dark); font-weight: 500; }
 .detail-status--verified svg { color: var(--chisan-color-moss); }
 .detail-status--pending { color: var(--chisan-color-stone); text-underline-offset: 4px; }
-/* One icon target beside the name holds the follow action; its label unfolds over free space. */
-.detail-title__follow { position: relative; width: 44px; height: 44px; }
-.detail-follow-control,
-.detail-title__follow form { display: contents; }
-.detail-follow { position: absolute; z-index: 1; top: 0; right: 0; display: inline-flex; align-items: center; gap: 0; height: 44px; padding-inline: var(--chisan-space-3); border: var(--chisan-line) solid var(--chisan-color-moss); border-radius: var(--chisan-radius-control); background: var(--chisan-color-moss); color: var(--chisan-color-surface); font: 500 0.875rem/1.4 var(--chisan-font-sans); white-space: nowrap; text-decoration: none; cursor: pointer; transition: gap var(--chisan-motion-page) var(--chisan-ease), padding var(--chisan-motion-page) var(--chisan-ease), background-color var(--chisan-motion-immediate) var(--chisan-ease); }
-.detail-follow svg { flex-shrink: 0; }
-.detail-follow[aria-pressed="true"] { background: var(--chisan-color-surface); color: var(--chisan-color-moss-dark); }
-.detail-follow__label { display: inline-block; max-width: 0; overflow: hidden; opacity: 0; transition: max-width var(--chisan-motion-page) var(--chisan-ease), opacity var(--chisan-motion-component) var(--chisan-ease); }
-.detail-follow:focus-visible,
-.detail-follow-control[data-expanded] .detail-follow { gap: var(--chisan-space-2); padding-inline: var(--chisan-space-3) var(--chisan-space-4); }
-.detail-follow:focus-visible .detail-follow__label,
-.detail-follow-control[data-expanded] .detail-follow__label { max-width: 12rem; opacity: 1; }
-@media (hover: hover) {
-  .detail-follow:hover { gap: var(--chisan-space-2); padding-inline: var(--chisan-space-3) var(--chisan-space-4); border-color: var(--chisan-color-moss-dark); background: var(--chisan-color-moss-dark); }
-  .detail-follow[aria-pressed="true"]:hover { border-color: var(--chisan-color-moss); background: var(--chisan-color-moss-pale); }
-  .detail-follow:hover .detail-follow__label { max-width: 12rem; opacity: 1; }
-}
+.detail-title__follow { position: relative; flex: none; min-height: 44px; }
 .detail-hero--identity .detail-subtitle { display: flex; flex-wrap: nowrap; align-items: center; column-gap: var(--chisan-space-2); row-gap: 0; min-width: 0; margin: calc(-1 * var(--chisan-space-2)); padding: var(--chisan-space-2); overflow: hidden; }
 .detail-subtitle a { display: inline-flex; align-items: center; min-height: 44px; color: var(--chisan-color-moss-dark); text-underline-offset: 4px; font-size: 0.875rem; }
 .detail-hero--identity .detail-subtitle a { display: block; min-width: 0; overflow: hidden; font-size: 0.8125rem; line-height: 44px; text-overflow: ellipsis; white-space: nowrap; }

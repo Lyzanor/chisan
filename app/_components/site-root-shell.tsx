@@ -13,10 +13,11 @@ import { FooterLandscape } from "@/components/footer-landscape";
 
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
+import { ProducerFollowsProvider } from "@/components/account/producer-follows-provider";
 import { ChisanAnalytics } from "@/components/analytics/chisan-analytics";
 import { CatalogAgentTools } from "@/components/agents/catalog-agent-tools";
 import { catalogToolDefinitions } from "@/lib/agents/catalog-schema";
-import { ChisanWordmark } from "@/components/brand/chisan-brand";
+import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
 import {
   type LanguageMenuConfig,
   SiteLanguageMenuProvider,
@@ -45,6 +46,7 @@ import "../../design/foundations/tokens.css";
 import "../../design/adapters/web.css";
 import "../../design/adapters/experience.css";
 import "../../design/adapters/category-themes.css";
+import "../../design/adapters/map-explorer.css";
 
 const adsenseAccountId = getAdSenseAccountId();
 
@@ -148,14 +150,18 @@ export function SiteRootShell({
             aria-label={`${SITE_NAME} — ${localizedTagline}`}
           >
             <ChisanWordmark alt="" />
+            <ChisanMark alt="" className="site-header__map-mark" />
             <span className="site-header__tagline">{localizedTagline}</span>
           </Link>
+          <div id="catalog-header-search" />
           <SiteAccountNav
             authConfigured={accountAuthConfigured}
             messages={accountMessages ?? headerMessages}
           />
         </header>
-        <PageMotion>{children}</PageMotion>
+        <ProducerFollowsProvider enabled={accountAuthConfigured}>
+          <PageMotion>{children}</PageMotion>
+        </ProducerFollowsProvider>
         <footer className="site-footer">
           <nav className="site-footer__links" aria-label={footerMessages.navigation}>
             <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>

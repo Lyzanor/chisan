@@ -7,14 +7,18 @@ export type ProducerMapSelectionCardItem = {
   name: string;
   description: string;
   imageSrc: string;
+  location?: string;
+  categoryLabel?: string;
 };
 
 export function ProducerMapSelectionCard({
   producer,
   linkRef,
+  tabIndex,
 }: {
   producer: ProducerMapSelectionCardItem;
   linkRef?: Ref<HTMLAnchorElement>;
+  tabIndex?: number;
 }) {
   return (
     <article className="producer-map-selection-card">
@@ -22,6 +26,8 @@ export function ProducerMapSelectionCard({
         ref={linkRef}
         className="producer-map-selection-card__link"
         href={producer.href}
+        prefetch={false}
+        tabIndex={tabIndex}
       >
         <span className="producer-map-selection-card__media">
           <Image
@@ -35,8 +41,10 @@ export function ProducerMapSelectionCard({
           />
         </span>
         <span className="producer-map-selection-card__content">
+          {producer.location ? <small className="producer-map-selection-card__location">{producer.location}</small> : null}
           <strong>{producer.name}</strong>
           {producer.description ? <span>{producer.description}</span> : null}
+          {producer.categoryLabel ? <small className="producer-map-selection-card__category">{producer.categoryLabel}</small> : null}
         </span>
       </Link>
     </article>
