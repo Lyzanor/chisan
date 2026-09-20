@@ -30,7 +30,6 @@ import {
   loadPublicProducerGallery,
   hasPublicProducerPremiumAccess,
 } from "@/lib/catalog/public-expanded";
-import { ProducerAccountProvider } from "@/components/account/producer-account-provider";
 import { isAccountSystemConfigured } from "@/lib/accounts/config";
 import { isProducerOwnershipVerified } from "@/lib/accounts/producer-ownership";
 import { producerProfileLabels } from "@/lib/i18n/producer-profile";
@@ -66,6 +65,7 @@ import {
   buildCatalogHref,
   buildProducerHref,
   buildProducerPathSegment,
+  readCatalogQueryContext,
 } from "@/lib/catalog-navigation";
 import {
   isCanonicalCatalogSegment,
@@ -94,14 +94,10 @@ import {
 
 type ProducerPageProps = {
   params: Promise<{ catalog: string; area: string; segment: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-// Generate once on first access, then serve shared HTML/RSC without session reads.
-// Public account presentation refreshes hourly and after ownership/Pro changes.
-export function generateStaticParams() { return []; }
-export const dynamic = "error";
-export const dynamicParams = true;
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
@@ -224,8 +220,12 @@ export async function generateMetadata({
 
 export default async function ProducerPage({
   params,
+  searchParams,
 }: ProducerPageProps) {
-  const { catalog, area: rawArea, segment } = await params;
+  const [{ catalog, area: rawArea, segment }, query] = await Promise.all([
+    params,
+    searchParams,
+  ]);
   const resolved = await resolveProducerCatalog(catalog, rawArea, segment);
 
   if (!resolved) notFound();
@@ -242,6 +242,7 @@ export default async function ProducerPage({
     notFound();
   }
 
+  const catalogQuery = readCatalogQueryContext(query);
   const canonicalSegment = buildProducerPathSegment(producer.slug);
 
   if (
@@ -254,6 +255,8 @@ export default async function ProducerPage({
       buildProducerHref(producer, {
         scope,
         area,
+        ...catalogQuery,
+        highlight: catalogQuery.highlight ? producer.slug : undefined,
       }),
     );
   }
@@ -322,6 +325,7 @@ export default async function ProducerPage({
   const returnTo = buildProducerHref(producer, {
     scope,
     area,
+    ...catalogQuery,
   });
   const municipalityHref = buildCatalogHref({
     scope,
@@ -374,7 +378,8 @@ export default async function ProducerPage({
       href: buildProducerHref(producer, {
         scope: buildCatalogScope(country, targetLocale),
         area,
-          }),
+        ...catalogQuery,
+      }),
     })),
   );
   const canonicalUrl = buildCatalogAlternateSet(
@@ -474,12 +479,6 @@ export default async function ProducerPage({
   const hoursBesideContact = mapPoints.length > 0 || !hasLocation;
 
   return (
-    <ProducerAccountProvider
-      enabled={isAccountSystemConfigured()}
-      country={country.slug}
-      producerId={producer.producerId}
-      activeOwner={ownershipVerified}
-    >
     <main className="detail-page" data-category={producer.category}>
       {isProducerStatsEnabled() ? (
         <ProducerProfileView
@@ -938,6 +937,5 @@ export default async function ProducerPage({
         </Suspense>
       </article>
     </main>
-    </ProducerAccountProvider>
   );
 }
