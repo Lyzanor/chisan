@@ -51,9 +51,8 @@ export async function ExpandedProducerProfile({
   producerId,
 }: ExpandedProducerProfileProps) {
   const content = await loadPublicExpandedContent(country, producerId, locale);
-  if (!content) return null;
   const contentLabels = getProducerContentLabels(locale);
-  const structuredData = buildProductStructuredData(content, canonicalUrl);
+  const structuredData = content ? buildProductStructuredData(content, canonicalUrl) : null;
   const guidedVisits = fieldValue(fields, "visitas guiadas");
   const video = fieldValue(fields, "video");
   const videoLabel = formatProducerFieldLabel("video", locale, messages);
@@ -66,7 +65,7 @@ export async function ExpandedProducerProfile({
   const history = fieldValue(fields, "historia");
   const historyLocale = fieldValue(fields, "historia_locale");
   const lastApprovedChange = fieldValue(fields, "fecha ultimo cambio");
-  const highlightedLinks = publicHighlightedLinks(fields, content.links).map(
+  const highlightedLinks = publicHighlightedLinks(fields, content?.links ?? []).map(
     ({ key, href }) => ({
       href,
       label:
@@ -85,7 +84,7 @@ export async function ExpandedProducerProfile({
     !EXTRA_PREMIUM_FIELDS.some(field => fields[field.key]) &&
     !lastApprovedChange &&
     !highlightedLinks.length &&
-    !hasProducerContent(content)
+    !(content && hasProducerContent(content))
   ) {
     return null;
   }
@@ -106,7 +105,7 @@ export async function ExpandedProducerProfile({
           }}
         />
       ) : null}
-      {content.products.length && content.links.length ? (
+      {content && content.products.length && content.links.length ? (
         <nav
           className="detail-expanded-profile__nav"
           aria-label={messages.producer.expandedProfile}
@@ -119,16 +118,20 @@ export async function ExpandedProducerProfile({
           ) : null}
         </nav>
       ) : null}
-      <ProducerContent content={content} locale={locale} showGallery={false} />
+      {content ? (
+        <ProducerContent content={content} locale={locale} showGallery={false} />
+      ) : null}
       {video ? (
         <YoutubePlayer videoUrl={video} label={videoLabel} locale={locale} />
       ) : null}
-      <ProducerPeople
-        people={content.people}
-        introduction={behindProducer}
-        introductionLocale={behindProducerLocale}
-        title={formatProducerFieldLabel("quien hay detras", locale, messages)}
-      />
+      {behindProducer || (content && (content.people?.length ?? 0) > 0) ? (
+        <ProducerPeople
+          people={content?.people ?? []}
+          introduction={behindProducer}
+          introductionLocale={behindProducerLocale}
+          title={formatProducerFieldLabel("quien hay detras", locale, messages)}
+        />
+      ) : null}
       {history || communityMessage || methods ? (
         <div className="detail-expanded-profile__stories">
           {methods ? <div className="detail-expanded-profile__message"><h3>{formatProducerFieldLabel("como producimos", locale, messages)}</h3><p lang={fields.como_producimos_locale || undefined}>{methods}</p></div> : null}

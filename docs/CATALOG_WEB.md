@@ -185,19 +185,18 @@ thumbnail and a direct-link fallback. Opening the profile loads the thumbnail
 from `i.ytimg.com`; the iframe uses the privacy-enhanced host and exists only
 after an explicit play action. The reviewed URL remains the API value; the
 client derives the thumbnail and embed from its video ID without retaining
-query parameters. `video`, `quien hay detras`, `historia` and `fecha ultimo
-cambio` have no JSON-LD mapping because the catalog does not own the title and
-publication metadata needed for a complete video
-record. The latter three render only in the visible expanded-profile HTML;
-the approval date is workflow context, not `dateModified` for the whole page or
-an ownership/verification signal.
+query parameters. `video`, `quien hay detras`, `historia` and related CSV facts
+render in the visible expanded-profile HTML for any producer with reviewed
+data, without requiring a premium entitlement. They have no direct entity
+JSON-LD mapping because the catalog does not own the title and publication
+metadata needed for a complete video record or independent prose nodes.
 
-If `producer.profile.premium` is inactive or account state fails closed, the
-premium block and any structured facts derived exclusively from it disappear
-from the same response. The base profile, canonical URL, page-local graph
-structure and durable producer identity remain unchanged. Reactivation reveals
-the already reviewed CSV values; it does not restore an unreviewed database
-overlay.
+If `producer.profile.premium` is inactive or account state fails closed,
+gated typed products, catalog links and custom content collections disappear
+from the same response. The base profile, canonical URL, reviewed CSV facts,
+page-local graph structure and durable producer identity remain unchanged.
+Reactivation reveals the already reviewed content files; it does not restore
+an unreviewed database overlay.
 
 The optional related `people` collection renders at most three individual names,
 roles, brief presentations and optional portraits below the CSV team introduction.

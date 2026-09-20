@@ -57,6 +57,7 @@ import {
   absoluteSiteUrl,
   buildCatalogAlternateSet,
   buildLocalizedMetadata,
+  buildProducerPageTitle,
 } from "@/lib/catalog-metadata";
 import type { SALES_CHANNEL_VALUES } from "@/lib/catalog/producer-schema";
 import { selectSimilarNearbyProducers } from "@/lib/catalog/similar-producers";
@@ -175,8 +176,17 @@ export async function generateMetadata({
         areaOption.publishedLocales,
       )
     ).get(producer.producerId) ?? [];
+  const categoryLabel = getCategoryLabel(producer.category, locale);
+  const areaLabel = getLocalizedCatalogLabel(areaOption, locale);
+  const pageTitle = buildProducerPageTitle({
+    producerName: producer.name,
+    categoryLabel,
+    city: producer.city,
+    areaLabel,
+    locale,
+  });
   const metadata = buildLocalizedMetadata({
-    title: producer.name,
+    title: pageTitle,
     description,
     locale,
     alternates: buildCatalogAlternateSet(
@@ -376,6 +386,16 @@ export default async function ProducerPage({
     { kind: "producer", country, localePolicy: areaOption, area, producer },
     locale,
   ).canonical;
+  const lastApprovedChange = getFieldValue(
+    producer.fields,
+    "fecha ultimo cambio",
+  );
+  const newsDate = getFieldValue(producer.fields, "fecha novedades");
+  const latestSourceDate = sources.length
+    ? [...sources].map((s) => s.checkedAt).sort().reverse()[0]
+    : undefined;
+  const dateModified = lastApprovedChange || newsDate || latestSourceDate;
+
   const structuredData = buildProducerStructuredData({
     producerName: producer.name,
     canonicalUrl,
@@ -399,6 +419,7 @@ export default async function ProducerPage({
     longitude: producer.longitude,
     categories: localizedCategories,
     featuredProducts,
+    dateModified,
   });
   const publishedAreas = new Set(
     country.regions.flatMap((region) =>

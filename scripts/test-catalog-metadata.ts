@@ -5,6 +5,7 @@ import {
   buildCatalogAlternateSet,
   buildHomeAlternateSet,
   buildLocalizedMetadata,
+  buildProducerPageTitle,
   CATALOG_HREFLANG_BY_LOCALE,
 } from "../lib/catalog-metadata";
 import {
@@ -310,4 +311,60 @@ test("producer metadata excludes incomplete translations without hiding the sour
     "https://chisan.app/ca-es/barcelona/test-profile",
   );
   assert.deepEqual(incomplete.languages, source.languages);
+});
+
+test("producer page titles combine identity, category and location context with localized prepositions", () => {
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "Formatgeria La Cleda",
+      categoryLabel: "Lácteos y quesos",
+      city: "Canovelles",
+      areaLabel: "Barcelona",
+      locale: "es",
+    }),
+    "Formatgeria La Cleda · Lácteos y quesos en Canovelles (Barcelona)",
+  );
+
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "Formatgeria La Cleda",
+      categoryLabel: "Làctics i formatges",
+      city: "Canovelles",
+      areaLabel: "Barcelona",
+      locale: "ca",
+    }),
+    "Formatgeria La Cleda · Làctics i formatges a Canovelles (Barcelona)",
+  );
+
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "La Cleda",
+      categoryLabel: "Dairy & Cheese",
+      city: "Canovelles",
+      areaLabel: "Barcelona",
+      locale: "en",
+    }),
+    "La Cleda · Dairy & Cheese in Canovelles (Barcelona)",
+  );
+
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "Obrador Central",
+      categoryLabel: "Panadería",
+      city: "Barcelona",
+      areaLabel: "Barcelona",
+      locale: "es",
+    }),
+    "Obrador Central · Panadería en Barcelona",
+  );
+
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "Granja Test",
+      city: "Vic",
+      areaLabel: "Barcelona",
+      locale: "es",
+    }),
+    "Granja Test · Vic (Barcelona)",
+  );
 });

@@ -1110,6 +1110,7 @@ test("producer structured data mirrors complete visible profile facts", () => {
     longitude: 2.28391,
     categories: ["Lácteos y quesos"],
     featuredProducts: ["Queso de oveja", "Yogur artesanal"],
+    dateModified: "2026-09-20",
   }) as { "@graph": Record<string, unknown>[] };
 
   const producer = data["@graph"].find(
@@ -1124,6 +1125,11 @@ test("producer structured data mirrors complete visible profile facts", () => {
 
   assert.equal(producer?.["@type"], "LocalBusiness");
   assert.equal(producer?.image, "https://chisan.app/productores/es/catalunya/barcelona/la-cleda.webp");
+  assert.deepEqual(producer?.knowsAbout, [
+    "Lácteos y quesos",
+    "Queso de oveja",
+    "Yogur artesanal",
+  ]);
   assert.deepEqual(producer?.sameAs, [
     "https://example.com/",
     "https://www.facebook.com/example",
@@ -1141,6 +1147,7 @@ test("producer structured data mirrors complete visible profile facts", () => {
     latitude: 41.61678,
     longitude: 2.28391,
   });
+  assert.equal(webpage?.dateModified, "2026-09-20");
   assert.deepEqual(webpage?.about, [
     { "@type": "Thing", name: "Lácteos y quesos" },
     { "@type": "Thing", name: "Queso de oveja" },
@@ -1174,10 +1181,12 @@ test("sparse producer structured data avoids speculative rich-result claims", ()
     (node) => node["@id"] ===
       "https://chisan.app/es/asturias/productor-sin-ficha#producer",
   );
+  const webpage = data["@graph"].find((node) => node["@type"] === "WebPage");
   const serialized = serializeStructuredData(data);
 
   assert.equal(producer?.["@type"], "Organization");
   assert.ok(producer?.location);
+  assert.equal(webpage?.dateModified, undefined);
   for (const unsupportedProperty of [
     "address",
     "geo",
@@ -1185,6 +1194,7 @@ test("sparse producer structured data avoids speculative rich-result claims", ()
     "image",
     "description",
     "sameAs",
+    "knowsAbout",
     "openingHoursSpecification",
     "aggregateRating",
     "review",

@@ -31,6 +31,7 @@ export type ProducerStructuredDataInput = Readonly<{
   longitude?: number | null;
   categories?: readonly string[];
   featuredProducts?: readonly string[];
+  dateModified?: string;
 }>;
 
 function optionalText(value: string | undefined): string | undefined {
@@ -83,6 +84,7 @@ export function buildProducerStructuredData({
   longitude,
   categories = [],
   featuredProducts = [],
+  dateModified,
 }: ProducerStructuredDataInput): JsonLdNode {
   const canonical = new URL(canonicalUrl).toString();
   const producerId = `${canonical}#producer`;
@@ -94,6 +96,7 @@ export function buildProducerStructuredData({
   const normalizedEmail = optionalText(email);
   const normalizedMapUrl = optionalHttpUrl(mapUrl);
   const normalizedImageUrl = optionalHttpUrl(imageUrl);
+  const normalizedDateModified = optionalText(dateModified);
   const sameAs = uniqueText([
     optionalHttpUrl(website),
     optionalHttpUrl(facebook),
@@ -117,6 +120,7 @@ export function buildProducerStructuredData({
     ...(normalizedImageUrl ? { image: normalizedImageUrl } : {}),
     ...(normalizedTelephone ? { telephone: normalizedTelephone } : {}),
     ...(normalizedEmail ? { email: normalizedEmail } : {}),
+    ...(topics.length > 0 ? { knowsAbout: topics } : {}),
     ...(sameAs.length > 0 ? { sameAs } : {}),
     ...(normalizedAddress
       ? {
@@ -162,6 +166,7 @@ export function buildProducerStructuredData({
     breadcrumb: { "@id": breadcrumbId },
     mainEntity: { "@id": producerId },
     ...(normalizedDescription ? { description: normalizedDescription } : {}),
+    ...(normalizedDateModified ? { dateModified: normalizedDateModified } : {}),
     ...(normalizedImageUrl
       ? { primaryImageOfPage: { "@type": "ImageObject", url: normalizedImageUrl } }
       : {}),

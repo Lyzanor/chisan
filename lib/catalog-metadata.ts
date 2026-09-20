@@ -157,6 +157,36 @@ export function buildHomeAlternateSet(): CatalogAlternateSet {
   };
 }
 
+export function buildProducerPageTitle({
+  producerName,
+  categoryLabel,
+  city,
+  areaLabel,
+  locale,
+}: {
+  producerName: string;
+  categoryLabel?: string;
+  city: string;
+  areaLabel: string;
+  locale: Locale;
+}): string {
+  const normalizedCity = city.trim();
+  const normalizedArea = areaLabel.trim();
+  const location =
+    normalizedCity.toLowerCase() === normalizedArea.toLowerCase()
+      ? normalizedCity
+      : `${normalizedCity} (${normalizedArea})`;
+
+  const preposition = locale === "ca" ? "a" : locale === "en" ? "in" : "en";
+  const normalizedCategory = categoryLabel?.trim();
+
+  if (normalizedCategory) {
+    return `${producerName} · ${normalizedCategory} ${preposition} ${location}`;
+  }
+
+  return `${producerName} · ${location}`;
+}
+
 type LocalizedMetadataImage = {
   url: string;
   alt: string;

@@ -5,7 +5,7 @@ import { premiumValueLabel } from "@/lib/i18n/producer-premium";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
 
-// Parent renders this only after the exact producer's premium entitlement check.
+// Renders reviewed commercial and certification facts from the CSV.
 export function ProducerCommercialDetails({ fields, locale, messages, country, producerId }: {
   fields: Readonly<Record<string, string>>; locale: Locale; messages: Messages; country: string; producerId: number;
 }) {
