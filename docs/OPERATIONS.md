@@ -110,7 +110,9 @@ the local diff review, semantic review or repository gate.
 
 1. Run `git status --short`, `git diff --name-status` and `git diff --stat`.
    Preserve unrelated work and confirm the release contains only the intended
-   scope.
+   scope. When a shared checkout contains overlapping or untracked code, validate
+   an isolated copy of the intended Git snapshot. A build that depends on files
+   omitted from the commit does not validate the deployment.
 2. Run `pnpm install --frozen-lockfile`. Every dependency change and its
    generated `pnpm-lock.yaml` update are one atomic release change; never relax
    frozen-lockfile to hide a mismatch.
