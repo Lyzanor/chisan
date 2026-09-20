@@ -367,4 +367,26 @@ test("producer page titles combine identity, category and location context with 
     }),
     "Granja Test · Vic (Barcelona)",
   );
+
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "Mas Nou",
+      categoryLabel: "Fruta y verdura",
+      city: "Gaüses (Girona)",
+      areaLabel: "Girona",
+      locale: "es",
+    }),
+    "Mas Nou · Fruta y verdura en Gaüses (Girona)",
+  );
+
+  assert.equal(
+    buildProducerPageTitle({
+      producerName: "Domaine Test",
+      categoryLabel: "Vin",
+      city: "Bordeaux",
+      areaLabel: "Gironde",
+      locale: "fr",
+    }),
+    "Domaine Test · Vin à Bordeaux (Gironde)",
+  );
 });

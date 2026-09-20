@@ -157,6 +157,17 @@ export function buildHomeAlternateSet(): CatalogAlternateSet {
   };
 }
 
+const PRODUCER_TITLE_PREPOSITIONS: Partial<Record<Locale, string>> = {
+  ca: "a",
+  en: "in",
+  es: "en",
+  fr: "à",
+  it: "a",
+  pt: "em",
+  de: "in",
+  nl: "in",
+};
+
 export function buildProducerPageTitle({
   producerName,
   categoryLabel,
@@ -172,12 +183,15 @@ export function buildProducerPageTitle({
 }): string {
   const normalizedCity = city.trim();
   const normalizedArea = areaLabel.trim();
+  const cityLower = normalizedCity.toLowerCase();
+  const areaLower = normalizedArea.toLowerCase();
+
   const location =
-    normalizedCity.toLowerCase() === normalizedArea.toLowerCase()
+    cityLower === areaLower || cityLower.endsWith(`(${areaLower})`)
       ? normalizedCity
       : `${normalizedCity} (${normalizedArea})`;
 
-  const preposition = locale === "ca" ? "a" : locale === "en" ? "in" : "en";
+  const preposition = PRODUCER_TITLE_PREPOSITIONS[locale] ?? "en";
   const normalizedCategory = categoryLabel?.trim();
 
   if (normalizedCategory) {

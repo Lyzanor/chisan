@@ -81,8 +81,7 @@ export async function ExpandedProducerProfile({
     !behindProducer &&
     !history &&
     !methods &&
-    !EXTRA_PREMIUM_FIELDS.some(field => fields[field.key]) &&
-    !lastApprovedChange &&
+    !EXTRA_PREMIUM_FIELDS.some((field) => fields[field.key]) &&
     !highlightedLinks.length &&
     !(content && hasProducerContent(content))
   ) {
@@ -132,38 +131,52 @@ export async function ExpandedProducerProfile({
           title={formatProducerFieldLabel("quien hay detras", locale, messages)}
         />
       ) : null}
-      {history || communityMessage || methods ? (
-        <div className="detail-expanded-profile__stories">
-          {methods ? <div className="detail-expanded-profile__message"><h3>{formatProducerFieldLabel("como producimos", locale, messages)}</h3><p lang={fields.como_producimos_locale || undefined}>{methods}</p></div> : null}
-          {history ? (
-            <div className="detail-expanded-profile__message">
-              <h3>{formatProducerFieldLabel("historia", locale, messages)}</h3>
-              <p lang={historyLocale || undefined}>{history}</p>
-            </div>
-          ) : null}
-          {communityMessage ? (
-            <div className="detail-expanded-profile__message">
-              <h3>{formatProducerFieldLabel("mensaje a la comunidad", locale, messages)}</h3>
-              {newsDate ? <time dateTime={newsDate}>{formatProducerFieldValue("fecha novedades", newsDate, locale, messages)}</time> : null}
-              <p lang={communityMessageLocale || undefined}>
-                {communityMessage}
-              </p>
-            </div>
-          ) : null}
-        </div>
-      ) : null}
-      <ProducerCommercialDetails fields={fields} locale={locale} messages={messages} country={country} producerId={producerId} />
-      {guidedVisits ? (
-        <p>
-          <strong>{messages.fieldLabels.guidedVisits}:</strong>{" "}
-          {formatProducerFieldValue(
-            "visitas guiadas",
-            guidedVisits,
-            locale,
-            messages,
-          )}
-        </p>
-      ) : null}
+      <ProducerCommercialDetails
+        fields={fields}
+        locale={locale}
+        messages={messages}
+        country={country}
+        producerId={producerId}
+      >
+        {methods ? (
+          <div className="detail-expanded-profile__message">
+            <h3>{formatProducerFieldLabel("como producimos", locale, messages)}</h3>
+            <p lang={fields.como_producimos_locale || undefined}>{methods}</p>
+          </div>
+        ) : null}
+        {history ? (
+          <div className="detail-expanded-profile__message">
+            <h3>{formatProducerFieldLabel("historia", locale, messages)}</h3>
+            <p lang={historyLocale || undefined}>{history}</p>
+          </div>
+        ) : null}
+        {communityMessage ? (
+          <div className="detail-expanded-profile__message">
+            <h3>{formatProducerFieldLabel("mensaje a la comunidad", locale, messages)}</h3>
+            {newsDate ? (
+              <time dateTime={newsDate}>
+                {formatProducerFieldValue("fecha novedades", newsDate, locale, messages)}
+              </time>
+            ) : null}
+            <p lang={communityMessageLocale || undefined}>
+              {communityMessage}
+            </p>
+          </div>
+        ) : null}
+        {guidedVisits ? (
+          <div className="detail-expanded-profile__message">
+            <h3>{messages.fieldLabels.guidedVisits}</h3>
+            <p>
+              {formatProducerFieldValue(
+                "visitas guiadas",
+                guidedVisits,
+                locale,
+                messages,
+              )}
+            </p>
+          </div>
+        ) : null}
+      </ProducerCommercialDetails>
       {lastApprovedChange ? (
         <p>
           <strong>
