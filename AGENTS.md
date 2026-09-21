@@ -23,7 +23,10 @@ Consider the ongoing maintenance cost of every new field, feature, task and
 process. Prefer existing data and workflows; add something only when a current
 need and its practical use justify keeping it maintained. Keep occasional work
 on demand and temporary artifacts disposable. Do not create standing machinery
-for hypothetical future uses or routines likely to remain unattended.
+for hypothetical future uses or routines likely to remain unattended. Preferring
+existing data avoids duplicate facts, but never justifies overloading entities
+with conflicting lifecycles or ownership (for example, using personal follows
+as the storage for curated commercial shelves).
 
 Three kinds of guidance have different weight:
 
@@ -63,6 +66,10 @@ Account actions recheck exact active permissions on the server. Payment and
 ownership do not prove facts or bypass review. Private material stays private.
 Device position remains transient browser input. Preserve routes, account
 references and content references when renaming, merging or retiring a producer.
+Actor identity and personal interactions remain distinct from published curated
+artifacts. Personal preferences (such as follows, bookmarks or favorites) must
+never serve as the storage, source of truth or roster for public curated displays
+(such as shelves, venue selections or menus).
 
 ## Find the owner
 

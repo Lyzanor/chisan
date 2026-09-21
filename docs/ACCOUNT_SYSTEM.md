@@ -36,6 +36,11 @@ it does not require a second login or move those relationships onto the producer
 An active owner membership or an open ownership claim prevents a second claim.
 Editor memberships remain separate delegated access and do not create another
 owned producer.
+Personal interactions (such as following or favoriting producers) belong to the
+actor's personal account lifecycle. Curated public artifacts (such as venue shelves,
+curated selections or menus) maintain their own independent composition and
+lifecycle; an action on personal follows must never mutate, contaminate or
+act as the source of truth for a curated commercial display.
 
 | Concern | Authority |
 | --- | --- |
@@ -989,9 +994,14 @@ the favorite aggregation. The public roster uses the same active-follow relation
 
 `CHISAN_SELECTION_SHELF_ENABLED` gates an optional photo below the existing
 `/u/<handle>` map. Apply migrations through `0020_public_follows_shelf_proposals`
-before enabling it. This is account-owned presentation in PostgreSQL, like
-favorites; it does not register a shop or change CSV/content facts. Private
-business data is never reused as public location or presentation.
+before enabling it. This is account-owned presentation in PostgreSQL; it does not
+register a shop or change CSV/content facts. Private business data is never
+reused as public location or presentation.
+
+Published shelf points define the shelf's own curated producer references. They
+remain isolated from the user's personal favorites and following list: unfollowing
+a producer personally does not alter the published shelf, and following a producer
+personally does not insert items onto the venue's shelf.
 
 The owner sends a JPEG/PNG/WebP through `/cuenta/estanteria`, linked from the
 selection preview and premium producer editor, or the dedicated WhatsApp shelf
