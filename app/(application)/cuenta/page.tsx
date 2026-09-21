@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
+import { AccountSignOutButton } from "@/components/account/account-signout-button";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { OPEN_PRODUCER_SUGGESTION_STATUSES } from "@/lib/accounts/producer-suggestion-workflow";
 import { getDatabase } from "@/lib/db";
@@ -138,6 +139,13 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
           </Link>
         </section>
       ) : null}
+      <section className="account-callout" aria-labelledby="account-settings-title">
+        <h2 id="account-settings-title">Ajustes y sesión</h2>
+        <p>Has iniciado sesión con {account.email || "tu cuenta de Chisan"}.</p>
+        <div className="account-inline-actions">
+          <AccountSignOutButton className="account-button account-button--secondary" />
+        </div>
+      </section>
     </div>
   );
 }

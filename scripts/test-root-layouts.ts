@@ -123,23 +123,35 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.doesNotMatch(applicationRoot, /SUPPORTED_LOCALES\.map/);
 });
 
-test("the shared account menu keeps identity, language and account actions separate", () => {
-  const accountMenu = readRepositoryFile(
+test("the shared account navigation keeps identity, language and account actions separate", () => {
+  const accountNav = readRepositoryFile(
     "components/account/site-account-nav.tsx",
+  );
+  const accountLayout = readRepositoryFile(
+    "app/(application)/cuenta/layout.tsx",
+  );
+  const accountPage = readRepositoryFile(
+    "app/(application)/cuenta/page.tsx",
+  );
+  const bottomNav = readRepositoryFile(
+    "components/navigation/site-bottom-nav.tsx",
   );
   const accountIdentity = readRepositoryFile(
     "app/(application)/api/account/me/route.ts",
   );
   const map = readRepositoryFile("components/map/producers-map-inner.tsx");
 
-  assert.match(accountMenu, /<details className="site-account-menu"/);
-  assert.match(accountMenu, /messages\.greeting/);
-  assert.match(accountMenu, /ACCOUNT_ROUTES\.favorites/);
-  assert.match(accountMenu, /SignOutButton/);
-  assert.match(accountMenu, /useLanguageMenu\(\)/);
-  assert.match(accountMenu, /fetch\("\/api\/account\/me"/);
-  assert.match(accountMenu, /event\.key === "Escape"/);
-  assert.match(accountMenu, /document\.addEventListener\("pointerdown"/);
+  assert.match(accountNav, /site-account-nav/);
+  assert.match(accountNav, /\/actividad/);
+  assert.match(accountNav, /ACCOUNT_ROUTES/);
+  assert.match(accountNav, /useLanguageMenu\(\)/);
+  assert.match(accountNav, /fetch\("\/api\/account\/me"/);
+  assert.match(bottomNav, /SiteBottomNav/);
+  assert.match(bottomNav, /\/actividad/);
+  assert.match(bottomNav, /Mapa/);
+  assert.match(bottomNav, /Mi Cuenta/);
+  assert.match(accountLayout, /AccountSignOutButton/);
+  assert.match(accountPage, /AccountSignOutButton/);
   assert.match(accountIdentity, /getCurrentAccount\(\)\.catch/);
   assert.match(accountIdentity, /"Cache-Control": "private, no-store"/);
   assert.match(map, /getCategoryMarkerIcon\(point\.icon, selected\)/);

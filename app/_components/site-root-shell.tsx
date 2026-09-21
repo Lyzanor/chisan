@@ -13,6 +13,7 @@ import { FooterLandscape } from "@/components/footer-landscape";
 
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
+import { SiteBottomNav } from "@/components/navigation/site-bottom-nav";
 import { ProducerFollowsProvider } from "@/components/account/producer-follows-provider";
 import { ChisanAnalytics } from "@/components/analytics/chisan-analytics";
 import { CatalogAgentTools } from "@/components/agents/catalog-agent-tools";
@@ -187,6 +188,7 @@ export function SiteRootShell({
           </nav>
           <FooterLandscape />
         </footer>
+        <SiteBottomNav />
       </SiteCatalogControlsProvider>
     </SiteLanguageMenuProvider>
   );

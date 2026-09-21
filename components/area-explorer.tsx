@@ -16,7 +16,9 @@ import {
   SquaresFourIcon,
   MinusIcon,
   PlusIcon,
+  PlusCircleIcon,
 } from "@phosphor-icons/react";
+import { ProducerCandidateSuggestionModal } from "@/components/map/producer-candidate-suggestion-modal";
 import {
   Suspense,
   memo,
@@ -361,6 +363,7 @@ function AreaExplorerView({
   const loading = searchScope !== "area" && !national.catalog && !national.error;
   const scopeLabel = searchScope === "area" ? model.areaLabel : model.countryLabel;
   const [listOpen, setListOpen] = useState(false);
+  const [suggestCandidateOpen, setSuggestCandidateOpen] = useState(false);
   const explorerRef = useRef<HTMLElement>(null);
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const previewTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -804,6 +807,17 @@ function AreaExplorerView({
           filterLabel={searchMessages.filters}
           areaLabel={model.areaLabel}
           countryLabel={model.countryLabel}
+          countryData={areaSelectorCountry}
+          currentAreaSlug={model.area}
+          onSelectArea={(areaOption) => {
+            cancelPendingPreview();
+            setPreviewedSlug("");
+            consumeNearbyMapFocus();
+            setMapFocusRequest(undefined);
+            setPrioritizedProducerScope(null);
+            listOrderLockedCategoryRef.current = null;
+            pushAreaQuery(areaOption.href);
+          }}
         />
       </CatalogSearchSlot>
       {municipality ? (
@@ -1056,8 +1070,29 @@ function AreaExplorerView({
                 {searchMessages.more}
               </button>
             ) : null}
+
+            <div className="catalog-roster-suggest">
+              <div className="catalog-roster-suggest__content">
+                <strong>¿Falta algún productor?</strong>
+                <p>Ayúdanos a completar el catálogo sugiriendo productores locales que conozcas.</p>
+              </div>
+              <button
+                type="button"
+                className="catalog-roster-suggest__btn"
+                onClick={() => setSuggestCandidateOpen(true)}
+              >
+                <PlusCircleIcon size={18} aria-hidden="true" />
+                <span>Añadir productor</span>
+              </button>
+            </div>
         </CatalogResultsSheet>
       </section>
+
+      <ProducerCandidateSuggestionModal
+        open={suggestCandidateOpen}
+        onClose={() => setSuggestCandidateOpen(false)}
+        defaultLocation={`${model.areaLabel}, ${model.countryLabel}`}
+      />
     </main>
   );
 }

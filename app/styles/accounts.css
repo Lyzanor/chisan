@@ -105,6 +105,13 @@
   color: var(--muted);
 }
 
+.account-header__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .account-profile-badge,
 .account-status {
   display: inline-flex;
@@ -118,6 +125,29 @@
   font-size: 0.78rem;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.account-signout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 30px;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--chisan-motion-fast, 120ms ease);
+}
+
+.account-signout-btn:hover {
+  background: var(--surface-muted);
+  color: var(--text);
+  border-color: var(--chisan-color-stone, #8c857b);
 }
 
 .account-nav {

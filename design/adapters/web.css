@@ -71,6 +71,48 @@ body {
 .site-account-nav {
   position: relative;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+}
+
+.site-account-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  min-height: 44px;
+  padding: var(--chisan-space-1) var(--chisan-space-3);
+  border-radius: var(--chisan-radius-control);
+  color: var(--chisan-color-ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--chisan-motion-fast);
+}
+
+.site-account-nav__link:hover {
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.site-account-nav__link.is-active {
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.site-account-nav__language select {
+  height: 36px;
+  padding: 0 var(--chisan-space-2);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-stone);
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.site-bottom-nav {
+  display: none;
 }
 
 .site-account-menu {

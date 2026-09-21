@@ -104,8 +104,7 @@ export function ProducerMapCarousel({
                   linkRef={item.key === activeKey ? linkRef : undefined}
                   tabIndex={index === activeIndex ? 0 : -1}
                   producer={{ ...item, description: catalogDescriptionPreview(item.description),
-                    location: [item.city, item.areaLabel].filter(Boolean).join(" · "),
-                    categoryLabel: item.categoryLabels?.[0] }}
+                    location: [item.city, item.areaLabel].filter(Boolean).join(" · ") }}
                 />
               </div>
             );

@@ -44,7 +44,6 @@ export function ProducerMapSelectionCard({
           {producer.location ? <small className="producer-map-selection-card__location">{producer.location}</small> : null}
           <strong>{producer.name}</strong>
           {producer.description ? <span>{producer.description}</span> : null}
-          {producer.categoryLabel ? <small className="producer-map-selection-card__category">{producer.categoryLabel}</small> : null}
         </span>
       </Link>
     </article>

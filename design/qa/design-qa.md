@@ -3,6 +3,18 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-21 — Map explorer refinement, integrated province search and mobile bottom navigation
+
+Reviewed at 390×844 first, then 1440×900:
+- Map floating producer card: removed category badge from the highlighted preview card and reduced `--catalog-card-height` from 148px to 108px, leaving more vertical space for the interactive map.
+- End of producer roster: added an "Añadir productor" suggestion callout and accessible modal (`ProducerCandidateSuggestionModal`), allowing visitors to suggest missing local producers directly to the editorial team, with an email fallback.
+- Search control: integrated province selector directly into the search bar (`CatalogSearchControl`), offering "Toda España", a quick-filter input for autonomous communities and provinces, and clean keyboard navigation.
+- Header & mobile bottom navigation:
+  - On desktop: top-right header features direct links to "Actividad" and "Mi Cuenta" (with dynamic display name) alongside the language selector, replacing the former multi-level dropdown.
+  - On mobile (<=760px): header account links are hidden in favor of a fixed 56px bottom navigation bar with three primary tabs: Actividad, Mapa (preserving last visited area), and Mi Cuenta.
+  - Map explorer clearance: updated `--catalog-sheet-peek` and body padding to accommodate the 56px bottom bar plus safe-area insets, ensuring the draggable handle, floating producer carousel, and locate button clear the navigation bar.
+  - Account & session: "Cerrar sesión" moved to Mi Cuenta (`/cuenta`) overview and header; "Novedades" and "Siguiendo" linked inside Actividad.
+
 ## 2026-09-21 — Store page as the purchase link
 
 Reviewed producer profiles from the production build at 390×844 first, then

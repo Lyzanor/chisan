@@ -1,13 +1,11 @@
 "use client";
 
-import { useAuth, SignOutButton } from "@clerk/nextjs";
-import { CaretDownIcon, ListIcon, UserCircleIcon } from "@phosphor-icons/react";
+import { useAuth } from "@clerk/nextjs";
+import { UserCircleIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { useSiteCatalogControls } from "@/components/account/site-catalog-controls-context";
-import { AreaSelector } from "@/components/area-selector";
 import { useLanguageMenu } from "@/components/language-menu-context";
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
 import { rememberExplicitLocale } from "@/lib/i18n/client-locale";
@@ -19,30 +17,19 @@ type SiteAccountNavProps = {
   messages: Messages["siteHeader"];
 };
 
-type AccountMenuProps = {
+type AccountNavViewProps = {
+  isSignedIn: boolean;
   messages: Messages["siteHeader"];
-  showAccountLinks: boolean;
-  signedIn: boolean;
 };
 
-function formatGreeting(template: string, displayName: string) {
-  return template.replace("{name}", displayName);
-}
-
-export function AccountMenu({
-  messages,
-  showAccountLinks,
-  signedIn,
-}: AccountMenuProps) {
-  const detailsRef = useRef<HTMLDetailsElement>(null);
-  const pathname = usePathname();
+function AccountNavView({ isSignedIn, messages }: AccountNavViewProps) {
+  const pathname = usePathname() || "";
   const router = useRouter();
-  const catalogControls = useSiteCatalogControls();
   const languageMenu = useLanguageMenu();
   const [accountDisplayName, setAccountDisplayName] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!signedIn) return;
+    if (!isSignedIn) return;
 
     const controller = new AbortController();
     void fetch("/api/account/me", {
@@ -56,46 +43,13 @@ export function AccountMenu({
       .catch(() => undefined);
 
     return () => controller.abort();
-  }, [signedIn]);
+  }, [isSignedIn]);
 
-  useEffect(() => {
-    function closeFromOutside(event: PointerEvent) {
-      if (!detailsRef.current?.contains(event.target as Node)) {
-        detailsRef.current?.removeAttribute("open");
-      }
-    }
-
-    function closeFromKeyboard(event: KeyboardEvent) {
-      if (event.key === "Escape" && detailsRef.current?.open) {
-        detailsRef.current?.removeAttribute("open");
-        detailsRef.current?.querySelector("summary")?.focus();
-      }
-    }
-
-    function closeFromFocus(event: FocusEvent) {
-      if (!detailsRef.current?.contains(event.target as Node)) {
-        detailsRef.current?.removeAttribute("open");
-      }
-    }
-
-    document.addEventListener("pointerdown", closeFromOutside);
-    document.addEventListener("keydown", closeFromKeyboard);
-    document.addEventListener("focusin", closeFromFocus);
-    return () => {
-      document.removeEventListener("pointerdown", closeFromOutside);
-      document.removeEventListener("keydown", closeFromKeyboard);
-      document.removeEventListener("focusin", closeFromFocus);
-    };
-  }, []);
-
-  useEffect(() => {
-    detailsRef.current?.removeAttribute("open");
-  }, [pathname]);
-
-  const summary =
-    signedIn && accountDisplayName
-      ? formatGreeting(messages.greeting, accountDisplayName)
-      : !signedIn && showAccountLinks ? messages.signIn : messages.myAccount;
+  const isActividadActive = pathname.startsWith("/actividad");
+  const isAccountActive =
+    pathname.startsWith("/cuenta") ||
+    pathname.startsWith("/acceso") ||
+    pathname.startsWith("/registro");
 
   function chooseLanguage(locale: Locale) {
     const destination = languageMenu.options.find(
@@ -104,38 +58,39 @@ export function AccountMenu({
     if (!destination) return;
 
     rememberExplicitLocale(locale);
-    detailsRef.current?.removeAttribute("open");
-
     if (destination.href && destination.href !== pathname) {
       router.push(destination.href);
       return;
     }
-
     router.refresh();
   }
 
-  function closeMenu() {
-    detailsRef.current?.removeAttribute("open");
-  }
+  const accountHref = isSignedIn ? ACCOUNT_ROUTES.dashboard : ACCOUNT_ROUTES.signIn;
+  const accountLabel =
+    isSignedIn && accountDisplayName ? accountDisplayName : messages.myAccount;
 
   return (
-    <details className="site-account-menu" ref={detailsRef}>
-      <summary>
-        <ListIcon className="site-account-menu__map-icon" size={24} aria-hidden="true" />
-        <UserCircleIcon size={22} aria-hidden="true" />
-        <span>{summary}</span>
-        <CaretDownIcon className="site-account-menu__chevron" size={14} aria-hidden="true" />
-      </summary>
-      <div
-        className="site-account-menu__panel"
-        onClickCapture={(event) => {
-          if (event.target instanceof Element && event.target.closest("a")) {
-            closeMenu();
-          }
-        }}
+    <nav className="site-account-nav" aria-label={messages.accountNavigation}>
+      <Link
+        href="/actividad"
+        className={`site-account-nav__link ${isActividadActive ? "is-active" : ""}`}
+        aria-current={isActividadActive ? "page" : undefined}
       >
-        {languageMenu.options.length > 1 && <label className="site-account-menu__language">
-          <span>{languageMenu.label}</span>
+        Actividad
+      </Link>
+
+      <Link
+        href={accountHref}
+        className={`site-account-nav__link site-account-nav__link--account ${isAccountActive ? "is-active" : ""}`}
+        aria-current={isAccountActive ? "page" : undefined}
+      >
+        <UserCircleIcon size={20} aria-hidden="true" />
+        <span>{accountLabel}</span>
+      </Link>
+
+      {languageMenu.options.length > 1 ? (
+        <label className="site-account-nav__language">
+          <span className="visually-hidden">{languageMenu.label}</span>
           <select
             value={languageMenu.currentLocale}
             onChange={(event) => chooseLanguage(event.target.value as Locale)}
@@ -146,72 +101,25 @@ export function AccountMenu({
               </option>
             ))}
           </select>
-        </label>}
-
-        {catalogControls ? (
-          <section className="site-account-menu__catalog">
-            <AreaSelector
-              country={catalogControls.country}
-              currentArea={catalogControls.currentArea}
-              messages={catalogControls.messages}
-              onNavigate={closeMenu}
-            />
-          </section>
-        ) : null}
-
-        {showAccountLinks ? (
-          <div className="site-account-menu__links">
-            <Link href="/actividad">Actividad</Link>
-            {signedIn ? (
-              <>
-                <Link href={ACCOUNT_ROUTES.dashboard}>{messages.myAccount}</Link>
-                <Link href={ACCOUNT_ROUTES.timeline}>{languageMenu.currentLocale === "es" ? "Novedades" : languageMenu.currentLocale === "ca" ? "Novetats" : "Updates"}</Link>
-                <Link href={ACCOUNT_ROUTES.favorites}>{messages.favorites}</Link>
-                <SignOutButton>
-                  <button type="button" onClick={closeMenu}>
-                    {messages.signOut}
-                  </button>
-                </SignOutButton>
-              </>
-            ) : (
-              <>
-                <Link href={ACCOUNT_ROUTES.signIn}>{messages.signIn}</Link>
-                <Link href={ACCOUNT_ROUTES.signUp}>{messages.register}</Link>
-              </>
-            )}
-          </div>
-        ) : null}
-      </div>
-    </details>
+        </label>
+      ) : null}
+    </nav>
   );
 }
 
-function AuthenticatedAccountMenu({ messages }: { messages: Messages["siteHeader"] }) {
+function AuthenticatedSiteAccountNav({ messages }: { messages: Messages["siteHeader"] }) {
   const { isSignedIn } = useAuth();
-  return <AccountMenu messages={messages} showAccountLinks signedIn={isSignedIn === true} />;
+  return <AccountNavView isSignedIn={isSignedIn === true} messages={messages} />;
 }
 
 export function SiteAccountNav({
   authConfigured,
   messages,
 }: SiteAccountNavProps) {
-  const catalogControls = useSiteCatalogControls();
-
-  if (!authConfigured && !catalogControls) return null;
-
-  return (
-    <nav className="site-account-nav" aria-label={messages.accountNavigation}>
-      {authConfigured ? (
-        <AuthenticatedAccountMenu messages={messages} />
-      ) : (
-        <AccountMenu
-          messages={messages}
-          showAccountLinks={false}
-          signedIn={false}
-        />
-      )}
-    </nav>
-  );
+  if (authConfigured) {
+    return <AuthenticatedSiteAccountNav messages={messages} />;
+  }
+  return <AccountNavView isSignedIn={false} messages={messages} />;
 }
 
 export default SiteAccountNav;

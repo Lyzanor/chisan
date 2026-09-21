@@ -4,6 +4,7 @@ import { NavigationLink } from "@/components/navigation-link";
 import type { Metadata } from "next";
 
 import { hasStaffAccess, requireCurrentAccount } from "@/lib/accounts/auth";
+import { AccountSignOutButton } from "@/components/account/account-signout-button";
 import { getAccountSystemConfiguration } from "@/lib/accounts/config";
 import { SITE_NAME } from "@/lib/site";
 
@@ -44,9 +45,12 @@ export default async function AccountLayout({ children }: { children: React.Reac
             <h1>{account.displayName || "Tu cuenta"}</h1>
             <p>{account.email || "Cuenta autenticada"}</p>
           </div>
-          <span className="account-profile-badge">
-            {account.profileKind === "producer" ? "Perfil de productor" : "Perfil de usuario"}
-          </span>
+          <div className="account-header__meta">
+            <span className="account-profile-badge">
+              {account.profileKind === "producer" ? "Perfil de productor" : "Perfil de usuario"}
+            </span>
+            <AccountSignOutButton />
+          </div>
         </header>
         <nav className="account-nav" aria-label="Secciones de la cuenta">
           <NavigationLink href="/cuenta" activePath="/cuenta">Resumen</NavigationLink>
