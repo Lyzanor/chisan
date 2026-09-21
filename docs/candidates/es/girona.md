@@ -13,6 +13,7 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
+| Amiette (Sin Gluten Canarias) | Girona province; municipality unknown | `Pan y cereal` — gluten-free buckwheat bread | Its Tenerife distributor states that the bread is made at «nuestra fábrica en Gerona». | [Directory](https://www.proveedores.com/proveedores/sin-gluten-canarias-amiette/) | <https://amiette.com/> | Routed from the Santa Cruz de Tenerife queue on 2026-09-21. Identify the Girona factory's municipality and a current own offer; amiette.com refused automated access. |
 | Francesc Serra Reixach | Santa Pau | `Legumbres` — DOP Fesols de Santa Pau | The council lists the grower at Mas la Quintana with public phone contacts. | [DOP producer directory](https://fesolsdesantapau.cat/productors/) | — | The council lists the named grower and Mas la Quintana in Santa Pau, but the current packer/offer page does not attribute an offer to him and no matching current proximity record was found. Confirm an attributable current own-bean offer; no own website or extra contact is required. |
 
 ## DO Catalunya
