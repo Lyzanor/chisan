@@ -5,6 +5,7 @@ import { createProducerSuggestionReviewService } from "@/lib/admin/review-produc
 
 import { and, eq, inArray, ne, or, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 import { requireAdminAccount, requireStaffAccount } from "@/lib/accounts/auth";
 import {
@@ -27,13 +28,18 @@ import { revalidatePublicProducer } from "@/lib/catalog/revalidate-producer";
 import { getDatabase } from "@/lib/db";
 import {
   auditEvents,
+  entitlements,
+  favorites,
   producerChangeExecutions,
   producerChangeRequests,
   producerClaims,
   producerMemberships,
   producerProfileUpgradeRequests,
+  selectionShelves,
   users,
 } from "@/lib/db/schema";
+import { USER_PROFILE_PREMIUM_ENTITLEMENT_KEY } from "@/lib/accounts/profile-qr-entitlements";
+import { PILOT_WINE_SHELF } from "@/lib/selection-shelf/pilot-wine-shelf-data";
 
 function adminRedirect(path: string, kind: "error" | "notice", message: string): never {
   const url = new URL(path, "https://chisan.invalid");
@@ -516,4 +522,117 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
 
 export async function reviewProducerSuggestionAction(formData: FormData): Promise<void> {
   return createProducerSuggestionReviewService({ getDatabase, requireStaffAccount, adminRedirect })(formData);
+}
+
+export async function importPilotWineShelfAction(): Promise<void> {
+  const operator = await requireAdminAccount("/admin/estanterias");
+  const db = getDatabase();
+  const imageBuffer = Buffer.from(PILOT_WINE_SHELF.imageBase64, "base64");
+  let handle = operator.publicHandle || "tienda-4076a054";
+  const now = new Date();
+
+  await db.transaction(async (tx) => {
+    const [existingWithHandle] = await tx
+      .select({ id: users.id })
+      .from(users)
+      .where(eq(users.publicHandle, "tienda-4076a054"))
+      .limit(1);
+
+    if (!operator.publicHandle) {
+      if (existingWithHandle && existingWithHandle.id !== operator.id) {
+        handle = `tienda-${operator.id.slice(0, 8)}`;
+      } else {
+        handle = "tienda-4076a054";
+      }
+    }
+
+    const [existingEntitlement] = await tx
+      .select({ id: entitlements.id })
+      .from(entitlements)
+      .where(
+        and(
+          eq(entitlements.subjectKind, "user"),
+          eq(entitlements.userId, operator.id),
+          eq(entitlements.key, USER_PROFILE_PREMIUM_ENTITLEMENT_KEY),
+          eq(entitlements.status, "active"),
+        ),
+      )
+      .limit(1);
+
+    if (!existingEntitlement) {
+      await tx.insert(entitlements).values({
+        subjectKind: "user",
+        userId: operator.id,
+        key: USER_PROFILE_PREMIUM_ENTITLEMENT_KEY,
+        status: "active",
+        source: "admin_grant",
+        startsAt: now,
+      });
+    }
+
+    await tx
+      .update(users)
+      .set({
+        publicHandle: handle,
+        publicProfileVisibility: "public",
+        publicProfileBaseCountry: "es",
+        publicProfileBaseArea: "barcelona",
+        publicProfileBaseMunicipality: "Santa Coloma de Gramenet",
+        displayName: operator.displayName || "Enrique Pérez",
+        termsAcceptedAt: operator.termsAcceptedAt ?? now,
+        updatedAt: now,
+      })
+      .where(eq(users.id, operator.id));
+
+    const producerIdentities = [
+      { country: "es", producerId: 55 },
+      { country: "es", producerId: 2411 },
+      { country: "es", producerId: 3692 },
+      { country: "es", producerId: 13441 },
+      { country: "es", producerId: 5652 },
+      { country: "es", producerId: 3491 },
+    ];
+    for (const identity of producerIdentities) {
+      await tx
+        .insert(favorites)
+        .values({
+          userId: operator.id,
+          country: identity.country,
+          producerId: identity.producerId,
+        })
+        .onConflictDoNothing();
+    }
+
+    await tx
+      .update(selectionShelves)
+      .set({
+        status: "superseded",
+        updatedAt: now,
+        version: sql`${selectionShelves.version} + 1`,
+      })
+      .where(
+        and(
+          eq(selectionShelves.userId, operator.id),
+          eq(selectionShelves.status, "published"),
+        ),
+      );
+
+    await tx.insert(selectionShelves).values({
+      userId: operator.id,
+      channel: "web",
+      sha256: PILOT_WINE_SHELF.sha256,
+      bytes: imageBuffer,
+      width: PILOT_WINE_SHELF.width,
+      height: PILOT_WINE_SHELF.height,
+      status: "published",
+      version: 1,
+      points: [...PILOT_WINE_SHELF.points],
+      reviewedBy: operator.id,
+      reviewedAt: now,
+      rightsConfirmedAt: now,
+    });
+  });
+
+  revalidatePath(`/u/${handle}`);
+  redirect(`/u/${handle}`);
 }
