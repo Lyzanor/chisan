@@ -30,6 +30,7 @@ export function ProducerSelectionPage({
   embedded = false,
   profileAvatar,
   shelf,
+  userSelections,
 }: {
   selection: ProducerSelectionPageModel;
   messages: ProducerSelectionPageMessages;
@@ -37,6 +38,7 @@ export function ProducerSelectionPage({
   embedded?: boolean;
   profileAvatar?: { name: string; src: string | null };
   shelf?: PublicSelectionShelf | null;
+  userSelections?: Array<{ publicHandle: string; title: string; description: string | null }>;
 }) {
   const mappedCount = selection.items.filter(
     hasProducerSelectionCoordinates,
@@ -76,6 +78,32 @@ export function ProducerSelectionPage({
           </p>
         ) : null}
       </header>
+
+      {userSelections && userSelections.length > 0 ? (
+        <aside
+          className="producer-selection-page__subselections"
+          aria-label="Selecciones y estanterías"
+          style={{
+            marginInline: shelf ? "var(--chisan-space-4)" : 0,
+            marginBlockEnd: "var(--chisan-space-4)",
+          }}
+        >
+          <p className="catalog-kicker" style={{ margin: 0, marginBottom: "var(--chisan-space-2)" }}>
+            Selecciones y estanterías
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+            {userSelections.map((sel) => (
+              <a
+                key={sel.publicHandle}
+                href={`/u/${sel.publicHandle}`}
+                className="account-button account-button--secondary"
+              >
+                {sel.title}
+              </a>
+            ))}
+          </div>
+        </aside>
+      ) : null}
 
       {selection.items.length ? (
         <ProducerSelectionExplorer

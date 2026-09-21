@@ -339,6 +339,46 @@ export const favorites = pgTable(
   ],
 );
 
+export const accountSelections = pgTable(
+  "account_selections",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    publicHandle: varchar("public_handle", { length: 40 }).notNull(),
+    title: varchar("title", { length: 160 }).notNull(),
+    description: varchar("description", { length: 600 }),
+    visibility: publicProfileVisibility("visibility")
+      .notNull()
+      .default("public"),
+    baseCountry: varchar("base_country", { length: 2 }),
+    baseArea: varchar("base_area", { length: 160 }),
+    baseMunicipality: varchar("base_municipality", { length: 160 }),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("account_selections_public_handle_uidx").on(table.publicHandle),
+    index("account_selections_user_id_idx").on(table.userId),
+    check(
+      "account_selections_public_handle_format_check",
+      sql`${table.publicHandle} ~ '^[a-z0-9]([a-z0-9-]{1,38}[a-z0-9])$'`,
+    ),
+    check(
+      "account_selections_base_country_check",
+      sql`${table.baseCountry} IS NULL OR ${table.baseCountry} ~ '^[a-z]{2}$'`,
+    ),
+    check(
+      "account_selections_base_area_check",
+      sql`${table.baseArea} IS NULL OR ${table.baseArea} ~ '^[a-z0-9]+(?:-[a-z0-9]+)*$'`,
+    ),
+  ],
+);
+
 export const producerClaims = pgTable(
   "producer_claims",
   {

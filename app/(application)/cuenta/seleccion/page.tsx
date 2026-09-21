@@ -42,8 +42,19 @@ export default async function SelectionPreviewPage({
     searchParams,
     selectionShelfService().publicShelf(account.id),
   ]);
+  const producerIdentities =
+    shelf && shelf.points.length > 0
+      ? [
+          ...new Map(
+            shelf.points.map((p) => {
+              const [country, id] = p.producerKey.split(":");
+              return [`${country}:${id}`, { country, producerId: Number(id) }];
+            }),
+          ).values(),
+        ]
+      : identities;
   const items = buildProducerSelectionItems(
-    await findProducersByIds(identities, presentation.locale),
+    await findProducersByIds(producerIdentities, presentation.locale),
     presentation,
   );
   const selection = buildAccountSelectionPage(

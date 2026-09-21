@@ -155,6 +155,13 @@
       "when": 1789944482570,
       "tag": "0021_single-owner-membership",
       "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1789980777279,
+      "tag": "0022_account_selections",
+      "breakpoints": true
     }
   ]
 }

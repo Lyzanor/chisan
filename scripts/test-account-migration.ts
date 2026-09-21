@@ -195,6 +195,7 @@ test("account migration creates constraints and durable producer keys", async ()
     assert.deepEqual(
       tables.rows.map(({ table_name }) => table_name),
       [
+        "account_selections",
         "audit_events",
         "auth_identities",
         "auth_identity_tombstones",
@@ -368,6 +369,7 @@ test("account migration creates constraints and durable producer keys", async ()
         order by tc.table_name, kcu.column_name`,
     );
     assert.deepEqual(internalUserReferences.rows, [
+      { table_name: "account_selections", column_name: "user_id" },
       { table_name: "audit_events", column_name: "actor_user_id" },
       { table_name: "auth_identities", column_name: "user_id" },
       { table_name: "business_enquiries", column_name: "requester_id" },

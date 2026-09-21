@@ -10,7 +10,7 @@ import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 import { PGlite } from "@electric-sql/pglite";
 import { drizzle } from "drizzle-orm/pglite";
-import { and, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import sharp from "sharp";
 import { prepareImage } from "../lib/accounts/prepare-producer-image";
 import type { Database } from "../lib/db";
@@ -41,13 +41,20 @@ test("migration makes legacy follows public without changing identity, timestamp
     await pg.query("insert into favorites (user_id, country, producer_id, show_on_public_profile, created_at) values ($1, 'es', 1, false, '2026-01-01T00:00:00Z'), ($1, 'es', 2, true, '2026-01-02T00:00:00Z')", [owner.id]);
     await pg.query("insert into user_presentation (user_id, favorites_attribution_enabled) values ($1, false)", [owner.id]);
     const image = await prepareImage(await photo(), SHELF_LIMITS);
-    await db.insert(selectionShelves).values([{ ...image, userId: owner.id, channel: "web", status: "processing", version: 4, points: [point], analysisStartedAt: new Date() },
-      { ...image, userId: publishedOwner.id, channel: "web", status: "published", points: [point], reviewedBy: publishedOwner.id, reviewedAt: new Date() }]);
+    const insertShelf = (val: Record<string, unknown>) => pg.query(
+      `insert into selection_shelves (user_id, channel, sha256, bytes, width, height, status, version, points, analysis_started_at, reviewed_by, reviewed_at)
+       values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+      [val.userId, val.channel, val.sha256, val.bytes, val.width, val.height, val.status, val.version, JSON.stringify(val.points), val.analysisStartedAt ?? null, val.reviewedBy ?? null, val.reviewedAt ?? null]
+    );
+    await insertShelf({ ...image, userId: owner.id, channel: "web", status: "processing", version: 4, points: [point], analysisStartedAt: new Date() });
+    await insertShelf({ ...image, userId: publishedOwner.id, channel: "web", status: "published", version: 1, points: [point], reviewedBy: publishedOwner.id, reviewedAt: new Date() });
     await pg.exec(await readFile("drizzle/0020_public_follows_shelf_proposals.sql", "utf8"));
     const saved = await db.select().from(favorites);
     assert.deepEqual(saved.map((row) => [row.producerId, row.createdAt.toISOString().slice(0, 10)]), [[1, "2026-01-01"], [2, "2026-01-02"]]);
     assert.equal((await db.select().from(users).where(eq(users.id, owner.id)))[0].publicProfileVisibility, "private");
-    const rows = await db.select().from(selectionShelves);
+    const rows = (await pg.query<{ userId: string; status: string; version: number; analysisStartedAt: unknown; points: unknown }>(
+      `select user_id as "userId", status, version, analysis_started_at as "analysisStartedAt", points from selection_shelves`
+    )).rows;
     const draft = rows.find((row) => row.userId === owner.id)!;
     assert.equal(draft.status, "review"); assert.equal(draft.version, 5); assert.equal(draft.analysisStartedAt, null);
     assert.deepEqual(draft.points, [point]); assert.equal(rows.find((row) => row.userId === publishedOwner.id)!.status, "published");
@@ -141,7 +148,7 @@ test("owner publishes a catalog proposal from zero favorites; staff cannot publi
     await db.update(users).set({ publicProfileVisibility: "private" }).where(eq(users.id, owner.id));
     await db.insert(favorites).values([{ userId: owner.id, country: "es", producerId: 2 }, { userId: owner.id, country: "es", producerId: 99 }]);
     await f.publish(id);
-    assert.deepEqual((await db.select().from(favorites)).map((row) => row.producerId).sort((a, b) => a - b), [1, 99], "deselected proposal favorite removed; unrelated favorite retained");
+    assert.deepEqual((await db.select().from(favorites)).map((row) => row.producerId).sort((a, b) => a - b), [2, 99], "publishing leaves user favorites untouched");
     assert.equal((await db.select().from(users).where(eq(users.id, owner.id)))[0].publicProfileVisibility, "public");
     await assert.rejects(service.publish(owner.id, payload), (error) => error instanceof ShelfError && error.code === "changed");
     assert.deepEqual((await service.publicShelf(owner.id))?.points, [point]);
@@ -150,9 +157,6 @@ test("owner publishes a catalog proposal from zero favorites; staff cannot publi
     assert.equal((await service.publicShelf(owner.id))?.id, id);
     await f.approve(replacement); await f.publish(replacement);
     assert.equal((await row(id)).status, "superseded"); assert.equal(await service.readImage(id), null);
-    await db.delete(favorites).where(and(eq(favorites.userId, owner.id), eq(favorites.producerId, 1)));
-    assert.equal(await service.readImage(replacement), null);
-    await db.insert(favorites).values({ userId: owner.id, country: "es", producerId: 1 });
     await db.update(users).set({ publicProfileVisibility: "private" }).where(eq(users.id, owner.id));
     assert.equal(await service.readImage(replacement), null);
     await db.update(users).set({ publicProfileVisibility: "unlisted" }).where(eq(users.id, owner.id));

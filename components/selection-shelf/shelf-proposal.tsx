@@ -69,11 +69,11 @@ export function ShelfProposal({ proposal, items, profile, areas, allowed }: {
             <small>{[...new Set(proposal.points.filter((point) => point.producerKey === producer.key).map((point) => producer.products.find((product) => product.id === point.productId)?.name ?? point.label))].join(" · ")}</small>
           </span>
         </label>)}
-        <p>Los marcados pasarán a favoritos y serán públicos como productores que sigues. Los que desmarques se retirarán de tus favoritos. Tus demás favoritos se conservan.</p>
+        <p>Los productores marcados formarán parte de esta estantería y se mostrarán en su mapa y foto.</p>
         <label>Identificador de tu perfil<input name="publicHandle" required minLength={3} maxLength={40} readOnly={profile.handleFixed} defaultValue={profile.publicHandle} autoComplete="off" /><small>Tu dirección permanente: /u/identificador</small></label>
         <label>Zona de la tienda<select name="baseLocation" required defaultValue={profile.baseLocation}><option value="">Elige una zona</option>{areas.map((area) => <option key={area.value} value={area.value}>{area.label}</option>)}</select></label>
         <label>Municipio de la tienda<input name="baseMunicipality" required maxLength={160} defaultValue={profile.baseMunicipality} autoComplete="address-level2" /></label>
-        {profile.private ? <p>Al publicar, tu perfil, tus favoritos y esta foto serán visibles públicamente.</p> : <p>Al publicar, tu perfil mostrará esta foto y los favoritos seleccionados.</p>}
+        {profile.private ? <p>Al publicar, esta selección y su foto serán visibles públicamente.</p> : <p>Al publicar, esta selección mostrará esta foto y sus productores.</p>}
         <button className="account-button" disabled={busy || !checked.length}>{busy ? "Publicando…" : "Publicar mi perfil"}</button>
       </fieldset>
     </form> : null}
