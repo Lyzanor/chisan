@@ -3,21 +3,26 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
-## 2026-09-21 — Responsive shelf split view and mobile synchronized tabs
+## 2026-09-21 — Responsive shelf split view, floating zoom and edge-to-edge layout
 
 Reviewed the public shelf explorer (`/u/[handle]`) in responsive viewports at 390×844
 first, then 1280×900.
-- On mobile (390px): the shelf selection page is full width (edge-to-edge) without
-  redundant side margins. A clean pill toggle (`[ 🖼️ Estantería (N) ]` | `[ 🗺️ Mapa (M) ]`)
-  enables full-screen exploration of both surfaces. Tapping any point on the shelf
-  displays a rich producer card with its name, municipality and product label, paired
-  with an immediate action button ("Ver en mapa 📍") that fluidly switches to the map
-  centered on that producer's marker. In the map view, a return button ("← Ver en estantería")
-  smoothly switches back to the photo with matching points highlighted.
+- On mobile (390px): the shelf selection page omits `.catalog-page--simple` to avoid
+  forced mobile margins, achieving true 100% full-width (edge-to-edge) layout with zero
+  outside white space. Side borders are removed on mobile for both the photo and the map.
+  A clean pill toggle (`[ 🖼️ Estantería (N) ]` | `[ 🗺️ Mapa (M) ]`) enables full-screen
+  exploration of both surfaces. Tapping any point on the shelf displays a rich producer
+  card with its name, municipality and product label, paired with an immediate action
+  button ("Ver en mapa 📍") that fluidly switches to the map centered on that producer's
+  marker. In the map view, a return button ("← Ver en estantería") smoothly switches
+  back to the photo with matching points highlighted.
+- Floating photo zoom control: replaced the top heading and text button with a 44×44px
+  floating magnifying glass icon button (`+`/`-`) inside the photo canvas, matching the
+  map's floating controls.
 - On desktop (>=980px): the explorer uses a side-by-side split view with the shelf photo
-  on the left and the interactive map on the right, both active simultaneously. Tapping
-  a bottle pin centers the map on the right, while interacting with map markers highlights
-  matching bottles on the left. Tabs are hidden on desktop.
+  on the left and the interactive map on the right, both active simultaneously. Both
+  columns align flush at the top and share the exact same height (`min(740px, 85dvh)`),
+  border-radius and hairline border. Tabs are hidden on desktop.
 
 ## 2026-09-21 — Native entry and Instagram claim evidence
 

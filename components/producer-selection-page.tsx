@@ -56,8 +56,10 @@ export function ProducerSelectionPage({
   const Heading = embedded ? "h2" : "h1";
   return (
     <Container
-      className={`catalog-page catalog-page--simple producer-selection-page${
-        shelf ? " producer-selection-page--with-shelf" : ""
+      className={`catalog-page ${
+        shelf
+          ? "producer-selection-page producer-selection-page--with-shelf"
+          : "catalog-page--simple producer-selection-page"
       }`}
     >
       <header className="catalog-simple-header">

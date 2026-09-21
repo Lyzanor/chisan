@@ -1,15 +1,77 @@
-.photoSection { min-width: 0; overflow-wrap: anywhere; }
-.photoHeading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; }
-.photoHeading h2 { margin: 0; font-size: 20px; }
-.hint { color: var(--chisan-color-stone); font-size: 14px; margin: 0 0 12px; }
-.photoViewport { overflow: auto; max-width: 100%; border-radius: 4px; background: var(--surface-muted); }
+.photoSection {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  display: flex;
+  flex-direction: column;
+}
+
+.photoViewportWrapper {
+  position: relative;
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  background: var(--surface-muted);
+  overflow: hidden;
+}
+
+.photoViewport {
+  overflow: auto;
+  max-width: 100%;
+  background: var(--surface-muted);
+}
+
+.zoomButton {
+  position: absolute;
+  top: var(--chisan-space-3, 12px);
+  right: var(--chisan-space-3, 12px);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--surface);
+  color: var(--chisan-color-ink);
+  cursor: pointer;
+  box-shadow: var(--chisan-shadow-control);
+  transition: all 150ms ease;
+}
+
+.zoomButton:hover {
+  background: var(--surface-muted);
+  color: var(--chisan-color-moss);
+}
+
+.zoomButton:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.hint {
+  color: var(--chisan-color-stone);
+  font-size: 14px;
+  margin: var(--chisan-space-2, 8px) 0;
+  padding-inline: var(--chisan-space-4, 16px);
+}
+
 .photoCanvas { position: relative; }
 .image { display: block; width: 100%; height: auto; }
 .point { position: absolute; transform: translate(-50%, -50%); width: 44px; height: 44px; border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
 .point span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--surface); color: var(--surface); background: var(--chisan-color-moss); box-shadow: 0 0 0 1px var(--chisan-color-ink); font-weight: 500; font-size: 14px; }
 .point[aria-pressed="true"] span { width: 40px; height: 40px; color: var(--chisan-color-moss-dark); background: var(--surface); border: 4px solid var(--chisan-color-moss); box-shadow: 0 0 0 3px var(--surface); }
 .point:focus-visible, .photoViewport:focus-visible { outline: 3px solid var(--chisan-color-moss); outline-offset: 4px; }
-.selection { margin: 12px 0 8px; font-weight: 500; min-height: 24px; }
+.selection {
+  margin: var(--chisan-space-3, 12px) 0 var(--chisan-space-2, 8px);
+  padding-inline: var(--chisan-space-4, 16px);
+  font-weight: 500;
+  min-height: 24px;
+}
 .selectedProducer { pointer-events: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; width: 100%; padding: 8px 12px; background: var(--chisan-color-moss-pale); color: var(--chisan-color-moss-dark); text-decoration: none; }
 .selectedProducer span { font-size: 14px; flex-shrink: 0; }
 .selectedProducer strong { min-width: 0; overflow-wrap: anywhere; }
@@ -110,7 +172,7 @@
 }
 
 .selectedProducerCard {
-  margin-top: var(--chisan-space-3, 12px);
+  margin: var(--chisan-space-3, 12px) var(--chisan-space-4, 16px) 0;
   padding: var(--chisan-space-3, 12px) var(--chisan-space-4, 16px);
   background: var(--chisan-color-moss-pale);
   border: var(--chisan-line, 1px) solid var(--chisan-color-moss);
@@ -230,6 +292,22 @@
   }
   .shelfReturnBanner {
     display: none;
+  }
+  .photoViewportWrapper {
+    border: var(--chisan-line) solid var(--chisan-color-hairline);
+    border-radius: var(--chisan-radius-panel);
+    height: min(740px, 85dvh);
+    min-height: 480px;
+  }
+  .photoViewport {
+    height: 100%;
+  }
+  .selectedProducerCard {
+    margin-inline: 0;
+  }
+  .hint,
+  .selection {
+    padding-inline: 0;
   }
   .editor { grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr); align-items: start; }
 }

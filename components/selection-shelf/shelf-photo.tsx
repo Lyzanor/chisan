@@ -25,32 +25,21 @@ export function ShelfPhoto({
 
   return (
     <section className={styles.photoSection} aria-label="Productos en la estantería">
-      <div className={styles.photoHeading}>
-        <h2>En la estantería</h2>
-        <button
-          type="button"
-          className="account-button account-button--secondary"
-          aria-pressed={zoomed}
-          onClick={() => setZoomed(!zoomed)}
+      <div className={styles.photoViewportWrapper}>
+        <div
+          className={styles.photoViewport}
+          tabIndex={zoomed ? 0 : undefined}
+          aria-label={zoomed ? "Foto ampliada; desplázate para explorar" : undefined}
         >
-          {zoomed ? "Reducir foto" : "Ampliar foto"}
-        </button>
-      </div>
-      <p className={styles.hint}>Toca un punto de la foto o un productor del mapa para conectarlos.</p>
-      <div
-        className={styles.photoViewport}
-        tabIndex={zoomed ? 0 : undefined}
-        aria-label={zoomed ? "Foto ampliada; desplázate para explorar" : undefined}
-      >
-        <div className={styles.photoCanvas} style={{ width: zoomed ? "200%" : "100%" }}>
-          <Image
-            unoptimized
-            src={shelf.imageSrc}
-            width={shelf.width}
-            height={shelf.height}
-            alt="Estantería fotografiada por el titular de esta selección"
-            className={styles.image}
-          />
+          <div className={styles.photoCanvas} style={{ width: zoomed ? "200%" : "100%" }}>
+            <Image
+              unoptimized
+              src={shelf.imageSrc}
+              width={shelf.width}
+              height={shelf.height}
+              alt="Estantería fotografiada por el titular de esta selección"
+              className={styles.image}
+            />
           {shelf.points.map((point, index) => {
             const isSelected = point.producerKey === selectedKey;
             return (
@@ -78,6 +67,49 @@ export function ShelfPhoto({
           })}
         </div>
       </div>
+      <button
+        type="button"
+        className={styles.zoomButton}
+        aria-label={zoomed ? "Reducir foto" : "Ampliar foto"}
+        aria-pressed={zoomed}
+        onClick={() => setZoomed(!zoomed)}
+      >
+        {zoomed ? (
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <line x1="8" y1="11" x2="14" y2="11" />
+          </svg>
+        ) : (
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <line x1="11" y1="8" x2="11" y2="14" />
+            <line x1="8" y1="11" x2="14" y2="11" />
+          </svg>
+        )}
+      </button>
+    </div>
 
       {selectedProducer ? (
         <div className={styles.selectedProducerCard}>
