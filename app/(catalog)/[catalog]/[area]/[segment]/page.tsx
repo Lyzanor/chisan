@@ -64,6 +64,7 @@ import {
 import type { SALES_CHANNEL_VALUES } from "@/lib/catalog/producer-schema";
 import { selectSimilarNearbyProducers } from "@/lib/catalog/similar-producers";
 import { resolveProducerStoreLink } from "@/lib/catalog/store-link";
+import { resolveProducerWhatsAppLink } from "@/lib/catalog/producer-contact";
 import {
   buildCatalogHref,
   buildProducerHref,
@@ -284,6 +285,11 @@ export default async function ProducerPage({
     salesChannels,
     storeUrl: getFieldValue(producer.fields, "url_tienda"),
     website,
+  });
+  const whatsAppLink = resolveProducerWhatsAppLink({
+    phone,
+    salesChannels,
+    producerName: producer.name,
   });
 
   const localizedCategories = producer.categories.map((producerCategory) =>
@@ -618,6 +624,16 @@ export default async function ProducerPage({
                           {actionLabels.contact}
                         </a>
                       ) : null}
+                      {whatsAppLink ? (
+                        <a
+                          href={whatsAppLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <WhatsappLogoIcon size={20} aria-hidden="true" />
+                          {actionLabels.whatsapp}
+                        </a>
+                      ) : null}
                       {phone ? (
                         <a href="#detail-contact">
                           <PhoneIcon size={20} aria-hidden="true" />
@@ -840,6 +856,8 @@ export default async function ProducerPage({
                     email={email}
                     phone={phone}
                     callLabel={actionLabels.call}
+                    whatsAppLink={whatsAppLink}
+                    whatsAppLabel={actionLabels.whatsapp}
                     name={producer.name}
                     messages={contactMessages}
                   />

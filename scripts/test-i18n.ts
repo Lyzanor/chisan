@@ -54,6 +54,10 @@ import {
 import { getProducerActionLabels } from "../lib/i18n/producer-action-labels";
 import { resolveProducerStoreLink } from "../lib/catalog/store-link";
 import {
+  isMobilePhoneNumber,
+  resolveProducerWhatsAppLink,
+} from "../lib/catalog/producer-contact";
+import {
   buildProducerStructuredData,
   serializeStructuredData,
 } from "../lib/producer-structured-data";
@@ -968,12 +972,14 @@ test("producer conversion actions stay localized for every public locale", () =>
     directions: "Cómo llegar",
     call: "Llamar",
     contact: "Contactar",
+    whatsapp: "WhatsApp",
   });
   assert.deepEqual(getProducerActionLabels("ca"), {
     buyOnline: "Comprar en línia",
     directions: "Com arribar-hi",
     call: "Trucar",
     contact: "Contactar",
+    whatsapp: "WhatsApp",
   });
 });
 
@@ -1284,6 +1290,56 @@ test("the storefront channel opens the reviewed store page, else the website", (
   assert.equal(link("sí", "ecommerce", "", ""), null);
   assert.equal(link("sí", "telefono", "https://example.com/tienda"), null);
   assert.equal(link("no comprobado", "", "https://example.com/tienda"), null);
+});
+
+test("producer WhatsApp links resolve for mobile phones or explicit channels", () => {
+  assert.equal(isMobilePhoneNumber("+34600112233"), true);
+  assert.equal(isMobilePhoneNumber("+34712345678"), true);
+  assert.equal(isMobilePhoneNumber("+34972123456"), false);
+  assert.equal(isMobilePhoneNumber("+34872123456"), false);
+  assert.equal(isMobilePhoneNumber(""), false);
+
+  // Mobile phone gets a WhatsApp link with default message
+  assert.equal(
+    resolveProducerWhatsAppLink({
+      phone: "+34600112233",
+      producerName: "Formatgeria Mas d'Eroles",
+    }),
+    "https://wa.me/34600112233?text=Hola%2C%20he%20visto%20vuestro%20perfil%20en%20Chisan.",
+  );
+
+  // Landline without whatsapp channel gets no link
+  assert.equal(
+    resolveProducerWhatsAppLink({
+      phone: "+34972123456",
+      salesChannels: ["ecommerce"],
+      producerName: "Bodega Test",
+    }),
+    null,
+  );
+
+  // Landline with explicit whatsapp channel gets a link
+  assert.equal(
+    resolveProducerWhatsAppLink({
+      phone: "+34972123456",
+      salesChannels: ["whatsapp", "ecommerce"],
+      producerName: "Bodega Test",
+    }),
+    "https://wa.me/34972123456?text=Hola%2C%20he%20visto%20vuestro%20perfil%20en%20Chisan.",
+  );
+
+  // Custom text override
+  assert.equal(
+    resolveProducerWhatsAppLink({
+      phone: "+34600112233",
+      text: "Consulta directa",
+    }),
+    "https://wa.me/34600112233?text=Consulta%20directa",
+  );
+
+  // Empty or invalid input
+  assert.equal(resolveProducerWhatsAppLink({ phone: "" }), null);
+  assert.equal(resolveProducerWhatsAppLink({}), null);
 });
 
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {

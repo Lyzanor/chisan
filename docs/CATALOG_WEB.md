@@ -183,7 +183,11 @@ The route resolves the presentation locale, canonical URL, `hreflang` set and
 `inLanguage`. Shared interface copy, actions, country and area names, categories
 and breadcrumbs use maintained locale resources. Proper names, addresses,
 telephone numbers and external URLs remain canonical facts rather than being
-silently translated.
+silently translated. Direct contact actions expose phone calls (`tel:`) and,
+when a public email is recorded, draft messages (`mailto:`). When an E.164
+phone number is an identified mobile line or the producer has demonstrated
+WhatsApp orders in `Canal de venta`, an official WhatsApp action
+(`https://wa.me/...`) is exposed in hero quick actions and the contact section.
 
 `descripcion`, `quien hay detras` and `historia` use the sidecar resolver in `docs/CSV_CONTRACT.md`. A missing, stale or invalid translation is omitted from visible
 body copy and, where mapped, JSON-LD for that locale; localized generic metadata
