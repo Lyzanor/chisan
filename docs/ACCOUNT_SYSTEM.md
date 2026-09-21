@@ -902,10 +902,17 @@ activation, incidents, replacement and retirement are owned by
 Android/iOS reuse the same Clerk instance and internal account mapping through
 `/api/mobile/account`; [Mobile apps](MOBILE_APPS.md) owns their entry flow. Google
 and Apple are identity providers configured in Clerk, with no local email-based
-account merging. Native session checks do not create ownership or Pro permissions.
+account merging. Apple is offered only through native Sign in with Apple in the
+iOS app; Android and Chisan's web widgets do not offer Apple. Native session checks
+do not create ownership or Pro permissions.
 
-Instagram is an additional ownership-evidence method, not a Clerk identity or
-public verification badge. Meta's supported Instagram Login API connects
+The implemented Instagram adapter is an additional ownership-evidence method,
+not a Clerk identity or public verification badge. Account creation and returning
+Instagram sign-in across all three platforms are now requested, but require an
+additional identity/session integration before activation; see
+[Mobile apps](MOBILE_APPS.md#activation-and-verification). A matching profile
+remains supporting evidence for review, never an automatic ownership grant.
+Meta's supported Instagram Login API connects
 professional business/creator accounts. A signed-in active account with verified
 email and accepted terms may explicitly connect one while preparing a claim.
 The server requests only `instagram_business_basic`, exchanges the code, reads

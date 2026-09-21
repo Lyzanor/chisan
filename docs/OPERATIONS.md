@@ -926,6 +926,17 @@ is independent of the photo/attribution code and migration `0013`.
 
 ## Instagram professional-profile verification
 
+Configuration checkpoint (2026-09-21): the existing Chisan Meta app
+`1461279405814757` now includes the Instagram use case. Its separate Instagram
+app identifier is `1072744755348684` (`Chisan-IG`), not the WhatsApp/Facebook app
+identifier. The HTTPS callback below is registered. Only
+`instagram_business_basic` was added after owner confirmation, and Meta reports
+it as **Ready for testing**. Messaging, comments and publishing scopes were not
+added. This does not establish app
+review approval, a tested identity exchange or Instagram sign-in to Chisan.
+Keep the feature off until the credential, minimum-permission and real-account
+checks below pass. Do not enable the wizard's bundled messaging/comment scopes.
+
 This optional connection supports private ownership review; it is not a login
 provider or automatic ownership verification. The implementation is gated by
 `CHISAN_INSTAGRAM_VERIFICATION_ENABLED=true` and fails closed without all required

@@ -200,6 +200,10 @@ export function SiteRootShell({
         <CatalogAgentTools tools={catalogToolDefinitions} />
         {accountAuthConfigured ? (
           <ClerkProvider
+            appearance={{ elements: {
+              socialButtonsBlockButton__apple: { display: "none" },
+              socialButtonsIconButton__apple: { display: "none" },
+            } }}
             localization={htmlLang === "es" ? esES : undefined}
             signInUrl={ACCOUNT_ROUTES.signIn}
             signUpUrl={ACCOUNT_ROUTES.signUp}

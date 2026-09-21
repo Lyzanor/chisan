@@ -8,7 +8,7 @@ const config: ExpoConfig = {
   orientation: "portrait",
   userInterfaceStyle: "light",
   icon: "../../design/brand/assets/chisan-icon-apple.png",
-  ios: { bundleIdentifier: "app.chisan.mobile", supportsTablet: true },
+  ios: { bundleIdentifier: "app.chisan.mobile", supportsTablet: true, usesAppleSignIn: true },
   android: {
     package: "app.chisan.mobile",
     blockedPermissions: ["android.permission.ACCESS_BACKGROUND_LOCATION"],
@@ -16,6 +16,7 @@ const config: ExpoConfig = {
   plugins: [
     "expo-secure-store",
     "expo-web-browser",
+    "expo-apple-authentication",
     "@clerk/expo",
     ["expo-location", {
       locationWhenInUsePermission: "Chisan usa tu ubicación para mostrarte productores de tu zona. También puedes elegirla manualmente.",

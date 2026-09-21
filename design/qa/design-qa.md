@@ -3,6 +3,17 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-21 — iOS-only Apple and private APK configuration
+
+Apple now uses the native iOS flow and is omitted from Android and web entry.
+The internal APK profile bundles JavaScript without requiring a development
+server. Native prebuild and Android/iOS/web exports passed. The direct web export
+preview remained at Clerk initialization on localhost, so this follow-up does
+not claim a completed browser or device authentication check. The welcome layout
+is unchanged apart from removing Apple on unsupported platforms; the preceding
+390px/wide fixture review remains the visual reference. Device OAuth and the
+future standalone APK still need an installed-device check.
+
 ## 2026-09-21 — Responsive shelf split view, floating zoom and edge-to-edge layout
 
 Reviewed the public shelf explorer (`/u/[handle]`) in responsive viewports at 390×844

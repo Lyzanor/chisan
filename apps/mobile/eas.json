@@ -1,8 +1,13 @@
 {
-  "cli": { "version": ">=18.0.0", "appVersionSource": "remote" },
+  "cli": { "version": ">=18.0.0", "appVersionSource": "local" },
   "build": {
     "development": { "developmentClient": true, "distribution": "internal" },
-    "preview": { "distribution": "internal", "android": { "buildType": "apk" } },
-    "production": { "autoIncrement": true }
+    "preview": {
+      "distribution": "internal",
+      "developmentClient": false,
+      "environment": "preview",
+      "env": { "EXPO_PUBLIC_CHISAN_ORIGIN": "https://chisan.app" },
+      "android": { "buildType": "apk" }
+    }
   }
 }

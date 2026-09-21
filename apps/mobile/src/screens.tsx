@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Platform, Pressable, Text, TextInput, View } from "react-native";
 import { SITE_TAGLINE } from "../../../lib/site";
 import type { MobileArea, MobileProducer } from "./catalog";
 import { Action, Notice, styles } from "./ui";
@@ -14,7 +14,7 @@ export function Welcome({ busy, message, onSocial, onHosted, onPrivacy }: {
     <Text style={styles.text}>Entra con tu cuenta y descubre a los productores de tu zona.</Text>
     <View style={styles.actions}>
       <Action disabled={busy} secondary onPress={() => onSocial("google")}>Continuar con Google</Action>
-      <Action disabled={busy} secondary onPress={() => onSocial("apple")}>Continuar con Apple</Action>
+      {Platform.OS === "ios" ? <Action disabled={busy} secondary onPress={() => onSocial("apple")}>Continuar con Apple</Action> : null}
       <Action disabled={busy} onPress={onHosted}>{busy ? "Abriendo acceso…" : "Continuar con correo u otro método"}</Action>
     </View>
     <Text style={styles.small}>Si ya usas Chisan en la web, entra con la misma cuenta. Si es tu primera vez, podrás crearla al continuar.</Text>

@@ -1,11 +1,12 @@
 import { ClerkProvider, useAuth, useClerk, useSSO } from "@clerk/expo";
 import { useHostedAuth } from "@clerk/expo/hosted-auth";
+import { useSignInWithApple } from "@clerk/expo/apple";
 import { tokenCache } from "@clerk/expo/token-cache";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import * as WebBrowser from "expo-web-browser";
 import { useEffect, useRef, useState } from "react";
-import { ActivityIndicator, AppState, Text } from "react-native";
+import { ActivityIndicator, AppState, Platform, Text } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import outfit from "../../../app/_fonts/outfit.ttf";
 import { CatalogChangedError, catalogAreas, fetchJson, fetchProducers, mobileOrigin, producerSearchPath, savedArea, serializeArea, webUrl, type MobileArea, type MobileResults } from "./catalog";
@@ -24,6 +25,7 @@ async function openWeb(path: string) {
 
 function SignIn() {
   const { startSSOFlow } = useSSO();
+  const { startAppleAuthenticationFlow } = useSignInWithApple();
   const { startHostedAuth } = useHostedAuth();
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
@@ -32,8 +34,13 @@ function SignIn() {
     if (inFlight.current) return;
     inFlight.current = true; setBusy(true); setMessage("");
     try {
-      if (provider) {
-        const result = await startSSOFlow({ strategy: provider === "google" ? "oauth_google" : "oauth_apple", redirectUrl: "chisan://sso-callback" });
+      if (provider === "apple") {
+        if (Platform.OS !== "ios") return;
+        const result = await startAppleAuthenticationFlow();
+        if (result.createdSessionId && result.setActive) await result.setActive({ session: result.createdSessionId });
+        else if (result.signUp?.status === "missing_requirements" || result.signIn?.status === "needs_second_factor") setMessage("Falta completar tu acceso. Continúa con correo u otro método para terminarlo de forma segura.");
+      } else if (provider === "google") {
+        const result = await startSSOFlow({ strategy: "oauth_google", redirectUrl: "chisan://sso-callback" });
         if (result.createdSessionId && result.setActive) await result.setActive({ session: result.createdSessionId });
         else if (result.authSessionResult?.type === "success") setMessage("Falta completar tu acceso. Continúa con correo u otro método para terminarlo de forma segura.");
       } else await startHostedAuth({ redirectUrl: "chisan://sso-callback" });
