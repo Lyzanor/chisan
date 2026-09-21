@@ -1,28 +1,42 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
 import { UserPlusIcon, HeartIcon } from "@phosphor-icons/react";
+import { getFollowedProducersAction } from "@/app/(application)/actividad/actions";
 import { useProducerFollows } from "@/components/account/producer-follows-context";
 import type { ActivityFollowedProducer } from "@/lib/activity/data";
 import styles from "./activity.module.css";
 
-type ActivityFollowingBubblesProps = {
-  followedProducers: ActivityFollowedProducer[];
-  isSignedIn: boolean;
-};
-
-export function ActivityFollowingBubbles({
-  followedProducers,
-  isSignedIn,
-}: ActivityFollowingBubblesProps) {
+export function ActivityFollowingBubbles() {
+  const { isSignedIn, isLoaded } = useAuth();
   const followState = useProducerFollows();
+  const [producers, setProducers] = useState<ActivityFollowedProducer[]>([]);
 
-  // If client context has loaded and is ready, filter based on active follows
+  useEffect(() => {
+    if (!isLoaded || !isSignedIn) {
+      return;
+    }
+    let active = true;
+    getFollowedProducersAction()
+      .then((items) => {
+        if (active) setProducers(items);
+      })
+      .catch(() => undefined);
+
+    return () => {
+      active = false;
+    };
+  }, [isLoaded, isSignedIn, followState.keys.length]);
+
   const activeProducers =
-    followState.status === "ready"
-      ? followedProducers.filter((p) => followState.keys.includes(p.key))
-      : followedProducers;
+    !isSignedIn
+      ? []
+      : followState.status === "ready"
+        ? producers.filter((p) => followState.keys.includes(p.key))
+        : producers;
 
   return (
     <section className={styles.bubblesSection} aria-labelledby="following-bubbles-title">
@@ -38,7 +52,11 @@ export function ActivityFollowingBubbles({
         ) : null}
       </div>
 
-      {!isSignedIn ? (
+      {!isLoaded ? (
+        <div className={styles.bubblesGuest}>
+          <span>Cargando tus preferencias...</span>
+        </div>
+      ) : !isSignedIn ? (
         <div className={styles.bubblesGuest}>
           <span>Inicia sesión para guardar a tus productores de referencia y ver sus novedades aquí.</span>
           <Link href="/acceso" className={styles.buttonSecondary}>

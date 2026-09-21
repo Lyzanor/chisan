@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { getCurrentAccount } from "@/lib/accounts/auth";
 import {
-  getActivityFeed,
   getAvailableAreas,
   getEditorialFeaturedProducers,
-  getFollowedProducers,
+  getPublicActivityTimeline,
   listFeaturedGuides,
 } from "@/lib/activity/data";
 import { ActivityCallToAction } from "@/components/activity/activity-cta";
@@ -38,15 +36,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ActivityPage() {
-  const account = await getCurrentAccount();
   const availableAreas = getAvailableAreas("es");
 
-  const [initialFeaturedProducers, followedProducers, timelineItems] =
-    await Promise.all([
-      getEditorialFeaturedProducers("es", undefined, 4),
-      account ? getFollowedProducers(account.id) : Promise.resolve([]),
-      getActivityFeed(account?.id, 20),
-    ]);
+  const [initialFeaturedProducers, timelineItems] = await Promise.all([
+    getEditorialFeaturedProducers("es", undefined, 4),
+    getPublicActivityTimeline(20).catch(() => []),
+  ]);
 
   const featuredGuides = listFeaturedGuides().slice(0, 3);
 
@@ -68,10 +63,7 @@ export default async function ActivityPage() {
       />
 
       {/* 2. Burbujas de «Siguiendo» */}
-      <ActivityFollowingBubbles
-        followedProducers={followedProducers}
-        isSignedIn={Boolean(account)}
-      />
+      <ActivityFollowingBubbles />
 
       {/* 3. Guías destacadas */}
       <ActivityGuides guides={featuredGuides} />
