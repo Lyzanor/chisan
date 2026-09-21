@@ -98,6 +98,11 @@ body {
   color: var(--chisan-color-moss-dark);
 }
 
+.site-account-menu:not([open]) .site-account-menu__panel {
+  display: none;
+  pointer-events: none;
+}
+
 .site-account-menu__panel {
   position: absolute;
   z-index: 1000;

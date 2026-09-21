@@ -130,13 +130,14 @@ body { min-height: 100svh; }
     inset: calc(100% + var(--chisan-space-2)) 0 auto auto;
     width: min(24rem, calc(100vw - 3rem));
     opacity: 0;
+    pointer-events: none;
     translate: 0 -8px;
     transition:
       opacity var(--chisan-motion-component) var(--chisan-ease),
       translate var(--chisan-motion-component) var(--chisan-ease),
       content-visibility var(--chisan-motion-component) allow-discrete;
   }
-  .site-account-menu[open]::details-content { opacity: 1; translate: 0; }
+  .site-account-menu[open]::details-content { opacity: 1; translate: 0; pointer-events: auto; }
   .site-account-menu .site-account-menu__panel {
     position: relative;
     inset: auto;

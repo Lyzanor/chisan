@@ -47,6 +47,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     // The shared navigation and profile backlinks read the small guide library.
     "/*": ["./data/guides/es/*.md"],
+    "/actividad": ["./data/csv/**/*.csv", "./data/guides/es/*.md"],
     "/\\[catalog\\]/guias": ["./data/csv/es/**/*.csv"],
     "/\\[catalog\\]/guias/\\[slug\\]": ["./data/csv/es/**/*.csv"],
     "/how-we-work": ["./data/csv/es/**/*.csv", "./data/evidence/es/**/*.jsonl"],
