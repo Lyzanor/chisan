@@ -588,6 +588,27 @@
   font-weight: 500;
 }
 
+.producer-selection-page--with-shelf {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+.producer-selection-page--with-shelf .catalog-simple-header {
+  padding-inline: max(var(--chisan-space-4), env(safe-area-inset-left, 0px));
+}
+
+@media (min-width: 980px) {
+  .producer-selection-page--with-shelf {
+    width: min(1440px, calc(100% - 3rem));
+    margin-inline: auto;
+  }
+  .producer-selection-page--with-shelf .catalog-simple-header {
+    padding-inline: 0;
+  }
+}
+
 .catalog-simple-map,
 .catalog-viewer,
 .detail-shell,

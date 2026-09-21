@@ -55,7 +55,11 @@ export function ProducerSelectionPage({
   const Container = embedded ? "section" : "main";
   const Heading = embedded ? "h2" : "h1";
   return (
-    <Container className="catalog-page catalog-page--simple producer-selection-page">
+    <Container
+      className={`catalog-page catalog-page--simple producer-selection-page${
+        shelf ? " producer-selection-page--with-shelf" : ""
+      }`}
+    >
       <header className="catalog-simple-header">
         <div>
           {profileAvatar ? <UserAvatar name={profileAvatar.name} src={profileAvatar.src} size={64} /> : null}

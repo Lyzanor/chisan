@@ -3,6 +3,22 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-21 — Responsive shelf split view and mobile synchronized tabs
+
+Reviewed the public shelf explorer (`/u/[handle]`) in responsive viewports at 390×844
+first, then 1280×900.
+- On mobile (390px): the shelf selection page is full width (edge-to-edge) without
+  redundant side margins. A clean pill toggle (`[ 🖼️ Estantería (N) ]` | `[ 🗺️ Mapa (M) ]`)
+  enables full-screen exploration of both surfaces. Tapping any point on the shelf
+  displays a rich producer card with its name, municipality and product label, paired
+  with an immediate action button ("Ver en mapa 📍") that fluidly switches to the map
+  centered on that producer's marker. In the map view, a return button ("← Ver en estantería")
+  smoothly switches back to the photo with matching points highlighted.
+- On desktop (>=980px): the explorer uses a side-by-side split view with the shelf photo
+  on the left and the interactive map on the right, both active simultaneously. Tapping
+  a bottle pin centers the map on the right, while interacting with map markers highlights
+  matching bottles on the left. Tabs are hidden on desktop.
+
 ## 2026-09-21 — Native entry and Instagram claim evidence
 
 Reviewed the actual Expo welcome, area selection and producer-list components in
