@@ -2,6 +2,9 @@
 
 import { and, count, eq, gte, inArray, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
+import { INSTAGRAM_PROOF_COOKIE, instagramHandle } from "@/lib/instagram/verification";
+import { currentInstagramProof } from "@/lib/instagram/verification.server";
 
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import {
@@ -68,6 +71,15 @@ export async function submitProducerClaimAction(
     );
   }
   const database = getDatabase();
+  const instagramProof = await currentInstagramProof(account.id, parsed.data.country, parsed.data.producerId);
+  if (parsed.data.method === "instagram" && !instagramProof) {
+    redirectWithMessage(
+      `/cuenta/reclamaciones/nueva?country=${parsed.data.country}&producerId=${parsed.data.producerId}`,
+      "error",
+      "Conecta de nuevo tu Instagram profesional antes de enviar la solicitud o elige otro método.",
+    );
+  }
+  const catalogInstagram = instagramHandle(producer.fields.Instagram);
   const claimResult = await database.transaction(async (transaction) => {
     await transaction.execute(
       sql`select pg_advisory_xact_lock(hashtext(${`producer:${parsed.data.country}:${parsed.data.producerId}`}))`,
@@ -159,6 +171,11 @@ export async function submitProducerClaimAction(
           producerSlug: producer.slug,
           area: producer.area,
           baseRowHash: hashProducerFields(producer.fields),
+          ...(instagramProof ? { instagramVerification: {
+            ...instagramProof,
+            catalogUsername: catalogInstagram,
+            matchesCatalog: catalogInstagram === instagramProof.username.toLowerCase(),
+          } } : {}),
         },
         claimantMessage: parsed.data.proof,
         submittedAt: new Date(),
@@ -223,6 +240,7 @@ export async function submitProducerClaimAction(
       "Ya tienes una solicitud abierta para este productor.",
     );
   }
+  (await cookies()).delete(INSTAGRAM_PROOF_COOKIE);
   redirectWithMessage(
     "/cuenta/reclamaciones",
     "notice",

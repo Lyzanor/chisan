@@ -13,6 +13,7 @@ shared components feel responsive without changing catalog or account meaning.
 ```
 foundations/tokens.css   colour, type, space, shape, motion tokens
 adapters/web.css         maps those tokens onto the web surface
+adapters/native-colors.json  generated native color projection; never edit directly
 adapters/experience.css  shared navigation, discovery, profile and account polish
 adapters/category-themes.css  soft ingredient photography in category margins
 adapters/map-explorer.css     viewport discovery, header search and results sheet
@@ -27,6 +28,10 @@ qa/history/              dated historical checks, not current specifications
 ## Mobile first
 
 The phone is Chisan's primary surface and the base of a future web-based app.
+The Android/iOS foundation now lives in `apps/mobile`; see
+[Mobile apps](../docs/MOBILE_APPS.md). Its colors are generated from the same
+foundation with `pnpm build:mobile-tokens`, and its native layout reuses the
+existing font and brand assets.
 Design and review public and account surfaces at 390px first. Wider screens add
 columns, density and side-by-side context, never a capability the phone lacks.
 Administration remains usable on a phone but may favour wide screens.

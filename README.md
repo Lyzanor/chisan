@@ -57,6 +57,7 @@ Moving or translating a page does not change its account or content identity.
 | Maps and location | `components/map/`, `lib/location/` | [Producer coordinates](docs/PRODUCER_GEOLOCATION.md), [visitor location](docs/VISITOR_LOCATION_ROUTING.md) |
 | Visual system | `design/`, component styles | [Design](design/README.md) |
 | Runtime and release | `scripts/`, `.github/workflows/` | [Operations](docs/OPERATIONS.md) |
+| Android and iOS | `apps/mobile/` | [Mobile apps](docs/MOBILE_APPS.md) |
 | Payment adapter | `lib/payments/` | [Stripe runbook](docs/STRIPE_RUNBOOK.md) |
 
 [AGENTS.md](AGENTS.md) distinguishes core invariants from working defaults and

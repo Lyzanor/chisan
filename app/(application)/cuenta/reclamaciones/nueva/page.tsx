@@ -12,6 +12,9 @@ import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { producerClaims, producerMemberships } from "@/lib/db/schema";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
+import { InstagramClaimConnection } from "@/components/account/instagram-claim-connection";
+import { instagramConfiguration, instagramHandle } from "@/lib/instagram/verification";
+import { currentInstagramProof } from "@/lib/instagram/verification.server";
 
 export const metadata: Metadata = {
   title: "Verificar productor",
@@ -168,6 +171,7 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
     );
   }
 
+  const instagramProof = await currentInstagramProof(account.id, country, producerId);
   return (
     <div className="account-content account-content--narrow">
       <AccountMessage params={params} />
@@ -194,12 +198,15 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
         </p>
       </div>
 
+      <InstagramClaimConnection country={country} producerId={producerId} enabled={Boolean(instagramConfiguration())}
+        username={instagramProof?.username} matchesCatalog={Boolean(instagramProof && instagramHandle(producer.fields.Instagram) === instagramProof.username.toLowerCase())} />
       <form action={submitProducerClaimAction} className="account-form">
         <input type="hidden" name="country" value={producer.country} />
         <input type="hidden" name="producerId" value={producer.producerId} />
         <label className="account-field">
           <span>Método de verificación preferido</span>
-          <select name="method" required defaultValue="business_email">
+          <select name="method" required defaultValue={instagramProof ? "instagram" : "business_email"}>
+            {instagramProof ? <option value="instagram">Instagram profesional conectado</option> : null}
             <option value="business_email">Correo oficial del negocio</option>
             <option value="website">Web del productor</option>
             <option value="phone">Teléfono público del negocio</option>

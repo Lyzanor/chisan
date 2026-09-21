@@ -85,6 +85,7 @@ also uses the country's `data/csv/<country>/AGENTS.md` and relevant area note.
 | Publication, recovery, environment and deployment | `docs/OPERATIONS.md` |
 | Stripe activation and incidents | `docs/STRIPE_RUNBOOK.md` |
 | Visual presentation | `design/README.md` |
+| Android and iOS entry, native adapters and build | `docs/MOBILE_APPS.md` |
 
 Load skills only for needed workflow or tool knowledge, with references read on
 demand. A phase boundary does not finish a broader authorized task. Keep reusable

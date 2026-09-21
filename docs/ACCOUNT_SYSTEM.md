@@ -897,6 +897,42 @@ activation, incidents, replacement and retirement are owned by
 
 ## Account photos and favorite attribution
 
+### Native access and Instagram evidence
+
+Android/iOS reuse the same Clerk instance and internal account mapping through
+`/api/mobile/account`; [Mobile apps](MOBILE_APPS.md) owns their entry flow. Google
+and Apple are identity providers configured in Clerk, with no local email-based
+account merging. Native session checks do not create ownership or Pro permissions.
+
+Instagram is an additional ownership-evidence method, not a Clerk identity or
+public verification badge. Meta's supported Instagram Login API connects
+professional business/creator accounts. A signed-in active account with verified
+email and accepted terms may explicitly connect one while preparing a claim.
+The server requests only `instagram_business_basic`, exchanges the code, reads
+the current profile identifier/username and immediately discards the access token.
+
+The OAuth state and temporary proof are HMAC-signed, HttpOnly, Secure, SameSite=Lax
+cookies with ten-minute expiry, bound to the exact internal user and producer.
+Callback failure consumes the state cookie and reveals no provider error payload.
+Submission reads only the server-verified cookie, never a hidden form proof.
+Expired or missing proof cannot submit the Instagram method. Successful submission
+copies identity, username, check time and the catalog-handle comparison into the
+existing private `producer_claims.proof` JSON, then clears the cookie. No additional
+table, stored provider token or catalog writer is introduced.
+
+Reviewers see both the confirmed social-profile control and whether it matched
+the catalog at submission. A match is supporting evidence only; an agency,
+employee or former owner may control a profile. The existing manual review,
+one-owner constraints, quotas and authorization remain decisive. No Instagram
+connection changes public facts, producer membership, editorial verification or
+entitlements. The account can remove its retained Instagram evidence from its
+ownership-request page; this does not revoke an already reviewed membership.
+Activation is
+disabled until the [Operations setup](OPERATIONS.md#instagram-professional-profile-verification)
+has been completed.
+
+### Provider avatars
+
 Google is an additional OAuth connection in Clerk, alongside the existing email
 flow. `/acceso` and `/registro` use Clerk's configured connections, preserving
 its verified account-linking and session behavior. Chisan continues to map the

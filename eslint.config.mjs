@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "apps/mobile/.expo/**",
+    "apps/mobile/dist/**",
+    "apps/mobile/ios/**",
+    "apps/mobile/android/**",
     // Untracked workspace artefacts; see .gitignore.
     ".claude/**",
     ".tmp/**",

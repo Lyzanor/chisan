@@ -68,6 +68,13 @@ producer-distance calculation.
 
 ## Permission and choice experience
 
+The native Android/iOS entry is a separate surface described in
+[Mobile apps](MOBILE_APPS.md). After authentication it offers the same explicit
+location choice plus a manual area selector. It uses the shared boundary resolver
+with an Expo foreground-location adapter and retains the same privacy limits:
+only the catalog area is persisted locally, never coordinates or an account
+location. The browser entry rules below remain unchanged.
+
 The neutral `/` page is the only place that may offer first-visit location
 onboarding. It must:
 

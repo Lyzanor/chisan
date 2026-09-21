@@ -3,6 +3,27 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-21 — Native entry and Instagram claim evidence
+
+Reviewed the actual Expo welcome, area selection and producer-list components in
+a temporary web fixture at 390×844 first, then 1280×900. The fixture simulated
+sign-in and denied location without accounts, GPS access or database writes, and
+was removed after export. Shared Outfit, wordmark and generated forest/white
+colors render correctly; buttons remain readable and no horizontal overflow was
+observed. Manual area search and selection remain usable after denied location.
+
+Reviewed the actual web Instagram connection component with the existing account
+styles at the same widths, showing unavailable and connected/matching states.
+The temporary static render stubbed only its Server Action; no Meta request or
+claim was submitted. Copy distinguishes social-profile control from ownership,
+explains the limited data read and retains other verification methods.
+
+Native prebuild generated Android and iOS projects, and Expo exported all three
+JavaScript targets. These checks do not establish installed-device OAuth,
+OS permission behavior, App Store/Play approval or a signed binary. Apple and
+Instagram activation and live professional-account review remain untested pending
+provider configuration; the setup is in [Mobile apps](../../docs/MOBILE_APPS.md).
+
 ## 2026-09-20 — Free gallery completion
 
 The free gallery editor was checked at 390×844 first, then 1280×900, in a

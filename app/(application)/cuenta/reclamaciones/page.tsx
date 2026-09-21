@@ -2,6 +2,7 @@ import { and, desc, eq } from "drizzle-orm";
 import Link from "next/link";
 
 import { withdrawProducerClaimAction } from "@/app/(application)/cuenta/actions";
+import { removeInstagramEvidence } from "@/app/(application)/cuenta/actions/instagram";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
@@ -80,6 +81,14 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
           </Link>
         ) : null}
       </header>
+
+      {claims.some(claim => Boolean(claim.proof.instagramVerification)) ? <section className="account-callout">
+        <h3>Comprobación de Instagram</h3>
+        <p>Puedes eliminar el identificador, usuario y comprobación de Instagram de tus solicitudes. Si alguna sigue en revisión, necesitaremos otros datos para comprobarla.</p>
+        <form action={removeInstagramEvidence}>
+          <button type="submit" className="account-button account-button--secondary">Eliminar mi comprobación de Instagram</button>
+        </form>
+      </section> : null}
 
       <section>
         <h3>Productores que gestionas</h3>

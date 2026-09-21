@@ -6,6 +6,7 @@ import { requireStaffAccount } from "@/lib/accounts/auth";
 import { findProducersByIds } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { producerClaims, users } from "@/lib/db/schema";
+import { instagramProofSchema } from "@/lib/instagram/verification";
 
 type AdminClaimsPageProps = {
   searchParams: Promise<AccountMessageParams>;
@@ -44,6 +45,8 @@ export default async function AdminClaimsPage({ searchParams }: AdminClaimsPageP
           {queue.map(({ claim, displayName }, index) => {
             const producer = producers[index];
             const proof = claim.proof as Record<string, unknown>;
+            const instagram = instagramProofSchema.safeParse(proof.instagramVerification && typeof proof.instagramVerification === "object"
+              ? Object.fromEntries(Object.entries(proof.instagramVerification).filter(([key]) => ["provider", "subject", "username", "checkedAt"].includes(key))) : null);
             return (
               <li key={claim.id}>
                 <div className="account-record-heading">
@@ -68,6 +71,14 @@ export default async function AdminClaimsPage({ searchParams }: AdminClaimsPageP
                   </div>
                 </dl>
                 <p className="account-review-statement">{claim.claimantMessage}</p>
+                {instagram.success ? <div className="account-callout">
+                  <strong>Instagram control confirmed by OAuth</strong>
+                  <p><a href={`https://www.instagram.com/${instagram.data.username}/`} target="_blank" rel="noreferrer">@{instagram.data.username}</a> · {instagram.data.checkedAt}</p>
+                  <p>{(proof.instagramVerification as Record<string, unknown>).matchesCatalog === true ? "Matched the catalog Instagram at submission." : "Did not match a catalog Instagram at submission; review the discrepancy."} This proves control of the social profile only. It does not establish producer ownership, production or entitlement.</p>
+                </div> : null}
+                {claim.proofMethod === "instagram" && !instagram.success ? <p className="account-callout">
+                  No Instagram control proof remains on this request. Ask for another verification method before approving ownership.
+                </p> : null}
                 <form action={reviewProducerClaimAction} className="account-form">
                   <input type="hidden" name="claimId" value={claim.id} />
                   <label className="account-field">

@@ -5,6 +5,7 @@ export const claimMethodSchema = z.enum([
   "business_email",
   "website",
   "phone",
+  "instagram",
   "document",
   "other",
 ]);

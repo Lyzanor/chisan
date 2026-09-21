@@ -275,39 +275,47 @@ export function createCatalogPositionRequest({
     const requested = await requestCurrentPosition(geolocation);
     if (requested.status === "failed") return requested;
 
-    try {
-      const index = parseGeographyIndex(
-        await fetchJson(fetcher, CATALOG_GEOGRAPHY_INDEX_HREF),
-      );
-      if (!index) return { status: "failed", reason: "load-failed" };
-
-      const candidates = countriesForPosition(requested.position, index);
-      if (candidates.length === 0) {
-        return { status: "failed", reason: "outside" };
-      }
-      if (candidates.length !== 1) {
-        return { status: "failed", reason: "ambiguous" };
-      }
-
-      const candidate = candidates[0];
-      const geography = parseCatalogGeography(
-        await fetchJson(fetcher, candidate.href),
-        candidate.country,
-      );
-      if (!geography) return { status: "failed", reason: "load-failed" };
-
-      const resolved = resolveCatalogArea(requested.position, geography);
-      if (resolved.status === "resolved" && resolved.country === candidate.country) {
-        return { ...resolved, position: requested.position };
-      }
-      return {
-        status: "failed",
-        reason: resolved.status === "outside" ? "outside" : "ambiguous",
-      };
-    } catch {
-      return { status: "failed", reason: "load-failed" };
-    }
+    return resolvePositionToCatalogArea(requested.position, fetcher);
   };
+}
+
+/** Shared by browser and native adapters. The point never leaves this process. */
+export async function resolvePositionToCatalogArea(
+  position: CatalogPosition,
+  fetcher: LocationFetch,
+): Promise<CatalogPositionLookupResult> {
+  try {
+    const index = parseGeographyIndex(
+      await fetchJson(fetcher, CATALOG_GEOGRAPHY_INDEX_HREF),
+    );
+    if (!index) return { status: "failed", reason: "load-failed" };
+
+    const candidates = countriesForPosition(position, index);
+    if (candidates.length === 0) {
+      return { status: "failed", reason: "outside" };
+    }
+    if (candidates.length !== 1) {
+      return { status: "failed", reason: "ambiguous" };
+    }
+
+    const candidate = candidates[0];
+    const geography = parseCatalogGeography(
+      await fetchJson(fetcher, candidate.href),
+      candidate.country,
+    );
+    if (!geography) return { status: "failed", reason: "load-failed" };
+
+    const resolved = resolveCatalogArea(position, geography);
+    if (resolved.status === "resolved" && resolved.country === candidate.country) {
+      return { ...resolved, position };
+    }
+    return {
+      status: "failed",
+      reason: resolved.status === "outside" ? "outside" : "ambiguous",
+    };
+  } catch {
+    return { status: "failed", reason: "load-failed" };
+  }
 }
 
 export function createCatalogLocationRequest(

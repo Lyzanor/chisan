@@ -924,6 +924,46 @@ default scopes. The public sign-in and sign-up pages offer Google, and the
 authorization redirect reaches Google's account selector. This provider setup
 is independent of the photo/attribution code and migration `0013`.
 
+## Instagram professional-profile verification
+
+This optional connection supports private ownership review; it is not a login
+provider or automatic ownership verification. The implementation is gated by
+`CHISAN_INSTAGRAM_VERIFICATION_ENABLED=true` and fails closed without all required
+configuration. No schema migration is needed: submitted evidence uses the existing
+private claim proof JSON. The flow is shared with the mobile app through its
+system-browser ownership-request link.
+
+1. Configure **Instagram API with Instagram Login** in the Chisan Meta app for
+   professional business/creator accounts. Request only `instagram_business_basic`.
+   Complete Meta's current access/app-review requirements for accounts outside
+   the app's tester roles before enabling public use. Do not request messaging,
+   publishing, follower or media scopes for this proof.
+2. Register the exact HTTPS callback
+   `https://chisan.app/api/instagram/verification/callback`. Configure the privacy,
+   data deletion and deauthorization settings required by Meta, describing this
+   one-time proof and the account's Instagram-evidence removal action. No renewable
+   Instagram session or access token is retained after the identity lookup.
+3. Set `INSTAGRAM_APP_ID`, `INSTAGRAM_APP_SECRET`, an independent random
+   `CHISAN_INSTAGRAM_STATE_SECRET` of at least 32 characters, and
+   `INSTAGRAM_REDIRECT_URI` in the server environment. Do not reuse WhatsApp
+   secrets or put any of these secrets in Expo/Next public variables. Isolated
+   preview callbacks also need exact Meta registration and HTTPS for Secure cookies.
+4. Enable the feature and test a real professional account: valid connection,
+   refusal/cancellation, expired state, changed Chisan account, expired proof,
+   matching and mismatching catalog handles, submission and staff review. Verify
+   that ownership remains pending and no membership or public facts change.
+5. Ensure runtime request logging does not record callback query codes, signed
+   cookies, tokens or upstream bodies. Retained proof is only the identity,
+   handle, check time and catalog comparison. Disable the flag to stop new
+   connections/submissions through this method; already submitted proof remains
+   historical review evidence, not an active authorization.
+
+`pnpm test:instagram` verifies binding, signatures, expiry, minimum scope and
+token containment with a simulated provider. It does not establish Meta approval
+or a working production credential exchange. See
+[Meta's Instagram API reference](https://www.postman.com/meta/instagram/documentation/6yqw8pt/instagram-api)
+and [Business Login setup](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/business-login).
+
 ### Claimed producer gallery release
 
 Apply `0017_claimed_producer_gallery` before releasing the free gallery editor.
