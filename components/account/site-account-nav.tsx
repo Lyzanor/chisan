@@ -161,6 +161,7 @@ export function AccountMenu({
 
         {showAccountLinks ? (
           <div className="site-account-menu__links">
+            <Link href="/actividad">Actividad</Link>
             {signedIn ? (
               <>
                 <Link href={ACCOUNT_ROUTES.dashboard}>{messages.myAccount}</Link>

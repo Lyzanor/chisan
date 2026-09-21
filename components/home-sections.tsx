@@ -69,6 +69,20 @@ export function HomeSections({
           </ul>
         ) : null}
       </section>
+      <section
+        className={styles.section}
+        data-reveal
+        aria-labelledby="home-activity-title"
+      >
+        <p className="catalog-kicker">Comunidad y territorio</p>
+        <h2 id="home-activity-title">Novedades y actividad en tu zona</h2>
+        <p>
+          Conoce a productores destacados de tu provincia, novedades de temporada y la actividad reciente de la comunidad.
+        </p>
+        <Link className={styles.button} href="/actividad">
+          Ver actividad <ArrowUpRightIcon size={18} aria-hidden="true" />
+        </Link>
+      </section>
       <div data-reveal>
         <GuideHighlights />
       </div>

@@ -1,0 +1,517 @@
+.shell {
+  width: min(960px, calc(100% - 2rem));
+  margin: 1.5rem auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-12, 3rem);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-2, 0.5rem);
+}
+
+.kicker {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin: 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+/* Common section styles */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-4, 1rem);
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--chisan-space-2, 0.5rem);
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.sectionLink {
+  color: var(--accent-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+}
+
+/* Zone discovery styles */
+.locationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--chisan-space-3, 0.75rem);
+  padding: var(--chisan-space-3, 0.75rem) var(--chisan-space-4, 1rem);
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-object, 12px);
+}
+
+.locationInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--chisan-space-2, 0.5rem);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.locationInfo strong {
+  color: var(--accent-text);
+}
+
+.locationActions {
+  display: flex;
+  align-items: center;
+  gap: var(--chisan-space-2, 0.5rem);
+  flex-wrap: wrap;
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 38px;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background var(--chisan-motion-immediate), border-color var(--chisan-motion-immediate);
+}
+
+.buttonPrimary {
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.buttonPrimary:hover {
+  background: var(--chisan-color-moss-dark);
+}
+
+.buttonSecondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.buttonSecondary:hover {
+  background: var(--surface-muted);
+  border-color: var(--chisan-color-stone);
+}
+
+.selectorDropdown {
+  padding: 0.4rem 0.75rem;
+  min-height: 38px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-family: inherit;
+}
+
+.producersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--chisan-space-4, 1rem);
+}
+
+.producerCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-object, 12px);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform var(--chisan-motion-component), box-shadow var(--chisan-motion-component), border-color var(--chisan-motion-component);
+}
+
+.producerCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 6%);
+  transform: translateY(-2px);
+}
+
+.producerCardImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: var(--surface-muted);
+}
+
+.producerCardBody {
+  padding: var(--chisan-space-3, 0.75rem) var(--chisan-space-4, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.producerCategory {
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.producerName {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.producerCity {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.producerProducts {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--chisan-color-stone);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Following bubbles */
+.bubblesSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-3, 0.75rem);
+}
+
+.bubblesScroller {
+  display: flex;
+  gap: var(--chisan-space-4, 1rem);
+  overflow-x: auto;
+  padding: 0.5rem 0.25rem 1rem;
+  margin: 0 -0.25rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bubbleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  width: 76px;
+  flex-shrink: 0;
+  text-align: center;
+  color: var(--text);
+}
+
+.bubbleAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  background: var(--surface-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent-text);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  transition: border-color var(--chisan-motion-immediate), transform var(--chisan-motion-immediate);
+}
+
+.bubbleItem:hover .bubbleAvatar {
+  border-color: var(--accent);
+  transform: scale(1.06);
+}
+
+.bubbleName {
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bubblesEmpty,
+.bubblesGuest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--chisan-space-3, 0.75rem);
+  padding: var(--chisan-space-3, 0.75rem) var(--chisan-space-4, 1rem);
+  background: var(--surface-muted);
+  border: 1px dashed var(--line);
+  border-radius: var(--chisan-radius-object, 12px);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* Guides grid */
+.guidesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--chisan-space-4, 1rem);
+}
+
+.guideCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-object, 12px);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform var(--chisan-motion-component), box-shadow var(--chisan-motion-component), border-color var(--chisan-motion-component);
+}
+
+.guideCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 6%);
+  transform: translateY(-2px);
+}
+
+.guideImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: var(--surface-muted);
+}
+
+.guideBody {
+  padding: var(--chisan-space-3, 0.75rem) var(--chisan-space-4, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.guideTopic {
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  letter-spacing: 0.03em;
+}
+
+.guideTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.guideExcerpt {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Feed styles */
+.feedList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-3, 0.75rem);
+}
+
+.feedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: var(--chisan-space-4, 1rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-object, 12px);
+}
+
+.feedHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feedProducer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.feedProducer a {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.feedProducer a:hover {
+  text-decoration: underline;
+}
+
+.feedProducer small {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.feedTime {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.feedBadge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  letter-spacing: 0.02em;
+}
+
+.feedTitle {
+  margin: 0.2rem 0 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.feedBody {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.feedEmpty {
+  padding: var(--chisan-space-8, 2rem) var(--chisan-space-4, 1rem);
+  text-align: center;
+  background: var(--surface-muted);
+  border: 1px dashed var(--line);
+  border-radius: var(--chisan-radius-object, 12px);
+  color: var(--muted);
+}
+
+/* Call to action */
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-4, 1rem);
+  padding: var(--chisan-space-6, 1.5rem);
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--chisan-radius-panel, 16px);
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ctaContent h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+.ctaContent p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text);
+  line-height: 1.45;
+  max-width: 65ch;
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  gap: var(--chisan-space-3, 0.75rem);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: calc(100% - 1.5rem);
+    margin: 1rem auto 3rem;
+    gap: var(--chisan-space-8, 2rem);
+  }
+
+  .producersGrid,
+  .guidesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .locationActions {
+    justify-content: stretch;
+  }
+
+  .locationActions button,
+  .locationActions select {
+    flex: 1;
+  }
+}

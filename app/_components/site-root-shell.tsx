@@ -167,6 +167,7 @@ export function SiteRootShell({
             <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>
               <ChisanWordmark alt="" />
             </Link>
+            <Link href="/actividad">Actividad</Link>
             <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
             <GuidesLink locale={htmlLang === "en" ? "en" : "es"} />
             <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
