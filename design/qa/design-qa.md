@@ -3,6 +3,17 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-21 — Store page as the purchase link
+
+Reviewed producer profiles from the production build at 390×844 first, then
+1440×900, with two temporary local `url_tienda` values that were reverted before
+commit. An online shop row opened its store page from the existing “Tienda en
+línea” link while the hero website card kept `web`. A marketplace-only row
+turned its “Marketplace” label into the same moss link with the external-arrow
+icon. A row without a store page kept the website as the online shop link.
+Layout, wrapping and touch height of the sales row are unchanged; no styles
+were added.
+
 ## 2026-09-21 — iOS-only Apple and private APK configuration
 
 Apple now uses the native iOS flow and is omitted from Android and web entry.

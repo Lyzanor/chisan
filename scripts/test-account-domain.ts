@@ -241,6 +241,57 @@ test("producer proposals enforce cross-field and format invariants", () => {
   assert.match(result.errors["categorias adicionales"], /catalog value/);
 });
 
+test("producer store URLs need current online sales and a storefront channel", () => {
+  const current = {
+    ...validFields(),
+    web: "https://example.com/",
+    "Venta online": "sí",
+    "Canal de venta": "whatsapp",
+  };
+  const withStore = (changes: Record<string, string>) =>
+    validateProducerProposal({ ...current, ...changes }, current);
+
+  const subdomainShop = withStore({
+    "Canal de venta": "ecommerce|whatsapp",
+    url_tienda: "https://tienda.example.com/",
+  });
+  assert.equal(subdomainShop.ok, true);
+  if (subdomainShop.ok) {
+    assert.deepEqual(subdomainShop.patch, {
+      "Canal de venta": "ecommerce|whatsapp",
+      url_tienda: "https://tienda.example.com/",
+    });
+  }
+  assert.equal(
+    withStore({
+      "Canal de venta": "marketplace",
+      url_tienda: "https://mercado.example.org/productores/ejemplo",
+    }).ok,
+    true,
+  );
+
+  for (const [changes, pattern] of [
+    [{ url_tienda: "https://tienda.example.com/" }, /online shop, marketplace or subscription/],
+    [
+      {
+        "Venta online": "no comprobado",
+        "Canal de venta": "",
+        url_tienda: "https://tienda.example.com/",
+      },
+      /only valid when online sales is yes/,
+    ],
+    [
+      { "Canal de venta": "ecommerce", url_tienda: "https://owner:secret@example.com/tienda" },
+      /HTTP/,
+    ],
+    [{ "Canal de venta": "ecommerce", url_tienda: "tienda.example.com" }, /HTTP/],
+  ] as const) {
+    const result = withStore(changes);
+    assert.equal(result.ok, false);
+    if (!result.ok) assert.match(result.errors.url_tienda, pattern);
+  }
+});
+
 test("producer text fields reject spreadsheet formula prefixes", () => {
   const current = validFields();
   for (const prefix of ["=SUM(A1:A2)", "+1+1", "-1+1", "@SUM(A1:A2)"]) {

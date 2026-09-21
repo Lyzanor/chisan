@@ -86,6 +86,7 @@ const messages = {
     lon: "Longitud decimal WGS84. La latitud y la longitud deben indicarse juntas.",
     "Venta online": "Indica si se ha revisado un mecanismo de pedido vigente.",
     "Canal de venta": "Mecanismos de pedido vigentes demostrados.",
+    url_tienda: "Página HTTP(S) de entrada a la tienda en línea propia del productor o a su escaparate oficial en un marketplace colectivo; puede ser distinta de la web. Requiere venta en línea: sí y un canal de tienda en línea, marketplace o suscripción.",
     "visitas guiadas":
       "Indica si este productor ofrece actualmente visitas guiadas; déjalo vacío si no se publica.",
     "mensaje a la comunidad":
@@ -243,6 +244,7 @@ const messages = {
     image: "Imagen",
     onlineSales: "Venta en línea",
     salesChannels: "Canales de venta",
+    storeUrl: "URL de la tienda en línea",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

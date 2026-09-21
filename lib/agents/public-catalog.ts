@@ -125,6 +125,7 @@ export function publicProducerBase(
     sales_channels: SALES_CHANNEL_VALUES.filter((channel) =>
       (fields["Canal de venta"] ?? "").split("|").includes(channel),
     ),
+    store_url: absent(fields.url_tienda),
   };
 }
 

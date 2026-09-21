@@ -1405,6 +1405,92 @@ grep -q "historia contains a URL or source citation" \
 grep -q "fecha ultimo cambio must be empty or an exact YYYY-MM-DD UTC approval date" \
   "$TMP_DIR/out-premium-fields-invalid.txt"
 
+# A store page belongs to a demonstrated online storefront: current online
+# sales and a channel that a page can open, never only a contact route. Its
+# host may differ from the website (own path, subdomain or hosted shop).
+node - "$TMP_DIR/store-url-valid.csv" "$TMP_DIR/store-url-invalid.csv" <<'NODE'
+const fs = require("node:fs");
+const { stringify } = require("csv-stringify/sync");
+const header = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
+const makeRow = (producerId, overrides = {}) => ({
+  slug: `tienda-${producerId}`,
+  nombre: `Tienda ${producerId}`,
+  municipio: "Abrera",
+  categoria: "Miel",
+  web: "https://example.com/",
+  "Venta online": "sí",
+  "Canal de venta": "ecommerce",
+  producer_id: String(producerId),
+  ...overrides,
+});
+const record = (row) => header.map((column) => row[column] ?? "");
+fs.writeFileSync(
+  process.argv[2],
+  stringify([
+    header,
+    record(makeRow(94001, { url_tienda: "https://example.com/tienda" })),
+    record(makeRow(94002, { url_tienda: "https://tienda.example.com/" })),
+    record(
+      makeRow(94003, {
+        url_tienda: "https://example.myshopify.com/",
+        "Canal de venta": "whatsapp|marketplace",
+      }),
+    ),
+    record(
+      makeRow(94004, {
+        url_tienda: "https://example.com/",
+        "Canal de venta": "suscripcion",
+      }),
+    ),
+    record(makeRow(94005, { "Canal de venta": "telefono" })),
+  ]),
+);
+fs.writeFileSync(
+  process.argv[3],
+  stringify([
+    header,
+    record(makeRow(94011, { url_tienda: "ftp://example.com/tienda" })),
+    record(
+      makeRow(94012, { url_tienda: "https://owner:secret@example.com/tienda" }),
+    ),
+    record(
+      makeRow(94013, {
+        url_tienda: "https://example.com/tienda",
+        "Venta online": "no comprobado",
+        "Canal de venta": "",
+      }),
+    ),
+    record(
+      makeRow(94014, {
+        url_tienda: "https://example.com/tienda",
+        "Canal de venta": "whatsapp|telefono",
+      }),
+    ),
+    record(
+      makeRow(94015, {
+        url_tienda: "https://example.com/tienda",
+        "Canal de venta": "",
+      }),
+    ),
+    record(makeRow(94016, { url_tienda: "tienda.example.com" })),
+  ]),
+);
+NODE
+run_expect_success "$TMP_DIR/out-store-url-valid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/store-url-valid.csv"
+run_expect_failure "$TMP_DIR/out-store-url-invalid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/store-url-invalid.csv"
+grep -q "url_tienda: must use http or https" \
+  "$TMP_DIR/out-store-url-invalid.txt"
+grep -q "url_tienda: must not include embedded credentials" \
+  "$TMP_DIR/out-store-url-invalid.txt"
+grep -q "url_tienda: is not a valid URL" \
+  "$TMP_DIR/out-store-url-invalid.txt"
+grep -q "url_tienda is set but Venta online is not 'sí'" \
+  "$TMP_DIR/out-store-url-invalid.txt"
+test "$(grep -c "url_tienda requires Canal de venta to include one of: ecommerce, marketplace, suscripcion" \
+  "$TMP_DIR/out-store-url-invalid.txt")" -eq 2
+
 (cd "$ROOT_DIR" && node_modules/.bin/tsx --test scripts/test-i18n.ts)
 
 echo "CSV audit tests OK."

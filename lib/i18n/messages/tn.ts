@@ -87,6 +87,7 @@ const messages = {
     lon: "Longitude ya desimali ya WGS84. Latitude le longitude di tshwanetse go newa mmogo.",
     "Venta online": "Gore mokgwa wa jaanong wa go otara o sekasekilwe.",
     "Canal de venta": "Mekgwa ya jaanong ya go otara e e supilweng.",
+    url_tienda: "Tsebe ya go tsena ya HTTP(S) ya lebenkele la inthanete la modiri ka boene kgotsa lefelo la gagwe la semmuso mo mmarakeng o o kopanetsweng; e ka farologana le webosaete. Go tlhokega thekiso ya inthanete e e netefaditsweng le kanale ya lebenkele la inthanete, mmaraka kgotsa boingodiso.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -218,6 +219,7 @@ const messages = {
     image: "Setshwantsho",
     onlineSales: "Thekiso ya inthanete",
     salesChannels: "Dikanale tsa thekiso",
+    storeUrl: "URL ya lebenkele la inthanete",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

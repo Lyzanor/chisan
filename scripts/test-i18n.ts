@@ -52,6 +52,7 @@ import {
   loadMessages,
 } from "../lib/i18n/messages";
 import { getProducerActionLabels } from "../lib/i18n/producer-action-labels";
+import { resolveProducerStoreLink } from "../lib/catalog/store-link";
 import {
   buildProducerStructuredData,
   serializeStructuredData,
@@ -1238,12 +1239,51 @@ test("producer profiles promote canonical editorial facts without widening CSV",
   );
   assert.match(
     producerPage,
-    /onlineSales === "sí"\s*&&\s*salesChannels\.includes\("ecommerce"\)\s*&&\s*Boolean\(website\)/,
+    /resolveProducerStoreLink\(\{[\s\S]*?storeUrl: getFieldValue\(producer\.fields, "url_tienda"\),\s*website,/,
   );
+  assert.match(producerPage, /storeLink\?\.channel === channel/);
   assert.match(producerPage, /getFieldValue\(producer\.fields, "productos estrella"\)/);
   assert.match(producerPage, /className="detail-intro"/);
   assert.match(producerPage, /className="detail-product-list"/);
   assert.equal(producerPage.match(/prefetch=\{false\}/g)?.length, 4);
+});
+
+test("the storefront channel opens the reviewed store page, else the website", () => {
+  const link = (
+    onlineSales: string,
+    channels: string,
+    storeUrl = "",
+    website = "https://example.com/",
+  ) =>
+    resolveProducerStoreLink({
+      onlineSales,
+      salesChannels: channels.split("|").filter(Boolean),
+      storeUrl,
+      website,
+    });
+
+  assert.deepEqual(link("sí", "whatsapp|ecommerce", "https://tienda.example.com/"), {
+    channel: "ecommerce",
+    href: "https://tienda.example.com/",
+  });
+  assert.deepEqual(link("sí", "suscripcion|marketplace", "https://market.example.org/p/1"), {
+    channel: "marketplace",
+    href: "https://market.example.org/p/1",
+  });
+  assert.deepEqual(link("sí", "email|suscripcion", "https://example.com/cajas"), {
+    channel: "suscripcion",
+    href: "https://example.com/cajas",
+  });
+  // Until a store page is recorded, only the online shop channel keeps the
+  // official website as its destination.
+  assert.deepEqual(link("sí", "ecommerce"), {
+    channel: "ecommerce",
+    href: "https://example.com/",
+  });
+  assert.equal(link("sí", "marketplace"), null);
+  assert.equal(link("sí", "ecommerce", "", ""), null);
+  assert.equal(link("sí", "telefono", "https://example.com/tienda"), null);
+  assert.equal(link("no comprobado", "", "https://example.com/tienda"), null);
 });
 
 test("Japanese layout and map-popup contracts remain objectively testable", async () => {

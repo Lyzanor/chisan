@@ -22,6 +22,7 @@
 //   node scripts/audit-defects.mjs --json
 
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "csv-parse/sync";
@@ -32,6 +33,12 @@ import {
   descriptionNaturalnessReason,
   isLikelyDescriptionTruncated,
 } from "./lib/description-quality.mjs";
+
+// Loaded like audit-csv.js: a synchronous require keeps the shared schema
+// without Node's typeless-module warning in every report.
+const { STOREFRONT_SALES_CHANNEL_VALUES } = createRequire(import.meta.url)(
+  "../lib/catalog/producer-schema.ts",
+);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -100,6 +107,11 @@ const duplicateRows = (rows, keyOf) => {
   }
   return [...groups.values()].filter((group) => group.length > 1).flat();
 };
+
+const hasStorefrontChannel = (row) =>
+  (row["Canal de venta"] ?? "")
+    .split("|")
+    .some((channel) => STOREFRONT_SALES_CHANNEL_VALUES.includes(channel.trim()));
 
 const hostOf = (url) => {
   const m = (url ?? "").match(/^https?:\/\/(?:www\.)?([^/?#]+)/i);
@@ -600,6 +612,17 @@ export const CHECKS = [
     label: "`Venta online=sí` sin `Canal de venta`",
     hint: "sabemos que vende pero no cómo se le pide: el dato que hace accionable la fila",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "sí" && !r["Canal de venta"]),
+  },
+  {
+    id: "tienda-sin-url",
+    kind: "senal",
+    stage: "verification",
+    label: "`Venta online=sí` con canal de tienda (ecommerce, marketplace o suscripcion) sin `url_tienda`",
+    hint: "abre la tienda y registra su página de entrada; sin ella la ficha enlaza la `web` general desde ecommerce y no enlaza marketplace ni suscripción",
+    run: ({ rows }) =>
+      rows.filter(
+        (r) => r["Venta online"] === "sí" && !r.url_tienda && hasStorefrontChannel(r),
+      ),
   },
   {
     id: "venta-sin-resolver",

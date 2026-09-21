@@ -81,6 +81,7 @@ const messages = {
     lon: "WGS84 ਦਸ਼ਮਲਵ ਰੇਖਾਂਸ਼। ਅਕਸ਼ਾਂਸ਼ ਅਤੇ ਰੇਖਾਂਸ਼ ਦੋਵੇਂ ਇਕੱਠੇ ਦੇਣੇ ਹਨ।",
     "Venta online": "ਕੀ ਮੌਜੂਦਾ ਆਰਡਰ ਦੇ ਢੰਗ ਦੀ ਜਾਂਚ ਹੋਈ ਹੈ।",
     "Canal de venta": "ਮੌਜੂਦਾ ਅਤੇ ਸਾਬਤ ਹੋਏ ਆਰਡਰ ਦੇ ਢੰਗ।",
+    url_tienda: "ਉਤਪਾਦਕ ਦੀ ਆਪਣੀ ਆਨਲਾਈਨ ਦੁਕਾਨ ਜਾਂ ਕਿਸੇ ਅਧਿਕਾਰਕ ਸਾਂਝੇ ਮਾਰਕੀਟਪਲੇਸ ਉੱਤੇ ਉਸਦੀ ਦੁਕਾਨ ਦਾ HTTP(S) ਦਾਖ਼ਲਾ ਪੰਨਾ; ਇਹ ਵੈੱਬਸਾਈਟ ਤੋਂ ਵੱਖਰਾ ਹੋ ਸਕਦਾ ਹੈ। ਇਸ ਲਈ ਪੁਸ਼ਟ ਆਨਲਾਈਨ ਵਿਕਰੀ ਅਤੇ ਆਨਲਾਈਨ ਦੁਕਾਨ, ਮਾਰਕੀਟਪਲੇਸ ਜਾਂ ਗਾਹਕੀ ਮਾਧਿਅਮ ਲਾਜ਼ਮੀ ਹੈ।",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -207,6 +208,7 @@ const messages = {
     image: "ਤਸਵੀਰ",
     onlineSales: "ਆਨਲਾਈਨ ਵਿਕਰੀ",
     salesChannels: "ਵਿਕਰੀ ਮਾਧਿਅਮ",
+    storeUrl: "ਆਨਲਾਈਨ ਦੁਕਾਨ ਦਾ URL",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

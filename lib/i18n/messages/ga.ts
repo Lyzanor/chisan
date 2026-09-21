@@ -76,6 +76,7 @@ const messages = {
     lon: "Domhanfhad deachúil WGS84. Ní mór domhanleithead agus domhanfhad a sholáthar le chéile.",
     "Venta online": "An ndearnadh meicníocht ordaithe reatha a athbhreithniú.",
     "Canal de venta": "Meicníochtaí ordaithe reatha a léiríodh.",
+    url_tienda: "Leathanach iontrála HTTP(S) shiopa ar líne an táirgeora féin nó a aghaidh siopa oifigiúil i margadh comhroinnte; féadfaidh sé a bheith difriúil ón suíomh gréasáin. Teastaíonn díolacháin ar líne dheimhnithe agus cainéal siopa ar líne, margaidh nó síntiúis.",
     "visitas guiadas":
       "An gcuireann an táirgeoir turais threoraithe ar fáil faoi láthair.",
     "mensaje a la comunidad":
@@ -219,6 +220,7 @@ const messages = {
     image: "Íomhá",
     onlineSales: "Díolacháin ar líne",
     salesChannels: "Cainéil díolacháin",
+    storeUrl: "URL an tsiopa ar líne",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

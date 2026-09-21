@@ -12,6 +12,7 @@ ONLINE_SALES_VALUES,
 PRODUCER_EXPANDED_FIELD_DEFINITIONS,
 PRODUCER_STANDARD_FIELD_DEFINITIONS,
 SALES_CHANNEL_VALUES,
+STOREFRONT_SALES_CHANNEL_VALUES,
 } from "@/lib/catalog/producer-schema";
 export { ONLINE_SALES_VALUES,PRODUCER_BEHIND_MAX_CHARACTERS,PRODUCER_HISTORY_MAX_CHARACTERS,PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD,SALES_CHANNEL_VALUES } from "@/lib/catalog/producer-schema";
 
@@ -40,6 +41,7 @@ const EDITABLE_FIELD_KEYS = new Set<string>(
 const CATEGORY_SET = new Set<string>(PRODUCER_CATEGORIES);
 const ONLINE_SALES_SET = new Set<string>(ONLINE_SALES_VALUES);
 const SALES_CHANNEL_SET = new Set<string>(SALES_CHANNEL_VALUES);
+const STOREFRONT_SALES_CHANNEL_SET = new Set<string>(STOREFRONT_SALES_CHANNEL_VALUES);
 const DESCRIPTION_LOCALE_SET = new Set<string>(PRODUCER_DESCRIPTION_LOCALES);
 const PREMIUM_FIELD_KEYS = new Set<string>(
   PRODUCER_PREMIUM_EDITABLE_FIELDS.map(({ key }) => key),
@@ -237,6 +239,7 @@ export function validateProducerProposal(
 
   for (const key of [
     "web",
+    "url_tienda",
     "Facebook",
     "Instagram",
     "Google Maps",
@@ -275,6 +278,13 @@ export function validateProducerProposal(
     errors["Canal de venta"] = message("Every sales channel must use a catalog value.", "Todos los canales de venta deben pertenecer al catálogo.");
   } else if (candidate["Venta online"] !== "sí" && salesChannels.length > 0) {
     errors["Canal de venta"] = message("Sales channels are only valid when online sales is yes.", "Los canales de venta solo se indican cuando hay venta online.");
+  }
+  if (candidate.url_tienda && !errors.url_tienda) {
+    if (candidate["Venta online"] !== "sí") {
+      errors.url_tienda = message("An online shop URL is only valid when online sales is yes.", "La URL de la tienda solo se indica cuando hay venta online.");
+    } else if (!salesChannels.some((channel) => STOREFRONT_SALES_CHANNEL_SET.has(channel))) {
+      errors.url_tienda = message("An online shop URL requires the online shop, marketplace or subscription channel.", "La URL de la tienda requiere el canal tienda en línea, marketplace o suscripción.");
+    }
   }
 
   if (!candidate.descripcion && candidate.descripcion_locale) {

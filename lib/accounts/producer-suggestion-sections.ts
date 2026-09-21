@@ -62,8 +62,8 @@ export const PRODUCER_SUGGESTION_SECTIONS = {
   venta: {
     label: "Venta y canales",
     operatorLabel: "Sales and channels",
-    help: "Si hay venta online comprobada y por qué canales se puede comprar.",
-    fields: ["Venta online", "Canal de venta"],
+    help: "Si hay venta online comprobada, por qué canales se puede comprar y la dirección de su tienda en línea.",
+    fields: ["Venta online", "Canal de venta", "url_tienda"],
   },
 } as const satisfies Record<string, ProducerSuggestionSectionDefinition>;
 

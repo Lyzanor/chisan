@@ -166,7 +166,7 @@ refresh a source's `checkedAt` unless the source was opened again.
 | `municipality` | Places the productive unit in the stated municipality |
 | `location` | Supports address or coordinates |
 | `contact` | Publishes a direct contact route or visiting details |
-| `online-sales` | Supports the reviewed sales channels and remote-order status |
+| `online-sales` | Supports the reviewed sales channels, store page and remote-order status |
 | `link-ownership` | Connects a retained link to the entity |
 | `duplicate` | Shows that two rows are the same productive unit |
 | `closure` | Establishes permanent closure |

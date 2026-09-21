@@ -82,6 +82,7 @@ const messages = {
     lon: "WGS84 दशमलव देशान्तर। अक्षांश र देशान्तर सँगसँगै दिनुपर्छ।",
     "Venta online": "हालको अर्डर गर्ने माध्यमको समीक्षा गरिएको छ कि छैन।",
     "Canal de venta": "हाल प्रमाणित अर्डर गर्ने माध्यमहरू।",
+    url_tienda: "उत्पादकको आफ्नै अनलाइन पसल वा कुनै आधिकारिक सामूहिक मार्केटप्लेसमा रहेको उसको पसलको HTTP(S) प्रवेश पृष्ठ; यो वेबसाइटभन्दा फरक हुन सक्छ। यसका लागि पुष्टि भएको अनलाइन बिक्री र अनलाइन पसल, मार्केटप्लेस वा सदस्यता माध्यम आवश्यक छ।",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -214,6 +215,7 @@ const messages = {
     image: "तस्बिर",
     onlineSales: "अनलाइन बिक्री",
     salesChannels: "बिक्री माध्यमहरू",
+    storeUrl: "अनलाइन पसलको URL",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

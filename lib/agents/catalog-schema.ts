@@ -128,6 +128,9 @@ const baseShape = {
   ),
   online_sales: z.enum(ONLINE_SALES_VALUES),
   sales_channels: z.array(z.enum(SALES_CHANNEL_VALUES)),
+  store_url: text.describe(
+    "Reviewed entry page of the producer's own online shop or official collective storefront, only with online_sales sí. Orders and terms belong to that shop; null means not recorded.",
+  ),
 };
 export const publicProducerBaseSchema = z.strictObject(baseShape);
 export type PublicProducerBase = z.infer<typeof publicProducerBaseSchema>;

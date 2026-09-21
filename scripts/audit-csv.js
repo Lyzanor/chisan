@@ -3,7 +3,7 @@
 // Shared by every area CSV, in this order. Its length may grow through the
 // repository-wide migration documented in docs/CSV_CONTRACT.md.
 /* eslint-disable @typescript-eslint/no-require-imports -- This audit exports a synchronous CommonJS contract. */
-const { CANONICAL_PRODUCER_HEADER: CANONICAL_HEADER, ONLINE_SALES_VALUES: onlineSalesValues, SALES_CHANNEL_VALUES: salesChannelValues, TRANSLATABLE_FIELD_SPECS, PREMIUM_CONTROLLED_VALUES, EXTRA_PREMIUM_FIELDS } = require("../lib/catalog/producer-schema.ts");
+const { CANONICAL_PRODUCER_HEADER: CANONICAL_HEADER, ONLINE_SALES_VALUES: onlineSalesValues, SALES_CHANNEL_VALUES: salesChannelValues, STOREFRONT_SALES_CHANNEL_VALUES: storefrontSalesChannelValues, TRANSLATABLE_FIELD_SPECS, PREMIUM_CONTROLLED_VALUES, EXTRA_PREMIUM_FIELDS } = require("../lib/catalog/producer-schema.ts");
 const { SUPPORTED_LOCALES: supportedLocales, DESCRIPTION_SOURCE_LOCALES: sourceLocales, APPLICATION_DEFAULT_LOCALE } = require("../lib/i18n/locale-registry.ts");
 /* eslint-enable @typescript-eslint/no-require-imports */
 let PRODUCER_DESCRIPTION_MAX_CHARACTERS;
@@ -26,6 +26,8 @@ const SALES_CHANNEL_SEPARATOR = "|";
 const SALES_CHANNEL_VALUES = new Set(salesChannelValues);
 const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
+const STORE_URL_COLUMN = "url_tienda";
+const STOREFRONT_SALES_CHANNELS = new Set(storefrontSalesChannelValues);
 const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
 const PRODUCER_ID_COLUMN = "producer_id";
 const LOCATION_COLUMNS = Object.freeze(["country", "region", "area"]);
@@ -1408,6 +1410,8 @@ function runContractAudit({
 
   const validators = {
     web: () => null,
+    [STORE_URL_COLUMN]: (url) =>
+      url.username || url.password ? "must not include embedded credentials" : null,
     "enlace destacado 1": (url) =>
       url.username || url.password ? "must not include embedded credentials" : null,
     "enlace destacado 2": (url) =>
@@ -1874,12 +1878,14 @@ function runContractAudit({
     // that is present must be usable: known tokens, and an actual online sale to
     // describe.
     const salesChannelRaw = cleanCell(fields[SALES_CHANNEL_COLUMN]);
+    const salesChannels = salesChannelRaw
+      .split(SALES_CHANNEL_SEPARATOR)
+      .map((token) => token.trim())
+      .filter(Boolean);
     if (salesChannelRaw) {
-      const invalid = salesChannelRaw
-        .split(SALES_CHANNEL_SEPARATOR)
-        .map((token) => token.trim())
-        .filter(Boolean)
-        .filter((token) => !SALES_CHANNEL_VALUES.has(token));
+      const invalid = salesChannels.filter(
+        (token) => !SALES_CHANNEL_VALUES.has(token),
+      );
 
       if (invalid.length) {
         push(
@@ -1900,6 +1906,30 @@ function runContractAudit({
           id,
           slug,
           "Canal de venta is set but Venta online is not 'sí'",
+        );
+      }
+    }
+
+    // A store page describes a demonstrated storefront: it needs a current online
+    // sale and a channel that a page can open, not only a contact route.
+    if (cleanCell(fields[STORE_URL_COLUMN])) {
+      if (onlineSalesRaw !== "sí") {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${STORE_URL_COLUMN} is set but Venta online is not 'sí'`,
+        );
+      } else if (
+        !salesChannels.some((channel) => STOREFRONT_SALES_CHANNELS.has(channel))
+      ) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${STORE_URL_COLUMN} requires Canal de venta to include one of: ${storefrontSalesChannelValues.join(", ")}`,
         );
       }
     }

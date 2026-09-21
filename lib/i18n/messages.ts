@@ -85,6 +85,7 @@ export type Messages = {
     lon: string;
     "Venta online": string;
     "Canal de venta": string;
+    url_tienda: string;
   };
   common: {
     unitCount: string;
@@ -211,6 +212,7 @@ export type Messages = {
     image: string;
     onlineSales: string;
     salesChannels: string;
+    storeUrl: string;
     facebook: string;
     instagram: string;
     googleMaps: string;

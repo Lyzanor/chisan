@@ -87,6 +87,7 @@ const messages = {
     lon: "Longitude ya desimali ya WGS84. Latitude le longitude di swanetše go fiwa mmogo.",
     "Venta online": "Ge mokgwa wa bjale wa go otara o lekotšwe.",
     "Canal de venta": "Mekgwa ya bjale ya go otara ye e bonagaditšwego.",
+    url_tienda: "Letlakala la go tsena la HTTP(S) la lebenkele la inthanete la motšweletši ka boyena goba la lefelo la gagwe la semmušo mmarakeng wa inthanete wa sehlopha; le ka fapana le websaete. Le nyaka thekišo ya inthanete ye e netefaditšwego le kanale ya lebenkele la inthanete, mmaraka wa inthanete goba boleloko.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -218,6 +219,7 @@ const messages = {
     image: "Seswantšho",
     onlineSales: "Thekišo ya inthanete",
     salesChannels: "Dikanale tša thekišo",
+    storeUrl: "URL ya lebenkele la inthanete",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

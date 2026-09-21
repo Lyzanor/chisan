@@ -85,6 +85,7 @@ const messages = {
     lon: "Longitude yedesimali ye-WGS84. I-latitude ne-longitude kufuneka zinikwe kunye.",
     "Venta online": "Nokuba indlela yangoku yoku-odola ihloliwe.",
     "Canal de venta": "Iindlela zangoku zoku-odola eziqinisekisiweyo.",
+    url_tienda: "Iphepha lokungena le-HTTP(S) levenkile ye-intanethi yomvelisi ngokwakhe okanye ivenkile yakhe esemthethweni kwindawo yentengiso edibeneyo; linokwahluka kwiwebhusayithi. Kufuneka intengiso ye-intanethi eqinisekisiweyo kunye nendlela yevenkile ye-intanethi, yendawo yentengiso okanye yobhaliso.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -215,6 +216,7 @@ const messages = {
     image: "Umfanekiso",
     onlineSales: "Intengiso ye-intanethi",
     salesChannels: "Iindlela zentengiso",
+    storeUrl: "I-URL yevenkile ye-intanethi",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

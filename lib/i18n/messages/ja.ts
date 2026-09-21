@@ -73,6 +73,7 @@ const messages = {
     lon: "WGS84 の十進経度。緯度と経度は両方入力してください。",
     "Venta online": "現在の注文手段が確認済みかどうか。",
     "Canal de venta": "現在利用できることが確認された注文手段。",
+    url_tienda: "生産者自身のオンラインショップ、または公式の共同マーケットプレイス内の出店ページの入口となる HTTP(S) ページ。ウェブサイトと異なる場合があります。オンライン販売が「あり」で、オンラインショップ・マーケットプレイス・定期購入のいずれかのチャネルが必要です。",
     "visitas guiadas":
       "この生産者が現在ガイド付き見学を実施しているかどうか。未公開の場合は空欄にします。",
     "mensaje a la comunidad":
@@ -213,6 +214,7 @@ const messages = {
     image: "画像",
     onlineSales: "オンライン販売",
     salesChannels: "販売チャネル",
+    storeUrl: "オンラインショップのURL",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google マップ",

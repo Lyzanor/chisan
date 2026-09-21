@@ -76,6 +76,7 @@ const messages = {
     lon: "WGS84 decimal longitude. Latitude and longitude must be supplied together.",
     "Venta online": "Whether a current ordering mechanism has been reviewed.",
     "Canal de venta": "Current demonstrated ordering mechanisms.",
+    url_tienda: "HTTP(S) entry page of the producer's own online shop or official collective storefront; it may differ from the website. Requires online sales to be yes and an online shop, marketplace or subscription channel.",
     "visitas guiadas":
       "Whether this producer currently offers guided visits; leave empty when unpublished.",
     "mensaje a la comunidad":
@@ -224,6 +225,7 @@ const messages = {
     image: "Image",
     onlineSales: "Online sales",
     salesChannels: "Sales channels",
+    storeUrl: "Online shop URL",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

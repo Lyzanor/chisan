@@ -110,8 +110,11 @@ No match is a successful empty list and does not prove that no producer exists.
   are omitted using the same resolver as the page. Current related translations
   use the existing explicit source-language fallback.
 - Base results contain public contact channels, source-authored hours, online
-  sales tokens, categories and mapped coordinates. Generic imagery is null.
-  Coordinates describe the catalog map, not a new street-address assertion.
+  sales tokens, the reviewed `store_url`, categories and mapped coordinates.
+  Generic imagery is null. Coordinates describe the catalog map, not a new
+  street-address assertion. `store_url` is an additive v1 field holding the
+  row's shop entry page; null means none is recorded, and the website is never
+  substituted for it. Orders and terms belong to that shop.
 - Detail uses `loadPublicExpandedContent`, shared with HTML, for exact current
   entitlement checks and fail-closed behavior. It returns only visible expanded
   fields and localized products/gallery/links, preserving item IDs and order.

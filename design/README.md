@@ -334,11 +334,13 @@ below opening hours beside the location; telephone-only profiles remain usable.
 The composer prepares email in the visitor's own application and explains that
 before continuing.
 
-Featured products sit with one sales-channel row. The online shop channel is
-itself the purchase link when online sales and the website support it; other
-channels are plain labels, and a `no` or `no comprobado` online-sales value
-remains a quiet status. Details does not repeat those fields. Location shares a
-row with vertical reviewed opening hours and the contact widget. Preserve the
+Featured products sit with one sales-channel row. One storefront channel is
+itself the purchase link to the reviewed store page (online shop, else
+marketplace, else subscription); without a store page, the online shop channel
+falls back to the website. Other channels are plain labels, and a `no` or
+`no comprobado` online-sales value remains a quiet status. Details does not
+repeat those fields. Location shares a row with vertical reviewed opening hours
+and the contact widget. Preserve the
 source's days and ranges without inferring open/closed state. Directions is the
 green primary visit action; the transient distance tool uses a white secondary
 button. Directions uses Google Maps' universal directions URL with a reviewed

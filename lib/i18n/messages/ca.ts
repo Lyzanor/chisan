@@ -86,6 +86,7 @@ const messages = {
     lon: "Longitud decimal WGS84. La latitud i la longitud s'han d'indicar juntes.",
     "Venta online": "Indica si s'ha revisat un mecanisme de comanda vigent.",
     "Canal de venta": "Mecanismes de comanda vigents demostrats.",
+    url_tienda: "Pàgina HTTP(S) d'entrada a la botiga en línia pròpia del productor o al seu aparador oficial en un marketplace col·lectiu; pot ser diferent del web. Requereix venda en línia: sí i un canal de botiga en línia, marketplace o subscripció.",
     "visitas guiadas":
       "Indica si aquest productor ofereix actualment visites guiades; deixa-ho buit si no es publica.",
     "mensaje a la comunidad":
@@ -242,6 +243,7 @@ const messages = {
     image: "Imatge",
     onlineSales: "Venda en línia",
     salesChannels: "Canals de venda",
+    storeUrl: "URL de la botiga en línia",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

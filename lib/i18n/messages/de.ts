@@ -77,6 +77,7 @@ const messages = {
     lon: "Dezimaler WGS84-Längengrad. Breiten- und Längengrad müssen zusammen angegeben werden.",
     "Venta online": "Ob eine aktuelle Bestellmöglichkeit geprüft wurde.",
     "Canal de venta": "Aktuell nachgewiesene Bestellmöglichkeiten.",
+    url_tienda: "HTTP(S)-Einstiegsseite des eigenen Onlineshops des Erzeugers oder seiner offiziellen Präsenz auf einem gemeinschaftlichen Marktplatz; sie kann von der Website abweichen. Erfordert bestätigten Onlineverkauf und den Kanal Onlineshop, Marktplatz oder Abonnement.",
     "visitas guiadas":
       "Ob dieser Erzeuger derzeit Führungen anbietet; leer lassen, wenn dies nicht veröffentlicht wird.",
     "mensaje a la comunidad":
@@ -218,6 +219,7 @@ const messages = {
     image: "Bild",
     onlineSales: "Onlineverkauf",
     salesChannels: "Verkaufskanäle",
+    storeUrl: "URL des Onlineshops",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

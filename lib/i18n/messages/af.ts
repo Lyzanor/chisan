@@ -76,6 +76,7 @@ const messages = {
     lon: "WGS84-desimale lengtegraad. Breedte- en lengtegraad moet saam verskaf word.",
     "Venta online": "Of ’n huidige bestelmeganisme nagegaan is.",
     "Canal de venta": "Huidige, bewese bestelmeganismes.",
+    url_tienda: "HTTP(S)-intreebladsy van die produsent se eie aanlynwinkel of amptelike winkelblad op ’n gesamentlike markplek; dit kan van die webwerf verskil. Vereis bevestigde aanlynverkope en ’n aanlynwinkel-, markplek- of intekeningkanaal.",
     "visitas guiadas": "Of die produsent tans begeleide besoeke aanbied.",
     "mensaje a la comunidad":
       "’n Openbare boodskap van die produsent aan die plaaslike voedselgemeenskap.",
@@ -216,6 +217,7 @@ const messages = {
     image: "Beeld",
     onlineSales: "Aanlynverkope",
     salesChannels: "Verkoopskanale",
+    storeUrl: "Aanlynwinkel-URL",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

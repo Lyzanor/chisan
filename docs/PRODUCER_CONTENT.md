@@ -152,8 +152,10 @@ only with expanded-content access; no Person or Product JSON-LD is inferred.
 
 Optional `purchase_url` is the complete HTTP(S) product URL in the shop, without
 credentials. It is distinct from editorial `link_ids`; producers can edit it
-directly. The public button names the shop destination and opens it separately.
-Payment, order handling and current terms belong to that shop.
+directly. The producer-level shop entry page belongs in the base row's
+`url_tienda`; `purchase_url` names one product. The public button names the
+shop destination and opens it separately. Payment, order handling and current
+terms belong to that shop.
 
 Optional `price` contains `amount` as decimal text with exactly two digits after
 the dot (0.00 to 999999.99) and `currency: "EUR"`. The editor accepts a comma or

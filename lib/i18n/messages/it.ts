@@ -72,6 +72,7 @@ const messages = {
     lon: "Longitudine decimale WGS84. Latitudine e longitudine devono essere fornite insieme.",
     "Venta online": "Indica se è stato verificato un attuale meccanismo di ordinazione.",
     "Canal de venta": "I meccanismi di ordinazione attuali e dimostrati.",
+    url_tienda: "Pagina HTTP(S) di accesso al negozio online del produttore o alla sua vetrina ufficiale in un marketplace collettivo; può essere diversa dal sito web. Richiede una vendita online confermata e un canale negozio online, marketplace o abbonamento.",
     "visitas guiadas":
       "Indica se questo produttore offre attualmente visite guidate; lascia vuoto se l’informazione non viene pubblicata.",
     "mensaje a la comunidad":
@@ -199,6 +200,7 @@ const messages = {
     image: "Immagine",
     onlineSales: "Vendita online",
     salesChannels: "Canali di vendita",
+    storeUrl: "URL del negozio online",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

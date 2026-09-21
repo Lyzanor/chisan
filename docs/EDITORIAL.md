@@ -284,6 +284,14 @@ neither `no` nor closure.
 `Canal de venta` records the demonstrated mechanism and is filled only when
 `Venta online=sí`, using the values in `docs/CSV_CONTRACT.md`.
 
+When that mechanism is a shop, an official collective storefront or a
+subscription, `url_tienda` records the page where the order starts. Reach it
+from the producer's own site or profile rather than a search result. It is often
+not `web`: a new path, a subdomain, a hosted shop or a collective storefront are
+all common, and `web` stays the official site even when it only links out. A
+store reached only through a reseller, or one whose producer attribution is
+unclear, does not qualify; leave the cell empty rather than copying `web`.
+
 ## Canonical language and localized presentation
 
 Canonical `descripcion`, `quien hay detras` and `historia` each record their

@@ -87,6 +87,7 @@ const messages = {
     lon: "Longitude ea desimali ea WGS84. Latitude le longitude li tlameha ho fanoa hammoho.",
     "Venta online": "Hore na mokhoa oa hajoale oa ho odara o hlahlobiloe.",
     "Canal de venta": "Mekhoa ea hajoale ea ho odara e bontšitsoeng.",
+    url_tienda: "Leqephe la ho kena la HTTP(S) la lebenkele la inthanete la mohlahisi ka boeena kapa sebaka sa hae sa semmuso mmarakeng o kopanetsoeng; le ka fapana le webosaete. Ho hlokahala thekiso ea inthanete e netefalitsoeng le kanale ea lebenkele la inthanete, mmaraka kapa ngoliso.",
   },
   common: { unitCount: "{count} {unit}", unavailable: "—" },
   notFound: {
@@ -217,6 +218,7 @@ const messages = {
     image: "Setšoantšo",
     onlineSales: "Thekiso ea inthanete",
     salesChannels: "Likanale tsa thekiso",
+    storeUrl: "URL ea lebenkele la inthanete",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

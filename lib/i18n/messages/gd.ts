@@ -78,6 +78,7 @@ const messages = {
     lon: "Domhan-fhad deicheach WGS84. Feumar domhan-leud agus domhan-fhad a thoirt seachad còmhla.",
     "Venta online": "A bheil dòigh òrdachaidh làithreach air a sgrùdadh.",
     "Canal de venta": "Dòighean òrdachaidh làithreach a chaidh a dhearbhadh.",
+    url_tienda: "Duilleag inntrigidh HTTP(S) aig bùth air-loidhne an riochdaire fhèin no aig a bhùth oifigeil ann am margaidh choitcheann; faodaidh i a bhith eadar-dhealaichte bhon làrach-lìn. Feumaidh reic air-loidhne dearbhte agus sianal bùtha air-loidhne, margaidh no fo-sgrìobhaidh.",
     "visitas guiadas":
       "A bheil an riochdaire a’ tabhann tursan treòraichte an-dràsta.",
     "mensaje a la comunidad":
@@ -221,6 +222,7 @@ const messages = {
     image: "Ìomhaigh",
     onlineSales: "Reic air-loidhne",
     salesChannels: "Sianalan reic",
+    storeUrl: "URL na bùtha air-loidhne",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

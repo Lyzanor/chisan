@@ -63,6 +63,7 @@ const messages = {
     lon: "Longitude décimale WGS84. Latitude et longitude doivent être indiquées ensemble.",
     "Venta online": "Indique si un moyen de commande actuel a été vérifié.",
     "Canal de venta": "Moyens de commande actuels et démontrés.",
+    url_tienda: "Page HTTP(S) d’accès à la boutique en ligne du producteur ou à sa vitrine officielle sur une place de marché collective ; elle peut différer du site web. Nécessite une vente en ligne confirmée et un canal boutique en ligne, place de marché ou abonnement.",
     "visitas guiadas": "Indique si ce producteur propose actuellement des visites guidées ; laisser vide si l’information n’est pas publiée.",
     "mensaje a la comunidad": "Un message public rédigé par le producteur, conservé dans sa langue d’origine et vérifié avant publication.",
     mensaje_comunidad_locale: "La langue source du message à la communauté ; laisser vide uniquement si le message est vide.",
@@ -145,6 +146,7 @@ const messages = {
     descriptionLocale: "Langue de la description", guidedVisits: "Visites guidées", communityMessage: "Message à la communauté",
     communityMessageLocale: "Langue du message à la communauté", highlightedLink1: "Lien mis en avant 1", highlightedLink2: "Lien mis en avant 2", openingHours: "Horaires d’ouverture", phone: "Téléphone",
     email: "E-mail", website: "Web", image: "Image", onlineSales: "Vente en ligne", salesChannels: "Canaux de vente",
+    storeUrl: "URL de la boutique en ligne",
     facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Latitude",
     longitude: "Longitude", verification: "Vérification", },
   controlledValues: {

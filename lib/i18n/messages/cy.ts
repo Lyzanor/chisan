@@ -76,6 +76,7 @@ const messages = {
     lon: "Hydred degol WGS84. Rhaid darparu lledred a hydred gyda'i gilydd.",
     "Venta online": "A yw dull archebu cyfredol wedi'i adolygu.",
     "Canal de venta": "Mecanweithiau archebu cyfredol a ddangoswyd.",
+    url_tienda: "Tudalen fynediad HTTP(S) siop ar-lein y cynhyrchydd ei hun neu ei flaen siop swyddogol mewn marchnad gydweithredol; gall fod yn wahanol i'r wefan. Mae angen gwerthiannau ar-lein wedi'u cadarnhau a sianel siop ar-lein, marchnad neu danysgrifiad.",
     "visitas guiadas": "A yw'r cynhyrchydd yn cynnig teithiau tywys ar hyn o bryd.",
     "mensaje a la comunidad":
       "Neges gyhoeddus gan y cynhyrchydd i'r gymuned fwyd leol.",
@@ -216,6 +217,7 @@ const messages = {
     image: "Delwedd",
     onlineSales: "Gwerthiannau ar-lein",
     salesChannels: "Sianeli gwerthu",
+    storeUrl: "URL y siop ar-lein",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

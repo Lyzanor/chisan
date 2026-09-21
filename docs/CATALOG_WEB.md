@@ -119,9 +119,13 @@ reviewed block is visible, but never proves or upgrades a fact.
 
 The profile presents the website as a direct URL in the hero, and directions
 beside the address, map and transient distance tool, next to reviewed hours and
-the contact widget. A contact composer is available only for an existing public `correo`. It prepares a
-`mailto:` message in the visitor's email application, explicitly leaving review
-and sending to that application. It neither stores messages nor adds a Chisan
+the contact widget. In the sales row, one storefront channel is the purchase
+link: the online shop, else marketplace, else subscription channel opens the
+reviewed `url_tienda`. Until a store page is recorded, only the online shop
+channel links, and it opens the official `web`. A contact composer is available
+only for an existing public `correo`. It prepares a `mailto:` message in the
+visitor's email application, explicitly leaving review and sending to that
+application. It neither stores messages nor adds a Chisan
 inbox or delivery promise. The public email remains an ordinary accessible
 contact link. At the end of the profile, nearby discovery may show up to three
 other published producers within 100 km that share at least one canonical

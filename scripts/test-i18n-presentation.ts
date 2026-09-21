@@ -169,6 +169,19 @@ test("producer field presentation localizes display values while retaining CSV t
     "Quién hay detrás",
   );
   assert.equal(
+    formatProducerFieldLabel("url_tienda", "es", spanish),
+    "URL de la tienda en línea",
+  );
+  assert.equal(
+    formatProducerFieldValue(
+      "url_tienda",
+      "https://tienda.example.com/",
+      "de",
+      german,
+    ),
+    "https://tienda.example.com/",
+  );
+  assert.equal(
     formatProducerFieldLabel("fecha ultimo cambio", "es", spanish),
     "Último cambio aprobado del productor",
   );

@@ -80,18 +80,36 @@ test("stage and individual check filters compose", () => {
 });
 
 test("coverage gaps that may stay open forever are señales, not colas", () => {
-  // Empty is a valid end state for all four: images are a 60% target, evidence
+  // Empty is a valid end state for all five: images are a 60% target, evidence
   // is advisory, docs/PRODUCER_GEOLOCATION.md rules that a missing coordinate is a
-  // coverage signal because some rows correctly end with none, and a stale
-  // source date is a re-check invitation, not a defect in the row. Counting
-  // them as workload inflates the union ~6x and buries the real overlap.
+  // coverage signal because some rows correctly end with none, a stale source
+  // date is a re-check invitation, and an unrecorded store page is incomplete
+  // knowledge rather than a wrong row. Counting them as workload inflates the
+  // union ~6x and buries the real overlap.
   const senales = CHECKS.filter((c) => c.kind === "senal").map((c) => c.id);
   assert.deepEqual(senales.sort(), [
     "sin-coordenada",
     "sin-evidencia",
     "sin-imagen",
+    "tienda-sin-url",
     "venta-caducada",
   ]);
+});
+
+test("a store page is expected only where a storefront channel sells online", () => {
+  const check = CHECKS.find((c) => c.id === "tienda-sin-url");
+  const rows = [
+    { slug: "tienda", "Venta online": "sí", "Canal de venta": "ecommerce", url_tienda: "" },
+    { slug: "marketplace", "Venta online": "sí", "Canal de venta": "whatsapp|marketplace", url_tienda: "" },
+    { slug: "con-url", "Venta online": "sí", "Canal de venta": "ecommerce", url_tienda: "https://tienda.example.com/" },
+    { slug: "solo-contacto", "Venta online": "sí", "Canal de venta": "telefono|email", url_tienda: "" },
+    { slug: "sin-clasificar", "Venta online": "sí", "Canal de venta": "", url_tienda: "" },
+    { slug: "sin-venta", "Venta online": "no comprobado", "Canal de venta": "", url_tienda: "" },
+  ];
+  assert.deepEqual(
+    check.run({ rows }).map((r) => r.slug),
+    ["tienda", "marketplace"],
+  );
 });
 
 test("a row is off the map only when both coordinate cells are empty", () => {

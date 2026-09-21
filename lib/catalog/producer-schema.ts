@@ -61,6 +61,7 @@ export const CANONICAL_PRODUCER_HEADER = [
   "como_producimos_locale",
   "fecha novedades",
   ...EXTRA_PREMIUM_FIELDS.map(field => field.key),
+  "url_tienda",
 ] as const;
 
 export const ONLINE_SALES_VALUES = ["sí", "no", "no comprobado"] as const;
@@ -72,6 +73,13 @@ export const SALES_CHANNEL_VALUES = [
   "suscripcion",
   "marketplace",
 ] as const;
+// Channels a store page can open, in public link priority. `url_tienda` needs
+// at least one of them because contact-only channels have no storefront.
+export const STOREFRONT_SALES_CHANNEL_VALUES = [
+  "ecommerce",
+  "marketplace",
+  "suscripcion",
+] as const satisfies readonly (typeof SALES_CHANNEL_VALUES)[number][];
 export const PRODUCER_BEHIND_MAX_CHARACTERS = 2_000;
 export const PRODUCER_HISTORY_MAX_CHARACTERS = 4_000;
 export const PRODUCER_LAST_APPROVED_CHANGE_DATE_FIELD =
@@ -229,6 +237,14 @@ export const PRODUCER_STANDARD_FIELD_DEFINITIONS = [
     required: false,
     maxLength: 200,
     help: "Current demonstrated ordering mechanisms.",
+  },
+  {
+    key: "url_tienda",
+    label: "Online shop URL",
+    kind: "url",
+    required: false,
+    maxLength: 2_048,
+    help: "HTTP(S) entry page of the producer's own online shop or official collective storefront; it may differ from the website. Requires online sales to be yes and an online shop, marketplace or subscription channel.",
   },
 ] as const;
 

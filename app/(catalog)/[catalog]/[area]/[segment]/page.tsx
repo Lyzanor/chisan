@@ -63,6 +63,7 @@ import {
 } from "@/lib/catalog-metadata";
 import type { SALES_CHANNEL_VALUES } from "@/lib/catalog/producer-schema";
 import { selectSimilarNearbyProducers } from "@/lib/catalog/similar-producers";
+import { resolveProducerStoreLink } from "@/lib/catalog/store-link";
 import {
   buildCatalogHref,
   buildProducerHref,
@@ -278,10 +279,12 @@ export default async function ProducerPage({
     getFieldValue(producer.fields, "Canal de venta"),
     "|",
   );
-  const canBuyOnline =
-    onlineSales === "sí" &&
-    salesChannels.includes("ecommerce") &&
-    Boolean(website);
+  const storeLink = resolveProducerStoreLink({
+    onlineSales,
+    salesChannels,
+    storeUrl: getFieldValue(producer.fields, "url_tienda"),
+    website,
+  });
 
   const localizedCategories = producer.categories.map((producerCategory) =>
     getCategoryLabel(producerCategory, locale),
@@ -707,11 +710,11 @@ export default async function ProducerPage({
                           locale,
                           messages,
                         );
-                        // The online shop channel is the purchase link itself.
+                        // The storefront channel is the purchase link itself.
                         return (
                           <li key={channel}>
-                            {channel === "ecommerce" && canBuyOnline ? (
-                              <a href={website} target="_blank" rel="noreferrer">
+                            {storeLink?.channel === channel ? (
+                              <a href={storeLink.href} target="_blank" rel="noreferrer">
                                 {ChannelIcon ? (
                                   <ChannelIcon size={18} aria-hidden="true" />
                                 ) : null}

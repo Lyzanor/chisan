@@ -4,6 +4,7 @@ import {
   catalogToolDefinitions,
   catalogOperations,
   producerOutputSchema,
+  publicProducerBaseSchema,
   searchInputSchema,
   searchOutputSchema,
 } from "../lib/agents/catalog-schema";
@@ -221,6 +222,24 @@ test("explicit output projection excludes private, unknown, premium and generic-
   );
   assert.equal(base.image_url, null);
   assert.equal(base.description?.text, "</script>source text");
+  assert.equal(base.store_url, null);
+  const withStore = publicProducerBase(
+    {
+      ...sample,
+      fields: {
+        ...sample.fields,
+        "Venta online": "sí",
+        "Canal de venta": "ecommerce",
+        url_tienda: "https://tienda.example.com/",
+      },
+    },
+    findPublishedCountry("es")!,
+    findArea("es", "barcelona")!,
+    "es",
+  );
+  assert.equal(withStore.store_url, "https://tienda.example.com/");
+  assert.deepEqual(withStore.sales_channels, ["ecommerce"]);
+  assert.equal(publicProducerBaseSchema.safeParse(withStore).success, true);
   assert.doesNotMatch(
     JSON.stringify(base),
     /PRIVATE|HIDDEN|fully-certified|"fields"|"verificacion"/,

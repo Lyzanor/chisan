@@ -47,6 +47,7 @@ const messages = {
     lat: "Decimale WGS84-breedtegraad. Breedte- en lengtegraad moeten samen worden opgegeven.",
     lon: "Decimale WGS84-lengtegraad. Breedte- en lengtegraad moeten samen worden opgegeven.",
     "Venta online": "Of een actuele bestelmogelijkheid is gecontroleerd.", "Canal de venta": "Aantoonbare actuele bestelkanalen.",
+    url_tienda: "HTTP(S)-startpagina van de eigen webshop van de producent of van diens officiële etalage op een collectieve marktplaats; kan afwijken van de website. Vereist bevestigde online verkoop en het kanaal webshop, marktplaats of abonnement.",
     "visitas guiadas": "Of deze producent momenteel rondleidingen aanbiedt; leeg laten als dit niet wordt gepubliceerd.",
     "mensaje a la comunidad": "Een door de producent geschreven openbaar bericht, bewaard in de oorspronkelijke taal en vóór publicatie gecontroleerd.",
     mensaje_comunidad_locale: "De brontaal van het bericht aan de gemeenschap; alleen leeg laten als het bericht leeg is.",
@@ -109,6 +110,7 @@ const messages = {
     address: "Adres", description: "Beschrijving", descriptionLocale: "Taal van de beschrijving", guidedVisits: "Rondleidingen",
     communityMessage: "Bericht aan de gemeenschap", communityMessageLocale: "Taal van het bericht aan de gemeenschap", highlightedLink1: "Uitgelichte link 1", highlightedLink2: "Uitgelichte link 2", openingHours: "Openingstijden",
     phone: "Telefoon", email: "E-mail", website: "Web", image: "Afbeelding", onlineSales: "Online verkoop", salesChannels: "Verkoopkanalen",
+    storeUrl: "URL van de webshop",
     facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Breedtegraad", longitude: "Lengtegraad", verification: "Verificatie", },
   controlledValues: {
     verification: { pendiente: "In afwachting" },

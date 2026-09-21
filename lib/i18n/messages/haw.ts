@@ -77,6 +77,7 @@ const messages = {
     lon: "Lonitu helu WGS84. Pono e hāʻawi pū ʻia ka latitu a me ka lonitu.",
     "Venta online": "Inā ua nānā ʻia kekahi ala kauoha e hana nei.",
     "Canal de venta": "Nā ala kauoha e hana nei i hōʻike ʻia.",
+    url_tienda: "ʻAoʻao komo HTTP(S) o ka hale kūʻai pūnaewele ponoʻī o ka mea hana a i ʻole kona hale kūʻai kūhelu ma kahi marketplace like; he ʻokoʻa paha ia mai ka pūnaewele. Pono ke kūʻai pūnaewele i hōʻoia ʻia a me ke ala hale kūʻai pūnaewele, marketplace a i ʻole kakau inoa.",
     "visitas guiadas":
       "Inā hāʻawi ka mea hana i nā huakaʻi alakaʻi ʻia i kēia manawa.",
     "mensaje a la comunidad":
@@ -219,6 +220,7 @@ const messages = {
     image: "Kiʻi",
     onlineSales: "Kūʻai pūnaewele",
     salesChannels: "Nā ala kūʻai",
+    storeUrl: "URL o ka hale kūʻai pūnaewele",
     facebook: "Facebook",
     instagram: "Instagram",
     googleMaps: "Google Maps",

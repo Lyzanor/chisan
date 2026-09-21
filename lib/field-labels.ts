@@ -32,6 +32,7 @@ const FIELD_LABEL_KEYS: Record<string, FieldLabelKey> = {
   imagen: "image",
   "venta online": "onlineSales",
   "canal de venta": "salesChannels",
+  url_tienda: "storeUrl",
   facebook: "facebook",
   instagram: "instagram",
   "google maps": "googleMaps",

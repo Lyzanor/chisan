@@ -164,7 +164,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio,como producimos,como_producimos_locale,fecha novedades,certificaciones,certificaciones_detalle,visita_cita_previa,venta_profesionales,pedido_minimo,condiciones_envio
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale,visitas guiadas,mensaje a la comunidad,mensaje_comunidad_locale,enlace destacado 1,enlace destacado 2,country,region,area,video,quien hay detras,quien_hay_detras_locale,historia,historia_locale,fecha ultimo cambio,como producimos,como_producimos_locale,fecha novedades,certificaciones,certificaciones_detalle,visita_cita_previa,venta_profesionales,pedido_minimo,condiciones_envio,url_tienda
 ```
 
 The canonical header is defined in `lib/catalog/producer-schema.ts`. The form,
@@ -254,6 +254,7 @@ Presence terms have exact meanings:
 | `venta_profesionales` | optional | `sí`, `no` or `bajo consulta` | Inferred wholesale availability or guaranteed professional pricing |
 | `pedido_minimo` | optional | Reviewed minimum order with units or currency, at most 120 characters | An inferred minimum or a zero standing for unknown |
 | `condiciones_envio` | optional | Reviewed delivery scope or conditions, at most 120 characters | Live shipping estimates or unsupported delivery promises |
+| `url_tienda` | conditional | HTTP(S) entry page of the store where the reviewed online order starts: the producer's own shop or its storefront in an official collective marketplace; only with `Venta online=sí` and a storefront channel | A general home page when the shop has a more specific entry, product, cart, checkout or account pages, independent resale, a social profile or any value when sales are `no`/`no comprobado` |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -634,6 +635,13 @@ defines their representation.
 - `Canal de venta` must be empty when sales are `no` or `no comprobado`. When
   sales are `sí`, it may remain empty while the demonstrated mechanism is still
   unclassified.
+- `url_tienda` is allowed only when `Venta online=sí` and `Canal de venta`
+  contains at least one storefront token: `ecommerce`, `marketplace` or
+  `suscripcion`. The shared list, in public link priority, is
+  `STOREFRONT_SALES_CHANNEL_VALUES` in `lib/catalog/producer-schema.ts`.
+  Contact-only channels have no store page. Empty means that the store page is
+  not recorded, not that the storefront lacks one; it is not inferred from
+  `web`.
 
 Allowed channel tokens:
 
@@ -647,6 +655,12 @@ Allowed channel tokens:
 | `marketplace` | Producer or official collective storefront; not independent resale. |
 
 Multiple tokens use `|`, for example `ecommerce|whatsapp`; order has no meaning.
+
+`url_tienda` is one URL per producer row. When the producer runs its own shop and
+also sells through a collective storefront, record its own shop. The column was
+appended to every area CSV in one migration. A stored owner proposal whose base
+snapshot predates it no longer matches the current row hash, so materialization
+reports a conflict and the owner resubmits against the current row.
 
 ## Geography contract
 
@@ -678,10 +692,10 @@ or override; never move correct producer coordinates to satisfy the validator.
 
 ## Link contract
 
-`web`, `Facebook`, `Instagram`, `Google Maps`, `enlace destacado 1` and
-`enlace destacado 2` may be empty. When filled they must be valid HTTP(S) URLs,
-must not contain an embedded username or password, and must refer to the row's
-producer:
+`web`, `url_tienda`, `Facebook`, `Instagram`, `Google Maps`,
+`enlace destacado 1` and `enlace destacado 2` may be empty. When filled they
+must be valid HTTP(S) URLs, must not contain an embedded username or password,
+and must refer to the row's producer:
 
 - `Facebook` must use a `facebook.com` host and identify a page/profile, not the
   network home, feed or unrelated post.
@@ -696,6 +710,13 @@ producer:
   advisory migration warnings rather than blocking errors; do not add them to
   new or reviewed rows. When the represented unit has no matching listing,
   leave `Google Maps` empty and retain its reviewed position only in `lat`/`lon`.
+- `url_tienda` opens the storefront where this producer's online order starts.
+  Its host may differ from `web`: a new path, a subdomain, a hosted shop such as
+  Shopify or an official collective marketplace. It may equal `web` only when
+  the website itself is the shop. The store must be run by or explicitly on
+  behalf of the producer. Record the store's entry page without tracking or
+  session parameters; a product, cart, checkout, account or search URL is too
+  narrow.
 
 Prefer a link cross-published by the producer. Without a direct cross-link,
 retain it only when enough distinctive identity details agree, such as domain,
