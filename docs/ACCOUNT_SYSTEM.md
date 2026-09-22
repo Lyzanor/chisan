@@ -902,14 +902,15 @@ activation, incidents, replacement and retirement are owned by
 
 ## Account photos and favorite attribution
 
-### Native access and Instagram evidence
+### Mobile access and Instagram evidence
 
-Android/iOS reuse the same Clerk instance and internal account mapping through
-`/api/mobile/account`; [Mobile apps](MOBILE_APPS.md) owns their entry flow. Google
-and Apple are identity providers configured in Clerk, with no local email-based
-account merging. Apple is offered only through native Sign in with Apple in the
-iOS app; Android and Chisan's web widgets do not offer Apple. Native session checks
-do not create ownership or Pro permissions.
+Android/iOS show the responsive Chisan website for public discovery and open
+account, registration and sign-in routes in the system browser; [Mobile apps](MOBILE_APPS.md)
+owns that boundary. Clerk's web session and the existing internal account
+mapping govern those browser actions. The app does not transfer a native token
+or cookies into its WebView. Google remains a Clerk web provider; Apple is not
+currently offered in the Chisan web widgets. Account access never creates
+ownership or Pro permissions.
 
 The implemented Instagram adapter is an additional ownership-evidence method,
 not a Clerk identity or public verification badge. Account creation and returning

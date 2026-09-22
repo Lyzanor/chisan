@@ -782,3 +782,17 @@ kept the national search scope and its 3,010 homepage count matched the 3,010
 results shown on the destination map. The copy includes urban workshops as
 well as nearby growing places. No account write or public deployment was part
 of this browser review.
+
+## 2026-09-23 — Android/iOS web shell
+
+The earlier native Inicio / Explorar / Cuenta foundation has been superseded by
+a WebView of the responsive Chisan site. The deployed site was reviewed at
+390×844 first, then 1280×800. At phone width, the bottom Mapa destination
+opened `/es/madrid` with category filters, map markers, the producer preview,
+result count and navigation visible without horizontal overflow. At wide width,
+the same route presented the map beside its producer roster. A Pixel 8 Android
+emulator running the signed 0.1.1 APK loaded the site and map, opened Mi Cuenta
+in Chrome, returned to the homepage with system Back, and displayed the OS
+location prompt only after tapping the website's action. Denial preserved the
+manual area path. Chisan-intro timing and iOS behavior still require physical
+device QA.

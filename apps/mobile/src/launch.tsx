@@ -58,7 +58,7 @@ export function Launch({ ready, onFinish }: { ready: boolean; onFinish: () => vo
 
   const flightX = flight.interpolate({ inputRange: [0, 1], outputRange: [-290 * scale, 0] });
   const flightY = flight.interpolate({ inputRange: [0, 0.55, 1], outputRange: [170 * scale, -96 * scale, 0] });
-  return <Animated.View pointerEvents="none" accessibilityLabel="Iniciando Chisan" style={[styles.overlay, { opacity: fade }]}>
+  return <Animated.View pointerEvents="auto" accessibilityLabel="Iniciando Chisan" style={[styles.overlay, { opacity: fade }]}>
     <View style={{ width: 1485 * scale, height: 339 * scale }}>
       <Image source={c} alt="" resizeMode="stretch" style={[styles.layer, { left: 0, width: 354 * scale, height: 334 * scale }]} />
       <Animated.Image source={hisan} resizeMode="stretch" style={[styles.layer, {
