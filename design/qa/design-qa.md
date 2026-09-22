@@ -3,6 +3,23 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-22 — Header, bottom-bar and search transitions use the motion tokens
+
+`--chisan-motion-fast` was never defined, so the transitions that used it
+computed to `all 0s` and never ran. The bottom-bar tabs, header search filter
+and scope options, "Añadir productor" and the candidate modal controls now use
+`--chisan-motion-immediate` with `--chisan-ease` on the properties their states
+change; the sign-out button moves from its 120ms fallback to the same token.
+Header links already transitioned through `.site-header nav > a`, which outranks
+`.site-account-nav__link`, so that dead declaration was removed. The header
+search options and bottom-bar tabs sit outside `.site-content` and gained their
+own reduced-motion rules. Production build at 390×844, then 1280×900: every
+control computed 150ms with the Chisan ease, switching the bottom bar from
+Actividad to Mi Cuenta faded both tabs and scaled their icons, and opening the
+scope menu faded its button. With the reduced-motion rules forced on through
+the CSSOM (the pane cannot emulate the media feature), all of them computed
+`transition: none`.
+
 ## 2026-09-22 — Retired account menu styles removed
 
 Deleted the `.site-account-menu` rules that no component renders; in the

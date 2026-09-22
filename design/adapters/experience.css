@@ -517,11 +517,11 @@ body { min-height: 100svh; }
     text-decoration: none;
     font-size: 0.6875rem;
     font-weight: 500;
-    transition: color var(--chisan-motion-fast);
+    transition: color var(--chisan-motion-immediate) var(--chisan-ease);
   }
   .site-bottom-nav__item svg {
     flex: none;
-    transition: transform var(--chisan-motion-fast);
+    transition: transform var(--chisan-motion-immediate) var(--chisan-ease);
   }
   .site-bottom-nav__item.is-active {
     color: var(--chisan-color-moss);
@@ -581,6 +581,8 @@ body { min-height: 100svh; }
     transition: none !important;
     scroll-behavior: auto !important;
   }
+  .site-bottom-nav__item,
+  .site-bottom-nav__item svg { transition: none; }
   .country-card:hover .country-card__arrow { translate: none; }
   .catalog-chip:active { transform: none; }
   .producer-map-selection-card__link:hover .producer-map-selection-card__image { scale: none; }

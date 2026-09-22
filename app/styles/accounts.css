@@ -141,7 +141,10 @@
   font-size: 0.78rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--chisan-motion-fast, 120ms ease);
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease);
 }
 
 .account-signout-btn:hover {
