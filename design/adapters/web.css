@@ -43,6 +43,193 @@ body {
   background: var(--chisan-brand-asset) center / contain no-repeat;
 }
 
+/*
+ * Chisan Mascot - Vector brand character based on the detached mark module.
+ */
+
+.chisan-mascot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--chisan-mascot-size, 88px);
+  height: var(--chisan-mascot-size, 88px);
+  flex: 0 0 auto;
+  user-select: none;
+}
+
+.chisan-mascot__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chisan-mascot__cube {
+  fill: var(--chisan-color-moss);
+}
+
+.chisan-mascot__eyes {
+  fill: var(--chisan-color-rice-paper);
+}
+
+.chisan-mascot__shadow {
+  fill: var(--chisan-color-ink);
+  opacity: 0.12;
+  transform-origin: 50px 84px;
+}
+
+.chisan-mascot__horizon-mask {
+  fill: var(--chisan-color-surface);
+}
+
+.chisan-mascot__horizon-line {
+  fill: none;
+  stroke: var(--chisan-color-hairline);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+/* State: 404 Perplexed Head Tilt */
+.chisan-mascot__body--404 {
+  transform-origin: 50px 75px;
+  animation: chisan-mascot-tilt 4.2s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-tilt {
+  0%, 100% { transform: rotate(-7deg); }
+  35% { transform: rotate(7deg); }
+  70% { transform: rotate(0deg); }
+}
+
+.chisan-mascot__eyes--404 {
+  transform-origin: 50px 50px;
+  animation: chisan-mascot-eyes-404 4.2s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-eyes-404 {
+  0%, 28% { transform: translate(-4px, 0) scale(1, 1); }
+  35%, 63% { transform: translate(4px, 0) scale(1, 1); }
+  70%, 90% { transform: translate(0, -3px) scale(1.05, 1.45); }
+  95%, 100% { transform: translate(0, 0) scale(1, 0.15); }
+}
+
+/* State: Search Peek */
+.chisan-mascot__body--search {
+  transform-origin: 50px 80px;
+  animation: chisan-mascot-peek-rise 4.4s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-peek-rise {
+  0%, 15% { transform: translateY(28px) scale(0.95); opacity: 0.6; }
+  25%, 75% { transform: translateY(0) scale(1); opacity: 1; }
+  85%, 100% { transform: translateY(28px) scale(0.95); opacity: 0.6; }
+}
+
+.chisan-mascot__eyes--search {
+  transform-origin: 50px 48px;
+  animation: chisan-mascot-peek-look 4.4s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-peek-look {
+  0%, 25% { transform: translate(0, 0); }
+  32%, 48% { transform: translate(-5px, 0) scale(1.1, 0.95); }
+  54%, 72% { transform: translate(5px, 0) scale(1.1, 0.95); }
+  78%, 100% { transform: translate(0, 0) scale(1, 1); }
+}
+
+/* State: Following List Empty (Hop) */
+.chisan-mascot__body--following {
+  transform-origin: 50px 75px;
+  animation: chisan-mascot-hop 2.6s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-hop {
+  0%, 65%, 100% { transform: translateY(0) scale(1, 1); }
+  14% { transform: translateY(4px) scale(1.18, 0.82); }
+  25% { transform: translateY(-24px) scale(0.88, 1.25); }
+  36% { transform: translateY(0) scale(1.1, 0.92); }
+  44% { transform: translateY(0) scale(1, 1); }
+}
+
+.chisan-mascot__eyes--following {
+  transform-origin: 50px 52px;
+  animation: chisan-mascot-hop-eyes 2.6s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-hop-eyes {
+  0%, 65%, 100% { transform: translate(0, 0) scale(1, 1); }
+  14% { transform: translate(0, 1px) scale(1.18, 0.82); }
+  25% { transform: translate(2px, -3px) scale(1.05, 1.45); }
+  36% { transform: translate(0, 0) scale(1, 1); }
+}
+
+.chisan-mascot__shadow--following {
+  animation: chisan-mascot-hop-shadow 2.6s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-hop-shadow {
+  0%, 65%, 100% { transform: scale(1); opacity: 0.12; }
+  25% { transform: scale(0.6); opacity: 0.04; }
+}
+
+/* State: Catalog Loading & Idle (Calm Breathing) */
+.chisan-mascot__body--catalog,
+.chisan-mascot__body--idle {
+  transform-origin: 50px 50px;
+  animation: chisan-mascot-breathe 3.2s ease-in-out infinite;
+}
+
+@keyframes chisan-mascot-breathe {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50% { transform: translateY(-4px) scale(1.02, 0.98); }
+}
+
+.chisan-mascot__eyes--catalog,
+.chisan-mascot__eyes--idle {
+  transform-origin: 50px 50px;
+  animation: chisan-mascot-breathe-eyes 3.2s ease-in-out infinite;
+}
+
+@keyframes chisan-mascot-breathe-eyes {
+  0%, 45%, 55%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1, 0.15); }
+}
+
+/* State: Feedback & Suggestion (Success hop & wink) */
+.chisan-mascot__body--feedback {
+  transform-origin: 50px 75px;
+  animation: chisan-mascot-success 3.6s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-success {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  12% { transform: translateY(-14px) scale(0.94, 1.16); }
+  22% { transform: translateY(0) scale(1.08, 0.92); }
+  30% { transform: translateY(0) scale(1, 1); }
+}
+
+.chisan-mascot__eyes--feedback {
+  transform-origin: 50px 50px;
+  animation: chisan-mascot-success-eyes 3.6s var(--chisan-ease) infinite;
+}
+
+@keyframes chisan-mascot-success-eyes {
+  0%, 10% { opacity: 1; transform: scale(1, 1); }
+  18%, 62% { transform: scale(1.2, 0.15); }
+  72%, 100% { transform: scale(1, 1); }
+}
+
+/* Not-Found Page Layout */
+.not-found-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.not-found-panel__mascot {
+  margin-bottom: var(--chisan-space-4);
+}
+
 .site-header__tagline {
   color: var(--chisan-color-stone);
   font-size: 0.75rem;
@@ -540,7 +727,11 @@ body {
   .producer-map-category-icon--selected,
   .producer-map-tooltip__content,
   .chisan-visitor-locator__pulse,
-  .map-locate-spinner {
+  .map-locate-spinner,
+  .chisan-mascot__body,
+  .chisan-mascot__eyes,
+  .chisan-mascot__shadow {
     animation: none;
+    transform: none;
   }
 }

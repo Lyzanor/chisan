@@ -3,6 +3,12 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-22 — Minimalist Chisan mascot and 404 error page integration
+
+Introduced the official brand character (`<ChisanMascot />`) derived strictly from the detached upper-right module of the Chisan logo mark. It is a lightweight, pure vector SVG component (<0.3 KB) rendered with `--chisan-color-moss` and `--chisan-color-rice-paper` dot eyes, accompanied by organic squash/stretch animations matching `--chisan-ease`.
+
+On 404 not-found pages (`NotFoundContent`), the mascot is integrated in its perplexed head-tilt state (`state="404"`, 96px) above the page title, styled with `.not-found-panel` inside the standard editorial layout. Verified in mobile viewport (390px) and wide desktop (1280px). When `prefers-reduced-motion: reduce` is enabled, all animations and transforms are cleanly reset to static poses.
+
 ## 2026-09-22 — Header, bottom-bar and search transitions use the motion tokens
 
 `--chisan-motion-fast` was never defined, so the transitions that used it

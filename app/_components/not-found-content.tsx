@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ChisanMascot } from "@/components/brand/chisan-brand";
 import type { Messages } from "@/lib/i18n/messages";
 
 export function NotFoundContent({
@@ -11,7 +12,8 @@ export function NotFoundContent({
 }) {
   return (
     <main className="page-shell">
-      <section className="panel">
+      <section className="panel not-found-panel">
+        <ChisanMascot state="404" size={96} alt="" className="not-found-panel__mascot" />
         <h1>{messages.notFound.title}</h1>
         <p>{messages.notFound.description}</p>
         <p>{messages.home.aboutDescription}</p>

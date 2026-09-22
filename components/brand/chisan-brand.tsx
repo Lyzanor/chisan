@@ -55,3 +55,6 @@ export function ChisanMark({ alt = "chisan", className }: BrandImageProps) {
     />
   );
 }
+
+export { ChisanMascot, type MascotState } from "./chisan-mascot";
+
