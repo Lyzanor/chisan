@@ -17,7 +17,9 @@ import styles from "@/components/activity/activity.module.css";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Actividad en tu zona y novedades de productores | ${SITE_NAME}`;
+  // The root title template appends the site name; Open Graph titles are not
+  // templated, so they add it themselves.
+  const title = "Actividad en tu zona y novedades de productores";
   const description =
     "Descubre novedades de productores locales, destacados editoriales de tu zona, lecturas de temporada y actividad comunitaria.";
   const url = new URL("/actividad", SITE_ORIGIN).toString();
@@ -27,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: `${title} | ${SITE_NAME}`,
       description,
       url,
       type: "website",

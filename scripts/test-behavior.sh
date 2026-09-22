@@ -320,9 +320,11 @@ ACTIVIDAD_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/
 HTML_ACTIVIDAD="$(curl -sS "$BASE_URL/actividad" | sed 's/<!-- -->//g')"
 if [[
   "$ACTIVIDAD_STATUS" != "200" ||
+  "$HTML_ACTIVIDAD" != *'<title>Actividad en tu zona y novedades de productores | Chisan</title>'* ||
+  "$HTML_ACTIVIDAD" != *'<meta property="og:title" content="Actividad en tu zona y novedades de productores | Chisan"/>'* ||
   "$HTML_ACTIVIDAD" != *'id="following-bubbles-title">Siguiendo</h2>'*
 ]]; then
-  echo "Error: /actividad should render its Siguiendo section, got '$ACTIVIDAD_STATUS'." >&2
+  echo "Error: /actividad should render its Siguiendo section with the site name once in its titles, got '$ACTIVIDAD_STATUS'." >&2
   exit 1
 fi
 
