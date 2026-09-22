@@ -22,6 +22,7 @@ Do not treat Chisan as a complete census, a producer quality ranking, a marketpl
 ## Key public pages
 
 - Home and producer catalog: https://chisan.app/
+- About Chisan: https://chisan.app/about
 - How Chisan works: https://chisan.app/how-we-work
 - Contact: https://chisan.app/contact
 - Privacy and cookies: https://chisan.app/privacy

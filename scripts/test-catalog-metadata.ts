@@ -180,7 +180,9 @@ test("sitemap count matches effective locale policies and every alternate is rec
     assert.ok(locales, `Missing producer readiness for ${route.slug}`);
     return count + locales.length;
   }, 0);
-  const expectedCount = 4 + listGuideSitemapEntries().length + countryCount + areaCount + producerCount;
+  // 5 static public routes: home, about, how-we-work, contact, privacy
+  const staticPublicRoutesCount = 5;
+  const expectedCount = staticPublicRoutesCount + listGuideSitemapEntries().length + countryCount + areaCount + producerCount;
 
   assert.equal(entries.length, expectedCount);
 
@@ -216,6 +218,10 @@ test("sitemap count matches effective locale policies and every alternate is rec
   assert.deepEqual(root?.alternates?.languages, {
     "x-default": "https://chisan.app/",
   });
+  assert.deepEqual(
+    entryByUrl.get("https://chisan.app/about")?.alternates?.languages,
+    { en: "https://chisan.app/about" },
+  );
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/how-we-work")?.alternates?.languages,
     { en: "https://chisan.app/how-we-work" },

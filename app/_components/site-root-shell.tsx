@@ -169,6 +169,11 @@ export function SiteRootShell({
               <ChisanWordmark alt="" />
             </Link>
             <Link href="/actividad">Actividad</Link>
+            <Link href="/about">
+              {htmlLang.toLowerCase().startsWith("es")
+                ? "Sobre Chisan"
+                : "About Chisan"}
+            </Link>
             <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
             <GuidesLink locale={htmlLang === "en" ? "en" : "es"} />
             <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>

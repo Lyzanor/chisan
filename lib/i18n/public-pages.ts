@@ -194,6 +194,44 @@ type HowChisanWorksCopy = {
   account: string;
 };
 
+type AboutPrinciple = {
+  title: string;
+  description: string;
+};
+
+export type AboutCopy = {
+  locale: PublicPageLocale;
+  title: string;
+  description: string;
+  heroLead: string;
+  heroParagraphs: readonly string[];
+  founderKicker: string;
+  founderTitle: string;
+  founderLead: string;
+  founderParagraphs: readonly string[];
+  travelKicker: string;
+  travelTitle: string;
+  travelLead: string;
+  travelParagraphs: readonly string[];
+  technologyKicker: string;
+  technologyTitle: string;
+  technologyLead: string;
+  technologyParagraphs: readonly string[];
+  principlesKicker: string;
+  principlesTitle: string;
+  principlesLead: string;
+  principles: readonly AboutPrinciple[];
+  futureKicker: string;
+  futureTitle: string;
+  futureParagraphs: readonly string[];
+  closing: string;
+  exploreCatalog: string;
+  howWeWorkLink: string;
+  contactLink: string;
+  linkedInUrl: string;
+  linkedInLabel: string;
+};
+
 type ContactCopy = {
   locale: PublicPageLocale;
   title: string;
@@ -679,8 +717,152 @@ const CONTACT = {
   },
 } as const satisfies Record<PublicPageLocale, ContactCopy>;
 
+const ABOUT = {
+  en: {
+    locale: "en",
+    title: "About Chisan",
+    description:
+      "The origin, philosophy and people behind Chisan: restoring the value of local food in a rapidly changing world.",
+    heroLead: "Restoring the value of local food in a world changing at high speed.",
+    heroParagraphs: [
+      "Chisan is inspired by the Japanese concept of chisan-chisho (地産地消): local production for local consumption.",
+      "We believe that the most advanced technology is only meaningful when it serves what is tangible: the land, real food, and the craft of those who produce it.",
+    ],
+    founderKicker: "Who is behind Chisan",
+    founderTitle: "Physics, technology and fatherhood",
+    founderLead:
+      "Behind Chisan is Enrique Pérez: a physicist by training, technology journalist and senior editor at Xataka / director of Xataka Móvil for over a decade, and recently a father.",
+    founderParagraphs: [
+      "My career has allowed me to follow from the front row how the internet transformed society, and how artificial intelligence is bringing us to a new era. Yet my experience traveling and exploring territories has always reminded me of an essential truth: the more virtual the world becomes, the more vital the real things that sustain us are.",
+      "Becoming a father changes the time horizon. You stop thinking only about the next tech cycle and start asking what kind of world our children will inherit. Chisan is my personal commitment to building a more human, transparent and locally grounded future.",
+    ],
+    travelKicker: "The origin",
+    travelTitle: "The paradox of what is near",
+    travelLead:
+      "I have always loved traveling and tasting the identity of each place through its food: artisanal cheeses from local shepherds, wines from small parcels, olive oil from family mills, or vegetables grown just a few kilometers away.",
+    travelParagraphs: [
+      "Yet returning home brings an absurd reality: we regularly consume products shipped across oceans in refrigerated containers, while extraordinary local producers right next door remain invisible behind layers of intermediaries and industrial distribution.",
+      "In Japan, they understood generations ago that closely linking production with the immediate territory is not just environmentalism: it is health, community resilience, and cultural respect for those who work the land.",
+    ],
+    technologyKicker: "A post-AGI world",
+    technologyTitle: "Using artificial intelligence to look back at the land",
+    technologyLead:
+      "We are entering an era where software, digital content, and media tend toward infinite abundance. In this landscape, irreplaceable value lives in the physical, the biological, and human craft.",
+    technologyParagraphs: [
+      "Artificial intelligence should not be a tool to isolate us deeper into screens or fill the internet with synthetic noise. For the first time, it gives us the leverage to audit complex public registers, cross-reference dispersed official sources, and structure local catalog data with precision that once required a government agency or a large corporation.",
+      "Chisan uses technology to enhance human judgment, not replace it: AI assists with research and data reconciliation, but every publication decision reflects deliberate, evidence-backed editorial review.",
+    ],
+    principlesKicker: "Independence",
+    principlesTitle: "Principles of an independent project",
+    principlesLead:
+      "Building Chisan as a solo creator preserves complete editorial freedom without commercial compromises.",
+    principles: [
+      {
+        title: "Zero advertising and no paid placement",
+        description:
+          "No producer pays to be listed or to appear higher in searches. We do not sell sponsored rankings.",
+      },
+      {
+        title: "No intermediation or data monetization",
+        description:
+          "Chisan does not take sales cuts or commercialize producer contacts. Verified public data is maintained as a community resource.",
+      },
+      {
+        title: "Evidence-based editorial review",
+        description:
+          "We do not scrape or import bulk registries blindly. Every published unit is verified against public evidence and official records.",
+      },
+    ],
+    futureKicker: "Community",
+    futureTitle: "An open invitation",
+    futureParagraphs: [
+      "Chisan begins with one person behind the code and initial curation, but its purpose is shared. The catalog grows and stays current through the contributions of people who know their local territory.",
+      "Whether you are a food producer, know a local craft that deserves discovery, or share this vision for the future, this space is for you.",
+    ],
+    closing: "Connecting local food.",
+    exploreCatalog: "Explore the producer catalog",
+    howWeWorkLink: "How our editorial criteria works",
+    contactLink: "Contact Chisan",
+    linkedInUrl: "https://www.linkedin.com/in/lyzanor/",
+    linkedInLabel: "Connect with Enrique on LinkedIn",
+  },
+  es: {
+    locale: "es",
+    title: "Sobre Chisan",
+    description:
+      "El origen, la filosofía y quién está detrás de Chisan: devolver el valor a lo cercano en un mundo que cambia a toda velocidad.",
+    heroLead:
+      "Devolver el valor a lo cercano en un mundo que cambia a toda velocidad.",
+    heroParagraphs: [
+      "Chisan nace inspirado en la filosofía japonesa de chisan-chisho (地産地消): la producción local para el consumo local.",
+      "Creemos que la tecnología más avanzada solo tiene sentido si nos ayuda a cuidar lo tangible: la tierra, el alimento real y el oficio de quienes lo elaboran.",
+    ],
+    founderKicker: "Quién está detrás",
+    founderTitle: "Física, tecnología y paternidad",
+    founderLead:
+      "Detrás de Chisan está Enrique Pérez: físico de formación, periodista y editor especializado en tecnología y economía digital desde hace más de una década en Xataka y director de Xataka Móvil, y recientemente padre.",
+    founderParagraphs: [
+      "Mi trayectoria profesional me ha permitido seguir desde primera fila cómo internet ha transformado la sociedad, y cómo la llegada de la inteligencia artificial nos sitúa ante un cambio de época. Pero mi experiencia como viajero y ciudadano siempre me ha recordado una verdad elemental: cuanto más virtual se vuelve el mundo, más esenciales son las cosas reales que nos sostienen.",
+      "Al convertirme en padre, el horizonte temporal cambia. Dejas de pensar únicamente en el próximo ciclo tecnológico y empiezas a preguntarte qué clase de mundo van a heredar nuestros hijos. Chisan es mi compromiso personal para construir un entorno más humano, transparente y arraigado en lo cercano.",
+    ],
+    travelKicker: "El origen",
+    travelTitle: "La paradoja de lo cercano",
+    travelLead:
+      "Siempre me ha fascinado viajar y saborear la identidad de cada lugar a través de sus alimentos: los quesos de pastores locales, el vino de pequeñas parcelas, el aceite de almazaras familiares o las hortalizas cultivadas a pocos kilómetros.",
+    travelParagraphs: [
+      "Sin embargo, al regresar a la rutina diaria, la realidad suele ser otra: compramos productos que han recorrido medio planeta en cámaras frigoríficas mientras los alimentos excepcionales que se producen a nuestro lado quedan invisibilizados tras capas de intermediarios y distribución industrial.",
+      "En Japón comprendieron hace generaciones que vincular estrechamente la producción con el entorno inmediato no es solo ecología: es salud, economía comunitaria y respeto cultural por quien trabaja la tierra.",
+    ],
+    technologyKicker: "Un mundo post-AGI",
+    technologyTitle: "Usar la inteligencia artificial para mirar a la tierra",
+    technologyLead:
+      "Nos adentramos en una era donde el software, las imágenes y el contenido digital tienden a una abundancia infinita. En ese escenario, el valor insustituible reside en lo físico, lo biológico y el tiempo humano.",
+    technologyParagraphs: [
+      "La inteligencia artificial no debe ser una fuerza para aislarnos aún más en pantallas ni para inundar internet de ruido especulativo. Por primera vez, nos da la capacidad técnica para auditar registros sanitarios oficiales, contrastar fuentes públicas dispersas y ordenar la información del territorio con una precisión que antes solo estaba al alcance de grandes corporaciones o ministerios.",
+      "Chisan utiliza la tecnología avanzada no para sustituir al ser humano, sino para amplificar el criterio: la IA asiste en la investigación y el cruce de datos, pero cada decisión de publicación responde a una verificación editorial real y contrastada.",
+    ],
+    principlesKicker: "Independencia",
+    principlesTitle: "Principios de un proyecto independiente",
+    principlesLead:
+      "Construir Chisan en solitario permite mantener una libertad editorial absoluta y sin compromisos.",
+    principles: [
+      {
+        title: "Cero publicidad y sin compra de visibilidad",
+        description:
+          "Ningún productor paga por figurar en el catálogo ni por aparecer más arriba en los resultados. No vendemos posicionamiento patrocinado.",
+      },
+      {
+        title: "Sin intermediación ni venta de datos",
+        description:
+          "Chisan no cobra comisiones por venta ni comercializa los datos de los productores. La información verificada es un bien público puesto al servicio de la comunidad.",
+      },
+      {
+        title: "Criterio basado en evidencias",
+        description:
+          "No importamos listados masivos a ciegas ni usamos bots para inflar cifras. Cada unidad productiva publicada cuenta con fuentes contrastadas que respaldan su actividad real.",
+      },
+    ],
+    futureKicker: "Comunidad",
+    futureTitle: "Una iniciativa abierta a todos",
+    futureParagraphs: [
+      "Chisan comienza con una persona detrás del código y la investigación inicial, pero su vocación es compartida y abierta. El catálogo crece y se mantiene vivo gracias a las aportaciones de quienes conocen de cerca su territorio.",
+      "Si eres productor, si conoces proyectos locales que merecen ser descubiertos o si compartes esta forma de entender el futuro, este proyecto también es tuyo.",
+    ],
+    closing: "Conecta con lo que se produce cerca de ti.",
+    exploreCatalog: "Explorar el catálogo",
+    howWeWorkLink: "Cómo funciona nuestro criterio editorial",
+    contactLink: "Contactar con Chisan",
+    linkedInUrl: "https://www.linkedin.com/in/lyzanor/",
+    linkedInLabel: "Conectar con Enrique en LinkedIn",
+  },
+} as const satisfies Record<PublicPageLocale, AboutCopy>;
+
 export function getHowChisanWorksCopy(locale: Locale | null): HowChisanWorksCopy {
   return HOW_CHISAN_WORKS[resolvePublicPageLocale(locale)];
+}
+
+export function getAboutCopy(locale: Locale | null): AboutCopy {
+  return ABOUT[resolvePublicPageLocale(locale)];
 }
 
 export function getContactCopy(locale: Locale | null): ContactCopy {

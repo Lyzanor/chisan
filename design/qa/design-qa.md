@@ -3,6 +3,14 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-22 — Standalone About page (/about) design and layout verification
+
+Added dedicated `/about` ("Sobre Chisan" / "About Chisan") page reusing `public-information.module.css`:
+- **Layout & Structure:** Built mobile-first using `--surface` and `--line` tokens. Hero statement leads with the *chisan-chisho* purpose, followed by responsive grid sections (`.section`) breaking into two columns on desktop (kicker + title on the left, lead + prose on the right) and single-column stack on mobile (390px).
+- **Typography & Prose:** Fluid clamp-based typography (`clamp(2rem, 4vw, 3.5rem)` for section headers), readable maximum measure (`64ch`) for prose paragraphs, and accessible 44px minimum touch targets for all action buttons and links (`.primaryAction`, `.secondaryAction`).
+- **Navigation:** Added "Sobre Chisan" / "About Chisan" link in the global footer navigation while preserving "Cómo funciona Chisan" (`/how-we-work`). Verified that `/our-purpose` cleanly redirects (308) to `/about`.
+- **Viewports:** Verified at phone width (390×844) and desktop (1280×900). Content stacks cleanly with no horizontal overflow, proper spacing scale, and responsive action button wrapping.
+
 ## 2026-09-22 — Full monochrome palette distinction between Producer and Selection QR labels
 
 Profile QR labels now enforce a strict 100% monochrome palette separation between the two families:

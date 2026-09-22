@@ -300,13 +300,23 @@ if [[
   exit 1
 fi
 
-for LEGACY_PURPOSE_PATH in /our-purpose /about; do
-  LEGACY_PURPOSE_REDIRECT="$(curl -sS -o /dev/null --write-out '%{http_code} %{redirect_url}' "$BASE_URL$LEGACY_PURPOSE_PATH")"
-  if [[ "$LEGACY_PURPOSE_REDIRECT" != "308 $BASE_URL/how-we-work" ]]; then
-    echo "Error: $LEGACY_PURPOSE_PATH should permanently redirect to /how-we-work, got '$LEGACY_PURPOSE_REDIRECT'." >&2
-    exit 1
-  fi
-done
+HTML_ABOUT="$(curl -fsS "$BASE_URL/about" | sed 's/<!-- -->//g')"
+if [[
+  "$HTML_ABOUT" != *'<title>Sobre Chisan | Chisan</title>'* ||
+  "$HTML_ABOUT" != *'id="about-title">Sobre Chisan</h1>'* ||
+  "$HTML_ABOUT" != *'Enrique Pérez'* ||
+  "$HTML_ABOUT" != *'chisan-chisho'* ||
+  "$HTML_ABOUT" != *'"@type":"AboutPage"'*
+]]; then
+  echo "Error: /about should render the complete about page and metadata." >&2
+  exit 1
+fi
+
+LEGACY_PURPOSE_REDIRECT="$(curl -sS -o /dev/null --write-out '%{http_code} %{redirect_url}' "$BASE_URL/our-purpose")"
+if [[ "$LEGACY_PURPOSE_REDIRECT" != "308 $BASE_URL/about" ]]; then
+  echo "Error: /our-purpose should permanently redirect to /about, got '$LEGACY_PURPOSE_REDIRECT'." >&2
+  exit 1
+fi
 
 HTML_CONTACT="$(curl -fsS "$BASE_URL/contact" | sed 's/<!-- -->//g')"
 if [[

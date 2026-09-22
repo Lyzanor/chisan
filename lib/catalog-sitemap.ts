@@ -60,6 +60,11 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
     url: homeAlternates.canonical,
     alternates: { languages: homeAlternates.languages },
   });
+  const aboutUrl = new URL("/about", SITE_ORIGIN).toString();
+  entries.push({
+    url: aboutUrl,
+    alternates: { languages: { en: aboutUrl } },
+  });
   const purposeUrl = new URL("/how-we-work", SITE_ORIGIN).toString();
   entries.push({
     url: purposeUrl,
