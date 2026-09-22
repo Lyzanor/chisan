@@ -390,12 +390,19 @@ Frankfurt (`fra1`), alongside the current Neon database, to avoid cross-Atlantic
 database round trips. Recheck database placement before
 changing this region. Account responses and personalized producer actions must
 remain private and must not acquire shared caching merely to reduce usage.
-Prefer the standard build machine and bounded
-concurrency before paying for faster or parallel builds.
+Builds use a fixed Standard machine with On-Demand Concurrent Builds disabled:
+Standard minutes in the included build slot are not billed, and pushes that
+arrive during a build coalesce so that only the newest queued commit builds.
+Keep the selection fixed. Elastic selection bills every build by CPU minute and
+can promote the project to a larger machine after one slow build. Do not enable
+a larger machine or on-demand concurrency without approval.
 
 AI, WhatsApp recovery, statistics, advertising and checkout have independent
 feature flags and limits. Going live does not raise AI call allowances, enable
-paid add-ons or activate deferred integrations. Keep Preview account writes
+paid add-ons or activate deferred integrations. The project is excluded from
+Observability Plus, a per-event add-on, so runtime logs keep one day and usage
+has no per-route breakdown or Query; include it again only for a bounded
+investigation. Keep Preview account writes
 disabled until its resources are demonstrably isolated. Review CPU, invocations,
 transfer, build minutes and storage after a release or unusual traffic; do not
 add a recurring polling job merely to observe a quiet site.
