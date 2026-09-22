@@ -3,15 +3,15 @@ import type { ExpoConfig } from "expo/config";
 const config: ExpoConfig = {
   name: "Chisan",
   slug: "chisan",
-  version: "0.1.1",
+  version: "0.1.2",
   scheme: "chisan",
   orientation: "portrait",
   userInterfaceStyle: "light",
   icon: "../../design/brand/assets/chisan-icon-apple.png",
-  ios: { bundleIdentifier: "app.chisan.mobile", buildNumber: "2", supportsTablet: true },
+  ios: { bundleIdentifier: "app.chisan.mobile", buildNumber: "3", supportsTablet: true },
   android: {
     package: "app.chisan.mobile",
-    versionCode: 2,
+    versionCode: 3,
     blockedPermissions: ["android.permission.ACCESS_BACKGROUND_LOCATION"],
   },
   plugins: [

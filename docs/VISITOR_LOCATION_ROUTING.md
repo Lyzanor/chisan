@@ -73,7 +73,12 @@ responsive website in a WebView. Its explicit location choice, manual area
 selector and boundary resolver are the same browser implementation governed
 below. The app enables only foreground WebView geolocation and does not request
 position on launch. The site stores the catalog area in its WebView storage,
-never coordinates or an account location.
+never coordinates or an account location. On a fresh app entry, the native
+presentation adapter focuses the existing home location and country controls
+before showing the ordinary site navigation. It restores the full site after
+leaving the home. Choosing a country manually may record the shared dismissal
+state; it does not infer a location or request a permission. This is a
+presentation of the same home workflow, not a separate location resolver.
 
 The neutral `/` page is the only place that may offer first-visit location
 onboarding. It must:

@@ -21,8 +21,15 @@ reviewed session handoff exists.
 
 ## Visitor location
 
-The WebView displays the website's explicit location choice and manual area
-selection. It does not request position on launch. On Android the WebView has
+On a first home entry, the app presents the website's location choice as a
+focused screen immediately after the intro, with the existing manual country
+selection below it. Marketing content and the bottom navigation are hidden for
+that step. The presentation adapter in `apps/mobile/src/web-presentation.ts`
+uses the existing home classes; keep those hooks working when redesigning the
+home. Once the visitor leaves the home, ordinary web navigation is restored.
+Choosing the manual path records only the shared onboarding dismissal. A saved
+area is still validated and resumed by the website itself. The app does not
+request position on launch. On Android the WebView has
 `geolocationEnabled`; the app declares foreground coarse/fine permission, while
 background location is blocked. On iOS the Expo location configuration declares
 the when-in-use purpose. The website's
@@ -31,6 +38,16 @@ request, boundary resolution and storage: only the selected catalog area is
 saved in the WebView's site storage, never precise coordinates. Test permission
 grant, approximate position, denial and retry on physical devices because a
 browser preview does not exercise the operating-system WebView prompt.
+
+## App viewport
+
+Native safe areas own the space for the status and navigation bars. Automatic
+WebView content insets are disabled; the app presentation adapter removes the
+website's duplicate header and bottom-navigation safe-area padding. The
+immersive map receives the measured WebView height after each native layout,
+including keyboard opening/closing, and a resize event for its map canvas.
+Overscroll bounce is disabled. Keep these rules limited to the app so ordinary
+mobile browsers retain their own safe-area handling.
 
 ## Local work and builds
 
