@@ -110,6 +110,16 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
   assert.match(component, /COPY_FEEDBACK_DURATION_MS = 1_500/);
   assert.match(component, /copyFeedbackGenerationRef/);
   assert.match(component, /downloadFeedbackGeneration/);
+  assert.match(component, /CHISAN_MARK_INK_SRC/);
+  assert.match(component, /CHISAN_WORDMARK_INK_SRC/);
+  assert.match(
+    component,
+    /isProducer \? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC/,
+  );
+  assert.match(
+    component,
+    /isProducer \? CHISAN_WORDMARK_SRC : CHISAN_WORDMARK_INK_SRC/,
+  );
   assert.match(component, /aria-label=\{labels\.copy\}/);
   assert.match(component, /isCopied \? "is-visible" : undefined/);
   assert.match(component, /role="status"/);

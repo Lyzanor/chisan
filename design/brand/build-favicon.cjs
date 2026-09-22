@@ -7,6 +7,7 @@ const sharp = require('sharp');
 const root = path.resolve(__dirname, '..', '..');
 const reference = path.join(__dirname, 'chisan-reference.png');
 const FOREST = '#00563F';
+const NEUTRAL_INK = '#18221C';
 // The app icon matches the site surface: forest ink on rice paper, never reversed.
 const RICE_PAPER = '#FFFFFF';
 const CANVAS = 512;
@@ -102,15 +103,22 @@ function packIco(frames) {
     written.push(relativePath);
   };
   const wordmark = await silhouette(WORDMARK, FOREST);
+  const wordmarkInk = await silhouette(WORDMARK, NEUTRAL_INK);
   const reverseWordmark = await silhouette(WORDMARK, '#FFFFFF');
   const mark = await sharp(await silhouette(MARK, FOREST))
+    .resize(416, 416, { fit: 'contain', background: '#00000000' })
+    .extend({ top: 48, bottom: 48, left: 48, right: 48, background: '#00000000' })
+    .png({ compressionLevel: 9 }).toBuffer();
+  const markInk = await sharp(await silhouette(MARK, NEUTRAL_INK))
     .resize(416, 416, { fit: 'contain', background: '#00000000' })
     .extend({ top: 48, bottom: 48, left: 48, right: 48, background: '#00000000' })
     .png({ compressionLevel: 9 }).toBuffer();
   const favicon = await appIcon();
 
   write('public/brand/chisan-wordmark.svg', svgImage(wordmark, WORDMARK.width, WORDMARK.height, 'Chisan'));
+  write('public/brand/chisan-wordmark-ink.svg', svgImage(wordmarkInk, WORDMARK.width, WORDMARK.height, 'Chisan in neutral ink'));
   write('public/brand/chisan-mark.svg', svgImage(mark, CANVAS, CANVAS, 'Chisan C with one detached square'));
+  write('public/brand/chisan-mark-ink.svg', svgImage(markInk, CANVAS, CANVAS, 'Chisan C with one detached square in neutral ink'));
   write('design/brand/assets/chisan-wordmark-ink.png', wordmark);
   write('design/brand/assets/chisan-wordmark-reverse.png', reverseWordmark);
   write('design/brand/assets/chisan-mark-ink.png', await sharp(mark).flatten({ background: '#FFFFFF' }).png().toBuffer());

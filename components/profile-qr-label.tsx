@@ -5,7 +5,13 @@ import { useEffect, useId, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
-import { CHISAN_MARK_SRC, CHISAN_WORDMARK_SRC, PROFILE_QR_MARK_SIZE } from "@/lib/brand";
+import {
+  CHISAN_MARK_INK_SRC,
+  CHISAN_MARK_SRC,
+  CHISAN_WORDMARK_INK_SRC,
+  CHISAN_WORDMARK_SRC,
+  PROFILE_QR_MARK_SIZE,
+} from "@/lib/brand";
 import { getProfileQrLabels } from "@/lib/i18n/profile-qr-labels";
 import type { Locale } from "@/lib/i18n/locales";
 import {
@@ -182,8 +188,8 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
     try {
       await document.fonts?.ready;
       const [wordmark, mark] = await Promise.all([
-        loadImage(CHISAN_WORDMARK_SRC),
-        loadImage(CHISAN_MARK_SRC),
+        loadImage(isProducer ? CHISAN_WORDMARK_SRC : CHISAN_WORDMARK_INK_SRC),
+        loadImage(isProducer ? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC),
       ]);
       const fontFamily = getComputedStyle(sourceQr).fontFamily;
       const canvas = document.createElement("canvas");
@@ -279,7 +285,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
         onClick={() => dialog.current?.showModal()}
       >
         <span className="profile-qr__identity" aria-hidden="true">
-          <ChisanMark alt="" className="profile-qr__mark" />
+          <ChisanMark alt="" className="profile-qr__mark" ink={!isProducer} />
           <QrCodeIcon size={32} />
         </span>
         <span>
@@ -349,7 +355,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
           </div>
 
           <figure className="profile-qr__label">
-            <ChisanWordmark alt="" className="profile-qr__wordmark" />
+            <ChisanWordmark alt="" className="profile-qr__wordmark" ink={!isProducer} />
             <p>{labelType}</p>
             <div className="profile-qr__code">
               <QRCodeCanvas
@@ -361,7 +367,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
                 bgColor={LABEL_COLORS.surface}
                 fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
                 imageSettings={{
-                  src: CHISAN_MARK_SRC,
+                  src: isProducer ? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC,
                   width: PROFILE_QR_MARK_SIZE,
                   height: PROFILE_QR_MARK_SIZE,
                   excavate: true,

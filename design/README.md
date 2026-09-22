@@ -396,19 +396,23 @@ selection QR centres. Current exports and their roles are listed in
 - Preserve the supplied proportions and the detached square; do not redraw or typeset it.
 - Keep the tagline as separate live text and the reversed logo as the same silhouette.
 - No extra containers, motifs or app icon appended to the wordmark.
-- `public/brand/chisan-wordmark.svg` and `chisan-mark.svg` preserve the existing
-  public URLs as lossless embedded-PNG wrappers. These are raster-derived assets,
-  not newly traced vector masters. The supplied pixels remain the authority.
+- `public/brand/chisan-wordmark.svg`, `chisan-wordmark-ink.svg`, `chisan-mark.svg`
+  and `chisan-mark-ink.svg` preserve the existing public URLs as lossless embedded-PNG
+  wrappers. These are raster-derived assets, not newly traced vector masters. The
+  supplied pixels remain the authority.
 
 Profile QR labels use forest green for producer codes, neutral ink for selection
-codes and a pure white background. Both include the approved one-square C at the
-center of a small excavated area, with H error correction and a four-module
-outer quiet zone. Finder patterns remain intact. The 160px mark in an 880px code
-is a maximum visual footprint, not a guarantee for every payload or print size.
-Independently decode representative short and long profile/selection URLs and
-actual downloaded labels before release. Producer labels retain a forest outer
-rule; selection labels retain an ink rule. Neither implies verification,
-ownership or a reviewed restaurant/shop classification.
+codes and a pure white background. Producer labels use the forest green wordmark
+and center C; selection labels use the neutral ink wordmark and center C,
+establishing a 100% monochrome distinction between the two families. Both
+include the approved one-square C at the center of a small excavated area, with H
+error correction and a four-module outer quiet zone. Finder patterns remain
+intact. The 160px mark in an 880px code is a maximum visual footprint, not a
+guarantee for every payload or print size. Independently decode representative
+short and long profile/selection URLs and actual downloaded labels before
+release. Producer labels retain a forest outer rule; selection labels retain an
+ink rule. Neither implies verification, ownership or a reviewed restaurant/shop
+classification.
 
 Sizing and alt text live in `components/brand/chisan-brand.tsx`. Give an image
 empty alt text when its link already has an accessible name.

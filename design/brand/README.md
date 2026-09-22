@@ -15,7 +15,9 @@ producer and selection QR centres.
 | `assets/chisan-icon-light.png` | App icon, 512 px, forest C on rice paper |
 | `assets/chisan-icon-apple.png` | Apple touch icon, 180 px |
 | `public/brand/chisan-wordmark.svg` | Website wordmark, lossless raster wrapper |
+| `public/brand/chisan-wordmark-ink.svg` | Website wordmark in neutral ink, lossless raster wrapper |
 | `public/brand/chisan-mark.svg` | Website C, lossless raster wrapper |
+| `public/brand/chisan-mark-ink.svg` | Website C in neutral ink, lossless raster wrapper |
 | `app/favicon.ico` | Browser favicon, 16/32/48/256 px |
 
 Run `node design/brand/build-favicon.cjs` from the repository root to regenerate

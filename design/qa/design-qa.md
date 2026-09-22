@@ -3,6 +3,14 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-22 — Full monochrome palette distinction between Producer and Selection QR labels
+
+Profile QR labels now enforce a strict 100% monochrome palette separation between the two families:
+- **Producer QR (`kind="producer"`):** 100% forest green (`#00563F`) — QR modules, outer border, "PRODUCTOR LOCAL" eyebrow, primary download action, Chisan wordmark, and center one-square C.
+- **Selection / Person QR (`kind="selection"`):** 100% neutral ink (`#18221C`) — QR modules, outer border, "SELECCIÓN LOCAL" eyebrow, primary download action, Chisan wordmark in neutral ink (`chisan-wordmark-ink.svg`), and center one-square C in neutral ink (`chisan-mark-ink.svg`).
+
+Both the dialog preview and exported 1200×1600 px printable canvas consume these assets deterministically. Verified at mobile (390px) and wide viewports. QR codes decode cleanly to canonical URLs.
+
 ## 2026-09-22 — Minimalist Chisan mascot and 404 error page integration
 
 Introduced the official brand character (`<ChisanMascot />`) derived strictly from the detached upper-right module of the Chisan logo mark. It is a lightweight, pure vector SVG component (<0.3 KB) rendered with `--chisan-color-moss` and `--chisan-color-rice-paper` dot eyes, accompanied by organic squash/stretch animations matching `--chisan-ease`.
