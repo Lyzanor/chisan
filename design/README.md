@@ -201,10 +201,10 @@ to improve appearance.
   selected producer falls outside the bounded base roster, append that one row
   without reordering the existing results, then scroll it into view.
 - Search and the province/country scope share one field in the site header,
-  between the brand mark and account menu. Location remains an explicit floating
-  map action; there is no separate nearby option in the scope selector.
-  The account menu uses a compact icon in narrow headers and its full sign-in
-  label or personalized greeting when the header has enough room.
+  between the brand mark and the header navigation. Location remains an explicit
+  floating map action; there is no separate nearby option in the scope selector.
+  At 760px and below the header navigation gives way to a fixed bottom bar; the
+  results-sheet handle, card strip and map controls stay above it.
 - Searching filters the approved public base fields without introducing another
   catalog source. Text, category, scope and explicit selection retain their
   existing shareable URL state.
@@ -420,25 +420,34 @@ Motion orients: 150ms feedback, 220ms components, 240ms page arrival, easing
 image emphasis. Honour `prefers-reduced-motion`, including changes made while
 the page is open. Never animate thousands of result rows or delay navigation.
 
-The account menu is a native disclosure with progressive open/close motion,
-an explicit chevron and bounded scrolling. Escape returns focus to the open
-menu's trigger; outside pointer or focus movement closes it. Closed menus never
-capture Escape from another control. The account tabs mark the current page.
+Header navigation uses direct links rather than a menu. Its first link opens
+Actividad; on Actividad it becomes Mapa, so it always leads elsewhere. The
+account link shows the signed-in display name, otherwise Mi cuenta, and opens
+the account, or sign-in for guests. A language select follows only on pages
+available in more than one language. At 760px and below the header navigation
+is hidden and a fixed 56px bottom bar offers Actividad, Mapa and account tabs.
+Both Mapa links return to the last catalog page visited in this browser tab
+(guides excluded), then the saved area, then Madrid. The account link and
+bottom-bar tabs mark the current section; the account tabs mark the current
+page.
 
 Page arrival does not remount its children or intercept browser navigation.
 `NavigationLink` retains Next.js Link semantics, prefetching and modified clicks;
 its pending indicator follows the actual router state. The historical
 `ViewTransitionLink` entry point delegates to it. Map cards, the result roster
 and category filter links keep prefetch disabled. Province links open
-directly in the compact country overview, with no duplicate selector. The
-account menu's quick province switch has a bounded, searchable list grouped by
-region, a visible current selection and a recoverable empty state. Matching
-ignores accents and includes region names. Selecting an option navigates; hovering
-an option never navigates. Standard Tab/Enter/Escape operation remains accessible.
-There are no custom global keyboard shortcuts or command palette. Producer search
-keeps a compact footprint and filters the existing map/list inline. A small
-filter icon and search focus open one animated in-place menu for the current
-province or country, with the same surface and motion as account settings.
+directly in the compact country overview, with no duplicate selector. Producer
+search in the site header keeps a compact footprint and filters the existing
+map/list inline. A small filter button showing the current scope opens one
+animated in-place menu: the whole country first, then the province switch. The
+switch is a bounded, searchable list grouped by region, with a visible current
+selection and a recoverable empty state. Matching ignores accents and includes
+region names. Choosing another province navigates to it; choosing the whole
+country or the current province changes the search scope. Hovering an option
+never navigates. Escape closes the open menu and returns focus to its button;
+outside pointer or focus movement also closes it. A closed menu never captures
+Escape from another control. Standard Tab/Enter/Escape operation remains
+accessible. There are no custom global keyboard shortcuts or command palette.
 There is no native scope select. Location stays in the explicit map control.
 Loading and failure messages distinguish unavailable national data from an empty search.
 The category strip keeps equal visible breathing room above and below its
