@@ -748,3 +748,21 @@ originates in this presentation change.
 The compact follow-up removes the remaining white gutter below the collapsed
 count and overlays the open handle's 44px touch target on the roster, leaving
 only the 12px visual allowance required by its drag bar.
+
+## 2026-09-23 — Native entry and discovery foundation
+
+The Expo web export was reviewed at 390×844 and at the browser's wide default
+viewport. The native layout keeps a persistent Inicio / Explorar / Cuenta menu,
+the public welcome's location and manual-zone actions, and a scrollable producer
+list inside the safe area. At 390px, choosing Barcelona from the manual selector
+loaded the first 20 published producers through the anonymous catalog API;
+the app did not call `/api/mobile/account` during discovery.
+The list and bottom menu remained within the viewport; no horizontal overflow
+was visible. The wide view limits content to a readable 560px column.
+
+The production Clerk publishable key rejects a localhost web origin, so the
+local web preview could not visually exercise the account form. The native
+Google/Apple/hosted flows and OS location prompt still require device QA.
+The Chisan-intro assets were exported into separate native layers; the intro
+finishes after discovery succeeds or fails, with reduced motion supported.
+Audio and haptics remain concept-only pending reviewed assets and device QA.

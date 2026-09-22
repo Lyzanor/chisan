@@ -2,7 +2,9 @@
 
 `apps/mobile` is one Expo / React Native application for Android and iOS. The
 Next.js site remains the public website and backend. The first native flow is
-account access, device-local area selection, then a paginated producer list.
+the Chisan launch animation, a public welcome, device-local area selection and
+a paginated producer list. The persistent **Inicio / Explorar / Cuenta** menu
+keeps registration available without making it a condition of public discovery.
 Producer profiles, account editing and ownership verification open their existing
 web pages in the system browser. Distribution is currently private Android APK
 testing only. No Play Store or App Store submission is authorized or configured.
@@ -13,8 +15,11 @@ testing only. No Play Store or App Store submission is authorized or configured.
   No CSVs, private records or separately editable catalog ship in the app.
 - The same Clerk instance identifies the person. SecureStore stores native
   session credentials through Clerk's token cache. `/api/mobile/account` validates
-  the Bearer session and uses the existing internal-account resolver before the
-  app enters discovery. Native login does not grant memberships or entitlements.
+  the Bearer session and uses the existing internal-account resolver before
+  showing account actions. Native login does not grant memberships or entitlements.
+  Public discovery is anonymous and remains usable if Clerk is not configured or
+  Neon account access is temporarily unavailable. A signed-in user sees a
+  recoverable account message rather than losing the public catalog.
 - `lib/location/location-onboarding.ts` and the reviewed geometry resolve the
   device position locally. The native adapter requests foreground permission only
   after **Usar mi ubicación**, uses balanced accuracy, a five-minute maximum cached
@@ -27,8 +32,8 @@ testing only. No Play Store or App Store submission is authorized or configured.
   `pnpm build:mobile-tokens`; the app reuses the checked-in Chisan icon, wordmark and
   Outfit font. Native view layout belongs to `apps/mobile/src/ui.tsx`.
 
-The app's sign-in gate is presentation for public discovery; it is not an API
-authorization boundary. Every future private native operation must reuse the
+The native account screen is presentation, not an API authorization boundary.
+Every future private native operation must reuse the
 server's exact permission checks. A native session and a system-browser website
 session are separate: opening account/verification pages may require signing in
 again with the same provider. Do not put tokens in URLs or silently copy cookies.
@@ -57,8 +62,11 @@ to `chisan://sso-callback`. Register the native applications and callback in the
 same Clerk instance and enable its Native API. Google uses
 Clerk's SSO flow in a system authentication browser. Apple is exclusive to iOS
 and uses `useSignInWithApple` with `expo-apple-authentication`, without a web OAuth
-fallback. Android and the Chisan website do not offer the Apple button. Hosted authentication is
-available for email, additional verification and incomplete sign-up requirements.
+fallback. Android and the Chisan website do not offer the Apple button. iOS
+shows it only when `EXPO_PUBLIC_CHISAN_APPLE_SIGN_IN_ENABLED=true` in the build,
+after the provider has been configured and tested. Hosted
+authentication has separate sign-up and sign-in entry points for email,
+additional verification and incomplete sign-up requirements.
 Cancelling returns to the access screen. A saved valid session does not demand
 a fresh login on every launch. The app rechecks account status on foregrounding.
 
@@ -94,7 +102,8 @@ Apple was absent. Its native activation needs the owner's Apple Developer Team
 ID, the `app.chisan.mobile` Bundle ID with Sign in with Apple, and that native app
 registered in Clerk. Keep web Apple OAuth unconfigured; if the shared provider
 is enabled, verify the hosted email flow still does not offer an unusable Apple
-web option. The Chisan web widgets hide the Apple buttons through their shared
+web option. Set the native Apple build flag only after testing this setup. The
+Chisan web widgets hide the Apple buttons through their shared
 provider appearance. Frontend deployment does not activate a provider. Follow
 [native Sign in with Apple](https://clerk.com/docs/expo/guides/configure/auth-strategies/sign-in-with-apple),
 [Clerk hosted authentication](https://clerk.com/docs/expo/guides/account-portal/hosted-auth)
@@ -130,20 +139,19 @@ retry, catalog revision changes and the complete Instagram claim review. Verify
 that no precise device coordinates appear in network requests or logs. Web
 previews support visual QA but do not replace those device checks.
 
-## Launch experience and sensory branding (Concepts)
+## Launch experience and sensory branding
 
-The native startup gate serves as the threshold into Chisan. Rather than a static,
-frozen screen or a passive video loop, the approved concept is an interactive,
-state-machine driven launch experience:
+The native startup gate serves as the threshold into Chisan. Its checked-in
+layers come from `chisan-intro.html`. A native one-shot animation idles while
+the public discovery request and font load settle, then moves the detached
+module into the C, reveals the wordmark and fades to the already mounted app.
+Reduced-motion settings skip the movement. A recoverable catalog error also
+ends the intro so retry remains reachable. The prototype additionally specifies:
 
 - **Mascot and mark synergy:** The detached module from the initial **C** behaves as
-  an observant, curious entity. While the application initializes (fonts, location,
-  and initial producer area), it remains in an ambient idle loop—looking around and
-  lightly hopping in place.
-- **State-machine trigger:** The instant local discovery data is ready (`isReady`),
-  the module executes its joyful discovery stretch, leaps in a high parabolic arc,
-  and locks into the upper-right opening of the **C** with elastic settling. The
-  remaining wordmark letters («hisan») unfold smoothly to complete the mark.
+  an observant, curious entity while the application initializes.
+- **State-machine trigger:** When discovery is ready, the module leaps into the
+  upper-right opening of the **C** and the remaining letters appear.
 - **Haptic feedback (Taptic Engine):** In the millisecond of impact (`t ≈ 2.65s`),
   trigger a synchronized medium impact (`Haptics.impactAsync(ImpactFeedbackStyle.Medium)`).
   This grounds the digital snap as a tangible physical lock.
@@ -151,8 +159,11 @@ state-machine driven launch experience:
   (`AVAudioSessionCategoryAmbient`) so it never plays if the device is on silent/vibrate.
   When unmuted, the mechanical wooden snap of the **C** is complemented by a serene,
   harmonious Spanish nylon-string guitar arpeggio and a soft whisper unfold.
-- **Transition to territory:** As the acoustic resolution settles, the launch screen
-  dissolves smoothly upward, revealing the already rendered local producer map beneath.
+- **Transition to territory:** The prototype dissolves upward into local discovery.
+  The current native app fades into the public welcome and producer list.
 - **Prototyping reference:** An interactive HTML/CSS/WebAudio prototype is maintained
   in `chisan-intro.html` for motion timing and acoustic reference.
 
+Haptics and audio are prototype directions, not included in the current native
+bundle. The first app opens to public welcome and list discovery, not a native
+map. Add sound only with a reviewed asset, silent-mode behavior and device QA.

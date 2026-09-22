@@ -61,6 +61,9 @@ export function webUrl(value: string, origin: string): string {
 }
 
 export class CatalogChangedError extends Error {}
+export class MobileHttpError extends Error {
+  constructor(readonly status: number) { super(`Chisan request failed (${status}).`); }
+}
 
 export async function fetchJson(origin: string, path: string, token?: string): Promise<unknown> {
   const url = webUrl(path, origin);
@@ -72,7 +75,7 @@ export async function fetchJson(origin: string, path: string, token?: string): P
       headers: token ? { Authorization: `Bearer ${token}` } : undefined,
     });
     if (response.status === 409) throw new CatalogChangedError();
-    if (!response.ok) throw new Error("Chisan request failed.");
+    if (!response.ok) throw new MobileHttpError(response.status);
     return await response.json();
   } finally { clearTimeout(timeout); }
 }

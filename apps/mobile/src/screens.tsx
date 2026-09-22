@@ -4,30 +4,51 @@ import { SITE_TAGLINE } from "../../../lib/site";
 import type { MobileArea, MobileProducer } from "./catalog";
 import { Action, Notice, styles } from "./ui";
 
-export function Welcome({ busy, message, onSocial, onHosted, onPrivacy }: {
-  busy: boolean; message: string; onSocial: (provider: "google" | "apple") => void;
-  onHosted: () => void; onPrivacy: () => void;
+export function Home({ area, locating, areasReady, message, onLocate, onExplore, onAccount }: {
+  area: MobileArea | null; locating: boolean; areasReady: boolean; message: string;
+  onLocate: () => void; onExplore: () => void; onAccount: () => void;
 }) {
   return <>
     <Text style={styles.kicker}>CERCA DE TI</Text>
     <Text accessibilityRole="header" style={styles.title}>{SITE_TAGLINE}</Text>
-    <Text style={styles.text}>Entra con tu cuenta y descubre a los productores de tu zona.</Text>
+    <Text style={styles.text}>Descubre a quienes producen alimentos y bebidas en tu zona.</Text>
+    {area ? <Notice>Tu zona: {area.label} · {area.countryLabel}</Notice> : null}
     <View style={styles.actions}>
-      <Action disabled={busy} secondary onPress={() => onSocial("google")}>Continuar con Google</Action>
-      {Platform.OS === "ios" ? <Action disabled={busy} secondary onPress={() => onSocial("apple")}>Continuar con Apple</Action> : null}
-      <Action disabled={busy} onPress={onHosted}>{busy ? "Abriendo acceso…" : "Continuar con correo u otro método"}</Action>
+      {area ? <Action onPress={onExplore}>Explorar {area.label}</Action>
+        : <><Action disabled={locating || !areasReady} onPress={onLocate}>{locating ? "Buscando tu zona…" : areasReady ? "Usar mi ubicación" : "Cargando zonas…"}</Action>
+          <Action secondary onPress={onExplore}>Elegir zona manualmente</Action></>}
+      <Action secondary onPress={onAccount}>Crear cuenta o entrar</Action>
     </View>
-    <Text style={styles.small}>Si ya usas Chisan en la web, entra con la misma cuenta. Si es tu primera vez, podrás crearla al continuar.</Text>
+    <Text style={styles.small}>Puedes explorar sin registrarte. La ubicación solo se consulta cuando la pides; guardamos la zona elegida, nunca tu posición exacta.</Text>
+    {message ? <Notice>{message}</Notice> : null}
+  </>;
+}
+
+export function AccountAccess({ busy, message, appleEnabled, onSocial, onHosted, onPrivacy }: {
+  busy: boolean; message: string; appleEnabled: boolean; onSocial: (provider: "google" | "apple") => void;
+  onHosted: (mode: "sign-in" | "sign-up") => void; onPrivacy: () => void;
+}) {
+  return <>
+    <Text style={styles.kicker}>TU CUENTA</Text>
+    <Text accessibilityRole="header" style={styles.title}>Participa en Chisan</Text>
+    <Text style={styles.text}>Crea tu cuenta para guardar tu actividad y proponer mejoras. Puedes explorar el catálogo mientras tanto.</Text>
+    <View style={styles.actions}>
+      <Action disabled={busy} onPress={() => onHosted("sign-up")}>{busy ? "Abriendo acceso…" : "Crear cuenta con correo"}</Action>
+      <Action disabled={busy} secondary onPress={() => onSocial("google")}>Continuar con Google</Action>
+      {Platform.OS === "ios" && appleEnabled ? <Action disabled={busy} secondary onPress={() => onSocial("apple")}>Continuar con Apple</Action> : null}
+      <Action disabled={busy} secondary onPress={() => onHosted("sign-in")}>Ya tengo cuenta</Action>
+    </View>
+    <Text style={styles.small}>Si ya usas Chisan en la web, entra con la misma cuenta.</Text>
     {message ? <Notice>{message}</Notice> : null}
     <Action secondary onPress={onPrivacy}>Privacidad</Action>
   </>;
 }
 
-export function ChooseArea({ areas, busy, message, onLocate, onChoose }: {
-  areas: MobileArea[]; busy: boolean; message: string;
+export function ChooseArea({ areas, busy, message, initialManual = false, onLocate, onChoose }: {
+  areas: MobileArea[]; busy: boolean; message: string; initialManual?: boolean;
   onLocate: () => void; onChoose: (area: MobileArea) => void;
 }) {
-  const [manual, setManual] = useState(false);
+  const [manual, setManual] = useState(initialManual);
   const [query, setQuery] = useState("");
   const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   const visible = areas.filter(area => normalize(`${area.label} ${area.countryLabel}`).includes(normalize(query)));
@@ -41,7 +62,8 @@ export function ChooseArea({ areas, busy, message, onLocate, onChoose }: {
     <Action secondary onPress={() => setManual(!manual)}>{manual ? "Cerrar selector de zona" : "Elegir zona manualmente"}</Action>
     {manual ? <View style={styles.actions}>
       <TextInput style={styles.input} accessibilityLabel="Buscar zona" placeholder="Buscar zona" value={query} onChangeText={setQuery} autoCorrect={false} />
-      {visible.map(area => <Action key={`${area.country}:${area.area}`} secondary onPress={() => onChoose(area)}>{area.label} · {area.countryLabel}</Action>)}
+      {visible.slice(0, 30).map(area => <Action key={`${area.country}:${area.area}`} secondary onPress={() => onChoose(area)}>{area.label} · {area.countryLabel}</Action>)}
+      {visible.length > 30 ? <Text style={styles.small}>Escribe el nombre de la zona para ver más resultados.</Text> : null}
       {!visible.length ? <Text style={styles.text}>No encontramos esa zona en el catálogo actual.</Text> : null}
     </View> : null}
   </>;
