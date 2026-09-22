@@ -880,3 +880,9 @@ Routed from the Barcelona boundary review; no broader supplier search.
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Sosa Ingredients — La Granadella plant | La Granadella, Ctra. del Soleràs, s/n | `Frutos secos` — almond processing | Sosa lists this as a production plant and describes almond selection and processing there. | [Sosa plants](https://www.sosa.cat/contacto/) | <https://www.sosa.cat/sobre-sosa/> | Establish which material transformation beyond selection/packing this unit performs for an attributable own product. Do not attribute the entire Sosa range to it or duplicate an already represented unit. |
+
+## Routed from Tarragona — 2026-09-22
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| PRODUCTOS KLAM, SA | Agramunt (company seat Camí Vell de Tàrrega 27-31; RIAAC lists a fruit-preparation unit at Joan Alcover 4, Reus) | `Conservas` | RIAAC registration 430006571, main activity “Preparació i conservació de fruites (liofilització, IV gamma i altres tipus de conservació)” | [RIAAC dataset](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Ind-stries-agroaliment-ries-de-Catalunya/p28j-xe65); [Directory](https://www.proveedores.com/proveedores/productos-klam/) | <https://www.almendrina.com/> | Almendrina almond cream and drink are sold online by Productos Klam, S.A., seated in Agramunt, whose only RIAAC establishment is in Reus: place the plant that makes Almendrina and check it against the published Torrons Vicens row, which shares the phone. |
