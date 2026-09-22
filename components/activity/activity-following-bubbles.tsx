@@ -10,8 +10,15 @@ import { useProducerFollows } from "@/components/account/producer-follows-contex
 import type { ActivityFollowedProducer } from "@/lib/activity/data";
 import styles from "./activity.module.css";
 
-export function ActivityFollowingBubbles() {
-  const { isSignedIn, isLoaded } = useAuth();
+type ActivityFollowingBubblesViewProps = {
+  isLoaded: boolean;
+  isSignedIn: boolean;
+};
+
+function ActivityFollowingBubblesView({
+  isLoaded,
+  isSignedIn,
+}: ActivityFollowingBubblesViewProps) {
   const followState = useProducerFollows();
   const [producers, setProducers] = useState<ActivityFollowedProducer[]>([]);
 
@@ -106,4 +113,20 @@ export function ActivityFollowingBubbles() {
       )}
     </section>
   );
+}
+
+function AuthenticatedActivityFollowingBubbles() {
+  const { isLoaded, isSignedIn } = useAuth();
+  return (
+    <ActivityFollowingBubblesView isLoaded={isLoaded} isSignedIn={isSignedIn === true} />
+  );
+}
+
+// Clerk hooks need the ClerkProvider that the site shell adds only when account
+// auth is configured; without it the section keeps its signed-out state.
+export function ActivityFollowingBubbles({ authConfigured }: { authConfigured: boolean }) {
+  if (authConfigured) {
+    return <AuthenticatedActivityFollowingBubbles />;
+  }
+  return <ActivityFollowingBubblesView isLoaded isSignedIn={false} />;
 }

@@ -10,6 +10,7 @@ import { ActivityFeed } from "@/components/activity/activity-feed";
 import { ActivityFollowingBubbles } from "@/components/activity/activity-following-bubbles";
 import { ActivityGuides } from "@/components/activity/activity-guides";
 import { ActivityZoneDiscovery } from "@/components/activity/activity-zone-discovery";
+import { isAccountAuthConfigured } from "@/lib/accounts/config";
 import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 import styles from "@/components/activity/activity.module.css";
 
@@ -63,7 +64,7 @@ export default async function ActivityPage() {
       />
 
       {/* 2. Burbujas de «Siguiendo» */}
-      <ActivityFollowingBubbles />
+      <ActivityFollowingBubbles authConfigured={isAccountAuthConfigured()} />
 
       {/* 3. Guías destacadas */}
       <ActivityGuides guides={featuredGuides} />

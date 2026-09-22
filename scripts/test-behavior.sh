@@ -315,6 +315,17 @@ if [[
   exit 1
 fi
 
+# Actividad is public, so it must render whether or not account auth is configured.
+ACTIVIDAD_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/actividad")"
+HTML_ACTIVIDAD="$(curl -sS "$BASE_URL/actividad" | sed 's/<!-- -->//g')"
+if [[
+  "$ACTIVIDAD_STATUS" != "200" ||
+  "$HTML_ACTIVIDAD" != *'id="following-bubbles-title">Siguiendo</h2>'*
+]]; then
+  echo "Error: /actividad should render its Siguiendo section, got '$ACTIVIDAD_STATUS'." >&2
+  exit 1
+fi
+
 LLMS_TEXT="$(curl -fsS "$BASE_URL/llms.txt")"
 if [[
   "$LLMS_TEXT" != *'# Chisan'* ||
