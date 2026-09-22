@@ -3,6 +3,19 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-22 — Actividad returns to the map and its links respond again
+
+Reviewed the production build at 1280×900, then 390×844, with and without a
+saved area. On `/actividad` the desktop header now offers "Mapa" in place of the
+current page; it and the bottom-bar tab share one destination: the last catalog
+page visited in the tab (guides excluded), then the saved area, then Madrid.
+Other pages keep "Actividad". At 390px the header links stay hidden and the
+bottom bar is unchanged. With a saved area, production repeated the area
+highlights server action roughly ten times a second and every link click was
+held behind those async transitions indefinitely. Now one lookup runs per area
+change, outside a transition: header, card and bottom-bar links navigate at
+once, and choosing a zone sends a single request instead of two.
+
 ## 2026-09-21 — Map explorer refinement, integrated province search and mobile bottom navigation
 
 Reviewed at 390×844 first, then 1440×900:

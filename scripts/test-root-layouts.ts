@@ -143,12 +143,17 @@ test("the shared account navigation keeps identity, language and account actions
 
   assert.match(accountNav, /site-account-nav/);
   assert.match(accountNav, /\/actividad/);
+  // On Actividad the header offers the way back to the map instead of itself.
+  assert.match(accountNav, /isActividadActive \?[\s\S]*?href=\{mapHref\}[\s\S]*?Mapa/);
+  assert.match(accountNav, /useMapHref\(pathname\)/);
   assert.match(accountNav, /ACCOUNT_ROUTES/);
   assert.match(accountNav, /useLanguageMenu\(\)/);
   assert.match(accountNav, /fetch\("\/api\/account\/me"/);
   assert.match(bottomNav, /SiteBottomNav/);
   assert.match(bottomNav, /\/actividad/);
   assert.match(bottomNav, /Mapa/);
+  assert.match(bottomNav, /useMapHref\(pathname\)/);
+  assert.match(bottomNav, /useRememberMapPathname\(pathname\)/);
   assert.match(bottomNav, /Mi Cuenta/);
   assert.match(accountLayout, /AccountSignOutButton/);
   assert.match(accountPage, /AccountSignOutButton/);
@@ -160,6 +165,18 @@ test("the shared account navigation keeps identity, language and account actions
   assert.match(map, /CATEGORY_MARKER_MIN_ZOOM = 11/);
   assert.match(map, /<CircleMarker/);
   assert.match(map, /radius=\{selected \? 4 : 3\}/);
+});
+
+test("Actividad loads zone highlights once per area without holding back navigation", () => {
+  const zoneDiscovery = readRepositoryFile(
+    "components/activity/activity-zone-discovery.tsx",
+  );
+
+  // The saved area parses to a new object on every render; depending on it
+  // repeated the server action after each commit.
+  assert.match(zoneDiscovery, /\}, \[activeCountry, activeAreaSlug\]\);/);
+  // An async transition entangles router navigations until it settles.
+  assert.doesNotMatch(zoneDiscovery, /startTransition|useTransition/);
 });
 
 test("the catalog root derives document language only from the async URL scope", () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -39,31 +39,38 @@ export function ActivityZoneDiscovery({
   );
   const [locating, setLocating] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
-  const [selectedArea, setSelectedArea] = useState<string>("");
-  const [, startTransition] = useTransition();
+  // Covers a choice made where browser storage is unavailable.
+  const [selectedArea, setSelectedArea] = useState<{
+    country: string;
+    area: string;
+  } | null>(null);
 
-  const activeAreaKey =
-    stored?.onboarding === "resolved" && stored.area
-      ? stored.area.area
-      : selectedArea;
+  const activeArea =
+    (stored?.onboarding === "resolved" ? stored.area : null) ?? selectedArea;
+  // The saved state is a fresh object on every render; effects key on its values.
+  const activeCountry = activeArea?.country;
+  const activeAreaSlug = activeArea?.area;
 
   const currentAreaOption = availableAreas.find(
-    (item) => item.slug === activeAreaKey,
+    (item) => item.country === activeCountry && item.slug === activeAreaSlug,
   );
 
   useEffect(() => {
-    if (stored?.onboarding === "resolved" && stored.area) {
-      const area = stored.area.area;
-      const country = stored.area.country;
-      setSelectedArea(area);
-      startTransition(async () => {
-        const highlights = await getAreaHighlightsAction(country, area);
-        if (highlights.length > 0) {
-          setProducers(highlights);
-        }
-      });
-    }
-  }, [stored]);
+    if (!activeCountry || !activeAreaSlug) return;
+
+    // A plain call, not an async transition: a pending lookup must never hold
+    // back a navigation the visitor starts from this page.
+    let active = true;
+    getAreaHighlightsAction(activeCountry, activeAreaSlug)
+      .then((highlights) => {
+        if (active && highlights.length > 0) setProducers(highlights);
+      })
+      .catch(() => undefined);
+
+    return () => {
+      active = false;
+    };
+  }, [activeCountry, activeAreaSlug]);
 
   async function handleUseLocation() {
     if (locating) return;
@@ -94,14 +101,7 @@ export function ActivityZoneDiscovery({
             new Event("chisan:location-onboarding-storage-change"),
           );
         }
-        setSelectedArea(result.area);
-        const highlights = await getAreaHighlightsAction(
-          result.country,
-          result.area,
-        );
-        if (highlights.length > 0) {
-          setProducers(highlights);
-        }
+        setSelectedArea({ country: result.country, area: result.area });
       } else {
         setLocationError("No se ha podido determinar tu zona automáticamente. Elige tu zona en la lista.");
       }
@@ -117,7 +117,7 @@ export function ActivityZoneDiscovery({
     const option = availableAreas.find((item) => item.slug === slug);
     if (!option) return;
 
-    setSelectedArea(slug);
+    setSelectedArea({ country: option.country, area: option.slug });
     setLocationError(null);
 
     const storage = browserLocationStorage();
@@ -133,13 +133,6 @@ export function ActivityZoneDiscovery({
         new Event("chisan:location-onboarding-storage-change"),
       );
     }
-
-    startTransition(async () => {
-      const highlights = await getAreaHighlightsAction(option.country, option.slug);
-      if (highlights.length > 0) {
-        setProducers(highlights);
-      }
-    });
   }
 
   return (
