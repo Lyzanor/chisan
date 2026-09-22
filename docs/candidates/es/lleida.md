@@ -10,6 +10,7 @@
 - Follow-up 2026-09-07: 8 producers admitted from the recent municipality/HelloBo/artisan batches. Older historical holds remain outside this focused follow-up; optional missing data is not an eligibility blocker.
 
 - Follow-up 2026-09-22 (leads with an official site): seven producers admitted through their own sites, RIAAC and the proximity register. Torrelsa and the Cooperativa de La Granadella were already published; the published Torrelsa row sits in Barcelona although its roasting plant is at Ctra. N-230 km 4,84, Lleida (RIAAC), which needs a separate routing review. The fruit packers stay on hold until their orchards are placed.
+
 ## DO Catalunya
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |

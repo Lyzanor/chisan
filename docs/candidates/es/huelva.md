@@ -87,3 +87,9 @@ Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Jamones La Joya | Jabugo (El Repilado) | `Carne` — Iberian ham and cured meats | The exhibitor text states: “La esencia de La Joya en formato loncheado… Marca: La Joya. Categoría: Curados / Embutidos.” Group material places its cellars in El Repilado, Jabugo. | [AUTENTICA 2026 exhibitor directory](https://autenticapremium.ticketsnebext.com/autentica_2026/es/expo) | <https://www.thisislajoya.com/> | The aviso legal of `thisislajoya.com` names Jamones Duríber, S.L.U., a Vall Companys company with its registered office at C/ Parma 1, Guadalajara. The brand is not in the D.O.P. Jabugo register. Establish where La Joya pieces are cured and whether El Repilado is a productive unit of the group. |
+
+## Routed from Girona — 2026-09-22
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| La Jabugueña | Jabugo (plant at Pl. J. A. Escuredo Raimondez s/n; company offices and a deboning room in Salt, Girona) | `Carne` | The directory states: “La Jabugueña es una empresa que se dedica a la elaboración y distribución de productos ibéricos , caracterizándose…” | [Directory](https://www.proveedores.com/proveedores/la-jabuguena/) | <https://www.lajabuguena.com/> | La Jabugueña ham and cured meats are made by Matadero La Jabugueña, SL (B21425764) in Jabugo, while Productes La Jabugueña, SL keeps its offices and a RIAAC deboning room in Salt (Girona); the site also lists a serrano line at Toral de los Vados (León) and a dehesa in Encinasola: confirm the Jabugo plant and its current range, distinct from the published Alba Romero (Los Romeros de Jabugo) in Cala. |
