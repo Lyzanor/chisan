@@ -196,6 +196,58 @@ Free text may corroborate a category but never assigns one mechanically. Use
 `Otros` only when no registered category fits. Exact tokens and representation
 live in `docs/CSV_CONTRACT.md`.
 
+### Choosing the primary category
+
+Decide the unit first, then its products, in this order:
+
+1. **The defining activity decides.** `categoria` names what the unit is: the
+   trade it practises, the line it is known for or its main output. A bakery is
+   a bakery even when it also sells pastries; a pastry shop is a pastry shop even
+   when it bakes some bread. The other material lines go to
+   `categorias adicionales`.
+2. **A category that names the product itself wins.** Wine, beer, cider,
+   vermouth, sake, spirits, soft drinks, coffee, tea and infusions, chocolate,
+   ice cream, honey, oil, eggs and dairy go to their own category whatever the
+   process.
+3. **A recognisable raw material keeps its category.** When curing, smoking,
+   drying, canning, roasting, frying, candying or cooking leaves the raw material
+   recognisable, use its category: cured and cooked meat products and pâtés are
+   `Carne`; canned, salted and smoked fish and shellfish are `Pescado`; mushrooms
+   and truffles in any form are `Setas`; dry and cooked pulses, pulse flours and
+   hummus are `Legumbres`; nuts and edible seeds in any form are `Frutos secos`;
+   fresh and dried fruit and vegetables are `Fruta y verdura`.
+4. **Otherwise the process decides**, following the boundaries below.
+5. **`Otros` is residual.** It holds the listed residual products, or a row whose
+   output is not yet known. The second case is a research gap to close, not a
+   classification to keep.
+
+### Category boundaries
+
+| Category | Includes | Goes elsewhere |
+|---|---|---|
+| `Pan y cereal` | Bread and savoury bakery (picos, regañás, rosquilletas, savoury biscuits, savoury cocas and coca de recapte); savoury filled doughs (empanadas, empanadillas, hornazo); flours, milled grains and starches (gofio, kudzu); grain grown for food; rice; all pasta, dry, fresh and filled; breakfast cereals and granola. A bakery (forn de pa, panadería, fleca) stays here with `Dulces y repostería` as an additional line when its pastry is material | Units defined by sweet goods → `Dulces y repostería`; dishes ready to eat or heat, including ready pizza and cooked lasagne → `Comida preparada`; crisps and crackers made as snacks → `Aperitivos`; pulse flours → `Legumbres` |
+| `Dulces y repostería` | Pastry shops, confectioners and workshops defined by sweet goods: cakes and pastries, sweet bollería (croissants, ensaimadas, magdalenas, sobaos), sweet biscuits and pastas, turrón, marzipan, polvorones and mantecados, convent sweets, sweet tortas de aceite, churros and porras, caramels and sweets | Chocolate makers and bombonerías → `Chocolate`; candied or caramelised nuts → `Frutos secos`; jams and quince paste → `Conservas`; ice cream → `Helados`; bread-defined bakeries → `Pan y cereal` |
+| `Comida preparada` | Dishes ready to eat or heat: cooked dishes, croquettes, tortillas, soups, creams and stocks, cooked lasagne, ready and frozen pizza, frozen potato products; plant-based proteins and alternatives (tofu, tempeh, seitan, vegan cheeses and meats). A kitchen, takeaway or catering service alone does not qualify a unit | Savoury bakery and pasta → `Pan y cereal`; charcuterie and pâtés → `Carne`; sauces → `Condimentos`; cooked pulses and hummus → `Legumbres`; vegetable preserves → `Conservas`; fish preparations → `Pescado` |
+| `Conservas` | Plant-based preserves: vegetable preserves, pickles and table olives, jams, marmalades, compotes, quince paste, fruit purées, fermented vegetables (kimchi, sauerkraut) | Canned fish → `Pescado`; meat preserves and pâtés → `Carne`; preserved mushrooms and truffles → `Setas`; cooked pulses → `Legumbres`; dishes in jars → `Comida preparada`; sauces → `Condimentos` |
+| `Condimentos` | Salt, spices, pimentón, saffron, fresh or dried culinary herbs, sauces, mustards, alioli and mojos, black garlic, stock and seasoning bases, and vinegar made by a vinegar maker | Herbs and botanicals for infusion → `Té e infusiones`; a winery's or cider maker's vinegar is an additional line of its `Vino` or `Sidra` row |
+| `Aperitivos` | Salty snacks: potato and vegetable crisps, popcorn, pork rinds, extruded snacks, crackers and pretzels made as snacks | Nuts in any form → `Frutos secos`, as an additional line when a crisp maker also fries or roasts nuts |
+| `Siropes y azúcares` | Sugars and sweetener syrups: beet and cane sugar, panela, molasses and miel de caña, maple, birch, sorghum, date and carob syrups, arrope, stevia and other sweeteners, and the maple sugar, cream and candy a sugarhouse makes | Honey → `Miel`; syrups and cordials for diluting into drinks → `Bebidas sin alcohol`; confectionery → `Dulces y repostería` |
+| `Frutos secos` | Nuts and edible seeds (including pipas, hemp seed, carob and coconut), raw, roasted, fried, salted or candied (garrapiñadas), and nut creams and butters | Turrón and marzipan → `Dulces y repostería`; nut-based vegan cheese → `Comida preparada`; nut oils → `Aceite` |
+| `Fruta y verdura` | Fresh fruit and vegetables, potatoes, tubers and chufa, microgreens, dried fruit, and growers that pack their own harvest | Juices → `Bebidas sin alcohol`; preserves and jams → `Conservas`; the grower's own juice or preserves are additional lines |
+| `Otros` | Snails, mead, seaweed and microalgae (spirulina), insects, and rows whose output is not yet known | Everything that fits a category above |
+
+The product-named categories resolve their usual overlaps the same way: a
+chocolate maker or bombonería is `Chocolate`, and a pastry shop that also makes
+chocolates adds it; a dairy that also makes ice cream is `Lácteos y quesos` with
+`Helados`, and an ice-cream workshop is `Helados`; an horchata maker is
+`Bebidas sin alcohol`; sangría and fortified wines are `Vino`, while vermouth is
+`Vermut`; honey, pollen, propolis and royal jelly are `Miel`; edible oils are
+`Aceite`, and products made from bought oil are judged by what they are.
+
+`Despensa artesanal` was retired on 2026-09-22. Its sugarhouses and sugar
+producers moved to `Siropes y azúcares`; its other rows went to the specific
+category of their output.
+
 ## Editorial decision matrix
 
 This is the canonical place to choose an editorial outcome. Apply exclusions

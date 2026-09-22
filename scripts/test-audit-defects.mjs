@@ -410,12 +410,13 @@ test("the trade name is not evidence of a product", () => {
 });
 
 test("a category with no markers is never judged by them", () => {
-  // `Otros` and `Despensa artesanal` are catch-alls: the absence of their own
+  // `Otros` and `Comida preparada` are catch-alls: the absence of their own
   // nouns proves nothing, so a marker must not convict them.
-  assert.equal(CATEGORY_MARKERS["Despensa artesanal"], undefined);
+  assert.equal(CATEGORY_MARKERS.Otros, undefined);
+  assert.equal(CATEGORY_MARKERS["Comida preparada"], undefined);
   assert.deepEqual(
     flagged([
-      { nombre: "Casa Sintética", categoria: "Despensa artesanal", "productos estrella": "queso curado y miel" },
+      { nombre: "Casa Sintética", categoria: "Otros", "productos estrella": "queso curado y miel" },
     ]),
     [],
   );
@@ -429,7 +430,7 @@ test("star products holding a taxonomy label are flagged whatever the category",
     flagged([
       {
         nombre: "Aceitunas Sintéticas",
-        categoria: "Despensa artesanal",
+        categoria: "Otros",
         "productos estrella": "Aceitunas y encurtidos",
       },
     ]),

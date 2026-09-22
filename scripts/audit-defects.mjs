@@ -169,7 +169,7 @@ export const templateShape = (text) =>
 // what made the first draft of this detector flag every almazara called
 // "Molino de …". A category with no entry here is never judged by markers,
 // because then the absence of its own nouns proves nothing — that is why
-// `Otros`, `Despensa artesanal` and `Comida preparada` are deliberately absent.
+// `Otros` and `Comida preparada` are deliberately absent.
 export const CATEGORY_MARKERS = {
   Aceite: ["aceite", "aceites", "aove", "oliva", "olivar", "almazara", "arbequina", "picual", "hojiblanca", "oli", "olivera", "trull"],
   Miel: ["miel", "mieles", "polen", "propoleo", "jalea", "colmena", "colmenar", "apicola", "apicultura", "mel", "ezti"],

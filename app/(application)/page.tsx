@@ -47,13 +47,9 @@ import { SITE_NAME } from "@/lib/site";
 
 const HOME_LOCALE = "es" as const;
 
-// The featured categories describe the catalog's range. The catch-all and the
-// pantry token that reuses its map icon say nothing on their own, so they stay
-// out of the summary.
-const HOME_SUMMARY_SKIPPED_CATEGORIES = new Set([
-  "Otros",
-  "Despensa artesanal",
-]);
+// The featured categories describe the catalog's range. The catch-all says
+// nothing on its own, so it stays out of the summary.
+const HOME_SUMMARY_SKIPPED_CATEGORIES = new Set(["Otros"]);
 const HOME_SUMMARY_CATEGORY_LIMIT = 12;
 
 /** The most numerous featured categories, each producer counted once. */
