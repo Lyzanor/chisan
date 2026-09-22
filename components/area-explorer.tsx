@@ -1,27 +1,15 @@
 "use client";
 
-import Link from "next/link";
-import { producerProfileLabels } from "@/lib/i18n/producer-profile";
 import { useNationalCatalog } from "@/components/use-national-catalog";
 import { explorerSearchFields, type ExplorerProducer } from "@/lib/catalog/explorer";
 import { getCatalogSearchMessages } from "@/lib/i18n/catalog-search";
 import type { ProducerMapMarker } from "@/lib/producer-selections";
 import { CatalogSearchControl } from "@/components/catalog-search-control";
-import { ProducerMapRosterRow } from "@/components/map/producer-map-roster-row";
 import { CatalogSearchSlot } from "@/components/catalog-search-slot";
-import { CatalogResultsSheet } from "@/components/catalog-results-sheet";
-import { ProducerMapCarousel } from "@/components/map/producer-map-carousel";
 import { useSearchParams } from "next/navigation";
-import {
-  SquaresFourIcon,
-  MinusIcon,
-  PlusIcon,
-  PlusCircleIcon,
-} from "@phosphor-icons/react";
 import { ProducerCandidateSuggestionModal } from "@/components/map/producer-candidate-suggestion-modal";
 import {
   Suspense,
-  memo,
   useDeferredValue,
   useCallback,
   useEffect,
@@ -29,7 +17,6 @@ import {
   useRef,
   useState,
   type ReactNode,
-  type Ref,
 } from "react";
 
 import { SiteCatalogControlsRegistration } from "@/components/account/site-catalog-controls-context";
@@ -38,10 +25,9 @@ import {
   LanguageMenuRegistration,
   type LanguageMenuRegistrationOption,
 } from "@/components/language-menu-registration";
-import {
-  ProducerSelectionMap,
-  type ProducerMapFocusRequest,
-  type ProducerMapGroupOverview,
+import type {
+  ProducerMapFocusRequest,
+  ProducerMapGroupOverview,
 } from "@/components/map/producers-map";
 import { useDismissibleProducerMapSelection } from "@/components/map/use-dismissible-producer-map-selection";
 import {
@@ -51,8 +37,6 @@ import {
 import {
   buildCatalogSearchDocument,
   rankCatalogEntries,
-  catalogDescriptionPreview,
-  findCatalogSearchMatch,
   normalizeCatalogSearch,
 } from "@/lib/catalog-search";
 import type { CategoryPresentation } from "@/lib/i18n/categories";
@@ -71,6 +55,9 @@ import {
   includeSelectedProducer,
   prioritizeProducerItems,
 } from "@/lib/catalog/producer-list";
+import { CategoryNav } from "@/components/explorer/category-nav";
+import { MapStage } from "@/components/explorer/map-stage";
+import { RosterSheet } from "@/components/explorer/roster-sheet";
 
 export const BASE_CATEGORY_TOKENS = new Set([
   "Café",
@@ -97,7 +84,6 @@ export function isBaseCategory(token: string): boolean {
 }
 
 const VISIBLE_PRODUCER_LIMIT = 400;
-const PRODUCER_RESULTS_ID = "catalog-producer-results";
 
 function pushAreaQuery(href: string) {
   if (`${window.location.pathname}${window.location.search}` !== href) {
@@ -169,85 +155,6 @@ function withCatalogQuery(
   const query = url.searchParams.toString();
   return `${url.pathname}${query ? `?${query}` : ""}${url.hash}`;
 }
-
-function SearchMatch({ text, query }: { text: string; query: string }) {
-  const match = findCatalogSearchMatch(text, query);
-  if (!match) return text;
-
-  return (
-    <>
-      {text.slice(0, match.start)}
-      <mark className="catalog-search-match">
-        {text.slice(match.start, match.end)}
-      </mark>
-      {text.slice(match.end)}
-    </>
-  );
-}
-
-const ProducerRosterRow = memo(function ProducerRosterRow({
-  item,
-  href,
-  query,
-  categories,
-  active,
-  itemRef,
-  onPreview,
-  onPreviewEnd,
-  locale,
-}: {
-  item: AreaExplorerProducer;
-  locale: Locale;
-  href: string;
-  query: string;
-  categories: ReadonlyMap<string, CategoryPresentation>;
-  active: boolean;
-  itemRef?: Ref<HTMLLIElement>;
-  onPreview: (slug: string, immediate?: boolean) => void;
-  onPreviewEnd: (slug: string) => void;
-}) {
-  const matchingCategories = query
-    ? item.categories
-        .map((token) => categories.get(token)?.label ?? token)
-        .filter((label) => findCatalogSearchMatch(label, query))
-        .join(" · ")
-    : "";
-  return (
-    <ProducerMapRosterRow item={{ ...item, href }} itemRef={itemRef} active={active} locale={locale}
-        onPointerEnter={(event) => {
-          const sheetHandle = event.currentTarget.closest(".catalog-results-sheet")?.querySelector(".catalog-results-sheet__handle");
-          if (event.pointerType === "mouse" && !event.buttons &&
-            window.matchMedia("(hover: hover)").matches && sheetHandle &&
-            !sheetHandle.getClientRects().length) onPreview(item.key);
-        }}
-        onMouseLeave={() => onPreviewEnd(item.key)}
-        onFocus={() => onPreview(item.key, true)}
-        onBlur={() => onPreviewEnd(item.key)}
-      >
-          <strong>
-            <SearchMatch text={item.name} query={query} />
-          </strong>
-          {item.city ? (
-            <small className="producer-compact-location">
-              <SearchMatch text={`${item.city} · ${item.areaLabel}`} query={query} />
-            </small>
-          ) : null}
-          {matchingCategories ? (
-            <small>
-              <SearchMatch text={matchingCategories} query={query} />
-            </small>
-          ) : null}
-          {item.description || item.featuredProducts ? (
-            <small>
-              <SearchMatch text={catalogDescriptionPreview(
-                query && query.split(/\s+/u).some((term) => findCatalogSearchMatch(item.featuredProducts, term))
-                  ? item.featuredProducts : item.description, query,
-              )} query={query} />
-            </small>
-          ) : null}
-    </ProducerMapRosterRow>
-  );
-});
 
 function useNearbyMapFocusKeys(
   country: string,
@@ -822,7 +729,7 @@ function AreaExplorerView({
       </CatalogSearchSlot>
       {municipality ? (
         <button className="detail-municipality-filter catalog-map-municipality" type="button"
-          aria-label={`${producerProfileLabels(model.locale).removeMunicipality}: ${municipality}`}
+          aria-label={`${formatMessage("{label}", { label: "Municipio" })}: ${municipality}`}
           onClick={() => {
             const url = new URL(window.location.href);
             url.searchParams.delete("municipality");
@@ -835,257 +742,142 @@ function AreaExplorerView({
           {municipality} ×
         </button>
       ) : null}
-      <nav
-        className="catalog-simple-categories"
-        aria-label={model.catalogMessages.categories}
-      >
-        <div className="catalog-categories-row">
-          <Link
-            href={allCategoriesHref}
-            prefetch={false}
-            scroll={false}
-            onNavigate={(event) => {
-              event.preventDefault();
-              selectCategory(allCategoriesHref);
-            }}
-            className={`catalog-chip ${!category ? "is-active" : ""}`}
-            aria-current={!category ? "page" : undefined}
-            aria-label={model.catalogMessages.allCategories}
-          >
-            <SquaresFourIcon size={20} aria-hidden="true" />
-            <span className="catalog-chip__label">{model.catalogMessages.allCategories}</span>
-          </Link>
-          {baseCategories.map((categoryPresentation) => {
-            const href = buildCatalogHref({
-              scope: model.scope,
-              area: model.area,
-              q: searchQuery,
-              searchScope,
-              municipality,
-              category: categoryPresentation.token,
-            });
-            const isActive =
-              category === categoryPresentation.token ||
-              normalizeCatalogSearch(categoryPresentation.token) === normalizedCategory;
 
-            return (
-              <Link
-                key={categoryPresentation.token}
-                href={href}
-                prefetch={false}
-                scroll={false}
-                onNavigate={(event) => {
-                  event.preventDefault();
-                  selectCategory(href);
-                }}
-                className={`catalog-chip ${isActive ? "is-active" : ""}`}
-                aria-current={isActive ? "page" : undefined}
-                aria-label={categoryPresentation.label}
-              >
-                <span aria-hidden="true">{categoryPresentation.icon}</span>
-                <span className="catalog-chip__label">{categoryPresentation.label}</span>
-              </Link>
-            );
-          })}
-          {otherCategories.length > 0 ? (
-            <button
-              type="button"
-              className="catalog-chip catalog-chip--toggle"
-              onClick={toggleExpandedCategories}
-              aria-expanded={showAllCategories}
-              aria-label={
-                showAllCategories
-                  ? searchMessages.fewerCategories
-                  : searchMessages.moreCategories
-              }
-              title={
-                showAllCategories
-                  ? searchMessages.fewerCategories
-                  : searchMessages.moreCategories
-              }
-            >
-              {showAllCategories ? (
-                <MinusIcon aria-hidden="true" size={16} />
-              ) : (
-                <PlusIcon aria-hidden="true" size={16} />
-              )}
-            </button>
-          ) : null}
-        </div>
-        {otherCategories.length > 0 ? (
-          <div
-            className="catalog-categories-row catalog-categories-row--secondary"
-            data-expanded={showAllCategories || undefined}
-            role="group"
-            aria-label={searchMessages.moreCategories}
-          >
-            {otherCategories.map((categoryPresentation) => {
-              const href = buildCatalogHref({
-                scope: model.scope,
-                area: model.area,
-                q: searchQuery,
-                searchScope,
-                municipality,
-                category: categoryPresentation.token,
-              });
-              const isActive =
-                category === categoryPresentation.token ||
-                normalizeCatalogSearch(categoryPresentation.token) === normalizedCategory;
-
-              return (
-                <Link
-                  key={categoryPresentation.token}
-                  href={href}
-                  prefetch={false}
-                  scroll={false}
-                  onNavigate={(event) => {
-                    event.preventDefault();
-                    selectCategory(href);
-                  }}
-                  className={`catalog-chip ${isActive ? "is-active" : ""}`}
-                  aria-current={isActive ? "page" : undefined}
-                  aria-label={categoryPresentation.label}
-                >
-                  <span aria-hidden="true">{categoryPresentation.icon}</span>
-                  <span className="catalog-chip__label">{categoryPresentation.label}</span>
-                </Link>
-              );
-            })}
-          </div>
-        ) : null}
-      </nav>
+      <CategoryNav
+        category={category}
+        normalizedCategory={normalizedCategory}
+        allCategoriesHref={allCategoriesHref}
+        baseCategories={baseCategories}
+        otherCategories={otherCategories}
+        showAllCategories={showAllCategories}
+        onToggleExpanded={toggleExpandedCategories}
+        onSelectCategory={selectCategory}
+        buildCategoryHref={(token) =>
+          buildCatalogHref({
+            scope: model.scope,
+            area: model.area,
+            q: searchQuery,
+            searchScope,
+            municipality,
+            category: token,
+          })
+        }
+        labels={{
+          categories: model.catalogMessages.categories,
+          allCategories: model.catalogMessages.allCategories,
+          moreCategories: searchMessages.moreCategories,
+          fewerCategories: searchMessages.fewerCategories,
+        }}
+      />
 
       <section ref={explorerRef} className={`catalog-simple-layout producer-map-explorer${listOpen ? " is-list-open" : ""}`}>
-        <div className="producer-map-stage">
-          <div
-            ref={mapSurfaceRef}
-            className="catalog-simple-map"
-            aria-label={model.mapMessages.producerMap}
-            tabIndex={-1}
-          >
-            {loading || national.error && searchScope === "country" || !items.length ? (
-              // An unloaded national catalog is not a set without coordinates.
-              <div className="map-placeholder" />
-            ) : (
-              <ProducerSelectionMap
-                key={searchScope}
-                points={mapPoints}
-                minZoom={4}
-                selectedKey={presentedItem?.key}
-                focusPaddingBottom={180}
-                focusRequest={mapFocusRequest}
-                nearbyFocusKeys={nearbyMapFocusKeys}
-                onNearbyFocusConsumed={consumeNearbyMapFocus}
-                onSelectKey={selectMapProducer}
-                onPreviewKey={previewMapProducer}
-                onPreviewEndKey={clearProducerPreview}
-                onVisibleKeysChange={handleVisibleProducerKeysChange}
-                groupOverview={mapGroupOverview}
-                openOnMainCluster={searchScope === "country"}
-                messages={model.mapMessages}
-              />
-            )}
-          </div>
-          {loading || national.error && searchScope === "country" || !items.length ? (
-            <div className="catalog-map-status" role="status">
-              <p>{loading ? searchMessages.loading : national.error && searchScope === "country" ? searchMessages.error
-                : formatMessage(searchQuery ? searchMessages.empty : model.catalogMessages.emptyCategory, { area: scopeLabel, scope: scopeLabel })}</p>
-              {national.error && searchScope === "country" ? <button type="button" className="catalog-search-action" onClick={national.retry}>{searchMessages.retry}</button> : null}
-            </div>
-          ) : (
-            <ProducerMapCarousel
-              key={resultScope}
-              items={orderedItems}
-              activeKey={presentedItem?.key}
-              onSelect={selectMapProducer}
-              onInteract={() => { listOrderLockedCategoryRef.current = category; cancelPendingPreview(); }}
-              labels={searchMessages}
-              linkRef={selectedProducerLinkRef}
-            />
-          )}
-        </div>
+        <MapStage
+          mapSurfaceRef={mapSurfaceRef}
+          mapLabel={model.mapMessages.producerMap}
+          loading={loading}
+          hasError={Boolean(national.error && searchScope === "country")}
+          hasItems={Boolean(items.length)}
+          statusMessage={
+            loading
+              ? searchMessages.loading
+              : national.error && searchScope === "country"
+                ? searchMessages.error
+                : formatMessage(
+                    searchQuery
+                      ? searchMessages.empty
+                      : model.catalogMessages.emptyCategory,
+                    { area: scopeLabel, scope: scopeLabel },
+                  )
+          }
+          retryAction={national.retry}
+          retryLabel={searchMessages.retry}
+          searchScope={searchScope}
+          points={mapPoints}
+          selectedKey={presentedItem?.key}
+          focusRequest={mapFocusRequest}
+          nearbyFocusKeys={nearbyMapFocusKeys}
+          onNearbyFocusConsumed={consumeNearbyMapFocus}
+          onSelectKey={selectMapProducer}
+          onPreviewKey={previewMapProducer}
+          onPreviewEndKey={clearProducerPreview}
+          onVisibleKeysChange={handleVisibleProducerKeysChange}
+          groupOverview={mapGroupOverview}
+          messages={model.mapMessages}
+          carouselKey={resultScope}
+          orderedItems={orderedItems}
+          onCarouselInteract={() => {
+            listOrderLockedCategoryRef.current = category;
+            cancelPendingPreview();
+          }}
+          carouselLabels={searchMessages}
+          selectedProducerLinkRef={selectedProducerLinkRef}
+        />
 
-        <CatalogResultsSheet
+        <RosterSheet
           viewerRef={viewerRef}
           open={listOpen}
           onOpenChange={setListOpen}
           title={model.mapMessages.producers}
-          label={loading ? searchMessages.loading : formatMessage(searchMessages.sheetResults, {
-            count: formatNumber(model.localeDisplayTag, items.length),
-            scope: scopeLabel,
-          })}
+          sheetLabel={
+            loading
+              ? searchMessages.loading
+              : formatMessage(searchMessages.sheetResults, {
+                  count: formatNumber(model.localeDisplayTag, items.length),
+                  scope: scopeLabel,
+                })
+          }
           closeLabel={searchMessages.backToMap}
-        >
-            <div className="catalog-viewer-head"><h2>{model.catalogMessages.producers}</h2></div>
-            <p className="catalog-search-summary" role="status">
-              {loading ? searchMessages.loading : searchScope !== "area" && national.error ? searchMessages.error
-                : formatMessage(searchMessages.results, { count: formatNumber(model.localeDisplayTag, items.length), scope: scopeLabel })}
-              {normalizedSearchQuery && items.length ? ` · ${searchMessages.relevance}` : ""}
-            </p>
-            {adSlot}
-            {searchScope !== "area" && national.error ? <button type="button" className="catalog-search-action" onClick={national.retry}>{searchMessages.retry}</button> : null}
-            <p className="visually-hidden" aria-live="polite">
-              {screenReaderSummary}
-              {visibleItems[0] ? `: ${visibleItems[0].name}` : ""}
-            </p>
-
-            {loading || (searchScope !== "area" && national.error) ? null : items.length === 0 ? (
-              <p className="catalog-empty">
-                {formatMessage(searchQuery ? searchMessages.empty : model.catalogMessages.emptyCategory, {
-                  area: scopeLabel, scope: scopeLabel,
-                })}
-              </p>
-            ) : visibleItems.length > 0 ? (
-              <ul
-                id={PRODUCER_RESULTS_ID}
-                className="producer-compact-list"
-                aria-busy={searchQuery !== deferredSearchQuery || loading}
-              >
-                {visibleItems.map((item) => (
-                  <ProducerRosterRow
-                    key={item.producerId}
-                    locale={model.locale}
-                    item={item}
-                    href={item.href}
-                    query={deferredSearchQuery}
-                    categories={categoryPresentations}
-                    active={presentedItem?.key === item.key}
-                    itemRef={
-                      selectedItem?.key === item.key
-                        ? selectedListItemRef
-                        : undefined
-                    }
-                    onPreview={previewProducer}
-                    onPreviewEnd={clearProducerPreview}
-                  />
-                ))}
-              </ul>
-            ) : (
-              <p id={PRODUCER_RESULTS_ID} className="catalog-empty">
-                {model.catalogMessages.emptyMapView}
-              </p>
-            )}
-            {orderedItems.length > visibleLimit ? (
-              <button type="button" className="catalog-search-action" onClick={() => setPage({ scope: resultScope, limit: visibleLimit + VISIBLE_PRODUCER_LIMIT })}>
-                {searchMessages.more}
-              </button>
-            ) : null}
-
-            <div className="catalog-roster-suggest">
-              <div className="catalog-roster-suggest__content">
-                <strong>¿Falta algún productor?</strong>
-                <p>Ayúdanos a completar el catálogo sugiriendo productores locales que conozcas.</p>
-              </div>
-              <button
-                type="button"
-                className="catalog-roster-suggest__btn"
-                onClick={() => setSuggestCandidateOpen(true)}
-              >
-                <PlusCircleIcon size={18} aria-hidden="true" />
-                <span>Añadir productor</span>
-              </button>
-            </div>
-        </CatalogResultsSheet>
+          producersHeading={model.catalogMessages.producers}
+          summaryText={
+            loading
+              ? searchMessages.loading
+              : searchScope !== "area" && national.error
+                ? searchMessages.error
+                : formatMessage(searchMessages.results, {
+                    count: formatNumber(model.localeDisplayTag, items.length),
+                    scope: scopeLabel,
+                  })
+          }
+          relevanceLabel={
+            normalizedSearchQuery && items.length
+              ? searchMessages.relevance
+              : undefined
+          }
+          screenReaderSummary={screenReaderSummary}
+          adSlot={adSlot}
+          loading={loading}
+          hasError={Boolean(searchScope !== "area" && national.error)}
+          onRetry={national.retry}
+          retryLabel={searchMessages.retry}
+          items={items}
+          visibleItems={visibleItems}
+          visibleLimit={visibleLimit}
+          totalCount={orderedItems.length}
+          emptyMessage={formatMessage(
+            searchQuery
+              ? searchMessages.empty
+              : model.catalogMessages.emptyCategory,
+            { area: scopeLabel, scope: scopeLabel },
+          )}
+          emptyMapViewMessage={model.catalogMessages.emptyMapView}
+          moreLabel={searchMessages.more}
+          onLoadMore={() =>
+            setPage({
+              scope: resultScope,
+              limit: visibleLimit + VISIBLE_PRODUCER_LIMIT,
+            })
+          }
+          searchQuery={searchQuery}
+          deferredSearchQuery={deferredSearchQuery}
+          locale={model.locale}
+          categoryPresentations={categoryPresentations}
+          presentedKey={presentedItem?.key}
+          selectedKey={selectedItem?.key}
+          selectedListItemRef={selectedListItemRef}
+          onPreview={previewProducer}
+          onPreviewEnd={clearProducerPreview}
+          onSuggestProducer={() => setSuggestCandidateOpen(true)}
+        />
       </section>
 
       <ProducerCandidateSuggestionModal

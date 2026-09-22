@@ -129,3 +129,30 @@ suspended/deleted accounts, denied/revoked location, manual selection, offline
 retry, catalog revision changes and the complete Instagram claim review. Verify
 that no precise device coordinates appear in network requests or logs. Web
 previews support visual QA but do not replace those device checks.
+
+## Launch experience and sensory branding (Concepts)
+
+The native startup gate serves as the threshold into Chisan. Rather than a static,
+frozen screen or a passive video loop, the approved concept is an interactive,
+state-machine driven launch experience:
+
+- **Mascot and mark synergy:** The detached module from the initial **C** behaves as
+  an observant, curious entity. While the application initializes (fonts, location,
+  and initial producer area), it remains in an ambient idle loop—looking around and
+  lightly hopping in place.
+- **State-machine trigger:** The instant local discovery data is ready (`isReady`),
+  the module executes its joyful discovery stretch, leaps in a high parabolic arc,
+  and locks into the upper-right opening of the **C** with elastic settling. The
+  remaining wordmark letters («hisan») unfold smoothly to complete the mark.
+- **Haptic feedback (Taptic Engine):** In the millisecond of impact (`t ≈ 2.65s`),
+  trigger a synchronized medium impact (`Haptics.impactAsync(ImpactFeedbackStyle.Medium)`).
+  This grounds the digital snap as a tangible physical lock.
+- **Acoustic courtesy and identity:** Audio uses the ambient category
+  (`AVAudioSessionCategoryAmbient`) so it never plays if the device is on silent/vibrate.
+  When unmuted, the mechanical wooden snap of the **C** is complemented by a serene,
+  harmonious Spanish nylon-string guitar arpeggio and a soft whisper unfold.
+- **Transition to territory:** As the acoustic resolution settles, the launch screen
+  dissolves smoothly upward, revealing the already rendered local producer map beneath.
+- **Prototyping reference:** An interactive HTML/CSS/WebAudio prototype is maintained
+  in `chisan-intro.html` for motion timing and acoustic reference.
+

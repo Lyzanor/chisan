@@ -8,6 +8,8 @@ import {
 } from "@/app/_components/site-root-shell";
 import { loadMessages } from "@/lib/i18n/messages";
 
+import "@/app/styles/admin.css";
+
 export const metadata: Metadata = {
   ...SITE_METADATA,
   title: { default: "Operations | Chisan", template: "%s | Chisan" },

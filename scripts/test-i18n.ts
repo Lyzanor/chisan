@@ -1078,14 +1078,23 @@ test("controlled CSV values retain their tokens but render localized labels", as
   );
 });
 
-test("public producer social links use localized field labels", () => {
-  const producerPage = fs.readFileSync(
-    path.resolve(
-      process.cwd(),
-      "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
-    ),
-    "utf8",
+function readProducerProfileFiles(): string {
+  const basePath = path.resolve(
+    process.cwd(),
+    "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
   );
+  const producerDir = path.resolve(process.cwd(), "components/producer");
+  const subcomponents = fs.existsSync(producerDir)
+    ? fs
+        .readdirSync(producerDir)
+        .filter((file) => file.endsWith(".tsx"))
+        .map((file) => fs.readFileSync(path.join(producerDir, file), "utf8"))
+    : [];
+  return [fs.readFileSync(basePath, "utf8"), ...subcomponents].join("\n");
+}
+
+test("public producer social links use localized field labels", () => {
+  const producerPage = readProducerProfileFiles();
 
   assert.match(producerPage, /messages\.fieldLabels\.instagram/);
   assert.match(producerPage, /messages\.fieldLabels\.facebook/);
@@ -1215,13 +1224,7 @@ test("sparse producer structured data avoids speculative rich-result claims", ()
 });
 
 test("producer profiles expose server-rendered JSON-LD and matching breadcrumbs", () => {
-  const producerPage = fs.readFileSync(
-    path.resolve(
-      process.cwd(),
-      "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
-    ),
-    "utf8",
-  );
+  const producerPage = readProducerProfileFiles();
 
   assert.match(producerPage, /type="application\/ld\+json"/);
   assert.match(producerPage, /serializeStructuredData\(structuredData\)/);
@@ -1231,13 +1234,7 @@ test("producer profiles expose server-rendered JSON-LD and matching breadcrumbs"
 });
 
 test("producer profiles promote canonical editorial facts without widening CSV", () => {
-  const producerPage = fs.readFileSync(
-    path.resolve(
-      process.cwd(),
-      "app/(catalog)/[catalog]/[area]/[segment]/page.tsx",
-    ),
-    "utf8",
-  );
+  const producerPage = readProducerProfileFiles();
 
   assert.match(
     producerPage,

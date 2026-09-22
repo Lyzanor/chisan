@@ -433,8 +433,7 @@ page.
 
 Page arrival does not remount its children or intercept browser navigation.
 `NavigationLink` retains Next.js Link semantics, prefetching and modified clicks;
-its pending indicator follows the actual router state. The historical
-`ViewTransitionLink` entry point delegates to it. Map cards, the result roster
+its pending indicator follows the actual router state. Map cards, the result roster
 and category filter links keep prefetch disabled. Province links open
 directly in the compact country overview, with no duplicate selector. Producer
 search in the site header keeps a compact footprint and filters the existing

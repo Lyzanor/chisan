@@ -221,3 +221,72 @@ body:has(.profile-qr__dialog[open]) { overflow: hidden; }
   min-height: 1.25rem;
   margin-top: var(--chisan-space-2);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-qr__copy-label > span {
+    transition: none;
+  }
+}
+
+.profile-qr__label {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  padding: var(--chisan-space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: var(--chisan-space-1) solid var(--profile-qr-accent);
+  background: var(--chisan-color-rice-paper);
+}
+
+.profile-qr__wordmark {
+  width: 7rem;
+}
+
+.profile-qr__label > p {
+  margin: var(--chisan-space-2) 0 var(--chisan-space-4);
+  color: var(--profile-qr-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile-qr__code {
+  width: 100%;
+  padding: var(--chisan-space-2);
+  background: var(--chisan-color-surface);
+}
+
+.profile-qr__code canvas {
+  display: block;
+}
+
+.profile-qr__label figcaption {
+  width: 100%;
+  min-width: 0;
+  margin-top: auto;
+  padding-top: var(--chisan-space-4);
+  text-align: center;
+}
+
+.profile-qr__label figcaption strong,
+.profile-qr__label figcaption span {
+  display: block;
+}
+
+.profile-qr__label figcaption strong {
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.profile-qr__label figcaption span {
+  margin-top: var(--chisan-space-1);
+  color: var(--chisan-color-stone);
+  font-size: 0.75rem;
+}
