@@ -3,6 +3,13 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-23 — Browser favicon and app icon restored to forest green background
+
+Restored the app icon and browser favicon to the approved corporate palette:
+- **Palette and Contrast:** Reverted the app icon from rice paper (`#FFFFFF`) to the brand forest green square (`#00563F`) with the reversed C glyph in white (`#FFFFFF`), aligning with `themeColor: #00563f` and `SITE_METADATA.icons`.
+- **Browser Chrome Legibility:** Eliminates the white box artifact on dark browser tabs (`#202124`) and light tabs (`#DEE1E6`), delivering high contrast and crisp rendering at 16×16, 32×32, 48×48 and 256×256 px.
+- **Pipeline:** `design/brand/build-favicon.cjs` composites the reversed C on the forest rounded square (corner radius ratio 0.1924, glyph ratio 0.6487) and generates `app/favicon.ico`, `design/brand/assets/chisan-icon-light.png` and `chisan-icon-apple.png`.
+
 ## 2026-09-22 — Standalone About page (/about) design and layout verification
 
 Added dedicated `/about` ("Sobre Chisan" / "About Chisan") page reusing `public-information.module.css`:
@@ -796,3 +803,31 @@ in Chrome, returned to the homepage with system Back, and displayed the OS
 location prompt only after tapping the website's action. Denial preserved the
 manual area path. Chisan-intro timing and iOS behavior still require physical
 device QA.
+
+## 2026-09-23 — App entry and usable viewport, APK 0.1.2
+
+A fresh Pixel 8 / Android 16 emulator installation reproduced the missing
+dedicated entry: 0.1.1 showed the marketing home with location below the fold.
+The 0.1.2 presentation now focuses the existing web location and manual country
+controls after Chisan-intro, without requesting permission on load. Denial and
+timeout both retained a working manual path; Spain -> Barcelona opened the
+actual website map. The Android permission dialog was exercised, but the
+emulator position request timed out, so successful device-location resolution
+and approximate permission still require handset verification.
+
+The user-provided Pixel 10 Pro reference showed excess space above the map
+search. Native safe areas now own the system-bar margins, with duplicate web
+insets removed. The immersive map receives its measured native viewport height.
+Keyboard testing found and fixed a second gap caused by applying a keyboard
+offset inside an already inset view. Final checks showed navigation immediately
+above the keyboard and the full map restored after closing it. Search (`Brot`,
+25 results), producer-profile entry, system Back and expanded results remained
+usable. Screenshots are local artifacts in `output/mobile-qa/`.
+
+The deployed website was also checked at 390x844 first, then 1280x800: no
+horizontal overflow, a 64px map header, and the map reaching the viewport's
+bottom at both sizes. The APK uses the same signing certificate as 0.1.1 and
+installs over it. Mobile tests, Gradle release and Android/iOS JS exports passed.
+The full `verify:ai` gate stopped at two unrelated producer-profile i18n tests
+in the concurrently edited web tree. No deployment, physical Pixel 10 Pro or
+iOS runtime verification is claimed.

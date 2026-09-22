@@ -8,8 +8,7 @@ const root = path.resolve(__dirname, '..', '..');
 const reference = path.join(__dirname, 'chisan-reference.png');
 const FOREST = '#00563F';
 const NEUTRAL_INK = '#18221C';
-// The app icon matches the site surface: forest ink on rice paper, never reversed.
-const RICE_PAPER = '#FFFFFF';
+// The app icon reverses that same C on a forest square.
 const CANVAS = 512;
 const ICO_SIZES = [16, 32, 48, 256];
 
@@ -55,14 +54,14 @@ async function appIcon() {
   const radius = Math.round(CANVAS * ICON_RADIUS_RATIO);
   const square = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${CANVAS}" height="${CANVAS}">` +
-      `<rect width="${CANVAS}" height="${CANVAS}" rx="${radius}" ry="${radius}" fill="${RICE_PAPER}"/></svg>`,
+      `<rect width="${CANVAS}" height="${CANVAS}" rx="${radius}" ry="${radius}" fill="${FOREST}"/></svg>`,
   );
   const glyph = Math.round(CANVAS * ICON_GLYPH_RATIO);
-  const inkMark = await sharp(await silhouette(MARK, FOREST))
+  const reverseMark = await sharp(await silhouette(MARK, '#FFFFFF'))
     .resize(glyph, glyph, { fit: 'contain', background: '#00000000' })
     .toBuffer();
   return sharp(square)
-    .composite([{ input: inkMark, gravity: 'centre' }])
+    .composite([{ input: reverseMark, gravity: 'centre' }])
     .png({ compressionLevel: 9 }).toBuffer();
 }
 
@@ -123,7 +122,7 @@ function packIco(frames) {
   write('design/brand/assets/chisan-wordmark-reverse.png', reverseWordmark);
   write('design/brand/assets/chisan-mark-ink.png', await sharp(mark).flatten({ background: '#FFFFFF' }).png().toBuffer());
   write('design/brand/assets/chisan-icon-light.png', favicon);
-  write('design/brand/assets/chisan-icon-apple.png', await sharp(favicon).flatten({ background: RICE_PAPER }).resize(180, 180).png().toBuffer());
+  write('design/brand/assets/chisan-icon-apple.png', await sharp(favicon).flatten({ background: FOREST }).resize(180, 180).png().toBuffer());
   write('app/favicon.ico', packIco(await Promise.all(ICO_SIZES.map((size) => sharp(favicon).resize(size, size).png().toBuffer()))));
   console.log(`Wrote ${written.join(', ')}.`);
 })().catch((error) => { console.error(error); process.exitCode = 1; });
