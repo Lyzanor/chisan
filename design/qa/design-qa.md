@@ -774,7 +774,7 @@ viewport. The phone layout uses a compact location card, a two-row sideways
 category rail, a small QR illustration, folded User/Producer plans, and folded
 footer link groups. The original illustrated footer panorama remains, with
 Chisan's square character in place of the bicycle. The final gap before the
-footer is 56px at 390px; neither viewport had document overflow.
+footer is about 60px at 390px; neither viewport had document overflow.
 
 The User plan and footer groups opened by touch and returned to the folded
 state at phone width; all groups opened at wide width. The Vino category link
