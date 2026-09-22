@@ -9,7 +9,7 @@
 
 | Name | Municipality / geographic clue | Canonical category | Probable output | Reason / national or regional relevance | Discovery URL | Official URL | Visible doubt |
 |---|---|---|---|---|---|---|---|
-| Eastcape Manufacturers — Uitenhage facility | Uitenhage (Kariega), Baird Street | Legumbres y cereales | Beans, peas, grains, rice, seeds and related staples | The manufacturer's current site identifies a Uitenhage food factory and an unusually relevant beans/grains/rice range for an absent category. | [Eastcape Manufacturers](https://eastcapemf.co.za/) | [Eastcape Manufacturers](https://eastcapemf.co.za/) | The simple site needs corroboration of current own-brand sales, operating status and exact manufacturing address. |
+| Eastcape Manufacturers — Uitenhage facility | Uitenhage (Kariega), Baird Street | Legumbres / Pan y cereal | Beans, peas, grains, rice, seeds and related staples | The manufacturer's current site identifies a Uitenhage food factory and an unusually relevant beans/grains/rice range for an absent category. | [Eastcape Manufacturers](https://eastcapemf.co.za/) | [Eastcape Manufacturers](https://eastcapemf.co.za/) | The simple site needs corroboration of current own-brand sales, operating status and exact manufacturing address. |
 
 ## Remaining work
 

@@ -47,13 +47,12 @@ import { SITE_NAME } from "@/lib/site";
 
 const HOME_LOCALE = "es" as const;
 
-// The featured categories describe the catalog's range. A catch-all and the two
-// tokens that overlap a more specific category, reusing its map icon, say
-// nothing on their own, so they stay out of the summary.
+// The featured categories describe the catalog's range. The catch-all and the
+// pantry token that reuses its map icon say nothing on their own, so they stay
+// out of the summary.
 const HOME_SUMMARY_SKIPPED_CATEGORIES = new Set([
   "Otros",
   "Despensa artesanal",
-  "Legumbres y cereales",
 ]);
 const HOME_SUMMARY_CATEGORY_LIMIT = 12;
 
