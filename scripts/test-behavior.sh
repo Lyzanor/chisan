@@ -162,6 +162,7 @@ async function main() {
     ? publicProduction.rules
     : [publicProduction.rules];
   const publicRule = publicRules[0];
+  const excludedCrawlerRule = publicRules[1];
   const disallowed = Array.isArray(publicRule?.disallow)
     ? publicRule.disallow
     : [publicRule?.disallow];
@@ -174,10 +175,14 @@ async function main() {
     ? publicProduction.sitemap
     : [publicProduction.sitemap];
   if (
-    publicRules.length !== 1 ||
+    publicRules.length !== 2 ||
     publicRule?.userAgent !== "*" ||
     JSON.stringify(publicRule?.allow) !== JSON.stringify(["/", "/api/catalog/v1/", "/api/catalog/v1$"]) ||
     expectedPrivatePaths.some((path) => !disallowed.includes(path)) ||
+    JSON.stringify(excludedCrawlerRule?.userAgent) !==
+      JSON.stringify(["GoogleOther", "meta-externalagent"]) ||
+    excludedCrawlerRule?.disallow !== "/" ||
+    excludedCrawlerRule?.allow !== undefined ||
     JSON.stringify(advertisedSitemaps) !== JSON.stringify(expectedSitemapUrls) ||
     publicProduction.host !== "https://chisan.app"
   ) {

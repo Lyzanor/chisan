@@ -8,6 +8,9 @@ import {
 import { isPublicDiscoveryEnabled, SITE_ORIGIN } from "@/lib/site";
 
 const PRIVATE_PATHS = ["/acceso", "/registro", "/cuenta", "/admin", "/api/"];
+// Crawlers that send no search or answer visitors; see Operations' consumption
+// controls before re-admitting them.
+const EXCLUDED_CRAWLERS = ["GoogleOther", "meta-externalagent"];
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
   if (!isPublicDiscoveryEnabled()) {
@@ -24,11 +27,14 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   );
 
   return {
-    rules: {
-      userAgent: "*",
-      allow: ["/", "/api/catalog/v1/", "/api/catalog/v1$"],
-      disallow: PRIVATE_PATHS,
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: ["/", "/api/catalog/v1/", "/api/catalog/v1$"],
+        disallow: PRIVATE_PATHS,
+      },
+      { userAgent: EXCLUDED_CRAWLERS, disallow: "/" },
+    ],
     sitemap: sitemapUrls,
     host: SITE_ORIGIN,
   };

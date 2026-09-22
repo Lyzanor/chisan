@@ -324,11 +324,11 @@ test("discovery policy keeps previews closed and allows only the public API on l
     assert.deepEqual((await robots()).rules, { userAgent: "*", disallow: "/" });
     process.env.VERCEL_ENV = "production";
     const rules = (await robots()).rules;
-    assert.ok(!Array.isArray(rules));
-    assert.ok(
-      (rules as { allow: string[] }).allow.includes("/api/catalog/v1/"),
-    );
-    assert.ok((rules as { disallow: string[] }).disallow.includes("/api/"));
+    assert.ok(Array.isArray(rules));
+    const general = rules.find((rule) => rule.userAgent === "*");
+    assert.ok(general);
+    assert.ok((general.allow as string[]).includes("/api/catalog/v1/"));
+    assert.ok((general.disallow as string[]).includes("/api/"));
   } finally {
     if (previous.vercel === undefined) delete process.env.VERCEL_ENV;
     else process.env.VERCEL_ENV = previous.vercel;

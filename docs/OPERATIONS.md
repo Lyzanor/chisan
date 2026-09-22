@@ -397,6 +397,15 @@ Keep the selection fixed. Elastic selection bills every build by CPU minute and
 can promote the project to a larger machine after one slow build. Do not enable
 a larger machine or on-demand concurrency without approval.
 
+Search engines and answer crawlers that cite or link to Chisan remain welcome.
+`robots.txt` excludes Google's generic research crawler (`GoogleOther`), whose
+rules do not affect Search, and Meta's AI-training crawler
+(`meta-externalagent`), which a Vercel Firewall custom rule also denies at the
+edge. Together they made most crawler requests without sending visitors, and
+their sweeps re-rendered producer profiles after each deployment. Firewall-denied
+requests do not count as CDN requests. Re-admit either crawler only when it
+starts to serve discovery.
+
 AI, WhatsApp recovery, statistics, advertising and checkout have independent
 feature flags and limits. Going live does not raise AI call allowances, enable
 paid add-ons or activate deferred integrations. The project is excluded from
