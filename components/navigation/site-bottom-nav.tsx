@@ -39,7 +39,7 @@ export function SiteBottomNav() {
           weight={isActividadActive ? "fill" : "regular"}
           aria-hidden="true"
         />
-        <span>Actividad</span>
+        <span>Descubrir</span>
       </Link>
 
       <Link

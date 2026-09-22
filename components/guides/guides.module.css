@@ -456,6 +456,38 @@
   outline: var(--chisan-focus-ring) solid var(--accent);
   outline-offset: 4px;
 }
+@media (max-width: 700px) {
+  .homeHighlights { margin-top: var(--chisan-space-6); padding-top: var(--chisan-space-6); }
+  .homeHighlights > .eyebrow,
+  .homeHighlights > p:not(.eyebrow) { display: none; }
+  .homeHighlights .highlightsHeading { align-items: center; gap: var(--chisan-space-2); }
+  .homeHighlights h2 { font-size: 1.5rem; }
+  .homeHighlights .highlightGrid {
+    display: flex;
+    gap: var(--chisan-space-3);
+    margin-top: var(--chisan-space-4);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    padding-bottom: var(--chisan-space-2);
+  }
+  .homeHighlights .highlightGrid > article {
+    flex: 0 0 min(78vw, 300px);
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    align-items: center;
+    gap: var(--chisan-space-3);
+    padding: var(--chisan-space-2);
+    border: 1px solid var(--line);
+    border-radius: var(--chisan-radius-object);
+    scroll-snap-align: start;
+  }
+  .homeHighlights .coverCompact { grid-row: 1 / 3; margin: 0; }
+  .homeHighlights .coverCompact img { width: 80px; height: 80px; aspect-ratio: 1; }
+  .homeHighlights .highlightGrid .eyebrow,
+  .homeHighlights .highlightGrid > article > p:not(.eyebrow) { display: none; }
+  .homeHighlights .highlightGrid h3 { margin: 0; font-size: 1rem; line-height: 1.25; }
+}
 @media (max-width: 900px) {
   .map {
     height: 440px;
@@ -522,5 +554,4 @@
 .reading figure { margin: var(--chisan-space-8) 0; }
 .reading figure img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; border-radius: var(--chisan-radius-object); }
 .reading figure figcaption { margin-top: var(--chisan-space-2); color: var(--muted); font-size: 0.8125rem; line-height: 1.5; font-style: italic; }
-
 

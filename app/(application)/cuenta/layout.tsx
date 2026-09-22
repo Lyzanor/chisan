@@ -54,7 +54,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
         </header>
         <nav className="account-nav" aria-label="Secciones de la cuenta">
           <NavigationLink href="/cuenta" activePath="/cuenta">Resumen</NavigationLink>
-          <NavigationLink href="/actividad" activePath="/actividad">Actividad</NavigationLink>
+          <NavigationLink href="/actividad" activePath="/actividad">Descubrir</NavigationLink>
           <NavigationLink href="/cuenta/perfil" activePath="/cuenta/perfil">Perfil</NavigationLink>
           <NavigationLink href="/cuenta/novedades" activePath="/cuenta/novedades">Novedades</NavigationLink>
           <NavigationLink href="/cuenta/siguiendo" activePath="/cuenta/siguiendo">Siguiendo</NavigationLink>

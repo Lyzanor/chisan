@@ -100,8 +100,7 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.match(shell, /href=\{SITE_CONTACT_URL\}>\{SITE_CONTACT_EMAIL\}/);
   assert.doesNotMatch(shell, /GitHub|SITE_REPOSITORY_URL/);
   assert.doesNotMatch(shell, /site-footer__copyright/);
-  assert.match(shell, /const localizedTagline = headerMessages\.tagline/);
-  assert.match(shell, /site-header__tagline">\{localizedTagline\}/);
+  assert.doesNotMatch(shell, /site-header__tagline/);
   assert.match(shell, /import "\.\.\/globals\.css"/);
   assert.match(shell, /design\/foundations\/tokens\.css/);
   assert.match(shell, /design\/adapters\/web\.css/);

@@ -52,14 +52,16 @@ const HOME_LOCALE = "es" as const;
 const HOME_SUMMARY_SKIPPED_CATEGORIES = new Set(["Otros"]);
 const HOME_SUMMARY_CATEGORY_LIMIT = 12;
 
-/** The most numerous featured categories, each producer counted once. */
+/** The most numerous categories, each producer counted once per category. */
 function summarizeFeaturedCategories(
-  producers: readonly { category: string }[],
+  producers: readonly { categories: string[] }[],
 ): HomeCategoryCount[] {
   const totals = new Map<string, number>();
-  for (const { category } of producers) {
-    if (HOME_SUMMARY_SKIPPED_CATEGORIES.has(category)) continue;
-    totals.set(category, (totals.get(category) ?? 0) + 1);
+  for (const { categories } of producers) {
+    for (const category of new Set(categories)) {
+      if (HOME_SUMMARY_SKIPPED_CATEGORIES.has(category)) continue;
+      totals.set(category, (totals.get(category) ?? 0) + 1);
+    }
   }
 
   return [...totals]
@@ -123,6 +125,23 @@ function ProjectSummary({
         }),
       }
     : null;
+  const mapArea = onlyCountry?.regions
+    .flatMap((region) => region.areas)
+    .find((area) => area.slug === "madrid") ?? onlyCountry?.regions[0]?.areas[0];
+  const linkedCategoryCounts = categoryCounts.map((category) => ({
+    ...category,
+    href: onlyCountry && mapArea
+      ? buildCatalogHref({
+          scope: buildCatalogScope(
+            onlyCountry,
+            resolveDestinationLocale(onlyCountry, localePreferences),
+          ),
+          area: mapArea.slug,
+          category: category.token,
+          searchScope: "country",
+        })
+      : undefined,
+  }));
 
   return (
     <main className="catalog-start-page catalog-start-page--home">
@@ -143,6 +162,7 @@ function ProjectSummary({
           </div>
         </div>
         <section className="home-catalog" aria-labelledby="country-start-title">
+          <span className="home-catalog__orbit" aria-hidden="true" />
           <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
             <div>
               <p className="catalog-kicker">
@@ -153,7 +173,10 @@ function ProjectSummary({
           </div>
           <LocationOnboarding
             areas={locationAreas}
-            messages={messages.locationOnboarding}
+            messages={{
+              ...messages.locationOnboarding,
+              description: "Con tu permiso, buscamos tu zona en este navegador. Tu posición no se envía ni se guarda.",
+            }}
             explicitLocale={explicitLocale}
             browserLocales={browserLocales}
           />
@@ -203,7 +226,7 @@ function ProjectSummary({
                   })}
                   className="country-card"
                 >
-                  <strong>{countryLabel}</strong>
+                  <strong>{onlyCountry ? "Elegir provincia" : countryLabel}</strong>
                   <small>
                     {formatMessage(messages.home.countrySummary, {
                       areas: areaCount,
@@ -222,14 +245,14 @@ function ProjectSummary({
         </section>
         <div className="home-story-intro">
           <p>
-            Conoce a quienes producen lo que comes. Explora sus lugares, guarda
-            tus favoritos y conecta directamente con ellos.
+            Descubre qué significa realmente proximidad. Conoce a quienes producen
+            lo que comes y bebes, elige tus favoritos y contacta directamente con ellos.
           </p>
         </div>
       </section>
       <HomeSections
         producerCount={producerCount}
-        categoryCounts={categoryCounts}
+        categoryCounts={linkedCategoryCounts}
         countryCatalog={countryCatalog}
       />
     </main>

@@ -9,14 +9,14 @@ import {
 } from "@/lib/guides/catalog";
 import styles from "./guides.module.css";
 
-export function GuideHighlights({ producer }: { producer?: ProducerIdentity }) {
+export function GuideHighlights({ producer, compactHome = false }: { producer?: ProducerIdentity; compactHome?: boolean }) {
   const guides = producer
     ? listGuidesForProducer(producer)
     : listFeaturedGuides();
   if (!guides.length) return null;
   return (
     <section
-      className={styles.highlights}
+      className={`${styles.highlights} ${compactHome ? styles.homeHighlights : ""}`}
       lang="es"
       aria-labelledby="guide-highlights-title"
     >

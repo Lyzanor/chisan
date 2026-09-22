@@ -19,7 +19,7 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   // The root title template appends the site name; Open Graph titles are not
   // templated, so they add it themselves.
-  const title = "Actividad en tu zona y novedades de productores";
+  const title = "Descubrir productores y novedades de tu zona";
   const description =
     "Descubre novedades de productores locales, destacados editoriales de tu zona, lecturas de temporada y actividad comunitaria.";
   const url = new URL("/actividad", SITE_ORIGIN).toString();
@@ -52,7 +52,7 @@ export default async function ActivityPage() {
     <main className={`page-shell ${styles.shell}`}>
       <header className={styles.header}>
         <p className={styles.kicker}>Comunidad y territorio</p>
-        <h1>Actividad y Novedades</h1>
+        <h1>Descubrir</h1>
         <p className={styles.tagline}>
           Descubre qué está pasando cerca de ti, conoce a productores destacados de tu
           zona, sigue a tus favoritos y lee las guías de temporada.

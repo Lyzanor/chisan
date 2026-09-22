@@ -10,6 +10,7 @@ import type { ReactNode } from "react";
 import { GuidesLink } from "@/components/guides/guides-link";
 import { PageMotion } from "@/components/page-motion";
 import { FooterLandscape } from "@/components/footer-landscape";
+import { ResponsiveDisclosure } from "@/components/responsive-disclosure";
 
 import { SiteCatalogControlsProvider } from "@/components/account/site-catalog-controls-context";
 import { SiteAccountNav } from "@/components/account/site-account-nav";
@@ -137,7 +138,7 @@ export function SiteRootShell({
   languageMenu,
 }: SiteRootShellProps) {
   const accountAuthConfigured = isAccountAuthConfigured();
-  const localizedTagline = headerMessages.tagline;
+  const spanish = htmlLang.toLowerCase().startsWith("es");
   const content = (
     <SiteLanguageMenuProvider
       key={languageMenu.currentLocale}
@@ -148,11 +149,10 @@ export function SiteRootShell({
           <Link
             href="/"
             className="site-header__brand"
-            aria-label={`${SITE_NAME} — ${localizedTagline}`}
+            aria-label={SITE_NAME}
           >
             <ChisanWordmark alt="" />
             <ChisanMark alt="" className="site-header__map-mark" />
-            <span className="site-header__tagline">{localizedTagline}</span>
           </Link>
           <div id="catalog-header-search" />
           <SiteAccountNav
@@ -164,33 +164,35 @@ export function SiteRootShell({
           <PageMotion>{children}</PageMotion>
         </ProducerFollowsProvider>
         <footer className="site-footer">
-          <nav className="site-footer__links" aria-label={footerMessages.navigation}>
-            <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>
-              <ChisanWordmark alt="" />
-            </Link>
-            <Link href="/actividad">Actividad</Link>
-            <Link href="/about">
-              {htmlLang.toLowerCase().startsWith("es")
-                ? "Sobre Chisan"
-                : "About Chisan"}
-            </Link>
-            <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
-            <GuidesLink locale={htmlLang === "en" ? "en" : "es"} />
-            <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
-            <Link href="/privacy">
-              {htmlLang.toLowerCase().startsWith("es")
-                ? "Privacidad y cookies"
-                : "Privacy & cookies"}
-            </Link>
-            <Link href="/contact">{footerMessages.contactLink}</Link>
-            <a href={SITE_INSTAGRAM_URL} rel="me">
-              Instagram
-            </a>
-            <a href={SITE_X_URL} rel="me">
-              X
-            </a>
-            <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
-          </nav>
+          <div className="site-footer__top">
+            <div className="site-footer__identity">
+              <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>
+                <ChisanWordmark alt="" />
+              </Link>
+              <p>{spanish ? "Conoce el origen. Elige con sentido." : "Know the origin. Choose with care."}</p>
+            </div>
+            <nav className="site-footer__links" aria-label={footerMessages.navigation}>
+              <ResponsiveDisclosure className="site-footer__group" compactWidth={540} summary={spanish ? "Explora" : "Explore"}>
+                  <Link href={MANUAL_AREA_SELECTION_HREF}>{footerMessages.catalogLink}</Link>
+                  <Link href="/actividad">{spanish ? "Descubrir" : "Discover"}</Link>
+                  <GuidesLink locale={htmlLang === "en" ? "en" : "es"} />
+              </ResponsiveDisclosure>
+              <ResponsiveDisclosure className="site-footer__group" compactWidth={540} summary="Chisan">
+                  <Link href="/about">{spanish ? "Sobre Chisan" : "About Chisan"}</Link>
+                  <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
+                  <Link href="/contact">{footerMessages.contactLink}</Link>
+              </ResponsiveDisclosure>
+              <ResponsiveDisclosure className="site-footer__group" compactWidth={540} summary={spanish ? "Conecta" : "Connect"}>
+                  <a href={SITE_INSTAGRAM_URL} rel="me">Instagram</a>
+                  <a href={SITE_X_URL} rel="me">X</a>
+                  <a href={SITE_CONTACT_URL}>{SITE_CONTACT_EMAIL}</a>
+              </ResponsiveDisclosure>
+            </nav>
+          </div>
+          <div className="site-footer__bottom">
+            <span>© {new Date().getFullYear()} Chisan</span>
+            <Link href="/privacy">{spanish ? "Privacidad y cookies" : "Privacy & cookies"}</Link>
+          </div>
           <FooterLandscape />
         </footer>
         <SiteBottomNav />

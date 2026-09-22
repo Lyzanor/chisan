@@ -73,14 +73,14 @@ function AccountNavView({ isSignedIn, messages }: AccountNavViewProps) {
 
   return (
     <nav className="site-account-nav" aria-label={messages.accountNavigation}>
-      {/* Activity and the map trade places, so the link always leads elsewhere. */}
+      {/* Discovery and the map trade places, so the link always leads elsewhere. */}
       {isActividadActive ? (
         <Link href={mapHref} className="site-account-nav__link">
           Mapa
         </Link>
       ) : (
         <Link href="/actividad" className="site-account-nav__link">
-          Actividad
+          Descubrir
         </Link>
       )}
 

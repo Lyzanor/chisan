@@ -460,11 +460,10 @@ text is indexed independently of short, match-centred list previews. Text
 results retain shared relevance order even when the map moves. Country results
 show each producer's municipality and province and retain its own profile URL.
 
-The white footer has readable forest-green links, arranged in a single row on
-wide screens and a deliberate grid on narrow ones. A separate decorative rural
-panorama follows the links. A small delivery bicycle crosses it once, slowly,
-when the scene first enters view. Only transforms animate; reduced motion keeps
-a static bicycle. The scene and its motion never capture pointer or keyboard input.
+The white footer groups readable forest-green links in three columns on wide
+screens. On phones the groups are short native disclosures, above the original
+illustrated panorama. Chisan's square character replaces the former delivery
+bicycle in that scene. Decoration never captures pointer or keyboard input.
 
 The QR invitation uses the supplied C, which crossfades upward into the familiar
 QR icon on hover/focus while its arrow moves slightly right. Activation opens a
@@ -493,7 +492,7 @@ a separate brand layer: high-key food still lifes, genuine-looking texture,
 natural colour, pure-white margins and very low display opacity. Generated
 category assets must never become a real producer's product photo or evidence.
 The footer uses fine forest-green pen/engraving with sparse gold accents;
-its illustrated places and cyclist are generic. See [imagery.md](imagery.md)
+its illustrated places are generic. See [imagery.md](imagery.md)
 for the reusable image direction and provenance.
 
 Write with exact nouns and plain uncertainty. The current Spanish public tagline is **Conecta con lo que se produce cerca de ti**.

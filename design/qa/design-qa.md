@@ -766,3 +766,19 @@ Google/Apple/hosted flows and OS location prompt still require device QA.
 The Chisan-intro assets were exported into separate native layers; the intro
 finishes after discovery succeeds or fails, with reduced motion supported.
 Audio and haptics remain concept-only pending reviewed assets and device QA.
+
+## 2026-09-23 — Home and navigation refresh
+
+The production build was reviewed at 390×844 first, then at a 1233px-wide
+viewport. The phone layout uses a compact location card, a two-row sideways
+category rail, a small QR illustration, folded User/Producer plans, and folded
+footer link groups. The original illustrated footer panorama remains, with
+Chisan's square character in place of the bicycle. The final gap before the
+footer is 56px at 390px; neither viewport had document overflow.
+
+The User plan and footer groups opened by touch and returned to the folded
+state at phone width; all groups opened at wide width. The Vino category link
+kept the national search scope and its 3,010 homepage count matched the 3,010
+results shown on the destination map. The copy includes urban workshops as
+well as nearby growing places. No account write or public deployment was part
+of this browser review.

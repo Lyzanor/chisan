@@ -11,13 +11,14 @@ export async function HomeCommunity() {
     return [];
   });
   return (
-    <section className={styles.section} aria-labelledby="home-community-title">
-      <p className="catalog-kicker">Una comunidad que va creciendo</p>
-      <h2 id="home-community-title">Confían en nosotros</h2>
-      <p>
-        Productores con titularidad verificada y personas que comparten su
-        perfil en Chisan.
-      </p>
+    <section className={styles.communityPanel} aria-labelledby="home-community-title">
+      <div className={styles.communityIntro}>
+        <p className="catalog-kicker">Una comunidad que va creciendo</p>
+        <h2 id="home-community-title">{members.length ? "Confían en nosotros" : "Una comunidad en construcción"}</h2>
+        <p>{members.length
+          ? "Productores con titularidad verificada y personas que comparten su perfil en Chisan."
+          : "Sigue a los productores que te importan y comparte tu propia selección."}</p>
+      </div>
       {members.length ? (
         <div className={styles.community}>
           {members.map((member) => (
@@ -33,8 +34,10 @@ export async function HomeCommunity() {
                   sizes="(max-width: 700px) 45vw, 240px"
                 />
               ) : null}
-              <strong>{member.name}</strong>
-              <span>{member.place}</span>
+              <span>
+                <strong>{member.name}</strong>
+                <small>{member.place}</small>
+              </span>
             </Link>
           ))}
         </div>

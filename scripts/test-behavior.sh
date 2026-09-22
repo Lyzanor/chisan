@@ -258,9 +258,9 @@ done
 
 if [[
   "$HTML_HOME_CLEAN" != *"<title>Chisan · Conecta con lo que se produce cerca de ti</title>"* ||
-  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Conecta con lo que se produce cerca de ti"'* ||
+  "$HTML_HOME_CLEAN" != *'aria-label="Chisan"'* ||
   "$HTML_HOME_CLEAN" != *'class="chisan-wordmark"'* ||
-  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Conecta con lo que se produce cerca de ti</span>'* ||
+  "$HTML_HOME_CLEAN" == *'class="site-header__tagline"'* ||
   "$HTML_HOME_CLEAN" != *'id="home-summary-title">Conecta con lo que se produce cerca de ti</h1>'* ||
   "$HTML_HOME_CLEAN" != *'id="country-start-title">España</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
@@ -275,7 +275,7 @@ if [[
   "$HTML_HOME_CLEAN" == *'>About us</h2>'* ||
   "$HTML_HOME_CLEAN" == *'class="site-footer__copyright"'*
 ]]; then
-  echo "Error: home page should expose the Chisan brand and links-only global footer." >&2
+  echo "Error: home page should expose the Chisan brand and grouped global footer." >&2
   exit 1
 fi
 
@@ -335,8 +335,8 @@ ACTIVIDAD_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/
 HTML_ACTIVIDAD="$(curl -sS "$BASE_URL/actividad" | sed 's/<!-- -->//g')"
 if [[
   "$ACTIVIDAD_STATUS" != "200" ||
-  "$HTML_ACTIVIDAD" != *'<title>Actividad en tu zona y novedades de productores | Chisan</title>'* ||
-  "$HTML_ACTIVIDAD" != *'<meta property="og:title" content="Actividad en tu zona y novedades de productores | Chisan"/>'* ||
+  "$HTML_ACTIVIDAD" != *'<title>Descubrir productores y novedades de tu zona | Chisan</title>'* ||
+  "$HTML_ACTIVIDAD" != *'<meta property="og:title" content="Descubrir productores y novedades de tu zona | Chisan"/>'* ||
   "$HTML_ACTIVIDAD" != *'id="following-bubbles-title">Siguiendo</h2>'*
 ]]; then
   echo "Error: /actividad should render its Siguiendo section with the site name once in its titles, got '$ACTIVIDAD_STATUS'." >&2
