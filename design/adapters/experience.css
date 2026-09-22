@@ -27,7 +27,7 @@ body { min-height: 100svh; }
 
 /* Press feedback never shifts the surrounding layout or delays an action. */
 :where(.account-button, .back-link, .detail-actions a, .location-onboarding__primary,
-  .location-onboarding__secondary, .profile-qr__actions button, .site-account-menu > summary) {
+  .location-onboarding__secondary, .profile-qr__actions button) {
   transition:
     background-color var(--chisan-motion-component) var(--chisan-ease),
     border-color var(--chisan-motion-component) var(--chisan-ease),
@@ -35,7 +35,7 @@ body { min-height: 100svh; }
     scale var(--chisan-motion-immediate) var(--chisan-ease);
 }
 :where(.account-button, .back-link, .detail-actions a, .location-onboarding__primary,
-  .location-onboarding__secondary, .profile-qr__actions button, .site-account-menu > summary):not(:disabled):not([aria-disabled="true"]):active {
+  .location-onboarding__secondary, .profile-qr__actions button):not(:disabled):not([aria-disabled="true"]):active {
   scale: 0.98;
 }
 
@@ -78,75 +78,6 @@ body { min-height: 100svh; }
   opacity: 0.7;
   transform: scaleX(0.9);
   transition: transform 1.5s var(--chisan-ease), opacity var(--chisan-motion-immediate);
-}
-
-.site-account-menu > summary {
-  display: flex;
-  align-items: center;
-  gap: var(--chisan-space-2);
-  min-height: 48px;
-  padding-inline: var(--chisan-space-3);
-  border: var(--chisan-line) solid var(--chisan-color-hairline);
-  background: var(--chisan-color-surface);
-  list-style: none;
-}
-
-.site-account-menu > summary::-webkit-details-marker { display: none; }
-.site-account-menu > summary > span {
-  max-width: 12rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.site-account-menu > summary > svg { flex-shrink: 0; }
-.site-account-menu__chevron { transition: rotate var(--chisan-motion-component) var(--chisan-ease); }
-.site-account-menu[open] .site-account-menu__chevron { rotate: 180deg; }
-
-.site-account-menu__panel {
-  overflow: auto;
-  max-height: calc(100dvh - 6rem);
-  overscroll-behavior: contain;
-  border-radius: var(--chisan-radius-object);
-  transform-origin: top right;
-}
-
-.site-account-menu[open] .site-account-menu__panel {
-  animation: chisan-menu-enter var(--chisan-motion-component) var(--chisan-ease);
-}
-
-.site-account-menu__links { padding: var(--chisan-space-2); gap: var(--chisan-space-1); }
-.site-account-menu__links > a,
-.site-account-menu__links > button {
-  border: 0;
-  border-radius: var(--chisan-radius-control);
-  transition: background-color var(--chisan-motion-immediate) var(--chisan-ease);
-}
-
-/* The native disclosure still works without JS or this progressive enhancement. */
-@supports selector(::details-content) {
-  .site-account-menu::details-content {
-    position: absolute;
-    z-index: 1000;
-    inset: calc(100% + var(--chisan-space-2)) 0 auto auto;
-    width: min(24rem, calc(100vw - 3rem));
-    opacity: 0;
-    pointer-events: none;
-    translate: 0 -8px;
-    transition:
-      opacity var(--chisan-motion-component) var(--chisan-ease),
-      translate var(--chisan-motion-component) var(--chisan-ease),
-      content-visibility var(--chisan-motion-component) allow-discrete;
-  }
-  .site-account-menu[open]::details-content { opacity: 1; translate: 0; pointer-events: auto; }
-  .site-account-menu .site-account-menu__panel {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    animation: none;
-  }
-  @starting-style {
-    .site-account-menu[open]::details-content { opacity: 0; translate: 0 -8px; }
-  }
 }
 
 .catalog-start-page,
@@ -517,10 +448,6 @@ body { min-height: 100svh; }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
 
-@keyframes chisan-menu-enter {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-  to { opacity: 1; transform: none; }
-}
 @keyframes chisan-surface-enter {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
@@ -621,10 +548,6 @@ body { min-height: 100svh; }
   .auth-page,
   .purpose-page { width: calc(100% - 2rem); }
   .site-header .site-account-nav { min-width: 0; }
-  .site-account-menu { min-width: 0; max-width: 100%; }
-  .site-account-menu > summary { min-height: 44px; }
-  .site-account-menu > summary > span { max-width: 7.5rem; }
-  .site-account-menu::details-content { width: min(24rem, calc(100vw - 2rem)); }
   .catalog-start-page,
   .detail-page,
   .page-shell,
@@ -653,9 +576,7 @@ body { min-height: 100svh; }
 @media (prefers-reduced-motion: reduce) {
   .site-content *,
   .site-content *::before,
-  .site-content *::after,
-  .site-account-menu *,
-  .site-account-menu::details-content {
+  .site-content *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
@@ -664,7 +585,7 @@ body { min-height: 100svh; }
   .catalog-chip:active { transform: none; }
   .producer-map-selection-card__link:hover .producer-map-selection-card__image { scale: none; }
   :where(.account-button, .back-link, .detail-actions a, .location-onboarding__primary,
-    .location-onboarding__secondary, .profile-qr__actions button, .site-account-menu > summary):not(:disabled):not([aria-disabled="true"]):active { scale: none; }
+    .location-onboarding__secondary, .profile-qr__actions button):not(:disabled):not([aria-disabled="true"]):active { scale: none; }
   .producer-compact-preview { translate: none; }
 }
 

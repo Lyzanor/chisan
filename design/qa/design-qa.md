@@ -3,6 +3,12 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-22 — Retired account menu styles removed
+
+Deleted the `.site-account-menu` rules that no component renders; in the
+production build the header and bottom bar kept identical computed styles and
+geometry on `/actividad` and `/es/madrid` at 390×844 and 1280×900.
+
 ## 2026-09-22 — Actividad returns to the map and its links respond again
 
 Reviewed the production build at 1280×900, then 390×844, with and without a

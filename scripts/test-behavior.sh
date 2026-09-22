@@ -482,7 +482,7 @@ fi
 for PUBLIC_PATH in / /how-we-work /contact /privacy /es/barcelona; do
   HTML_SPANISH="$(curl -fsS -H 'Cookie: chisan_locale=en' -H 'Accept-Language: en,ca;q=0.9' "$BASE_URL$PUBLIC_PATH" | sed 's/<!-- -->//g')"
   assert_html_lang "$PUBLIC_PATH" "es" "$HTML_SPANISH"
-  if [[ "$HTML_SPANISH" == *'class="site-account-menu__language"'* ]]; then
+  if [[ "$HTML_SPANISH" == *'class="site-account-nav__language"'* ]]; then
     echo "Error: single-language public pages must not offer an inactive language selector." >&2
     exit 1
   fi

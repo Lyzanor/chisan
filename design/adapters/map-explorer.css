@@ -1,6 +1,5 @@
 /* Immersive discovery is a viewport workspace; ordinary pages keep their shell. */
 .site-header__map-mark,
-.site-account-menu__map-icon,
 #catalog-header-search { display: none; }
 
 html:has(.catalog-page--immersive) { scrollbar-gutter: auto; }
