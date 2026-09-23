@@ -1289,20 +1289,20 @@ test("the storefront channel opens the reviewed store page, else the website", (
   assert.equal(link("no comprobado", "", "https://example.com/tienda"), null);
 });
 
-test("producer WhatsApp links resolve for mobile phones or explicit channels", () => {
+test("producer WhatsApp links require an explicit channel and an international phone", () => {
   assert.equal(isMobilePhoneNumber("+34600112233"), true);
   assert.equal(isMobilePhoneNumber("+34712345678"), true);
   assert.equal(isMobilePhoneNumber("+34972123456"), false);
   assert.equal(isMobilePhoneNumber("+34872123456"), false);
   assert.equal(isMobilePhoneNumber(""), false);
 
-  // Mobile phone gets a WhatsApp link with default message
+  // A mobile phone alone is not evidence of WhatsApp availability
   assert.equal(
     resolveProducerWhatsAppLink({
       phone: "+34600112233",
       producerName: "Formatgeria Mas d'Eroles",
     }),
-    "https://wa.me/34600112233?text=Hola%2C%20he%20visto%20vuestro%20perfil%20en%20Chisan.",
+    null,
   );
 
   // Landline without whatsapp channel gets no link
@@ -1329,6 +1329,7 @@ test("producer WhatsApp links resolve for mobile phones or explicit channels", (
   assert.equal(
     resolveProducerWhatsAppLink({
       phone: "+34600112233",
+      salesChannels: ["whatsapp"],
       text: "Consulta directa",
     }),
     "https://wa.me/34600112233?text=Consulta%20directa",

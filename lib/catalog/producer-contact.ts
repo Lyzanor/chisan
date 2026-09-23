@@ -14,9 +14,8 @@ export function isMobilePhoneNumber(phone: string): boolean {
 /**
  * Resolves an official WhatsApp direct link (`https://wa.me/...`) for a producer.
  *
- * A producer qualifies if:
- * 1. The phone number is an identified mobile line, OR
- * 2. `salesChannels` explicitly includes "whatsapp" (e.g. landline or VoIP WhatsApp Business account).
+ * Requires an explicitly recorded WhatsApp sales channel and an E.164 phone.
+ * A mobile number alone does not establish WhatsApp availability.
  */
 export function resolveProducerWhatsAppLink({
   phone,
@@ -29,18 +28,8 @@ export function resolveProducerWhatsAppLink({
   producerName?: string;
   text?: string;
 }): string | null {
-  if (!phone) return null;
-  const isMobile = isMobilePhoneNumber(phone);
-  const hasWhatsAppChannel = salesChannels.includes("whatsapp");
-
-  if (!isMobile && !hasWhatsAppChannel) {
-    return null;
-  }
-
-  const digits = phone.replace(/\D/g, "");
-  if (!digits) return null;
-
-  const normalizedNumber = digits.startsWith("34") ? digits : `34${digits}`;
+  if (!phone || !/^\+[1-9]\d{1,14}$/.test(phone) || !salesChannels.includes("whatsapp")) return null;
+  const normalizedNumber = phone.slice(1);
   const message =
     text !== undefined
       ? text

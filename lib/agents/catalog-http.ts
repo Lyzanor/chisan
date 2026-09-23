@@ -84,33 +84,25 @@ export async function catalogResponse(
     }
     return new Response(body, { headers });
   } catch (error) {
-    const known = error instanceof CatalogRequestError;
-    const invalid = error instanceof z.ZodError;
-    if (!known && !invalid)
-      console.error("Public catalog read failed.", {
-        errorName: error instanceof Error ? error.name : "UnknownError",
-      });
-    return Response.json(
-      {
-        error: {
-          code: known
-            ? error.code
-            : invalid
-              ? "invalid_query"
-              : "catalog_unavailable",
-          message: known
-            ? error.message
-            : invalid
-              ? "Invalid parameters. See the operation schema in /api/catalog/v1/openapi.json."
-              : "Catalog temporarily unavailable. Retry later.",
-        },
-      },
-      {
-        status: known ? error.status : invalid ? 400 : 503,
-        headers: catalogHeaders(),
-      },
-    );
+    const failure = catalogReadError(error);
+    return Response.json(failure.body, { status: failure.status, headers: catalogHeaders() });
   }
+}
+
+export function catalogReadError(error: unknown) {
+  const known = error instanceof CatalogRequestError;
+  const invalid = error instanceof z.ZodError;
+  if (!known && !invalid)
+    console.error("Public catalog read failed.", { errorName: error instanceof Error ? error.name : "UnknownError" });
+  return {
+    status: known ? error.status : invalid ? 400 : 503,
+    body: { error: {
+      code: known ? error.code : invalid ? "invalid_query" : "catalog_unavailable",
+      message: known ? error.message : invalid
+        ? "Invalid parameters. See the operation schema in /api/catalog/v1/openapi.json."
+        : "Catalog temporarily unavailable. Retry later.",
+    } },
+  };
 }
 
 export function catalogOptions() {

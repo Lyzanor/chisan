@@ -55,6 +55,24 @@ export async function hasActiveProducerPremiumEntitlement(
   return Boolean(await getActiveProducerPremiumEntitlement(country, producerId));
 }
 
+/** Same exact active predicate as detail reads, batched without a cross-request cache. */
+export async function activeProducerPremiumKeys(
+  producers: readonly { country: string; producerId: number }[],
+): Promise<Set<string>> {
+  const keys = new Set<string>();
+  const now = new Date();
+  for (let offset = 0; offset < producers.length; offset += 200) {
+    const rows = await getDatabase()
+      .select({ country: entitlements.producerCountry, producerId: entitlements.producerId })
+      .from(entitlements)
+      .where(or(...producers.slice(offset, offset + 200).map(({ country, producerId }) =>
+        activeProducerPremiumEntitlementCondition(country, producerId, now),
+      )));
+    for (const row of rows) keys.add(`${row.country}:${row.producerId}`);
+  }
+  return keys;
+}
+
 function auditActor(actor: PremiumEntitlementAuditActor) {
   return actor.kind === "user"
     ? {

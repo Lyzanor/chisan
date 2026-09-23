@@ -41,6 +41,8 @@ export function catalogToolPath(name: string, input: Record<string, unknown>) {
   if (name === "chisan_catalog") path = "/api/catalog/v1";
   else if (name === "chisan_search_producers")
     path = "/api/catalog/v1/producers";
+  else if (name === "chisan_search_products")
+    path = "/api/catalog/v1/products";
   else if (name === "chisan_get_producer") {
     if (
       typeof args.country !== "string" ||

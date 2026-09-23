@@ -349,7 +349,9 @@ if [[
   "$LLMS_TEXT" != *'https://chisan.app/how-we-work'* ||
   "$LLMS_TEXT" != *'https://chisan.app/api/catalog/v1/openapi.json'* ||
   "$LLMS_TEXT" != *'chisan_get_producer'* ||
-  "$LLMS_TEXT" != *'There is no remote MCP server endpoint in this version'*
+  "$LLMS_TEXT" != *'https://chisan.app/mcp'* ||
+  "$LLMS_TEXT" != *'chisan_search_products'* ||
+  "$LLMS_TEXT" != *'No persistent sessions or subscriptions'*
 ]]; then
   echo "Error: /llms.txt should explain when agents should use Chisan and its technical limits." >&2
   exit 1

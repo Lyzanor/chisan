@@ -14,9 +14,19 @@ import {
   SALES_CHANNEL_VALUES,
 } from "../catalog/producer-schema";
 import { SUPPORTED_LOCALES } from "../i18n/locales";
+import { contentItemIdSchema } from "../catalog/content-identity";
 
 export const CATALOG_API_PATH = "/api/catalog/v1";
+export const CATALOG_MCP_PATH = "/mcp";
 export const CATALOG_SCHEMA_VERSION = "1.0";
+export const CATALOG_USAGE_POLICY = {
+  factual_certification: false,
+  live_stock: false,
+  live_prices: false,
+  executes_actions: false,
+  coverage: "incomplete",
+  missing_values: "unknown_not_negative",
+} as const;
 const country = z.string().regex(/^[a-z]{2}$/);
 const slug = z
   .string()
@@ -86,6 +96,13 @@ export const producerInputSchema = z.strictObject({
       "Published language of this producer's area; defaults to the country language.",
     ),
 });
+export const productSearchInputSchema = searchInputSchema.extend({
+  q: searchInputSchema.shape.q.unwrap().describe(
+    "Literal, accent-insensitive terms in the published product name, description or format. Varieties match only when recorded there. No semantic inference or stock assertion.",
+  ).optional(),
+  producer_id: producerId.optional().describe("Restrict to one producer; requires country."),
+  product_id: contentItemIdSchema.optional().describe("Exact stable product ID; requires country and producer_id."),
+});
 const text = z.string().nullable();
 const localizedText = z
   .strictObject({ text: z.string(), locale: z.string() })
@@ -136,6 +153,20 @@ export const publicProducerBaseSchema = z.strictObject(baseShape);
 export type PublicProducerBase = z.infer<typeof publicProducerBaseSchema>;
 export const publicProducerSchema = z.strictObject({
   ...baseShape,
+  handoff: z.strictObject({
+    execution: z.literal("external_requires_user_authorization"),
+    phone_url: text,
+    email_url: text,
+    whatsapp_url: text.describe("Only for an explicitly recorded WhatsApp sales channel and a valid international public phone. Opens a draft; never sends it."),
+    store_url: text,
+    message: z.string(),
+    message_locale: locale,
+    visits: z.strictObject({
+      status: z.enum(["recorded_yes", "recorded_no", "unknown"]),
+      booking: z.enum(VISIT_BOOKING_VALUES).nullable(),
+      inquiry_url: text.describe("General producer contact for confirming a recorded visit; not a reservation or a dedicated booking link."),
+    }),
+  }),
   ownership: z
     .enum(["confirmed", "not_asserted"])
     .describe(
@@ -175,6 +206,16 @@ export const publicProducerSchema = z.strictObject({
 export type PublicProducer = z.infer<typeof publicProducerSchema>;
 export const catalogOutputSchema = z.strictObject({
   schema_version: z.literal(CATALOG_SCHEMA_VERSION),
+  interfaces: z.strictObject({ openapi_url: z.string(), mcp_url: z.string() }),
+  methodology_url: z.string(),
+  usage: z.strictObject({
+    factual_certification: z.literal(false),
+    live_stock: z.literal(false),
+    live_prices: z.literal(false),
+    executes_actions: z.literal(false),
+    coverage: z.literal("incomplete"),
+    missing_values: z.literal("unknown_not_negative"),
+  }),
   countries: z.array(
     z.strictObject({
       ...place.shape,
@@ -204,6 +245,28 @@ export const producerOutputSchema = z.strictObject({
   schema_version: z.literal(CATALOG_SCHEMA_VERSION),
   producer: publicProducerSchema,
 });
+export const publicProductSchema = z.strictObject({
+  country,
+  producer_id: producerId,
+  product_id: contentItemIdSchema,
+  producer_name: z.string(),
+  municipality: z.string(),
+  url: z.string().describe("The producer profile that publishes this product; cite this URL."),
+  api_url: z.string(),
+  store_url: text,
+  product: contentProductSchema,
+});
+export type PublicProduct = z.infer<typeof publicProductSchema>;
+export const productSearchOutputSchema = z.strictObject({
+  schema_version: z.literal(CATALOG_SCHEMA_VERSION),
+  revision,
+  total: z.number().int(),
+  limit: z.number().int(),
+  offset: z.number().int(),
+  next: z.string().nullable(),
+  visibility: z.enum(["checked", "unavailable"]).describe("Unavailable means current public visibility could not be checked. An empty result then says nothing about catalog coverage."),
+  products: z.array(publicProductSchema),
+});
 export const errorOutputSchema = z.strictObject({
   error: z.strictObject({ code: z.string(), message: z.string() }),
 });
@@ -224,6 +287,14 @@ export const catalogOperations = [
     path: `${CATALOG_API_PATH}/producers`,
     input: searchInputSchema,
     output: searchOutputSchema,
+  },
+  {
+    name: "chisan_search_products",
+    description:
+      "Find individually recorded, currently visible products and varieties by literal product text, geography or stable identity. Excludes fictional demo products. Results are editorial records, not live stock or guaranteed prices. Empty results do not mean the food is unavailable. Cite the producer profile; purchase_url opens the producer's external shop.",
+    path: `${CATALOG_API_PATH}/products`,
+    input: productSearchInputSchema,
+    output: productSearchOutputSchema,
   },
   {
     name: "chisan_get_producer",

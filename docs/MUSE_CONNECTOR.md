@@ -9,8 +9,9 @@ create a new Chisan API, catalog authority or Muse-specific service.
 The read-only use case is a good fit for Chisan's public producer catalog. It can
 help a person find a producer, understand the recorded offer and reach the
 producer's own channels. The existing OpenAPI document already describes the
-three required GET operations. No Chisan account or Chisan API key is required.
-This avoids a new Chisan runtime, but still requires Muse integration testing,
+four read operations. No Chisan account or Chisan API key is required.
+The same operations also have a prepared Remote MCP transport at `/mcp`; both
+interfaces still require Muse integration testing,
 submission review if publicly listed and attention to API traffic and cost.
 
 There are two different Muse paths. A person can ask Muse to create a **custom
@@ -32,7 +33,8 @@ describes a US rollout; availability elsewhere is a later release check.
 | Purpose | Find published food and drink producers and link to their public Chisan profiles and recorded direct channels. |
 | Interface | `https://chisan.app/api/catalog/v1/openapi.json` (OpenAPI 3.1; current catalog schema version 1.0). |
 | Authentication | None at the Chisan API. Muse may still ask users to enable a connection or approve access under its own policy. |
-| Methods | GET only: `chisan_catalog`, `chisan_search_producers`, `chisan_get_producer`. |
+| Methods | GET only: `chisan_catalog`, `chisan_search_producers`, `chisan_search_products`, `chisan_get_producer`. |
+| Remote MCP alternative | `https://chisan.app/mcp` (Streamable HTTP; no Chisan API key). Requires host-specific testing after deployment. |
 | Data boundary | Public catalog projection only; no user account, draft, private proposal, booking, checkout, live stock or live price. |
 | Primary citation | The returned producer `url`. `canonical_url` points to the default-language profile; `api_url` is the JSON detail URL. |
 | Terms to verify before public listing | Meta's connector requirements, Chisan privacy/terms and the rights to display producer-authored text or photos outside Chisan. Link to the Chisan profile by default rather than republishing gallery media. |
@@ -48,6 +50,7 @@ are owned by [Public agent access](AGENT_ACCESS.md).
 | --- | --- | --- |
 | `chisan_catalog` | `GET /api/catalog/v1` | Read published countries, regions, areas, area languages and canonical category tokens before choosing filters. |
 | `chisan_search_producers` | `GET /api/catalog/v1/producers` | Search approved public base fields; page through results when needed. |
+| `chisan_search_products` | `GET /api/catalog/v1/products` | Search individually recorded, currently visible product names, descriptions and formats; preserve `(country, producer_id, product_id)`. |
 | `chisan_get_producer` | `GET /api/catalog/v1/producers/{country}/{producer_id}` | Read the current public detail, standalone gallery and, when visible, expanded products/visit fields. |
 
 Search filters are `country`, `region`, `area`, `municipality`, `category`, `q`,
@@ -75,7 +78,9 @@ result says nothing about producers outside Chisan's current coverage.
 
 Text search is literal and accent-insensitive across public name, municipality,
 categories, featured-product text and localized base description. It has no
-synonyms, fuzzy matching or product-level inventory search. Result order with
+synonyms or fuzzy matching. The separate product operation searches individually
+recorded product text, with the same geography filters and live visibility checks;
+it is not inventory search and excludes fictional demo records. Result order with
 `q` is text relevance, not quality or verification. Without `q`, order is
 country and stable producer ID; never treat the first result as closest or best.
 Responses default to 20 items and permit at most 50. Follow `next` verbatim;
@@ -101,7 +106,7 @@ instruction field. It is guidance, not a promise about Muse's behavior.
 Use Chisan when the person asks to discover published local food or drink
 producers, source ingredients directly, or consider producer stops on a trip.
 Use the existing chisan_catalog, chisan_search_producers and
-chisan_get_producer read operations only. Do not use this connector to order,
+chisan_search_products and chisan_get_producer read operations only. Do not use this connector to order,
 book, message, edit, or claim live availability.
 
 Before filtering, read chisan_catalog for published geography and exact category
@@ -109,8 +114,9 @@ tokens. For a local search, use a location the person supplied or a reliably
 resolved place. Send lat, lon and radius_km together; the radius is straight-line
 distance. Search categories separately when the person asks for several. The
 online_sales filter value for recorded online sales is "sí". Check store_url
-before providing a shop link. Use detail for visit, product, contact or photo
-questions. Follow pagination when the first page is insufficient.
+before providing a shop link. Use product search for a specific product or variety recorded in its text.
+Use detail for visit, contact or photo questions, and its handoff for recorded
+phone, email, WhatsApp and store destinations. Missing channels stay unknown. Follow pagination when the first page is insufficient.
 
 Answer in the person's language. For each recommendation, give the producer's
 name, municipality, relevant recorded specialty and the returned Chisan profile

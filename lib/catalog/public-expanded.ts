@@ -2,7 +2,7 @@ import "server-only";
 import { cache } from "react";
 
 import { getAccountSystemConfiguration } from "../accounts/config";
-import { hasActiveProducerPremiumEntitlement } from "../accounts/producer-premium-entitlements";
+import { activeProducerPremiumKeys, hasActiveProducerPremiumEntitlement } from "../accounts/producer-premium-entitlements";
 import type { Locale } from "../i18n/locales";
 import { loadProducerContent } from "./content";
 import { standaloneProducerGallery } from "./content-schema";
@@ -53,6 +53,20 @@ export const loadPublicExpandedContent = createPublicExpandedContentReader({
   hasEntitlement: hasPublicProducerPremiumAccess,
   loadContent: loadProducerContent,
 });
+
+/** Null distinguishes unavailable visibility from a checked, empty public set. */
+export async function publicProductVisibility(
+  producers: readonly { country: string; producerId: number }[],
+): Promise<ReadonlySet<string> | null> {
+  if (!getAccountSystemConfiguration().databaseConfigured) return null;
+  if (!producers.length) return new Set();
+  try {
+    return await activeProducerPremiumKeys(producers);
+  } catch {
+    console.error("Public product visibility is temporarily unavailable.");
+    return null;
+  }
+}
 
 export function publicHighlightedLinks(
   fields: Readonly<Record<string, string>>,

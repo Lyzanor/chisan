@@ -1,7 +1,7 @@
 # Public agent access
 
 Chisan exposes one public catalog through HTML, conservative JSON-LD, a versioned
-JSON API and browser WebMCP tools. `docs/CATALOG_WEB.md` owns publication and
+JSON API, browser WebMCP tools and a Remote MCP endpoint. `docs/CATALOG_WEB.md` owns publication and
 visibility; this document owns the agent interface and its compatibility policy.
 
 ## One catalog, several interfaces
@@ -13,7 +13,7 @@ related JSON      -> reviewed products, gallery and links for that identity
                             |
                   public projection + visibility
                             |
-           HTML / JSON-LD / JSON API / WebMCP tools
+           HTML / JSON-LD / JSON API / WebMCP / Remote MCP
 ```
 
 Identity remains `(country, producer_id)`. All results link to the existing
@@ -22,7 +22,7 @@ and routing context; the API's ID lookup survives a route move. No new registry,
 database catalog copy, externally hosted widget or runtime catalog writer exists.
 
 `lib/agents/catalog-schema.ts` owns version 1 inputs, outputs and operation
-descriptions. OpenAPI and WebMCP input schemas are generated from these same Zod
+descriptions. OpenAPI, WebMCP and Remote MCP schemas are generated from these same Zod
 schemas. `lib/agents/public-catalog.ts` projects an explicit public allowlist.
 Adding a CSV column never automatically exposes it. Browser bundles receive
 tool descriptions and schemas, not CSV rows, Zod or server/database modules.
@@ -40,9 +40,13 @@ source hashes are exposed. People never enter product arrays or Product JSON-LD.
 | --- | --- |
 | `chisan_catalog` | `/api/catalog/v1` |
 | `chisan_search_producers` | `/api/catalog/v1/producers` |
+| `chisan_search_products` | `/api/catalog/v1/products` |
 | `chisan_get_producer` | `/api/catalog/v1/producers/{country}/{producer_id}` |
 
-All are anonymous reads. Examples against a running local checkout:
+All are anonymous reads. The same four operations are tools at `/mcp`. Discovery
+also returns `interfaces`, `methodology_url` and machine-readable `usage` limits: no
+factual certification, live stock/prices or action execution; incomplete coverage;
+missing values mean unknown rather than negative. Examples against a running local checkout:
 
 ```bash
 curl 'http://localhost:3000/api/catalog/v1'
@@ -107,6 +111,54 @@ URLs over 4096 characters return 414. Read failures return 503 with no stack,
 filesystem path or database details. Check HTTP status before interpreting data.
 No match is a successful empty list and does not prove that no producer exists.
 
+## Product discovery
+
+`chisan_search_products` / `GET /api/catalog/v1/products` searches individual
+reviewed product records. It accepts the producer search's geographic, category,
+online-sales, locale and pagination filters; `q` instead searches product name
+(weight 8), format (2) and description (1). The shared literal scorer supplies
+accent folding, every-term matching and phrase bonuses. A variety is searchable
+only when recorded in those fields. There are no embeddings, inferred synonyms,
+stock assertions or normalized varieties invented from prose. Category is the
+producer's category, not a newly asserted product classification.
+
+Optional `producer_id` requires country; exact `product_id` requires both.
+Results preserve `(country, producer_id, product_id)`, localized product fields,
+producer name/municipality, profile citation `url`, detail `api_url` and recorded
+`store_url`. `product.purchase_url` remains the specific product page. No product
+is fabricated by splitting the CSV featured-product summary. The demo producer
+is always excluded. Ties use country, numeric producer ID and product ID.
+
+Only immutable CSV/JSON projections are indexed in process, once per supported
+locale. Only existing packages are read, with bounded filesystem concurrency.
+Every query checks the exact current active premium predicate in batches of up
+to 200 producers with indexed products, shared with the profile's entitlement
+reader. Visibility is checked before text/geographic filtering so the status
+cannot disclose whether hidden text matched a query. No
+visibility decision survives a request. Search results, totals and revisions
+include only visible products; retained hidden content cannot affect the public
+revision. Locale fallback and package validation follow the detail loader.
+Responses are `no-store`. A visibility change invalidates pagination with 409.
+`visibility: unavailable` returns no products and distinguishes an unavailable
+account check from a checked empty result. Neither implies absent production.
+
+## Direct action handoff
+
+Detail adds `handoff`, derived from its public base and currently visible
+expanded block. `phone_url` uses the recorded E.164 number; `email_url` and
+`whatsapp_url` open drafts with a contextual message containing the producer name
+and Chisan profile URL. `message_locale` states the draft language. The WhatsApp
+resolver requires an explicit `whatsapp` sales-channel token and preserves the
+international prefix; a mobile number alone proves nothing. `store_url` remains
+the reviewed store entry and never falls back to a guessed shop path.
+
+`visits.status` is `recorded_yes`, `recorded_no` or `unknown`. Only recorded yes
+can expose its visible booking policy and an `inquiry_url`; that URL is a general
+public contact for confirmation, not an invented booking endpoint. Hidden or
+missing visit fields remain unknown. `execution` explicitly requires external
+user authorization. Reading a link never sends a message, starts a call, makes a
+booking or orders. The receiving agent and producer channel handle those actions.
+
 ## Public facts and trust
 
 - Only manifest-published countries are returned. A requested locale filters
@@ -169,18 +221,56 @@ browser storage, device location or arbitrary URLs. Read-only and untrusted-
 content annotations describe their behavior. Unsupported browsers use the site
 normally, and agents can still use documented HTTP requests.
 
-WebMCP is browser integration, not a remote MCP server. There is no `/mcp`
-Streamable HTTP endpoint in this version. Do not advertise one or require the
-old widget/token/localhost bridge. Recheck draft changes before adding APIs;
-keep protocol-specific code in `lib/agents/webmcp.ts`.
+WebMCP is the browser integration. `/mcp` separately serves Remote MCP without
+a browser or a widget/token/localhost bridge. Keep the browser-specific adapter
+in `lib/agents/webmcp.ts` and HTTP protocol handling in `lib/agents/remote-mcp.ts`.
+
+## Remote MCP compatibility and consumption
+
+`POST /mcp` uses the official `@modelcontextprotocol/server` SDK, pinned at 2.0.0,
+with Streamable HTTP and one fresh server per request. The SDK handles protocol
+negotiation, validation and errors for the 2025 compatibility path and 2026-07-28
+protocol. The official client tests both paths. Tools declare input and output
+schemas and read-only annotations; tool failures use `isError`, retaining the
+catalog's sanitized error envelope. There are no write tools, OAuth credentials,
+account sessions, outgoing requests to producer URLs or AI inference calls.
+
+Clients send `Content-Type: application/json` and
+`Accept: application/json, text/event-stream`. POST is the only execution method;
+GET and DELETE return 405 because there are no persistent sessions or unsolicited
+streams. No `Mcp-Session-Id` is issued. OPTIONS supports preflight. Server clients
+can omit Origin; supplied origins must match Chisan's canonical origin, the
+configured `VERCEL_URL`, or an HTTP loopback origin in development. Other origins
+receive 403. No arbitrary Host or forwarded header grants an allowed origin.
+The endpoint bypasses Clerk just like public catalog reads and is `no-store`.
+
+Limits are 16 KiB per request, one message per request (no batches), a 1 MiB
+response ceiling, a 15-second exchange deadline and a 20-second route maximum.
+The instance admits at most 120 requests per minute and eight concurrent
+exchanges; excess receives 429 with `Retry-After: 60`. Its counters retain no
+IP, prompt, location or client identity. Product visibility uses batched reads;
+base discovery and search reuse their immutable indexes. Logs contain generic
+protocol/read failures only, while Vercel request metrics provide status/latency.
+The deadline cancels the exchange; it is not a database statement-cancellation
+guarantee. Instance limits reset on cold starts and do not form a distributed
+quota or a spending cap. Before broad promotion, verify WAF rate limits and the
+existing Vercel/Neon consumption controls in [Operations](OPERATIONS.md).
+
+Client configuration uses the deployed HTTPS URL `https://chisan.app/mcp` with
+Streamable HTTP and no Chisan API key. Each host still controls installation,
+availability and user consent. Muse, Instinct, Aeon and other product names do
+not imply a tested or approved integration. If a host cannot use MCP, its agent
+can use the existing OpenAPI/HTTP interface. Test real hosts separately after an
+authorized deployment; local SDK tests do not prove directory approval or that
+a hosted agent will automatically discover Chisan.
 
 ## Operations and verification
 
 Discovery/search use an immutable per-process public base index with bounded
 locale keys, ETags and short public caching (browser 60s, shared 300s). Detail
 reads use `no-store` and never cache account-derived visibility across requests.
-Public GET/HEAD/OPTIONS support CORS without credentials; other methods have no
-handler. The public namespace bypasses Clerk context, while other account APIs
+The JSON API supports public GET/HEAD/OPTIONS with CORS and no credentials;
+Remote MCP has the separate method and origin policy above. The public namespace bypasses Clerk context, while other account APIs
 retain their existing authentication and authorization boundaries.
 
 `CHISAN_PUBLIC_DISCOVERY_ENABLED` keeps its existing Production-only indexing
@@ -192,12 +282,13 @@ API namespace while retaining the general private API exclusion. API JSON is
 rules against these routes during deployment. No firewall or environment setting
 is changed by this implementation.
 
-Run `pnpm test:agents` for schemas, visibility, filtering, identity, pagination,
-invalid input, public scope, error handling and WebMCP lifecycle tests. These
+Run `pnpm test:agents` for schemas, visibility, product and producer filtering,
+identity, pagination/revocation, handoff accuracy, invalid input, public scope,
+error handling, WebMCP lifecycle and real SDK HTTP negotiation tests. These
 checks are part of `pnpm verify:ai`. Browser QA must exercise the actual API from
 registered callbacks, unsupported-browser behavior and navigation cleanup.
 Record whether WebMCP was native or emulated; a mock is not browser conformance.
-The deployment must include CSV and related JSON traces for the API functions.
+The deployment must include CSV and related JSON traces for the API and `/mcp` functions.
 
 The 2026-09-05 browser check used native Chrome 152 with
 `--enable-features=WebMCP`, plus a normal browser without that flag. All three
@@ -207,6 +298,17 @@ the registered callback receives a parsed object. The inspector signature can
 lag the draft and is not called by Chisan's adapter. Same-document navigation
 to a non-catalog application page removed the tools. See the
 [design QA record](../design/qa/design-qa.md) for the responsive check.
+
+The 2026-09-23 increment was checked against an isolated local production build.
+Official SDK clients negotiated both 2025-11-25 and 2026-07-28 over real HTTP,
+listed all four tools and read producer details with handoff links. Native Chrome
+153 with WebMCP enabled discovered all four tools at 390px and 1440px, executed
+producer/product searches and detail reads, and removed the tools after client
+navigation to `/privacy`. The isolated server had no account database configured:
+product search correctly returned `visibility: unavailable`; fixture tests cover
+active, revoked and unavailable product visibility. The local Vercel Analytics
+script returned its expected 404; catalog requests succeeded. No vendor connector
+installation, production deployment or end-user action was performed.
 
 ## Next increments
 
@@ -219,12 +321,14 @@ submitted or approved connector.
    a distinct full-profile review date becomes useful, define and record that
    real review event first; never derive it from payment, ownership or deployment.
    Public per-field source lists are not part of the current product direction.
-2. **Product discovery:** index stable `(country, producer_id, product_id)` records
-   with normalized product vocabulary and the same current visibility rules.
-   Current search already indexes the base featured-product summary.
-3. **Remote MCP:** expose these same services through an official MCP SDK and
-   Streamable HTTP for clients without a browser, with transport conformance,
-   request budgets, observability and explicit public-read semantics.
+2. **Product coverage:** enrich real reviewed products and varieties through the
+   existing content workflow. The product endpoint is implemented; its usefulness
+   depends on actual structured content and current public visibility. Semantic
+   query expansion can later sit above literal matching with disclosed terms.
+3. **Remote MCP adoption:** the transport is implemented. Validate deployed WAF
+   access and costs, then exercise real clients and measure successful producer
+   handoffs before seeking connector listings. No platform-specific runtime or
+   private write capability is required for this increment.
 4. **Spatial discovery:** radius queries are available; bounding-box queries
    remain a possible increment. Preserve explicit location input and clear
    straight-line distance semantics.

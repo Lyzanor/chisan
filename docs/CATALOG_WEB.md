@@ -22,7 +22,7 @@ maps keep the canonical productive coordinates of each producer.
 
 Public agent reads use the same identity, publication and localization policy.
 [Agent access](AGENT_ACCESS.md) owns the versioned JSON API, generated OpenAPI,
-browser WebMCP tools, public projection and compatibility checks. Every producer
+browser WebMCP tools, Remote MCP, public projection and compatibility checks. Every producer
 profile advertises its ID-based JSON representation. Expanded content visibility
 is resolved by a shared loader for HTML and agent reads; new adapters cannot
 publish a broader catalog or turn ownership into factual certification.

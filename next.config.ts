@@ -63,6 +63,7 @@ const nextConfig: NextConfig = {
     "/api/producer-stats/**": ["./data/csv/**/*.csv"],
     "/api/producer-favorites": ["./data/csv/**/*.csv"],
     "/api/catalog/v1/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
+    "/mcp": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     middleware: ["./data/csv/**/*.csv"],
     "/api/producer-redirect/**": ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]": ["./data/csv/**/*.csv"],

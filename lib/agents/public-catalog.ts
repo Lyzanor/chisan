@@ -39,9 +39,12 @@ import { getCategoryLabel } from "../i18n/categories";
 import { buildCatalogScope } from "../i18n/catalog-scope";
 import type { Locale } from "../i18n/locales";
 import { SITE_ORIGIN } from "../site";
+import { producerHandoff } from "./producer-handoff";
 import {
   CATALOG_API_PATH,
+  CATALOG_MCP_PATH,
   CATALOG_SCHEMA_VERSION,
+  CATALOG_USAGE_POLICY,
   type PublicProducer,
   type PublicProducerBase,
   type searchInputSchema,
@@ -221,6 +224,12 @@ export function publicExpanded(
 export function describePublicCatalog() {
   return {
     schema_version: CATALOG_SCHEMA_VERSION,
+    interfaces: {
+      openapi_url: `${SITE_ORIGIN}${CATALOG_API_PATH}/openapi.json`,
+      mcp_url: `${SITE_ORIGIN}${CATALOG_MCP_PATH}`,
+    },
+    methodology_url: `${SITE_ORIGIN}/how-we-work`,
+    usage: CATALOG_USAGE_POLICY,
     countries: listPublishedCountries().map((country) => ({
       slug: country.slug,
       name: country.label,
@@ -248,7 +257,7 @@ const indexes = new Map<
     entries: { producer: PublicProducerBase; country: string; producerId: number; search: CatalogSearchDocument }[];
   }>
 >();
-async function publicIndex(locale?: Locale) {
+export async function publicProducerIndex(locale?: Locale) {
   const key = locale ?? "default";
   const existing = indexes.get(key);
   if (existing) return existing;
@@ -319,7 +328,7 @@ export async function readExplorerCatalog(country: string, locale: Locale, offse
   if (!published || !published.regions.some((region) => region.areas.some((area) => area.publishedLocales.includes(locale)))) {
     throw new CatalogRequestError(404, "not_found", "Published country or language not found.");
   }
-  const index = await publicIndex(locale);
+  const index = await publicProducerIndex(locale);
   if (revision && revision !== index.revision) {
     throw new CatalogRequestError(409, "catalog_changed", "Catalog changed. Reload the explorer.");
   }
@@ -335,7 +344,7 @@ export async function readExplorerCatalog(country: string, locale: Locale, offse
   };
 }
 
-export async function searchPublicProducers(
+export function producerSearchPredicate(
   input: z.infer<typeof searchInputSchema>,
 ) {
   const spatialValues = [input.lat, input.lon, input.radius_km];
@@ -392,13 +401,6 @@ export async function searchPublicProducers(
       "invalid_query",
       "Unknown category. Read the catalog's category tokens.",
     );
-  const index = await publicIndex(input.locale);
-  if (input.revision && input.revision !== index.revision)
-    throw new CatalogRequestError(
-      409,
-      "catalog_changed",
-      "Catalog revision changed. Restart pagination at offset 0 without revision.",
-    );
   const terms = normalizeCatalogSearch(input.q ?? "")
     .split(" ")
     .filter(Boolean);
@@ -408,8 +410,7 @@ export async function searchPublicProducers(
       "invalid_query",
       "Search requires at least one letter or number.",
     );
-  const results = rankCatalogEntries(index.entries.filter(
-    ({ producer: p }) =>
+  return (p: PublicProducerBase) =>
       (!radius || (p.coordinates !== null && isWithinRadius(p.coordinates, radius))) &&
       (!input.country || p.country === input.country) &&
       (!input.region || p.region.slug === input.region) &&
@@ -419,8 +420,15 @@ export async function searchPublicProducers(
       (!input.municipality ||
         normalizeCatalogSearch(p.municipality) ===
           normalizeCatalogSearch(input.municipality)) &&
-      (!input.online_sales || p.online_sales === input.online_sales),
-  ), input.q ?? "");
+      (!input.online_sales || p.online_sales === input.online_sales);
+}
+
+export async function searchPublicProducers(input: z.infer<typeof searchInputSchema>) {
+  const matches = producerSearchPredicate(input);
+  const index = await publicProducerIndex(input.locale);
+  if (input.revision && input.revision !== index.revision)
+    throw new CatalogRequestError(409, "catalog_changed", "Catalog revision changed. Restart pagination at offset 0 without revision.");
+  const results = rankCatalogEntries(index.entries.filter(({ producer }) => matches(producer)), input.q ?? "");
   const nextOffset = input.offset + input.limit;
   const query = new URLSearchParams(
     Object.entries({
@@ -478,7 +486,7 @@ export async function findPublicProducersByContact(
       .map((email) => email.split("@")[1] ?? "")
       .filter((domain) => domain && !WEBMAIL_DOMAINS.has(domain)),
   );
-  const index = await publicIndex();
+  const index = await publicProducerIndex();
   const exact: PublicProducerBase[] = [];
   const sameDomain: PublicProducerBase[] = [];
   for (const { producer } of index.entries) {
@@ -520,13 +528,16 @@ export async function getPublicProducer(
     loadPublicProducerGallery(country.slug, row.producerId, locale),
   ]);
   const [localized] = localizeProducerFields([row], locale, translations);
+  const base = publicProducerBase(localized, country, area, locale);
+  const expanded = publicExpanded(localized.fields, content);
   return {
     schema_version: CATALOG_SCHEMA_VERSION,
     producer: {
-      ...publicProducerBase(localized, country, area, locale),
+      ...base,
+      handoff: producerHandoff(base, expanded),
       ownership: ownership ? ("confirmed" as const) : ("not_asserted" as const),
       gallery,
-      expanded: publicExpanded(localized.fields, content),
+      expanded,
     },
   };
 }
