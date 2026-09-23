@@ -6,10 +6,20 @@ import { removeInstagramEvidence } from "@/app/(application)/cuenta/actions/inst
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
-import { OPEN_PRODUCER_CLAIM_STATUSES } from "@/lib/accounts/producer-claim-policy";
+import {
+  claimFollowUp,
+  OPEN_PRODUCER_CLAIM_STATUSES,
+  PRODUCER_CLAIM_CODE_PATTERN,
+  PRODUCER_ONBOARDING_PATH,
+  type ProducerClaimChannels,
+} from "@/lib/accounts/producer-claim-policy";
 import { findProducersByIds } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
-import { producerClaims, producerMemberships } from "@/lib/db/schema";
+import {
+  producerClaims,
+  producerMemberships,
+  type ProducerClaim,
+} from "@/lib/db/schema";
 import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
 import { APPLICATION_DEFAULT_LOCALE } from "@/lib/i18n/locales";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
@@ -23,6 +33,23 @@ const CLAIM_LABELS: Record<string, string> = {
   withdrawn: "Retirada",
   revoked: "Revocada",
 };
+
+function ClaimVerificationCode({ claim }: { claim: ProducerClaim }) {
+  const code = claim.proof.verificationCode;
+  const followUp = claimFollowUp(
+    claim.proofMethod,
+    (claim.proof.catalogChannels ?? {}) as Partial<ProducerClaimChannels>,
+    claim.proof.signInEmailMatchesCatalog === true,
+  );
+  if (!followUp.needsCode || typeof code !== "string" || !PRODUCER_CLAIM_CODE_PATTERN.test(code)) {
+    return null;
+  }
+  return (
+    <p>
+      Código de verificación: <strong>{code}</strong>. {followUp.steps.slice(0, 2).join(" ")}
+    </p>
+  );
+}
 
 type ClaimsPageProps = {
   searchParams: Promise<AccountMessageParams>;
@@ -76,8 +103,8 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
           </p>
         </div>
         {!hasOwnedProducer && !hasOpenClaim ? (
-          <Link href="/" className="account-button account-button--secondary">
-            Buscar un productor para verificar
+          <Link href={PRODUCER_ONBOARDING_PATH} className="account-button account-button--secondary">
+            Buscar mi ficha
           </Link>
         ) : null}
       </header>
@@ -156,6 +183,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                       {CLAIM_LABELS[claim.status] ?? claim.status}
                     </span>
                   </div>
+                  {canWithdraw ? <ClaimVerificationCode claim={claim} /> : null}
                   {claim.decisionReason ? <p>{claim.decisionReason}</p> : null}
                   {producer || canWithdraw ? (
                     <div className="account-inline-actions">

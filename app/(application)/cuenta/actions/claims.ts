@@ -1,12 +1,17 @@
 "use server";
 
+import { randomInt } from "node:crypto";
+
 import { and, count, eq, gte, inArray, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { INSTAGRAM_PROOF_COOKIE, instagramHandle } from "@/lib/instagram/verification";
 import { currentInstagramProof } from "@/lib/instagram/verification.server";
 
-import { requireCurrentAccount } from "@/lib/accounts/auth";
+import {
+  currentVerifiedEmailAddresses,
+  requireCurrentAccount,
+} from "@/lib/accounts/auth";
 import {
   claimSubmissionSchema,
   firstValidationMessage,
@@ -14,8 +19,11 @@ import {
 } from "@/lib/accounts/input";
 import { hashProducerFields } from "@/lib/accounts/producer-fields";
 import {
+  methodChannelAvailable,
   OPEN_PRODUCER_CLAIM_STATUSES,
+  producerClaimChannels,
   sameProducerIdentity,
+  verifiedEmailMatchesCatalog,
 } from "@/lib/accounts/producer-claim-policy";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
@@ -28,6 +36,16 @@ import {
 
 import { redirectWithMessage } from "./navigation";
 const CLAIM_MAX_SUBMISSIONS_PER_DAY = 10;
+
+function claimFormPath(
+  country: string,
+  producerId: string,
+  step: "verificacion" | "relacion" = "relacion",
+): string {
+  return /^[a-z]{2}$/.test(country) && /^\d+$/.test(producerId)
+    ? `/cuenta/reclamaciones/nueva?country=${country}&producerId=${producerId}&paso=${step}`
+    : "/cuenta/reclamaciones/nueva";
+}
 const ONE_DAY_MS = 24 * 60 * 60 * 1_000;
 export async function submitProducerClaimAction(
   formData: FormData,
@@ -48,14 +66,18 @@ export async function submitProducerClaimAction(
     country: formString(formData, "country"),
     producerId: formString(formData, "producerId"),
     method: formString(formData, "method"),
+    role: formString(formData, "role"),
     contactEmail: formString(formData, "contactEmail"),
     proof: formString(formData, "proof"),
   });
   if (!parsed.success) {
+    const issue = parsed.error.issues[0];
     redirectWithMessage(
-      "/cuenta/reclamaciones",
+      claimFormPath(formString(formData, "country"), formString(formData, "producerId")),
       "error",
-      firstValidationMessage(parsed.error, "es"),
+      issue?.path[0] === "proof" && issue.code === "too_small"
+        ? "Cuéntanos dónde publicarás el código o qué entidad puede confirmar tu relación con el productor."
+        : firstValidationMessage(parsed.error, "es"),
     );
   }
 
@@ -71,15 +93,41 @@ export async function submitProducerClaimAction(
     );
   }
   const database = getDatabase();
-  const instagramProof = await currentInstagramProof(account.id, parsed.data.country, parsed.data.producerId);
-  if (parsed.data.method === "instagram" && !instagramProof) {
+  const formPath = claimFormPath(
+    parsed.data.country,
+    String(parsed.data.producerId),
+    "verificacion",
+  );
+  const channels = producerClaimChannels(producer.fields);
+  if (!methodChannelAvailable(parsed.data.method, channels)) {
     redirectWithMessage(
-      `/cuenta/reclamaciones/nueva?country=${parsed.data.country}&producerId=${parsed.data.producerId}`,
+      formPath,
       "error",
-      "Conecta de nuevo tu Instagram profesional antes de enviar la solicitud o elige otro método.",
+      "La ficha no publica ese canal de contacto. Elige otra vía de verificación.",
     );
   }
+  const instagramProof = await currentInstagramProof(account.id, parsed.data.country, parsed.data.producerId);
   const catalogInstagram = instagramHandle(producer.fields.Instagram);
+  if (parsed.data.method === "instagram") {
+    if (!instagramProof) {
+      redirectWithMessage(
+        formPath,
+        "error",
+        "Conecta de nuevo tu Instagram profesional antes de enviar la solicitud o elige otro método.",
+      );
+    }
+    if (catalogInstagram !== instagramProof.username.toLowerCase()) {
+      redirectWithMessage(
+        formPath,
+        "error",
+        "El Instagram conectado no es el que publica la ficha. Elige otra vía de verificación.",
+      );
+    }
+  }
+  const signInEmailMatchesCatalog =
+    parsed.data.method === "catalog_email" &&
+    verifiedEmailMatchesCatalog(channels.email, await currentVerifiedEmailAddresses());
+  const verificationCode = randomInt(0, 1_000_000).toString().padStart(6, "0");
   const claimResult = await database.transaction(async (transaction) => {
     await transaction.execute(
       sql`select pg_advisory_xact_lock(hashtext(${`producer:${parsed.data.country}:${parsed.data.producerId}`}))`,
@@ -171,13 +219,19 @@ export async function submitProducerClaimAction(
           producerSlug: producer.slug,
           area: producer.area,
           baseRowHash: hashProducerFields(producer.fields),
+          claimantRole: parsed.data.role,
+          catalogChannels: channels,
+          verificationCode,
+          ...(parsed.data.method === "catalog_email"
+            ? { signInEmailMatchesCatalog }
+            : {}),
           ...(instagramProof ? { instagramVerification: {
             ...instagramProof,
             catalogUsername: catalogInstagram,
             matchesCatalog: catalogInstagram === instagramProof.username.toLowerCase(),
           } } : {}),
         },
-        claimantMessage: parsed.data.proof,
+        claimantMessage: parsed.data.proof || null,
         submittedAt: new Date(),
       })
       .onConflictDoNothing()
@@ -241,11 +295,7 @@ export async function submitProducerClaimAction(
     );
   }
   (await cookies()).delete(INSTAGRAM_PROOF_COOKIE);
-  redirectWithMessage(
-    "/cuenta/reclamaciones",
-    "notice",
-    "Solicitud enviada para verificación manual.",
-  );
+  redirect("/cuenta/reclamaciones/enviada");
 }
 
 export async function withdrawProducerClaimAction(

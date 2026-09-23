@@ -76,6 +76,20 @@ collect a candidate for editorial admission and deduplication first; review and
 publish its stable identity before granting ownership. A sign-up or claim never
 creates a duplicate catalog record or publishes self-declared facts directly.
 
+The phone-first flow has one decision per screen. Account setup
+(`/cuenta/bienvenida`) asks for the display name and whether the person
+discovers producers or runs one. That choice only routes the first visit; it
+is not stored and grants nothing. A producer continues at
+`/cuenta/reclamaciones/nueva` through four steps: search the published catalog
+by name, brand or municipality (profiles whose public email, or website domain
+outside shared webmail, matches a verified sign-in address are suggested first);
+confirm the profile; choose a verification route; state the relationship.
+Opening the flow from a producer profile skips the search, and setup resumes
+it afterwards. Steps live in the `paso` query parameter so the phone's back
+gesture moves between screens. Submission ends on `/cuenta/reclamaciones/enviada`
+with the verification code and the route's next steps. An account without a
+membership or open claim sees a dashboard entry back into the flow.
+
 Keep sign-in identifier verification, evidence for catalog facts, and authority
 to represent the producer separate. An approved claim creates the active owner
 membership; the existing “Verificado por el productor” label reflects that
@@ -461,9 +475,13 @@ explicit Chisan operation.
 The initial flow is deliberately manual:
 
 1. A signed-in account with a verified email opens a public producer profile.
-2. The claimant chooses a verification method and explains the relationship.
-3. The claim enters `pending` and the account profile becomes `producer`;
-   matching a public producer email is only a signal, never sufficient proof.
+2. The claimant chooses one of the verification routes below and states the
+   relationship (owner or partner, family or team, representative); a message
+   is optional except for the `other` route. Submission snapshots the published
+   channels and issues a six-digit verification code shown to the claimant and
+   the reviewer.
+3. The claim enters `pending` and the account profile becomes `producer`. A
+   contact email typed into the claim is only for correspondence, never proof.
 4. A reviewer approves, rejects or marks the claim as needing more information.
    In the current UI, the claimant withdraws that claim and submits a new one
    with the missing proof; there is no private conversation thread.
@@ -476,6 +494,26 @@ The initial flow is deliberately manual:
    memberships for additional team accounts without weakening ownership
    verification, but the initial release has no self-service invitation flow.
 6. Revocation closes the membership without deleting claim or audit history.
+
+### Verification routes
+
+Ownership is proved through a channel the catalog published before the claim:
+the row's `correo`, `telefono` or `Instagram`. A channel the claimant supplies
+never counts. A route is offered only when the row publishes its channel.
+
+| Route (`proof_method`) | Check before approval |
+|---|---|
+| Catalog email (`catalog_email`) | Proved when an address Clerk verified for the account (email code or Google sign-in) equals the catalog email at submission. Otherwise the reviewer writes to the catalog email and approves when a reply from that mailbox quotes the code. |
+| Catalog phone (`catalog_phone`) | The reviewer calls the catalog number and approves when the person answering reads back the code. |
+| Instagram (`instagram`) | OAuth proves control of the professional account, and submission requires it to be the catalog Instagram. A mismatch is refused. |
+| Other (`other`) | The code appears on a page of the catalog website or in a DNS TXT record of its domain, or a collective (designation, cooperative, association, market) confirms the relationship through its own official channel. Weaker material needs another route. |
+
+Before approving, the reviewer confirms in Git that the channel used predates
+any accepted community suggestion that changed it; the queue flags such
+suggestions and channels changed since submission. The decision note records
+the route, the channel checked and the date. `business_email`, `website`,
+`phone` and `document` remain readable on earlier claims but are no longer
+offered.
 
 The public evidence ledgers under `data/evidence/**` are not storage for private
 ownership documents. If document upload is added, use private object storage,

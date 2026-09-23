@@ -1,14 +1,11 @@
 import { z } from "zod";
 
+import {
+  PRODUCER_CLAIM_METHODS,
+  PRODUCER_CLAIM_ROLES,
+} from "@/lib/accounts/producer-claim-policy";
 import { PUBLIC_PROFILE_VISIBILITIES } from "@/lib/accounts/public-profile-policy";
-export const claimMethodSchema = z.enum([
-  "business_email",
-  "website",
-  "phone",
-  "instagram",
-  "document",
-  "other",
-]);
+export const claimMethodSchema = z.enum(PRODUCER_CLAIM_METHODS);
 
 export const producerKeySchema = z.object({
   country: z
@@ -43,11 +40,27 @@ export const publicProfileUpdateSchema = z.object({
     .max(160),
 });
 
-export const claimSubmissionSchema = producerKeySchema.extend({
-  method: claimMethodSchema,
-  contactEmail: z.union([z.literal(""), z.email().max(254)]),
-  proof: z.string().trim().min(20).max(4_000),
-});
+// The message is optional except for `other`, where it must say where the code
+// will be published or which collective can confirm the relationship.
+export const claimSubmissionSchema = producerKeySchema
+  .extend({
+    method: claimMethodSchema,
+    role: z.enum(PRODUCER_CLAIM_ROLES),
+    contactEmail: z.union([z.literal(""), z.email().max(254)]),
+    proof: z.string().trim().max(4_000),
+  })
+  .superRefine((claim, context) => {
+    if (claim.method === "other" && claim.proof.length < 20) {
+      context.addIssue({
+        code: "too_small",
+        origin: "string",
+        minimum: 20,
+        inclusive: true,
+        path: ["proof"],
+        input: claim.proof,
+      });
+    }
+  });
 
 export const claimReviewSchema = z.object({
   claimId: z.uuid(),

@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { AccountSignOutButton } from "@/components/account/account-signout-button";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { PRODUCER_ONBOARDING_PATH } from "@/lib/accounts/producer-claim-policy";
 import { OPEN_PRODUCER_SUGGESTION_STATUSES } from "@/lib/accounts/producer-suggestion-workflow";
 import { getDatabase } from "@/lib/db";
 import {
@@ -113,6 +114,13 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   return (
     <div className="account-content">
       <AccountMessage params={params} />
+      {membershipCount.value === 0 && claimCount.value === 0 ? (
+        <section className="account-callout">
+          <h2>¿Tienes un negocio productor?</h2>
+          <p>Busca tu ficha y verifica que es tuya para mantenerla al día. Es gratis y solo lleva unos minutos.</p>
+          <Link href={PRODUCER_ONBOARDING_PATH} className="account-button">Buscar mi ficha</Link>
+        </section>
+      ) : null}
       <section className="account-callout"><h2>Las novedades de tu comunidad</h2><p>Lee los mensajes publicados y los avisos de los productores que sigues.</p><Link href="/cuenta/novedades" className="account-button">Abrir mi timeline</Link></section>
       <section aria-labelledby="account-overview-title">
         <h2 id="account-overview-title">Resumen</h2>

@@ -445,6 +445,53 @@ export async function searchPublicProducers(
   };
 }
 
+// Shared mailbox providers say nothing about which business owns an address.
+const WEBMAIL_DOMAINS = new Set([
+  "aol.com", "gmail.com", "gmx.com", "gmx.es", "googlemail.com", "hotmail.com",
+  "hotmail.es", "icloud.com", "live.com", "me.com", "msn.com", "outlook.com",
+  "outlook.es", "proton.me", "protonmail.com", "telefonica.net", "yahoo.com",
+  "yahoo.es",
+]);
+
+function websiteHost(value: string | null): string | null {
+  if (!value) return null;
+  try {
+    return new URL(value).hostname.toLowerCase().replace(/^www\./, "") || null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Published producers whose public email is one of the addresses, then those
+ * whose website shares a business domain with one. A hint for finding a
+ * profile, never ownership proof.
+ */
+export async function findPublicProducersByContact(
+  emails: readonly string[],
+  limit = 5,
+): Promise<PublicProducerBase[]> {
+  const addresses = new Set(emails.map((email) => email.trim().toLowerCase()).filter(Boolean));
+  if (!addresses.size) return [];
+  const domains = new Set(
+    [...addresses]
+      .map((email) => email.split("@")[1] ?? "")
+      .filter((domain) => domain && !WEBMAIL_DOMAINS.has(domain)),
+  );
+  const index = await publicIndex();
+  const exact: PublicProducerBase[] = [];
+  const sameDomain: PublicProducerBase[] = [];
+  for (const { producer } of index.entries) {
+    if (producer.contact.email && addresses.has(producer.contact.email.toLowerCase())) {
+      exact.push(producer);
+    } else {
+      const host = websiteHost(producer.contact.website);
+      if (host && domains.has(host)) sameDomain.push(producer);
+    }
+  }
+  return [...exact, ...sameDomain].slice(0, limit);
+}
+
 export async function getPublicProducer(
   input: z.infer<typeof producerInputSchema>,
 ) {

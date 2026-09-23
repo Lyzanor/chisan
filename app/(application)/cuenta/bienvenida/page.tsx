@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
+import { onboardingStyles as styles } from "@/components/account/producer-onboarding";
 import { completeOnboardingAction } from "@/app/(application)/cuenta/actions";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import {
+  isProducerOnboardingPath,
+  onboardingReturnPath,
+} from "@/lib/accounts/producer-claim-policy";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,51 +17,95 @@ export const metadata: Metadata = {
 };
 
 type OnboardingPageProps = {
-  searchParams: Promise<AccountMessageParams>;
+  searchParams: Promise<
+    AccountMessageParams & {
+      siguiente?: string | string[];
+      perfil?: string | string[];
+    }
+  >;
 };
+
+function first(value: string | string[] | undefined): string {
+  return Array.isArray(value) ? value[0] ?? "" : value ?? "";
+}
 
 export default async function OnboardingPage({ searchParams }: OnboardingPageProps) {
   const [account, params] = await Promise.all([
     requireCurrentAccount("/cuenta/bienvenida"),
     searchParams,
   ]);
-  if (account.termsAcceptedAt) redirect("/cuenta");
+  const next = onboardingReturnPath(first(params.siguiente));
+  if (account.termsAcceptedAt) redirect(next || "/cuenta");
+
+  const producerIntent =
+    first(params.perfil) === "productor" || isProducerOnboardingPath(next);
 
   return (
     <div className="account-content account-content--narrow">
       <AccountMessage params={params} />
-      <section>
-        <h2>Configura tu cuenta de {SITE_NAME}</h2>
-        <p>
-          Cada cuenta comienza con un perfil de usuario. Si envías una solicitud de propiedad de un productor, tu perfil pasa automáticamente a ser de productor.
-        </p>
-        <p>Seguir a un productor es público: tu nombre y foto aparecen entre sus seguidores. Todos los productores que sigas forman parte de tu selección.</p>
-        <form action={completeOnboardingAction} className="account-form">
-          <label className="account-field">
-            <span>Nombre visible</span>
+      <form action={completeOnboardingAction} className={styles.flow}>
+        <input type="hidden" name="siguiente" value={next} />
+        <header className={styles.header}>
+          <p className="catalog-kicker">Te damos la bienvenida</p>
+          <h2 className={styles.title}>Configura tu cuenta de {SITE_NAME}</h2>
+          <p className={styles.lead}>Solo dos preguntas.</p>
+        </header>
+
+        <label className={styles.field}>
+          <span>¿Cómo quieres que te llamemos?</span>
+          <input
+            type="text"
+            name="displayName"
+            maxLength={160}
+            defaultValue={account.displayName ?? ""}
+            autoComplete="name"
+            enterKeyHint="next"
+          />
+          <small>Es tu nombre visible: aparece cuando sigues a un productor.</small>
+        </label>
+
+        <fieldset className={styles.choices}>
+          <legend className={styles.sectionTitle}>¿Qué te trae a {SITE_NAME}?</legend>
+          <label className={styles.choice}>
             <input
-              type="text"
-              name="displayName"
-              maxLength={160}
-              defaultValue={account.displayName ?? ""}
-              autoComplete="name"
+              type="radio"
+              name="intent"
+              value="user"
+              defaultChecked={!producerIntent}
+              required
             />
-          </label>
-          <div className="account-callout">
-            <strong>Tipo de perfil: usuario</strong>
-            <p>El tipo de perfil depende de tu actividad en la cuenta y no se elige manualmente.</p>
-          </div>
-          <label className="account-check">
-            <input type="checkbox" name="acknowledgeReview" value="yes" required />
-            <span>
-              Entiendo que las solicitudes de propiedad y los cambios de perfil se revisan, y que la información enviada debe ser correcta y estar autorizada para su publicación.
+            <span className={styles.choiceText}>
+              <strong>Descubrir productores</strong>
+              <span>Sigue a quien te interesa, lee sus novedades y crea tu selección.</span>
             </span>
           </label>
+          <label className={styles.choice}>
+            <input
+              type="radio"
+              name="intent"
+              value="producer"
+              defaultChecked={producerIntent}
+            />
+            <span className={styles.choiceText}>
+              <strong>Tengo un negocio productor</strong>
+              <span>Encuentra tu ficha y verifica que es tuya para mantenerla al día. Es gratis.</span>
+            </span>
+          </label>
+        </fieldset>
+
+        <label className={styles.check}>
+          <input type="checkbox" name="acknowledgeReview" value="yes" required />
+          <span>
+            Entiendo que seguir a un productor es público y que las solicitudes y los cambios de fichas se revisan antes de publicarse.
+          </span>
+        </label>
+
+        <div className={styles.actions}>
           <button type="submit" className="account-button">
-            Crear mi perfil
+            Continuar
           </button>
-        </form>
-      </section>
+        </div>
+      </form>
     </div>
   );
 }

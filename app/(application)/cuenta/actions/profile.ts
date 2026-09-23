@@ -10,6 +10,11 @@ import {
   formString,
   publicProfileUpdateSchema,
 } from "@/lib/accounts/input";
+import {
+  isProducerOnboardingPath,
+  onboardingReturnPath,
+  PRODUCER_ONBOARDING_PATH,
+} from "@/lib/accounts/producer-claim-policy";
 import { resolvePublicProfileBaseLocation } from "@/lib/accounts/public-profile-location.server";
 import {
   isPublicProfileVisible,
@@ -28,17 +33,22 @@ export async function completeOnboardingAction(
   const acknowledgedReview =
     formString(formData, "acknowledgeReview") === "yes";
   const displayName = formString(formData, "displayName").replace(/\s+/g, " ");
+  const intent = formString(formData, "intent") === "producer" ? "producer" : "user";
+  const next = onboardingReturnPath(formString(formData, "siguiente"));
+  const retryPath = next
+    ? `/cuenta/bienvenida?siguiente=${encodeURIComponent(next)}`
+    : "/cuenta/bienvenida";
 
   if (!acknowledgedReview) {
     redirectWithMessage(
-      "/cuenta/bienvenida",
+      retryPath,
       "error",
       "Debes aceptar el aviso de revisión y publicación.",
     );
   }
   if (displayName.length > 160) {
     redirectWithMessage(
-      "/cuenta/bienvenida",
+      retryPath,
       "error",
       "El nombre visible es demasiado largo.",
     );
@@ -60,11 +70,15 @@ export async function completeOnboardingAction(
       action: "account.onboarding_completed",
       targetType: "user",
       targetId: account.id,
-      metadata: { fields: ["displayName", "reviewAcknowledgement"] },
+      metadata: { fields: ["displayName", "reviewAcknowledgement"], intent },
     });
   });
 
-  redirect("/cuenta");
+  // The choice only routes the first visit; profile kind still follows claims.
+  if (intent === "producer") {
+    redirect(isProducerOnboardingPath(next) ? next : PRODUCER_ONBOARDING_PATH);
+  }
+  redirect(next && !isProducerOnboardingPath(next) ? next : "/cuenta");
 }
 
 export async function updateAccountProfileAction(

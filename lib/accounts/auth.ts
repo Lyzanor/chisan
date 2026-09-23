@@ -326,6 +326,15 @@ export async function requireCurrentAccount(
   return account;
 }
 
+/** Every address Clerk has verified for the signed-in identity, lowercased. */
+export async function currentVerifiedEmailAddresses(): Promise<string[]> {
+  const clerkUser = await currentUser();
+  if (!clerkUser) return [];
+  return clerkUser.emailAddresses
+    .filter((address) => address.verification?.status === "verified")
+    .map((address) => address.emailAddress.trim().toLowerCase());
+}
+
 export async function hasStaffAccess(
   userId: string,
   roles: readonly ("reviewer" | "admin")[] = ["reviewer", "admin"],

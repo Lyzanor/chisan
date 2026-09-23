@@ -38,6 +38,11 @@ import {
   serializeProducerChangeDetail,
   type AdminProducerChangeDetail,
 } from "../lib/admin/producer-change-requests";
+import {
+  methodChannelAvailable,
+  producerClaimChannels,
+  verifiedEmailMatchesCatalog,
+} from "../lib/accounts/producer-claim-policy";
 import { findProducerById, findProducersByIds } from "../lib/csv-catalog";
 
 test("account auth configuration rejects empty and placeholder Clerk keys", () => {
@@ -773,7 +778,7 @@ test("catalog identity lookup follows country plus immutable producer ID", async
 
 
 test("account validation can use Spanish without changing the admin default", () => {
-  const result = claimSubmissionSchema.safeParse({ country: "es", producerId: 1, method: "website", contactEmail: "", proof: "short" });
+  const result = claimSubmissionSchema.safeParse({ country: "es", producerId: 1, method: "other", role: "owner", contactEmail: "", proof: "short" });
   assert.equal(result.success, false);
   if (result.success) return;
   assert.match(firstValidationMessage(result.error), /Too small/);
@@ -800,4 +805,36 @@ test("new premium fields validate scope, controlled values and access without ac
     { condiciones_envio: "<b>Gratis</b>" }, { como_producimos_locale: "" },
   ]) assert.equal(validateProducerProposal({ ...proposed, ...patch }, base).ok, false);
   assert.equal(isProducerPatch({ "fecha novedades": "2026-09-08" }), false);
+});
+
+test("ownership claims rely only on channels the catalog already publishes", () => {
+  const channels = producerClaimChannels({
+    correo: " Hola@Quesos.example ",
+    telefono: "+34600112233",
+    Instagram: "https://www.instagram.com/Quesos.Example/",
+    web: "",
+  });
+  assert.deepEqual(channels, {
+    email: "hola@quesos.example",
+    phone: "+34600112233",
+    instagram: "quesos.example",
+    web: null,
+  });
+  assert.equal(verifiedEmailMatchesCatalog(channels.email, ["hola@quesos.example"]), true);
+  assert.equal(verifiedEmailMatchesCatalog(channels.email, ["HOLA@quesos.example "]), true);
+  assert.equal(verifiedEmailMatchesCatalog(channels.email, ["otro@quesos.example"]), false);
+  assert.equal(verifiedEmailMatchesCatalog(null, ["hola@quesos.example"]), false);
+
+  const silent = producerClaimChannels({});
+  assert.equal(methodChannelAvailable("catalog_email", silent), false);
+  assert.equal(methodChannelAvailable("catalog_phone", silent), false);
+  assert.equal(methodChannelAvailable("instagram", silent), false);
+  assert.equal(methodChannelAvailable("other", silent), true);
+  const claim = { country: "es", producerId: 1, role: "owner", contactEmail: "", proof: "" };
+  assert.equal(claimSubmissionSchema.safeParse({ ...claim, method: "website" }).success, false);
+  assert.equal(claimSubmissionSchema.safeParse({ ...claim, method: "catalog_phone" }).success, true);
+  assert.equal(claimSubmissionSchema.safeParse({ ...claim, method: "other" }).success, false);
+  assert.equal(claimSubmissionSchema.safeParse({
+    ...claim, method: "other", proof: "Publicaré el código en la página de contacto.",
+  }).success, true);
 });

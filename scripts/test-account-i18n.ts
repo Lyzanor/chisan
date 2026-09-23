@@ -160,7 +160,8 @@ test("short and composite routes produce the same validated account and claim ta
   assert.deepEqual(compositeIdentity, shortIdentity);
 
   const claimFields = {
-    method: "website" as const,
+    method: "other" as const,
+    role: "owner" as const,
     contactEmail: "owner@example.test",
     proof: "The public website identifies this account as the producer owner.",
   };

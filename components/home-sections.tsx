@@ -143,7 +143,7 @@ export function HomeSections({
           <p className="catalog-kicker">Tu trabajo merece conocerse</p>
           <h2 id="home-producer-title">¿Eres productor?</h2>
           <p>Encuentra tu ficha, verifica que es tuya y propón mejoras para mostrar lo que haces y cómo encontrarte.</p>
-          <Link className={styles.button} href={ACCOUNT_ROUTES.signUp}>Regístrate gratis <ArrowUpRightIcon size={18} aria-hidden="true" /></Link>
+          <Link className={styles.button} href={`${ACCOUNT_ROUTES.signUp}?redirect_url=${encodeURIComponent("/cuenta/bienvenida?perfil=productor")}`}>Regístrate gratis <ArrowUpRightIcon size={18} aria-hidden="true" /></Link>
           <Link className={styles.textLink} href="/cuenta/reclamaciones/nueva">Ya tengo cuenta</Link>
         </div>
       </section>

@@ -1,19 +1,32 @@
 import { and, eq, inArray } from "drizzle-orm";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-import { submitProducerClaimAction } from "@/app/(application)/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
+import { ProducerClaimWizard } from "@/components/account/producer-claim-wizard";
+import { ProducerSearchStep } from "@/components/account/producer-claim-search-step";
+import { onboardingStyles as styles } from "@/components/account/producer-onboarding";
 import { buildAccountProducerHref } from "@/lib/accounts/catalog-links";
-import { requireCurrentAccount } from "@/lib/accounts/auth";
-import { OPEN_PRODUCER_CLAIM_STATUSES } from "@/lib/accounts/producer-claim-policy";
-import { findProducerById } from "@/lib/csv-catalog";
+import {
+  currentVerifiedEmailAddresses,
+  requireCurrentAccount,
+} from "@/lib/accounts/auth";
+import {
+  methodChannelAvailable,
+  OPEN_PRODUCER_CLAIM_STATUSES,
+  parseClaimWizardStep,
+  PRODUCER_CLAIM_METHODS,
+  PRODUCER_ONBOARDING_PATH,
+  producerClaimChannels,
+  verifiedEmailMatchesCatalog,
+} from "@/lib/accounts/producer-claim-policy";
+import { findArea, findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { producerClaims, producerMemberships } from "@/lib/db/schema";
 import { readApplicationLocalePreference } from "@/lib/i18n/application-presentation.server";
-import { InstagramClaimConnection } from "@/components/account/instagram-claim-connection";
-import { instagramConfiguration, instagramHandle } from "@/lib/instagram/verification";
+import { instagramConfiguration } from "@/lib/instagram/verification";
 import { currentInstagramProof } from "@/lib/instagram/verification.server";
 
 export const metadata: Metadata = {
@@ -26,6 +39,8 @@ type NewClaimPageProps = {
     AccountMessageParams & {
       country?: string | string[];
       producerId?: string | string[];
+      q?: string | string[];
+      paso?: string | string[];
     }
   >;
 };
@@ -34,18 +49,51 @@ function first(value: string | string[] | undefined): string {
   return Array.isArray(value) ? value[0] ?? "" : value ?? "";
 }
 
-export default async function NewClaimPage({ searchParams }: NewClaimPageProps) {
-  const [account, params, explicitLocale] = await Promise.all([
-    requireCurrentAccount("/cuenta/reclamaciones/nueva"),
-    searchParams,
-    readApplicationLocalePreference(),
-  ]);
-  if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
+function StatusScreen({
+  params,
+  kicker,
+  title,
+  copy,
+  actions,
+}: {
+  params: AccountMessageParams;
+  kicker: string;
+  title: string;
+  copy: string;
+  actions: ReactNode;
+}) {
+  return (
+    <div className="account-content account-content--narrow">
+      <div className={styles.flow}>
+        <AccountMessage params={params} />
+        <header className={styles.header}>
+          <p className="catalog-kicker">{kicker}</p>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.lead}>{copy}</p>
+        </header>
+        <div className={styles.actions}>{actions}</div>
+      </div>
+    </div>
+  );
+}
 
+export default async function NewClaimPage({ searchParams }: NewClaimPageProps) {
+  const params = await searchParams;
   const country = first(params.country).trim().toLowerCase();
   const producerId = Number(first(params.producerId));
   const validProducerKey =
     /^[a-z]{2}$/.test(country) && Number.isSafeInteger(producerId) && producerId > 0;
+  const resume = validProducerKey
+    ? `${PRODUCER_ONBOARDING_PATH}?country=${country}&producerId=${producerId}`
+    : PRODUCER_ONBOARDING_PATH;
+  const [account, explicitLocale] = await Promise.all([
+    requireCurrentAccount(resume),
+    readApplicationLocalePreference(),
+  ]);
+  if (!account.termsAcceptedAt) {
+    redirect(`/cuenta/bienvenida?siguiente=${encodeURIComponent(resume)}`);
+  }
+
   const database = getDatabase();
   const [producer, ownerRows, accountOwnerRows, accountClaimRows] = await Promise.all([
     validProducerKey ? findProducerById(country, producerId) : Promise.resolve(null),
@@ -95,51 +143,42 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
   const accountOwner = accountOwnerRows[0];
   const accountClaim = accountClaimRows[0];
 
-  if (!producer) {
-    return (
-      <div className="account-content account-content--narrow">
-        <AccountMessage params={params} />
-        <h2>Elige primero un productor</h2>
-        <p>Las solicitudes de propiedad se inician desde un perfil público de productor existente.</p>
-        <Link href="/" className="account-button">
-          Explorar productores
-        </Link>
-      </div>
-    );
-  }
-
-  if (activeOwner) {
+  if (producer && activeOwner) {
     const currentAccountOwnsProducer = activeOwner.userId === account.id;
     return (
-      <div className="account-content account-content--narrow">
-        <AccountMessage params={params} />
-        <section>
-          <p className="catalog-kicker">Titularidad verificada</p>
-          <h2>
-            {currentAccountOwnsProducer
-              ? `Ya gestionas ${producer.name}`
-              : `${producer.name} ya tiene un titular verificado`}
-          </h2>
-          <p>
-            {currentAccountOwnsProducer
-              ? "Utiliza tu área de productor para gestionar este perfil."
-              : "Un productor con un titular confirmado activo no se puede volver a verificar."}
-          </p>
-          <div className="account-inline-actions">
+      <StatusScreen
+        params={params}
+        kicker="Titularidad verificada"
+        title={
+          currentAccountOwnsProducer
+            ? `Ya gestionas ${producer.name}`
+            : `${producer.name} ya tiene un titular verificado`
+        }
+        copy={
+          currentAccountOwnsProducer
+            ? "Utiliza tu área de productor para gestionar esta ficha."
+            : "Una ficha con un titular confirmado no se puede volver a verificar. Si crees que es un error, escríbenos."
+        }
+        actions={
+          <>
+            {currentAccountOwnsProducer ? (
+              <Link href="/cuenta/reclamaciones" className="account-button">
+                Ir a mi área de productor
+              </Link>
+            ) : (
+              <Link href={PRODUCER_ONBOARDING_PATH} className="account-button">
+                Buscar otra ficha
+              </Link>
+            )}
             <Link
               href={buildAccountProducerHref(producer, explicitLocale)}
               className="account-button account-button--secondary"
             >
-              Perfil público
+              Ver la ficha
             </Link>
-            {currentAccountOwnsProducer ? (
-              <Link href="/cuenta/reclamaciones" className="account-button">
-                Productores que gestionas
-              </Link>
-            ) : null}
-          </div>
-        </section>
-      </div>
+          </>
+        }
+      />
     );
   }
 
@@ -147,99 +186,89 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
     const claimIsForThisProducer =
       accountClaim?.country === country && accountClaim.producerId === producerId;
     return (
-      <div className="account-content account-content--narrow">
-        <AccountMessage params={params} />
-        <section>
-          <p className="catalog-kicker">Solicitud de propiedad</p>
-          <h2>
-            {accountOwner
-              ? "Ya tienes un productor verificado"
-              : claimIsForThisProducer
-                ? `Ya has solicitado verificar ${producer.name}`
-                : "Ya tienes una solicitud en revisión"}
-          </h2>
-          <p>
-            {accountOwner
-              ? "Cada cuenta de productor puede gestionar una única ficha como titular. Puedes seguir y recomendar otros productores sin reclamarlos."
-              : "Resuelve o retira la solicitud existente antes de verificar otro productor."}
-          </p>
+      <StatusScreen
+        params={params}
+        kicker="Solicitud de propiedad"
+        title={
+          accountOwner
+            ? "Ya tienes una ficha verificada"
+            : claimIsForThisProducer && producer
+              ? `Ya has solicitado verificar ${producer.name}`
+              : "Ya tienes una solicitud en revisión"
+        }
+        copy={
+          accountOwner
+            ? "Cada cuenta puede ser titular de una sola ficha. Puedes seguir y recomendar a otros productores."
+            : "Espera a que se resuelva o retírala antes de verificar otra ficha."
+        }
+        actions={
           <Link href="/cuenta/reclamaciones" className="account-button">
-            Ver mis solicitudes y productor
+            Ver mi solicitud
           </Link>
-        </section>
+        }
+      />
+    );
+  }
+
+  const verifiedEmails = await currentVerifiedEmailAddresses();
+
+  if (!producer) {
+    return (
+      <div className="account-content account-content--narrow">
+        <ProducerSearchStep
+          query={first(params.q).trim().slice(0, 160)}
+          verifiedEmails={verifiedEmails}
+          params={
+            validProducerKey
+              ? { error: "Esa ficha ya no está en el catálogo. Búscala de nuevo." }
+              : params
+          }
+        />
       </div>
     );
   }
 
   const instagramProof = await currentInstagramProof(account.id, country, producerId);
+  const channels = producerClaimChannels(producer.fields);
+  const instagramMatches = Boolean(
+    instagramProof && channels.instagram === instagramProof.username.toLowerCase(),
+  );
+  const emailMatches = verifiedEmailMatchesCatalog(channels.email, verifiedEmails);
+  const instagramAvailable = instagramMatches || Boolean(instagramConfiguration());
+  const methods = PRODUCER_CLAIM_METHODS.filter(
+    (method) =>
+      methodChannelAvailable(method, channels) &&
+      (method !== "instagram" || instagramAvailable),
+  );
+  const defaultMethod = instagramMatches
+    ? "instagram"
+    : emailMatches
+      ? "catalog_email"
+      : methods[0];
+  const initialStep =
+    parseClaimWizardStep(first(params.paso)) ?? (instagramProof ? "verificacion" : "ficha");
+
   return (
     <div className="account-content account-content--narrow">
-      <AccountMessage params={params} />
-      <header className="account-section-heading">
-        <div>
-          <p className="catalog-kicker">Solicitud de propiedad</p>
-          <h2>{producer.name}</h2>
-          <p>
-            {producer.city} · {producer.area}
-          </p>
-        </div>
-        <Link
-          href={buildAccountProducerHref(producer, explicitLocale)}
-          className="account-button account-button--secondary"
-        >
-          Perfil público
-        </Link>
-      </header>
-
-      <div className="account-callout">
-        <strong>La titularidad nunca se concede automáticamente.</strong>
-        <p>
-          El equipo revisará la solicitud con la identidad y los datos de contacto públicos. No envíes documentos de identidad en este primer formulario; solo se solicitarán por un canal privado si son necesarios.
-        </p>
-      </div>
-
-      <InstagramClaimConnection country={country} producerId={producerId} enabled={Boolean(instagramConfiguration())}
-        username={instagramProof?.username} matchesCatalog={Boolean(instagramProof && instagramHandle(producer.fields.Instagram) === instagramProof.username.toLowerCase())} />
-      <form action={submitProducerClaimAction} className="account-form">
-        <input type="hidden" name="country" value={producer.country} />
-        <input type="hidden" name="producerId" value={producer.producerId} />
-        <label className="account-field">
-          <span>Método de verificación preferido</span>
-          <select name="method" required defaultValue={instagramProof ? "instagram" : "business_email"}>
-            {instagramProof ? <option value="instagram">Instagram profesional conectado</option> : null}
-            <option value="business_email">Correo oficial del negocio</option>
-            <option value="website">Web del productor</option>
-            <option value="phone">Teléfono público del negocio</option>
-            <option value="document">Documento privado del negocio (se solicitará después)</option>
-            <option value="other">Otro</option>
-          </select>
-        </label>
-        <label className="account-field">
-          <span>Correo de contacto del negocio</span>
-          <input
-            type="email"
-            name="contactEmail"
-            maxLength={254}
-            defaultValue={account.email ?? ""}
-            autoComplete="email"
-          />
-          <small>Utiliza una dirección vinculada al productor siempre que sea posible.</small>
-        </label>
-        <label className="account-field">
-          <span>¿Cómo podemos verificar tu relación con el productor?</span>
-          <textarea
-            name="proof"
-            required
-            minLength={20}
-            maxLength={4_000}
-            rows={7}
-            placeholder="Explica tu función e indica datos de contacto públicos o una forma segura de verificarla."
-          />
-        </label>
-        <button type="submit" className="account-button">
-          Enviar solicitud para revisión
-        </button>
-      </form>
+      <ProducerClaimWizard
+        producer={{
+          country: producer.country,
+          producerId: producer.producerId,
+          name: producer.name,
+          municipality: producer.city,
+          area: findArea(producer.country, producer.area)?.label ?? producer.area,
+          imageSrc: producer.imageSrc === "/productores/generica.webp" ? null : producer.imageSrc,
+          publicHref: buildAccountProducerHref(producer, explicitLocale),
+        }}
+        channels={channels}
+        methods={methods}
+        defaultMethod={defaultMethod}
+        emailMatches={emailMatches}
+        instagramMatches={instagramMatches}
+        searchHref={PRODUCER_ONBOARDING_PATH}
+        initialStep={initialStep}
+        message={{ error: params.error, notice: params.notice }}
+      />
     </div>
   );
 }

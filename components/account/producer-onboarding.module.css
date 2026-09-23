@@ -1,0 +1,462 @@
+/* Focused, one-decision-per-screen onboarding. Phone first; wider screens
+   only centre the column. */
+
+.flow {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--chisan-space-6);
+}
+
+/* Each step replaces the account chrome, so it starts at the top of the phone
+   screen; the flow's own back links lead out of it. */
+:global(.account-shell):has(.flow) > :global(.account-header),
+:global(.account-shell):has(.flow) > :global(.account-nav) {
+  display: none;
+}
+
+.header {
+  display: grid;
+  gap: var(--chisan-space-3);
+}
+
+.topRow {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--chisan-space-3);
+}
+
+.back {
+  min-height: 44px;
+  margin-left: calc(-1 * var(--chisan-space-2));
+  padding: 0 var(--chisan-space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  border: 0;
+  border-radius: var(--chisan-radius-control);
+  background: transparent;
+  color: var(--chisan-color-moss-dark);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.flow .stepCount {
+  margin: 0 0 0 auto;
+  color: var(--chisan-color-stone);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(var(--steps), 1fr);
+  gap: var(--chisan-space-1);
+}
+
+.progress span {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--chisan-color-hairline);
+}
+
+.progress span[data-done="true"] {
+  background: var(--chisan-color-moss);
+}
+
+/* Scoped to the flow so it outranks `.account-content h2/h3`. */
+.flow .title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.flow .lead {
+  margin: 0;
+  color: var(--chisan-color-stone);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.section {
+  display: grid;
+  gap: var(--chisan-space-3);
+}
+
+.flow .sectionTitle {
+  margin: 0;
+  color: var(--chisan-color-stone);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* One selectable choice per card; the native radio stays for accessibility. */
+.choices {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: var(--chisan-space-3);
+}
+
+.choice {
+  min-height: 64px;
+  padding: var(--chisan-space-4);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: var(--chisan-space-3);
+  border: 1px solid var(--chisan-color-stone);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  cursor: pointer;
+  transition:
+    background-color var(--chisan-motion-component) var(--chisan-ease),
+    border-color var(--chisan-motion-component) var(--chisan-ease);
+}
+
+.choice:has(input:checked) {
+  border-color: var(--chisan-color-moss);
+  background: var(--chisan-color-moss-pale);
+}
+
+.choice:has(input:focus-visible) {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.choice input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--chisan-color-moss);
+}
+
+.choiceText {
+  display: grid;
+  gap: var(--chisan-space-1);
+}
+
+.choiceText strong {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.choiceText span {
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.choiceText .badge {
+  justify-self: start;
+  color: var(--chisan-color-moss-dark);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Search */
+.searchForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--chisan-space-2);
+}
+
+.searchForm input {
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 var(--chisan-space-4);
+  border: 1px solid var(--chisan-color-stone);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.searchForm input:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.searchForm button {
+  min-height: 48px;
+}
+
+.results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  border-top: 1px solid var(--chisan-color-hairline);
+}
+
+.results li {
+  border-bottom: 1px solid var(--chisan-color-hairline);
+}
+
+.resultLink {
+  min-height: 72px;
+  padding: var(--chisan-space-3) 0;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: var(--chisan-space-3);
+  color: var(--chisan-color-ink);
+  text-decoration: none;
+}
+
+.resultLink:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+  border-radius: var(--chisan-radius-control);
+}
+
+.thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface-muted);
+  object-fit: cover;
+}
+
+.resultText {
+  min-width: 0;
+  display: grid;
+  gap: var(--chisan-space-1);
+}
+
+.resultText strong {
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resultText span {
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+}
+
+.chevron {
+  color: var(--chisan-color-stone);
+}
+
+.flow .hint {
+  margin: 0;
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.flow .hint a {
+  color: var(--chisan-color-moss-dark);
+}
+
+/* Producer confirmation */
+.producerCard {
+  display: grid;
+  gap: var(--chisan-space-3);
+}
+
+.producerImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface-muted);
+  object-fit: cover;
+}
+
+.flow .producerName {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.flow .producerMeta {
+  margin: 0;
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+}
+
+.textLink {
+  color: var(--chisan-color-moss-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Fields */
+.field {
+  display: grid;
+  gap: var(--chisan-space-2);
+}
+
+.field > span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  border: 1px solid var(--chisan-color-stone);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.field small {
+  color: var(--chisan-color-stone);
+  font-size: 0.8125rem;
+}
+
+.check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: var(--chisan-space-3);
+  color: var(--chisan-color-stone);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.check input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--chisan-color-moss);
+}
+
+/* The primary action stays reachable just above the site's bottom navigation
+   (56px plus the safe area, shown up to 760px). */
+.actions {
+  position: sticky;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+  margin: 0 calc(-1 * var(--chisan-space-4));
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  display: grid;
+  gap: var(--chisan-space-2);
+  border-top: 1px solid var(--chisan-color-hairline);
+  background: var(--chisan-color-surface);
+}
+
+.actions :is(a, button) {
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+}
+
+.actions form {
+  display: grid;
+}
+
+/* Confirmation */
+.done {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss);
+}
+
+.codeBox {
+  padding: var(--chisan-space-4);
+  display: grid;
+  gap: var(--chisan-space-1);
+  border: 1px solid var(--chisan-color-moss);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-moss-pale);
+}
+
+.codeBox span {
+  color: var(--chisan-color-moss-dark);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.flow .code {
+  margin: 0;
+  color: var(--chisan-color-ink);
+  font-size: 2.25rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.18em;
+}
+
+.nextSteps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: var(--chisan-space-4);
+}
+
+.nextSteps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: var(--chisan-space-3);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.nextSteps li::before {
+  content: counter(step);
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--chisan-color-moss);
+  border-radius: 50%;
+  color: var(--chisan-color-moss-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 761px) {
+  .flow {
+    padding-top: var(--chisan-space-8);
+  }
+
+  .flow .title {
+    font-size: 2.25rem;
+  }
+
+  .actions {
+    position: static;
+    margin: 0;
+    padding: 0;
+    border-top: 0;
+    background: transparent;
+  }
+}
