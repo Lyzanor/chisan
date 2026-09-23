@@ -49,7 +49,8 @@ direct sales. A discontinued reference, a service description or an assortment
 resold from other makers does not establish it. Ingredients sold as identifiable
 products to cooks qualify on the same terms as food sold to households; inputs
 that reach the public only anonymously inside another manufacturer's product do
-not establish an own offer. Attribute only the demonstrated output to the unit,
+not establish an own offer. Ingredients made for other food makers and food
+supplements are explicit product-scope exclusions (see the table below). Attribute only the demonstrated output to the unit,
 not the group's whole range.
 
 For a collective, identify its producer members, its actual responsibility for
@@ -73,7 +74,8 @@ Apply the scope above as eight questions, in this order:
 3. **Is the output food or drink for people?** An entity whose relevant output
    is animal feed, breeding stock, agricultural inputs, cosmetics, crafts or
    another non-food product does not qualify through that activity. Apply the
-   explicit product-scope exclusion for plain edible ice below as well.
+   explicit product-scope exclusions below as well: plain edible ice,
+   ingredients made for other food makers and food supplements.
 4. **Does it have an own current offer?** At least one resulting product reaches
    the public under an identity that remains attributable to this producer.
 5. **Can the productive unit be placed?** Its actual productive activity can be
@@ -124,7 +126,9 @@ qualify; a polished profile that fails one scope criterion does not.
 | Shop, headquarters, tasting room or visitor centre separate from production | It may be a contact or visiting fact, but it neither determines catalog placement nor proves the productive location |
 | Washing, peeling, cutting, bagging or freezing fresh produce | Handling is not elaboration, whatever the format, atmosphere or gama it is sold as. A grower qualifies through its own growing; a unit that starts from others' produce qualifies only through a further transforming step such as cooking, roasting, fermenting, curing or preserving |
 | Tea, herb or botanical packer | Roasting, drying, fermenting, infusing or extracting on the unit's own premises is elaboration, as it is for coffee. Blending and packing leaf or botanicals bought ready-processed is not |
-| Ingredient producer serving professional kitchens | Include a qualifying own ingredient range attributable to the unit. A professional customer does not make the offer anonymous; a unit making only inputs that lose their identity inside another manufacturer's product remains `out-of-scope` |
+| Ingredient producer serving professional kitchens | Include a qualifying own ingredient range attributable to the unit. A professional customer does not make the offer anonymous; a unit making only inputs that lose their identity inside another manufacturer's product remains `out-of-scope`, and so does a maker of ingredients for other food makers (next row) |
+| Maker of ingredients for other food makers | Explicit product-scope exclusion, decided 2026-09-23: `out-of-scope` even under its own brand. It covers fillings, creams, coatings and compound chocolate, mixes, improvers, sourdoughs, bases, pastes and decorations sold to bakeries, pastry and ice-cream workshops or industry, and snack pellets sold to snack makers. Review any consumer food line independently |
+| Food supplement maker | Explicit product-scope exclusion, decided 2026-09-23: capsules, extracts, powders and other products sold as food supplements (`complementos alimenticios`) are `out-of-scope`, whether sold to consumers or pharmacies. Review any ordinary food line independently |
 | Unit producing only plain edible ice | Explicit current product-scope exclusion: `out-of-scope`, even when production, identity and municipality are established. This is not a finding that the unit has no origin, nor a general exclusion of commodities. Review any other food or drink line independently |
 
 One row represents one qualifying productive unit through its public producer

@@ -727,7 +727,6 @@
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Boscum | Olot | `Fruta y verdura` — Organic cultivated mushrooms on log wood | Ecological farm in Garrotxa growing shiitake, chaga and specialty mushrooms on natural wood logs. | [HelloBo marketplace](https://app.hellobo.eu/search/products) | <http://boscum.com/> | The shop sells only medicinal-mushroom extracts (supplements), inoculated plugs and logs, and courses; RGSEAA added a dried plant products registration at Mestre Turina 95, Olot, on 2026-01-23: confirm an edible fresh or dried mushroom offer from its own growing. |
 
 ## Girona municipality exhaustive discovery pass — 2026-09-07
 
