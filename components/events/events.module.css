@@ -1,50 +1,284 @@
+/*
+ * Editorial fairs: the agenda, each event page and its cards in Descubrir.
+ * Eyebrows, buttons, links and cards are the shared primitives.
+ */
+
 .page {
-  width: min(1280px, calc(100% - 2rem));
-  margin: 1.5rem auto 5rem;
   display: grid;
-  gap: var(--chisan-space-8, 2rem);
-  color: var(--text);
+  gap: var(--chisan-space-10);
+  width: min(var(--chisan-container), 100% - 2 * var(--chisan-gutter));
+  margin: var(--chisan-space-8) auto var(--chisan-section-gap);
+  color: var(--chisan-color-ink);
 }
 
-.breadcrumb { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); }
-.breadcrumb a, .sourceNote a, .sources a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
-.breadcrumb a:focus-visible, .sourceNote a:focus-visible, .sources a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.header { display: grid; gap: var(--chisan-space-4, 1rem); max-width: 76ch; }
-.eyebrow, .cardEyebrow { margin: 0; color: var(--accent-text); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
-.header h1 { margin: 0; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 400; line-height: 1.08; }
-.header > p:not(.eyebrow) { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.55; color: var(--muted); }
-.facts { display: grid; gap: var(--chisan-space-3, 0.75rem); margin-top: var(--chisan-space-4, 1rem); }
-.facts > div { display: grid; gap: 0.3rem; padding-block: var(--chisan-space-3, 0.75rem); border-top: 1px solid var(--line); }
-.facts span { color: var(--muted); font-size: 0.85rem; }
-.facts strong { font-weight: 500; line-height: 1.4; }
-.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.actions a { min-height: 44px; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: var(--chisan-radius-control, 8px); text-decoration: none; color: var(--surface); background: var(--accent); font-weight: 500; }
-.actions a + a { background: var(--surface); color: var(--accent-text); border: 1px solid var(--accent); }
-.actions a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.section { min-width: 0; display: grid; gap: var(--chisan-space-3, 0.75rem); scroll-margin-top: 5rem; }
-.section h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; }
-.section > p { max-width: 76ch; margin: 0; line-height: 1.55; color: var(--muted); }
-.eventGrid { display: grid; gap: var(--chisan-space-4, 1rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-.eventCard { display: grid; align-content: start; gap: 0.55rem; min-height: 230px; padding: var(--chisan-space-6, 1.5rem); border: 1px solid var(--line); border-radius: var(--chisan-radius-object, 12px); color: var(--text); text-decoration: none; background: var(--surface); }
-.eventCard:hover { border-color: var(--accent); }
-.eventCard:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.cardTitle { font-size: 1.4rem; line-height: 1.2; font-weight: 500; }
-.cardDates { font-size: 0.88rem; color: var(--accent-text); font-weight: 500; }
-.cardDescription { font-size: 0.9rem; line-height: 1.45; color: var(--muted); }
-.cardAction { margin-top: auto; padding-top: var(--chisan-space-4, 1rem); color: var(--accent-text); font-size: 0.9rem; font-weight: 500; }
-.exhibitorDetails { border: 1px solid var(--line); border-radius: var(--chisan-radius-object, 12px); overflow: hidden; }
-.exhibitorDetails summary { cursor: pointer; min-height: 44px; padding: 0.75rem 1rem; color: var(--accent-text); font-weight: 500; }
-.exhibitorDetails summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
-.standGrid { padding: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1rem; border-top: 1px solid var(--line); }
-.standGroup { min-width: 0; }
-.standGroup h3 { margin: 0 0 0.35rem; font-size: 0.9rem; color: var(--muted); font-weight: 500; }
-.standGroup ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.2rem; }
-.standGroup a { min-height: 44px; display: flex; align-items: center; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; line-height: 1.3; }
-.standGroup a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.sources { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
-.sources li { display: grid; gap: 0.2rem; }
-.sources span, .sourceNote { font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--chisan-space-2);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+}
+
+.breadcrumb a,
+.sourceNote a,
+.sources a {
+  color: var(--chisan-color-moss-dark);
+  text-decoration-color: var(--chisan-color-moss-line);
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+}
+
+@media (hover: hover) {
+  .breadcrumb a:hover,
+  .sourceNote a:hover,
+  .sources a:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.header {
+  display: grid;
+  gap: var(--chisan-space-4);
+  max-width: 76ch;
+}
+
+.header :global(.chisan-eyebrow) {
+  margin: 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: var(--chisan-font-title);
+  font-weight: var(--chisan-weight-display);
+  letter-spacing: var(--chisan-tracking-title);
+  line-height: var(--chisan-leading-title);
+}
+
+.header > p:not(:global(.chisan-eyebrow)) {
+  margin: 0;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-lead);
+}
+
+/* When and where: two quiet fact tiles. */
+.facts {
+  display: grid;
+  gap: var(--chisan-space-3);
+  margin-top: var(--chisan-space-2);
+}
+
+.facts > div {
+  display: grid;
+  gap: var(--chisan-space-1);
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface-muted);
+}
+
+.facts span {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+}
+
+.facts strong {
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--chisan-space-3);
+}
+
+.section {
+  display: grid;
+  gap: var(--chisan-space-4);
+  min-width: 0;
+  padding-top: var(--chisan-space-8);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+  scroll-margin-top: var(--chisan-space-24);
+}
+
+.section h2 {
+  margin: 0;
+  font-size: var(--chisan-font-heading);
+}
+
+.section > p {
+  max-width: 76ch;
+  margin: 0;
+  color: var(--chisan-color-stone);
+}
+
+/* Event cards: date first, then place, as one selectable object. */
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--chisan-space-4);
+}
+
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--chisan-space-2);
+  min-height: 230px;
+  padding: var(--chisan-space-6);
+}
+
+.eventCard :global(.chisan-eyebrow) {
+  margin: 0;
+}
+
+.cardTitle {
+  font-size: var(--chisan-font-subheading);
+  font-weight: var(--chisan-weight-heading);
+  letter-spacing: var(--chisan-tracking-heading);
+  line-height: var(--chisan-leading-subheading);
+}
+
+.cardDates {
+  color: var(--chisan-color-moss-dark);
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
+}
+
+.cardDescription {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+  line-height: var(--chisan-leading-body);
+}
+
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  margin-top: auto;
+  padding-top: var(--chisan-space-4);
+  color: var(--chisan-color-moss-dark);
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
+}
+
+/* Choose an exhibitor: a disclosure that opens with its height. */
+.exhibitorDetails {
+  overflow: hidden;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+}
+
+.exhibitorDetails summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  color: var(--chisan-color-moss-dark);
+  font-weight: var(--chisan-weight-interface);
+  transition: background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.exhibitorDetails summary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  rotate: 45deg;
+  translate: 0 -2px;
+  transition:
+    rotate var(--chisan-motion-component) var(--chisan-ease),
+    translate var(--chisan-motion-component) var(--chisan-ease);
+}
+
+.exhibitorDetails[open] summary::after {
+  rotate: 225deg;
+  translate: 0 2px;
+}
+
+@media (hover: hover) {
+  .exhibitorDetails summary:hover {
+    background: var(--chisan-color-moss-pale);
+  }
+}
+
+.exhibitorDetails summary:focus-visible {
+  outline-offset: -3px;
+}
+
+.standGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--chisan-space-4);
+  padding: var(--chisan-space-4);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+}
+
+.standGroup {
+  min-width: 0;
+}
+
+.standGroup h3 {
+  margin: 0 0 var(--chisan-space-1);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
+  text-transform: uppercase;
+}
+
+.standGroup ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.standGroup a {
+  display: flex;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+  color: var(--chisan-color-moss-dark);
+  line-height: var(--chisan-leading-ui);
+  text-decoration-color: var(--chisan-color-moss-line);
+  text-underline-offset: 0.25em;
+}
+
+@media (hover: hover) {
+  .standGroup a:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.sources {
+  display: grid;
+  gap: var(--chisan-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sources li {
+  display: grid;
+  gap: var(--chisan-space-1);
+}
+
+.sources span,
+.sourceNote {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+  line-height: var(--chisan-leading-body);
+}
 
 @media (min-width: 700px) {
-  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

@@ -63,6 +63,12 @@ markup changes are class renames onto the same primitives.
 `test:catalog-geography`, the root-layout and marker tests and
 `BASE_URL=… test:behavior` passed.
 
+The editorial events added the same day (agenda, event pages and the Descubrir
+row) now compose the same primitives: eyebrow, primary and secondary buttons,
+link with arrow and card, with fact tiles, a height-animated exhibitor
+disclosure and title/heading roles. Shelf and fair-plan views keep their zoom
+and point logic on the tokenised shelf module; their tabs are chips.
+
 ## 2026-09-23 — Guide reading roles and editorial revision notes
 
 Reused the existing guide styles for reference, practical, seasonal and story

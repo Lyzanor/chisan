@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { ProducerSelectionExplorer } from "@/components/producer-selection-explorer";
 import { selectionPageMessages } from "@/lib/accounts/selection-presentation";
 import { EVENTS_PATH, eventPath } from "@/lib/events/routes";
@@ -36,26 +37,26 @@ export function EventPage({ event, selection }: { event: EditorialEvent; selecti
       <span aria-current="page">{event.title}</span>
     </nav>
     <header className={styles.header}>
-      <p className={styles.eyebrow}>Evento seleccionado · {event.category}</p>
-      <h1>{event.title}</h1>
+      <p className="chisan-eyebrow">Evento seleccionado · {event.category}</p>
+      <h1 className="chisan-enter">{event.title}</h1>
       <p>{event.description}</p>
       <div className={styles.facts}>
         <div><span>Cuándo</span><strong><time dateTime={event.startDate}>{formatEventDate(event.startDate)}</time> — <time dateTime={event.endDate}>{formatEventDate(event.endDate)}</time></strong></div>
         <div><span>Dónde</span><strong>{event.venue.name}, {event.venue.municipality}</strong></div>
       </div>
       <div className={styles.actions}>
-        <a href={event.organizerUrl} target="_blank" rel="noopener noreferrer">Programa oficial <span aria-hidden="true">↗</span></a>
-        <a href={locationUrl} target="_blank" rel="noopener noreferrer">Abrir ubicación <span aria-hidden="true">↗</span></a>
+        <a className="chisan-button chisan-button--primary" href={event.organizerUrl} target="_blank" rel="noopener noreferrer">Programa oficial <ArrowUpRightIcon className="chisan-arrow" size={18} aria-hidden="true" /></a>
+        <a className="chisan-button" href={locationUrl} target="_blank" rel="noopener noreferrer">Abrir ubicación <ArrowUpRightIcon className="chisan-arrow" size={18} aria-hidden="true" /></a>
       </div>
     </header>
-    <section className={styles.section} aria-labelledby="venue-title">
+    <section className={styles.section} data-reveal aria-labelledby="venue-title">
       <h2 id="venue-title">Lugar de la feria</h2>
       <p>{event.venue.name} está en {event.venue.municipality}. Coordenadas del evento: {event.venue.latitude}, {event.venue.longitude}. El mapa de productores de abajo indica sus lugares de producción.</p>
     </section>
-    <section className={styles.section} aria-labelledby="exhibitors-title">
+    <section className={styles.section} data-reveal aria-labelledby="exhibitors-title">
       <h2 id="exhibitors-title">Expositores en Chisan</h2>
       <p>{event.editorialNote}</p>
-      <details className={styles.exhibitorDetails}>
+      <details className={`chisan-disclosure ${styles.exhibitorDetails}`}>
         <summary>Elegir expositor ({selection.items.length})</summary>
         <div className={styles.standGrid}>
           {[...exhibitorsByStand].map(([stand, items]) => <div key={stand} className={styles.standGroup}>
@@ -79,7 +80,7 @@ export function EventPage({ event, selection }: { event: EditorialEvent; selecti
       />
       {event.plan ? <p className={styles.sourceNote}>Plano: {event.plan.credit}. <a href={event.plan.sourceUrl} target="_blank" rel="noopener noreferrer">Ver el original ↗</a> · Consultado el <time dateTime={event.plan.checkedAt}>{formatEventDate(event.plan.checkedAt)}</time>. {event.plan.rights}</p> : null}
     </section>
-    <section className={styles.section} aria-labelledby="sources-title">
+    <section className={styles.section} data-reveal aria-labelledby="sources-title">
       <h2 id="sources-title">Fuentes y revisión</h2>
       <ul className={styles.sources}>{event.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a><span>Consultada el <time dateTime={source.checkedAt}>{formatEventDate(source.checkedAt)}</time></span></li>)}</ul>
       <p className={styles.sourceNote}>Selección revisada por Chisan el <time dateTime={event.updatedAt}>{formatEventDate(event.updatedAt)}</time>. La organización puede cambiar expositores y horarios; comprueba su información antes de desplazarte.</p>
