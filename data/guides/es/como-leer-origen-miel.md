@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Miel
-title: "Cómo leer el origen de la miel: países, porcentajes y apicultor"
+title: "De dónde viene la miel de ese tarro"
 description: Qué cambia en el etiquetado desde junio de 2026, cómo leer una mezcla y por qué la dirección del envasador no equivale al lugar de recolección.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

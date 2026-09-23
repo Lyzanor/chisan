@@ -7,7 +7,7 @@ status: published
 publishedAt: 2026-09-23
 kind: seasonal
 topic: Despensa
-title: "La despensa de otoño: fruta, legumbres y aceite de nueva cosecha"
+title: "Lo que trae el otoño a la despensa"
 description: "De septiembre a noviembre: qué preguntar al comprar fruta, legumbre seca y aceite, y cómo distinguir cosecha, elaboración y disponibilidad."
 cover:
   src: /editorial/guides/despensa-otono-fruta.webp

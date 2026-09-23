@@ -12,7 +12,7 @@ export type ProducerDistanceMessages = Readonly<{
 }>;
 
 const ENGLISH_MESSAGES = {
-  title: "Distance from me",
+  title: "How far away am I?",
   description:
     "Calculate the approximate distance from your current location. Your position stays in this browser and is not saved.",
   action: "Calculate distance",
@@ -28,7 +28,7 @@ const PRODUCER_DISTANCE_MESSAGES: Partial<
 > = {
   en: ENGLISH_MESSAGES,
   es: {
-    title: "Distancia desde mi ubicación",
+    title: "¿Cómo de lejos estoy?",
     description:
       "Calcula la distancia aproximada desde donde estás. Tu posición permanece en este navegador y no se guarda.",
     action: "Calcular distancia",
@@ -39,7 +39,7 @@ const PRODUCER_DISTANCE_MESSAGES: Partial<
     unavailable: "Tu ubicación no está disponible en este navegador.",
   },
   ca: {
-    title: "Distància des de la meva ubicació",
+    title: "A quina distància soc?",
     description:
       "Calcula la distància aproximada des d'on ets. La teva posició es queda en aquest navegador i no es desa.",
     action: "Calcula la distància",

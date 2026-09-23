@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRightIcon, ClockIcon, PencilSimpleIcon } from "@phosphor-icons/react";
+import { ArrowUpRightIcon, ClockIcon, PlusIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ChisanMascot } from "@/components/brand/chisan-brand";
@@ -43,7 +43,8 @@ export function ProducerSuggestionAction({
 
   // Only an unclaimed producer accepts community corrections: once ownership is
   // verified, its holder maintains the profile through the producer editor.
-  if (activeOwner || membership || claim) return null;
+  if (membership) return <Link prefetch={false} className="chisan-button chisan-button--quiet chisan-button--icon" href={`/cuenta/productores/${country}/${producerId}/editar`} aria-label={messages.editMyProfile} title={messages.editMyProfile}><PlusIcon size={20} aria-hidden="true" /></Link>;
+  if (activeOwner || claim) return null;
 
   const suggestionPath = newProducerSuggestionPath(country, producerId);
   const href = !signedIn
@@ -53,9 +54,8 @@ export function ProducerSuggestionAction({
       : suggestionPath;
 
   return (
-    <Link prefetch={false} className="detail-suggest" href={href}>
-      <PencilSimpleIcon size={18} aria-hidden="true" />
-      {openSuggestion ? messages.viewMySuggestions : messages.suggestChanges}
+    <Link prefetch={false} className="chisan-button chisan-button--quiet chisan-button--icon" href={href} aria-label={openSuggestion ? messages.viewMySuggestions : messages.suggestChanges} title={openSuggestion ? messages.viewMySuggestions : messages.suggestChanges}>
+      <PlusIcon size={18} aria-hidden="true" />
     </Link>
   );
 }

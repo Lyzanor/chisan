@@ -34,7 +34,7 @@ export type ActivityFeaturedProducer = {
   city: string;
   category: string;
   imageSrc: string;
-  featuredProducts?: string;
+  description?: string;
   href: string;
 };
 
@@ -122,7 +122,7 @@ export async function getEditorialFeaturedProducers(
           city: row.city,
           category: row.category,
           imageSrc: row.imageSrc,
-          featuredProducts: row.featuredProducts || undefined,
+          description: row.fields.descripcion || undefined,
           href: buildAccountProducerHref(located, null),
         };
       });

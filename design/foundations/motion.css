@@ -32,6 +32,11 @@
   }
 }
 
+@keyframes chisan-landscape-breeze {
+  from { transform: scale(1.02) rotate(-0.2deg); }
+  to { transform: scale(1.035) rotate(0.2deg); }
+}
+
 @keyframes chisan-spin {
   to {
     rotate: 1turn;
@@ -47,29 +52,16 @@
   }
 }
 
-/* Content rises into place as it enters the viewport, tied to scroll rather
- * than a timer, so fast scrolling simply shows it. Without scroll timelines
- * the content is already in place. */
-@keyframes chisan-reveal {
-  from {
-    opacity: 0;
-    translate: 0 2.5rem;
-  }
-}
-
+/* The shared page shell reveals each section once, including in browsers
+ * without scroll timelines. With no JavaScript the content remains visible. */
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    [data-reveal],
-    [data-reveal-stagger] > * {
-      animation: chisan-reveal linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 30vh;
-    }
+  [data-reveal-state="pending"] {
+    opacity: 0;
+    translate: 0 var(--chisan-space-4);
+  }
 
-    [data-reveal-stagger] > :nth-child(2) { animation-range: entry 2vh entry 32vh; }
-    [data-reveal-stagger] > :nth-child(3) { animation-range: entry 4vh entry 34vh; }
-    [data-reveal-stagger] > :nth-child(4) { animation-range: entry 6vh entry 36vh; }
-    [data-reveal-stagger] > :nth-child(n + 5) { animation-range: entry 8vh entry 38vh; }
+  [data-reveal-state="visible"] {
+    animation: chisan-fade-up var(--chisan-motion-reveal) var(--chisan-ease) both;
   }
 
   /* Full document navigations between root layouts crossfade; the header and

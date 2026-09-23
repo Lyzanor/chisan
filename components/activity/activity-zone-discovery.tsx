@@ -239,8 +239,8 @@ export function ActivityZoneDiscovery({
               <span className={styles.producerCategory}>{producer.category}</span>
               <h3 className={styles.producerName}>{producer.name}</h3>
               <span className={styles.producerCity}>{producer.city}</span>
-              {producer.featuredProducts ? (
-                <p className={styles.producerProducts}>{producer.featuredProducts}</p>
+              {producer.description ? (
+                <p className={styles.producerProducts}>{producer.description}</p>
               ) : null}
             </div>
           </Link>

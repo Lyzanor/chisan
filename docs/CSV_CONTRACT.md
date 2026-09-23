@@ -736,6 +736,12 @@ activity or online sales.
 
 This section covers the base `imagen`; gallery records follow `docs/PRODUCER_CONTENT.md`.
 
+`imagen` is the producer's reviewed visual identity, normally its official
+logo or wordmark. It is displayed beside the name, never promoted into a cover
+photograph. Existing attributable photo fallbacks remain valid; do not relabel
+them as logos without checking the asset. Documentary photos belong to the
+reviewed gallery. No extra CSV image-role column is needed for this presentation.
+
 `imagen` may be empty. When filled it must:
 
 - be a safe root-relative path to a supported image under `public/`;

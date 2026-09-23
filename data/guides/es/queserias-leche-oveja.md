@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Queserías de leche de oveja: del queso de corte a la crema"
+title: "Otras formas de disfrutar el queso de oveja"
 description: Cómo comparar quesos de oveja por elaboración, textura, maduración y formato, con ejemplos que van de la pieza de corte a otras presentaciones.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

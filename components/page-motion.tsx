@@ -21,6 +21,46 @@ export function PageMotion({ children }: { children: ReactNode }) {
   useEffect(() => {
     const element = surface.current;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!element || !window.IntersectionObserver) return;
+    const targets = new Set<HTMLElement>();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        (target as HTMLElement).dataset.revealState = "visible";
+        observer.unobserve(target);
+      });
+    }, { rootMargin: "0px 0px -24px 0px" });
+    const discover = () => {
+      element.querySelectorAll<HTMLElement>("[data-reveal], [data-reveal-stagger] > *").forEach((target) => {
+        if (targets.has(target)) return;
+        targets.add(target);
+        // Content already in view and reduced-motion visits stay visible.
+        if (preference.matches || target.getBoundingClientRect().top < window.innerHeight) return;
+        target.dataset.revealState = "pending";
+        observer.observe(target);
+      });
+    };
+    const stop = () => {
+      if (!preference.matches) return;
+      observer.disconnect();
+      targets.forEach((target) => target.removeAttribute("data-reveal-state"));
+    };
+    discover();
+    // Also cover sections streamed into the shared page shell.
+    const additions = new MutationObserver(discover);
+    additions.observe(element, { childList: true, subtree: true });
+    preference.addEventListener("change", stop);
+    return () => {
+      observer.disconnect();
+      additions.disconnect();
+      preference.removeEventListener("change", stop);
+      targets.forEach((target) => target.removeAttribute("data-reveal-state"));
+    };
+  }, [pathname]);
+
+  useEffect(() => {
+    const element = surface.current;
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!element?.animate || preference.matches) return;
 
     const styles = getComputedStyle(element);

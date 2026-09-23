@@ -17,19 +17,21 @@ added to CSV, content JSON, public HTML, structured data or catalog APIs.
 ## Plan boundary
 
 [Registered account model](ACCOUNT_SYSTEM.md#registered-account-model) owns the
-two free/Pro families. The target professional channel requires User Pro for
+two free/Pro families. The professional channel requires User Pro for
 buyer interactions and Producer Pro for supplier interactions, together with
 the existing business-context and exact-membership checks. Ordinary public
 contact remains free. “B2B requests” describes enquiries and conversations;
 confirmed orders, payment and stock reservation require a separate scope.
 
-Current enforcement already requires supplier Pro but lets any active account
-with enabled business context initiate and answer buyer enquiries. Introducing
-the User Pro requirement is a pending behavior change: update the shared
-service, entry points, copy and tests together. Preserve authorized access to
-existing conversation history after Pro ends. Business context remains private;
-the planned public User Pro business profile needs explicit public fields and
-visibility choices, rather than exposing these enquiry records.
+The shared service rechecks User Pro and enabled private business context inside
+buyer mutations, and Producer Pro plus exact membership for supplier mutations.
+Both routes and API consumers use this boundary. Existing participants retain
+read access to their conversation history and can close enquiries after Pro
+ends; sending and replying require the relevant active entitlement. The public
+`/pro` entry explains both plans and preserves the intended producer through
+registration and account setup. Activation remains by consultation; it does not
+start a payment or enable the feature flag. Business context remains private;
+a public business profile needs explicit fields and visibility choices.
 
 ## Current working flow
 

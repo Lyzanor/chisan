@@ -3,6 +3,7 @@ import { ProductPurchaseDetails } from "./product-purchase-details";
 import { isDemoProducer } from "@/lib/catalog/product-commerce";
 
 import Image from "next/image";
+import { ProducerLinkCard } from "@/components/producer-link-card";
 import { standaloneProducerGallery } from "@/lib/catalog/content-schema";
 import { ProducerPhotoDetails } from "@/components/producer-photo-details";
 import { producerProfileLabels } from "@/lib/i18n/producer-profile";
@@ -17,22 +18,77 @@ export function ProducerContent({
   content,
   locale,
   showGallery = true,
+  showProducts = true,
+  identityImageSrc = "",
 }: {
   content: Content;
   locale: Locale;
   showGallery?: boolean;
+  showProducts?: boolean;
+  identityImageSrc?: string;
 }) {
+  const labels = getProducerContentLabels(locale);
+  const gallery = standaloneProducerGallery(content);
+  return (
+    <div className={styles.content}>
+      {showProducts && content.products.length ? (
+        <section aria-labelledby="producer-content-products">
+          <h2 id="producer-content-products">{labels.products}</h2>
+          <ProducerProductCards content={content} locale={locale} />
+        </section>
+      ) : null}
+      {showGallery && gallery.length ? (
+        <section aria-labelledby="producer-content-gallery">
+          <h2 id="producer-content-gallery">{labels.gallery}</h2>
+          <div className={styles.gallery}>
+            {gallery.map((item) => (
+              <figure key={item.id} id={`media-${item.id}`}>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  lang={item.locale}
+                  width={item.width}
+                  height={item.height}
+                  sizes="(max-width: 600px) 90vw, 400px"
+                  loading="lazy"
+                />
+                {item.caption || item.credit ? (
+                  <figcaption lang={item.locale}>
+                    {item.caption}
+                    {item.caption && item.credit ? " · " : ""}
+                    {item.credit}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      {content.links.length ? (
+        <section aria-labelledby="producer-content-links">
+          <h2 id="producer-content-links">{labels.links}</h2>
+          <ul className="chisan-link-cards">
+            {content.links.map((item) => {
+              const product = content.products.find((product) => product.link_ids.includes(item.id) && product.media_ids.length);
+              const photo = content.gallery.find((photo) => photo.id === product?.media_ids[0]);
+              return <li key={item.id} id={`link-${item.id}`}>
+                <ProducerLinkCard href={item.url} label={item.label} locale={item.locale} imageSrc={photo?.src || identityImageSrc} identity={!photo} />
+              </li>;
+            })}
+          </ul>
+        </section>
+      ) : null}
+    </div>
+  );
+}
+
+export function ProducerProductCards({ content, locale }: { content: Content; locale: Locale }) {
   const season = producerSeasonLabels(locale);
   const labels = getProducerContentLabels(locale);
   const captionLabel = producerProfileLabels(locale).photoCaption;
   const media = new Map(content.gallery.map((item) => [item.id, item]));
-  const gallery = standaloneProducerGallery(content);
   const links = new Map(content.links.map((item) => [item.id, item]));
   return (
-    <div className={styles.content}>
-      {content.products.length ? (
-        <section aria-labelledby="producer-content-products">
-          <h2 id="producer-content-products">{labels.products}</h2>
           <ul className={styles.products} tabIndex={content.products.length > 1 ? 0 : undefined}>
             {content.products.map((product) => (
               <li key={product.id} id={`product-${product.id}`}>
@@ -85,55 +141,5 @@ export function ProducerContent({
               </li>
             ))}
           </ul>
-        </section>
-      ) : null}
-      {showGallery && gallery.length ? (
-        <section aria-labelledby="producer-content-gallery">
-          <h2 id="producer-content-gallery">{labels.gallery}</h2>
-          <div className={styles.gallery}>
-            {gallery.map((item) => (
-              <figure key={item.id} id={`media-${item.id}`}>
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  lang={item.locale}
-                  width={item.width}
-                  height={item.height}
-                  sizes="(max-width: 600px) 90vw, 400px"
-                  loading="lazy"
-                />
-                {item.caption || item.credit ? (
-                  <figcaption lang={item.locale}>
-                    {item.caption}
-                    {item.caption && item.credit ? " · " : ""}
-                    {item.credit}
-                  </figcaption>
-                ) : null}
-              </figure>
-            ))}
-          </div>
-        </section>
-      ) : null}
-      {content.links.length ? (
-        <section aria-labelledby="producer-content-links">
-          <h2 id="producer-content-links">{labels.links}</h2>
-          <ul className={styles.featuredLinks}>
-            {content.links.map((item) => (
-              <li key={item.id} id={`link-${item.id}`}>
-                <a
-                  href={item.url}
-                  lang={item.locale}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <span className={styles.linkPreview} aria-hidden="true">{new URL(item.url).hostname.replace(/^www\./, "").slice(0, 1).toUpperCase()}</span>
-                  <span className={styles.linkCopy}><strong>{item.label}</strong><small>{new URL(item.url).hostname.replace(/^www\./, "")}</small></span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-    </div>
   );
 }

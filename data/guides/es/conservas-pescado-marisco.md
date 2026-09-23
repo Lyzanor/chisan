@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Despensa
-title: "Conservas de pescado y marisco: especie, elaboración y origen"
+title: "El mar dentro de una conserva"
 description: "Qué comparar en una conserva: especie, preparación, líquido de cobertura, peso escurrido y lugar de elaboración, con ejemplos de conserveras."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

@@ -6,6 +6,8 @@ import { producerMemberships } from "@/lib/db/schema";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getBusinessService } from "@/lib/b2b/runtime";
 import { B2B_ROOT, isB2BEnabled } from "@/lib/b2b/policy";
+import { getActiveUserProfilePremiumEntitlement } from "@/lib/accounts/profile-qr-entitlements";
+import { USER_PRO_PATH } from "@/lib/accounts/pro-paths";
 import { ProfileForm } from "@/components/b2b/forms";
 export default async function ProfessionalPage({
   searchParams,
@@ -17,7 +19,8 @@ export default async function ProfessionalPage({
     return (
       <div className="account-content">
         <h2>Canal profesional</h2>
-        <p>El canal profesional está pendiente de activación.</p>
+        <p>El canal profesional está en preparación. Usuario Pro dará acceso a las solicitudes B2B cuando esté disponible.</p>
+        <Link className="chisan-button chisan-button--primary" href={USER_PRO_PATH}>Conocer Usuario Pro</Link>
       </div>
     );
   const page = Math.max(
@@ -25,6 +28,7 @@ export default async function ProfessionalPage({
     Math.min(200, Number((await searchParams).page) || 0),
   );
   const service = getBusinessService();
+  const userPro = await getActiveUserProfilePremiumEntitlement(account.id);
   const [profile, inbox, memberships] = await Promise.all([
     service.profile(account.id),
     service.inbox(account.id, page * 50),
@@ -61,6 +65,7 @@ export default async function ProfessionalPage({
         Consultas de suministro para restaurantes, hostelería y tiendas. El
         contacto para compras particulares sigue disponible en la ficha pública.
       </p>
+      {!userPro ? <p>Prepara tus datos gratis. Para enviar solicitudes B2B necesitas Usuario Pro. <Link className="chisan-button" href={USER_PRO_PATH}>Activar Usuario Pro</Link></p> : null}
       <section>
         <h3>Tu negocio</h3>
         <ProfileForm initial={profile} />

@@ -7,7 +7,7 @@ status: published
 publishedAt: 2026-09-23
 kind: reference
 topic: Despensa
-title: "Comprar directamente a productores: cómo encontrar, elegir y pedir"
+title: "Tu primera compra al productor"
 description: "Del mapa al pedido: cómo comprobar quién produce, distinguir venta directa y canal corto y organizar una compra de alimentos sin acumular de más."
 cover:
   src: /editorial/guides/compra-directa-mercado.webp

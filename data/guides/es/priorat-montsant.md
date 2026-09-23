@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Priorat y Montsant: dos denominaciones para leer por separado"
+title: "Priorat y Montsant no son el mismo vino"
 description: Cómo distinguir comarca, DOQ Priorat y DO Montsant; cinco proyectos para seguir la botella, el lugar y la clasificación sin confundirlos.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

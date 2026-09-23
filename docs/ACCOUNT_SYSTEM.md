@@ -112,7 +112,7 @@ account's statement, not Chisan verification of a supply relationship, menu or
 current stock. Private business enquiry data never becomes public merely
 because the account adds Pro or enables its public profile.
 
-In the target model, initiating or continuing buyer-side B2B enquiries requires
+Initiating or continuing buyer-side B2B enquiries requires
 User Pro and an enabled business context. Receiving and answering as supplier
 requires Producer Pro and the exact membership, plus the published professional
 availability and product rules in [Professional enquiries](PROFESSIONAL_ENQUIRIES.md).
@@ -154,7 +154,7 @@ Account suspension and membership revocation remain independent access checks.
 
 ### Implementation boundary
 
-This definition does not activate payments or change runtime authorization.
+This definition does not activate payments.
 The detailed contracts below describe current enforcement. The remaining
 differences are explicit:
 
@@ -165,10 +165,14 @@ differences are explicit:
 - Current business profiles are private enquiry context. The public business
   profile and richer visual selection need their own implemented presentation
   and privacy rules; do not publish private business fields by reuse.
-- Current B2B buyer access checks active account and business context, without
-  User Pro. Applying the target Pro boundary requires updating the shared
-  service, navigation, copy and tests together, while preserving existing
-  participants' historical access. Supplier Pro checks already exist.
+- B2B buyer access now enforces User Pro and enabled private business context
+  in the shared service. Supplier Pro and exact membership remain required.
+  Historical access and closing a conversation survive entitlement expiry.
+- `/pro` is the shared public explanation and onboarding entry for both plans.
+  Product additions preserve the producer key through registration and account
+  setup, then lead to ownership verification or the existing producer upgrade
+  flow. User Pro uses a conditions enquiry with Chisan. Neither entry activates
+  payment, a Pro entitlement or B2B operational availability automatically.
 - Current claims require an existing catalog producer. A continuous new-producer
   onboarding flow still needs the candidate-to-publication handoff; editorial
   admission and ownership review remain distinct decisions.

@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Miel
-title: "Miel de La Alcarria y Miel de Liébana: dos nombres de origen"
+title: "De La Alcarria a Liébana, dos mieles con origen"
 description: Cómo comparar Miel de La Alcarria y Miel de Liébana a partir de sus nombres protegidos y del producto, con ejemplos del catálogo.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

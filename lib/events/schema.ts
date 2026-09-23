@@ -6,6 +6,17 @@ const date = z.iso.date();
 const httpsUrl = z.url().refine((url) => new URL(url).protocol === "https:", "Use an HTTPS URL");
 const identity = z.strictObject({ country: z.literal("es"), producerId: z.number().int().positive() });
 
+const eventImage = z.strictObject({
+  src: text.regex(/^\/editorial\/events\/[a-z0-9-]+\.(?:webp|png|jpg)$/),
+  alt: text,
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  credit: text,
+  sourceUrl: httpsUrl,
+  rights: text,
+  checkedAt: date,
+});
+
 export const eventSchema = z.strictObject({
   schemaVersion: z.literal(1),
   slug,
@@ -15,6 +26,7 @@ export const eventSchema = z.strictObject({
   featuredInDiscover: z.boolean(),
   title: text,
   description: text,
+  image: eventImage.optional(),
   category: z.enum(["Vinos", "Quesos", "Alimentos", "Bebidas"]),
   startDate: date,
   endDate: date,
@@ -29,15 +41,7 @@ export const eventSchema = z.strictObject({
   organizerName: text,
   editorialNote: text,
   exhibitors: z.array(identity.extend({ stand: text.optional() })).min(1),
-  plan: z.strictObject({
-    src: text.regex(/^\/editorial\/events\/[a-z0-9-]+\.(?:webp|png|jpg)$/),
-    alt: text,
-    width: z.number().int().positive(),
-    height: z.number().int().positive(),
-    credit: text,
-    sourceUrl: httpsUrl,
-    rights: text,
-    checkedAt: date,
+  plan: eventImage.extend({
     points: z.array(z.strictObject({
       id: slug,
       producerKey: text.regex(/^es:[1-9]\d*$/),
@@ -55,6 +59,7 @@ export const eventSchema = z.strictObject({
   if (event.startDate > event.endDate) issue("startDate follows endDate");
   if (event.venue.latitude === 0 && event.venue.longitude === 0) issue("Venue coordinates cannot be 0,0");
   if (event.status === "published" && !event.publishedAt) issue("Published events need publishedAt");
+  if (event.status === "published" && !event.image) issue("Published events need an official logo or poster");
   if (event.publishedAt && event.updatedAt < event.publishedAt) issue("updatedAt precedes publishedAt");
   const keys = event.exhibitors.map(({ country, producerId }) => `${country}:${producerId}`);
   if (new Set(keys).size !== keys.length) issue("Duplicate exhibitor");

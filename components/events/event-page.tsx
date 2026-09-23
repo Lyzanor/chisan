@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { ProducerSelectionExplorer } from "@/components/producer-selection-explorer";
@@ -37,6 +38,7 @@ export function EventPage({ event, selection }: { event: EditorialEvent; selecti
       <span aria-current="page">{event.title}</span>
     </nav>
     <header className={styles.header}>
+      {event.image ? <Image className={styles.eventIdentity} src={event.image.src} alt={event.image.alt} width={event.image.width} height={event.image.height} sizes="160px" priority /> : null}
       <p className="chisan-eyebrow">Evento seleccionado · {event.category}</p>
       <h1 className="chisan-enter">{event.title}</h1>
       <p>{event.description}</p>
@@ -83,6 +85,7 @@ export function EventPage({ event, selection }: { event: EditorialEvent; selecti
     <section className={styles.section} data-reveal aria-labelledby="sources-title">
       <h2 id="sources-title">Fuentes y revisión</h2>
       <ul className={styles.sources}>{event.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a><span>Consultada el <time dateTime={source.checkedAt}>{formatEventDate(source.checkedAt)}</time></span></li>)}</ul>
+      {event.image ? <p className={styles.sourceNote}>Imagen: <a href={event.image.sourceUrl} target="_blank" rel="noopener noreferrer">{event.image.credit}</a>. {event.image.rights}</p> : null}
       <p className={styles.sourceNote}>Selección revisada por Chisan el <time dateTime={event.updatedAt}>{formatEventDate(event.updatedAt)}</time>. La organización puede cambiar expositores y horarios; comprueba su información antes de desplazarte.</p>
     </section>
   </main>;

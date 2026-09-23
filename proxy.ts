@@ -87,6 +87,7 @@ export const config = {
     "/acceso/:path*",
     "/registro/:path*",
     "/cuenta/:path*",
+    "/pro",
     "/admin/:path*",
     "/api",
     "/api/((?!catalog-redirect(?:/|$)|producer-redirect(?:/|$)|catalog/v1(?:/|$)|producer-favorites(?:/|$)).*)",

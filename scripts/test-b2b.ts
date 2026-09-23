@@ -102,6 +102,11 @@ test("professional enquiries isolate private templates, participants and dated o
     });
     await assert.rejects(service.create(buyer.id, request()), BusinessError);
     await service.saveProfile(buyer.id, profile);
+    await assert.rejects(service.create(buyer.id, request()), /Usuario Pro/);
+    const [buyerPremium] = await db.insert(schema.entitlements).values({
+      subjectKind: "user", userId: buyer.id, key: "user.profile.premium",
+      source: "admin_profile_upgrade_gift", startsAt: started,
+    }).returning();
     const terms = {
       ...emptyBusinessTerms(),
       weeklyCapacity: 100,
@@ -127,6 +132,12 @@ test("professional enquiries isolate private templates, participants and dated o
     const id = await service.create(buyer.id, input);
     assert.equal(await service.create(buyer.id, input), id);
     const first = await service.read(buyer.id, id);
+    await db.update(schema.entitlements).set({ expiresAt: new Date("2026-01-02") }).where(eq(schema.entitlements.id, buyerPremium.id));
+    assert.equal((await service.read(buyer.id, id)).canReply, false);
+    assert.equal((await service.inbox(buyer.id)).items.length, 1);
+    await assert.rejects(service.create(buyer.id, request()), /Usuario Pro/);
+    await assert.rejects(service.reply(buyer.id, { id: randomUUID(), enquiryId: id, body: "¿Disponible?" }), /Usuario Pro/);
+    await db.update(schema.entitlements).set({ expiresAt: null }).where(eq(schema.entitlements.id, buyerPremium.id));
     assert.equal(first.messages.length, 0);
     assert.ok(
       !JSON.stringify(first).includes("weeklyCapacity"),
@@ -195,6 +206,10 @@ test("professional enquiries isolate private templates, participants and dated o
       (await service.read(buyer.id, id)).enquiry.products[0].name,
       "Manzanas",
     );
+    await db.insert(schema.entitlements).values({
+      subjectKind: "user", userId: owner.id, key: "user.profile.premium",
+      source: "admin_profile_upgrade_gift", startsAt: started,
+    });
     await service.saveProfile(owner.id, profile);
     await assert.rejects(service.create(owner.id, request()), /propio equipo/);
     await service.saveProfile(buyer.id, { ...profile, enabled: false });

@@ -9,7 +9,6 @@ import {
 import { loadPublicProducerSources } from "@/lib/catalog/public-evidence";
 import {
   ProducerGallery,
-  splitProducerPhotos,
 } from "@/components/producer-gallery";
 import {
   loadPublicProducerGallery,
@@ -27,6 +26,7 @@ import {
   ProducerAccountActions,
   ProducerGalleryAction,
 } from "@/components/account/producer-account-actions";
+import { loadPublicExpandedContent } from "@/lib/catalog/public-expanded";
 import { ProducerFavorites } from "@/components/account/producer-favorites";
 import { ExpandedProducerProfile } from "@/components/expanded-producer-profile";
 import { GuideHighlights } from "@/components/guides/guide-highlights";
@@ -37,7 +37,6 @@ import { SimilarProducers } from "@/components/similar-producers";
 import { ProducerHero } from "@/components/producer/producer-hero";
 import { ProducerProducts, ProducerSales } from "@/components/producer/producer-products";
 import { ProducerMethods } from "@/components/producer/producer-methods";
-import { ProducerProductInvitation } from "@/components/producer/producer-product-invitation";
 import { ProducerNewsPrompt } from "@/components/producer/producer-news-prompt";
 import { ProducerVisit } from "@/components/producer/producer-visit";
 import { ProducerDetails } from "@/components/producer/producer-details";
@@ -281,13 +280,12 @@ export default async function ProducerPage({
   const similarMessages = getSimilarProducersMessages(locale);
   const contactMessages = getProducerContactMessages(locale);
   const profileWords = producerProfileLabels(locale);
-  const [ownershipVerified, premiumActive, gallery] = await Promise.all([
+  const [ownershipVerified, premiumActive, gallery, content] = await Promise.all([
     isProducerOwnershipVerified(country.slug, producer.producerId),
     hasPublicProducerPremiumAccess(country.slug, producer.producerId),
     loadPublicProducerGallery(country.slug, producer.producerId, locale),
+    loadPublicExpandedContent(country.slug, producer.producerId, locale),
   ]);
-  // Only reviewed material is shown: no generic cover, logo or photo fills a gap.
-  const { cover, photos } = splitProducerPhotos(gallery);
   const identityImageSrc =
     producer.imageSrc === DEFAULT_PRODUCER_IMAGE_SRC ? "" : producer.imageSrc;
   const sources = await loadPublicProducerSources(
@@ -465,7 +463,6 @@ export default async function ProducerPage({
           countryHref={countryHref}
           countryLabel={countryLabel}
           countrySlug={country.slug}
-          cover={cover}
           description={description}
           email={email}
           identityImageSrc={identityImageSrc}
@@ -487,6 +484,7 @@ export default async function ProducerPage({
         />
 
         <ProducerDetails
+          accountsEnabled={accountsEnabled}
           countrySlug={country.slug}
           lastApprovedChange={lastApprovedChange}
           locale={locale}
@@ -500,16 +498,16 @@ export default async function ProducerPage({
 
         <div className="detail-lead">
           <div className="detail-lead__main">
+            <ProducerGallery
+              photos={gallery}
+              title={profileWords.gallery}
+              captionLabel={profileWords.photoCaption}
+            />
             <ProducerMethods
               text={getFieldValue(producer.fields, "como producimos")}
               textLocale={getFieldValue(producer.fields, "como_producimos_locale")}
               locale={locale}
               messages={messages}
-            />
-            <ProducerGallery
-              photos={photos}
-              title={profileWords.gallery}
-              captionLabel={profileWords.photoCaption}
             />
             {accountsEnabled ? (
               <Suspense fallback={null}>
@@ -546,16 +544,7 @@ export default async function ProducerPage({
           />
         </Suspense>
 
-        <ProducerProducts featuredProducts={featuredProducts} messages={messages} />
-        {!premiumActive ? (
-          <Suspense fallback={null}>
-            <ProducerProductInvitation
-              country={country.slug}
-              producerId={producer.producerId}
-              locale={locale}
-            />
-          </Suspense>
-        ) : null}
+        <ProducerProducts featuredProducts={featuredProducts} messages={messages} content={content} locale={locale} country={country.slug} producerId={producer.producerId} premiumActive={premiumActive} />
         <ProducerSales
           locale={locale}
           messages={messages}
@@ -566,6 +555,8 @@ export default async function ProducerPage({
 
         <Suspense fallback={null}>
           <ExpandedProducerProfile
+            content={content}
+            identityImageSrc={identityImageSrc}
             canonicalUrl={canonicalUrl}
             country={country.slug}
             producerId={producer.producerId}

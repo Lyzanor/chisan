@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Territorios
-title: "La despensa de Galicia: fabas, vino y conservas con origen"
+title: "Una despensa que recorre Galicia"
 description: "Lourenzá, Padrón y las Rías Baixas como entradas a legumbres, pimientos, vino y conservas: cómo seguir cada producto hasta su elaborador."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

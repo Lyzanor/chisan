@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ChisanMascot } from "@/components/brand/chisan-brand";
 
-/** A shared countryside and city landscape travelled by Chisan's character. */
+/** Chisan watches the shared countryside and city landscape from one corner. */
 export function FooterLandscape() {
   return (
     <div className="footer-landscape" aria-hidden="true">
@@ -14,7 +14,7 @@ export function FooterLandscape() {
         sizes="100vw"
       />
       <span className="footer-landscape__journey">
-        <ChisanMascot state="following" size={40} alt="" />
+        <ChisanMascot state="catalog" size={56} alt="" />
       </span>
     </div>
   );

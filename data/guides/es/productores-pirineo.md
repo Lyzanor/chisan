@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Territorios
-title: "Productores del Pirineo: leche, queso, pan y otros oficios"
+title: "Quienes producen en el Pirineo"
 description: Proyectos de Lleida y Huesca para explorar cooperación ganadera, quesería, panadería, viñedo y embutidos con un alcance territorial explícito.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

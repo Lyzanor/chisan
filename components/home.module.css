@@ -266,52 +266,21 @@
 
 .agentPhoto {
   position: absolute;
-  inset: 0 16% 12% 4%;
-  display: grid;
-  align-content: space-between;
-  padding: var(--chisan-space-5);
+  inset: 0 12% 0 0;
+  overflow: hidden;
   border-radius: var(--chisan-radius-panel);
-  background: var(--chisan-color-moss-pale);
-  color: var(--chisan-color-moss-dark);
-  rotate: 4deg;
-  animation: chisan-home-float 8s var(--chisan-ease-in-out) infinite;
 }
 
-.agentPhotoTop,
+.agentPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .agentResult > span {
   font-size: var(--chisan-font-micro);
   font-weight: var(--chisan-weight-interface);
   letter-spacing: var(--chisan-tracking-caps);
-}
-
-.agentShelves {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: end;
-  gap: var(--chisan-space-2);
-  padding: var(--chisan-space-3);
-  border-block: 4px solid var(--chisan-color-moss);
-}
-
-.agentShelves i {
-  height: 36px;
-  border: 2px solid var(--chisan-color-moss);
-  border-radius: var(--chisan-radius-object) var(--chisan-radius-object) var(--chisan-radius-xs) var(--chisan-radius-xs);
-}
-
-.agentShelves i:nth-child(2n) {
-  height: 48px;
-  border-radius: var(--chisan-radius-xs) var(--chisan-radius-xs) var(--chisan-radius-control) var(--chisan-radius-control);
-}
-
-.agentPhotoPin {
-  display: grid;
-  place-items: center;
-  justify-self: end;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--chisan-color-surface);
 }
 
 .agentResult {
@@ -653,14 +622,6 @@
     min-height: 21rem;
   }
 
-  .agentShelves i {
-    height: 52px;
-  }
-
-  .agentShelves i:nth-child(2n) {
-    height: 68px;
-  }
-
   .communityPanel {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: var(--chisan-space-8);
@@ -695,4 +656,15 @@
     gap: var(--chisan-space-12);
     padding-top: var(--chisan-space-12);
   }
+}
+
+.imageEntrances {
+  display: grid;
+  gap: var(--chisan-space-4);
+  margin-top: var(--chisan-space-6);
+}
+.imageEntrances :global(.chisan-card__media) { width: 100%; aspect-ratio: 3 / 2; }
+.imageEntrances a > span { display: flex; align-items: center; justify-content: space-between; gap: var(--chisan-space-3); padding: var(--chisan-space-4); }
+@media (min-width: 761px) {
+  .imageEntrances { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

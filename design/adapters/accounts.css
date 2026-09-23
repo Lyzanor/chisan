@@ -735,3 +735,15 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Shared Pro entry uses the same panels, buttons and section rhythm. */
+.pro-page {
+  display: grid;
+  gap: var(--chisan-space-8);
+  max-width: var(--chisan-container-content);
+}
+.pro-page__intro { max-width: var(--chisan-measure); font-size: var(--chisan-font-lead); }
+.pro-page__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--chisan-space-3); }
+.pro-page__steps { display: grid; gap: var(--chisan-space-4); padding-left: var(--chisan-space-6); }
+.pro-page__steps p { margin: var(--chisan-space-1) 0 0; }
+.pro-page__note { color: var(--chisan-color-stone); font-size: var(--chisan-font-small); }

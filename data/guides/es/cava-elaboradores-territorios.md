@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Cava: elaboradores certificados de la DOP, territorio a territorio"
+title: "Dónde se elabora el cava"
 description: Una selección documentada de instalaciones certificadas y productores del catálogo, con las claves de crianza, azúcar y territorio para leer la etiqueta.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

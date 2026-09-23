@@ -806,5 +806,15 @@
     }
   ],
   "publishedAt": "2026-09-23",
-  "updatedAt": "2026-09-23"
+  "updatedAt": "2026-09-23",
+  "image": {
+    "src": "/editorial/events/escumostra-2026-poster.webp",
+    "alt": "Cartel oficial con la marca Escumostra 2026",
+    "width": 400,
+    "height": 566,
+    "credit": "Ajuntament de Sant Sadurní d’Anoia",
+    "sourceUrl": "https://santsadurni.cat/document.php?id=23835",
+    "rights": "Cartel de difusión del evento publicado por la organización; se reproduce para identificar esta edición, sin alterar su diseño.",
+    "checkedAt": "2026-09-23"
+  }
 }

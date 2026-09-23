@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Quesos con DOP: cómo reconocer el origen y encontrar queserías"
+title: "Qué te dice la DOP de un queso"
 description: Cómo relacionar un nombre protegido, una quesería y una pieza etiquetada; ejemplos y consultas para comprobar el origen sin extender un sello a toda una gama.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

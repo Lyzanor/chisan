@@ -10,6 +10,7 @@ import { serializeStructuredData } from "../lib/site-structured-data";
 test("event dates, venue and plan relationships are validated", () => {
   const event = readEvents().find((entry) => entry.slug === "escumostra-2026");
   assert.ok(event);
+  assert.equal(eventSchema.safeParse({ ...event, image: undefined }).success, false);
   assert.equal(eventSchema.safeParse({ ...event, startDate: "2026-10-05" }).success, false);
   assert.equal(eventSchema.safeParse({ ...event, venue: { ...event.venue, latitude: 0, longitude: 0 } }).success, false);
   assert.equal(eventSchema.safeParse({ ...event, publishedAt: undefined }).success, false);

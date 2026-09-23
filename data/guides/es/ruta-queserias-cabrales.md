@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Queserías en Cabrales: cómo preparar una visita y qué preguntar"
+title: "Una visita a las queserías de Cabrales"
 description: Productores del concejo, diferencias entre queso y lugar, y un modo de organizar la visita sin presuponer horarios ni acceso a cuevas.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

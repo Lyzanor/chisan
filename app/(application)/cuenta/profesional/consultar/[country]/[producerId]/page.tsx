@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { businessSupplierCatalog, getBusinessService } from "@/lib/b2b/runtime";
 import { B2B_ROOT, isB2BEnabled } from "@/lib/b2b/policy";
+import { getActiveUserProfilePremiumEntitlement } from "@/lib/accounts/profile-qr-entitlements";
+import { USER_PRO_PATH } from "@/lib/accounts/pro-paths";
 import { RequestForm } from "@/components/b2b/forms";
 export default async function RequestPage({
   params,
@@ -24,7 +26,7 @@ export default async function RequestPage({
   );
   const producer = await businessSupplierCatalog(key);
   if (!producer?.acceptsEnquiries) notFound();
-  const profile = await getBusinessService().profile(account.id);
+  const [profile, userPro] = await Promise.all([getBusinessService().profile(account.id), getActiveUserProfilePremiumEntitlement(account.id)]);
   return (
     <div className="account-content">
       <h2>Consulta profesional a {producer.name}</h2>
@@ -32,7 +34,7 @@ export default async function RequestPage({
         Para suministro a negocios. Si buscas comprar para ti, utiliza el
         contacto de la <Link href={producer.href}>ficha pública</Link>.
       </p>
-      {!profile?.enabled ? (
+      {!userPro ? <p>Para enviar esta solicitud necesitas Usuario Pro. <Link className="chisan-button chisan-button--primary" href={USER_PRO_PATH}>Conocer y activar Usuario Pro</Link></p> : !profile?.enabled ? (
         <p>
           <Link href={B2B_ROOT}>Completa y activa tus datos profesionales</Link>{" "}
           antes de enviar la consulta.

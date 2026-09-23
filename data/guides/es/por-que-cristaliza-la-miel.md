@@ -7,7 +7,7 @@ status: published
 publishedAt: 2026-09-23
 kind: story
 topic: Miel
-title: Por qué cristaliza la miel y qué cuenta ese cambio de textura
+title: "¿Por qué se ha cristalizado mi miel?"
 description: "Un tarro que se vuelve espeso no trae un certificado de pureza: qué explica la cristalización, qué no permite deducir y qué preguntar al productor."
 cover:
   src: /editorial/guides/miel-textura-tarro.webp

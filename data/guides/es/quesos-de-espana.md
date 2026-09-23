@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Quesos de España: tipos de leche, maduración y cómo elegir"
+title: "Encuentra tu queso entre las queserías de España"
 description: Una guía para distinguir leches, texturas, maduraciones y sellos de origen, con queserías y preguntas útiles antes de comprar.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

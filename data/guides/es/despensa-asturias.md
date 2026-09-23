@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Territorios
-title: "La despensa de Asturias: queso, sidra y conservas con elaborador"
+title: "Asturias entre el prado y el mar"
 description: Cinco proyectos para conectar leche, manzana, pescado y legumbres en Asturias y organizar una compra por oficios y lugares.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

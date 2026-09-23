@@ -4,9 +4,10 @@
  */
 
 .shell {
+  --page-start-space: var(--chisan-space-3);
   display: flex;
   flex-direction: column;
-  gap: var(--chisan-space-12);
+  gap: var(--chisan-space-8);
   max-width: var(--chisan-container-content);
 }
 

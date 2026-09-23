@@ -3,7 +3,7 @@
 ## Authority and scope
 
 `data/events/es/<slug>.json` owns a reviewed event edition: its title, calendar
-dates, venue coordinates, official source, editorial selection and optional
+dates, venue coordinates, official source, identity image, editorial selection and optional
 exhibitor plan. Git reviews and publishes these files. The producer roster uses
 only `(country, producerId)` references to the canonical CSV catalog; an event
 file cannot register a producer or change a producer's facts or coordinates.
@@ -24,6 +24,15 @@ renders the page. Published HTML and structured data show the same start/end
 dates and venue. The venue latitude/longitude identifies where the fair happens.
 The shared producer map identifies where exhibitors produce. These must never
 be substituted for each other.
+
+## Event imagery
+
+Every published edition has a reviewed `image`: an official logo or poster,
+stored under `public/editorial/events/`. Preserve its aspect ratio and record
+alt text, dimensions, credit, source URL, rights context and actual review date.
+The event card, page heading and social metadata use this identity image. It is
+separate from the optional exhibitor plan; a plan must not silently stand in for
+an event's identity. Drafts may omit the image while research is in progress.
 
 ## Exhibitors and plans
 

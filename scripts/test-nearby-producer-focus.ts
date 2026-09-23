@@ -152,13 +152,13 @@ test("producer distance handles browser failures and locale-aware kilometres", a
 test("producer distance copy is localized for Spain and has a safe fallback", () => {
   assert.equal(
     getProducerDistanceMessages("es").title,
-    "Distancia desde mi ubicación",
+    "¿Cómo de lejos estoy?",
   );
   assert.equal(
     getProducerDistanceMessages("ca").result,
     "Aproximadament a {distance} km en línia recta.",
   );
-  assert.equal(getProducerDistanceMessages("zu").title, "Distance from me");
+  assert.equal(getProducerDistanceMessages("zu").title, "How far away am I?");
 });
 
 test("similar producers share a category and are ordered by distance", () => {

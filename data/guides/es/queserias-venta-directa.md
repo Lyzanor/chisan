@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Comprar queso al elaborador: formatos, pedidos y recogida"
+title: "Pedir queso directamente a la quesería"
 description: Cómo preparar un pedido de queso, confirmar el canal de venta y organizar la recepción, con queserías para empezar a consultar.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

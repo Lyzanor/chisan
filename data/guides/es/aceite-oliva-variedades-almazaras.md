@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Aceite
-title: "Aceite de oliva: categoría, variedad y cosecha para elegir"
+title: "Qué mirar al elegir un aceite de oliva"
 description: "Cómo leer una botella de aceite: categoría comercial, variedad, origen, campaña y formato, con ejemplos de elaboradores."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Queserías de leche de cabra: rebaños, texturas y elaboraciones"
+title: "Del rebaño al queso de cabra"
 description: Qué preguntar sobre la leche, la ganadería y la textura de un queso de cabra, con cinco elaboradores para comparar referencias concretas.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

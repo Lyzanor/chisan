@@ -6,46 +6,6 @@ import { ProducerPhotoDetails } from "./producer-photo-details";
 
 type Photo = ProducerContent["gallery"][number];
 
-// A panoramic crop needs a landscape photo with enough pixels to stay sharp.
-const COVER_MIN_WIDTH = 1200;
-const COVER_MIN_RATIO = 1.3;
-
-/** The first reviewed landscape photo becomes the cover; the rest form the strip. */
-export function splitProducerPhotos(gallery: readonly Photo[]) {
-  const cover =
-    gallery.find(
-      (photo) =>
-        photo.width >= COVER_MIN_WIDTH &&
-        photo.width / photo.height >= COVER_MIN_RATIO,
-    ) ?? null;
-  return { cover, photos: gallery.filter((photo) => photo !== cover) };
-}
-
-export function ProducerCover({
-  photo,
-  captionLabel,
-}: {
-  photo: Photo;
-  captionLabel: string;
-}) {
-  return (
-    <figure className="detail-cover">
-      <div className="detail-cover__frame">
-        <Image
-          src={photo.src}
-          alt={photo.alt}
-          lang={photo.locale}
-          width={photo.width}
-          height={photo.height}
-          sizes="100vw"
-          priority
-        />
-      </div>
-      <ProducerPhotoDetails photo={photo} label={captionLabel} />
-    </figure>
-  );
-}
-
 /** One row of photos at their honest aspect ratios. Every photo shares the row
  * height; narrow screens and long galleries scroll sideways instead of cropping. */
 export function ProducerGallery({

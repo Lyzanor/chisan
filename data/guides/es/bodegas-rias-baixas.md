@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Bodegas de Rías Baixas: albariño y otras variedades que seguir"
+title: "Rías Baixas más allá del albariño"
 description: "Albariño, mezclas de variedades y distintas formas de organizar una bodega: cinco proyectos para aprender a leer la referencia concreta."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23
