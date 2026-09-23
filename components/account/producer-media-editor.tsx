@@ -252,7 +252,7 @@ export function ProducerMediaEditor({
         />
         <button
           type="button"
-          className="account-button account-button--secondary"
+          className="chisan-button"
           disabled={!rights || gallery.length >= limit}
           onClick={choosePhotos}
         >

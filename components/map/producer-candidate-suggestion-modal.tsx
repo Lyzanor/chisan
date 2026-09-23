@@ -129,16 +129,16 @@ export function ProducerCandidateSuggestionModal({
             </p>
             {result.mailtoUrl ? (
               <div className="candidate-modal__success-actions">
-                <a href={result.mailtoUrl} className="candidate-modal__btn-secondary">
+                <a href={result.mailtoUrl} className="chisan-button">
                   <EnvelopeSimpleIcon size={18} aria-hidden="true" />
                   <span>Enviar también por email</span>
                 </a>
-                <button type="button" className="candidate-modal__btn-primary" onClick={onClose}>
+                <button type="button" className="chisan-button chisan-button--primary" onClick={onClose}>
                   Aceptar
                 </button>
               </div>
             ) : (
-              <button type="button" className="candidate-modal__btn-primary" onClick={onClose}>
+              <button type="button" className="chisan-button chisan-button--primary" onClick={onClose}>
                 Cerrar
               </button>
             )}
@@ -216,7 +216,7 @@ export function ProducerCandidateSuggestionModal({
             <div className="candidate-modal__actions">
               <button
                 type="button"
-                className="candidate-modal__btn-secondary"
+                className="chisan-button"
                 onClick={onClose}
                 disabled={submitting}
               >
@@ -224,7 +224,7 @@ export function ProducerCandidateSuggestionModal({
               </button>
               <button
                 type="submit"
-                className="candidate-modal__btn-primary"
+                className="chisan-button chisan-button--primary"
                 disabled={submitting || !name.trim()}
               >
                 <PaperPlaneTiltIcon size={18} aria-hidden="true" />

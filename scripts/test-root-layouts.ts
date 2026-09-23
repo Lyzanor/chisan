@@ -104,8 +104,14 @@ test("the shared server shell owns fonts, Clerk, the header and the footer once"
   assert.doesNotMatch(shell, /site-footer__copyright/);
   assert.doesNotMatch(shell, /site-header__tagline/);
   assert.match(shell, /import "\.\.\/globals\.css"/);
-  assert.match(shell, /design\/foundations\/tokens\.css/);
-  assert.match(shell, /design\/adapters\/web\.css/);
+  // One ordered stylesheet: the design foundations load before every surface.
+  const globals = readRepositoryFile("app/globals.css");
+  const imports = [...globals.matchAll(/@import "([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(imports[0], "../design/foundations/tokens.css");
+  assert.ok(
+    imports.indexOf("../design/adapters/primitives.css") < imports.indexOf("../design/adapters/shell.css"),
+    "shared primitives load before the shell",
+  );
   assert.match(shell, /SiteLanguageMenuProvider/);
   assert.match(shell, /messages=\{accountMessages \?\? headerMessages\}/);
 

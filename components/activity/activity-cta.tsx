@@ -4,9 +4,9 @@ import styles from "./activity.module.css";
 
 export function ActivityCallToAction() {
   return (
-    <section className={styles.cta} aria-labelledby="activity-cta-title">
+    <section className={`chisan-panel chisan-panel--tint ${styles.cta}`} data-reveal aria-labelledby="activity-cta-title">
       <div className={styles.ctaContent}>
-        <p className={styles.kicker}>Participación y comunidad</p>
+        <p className="chisan-eyebrow">Participación y comunidad</p>
         <h2 id="activity-cta-title">
           ¿Conoces a un productor local o quieres aportar datos?
         </h2>
@@ -17,11 +17,11 @@ export function ActivityCallToAction() {
         </p>
       </div>
       <div className={styles.ctaActions}>
-        <Link href="/contact" className={styles.buttonPrimary}>
+        <Link href="/contact" className="chisan-button chisan-button--primary">
           <PlusCircleIcon size={18} aria-hidden="true" />
           <span>Sugerir productor local</span>
         </Link>
-        <Link href="/how-we-work" className={styles.buttonSecondary}>
+        <Link href="/how-we-work" className="chisan-button">
           <InfoIcon size={18} aria-hidden="true" />
           <span>Cómo colaboramos</span>
         </Link>

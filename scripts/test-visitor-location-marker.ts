@@ -124,7 +124,7 @@ test("map components integrate VisitorLocationMarker and MapLocateControl", () =
 });
 
 test("design system defines visitor locator, pulse animation and reduced motion rules", () => {
-  const css = readFileSync("design/adapters/web.css", "utf8");
+  const css = readFileSync("design/adapters/map.css", "utf8");
 
   assert.match(css, /\.chisan-visitor-locator\s*\{/);
   assert.match(css, /\.chisan-visitor-locator__pulse\s*\{/);

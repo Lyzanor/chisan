@@ -75,7 +75,7 @@ export default async function AdminProfilesPage({ searchParams }: AdminProfilesP
     <div className="admin-content">
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">Chisan account registry</p>
+          <p className="chisan-eyebrow">Chisan account registry</p>
           <h2>User profiles</h2>
           <p>
             Inspect profile visibility and shared producer selections from Chisan-owned account
@@ -129,7 +129,7 @@ export default async function AdminProfilesPage({ searchParams }: AdminProfilesP
               </option>
             ))}
           </select>
-          <button type="submit" className="account-button">
+          <button type="submit" className="chisan-button chisan-button--primary">
             Apply
           </button>
           {registry.options.query || registry.options.status !== "active" ? (

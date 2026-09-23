@@ -69,7 +69,7 @@ export default async function AdminChangesPage({ searchParams }: AdminChangesPag
       <AccountMessage params={params} />
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">Durable request history</p>
+          <p className="chisan-eyebrow">Durable request history</p>
           <h2>Producer change registry</h2>
           <p>
             Review every proposal from draft to canonical commit. Approval never publishes a
@@ -114,7 +114,7 @@ export default async function AdminChangesPage({ searchParams }: AdminChangesPag
             maxLength={120}
             placeholder="Producer, request UUID, country or producer ID"
           />
-          <button type="submit" className="account-button">
+          <button type="submit" className="chisan-button chisan-button--primary">
             Search
           </button>
           {registry.options.query ? (

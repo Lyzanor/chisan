@@ -74,7 +74,7 @@ export function ShelfProposal({ proposal, items, profile, areas, allowed }: {
         <label>Zona de la tienda<select name="baseLocation" required defaultValue={profile.baseLocation}><option value="">Elige una zona</option>{areas.map((area) => <option key={area.value} value={area.value}>{area.label}</option>)}</select></label>
         <label>Municipio de la tienda<input name="baseMunicipality" required maxLength={160} defaultValue={profile.baseMunicipality} autoComplete="address-level2" /></label>
         {profile.private ? <p>Al publicar, esta selección y su foto serán visibles públicamente.</p> : <p>Al publicar, esta selección mostrará esta foto y sus productores.</p>}
-        <button className="account-button" disabled={busy || !checked.length}>{busy ? "Publicando…" : "Publicar mi perfil"}</button>
+        <button className="chisan-button chisan-button--primary" disabled={busy || !checked.length}>{busy ? "Publicando…" : "Publicar mi perfil"}</button>
       </fieldset>
     </form> : null}
     <p role="status">{message}</p>

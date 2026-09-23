@@ -13,7 +13,7 @@
   overflow-wrap: anywhere;
 }
 .heading small {
-  color: var(--muted);
+  color: var(--chisan-color-stone);
 }
 .list {
   padding: 0;
@@ -23,7 +23,7 @@
 .product {
   display: grid;
   gap: var(--chisan-space-4);
-  border-top: 1px solid var(--line);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
   padding: var(--chisan-space-6) 0;
 }
 .tools {
@@ -34,10 +34,10 @@
 .tools button {
   min-height: 44px;
   padding: var(--chisan-space-2) var(--chisan-space-3);
-  border: 1px solid var(--line);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-control);
-  background: var(--surface);
-  color: var(--text);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
   font: inherit;
   cursor: pointer;
 }
@@ -48,7 +48,7 @@
 .tools button:focus-visible,
 .attachments summary:focus-visible,
 .preview summary:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--chisan-color-moss);
   outline-offset: 2px;
 }
 .attachments summary,
@@ -73,7 +73,7 @@
   object-fit: cover;
 }
 .preview {
-  border-top: 1px solid var(--line);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
   margin-top: var(--chisan-space-6);
 }
 .preview ul {

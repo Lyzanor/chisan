@@ -3,9 +3,11 @@
 /*
  * Checks the stylesheets against design/README.md.
  *
- * The app predates the design system, so every rule carries a baseline: the
- * number of findings when the rule was written. Style findings are review
- * prompts. New undersized interactive targets require an accessibility review.
+ * design/foundations/tokens.css is the only place raw values live. Every rule
+ * carries a baseline: the number of findings accepted when the rule was last
+ * reviewed. Style findings are review prompts. Undefined `--chisan-*`
+ * properties and new undersized interactive targets fail the check, because
+ * both break rendering or accessibility without a visible error.
  *
  * Run `node scripts/check-design.mjs --list <rule>` to see the offending lines.
  */
@@ -17,8 +19,9 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TOKENS = "design/foundations/tokens.css";
 const STYLE_ROOTS = ["app", "components", "design"];
+const SOURCE_ROOTS = ["app", "components", "lib"];
 
-function listStyles(relativeDirectory) {
+function listFiles(relativeDirectory, matches) {
   const fullDirectory = path.join(ROOT, relativeDirectory);
   if (!fs.existsSync(fullDirectory)) return [];
 
@@ -26,23 +29,30 @@ function listStyles(relativeDirectory) {
     .readdirSync(fullDirectory, { withFileTypes: true })
     .flatMap((entry) => {
       const relativePath = path.join(relativeDirectory, entry.name);
-      if (entry.isDirectory()) return listStyles(relativePath);
-      return entry.isFile() && entry.name.endsWith(".css") ? [relativePath] : [];
+      if (entry.isDirectory()) return entry.name === "node_modules" ? [] : listFiles(relativePath, matches);
+      return entry.isFile() && matches(entry.name) ? [relativePath] : [];
     })
     .sort();
 }
 
-const SHEETS = STYLE_ROOTS.flatMap(listStyles).sort();
+const SHEETS = STYLE_ROOTS.flatMap((root) => listFiles(root, (name) => name.endsWith(".css"))).sort();
+const SOURCES = SOURCE_ROOTS.flatMap((root) => listFiles(root, (name) => /\.(tsx?|jsx?)$/.test(name)));
 
-// Design tokens are the one place raw values are allowed to appear.
-const SPACE_SCALE = [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128];
-const RADII = ["0", "999px", "50%", "2px", "4px", "8px"];
-const PILL_ALLOWLIST = [
-  ".catalog-chip",
-  ".detail-product-list",
-  ".admin-field-tags",
-  ".admin-filter-tabs",
-];
+const read = (file) => fs.readFileSync(path.join(ROOT, file), "utf8");
+const withoutComments = (css) => css.replace(/\/\*[\s\S]*?\*\//g, (comment) => comment.replace(/[^\n]/g, " "));
+
+// Custom properties declared in any stylesheet or set from component markup.
+const DECLARED = new Set();
+for (const file of SHEETS) {
+  for (const match of withoutComments(read(file)).matchAll(/(--[\w-]+)\s*:/g)) DECLARED.add(match[1]);
+}
+for (const file of SOURCES) {
+  for (const match of read(file).matchAll(/["'`](--[\w-]+)["'`]\s*[:\]]/g)) DECLARED.add(match[1]);
+}
+
+const SPACE_SCALE = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128];
+const RADII = ["0", "50%", "2px", "inherit"];
+const PILL_ALLOWLIST = [".catalog-chip", ".detail-product-list", ".admin-field-tags", ".admin-filter-tabs"];
 
 /** Split a stylesheet into { selector, body, line } blocks. */
 function blocks(css) {
@@ -68,48 +78,59 @@ function toPx(value) {
 
 const RULES = [
   {
+    name: "undefined-token",
+    severity: "error",
+    baseline: 0,
+    describe: "var(--chisan-*) with no declaration or fallback",
+    find: (file, css) =>
+      [...css.matchAll(/var\(\s*(--chisan-[\w-]+)\s*(,)?/g)]
+        .filter((m) => !m[2] && !DECLARED.has(m[1]))
+        .map((m) => ({ at: m.index, text: m[1] })),
+  },
+  {
     name: "raw-colour",
-    baseline: 71,
-    describe: "colour literals outside design/foundations",
+    baseline: 0,
+    describe: "colour literals outside design/foundations/tokens.css",
     find: (file, css) =>
       file === TOKENS
         ? []
-        : [...css.matchAll(/#[0-9a-f]{3,8}\b|rgba?\([^)]*\)/gi)]
-            .filter((m) => !/^rgb\(\s*var\(/i.test(m[0]))
+        : [...css.matchAll(/#[0-9a-f]{3,8}\b|rgba?\([^)]*\)|hsla?\([^)]*\)/gi)]
+            .filter((m) => !/^rgba?\(\s*var\(/i.test(m[0]))
             .map((m) => ({ at: m.index, text: m[0] })),
   },
   {
     name: "off-scale-space",
-    baseline: 190,
-    describe: "padding/margin/gap off the 4px scale",
+    baseline: 9,
+    describe: "padding/margin/gap literal off the 4px scale",
     find: (file, css) =>
-      [...css.matchAll(/(?:padding|margin|gap)[a-z-]*:\s*([^;}]+)/g)].flatMap((m) =>
-        m[1]
-          .split(/\s+/)
-          .filter((v) => toPx(v) !== null && !SPACE_SCALE.includes(toPx(v)))
-          .map((v) => ({ at: m.index, text: `${v} = ${toPx(v)}px` })),
-      ),
+      file === TOKENS
+        ? []
+        : [...css.matchAll(/(?:padding|margin|gap)[a-z-]*:\s*([^;}]+)/g)].flatMap((m) =>
+            m[1]
+              .split(/\s+/)
+              .filter((v) => toPx(v) !== null && !SPACE_SCALE.includes(toPx(v)))
+              .map((v) => ({ at: m.index, text: `${v} = ${toPx(v)}px` })),
+          ),
   },
   {
-    name: "type-scale",
-    baseline: 80,
-    describe: "font-size below 12px or off the type scale",
+    name: "raw-font-size",
+    baseline: 2,
+    describe: "font-size other than a --chisan-font-* role",
     find: (file, css) =>
-      [...css.matchAll(/font-size:\s*([^;}]+)/g)]
-        .filter((m) => {
-          const px = toPx(m[1].trim());
-          return px !== null && (px < 12 || !([12, 13, 14, 16, 18].includes(px) || (px >= 28 && px <= 40) || (px >= 48 && px <= 88)));
-        })
-        .map((m) => ({ at: m.index, text: m[1].trim() })),
+      file === TOKENS
+        ? []
+        : [...css.matchAll(/font-size:\s*([^;}]+)/g)]
+            .filter((m) => !/^var\(--chisan-font-[\w-]+\)$|^(inherit|1em|100%)$/.test(m[1].trim()))
+            .map((m) => ({ at: m.index, text: m[1].trim() })),
   },
   {
     name: "authored-weight",
     baseline: 0,
-    describe: "authored CSS font-weight other than 400 or 500",
+    describe: "font-weight other than a --chisan-weight-* token, 400 or 500",
     find: (file, css) =>
-      [...css.matchAll(/font-weight:\s*(\d+)/g)]
-        .filter((m) => !["400", "500"].includes(m[1]))
-        .map((m) => ({ at: m.index, text: m[1] })),
+      [...css.matchAll(/font-weight:\s*([^;}]+)/g)]
+        .filter((m) => !/^(var\(--chisan-weight-[\w-]+\)|400|500|inherit|normal)$/.test(m[1].trim()))
+        .map((m) => ({ at: m.index, text: m[1].trim() })),
   },
   {
     name: "serif-fallback",
@@ -123,34 +144,45 @@ const RULES = [
   },
   {
     name: "decorative-pill",
-    baseline: 13,
-    describe: "999px radius outside filters and tags",
+    baseline: 1,
+    describe: "pill radius outside toggles, filters and tags",
     find: (file, css) =>
       blocks(css)
         .filter(
           (b) =>
-            /border-radius:\s*999px/.test(b.body) &&
+            /border-radius:\s*(999px|var\(--chisan-radius-pill\))/.test(b.body) &&
             !PILL_ALLOWLIST.some((allowed) => b.selector.includes(allowed)),
         )
         .map((b) => ({ line: b.line, text: b.selector.replace(/\s+/g, " ").slice(0, 70) })),
   },
   {
-    name: "off-scale-radius",
-    baseline: 1,
-    describe: "border-radius outside 0 / 4px / 8px / 999px",
+    name: "raw-radius",
+    baseline: 0,
+    describe: "border-radius other than a --chisan-radius-* token, 0, 2px or 50%",
     find: (file, css) =>
-      [...css.matchAll(/border-radius:\s*([^;}]+)/g)]
-        .filter((m) => {
-          const value = m[1].trim();
-          if (value.startsWith("var(") || value.startsWith("calc(")) return false;
-          return value.split(/\s+/).some((part) => !RADII.includes(part));
-        })
-        .map((m) => ({ at: m.index, text: m[1].trim() })),
+      file === TOKENS
+        ? []
+        : [...css.matchAll(/border-radius:\s*([^;}]+)/g)]
+            .filter((m) => {
+              const value = m[1].trim();
+              if (value.startsWith("calc(")) return false;
+              return value.split(/\s+/).some((part) => !part.startsWith("var(--chisan-radius-") && !RADII.includes(part));
+            })
+            .map((m) => ({ at: m.index, text: m[1].trim() })),
+  },
+  {
+    name: "raw-transition",
+    baseline: 2,
+    describe: "transition with a literal duration or keyword curve",
+    find: (file, css) =>
+      [...css.matchAll(/transition(?:-duration|-timing-function)?:\s*([^;}]+)/g)]
+        .filter((m) => /(?<![\w-])(\d*\.?\d+m?s|ease(?:-in|-out|-in-out)?)(?![\w-])/.test(m[1]))
+        .map((m) => ({ at: m.index, text: m[1].replace(/\s+/g, " ").trim().slice(0, 70) })),
   },
   {
     // Phones are the primary surface: base styles serve them, min-width adds.
     name: "max-width-query",
-    baseline: 31,
+    baseline: 23,
     describe: "viewport queries capped by max-width instead of min-width",
     find: (file, css) =>
       [...css.matchAll(/@media([^{]*)\{/g)]
@@ -160,7 +192,7 @@ const RULES = [
   {
     name: "small-target",
     severity: "error",
-    baseline: 7,
+    baseline: 0,
     describe: "explicit interactive min-height under 44px (heuristic)",
     find: (file, css) =>
       blocks(css).flatMap((block) => {
@@ -182,9 +214,7 @@ let failed = false;
 for (const rule of RULES) {
   const hits = [];
   for (const file of SHEETS) {
-    const full = path.join(ROOT, file);
-    if (!fs.existsSync(full)) continue;
-    const css = fs.readFileSync(full, "utf8");
+    const css = withoutComments(read(file));
     for (const hit of rule.find(file, css)) {
       const line = hit.line ?? css.slice(0, hit.at).split("\n").length;
       hits.push({ file, line, text: hit.text });
@@ -207,7 +237,7 @@ for (const rule of RULES) {
 }
 
 if (failed) {
-  console.error("\nA target-size check regressed. Inspect the affected controls and verify accessibility.");
+  console.error("\nA blocking design check regressed: an undefined token or an undersized target. Inspect the listed rules.");
   process.exit(1);
 }
 console.log("\nNo blocking design check regressed. Assess style notices in context.");

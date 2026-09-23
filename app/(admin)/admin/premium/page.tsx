@@ -172,7 +172,7 @@ export default async function AdminPremiumProfilesPage({
 
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">Producer-scoped entitlement registry</p>
+          <p className="chisan-eyebrow">Producer-scoped entitlement registry</p>
           <h2>Expanded profiles</h2>
           <p>
             Inspect every premium right and grant selected claimed producers access without a
@@ -217,7 +217,7 @@ export default async function AdminPremiumProfilesPage({
               maxLength={120}
               placeholder="Producer, municipality, owner or es:123"
             />
-            <button className="account-button">Search</button>
+            <button className="chisan-button chisan-button--primary">Search</button>
           </div>
         </form>
 
@@ -279,7 +279,7 @@ export default async function AdminPremiumProfilesPage({
                               required
                             />
                           </label>
-                          <button className="account-button">Grant premium gift</button>
+                          <button className="chisan-button chisan-button--primary">Grant premium gift</button>
                         </form>
                       ) : (
                         <p>No administrative grant is available in this state.</p>
@@ -300,7 +300,7 @@ export default async function AdminPremiumProfilesPage({
                 href={premiumAdminHref(current, {
                   candidatePage: candidates.page - 1,
                 })}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Newer candidates
               </Link>
@@ -310,7 +310,7 @@ export default async function AdminPremiumProfilesPage({
                 href={premiumAdminHref(current, {
                   candidatePage: candidates.page + 1,
                 })}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 More candidates
               </Link>
@@ -351,7 +351,7 @@ export default async function AdminPremiumProfilesPage({
               <option value="gift">Admin gifts</option>
               <option value="payment">Paid purchases</option>
             </select>
-            <button className="account-button account-button--secondary">Apply</button>
+            <button className="chisan-button">Apply</button>
           </div>
         </form>
 
@@ -474,7 +474,7 @@ export default async function AdminPremiumProfilesPage({
                             />{" "}
                             Revoke this gift and close unpublished premium proposals.
                           </label>
-                          <button className="account-button account-button--danger">
+                          <button className="chisan-button chisan-button--danger">
                             Revoke administrative gift
                           </button>
                         </form>
@@ -500,7 +500,7 @@ export default async function AdminPremiumProfilesPage({
             {access.page > 1 ? (
               <Link
                 href={premiumAdminHref(current, { accessPage: access.page - 1 })}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Newer access records
               </Link>
@@ -508,7 +508,7 @@ export default async function AdminPremiumProfilesPage({
             {access.page < access.totalPages ? (
               <Link
                 href={premiumAdminHref(current, { accessPage: access.page + 1 })}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Older access records
               </Link>

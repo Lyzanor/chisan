@@ -67,7 +67,7 @@ function StatusScreen({
       <div className={styles.flow}>
         <AccountMessage params={params} />
         <header className={styles.header}>
-          <p className="catalog-kicker">{kicker}</p>
+          <p className="chisan-eyebrow">{kicker}</p>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.lead}>{copy}</p>
         </header>
@@ -162,17 +162,17 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
         actions={
           <>
             {currentAccountOwnsProducer ? (
-              <Link href="/cuenta/reclamaciones" className="account-button">
+              <Link href="/cuenta/reclamaciones" className="chisan-button chisan-button--primary">
                 Ir a mi área de productor
               </Link>
             ) : (
-              <Link href={PRODUCER_ONBOARDING_PATH} className="account-button">
+              <Link href={PRODUCER_ONBOARDING_PATH} className="chisan-button chisan-button--primary">
                 Buscar otra ficha
               </Link>
             )}
             <Link
               href={buildAccountProducerHref(producer, explicitLocale)}
-              className="account-button account-button--secondary"
+              className="chisan-button"
             >
               Ver la ficha
             </Link>
@@ -202,7 +202,7 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
             : "Espera a que se resuelva o retírala antes de verificar otra ficha."
         }
         actions={
-          <Link href="/cuenta/reclamaciones" className="account-button">
+          <Link href="/cuenta/reclamaciones" className="chisan-button chisan-button--primary">
             Ver mi solicitud
           </Link>
         }

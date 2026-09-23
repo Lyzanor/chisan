@@ -53,31 +53,31 @@ export default async function FollowingPage({
           </p>
         </div>
         <div className="account-inline-actions">
-          <Link href="/cuenta/novedades" className="account-button">
+          <Link href="/cuenta/novedades" className="chisan-button chisan-button--primary">
             Ver novedades
           </Link>
           <Link
             href="/cuenta/seleccion"
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             Vista previa de la selección y el QR
           </Link>
           {publicProfileVisible && account.publicHandle ? (
             <Link
               href={`/u/${account.publicHandle}`}
-              className="account-button account-button--secondary"
+              className="chisan-button"
             >
               Abrir selección pública
             </Link>
           ) : (
             <Link
               href="/cuenta/perfil"
-              className="account-button account-button--secondary"
+              className="chisan-button"
             >
               Configurar selección
             </Link>
           )}
-          <Link href="/" className="account-button account-button--secondary">
+          <Link href="/" className="chisan-button">
             Explorar el catálogo
           </Link>
         </div>
@@ -117,7 +117,7 @@ export default async function FollowingPage({
                         producer,
                         presentation.explicitLocale,
                       )}
-                      className="account-button account-button--secondary"
+                      className="chisan-button"
                     >
                       Abrir perfil
                     </Link>
@@ -141,7 +141,7 @@ export default async function FollowingPage({
                     />
                     <button
                       type="submit"
-                      className="account-button account-button--danger"
+                      className="chisan-button chisan-button--danger"
                     >
                       Dejar de seguir
                     </button>

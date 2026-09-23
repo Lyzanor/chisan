@@ -126,7 +126,7 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
       <section className="catalog-start-shell" aria-labelledby="area-start-title">
         <div className="catalog-start-head">
           <div>
-            <p className="catalog-kicker">
+            <p className="chisan-eyebrow">
               <Link href="/" className="country-back-link">
                 {SITE_NAME}
               </Link>{" "}

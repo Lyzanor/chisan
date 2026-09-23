@@ -54,7 +54,7 @@ export default async function ActivityPage() {
   return (
     <main className={`page-shell ${styles.shell}`}>
       <header className={styles.header}>
-        <p className={styles.kicker}>Comunidad y territorio</p>
+        <p className="chisan-eyebrow">Comunidad y territorio</p>
         <h1>Descubrir</h1>
         <p className={styles.tagline}>
           Descubre qué está pasando cerca de ti, conoce a productores destacados de tu

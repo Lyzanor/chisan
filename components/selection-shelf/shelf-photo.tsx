@@ -166,7 +166,7 @@ export function AnnotatedProducerImageView({
           {onViewMap ? (
             <button
               type="button"
-              className={styles.viewOnMapButton}
+              className="chisan-button chisan-button--primary"
               onClick={onViewMap}
               aria-label={`Ver ${selectedProducer.name} en el mapa`}
             >

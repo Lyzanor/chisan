@@ -133,14 +133,14 @@ export default async function AdminPage() {
     <div className="admin-content">
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">System of record</p>
+          <p className="chisan-eyebrow">System of record</p>
           <h2>Operations overview</h2>
           <p>
             Review account requests here. Public producer data remains controlled by the
             canonical CSV and Git workflow.
           </p>
         </div>
-        <Link href="/admin/cambios" className="account-button">
+        <Link href="/admin/cambios" className="chisan-button chisan-button--primary">
           Open change registry
         </Link>
       </header>
@@ -215,7 +215,7 @@ export default async function AdminPage() {
 
       <section className="admin-agent-panel" aria-labelledby="admin-agent-title">
         <div>
-          <p className="catalog-kicker">Agent-ready read model</p>
+          <p className="chisan-eyebrow">Agent-ready read model</p>
           <h3 id="admin-agent-title">Structured access without HTML scraping</h3>
           <p>
             The same status vocabulary powers this workspace and the read-only operational

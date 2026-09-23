@@ -75,7 +75,7 @@ export default async function AdminProducerSuggestionsPage({
       <AccountMessage params={params} />
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">Community corrections</p>
+          <p className="chisan-eyebrow">Community corrections</p>
           <h2>Producer suggestions</h2>
           <p>
             Readers may correct a producer nobody has claimed. A suggestion is
@@ -136,7 +136,7 @@ export default async function AdminProducerSuggestionsPage({
             maxLength={120}
             placeholder="Producer, suggestion UUID, section, country or producer ID"
           />
-          <button type="submit" className="account-button">
+          <button type="submit" className="chisan-button chisan-button--primary">
             Search
           </button>
           {registry.options.query ? (
@@ -305,14 +305,14 @@ export default async function AdminProducerSuggestionsPage({
                         {reviewable ? (
                           <>
                             <button
-                              className="account-button"
+                              className="chisan-button chisan-button--primary"
                               name="decision"
                               value="approved"
                             >
                               Accept
                             </button>
                             <button
-                              className="account-button account-button--danger"
+                              className="chisan-button chisan-button--danger"
                               name="decision"
                               value="rejected"
                             >
@@ -321,7 +321,7 @@ export default async function AdminProducerSuggestionsPage({
                           </>
                         ) : (
                           <button
-                            className="account-button"
+                            className="chisan-button chisan-button--primary"
                             name="decision"
                             value="applied"
                           >

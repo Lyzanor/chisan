@@ -5,7 +5,7 @@
 }
 .content h2 {
   margin: 0 0 var(--chisan-space-3);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: var(--chisan-font-heading);
 }
 .products {
   display: grid;
@@ -26,19 +26,19 @@
   background: var(--chisan-color-surface);
 }
 .products h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  font-weight: 500;
+  margin: 0 0 var(--chisan-space-2);
+  font-size: var(--chisan-font-lead);
+  font-weight: var(--chisan-weight-interface);
 }
 .products p {
-  line-height: 1.6;
+  line-height: var(--chisan-leading-body);
   white-space: pre-line;
   overflow-wrap: anywhere;
 }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  gap: 24px;
+  gap: var(--chisan-space-6);
 }
 .gallery figure {
   margin: 0;
@@ -52,8 +52,8 @@
   border-radius: var(--chisan-radius-control);
 }
 .gallery figcaption {
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: var(--chisan-space-2);
+  font-size: var(--chisan-font-small);
   overflow-wrap: anywhere;
 }
 .productImages {
@@ -73,7 +73,7 @@
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
+  gap: var(--chisan-space-2) var(--chisan-space-6);
   list-style: none;
   padding: 0;
 }
@@ -99,22 +99,22 @@
 
 .purchase { display: grid; gap: var(--chisan-space-2); margin-top: auto; padding-top: var(--chisan-space-3); }
 .price { display: flex; align-items: baseline; gap: var(--chisan-space-3); flex-wrap: wrap; margin: 0; }
-.price span, .purchase time { color: var(--muted); font-size: .875rem; }
-.price strong { font-size: 1.25rem; color: var(--ink); }
-.shop { display: flex; flex-direction: column; align-items: flex-start; gap: var(--chisan-space-1); min-height: 44px; padding: var(--chisan-space-3) var(--chisan-space-4); border: 1px solid var(--chisan-color-moss-dark); border-radius: var(--chisan-radius-control); color: var(--chisan-color-moss-dark); text-decoration: none; overflow-wrap: anywhere; }
+.price span, .purchase time { color: var(--chisan-color-stone); font-size: var(--chisan-font-small); }
+.price strong { font-size: var(--chisan-font-subheading); color: var(--chisan-color-ink); }
+.shop { display: flex; flex-direction: column; align-items: flex-start; gap: var(--chisan-space-1); min-height: 44px; padding: var(--chisan-space-3) var(--chisan-space-4); border: var(--chisan-line) solid var(--chisan-color-moss-dark); border-radius: var(--chisan-radius-control); color: var(--chisan-color-moss-dark); text-decoration: none; overflow-wrap: anywhere; }
 .shop:hover { background: var(--chisan-color-moss-pale); }
 .shop:focus-visible { outline: 2px solid var(--chisan-color-moss-dark); outline-offset: 2px; }
-.shop small { color: var(--muted); }
-.purchaseHelp { color: var(--muted); line-height: 1.5; }
+.shop small { color: var(--chisan-color-stone); }
+.purchaseHelp { color: var(--chisan-color-stone); line-height: var(--chisan-leading-body); }
 
 .featuredLinks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--chisan-space-3); margin: 0; padding: 0; list-style: none; }
 .featuredLinks li { min-width: 0; }
 .featuredLinks a { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); align-items: center; gap: var(--chisan-space-3); min-height: 7rem; overflow: hidden; border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-object); color: var(--chisan-color-ink); text-decoration: none; }
 .featuredLinks a:hover { border-color: var(--chisan-color-moss); }
-.linkPreview { display: grid; place-items: center; align-self: stretch; background: var(--chisan-color-moss-pale); color: var(--chisan-color-moss-dark); font-size: 2rem; font-weight: 700; }
+.linkPreview { display: grid; place-items: center; align-self: stretch; background: var(--chisan-color-moss-pale); color: var(--chisan-color-moss-dark); font-size: var(--chisan-font-title); font-weight: var(--chisan-weight-interface); }
 .linkCopy { min-width: 0; padding-right: var(--chisan-space-3); }
 .linkCopy strong, .linkCopy small { display: block; overflow-wrap: anywhere; }
-.linkCopy small { margin-top: var(--chisan-space-1); color: var(--chisan-color-stone); font-size: .75rem; }
+.linkCopy small { margin-top: var(--chisan-space-1); color: var(--chisan-color-stone); font-size: var(--chisan-font-micro); }
 
 @media (max-width: 760px) {
   .products {

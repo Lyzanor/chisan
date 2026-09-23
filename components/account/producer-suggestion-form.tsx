@@ -148,7 +148,7 @@ function SubmitSuggestionButton() {
   const { pending } = useFormStatus();
   return (
     <div className="account-inline-actions">
-      <button type="submit" className="account-button" disabled={pending}>
+      <button type="submit" className="chisan-button chisan-button--primary" disabled={pending}>
         {pending ? "Enviando…" : "Enviar sugerencia"}
       </button>
     </div>
@@ -239,7 +239,7 @@ export function ProducerSuggestionForm({
             {state.reloadRequired ? (
               <button
                 type="button"
-                className="account-button account-button--secondary"
+                className="chisan-button"
                 onClick={() => window.location.reload()}
               >
                 Recargar los valores actuales

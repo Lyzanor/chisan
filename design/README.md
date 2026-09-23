@@ -4,21 +4,28 @@ The visual system: rules, tokens, brand assets, and the web mapping.
 This guide owns the visual system. Components consume its tokens while their
 product contracts own data, permissions and meaning.
 
-The active design is **v0.6 — Product in the light**. Clean white surfaces,
-light Outfit headings and forest-green controls frame documentary producer
-photographs. Generic ingredient photography softly decorates category margins;
-a fine illustrated rural scene closes the page. Small interactions make the
-shared components feel responsive without changing catalog or account meaning.
+The active design is **v0.7 — One field**. It keeps v0.6's clean white page,
+light Outfit headings, forest-green actions and documentary photography, and
+turns them into one system: every value comes from a token, every repeated
+element comes from one primitive, and motion is fluid but quiet. A button,
+a card, an eyebrow or a section heading looks the same on every page.
 
 ```
-foundations/tokens.css   colour, type, space, shape, motion tokens
-adapters/web.css         maps those tokens onto the web surface
-adapters/native-colors.json  generated native color projection; never edit directly
-adapters/experience.css  shared navigation, discovery, profile and account polish
-adapters/category-themes.css  soft ingredient photography in category margins
-adapters/map-explorer.css     viewport discovery, header search and results sheet
-adapters/producer-profile.css edge-to-edge producer profile layout and sections
-brand/chisan-reference.png   supplied identity sheet (pixel source)
+foundations/tokens.css     every colour, type role, space, shape, shadow, curve and layer
+foundations/base.css       element defaults: type, links, focus, form fields, tables
+foundations/motion.css     keyframes, scroll reveals, view transitions, reduced motion
+adapters/primitives.css    buttons, links, eyebrows, chips, cards, panels, badges
+adapters/brand.css         wordmark, mark and Chisan's character
+adapters/shell.css         header, header and bottom navigation, page containers, footer
+adapters/map.css           the shared map: Leaflet chrome, markers, locator, selection card
+adapters/map-explorer.css  immersive discovery, header search, card strip and results sheet
+adapters/discovery.css     home hero and location card, province choice, selections
+adapters/producer-profile.css  the edge-to-edge producer profile
+adapters/profile-qr.css    printable QR invitation, dialog and label
+adapters/accounts.css      sign-in, account workspace, forms, reviews and producer tools
+adapters/category-themes.css   soft ingredient photography in category margins
+adapters/native-colors.json    generated native colour projection; never edit directly
+brand/chisan-reference.png     supplied identity sheet (pixel source)
 brand/assets/            generated metadata and icon exports
 public/brand/            lossless SVG wrappers for the supplied identity
 references/              selected image direction and external inspiration
@@ -54,26 +61,32 @@ Administration remains usable on a phone but may favour wide screens.
 
 ## Ownership and working defaults
 
-`app/_components/site-root-shell.tsx` imports, in this order:
+`app/globals.css` is the one ordered entry point, imported by
+`app/_components/site-root-shell.tsx`:
 
 ```
-app/globals.css  →  foundations/tokens.css  →  adapters/web.css
-                →  adapters/experience.css  →  adapters/category-themes.css
-                →  adapters/map-explorer.css  →  adapters/producer-profile.css
+tokens → base → motion → primitives → brand → shell → map → map-explorer
+       → discovery → producer-profile → profile-qr → accounts → category-themes
 ```
 
-`tokens.css` is the only place brand colours, spacing and radii are declared. It
-also publishes the older `--accent` / `--radius` names that `globals.css` still
-consumes, so `globals.css` cannot render without it. Semantic product colours,
-such as errors and verification states, remain with their product contract.
+Administration adds `app/styles/admin.css` from its own layout. Component CSS
+modules load with their components and consume the same tokens.
 
-`adapters/web.css` styles the wordmark, map primitives and original web mapping.
-`adapters/experience.css` owns the shared presentation of navigation, menu motion,
-landing pages, discovery and account surfaces. `adapters/producer-profile.css`
-owns the current producer layout while reusing shared catalog chips and controls. Most remaining
-catalog, profile, account and admin presentation is still `app/globals.css` (ordered imports from `app/styles/`) or
-a page-owned CSS module. Those files consume the mapped tokens and remain in
-scope for design work even though they live outside this folder.
+- `tokens.css` is the only place raw values live: brand and state colours,
+  type roles, spacing, radii, shadows, durations, curves and layers. Brand
+  colours stay literal hex so `pnpm build:mobile-tokens` can project them.
+  Semantic product states (danger, warning, info, success) are tokens too;
+  their meaning stays with their product contract.
+- Earlier names (`--accent`, `--line`, `--radius`, `--muted`, …) remain as
+  aliases so older rules and parallel work keep resolving. New rules use the
+  `--chisan-*` names.
+- Each component's styles live in exactly one place. A surface file never
+  resets another file's rule; if a selector needs different values, change
+  its owner. `!important` is reserved for `.visually-hidden` and the
+  reduced-motion switch.
+- CSS modules rename their keyframes and classes. A module refers to shared
+  primitives with `:global(.chisan-…)` and never names a global keyframe; page
+  entries use the `.chisan-enter` utilities in markup instead.
 
 ## Checking
 
@@ -81,33 +94,45 @@ scope for design work even though they live outside this folder.
 pnpm check:design
 ```
 
-The checker reports style drift and catches narrow mechanical accessibility
-regressions. Style choices are defaults, not permanent prohibitions. Use
-`--list <rule>` to inspect locations; judge contrast, focus and responsive
-behavior in the browser. A count alone cannot prove accessibility.
+The checker reports style drift and catches mechanical regressions: raw values
+outside the tokens, undefined `--chisan-*` properties, authored weights other
+than the tokens, and undersized interactive targets. Style findings are review
+prompts. Use `--list <rule>` to inspect locations; judge contrast, focus and
+responsive behavior in the browser. A count alone cannot prove accessibility.
 
 Preserve readable contrast, keyboard operation, clear focus, honest maps and
-reduced-motion support. The palette, type scale, shapes and map density are
+reduced-motion support. The palette, type roles, shapes and map density are
 current product decisions. A justified change may revise them with visual QA.
 
 ## Colour
 
-| Token           |     Value | Role                                    |
-| --------------- | --------: | --------------------------------------- |
-| `rice-paper`    | `#FFFFFF` | Pure white page field                    |
-| `surface`       | `#FFFFFF` | Controls, raised surfaces               |
-| `surface-muted` | `#F6F7F6` | Quiet neutral fills                     |
-| `ink`           | `#18221C` | Text, dark surfaces                     |
-| `stone`         | `#59645D` | Secondary text, map labels              |
-| `hairline`      | `#D8DFDA` | Decorative rules and borders            |
-| `moss`          | `#00563F` | Forest green action, focus, selection   |
-| `moss-dark`     | `#003D2D` | Dark green text and hover               |
-| `moss-pale`     | `#EDF3EF` | Quiet green selected fill                   |
+| Token            |     Value | Role                                           |
+| ---------------- | --------: | ---------------------------------------------- |
+| `rice-paper`     | `#FFFFFF` | Pure white page field                           |
+| `surface`        | `#FFFFFF` | Controls, raised surfaces                      |
+| `surface-muted`  | `#F6F7F6` | Quiet neutral fills: placeholders, fields, facts |
+| `ink`            | `#18221C` | Text, dark surfaces                            |
+| `stone`          | `#59645D` | Secondary text, map labels                     |
+| `hairline`       | `#DFE5E1` | Decorative rules and card edges                |
+| `field-line`     | `#848E87` | Form control boundaries (3:1 on white)         |
+| `moss`           | `#00563F` | Forest green action, focus, selection          |
+| `moss-dark`      | `#003D2D` | Dark green text, hover and inverse panels      |
+| `moss-pale`      | `#EDF3EF` | Tint panels, selected and hover fills          |
+| `moss-line`      | `#B3CCC5` | Secondary button and chip outlines, link rules |
 
-White, soft grays and forest green remain the shared interface palette. The
-page stays white. Category decoration uses generic high-key ingredient photographs
-with white margins, soft edges and the shared ambient-opacity token. Place them
-in the outer body margins below the header, never as a hero banner or behind
+State colours pair a text, a line and a pale fill: `danger` `#9D2B22`,
+`warning` `#6B4A0C`, `info` `#174B70`, and `success-line` `#87B397` beside
+moss. Derived layers are `scrim` (modal backdrop), `glass` (translucent
+navigation) and the `inverse-*` whites used on dark panels.
+
+White, soft greys and forest green remain the shared interface palette. The
+page stays white. Tinted surfaces use `moss-pale` only; `surface-muted` fills
+small things (fields, placeholders, fact tiles) and never a whole section, so
+two nearly equal greens never sit side by side.
+
+Category decoration uses generic high-key ingredient photographs with white
+margins, soft edges and the shared ambient-opacity token. Place them in the
+outer body margins below the header, never as a hero banner or behind
 meaningful text, controls or geography. The first reviewed assets cover
 `Lácteos y quesos` and `Vino`; other categories stay white until they have a
 reviewed matching asset. Do not assign cheese to ice cream or grapes to every
@@ -120,51 +145,93 @@ its natural colour; its labels and geometry remain authoritative. Photographs,
 markers and controls are not desaturated. Category imagery never conveys
 verification, ownership, price, entitlement or a particular producer's products.
 
-Use `stone` or darker for meaningful control boundaries; `hairline` is
+Use `field-line` or darker for meaningful control boundaries; `hairline` is
 decorative only. Text uses `ink`, `stone` or `moss-dark` on light surfaces and
 `surface` on green or dark surfaces. Check actual foreground/background pairs.
 
 Keep decorative photography separate from reading surfaces. Do not add
-tinted control shadows or colour-coded card sets. Status colours belong to their
-product contract. The wordmark and QR C use solid forest green with the supplied
-silhouette; the app icon reverses that silhouette white on a forest square.
+tinted control shadows or colour-coded card sets. The wordmark and QR C use
+solid forest green with the supplied silhouette; the app icon reverses that
+silhouette white on a forest square.
 
 ## Type
 
 Primary family: **Outfit**, self-hosted as a variable font. **Noto Sans** remains
-the fallback before the existing script-specific system fonts. Prefer sans-serif fallbacks; choose a script-appropriate fallback when it
-better preserves legibility.
+the fallback before the existing script-specific system fonts. Prefer sans-serif
+fallbacks; choose a script-appropriate fallback when it better preserves legibility.
 
-| Role      | Weight | Size    | Line height   |
-| --------- | ------ | ------- | ------------- |
-| Display   | 350    | 48–88px | 0.98–1.05     |
-| Heading   | 400    | 28–40px | 1.1–1.2       |
-| Body      | 400    | 16–18px | 1.55–1.7      |
-| Interface | 500    | 14–16px | 1.35–1.5      |
-| Metadata  | 500    | 12–13px | 1.4, `0.04em` |
+Sizes are roles, not numbers. Fluid roles grow between a 360px and a 1280px
+viewport; nothing is smaller than 12px.
 
-`next/font/local` loads Outfit weights 100–900; Noto Sans loads 400, 500 and 700. Display, heading and interface weights are shared tokens (350, 400 and 500), using size, position and space
-for hierarchy. A different weight is a design decision to evaluate in context. 700 belongs to `<strong>` and
-`<b>`, where the browser applies it and the meaning is in the markup. Nothing
-under 12px. Reading column 58–64 characters.
+| Role token         | Size     | Weight | Leading | Use                                        |
+| ------------------ | -------- | ------ | ------- | ------------------------------------------ |
+| `font-display`     | 40–80px  | 350    | 1.02    | Landing and library heroes                 |
+| `font-title`       | 30–52px  | 350    | 1.06    | Page titles; landing section headings (400) |
+| `font-heading`     | 24–36px  | 400    | 1.15    | Section headings on content pages          |
+| `font-subheading`  | 20–24px  | 400    | 1.3     | Card and list titles, h3                   |
+| `font-lead`        | 18–20px  | 400    | 1.5–1.7 | Introductions and long-form reading        |
+| `font-body`        | 16px     | 400    | 1.5     | Body text                                  |
+| `font-ui`          | 15px     | 500    | 1.35    | Buttons, navigation, list titles           |
+| `font-small`       | 14px     | 400/500| 1.35–1.5| Secondary text, chips, descriptions        |
+| `font-caption`     | 13px     | 400    | 1.5     | Metadata, captions, helper text            |
+| `font-micro`       | 12px     | 500    | 1.35    | Eyebrows (uppercase, 0.08em), badges, legal |
+| `font-stat`        | 48–96px  | 350    | 1       | A single headline figure                   |
+
+Weights are three tokens: display 350, heading 400 and interface 500. 700
+belongs to `<strong>` and `<b>`, where the browser applies it. Tracking tightens
+with size (`tracking-display`, `-title`, `-heading`) and opens only for
+uppercase eyebrows (`tracking-caps`). Reading measure is `measure` (64ch).
 
 ## Space, shape, line
 
-- Base 4px. Scale `4 8 12 16 24 32 48 64 96 128`. Prefer these steps for padding, margin and gaps; optical corrections and
-  responsive dimensions may use other values when justified.
-- Shell up to 1440px, gutters 16–24px on small screens and 80px for wide discovery. Discovery is asymmetric 5/7 or 4/8; data
-  tools use strict grids.
-- Radius: `0` structural, `8px` control, `12px` compact object, `16px` large
-  surface. Large map and profile surfaces use the panel token; small screens
-  use the object token where space is limited.
-- `999px` is for filters and tags only — things you can toggle or remove. Never
-  navigation, buttons, badges or links.
+- Base 4px. Space tokens `1 2 3 4 5 6 8 10 12 16 20 24 32` (4–128px). Roles:
+  `gutter` (16–40px), `section-gap` (48–96px) and `panel-padding` (20–48px).
+- Containers: `container` 1280px for the shell and landing pages,
+  `container-wide` 1440px for discovery and administration,
+  `container-content` 960px for forms and Descubrir, `container-reading` 720px.
+  The header and footer span the viewport and inset their content to the same
+  left edge as the page (`--site-inset`); full-bleed pages set
+  `--site-header-inset` to the plain gutter.
+- Radius: `0` structural, `xs` 4px badges and highlights, `control` 8px,
+  `object` 12px cards, `panel` 16–20px large surfaces, `pill` for toggles and
+  filters only — things you can toggle or remove. Never navigation, buttons,
+  badges or links.
 - Border 1px `hairline`; selected 1px `moss`. Focus is a 2px `moss` `outline`
-  with 2px offset, on every interactive element.
-- Overlays alone may use the shared soft shadow. Navigation can use a lightly
-  translucent rice-paper background with blur; an opaque fill remains usable
-  when backdrop filtering is unavailable.
+  with 3px offset, on every interactive element.
 - A card exists only when its content is one selectable, reusable object.
+- Panels come in three treatments only: outline (white with a hairline), tint
+  (`moss-pale`) and inverse (`moss-dark`). A page alternates plain sections
+  with a few panels; twin calls to action use the same treatment.
+
+## Elevation
+
+The page is flat. Only what floats gets a shadow: `shadow-control` for map
+controls and floating buttons, `shadow-raised` for a hovered card lifting 2px,
+`shadow-overlay` for menus, tooltips, sheets and the selected map card, and
+`shadow-modal` for dialogs. Navigation uses the translucent `glass` fill with
+blur; an opaque white remains when backdrop filtering is unavailable.
+
+## Primitives
+
+Compose these classes; a component keeps only its own layout.
+
+- `.chisan-button` — secondary by default (white, `moss-line` outline).
+  Modifiers: `--primary` (forest fill), `--quiet`, `--inverse` (on dark
+  panels), `--danger`, `--lg` (52px), `--block`, `--icon` (44px square).
+  One primary action per group. `.account-button` is a deprecated alias.
+- `.chisan-link` — an underlined inline action; `--inverse` on dark panels.
+- `.chisan-arrow` on a trailing ↗ icon: it leans toward its destination on
+  hover. Links that leave for another page use the up-right arrow.
+- `.chisan-eyebrow` — the small uppercase moss line above a heading.
+  `.catalog-kicker` is a deprecated alias.
+- `.catalog-chip` — toggles and filters, the only pill; `.is-active` fills it
+  dark green.
+- `.chisan-card` with `.chisan-card__media` — one selectable object; lifts on
+  hover and its image eases in.
+- `.chisan-panel` with `--outline`, `--tint` or `--inverse`.
+- `.chisan-badge` with `--neutral`, `--warning`, `--danger` or `--info`.
+- `.chisan-disclosure` — a details element whose content opens with its height.
+- `.chisan-skeleton`, `.chisan-spin` — loading states.
 
 ## Map
 
@@ -350,8 +417,11 @@ coordinate or address as destination and no origin: Google Maps uses device
 location when available, otherwise asks for a starting point. Chisan neither
 requests nor stores the visitor's position for this link. See the [Google Maps URL contract](https://developers.google.com/maps/documentation/urls/get-started#directions-action).
 
-The profile fills the viewport with no outer side margins. Sections keep a small
-inner reading gutter, hairline dividers and compact vertical rhythm. "How we
+The profile fills the viewport with no outer side margins. Every block after
+the hero is a section with the page gutter, a hairline divider and one shared
+vertical rhythm (`--profile-section-space`), including sections that components
+add later. The name row aligns with the page gutter; with a cover it sits on a
+white tab that cuts into the photograph's lower edge. "How we
 produce" has its own early block. The remaining standalone photos form a strip
 near the top: one row at honest aspect
 ratios that scrolls sideways when the screen is narrow or the gallery is long.
@@ -430,10 +500,34 @@ empty alt text when its link already has an accessible name.
 
 ## Motion, voice, access
 
-Motion orients: 150ms feedback, 220ms components, 240ms page arrival, easing
-`cubic-bezier(0.2, 0.8, 0.2, 1)`. Use opacity, short translations and small
-image emphasis. Honour `prefers-reduced-motion`, including changes made while
-the page is open. Never animate thousands of result rows or delay navigation.
+Motion orients: it confirms an action, connects two states or brings content
+into view. Durations are tokens — `motion-instant` 100ms (press),
+`motion-immediate` 160ms (colour and state), `motion-component` 260ms (menus,
+disclosures, cards), `motion-page` 480ms (page arrival, sheets) and
+`motion-reveal` 720ms (content entering view). Curves are `ease` (a quint
+ease-out for most movement), `ease-in-out` for loops, and `ease-spring` /
+`ease-pop`, gentle `linear()` springs for sheets, menus, markers, icons and
+indicators, with cubic fallbacks.
+
+- Press: buttons, chips and controls scale to 0.95–0.97 while pressed.
+- Hover: cards lift 2px onto `shadow-raised` and their image eases to 1.04;
+  trailing arrows lean toward their destination.
+- Arrival: page content rises once (`PageMotion`); hero headings, statements
+  and cards use the `.chisan-enter` steps in markup.
+- Reveal: `data-reveal` sections and `data-reveal-stagger` children rise into
+  place as they scroll into view, tied to scroll position through
+  `animation-timeline: view()`. Browsers without scroll timelines show the
+  content in place. Items inside sideways strips do not reveal.
+- The header's rule appears once the page scrolls beneath it; the active
+  header link grows an underline and the active bottom-bar tab a soft green
+  indicator.
+- Full document navigations between root layouts crossfade through
+  `@view-transition`, with the header and bottom bar held in place.
+
+Honour `prefers-reduced-motion`, including changes made while the page is
+open: one switch in `motion.css` removes every animation and transition, and
+scroll reveals and view transitions only run under `no-preference`. Never
+animate thousands of result rows or delay navigation.
 
 Header navigation uses direct links rather than a menu. Its first link opens
 Actividad; on Actividad it becomes Mapa, so it always leads elsewhere. The
@@ -472,9 +566,10 @@ results retain shared relevance order even when the map moves. Country results
 show each producer's municipality and province and retain its own profile URL.
 
 The white footer groups readable forest-green links in three columns on wide
-screens. On phones the groups are short native disclosures, above the original
-illustrated panorama. Chisan's square character replaces the former delivery
-bicycle in that scene. Decoration never captures pointer or keyboard input.
+screens. On phones the groups are short native disclosures that open with their
+height. The illustrated panorama closes the page in its own band below the legal
+line, so it never sits behind text. Chisan's square character replaces the former
+delivery bicycle in that scene. Decoration never captures pointer or keyboard input.
 
 The selection QR invitation uses the supplied C, which crossfades upward into
 the QR icon on hover/focus. Activation opens a native modal dialog with a brief
@@ -517,10 +612,11 @@ stronger evidence.
 
 ## Before you ship
 
-- [ ] Every colour is a token above, and no banned pair.
+- [ ] Every colour, size, weight, radius, shadow, duration and curve is a token.
+- [ ] Buttons, links, eyebrows, chips, cards, panels and badges compose the
+      primitives rather than restating them.
 - [ ] Every space value is on the 4px scale.
-- [ ] Every size and weight is in the type table.
-- [ ] Pills only on toggles.
+- [ ] Pills only on toggles and filters; panels only outline, tint or inverse.
 - [ ] Targets 44×44px, apart from the documented dense-map exception; focus
       visible as an outline.
 - [ ] Designed and checked at 390px first, with no horizontal overflow.

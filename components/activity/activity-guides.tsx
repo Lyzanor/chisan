@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { GuideCover } from "@/components/guides/guide-cover";
 import {
   GUIDES_PATH,
@@ -15,23 +16,23 @@ export function ActivityGuides({ guides }: ActivityGuidesProps) {
   if (!guides.length) return null;
 
   return (
-    <section className={styles.section} aria-labelledby="activity-guides-title">
+    <section className={styles.section} data-reveal aria-labelledby="activity-guides-title">
       <div className={styles.sectionHeading}>
         <div>
-          <p className={styles.kicker}>Biblioteca Chisan</p>
+          <p className="chisan-eyebrow">Biblioteca Chisan</p>
           <h2 id="activity-guides-title">Guías destacadas</h2>
         </div>
-        <Link href={GUIDES_PATH} className={styles.sectionLink}>
-          Todas las guías →
+        <Link href={GUIDES_PATH} className="chisan-link">
+          Todas las guías <ArrowUpRightIcon className="chisan-arrow" size={16} aria-hidden="true" />
         </Link>
       </div>
 
-      <div className={styles.guidesGrid}>
+      <div className={styles.guidesGrid} data-reveal-stagger>
         {guides.map((guide) => (
           <Link
             key={guide.slug}
             href={guidePath(guide.slug)}
-            className={styles.guideCard}
+            className={`chisan-card ${styles.guideCard}`}
           >
             <GuideCover guide={guide} compact />
             <div className={styles.guideBody}>

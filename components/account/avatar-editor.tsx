@@ -94,7 +94,7 @@ export function AvatarEditor({
       {avatarUrl ? (
         <button
           type="button"
-          className="account-button account-button--secondary"
+          className="chisan-button"
           disabled={busy}
           onClick={() => void save(null)}
         >

@@ -63,14 +63,14 @@ export default async function ContactPage() {
       />
       <article aria-labelledby="contact-title">
         <header className={`${styles.hero} ${styles.contactHero}`}>
-          <p className="catalog-kicker">{SITE_NAME}</p>
-          <h1 id="contact-title">{copy.title}</h1>
-          <p className={styles.contactIntro}>{copy.introduction}</p>
+          <p className="chisan-eyebrow">{SITE_NAME}</p>
+          <h1 className="chisan-enter" id="contact-title">{copy.title}</h1>
+          <p className={`chisan-enter chisan-enter--2 ${styles.contactIntro}`}>{copy.introduction}</p>
         </header>
 
-        <section className={styles.section} aria-labelledby="contact-channels-title">
+        <section className={styles.section} data-reveal aria-labelledby="contact-channels-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{SITE_NAME}</p>
+            <p className="chisan-eyebrow">{SITE_NAME}</p>
             <h2 id="contact-channels-title">{copy.channelsTitle}</h2>
           </div>
           <div className={styles.sectionBody}>

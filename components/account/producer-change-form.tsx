@@ -218,7 +218,7 @@ function SubmitProducerChangeButton({
         name="intent"
         value="draft"
         formNoValidate
-        className="account-button account-button--secondary"
+        className="chisan-button"
         disabled={pending || blocked}
       >
         {pending ? labels.saving : labels.draft}
@@ -227,7 +227,7 @@ function SubmitProducerChangeButton({
         type="submit"
         name="intent"
         value="submit"
-        className="account-button"
+        className="chisan-button chisan-button--primary"
         disabled={pending || blocked}
       >
         {pending ? labels.saving : labels.submit}
@@ -369,7 +369,7 @@ export function ProducerChangeForm({
               <div>
                 <button
                   type="button"
-                  className="account-button account-button--secondary"
+                  className="chisan-button"
                   onClick={async () => {
                     const data = new FormData(formRef.current!);
                     const values = [...data.entries()].filter(
@@ -397,7 +397,7 @@ export function ProducerChangeForm({
             {state.reloadRequired ? (
               <button
                 type="button"
-                className="account-button account-button--secondary"
+                className="chisan-button"
                 onClick={() => window.location.reload()}
               >
                 {labels.reload}

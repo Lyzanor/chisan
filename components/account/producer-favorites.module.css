@@ -1,13 +1,13 @@
 .section {
   margin-block: 0;
   padding-block: var(--chisan-space-6);
-  border-top: 1px solid var(--chisan-color-hairline);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
 }
 .summary {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: var(--chisan-space-4);
   min-height: 64px;
   padding: var(--chisan-space-2) 0;
   cursor: pointer;
@@ -23,38 +23,38 @@
 }
 .copy {
   display: grid;
-  gap: 0.25rem;
+  gap: var(--chisan-space-1);
   margin-right: auto;
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
+  font-size: var(--chisan-font-small);
 }
 .title {
   color: var(--chisan-color-ink);
-  font-weight: 500;
-  font-size: 1.25rem;
+  font-weight: var(--chisan-weight-interface);
+  font-size: var(--chisan-font-subheading);
   margin: 0;
 }
 .stack {
   display: flex;
   align-items: center;
-  padding-left: 0.75rem;
+  padding-left: var(--chisan-space-3);
 }
 .stack > span {
   display: flex;
-  border: 2px solid var(--surface);
+  border: 2px solid var(--chisan-color-surface);
   border-radius: 50%;
-  margin-left: -0.75rem;
+  margin-left: calc(-1 * var(--chisan-space-3));
 }
 .stack .count {
   min-width: 44px;
   height: 44px;
   align-items: center;
   justify-content: center;
-  padding-inline: 0.5rem;
+  padding-inline: var(--chisan-space-2);
   color: var(--chisan-color-ink);
-  background: var(--surface-muted);
-  font-size: 0.875rem;
-  font-weight: 600;
+  background: var(--chisan-color-surface-muted);
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
 }
 .chevron {
   color: var(--chisan-color-moss);
@@ -63,26 +63,26 @@
   transform: rotate(180deg);
 }
 .content {
-  padding-bottom: 1rem;
+  padding-bottom: var(--chisan-space-4);
 }
 .note {
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
+  font-size: var(--chisan-font-small);
 }
 .list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: var(--chisan-space-4) 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.25rem 1.5rem;
+  gap: var(--chisan-space-1) var(--chisan-space-6);
 }
 .person {
   min-height: 64px;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
+  gap: var(--chisan-space-3);
+  padding: var(--chisan-space-2) 0;
   color: var(--chisan-color-ink);
   text-decoration: none;
 }
@@ -92,12 +92,12 @@
   overflow-wrap: anywhere;
 }
 .person strong {
-  font-weight: 600;
+  font-weight: var(--chisan-weight-interface);
 }
 .person small {
   display: block;
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
+  font-size: var(--chisan-font-small);
 }
 a.person:hover strong {
   text-decoration: underline;
@@ -107,6 +107,6 @@ a.person:hover strong {
     grid-template-columns: minmax(0, 1fr);
   }
   .summary {
-    gap: 0.75rem;
+    gap: var(--chisan-space-3);
   }
 }

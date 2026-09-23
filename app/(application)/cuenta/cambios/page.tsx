@@ -84,11 +84,11 @@ export default async function ChangesPage({ searchParams }: ChangesPageProps) {
                   <p className="account-message account-message--error">{producerEditorMessage(presentation.locale, change.failureReason)}</p>
                 ) : null}
                 <div className="account-inline-actions">
-                  {producer && change.status === "draft" ? <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`} className="account-button">{labels.continue}</Link> : null}
+                  {producer && change.status === "draft" ? <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`} className="chisan-button chisan-button--primary">{labels.continue}</Link> : null}
                   {producer && ["conflict", "rejected", "withdrawn", "failed"].includes(change.status) ? (
                     <Link
                       href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`}
-                      className="account-button account-button--secondary"
+                      className="chisan-button"
                     >
                       {labels.newProposal}
                     </Link>

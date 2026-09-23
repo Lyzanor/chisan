@@ -46,7 +46,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
       <form action={completeOnboardingAction} className={styles.flow}>
         <input type="hidden" name="siguiente" value={next} />
         <header className={styles.header}>
-          <p className="catalog-kicker">Te damos la bienvenida</p>
+          <p className="chisan-eyebrow">Te damos la bienvenida</p>
           <h2 className={styles.title}>Configura tu cuenta de {SITE_NAME}</h2>
           <p className={styles.lead}>Solo dos preguntas.</p>
         </header>
@@ -101,7 +101,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
         </label>
 
         <div className={styles.actions}>
-          <button type="submit" className="account-button">
+          <button type="submit" className="chisan-button chisan-button--primary">
             Continuar
           </button>
         </div>

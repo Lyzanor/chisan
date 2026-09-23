@@ -20,31 +20,31 @@ export function ActivityFeed({ items }: ActivityFeedProps) {
   });
 
   return (
-    <section className={styles.section} aria-labelledby="activity-feed-title">
+    <section className={styles.section} data-reveal aria-labelledby="activity-feed-title">
       <div className={styles.sectionHeading}>
         <div>
-          <p className={styles.kicker}>Actualidad</p>
+          <p className="chisan-eyebrow">Actualidad</p>
           <h2 id="activity-feed-title">Feed cronológico</h2>
         </div>
 
-        <div className={styles.locationActions} role="tablist" aria-label="Filtro de actividad">
+        <div className={styles.filters} role="tablist" aria-label="Filtro de actividad">
           <button
             type="button"
-            className={filter === "all" ? styles.buttonPrimary : styles.buttonSecondary}
+            className={`catalog-chip${filter === "all" ? " is-active" : ""}`}
             onClick={() => setFilter("all")}
           >
             Todo
           </button>
           <button
             type="button"
-            className={filter === "update" ? styles.buttonPrimary : styles.buttonSecondary}
+            className={`catalog-chip${filter === "update" ? " is-active" : ""}`}
             onClick={() => setFilter("update")}
           >
             Novedades
           </button>
           <button
             type="button"
-            className={filter === "claim" ? styles.buttonPrimary : styles.buttonSecondary}
+            className={`catalog-chip${filter === "claim" ? " is-active" : ""}`}
             onClick={() => setFilter("claim")}
           >
             Titularidad
@@ -57,7 +57,7 @@ export function ActivityFeed({ items }: ActivityFeedProps) {
           <p>No hay actividad reciente para mostrar con este filtro.</p>
         </div>
       ) : (
-        <div className={styles.feedList}>
+        <div className={styles.feedList} data-reveal-stagger>
           {filteredItems.map((item) => (
             <article key={item.id} className={styles.feedItem}>
               <div className={styles.feedHeader}>

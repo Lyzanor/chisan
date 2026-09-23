@@ -30,7 +30,7 @@ export function AdminShell({
         <div className="admin-workspace">
           <header className="admin-workspace__header">
             <div>
-              <p className="catalog-kicker">Controlled workspace</p>
+              <p className="chisan-eyebrow">Controlled workspace</p>
               <h1>Operations</h1>
             </div>
             <div className="admin-workspace__identity">

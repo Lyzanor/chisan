@@ -116,7 +116,7 @@ export default async function AdminChangeDetailPage({
 
       <header className="admin-detail-heading">
         <div>
-          <p className="catalog-kicker">
+          <p className="chisan-eyebrow">
             {detail.change.country.toUpperCase()} · Producer #{detail.change.producerId}
           </p>
           <h2>{detail.producerName}</h2>
@@ -369,7 +369,7 @@ export default async function AdminChangeDetailPage({
       {reviewable ? (
         <section className="admin-review-panel" aria-labelledby="editorial-decision-title">
           <div>
-            <p className="catalog-kicker">Editorial checkpoint</p>
+            <p className="chisan-eyebrow">Editorial checkpoint</p>
             <h3 id="editorial-decision-title">Record a decision</h3>
             <p>
               Approval confirms editorial review and makes the request eligible for local CSV
@@ -390,11 +390,11 @@ export default async function AdminChangeDetailPage({
               <small>Record the public evidence checked and the reasoning behind the decision.</small>
             </label>
             <div className="account-inline-actions">
-              <button className="account-button" name="decision" value="approved">
+              <button className="chisan-button chisan-button--primary" name="decision" value="approved">
                 Approve for CSV
               </button>
               <button
-                className="account-button account-button--danger"
+                className="chisan-button chisan-button--danger"
                 name="decision"
                 value="rejected"
               >
@@ -439,7 +439,7 @@ export default async function AdminChangeDetailPage({
 
         <section className="admin-agent-panel admin-agent-panel--stacked" aria-labelledby="agent-record-title">
           <div>
-            <p className="catalog-kicker">Machine-readable record</p>
+            <p className="chisan-eyebrow">Machine-readable record</p>
             <h3 id="agent-record-title">Agent access</h3>
             <p>
               Read the full request, normalized workflow state, safe audit metadata and operator

@@ -35,7 +35,7 @@ export default async function CommunityPage() {
                 <p>{producer.city}</p>
               </div>
               <Link
-                className="account-button"
+                className="chisan-button chisan-button--primary"
                 href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`}
               >
                 Editar y enviar una novedad

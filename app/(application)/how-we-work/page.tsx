@@ -73,9 +73,9 @@ export default async function HowChisanWorksPage() {
       />
       <article aria-labelledby="how-chisan-works-title">
         <header className={styles.hero}>
-          <p className="catalog-kicker">{SITE_NAME}</p>
-          <h1 id="how-chisan-works-title">{copy.title}</h1>
-          <div className={styles.heroStatement}>
+          <p className="chisan-eyebrow">{SITE_NAME}</p>
+          <h1 className="chisan-enter" id="how-chisan-works-title">{copy.title}</h1>
+          <div className={`chisan-enter chisan-enter--2 ${styles.heroStatement}`}>
             <p>{copy.purposeLead}</p>
             <p>
               {copy.purposeOriginBefore}
@@ -86,9 +86,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </header>
 
-        <section className={styles.section} aria-labelledby="catalog-process-title">
+        <section className={styles.section} data-reveal aria-labelledby="catalog-process-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.processKicker}</p>
+            <p className="chisan-eyebrow">{copy.processKicker}</p>
             <h2 id="catalog-process-title">{copy.processTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -109,9 +109,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="catalog-sources-title">
+        <section className={styles.section} data-reveal aria-labelledby="catalog-sources-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.sourcesKicker}</p>
+            <p className="chisan-eyebrow">{copy.sourcesKicker}</p>
             <h2 id="catalog-sources-title">{copy.sourcesTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -157,9 +157,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="catalog-eligibility-title">
+        <section className={styles.section} data-reveal aria-labelledby="catalog-eligibility-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.eligibilityKicker}</p>
+            <p className="chisan-eyebrow">{copy.eligibilityKicker}</p>
             <h2 id="catalog-eligibility-title">{copy.eligibilityTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -177,9 +177,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="catalog-boundaries-title">
+        <section className={styles.section} data-reveal aria-labelledby="catalog-boundaries-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.boundariesKicker}</p>
+            <p className="chisan-eyebrow">{copy.boundariesKicker}</p>
             <h2 id="catalog-boundaries-title">{copy.boundariesTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -197,9 +197,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="catalog-lifecycle-title">
+        <section className={styles.section} data-reveal aria-labelledby="catalog-lifecycle-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.lifecycleKicker}</p>
+            <p className="chisan-eyebrow">{copy.lifecycleKicker}</p>
             <h2 id="catalog-lifecycle-title">{copy.lifecycleTitle}</h2>
           </div>
           <div className={`${styles.sectionBody} ${styles.prose}`}>
@@ -209,9 +209,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="catalog-trust-title">
+        <section className={styles.section} data-reveal aria-labelledby="catalog-trust-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.trustKicker}</p>
+            <p className="chisan-eyebrow">{copy.trustKicker}</p>
             <h2 id="catalog-trust-title">{copy.trustTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -229,9 +229,9 @@ export default async function HowChisanWorksPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="participation-title">
+        <section className={styles.section} data-reveal aria-labelledby="participation-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.participationKicker}</p>
+            <p className="chisan-eyebrow">{copy.participationKicker}</p>
             <h2 id="participation-title">{copy.participationTitle}</h2>
           </div>
           <div className={`${styles.sectionBody} ${styles.prose}`}>
@@ -239,19 +239,19 @@ export default async function HowChisanWorksPage() {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className={styles.actions}>
-              <Link className={styles.secondaryAction} href={ACCOUNT_ROUTES.dashboard}>
+              <Link className="chisan-button" href={ACCOUNT_ROUTES.dashboard}>
                 {copy.account}
               </Link>
-              <Link className={styles.secondaryAction} href="/contact">
+              <Link className="chisan-button" href="/contact">
                 {copy.contact}
               </Link>
             </div>
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="public-access-title">
+        <section className={styles.section} data-reveal aria-labelledby="public-access-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.accessKicker}</p>
+            <p className="chisan-eyebrow">{copy.accessKicker}</p>
             <h2 id="public-access-title">{copy.accessTitle}</h2>
           </div>
           <div className={`${styles.sectionBody} ${styles.prose}`}>
@@ -259,7 +259,7 @@ export default async function HowChisanWorksPage() {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className={styles.actions}>
-              <Link className={styles.primaryAction} href="/">
+              <Link className="chisan-button chisan-button--primary" href="/">
                 {copy.exploreCatalog}
               </Link>
             </div>

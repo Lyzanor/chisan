@@ -277,7 +277,7 @@ export function ProducerProductsEditor({
       <button
         ref={addButton}
         type="button"
-        className="account-button account-button--secondary"
+        className="chisan-button"
         disabled={products.length >= content.limit}
         onClick={() => {
           const id = `product-${crypto.randomUUID()}`;

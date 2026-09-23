@@ -115,7 +115,7 @@ export function ProducerFavoritesList({
           </div>
           {error ? (
             <button
-              className="account-button account-button--secondary"
+              className="chisan-button"
               onClick={() => void refresh()}
               disabled={busy}
             >
@@ -124,7 +124,7 @@ export function ProducerFavoritesList({
           ) : null}
           {page && page.nextOffset !== null && !error ? (
             <button
-              className="account-button account-button--secondary"
+              className="chisan-button"
               disabled={busy}
               onClick={() => void refresh(page.nextOffset!)}
             >

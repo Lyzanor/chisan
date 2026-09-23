@@ -98,7 +98,7 @@ function ProducerQrSettings({
             Mostrar y permitir descargar la etiqueta QR
           </span>
         </label>
-        <button type="submit" className="account-button">
+        <button type="submit" className="chisan-button chisan-button--primary">
           Guardar preferencia del QR
         </button>
       </form>
@@ -185,7 +185,7 @@ export default async function EditProducerPage({
   const premiumActive = Boolean(premiumEntitlement);
   const producerQrEnabled = isProfileQrEnabled(premiumEntitlement?.metadata);
   const statisticsLink = owner ? (
-    <Link href={`/cuenta/productores/${country}/${producerId}/estadisticas`} className="account-button account-button--secondary">
+    <Link href={`/cuenta/productores/${country}/${producerId}/estadisticas`} className="chisan-button">
       {getProducerStatsLabels(presentation.locale).link}
     </Link>
   ) : null;
@@ -211,11 +211,11 @@ export default async function EditProducerPage({
             {openChange.status === "draft" ? labels.premiumPausedHelp : labels.sentHelp}
           </p>
           <div className="account-inline-actions">
-            {premiumActive && selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="account-button account-button--secondary">Foto de mi estantería</Link> : null}
-            <Link href="/cuenta/cambios" className="account-button">
+            {premiumActive && selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="chisan-button">Foto de mi estantería</Link> : null}
+            <Link href="/cuenta/cambios" className="chisan-button chisan-button--primary">
               {labels.viewRequest}
             </Link>
-            <Link href={publicHref} className="account-button account-button--secondary">
+            <Link href={publicHref} className="chisan-button">
               {labels.publicProfile}
             </Link>
           </div>
@@ -236,7 +236,7 @@ export default async function EditProducerPage({
           <p>
             Chisan está realizando tareas de mantenimiento del catálogo. Las solicitudes existentes siguen disponibles para revisión y este formulario volverá a abrirse al terminar.
           </p>
-          <Link href={publicHref} className="account-button account-button--secondary">
+          <Link href={publicHref} className="chisan-button">
             {labels.publicProfile}
           </Link>
         </div>
@@ -345,7 +345,7 @@ export default async function EditProducerPage({
       <AccountMessage params={query} />
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">{labels.editor}</p>
+          <p className="chisan-eyebrow">{labels.editor}</p>
           <h2>{producer.name}</h2>
           <p>
             {producer.city} · {producer.country.toUpperCase()} / {producer.area}
@@ -353,7 +353,7 @@ export default async function EditProducerPage({
         </div>
         <div className="account-inline-actions">
           {statisticsLink}
-          <Link href={publicHref} className="account-button account-button--secondary">
+          <Link href={publicHref} className="chisan-button">
             {labels.publicProfile}
           </Link>
         </div>
@@ -394,7 +394,7 @@ export default async function EditProducerPage({
         {canOpenUpgrade ? (
           <Link
             href={`/cuenta/productores/${country}/${producerId}/ampliar`}
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             {premiumActive || upgradePending || upgradeNeedsReconciliation
               ? "Ver estado de la ampliación"

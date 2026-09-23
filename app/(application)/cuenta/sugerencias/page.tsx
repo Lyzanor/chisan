@@ -64,7 +64,7 @@ export default async function ProducerSuggestionsPage({
             editorial habitual y nunca te concede acceso a la ficha.
           </p>
         </div>
-        <Link href="/" className="account-button account-button--secondary">
+        <Link href="/" className="chisan-button">
           Buscar un productor
         </Link>
       </header>
@@ -117,7 +117,7 @@ export default async function ProducerSuggestionsPage({
                   {producer ? (
                     <Link
                       href={buildAccountProducerHref(producer, explicitLocale)}
-                      className="account-button account-button--secondary"
+                      className="chisan-button"
                     >
                       Perfil público
                     </Link>

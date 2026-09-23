@@ -37,7 +37,7 @@ function SubmitForm({
       <input type="hidden" name="operation" value={operation} />
       <input type="hidden" name="payload" value={JSON.stringify(payload)} />
       {children}
-      <button disabled={pending} className="account-button">
+      <button disabled={pending} className="chisan-button chisan-button--primary">
         {pending ? "Guardando…" : label}
       </button>
       {state.error ? (

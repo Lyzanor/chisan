@@ -119,9 +119,7 @@ function ProducerSelectionExplorerView({
           type="button"
           role="tab"
           aria-selected={mobileTab === "shelf"}
-          className={`${shelfStyles.mobileTab} ${
-            mobileTab === "shelf" ? shelfStyles.mobileTabActive : ""
-          }`}
+          className={`catalog-chip${mobileTab === "shelf" ? " is-active" : ""}`}
           onClick={viewShelf}
         >
           <span>{isPlan ? "🗺️ Plano" : "🖼️ Estantería"} ({image.points.length})</span>
@@ -130,9 +128,7 @@ function ProducerSelectionExplorerView({
           type="button"
           role="tab"
           aria-selected={mobileTab === "map"}
-          className={`${shelfStyles.mobileTab} ${
-            mobileTab === "map" ? shelfStyles.mobileTabActive : ""
-          }`}
+          className={`catalog-chip${mobileTab === "map" ? " is-active" : ""}`}
           onClick={viewMap}
         >
           <span>🗺️ {isPlan ? "Origen" : "Mapa"} ({mappedCount})</span>
@@ -167,7 +163,7 @@ function ProducerSelectionExplorerView({
           <div className={shelfStyles.shelfReturnBanner}>
             <button
               type="button"
-              className={shelfStyles.backToShelfButton}
+              className="chisan-button"
               onClick={viewShelf}
             >
               <span>← Ver {isPlan ? "en el plano" : "en estantería"}</span>

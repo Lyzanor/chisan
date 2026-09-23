@@ -17,7 +17,7 @@ export async function ShelfWhatsAppLink() {
   return <section className="account-callout"><h3>Envía la foto por WhatsApp</h3>
     {link?.sender ? <>
       <p>Tu número terminado en {link.sender.slice(-4)} está vinculado a la estantería. Envía la foto al chat de Chisan; nosotros nos encargamos del resto.</p>
-      <form action={unlinkWhatsApp}><button className="account-button account-button--secondary">Desconectar WhatsApp</button></form>
+      <form action={unlinkWhatsApp}><button className="chisan-button">Desconectar WhatsApp</button></form>
     </> : <ShelfWhatsAppForm aiProviderName={aiProviderLabel()} />}
   </section>;
 }

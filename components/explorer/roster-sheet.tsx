@@ -210,7 +210,7 @@ export function RosterSheet({
       {hasError && onRetry ? (
         <button
           type="button"
-          className="catalog-search-action"
+          className="chisan-button catalog-search-action"
           onClick={onRetry}
         >
           {retryLabel}
@@ -253,7 +253,7 @@ export function RosterSheet({
       {totalCount > visibleLimit ? (
         <button
           type="button"
-          className="catalog-search-action"
+          className="chisan-button catalog-search-action"
           onClick={onLoadMore}
         >
           {moreLabel}
@@ -270,7 +270,7 @@ export function RosterSheet({
         </div>
         <button
           type="button"
-          className="catalog-roster-suggest__btn"
+          className="chisan-button catalog-roster-suggest__btn"
           onClick={onSuggestProducer}
         >
           <PlusCircleIcon size={18} aria-hidden="true" />

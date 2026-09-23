@@ -97,7 +97,7 @@ function MethodChoice({
 function SubmitClaimButton() {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" className="account-button" disabled={pending}>
+    <button type="submit" className="chisan-button chisan-button--primary" disabled={pending}>
       {pending ? "Enviando…" : "Enviar solicitud"}
     </button>
   );
@@ -164,10 +164,10 @@ export function ProducerClaimWizard({
           </Link>
         </article>
         <div className={styles.actions}>
-          <button type="button" className="account-button" onClick={() => go("verificacion")}>
+          <button type="button" className="chisan-button chisan-button--primary" onClick={() => go("verificacion")}>
             Sí, es mi ficha
           </button>
-          <Link href={searchHref} className="account-button account-button--secondary">
+          <Link href={searchHref} className="chisan-button">
             No, buscar otra
           </Link>
         </div>
@@ -213,12 +213,12 @@ export function ProducerClaimWizard({
             <form action={beginInstagramVerification}>
               <input type="hidden" name="country" value={producer.country} />
               <input type="hidden" name="producerId" value={producer.producerId} />
-              <button type="submit" className="account-button">
+              <button type="submit" className="chisan-button chisan-button--primary">
                 Conectar Instagram
               </button>
             </form>
           ) : (
-            <button type="button" className="account-button" onClick={() => go("relacion")}>
+            <button type="button" className="chisan-button chisan-button--primary" onClick={() => go("relacion")}>
               Continuar
             </button>
           )}

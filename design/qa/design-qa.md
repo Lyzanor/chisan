@@ -1,7 +1,67 @@
 # Current design QA
 
-Active system: [Product in the light](../README.md). Earlier verification is
+Active system: [One field](../README.md) (v0.7). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
+
+## 2026-09-23 — v0.7 One field: one token system, shared primitives and fluid motion
+
+The stylesheets had grown by layering: `app/styles/*`, `web.css`,
+`experience.css` and `producer-profile.css` restated the same selectors and
+reset each other. Before the change the CSS used 97 font sizes, 23 radii, 15
+shadows, 63 loose colours, 600/700 weights the system forbids, 63 classes no
+component rendered, and three undefined properties (`--chisan-space-5` was
+used nine times, so those paddings computed to 0). Buttons, eyebrows, cards
+and section headings had a different look on almost every page.
+
+- **Foundation.** `tokens.css` now declares every value by role: 11 type roles
+  (fluid between 360 and 1280px, nothing under 12px), three weights, the 4px
+  space scale plus gutter/section/panel roles, containers, radii, four
+  elevations, five durations, a quint ease-out and two `linear()` springs, and
+  the layer scale. `base.css` sets element defaults (headings, links, focus,
+  one field look for inputs, tables); `motion.css` owns keyframes, reveals,
+  view transitions and the single reduced-motion switch.
+- **Primitives.** `.chisan-button` (primary, secondary, quiet, inverse,
+  danger, lg, block, icon), `.chisan-link` with `.chisan-arrow`,
+  `.chisan-eyebrow`, `.catalog-chip`, `.chisan-card`, `.chisan-panel` (outline,
+  tint, inverse) and `.chisan-badge`. 138 `account-button` uses and every
+  `catalog-kicker` now compose them; the old names stay as aliases.
+- **Structure.** One ordered entry (`app/globals.css`) imports tokens → base →
+  motion → primitives → brand → shell → map → map-explorer → discovery →
+  producer-profile → profile-qr → accounts → category-themes. Seven
+  `app/styles` files and `web.css`/`experience.css` were merged into owners
+  where each selector lives once. After the change: 11 font-size roles plus
+  two emoji glyph sizes, only token radii, no loose colour outside tokens, no
+  undefined property, and `pnpm check:design` fails on an undefined
+  `--chisan-*` or a new target under 44px.
+- **Harmony.** The header and footer span the viewport and inset their content
+  to the page edge (logo, profile name and introduction all start at x=32 at
+  1280px). Tinted panels use `moss-pale` only; the home's two calls to action
+  are twin tint panels; landing section headings share one size. The hairline
+  is lighter (`#DFE5E1`) and form boundaries use `field-line` (3:1).
+- **Motion.** Glass header whose rule appears on scroll, active header link
+  underline, bottom-bar indicator that grows with a spring, press scale on
+  buttons and chips, cards lifting onto `shadow-raised` with image ease,
+  scroll-linked section reveals (`data-reveal`, `data-reveal-stagger`), hero
+  entry steps, spring sheet and menus, marker pop, height-animated
+  disclosures, and cross-document view transitions. The JS `SectionReveal`
+  was removed.
+- **Fixes found on the way.** Profile sections added by components (people,
+  followers) had no gutter on the edge-to-edge profile; the B2B panel lost its
+  three-column layout; the video button rendered in Arial; the Descubrir
+  spinner never turned; the footer panorama sat behind the legal line; a CSS
+  module's reference to a global keyframe was silently renamed.
+
+Checked on a production build at 390×844 first, then 1280×900 and tall
+captures: home, `/es`, `/es/madrid` (immersive map, sheet, carousel, header
+search), producer profiles with and without cover (`/es/barcelona/chisan`,
+Cervesa del Montseny), guides index and article, Descubrir, About, Contact,
+404 and account entry. No horizontal overflow on any of them; the header mark,
+footer disclosures and bottom-bar indicator behave at both widths. Account
+pages that need the database and Clerk were not rendered locally; their
+markup changes are class renames onto the same primitives.
+`pnpm check:design`, `check:docs`, `lint`, `build`, `test:i18n`,
+`test:catalog-geography`, the root-layout and marker tests and
+`BASE_URL=… test:behavior` passed.
 
 ## 2026-09-23 — Guide reading roles and editorial revision notes
 

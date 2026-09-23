@@ -97,7 +97,7 @@ export async function ProducerSearchStep({
           maxLength={160}
           required
         />
-        <button type="submit" className="account-button">
+        <button type="submit" className="chisan-button chisan-button--primary">
           Buscar
         </button>
       </form>

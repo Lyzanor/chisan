@@ -88,7 +88,7 @@ export default async function AdminSystemStatusPage() {
     <div className="admin-content">
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">Runtime-owned diagnostics</p>
+          <p className="chisan-eyebrow">Runtime-owned diagnostics</p>
           <h2>System status</h2>
           <p>
             Verify the account database contract from the application that actually uses it,

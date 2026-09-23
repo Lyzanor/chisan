@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 import { UserAvatar } from "./account/user-avatar";
 import { listHomeCommunity } from "@/lib/accounts/home-community";
@@ -13,16 +14,16 @@ export async function HomeCommunity() {
   return (
     <section className={styles.communityPanel} aria-labelledby="home-community-title">
       <div className={styles.communityIntro}>
-        <p className="catalog-kicker">Una comunidad que va creciendo</p>
+        <p className="chisan-eyebrow">Una comunidad que va creciendo</p>
         <h2 id="home-community-title">{members.length ? "Confían en nosotros" : "Una comunidad en construcción"}</h2>
         <p>{members.length
           ? "Productores con titularidad verificada y personas que comparten su perfil en Chisan."
           : "Sigue a los productores que te importan y comparte tu propia selección."}</p>
       </div>
       {members.length ? (
-        <div className={styles.community}>
+        <div className={styles.community} data-reveal-stagger>
           {members.map((member) => (
-            <Link key={`${member.kind}:${member.key}`} href={member.href}>
+            <Link key={`${member.kind}:${member.key}`} className="chisan-card" href={member.href}>
               {member.kind === "user" ? (
                 <UserAvatar name={member.name} src={member.image} size={64} />
               ) : member.image ? (
@@ -42,8 +43,8 @@ export async function HomeCommunity() {
           ))}
         </div>
       ) : (
-        <Link className={styles.textLink} href="/registro">
-          Forma parte de Chisan <span aria-hidden="true">↗</span>
+        <Link className="chisan-link" href="/registro">
+          Forma parte de Chisan <ArrowUpRightIcon className="chisan-arrow" size={16} aria-hidden="true" />
         </Link>
       )}
     </section>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
-import { UserPlusIcon, HeartIcon } from "@phosphor-icons/react";
+import { ArrowUpRightIcon, UserPlusIcon, HeartIcon } from "@phosphor-icons/react";
 import { getFollowedProducersAction } from "@/app/(application)/actividad/actions";
 import { useProducerFollows } from "@/components/account/producer-follows-context";
 import type { ActivityFollowedProducer } from "@/lib/activity/data";
@@ -49,12 +49,12 @@ function ActivityFollowingBubblesView({
     <section className={styles.bubblesSection} aria-labelledby="following-bubbles-title">
       <div className={styles.sectionHeading}>
         <div>
-          <p className={styles.kicker}>Tu red local</p>
+          <p className="chisan-eyebrow">Tu red local</p>
           <h2 id="following-bubbles-title">Siguiendo</h2>
         </div>
         {isSignedIn && activeProducers.length > 0 ? (
-          <Link href="/cuenta/siguiendo" className={styles.sectionLink}>
-            Gestionar seguimientos ({activeProducers.length}) →
+          <Link href="/cuenta/siguiendo" className="chisan-link">
+            Gestionar seguimientos ({activeProducers.length}) <ArrowUpRightIcon className="chisan-arrow" size={16} aria-hidden="true" />
           </Link>
         ) : null}
       </div>
@@ -66,7 +66,7 @@ function ActivityFollowingBubblesView({
       ) : !isSignedIn ? (
         <div className={styles.bubblesGuest}>
           <span>Inicia sesión para guardar a tus productores de referencia y ver sus novedades aquí.</span>
-          <Link href="/acceso" className={styles.buttonSecondary}>
+          <Link href="/acceso" className="chisan-button">
             <UserPlusIcon size={18} aria-hidden="true" />
             <span>Iniciar sesión</span>
           </Link>
@@ -74,7 +74,7 @@ function ActivityFollowingBubblesView({
       ) : activeProducers.length === 0 ? (
         <div className={styles.bubblesEmpty}>
           <span>Aún no sigues a ningún productor. Pulsa «Seguir» en sus perfiles para estar al día.</span>
-          <Link href="/#choose-country" className={styles.buttonSecondary}>
+          <Link href="/#choose-country" className="chisan-button">
             <HeartIcon size={18} aria-hidden="true" />
             <span>Descubrir en el mapa</span>
           </Link>

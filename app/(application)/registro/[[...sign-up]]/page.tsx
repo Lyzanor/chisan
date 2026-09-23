@@ -21,7 +21,7 @@ export default function SignUpPage() {
           <div className="auth-copy">
           <h1 id="account-auth-unavailable-title">Acceso a cuentas</h1>
           <p>El acceso a cuentas estará habilitado a partir del 1 de octubre.</p>
-          <Link href="/" className="account-button account-button--secondary">Volver al catálogo</Link>
+          <Link href="/" className="chisan-button">Volver al catálogo</Link>
           </div>
         </section>
       </main>
@@ -32,7 +32,7 @@ export default function SignUpPage() {
     <main className="auth-page">
       <section className="auth-shell">
         <div className="auth-copy">
-          <p className="catalog-kicker">Únete a {SITE_NAME}</p>
+          <p className="chisan-eyebrow">Únete a {SITE_NAME}</p>
           <h1>Una cuenta, dos tipos de perfil</h1>
           <p>Elige cómo quieres utilizar {SITE_NAME} después de crear tu acceso seguro.</p>
           <div className="auth-profile-list">

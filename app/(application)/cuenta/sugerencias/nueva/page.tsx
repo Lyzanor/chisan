@@ -85,7 +85,7 @@ export default async function NewProducerSuggestionPage({
           Las sugerencias se abren desde la ficha pública del productor que
           quieres corregir.
         </p>
-        <Link href="/" className="account-button">
+        <Link href="/" className="chisan-button chisan-button--primary">
           Explorar productores
         </Link>
       </div>
@@ -108,7 +108,7 @@ export default async function NewProducerSuggestionPage({
   const header = (
     <header className="account-section-heading">
       <div>
-        <p className="catalog-kicker">Sugerencia de la comunidad</p>
+        <p className="chisan-eyebrow">Sugerencia de la comunidad</p>
         <h2>{producer.name}</h2>
         <p>
           {producer.city} · {producer.area}
@@ -116,7 +116,7 @@ export default async function NewProducerSuggestionPage({
       </div>
       <Link
         href={publicHref}
-        className="account-button account-button--secondary"
+        className="chisan-button"
       >
         Perfil público
       </Link>
@@ -135,7 +135,7 @@ export default async function NewProducerSuggestionPage({
             las sugerencias de la comunidad están cerradas. Si detectas un error
             grave, escríbenos desde la página de contacto.
           </p>
-          <Link href="/contact" className="account-button">
+          <Link href="/contact" className="chisan-button chisan-button--primary">
             Contactar con el equipo
           </Link>
         </div>
@@ -189,7 +189,7 @@ export default async function NewProducerSuggestionPage({
                   <div className="account-inline-actions">
                     <Link
                       href={newProducerSuggestionPath(country, producerId, key)}
-                      className="account-button"
+                      className="chisan-button chisan-button--primary"
                     >
                       Sugerir cambios
                     </Link>
@@ -273,7 +273,7 @@ export default async function NewProducerSuggestionPage({
         <div className="account-inline-actions">
           <Link
             href={newProducerSuggestionPath(country, producerId)}
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             Cambiar de apartado
           </Link>

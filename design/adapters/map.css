@@ -1,0 +1,523 @@
+/*
+ * The shared producer map: canvas, Leaflet chrome, exact-point markers, the
+ * visitor locator and the linked selection card. Pages configure the map stack;
+ * they never redraw markers or restyle selection.
+ */
+
+.map-shell {
+  display: grid;
+  overflow: hidden;
+  background: var(--chisan-color-surface-muted);
+}
+
+.map-shell > .map-placeholder,
+.map-shell > .producers-map-canvas {
+  grid-area: 1 / 1;
+}
+
+.map-shell > .map-placeholder {
+  z-index: var(--chisan-z-raised);
+}
+
+.producers-map-canvas,
+.map-placeholder {
+  width: 100%;
+  height: min(72vh, 760px);
+  min-height: 520px;
+}
+
+.map-placeholder {
+  display: grid;
+  place-items: center;
+  padding: var(--chisan-space-4);
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+  text-align: center;
+}
+
+.catalog-simple-map {
+  overflow: hidden;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-panel);
+  background: var(--chisan-color-surface);
+}
+
+/* Leaflet chrome ---------------------------------------------------------- */
+
+/* Leaflet's stylesheet loads with the map, so these rules outrank it by selector. */
+.producers-map-canvas.leaflet-container {
+  background: var(--chisan-color-surface-muted);
+  font-family: var(--chisan-font-sans);
+}
+
+.leaflet-tile-pane {
+  filter: saturate(0.75);
+}
+
+.leaflet-container .leaflet-bottom .leaflet-control-attribution {
+  border-radius: var(--chisan-radius-xs) 0 0;
+  background: color-mix(in srgb, var(--chisan-color-surface) 88%, transparent);
+  color: var(--chisan-color-stone);
+  font-family: var(--chisan-font-sans);
+  font-size: var(--chisan-font-micro);
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  color: var(--chisan-color-moss-dark);
+}
+
+.leaflet-container .leaflet-control-zoom.leaflet-bar {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--chisan-radius-control);
+  box-shadow: var(--chisan-shadow-control);
+}
+
+.leaflet-container .leaflet-control-container .leaflet-control-zoom a {
+  width: var(--chisan-control-height);
+  height: var(--chisan-control-height);
+  border-color: var(--chisan-color-hairline);
+  color: var(--chisan-color-moss-dark);
+  font: var(--chisan-weight-heading) 1.25rem / var(--chisan-control-height) var(--chisan-font-sans);
+  transition: background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.leaflet-container .leaflet-control-container .leaflet-control-zoom a:hover {
+  background: var(--chisan-color-moss-pale);
+}
+
+/* Exact producer field: overview circles stay at the catalog coordinate. */
+.producer-map-circle {
+  fill: var(--chisan-color-moss-dark);
+  fill-opacity: 1;
+  stroke: var(--chisan-color-moss-dark);
+  stroke-opacity: 0;
+  stroke-width: 0;
+  vector-effect: non-scaling-stroke;
+  transition:
+    fill var(--chisan-motion-immediate) var(--chisan-ease),
+    r var(--chisan-motion-component) var(--chisan-ease-pop),
+    stroke var(--chisan-motion-immediate) var(--chisan-ease),
+    stroke-opacity var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.producer-map-circle--selected {
+  fill: var(--chisan-color-moss);
+  stroke: var(--chisan-color-surface);
+  stroke-opacity: 1;
+  stroke-width: 2px;
+}
+
+.producer-map-category-marker {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+}
+
+.producer-map-category-icon {
+  display: grid;
+  place-items: center;
+  width: var(--chisan-space-6);
+  height: var(--chisan-space-6);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  box-shadow: var(--chisan-shadow-control);
+  font-size: var(--chisan-font-small);
+  line-height: 1;
+  transition:
+    width var(--chisan-motion-component) var(--chisan-ease-pop),
+    height var(--chisan-motion-component) var(--chisan-ease-pop),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+.producer-map-category-icon--selected {
+  width: var(--chisan-space-8);
+  height: var(--chisan-space-8);
+  border-color: var(--chisan-color-moss);
+  background: var(--chisan-color-moss-pale);
+  font-size: var(--chisan-font-body);
+}
+
+.producer-map-circle--selected,
+.producer-map-category-icon--selected {
+  animation: chisan-pop var(--chisan-motion-component) var(--chisan-ease-pop) both;
+}
+
+.producer-map-hit-area {
+  cursor: pointer;
+  pointer-events: fill;
+}
+
+/* Dense discovery below province zoom: one count stands for exact points. */
+.producer-map-group-marker {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.producer-map-group-count {
+  display: grid;
+  place-items: center;
+  min-width: 100%;
+  height: var(--chisan-space-8);
+  padding: 0 var(--chisan-space-3);
+  border: var(--chisan-line) solid var(--chisan-color-surface);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-moss-dark);
+  box-shadow: var(--chisan-shadow-control);
+  color: var(--chisan-color-surface);
+  font-size: var(--chisan-font-small);
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--chisan-weight-interface);
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+.producer-map-group-marker:hover .producer-map-group-count,
+.producer-map-group-marker:focus-visible .producer-map-group-count {
+  background: var(--chisan-color-moss);
+  scale: 1.06;
+}
+
+.producer-map-category-marker:focus-visible,
+.producer-map-group-marker:focus-visible,
+.producer-map-hit-area:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+/* Visitor location marker ("blue dot" locator) ---------------------------- */
+
+.chisan-visitor-locator-container {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+}
+
+.chisan-visitor-locator {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.chisan-visitor-locator__pulse {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--chisan-color-locator-pulse);
+  animation: chisan-locator-pulse 2000ms var(--chisan-ease-in-out) infinite;
+  pointer-events: none;
+}
+
+.chisan-visitor-locator__dot {
+  position: relative;
+  z-index: var(--chisan-z-raised);
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid var(--chisan-color-surface);
+  border-radius: 50%;
+  background: var(--chisan-color-locator);
+  box-shadow: 0 2px 5px var(--chisan-color-locator-border);
+}
+
+@keyframes chisan-locator-pulse {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.95;
+  }
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Map locate control ------------------------------------------------------ */
+
+.map-locate-control {
+  margin: var(--chisan-space-3) var(--chisan-space-3) 0 0;
+  border-radius: var(--chisan-radius-control);
+}
+
+.map-locate-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  box-shadow: var(--chisan-shadow-control);
+  color: var(--chisan-color-ink);
+  cursor: pointer;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .map-locate-btn:hover {
+    background: var(--chisan-color-moss-pale);
+    color: var(--chisan-color-moss);
+  }
+}
+
+.map-locate-btn:active {
+  scale: 0.94;
+}
+
+.map-locate-btn--active {
+  border-color: var(--chisan-color-locator-border);
+  color: var(--chisan-color-locator);
+}
+
+.map-locate-btn--active:hover {
+  background: var(--chisan-color-locator-active-bg);
+  color: var(--chisan-color-locator);
+}
+
+.map-locate-btn:focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 2px;
+}
+
+.map-locate-spinner {
+  animation: chisan-spin 800ms linear infinite;
+}
+
+/* Tooltips ---------------------------------------------------------------- */
+
+.leaflet-tooltip.producer-map-tooltip {
+  padding: 0;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  box-shadow: var(--chisan-shadow-overlay);
+  color: var(--chisan-color-ink);
+  font-family: var(--chisan-font-sans);
+  white-space: normal;
+}
+
+.producer-map-tooltip__content {
+  display: grid;
+  gap: var(--chisan-space-1);
+  min-width: 9rem;
+  max-width: 17rem;
+  padding: var(--chisan-space-2) var(--chisan-space-3);
+  animation: chisan-fade-up var(--chisan-motion-immediate) var(--chisan-ease) both;
+  --chisan-motion-distance: var(--chisan-space-1);
+}
+
+.producer-map-tooltip__content strong,
+.producer-map-tooltip__content span {
+  display: block;
+}
+
+.producer-map-tooltip__content strong {
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+}
+
+.producer-map-tooltip__content span {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+  line-height: var(--chisan-leading-ui);
+}
+
+/* Linked selection card ----------------------------------------------------- */
+
+.producer-map-selection-card {
+  width: min(36rem, 100%);
+  overflow: hidden;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  box-shadow: var(--chisan-shadow-overlay);
+  color: var(--chisan-color-ink);
+  pointer-events: auto;
+  animation: chisan-scale-in var(--chisan-motion-component) var(--chisan-ease) both;
+}
+
+.producer-map-selection-card__link {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  align-items: stretch;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .producer-map-selection-card__link:hover {
+    background: var(--chisan-color-surface-muted);
+  }
+}
+
+.producer-map-selection-card__link:focus-visible {
+  outline-offset: -3px;
+}
+
+.producer-map-selection-card__media {
+  display: block;
+  min-height: 7.5rem;
+  overflow: hidden;
+  background: var(--chisan-color-surface-muted);
+}
+
+.producer-map-selection-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale var(--chisan-motion-reveal) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .producer-map-selection-card__link:hover .producer-map-selection-card__image {
+    scale: 1.05;
+  }
+}
+
+.producer-map-selection-card__content {
+  display: grid;
+  align-content: center;
+  gap: var(--chisan-space-1);
+  min-width: 0;
+  padding: var(--chisan-space-4);
+}
+
+.producer-map-selection-card__content strong,
+.producer-map-selection-card__content > span {
+  display: block;
+}
+
+.producer-map-selection-card__content strong {
+  overflow: hidden;
+  font-size: var(--chisan-font-ui);
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.producer-map-selection-card__content > span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+  line-height: var(--chisan-leading-ui);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.producer-map-selection-card__location {
+  overflow: hidden;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+  line-height: var(--chisan-leading-ui);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Standalone browsing maps anchor the same card to the chosen point. */
+.producer-map-floating-card {
+  position: absolute;
+  z-index: var(--chisan-z-map-popover);
+  top: 0;
+  left: 0;
+  width: min(21rem, calc(100% - var(--chisan-space-6)));
+  color: var(--chisan-color-ink);
+  font-family: var(--chisan-font-sans);
+  pointer-events: auto;
+}
+
+.producer-map-floating-card::after {
+  content: "";
+  position: absolute;
+  left: var(--preview-tip-x);
+  width: 10px;
+  height: 10px;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  background: var(--chisan-color-surface);
+  rotate: 45deg;
+  translate: -50% 0;
+}
+
+.producer-map-floating-card[data-side="above"]::after {
+  bottom: -5px;
+  border-top: 0;
+  border-left: 0;
+}
+
+.producer-map-floating-card[data-side="below"]::after {
+  top: -5px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.producer-map-floating-card > div {
+  max-height: inherit;
+  overflow-y: auto;
+  border-radius: var(--chisan-radius-object);
+  box-shadow: var(--chisan-shadow-overlay);
+}
+
+.producer-map-floating-card .producer-map-selection-card {
+  width: 100%;
+  box-shadow: none;
+}
+
+.producer-map-floating-card .producer-map-selection-card__link {
+  grid-template-columns: 5rem minmax(0, 1fr);
+}
+
+.producer-map-floating-card .producer-map-selection-card__media {
+  min-height: 6rem;
+}
+
+.producer-map-floating-card .producer-map-selection-card__content {
+  padding: var(--chisan-space-3);
+}
+
+.producer-map-floating-card .producer-map-selection-card__content strong {
+  white-space: normal;
+}
+
+/* A producer's own location map is quiet context. */
+.detail-producer-map {
+  overflow: hidden;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+}
+
+.detail-producer-map .producers-map-canvas,
+.detail-producer-map .map-placeholder {
+  height: 240px;
+  min-height: 240px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chisan-visitor-locator__pulse {
+    display: none;
+  }
+}

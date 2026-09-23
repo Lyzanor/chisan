@@ -1,0 +1,214 @@
+/*
+ * Element defaults. Everything here uses zero-specificity selectors where it
+ * can, so any component rule refines it without fighting the cascade.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-padding-top: var(--chisan-space-24);
+  scrollbar-gutter: stable;
+  interpolate-size: allow-keywords;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100svh;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  background: var(--chisan-color-rice-paper);
+  color: var(--chisan-color-ink);
+  font-family: var(--chisan-font-sans);
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-body);
+  line-height: var(--chisan-leading-body);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:lang(ja) body {
+  line-break: strict;
+}
+
+:lang(ja) button,
+:lang(ja) select,
+:lang(ja) .catalog-chip,
+:lang(ja) .leaflet-popup-content {
+  overflow-wrap: anywhere;
+}
+
+/* Hierarchy comes from size, measure and space; weights stay light. */
+:where(h1, h2, h3, h4, h5, h6) {
+  color: var(--chisan-color-ink);
+  font-weight: var(--chisan-weight-heading);
+  text-wrap: balance;
+}
+
+:where(h1) {
+  font-size: var(--chisan-font-title);
+  font-weight: var(--chisan-weight-display);
+  letter-spacing: var(--chisan-tracking-title);
+  line-height: var(--chisan-leading-title);
+}
+
+:where(h2) {
+  font-size: var(--chisan-font-heading);
+  letter-spacing: var(--chisan-tracking-heading);
+  line-height: var(--chisan-leading-heading);
+}
+
+:where(h3) {
+  font-size: var(--chisan-font-subheading);
+  line-height: var(--chisan-leading-subheading);
+}
+
+:where(h4, h5, h6) {
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+}
+
+:where(th) {
+  font-weight: var(--chisan-weight-interface);
+}
+
+:where(p, li, dd, figcaption, blockquote) {
+  text-wrap: pretty;
+}
+
+:where(small) {
+  font-size: var(--chisan-font-caption);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+:where(img, svg, video, canvas) {
+  vertical-align: middle;
+}
+
+::selection {
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+/* Focus is a 2px moss outline on every interactive element. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
+  outline-offset: 3px;
+}
+
+:where(a, button, summary) {
+  transition: outline-offset var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+/* Form controls share one field look; component rules may refine it. */
+:where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+:where(button) {
+  cursor: pointer;
+}
+
+:where(button:disabled) {
+  cursor: not-allowed;
+}
+
+/* Clerk widgets (`cl-*`) keep their own field geometry. */
+:where(input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="color"], [type="submit"], [type="button"], [type="reset"], [type="image"], [type="hidden"], [class*="cl-"]), select:not([class*="cl-"]), textarea:not([class*="cl-"])) {
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2) var(--chisan-space-3);
+  border: var(--chisan-line) solid var(--chisan-color-field-line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  line-height: var(--chisan-leading-ui);
+  transition:
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    box-shadow var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+:where(input, select, textarea):hover:not(:disabled, :focus) {
+  border-color: var(--chisan-color-stone);
+}
+
+:where(input, select, textarea):focus-visible {
+  outline-offset: 1px;
+  border-color: var(--chisan-color-moss);
+}
+
+:where(textarea) {
+  resize: vertical;
+  line-height: var(--chisan-leading-body);
+}
+
+:where(input, textarea)::placeholder {
+  color: var(--chisan-color-stone);
+  opacity: 1;
+}
+
+:where(input[type="checkbox"], input[type="radio"], input[type="range"], progress) {
+  accent-color: var(--chisan-color-moss);
+}
+
+:where(fieldset) {
+  min-width: 0;
+}
+
+:where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(th, td) {
+  padding: var(--chisan-space-3);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+  text-align: start;
+  vertical-align: top;
+}
+
+:where(th) {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+}
+
+:where(hr) {
+  height: 0;
+  margin: var(--chisan-space-8) 0;
+  border: 0;
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

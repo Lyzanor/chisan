@@ -56,7 +56,7 @@ function ActiveProfileUpgradeStatusRefresh() {
       <div className="account-inline-actions">
         <button
           type="button"
-          className="account-button account-button--secondary"
+          className="chisan-button"
           disabled={isPending}
           onClick={refreshStatus}
         >

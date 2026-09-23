@@ -1,6 +1,6 @@
 .section { min-width: 0; }
-.section h2 { margin: 0 0 var(--chisan-space-3); font-size: clamp(1.5rem, 2.5vw, 2rem); }
-.section p { white-space: pre-line; overflow-wrap: anywhere; line-height: 1.6; }
+.section h2 { margin: 0 0 var(--chisan-space-3); font-size: var(--chisan-font-heading); }
+.section p { white-space: pre-line; overflow-wrap: anywhere; line-height: var(--chisan-leading-body); }
 .people {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));

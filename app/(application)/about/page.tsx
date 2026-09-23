@@ -55,9 +55,9 @@ export default async function AboutPage() {
       />
       <article aria-labelledby="about-title">
         <header className={styles.hero}>
-          <p className="catalog-kicker">{SITE_NAME}</p>
-          <h1 id="about-title">{copy.title}</h1>
-          <div className={styles.heroStatement}>
+          <p className="chisan-eyebrow">{SITE_NAME}</p>
+          <h1 className="chisan-enter" id="about-title">{copy.title}</h1>
+          <div className={`chisan-enter chisan-enter--2 ${styles.heroStatement}`}>
             <p>{copy.heroLead}</p>
             {copy.heroParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -65,9 +65,9 @@ export default async function AboutPage() {
           </div>
         </header>
 
-        <section className={styles.section} aria-labelledby="about-founder-title">
+        <section className={styles.section} data-reveal aria-labelledby="about-founder-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.founderKicker}</p>
+            <p className="chisan-eyebrow">{copy.founderKicker}</p>
             <h2 id="about-founder-title">{copy.founderTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -80,9 +80,9 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="about-travel-title">
+        <section className={styles.section} data-reveal aria-labelledby="about-travel-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.travelKicker}</p>
+            <p className="chisan-eyebrow">{copy.travelKicker}</p>
             <h2 id="about-travel-title">{copy.travelTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -95,9 +95,9 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="about-technology-title">
+        <section className={styles.section} data-reveal aria-labelledby="about-technology-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.technologyKicker}</p>
+            <p className="chisan-eyebrow">{copy.technologyKicker}</p>
             <h2 id="about-technology-title">{copy.technologyTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -110,9 +110,9 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="about-principles-title">
+        <section className={styles.section} data-reveal aria-labelledby="about-principles-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.principlesKicker}</p>
+            <p className="chisan-eyebrow">{copy.principlesKicker}</p>
             <h2 id="about-principles-title">{copy.principlesTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -130,9 +130,9 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="about-future-title">
+        <section className={styles.section} data-reveal aria-labelledby="about-future-title">
           <div className={styles.sectionHeader}>
-            <p className="catalog-kicker">{copy.futureKicker}</p>
+            <p className="chisan-eyebrow">{copy.futureKicker}</p>
             <h2 id="about-future-title">{copy.futureTitle}</h2>
           </div>
           <div className={styles.sectionBody}>
@@ -142,20 +142,20 @@ export default async function AboutPage() {
               ))}
             </div>
             <div className={styles.actions}>
-              <Link href="/" className={styles.primaryAction}>
+              <Link href="/" className="chisan-button chisan-button--primary">
                 {copy.exploreCatalog}
               </Link>
-              <Link href="/how-we-work" className={styles.secondaryAction}>
+              <Link href="/how-we-work" className="chisan-button">
                 {copy.howWeWorkLink}
               </Link>
-              <Link href="/contact" className={styles.secondaryAction}>
+              <Link href="/contact" className="chisan-button">
                 {copy.contactLink}
               </Link>
               <a
                 href={copy.linkedInUrl}
                 target="_blank"
                 rel="noreferrer"
-                className={styles.secondaryAction}
+                className="chisan-button"
               >
                 {copy.linkedInLabel}
               </a>

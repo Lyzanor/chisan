@@ -104,7 +104,7 @@ export default async function WhatsAppPage() {
                 vinculación actual y descarta la conversación pendiente.
               </p>
               <form action={unlinkWhatsApp}>
-                <button className="account-button account-button--secondary">
+                <button className="chisan-button">
                   Desconectar WhatsApp
                 </button>
               </form>
@@ -121,7 +121,7 @@ export default async function WhatsAppPage() {
           </p>
           <Link
             href="/cuenta/reclamaciones"
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             Ver productores que gestionas
           </Link>

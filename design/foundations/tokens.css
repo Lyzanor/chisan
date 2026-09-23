@@ -1,62 +1,156 @@
 /*
- * Chisan v0.6 foundations: light, precise and tactile.
+ * Chisan v0.7 foundations — one field.
  *
- * The --chisan-* properties are canonical. The final block maps them onto the
- * existing web surface; product-semantic state such as errors stays outside
- * the brand foundation.
+ * Every visual value the web surface uses is declared here, once. Stylesheets
+ * and CSS modules consume these properties by role; they never restate a
+ * colour, size, radius, shadow, duration or curve. The brand colours stay as
+ * literal hex values because `pnpm build:mobile-tokens` projects them onto the
+ * native app.
  */
 
 :root {
-  --chisan-ambient-opacity: 0.28;
   color-scheme: light;
 
+  /* Colour — brand field. The page stays white; forest green acts. */
   --chisan-color-rice-paper: #ffffff;
   --chisan-color-surface: #ffffff;
   --chisan-color-surface-muted: #f6f7f6;
   --chisan-color-ink: #18221c;
   --chisan-color-stone: #59645d;
-  --chisan-color-hairline: #d8dfda;
-  --chisan-color-overlay-backdrop: rgb(0 0 0 / 78%);
-  --chisan-color-premium-surface: #EDF5F1;
+  --chisan-color-hairline: #dfe5e1;
+  --chisan-color-field-line: #848e87;
   --chisan-color-moss: #00563f;
   --chisan-color-moss-dark: #003d2d;
   --chisan-color-moss-pale: #edf3ef;
+  --chisan-color-moss-line: #b3ccc5;
+  --chisan-color-premium-surface: #edf3ef;
   --chisan-color-locator: #2563eb;
+
+  /* Colour — product states. Each keeps readable text on its pale fill. */
+  --chisan-color-danger: #9d2b22;
+  --chisan-color-danger-line: #d39a95;
+  --chisan-color-danger-pale: #fbeae7;
+  --chisan-color-warning: #6b4a0c;
+  --chisan-color-warning-line: #c9962f;
+  --chisan-color-warning-pale: #fff4dc;
+  --chisan-color-info: #174b70;
+  --chisan-color-info-line: #86a9c5;
+  --chisan-color-info-pale: #ebf3f9;
+  --chisan-color-success-line: #87b397;
+
+  /* Colour — derived layers. */
+  --chisan-color-scrim: rgb(12 20 15 / 62%);
+  --chisan-color-scrim-strong: rgb(12 20 15 / 78%);
+  --chisan-color-scrim-soft: rgb(12 20 15 / 36%);
+  --chisan-color-glass: rgb(255 255 255 / 84%);
+  --chisan-color-inverse-muted: rgb(255 255 255 / 72%);
+  --chisan-color-inverse-line: rgb(255 255 255 / 18%);
+  --chisan-color-inverse-fill: rgb(255 255 255 / 10%);
   --chisan-color-locator-pulse: rgb(37 99 235 / 24%);
   --chisan-color-locator-active-bg: rgb(37 99 235 / 8%);
   --chisan-color-locator-border: rgb(37 99 235 / 35%);
+  --chisan-ambient-opacity: 0.28;
 
+  /* Type — Outfit carries every role; hierarchy comes from size and space. */
   --chisan-font-sans: var(--font-chisan-sans), var(--font-chisan-fallback), "Hiragino Kaku Gothic ProN",
     "Yu Gothic", YuGothic, Meiryo, system-ui, sans-serif;
   --chisan-weight-display: 350;
   --chisan-weight-heading: 400;
+  --chisan-weight-body: 400;
   --chisan-weight-interface: 500;
 
+  /* Type scale by role. Fluid roles grow from a 360px to a 1280px viewport. */
+  --chisan-font-display: clamp(2.5rem, 1.5217rem + 4.3478vw, 5rem);        /* 40 → 80 */
+  --chisan-font-title: clamp(1.875rem, 1.337rem + 2.3913vw, 3.25rem);      /* 30 → 52 */
+  --chisan-font-heading: clamp(1.5rem, 1.2065rem + 1.3043vw, 2.25rem);     /* 24 → 36 */
+  --chisan-font-subheading: clamp(1.25rem, 1.1522rem + 0.4348vw, 1.5rem);  /* 20 → 24 */
+  --chisan-font-lead: clamp(1.125rem, 1.0761rem + 0.2174vw, 1.25rem);      /* 18 → 20 */
+  --chisan-font-stat: clamp(3rem, 1.8261rem + 5.2174vw, 6rem);             /* 48 → 96 */
+  --chisan-font-body: 1rem;       /* 16: reading text */
+  --chisan-font-ui: 0.9375rem;    /* 15: buttons, navigation, list titles */
+  --chisan-font-small: 0.875rem;  /* 14: secondary text and descriptions */
+  --chisan-font-caption: 0.8125rem; /* 13: metadata, captions, helper text */
+  --chisan-font-micro: 0.75rem;   /* 12: eyebrows, badges, legal; nothing smaller */
+
+  --chisan-leading-display: 1.02;
+  --chisan-leading-title: 1.06;
+  --chisan-leading-heading: 1.15;
+  --chisan-leading-subheading: 1.3;
+  --chisan-leading-ui: 1.35;
+  --chisan-leading-body: 1.5;
+  --chisan-leading-reading: 1.7;
+
+  --chisan-tracking-display: -0.035em;
+  --chisan-tracking-title: -0.025em;
+  --chisan-tracking-heading: -0.015em;
+  --chisan-tracking-caps: 0.08em;
+  --chisan-measure: 64ch;
+
+  /* Space — a 4px grid. Roles below derive from it. */
   --chisan-space-1: 0.25rem;
   --chisan-space-2: 0.5rem;
   --chisan-space-3: 0.75rem;
   --chisan-space-4: 1rem;
+  --chisan-space-5: 1.25rem;
   --chisan-space-6: 1.5rem;
   --chisan-space-8: 2rem;
+  --chisan-space-10: 2.5rem;
   --chisan-space-12: 3rem;
   --chisan-space-16: 4rem;
+  --chisan-space-20: 5rem;
   --chisan-space-24: 6rem;
   --chisan-space-32: 8rem;
 
+  --chisan-gutter: clamp(1rem, 0.6087rem + 1.7391vw, 2.5rem);          /* 16 → 32, max 40 */
+  --chisan-section-gap: clamp(3rem, 1.8261rem + 5.2174vw, 6rem);       /* 48 → 96 */
+  --chisan-panel-padding: clamp(1.25rem, 0.7609rem + 2.1739vw, 3rem);  /* 20 → 40, max 48 */
+  --chisan-container: 80rem;         /* 1280: shell, header and landing pages */
+  --chisan-container-wide: 90rem;    /* 1440: discovery workspaces and administration */
+  --chisan-container-content: 60rem; /* 960: forms, account and activity */
+  --chisan-container-reading: 45rem; /* 720: articles and legal text */
+
+  /* Shape. 999px belongs to toggles and filters only. */
   --chisan-radius-structural: 0;
+  --chisan-radius-xs: 4px;
   --chisan-radius-control: 8px;
   --chisan-radius-object: 12px;
-  --chisan-radius-panel: 16px;
+  --chisan-radius-panel: clamp(16px, 12.87px + 0.87vw, 20px);
+  --chisan-radius-pill: 999px;
   --chisan-line: 1px;
   --chisan-focus-ring: 2px;
-  --chisan-shadow-overlay: 0 12px 40px rgb(24 34 28 / 9%);
-  --chisan-shadow-control: 0 1px 4px rgb(24 34 28 / 12%);
-  --chisan-motion-immediate: 150ms;
-  --chisan-motion-component: 220ms;
-  --chisan-motion-page: 240ms;
-  --chisan-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --chisan-control-height: 44px;
+  --chisan-control-height-lg: 52px;
 
-  /* Existing web visual names mapped to the current foundation. */
+  /* Elevation. Only things that float get a shadow; the page itself is flat. */
+  --chisan-shadow-control: 0 1px 2px rgb(24 34 28 / 6%), 0 2px 8px rgb(24 34 28 / 8%);
+  --chisan-shadow-raised: 0 1px 2px rgb(24 34 28 / 4%), 0 12px 32px -8px rgb(24 34 28 / 14%);
+  --chisan-shadow-overlay: 0 2px 6px rgb(24 34 28 / 5%), 0 18px 48px -12px rgb(24 34 28 / 20%);
+  --chisan-shadow-modal: 0 32px 80px -16px rgb(12 20 15 / 36%);
+
+  /* Motion. Durations stay in milliseconds: components read them as numbers. */
+  --chisan-motion-instant: 100ms;   /* press feedback */
+  --chisan-motion-immediate: 160ms; /* colour and state feedback */
+  --chisan-motion-component: 260ms; /* menus, disclosures, cards */
+  --chisan-motion-page: 480ms;      /* page arrival and sheets */
+  --chisan-motion-reveal: 720ms;    /* content entering the viewport */
+  --chisan-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --chisan-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --chisan-ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+  --chisan-ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layers. Leaflet owns 400–1000 inside a map; the site stacks above it. */
+  --chisan-z-raised: 1;
+  --chisan-z-menu: 10;
+  --chisan-z-map-overlay: 500;
+  --chisan-z-map-carousel: 600;
+  --chisan-z-map-sheet: 700;
+  --chisan-z-map-popover: 750;
+  --chisan-z-bottom-nav: 1000;
+  --chisan-z-header: 1100;
+  --chisan-z-modal: 1200;
+  --chisan-bottom-nav-height: 56px;
+
+  /* Earlier web names, kept so older rules and parallel work keep resolving. */
   --page-bg: var(--chisan-color-rice-paper);
   --surface: var(--chisan-color-surface);
   --surface-muted: var(--chisan-color-surface-muted);
@@ -66,6 +160,16 @@
   --accent: var(--chisan-color-moss);
   --accent-soft: var(--chisan-color-moss-pale);
   --accent-text: var(--chisan-color-moss-dark);
+  --danger: var(--chisan-color-danger);
   --shadow: none;
   --radius: var(--chisan-radius-control);
+  --chisan-color-overlay-backdrop: var(--chisan-color-scrim);
+}
+
+/* Springs overshoot slightly and settle; browsers without linear() keep the cubic fallbacks. */
+@supports (transition-timing-function: linear(0, 1)) {
+  :root {
+    --chisan-ease-spring: linear(0, 0.054 4.2%, 0.181 8.3%, 0.34 12.5%, 0.502 16.7%, 0.65 20.8%, 0.775 25%, 0.873 29.2%, 0.945 33.3%, 0.994 37.5%, 1.024 41.7%, 1.04 45.8%, 1.046 50%, 1.045 54.2%, 1.039 58.3%, 1.025 66.7%, 1.012 75%, 1.003 83.3%, 0.999 91.7%, 1);
+    --chisan-ease-pop: linear(0, 0.066 4.2%, 0.221 8.3%, 0.411 12.5%, 0.599 16.7%, 0.763 20.8%, 0.893 25%, 0.985 29.2%, 1.043 33.3%, 1.074 37.5%, 1.083 41.7%, 1.079 45.8%, 1.067 50%, 1.051 54.2%, 1.035 58.3%, 1.021 62.5%, 1.01 66.7%, 1.002 70.8%, 0.994 79.2%, 0.993 87.5%, 1);
+  }
 }

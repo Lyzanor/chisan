@@ -1,0 +1,446 @@
+/*
+ * Shared interface primitives. A component composes these classes and keeps
+ * only its own layout; it never restates how a button, link, chip, card,
+ * panel or badge looks.
+ *
+ *   .chisan-button   actions: primary, secondary (default), quiet, inverse, danger
+ *   .chisan-link     inline text actions, optional .chisan-arrow icon
+ *   .chisan-eyebrow  the small uppercase line above a heading
+ *   .catalog-chip    toggles and filters, the only pill shape
+ *   .chisan-card     one selectable, reusable object
+ *   .chisan-panel    a grouped region: outline, tint or inverse
+ *   .chisan-badge    a short status or count
+ */
+
+/* Buttons -------------------------------------------------------------- */
+
+.chisan-button {
+  --button-bg: var(--chisan-color-surface);
+  --button-bg-hover: var(--chisan-color-moss-pale);
+  --button-fg: var(--chisan-color-moss-dark);
+  --button-line: var(--chisan-color-moss-line);
+  --button-line-hover: var(--chisan-color-moss);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--chisan-space-2);
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2) var(--chisan-space-5);
+  border: var(--chisan-line) solid var(--button-line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font: var(--chisan-weight-interface) var(--chisan-font-ui) / var(--chisan-leading-ui) var(--chisan-font-sans);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-instant) var(--chisan-ease),
+    outline-offset var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+.chisan-button > svg {
+  flex: none;
+}
+
+@media (hover: hover) {
+  .chisan-button:hover:not(:disabled, [aria-disabled="true"]) {
+    border-color: var(--button-line-hover);
+    background: var(--button-bg-hover);
+  }
+}
+
+.chisan-button:active:not(:disabled, [aria-disabled="true"]) {
+  scale: 0.97;
+}
+
+.chisan-button:disabled,
+.chisan-button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chisan-button[aria-busy="true"] {
+  cursor: progress;
+}
+
+.chisan-button--primary {
+  --button-bg: var(--chisan-color-moss);
+  --button-bg-hover: var(--chisan-color-moss-dark);
+  --button-fg: var(--chisan-color-surface);
+  --button-line: var(--chisan-color-moss);
+  --button-line-hover: var(--chisan-color-moss-dark);
+}
+
+.chisan-button--quiet {
+  --button-bg: transparent;
+  --button-line: transparent;
+  --button-line-hover: transparent;
+}
+
+.chisan-button--inverse {
+  --button-bg: var(--chisan-color-surface);
+  --button-bg-hover: var(--chisan-color-moss-pale);
+  --button-fg: var(--chisan-color-moss-dark);
+  --button-line: var(--chisan-color-surface);
+  --button-line-hover: var(--chisan-color-moss-pale);
+}
+
+.chisan-button--danger {
+  --button-bg-hover: var(--chisan-color-danger-pale);
+  --button-fg: var(--chisan-color-danger);
+  --button-line: var(--chisan-color-danger-line);
+  --button-line-hover: var(--chisan-color-danger);
+}
+
+.chisan-button--lg {
+  min-height: var(--chisan-control-height-lg);
+  padding-inline: var(--chisan-space-6);
+  font-size: var(--chisan-font-body);
+}
+
+.chisan-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.chisan-button--icon {
+  width: var(--chisan-control-height);
+  padding: 0;
+}
+
+/* Trailing arrows lean toward their destination on hover. */
+.chisan-arrow {
+  flex: none;
+  transition: translate var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+@media (hover: hover) {
+  :is(.chisan-button, .chisan-link, .chisan-card):hover .chisan-arrow {
+    translate: 2px -2px;
+  }
+}
+
+/* Text links ------------------------------------------------------------ */
+
+.chisan-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  min-height: var(--chisan-control-height);
+  color: var(--chisan-color-moss-dark);
+  font-weight: var(--chisan-weight-interface);
+  text-decoration-line: underline;
+  text-decoration-color: var(--chisan-color-moss-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition:
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    text-decoration-color var(--chisan-motion-immediate) var(--chisan-ease),
+    outline-offset var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .chisan-link:hover {
+    color: var(--chisan-color-moss);
+    text-decoration-color: currentColor;
+  }
+}
+
+.chisan-link--inverse {
+  color: var(--chisan-color-surface);
+  text-decoration-color: var(--chisan-color-inverse-muted);
+}
+
+@media (hover: hover) {
+  .chisan-link--inverse:hover {
+    color: var(--chisan-color-surface);
+  }
+}
+
+/* Eyebrow --------------------------------------------------------------- */
+
+.chisan-eyebrow,
+.catalog-kicker {
+  margin: 0 0 var(--chisan-space-3);
+  color: var(--chisan-color-moss);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
+  line-height: var(--chisan-leading-ui);
+  text-transform: uppercase;
+}
+
+/* Chips: toggles and filters -------------------------------------------- */
+
+.catalog-chip {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--chisan-space-2);
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2) var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-pill);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  font: var(--chisan-weight-interface) var(--chisan-font-small) / var(--chisan-leading-ui) var(--chisan-font-sans);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-component) var(--chisan-ease-pop),
+    outline-offset var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+.catalog-chip > span[aria-hidden="true"] {
+  line-height: 1;
+}
+
+@media (hover: hover) {
+  .catalog-chip:hover {
+    border-color: var(--chisan-color-moss-line);
+    background: var(--chisan-color-moss-pale);
+  }
+}
+
+.catalog-chip.is-active {
+  border-color: var(--chisan-color-moss-dark);
+  background: var(--chisan-color-moss-dark);
+  color: var(--chisan-color-surface);
+}
+
+.catalog-chip:active {
+  scale: 0.95;
+}
+
+.catalog-chip--toggle {
+  min-width: var(--chisan-control-height);
+}
+
+.catalog-chip--select {
+  padding-inline-end: var(--chisan-space-3);
+}
+
+/* Cards ------------------------------------------------------------------ */
+
+.chisan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    translate var(--chisan-motion-component) var(--chisan-ease),
+    box-shadow var(--chisan-motion-component) var(--chisan-ease),
+    border-color var(--chisan-motion-component) var(--chisan-ease);
+}
+
+.chisan-card__media {
+  position: relative;
+  overflow: hidden;
+  background: var(--chisan-color-surface-muted);
+}
+
+.chisan-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale var(--chisan-motion-reveal) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  a.chisan-card:hover,
+  .chisan-card:has(a:hover) {
+    border-color: var(--chisan-color-moss-line);
+    box-shadow: var(--chisan-shadow-raised);
+    translate: 0 -2px;
+  }
+
+  a.chisan-card:hover .chisan-card__media img,
+  .chisan-card:has(a:hover) .chisan-card__media img {
+    scale: 1.04;
+  }
+}
+
+/* Panels ----------------------------------------------------------------- */
+
+.chisan-panel {
+  padding: var(--chisan-panel-padding);
+  border-radius: var(--chisan-radius-panel);
+}
+
+.chisan-panel--outline {
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  background: var(--chisan-color-surface);
+}
+
+.chisan-panel--tint {
+  background: var(--chisan-color-moss-pale);
+}
+
+.chisan-panel--inverse {
+  background: var(--chisan-color-moss-dark);
+  color: var(--chisan-color-surface);
+}
+
+.chisan-panel--inverse :is(h1, h2, h3, h4) {
+  color: inherit;
+}
+
+.chisan-panel--inverse :is(p, small) {
+  color: var(--chisan-color-inverse-muted);
+}
+
+.chisan-panel--inverse .chisan-eyebrow {
+  color: var(--chisan-color-inverse-muted);
+}
+
+.chisan-panel--inverse :focus-visible {
+  outline-color: var(--chisan-color-surface);
+}
+
+/* Badges ----------------------------------------------------------------- */
+
+.chisan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  min-height: 1.5rem;
+  padding: 0 var(--chisan-space-2);
+  border: var(--chisan-line) solid var(--chisan-color-moss-line);
+  border-radius: var(--chisan-radius-xs);
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+  white-space: nowrap;
+}
+
+.chisan-badge--neutral {
+  border-color: var(--chisan-color-hairline);
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-ink);
+}
+
+.chisan-badge--warning {
+  border-color: var(--chisan-color-warning-line);
+  background: var(--chisan-color-warning-pale);
+  color: var(--chisan-color-warning);
+}
+
+.chisan-badge--danger {
+  border-color: var(--chisan-color-danger-line);
+  background: var(--chisan-color-danger-pale);
+  color: var(--chisan-color-danger);
+}
+
+.chisan-badge--info {
+  border-color: var(--chisan-color-info-line);
+  background: var(--chisan-color-info-pale);
+  color: var(--chisan-color-info);
+}
+
+/* Disclosures open and close with their content height where supported. */
+@supports selector(::details-content) {
+  :is(.site-footer__group, .chisan-disclosure)::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size var(--chisan-motion-component) var(--chisan-ease),
+      content-visibility var(--chisan-motion-component) allow-discrete;
+  }
+
+  :is(.site-footer__group, .chisan-disclosure)[open]::details-content {
+    block-size: auto;
+  }
+}
+
+.chisan-disclosure > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.chisan-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Deprecated aliases ----------------------------------------------------------
+ * Earlier markup named its buttons `.account-button`. New markup composes
+ * `.chisan-button`; these aliases keep older and in-flight work consistent. */
+
+.account-button {
+  --button-bg: var(--chisan-color-moss);
+  --button-bg-hover: var(--chisan-color-moss-dark);
+  --button-fg: var(--chisan-color-surface);
+  --button-line: var(--chisan-color-moss);
+  --button-line-hover: var(--chisan-color-moss-dark);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--chisan-space-2);
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2) var(--chisan-space-5);
+  border: var(--chisan-line) solid var(--button-line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font: var(--chisan-weight-interface) var(--chisan-font-ui) / var(--chisan-leading-ui) var(--chisan-font-sans);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+.account-button--secondary {
+  --button-bg: var(--chisan-color-surface);
+  --button-bg-hover: var(--chisan-color-moss-pale);
+  --button-fg: var(--chisan-color-moss-dark);
+  --button-line: var(--chisan-color-moss-line);
+  --button-line-hover: var(--chisan-color-moss);
+}
+
+.account-button--danger {
+  --button-bg: var(--chisan-color-surface);
+  --button-bg-hover: var(--chisan-color-danger-pale);
+  --button-fg: var(--chisan-color-danger);
+  --button-line: var(--chisan-color-danger-line);
+  --button-line-hover: var(--chisan-color-danger);
+}
+
+@media (hover: hover) {
+  .account-button:hover:not(:disabled) {
+    border-color: var(--button-line-hover);
+    background: var(--button-bg-hover);
+  }
+}
+
+.account-button:active:not(:disabled) {
+  scale: 0.97;
+}
+
+.account-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

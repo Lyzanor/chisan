@@ -186,7 +186,7 @@ export default async function AdminProfilePaymentsPage({ searchParams }: Payment
 
       <header className="admin-page-heading">
         <div>
-          <p className="catalog-kicker">Commercial incident queue</p>
+          <p className="chisan-eyebrow">Commercial incident queue</p>
           <h2>Expanded-profile payments</h2>
           <p>
             Stripe owns the payment; PostgreSQL records the request and producer-scoped right.
@@ -302,7 +302,7 @@ export default async function AdminProfilePaymentsPage({ searchParams }: Payment
                         {canRetry ? (
                           <form action={retryProducerProfileUpgradeAction}>
                             <input type="hidden" name="requestId" value={request.id} />
-                            <button className="account-button account-button--secondary">
+                            <button className="chisan-button">
                               Re-read Stripe and retry
                             </button>
                           </form>
@@ -322,7 +322,7 @@ export default async function AdminProfilePaymentsPage({ searchParams }: Payment
             {incidentPage > 1 ? (
               <Link
                 href={paymentPageHref(incidentPage - 1, unmatchedPage)}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Newer incidents
               </Link>
@@ -330,7 +330,7 @@ export default async function AdminProfilePaymentsPage({ searchParams }: Payment
             {incidentHasNext ? (
               <Link
                 href={paymentPageHref(incidentPage + 1, unmatchedPage)}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Older incidents
               </Link>
@@ -414,7 +414,7 @@ export default async function AdminProfilePaymentsPage({ searchParams }: Payment
             {unmatchedPage > 1 ? (
               <Link
                 href={paymentPageHref(incidentPage, unmatchedPage - 1)}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Newer incidents
               </Link>
@@ -422,7 +422,7 @@ export default async function AdminProfilePaymentsPage({ searchParams }: Payment
             {unmatchedHasNext ? (
               <Link
                 href={paymentPageHref(incidentPage, unmatchedPage + 1)}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Older incidents
               </Link>

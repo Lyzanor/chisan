@@ -1,0 +1,553 @@
+/*
+ * The site shell: header, navigation, page containers and footer. The header
+ * and footer span the viewport; their content aligns with the page container
+ * through one inset, so every page starts on the same left edge.
+ */
+
+:root {
+  --site-inset: max(var(--chisan-gutter), (100% - var(--chisan-container)) / 2);
+}
+
+/* The footer always closes the viewport, even under a short page. */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  display: flow-root;
+  flex: 1 0 auto;
+  min-width: 0;
+}
+
+/* Header ----------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  z-index: var(--chisan-z-header);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--chisan-space-6);
+  min-height: calc(4.5rem + env(safe-area-inset-top, 0px));
+  margin: 0;
+  padding: env(safe-area-inset-top, 0px) var(--site-header-inset, var(--site-inset)) 0;
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+  background: var(--chisan-color-rice-paper);
+  view-transition-name: chisan-header;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header {
+    background: var(--chisan-color-glass);
+    -webkit-backdrop-filter: saturate(1.6) blur(18px);
+    backdrop-filter: saturate(1.6) blur(18px);
+  }
+}
+
+/* The rule under the header appears once the page scrolls beneath it. */
+@keyframes chisan-header-lift {
+  to {
+    border-bottom-color: var(--chisan-color-hairline);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .site-header {
+    border-bottom-color: transparent;
+    animation: chisan-header-lift linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 var(--chisan-space-12);
+  }
+}
+
+.site-header__brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+  color: var(--chisan-color-moss-dark);
+  text-decoration: none;
+}
+
+.site-header__map-mark,
+#catalog-header-search {
+  display: none;
+}
+
+/* Header navigation: direct links, the current section marked in green. */
+.site-account-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  margin-left: auto;
+}
+
+.site-account-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-2);
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2) var(--chisan-space-3);
+  border-radius: var(--chisan-radius-control);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-ui);
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+  text-decoration: none;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    outline-offset var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+.site-account-nav__link::after {
+  content: "";
+  position: absolute;
+  inset: auto var(--chisan-space-3) var(--chisan-space-1);
+  height: 2px;
+  border-radius: var(--chisan-radius-xs);
+  background: currentColor;
+  opacity: 0;
+  scale: 0.4 1;
+  transition:
+    opacity var(--chisan-motion-component) var(--chisan-ease),
+    scale var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+@media (hover: hover) {
+  .site-account-nav__link:hover {
+    background: var(--chisan-color-moss-pale);
+    color: var(--chisan-color-moss-dark);
+  }
+}
+
+.site-account-nav__link.is-active {
+  color: var(--chisan-color-moss-dark);
+}
+
+.site-account-nav__link.is-active::after {
+  opacity: 1;
+  scale: 1;
+}
+
+.site-account-nav__link--account::after {
+  inset-inline-start: calc(var(--chisan-space-3) + 20px + var(--chisan-space-2));
+}
+
+.site-account-nav__language select {
+  min-height: var(--chisan-control-height);
+  padding: 0 var(--chisan-space-2);
+  border-color: var(--chisan-color-hairline);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+}
+
+/* Navigation links report their pending route with a fine progress line. */
+.navigation-link__content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-2);
+  min-width: 0;
+}
+
+.navigation-link__progress {
+  position: absolute;
+  inset: auto 0 calc(-1 * var(--chisan-space-1));
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0.25);
+  transform-origin: left;
+}
+
+[data-pending] > .navigation-link__progress {
+  opacity: 0.7;
+  transform: scaleX(0.9);
+  transition:
+    transform 1500ms var(--chisan-ease),
+    opacity var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+/* Bottom bar: the phone's primary navigation ----------------------------- */
+
+.site-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    min-height: calc(4rem + env(safe-area-inset-top, 0px));
+    gap: var(--chisan-space-2);
+  }
+
+  .site-header .site-account-nav {
+    display: none;
+  }
+
+  .site-bottom-nav {
+    position: fixed;
+    z-index: var(--chisan-z-bottom-nav);
+    inset: auto 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    height: calc(var(--chisan-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+    padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+    background: var(--chisan-color-rice-paper);
+    view-transition-name: chisan-bottom-nav;
+  }
+
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .site-bottom-nav {
+      background: var(--chisan-color-glass);
+      -webkit-backdrop-filter: saturate(1.6) blur(18px);
+      backdrop-filter: saturate(1.6) blur(18px);
+    }
+  }
+
+  .site-bottom-nav__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--chisan-space-1);
+    color: var(--chisan-color-stone);
+    font-size: var(--chisan-font-micro);
+    font-weight: var(--chisan-weight-interface);
+    line-height: 1;
+    text-decoration: none;
+    transition: color var(--chisan-motion-immediate) var(--chisan-ease);
+  }
+
+  /* The active tab's icon sits on a soft green indicator that grows in. */
+  .site-bottom-nav__item::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: calc(50% - 1.5rem);
+    left: calc(50% - 1.75rem);
+    width: 3.5rem;
+    height: 1.875rem;
+    border-radius: var(--chisan-radius-object);
+    background: var(--chisan-color-moss-pale);
+    opacity: 0;
+    scale: 0.5 1;
+    transition:
+      opacity var(--chisan-motion-component) var(--chisan-ease),
+      scale var(--chisan-motion-component) var(--chisan-ease-pop);
+  }
+
+  .site-bottom-nav__item svg {
+    flex: none;
+    transition: scale var(--chisan-motion-component) var(--chisan-ease-pop);
+  }
+
+  .site-bottom-nav__item.is-active {
+    color: var(--chisan-color-moss-dark);
+  }
+
+  .site-bottom-nav__item.is-active::before {
+    opacity: 1;
+    scale: 1;
+  }
+
+  .site-bottom-nav__item:active svg {
+    scale: 0.88;
+  }
+
+  .site-bottom-nav__item:focus-visible {
+    outline-offset: -4px;
+    border-radius: var(--chisan-radius-object);
+  }
+}
+
+/* Page containers --------------------------------------------------------- */
+
+.page-shell,
+.auth-page,
+.catalog-start-page {
+  width: min(var(--chisan-container), 100% - 2 * var(--chisan-gutter));
+  margin: var(--chisan-space-8) auto var(--chisan-section-gap);
+}
+
+.account-page {
+  width: min(var(--chisan-container-wide), 100% - 2 * var(--chisan-gutter));
+}
+
+.panel {
+  padding: var(--chisan-panel-padding);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-panel);
+  background: var(--chisan-color-surface);
+}
+
+.panel h1 {
+  margin: 0;
+}
+
+.panel p {
+  margin: var(--chisan-space-2) 0 0;
+  color: var(--chisan-color-stone);
+}
+
+/* The bottom bar never covers the end of a page. */
+@media (max-width: 760px) {
+  body:not(:has(.catalog-page--immersive)) :is(.page-shell, .auth-page, .catalog-start-page) {
+    margin-bottom: calc(var(--chisan-section-gap) + var(--chisan-bottom-nav-height));
+  }
+}
+
+/* A compact way back, used by error and fallback pages. */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-2);
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2) var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-moss-line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-moss-dark);
+  font-size: var(--chisan-font-ui);
+  font-weight: var(--chisan-weight-interface);
+  text-decoration: none;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .back-link:hover {
+    border-color: var(--chisan-color-moss);
+    background: var(--chisan-color-moss-pale);
+  }
+}
+
+.back-link:active {
+  scale: 0.97;
+}
+
+.not-found-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--chisan-space-3);
+}
+
+.not-found-panel__mascot {
+  margin-bottom: var(--chisan-space-4);
+}
+
+/* Footer ----------------------------------------------------------------- */
+
+.site-footer {
+  --footer-landscape-height: clamp(180px, 19vw, 270px);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0 var(--site-header-inset, var(--site-inset)) calc(var(--footer-landscape-height) - var(--chisan-space-8));
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-small);
+}
+
+.site-footer a {
+  color: var(--chisan-color-moss-dark);
+  text-decoration: none;
+  transition: color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .site-footer a:hover {
+    color: var(--chisan-color-moss);
+    text-decoration: underline;
+  }
+}
+
+.site-footer__top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2.2fr);
+  gap: var(--chisan-space-12);
+  padding: var(--chisan-space-16) 0 var(--chisan-space-12);
+}
+
+.site-footer__brand-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+}
+
+.site-footer .chisan-wordmark {
+  width: 6rem;
+}
+
+.site-footer__identity p {
+  max-width: 22ch;
+  margin: var(--chisan-space-2) 0 0;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-body);
+  line-height: var(--chisan-leading-ui);
+}
+
+.site-footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--chisan-space-6);
+}
+
+.site-footer__group {
+  min-width: 0;
+}
+
+.site-footer__group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--chisan-control-height);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-ui);
+  font-weight: var(--chisan-weight-interface);
+  list-style: none;
+}
+
+.site-footer__group summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-footer__group > div {
+  display: grid;
+}
+
+.site-footer__group a {
+  display: flex;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+  overflow-wrap: anywhere;
+}
+
+.site-footer__bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--chisan-space-4);
+  padding-block: var(--chisan-space-2);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+}
+
+.site-footer__bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+}
+
+.footer-landscape {
+  position: absolute;
+  z-index: 0;
+  inset: auto 0 0;
+  height: var(--footer-landscape-height);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.footer-landscape__scenery {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.footer-landscape__journey {
+  position: absolute;
+  bottom: var(--chisan-space-10);
+  left: 50%;
+  translate: -50% 0;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .site-footer {
+    --footer-landscape-height: 200px;
+
+    padding-bottom: calc(var(--footer-landscape-height) - var(--chisan-space-8) + var(--chisan-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--chisan-space-4);
+    padding-block: var(--chisan-space-10) var(--chisan-space-8);
+  }
+
+  .site-footer__identity p {
+    max-width: none;
+  }
+
+  .footer-landscape {
+    bottom: calc(var(--chisan-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .footer-landscape__scenery {
+    position: absolute;
+    left: 50%;
+    width: 900px;
+    max-width: none;
+    translate: -50% 0;
+  }
+}
+
+/* On phones each group is a short native disclosure. */
+@media (max-width: 540px) {
+  .site-footer__links {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .site-footer__group {
+    border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+  }
+
+  .site-footer__group summary {
+    cursor: pointer;
+  }
+
+  .site-footer__group summary::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-inline-end: var(--chisan-space-1);
+    border-right: 1.5px solid var(--chisan-color-moss);
+    border-bottom: 1.5px solid var(--chisan-color-moss);
+    rotate: 45deg;
+    translate: 0 -2px;
+    transition:
+      rotate var(--chisan-motion-component) var(--chisan-ease),
+      translate var(--chisan-motion-component) var(--chisan-ease);
+  }
+
+  .site-footer__group[open] summary::after {
+    rotate: 225deg;
+    translate: 0 2px;
+  }
+
+  .site-footer__group > div {
+    padding-bottom: var(--chisan-space-3);
+  }
+}

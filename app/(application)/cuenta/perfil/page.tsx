@@ -117,7 +117,7 @@ export default async function AccountProfilePage({
               autoComplete="name"
             />
           </label>
-          <button type="submit" className="account-button">
+          <button type="submit" className="chisan-button chisan-button--primary">
             Guardar perfil
           </button>
         </form>
@@ -154,7 +154,7 @@ export default async function AccountProfilePage({
           {publicProfileVisible && account.publicHandle ? (
             <Link
               href={`/u/${account.publicHandle}`}
-              className="account-button account-button--secondary"
+              className="chisan-button"
             >
               Abrir selección pública
             </Link>
@@ -265,7 +265,7 @@ export default async function AccountProfilePage({
               Todos los productores que sigues forman parte de tu selección. Esta visibilidad controla el acceso a tu perfil; tu nombre y foto aparecen entre sus seguidores aunque el perfil sea privado.
             </small>
           </label>
-          <button type="submit" className="account-button">
+          <button type="submit" className="chisan-button chisan-button--primary">
             Guardar perfil público
           </button>
         </form>
@@ -274,14 +274,14 @@ export default async function AccountProfilePage({
           <p>
             Revisa el mapa de tus favoritos y activa el QR desde la vista previa.
           </p>
-          <Link href="/cuenta/seleccion" className="account-button">
+          <Link href="/cuenta/seleccion" className="chisan-button chisan-button--primary">
             Vista previa de la selección y el QR
           </Link>
           {publicProfilePremiumEntitlement && profileQrEnabled ? (
             <form action={updatePublicProfileQrAction} className="account-form">
               <button
                 type="submit"
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 Desactivar QR de selección
               </button>

@@ -84,16 +84,16 @@ export default async function SelectionPreviewPage({
           </p>
         </div>
         <div className="account-inline-actions">
-          {selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="account-button">Foto de mi estantería</Link> : null}
+          {selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="chisan-button chisan-button--primary">Foto de mi estantería</Link> : null}
           <Link
             href="/cuenta/siguiendo"
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             Elegir productores
           </Link>
           <Link
             href="/cuenta/perfil"
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             Título y visibilidad
           </Link>
@@ -155,7 +155,7 @@ export default async function SelectionPreviewPage({
             ) : null}
             <button
               type="submit"
-              className="account-button"
+              className="chisan-button chisan-button--primary"
               disabled={!enabled && !canEnable}
             >
               {enabled ? "Desactivar QR de selección" : "Activar QR de selección"}

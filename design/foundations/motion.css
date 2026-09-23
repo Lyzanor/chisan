@@ -1,0 +1,136 @@
+/*
+ * Motion orients: it confirms an action, connects two states or brings content
+ * into view. Durations and curves come from tokens.css. Nothing here delays
+ * navigation, and reduced motion removes all of it, including changes made
+ * while a page is open.
+ */
+
+@keyframes chisan-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 var(--chisan-motion-distance, 16px);
+  }
+}
+
+@keyframes chisan-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes chisan-scale-in {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+
+@keyframes chisan-pop {
+  from {
+    opacity: 0.4;
+    scale: 0.6;
+  }
+}
+
+@keyframes chisan-spin {
+  to {
+    rotate: 1turn;
+  }
+}
+
+@keyframes chisan-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+/* Content rises into place as it enters the viewport, tied to scroll rather
+ * than a timer, so fast scrolling simply shows it. Without scroll timelines
+ * the content is already in place. */
+@keyframes chisan-reveal {
+  from {
+    opacity: 0;
+    translate: 0 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-reveal],
+    [data-reveal-stagger] > * {
+      animation: chisan-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30vh;
+    }
+
+    [data-reveal-stagger] > :nth-child(2) { animation-range: entry 2vh entry 32vh; }
+    [data-reveal-stagger] > :nth-child(3) { animation-range: entry 4vh entry 34vh; }
+    [data-reveal-stagger] > :nth-child(4) { animation-range: entry 6vh entry 36vh; }
+    [data-reveal-stagger] > :nth-child(n + 5) { animation-range: entry 8vh entry 38vh; }
+  }
+
+  /* Full document navigations between root layouts crossfade; the header and
+   * bottom bar stay in place. Client navigations use the page arrival motion. */
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: chisan-fade-in var(--chisan-motion-immediate) var(--chisan-ease-in-out) reverse both;
+  }
+
+  ::view-transition-new(root) {
+    animation: chisan-fade-up var(--chisan-motion-page) var(--chisan-ease) both;
+  }
+}
+
+/* Page-opening content rises once as the page arrives. The later steps wait a
+ * beat so a heading, its statement and its action read in order. */
+.chisan-enter {
+  animation: chisan-fade-up var(--chisan-motion-reveal) var(--chisan-ease) both;
+}
+
+.chisan-enter--2 {
+  animation-delay: 80ms;
+}
+
+.chisan-enter--3 {
+  animation-delay: 160ms;
+}
+
+/* A pending icon turns; reduced motion leaves it still. */
+.chisan-spin {
+  animation: chisan-spin 800ms linear infinite;
+}
+
+/* A quiet placeholder for content that is still loading. */
+.chisan-skeleton {
+  border-radius: var(--chisan-radius-object);
+  background: linear-gradient(
+      100deg,
+      var(--chisan-color-surface-muted) 30%,
+      var(--chisan-color-moss-pale) 50%,
+      var(--chisan-color-surface-muted) 70%
+    )
+    0 0 / 200% 100%;
+  animation: chisan-shimmer 1600ms var(--chisan-ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-delay: 0ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

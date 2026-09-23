@@ -18,7 +18,7 @@ export function Timeline({
     <section className={styles.timeline} aria-labelledby="timeline-title">
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">Tu comunidad</p>
+          <p className="chisan-eyebrow">Tu comunidad</p>
           <h2 id="timeline-title">Cerca de quienes producen</h2>
           <p>
             Novedades publicadas de los productores que sigues y avisos de
@@ -27,7 +27,7 @@ export function Timeline({
         </div>
         <Link
           href={FOLLOWING_PATH}
-          className={`account-button account-button--secondary ${styles.followingLink}`}
+          className={`chisan-button ${styles.followingLink}`}
         >
           Siguiendo · {page.followingCount}
         </Link>
@@ -61,7 +61,7 @@ export function Timeline({
               ? "Cuando se publique un cambio de un productor premium que sigues o se apruebe su titularidad, podrás leerlo aquí."
               : "Pulsa «Seguir productor» en sus perfiles para reunir aquí sus novedades. Tus favoritos anteriores ya son seguimientos."}
           </p>
-          <Link href="/" className="account-button">
+          <Link href="/" className="chisan-button chisan-button--primary">
             Descubrir productores
           </Link>
         </div>
@@ -115,7 +115,7 @@ export function Timeline({
       )}
       {page.nextCursor ? (
         <Link
-          className="account-button account-button--secondary"
+          className="chisan-button"
           href={`${TIMELINE_PATH}?filter=${filter}&cursor=${encodeURIComponent(page.nextCursor)}`}
         >
           Ver anteriores
@@ -142,7 +142,7 @@ export function Timeline({
           ))}
           {page.nextMessagePage !== null ? (
             <Link
-              className="account-button account-button--secondary"
+              className="chisan-button"
               href={`${TIMELINE_PATH}?filter=${filter}&messagePage=${page.nextMessagePage}#current-messages-title`}
             >
               Más mensajes de productores

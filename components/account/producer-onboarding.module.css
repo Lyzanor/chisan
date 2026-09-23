@@ -41,8 +41,8 @@
   background: transparent;
   color: var(--chisan-color-moss-dark);
   font: inherit;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
   text-decoration: none;
   cursor: pointer;
 }
@@ -50,9 +50,9 @@
 .flow .stepCount {
   margin: 0 0 0 auto;
   color: var(--chisan-color-stone);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: var(--chisan-font-caption);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
 }
 
 .progress {
@@ -74,16 +74,16 @@
 /* Scoped to the flow so it outranks `.account-content h2/h3`. */
 .flow .title {
   margin: 0;
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1.15;
+  font-size: var(--chisan-font-heading);
+  font-weight: var(--chisan-weight-body);
+  line-height: var(--chisan-leading-heading);
 }
 
 .flow .lead {
   margin: 0;
   color: var(--chisan-color-stone);
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: var(--chisan-font-body);
+  line-height: var(--chisan-leading-body);
 }
 
 .section {
@@ -94,9 +94,9 @@
 .flow .sectionTitle {
   margin: 0;
   color: var(--chisan-color-stone);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: var(--chisan-font-caption);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
   text-transform: uppercase;
 }
 
@@ -116,7 +116,7 @@
   grid-template-columns: auto 1fr;
   align-items: start;
   gap: var(--chisan-space-3);
-  border: 1px solid var(--chisan-color-stone);
+  border: var(--chisan-line) solid var(--chisan-color-stone);
   border-radius: var(--chisan-radius-object);
   background: var(--chisan-color-surface);
   cursor: pointer;
@@ -148,21 +148,21 @@
 }
 
 .choiceText strong {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-interface);
 }
 
 .choiceText span {
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--chisan-font-small);
+  line-height: var(--chisan-leading-body);
 }
 
 .choiceText .badge {
   justify-self: start;
   color: var(--chisan-color-moss-dark);
-  font-size: 0.8125rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-caption);
+  font-weight: var(--chisan-weight-interface);
 }
 
 /* Search */
@@ -176,12 +176,12 @@
   min-width: 0;
   min-height: 48px;
   padding: 0 var(--chisan-space-4);
-  border: 1px solid var(--chisan-color-stone);
+  border: var(--chisan-line) solid var(--chisan-color-stone);
   border-radius: var(--chisan-radius-control);
   background: var(--chisan-color-surface);
   color: var(--chisan-color-ink);
   font: inherit;
-  font-size: 1rem;
+  font-size: var(--chisan-font-body);
 }
 
 .searchForm input:focus-visible {
@@ -198,11 +198,11 @@
   padding: 0;
   list-style: none;
   display: grid;
-  border-top: 1px solid var(--chisan-color-hairline);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
 }
 
 .results li {
-  border-bottom: 1px solid var(--chisan-color-hairline);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
 }
 
 .resultLink {
@@ -238,15 +238,15 @@
 
 .resultText strong {
   overflow: hidden;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-interface);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .resultText span {
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
+  font-size: var(--chisan-font-small);
 }
 
 .chevron {
@@ -256,8 +256,8 @@
 .flow .hint {
   margin: 0;
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--chisan-font-small);
+  line-height: var(--chisan-leading-body);
 }
 
 .flow .hint a {
@@ -281,21 +281,21 @@
 
 .flow .producerName {
   margin: 0;
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: var(--chisan-font-heading);
+  font-weight: var(--chisan-weight-body);
+  line-height: var(--chisan-leading-heading);
 }
 
 .flow .producerMeta {
   margin: 0;
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
+  font-size: var(--chisan-font-small);
 }
 
 .textLink {
   color: var(--chisan-color-moss-dark);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
 }
 
 /* Fields */
@@ -305,8 +305,8 @@
 }
 
 .field > span {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
 }
 
 .field input,
@@ -314,12 +314,12 @@
   width: 100%;
   min-height: 48px;
   padding: var(--chisan-space-3) var(--chisan-space-4);
-  border: 1px solid var(--chisan-color-stone);
+  border: var(--chisan-line) solid var(--chisan-color-stone);
   border-radius: var(--chisan-radius-control);
   background: var(--chisan-color-surface);
   color: var(--chisan-color-ink);
   font: inherit;
-  font-size: 1rem;
+  font-size: var(--chisan-font-body);
 }
 
 .field input:focus-visible,
@@ -330,7 +330,7 @@
 
 .field small {
   color: var(--chisan-color-stone);
-  font-size: 0.8125rem;
+  font-size: var(--chisan-font-caption);
 }
 
 .check {
@@ -339,8 +339,8 @@
   align-items: start;
   gap: var(--chisan-space-3);
   color: var(--chisan-color-stone);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--chisan-font-small);
+  line-height: var(--chisan-leading-body);
   cursor: pointer;
 }
 
@@ -361,14 +361,14 @@
   padding: var(--chisan-space-3) var(--chisan-space-4);
   display: grid;
   gap: var(--chisan-space-2);
-  border-top: 1px solid var(--chisan-color-hairline);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
   background: var(--chisan-color-surface);
 }
 
 .actions :is(a, button) {
   width: 100%;
   min-height: 48px;
-  font-size: 1rem;
+  font-size: var(--chisan-font-body);
 }
 
 .actions form {
@@ -390,26 +390,26 @@
   padding: var(--chisan-space-4);
   display: grid;
   gap: var(--chisan-space-1);
-  border: 1px solid var(--chisan-color-moss);
+  border: var(--chisan-line) solid var(--chisan-color-moss);
   border-radius: var(--chisan-radius-object);
   background: var(--chisan-color-moss-pale);
 }
 
 .codeBox span {
   color: var(--chisan-color-moss-dark);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: var(--chisan-font-caption);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
   text-transform: uppercase;
 }
 
 .flow .code {
   margin: 0;
   color: var(--chisan-color-ink);
-  font-size: 2.25rem;
-  font-weight: 400;
+  font-size: var(--chisan-font-title);
+  font-weight: var(--chisan-weight-body);
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--chisan-tracking-caps);
 }
 
 .nextSteps {
@@ -426,8 +426,8 @@
   display: grid;
   grid-template-columns: 28px 1fr;
   gap: var(--chisan-space-3);
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: var(--chisan-font-body);
+  line-height: var(--chisan-leading-body);
 }
 
 .nextSteps li::before {
@@ -436,11 +436,11 @@
   height: 28px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--chisan-color-moss);
+  border: var(--chisan-line) solid var(--chisan-color-moss);
   border-radius: 50%;
   color: var(--chisan-color-moss-dark);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
 }
 
 @media (min-width: 761px) {
@@ -449,7 +449,7 @@
   }
 
   .flow .title {
-    font-size: 2.25rem;
+    font-size: var(--chisan-font-title);
   }
 
   .actions {

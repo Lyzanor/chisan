@@ -157,15 +157,15 @@ function ProjectSummary({
       >
         <div className="catalog-start-head">
           <div>
-            <p className="catalog-kicker">{messages.home.aboutKicker}</p>
-            <h1 id="home-summary-title">{messages.siteHeader.tagline}</h1>
+            <p className="chisan-eyebrow">{messages.home.aboutKicker}</p>
+            <h1 className="chisan-enter" id="home-summary-title">{messages.siteHeader.tagline}</h1>
           </div>
         </div>
-        <section className="home-catalog" aria-labelledby="country-start-title">
+        <section className="home-catalog chisan-enter chisan-enter--3" aria-labelledby="country-start-title">
           <span className="home-catalog__orbit" aria-hidden="true" />
           <div className="catalog-start-head" id={MANUAL_AREA_SELECTION_ID}>
             <div>
-              <p className="catalog-kicker">
+              <p className="chisan-eyebrow">
                 {messages.siteFooter.catalogLink}
               </p>
               <h2 id="country-start-title">{catalogTitle}</h2>
@@ -243,7 +243,7 @@ function ProjectSummary({
             })}
           </div>
         </section>
-        <div className="home-story-intro">
+        <div className="home-story-intro chisan-enter chisan-enter--2">
           <p>
             Descubre qué significa realmente proximidad. Conoce a quienes producen
             lo que comes y bebes, elige tus favoritos y contacta directamente con ellos.

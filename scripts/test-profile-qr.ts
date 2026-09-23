@@ -65,7 +65,7 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
     "utf8",
   );
   const styles = fs.readFileSync(
-    path.join(ROOT, "app/styles/profile-tools.css"),
+    path.join(ROOT, "design/adapters/profile-qr.css"),
     "utf8",
   );
   const producerPage = fs.readFileSync(

@@ -71,14 +71,14 @@ export default async function ProducerStatisticsPage({
     <div className="account-content">
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">{labels.title}</p>
+          <p className="chisan-eyebrow">{labels.title}</p>
           <h2>{producer.name}</h2>
           <p>{labels.description}</p>
         </div>
         <div className="account-inline-actions">
           <Link
             href={`/cuenta/productores/${country}/${producerId}/editar`}
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             {labels.back}
           </Link>
@@ -87,7 +87,7 @@ export default async function ProducerStatisticsPage({
               producer,
               presentation.explicitLocale,
             )}
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             {labels.publicProfile}
           </Link>
@@ -104,7 +104,7 @@ export default async function ProducerStatisticsPage({
           {message === labels.unavailable ? (
             <Link
               href={path}
-              className="account-button account-button--secondary"
+              className="chisan-button"
             >
               {labels.retry}
             </Link>

@@ -67,7 +67,7 @@ export function ProducerSelectionPage({
       <header className="catalog-simple-header">
         <div>
           {profileAvatar ? <UserAvatar name={profileAvatar.name} src={profileAvatar.src} size={64} /> : null}
-          <p className="catalog-kicker">{selection.eyebrow}</p>
+          <p className="chisan-eyebrow">{selection.eyebrow}</p>
           <Heading>{selection.title}</Heading>
           <p>{selection.description}</p>
         </div>
@@ -88,7 +88,7 @@ export function ProducerSelectionPage({
             marginBlockEnd: "var(--chisan-space-4)",
           }}
         >
-          <p className="catalog-kicker" style={{ margin: 0, marginBottom: "var(--chisan-space-2)" }}>
+          <p className="chisan-eyebrow" style={{ margin: 0, marginBottom: "var(--chisan-space-2)" }}>
             Selecciones y estanterías
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
@@ -96,7 +96,7 @@ export function ProducerSelectionPage({
               <a
                 key={sel.publicHandle}
                 href={`/u/${sel.publicHandle}`}
-                className="account-button account-button--secondary"
+                className="chisan-button"
               >
                 {sel.title}
               </a>

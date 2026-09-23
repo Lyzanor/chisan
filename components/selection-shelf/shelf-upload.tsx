@@ -50,14 +50,14 @@ export function ShelfUpload({ allowed, records, aiProviderName }: { aiProviderNa
       <label className="account-field"><span>Foto de tu estantería</span><input type="file" name="photo" accept="image/jpeg,image/png,image/webp" required disabled={busy} /></label>
       <p>Fotografía las etiquetas de frente, con buena luz y sin personas. Puedes enviar una nueva foto cuando cambie la estantería.</p>
       <label className={styles.consent}><input type="checkbox" name="consent" required disabled={busy} /><span>Tengo permiso para usar esta foto y autorizo su análisis con {aiProviderName} y la preparación de una propuesta que revisaré antes de publicar.</span></label>
-      <button className="account-button" disabled={busy}>{busy ? "Enviando…" : "Enviar foto a Chisan"}</button>
+      <button className="chisan-button chisan-button--primary" disabled={busy}>{busy ? "Enviando…" : "Enviar foto a Chisan"}</button>
     </form> : <p>El envío de fotos requiere acceso activo al perfil ampliado de tu cuenta o de un productor que gestionas.</p>}
     <p role="status">{message}</p>
-    <div className={styles.photoHeading}><h3>Tus fotos</h3><button type="button" className="account-button account-button--secondary" onClick={() => router.refresh()} disabled={busy}>Actualizar estado</button></div>
+    <div className={styles.photoHeading}><h3>Tus fotos</h3><button type="button" className="chisan-button" onClick={() => router.refresh()} disabled={busy}>Actualizar estado</button></div>
     {records.length ? <ul className={styles.statusList}>{records.map((record) => <li key={record.id}>
       <span><strong>{shelfStatusLabels[record.status] ?? record.status}</strong> · {record.date}</span>
-      <a href={shelfImageUrl(record.id)} target="_blank" rel="noreferrer" className="account-button account-button--secondary">Ver foto</a>
-      {["received", "queued", "processing", "review", "ready", "published"].includes(record.status) ? <button className="account-button account-button--secondary" type="button" disabled={busy} onClick={() => void withdraw(record.id)}>Retirar foto</button> : null}
+      <a href={shelfImageUrl(record.id)} target="_blank" rel="noreferrer" className="chisan-button">Ver foto</a>
+      {["received", "queued", "processing", "review", "ready", "published"].includes(record.status) ? <button className="chisan-button" type="button" disabled={busy} onClick={() => void withdraw(record.id)}>Retirar foto</button> : null}
     </li>)}</ul> : <p>Todavía no has enviado ninguna foto.</p>}
   </>;
 }

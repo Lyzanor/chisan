@@ -21,7 +21,7 @@ export default function SignInPage() {
           <div className="auth-copy">
           <h1 id="account-auth-unavailable-title">Acceso a cuentas</h1>
           <p>El acceso a cuentas estará habilitado a partir del 1 de octubre.</p>
-          <Link href="/" className="account-button account-button--secondary">Volver al catálogo</Link>
+          <Link href="/" className="chisan-button">Volver al catálogo</Link>
           </div>
         </section>
       </main>
@@ -32,7 +32,7 @@ export default function SignInPage() {
     <main className="auth-page">
       <section className="auth-shell">
         <div className="auth-copy">
-          <p className="catalog-kicker">Cuenta de {SITE_NAME}</p>
+          <p className="chisan-eyebrow">Cuenta de {SITE_NAME}</p>
           <h1>Te damos la bienvenida</h1>
           <p>Inicia sesión para seguir productores, leer sus novedades y gestionar solicitudes de propiedad y cambios en los perfiles de productores.</p>
         </div>

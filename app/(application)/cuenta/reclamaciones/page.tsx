@@ -103,7 +103,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
           </p>
         </div>
         {!hasOwnedProducer && !hasOpenClaim ? (
-          <Link href={PRODUCER_ONBOARDING_PATH} className="account-button account-button--secondary">
+          <Link href={PRODUCER_ONBOARDING_PATH} className="chisan-button">
             Buscar mi ficha
           </Link>
         ) : null}
@@ -113,7 +113,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
         <h3>Comprobación de Instagram</h3>
         <p>Puedes eliminar el identificador, usuario y comprobación de Instagram de tus solicitudes. Si alguna sigue en revisión, necesitaremos otros datos para comprobarla.</p>
         <form action={removeInstagramEvidence}>
-          <button type="submit" className="account-button account-button--secondary">Eliminar mi comprobación de Instagram</button>
+          <button type="submit" className="chisan-button">Eliminar mi comprobación de Instagram</button>
         </form>
       </section> : null}
 
@@ -135,18 +135,18 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                     <div className="account-inline-actions">
                       <Link
                         href={buildAccountProducerHref(producer, explicitLocale)}
-                        className="account-button account-button--secondary"
+                        className="chisan-button"
                       >
                         Perfil público
                       </Link>
                       {membership.role === "owner" ? (
-                        <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/estadisticas`} className="account-button account-button--secondary">
+                        <Link href={`/cuenta/productores/${producer.country}/${producer.producerId}/estadisticas`} className="chisan-button">
                           {getProducerStatsLabels(explicitLocale ?? APPLICATION_DEFAULT_LOCALE).link}
                         </Link>
                       ) : null}
                       <Link
                         href={`/cuenta/productores/${producer.country}/${producer.producerId}/editar`}
-                        className="account-button"
+                        className="chisan-button chisan-button--primary"
                       >
                         Proponer cambios
                       </Link>
@@ -190,7 +190,7 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
                       {producer ? (
                         <Link
                           href={buildAccountProducerHref(producer, explicitLocale)}
-                          className="account-button account-button--secondary"
+                          className="chisan-button"
                         >
                           Perfil público
                         </Link>

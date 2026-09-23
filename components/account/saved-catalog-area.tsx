@@ -45,7 +45,7 @@ export function SavedCatalogArea({
         <div className="account-inline-actions">
           <Link
             href={MANUAL_AREA_SELECTION_HREF}
-            className="account-button account-button--secondary"
+            className="chisan-button"
           >
             Elegir una zona
           </Link>
@@ -63,20 +63,20 @@ export function SavedCatalogArea({
       <div className="account-inline-actions">
         <Link
           href={buildLocationAreaHref(savedArea, explicitLocale, browserLocales)}
-          className="account-button account-button--secondary"
+          className="chisan-button"
         >
           Abrir {savedArea.label}
         </Link>
         <Link
           href={MANUAL_AREA_SELECTION_HREF}
-          className="account-button account-button--secondary"
+          className="chisan-button"
           onClick={forgetSavedLocationArea}
         >
           Elegir otra zona
         </Link>
         <button
           type="button"
-          className="account-button account-button--secondary"
+          className="chisan-button"
           onClick={forgetSavedLocationArea}
         >
           Olvidar zona guardada

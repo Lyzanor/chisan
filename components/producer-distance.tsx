@@ -71,7 +71,7 @@ export function ProducerDistance({
       </div>
       <button
         type="button"
-        className={styles.action}
+        className={`chisan-button ${styles.action}`}
         disabled={state.status === "calculating"}
         onClick={handleCalculate}
       >

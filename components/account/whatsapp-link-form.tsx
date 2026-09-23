@@ -46,7 +46,7 @@ export function WhatsAppLinkForm({
         otras personas.
       </label>
       <button
-        className="account-button"
+        className="chisan-button chisan-button--primary"
         disabled={pending || !producers.length}
       >
         {pending ? "Preparando enlace…" : "Generar enlace de vinculación"}
@@ -59,7 +59,7 @@ export function WhatsAppLinkForm({
             caduca en 10 minutos. No lo compartas.
           </p>
           <a
-            className="account-button"
+            className="chisan-button chisan-button--primary"
             href={state.url}
             rel="noreferrer"
             target="_blank"

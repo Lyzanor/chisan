@@ -196,7 +196,7 @@ export function LocationOnboarding({
       </div>
       <div className="location-onboarding__actions">
         <button
-          className="location-onboarding__primary"
+          className="chisan-button chisan-button--primary location-onboarding__primary"
           type="button"
           disabled={isPending}
           aria-busy={isLocating}

@@ -118,10 +118,10 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
         <section className="account-callout">
           <h2>¿Tienes un negocio productor?</h2>
           <p>Busca tu ficha y verifica que es tuya para mantenerla al día. Es gratis y solo lleva unos minutos.</p>
-          <Link href={PRODUCER_ONBOARDING_PATH} className="account-button">Buscar mi ficha</Link>
+          <Link href={PRODUCER_ONBOARDING_PATH} className="chisan-button chisan-button--primary">Buscar mi ficha</Link>
         </section>
       ) : null}
-      <section className="account-callout"><h2>Las novedades de tu comunidad</h2><p>Lee los mensajes publicados y los avisos de los productores que sigues.</p><Link href="/cuenta/novedades" className="account-button">Abrir mi timeline</Link></section>
+      <section className="account-callout"><h2>Las novedades de tu comunidad</h2><p>Lee los mensajes publicados y los avisos de los productores que sigues.</p><Link href="/cuenta/novedades" className="chisan-button chisan-button--primary">Abrir mi timeline</Link></section>
       <section aria-labelledby="account-overview-title">
         <h2 id="account-overview-title">Resumen</h2>
         <div className="account-stat-grid">
@@ -142,7 +142,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
           <p>
             Abre el perfil público del productor y elige «Verificar productor». La titularidad se comprueba manualmente antes de conceder acceso de edición.
           </p>
-          <Link href="/" className="account-button">
+          <Link href="/" className="chisan-button chisan-button--primary">
             Buscar mi productor
           </Link>
         </section>
@@ -151,7 +151,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
         <h2 id="account-settings-title">Ajustes y sesión</h2>
         <p>Has iniciado sesión con {account.email || "tu cuenta de Chisan"}.</p>
         <div className="account-inline-actions">
-          <AccountSignOutButton className="account-button account-button--secondary" />
+          <AccountSignOutButton className="chisan-button" />
         </div>
       </section>
     </div>

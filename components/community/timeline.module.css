@@ -1,13 +1,13 @@
 .timeline {
   display: grid;
-  gap: var(--chisan-space-6, 24px);
+  gap: var(--chisan-space-6);
   max-width: 880px;
 }
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  border-bottom: 1px solid var(--line);
+  gap: var(--chisan-space-2);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
 }
 .followingLink {
   flex-shrink: 0;
@@ -17,10 +17,20 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 8px 16px;
-  color: var(--chisan-color-ink);
-  text-decoration: none;
+  margin-bottom: -1px;
+  padding: var(--chisan-space-2) var(--chisan-space-4);
   border-bottom: 2px solid transparent;
+  color: var(--chisan-color-ink);
+  font-weight: var(--chisan-weight-interface);
+  text-decoration: none;
+  transition:
+    border-color var(--chisan-motion-component) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+@media (hover: hover) {
+  .filters a:hover {
+    border-color: var(--chisan-color-moss-line);
+  }
 }
 .filters a[aria-current="page"] {
   color: var(--chisan-color-moss-dark);
@@ -32,63 +42,63 @@
   list-style: none;
 }
 .entry {
-  padding: 24px 0 32px;
-  border-bottom: 1px solid var(--line);
+  padding: var(--chisan-space-6) 0 var(--chisan-space-8);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
   overflow-wrap: anywhere;
 }
 .entry h3,
 .empty h3 {
-  margin: 8px 0 16px;
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  font-weight: 500;
+  margin: var(--chisan-space-2) 0 var(--chisan-space-4);
+  font-size: var(--chisan-font-heading);
+  font-weight: var(--chisan-weight-interface);
 }
 .byline {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--chisan-space-4);
 }
 .byline a {
   color: var(--chisan-color-ink);
-  font-weight: 500;
+  font-weight: var(--chisan-weight-interface);
 }
 .byline small {
   display: block;
-  margin-top: 4px;
+  margin-top: var(--chisan-space-1);
 }
 .byline time,
 .byline small,
 .kind {
-  color: var(--muted);
-  font-size: 0.8125rem;
-  line-height: 1.5;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+  line-height: var(--chisan-leading-body);
 }
 .kind {
-  margin: 24px 0 8px;
+  margin: var(--chisan-space-6) 0 var(--chisan-space-2);
 }
 .body {
   max-width: 64ch;
   white-space: pre-wrap;
-  line-height: 1.7;
+  line-height: var(--chisan-leading-reading);
 }
 .profileLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--chisan-space-2);
   min-height: 44px;
   color: var(--chisan-color-moss-dark);
 }
 .empty {
-  padding: 32px 0;
+  padding: var(--chisan-space-8) 0;
   max-width: 60ch;
 }
 .empty p {
-  line-height: 1.7;
-  margin-bottom: 24px;
+  line-height: var(--chisan-leading-reading);
+  margin-bottom: var(--chisan-space-6);
 }
 .currentMessage {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  padding: var(--chisan-space-4) 0;
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
   overflow-wrap: anywhere;
 }
 .currentMessage summary {
@@ -97,8 +107,8 @@
 }
 .currentMessage small {
   display: block;
-  color: var(--muted);
-  margin-top: 4px;
+  color: var(--chisan-color-stone);
+  margin-top: var(--chisan-space-1);
 }
 .currentMessage summary:focus-visible {
   outline: 2px solid var(--chisan-color-moss);
@@ -112,9 +122,9 @@
 @media (max-width: 600px) {
   .byline {
     flex-direction: column;
-    gap: 8px;
+    gap: var(--chisan-space-2);
   }
   .entry {
-    padding: 24px 0;
+    padding: var(--chisan-space-6) 0;
   }
 }

@@ -234,18 +234,18 @@ export default async function AdminClaimsPage({ searchParams }: AdminClaimsPageP
                     />
                   </label>
                   <div className="account-inline-actions">
-                    <button className="account-button" name="decision" value="approved">
+                    <button className="chisan-button chisan-button--primary" name="decision" value="approved">
                       Approve
                     </button>
                     <button
-                      className="account-button account-button--secondary"
+                      className="chisan-button"
                       name="decision"
                       value="needs_info"
                     >
                       Request information
                     </button>
                     <button
-                      className="account-button account-button--danger"
+                      className="chisan-button chisan-button--danger"
                       name="decision"
                       value="rejected"
                     >

@@ -1,0 +1,737 @@
+/*
+ * Account surfaces: sign-in, the account workspace, forms, reviews and the
+ * producer tools. They share the primitives; states use the product colours.
+ */
+
+/* Sign-in and registration -------------------------------------------------- */
+
+.auth-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: var(--chisan-space-8);
+  padding: var(--chisan-panel-padding);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-panel);
+  background: var(--chisan-color-surface);
+}
+
+.auth-copy h1 {
+  margin: 0;
+}
+
+.auth-copy p {
+  max-width: var(--chisan-measure);
+  color: var(--chisan-color-stone);
+}
+
+.auth-profile-list {
+  display: grid;
+  gap: var(--chisan-space-3);
+  margin-top: var(--chisan-space-5);
+}
+
+.auth-profile-list article {
+  padding: var(--chisan-space-4);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface-muted);
+}
+
+.auth-profile-list strong,
+.auth-profile-list span {
+  display: block;
+}
+
+.auth-profile-list strong {
+  font-weight: var(--chisan-weight-interface);
+}
+
+.auth-profile-list span {
+  margin-top: var(--chisan-space-1);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+}
+
+.auth-widget {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+@media (min-width: 761px) {
+  .auth-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  }
+}
+
+/* Account workspace ----------------------------------------------------------- */
+
+.account-setup-panel > .chisan-button,
+.auth-copy > .chisan-button {
+  margin-top: var(--chisan-space-5);
+}
+
+.account-shell {
+  overflow: visible;
+}
+
+.account-header,
+.account-section-heading,
+.account-record-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--chisan-space-4);
+}
+
+.account-header {
+  padding-bottom: var(--chisan-space-5);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-hairline);
+}
+
+.account-header h1,
+.account-section-heading h2,
+.account-content h2,
+.account-content h3 {
+  margin: 0;
+}
+
+.account-content h2 {
+  font-size: var(--chisan-font-heading);
+}
+
+.account-content h3 {
+  margin-bottom: var(--chisan-space-3);
+  font-size: var(--chisan-font-subheading);
+}
+
+.account-header p,
+.account-section-heading p,
+.account-record-heading p,
+.account-content > section > p {
+  margin: var(--chisan-space-2) 0 0;
+  color: var(--chisan-color-stone);
+}
+
+.account-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--chisan-space-2);
+}
+
+.account-profile-badge,
+.account-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0 var(--chisan-space-2);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-xs);
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  white-space: nowrap;
+}
+
+.account-status--approved,
+.account-status--applied {
+  border-color: var(--chisan-color-moss-line);
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.account-status--rejected,
+.account-status--revoked,
+.account-status--failed,
+.account-status--conflict {
+  border-color: var(--chisan-color-danger-line);
+  background: var(--chisan-color-danger-pale);
+  color: var(--chisan-color-danger);
+}
+
+.account-status--pending,
+.account-status--submitted,
+.account-status--needs_info,
+.account-status--needs_changes {
+  border-color: var(--chisan-color-warning-line);
+  background: var(--chisan-color-warning-pale);
+  color: var(--chisan-color-warning);
+}
+
+.account-signout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
+  min-height: var(--chisan-control-height);
+  padding: 0 var(--chisan-space-3);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+  font-weight: var(--chisan-weight-interface);
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .account-signout-btn:hover {
+    border-color: var(--chisan-color-field-line);
+    background: var(--chisan-color-surface-muted);
+    color: var(--chisan-color-ink);
+  }
+}
+
+/* Section tabs: one quiet track, the current page filled green. */
+.account-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--chisan-space-1);
+  margin-block: var(--chisan-space-6) var(--chisan-space-8);
+  padding: var(--chisan-space-1);
+  overflow-x: auto;
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface-muted);
+  scrollbar-width: none;
+}
+
+.account-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.account-nav a {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+  padding-inline: var(--chisan-space-4);
+  border-radius: var(--chisan-radius-control);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
+  text-decoration: none;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .account-nav a:hover {
+    background: var(--chisan-color-surface);
+  }
+}
+
+.account-nav a[aria-current="page"] {
+  background: var(--chisan-color-moss-dark);
+  color: var(--chisan-color-surface);
+}
+
+.account-content {
+  display: grid;
+  gap: var(--chisan-space-8);
+}
+
+.account-content--narrow {
+  max-width: var(--chisan-container-content);
+}
+
+.account-stat-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--chisan-space-3);
+  margin-top: var(--chisan-space-4);
+}
+
+.account-stat-card {
+  display: grid;
+  gap: var(--chisan-space-1);
+  min-width: 0;
+  padding: var(--chisan-space-5);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--chisan-motion-component) var(--chisan-ease),
+    box-shadow var(--chisan-motion-component) var(--chisan-ease),
+    translate var(--chisan-motion-component) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  a.account-stat-card:hover {
+    border-color: var(--chisan-color-moss-line);
+    box-shadow: var(--chisan-shadow-raised);
+    translate: 0 -2px;
+  }
+}
+
+.account-stat-card strong {
+  color: var(--chisan-color-moss);
+  font-size: var(--chisan-font-heading);
+  font-weight: var(--chisan-weight-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.account-stat-card span {
+  font-weight: var(--chisan-weight-interface);
+}
+
+.account-stat-card small,
+.account-field small {
+  color: var(--chisan-color-stone);
+  line-height: var(--chisan-leading-ui);
+}
+
+/* Messages and empty states. */
+.account-callout,
+.account-empty,
+.account-message,
+.account-card {
+  margin: 0;
+  padding: var(--chisan-space-5);
+  border-radius: var(--chisan-radius-object);
+}
+
+.account-callout,
+.account-message {
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.account-callout--success {
+  box-shadow: inset 3px 0 0 var(--chisan-color-success-line);
+}
+
+.account-callout p {
+  margin: var(--chisan-space-2) 0 var(--chisan-space-3);
+  color: var(--chisan-color-stone);
+}
+
+.account-card {
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  background: var(--chisan-color-surface);
+  color: inherit;
+}
+
+.account-card > :last-child {
+  margin-bottom: 0;
+}
+
+.account-empty {
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-ink);
+}
+
+.account-message--error,
+.account-callout--error {
+  background: var(--chisan-color-danger-pale);
+  color: var(--chisan-color-danger);
+}
+
+.account-link-button {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--chisan-color-danger);
+  font-weight: var(--chisan-weight-interface);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Forms ------------------------------------------------------------------ */
+
+.account-form {
+  display: grid;
+  gap: var(--chisan-space-4);
+}
+
+.account-form--wide {
+  gap: var(--chisan-space-5);
+}
+
+.account-form-section {
+  display: grid;
+  gap: var(--chisan-space-4);
+  min-width: 0;
+  margin: 0;
+  padding: var(--chisan-space-5);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+}
+
+.account-form-section--premium {
+  border-color: var(--chisan-color-moss-line);
+  background: var(--chisan-color-moss-pale);
+}
+
+.account-form-section > legend {
+  padding: 0 var(--chisan-space-2);
+  color: var(--chisan-color-ink);
+  font-weight: var(--chisan-weight-interface);
+}
+
+.account-form-section > p {
+  margin: 0;
+  color: var(--chisan-color-stone);
+}
+
+.account-form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--chisan-space-4);
+}
+
+.account-field {
+  display: grid;
+  gap: var(--chisan-space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.account-field--full {
+  grid-column: 1 / -1;
+}
+
+.account-field > span,
+.account-field > label,
+.account-field legend {
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
+}
+
+.account-field input,
+.account-field textarea,
+.account-field select {
+  width: 100%;
+}
+
+.account-field input[aria-invalid="true"],
+.account-field textarea[aria-invalid="true"],
+.account-field select[aria-invalid="true"],
+.account-field[aria-invalid="true"] .account-checkbox-grid {
+  border-color: var(--chisan-color-danger);
+}
+
+.account-field-error {
+  color: var(--chisan-color-danger) !important;
+  font-weight: var(--chisan-weight-interface);
+}
+
+.account-error-summary:focus {
+  outline: var(--chisan-focus-ring) solid var(--chisan-color-danger);
+  outline-offset: 2px;
+}
+
+.account-error-summary ul {
+  margin: var(--chisan-space-2) 0 var(--chisan-space-4);
+  padding-left: var(--chisan-space-5);
+}
+
+.account-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--chisan-space-2);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+}
+
+.account-check input {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0.15rem 0 0;
+}
+
+.account-check span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.account-check--compact {
+  color: var(--chisan-color-ink);
+}
+
+.account-checkbox-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--chisan-space-2) var(--chisan-space-3);
+  padding: var(--chisan-space-3);
+  border: var(--chisan-line) solid var(--chisan-color-field-line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+}
+
+/* Records and reviews ------------------------------------------------------ */
+
+.account-record-list,
+.account-review-list {
+  display: grid;
+  gap: var(--chisan-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.account-record-list > li,
+.account-review-list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--chisan-space-4);
+  padding: var(--chisan-space-4);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-object);
+  background: var(--chisan-color-surface);
+}
+
+.account-record-list p {
+  margin: var(--chisan-space-1) 0 0;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+}
+
+.account-record-list > li.account-record-list__stacked,
+.account-review-list > li {
+  display: grid;
+  align-items: stretch;
+  gap: var(--chisan-space-3);
+}
+
+.account-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--chisan-space-2);
+}
+
+.account-diff-list,
+.account-review-meta {
+  display: grid;
+  gap: var(--chisan-space-2);
+  margin: 0;
+}
+
+.account-diff-list > div,
+.account-review-meta > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--chisan-space-1) var(--chisan-space-3);
+}
+
+.account-diff-list dt,
+.account-review-meta dt {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+  font-weight: var(--chisan-weight-interface);
+}
+
+.account-diff-list dd,
+.account-review-meta dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.account-diff-list del {
+  color: var(--chisan-color-danger);
+}
+
+.account-diff-list ins {
+  color: var(--chisan-color-moss-dark);
+  text-decoration: none;
+}
+
+.account-review-statement {
+  margin: 0;
+  padding: var(--chisan-space-3) var(--chisan-space-4);
+  border-left: 3px solid var(--chisan-color-moss);
+  border-radius: 0 var(--chisan-radius-xs) var(--chisan-radius-xs) 0;
+  background: var(--chisan-color-surface-muted);
+  color: var(--chisan-color-ink);
+  white-space: pre-wrap;
+}
+
+@media (min-width: 461px) {
+  .account-checkbox-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .account-diff-list > div,
+  .account-review-meta > div {
+    grid-template-columns: minmax(120px, 0.3fr) minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 761px) {
+  .account-header,
+  .account-section-heading,
+  .account-record-heading,
+  .account-record-list > li {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .account-record-list > li {
+    align-items: center;
+  }
+
+  .account-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .account-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .account-checkbox-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .account-inline-actions :is(.chisan-button, .account-button),
+  .account-inline-actions form,
+  .account-inline-actions form :is(.chisan-button, .account-button) {
+    width: 100%;
+  }
+}
+
+/* Producer editor and statistics ---------------------------------------------- */
+
+.producer-editor-fields {
+  display: grid;
+  gap: var(--chisan-space-6);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.producer-editor-fields:disabled {
+  opacity: 0.7;
+}
+
+.producer-editor-progress {
+  padding: var(--chisan-space-4);
+  border-left: 3px solid var(--chisan-color-moss);
+  border-radius: 0 var(--chisan-radius-xs) var(--chisan-radius-xs) 0;
+  background: var(--chisan-color-moss-pale);
+  color: var(--chisan-color-moss-dark);
+}
+
+.producer-editor-progress p {
+  margin-bottom: 0;
+}
+
+.producer-stats p {
+  max-width: 72ch;
+}
+
+.producer-stats__totals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--chisan-space-6);
+  margin: var(--chisan-space-6) 0 var(--chisan-space-8);
+}
+
+.producer-stats__totals > div {
+  min-width: 0;
+  padding-top: var(--chisan-space-4);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+}
+
+.producer-stats__totals dt {
+  color: var(--chisan-color-stone);
+}
+
+.producer-stats__totals dd {
+  margin: var(--chisan-space-2) 0 0;
+  font-size: var(--chisan-font-heading);
+  font-weight: var(--chisan-weight-heading);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.producer-stats__chart {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(0, 1fr));
+  gap: var(--chisan-space-1);
+  height: 160px;
+  margin-top: var(--chisan-space-6);
+  border-bottom: var(--chisan-line) solid var(--chisan-color-stone);
+}
+
+.producer-stats__column {
+  display: flex;
+  align-items: end;
+}
+
+.producer-stats__column > span {
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+  background: var(--chisan-color-moss);
+  transform-origin: bottom;
+  animation: chisan-grow 720ms var(--chisan-ease) both;
+}
+
+@keyframes chisan-grow {
+  from {
+    scale: 1 0;
+  }
+}
+
+.producer-stats__axis {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--chisan-space-4);
+  margin-top: var(--chisan-space-2);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+}
+
+.producer-stats__daily {
+  margin: var(--chisan-space-6) 0;
+}
+
+.producer-stats__daily summary {
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-3) 0;
+  cursor: pointer;
+}
+
+.producer-stats__daily table {
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.producer-stats__daily caption {
+  padding: var(--chisan-space-4) 0;
+  text-align: start;
+}
+
+.producer-stats__daily th,
+.producer-stats__daily td {
+  padding: var(--chisan-space-3) 0;
+}
+
+.producer-stats__daily th:last-child,
+.producer-stats__daily td:last-child {
+  text-align: end;
+}
+
+@media (min-width: 641px) {
+  .producer-stats__totals {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

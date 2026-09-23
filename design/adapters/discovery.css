@@ -1,0 +1,465 @@
+/*
+ * Discovery entry points: the home hero and its location card, the province
+ * choice, public selections and the catalog page frame around the explorer.
+ */
+
+.catalog-page--simple {
+  width: min(var(--chisan-container-wide), 100% - 2 * var(--chisan-gutter));
+  margin: var(--chisan-space-6) auto;
+}
+
+/* Page heading shared by the start pages and selections. */
+.catalog-start-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--chisan-space-4);
+  scroll-margin-top: var(--chisan-space-24);
+}
+
+.catalog-start-head h1,
+.catalog-start-head h2 {
+  margin: 0;
+}
+
+.catalog-simple-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--chisan-space-4) var(--chisan-space-8);
+  padding-block: var(--chisan-space-4) var(--chisan-space-6);
+}
+
+.catalog-simple-header h1,
+.catalog-simple-header h2 {
+  margin: 0;
+}
+
+.catalog-simple-header p:not(.chisan-eyebrow) {
+  max-width: var(--chisan-measure);
+  margin: var(--chisan-space-3) 0 0;
+  color: var(--chisan-color-stone);
+}
+
+.producer-selection-page__summary {
+  flex: none;
+  margin: 0;
+  color: var(--chisan-color-moss-dark);
+  font-size: var(--chisan-font-small);
+  font-weight: var(--chisan-weight-interface);
+}
+
+/* Public selections with a shelf photograph run edge to edge on phones. */
+.producer-selection-page--with-shelf {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.producer-selection-page--with-shelf .catalog-simple-header {
+  padding-inline: max(var(--chisan-space-4), env(safe-area-inset-left, 0px));
+}
+
+.producer-selection-page--with-shelf :is(.producer-map-explorer.producer-map-explorer--embedded, .catalog-simple-map) {
+  border-inline: 0;
+  border-radius: 0;
+}
+
+@media (min-width: 980px) {
+  .producer-selection-page--with-shelf {
+    width: min(var(--chisan-container-wide), 100% - 2 * var(--chisan-gutter));
+    margin: var(--chisan-space-6) auto;
+  }
+
+  .producer-selection-page--with-shelf .catalog-simple-header {
+    padding-inline: 0;
+  }
+
+  .producer-selection-page--with-shelf :is(.producer-map-explorer.producer-map-explorer--embedded, .catalog-simple-map) {
+    border: var(--chisan-line) solid var(--chisan-color-hairline);
+    border-radius: var(--chisan-radius-panel);
+  }
+}
+
+/* Home hero ---------------------------------------------------------------- */
+
+.catalog-start-page--home .catalog-start-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--chisan-space-6);
+  padding: var(--chisan-space-4) 0 0;
+}
+
+.catalog-start-page--home .catalog-start-shell > .catalog-start-head .chisan-eyebrow {
+  display: none;
+}
+
+.catalog-start-page--home h1 {
+  max-width: 13ch;
+  margin: 0;
+  font-size: var(--chisan-font-display);
+  font-weight: var(--chisan-weight-display);
+  letter-spacing: var(--chisan-tracking-display);
+  line-height: var(--chisan-leading-display);
+}
+
+.catalog-start-page--home .home-story-intro {
+  max-width: 48ch;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-lead);
+  line-height: var(--chisan-leading-body);
+}
+
+.catalog-start-page--home .home-story-intro p {
+  margin: 0;
+}
+
+.catalog-start-page--home .home-story {
+  width: 100%;
+}
+
+/* The catalog card offers one clear location action inside a quiet map motif. */
+.home-catalog {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: var(--chisan-space-5);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-panel);
+  background:
+    radial-gradient(circle at 92% 8%, var(--chisan-color-moss-pale) 0 18%, transparent 46%),
+    var(--chisan-color-surface);
+}
+
+.home-catalog > :not(.home-catalog__orbit) {
+  position: relative;
+  z-index: var(--chisan-z-raised);
+}
+
+.home-catalog__orbit {
+  position: absolute;
+  top: -105px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border: var(--chisan-line) solid var(--chisan-color-moss);
+  border-radius: 50%;
+  opacity: 0.14;
+  pointer-events: none;
+  animation: chisan-orbit 40s linear infinite;
+}
+
+.home-catalog__orbit::before,
+.home-catalog__orbit::after {
+  content: "";
+  position: absolute;
+  border: var(--chisan-line) solid var(--chisan-color-moss);
+  border-radius: 50%;
+}
+
+.home-catalog__orbit::before {
+  inset: 45px;
+  border-style: dashed;
+}
+
+.home-catalog__orbit::after {
+  inset: 95px;
+  background: var(--chisan-color-moss);
+}
+
+@keyframes chisan-orbit {
+  to {
+    rotate: 1turn;
+  }
+}
+
+.home-catalog .catalog-start-head .chisan-eyebrow {
+  margin-bottom: var(--chisan-space-1);
+}
+
+.home-catalog .catalog-start-head h2 {
+  font-size: var(--chisan-font-heading);
+}
+
+/* Location onboarding ------------------------------------------------------ */
+
+.location-onboarding {
+  display: grid;
+  gap: var(--chisan-space-4);
+  margin: var(--chisan-space-4) 0 var(--chisan-space-3);
+}
+
+.location-onboarding__copy h2 {
+  margin: 0;
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: 0;
+  line-height: var(--chisan-leading-ui);
+}
+
+.location-onboarding__copy p {
+  max-width: 60ch;
+  margin: var(--chisan-space-1) 0 0;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+  line-height: var(--chisan-leading-body);
+}
+
+.location-onboarding__actions {
+  display: block;
+}
+
+.location-onboarding__primary {
+  width: 100%;
+  min-height: 56px;
+  gap: var(--chisan-space-3);
+  font-size: var(--chisan-font-body);
+}
+
+.location-onboarding[data-status="resolved"] .location-onboarding__primary {
+  --button-bg: var(--chisan-color-moss-dark);
+}
+
+.location-onboarding__primary:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.location-onboarding__spinner {
+  animation: chisan-spin 800ms linear infinite;
+}
+
+.location-onboarding__status {
+  min-height: 1.35em;
+  margin: 0;
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-caption);
+}
+
+.location-onboarding__status:empty {
+  display: none;
+}
+
+/* The province choice: a secondary action with its reach and an arrow. */
+.country-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--chisan-space-3);
+}
+
+.country-card {
+  position: relative;
+  display: flex;
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-4) var(--chisan-space-5);
+  border: var(--chisan-line) solid var(--chisan-color-moss-line);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  color: var(--chisan-color-moss-dark);
+  text-decoration: none;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+.country-card > .navigation-link__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0 var(--chisan-space-3);
+  width: 100%;
+}
+
+.country-card strong {
+  grid-column: 1;
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-interface);
+  line-height: var(--chisan-leading-ui);
+}
+
+.country-card small {
+  grid-column: 1;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-caption);
+}
+
+.country-card__arrow {
+  grid-row: 1 / 3;
+  grid-column: 2;
+  align-self: center;
+  transition: translate var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+@media (hover: hover) {
+  .country-card:hover {
+    border-color: var(--chisan-color-moss);
+    background: var(--chisan-color-moss-pale);
+  }
+
+  .country-card:hover .country-card__arrow {
+    translate: 3px -3px;
+  }
+}
+
+.country-card:active {
+  scale: 0.98;
+}
+
+@media (min-width: 761px) {
+  .catalog-start-page--home .catalog-start-shell {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    gap: var(--chisan-space-6) clamp(2rem, 4vw, 5rem);
+    padding-top: var(--chisan-space-10);
+  }
+
+  .catalog-start-page--home .catalog-start-shell > .catalog-start-head {
+    align-self: end;
+  }
+
+  .catalog-start-page--home .catalog-start-shell > .catalog-start-head .chisan-eyebrow {
+    display: block;
+  }
+
+  .catalog-start-page--home .home-story-intro {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .home-catalog {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    padding: var(--chisan-space-8);
+  }
+}
+
+/* On phones the card keeps only its action; the heading already names it. */
+@media (max-width: 760px) {
+  .home-catalog .chisan-eyebrow,
+  .catalog-start-page--home .location-onboarding__copy h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .catalog-start-page--home .country-card {
+    padding: var(--chisan-space-3) var(--chisan-space-4);
+  }
+
+  .catalog-start-page--home .country-card small {
+    display: none;
+  }
+}
+
+/* Province choice ------------------------------------------------------------ */
+
+.catalog-start-page--country .catalog-start-head {
+  padding-bottom: var(--chisan-space-8);
+}
+
+.country-back-link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The compact breadcrumb keeps its line while touch gets a 44px target. */
+.country-back-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 44px);
+  height: 44px;
+  translate: -50% -50%;
+}
+
+@media (hover: hover) {
+  .country-back-link:hover {
+    text-decoration: underline;
+  }
+}
+
+.region-group-list {
+  columns: 1;
+  column-gap: var(--chisan-space-10);
+}
+
+.region-group-section {
+  margin-bottom: var(--chisan-space-6);
+  padding-top: var(--chisan-space-3);
+  border-top: var(--chisan-line) solid var(--chisan-color-hairline);
+  break-inside: avoid;
+}
+
+.region-group-section h2 {
+  margin: 0 0 var(--chisan-space-2);
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
+  text-transform: uppercase;
+}
+
+.area-link-list {
+  display: grid;
+  gap: 0;
+}
+
+.area-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--chisan-control-height);
+  margin-inline: calc(-1 * var(--chisan-space-2));
+  padding: var(--chisan-space-2);
+  border-radius: var(--chisan-radius-control);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-body);
+  text-decoration: none;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    padding var(--chisan-motion-component) var(--chisan-ease);
+}
+
+.area-link::after {
+  content: "→";
+  color: var(--chisan-color-moss);
+  opacity: 0;
+  translate: calc(-1 * var(--chisan-space-2)) 0;
+  transition:
+    opacity var(--chisan-motion-immediate) var(--chisan-ease),
+    translate var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+@media (hover: hover) {
+  .area-link:hover {
+    background: var(--chisan-color-moss-pale);
+    color: var(--chisan-color-moss-dark);
+  }
+
+  .area-link:hover::after {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@media (min-width: 541px) {
+  .region-group-list {
+    columns: 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .region-group-list {
+    columns: 3;
+  }
+}

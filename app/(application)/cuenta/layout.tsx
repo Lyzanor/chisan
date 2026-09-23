@@ -20,10 +20,10 @@ export default async function AccountLayout({ children }: { children: React.Reac
     return (
       <main className="page-shell account-page">
         <section className="panel account-setup-panel">
-          <p className="catalog-kicker">Cuentas de {SITE_NAME}</p>
+          <p className="chisan-eyebrow">Cuentas de {SITE_NAME}</p>
           <h1>Acceso a cuentas</h1>
           <p>El acceso a cuentas estará habilitado a partir del 1 de octubre.</p>
-          <Link href="/" className="account-button account-button--secondary">
+          <Link href="/" className="chisan-button">
             Volver al catálogo
           </Link>
         </section>
@@ -39,7 +39,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
       <section className="panel account-shell">
         <header className="account-header">
           <div>
-            <p className="catalog-kicker">Cuenta de {SITE_NAME}</p>
+            <p className="chisan-eyebrow">Cuenta de {SITE_NAME}</p>
             <h1>{account.displayName || "Tu cuenta"}</h1>
             <p>{account.email || "Cuenta autenticada"}</p>
           </div>

@@ -20,7 +20,7 @@ export function ProducerStatistics({
   const max = Math.max(1, ...stats.days.map((day) => day.views));
   return (
     <section className="producer-stats" aria-label={labels.title}>
-      <p className="catalog-kicker">{labels.premium}</p>
+      <p className="chisan-eyebrow">{labels.premium}</p>
       <dl className="producer-stats__totals">
         {(
           [

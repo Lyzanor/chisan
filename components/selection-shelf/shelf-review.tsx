@@ -84,8 +84,8 @@ export function ShelfReview({ detail }: { detail: Detail }) {
       {status === "review" && !detail.analysisError && !points.length ? <p>No clear catalog matches were found. The photo remains saved for review; no favorites have been added.</p> : null}
       {detail.allowance ? <p>Shared AI allowance: <strong>{detail.allowance.used}/{detail.allowance.limit} attempts used</strong> · {detail.allowance.remaining} remaining. Failed API attempts also count.</p> : null}
       <div className={styles.actions}>
-        <button type="button" className="account-button" disabled={!editable || busy || detail.allowance?.remaining === 0} onClick={() => void act("analyze")}>{preparing ? "Analysis in progress…" : "Request AI analysis"}</button>
-        <button type="button" className="account-button account-button--secondary" disabled={busy} onClick={() => router.refresh()}>Refresh status</button>
+        <button type="button" className="chisan-button chisan-button--primary" disabled={!editable || busy || detail.allowance?.remaining === 0} onClick={() => void act("analyze")}>{preparing ? "Analysis in progress…" : "Request AI analysis"}</button>
+        <button type="button" className="chisan-button" disabled={busy} onClick={() => router.refresh()}>Refresh status</button>
       </div>
       <p role="status">{message}</p>
       <details><summary>API attempts and token usage</summary>
@@ -115,21 +115,21 @@ export function ShelfReview({ detail }: { detail: Detail }) {
       <p>Use only to correct an AI result. Adding points is not required to request analysis. This photo is a snapshot, not a stock or supplier claim.</p>
       <fieldset disabled={!editable || busy} className={styles.editorPanel}>
         <legend>Review points ({points.length}/{SHELF_LIMITS.hotspots})</legend>
-        <button type="button" className="account-button account-button--secondary" disabled={points.length >= SHELF_LIMITS.hotspots} onClick={() => add()}>Add point</button>
+        <button type="button" className="chisan-button" disabled={points.length >= SHELF_LIMITS.hotspots} onClick={() => add()}>Add point</button>
         <label>Point<select value={selectedId} onChange={(event) => { setSelectedId(event.target.value); setPlacing(false); }}><option value="">Choose a point</option>{points.map((point, index) => <option key={point.id} value={point.id}>{index + 1}. {point.label || "Unassigned"}</option>)}</select></label>
         {selected ? <>
           <label>Producer<select value={selected.producerKey} onChange={(event) => update({ producerKey: event.target.value, productId: undefined })}><option value="">Choose a catalog producer</option>{detail.candidates.map((candidate) => <option key={candidate.key} value={candidate.key}>{candidate.name} · {candidate.city}</option>)}</select></label>
           <label>Reviewed product (optional)<select value={selected.productId ?? ""} onChange={(event) => update({ productId: event.target.value || undefined })}><option value="">Visible label only</option>{detail.candidates.find((candidate) => candidate.key === selected.producerKey)?.products.map((product) => <option key={product.id} value={product.id}>{product.name}</option>)}</select></label>
           <label>Visible product label<input maxLength={120} value={selected.label} onChange={(event) => update({ label: event.target.value })} /></label>
           <div className={styles.coordinates}>{(["x", "y"] as const).map((axis) => <label key={axis}>{axis === "x" ? "From left (%)" : "From top (%)"}<input type="number" min="0" max="100" step="0.1" value={Number((selected[axis] * 100).toFixed(1))} onChange={(event) => update({ [axis]: Number(event.target.value) / 100 })} /></label>)}</div>
-          <div className={styles.actions}><button type="button" className="account-button account-button--secondary" aria-pressed={placing} onClick={() => setPlacing(!placing)}>{placing ? "Cancel placement" : "Place on photo"}</button><button type="button" className="account-button account-button--secondary" onClick={() => { setPoints(points.filter((point) => point.id !== selectedId)); setSelectedId(""); setPlacing(false); }}>Remove point</button></div>
+          <div className={styles.actions}><button type="button" className="chisan-button" aria-pressed={placing} onClick={() => setPlacing(!placing)}>{placing ? "Cancel placement" : "Place on photo"}</button><button type="button" className="chisan-button" onClick={() => { setPoints(points.filter((point) => point.id !== selectedId)); setSelectedId(""); setPlacing(false); }}>Remove point</button></div>
         </> : <p>Select a point in the photo or add one.</p>}
-        {detail.suggestions.points.some((point) => !point.producerKey) ? <details><summary>Unmatched AI suggestions</summary><ul>{detail.suggestions.points.filter((point) => !point.producerKey).map((point, index) => <li key={index}>{point.label || "Unreadable label"} <button type="button" className="account-button account-button--secondary" disabled={points.length >= SHELF_LIMITS.hotspots} onClick={() => add(point.x, point.y, point.label)}>Assign manually</button></li>)}</ul></details> : null}
+        {detail.suggestions.points.some((point) => !point.producerKey) ? <details><summary>Unmatched AI suggestions</summary><ul>{detail.suggestions.points.filter((point) => !point.producerKey).map((point, index) => <li key={index}>{point.label || "Unreadable label"} <button type="button" className="chisan-button" disabled={points.length >= SHELF_LIMITS.hotspots} onClick={() => add(point.x, point.y, point.label)}>Assign manually</button></li>)}</ul></details> : null}
         <label>Internal review note<textarea maxLength={600} value={note} onChange={(event) => setNote(event.target.value)} /></label>
         <div className={styles.actions}>
-          <button type="button" className="account-button account-button--secondary" onClick={() => void act("save")}>Save review</button>
-          <button type="button" className="account-button" disabled={!points.length} onClick={() => void act("approve")}>Prepare proposal for owner</button>
-          <button type="button" className="account-button account-button--secondary" onClick={() => void act("reject")}>Reject photo</button>
+          <button type="button" className="chisan-button" onClick={() => void act("save")}>Save review</button>
+          <button type="button" className="chisan-button chisan-button--primary" disabled={!points.length} onClick={() => void act("approve")}>Prepare proposal for owner</button>
+          <button type="button" className="chisan-button" onClick={() => void act("reject")}>Reject photo</button>
         </div>
       </fieldset>
       </details>

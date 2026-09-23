@@ -1344,7 +1344,7 @@ test("Japanese layout and map-popup contracts remain objectively testable", asyn
   const [css, foundationTokens, areaCatalog, areaExplorer, mapInner, japanese] =
     await Promise.all([
       fs.promises.readFile(
-        path.resolve(process.cwd(), "app/styles/base.css"),
+        path.resolve(process.cwd(), "design/foundations/base.css"),
         "utf8",
       ),
       fs.promises.readFile(

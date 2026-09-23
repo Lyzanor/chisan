@@ -1,8 +1,18 @@
-/* Ordered entry point. Tokens and web adapters load after these foundations. */
-@import "./styles/base.css";
-@import "./styles/discovery.css";
-@import "./styles/producer.css";
-@import "./styles/shell.css";
-@import "./styles/accounts.css";
-@import "./styles/profile-tools.css";
-@import "./styles/responsive.css";
+/*
+ * The web surface's one ordered stylesheet. Foundations come first, then the
+ * shared primitives, then each surface. Component CSS modules load with their
+ * components and consume the same tokens. design/README.md owns the system.
+ */
+@import "../design/foundations/tokens.css";
+@import "../design/foundations/base.css";
+@import "../design/foundations/motion.css";
+@import "../design/adapters/primitives.css";
+@import "../design/adapters/brand.css";
+@import "../design/adapters/shell.css";
+@import "../design/adapters/map.css";
+@import "../design/adapters/map-explorer.css";
+@import "../design/adapters/discovery.css";
+@import "../design/adapters/producer-profile.css";
+@import "../design/adapters/profile-qr.css";
+@import "../design/adapters/accounts.css";
+@import "../design/adapters/category-themes.css";

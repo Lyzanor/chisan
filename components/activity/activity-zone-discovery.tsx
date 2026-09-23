@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowUpRightIcon,
   CompassIcon,
   CircleNotchIcon,
   MapPinIcon,
@@ -136,10 +137,10 @@ export function ActivityZoneDiscovery({
   }
 
   return (
-    <section className={styles.section} aria-labelledby="zone-discovery-title">
+    <section className={styles.section} data-reveal aria-labelledby="zone-discovery-title">
       <div className={styles.sectionHeading}>
         <div>
-          <p className={styles.kicker}>En tu territorio</p>
+          <p className="chisan-eyebrow">En tu territorio</p>
           <h2 id="zone-discovery-title">
             {currentAreaOption
               ? `Destacados en ${currentAreaOption.label}`
@@ -149,9 +150,9 @@ export function ActivityZoneDiscovery({
         {currentAreaOption ? (
           <Link
             href={`/es/${encodeURIComponent(currentAreaOption.slug)}`}
-            className={styles.sectionLink}
+            className="chisan-link"
           >
-            Ver mapa de {currentAreaOption.label} →
+            Ver mapa de {currentAreaOption.label} <ArrowUpRightIcon className="chisan-arrow" size={16} aria-hidden="true" />
           </Link>
         ) : null}
       </div>
@@ -171,14 +172,14 @@ export function ActivityZoneDiscovery({
         <div className={styles.locationActions}>
           <button
             type="button"
-            className={styles.buttonPrimary}
+            className="chisan-button chisan-button--primary"
             onClick={handleUseLocation}
             disabled={locating}
             aria-label="Usar mi ubicación actual"
           >
             {locating ? (
               <>
-                <CircleNotchIcon size={18} className="spin" aria-hidden="true" />
+                <CircleNotchIcon size={18} className="chisan-spin" aria-hidden="true" />
                 <span>Ubicando...</span>
               </>
             ) : (
@@ -216,12 +217,12 @@ export function ActivityZoneDiscovery({
         </p>
       ) : null}
 
-      <div className={styles.producersGrid}>
+      <div className={styles.producersGrid} data-reveal-stagger>
         {producers.map((producer) => (
           <Link
             key={`${producer.country}:${producer.producerId}`}
             href={producer.href}
-            className={styles.producerCard}
+            className={`chisan-card ${styles.producerCard}`}
           >
             {producer.imageSrc ? (
               <Image

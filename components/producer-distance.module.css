@@ -1,13 +1,12 @@
+/* The transient distance tool: a quiet card whose action stays secondary to directions. */
 .card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--chisan-space-2) var(--chisan-space-4);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  margin-top: var(--chisan-space-3);
-  padding: var(--chisan-space-3) var(--chisan-space-4);
-  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  gap: var(--chisan-space-3) var(--chisan-space-4);
+  padding: var(--chisan-space-5);
   border-radius: var(--chisan-radius-object);
-  background: var(--chisan-color-surface);
+  background: var(--chisan-color-surface-muted);
 }
 
 .copy h2,
@@ -17,45 +16,29 @@
 }
 
 .copy h2 {
-  font-size: 1rem;
+  font-size: var(--chisan-font-body);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: 0;
 }
 
 .copy p,
 .status {
-  max-width: 64ch;
+  max-width: var(--chisan-measure);
   color: var(--chisan-color-stone);
-  font-size: 0.8125rem;
-  line-height: 1.5;
+  font-size: var(--chisan-font-caption);
+  line-height: var(--chisan-leading-body);
 }
 
 .copy p {
   margin-top: var(--chisan-space-1);
 }
 
-/* Directions is the primary visit action; distance stays secondary. */
 .action {
-  min-height: 44px;
-  padding: var(--chisan-space-2) var(--chisan-space-4);
-  border: var(--chisan-line) solid var(--chisan-color-moss);
-  border-radius: var(--chisan-radius-control);
-  background: var(--chisan-color-surface);
-  color: var(--chisan-color-moss-dark);
-  cursor: pointer;
-  font: 500 0.875rem/1.4 var(--chisan-font-sans);
-}
-
-.action:hover:not(:disabled) {
-  background: var(--chisan-color-moss-pale);
-}
-
-.action:focus-visible {
-  outline: var(--chisan-focus-ring) solid var(--chisan-color-moss);
-  outline-offset: 2px;
+  width: 100%;
 }
 
 .action:disabled {
   cursor: progress;
-  opacity: 0.65;
 }
 
 .status {
@@ -63,14 +46,16 @@
   min-height: 1.3125rem;
 }
 
-.status:empty { display: none; }
+.status:empty {
+  display: none;
+}
 
-@media (max-width: 640px) {
+@media (min-width: 641px) {
   .card {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .action {
-    width: 100%;
+    width: auto;
   }
 }

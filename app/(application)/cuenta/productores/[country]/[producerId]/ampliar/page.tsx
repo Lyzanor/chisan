@@ -180,7 +180,7 @@ export default async function UpgradeProducerProfilePage({
       ) : null}
       <header className="account-section-heading">
         <div>
-          <p className="catalog-kicker">Perfil ampliado del productor</p>
+          <p className="chisan-eyebrow">Perfil ampliado del productor</p>
           <h2>{producer.name}</h2>
           <p>
             {premiumActive
@@ -190,7 +190,7 @@ export default async function UpgradeProducerProfilePage({
                 : "Acceso vinculado al productor"}
           </p>
         </div>
-        <Link href={publicHref} className="account-button account-button--secondary">
+        <Link href={publicHref} className="chisan-button">
           Perfil público
         </Link>
       </header>
@@ -221,7 +221,7 @@ export default async function UpgradeProducerProfilePage({
           </p>
           <Link
             href={`/cuenta/productores/${country}/${producerId}/editar`}
-            className="account-button"
+            className="chisan-button chisan-button--primary"
           >
             Editar perfil ampliado
           </Link>
@@ -234,7 +234,7 @@ export default async function UpgradeProducerProfilePage({
           aria-live={premiumActive ? undefined : "polite"}
           aria-atomic="true"
         >
-          <p className="catalog-kicker">Última solicitud</p>
+          <p className="chisan-eyebrow">Última solicitud</p>
           <h3>{STATUS_LABELS[latestRequest.status]}</h3>
           <p>{STATUS_COPY[latestRequest.status]}</p>
           <small>
@@ -312,7 +312,7 @@ export default async function UpgradeProducerProfilePage({
                   </span>
                 </label>
               ) : null}
-              <button type="submit" className="account-button">
+              <button type="submit" className="chisan-button chisan-button--primary">
                 {canResumeCheckout ? "Continuar con el pago seguro" : "Ampliar perfil por 49 €"}
               </button>
               <small>El pago se realiza de forma segura en Stripe Checkout.</small>
@@ -333,7 +333,7 @@ export default async function UpgradeProducerProfilePage({
                   <input type="hidden" name="country" value={country} />
                   <input type="hidden" name="producerId" value={producerId} />
                   <input type="hidden" name="requestId" value={latestRequest.id} />
-                  <button type="submit" className="account-button account-button--secondary">
+                  <button type="submit" className="chisan-button">
                     Consultar el pago anterior
                   </button>
                   <small>
@@ -357,7 +357,7 @@ export default async function UpgradeProducerProfilePage({
               {paymentConfiguration.supportEmail ? (
                 <a
                   href={`mailto:${paymentConfiguration.supportEmail}?subject=${encodeURIComponent(`Ampliación de perfil ${latestRequest.id}`)}`}
-                  className="account-button account-button--secondary"
+                  className="chisan-button"
                 >
                   Contactar con soporte de facturación
                 </a>

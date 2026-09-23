@@ -82,7 +82,7 @@ export function ProducerAccountActions({
     const body = encodeURIComponent(`${words.participateEmailBody}\n\n${profileUrl}\n${country.toUpperCase()} #${producerId}`);
     return (
       <ProducerClosingSection title={words.participate} help={words.participateOfflineHelp} mascot>
-        <a href={`mailto:${SITE_CONTACT_EMAIL}?subject=${subject}&body=${body}`}>
+        <a className="chisan-button chisan-button--primary" href={`mailto:${SITE_CONTACT_EMAIL}?subject=${subject}&body=${body}`}>
           {words.participateEmailAction}
         </a>
       </ProducerClosingSection>
@@ -101,16 +101,16 @@ export function ProducerAccountActions({
 
     return (
       <ProducerClosingSection title={words.contribute} help={words.contributeHelp}>
-        <Link prefetch={false} href={`/cuenta/productores/${country}/${producerId}/editar`}>
+        <Link className="chisan-button chisan-button--primary" prefetch={false} href={`/cuenta/productores/${country}/${producerId}/editar`}>
           {messages.editMyProfile}
         </Link>
         {membership.role === "owner" ? (
-          <Link prefetch={false} href={`/cuenta/productores/${country}/${producerId}/estadisticas`}>
+          <Link className="chisan-button" prefetch={false} href={`/cuenta/productores/${country}/${producerId}/estadisticas`}>
             {getProducerStatsLabels(locale).link}
           </Link>
         ) : null}
         {canOfferProfileUpgrade ? (
-          <Link prefetch={false} href={`/cuenta/productores/${country}/${producerId}/ampliar`}>
+          <Link className="chisan-button" prefetch={false} href={`/cuenta/productores/${country}/${producerId}/ampliar`}>
             {messages.expandProfile}
           </Link>
         ) : null}
@@ -124,7 +124,7 @@ export function ProducerAccountActions({
   if (claim) {
     return (
       <ProducerClosingSection title={words.participate} help={words.participateHelp}>
-        <Link prefetch={false} href="/cuenta/reclamaciones">
+        <Link className="chisan-button chisan-button--primary" prefetch={false} href="/cuenta/reclamaciones">
           {messages.viewOwnershipClaim}
         </Link>
       </ProducerClosingSection>
@@ -135,11 +135,11 @@ export function ProducerAccountActions({
   return (
     <ProducerClosingSection title={words.participate} help={words.participateHelp} mascot>
       {!signedIn ? (
-        <Link prefetch={false} href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`}>
+        <Link className="chisan-button chisan-button--primary" prefetch={false} href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`}>
           {messages.claimProducer}
         </Link>
       ) : (
-        <Link prefetch={false} href={claimPath}>{messages.claimProducer}</Link>
+        <Link className="chisan-button chisan-button--primary" prefetch={false} href={claimPath}>{messages.claimProducer}</Link>
       )}
     </ProducerClosingSection>
   );
@@ -168,7 +168,7 @@ export function ProducerGalleryAction({
             <span className="detail-gallery-action__help">{words.freeGalleryHelp}</span>
           </div>
         </div>
-        <Link prefetch={false} href={`/cuenta/productores/${country}/${producerId}/editar#producer-change-gallery`} className="detail-gallery-action__action">
+        <Link prefetch={false} href={`/cuenta/productores/${country}/${producerId}/editar#producer-change-gallery`} className="chisan-button detail-gallery-action__action">
           <span>{words.galleryManageAction}</span>
           <ArrowUpRightIcon size={14} aria-hidden="true" />
         </Link>
@@ -187,7 +187,7 @@ export function ProducerGalleryAction({
             <span className="detail-gallery-action__help">{words.galleryClaimPendingHelp}</span>
           </div>
         </div>
-        <Link prefetch={false} href="/cuenta/reclamaciones" className="detail-gallery-action__action">
+        <Link prefetch={false} href="/cuenta/reclamaciones" className="chisan-button detail-gallery-action__action">
           <span>{words.galleryClaimPendingAction}</span>
           <ArrowUpRightIcon size={14} aria-hidden="true" />
         </Link>

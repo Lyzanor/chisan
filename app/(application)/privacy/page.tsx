@@ -26,7 +26,7 @@ export default function PrivacyPage() {
   return (
     <main className={styles.page}>
       <article className={styles.article} aria-labelledby="privacy-title">
-        <p className="catalog-kicker">{SITE_NAME}</p>
+        <p className="chisan-eyebrow">{SITE_NAME}</p>
         <h1 id="privacy-title">Privacidad y publicidad</h1>
         <p className={styles.updated}>
           Última actualización: 12 de septiembre de 2026

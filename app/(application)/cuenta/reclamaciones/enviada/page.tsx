@@ -78,10 +78,10 @@ export default async function ClaimSubmittedPage() {
         </section>
 
         <div className={styles.actions}>
-          <Link href="/cuenta/reclamaciones" className="account-button">
+          <Link href="/cuenta/reclamaciones" className="chisan-button chisan-button--primary">
             Ver mi solicitud
           </Link>
-          <Link href="/" className="account-button account-button--secondary">
+          <Link href="/" className="chisan-button">
             Seguir explorando
           </Link>
         </div>

@@ -1,22 +1,22 @@
 .placement {
   display: grid;
-  gap: 0.45rem;
+  gap: var(--chisan-space-2);
   width: 100%;
   min-height: 138px;
-  padding: 0.65rem 0.8rem 0.8rem;
+  padding: var(--chisan-space-3) var(--chisan-space-3) var(--chisan-space-3);
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
   contain: layout paint;
 }
 
 .label {
   margin: 0;
-  color: var(--muted);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  letter-spacing: var(--chisan-tracking-caps);
   line-height: 1;
   text-transform: uppercase;
 }
@@ -30,7 +30,7 @@
 
 @media (max-width: 499px) {
   .placement {
-    padding-inline: 0.25rem;
+    padding-inline: var(--chisan-space-1);
   }
 }
 

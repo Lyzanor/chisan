@@ -444,7 +444,7 @@ test("every presentation dictionary provides the complete typed onboarding messa
 
 test("location onboarding exposes locating, resolved and cancellable UI states", () => {
   const onboarding = readFileSync("components/location-onboarding.tsx", "utf8");
-  const styles = readFileSync("design/adapters/web.css", "utf8");
+  const styles = readFileSync("design/adapters/discovery.css", "utf8");
 
   assert.match(onboarding, /\{ status: "resolved"; areaLabel: string \}/);
   assert.match(onboarding, /requestGenerationRef\.current \+= 1/);
@@ -454,7 +454,7 @@ test("location onboarding exposes locating, resolved and cancellable UI states",
   assert.match(onboarding, /aria-atomic="true"/);
   assert.match(onboarding, /<CheckCircleIcon/);
   assert.doesNotMatch(onboarding, /setTimeout|requestAnimationFrame/);
-  assert.match(styles, /location-onboarding__[\s\S]*min-height: 44px/);
+  assert.match(styles, /\.location-onboarding__primary\s*\{[^}]*min-height:\s*56px/);
 });
 
 test("a saved area resumes on the home page while the profile owns forgetting it", () => {
