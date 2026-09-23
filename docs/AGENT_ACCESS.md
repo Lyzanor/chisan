@@ -205,6 +205,10 @@ to a non-catalog application page removed the tools. See the
 
 ## Next increments
 
+A prepared [Muse read-connector brief](MUSE_CONNECTOR.md) maps the existing
+OpenAPI contract to possible Muse integration paths. It is not an installed,
+submitted or approved connector.
+
 1. **Methodology and freshness:** keep the global source methodology current and
    make existing approved-change dates and ownership signals understandable. If
    a distinct full-profile review date becomes useful, define and record that
