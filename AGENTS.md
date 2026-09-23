@@ -83,6 +83,7 @@ also uses the country's `data/csv/<country>/AGENTS.md` and relevant area note.
 | Products, gallery and links | `docs/PRODUCER_CONTENT.md` |
 | Public routes, localization, HTML and metadata | `docs/CATALOG_WEB.md` |
 | Editorial articles, guides and producer selections in articles | `docs/GUIDES.md` |
+| Editorial fairs, dates, venues and exhibitor plans | `docs/EVENTS.md` |
 | Public JSON API, OpenAPI and browser WebMCP tools | `docs/AGENT_ACCESS.md` |
 | Sources and exclusions | `docs/EVIDENCE_CONTRACT.md` |
 | Producer coordinates or images | `docs/PRODUCER_GEOLOCATION.md`, `docs/IMAGES.md` |

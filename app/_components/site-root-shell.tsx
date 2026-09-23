@@ -208,7 +208,8 @@ export function SiteRootShell({
         <link rel="describedby" href="/llms.txt" type="text/plain" />
       </head>
       <body>
-        <CatalogAgentTools tools={catalogToolDefinitions} />
+        {/* Zod's JSON Schema output can retain non-plain nested values; cross the client boundary as JSON. */}
+        <CatalogAgentTools tools={JSON.parse(JSON.stringify(catalogToolDefinitions))} />
         {accountAuthConfigured ? (
           <ClerkProvider
             appearance={{ elements: {

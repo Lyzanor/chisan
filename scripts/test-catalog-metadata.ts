@@ -27,6 +27,7 @@ import {
 
 import { listIndexableProducerLocales } from "../lib/catalog/producers";
 import { listGuideSitemapEntries } from "../lib/guides/metadata";
+import { listEventSitemapEntries } from "../lib/events/metadata";
 
 const SPAIN = { slug: "es", defaultLocale: "es" as const };
 
@@ -182,7 +183,7 @@ test("sitemap count matches effective locale policies and every alternate is rec
   }, 0);
   // 5 static public routes: home, about, how-we-work, contact, privacy
   const staticPublicRoutesCount = 5;
-  const expectedCount = staticPublicRoutesCount + listGuideSitemapEntries().length + countryCount + areaCount + producerCount;
+  const expectedCount = staticPublicRoutesCount + listGuideSitemapEntries().length + listEventSitemapEntries().length + countryCount + areaCount + producerCount;
 
   assert.equal(entries.length, expectedCount);
 

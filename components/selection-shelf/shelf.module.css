@@ -22,6 +22,8 @@
   background: var(--surface-muted);
 }
 
+.planViewport { max-height: min(70dvh, 720px); }
+
 .zoomButton {
   position: absolute;
   top: var(--chisan-space-3, 12px);
@@ -311,4 +313,3 @@
   }
   .editor { grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr); align-items: start; }
 }
-

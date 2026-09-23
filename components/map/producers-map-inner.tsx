@@ -780,10 +780,16 @@ function BoundsAwareMarkers({
     const point = points.find(({ key }) => key === focusRequest.key);
     if (!point) return;
 
+    // A paired image/map view can keep the map hidden on phones. Leaflet cannot
+    // project a focus point until that surface has measurable dimensions.
+    const size = map.getSize();
+    if (size.x <= 0 || size.y <= 0 || !Number.isFinite(map.getZoom())) return;
+
     const zoom = focusRequest.behavior === "preview" ? map.getZoom() : Math.max(map.getZoom(), PRODUCER_FOCUS_ZOOM);
     // Centre the point in the geography left visible above discovery cards.
     const target = map.unproject(map.project([point.latitude, point.longitude], zoom)
       .add([0, Math.min(focusPaddingBottom, map.getSize().y / 2) / 2]), zoom);
+    if (!Number.isFinite(target.lat) || !Number.isFinite(target.lng)) return;
     map.stop();
     if (focusRequest.behavior === "preview") {
       map.panTo(target, {

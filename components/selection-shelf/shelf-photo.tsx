@@ -1,46 +1,80 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProducerSelectionItem } from "@/lib/producer-selections";
-import type { PublicSelectionShelf } from "@/lib/selection-shelf/policy";
+import type { ShelfPoint } from "@/lib/selection-shelf/policy";
 import styles from "./shelf.module.css";
 
-export function ShelfPhoto({
-  shelf,
+export type AnnotatedProducerImage = {
+  imageSrc: string;
+  width: number;
+  height: number;
+  points: (ShelfPoint & { marker?: string })[];
+  updatedOn?: string;
+  preview?: boolean;
+  alt?: string;
+  note?: string;
+};
+
+export function AnnotatedProducerImageView({
+  image,
+  mode = "shelf",
   selectedKey,
   selectedProducer,
   onSelectKey,
   onViewMap,
 }: {
-  shelf: PublicSelectionShelf;
+  image: AnnotatedProducerImage;
+  mode?: "shelf" | "event-plan";
   selectedKey?: string;
   selectedProducer?: ProducerSelectionItem | null;
   onSelectKey: (key: string) => void;
   onViewMap?: () => void;
 }) {
-  const [zoomed, setZoomed] = useState(false);
-  const selectedPoints = shelf.points.filter((point) => point.producerKey === selectedKey);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const selectedPoints = image.points.filter((point) => point.producerKey === selectedKey);
+  const selectedPoint = selectedPoints[0];
   const selectedLabels = [...new Set(selectedPoints.map((point) => point.label))];
+  const isPlan = mode === "event-plan";
+  const [zoomChoice, setZoomChoice] = useState(() => ({ key: selectedKey ?? "", value: isPlan && selectedPoint ? 4 : 1 }));
+  const zoom = zoomChoice.key === (selectedKey ?? "") ? zoomChoice.value : isPlan && selectedPoint ? 4 : 1;
+  const maxZoom = isPlan ? 8 : 2;
+
+  useEffect(() => {
+    const point = isPlan ? selectedPoint : undefined;
+    if (!point || zoom === 1) return;
+    const frame = requestAnimationFrame(() => {
+      const viewport = viewportRef.current;
+      if (!viewport) return;
+      viewport.scrollTo({
+        left: point.x * viewport.scrollWidth - viewport.clientWidth / 2,
+        top: point.y * viewport.scrollHeight - viewport.clientHeight / 2,
+        behavior: "smooth",
+      });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [isPlan, selectedPoint, zoom]);
 
   return (
-    <section className={styles.photoSection} aria-label="Productos en la estantería">
+    <section className={styles.photoSection} aria-label={isPlan ? "Plano de expositores" : "Productos en la estantería"}>
       <div className={styles.photoViewportWrapper}>
         <div
-          className={styles.photoViewport}
-          tabIndex={zoomed ? 0 : undefined}
-          aria-label={zoomed ? "Foto ampliada; desplázate para explorar" : undefined}
+          ref={viewportRef}
+          className={`${styles.photoViewport} ${isPlan ? styles.planViewport : ""}`}
+          tabIndex={zoom > 1 ? 0 : undefined}
+          aria-label={zoom > 1 ? `${isPlan ? "Plano" : "Foto"} ampliado; desplázate para explorar` : undefined}
         >
-          <div className={styles.photoCanvas} style={{ width: zoomed ? "200%" : "100%" }}>
+          <div className={styles.photoCanvas} style={{ width: `${zoom * 100}%` }}>
             <Image
               unoptimized
-              src={shelf.imageSrc}
-              width={shelf.width}
-              height={shelf.height}
-              alt="Estantería fotografiada por el titular de esta selección"
+              src={image.imageSrc}
+              width={image.width}
+              height={image.height}
+              alt={image.alt ?? "Estantería fotografiada por el titular de esta selección"}
               className={styles.image}
             />
-          {shelf.points.map((point, index) => {
+          {image.points.filter((point) => !isPlan || point.producerKey === selectedKey).map((point, index) => {
             const isSelected = point.producerKey === selectedKey;
             return (
               <button
@@ -51,7 +85,7 @@ export function ShelfPhoto({
                   left: `clamp(22px, ${point.x * 100}%, calc(100% - 22px))`,
                   top: `clamp(22px, ${point.y * 100}%, calc(100% - 22px))`,
                 }}
-                aria-label={`${point.label}. Ver su productor en el mapa`}
+                aria-label={isPlan ? `${point.label}. Ver dónde produce este expositor` : `${point.label}. Ver su productor en el mapa`}
                 aria-pressed={isSelected}
                 onClick={() => {
                   if (isSelected && onViewMap) {
@@ -61,7 +95,7 @@ export function ShelfPhoto({
                   }
                 }}
               >
-                <span>{index + 1}</span>
+                <span>{point.marker ?? index + 1}</span>
               </button>
             );
           })}
@@ -70,11 +104,11 @@ export function ShelfPhoto({
       <button
         type="button"
         className={styles.zoomButton}
-        aria-label={zoomed ? "Reducir foto" : "Ampliar foto"}
-        aria-pressed={zoomed}
-        onClick={() => setZoomed(!zoomed)}
+        aria-label={zoom === maxZoom ? `Reducir ${isPlan ? "plano" : "foto"}` : `Ampliar ${isPlan ? "plano" : "foto"}`}
+        aria-pressed={zoom > 1}
+        onClick={() => setZoomChoice({ key: selectedKey ?? "", value: zoom === maxZoom ? 1 : zoom * 2 })}
       >
-        {zoomed ? (
+        {zoom === maxZoom ? (
           <svg
             width="20"
             height="20"
@@ -125,7 +159,7 @@ export function ShelfPhoto({
                 ) : null}
               </div>
               <div className={styles.selectedProducerLabels}>
-                {selectedLabels.length ? selectedLabels.join(" · ") : "En la estantería"}
+                {selectedLabels.length ? selectedLabels.join(" · ") : isPlan ? "En el plano" : "En la estantería"}
               </div>
             </div>
           </div>
@@ -136,7 +170,7 @@ export function ShelfPhoto({
               onClick={onViewMap}
               aria-label={`Ver ${selectedProducer.name} en el mapa`}
             >
-              <span>Ver en mapa</span>
+              <span>{isPlan ? "Ver origen" : "Ver en mapa"}</span>
               <span aria-hidden="true">📍</span>
             </button>
           ) : null}
@@ -144,16 +178,15 @@ export function ShelfPhoto({
       ) : (
         <p className={styles.selection} aria-live="polite">
           {selectedKey
-            ? "Este productor no tiene productos señalados en esta foto."
-            : "Toca una botella señalada para ver su origen."}
+            ? isPlan ? "Este productor no tiene un puesto señalado en el plano." : "Este productor no tiene productos señalados en esta foto."
+            : isPlan ? "Elige un expositor de la lista para señalar su puesto en el plano." : "Toca una botella señalada para ver su origen."}
         </p>
       )}
 
-      <p className={styles.hint}>
-        {shelf.preview ? "Propuesta pendiente de tu confirmación." : `Foto publicada el ${shelf.updatedOn}.`}{" "}
-        La foto no indica existencias actuales.
+      <p className={styles.hint}>{isPlan
+        ? image.note
+        : <>{image.preview ? "Propuesta pendiente de tu confirmación." : `Foto publicada el ${image.updatedOn}.`} La foto no indica existencias actuales.</>}
       </p>
     </section>
   );
 }
-

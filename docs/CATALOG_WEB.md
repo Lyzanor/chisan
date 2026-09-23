@@ -14,6 +14,12 @@ Published guides join the sitemap, homepage and footer; mentioned producers
 expose reverse links by stable identity. Guide text does not replace canonical
 producer facts or imply translated articles.
 
+[Editorial events](EVENTS.md) use `/es/eventos` and `/es/eventos/<slug>` within
+the same Spanish catalog scope. The route segment is reserved from area slugs.
+Published events join the sitemap, while only current, explicitly featured events
+appear in Descubrir. An event venue has its own coordinates; exhibitor origin
+maps keep the canonical productive coordinates of each producer.
+
 Public agent reads use the same identity, publication and localization policy.
 [Agent access](AGENT_ACCESS.md) owns the versioned JSON API, generated OpenAPI,
 browser WebMCP tools, public projection and compatibility checks. Every producer

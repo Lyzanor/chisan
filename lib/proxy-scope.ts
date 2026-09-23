@@ -1,4 +1,5 @@
 import { GUIDES_SEGMENT } from "./guides/routes";
+import { EVENTS_SEGMENT } from "./events/routes";
 import { isCatalogScopeSegment } from "./i18n/catalog-scope";
 import { PRODUCER_STATS_COLLECTION_PAUSED, PRODUCER_STATS_ENDPOINT } from "./producer-stats/policy";
 
@@ -19,7 +20,7 @@ export function catalogPathSegments(pathname: string): string[] | null {
   if (!isCatalogScopeSegment(segments[0] ?? "")) return null;
   // The editorial library shares the catalog scope without being an area. Its
   // own route decides which scope publishes it.
-  if (segments[1] === GUIDES_SEGMENT) return null;
+  if (segments[1] === GUIDES_SEGMENT || segments[1] === EVENTS_SEGMENT) return null;
   return segments;
 }
 

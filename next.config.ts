@@ -47,9 +47,11 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     // The shared navigation and profile backlinks read the small guide library.
     "/*": ["./data/guides/es/*.md"],
-    "/actividad": ["./data/csv/**/*.csv", "./data/guides/es/*.md"],
+    "/actividad": ["./data/csv/**/*.csv", "./data/guides/es/*.md", "./data/events/es/*.json"],
     "/\\[catalog\\]/guias": ["./data/csv/es/**/*.csv"],
     "/\\[catalog\\]/guias/\\[slug\\]": ["./data/csv/es/**/*.csv"],
+    "/\\[catalog\\]/eventos": ["./data/events/es/*.json"],
+    "/\\[catalog\\]/eventos/\\[slug\\]": ["./data/events/es/*.json", "./data/csv/es/**/*.csv"],
     "/how-we-work": ["./data/csv/es/**/*.csv", "./data/evidence/es/**/*.jsonl"],
     "/api/producer-media": ["./data/csv/**/*.csv"],
     "/api/producer-stats/**": ["./data/csv/**/*.csv"],
@@ -60,7 +62,7 @@ const nextConfig: NextConfig = {
     "/\\[catalog\\]/\\[area\\]": ["./data/csv/**/*.csv"],
     "/\\[catalog\\]/\\[area\\]/\\[segment\\]": ["./data/csv/**/*.csv", "./data/content/**/*.json", "./data/evidence/**/*.jsonl"],
     "/robots.txt": ["./data/csv/**/*.csv"],
-    "/sitemap/**": ["./data/csv/**/*.csv"],
+    "/sitemap/**": ["./data/csv/**/*.csv", "./data/events/es/*.json"],
     "/cuenta": ["./data/csv/**/*.csv"],
     "/cuenta/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/admin": ["./data/csv/**/*.csv"],

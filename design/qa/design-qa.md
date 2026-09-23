@@ -868,3 +868,16 @@ installs over it. Mobile tests, Gradle release and Android/iOS JS exports passed
 The full `verify:ai` gate stopped at two unrelated producer-profile i18n tests
 in the concurrently edited web tree. No deployment, physical Pixel 10 Pro or
 iOS runtime verification is claimed.
+
+## 2026-09-23 — Editorial event and exhibitor plan
+
+Reviewed `/es/eventos/escumostra-2026` locally at 390×844 first, then
+1280×900. The dates, venue and official actions fit the phone width without
+horizontal overflow. The exhibitor list opens with 44px links; choosing a
+producer highlights its numbered stand on the organizer's plan. On the phone,
+the Plano and Origen tabs switch between the zoomable stand image and the
+producer-origin map; at wide width they sit side by side. The selected stand
+and map marker remain linked. The event card also renders under Ferias y
+encuentros in Descubrir. The source credit and full original plan remain
+available below the explorer. This review used the local Webpack dev server;
+no production publication is claimed.

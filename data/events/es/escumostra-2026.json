@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 1,
+  "slug": "escumostra-2026",
+  "country": "es",
+  "locale": "es",
+  "status": "published",
+  "featuredInDiscover": true,
+  "title": "Escumostra 2026",
+  "description": "La 30.ª muestra de vinos espumosos y gastronomía de Sant Sadurní d’Anoia reúne elaboradores del Penedès, degustaciones y actividades del 2 al 4 de octubre.",
+  "category": "Vinos",
+  "startDate": "2026-10-02",
+  "endDate": "2026-10-04",
+  "timeZone": "Europe/Madrid",
+  "venue": {
+    "name": "Parc Lluís Companys",
+    "municipality": "Sant Sadurní d’Anoia",
+    "latitude": 41.4307882,
+    "longitude": 1.781425
+  },
+  "organizerUrl": "https://santsadurni.cat/document.php?id=21250&idioma=es",
+  "organizerName": "Ajuntament de Sant Sadurní d’Anoia",
+  "editorialNote": "Esta selección enlaza los expositores del plano oficial que hemos identificado con productores ya publicados en Chisan. Los puestos colectivos pueden reunir varias bodegas. El plano original y la web municipal contienen la lista completa y la información de visita; la ubicación del evento es distinta de los lugares de producción que muestra el mapa.",
+  "exhibitors": [
+    {
+      "country": "es",
+      "producerId": 13472,
+      "stand": "16"
+    },
+    {
+      "country": "es",
+      "producerId": 13446,
+      "stand": "18"
+    },
+    {
+      "country": "es",
+      "producerId": 12000,
+      "stand": "19"
+    },
+    {
+      "country": "es",
+      "producerId": 3035,
+      "stand": "20"
+    },
+    {
+      "country": "es",
+      "producerId": 1253,
+      "stand": "21"
+    },
+    {
+      "country": "es",
+      "producerId": 3656,
+      "stand": "22"
+    },
+    {
+      "country": "es",
+      "producerId": 6251,
+      "stand": "23"
+    },
+    {
+      "country": "es",
+      "producerId": 11450,
+      "stand": "24"
+    },
+    {
+      "country": "es",
+      "producerId": 11881,
+      "stand": "25"
+    },
+    {
+      "country": "es",
+      "producerId": 699,
+      "stand": "26"
+    },
+    {
+      "country": "es",
+      "producerId": 3772,
+      "stand": "27"
+    },
+    {
+      "country": "es",
+      "producerId": 4108,
+      "stand": "28"
+    },
+    {
+      "country": "es",
+      "producerId": 3754,
+      "stand": "29"
+    },
+    {
+      "country": "es",
+      "producerId": 3539,
+      "stand": "30"
+    },
+    {
+      "country": "es",
+      "producerId": 7395,
+      "stand": "30"
+    },
+    {
+      "country": "es",
+      "producerId": 3547,
+      "stand": "30"
+    },
+    {
+      "country": "es",
+      "producerId": 3529,
+      "stand": "30"
+    },
+    {
+      "country": "es",
+      "producerId": 3535,
+      "stand": "31"
+    },
+    {
+      "country": "es",
+      "producerId": 4676,
+      "stand": "32"
+    },
+    {
+      "country": "es",
+      "producerId": 12280,
+      "stand": "34"
+    },
+    {
+      "country": "es",
+      "producerId": 8892,
+      "stand": "35"
+    },
+    {
+      "country": "es",
+      "producerId": 7323,
+      "stand": "36"
+    },
+    {
+      "country": "es",
+      "producerId": 12169,
+      "stand": "37"
+    },
+    {
+      "country": "es",
+      "producerId": 727,
+      "stand": "38"
+    },
+    {
+      "country": "es",
+      "producerId": 3579,
+      "stand": "40"
+    },
+    {
+      "country": "es",
+      "producerId": 9002,
+      "stand": "42"
+    },
+    {
+      "country": "es",
+      "producerId": 7422,
+      "stand": "43"
+    },
+    {
+      "country": "es",
+      "producerId": 1019,
+      "stand": "44"
+    },
+    {
+      "country": "es",
+      "producerId": 11869,
+      "stand": "45"
+    },
+    {
+      "country": "es",
+      "producerId": 3708,
+      "stand": "46"
+    },
+    {
+      "country": "es",
+      "producerId": 6512,
+      "stand": "46"
+    },
+    {
+      "country": "es",
+      "producerId": 7414,
+      "stand": "46"
+    },
+    {
+      "country": "es",
+      "producerId": 8411,
+      "stand": "46"
+    },
+    {
+      "country": "es",
+      "producerId": 9021,
+      "stand": "46"
+    },
+    {
+      "country": "es",
+      "producerId": 11272,
+      "stand": "46"
+    },
+    {
+      "country": "es",
+      "producerId": 3756,
+      "stand": "47"
+    },
+    {
+      "country": "es",
+      "producerId": 506,
+      "stand": "48"
+    },
+    {
+      "country": "es",
+      "producerId": 8185,
+      "stand": "49"
+    },
+    {
+      "country": "es",
+      "producerId": 3531,
+      "stand": "50"
+    },
+    {
+      "country": "es",
+      "producerId": 570,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 1051,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 2955,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 12890,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 3605,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 4116,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 5845,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 8238,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 3710,
+      "stand": "51"
+    },
+    {
+      "country": "es",
+      "producerId": 11875,
+      "stand": "51"
+    }
+  ],
+  "plan": {
+    "src": "/editorial/events/escumostra-2026-plan.webp",
+    "alt": "Plano oficial de Escumostra 2026 con los puestos numerados, los servicios y la lista de expositores",
+    "width": 3200,
+    "height": 2265,
+    "credit": "Ajuntament de Sant Sadurní d’Anoia",
+    "sourceUrl": "https://santsadurni.cat/ARXIUS/turisme/Planol_expositors_Escumostra.jpg",
+    "rights": "Plano del Ayuntamiento de Sant Sadurní d’Anoia; consultar la fuente oficial para la versión original.",
+    "checkedAt": "2026-09-23",
+    "points": [
+      {
+        "id": "puesto-16-13472",
+        "producerKey": "es:13472",
+        "marker": "16",
+        "label": "Puesto 16 · Fonpinet",
+        "x": 0.185417,
+        "y": 0.24485
+      },
+      {
+        "id": "puesto-18-13446",
+        "producerKey": "es:13446",
+        "marker": "18",
+        "label": "Puesto 18 · El Mas Ferrer",
+        "x": 0.201667,
+        "y": 0.251913
+      },
+      {
+        "id": "puesto-19-12000",
+        "producerKey": "es:12000",
+        "marker": "19",
+        "label": "Puesto 19 · U Més U",
+        "x": 0.209583,
+        "y": 0.253679
+      },
+      {
+        "id": "puesto-20-3035",
+        "producerKey": "es:3035",
+        "marker": "20",
+        "label": "Puesto 20 · Canals & Munné",
+        "x": 0.217917,
+        "y": 0.257799
+      },
+      {
+        "id": "puesto-21-1253",
+        "producerKey": "es:1253",
+        "marker": "21",
+        "label": "Puesto 21 · Blancher",
+        "x": 0.22625,
+        "y": 0.260153
+      },
+      {
+        "id": "puesto-22-3656",
+        "producerKey": "es:3656",
+        "marker": "22",
+        "label": "Puesto 22 · Celler Giró Ribot",
+        "x": 0.234583,
+        "y": 0.264273
+      },
+      {
+        "id": "puesto-23-6251",
+        "producerKey": "es:6251",
+        "marker": "23",
+        "label": "Puesto 23 · Freixenet",
+        "x": 0.236667,
+        "y": 0.243673
+      },
+      {
+        "id": "puesto-24-11450",
+        "producerKey": "es:11450",
+        "marker": "24",
+        "label": "Puesto 24 · Segura Viudas",
+        "x": 0.22875,
+        "y": 0.24073
+      },
+      {
+        "id": "puesto-25-11881",
+        "producerKey": "es:11881",
+        "marker": "25",
+        "label": "Puesto 25 · Torrens Moliner",
+        "x": 0.221667,
+        "y": 0.237787
+      },
+      {
+        "id": "puesto-26-699",
+        "producerKey": "es:699",
+        "marker": "26",
+        "label": "Puesto 26 · Alsina & Sardà",
+        "x": 0.214167,
+        "y": 0.233667
+      },
+      {
+        "id": "puesto-27-3772",
+        "producerKey": "es:3772",
+        "marker": "27",
+        "label": "Puesto 27 · Cellers Maset",
+        "x": 0.205417,
+        "y": 0.231313
+      },
+      {
+        "id": "puesto-28-4108",
+        "producerKey": "es:4108",
+        "marker": "28",
+        "label": "Puesto 28 · Codorníu",
+        "x": 0.1975,
+        "y": 0.228958
+      },
+      {
+        "id": "puesto-29-3754",
+        "producerKey": "es:3754",
+        "marker": "29",
+        "label": "Puesto 29 · Celler Vell",
+        "x": 0.189167,
+        "y": 0.226015
+      },
+      {
+        "id": "puesto-30-3539",
+        "producerKey": "es:3539",
+        "marker": "30",
+        "label": "Puesto 30 · Caves Bolet",
+        "x": 0.25,
+        "y": 0.222484
+      },
+      {
+        "id": "puesto-30-7395",
+        "producerKey": "es:7395",
+        "marker": "30",
+        "label": "Puesto 30 · Josep Masachs",
+        "x": 0.25,
+        "y": 0.222484
+      },
+      {
+        "id": "puesto-30-3547",
+        "producerKey": "es:3547",
+        "marker": "30",
+        "label": "Puesto 30 · Caves Naveran",
+        "x": 0.25,
+        "y": 0.222484
+      },
+      {
+        "id": "puesto-30-3529",
+        "producerKey": "es:3529",
+        "marker": "30",
+        "label": "Puesto 30 · Cava Pagès Entrena",
+        "x": 0.25,
+        "y": 0.222484
+      },
+      {
+        "id": "puesto-31-3535",
+        "producerKey": "es:3535",
+        "marker": "31",
+        "label": "Puesto 31 · Cavas Hill",
+        "x": 0.258333,
+        "y": 0.226604
+      },
+      {
+        "id": "puesto-32-4676",
+        "producerKey": "es:4676",
+        "marker": "32",
+        "label": "Puesto 32 · Covides",
+        "x": 0.265417,
+        "y": 0.230135
+      },
+      {
+        "id": "puesto-34-12280",
+        "producerKey": "es:12280",
+        "marker": "34",
+        "label": "Puesto 34 · Vins El Cep",
+        "x": 0.280833,
+        "y": 0.234844
+      },
+      {
+        "id": "puesto-35-8892",
+        "producerKey": "es:8892",
+        "marker": "35",
+        "label": "Puesto 35 · Molí Parellada",
+        "x": 0.295833,
+        "y": 0.258387
+      },
+      {
+        "id": "puesto-36-7323",
+        "producerKey": "es:7323",
+        "marker": "36",
+        "label": "Puesto 36 · Jaume Giró i Giró",
+        "x": 0.295833,
+        "y": 0.273102
+      },
+      {
+        "id": "puesto-37-12169",
+        "producerKey": "es:12169",
+        "marker": "37",
+        "label": "Puesto 37 · Vilarnau",
+        "x": 0.295833,
+        "y": 0.288994
+      },
+      {
+        "id": "puesto-38-727",
+        "producerKey": "es:727",
+        "marker": "38",
+        "label": "Puesto 38 · Amat & Montané",
+        "x": 0.31,
+        "y": 0.293114
+      },
+      {
+        "id": "puesto-40-3579",
+        "producerKey": "es:3579",
+        "marker": "40",
+        "label": "Puesto 40 · Celler Anna Rosell",
+        "x": 0.309167,
+        "y": 0.26545
+      },
+      {
+        "id": "puesto-42-9002",
+        "producerKey": "es:9002",
+        "marker": "42",
+        "label": "Puesto 42 · Mulet Viticultors",
+        "x": 0.309167,
+        "y": 0.241907
+      },
+      {
+        "id": "puesto-43-7422",
+        "producerKey": "es:7422",
+        "marker": "43",
+        "label": "Puesto 43 · Juvé & Camps",
+        "x": 0.3675,
+        "y": 0.293114
+      },
+      {
+        "id": "puesto-44-1019",
+        "producerKey": "es:1019",
+        "marker": "44",
+        "label": "Puesto 44 · AT Roca",
+        "x": 0.367083,
+        "y": 0.305474
+      },
+      {
+        "id": "puesto-45-11869",
+        "producerKey": "es:11869",
+        "marker": "45",
+        "label": "Puesto 45 · Torelló Viticultors",
+        "x": 0.366667,
+        "y": 0.319011
+      },
+      {
+        "id": "puesto-46-3708",
+        "producerKey": "es:3708",
+        "marker": "46",
+        "label": "Puesto 46 · Celler Mir",
+        "x": 0.3675,
+        "y": 0.331371
+      },
+      {
+        "id": "puesto-46-6512",
+        "producerKey": "es:6512",
+        "marker": "46",
+        "label": "Puesto 46 · Gramona",
+        "x": 0.3675,
+        "y": 0.331371
+      },
+      {
+        "id": "puesto-46-7414",
+        "producerKey": "es:7414",
+        "marker": "46",
+        "label": "Puesto 46 · Julia Bernet",
+        "x": 0.3675,
+        "y": 0.331371
+      },
+      {
+        "id": "puesto-46-8411",
+        "producerKey": "es:8411",
+        "marker": "46",
+        "label": "Puesto 46 · Mas Bertran",
+        "x": 0.3675,
+        "y": 0.331371
+      },
+      {
+        "id": "puesto-46-9021",
+        "producerKey": "es:9021",
+        "marker": "46",
+        "label": "Puesto 46 · Nadal",
+        "x": 0.3675,
+        "y": 0.331371
+      },
+      {
+        "id": "puesto-46-11272",
+        "producerKey": "es:11272",
+        "marker": "46",
+        "label": "Puesto 46 · Sabaté i Coca",
+        "x": 0.3675,
+        "y": 0.331371
+      },
+      {
+        "id": "puesto-47-3756",
+        "producerKey": "es:3756",
+        "marker": "47",
+        "label": "Puesto 47 · Celler Viader",
+        "x": 0.370833,
+        "y": 0.379635
+      },
+      {
+        "id": "puesto-48-506",
+        "producerKey": "es:506",
+        "marker": "48",
+        "label": "Puesto 48 · Celler Kripta",
+        "x": 0.374583,
+        "y": 0.392584
+      },
+      {
+        "id": "puesto-49-8185",
+        "producerKey": "es:8185",
+        "marker": "49",
+        "label": "Puesto 49 · Llopart",
+        "x": 0.378333,
+        "y": 0.405533
+      },
+      {
+        "id": "puesto-50-3531",
+        "producerKey": "es:3531",
+        "marker": "50",
+        "label": "Puesto 50 · Torné & Bel",
+        "x": 0.382083,
+        "y": 0.419659
+      },
+      {
+        "id": "puesto-51-570",
+        "producerKey": "es:570",
+        "marker": "51",
+        "label": "Puesto 51 · Albet i Noya",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-1051",
+        "producerKey": "es:1051",
+        "marker": "51",
+        "label": "Puesto 51 · Aymar",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-2955",
+        "producerKey": "es:2955",
+        "marker": "51",
+        "label": "Puesto 51 · Can Lleó de Vilanoveta",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-12890",
+        "producerKey": "es:12890",
+        "marker": "51",
+        "label": "Puesto 51 · Can Marlès",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-3605",
+        "producerKey": "es:3605",
+        "marker": "51",
+        "label": "Puesto 51 · Celler Can Suriol",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-4116",
+        "producerKey": "es:4116",
+        "marker": "51",
+        "label": "Puesto 51 · Colet Vins",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-5845",
+        "producerKey": "es:5845",
+        "marker": "51",
+        "label": "Puesto 51 · Finca La Font de Jui",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-8238",
+        "producerKey": "es:8238",
+        "marker": "51",
+        "label": "Puesto 51 · Loxarel",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-3710",
+        "producerKey": "es:3710",
+        "marker": "51",
+        "label": "Puesto 51 · Celler MontPicolis",
+        "x": 0.336667,
+        "y": 0.433196
+      },
+      {
+        "id": "puesto-51-11875",
+        "producerKey": "es:11875",
+        "marker": "51",
+        "label": "Puesto 51 · Torre del Veguer",
+        "x": 0.336667,
+        "y": 0.433196
+      }
+    ]
+  },
+  "sources": [
+    {
+      "title": "Escumostra 2026: programa, fechas y ubicación — Ayuntamiento de Sant Sadurní d’Anoia",
+      "url": "https://santsadurni.cat/document.php?id=21250&idioma=es",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "title": "Plano oficial de expositores de Escumostra 2026",
+      "url": "https://santsadurni.cat/ARXIUS/turisme/Planol_expositors_Escumostra.jpg",
+      "checkedAt": "2026-09-23"
+    }
+  ],
+  "publishedAt": "2026-09-23",
+  "updatedAt": "2026-09-23"
+}

@@ -3,6 +3,8 @@
 import { useEffect, useSyncExternalStore } from "react";
 
 import { useLocationOnboardingState } from "@/lib/location/saved-location-area";
+import { EVENTS_SEGMENT } from "@/lib/events/routes";
+import { GUIDES_SEGMENT } from "@/lib/guides/routes";
 
 const LAST_MAP_STORAGE_KEY = "chisan:last-map-url";
 const LAST_MAP_EVENT = "chisan:last-map-changed";
@@ -27,7 +29,8 @@ function subscribeToLastMap(callback: () => void): () => void {
 
 /** Only country and area catalog pages render a map. */
 export function isMapPathname(pathname: string): boolean {
-  return pathname === "/es" || (/^\/es\/[^/]+\/?$/.test(pathname) && !pathname.startsWith("/es/guias"));
+  const segment = pathname.split("/")[2];
+  return pathname === "/es" || (/^\/es\/[^/]+\/?$/.test(pathname) && segment !== GUIDES_SEGMENT && segment !== EVENTS_SEGMENT);
 }
 
 /** Remembers, for this tab, the map page a navigation link returns to. */
@@ -55,7 +58,7 @@ export function useMapHref(pathname: string): string {
 
   if (isMapPathname(pathname)) return pathname;
   const producerArea = /^\/es\/([^/]+)\/[^/]+\/?$/.exec(pathname);
-  if (producerArea) return `/es/${producerArea[1]}`;
+  if (producerArea && isMapPathname(`/es/${producerArea[1]}`)) return `/es/${producerArea[1]}`;
   if (isMapPathname(storedLastMap)) return storedLastMap;
   return savedState?.onboarding === "resolved" && savedState.area
     ? `/${savedState.area.country}/${savedState.area.area}`

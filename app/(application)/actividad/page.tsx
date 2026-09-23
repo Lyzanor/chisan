@@ -9,9 +9,11 @@ import { ActivityCallToAction } from "@/components/activity/activity-cta";
 import { ActivityFeed } from "@/components/activity/activity-feed";
 import { ActivityFollowingBubbles } from "@/components/activity/activity-following-bubbles";
 import { ActivityGuides } from "@/components/activity/activity-guides";
+import { ActivityEvents } from "@/components/activity/activity-events";
 import { ActivityZoneDiscovery } from "@/components/activity/activity-zone-discovery";
 import { isAccountAuthConfigured } from "@/lib/accounts/config";
 import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
+import { listDiscoverEvents } from "@/lib/events/catalog";
 import styles from "@/components/activity/activity.module.css";
 
 export const dynamic = "force-dynamic";
@@ -47,6 +49,7 @@ export default async function ActivityPage() {
   ]);
 
   const featuredGuides = listFeaturedGuides().slice(0, 3);
+  const featuredEvents = listDiscoverEvents();
 
   return (
     <main className={`page-shell ${styles.shell}`}>
@@ -64,6 +67,8 @@ export default async function ActivityPage() {
         availableAreas={availableAreas}
         initialFeaturedProducers={initialFeaturedProducers}
       />
+
+      <ActivityEvents events={featuredEvents} />
 
       {/* 2. Burbujas de «Siguiendo» */}
       <ActivityFollowingBubbles authConfigured={isAccountAuthConfigured()} />

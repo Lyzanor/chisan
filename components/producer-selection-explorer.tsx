@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { ProducerCollectionMap } from "@/components/map/producer-collection-map";
 import type { MapMessages } from "@/components/map/producers-map";
 import type { PublicSelectionShelf } from "@/lib/selection-shelf/policy";
-import { ShelfPhoto } from "@/components/selection-shelf/shelf-photo";
+import { AnnotatedProducerImageView, type AnnotatedProducerImage } from "@/components/selection-shelf/shelf-photo";
 import shelfStyles from "@/components/selection-shelf/shelf.module.css";
 import {
   buildProducerSelectionHighlightHref,
@@ -39,15 +39,19 @@ function ProducerSelectionExplorerView({
   selection,
   messages,
   shelf,
+  plan,
   selectedKey,
 }: {
   selection: ProducerSelectionExplorerModel;
   messages: ProducerSelectionExplorerMessages;
   shelf?: PublicSelectionShelf | null;
+  plan?: AnnotatedProducerImage | null;
   selectedKey: string;
 }) {
   const [mobileTab, setMobileTab] = useState<"shelf" | "map">("shelf");
   const combinedRef = useRef<HTMLElement>(null);
+  const image = plan ?? shelf;
+  const isPlan = Boolean(plan);
 
   const selectProducer = useCallback(
     (key: string) => {
@@ -81,7 +85,7 @@ function ProducerSelectionExplorerView({
     setMobileTab("shelf");
   }, []);
 
-  if (!shelf) {
+  if (!image) {
     return (
       <section ref={combinedRef}>
         <ProducerCollectionMap
@@ -101,7 +105,7 @@ function ProducerSelectionExplorerView({
     hasProducerSelectionCoordinates,
   ).length;
   const producerHasShelfPoints = Boolean(
-    selectedKey && shelf.points.some((p) => p.producerKey === selectedKey),
+    selectedKey && image.points.some((p) => p.producerKey === selectedKey),
   );
 
   return (
@@ -120,7 +124,7 @@ function ProducerSelectionExplorerView({
           }`}
           onClick={viewShelf}
         >
-          <span>🖼️ Estantería ({shelf.points.length})</span>
+          <span>{isPlan ? "🗺️ Plano" : "🖼️ Estantería"} ({image.points.length})</span>
         </button>
         <button
           type="button"
@@ -131,7 +135,7 @@ function ProducerSelectionExplorerView({
           }`}
           onClick={viewMap}
         >
-          <span>🗺️ Mapa ({mappedCount})</span>
+          <span>🗺️ {isPlan ? "Origen" : "Mapa"} ({mappedCount})</span>
         </button>
       </div>
 
@@ -142,8 +146,9 @@ function ProducerSelectionExplorerView({
             : shelfStyles.colHiddenMobile
         }`}
       >
-        <ShelfPhoto
-          shelf={shelf}
+        <AnnotatedProducerImageView
+          image={image}
+          mode={isPlan ? "event-plan" : "shelf"}
           selectedKey={selectedKey}
           selectedProducer={selectedProducer}
           onSelectKey={selectProducer}
@@ -165,11 +170,12 @@ function ProducerSelectionExplorerView({
               className={shelfStyles.backToShelfButton}
               onClick={viewShelf}
             >
-              <span>← Ver en estantería</span>
+              <span>← Ver {isPlan ? "en el plano" : "en estantería"}</span>
             </button>
           </div>
         ) : null}
         <ProducerCollectionMap
+          key={isPlan ? mobileTab : undefined}
           items={selection.items}
           selectedKey={selectedKey}
           onSelect={selectProducer}
@@ -187,10 +193,12 @@ function ProducerSelectionExplorerFromSearchParams({
   selection,
   messages,
   shelf,
+  plan,
 }: {
   selection: ProducerSelectionExplorerModel;
   messages: ProducerSelectionExplorerMessages;
   shelf?: PublicSelectionShelf | null;
+  plan?: AnnotatedProducerImage | null;
 }) {
   const searchParams = useSearchParams();
   const selectedKey = searchParams.get("highlight")?.trim() ?? "";
@@ -200,6 +208,7 @@ function ProducerSelectionExplorerFromSearchParams({
       selection={selection}
       messages={messages}
       shelf={shelf}
+      plan={plan}
       selectedKey={selectedKey}
     />
   );
@@ -209,10 +218,12 @@ export function ProducerSelectionExplorer({
   selection,
   messages,
   shelf,
+  plan,
 }: {
   selection: ProducerSelectionExplorerModel;
   messages: ProducerSelectionExplorerMessages;
   shelf?: PublicSelectionShelf | null;
+  plan?: AnnotatedProducerImage | null;
 }) {
   return (
     <Suspense
@@ -221,12 +232,14 @@ export function ProducerSelectionExplorer({
           selection={selection}
           messages={messages}
           shelf={shelf}
+          plan={plan}
           selectedKey=""
         />
       }
     >
       <ProducerSelectionExplorerFromSearchParams
         shelf={shelf}
+        plan={plan}
         selection={selection}
         messages={messages}
       />
