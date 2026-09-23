@@ -115,6 +115,7 @@ body:has(.catalog-page--immersive) .site-footer { display: none; }
 .producer-map-explorer .leaflet-control-container .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; color: var(--chisan-color-moss-dark); }
 .catalog-map-status { position: absolute; z-index: 500; top: 30%; left: var(--chisan-space-4); right: var(--chisan-space-4); max-width: 28rem; margin-inline: auto; padding: var(--chisan-space-4); border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-panel); background: var(--chisan-color-surface); text-align: center; }
 .catalog-map-status p { margin: 0; }
+.catalog-map-status__mascot { display: flex; margin: 0 auto var(--chisan-space-2); }
 
 .catalog-map-carousel { position: absolute; z-index: 600; inset: auto auto calc(var(--catalog-sheet-peek) + var(--chisan-space-2)) 50%; width: min(480px, 100%); transform: translateX(-50%); pointer-events: none; }
 .catalog-map-carousel__strip { position: relative; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--chisan-space-3); scrollbar-width: none; pointer-events: auto; }

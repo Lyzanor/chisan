@@ -1,6 +1,7 @@
 "use client";
 
 import type { Ref } from "react";
+import { ChisanMascot } from "@/components/brand/chisan-brand";
 import {
   ProducerSelectionMap,
   type ProducerMapFocusRequest,
@@ -101,6 +102,14 @@ export function MapStage({
 
       {showPlaceholder ? (
         <div className="catalog-map-status" role="status">
+          {loading && searchScope === "country" ? (
+            <ChisanMascot
+              state="catalog"
+              size={88}
+              alt=""
+              className="catalog-map-status__mascot"
+            />
+          ) : null}
           <p>{statusMessage}</p>
           {hasError && retryAction ? (
             <button
