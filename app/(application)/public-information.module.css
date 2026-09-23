@@ -148,6 +148,22 @@
   margin-top: 0;
 }
 
+/* A copyable endpoint URL; long URLs wrap instead of widening the page. */
+.endpoint {
+  margin: var(--chisan-space-6) 0 0;
+  color: var(--chisan-color-stone);
+  line-height: var(--chisan-leading-reading);
+}
+
+.endpoint code {
+  color: var(--chisan-color-ink);
+  font-family: inherit;
+  font-weight: var(--chisan-weight-interface);
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.principles + .prose,
 .sectionLead + .prose {
   margin-top: var(--chisan-space-6);
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cache } from "react";
 
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
+import { CATALOG_API_PATH } from "@/lib/agents/catalog-schema";
 import {
   loadCatalogSourceFigures,
   type CatalogSourceFigures,
@@ -21,6 +22,7 @@ import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 import styles from "../public-information.module.css";
 
 const canonicalUrl = new URL("/how-we-work", SITE_ORIGIN).toString();
+const mcpUrl = new URL("/mcp", SITE_ORIGIN).toString();
 const loadCopy = cache(async () => {
   const presentation = await loadApplicationPresentation();
   return getHowChisanWorksCopy(presentation.locale);
@@ -263,6 +265,45 @@ export default async function HowChisanWorksPage() {
                 {copy.exploreCatalog}
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className={styles.section} id="agents" data-reveal aria-labelledby="agents-title">
+          <div className={styles.sectionHeader}>
+            <p className="chisan-eyebrow">{copy.agentsKicker}</p>
+            <h2 id="agents-title">{copy.agentsTitle}</h2>
+          </div>
+          <div className={styles.sectionBody}>
+            <p className={styles.sectionLead}>{copy.agentsIntroduction}</p>
+            <p className={styles.endpoint}>
+              {copy.agentsEndpointLabel} <code>{mcpUrl}</code>
+            </p>
+            <ul className={styles.principles}>
+              {copy.agentsTools.map((tool) => (
+                <li className={styles.principle} key={tool.title}>
+                  <div>
+                    <h3>{tool.title}</h3>
+                    <p>{tool.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.prose}>
+              {copy.agentsParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <ul className={styles.sourceLinks}>
+              <li>
+                <a href={`${CATALOG_API_PATH}/openapi.json`}>{copy.agentsOpenApi}</a>
+              </li>
+              <li>
+                <a href="/llms.txt">{copy.agentsLlms}</a>
+              </li>
+              <li>
+                <Link href="/privacy">{copy.agentsPrivacy}</Link>
+              </li>
+            </ul>
           </div>
         </section>
 

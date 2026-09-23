@@ -26,6 +26,7 @@ export function catalogOpenApi() {
           {
             get: {
               operationId: operation.name,
+              summary: operation.title,
               description: operation.description,
               parameters: Object.entries(input.properties ?? {}).map(
                 ([name, schema]) => ({

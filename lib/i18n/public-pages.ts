@@ -188,6 +188,18 @@ type HowChisanWorksCopy = {
   accessKicker: string;
   accessTitle: string;
   accessParagraphs: readonly string[];
+  agentsKicker: string;
+  agentsTitle: string;
+  agentsIntroduction: string;
+  agentsEndpointLabel: string;
+  agentsTools: readonly {
+    title: string;
+    description: string;
+  }[];
+  agentsParagraphs: readonly string[];
+  agentsOpenApi: string;
+  agentsLlms: string;
+  agentsPrivacy: string;
   closing: string;
   exploreCatalog: string;
   contact: string;
@@ -451,6 +463,36 @@ const HOW_CHISAN_WORKS = {
       "The public catalog can be browsed without an account. Accounts add favorites, ownership workflows and reviewed participation around the same public catalog.",
       "Any paid producer offer must publish its price, scope and terms before it is activated. Paid access never determines catalog inclusion, ordering, verification or editorial copy.",
     ],
+    agentsKicker: "Agents and integrations",
+    agentsTitle: "AI assistants can read the same public catalog",
+    agentsIntroduction:
+      "Chisan offers a public, read-only Remote MCP server. Assistants such as Claude can connect to it without an account or API key and answer with the same reviewed information shown on these pages.",
+    agentsEndpointLabel: "Server URL (Streamable HTTP, no authentication):",
+    agentsTools: [
+      {
+        title: "Chisan catalog coverage",
+        description: "Published countries, regions, areas, languages and categories.",
+      },
+      {
+        title: "Search Chisan producers",
+        description: "Producers by text, geography, category, online sales or distance from a point.",
+      },
+      {
+        title: "Search Chisan products",
+        description: "Individually recorded products and varieties that are currently visible.",
+      },
+      {
+        title: "Get Chisan producer",
+        description: "One producer profile with its reviewed products, photos, links and contact channels.",
+      },
+    ],
+    agentsParagraphs: [
+      "Every tool only reads. None sends messages, books visits or places orders: contact and shop links are prepared for the person to use. Answers should cite the producer's Chisan profile. Missing information means unknown, and recorded prices are not live quotes or stock.",
+      "The server needs no account and keeps no prompts, locations or client identities. Coordinates sent with a search are used only to answer it. The same operations are available as a JSON API.",
+    ],
+    agentsOpenApi: "OpenAPI description",
+    agentsLlms: "Guide for language models (llms.txt)",
+    agentsPrivacy: "Privacy policy",
     closing: "Connecting local food.",
     exploreCatalog: "Explore the producer catalog",
     contact: "Contact Chisan",
@@ -655,6 +697,36 @@ const HOW_CHISAN_WORKS = {
       "El catálogo público puede consultarse sin una cuenta. Las cuentas añaden favoritos, flujos de propiedad y participación revisada alrededor del mismo catálogo público.",
       "Cualquier oferta de pago para productores debe publicar su precio, alcance y condiciones antes de activarse. El pago nunca determina la inclusión, el orden, la verificación ni el texto editorial del catálogo.",
     ],
+    agentsKicker: "Agentes e integraciones",
+    agentsTitle: "Los asistentes de IA pueden consultar el mismo catálogo público",
+    agentsIntroduction:
+      "Chisan ofrece un servidor Remote MCP público y de solo lectura. Asistentes como Claude pueden conectarse sin cuenta ni clave de API y responder con la misma información revisada que muestran estas páginas.",
+    agentsEndpointLabel: "URL del servidor (Streamable HTTP, sin autenticación):",
+    agentsTools: [
+      {
+        title: "Cobertura del catálogo",
+        description: "Países, regiones, zonas, idiomas y categorías publicados.",
+      },
+      {
+        title: "Buscar productores",
+        description: "Productores por texto, geografía, categoría, venta en línea o distancia a un punto.",
+      },
+      {
+        title: "Buscar productos",
+        description: "Productos y variedades registrados individualmente y visibles en ese momento.",
+      },
+      {
+        title: "Consultar un productor",
+        description: "Un perfil con sus productos revisados, fotos, enlaces y canales de contacto.",
+      },
+    ],
+    agentsParagraphs: [
+      "Todas las herramientas son de lectura. Ninguna envía mensajes, reserva visitas ni hace pedidos: los enlaces de contacto y tienda quedan preparados para que los use la persona. Las respuestas deben citar el perfil del productor en Chisan. La información que falta es desconocida y los precios registrados no son cotizaciones ni existencias en vivo.",
+      "El servidor no necesita cuenta y no guarda consultas, ubicaciones ni identidades de cliente. Las coordenadas enviadas en una búsqueda solo se usan para responderla. Las mismas operaciones están disponibles como API JSON.",
+    ],
+    agentsOpenApi: "Descripción OpenAPI",
+    agentsLlms: "Guía para modelos de lenguaje (llms.txt)",
+    agentsPrivacy: "Política de privacidad",
     closing: "Conecta con lo que se produce cerca de ti",
     exploreCatalog: "Explorar el catálogo de productores",
     contact: "Contactar con Chisan",

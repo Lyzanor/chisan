@@ -31,7 +31,10 @@ for (const mode of ["legacy", "auto"] as const) {
       const listed = await client.listTools();
       assert.deepEqual(listed.tools.map(tool => tool.name), catalogOperations.map(tool => tool.name));
       for (const tool of listed.tools) {
+        // Connector directories require a display title and explicit read/write hints.
+        assert.equal(tool.title, catalogOperations.find(operation => operation.name === tool.name)?.title);
         assert.equal(tool.annotations?.readOnlyHint, true);
+        assert.equal(tool.annotations?.destructiveHint, false);
         assert.equal(tool.inputSchema.additionalProperties, false);
         assert.ok(tool.outputSchema);
       }

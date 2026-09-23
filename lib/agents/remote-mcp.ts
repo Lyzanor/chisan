@@ -15,6 +15,7 @@ export function createCatalogMcpServer(execute = executeCatalogOperation) {
   });
   for (const operation of catalogOperations) {
     server.registerTool(operation.name, {
+      title: operation.title,
       description: operation.description,
       inputSchema: operation.input,
       outputSchema: operation.output,

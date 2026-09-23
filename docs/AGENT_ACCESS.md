@@ -261,6 +261,12 @@ guarantee. Instance limits reset on cold starts and do not form a distributed
 quota or a spending cap. Before broad promotion, verify WAF rate limits and the
 existing Vercel/Neon consumption controls in [Operations](OPERATIONS.md).
 
+Every operation carries a human-readable `title` (the MCP tool title and the
+OpenAPI `summary`) alongside its read-only annotations; connector directories
+require both. The public setup and usage page is
+[How we work, agents section](https://chisan.app/how-we-work#agents); keep its
+tool list and trust wording in step with these operations.
+
 Client configuration uses the deployed HTTPS URL `https://chisan.app/mcp` with
 Streamable HTTP and no Chisan API key. Each host still controls installation,
 availability and user consent. Muse, Instinct, Aeon and other product names do
