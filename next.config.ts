@@ -20,7 +20,13 @@ const nextConfig: NextConfig = {
     ],
   },
   rewrites: () => ({
-    beforeFiles: buildCatalogNormalizationRewritesFromManifests(),
+    beforeFiles: [
+      // Keep the root index separate from Next metadata sitemap route discovery.
+      { source: "/sitemap.xml", destination: "/sitemap-index" },
+      // Root-level sitemap files cover the whole site without directory scope limits.
+      { source: "/sitemap-:name.xml", destination: "/sitemaps/:name" },
+      ...buildCatalogNormalizationRewritesFromManifests(),
+    ],
     afterFiles: [],
     fallback: [],
   }),
@@ -63,6 +69,8 @@ const nextConfig: NextConfig = {
     "/\\[catalog\\]/\\[area\\]/\\[segment\\]": ["./data/csv/**/*.csv", "./data/content/**/*.json", "./data/evidence/**/*.jsonl"],
     "/robots.txt": ["./data/csv/**/*.csv"],
     "/sitemap/**": ["./data/csv/**/*.csv", "./data/events/es/*.json"],
+    "/sitemap-index": ["./data/csv/**/*.csv", "./data/events/es/*.json"],
+    "/sitemaps/**": ["./data/csv/**/*.csv", "./data/events/es/*.json"],
     "/cuenta": ["./data/csv/**/*.csv"],
     "/cuenta/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/admin": ["./data/csv/**/*.csv"],

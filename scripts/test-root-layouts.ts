@@ -46,6 +46,8 @@ test("application and catalog routes live under separate root layout groups", ()
     "app/globals.css",
     "app/robots.ts",
     "app/sitemap.ts",
+    "app/sitemap-index/route.ts",
+    "app/sitemaps/[name]/route.ts",
     "public/llms.txt",
   ];
 

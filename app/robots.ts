@@ -1,10 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { absoluteSiteUrl } from "@/lib/catalog-metadata";
-import {
-  buildCatalogSitemapPath,
-  listCatalogSitemapDescriptors,
-} from "@/lib/catalog-sitemap";
+import { SITEMAP_INDEX_PATH } from "@/lib/sitemap-index";
 import { isPublicDiscoveryEnabled, SITE_ORIGIN } from "@/lib/site";
 
 const PRIVATE_PATHS = ["/acceso", "/registro", "/cuenta", "/admin", "/api/"];
@@ -22,10 +19,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     };
   }
 
-  const sitemapUrls = (await listCatalogSitemapDescriptors()).map(({ id }) =>
-    absoluteSiteUrl(buildCatalogSitemapPath(id)),
-  );
-
   return {
     rules: [
       {
@@ -35,7 +28,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       },
       { userAgent: EXCLUDED_CRAWLERS, disallow: "/" },
     ],
-    sitemap: sitemapUrls,
+    sitemap: absoluteSiteUrl(SITEMAP_INDEX_PATH),
     host: SITE_ORIGIN,
   };
 }

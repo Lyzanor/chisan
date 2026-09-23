@@ -55,6 +55,11 @@ same locale and the profile `url` for citations. Absolute response URLs use
 Chisan's canonical origin; when testing locally, replace only that origin. HTML
 profiles advertise their JSON counterpart via `rel=alternate`. The shared HTML
 head and API `Link` header advertise OpenAPI and `/llms.txt`.
+`llms.txt` links to `/sitemap.xml`, the complete index of canonical public HTML
+pages. Its generated content and territory groups follow
+[Catalog Web](CATALOG_WEB.md#sitemap-discovery-and-growth). Use that index for
+page discovery and the API for bounded factual searches; the sitemap is not a
+second catalog, a freshness guarantee or an API record export.
 
 Search accepts country, region, area, municipality, category, online-sales state,
 query text and locale. Optional `lat`, `lon` and `radius_km` must be supplied

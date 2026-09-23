@@ -26,7 +26,7 @@ Do not treat Chisan as a complete census, a producer quality ranking, a marketpl
 - How Chisan works: https://chisan.app/how-we-work
 - Contact: https://chisan.app/contact
 - Privacy and cookies: https://chisan.app/privacy
-- Current sitemap shard: https://chisan.app/sitemap/0.xml
+- Sitemap index (all published pages, territories, guides, events and producer profiles): https://chisan.app/sitemap.xml
 
 ## Access and technical scope
 

@@ -115,6 +115,7 @@ LAST_SLUG="$(node -p "JSON.parse(process.argv[1]).lastSlug" "$FIXTURE_JSON")"
   scripts/test-public-analytics.ts \
   scripts/test-catalog-redirects.ts \
   scripts/test-catalog-metadata.ts \
+  scripts/test-sitemaps.ts \
   scripts/test-account-language-menu.ts \
   scripts/test-producer-route-aliases.ts
 
@@ -168,9 +169,7 @@ async function main() {
     : [publicRule?.disallow];
   const expectedPrivatePaths = ["/acceso", "/registro", "/cuenta", "/admin", "/api/"];
   const sitemapDescriptors = await generateSitemaps();
-  const expectedSitemapUrls = sitemapDescriptors.map(
-    ({ id }) => `https://chisan.app/sitemap/${id}.xml`,
-  );
+  const expectedSitemapUrls = ["https://chisan.app/sitemap.xml"];
   const advertisedSitemaps = Array.isArray(publicProduction.sitemap)
     ? publicProduction.sitemap
     : [publicProduction.sitemap];

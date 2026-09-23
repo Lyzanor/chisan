@@ -177,7 +177,11 @@ test("Next config installs build rewrites and disables image transformations", a
   if (Array.isArray(rewrites)) assert.fail("Expected phased rewrites");
   assert.deepEqual(
     rewrites.beforeFiles,
-    buildCatalogNormalizationRewritesFromManifests(),
+    [
+      { source: "/sitemap.xml", destination: "/sitemap-index" },
+      { source: "/sitemap-:name.xml", destination: "/sitemaps/:name" },
+      ...buildCatalogNormalizationRewritesFromManifests(),
+    ],
   );
   assert.deepEqual(rewrites.afterFiles, []);
   assert.deepEqual(rewrites.fallback, []);

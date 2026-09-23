@@ -377,13 +377,69 @@ the only `x-default` URL. Area and producer pages do not invent an `x-default`;
 English, when published, is an ordinary explicit alternate.
 
 The sitemap uses the same canonical/alternate builder as HTML metadata and
-contains only `/`, canonical short defaults and complete published composite
-variants. It excludes `standby` countries, redundant default composites,
+includes `/`, public information, published editorial pages, canonical short
+defaults and complete published composite variants. It excludes `standby`
+countries, redundant default composites,
 filtered/highlight URLs, unpublished or incomplete variants and application,
 account and admin routes.
-Shards keep a safety margin below the 50,000-URL protocol limit; the maintained
-ceiling is currently 40,000 entries. The public-discovery flag applies
-consistently to every locale's robots, indexing metadata and sitemap exposure.
+
+### Sitemap discovery and growth
+
+`/sitemap.xml` is the single sitemap index advertised by `robots.txt` and
+`llms.txt`. Submit this index in Search Console. Its root-level XML children
+separate content into understandable, independently inspectable groups:
+
+| File pattern | Contents |
+| --- | --- |
+| `/sitemap-pages-1.xml` | Home and public information pages |
+| `/sitemap-catalog-<country>-1.xml` | Published country and area landing pages |
+| `/sitemap-guides-<scope>-1.xml` | Published guide library and articles |
+| `/sitemap-events-<scope>-1.xml` | Published event library and events |
+| `/sitemap-producers-<country>-<area>-1.xml` | Indexable producer profile variants in one area |
+
+`lib/catalog-sitemap.ts` derives groups from country manifests, canonical route
+builders, translation readiness and the guide/event publication owners. There
+is no manually maintained list of provinces, producers or shard counts. New
+published countries, areas, locales and editorial records join on the next build;
+empty groups disappear. New public route families must explicitly join their
+owning group and the coverage test, rather than admitting every filesystem route.
+Profiles are ordered by stable producer ID within an area. Adding a producer in
+one area never moves another area's URLs into a different file.
+
+Each group splits automatically at 40,000 URLs or 40 MiB of serialized UTF-8 XML,
+including escaped values and language alternates. Both ceilings leave a margin
+below the protocol's 50,000 URLs and 50 MiB. The part suffix always starts at `1`
+so adding a second part does not rename the first. The index is flat, contains
+only nonempty child files, and has its own protocol-limit guard. Root-level
+rewrites serve the statically generated `/sitemaps/<name>` handlers without
+restricting sitemap scope to a subdirectory. Unknown public names return 404.
+
+The previous `/sitemap/<number>.xml` files remain available for existing crawler
+bookmarks and Search Console submissions, using the same catalog projection;
+new discovery advertises only the index. Do not delete old submissions before
+the new index is deployed and successfully processed.
+
+`lastmod` uses the existing editorial dates for guides and events. Omit it for
+profiles, undated information pages and the index until an authoritative date
+covering their significant public changes exists. Build time, filesystem mtime,
+payment state and source-check dates are not page modification dates. Do not
+emit `priority` or `changefreq`, which Google ignores. Spanish information pages
+declare Spanish alternates; producer alternates share HTML's readiness policy.
+
+The public-discovery flag applies consistently to robots, indexing metadata and
+all sitemap endpoints. Preview and closed Production return empty XML and do not
+advertise the index. Generation reads reviewed files, never account state.
+`scripts/test-sitemaps.ts` covers partitioning, XML escaping, byte limits and the
+HTTP publication gate; catalog metadata tests cover complete, unique canonical
+coverage and reciprocal alternates. Both run under `pnpm test:behavior`.
+
+These rules follow Google's [sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+and [sitemap index guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/large-sitemaps).
+Sitemaps aid discovery, not guaranteed indexing or ranking. Google's
+[AI guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+uses the same SEO foundations; `llms.txt` is an agent orientation document, not
+a Google ranking mechanism. Agents should use the bounded public API and OpenAPI
+under [Agent access](AGENT_ACCESS.md) instead of repeatedly crawling every profile.
 
 ## Values that remain untranslated
 

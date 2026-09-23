@@ -221,11 +221,11 @@ test("sitemap count matches effective locale policies and every alternate is rec
   });
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/about")?.alternates?.languages,
-    { en: "https://chisan.app/about" },
+    { es: "https://chisan.app/about" },
   );
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/how-we-work")?.alternates?.languages,
-    { en: "https://chisan.app/how-we-work" },
+    { es: "https://chisan.app/how-we-work" },
   );
   assert.equal(entryByUrl.has("https://chisan.app/our-purpose"), false);
   for (const countrySlug of listCountries()
@@ -243,11 +243,11 @@ test("sitemap count matches effective locale policies and every alternate is rec
   }
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/contact")?.alternates?.languages,
-    { en: "https://chisan.app/contact" },
+    { es: "https://chisan.app/contact" },
   );
   assert.deepEqual(
     entryByUrl.get("https://chisan.app/privacy")?.alternates?.languages,
-    { en: "https://chisan.app/privacy" },
+    { es: "https://chisan.app/privacy" },
   );
 
   for (const country of countries) {
@@ -261,10 +261,8 @@ test("sitemap count matches effective locale policies and every alternate is rec
   }
 
   const descriptors = await listCatalogSitemapDescriptors();
-  assert.equal(
-    descriptors.length,
-    Math.ceil(entries.length / SITEMAP_SHARD_URL_LIMIT),
-  );
+  // Long URLs or additional languages can reach the byte ceiling first.
+  assert.ok(descriptors.length >= Math.ceil(entries.length / SITEMAP_SHARD_URL_LIMIT));
   const actualShards = await Promise.all(
     descriptors.map(({ id }) => getCatalogSitemapShard(String(id))),
   );

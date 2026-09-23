@@ -16,8 +16,8 @@ import { SITE_ORIGIN } from "./site";
 import { listGuideSitemapEntries } from "./guides/metadata";
 import { listEventSitemapEntries } from "./events/metadata";
 
-export const SITEMAP_SHARD_URL_LIMIT = 40_000;
-export const SITEMAP_GOOGLE_URL_LIMIT = 50_000;
+import { shardSitemapEntries, SITEMAP_SHARD_URL_LIMIT } from "./sitemap-xml";
+export { SITEMAP_SHARD_URL_LIMIT, SITEMAP_GOOGLE_URL_LIMIT } from "./sitemap-xml";
 
 export type CatalogSitemapEntry = MetadataRoute.Sitemap[number];
 
@@ -51,11 +51,28 @@ function appendCatalogTarget(
   }
 }
 
-async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
+export type CatalogSitemapGroup = { key: string; entries: CatalogSitemapEntry[] };
+
+async function buildCatalogSitemapGroups(): Promise<CatalogSitemapGroup[]> {
   const countries = listPublishedCountries();
   const entries: CatalogSitemapEntry[] = [];
-  entries.push(...listGuideSitemapEntries());
-  entries.push(...listEventSitemapEntries());
+  const groups: CatalogSitemapGroup[] = [{ key: "pages", entries }];
+  // Editorial owners decide which publications and locales are indexable.
+  for (const [kind, editorialEntries] of [
+    ["guides", listGuideSitemapEntries()],
+    ["events", listEventSitemapEntries()],
+  ] as const) {
+    const byScope = new Map<string, CatalogSitemapEntry[]>();
+    for (const entry of editorialEntries) {
+      const scope = new URL(entry.url).pathname.split("/")[1];
+      const group = byScope.get(scope) ?? [];
+      group.push(entry);
+      byScope.set(scope, group);
+    }
+    for (const [scope, entries] of byScope) {
+      groups.push({ key: `${kind}-${scope}`, entries });
+    }
+  }
   const homeAlternates = buildHomeAlternateSet();
 
   entries.push({
@@ -65,33 +82,35 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
   const aboutUrl = new URL("/about", SITE_ORIGIN).toString();
   entries.push({
     url: aboutUrl,
-    alternates: { languages: { en: aboutUrl } },
+    alternates: { languages: { es: aboutUrl } },
   });
   const purposeUrl = new URL("/how-we-work", SITE_ORIGIN).toString();
   entries.push({
     url: purposeUrl,
-    alternates: { languages: { en: purposeUrl } },
+    alternates: { languages: { es: purposeUrl } },
   });
   const contactUrl = new URL("/contact", SITE_ORIGIN).toString();
   entries.push({
     url: contactUrl,
-    alternates: { languages: { en: contactUrl } },
+    alternates: { languages: { es: contactUrl } },
   });
   const privacyUrl = new URL("/privacy", SITE_ORIGIN).toString();
   entries.push({
     url: privacyUrl,
-    alternates: { languages: { en: privacyUrl } },
+    alternates: { languages: { es: privacyUrl } },
   });
 
   for (const country of countries) {
-    appendCatalogTarget(entries, {
+    const territories: CatalogSitemapEntry[] = [];
+    groups.push({ key: `catalog-${country.slug}`, entries: territories });
+    appendCatalogTarget(territories, {
       kind: "country",
       country,
       localePolicy: country,
     });
 
     for (const area of listCountryAreas(country)) {
-      appendCatalogTarget(entries, {
+      appendCatalogTarget(territories, {
         kind: "area",
         country,
         localePolicy: area,
@@ -105,8 +124,10 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
           area.publishedLocales,
         ),
       ]);
-      for (const producer of producers) {
-        appendCatalogTarget(entries, {
+      const profiles: CatalogSitemapEntry[] = [];
+      groups.push({ key: `producers-${country.slug}-${area.slug}`, entries: profiles });
+      for (const producer of [...producers].sort((a, b) => a.producerId - b.producerId)) {
+        appendCatalogTarget(profiles, {
           kind: "producer",
           country,
           localePolicy: area,
@@ -118,49 +139,31 @@ async function buildCatalogSitemapEntries(): Promise<CatalogSitemapEntry[]> {
     }
   }
 
-  return entries;
+  return groups.filter((group) => group.entries.length > 0);
 }
 
-let catalogSitemapEntriesPromise: Promise<
-  readonly CatalogSitemapEntry[]
-> | null = null;
+let catalogSitemapGroupsPromise: Promise<CatalogSitemapGroup[]> | null = null;
 
-export function listCatalogSitemapEntries(): Promise<
-  readonly CatalogSitemapEntry[]
-> {
-  if (catalogSitemapEntriesPromise) return catalogSitemapEntriesPromise;
-
-  const pending = buildCatalogSitemapEntries();
-  catalogSitemapEntriesPromise = pending;
+export function listCatalogSitemapGroups(): Promise<CatalogSitemapGroup[]> {
+  if (catalogSitemapGroupsPromise) return catalogSitemapGroupsPromise;
+  const pending = buildCatalogSitemapGroups();
+  catalogSitemapGroupsPromise = pending;
   void pending.catch(() => {
-    if (catalogSitemapEntriesPromise === pending) {
-      catalogSitemapEntriesPromise = null;
-    }
+    if (catalogSitemapGroupsPromise === pending) catalogSitemapGroupsPromise = null;
   });
-
   return pending;
+}
+
+// Numeric sitemaps remain readable for existing Search Console submissions.
+export async function listCatalogSitemapEntries(): Promise<readonly CatalogSitemapEntry[]> {
+  return (await listCatalogSitemapGroups()).flatMap(({ entries }) => entries);
 }
 
 export function shardCatalogSitemapEntries(
   entries: readonly CatalogSitemapEntry[],
   limit: number = SITEMAP_SHARD_URL_LIMIT,
 ): CatalogSitemapEntry[][] {
-  if (
-    !Number.isSafeInteger(limit) ||
-    limit < 1 ||
-    limit >= SITEMAP_GOOGLE_URL_LIMIT
-  ) {
-    throw new Error(
-      `Sitemap shard limit must be an integer below ${SITEMAP_GOOGLE_URL_LIMIT}.`,
-    );
-  }
-
-  const shards: CatalogSitemapEntry[][] = [];
-  for (let start = 0; start < entries.length; start += limit) {
-    shards.push(entries.slice(start, start + limit));
-  }
-
-  return shards;
+  return shardSitemapEntries(entries, limit);
 }
 
 export async function listCatalogSitemapDescriptors(): Promise<
@@ -169,7 +172,7 @@ export async function listCatalogSitemapDescriptors(): Promise<
   const entries = await listCatalogSitemapEntries();
   const shardCount = Math.max(
     1,
-    Math.ceil(entries.length / SITEMAP_SHARD_URL_LIMIT),
+    shardCatalogSitemapEntries(entries).length,
   );
 
   return Array.from({ length: shardCount }, (_, id) => ({ id }));
@@ -184,10 +187,7 @@ export async function getCatalogSitemapShard(
   if (!Number.isSafeInteger(id)) return [];
 
   const entries = await listCatalogSitemapEntries();
-  const start = id * SITEMAP_SHARD_URL_LIMIT;
-  if (start >= entries.length) return [];
-
-  return entries.slice(start, start + SITEMAP_SHARD_URL_LIMIT);
+  return shardCatalogSitemapEntries(entries)[id] ?? [];
 }
 
 export function buildCatalogSitemapPath(id: number): string {
