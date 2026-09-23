@@ -142,6 +142,7 @@ export function ProducerSelectionMap({
   groupOverview,
   openOnMainCluster,
   visitorPosition,
+  continuousView,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -163,6 +164,8 @@ export function ProducerSelectionMap({
   /** Dense sets open on their main connected cluster; distant minorities stay a pan away. */
   openOnMainCluster?: boolean;
   visitorPosition?: VisitorPosition | null;
+  /** Maps sharing this name continue from each other's last view. */
+  continuousView?: string;
   messages: MapMessages;
 }) {
   const [isReady, setIsReady] = useState(false);
@@ -202,6 +205,7 @@ export function ProducerSelectionMap({
         groupOverview={groupOverview}
         openOnMainCluster={openOnMainCluster}
         visitorPosition={visitorPosition}
+        continuousView={continuousView}
         messages={messages}
         onReady={handleReady}
       />

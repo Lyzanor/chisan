@@ -3,6 +3,21 @@
 Active system: [One field](../README.md) (v0.7). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-23 — Place picker and province framing
+
+The header search now names the place it searches. The filter icon became a
+pill (pin + province, globe + country) that stays visible at 390px; the text
+field keeps a short "Buscar". The panel opens scrolled to the current province
+with sticky region labels, and typing a name then Enter goes there. While the
+new province loads, the pill shows its name with a spinner.
+
+A province map is framed in the geography left visible above the card strip
+(32px edges plus the 180px card inset, at most a third of the map) instead of a
+20% ratio margin that let points sit behind the cards. A province or scope
+change hands the previous view to the new map, which flies there (0.9s, instant
+under reduced motion). Checked Madrid → Cuenca by name + Enter, Cuenca → whole
+country → Granada at 390×844, and the open panel at 1280×900.
+
 ## 2026-09-23 — National loading, province navigation and homepage queries
 
 The map keeps every producer and coordinate. A lossless compact transport reduces

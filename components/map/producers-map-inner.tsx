@@ -65,6 +65,10 @@ const CATEGORY_MARKER_MIN_ZOOM = 11;
 const NEARBY_FOCUS_MAX_ZOOM = 14;
 // A ratio margin would cost a whole zoom level at country scale.
 const OPENING_VIEW_PADDING = 24;
+const AREA_VIEW_PADDING = 32;
+// Long enough for a route commit to remount the map, too short to reach a later visit.
+const VIEW_HANDOFF_MS = 1_500;
+const HANDOFF_FLIGHT_SECONDS = 0.9;
 const EMPTY_FOCUS_KEYS: string[] = [];
 const GROUP_MARKER_HEIGHT = 32;
 const GROUP_MARKER_TARGET = 44;
@@ -570,21 +574,42 @@ function fitProducerPoints(
   singlePointZoom: number,
   maxZoom?: number,
   padding?: number,
+  { bottomInset = 0, fly = false }: { bottomInset?: number; fly?: boolean } = {},
 ): void {
   if (points.length === 1) {
-    map.setView([points[0].latitude, points[0].longitude], singlePointZoom, {
-      animate: false,
-    });
+    const target: L.LatLngExpression = [points[0].latitude, points[0].longitude];
+    if (fly) map.flyTo(target, singlePointZoom, { duration: HANDOFF_FLIGHT_SECONDS });
+    else map.setView(target, singlePointZoom, { animate: false });
     return;
   }
 
   const bounds = getPointsBounds(points);
   if (!bounds) return;
-  map.fitBounds(padding === undefined ? bounds.pad(0.2) : bounds, {
-    animate: false,
-    ...(padding === undefined ? {} : { padding: [padding, padding] }),
+  // Overlays such as the card strip cover the bottom of the map; frame the
+  // points in the geography that stays visible instead.
+  const edge = padding ?? (bottomInset ? AREA_VIEW_PADDING : undefined);
+  const options: L.FitBoundsOptions = {
+    ...(edge === undefined
+      ? {}
+      : { paddingTopLeft: [edge, edge], paddingBottomRight: [edge, edge + bottomInset] }),
     ...(maxZoom === undefined ? {} : { maxZoom }),
-  });
+  };
+  const target = edge === undefined ? bounds.pad(0.2) : bounds;
+  if (fly) map.flyToBounds(target, { ...options, duration: HANDOFF_FLIGHT_SECONDS });
+  else map.fitBounds(target, { ...options, animate: false });
+}
+
+type ViewHandoff = { center: [number, number]; zoom: number; at: number };
+// Transient, in-memory only: the last view of each named map, so the next map
+// with that name (another province, the whole country) starts where the
+// visitor was and flies to its own place instead of jumping there.
+const viewHandoffs = new Map<string, ViewHandoff>();
+
+function takeViewHandoff(name: string | undefined): ViewHandoff | null {
+  if (!name) return null;
+  const handoff = viewHandoffs.get(name);
+  viewHandoffs.delete(name);
+  return handoff && Date.now() - handoff.at < VIEW_HANDOFF_MS ? handoff : null;
 }
 
 function BoundsAwareMarkers({
@@ -604,6 +629,8 @@ function BoundsAwareMarkers({
   singlePointZoom = 13,
   groupOverview,
   openOnMainCluster = false,
+  continuousView,
+  flyOnFirstFit = false,
   messages,
 }: {
   points: ProducerMapMarker[];
@@ -611,6 +638,8 @@ function BoundsAwareMarkers({
   selectionContent?: ReactNode;
   focusRequest?: ProducerMapFocusRequest;
   focusPaddingBottom?: number;
+  continuousView?: string;
+  flyOnFirstFit?: boolean;
   initialFocusKeys?: string[];
   nearbyFocusKeys?: string[];
   onNearbyFocusConsumed?: () => void;
@@ -638,6 +667,7 @@ function BoundsAwareMarkers({
     nearbyFocusKey: string;
   } | null>(null);
   const viewModeRef = useRef<"area" | "initial" | "nearby">("area");
+  const settledViewRef = useRef<Omit<ViewHandoff, "at"> | null>(null);
   const previewedMapKeyRef = useRef("");
   const handlePreviewKey = useCallback(
     (key: string) => {
@@ -672,6 +702,8 @@ function BoundsAwareMarkers({
       clearMapPreview();
       setViewBounds(map.getBounds());
       setZoom(map.getZoom());
+      const center = map.getCenter();
+      settledViewRef.current = { center: [center.lat, center.lng], zoom: map.getZoom() };
     },
     zoomstart: clearMapPreview,
     zoomend: () => {
@@ -694,10 +726,21 @@ function BoundsAwareMarkers({
   // Fit only when the effective geometry changes. Navigation state such as a
   // selected producer may rebuild props, but must preserve the user's pan
   // and zoom.
+  // MapContainer removes the Leaflet map before this cleanup runs, so hand
+  // off the last settled view rather than reading the map.
+  useEffect(() => () => {
+    const view = settledViewRef.current;
+    if (continuousView && view) {
+      viewHandoffs.set(continuousView, { ...view, at: Date.now() });
+    }
+  }, [continuousView]);
+
   useEffect(() => {
     if (points.length === 0) return;
 
     const fittedView = fittedViewRef.current;
+    const fly = flyOnFirstFit && fittedView === null && !motionIsReduced();
+    const bottomInset = Math.min(focusPaddingBottom, map.getSize().y / 3);
     const initialFocusKey = initialFocusKeys.join("\0");
     const nearbyFocusKey = nearbyFocusKeys.join("\0");
     if (
@@ -756,6 +799,7 @@ function BoundsAwareMarkers({
         singlePointZoom,
         10,
         OPENING_VIEW_PADDING,
+        { bottomInset, fly },
       );
       return;
     }
@@ -764,8 +808,12 @@ function BoundsAwareMarkers({
       points,
       singlePointZoom,
       points.length > VIEWPORT_THRESHOLD ? 10 : undefined,
+      undefined,
+      { bottomInset, fly },
     );
   }, [
+    flyOnFirstFit,
+    focusPaddingBottom,
     initialFocusKeys,
     map,
     nearbyFocusKeys,
@@ -963,6 +1011,7 @@ export default function ProducersMapInner({
   groupOverview,
   openOnMainCluster,
   visitorPosition: propVisitorPosition,
+  continuousView,
   messages,
   onReady,
 }: {
@@ -984,13 +1033,16 @@ export default function ProducersMapInner({
   groupOverview?: ProducerMapGroupOverview;
   openOnMainCluster?: boolean;
   visitorPosition?: VisitorPosition | null;
+  /** Maps sharing this name continue from each other's last view. */
+  continuousView?: string;
   messages: {
     openProfile: string;
   };
   onReady: () => void;
 }) {
-  const initialCenter = getInitialCenter(points);
-  const initialZoom = points.length === 1 ? singlePointZoom : 10;
+  const [handoff] = useState(() => takeViewHandoff(continuousView));
+  const initialCenter = handoff?.center ?? getInitialCenter(points);
+  const initialZoom = handoff?.zoom ?? (points.length === 1 ? singlePointZoom : 10);
   const detectedPosition = useVisitorPosition();
   const effectiveVisitorPosition = propVisitorPosition ?? detectedPosition;
 
@@ -1038,6 +1090,8 @@ export default function ProducersMapInner({
         singlePointZoom={singlePointZoom}
         groupOverview={groupOverview}
         openOnMainCluster={openOnMainCluster}
+        continuousView={continuousView}
+        flyOnFirstFit={handoff !== null}
         messages={messages}
       />
       {effectiveVisitorPosition ? (

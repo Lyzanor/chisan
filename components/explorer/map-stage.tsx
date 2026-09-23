@@ -95,6 +95,7 @@ export function MapStage({
             onVisibleKeysChange={onVisibleKeysChange}
             groupOverview={groupOverview}
             openOnMainCluster={searchScope === "country"}
+            continuousView="catalog-explorer"
             messages={messages}
           />
         )}

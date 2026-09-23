@@ -16,11 +16,12 @@ import {
   useMemo,
   useRef,
   useState,
+  useTransition,
   type ReactNode,
 } from "react";
 
 import { SiteCatalogControlsRegistration } from "@/components/account/site-catalog-controls-context";
-import type { AreaSelectorCountry, AreaSelectorMessages } from "@/components/area-selector";
+import type { AreaOption, AreaSelectorCountry, AreaSelectorMessages } from "@/components/area-selector";
 import {
   LanguageMenuRegistration,
   type LanguageMenuRegistrationOption,
@@ -89,6 +90,18 @@ function pushAreaQuery(href: string) {
   if (`${window.location.pathname}${window.location.search}` !== href) {
     window.history.pushState(null, "", href);
   }
+}
+
+/** Load another province while the current map stays usable and says where it is going. */
+function useAreaNavigation() {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const [target, setTarget] = useState<AreaOption>();
+  const go = useCallback((area: AreaOption) => {
+    setTarget(area);
+    startTransition(() => router.push(area.href));
+  }, [router]);
+  return { isPending, target, go };
 }
 
 type AreaExplorerProducer = ExplorerProducer;
@@ -264,7 +277,7 @@ function AreaExplorerView({
   searchQuery?: string;
   searchScope?: SearchScope;
 }) {
-  const router = useRouter();
+  const areaNavigation = useAreaNavigation();
   const searchMessages = getCatalogSearchMessages(model.locale);
   const national = useNationalCatalog(model.scope.country, model.locale, searchScope !== "area");
   const producers = searchScope === "area" ? model.producers : national.catalog?.producers;
@@ -709,14 +722,22 @@ function AreaExplorerView({
             listOrderLockedCategoryRef.current = null;
             pushAreaQuery(buildCatalogHref({ scope: model.scope, area: model.area, category, q: searchQuery, searchScope: next }));
           }}
-          searchLabel={model.catalogMessages.searchPlaceholder}
-          placeholder={searchMessages.searchShort}
-          scopeLabel={searchMessages.scope}
-          filterLabel={searchMessages.filters}
+          messages={{
+            search: model.catalogMessages.searchPlaceholder,
+            placeholder: searchMessages.searchShort,
+            scope: searchMessages.scope,
+            place: searchMessages.place,
+            wholeCountry: searchMessages.wholeCountry,
+            areaHeading: model.selectorMessages.label,
+            areaSearch: model.selectorMessages.search,
+            areaEmpty: model.selectorMessages.empty,
+            clearAreaSearch: searchMessages.clearAreaSearch,
+          }}
           areaLabel={model.areaLabel}
           countryLabel={model.countryLabel}
           countryData={areaSelectorCountry}
           currentAreaSlug={model.area}
+          pendingArea={areaNavigation.isPending ? areaNavigation.target : undefined}
           onSelectArea={(areaOption) => {
             cancelPendingPreview();
             setPreviewedSlug("");
@@ -725,7 +746,7 @@ function AreaExplorerView({
             setPrioritizedProducerScope(null);
             listOrderLockedCategoryRef.current = null;
             // A different province needs its server model, not just new query state.
-            router.push(areaOption.href);
+            areaNavigation.go(areaOption);
           }}
         />
       </CatalogSearchSlot>

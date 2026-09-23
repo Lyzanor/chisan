@@ -9,8 +9,9 @@ const en = {
   mapProducer: "{count} producer", mapProducers: "{count} producers", mapGroup: "{areas}: {producers}. Zoom in",
   moreCategories: "More categories",
   fewerCategories: "Fewer categories",
-  searchShort: "Search", filters: "Search filters", viewList: "{count} producers", backToMap: "Close list",
+  searchShort: "Search", viewList: "{count} producers", backToMap: "Close list",
   previousProducer: "Previous producer", nextProducer: "Next producer", carousel: "Explore producers",
+  place: "Place", wholeCountry: "Whole country", clearAreaSearch: "Clear",
 };
 type Messages = { [K in keyof typeof en]: string };
 const messages: Partial<Record<Locale, Messages>> = {
@@ -24,8 +25,9 @@ const messages: Partial<Record<Locale, Messages>> = {
     mapProducer: "{count} productor", mapProducers: "{count} productores", mapGroup: "{areas}: {producers}. Acercar el mapa",
     moreCategories: "Más categorías",
     fewerCategories: "Menos categorías",
-    searchShort: "Buscar", filters: "Filtros de búsqueda", viewList: "{count} productores", backToMap: "Cerrar listado",
+    searchShort: "Buscar", viewList: "{count} productores", backToMap: "Cerrar listado",
     previousProducer: "Productor anterior", nextProducer: "Siguiente productor", carousel: "Explorar productores",
+    place: "Lugar", wholeCountry: "Todo el país", clearAreaSearch: "Borrar",
   },
   ca: {
     scope: "Cerca a", province: "Província: {area}", nearby: "A prop meu",
@@ -36,8 +38,9 @@ const messages: Partial<Record<Locale, Messages>> = {
     mapProducer: "{count} productor", mapProducers: "{count} productors", mapGroup: "{areas}: {producers}. Apropa el mapa",
     moreCategories: "Més categories",
     fewerCategories: "Menys categories",
-    searchShort: "Cerca", filters: "Filtres de cerca", viewList: "{count} productors", backToMap: "Tanca la llista",
+    searchShort: "Cerca", viewList: "{count} productors", backToMap: "Tanca la llista",
     previousProducer: "Productor anterior", nextProducer: "Productor següent", carousel: "Explorar productors",
+    place: "Lloc", wholeCountry: "Tot el país", clearAreaSearch: "Esborra",
   },
 };
 export function getCatalogSearchMessages(locale: Locale): Messages {

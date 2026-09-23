@@ -52,7 +52,7 @@ for (const file of SOURCES) {
 
 const SPACE_SCALE = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128];
 const RADII = ["0", "50%", "2px", "inherit"];
-const PILL_ALLOWLIST = [".catalog-chip", ".detail-product-list", ".admin-field-tags", ".admin-filter-tabs"];
+const PILL_ALLOWLIST = [".catalog-chip", ".catalog-header-search__place", ".detail-product-list", ".admin-field-tags", ".admin-filter-tabs"];
 
 /** Split a stylesheet into { selector, body, line } blocks. */
 function blocks(css) {
@@ -100,7 +100,7 @@ const RULES = [
   },
   {
     name: "off-scale-space",
-    baseline: 9,
+    baseline: 8,
     describe: "padding/margin/gap literal off the 4px scale",
     find: (file, css) =>
       file === TOKENS
@@ -182,7 +182,7 @@ const RULES = [
   {
     // Phones are the primary surface: base styles serve them, min-width adds.
     name: "max-width-query",
-    baseline: 23,
+    baseline: 22,
     describe: "viewport queries capped by max-width instead of min-width",
     find: (file, css) =>
       [...css.matchAll(/@media([^{]*)\{/g)]
