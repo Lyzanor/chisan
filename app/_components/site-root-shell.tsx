@@ -49,6 +49,7 @@ import "../../design/adapters/web.css";
 import "../../design/adapters/experience.css";
 import "../../design/adapters/category-themes.css";
 import "../../design/adapters/map-explorer.css";
+import "../../design/adapters/producer-profile.css";
 
 const adsenseAccountId = getAdSenseAccountId();
 

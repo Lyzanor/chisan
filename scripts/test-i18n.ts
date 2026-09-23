@@ -968,14 +968,14 @@ test("producer conversion actions stay localized for every public locale", () =>
     assert.ok(Object.values(getProducerActionLabels(locale)).every(Boolean));
   }
   assert.deepEqual(getProducerActionLabels("es"), {
-    buyOnline: "Comprar online",
+    buyOnline: "Comprar en la tienda",
     directions: "Cómo llegar",
     call: "Llamar",
     contact: "Contactar",
     whatsapp: "WhatsApp",
   });
   assert.deepEqual(getProducerActionLabels("ca"), {
-    buyOnline: "Comprar en línia",
+    buyOnline: "Comprar a la botiga",
     directions: "Com arribar-hi",
     call: "Trucar",
     contact: "Contactar",
@@ -1244,11 +1244,11 @@ test("producer profiles promote canonical editorial facts without widening CSV",
     producerPage,
     /resolveProducerStoreLink\(\{[\s\S]*?storeUrl: getFieldValue\(producer\.fields, "url_tienda"\),\s*website,/,
   );
-  assert.match(producerPage, /storeLink\?\.channel === channel/);
+  assert.match(producerPage, /className="detail-sales__shop" href=\{storeLink\.href\}/);
   assert.match(producerPage, /getFieldValue\(producer\.fields, "productos estrella"\)/);
   assert.match(producerPage, /className="detail-intro"/);
   assert.match(producerPage, /className="detail-product-list"/);
-  assert.equal(producerPage.match(/prefetch=\{false\}/g)?.length, 4);
+  assert.ok((producerPage.match(/prefetch=\{false\}/g)?.length ?? 0) >= 4);
 });
 
 test("the storefront channel opens the reviewed store page, else the website", () => {

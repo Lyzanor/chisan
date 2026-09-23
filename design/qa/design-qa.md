@@ -804,6 +804,23 @@ location prompt only after tapping the website's action. Denial preserved the
 manual area path. Chisan-intro timing and iOS behavior still require physical
 device QA.
 
+## 2026-09-23 — Producer profile layout and trust hierarchy
+
+Reviewed `/es/barcelona/chisan` at 390×844 first and 1440×900 with the local
+Webpack server. The cover spans the viewport, while name, follow menu and the
+single context row remain readable. The top desktop menu and phone bottom menu
+both take Mapa to `/es/barcelona`. The follow disclosure opens a working guest
+registration action, and the store CTA keeps the reviewed external URL. The
+gallery scrolls inside its own strip; the document has no horizontal overflow.
+The source/date strip, methods, photographs and sales action appear before the
+longer profile sections. Compact practical facts use two phone columns.
+
+The local browser ran with accounts and database disabled, so the entitlement
+gates correctly hid the producer QR and Pro product cards. Their rendering and
+commerce contracts are covered by focused tests; live entitlement presentation
+still needs a deployed browser check. Local console errors concerned the
+existing development WebMCP and analytics loading, not this layout.
+
 ## 2026-09-23 — App entry and usable viewport, APK 0.1.2
 
 A fresh Pixel 8 / Android 16 emulator installation reproduced the missing

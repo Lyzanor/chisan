@@ -274,6 +274,46 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
     }
   }
 
+  const labelFigure = (
+    <figure className="profile-qr__label">
+      <ChisanWordmark alt="" className="profile-qr__wordmark" ink={!isProducer} />
+      <p>{labelType}</p>
+      <div className="profile-qr__code">
+        <QRCodeCanvas
+          ref={qrCanvas}
+          value={profileUrl}
+          size={880}
+          level="H"
+          marginSize={4}
+          bgColor={LABEL_COLORS.surface}
+          fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
+          imageSettings={{
+            src: isProducer ? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC,
+            width: PROFILE_QR_MARK_SIZE,
+            height: PROFILE_QR_MARK_SIZE,
+            excavate: true,
+          }}
+          title={`${scanLabel}: ${name}`}
+          style={{ height: "auto", width: "100%" }}
+        />
+      </div>
+      <figcaption>
+        <strong>{name}</strong>
+        <span>chisan.app</span>
+      </figcaption>
+    </figure>
+  );
+
+  if (isProducer) return (
+    <section className="profile-qr profile-qr--producer profile-qr--inline" aria-label={scanLabel}>
+      {labelFigure}
+      <button type="button" className="profile-qr__download-float" onClick={handleDownload} aria-label={labels.download} title={labels.download}>
+        <DownloadSimpleIcon size={20} aria-hidden="true" />
+      </button>
+      <p className="profile-qr__inline-status" role="status" aria-live="polite">{status}</p>
+    </section>
+  );
+
   return (
     <div className={`profile-qr profile-qr--${kind}`}>
       <button
@@ -354,33 +394,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
             </p>
           </div>
 
-          <figure className="profile-qr__label">
-            <ChisanWordmark alt="" className="profile-qr__wordmark" ink={!isProducer} />
-            <p>{labelType}</p>
-            <div className="profile-qr__code">
-              <QRCodeCanvas
-                ref={qrCanvas}
-                value={profileUrl}
-                size={880}
-                level="H"
-                marginSize={4}
-                bgColor={LABEL_COLORS.surface}
-                fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
-                imageSettings={{
-                  src: isProducer ? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC,
-                  width: PROFILE_QR_MARK_SIZE,
-                  height: PROFILE_QR_MARK_SIZE,
-                  excavate: true,
-                }}
-                title={`${scanLabel}: ${name}`}
-                style={{ height: "auto", width: "100%" }}
-              />
-            </div>
-            <figcaption>
-              <strong>{name}</strong>
-              <span>chisan.app</span>
-            </figcaption>
-          </figure>
+          {labelFigure}
         </div>
       </dialog>
     </div>

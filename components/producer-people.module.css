@@ -1,5 +1,5 @@
 .section { min-width: 0; }
-.section h3 { margin: 0 0 var(--chisan-space-3); }
+.section h2 { margin: 0 0 var(--chisan-space-3); font-size: clamp(1.5rem, 2.5vw, 2rem); }
 .section p { white-space: pre-line; overflow-wrap: anywhere; line-height: 1.6; }
 .people {
   display: grid;
@@ -13,6 +13,5 @@
 .people h4 { margin: var(--chisan-space-3) 0 var(--chisan-space-1); overflow-wrap: anywhere; }
 .people p { margin: var(--chisan-space-2) 0 0; }
 .people .role { color: var(--chisan-color-stone); margin-top: 0; }
-.people figure { margin: 0; }
+.people figure { position: relative; margin: 0; }
 .people img { display: block; width: 100%; max-height: 320px; height: auto; object-fit: contain; object-position: left; border-radius: var(--chisan-radius-control); }
-.people figcaption { margin-top: var(--chisan-space-2); font-size: .875rem; color: var(--chisan-color-stone); overflow-wrap: anywhere; }

@@ -1,8 +1,8 @@
-import { InfoIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
 import styles from "./producer-gallery.module.css";
+import { ProducerPhotoDetails } from "./producer-photo-details";
 
 type Photo = ProducerContent["gallery"][number];
 
@@ -19,23 +19,6 @@ export function splitProducerPhotos(gallery: readonly Photo[]) {
         photo.width / photo.height >= COVER_MIN_RATIO,
     ) ?? null;
   return { cover, photos: gallery.filter((photo) => photo !== cover) };
-}
-
-/** Caption and credit stay one tap away so they never crowd the photograph. */
-function PhotoDetails({ photo, label }: { photo: Photo; label: string }) {
-  const text = [photo.caption, photo.credit].filter(Boolean).join(" · ");
-  return text ? (
-    <figcaption className="detail-photo-details">
-      <details>
-        <summary aria-label={label} title={label}>
-          <span>
-            <InfoIcon size={18} aria-hidden="true" />
-          </span>
-        </summary>
-        <p lang={photo.locale}>{text}</p>
-      </details>
-    </figcaption>
-  ) : null;
 }
 
 export function ProducerCover({
@@ -58,7 +41,7 @@ export function ProducerCover({
           priority
         />
       </div>
-      <PhotoDetails photo={photo} label={captionLabel} />
+      <ProducerPhotoDetails photo={photo} label={captionLabel} />
     </figure>
   );
 }
@@ -83,7 +66,7 @@ export function ProducerGallery({
           `minmax(calc(${ratio.toFixed(4)} * var(--gallery-min-height)), ${ratio.toFixed(4)}fr)`,
       )
       .join(" "),
-    maxWidth: `calc(${ratios.reduce((sum, ratio) => sum + ratio, 0).toFixed(4)} * var(--gallery-max-height) + ${photos.length - 1} * var(--gallery-gap))`,
+    width: `min(100%, calc(${ratios.reduce((sum, ratio) => sum + ratio, 0).toFixed(4)} * var(--gallery-max-height) + ${photos.length - 1} * var(--gallery-gap)))`,
   } satisfies CSSProperties;
   return (
     <section
@@ -113,7 +96,7 @@ export function ProducerGallery({
                 className={styles.image}
               />
             </div>
-            <PhotoDetails photo={photo} label={captionLabel} />
+            <ProducerPhotoDetails photo={photo} label={captionLabel} />
           </figure>
         ))}
       </div>

@@ -119,10 +119,12 @@ reviewed block is visible, but never proves or upgrades a fact.
 
 The profile presents the website as a direct URL in the hero, and directions
 beside the address, map and transient distance tool, next to reviewed hours and
-the contact widget. In the sales row, one storefront channel is the purchase
-link: the online shop, else marketplace, else subscription channel opens the
-reviewed `url_tienda`. Until a store page is recorded, only the online shop
-channel links, and it opens the official `web`. A contact composer is available
+the contact widget. Sales channels are separate from featured products. When a
+storefront is reviewed, a prominent purchase action opens `url_tienda` (online
+shop, else marketplace, else subscription). Until a store page is recorded,
+the online shop action opens the official `web`; the other channels remain
+plain labels. The public API separately exposes the reviewed `store_url`.
+A contact composer is available
 only for an existing public `correo`. It prepares a `mailto:` message in the
 visitor's email application, explicitly leaving review and sending to that
 application. It neither stores messages nor adds a Chisan
@@ -225,7 +227,7 @@ type, localized under the preceding contract and covered by tests. Entitlement
 activation alone never makes a field eligible.
 
 `video` renders as a responsive click-to-load YouTube player with its official
-thumbnail and a direct-link fallback. Opening the profile loads the thumbnail
+thumbnail; invalid embed URLs keep a direct-link fallback. Opening the profile loads the thumbnail
 from `i.ytimg.com`; the iframe uses the privacy-enhanced host and exists only
 after an explicit play action. The reviewed URL remains the API value; the
 client derives the thumbnail and embed from its video ID without retaining
@@ -389,8 +391,9 @@ name variant is an editorial identity feature, not an automatic translation.
 
 ## Profile gallery and trust presentation
 
-The profile header links municipality and categories to area filters, places
-photography beside the title and exposes ownership separately from premium
+The profile header links country, area, municipality and categories to catalog
+filters on one context row, uses a full-width reviewed cover photograph and
+exposes ownership separately from premium
 presentation. `pendiente` is editorial uncertainty, never a pending private
 claim. Its optional public-source disclosure includes only the current keep
 record's URLs and consultation dates, without evidence notes or private data.

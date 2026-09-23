@@ -1,7 +1,9 @@
 import { Suspense } from "react";
 
 import { ProducerSuggestionAction } from "@/components/account/producer-account-actions";
+import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
+import { formatProducerFieldLabel, formatProducerFieldValue } from "@/lib/i18n/producer-fields";
 
 export type ProducerPublicSource = {
   checkedAt: string;
@@ -10,6 +12,8 @@ export type ProducerPublicSource = {
 
 export type ProducerDetailsProps = {
   countrySlug: string;
+  lastApprovedChange?: string;
+  locale: Locale;
   messages: Messages;
   ownershipVerified: boolean;
   producerId: number;
@@ -27,6 +31,8 @@ export type ProducerDetailsProps = {
 
 export function ProducerDetails({
   countrySlug,
+  lastApprovedChange,
+  locale,
   messages,
   ownershipVerified,
   producerId,
@@ -50,19 +56,29 @@ export function ProducerDetails({
           />
         </Suspense>
       </div>
-      <p
-        className={
-          verification === "pendiente" && !ownershipVerified
-            ? "detail-review-notice"
-            : "detail-trust-note"
-        }
-      >
-        {ownershipVerified
-          ? profileWords.verifiedHelp
-          : verification === "pendiente"
-            ? profileWords.pendingHelp
-            : profileWords.editorial}
-      </p>
+      <div className="detail-info__facts">
+        <p
+          className={
+            verification === "pendiente" && !ownershipVerified
+              ? "detail-review-notice"
+              : "detail-trust-note"
+          }
+        >
+          {ownershipVerified
+            ? profileWords.verifiedHelp
+            : verification === "pendiente"
+              ? profileWords.pendingHelp
+              : profileWords.editorial}
+        </p>
+        {lastApprovedChange ? (
+          <p className="detail-info__date">
+            <span>{formatProducerFieldLabel("fecha ultimo cambio", locale, messages)}</span>
+            <time dateTime={lastApprovedChange}>
+              {formatProducerFieldValue("fecha ultimo cambio", lastApprovedChange, locale, messages)}
+            </time>
+          </p>
+        ) : null}
+      </div>
       {sources.length ? (
         <details className="detail-sources">
           <summary>{profileWords.sources}</summary>

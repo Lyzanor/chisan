@@ -10,8 +10,8 @@ export type ProducerActionLabels = Readonly<{
 
 const PRODUCER_ACTION_LABELS = {
   en: { buyOnline: "Buy online", directions: "Directions", call: "Call", contact: "Contact", whatsapp: "WhatsApp" },
-  es: { buyOnline: "Comprar online", directions: "Cómo llegar", call: "Llamar", contact: "Contactar", whatsapp: "WhatsApp" },
-  ca: { buyOnline: "Comprar en línia", directions: "Com arribar-hi", call: "Trucar", contact: "Contactar", whatsapp: "WhatsApp" },
+  es: { buyOnline: "Comprar en la tienda", directions: "Cómo llegar", call: "Llamar", contact: "Contactar", whatsapp: "WhatsApp" },
+  ca: { buyOnline: "Comprar a la botiga", directions: "Com arribar-hi", call: "Trucar", contact: "Contactar", whatsapp: "WhatsApp" },
   de: { buyOnline: "Online kaufen", directions: "Route", call: "Anrufen", contact: "Kontakt", whatsapp: "WhatsApp" },
   ja: { buyOnline: "オンラインで購入", directions: "行き方", call: "電話する", contact: "お問い合わせ", whatsapp: "WhatsApp" },
   fr: { buyOnline: "Acheter en ligne", directions: "Itinéraire", call: "Appeler", contact: "Contacter", whatsapp: "WhatsApp" },

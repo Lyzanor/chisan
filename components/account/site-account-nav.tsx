@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { useLanguageMenu } from "@/components/language-menu-context";
-import { useMapHref } from "@/components/navigation/map-destination";
+import { isMapPathname, useMapHref } from "@/components/navigation/map-destination";
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
 import { rememberExplicitLocale } from "@/lib/i18n/client-locale";
 import type { Locale } from "@/lib/i18n/locales";
@@ -73,16 +73,20 @@ function AccountNavView({ isSignedIn, messages }: AccountNavViewProps) {
 
   return (
     <nav className="site-account-nav" aria-label={messages.accountNavigation}>
-      {/* Discovery and the map trade places, so the link always leads elsewhere. */}
-      {isActividadActive ? (
-        <Link href={mapHref} className="site-account-nav__link">
-          Mapa
-        </Link>
-      ) : (
-        <Link href="/actividad" className="site-account-nav__link">
-          Descubrir
-        </Link>
-      )}
+      <Link
+        href="/actividad"
+        className={`site-account-nav__link ${isActividadActive ? "is-active" : ""}`}
+        aria-current={isActividadActive ? "page" : undefined}
+      >
+        Descubrir
+      </Link>
+      <Link
+        href={mapHref}
+        className={`site-account-nav__link ${isMapPathname(pathname) ? "is-active" : ""}`}
+        aria-current={isMapPathname(pathname) ? "page" : undefined}
+      >
+        Mapa
+      </Link>
 
       <Link
         href={accountHref}

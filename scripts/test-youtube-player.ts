@@ -56,10 +56,7 @@ test("the server-rendered player includes a thumbnail but no iframe", () => {
     html,
     /https:\/\/i\.ytimg\.com\/vi\/dQw4w9WgXcQ\/maxresdefault\.jpg/,
   );
-  assert.match(
-    html,
-    /href="https:\/\/www\.youtube\.com\/watch\?v=dQw4w9WgXcQ"/,
-  );
+  assert.doesNotMatch(html, /Abrir en YouTube|href="https:\/\/www\.youtube\.com\/watch/);
   assert.doesNotMatch(html, /<iframe|youtube-nocookie|utm_source/);
   assert.match(html, /aria-label="Reproducir vídeo: Vídeo"/);
 });

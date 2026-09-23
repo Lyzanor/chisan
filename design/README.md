@@ -17,6 +17,7 @@ adapters/native-colors.json  generated native color projection; never edit direc
 adapters/experience.css  shared navigation, discovery, profile and account polish
 adapters/category-themes.css  soft ingredient photography in category margins
 adapters/map-explorer.css     viewport discovery, header search and results sheet
+adapters/producer-profile.css edge-to-edge producer profile layout and sections
 brand/chisan-reference.png   supplied identity sheet (pixel source)
 brand/assets/            generated metadata and icon exports
 public/brand/            lossless SVG wrappers for the supplied identity
@@ -58,7 +59,7 @@ Administration remains usable on a phone but may favour wide screens.
 ```
 app/globals.css  →  foundations/tokens.css  →  adapters/web.css
                 →  adapters/experience.css  →  adapters/category-themes.css
-                →  adapters/map-explorer.css
+                →  adapters/map-explorer.css  →  adapters/producer-profile.css
 ```
 
 `tokens.css` is the only place brand colours, spacing and radii are declared. It
@@ -68,7 +69,8 @@ such as errors and verification states, remain with their product contract.
 
 `adapters/web.css` styles the wordmark, map primitives and original web mapping.
 `adapters/experience.css` owns the shared presentation of navigation, menu motion,
-landing pages, discovery, producer profiles and account surfaces. Most remaining
+landing pages, discovery and account surfaces. `adapters/producer-profile.css`
+owns the current producer layout while reusing shared catalog chips and controls. Most remaining
 catalog, profile, account and admin presentation is still `app/globals.css` (ordered imports from `app/styles/`) or
 a page-owned CSS module. Those files consume the mapped tokens and remain in
 scope for design work even though they live outside this folder.
@@ -294,37 +296,37 @@ overview zooms. Fixed detail points are non-essential map context.
 
 ## Producer profile
 
-The breadcrumb provides catalog context. Municipality and category labels below
-the name link to their corresponding area filters; no separate category-links
-section is repeated. The municipality filter matches the full municipality and
+Country, area, producer, municipality and category share a compact context row
+below the name. The location and category labels link to their catalog filters.
+The municipality filter matches the full municipality and
 has a visible removal control, preserving category and search intersections.
 
-The follow action is a person-plus icon and label beside the producer name;
+The follow action uses the shared catalog chip style in a small menu beside the producer name;
 compact roster rows use the same person icon with an accessible name. A followed
 producer shows person-check. This represents a relationship with a producer and
-their updates, consistently with Chisan's participation model. It works in one tap.
+their updates, consistently with Chisan's participation model. Compact map rows
+still work in one tap.
 Guests always see the action and open registration with their current route as
 the return destination. Signed-in users see one session-backed follow state
 across maps and profiles; pending and unavailable states never pretend to be
-saved or empty. Premium uses its dedicated green header independently of ownership.
+saved or empty. Premium visibility remains independent of ownership.
 
 The header shows only reviewed material. A landscape gallery photograph becomes
-the cover, the page's first and strongest image, and the name row cuts into its
-lower-left edge so name and photograph share one level. Concave corners repeat
-the cover radius, and part of the photograph always continues beside the cut.
-Municipality and categories follow as one compact line below the cover edge,
-truncated rather than wrapped. The `imagen` identity image sits beside the name
-on wide screens and above it on narrow ones; without a cover, the same block is
+the full-width cover, the page's first and strongest image. The name row overlaps
+its lower edge without obscuring the image. The context row stays compact and
+scrollable on a narrow phone. The `imagen` identity image sits beside the name;
+without a cover, the same block is
 ordinary page content. A missing cover, identity image or gallery leaves no
 generic, category or placeholder image. Captions and credits wait behind a small
 info disclosure on each photograph instead of text beneath it. The description
-and the contact, website and social links share two columns on wide screens.
+uses the full reading width; contact, website and social links wrap as one fluid row.
 
 Verified ownership receives an explicit badge beside the name and an explanation
-in Details. Unclaimed profiles have no verification badge. Editorial `pendiente`
-places its review link beside the name, and Details holds the visible review
-notice, contact advice and an optional disclosure of recorded public source URLs
-and dates. Never expose claim status, claimant identity or private review notes.
+in the trust strip immediately below the hero. Unclaimed profiles have no
+verification badge. Editorial `pendiente` places its review link beside the name.
+The trust strip shows the last approved change when present and the public source
+URLs and consultation dates for any profile with a keep record. Never expose
+claim status, claimant identity or private review notes.
 
 The official website appears prominently with its address, while Instagram,
 Facebook and Google Maps appear as labeled external links showing only the
@@ -334,12 +336,12 @@ below opening hours beside the location; telephone-only profiles remain usable.
 The composer prepares email in the visitor's own application and explains that
 before continuing.
 
-Featured products sit with one sales-channel row. One storefront channel is
-itself the purchase link to the reviewed store page (online shop, else
-marketplace, else subscription); without a store page, the online shop channel
-falls back to the website. Other channels are plain labels, and a `no` or
-`no comprobado` online-sales value remains a quiet status. Details does not
-repeat those fields. Location shares a row with vertical reviewed opening hours
+Featured products and sales channels have separate sections. A dedicated
+"shop" action opens the reviewed store page (online shop, else marketplace,
+else subscription); without one, an online shop action falls back to the
+official website. Other channels are plain labels, and a `no` or
+`no comprobado` online-sales value remains a quiet status. The public API also
+exposes the reviewed store URL for agents. Location shares a row with reviewed opening hours
 and the contact widget. Preserve the
 source's days and ranges without inferring open/closed state. Directions is the
 green primary visit action; the transient distance tool uses a white secondary
@@ -348,14 +350,21 @@ coordinate or address as destination and no origin: Google Maps uses device
 location when available, otherwise asks for a starting point. Chisan neither
 requests nor stores the visitor's position for this link. See the [Google Maps URL contract](https://developers.google.com/maps/documentation/urls/get-started#directions-action).
 
-Profile sections share one compact rhythm: a hairline rule and 24px of vertical
-space, with 28px section headings and 18px card headings. Expanded profiles keep
-products, links and stories in named sections; their jump links appear only when
-both products and links exist. The standalone photos not used as the cover form
-a strip after the visit section and before Details: one row at honest aspect
+The profile fills the viewport with no outer side margins. Sections keep a small
+inner reading gutter, hairline dividers and compact vertical rhythm. "How we
+produce" has its own early block. The remaining standalone photos form a strip
+near the top: one row at honest aspect
 ratios that scrolls sideways when the screen is narrow or the gallery is long.
 Pointer hover scales a photo to 1.03 within its frame; the photos open nothing,
 and reduced motion removes the emphasis.
+Pro product cards align their commerce footers despite different description
+lengths. Approved links render as visual destination cards; no remote preview
+image is inferred. The printable producer QR appears beside the early content
+with a small download control. Short visit and order facts form one group;
+certifications keep their exact scope and link back to recorded public sources.
+B2B has a separate section and leads eligible buyers toward their professional
+account. The current single CSV news notice renders as a dated feed item, with
+an owner-only prompt to submit another reviewed notice; it is not an archive.
 Beside the gallery, a compact invitation offers free profile completion to an
 unclaimed producer and preserves its identity through sign-in. A pending claimant
 sees their request link; active members go directly to the gallery editor. Other
@@ -465,12 +474,12 @@ screens. On phones the groups are short native disclosures, above the original
 illustrated panorama. Chisan's square character replaces the former delivery
 bicycle in that scene. Decoration never captures pointer or keyboard input.
 
-The QR invitation uses the supplied C, which crossfades upward into the familiar
-QR icon on hover/focus while its arrow moves slightly right. Activation opens a
-native modal dialog with a brief fade and rise. It keeps focus inside, supports
-Escape and outside dismissal, restores trigger focus and locks background scroll.
-Download and copy remain real actions with local feedback. The producer/selection
-eligibility gates and opt-in settings remain unchanged.
+The selection QR invitation uses the supplied C, which crossfades upward into
+the QR icon on hover/focus. Activation opens a native modal dialog with a brief
+fade and rise. It keeps focus inside, supports Escape and outside dismissal,
+restores trigger focus and locks background scroll. The eligible producer QR is
+already visible on the producer page, with a small floating download button.
+The producer/selection eligibility gates remain unchanged.
 Area filters and producer selection update the URL through Next.js-integrated
 browser history, using the already loaded area model. Back, Forward and shared
 URLs retain the same meaning without fetching the area on every interaction.

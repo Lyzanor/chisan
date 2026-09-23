@@ -37,7 +37,7 @@ export function YoutubePlayer({
   return (
     <section className="producer-video" aria-labelledby="producer-video-title">
       <div className="producer-video__heading">
-        <h3 id="producer-video-title">{label}</h3>
+        <h2 id="producer-video-title">{label}</h2>
         <span>YouTube</span>
       </div>
       <div className="producer-video__frame">
@@ -78,9 +78,6 @@ export function YoutubePlayer({
           </>
         )}
       </div>
-      <a href={videoUrl} target="_blank" rel="noopener noreferrer">
-        {words.external} <span aria-hidden="true">↗</span>
-      </a>
     </section>
   );
 }

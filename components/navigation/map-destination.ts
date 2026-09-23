@@ -25,12 +25,9 @@ function subscribeToLastMap(callback: () => void): () => void {
   return () => window.removeEventListener(LAST_MAP_EVENT, callback);
 }
 
-/** Catalog maps and producer profiles count as the map; guides do not. */
+/** Only country and area catalog pages render a map. */
 export function isMapPathname(pathname: string): boolean {
-  return (
-    (pathname.startsWith("/es/") || pathname === "/es") &&
-    !pathname.startsWith("/es/guias")
-  );
+  return pathname === "/es" || (/^\/es\/[^/]+\/?$/.test(pathname) && !pathname.startsWith("/es/guias"));
 }
 
 /** Remembers, for this tab, the map page a navigation link returns to. */
@@ -57,6 +54,8 @@ export function useMapHref(pathname: string): string {
   );
 
   if (isMapPathname(pathname)) return pathname;
+  const producerArea = /^\/es\/([^/]+)\/[^/]+\/?$/.exec(pathname);
+  if (producerArea) return `/es/${producerArea[1]}`;
   if (isMapPathname(storedLastMap)) return storedLastMap;
   return savedState?.onboarding === "resolved" && savedState.area
     ? `/${savedState.area.country}/${savedState.area.area}`

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
 import {
@@ -36,7 +35,10 @@ import { ProducerLanguageMenu } from "@/components/producer-language-menu";
 import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
 import { SimilarProducers } from "@/components/similar-producers";
 import { ProducerHero } from "@/components/producer/producer-hero";
-import { ProducerProducts } from "@/components/producer/producer-products";
+import { ProducerProducts, ProducerSales } from "@/components/producer/producer-products";
+import { ProducerMethods } from "@/components/producer/producer-methods";
+import { ProducerProductInvitation } from "@/components/producer/producer-product-invitation";
+import { ProducerNewsPrompt } from "@/components/producer/producer-news-prompt";
 import { ProducerVisit } from "@/components/producer/producer-visit";
 import { ProducerDetails } from "@/components/producer/producer-details";
 import { CATALOG_API_PATH } from "@/lib/agents/catalog-schema";
@@ -288,15 +290,12 @@ export default async function ProducerPage({
   const { cover, photos } = splitProducerPhotos(gallery);
   const identityImageSrc =
     producer.imageSrc === DEFAULT_PRODUCER_IMAGE_SRC ? "" : producer.imageSrc;
-  const sources =
-    verification === "pendiente" && !ownershipVerified
-      ? await loadPublicProducerSources(
-          country.slug,
-          producer.fields.region,
-          area,
-          producer.slug,
-        )
-      : [];
+  const sources = await loadPublicProducerSources(
+    country.slug,
+    producer.fields.region,
+    area,
+    producer.slug,
+  );
   const returnTo = buildProducerHref(producer, {
     scope,
     area,
@@ -455,30 +454,15 @@ export default async function ProducerPage({
         <Suspense fallback={<LanguageMenuRegistration currentLocale={locale} label={messages.languageSwitcher.label} options={languageOptions} />}>
           <ProducerLanguageMenu currentLocale={locale} label={messages.languageSwitcher.label} options={languageOptions} />
         </Suspense>
-        <nav
-          className="detail-breadcrumb"
-          aria-label={messages.producer.navigation}
-        >
-          <ol>
-            <li>
-              <Link href={countryHref} prefetch={false}>
-                {countryLabel}
-              </Link>
-            </li>
-            <li>
-              <Link href={relatedAreaHref} prefetch={false}>
-                {areaLabel}
-              </Link>
-            </li>
-            <li aria-current="page">{producer.name}</li>
-          </ol>
-        </nav>
-
         <ProducerHero
           actionLabels={actionLabels}
           area={area}
+          areaHref={relatedAreaHref}
+          areaLabel={areaLabel}
           categories={producer.categories}
           city={producer.city}
+          countryHref={countryHref}
+          countryLabel={countryLabel}
           countrySlug={country.slug}
           cover={cover}
           description={description}
@@ -501,16 +485,64 @@ export default async function ProducerPage({
           whatsAppLink={whatsAppLink}
         />
 
-        <ProducerProfileQrLabel
-          country={country.slug}
+        <ProducerDetails
+          countrySlug={country.slug}
+          lastApprovedChange={lastApprovedChange}
           locale={locale}
-          name={producer.name}
-          path={profileQrPath}
+          messages={messages}
+          ownershipVerified={ownershipVerified}
           producerId={producer.producerId}
+          profileWords={profileWords}
+          sources={sources}
+          verification={verification}
         />
 
-        <ProducerProducts
-          featuredProducts={featuredProducts}
+        <div className="detail-lead">
+          <div className="detail-lead__main">
+            <ProducerMethods
+              text={getFieldValue(producer.fields, "como producimos")}
+              textLocale={getFieldValue(producer.fields, "como_producimos_locale")}
+              locale={locale}
+              messages={messages}
+            />
+            <ProducerGallery
+              photos={photos}
+              title={profileWords.gallery}
+              captionLabel={profileWords.photoCaption}
+            />
+            {isAccountSystemConfigured() ? (
+              <Suspense fallback={null}>
+                <ProducerGalleryAction
+                  country={country.slug}
+                  producerId={producer.producerId}
+                  locale={locale}
+                  messages={messages.accountActions}
+                />
+              </Suspense>
+            ) : null}
+          </div>
+          <aside className="detail-lead__aside">
+            <ProducerProfileQrLabel
+              country={country.slug}
+              locale={locale}
+              name={producer.name}
+              path={profileQrPath}
+              producerId={producer.producerId}
+            />
+          </aside>
+        </div>
+
+        <ProducerProducts featuredProducts={featuredProducts} messages={messages} />
+        {!premiumActive ? (
+          <Suspense fallback={null}>
+            <ProducerProductInvitation
+              country={country.slug}
+              producerId={producer.producerId}
+              locale={locale}
+            />
+          </Suspense>
+        ) : null}
+        <ProducerSales
           locale={locale}
           messages={messages}
           onlineSales={onlineSales}
@@ -524,9 +556,13 @@ export default async function ProducerPage({
             country={country.slug}
             producerId={producer.producerId}
             fields={producer.fields}
+            hasSources={sources.length > 0}
             locale={locale}
             messages={messages}
           />
+        </Suspense>
+        <Suspense fallback={null}>
+          <ProducerNewsPrompt country={country.slug} producerId={producer.producerId} locale={locale} premiumActive={premiumActive} />
         </Suspense>
 
         <ProducerVisit
@@ -551,32 +587,6 @@ export default async function ProducerPage({
           profileWords={profileWords}
           scope={scope}
           whatsAppLink={whatsAppLink}
-        />
-
-        <ProducerGallery
-          photos={photos}
-          title={profileWords.gallery}
-          captionLabel={profileWords.photoCaption}
-        />
-        {isAccountSystemConfigured() ? (
-          <Suspense fallback={null}>
-            <ProducerGalleryAction
-              country={country.slug}
-              producerId={producer.producerId}
-              locale={locale}
-              messages={messages.accountActions}
-            />
-          </Suspense>
-        ) : null}
-
-        <ProducerDetails
-          countrySlug={country.slug}
-          messages={messages}
-          ownershipVerified={ownershipVerified}
-          producerId={producer.producerId}
-          profileWords={profileWords}
-          sources={sources}
-          verification={verification}
         />
 
         <Suspense fallback={null}>

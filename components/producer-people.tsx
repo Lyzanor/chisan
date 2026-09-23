@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ProducerContent } from "@/lib/catalog/content-schema";
+import { ProducerPhotoDetails } from "@/components/producer-photo-details";
 import styles from "./producer-people.module.css";
 
 export function ProducerPeople({
@@ -7,16 +8,18 @@ export function ProducerPeople({
   introduction,
   introductionLocale,
   title,
+  captionLabel = "Photo caption and credit",
 }: {
   people?: ProducerContent["people"];
   introduction?: string;
   introductionLocale?: string;
   title: string;
+  captionLabel?: string;
 }) {
   if (!people.length && !introduction) return null;
   return (
     <section className={styles.section} aria-labelledby="producer-people-title">
-      <h3 id="producer-people-title">{title}</h3>
+      <h2 id="producer-people-title">{title}</h2>
       {introduction ? <p lang={introductionLocale || undefined}>{introduction}</p> : null}
       {people.length ? (
         <ul className={styles.people}>
@@ -33,11 +36,7 @@ export function ProducerPeople({
                     sizes="(max-width: 600px) 85vw, 320px"
                     loading="lazy"
                   />
-                  {person.photo.caption || person.photo.credit ? (
-                    <figcaption lang={person.photo.locale}>
-                      {person.photo.caption}{person.photo.caption && person.photo.credit ? " · " : ""}{person.photo.credit}
-                    </figcaption>
-                  ) : null}
+                  <ProducerPhotoDetails photo={person.photo} label={captionLabel} />
                 </figure>
               ) : null}
               <h4>{person.name}</h4>

@@ -388,7 +388,7 @@ govern proposals, not public visibility.
 
 The first standalone photo that is landscape (at least 1.3 times wider than
 tall) and at least 1,200 px wide becomes the profile cover. The remaining
-standalone photos form the photo strip near the end of the profile, in array
+standalone photos form the photo strip near the start of the profile, in array
 order and at their own aspect ratios. The CSV `imagen` is the identity image
 beside the name. A missing asset leaves its place empty: no generic, category or
 placeholder image fills the cover, identity image or strip. Product-owned images

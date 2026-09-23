@@ -37,8 +37,12 @@ export type ProducerHeroProps = {
     whatsapp: string;
   };
   area: string;
+  areaHref: string;
+  areaLabel: string;
   categories: string[];
   city: string;
+  countryHref: string;
+  countryLabel: string;
   countrySlug: string;
   cover: Photo | null;
   description?: string;
@@ -69,8 +73,12 @@ export type ProducerHeroProps = {
 export function ProducerHero({
   actionLabels,
   area,
+  areaHref,
+  areaLabel,
   categories,
   city,
+  countryHref,
+  countryLabel,
   countrySlug,
   cover,
   description,
@@ -154,23 +162,31 @@ export function ProducerHero({
                   returnTo={returnTo}
                   name={name}
                   locale={locale}
+                  dropdown
                 />
               </Suspense>
             </div>
           </div>
-          <div className="detail-subtitle">
-            <Link href={municipalityHref} prefetch={false}>
-              {city}
-            </Link>
-            {categories.map((category) => (
-              <Link
-                key={category}
-                href={buildCatalogHref({ scope, area, category })}
-                prefetch={false}
-              >
-                {getCategoryLabel(category, locale)}
-              </Link>
-            ))}
+          <div className="detail-context">
+            <nav className="detail-breadcrumb" aria-label={messages.producer.navigation}>
+              <ol>
+                <li><Link href={countryHref} prefetch={false}>{countryLabel}</Link></li>
+                <li><Link href={areaHref} prefetch={false}>{areaLabel}</Link></li>
+                <li aria-current="page">{name}</li>
+              </ol>
+            </nav>
+            <div className="detail-subtitle">
+              <Link href={municipalityHref} prefetch={false}>{city}</Link>
+              {categories.map((category) => (
+                <Link
+                  key={category}
+                  href={buildCatalogHref({ scope, area, category })}
+                  prefetch={false}
+                >
+                  {getCategoryLabel(category, locale)}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

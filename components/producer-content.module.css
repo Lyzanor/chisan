@@ -3,25 +3,28 @@
   gap: var(--chisan-space-6);
   min-width: 0;
 }
-.content h3 {
+.content h2 {
   margin: 0 0 var(--chisan-space-3);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: var(--chisan-space-4);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .products > li {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   padding: var(--chisan-space-4);
   border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-object);
   background: var(--chisan-color-surface);
 }
-.products h4 {
+.products h3 {
   margin: 0 0 8px;
   font-size: 18px;
   font-weight: 500;
@@ -54,12 +57,17 @@
 }
 .productImages {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: var(--chisan-space-2);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  margin-block: var(--chisan-space-3);
+  scroll-snap-type: x proximity;
 }
+.productImages:focus-visible { outline: 2px solid var(--chisan-color-moss); outline-offset: 2px; }
 .productImages img {
-  width: min(100%, 320px);
-  max-height: 320px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .links {
   display: flex;
@@ -78,7 +86,7 @@
 .content > section {
   min-width: 0;
 }
-.products h4 {
+.products h3 {
   overflow-wrap: anywhere;
 }
 .links li,
@@ -86,10 +94,9 @@
   max-width: 100%;
 }
 
-.productImages figure { margin: 0; min-width: 0; max-width: 320px; }
-.productImages figcaption { margin-top: var(--chisan-space-2); font-size: .875rem; overflow-wrap: anywhere; }
+.productImages figure { position: relative; flex: 0 0 100%; margin: 0; min-width: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--chisan-radius-control); scroll-snap-align: start; }
 
-.purchase { display: grid; gap: var(--chisan-space-2); margin-top: var(--chisan-space-3); }
+.purchase { display: grid; gap: var(--chisan-space-2); margin-top: auto; padding-top: var(--chisan-space-3); }
 .price { display: flex; align-items: baseline; gap: var(--chisan-space-3); flex-wrap: wrap; margin: 0; }
 .price span, .purchase time { color: var(--muted); font-size: .875rem; }
 .price strong { font-size: 1.25rem; color: var(--ink); }
@@ -98,3 +105,12 @@
 .shop:focus-visible { outline: 2px solid var(--chisan-color-moss-dark); outline-offset: 2px; }
 .shop small { color: var(--muted); }
 .purchaseHelp { color: var(--muted); line-height: 1.5; }
+
+.featuredLinks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--chisan-space-3); margin: 0; padding: 0; list-style: none; }
+.featuredLinks li { min-width: 0; }
+.featuredLinks a { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); align-items: center; gap: var(--chisan-space-3); min-height: 7rem; overflow: hidden; border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-object); color: var(--chisan-color-ink); text-decoration: none; }
+.featuredLinks a:hover { border-color: var(--chisan-color-moss); }
+.linkPreview { display: grid; place-items: center; align-self: stretch; background: var(--chisan-color-moss-pale); color: var(--chisan-color-moss-dark); font-size: 2rem; font-weight: 700; }
+.linkCopy { min-width: 0; padding-right: var(--chisan-space-3); }
+.linkCopy strong, .linkCopy small { display: block; overflow-wrap: anywhere; }
+.linkCopy small { margin-top: var(--chisan-space-1); color: var(--chisan-color-stone); font-size: .75rem; }

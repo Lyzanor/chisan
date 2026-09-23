@@ -3,6 +3,7 @@
 import { ArrowUpRightIcon, ClockIcon, PencilSimpleIcon, CameraIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ChisanMascot } from "@/components/brand/chisan-brand";
 import { ACCOUNT_ROUTES } from "@/lib/accounts/config";
 import { newProducerSuggestionPath } from "@/lib/accounts/producer-suggestion-workflow";
 import type { Locale } from "@/lib/i18n/locales";
@@ -138,7 +139,7 @@ export function ProducerGalleryAction({
     return (
       <aside className="detail-gallery-action" aria-label={words.galleryManageTitle}>
         <div className="detail-gallery-action__content">
-          <CameraIcon size={20} aria-hidden="true" className="detail-gallery-action__icon" />
+          <ChisanMascot state="gallery" size={64} alt="" />
           <div className="detail-gallery-action__copy">
             <strong>{words.galleryManageTitle}</strong>
             <span className="detail-gallery-action__help">{words.freeGalleryHelp}</span>
