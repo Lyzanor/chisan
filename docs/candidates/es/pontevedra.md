@@ -357,10 +357,9 @@ Targeted at categories with few published producers in this area (olive oil, cra
 
 ## Category-gap directory pass — 2026-09-23
 
-Second targeted pass at thin categories in this area (cheese and meat). Source: the Agacal *Experiencias de Calidade* directory of Galician DOP/IXP operators (undated, cites the Catas de Galicia 2020 awards; operators with brand, address and concello). Cutoff: 2026-09-23. Leads were checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain, phone and distinctive name tokens; 3 were queued.
+Second targeted pass at thin categories in this area (cheese and meat). Source: the Agacal *Experiencias de Calidade* directory of Galician DOP/IXP operators (undated, cites the Catas de Galicia 2020 awards; operators with brand, address and concello). Cutoff: 2026-09-23. Three apparent leads were checked against the Spanish CSVs, evidence ledgers and open notes. HOXE was already represented as `cooperativa-hoxe-lalin`; the other two remain open.
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Hoxe, S.C.G. | Lalín; Borralla | `Lácteos y quesos` — Tetilla and Arzúa-Ulloa DOP cheese | Cooperative operating in both the Tetilla and Arzúa-Ulloa DOPs (Deza-Hoxe), with its own domain. | [Agacal Experiencias de Calidade](http://castanadegalicia.org/documentos/directorio_agacal.pdf) | <https://hoxe.es/> | Confirm the cheese is made from members' milk, and a consumer channel. |
 | Frigoríficos Bandeira | Silleda; Rúa Calzada 22 | `Carne` — lacón | IXP Lacón Gallego operator with its own domain; the directory mislabels Silleda as Ourense. | [Agacal Experiencias de Calidade](http://castanadegalicia.org/documentos/directorio_agacal.pdf) | <https://frigobandeira.com/> | Establish its own curing and a consumer channel. |
 | Cárnicas do Deza | Lalín; Donfreán 28 | `Carne` — Ternera Gallega IXP | IXP Ternera Gallega operator. | [Agacal Experiencias de Calidade](http://castanadegalicia.org/documentos/directorio_agacal.pdf) | — | Establish rearing or elaboration rather than butchery only. |
