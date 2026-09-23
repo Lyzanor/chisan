@@ -1,5 +1,6 @@
 import { ArrowUpRightIcon, BriefcaseIcon, SealCheckIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
+import { USER_PRO_PATH } from "@/lib/accounts/pro-paths";
 
 import { isB2BEnabled, B2B_ROOT } from "@/lib/b2b/policy";
 import { isAccountSystemConfigured } from "@/lib/accounts/config";
@@ -10,9 +11,9 @@ import type { Locale } from "@/lib/i18n/locales";
 import type { Messages } from "@/lib/i18n/messages";
 
 const b2bWords = {
-  es: { title: "Venta a profesionales", help: "¿Compras para un negocio? Crea tu perfil profesional para consultar a este productor y aprovechar las solicitudes B2B.", direct: "¿Compras para un negocio? Consulta directamente disponibilidad y condiciones con este productor.", account: "Crear perfil profesional", sources: "Consultar fuentes públicas del perfil" },
-  ca: { title: "Venda a professionals", help: "Compres per a un negoci? Crea el teu perfil professional per consultar aquest productor i aprofitar les sol·licituds B2B.", direct: "Compres per a un negoci? Consulta directament la disponibilitat i les condicions amb aquest productor.", account: "Crear perfil professional", sources: "Consultar fonts públiques del perfil" },
-  en: { title: "Professional sales", help: "Buying for a business? Create a professional profile to contact this producer and use B2B enquiries.", direct: "Buying for a business? Ask this producer directly about availability and terms.", account: "Create a professional profile", sources: "View public profile sources" },
+  es: { title: "Venta a profesionales", help: "¿Compras para un negocio? Con Usuario Pro puedes consultar suministro por el canal privado B2B. El contacto directo sigue siendo gratuito.", direct: "¿Compras para un negocio? Consulta disponibilidad y condiciones directamente. Conoce también Usuario Pro para tu negocio; el canal privado B2B está en preparación.", account: "Conocer Usuario Pro", sources: "Consultar fuentes públicas del perfil" },
+  ca: { title: "Venda a professionals", help: "Compres per a un negoci? Amb Usuari Pro pots consultar subministrament pel canal privat B2B. El contacte directe continua sent gratuït.", direct: "Compres per a un negoci? Consulta directament la disponibilitat i les condicions. Coneix també Usuari Pro; el canal privat B2B està en preparació.", account: "Conèixer Usuari Pro", sources: "Consultar fonts públiques del perfil" },
+  en: { title: "Professional sales", help: "Buying for a business? User Pro gives you access to private B2B supply enquiries. Direct contact remains free.", direct: "Buying for a business? Ask directly about availability and terms, or explore User Pro. The private B2B channel is being prepared.", account: "Explore User Pro", sources: "View public profile sources" },
 };
 
 /** Reviewed CSV facts; contact keeps the existing B2B feature gate. */
@@ -91,7 +92,7 @@ export function ProducerCommercialDetails({
           {professional ? (
             <div className="detail-b2b__actions">
               {contact ? <a href={contact} className="detail-b2b__contact">{premiumValueLabel("contact", locale)}<ArrowUpRightIcon size={18} aria-hidden="true" /></a> : null}
-              {b2bAvailable ? <Link href={B2B_ROOT} prefetch={false}>{words.account}</Link> : null}
+              <Link href={USER_PRO_PATH} prefetch={false}>{words.account}</Link>
             </div>
           ) : null}
         </section>

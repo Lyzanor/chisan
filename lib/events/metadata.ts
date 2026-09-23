@@ -17,7 +17,7 @@ export function buildEventMetadata(event?: EditorialEvent): Metadata {
     robots: { index: isPublicDiscoveryEnabled(), follow: true },
     openGraph: {
       type: "website", title, description, url, siteName: SITE_NAME, locale: "es_ES",
-      ...(event?.plan ? { images: [{ url: event.plan.src, alt: event.plan.alt, width: event.plan.width, height: event.plan.height }] } : {}),
+      ...(event?.image ? { images: [{ url: event.image.src, alt: event.image.alt, width: event.image.width, height: event.image.height }] } : {}),
     },
   };
 }
@@ -54,6 +54,6 @@ export function buildEventStructuredData(event: EditorialEvent) {
     },
     organizer: { "@type": "Organization", name: event.organizerName, url: event.organizerUrl },
     publisher: { "@type": "Organization", "@id": SITE_ORGANIZATION_ID, name: SITE_NAME, url: SITE_ORIGIN },
-    image: event.plan ? new URL(event.plan.src, SITE_ORIGIN).href : undefined,
+    image: event.image ? new URL(event.image.src, SITE_ORIGIN).href : undefined,
   };
 }

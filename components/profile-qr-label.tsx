@@ -2,7 +2,7 @@
 
 import { ArrowRightIcon, CheckIcon, CopyIcon, DownloadSimpleIcon, QrCodeIcon, XIcon } from "@phosphor-icons/react";
 import { useEffect, useId, useRef, useState } from "react";
-import { QRCodeCanvas } from "qrcode.react";
+import { ChisanQrCode } from "@/components/brand/chisan-qr-code";
 
 import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
 import {
@@ -279,23 +279,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
       <ChisanWordmark alt="" className="profile-qr__wordmark" ink={!isProducer} />
       <p>{labelType}</p>
       <div className="profile-qr__code">
-        <QRCodeCanvas
-          ref={qrCanvas}
-          value={profileUrl}
-          size={880}
-          level="H"
-          marginSize={4}
-          bgColor={LABEL_COLORS.surface}
-          fgColor={isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink}
-          imageSettings={{
-            src: isProducer ? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC,
-            width: PROFILE_QR_MARK_SIZE,
-            height: PROFILE_QR_MARK_SIZE,
-            excavate: true,
-          }}
-          title={`${scanLabel}: ${name}`}
-          style={{ height: "auto", width: "100%" }}
-        />
+        <ChisanQrCode canvasRef={qrCanvas} value={profileUrl} size={880} ink={!isProducer} title={`${scanLabel}: ${name}`} />
       </div>
       <figcaption>
         <strong>{name}</strong>

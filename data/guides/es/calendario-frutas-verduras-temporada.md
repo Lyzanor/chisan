@@ -7,7 +7,7 @@ status: published
 publishedAt: 2026-09-23
 kind: reference
 topic: Despensa
-title: "Frutas y verduras de temporada en España: cómo usar el calendario"
+title: "Qué da la huerta cada mes"
 description: "Una orientación mes a mes y las preguntas para adaptarla a tu zona: cosecha, comercialización, conservación y disponibilidad del productor."
 cover:
   src: /editorial/guides/calendario-huerta.webp

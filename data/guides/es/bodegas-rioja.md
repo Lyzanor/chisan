@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Bodegas de Rioja: cinco miradas al vino desde Haro"
+title: "Cinco bodegas para conocer Haro"
 description: Un recorrido por Haro para entender tonelería, calados y referencias de vino, con cinco bodegas y claves para preparar una comparación o visita.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

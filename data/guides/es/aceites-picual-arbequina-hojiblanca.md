@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Aceite
-title: "Picual, arbequina y hojiblanca: comparar aceites con nombre propio"
+title: "Picual, arbequina y hojiblanca frente a frente"
 description: "Cómo comparar referencias de picual, arbequina y hojiblanca: variedad declarada, campaña, categoría y una prueba doméstica que puedas repetir."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

@@ -7,6 +7,7 @@ const CLERK_PATH_PREFIXES = [
   "/acceso",
   "/registro",
   "/cuenta",
+  "/pro",
   "/admin",
   "/api",
   "/trpc",

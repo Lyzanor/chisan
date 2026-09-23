@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Miel
-title: "Miel de España: origen, floración y claves para elegir"
+title: "La miel empieza en las flores"
 description: Distingue el lugar de recolección, la floración y el envasador; aprende qué preguntar al apicultor y qué puede decir la textura.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

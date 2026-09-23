@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { eventPath } from "@/lib/events/routes";
@@ -12,6 +13,7 @@ export function formatEventDate(date: string): string {
 
 export function EventCard({ event }: { event: EditorialEvent }) {
   return <Link href={eventPath(event.slug)} className={`chisan-card ${styles.eventCard}`}>
+    {event.image ? <Image className={styles.cardImage} src={event.image.src} alt={event.image.alt} width={event.image.width} height={event.image.height} sizes="160px" /> : null}
     <span className="chisan-eyebrow">{event.category} · {event.venue.municipality}</span>
     <strong className={styles.cardTitle}>{event.title}</strong>
     <span className={styles.cardDates}><time dateTime={event.startDate}>{formatEventDate(event.startDate)}</time> — <time dateTime={event.endDate}>{formatEventDate(event.endDate)}</time></span>

@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Despensa
-title: "Legumbres de España: variedades, cultivo y productores"
+title: "Volver a elegir las legumbres por su origen"
 description: "Cómo comparar legumbres por especie, variedad, origen, cosecha y presentación: ejemplos de productores y pautas para una compra que puedas repetir."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

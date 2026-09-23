@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Quesos
-title: "Quesos azules de España: Cabrales y otras formas de madurar"
+title: "El tiempo y las cuevas del queso azul"
 description: "Cabrales, otros nombres de origen y queserías de azules: qué mirar en la leche, el afinado y la pieza para comparar sin confundirlos."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

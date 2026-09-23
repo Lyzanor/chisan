@@ -274,7 +274,7 @@ body {
 .auth-page,
 .catalog-start-page {
   width: min(var(--chisan-container), 100% - 2 * var(--chisan-gutter));
-  margin: var(--chisan-space-8) auto var(--chisan-section-gap);
+  margin: var(--page-start-space, var(--chisan-space-8)) auto var(--chisan-section-gap);
 }
 
 .account-page {
@@ -349,14 +349,14 @@ body {
 /* Footer ----------------------------------------------------------------- */
 
 .site-footer {
-  --footer-landscape-height: clamp(180px, 19vw, 270px);
+  --footer-landscape-height: clamp(280px, 32vw, 460px);
 
   position: relative;
   isolation: isolate;
   overflow: hidden;
   width: 100%;
   margin: 0;
-  padding: 0 var(--site-header-inset, var(--site-inset)) calc(var(--footer-landscape-height) - var(--chisan-space-8));
+  padding: 0 var(--site-header-inset, var(--site-inset)) calc(var(--footer-landscape-height) * 0.4);
   border-top: var(--chisan-line) solid var(--chisan-color-hairline);
   background: var(--chisan-color-surface);
   color: var(--chisan-color-ink);
@@ -383,16 +383,6 @@ body {
   grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2.2fr);
   gap: var(--chisan-space-12);
   padding: var(--chisan-space-16) 0 var(--chisan-space-12);
-}
-
-.site-footer__brand-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--chisan-control-height);
-}
-
-.site-footer .chisan-wordmark {
-  width: 6rem;
 }
 
 .site-footer__identity p {
@@ -473,21 +463,23 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center bottom;
+  mask-image: linear-gradient(to bottom, transparent, black 45%);
+  transform-origin: bottom center;
+  animation: chisan-landscape-breeze 14s var(--chisan-ease-in-out) infinite alternate;
 }
 
 .footer-landscape__journey {
   position: absolute;
   bottom: var(--chisan-space-10);
-  left: 50%;
-  translate: -50% 0;
+  right: var(--chisan-gutter);
   pointer-events: none;
 }
 
 @media (max-width: 760px) {
   .site-footer {
-    --footer-landscape-height: 200px;
+    --footer-landscape-height: 320px;
 
-    padding-bottom: calc(var(--footer-landscape-height) - var(--chisan-space-8) + var(--chisan-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(var(--footer-landscape-height) * 0.4 + var(--chisan-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
   }
 
   .site-footer__top {

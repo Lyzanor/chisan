@@ -107,15 +107,6 @@
 .shop small { color: var(--chisan-color-stone); }
 .purchaseHelp { color: var(--chisan-color-stone); line-height: var(--chisan-leading-body); }
 
-.featuredLinks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--chisan-space-3); margin: 0; padding: 0; list-style: none; }
-.featuredLinks li { min-width: 0; }
-.featuredLinks a { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); align-items: center; gap: var(--chisan-space-3); min-height: 7rem; overflow: hidden; border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-object); color: var(--chisan-color-ink); text-decoration: none; }
-.featuredLinks a:hover { border-color: var(--chisan-color-moss); }
-.linkPreview { display: grid; place-items: center; align-self: stretch; background: var(--chisan-color-moss-pale); color: var(--chisan-color-moss-dark); font-size: var(--chisan-font-title); font-weight: var(--chisan-weight-interface); }
-.linkCopy { min-width: 0; padding-right: var(--chisan-space-3); }
-.linkCopy strong, .linkCopy small { display: block; overflow-wrap: anywhere; }
-.linkCopy small { margin-top: var(--chisan-space-1); color: var(--chisan-color-stone); font-size: var(--chisan-font-micro); }
-
 @media (max-width: 760px) {
   .products {
     grid-template-columns: none;

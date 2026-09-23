@@ -267,6 +267,7 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
     "/api",
     "/api/webhooks/clerk",
     "/trpc/example",
+    "/pro",
   ]) {
     assert.equal(matches(pathname), true, pathname);
   }
@@ -298,6 +299,7 @@ test("the proxy skips unrelated traffic and initializes Clerk only where needed"
     "/admin/cambios",
     "/api/webhooks/clerk",
     "/trpc/example",
+    "/pro",
   ]) {
     assert.equal(needsClerkRequestContext(pathname), true, pathname);
   }

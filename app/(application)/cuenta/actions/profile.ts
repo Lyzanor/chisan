@@ -74,6 +74,8 @@ export async function completeOnboardingAction(
     });
   });
 
+  if (next === "/pro" || next.startsWith("/pro?")) redirect(next);
+
   // The choice only routes the first visit; profile kind still follows claims.
   if (intent === "producer") {
     redirect(isProducerOnboardingPath(next) ? next : PRODUCER_ONBOARDING_PATH);

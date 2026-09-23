@@ -23,6 +23,7 @@ import {
   businessEnquiries,
   businessMessages,
 } from "../db/schema";
+import { activeUserProfilePremiumEntitlementCondition } from "../accounts/profile-qr-entitlements";
 import { activeProducerPremiumEntitlementCondition } from "../accounts/producer-premium-entitlements";
 import {
   businessProfileSchema,
@@ -95,7 +96,7 @@ export function createBusinessService({
       .for("share");
     if (!row)
       throw new BusinessError(
-        "El proveedor necesita un perfil premium activo para recibir solicitudes y compartir condiciones.",
+        "El proveedor necesita Productor Pro activo para recibir solicitudes y compartir condiciones.",
       );
   }
   async function business(tx: Transaction, userId: string) {
@@ -113,6 +114,9 @@ export function createBusinessService({
       throw new BusinessError(
         "Activa tus datos profesionales antes de enviar una consulta.",
       );
+    const [access] = await tx.select({ id: entitlements.id }).from(entitlements)
+      .where(activeUserProfilePremiumEntitlementCondition(userId)).for("share");
+    if (!access) throw new BusinessError("Activa Usuario Pro para enviar solicitudes B2B. Tu historial sigue disponible.");
     return profile;
   }
   async function access(

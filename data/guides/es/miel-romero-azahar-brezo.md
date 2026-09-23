@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Miel
-title: "Miel de romero, azahar y brezo: leer la floración en el tarro"
+title: "Romero, azahar o brezo: elegir miel por su floración"
 description: Cómo comparar tres nombres de floración a partir del lote, el origen y la información del apicultor, sin dar por fijos color, sabor o calendario.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

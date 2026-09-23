@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Bodegas de Jerez: nombres de vino, soleras y casas que conocer"
+title: "Entrar en una solera de Jerez"
 description: Cómo distinguir crianza, tipo de vino y bodega en Jerez y Sanlúcar, con ejemplos y preguntas para entender una solera.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

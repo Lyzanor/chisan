@@ -57,7 +57,6 @@ export function CatalogResultsSheet({ children, open, onOpenChange, label, close
         }}
       >
         <span className="catalog-results-sheet__grip" aria-hidden="true" />
-        {!open ? <span className="catalog-results-sheet__label">{label}</span> : null}
       </button>
       <div className="catalog-viewer-body" id={bodyId} role="region" aria-label={title}>
         {children}

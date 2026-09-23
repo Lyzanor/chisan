@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Aceite
-title: "Comprar aceite a una almazara: campaña, formato y pedido"
+title: "Comprar el aceite en la almazara"
 description: Cómo confirmar la venta al particular, comparar el coste por litro y elegir una cantidad adecuada de aceite sin dar por hecho el stock de nueva cosecha.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

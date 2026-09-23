@@ -1,4 +1,6 @@
 import { Suspense } from "react";
+import { PlusIcon } from "@phosphor-icons/react/ssr";
+import { SITE_CONTACT_EMAIL } from "@/lib/site";
 
 import { ProducerSuggestionAction } from "@/components/account/producer-account-actions";
 import type { Locale } from "@/lib/i18n/locales";
@@ -11,6 +13,7 @@ export type ProducerPublicSource = {
 };
 
 export type ProducerDetailsProps = {
+  accountsEnabled: boolean;
   countrySlug: string;
   lastApprovedChange?: string;
   locale: Locale;
@@ -30,6 +33,7 @@ export type ProducerDetailsProps = {
 };
 
 export function ProducerDetails({
+  accountsEnabled,
   countrySlug,
   lastApprovedChange,
   locale,
@@ -48,13 +52,13 @@ export function ProducerDetails({
     >
       <div className="detail-info__heading">
         <h2 id="detail-info-title">{messages.producer.details}</h2>
-        <Suspense fallback={null}>
+        {!accountsEnabled && !ownershipVerified ? <a className="chisan-button chisan-button--quiet chisan-button--icon" href={`mailto:${SITE_CONTACT_EMAIL}?subject=${encodeURIComponent(`${messages.accountActions.suggestChanges} · ${countrySlug.toUpperCase()} #${producerId}`)}`} aria-label={messages.accountActions.suggestChanges} title={messages.accountActions.suggestChanges}><PlusIcon size={20} aria-hidden="true" /></a> : <Suspense fallback={null}>
           <ProducerSuggestionAction
             country={countrySlug}
             producerId={producerId}
             messages={messages.accountActions}
           />
-        </Suspense>
+        </Suspense>}
       </div>
       <div className="detail-info__facts">
         <p

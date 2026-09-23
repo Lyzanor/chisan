@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Vinos de España: denominaciones, variedades y cómo orientarse"
+title: "Un mapa para orientarte entre los vinos de España"
 description: Distingue denominación, bodega y botella para explorar el vino de España sin confundir un lugar con una certificación o una variedad.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

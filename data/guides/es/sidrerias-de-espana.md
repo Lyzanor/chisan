@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Despensa
-title: "Sidrerías de España: seguir la manzana hasta la elaboración"
+title: "Tras la manzana, las sidrerías"
 description: "Cómo distinguir productor, bebida y experiencia: manzana, sidra natural, otras elaboraciones y ejemplos de Asturias, Euskadi y Girona."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

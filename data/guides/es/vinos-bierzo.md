@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Vinos del Bierzo: mencía, godello y trabajo de parcela"
+title: "El Bierzo, parcela a parcela"
 description: "Mencía, godello, referencias y parcelas: cómo empezar a explorar el Bierzo a través de proyectos del catálogo y documentación del consejo."
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

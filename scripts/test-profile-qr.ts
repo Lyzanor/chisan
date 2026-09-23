@@ -104,8 +104,10 @@ test("producer and selection profiles expose distinct, robust QR labels", () => 
     "utf8",
   );
 
-  assert.match(component, /level="H"/);
-  assert.match(component, /marginSize=\{4\}/);
+  const qrCode = fs.readFileSync(path.join(ROOT, "components/brand/chisan-qr-code.tsx"), "utf8");
+  assert.match(component, /<ChisanQrCode/);
+  assert.match(qrCode, /level="H"/);
+  assert.match(qrCode, /marginSize=\{4\}/);
   // The branded QR overlay is verified by independent decoding of downloaded labels.
   assert.match(component, /COPY_FEEDBACK_DURATION_MS = 1_500/);
   assert.match(component, /copyFeedbackGenerationRef/);

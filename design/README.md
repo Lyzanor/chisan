@@ -261,7 +261,8 @@ to improve appearance.
 - Roomy containers show every available category in one scrollable icon row
   without a disclosure button. Narrow ones keep the primary row and a disclosure
   for additional categories. Labels unfold on selection, hover or keyboard focus.
-- The results-sheet handle carries the result count. Opening the sheet exposes
+- The collapsed results sheet shows only its centered drag grip within a 44px
+  interaction target. Its accessible label retains the count. Opening the sheet exposes
   the scope and full paginated roster without adding a heading above the map.
 - The discovery list uses one continuous mapped roster, with producers near the
   current opening view first and no map-only scope. Once list navigation begins,
@@ -379,19 +380,18 @@ the return destination. Signed-in users see one session-backed follow state
 across maps and profiles; pending and unavailable states never pretend to be
 saved or empty. Premium visibility remains independent of ownership.
 
-The header shows only reviewed material. A landscape gallery photograph becomes
-the full-width cover, the page's first and strongest image. The name row overlaps
-its lower edge without obscuring the image. The context row stays compact and
-scrollable on a narrow phone. The `imagen` identity image sits beside the name;
-without a cover, the same block is
-ordinary page content. A missing cover, identity image or gallery leaves no
-generic, category or placeholder image. Captions and credits wait behind a small
-info disclosure on each photograph instead of text beneath it. The description
-uses the full reading width; contact, website and social links wrap as one fluid row.
+The header shows the reviewed `imagen` identity beside the name at phone and
+wide widths; it never promotes a gallery photograph to a cover. The breadcrumb
+contains country, area and municipality without repeating the producer name,
+followed by the category. A missing identity or gallery leaves no placeholder.
+Captions and credits wait behind a small info disclosure on each photograph.
+The description uses the full reading width; contact, website and social links
+wrap as one fluid row.
 
 Verified ownership receives an explicit badge beside the name and an explanation
 in the trust strip immediately below the hero. Unclaimed profiles have no
-verification badge. Editorial `pendiente` places its review link beside the name.
+verification badge. Editorial `pendiente` places an accessible exclamation icon beside the name;
+the explanation stays in the trust strip.
 The trust strip shows the last approved change when present and the public source
 URLs and consultation dates for any profile with a keep record. Never expose
 claim status, claimant identity or private review notes.
@@ -404,10 +404,14 @@ below opening hours beside the location; telephone-only profiles remain usable.
 The composer prepares email in the visitor's own application and explains that
 before continuing.
 
-Featured products and sales channels have separate sections. A dedicated
+Featured product tags and approved product cards share one section. Its small
+plus action opens the existing editor for an eligible member, or the shared Pro
+onboarding with the producer context. The information section uses the same
+quiet plus control for completing reviewed facts. A dedicated
 "shop" action opens the reviewed store page (online shop, else marketplace,
 else subscription); without one, an online shop action falls back to the
-official website. Other channels are plain labels, and a `no` or
+official website. Channels are listed only when there is more than one, avoiding
+a duplicate label beside the only shop link. With multiple channels, a `no` or
 `no comprobado` online-sales value remains a quiet status. The public API also
 exposes the reviewed store URL for agents. Location shares a row with reviewed opening hours
 and the contact widget. Preserve the
@@ -421,16 +425,17 @@ requests nor stores the visitor's position for this link. See the [Google Maps U
 The profile fills the viewport with no outer side margins. Every block after
 the hero is a section with the page gutter, a hairline divider and one shared
 vertical rhythm (`--profile-section-space`), including sections that components
-add later. The name row aligns with the page gutter; with a cover it sits on a
-white tab that cuts into the photograph's lower edge. "How we
-produce" has its own early block. The remaining standalone photos form a strip
-near the top: one row at honest aspect
-ratios that scrolls sideways when the screen is narrow or the gallery is long.
+add later. The name row aligns with the page gutter. All approved standalone
+photos form a strip before “How we produce”: one row at honest aspect ratios
+that scrolls sideways when the screen is narrow or the gallery is long. Long
+production-method prose uses a minimal native read-more disclosure.
 Pointer hover scales a photo to 1.03 within its frame; the photos open nothing,
 and reduced motion removes the emphasis.
 Pro product cards align their commerce footers despite different description
 lengths. On phones, equal-width cards swipe sideways with a visible hint of the
-next card and keyboard scrolling. Approved links render as visual destination
+next card and keyboard scrolling. Approved links use the shared thumbnail card,
+with their associated product image or the reviewed producer identity, without
+fetching remote website previews. They render as visual destination
 cards; no remote preview
 image is inferred. The printable producer QR appears beside the early content
 with a small download control. Short visit and order facts form one group;
@@ -516,9 +521,11 @@ indicators, with cubic fallbacks.
 - Arrival: page content rises once (`PageMotion`); hero headings, statements
   and cards use the `.chisan-enter` steps in markup.
 - Reveal: `data-reveal` sections and `data-reveal-stagger` children rise into
-  place as they scroll into view, tied to scroll position through
-  `animation-timeline: view()`. Browsers without scroll timelines show the
-  content in place. Items inside sideways strips do not reveal.
+  place once on intersection, including streamed sections. Server-rendered
+  content stays visible until enhancement; reduced motion and browsers without
+  IntersectionObserver keep it visible. Already visible items do not wait for
+  scrolling. The footer's landscape gently moves beneath overlapping links,
+  with the mascot at one corner.
 - The header's rule appears once the page scrolls beneath it; the active
   header link grows an underline and the active bottom-bar tab a soft green
   indicator.

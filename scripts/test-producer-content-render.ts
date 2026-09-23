@@ -111,11 +111,11 @@ test("commercial sections show certification scope and professional contact with
   assert.match(render(), /Hortalizas; emisor y código revisados/);
   assert.match(render(), /mailto:demo@example.org\?subject=Consulta/);
   assert.match(render({ correo: "" }), /tel:\+34600112233/);
-  assert.doesNotMatch(render({ correo: "", telefono: "" }), /href=/);
+  assert.match(render({ correo: "", telefono: "" }), /href="\/pro"/);
   assert.doesNotMatch(render({ venta_profesionales: "no" }), /href=/);
 });
 
-test("producer photos use only reviewed material: a landscape cover and an honest strip", async () => {
+test("producer gallery keeps all reviewed photos in order without promoting one to a cover", async () => {
   const hooks = registerHooks({
     load(url, context, nextLoad) {
       if (new URL(url).pathname.endsWith(".module.css")) {
@@ -129,7 +129,7 @@ test("producer photos use only reviewed material: a landscape cover and an hones
     },
   });
   try {
-    const { ProducerCover, ProducerGallery, splitProducerPhotos } =
+    const { ProducerGallery } =
       await import("../components/producer-gallery");
     const photo = (id: string, width: number, height: number) => ({
       id,
@@ -146,33 +146,20 @@ test("producer photos use only reviewed material: a landscape cover and an hones
     const landscape = { ...photo("landscape", 1600, 1067), caption: "Campo de olivos", credit: "Autora" };
     const square = photo("square", 1400, 1400);
 
-    const split = splitProducerPhotos([portrait, small, landscape, square]);
-    assert.equal(split.cover, landscape, "the first sharp landscape photo is the cover");
-    assert.deepEqual(split.photos.map(({ id }) => id), ["portrait", "small", "square"]);
-    assert.deepEqual(splitProducerPhotos([portrait, small]), { cover: null, photos: [portrait, small] });
-    assert.deepEqual(splitProducerPhotos([]), { cover: null, photos: [] });
-
+    const photos = [portrait, small, landscape, square];
     const captionLabel = "Pie y créditos de la foto";
-    const coverHtml = renderToStaticMarkup(createElement(ProducerCover, { photo: landscape, captionLabel }));
-    assert.match(coverHtml, /<figure class="detail-cover">/);
-    assert.match(coverHtml, /alt="Foto landscape"/);
-    assert.match(
-      coverHtml,
-      /<figcaption class="detail-photo-details"><details><summary aria-label="Pie y créditos de la foto"[^>]*>[\s\S]*<\/summary><p lang="es">Campo de olivos · Autora<\/p><\/details><\/figcaption>/,
-      "caption and credit wait behind a closed disclosure",
-    );
-    assert.doesNotMatch(coverHtml, /<details open/);
-
     assert.equal(renderToStaticMarkup(createElement(ProducerGallery, { photos: [], title: "Fotos", captionLabel })), "");
     const stripHtml = renderToStaticMarkup(
-      createElement(ProducerGallery, { photos: split.photos, title: "Fotos del productor", captionLabel }),
+      createElement(ProducerGallery, { photos, title: "Fotos del productor", captionLabel }),
     );
     assert.match(stripHtml, /<h2 id="detail-gallery-title">Fotos del productor<\/h2>/);
-    assert.equal((stripHtml.match(/<img /g) ?? []).length, 3);
-    assert.equal((stripHtml.match(/loading="lazy"/g) ?? []).length, 3);
+    assert.equal((stripHtml.match(/<img /g) ?? []).length, 4);
+    assert.equal((stripHtml.match(/loading="lazy"/g) ?? []).length, 4);
     assert.match(stripHtml, /minmax\(calc\(0\.7500 \* var\(--gallery-min-height\)\), 0\.7500fr\)/, "columns keep each aspect ratio");
     assert.doesNotMatch(stripHtml, /<button|<dialog|<a /, "photos open nothing");
-    assert.doesNotMatch(stripHtml, /generica\.webp|<figcaption/);
+    assert.doesNotMatch(stripHtml, /generica\.webp|<details open/);
+    assert.match(stripHtml, /Campo de olivos · Autora/, "reviewed captions remain available behind the info control");
+    assert.ok(stripHtml.indexOf("Foto portrait") < stripHtml.indexOf("Foto landscape"), "editorial photo order is preserved");
   } finally {
     hooks.deregister();
   }

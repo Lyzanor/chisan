@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Territorios
-title: "La despensa de Extremadura: queso, miel, pimentón e ibérico"
+title: "Los oficios que alimentan Extremadura"
 description: Cinco proyectos de Cáceres y Badajoz para seguir elaboraciones concretas, comprobar origen y preparar una compra sin reducir la región a un solo paisaje.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

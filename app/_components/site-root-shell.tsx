@@ -161,9 +161,6 @@ export function SiteRootShell({
         <footer className="site-footer">
           <div className="site-footer__top">
             <div className="site-footer__identity">
-              <Link href="/" className="site-footer__brand-link" aria-label={SITE_NAME}>
-                <ChisanWordmark alt="" />
-              </Link>
               <p>{spanish ? "Conoce el origen. Elige con sentido." : "Know the origin. Choose with care."}</p>
             </div>
             <nav className="site-footer__links" aria-label={footerMessages.navigation}>

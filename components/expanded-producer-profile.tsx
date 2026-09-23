@@ -1,9 +1,9 @@
-import { ArrowUpRightIcon, LinkSimpleIcon } from "@phosphor-icons/react/ssr";
+import { ProducerLinkCard } from "@/components/producer-link-card";
 
 import { ProducerCommercialDetails } from "./producer-commercial-details";
 import { EXTRA_PREMIUM_FIELDS } from "@/lib/catalog/producer-schema";
-import { hasProducerContent } from "@/lib/catalog/content-schema";
-import { loadPublicExpandedContent, publicHighlightedLinks } from "@/lib/catalog/public-expanded";
+import { hasProducerContent, type ProducerContent as Content } from "@/lib/catalog/content-schema";
+import { publicHighlightedLinks } from "@/lib/catalog/public-expanded";
 import { ProducerContent } from "@/components/producer-content";
 import { ProducerPeople } from "@/components/producer-people";
 import { YoutubePlayer } from "@/components/youtube-player";
@@ -16,6 +16,8 @@ import { producerProfileLabels } from "@/lib/i18n/producer-profile";
 import { formatProducerFieldLabel, formatProducerFieldValue } from "@/lib/i18n/producer-fields";
 
 type ExpandedProducerProfileProps = {
+  content: Content | null;
+  identityImageSrc: string;
   canonicalUrl: string;
   country: string;
   fields: Readonly<Record<string, string>>;
@@ -29,12 +31,9 @@ function fieldValue(fields: Readonly<Record<string, string>>, key: string): stri
   return fields[key]?.trim() ?? "";
 }
 
-function linkHostname(value: string): string {
-  try { return new URL(value).hostname.replace(/^www\./, ""); }
-  catch { return value; }
-}
-
-export async function ExpandedProducerProfile({
+export function ExpandedProducerProfile({
+  content,
+  identityImageSrc,
   canonicalUrl,
   country,
   fields,
@@ -43,7 +42,6 @@ export async function ExpandedProducerProfile({
   messages,
   producerId,
 }: ExpandedProducerProfileProps) {
-  const content = await loadPublicExpandedContent(country, producerId, locale);
   const contentLabels = getProducerContentLabels(locale);
   const structuredData = content ? buildProductStructuredData(content, canonicalUrl) : null;
   const guidedVisits = fieldValue(fields, "visitas guiadas");
@@ -74,13 +72,7 @@ export async function ExpandedProducerProfile({
       {structuredData ? (
         <script id="producer-products-structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} />
       ) : null}
-      {content && content.products.length && content.links.length ? (
-        <nav className="detail-expanded-profile__nav" aria-label={messages.producer.expandedProfile}>
-          <a href="#producer-content-products">{contentLabels.products}</a>
-          <a href="#producer-content-links">{contentLabels.links}</a>
-        </nav>
-      ) : null}
-      {content ? <div className="detail-expanded-profile__content"><ProducerContent content={content} locale={locale} showGallery={false} /></div> : null}
+      {content?.links.length ? <div className="detail-expanded-profile__content"><ProducerContent content={content} locale={locale} showGallery={false} showProducts={false} identityImageSrc={identityImageSrc} /></div> : null}
       {video ? <YoutubePlayer videoUrl={video} label={formatProducerFieldLabel("video", locale, messages)} locale={locale} /> : null}
       {behindProducer || (content && (content.people?.length ?? 0) > 0) ? (
         <ProducerPeople
@@ -122,14 +114,10 @@ export async function ExpandedProducerProfile({
       {highlightedLinks.length ? (
         <section className="detail-highlighted-links" aria-labelledby="detail-highlighted-links-title">
           <h2 id="detail-highlighted-links-title">{contentLabels.links}</h2>
-          <ul>
+          <ul className="chisan-link-cards">
             {highlightedLinks.map(({ href, label }) => (
               <li key={href}>
-                <a href={href} target="_blank" rel="noopener noreferrer">
-                  <span className="detail-highlighted-links__art" aria-hidden="true"><LinkSimpleIcon size={32} /></span>
-                  <span><strong>{label}</strong><small>{linkHostname(href)}</small></span>
-                  <ArrowUpRightIcon size={22} aria-hidden="true" />
-                </a>
+                <ProducerLinkCard href={href} label={label} imageSrc={identityImageSrc} identity />
               </li>
             ))}
           </ul>

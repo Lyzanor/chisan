@@ -1,7 +1,7 @@
 /*
  * The producer profile fills the viewport. Sections share one rhythm: a
  * hairline, the page gutter and the same vertical space. The first strong
- * image is the reviewed cover; the name row overlaps its lower edge.
+ * image beside the name is its identity; documentary photos belong to the gallery.
  */
 
 body:has(.detail-page) {
@@ -11,7 +11,6 @@ body:has(.detail-page) {
 .detail-page {
   --profile-gutter: var(--chisan-gutter);
   --profile-section-space: clamp(1.75rem, 1.25rem + 2.2vw, 3rem);
-  --profile-tab-pad: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
 
   width: 100%;
   min-width: 0;
@@ -54,37 +53,6 @@ body:has(.detail-page) {
   padding: 0;
   background: var(--chisan-color-surface);
   container-type: inline-size;
-}
-
-.detail-hero--cover {
-  grid-template-areas: "cover" "tab" "summary";
-}
-
-.detail-cover {
-  position: relative;
-  grid-area: cover;
-  min-width: 0;
-  margin: 0;
-}
-
-.detail-cover__frame {
-  height: clamp(13rem, 58vw, 18rem);
-  overflow: hidden;
-  background: var(--chisan-color-surface-muted);
-}
-
-.detail-cover__frame img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: chisan-cover-settle 1400ms var(--chisan-ease) both;
-}
-
-@keyframes chisan-cover-settle {
-  from {
-    scale: 1.06;
-  }
 }
 
 /* Captions and credits wait behind a small info control so the photograph leads. */
@@ -165,26 +133,17 @@ body:has(.detail-page) {
   }
 }
 
-/* The name row. With a cover it cuts into the photograph's lower edge. */
+/* The identity stays beside the name, including on phones. */
 .detail-hero__tab {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   grid-area: tab;
   gap: var(--chisan-space-3);
   min-width: 0;
   padding: var(--chisan-space-6) var(--profile-gutter) 0;
 }
 
-.detail-hero--cover .detail-hero__tab {
-  position: relative;
-  z-index: var(--chisan-z-raised);
-  justify-self: start;
-  width: calc(100% - 2 * (var(--profile-gutter) - var(--profile-tab-pad)));
-  margin: calc(-1 * var(--chisan-space-6)) 0 0 calc(var(--profile-gutter) - var(--profile-tab-pad));
-  padding: var(--chisan-space-4) var(--profile-tab-pad) 0;
-  border-radius: var(--chisan-radius-panel) var(--chisan-radius-panel) 0 0;
-  background: var(--chisan-color-surface);
-}
 
 .detail-identity {
   flex: none;
@@ -204,8 +163,7 @@ body:has(.detail-page) {
 }
 
 .detail-profile-heading {
-  flex: 1 1 auto;
-  width: 100%;
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -256,6 +214,8 @@ body:has(.detail-page) {
 }
 
 .detail-status--pending {
+  justify-content: center;
+  min-width: var(--chisan-control-height);
   color: var(--chisan-color-stone);
   text-underline-offset: 4px;
 }
@@ -266,10 +226,11 @@ body:has(.detail-page) {
   min-height: var(--chisan-control-height);
 }
 
-/* Country, area, producer, municipality and category share one compact row. */
+/* Country, area, municipality and category; the name already has its heading. */
 .detail-context {
+  flex: 1 0 100%;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0 var(--chisan-space-3);
   margin-top: var(--chisan-space-1);
@@ -284,20 +245,17 @@ body:has(.detail-page) {
 
 .detail-breadcrumb ol {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--chisan-space-1);
   margin: 0;
   padding: 0;
   font-size: var(--chisan-font-micro);
   list-style: none;
-  white-space: nowrap;
 }
 
 .detail-breadcrumb li {
-  max-width: 11rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .detail-breadcrumb li:not(:last-child)::after {
@@ -526,9 +484,6 @@ body:has(.detail-page) {
 }
 
 @media (min-width: 541px) {
-  .detail-cover__frame {
-    height: clamp(17rem, 39vw, 36rem);
-  }
 
   .detail-hero {
     --detail-identity-height: 5.5rem;
@@ -540,13 +495,6 @@ body:has(.detail-page) {
     gap: var(--chisan-space-4);
   }
 
-  .detail-hero--cover .detail-hero__tab {
-    width: auto;
-    min-width: min(100%, 21rem);
-    max-width: min(56rem, calc(100% - 2 * var(--profile-gutter)));
-    margin-top: calc(-1 * var(--chisan-space-12));
-    padding-top: var(--chisan-space-5);
-  }
 
   .detail-breadcrumb ol,
   .detail-subtitle a {
@@ -732,7 +680,7 @@ body:has(.detail-page) {
   }
 }
 
-/* Lead: how they produce, photographs and the QR label. ------------------- */
+/* Lead: photographs, how they produce and the QR label. ------------------- */
 
 .detail-lead {
   display: grid;
@@ -979,7 +927,6 @@ body:has(.detail-page) {
 }
 
 /* Invitations addressed to the producer's members. */
-.detail-product-invitation,
 .detail-news-prompt {
   display: flex;
   flex-wrap: wrap;
@@ -988,20 +935,8 @@ body:has(.detail-page) {
   background: var(--chisan-color-moss-pale);
 }
 
-.detail-product-invitation > div:nth-child(2) {
-  flex: 1 1 20rem;
-}
 
-.detail-product-invitation h2 {
-  margin: 0;
-  font-size: var(--chisan-font-subheading);
-}
 
-.detail-product-invitation p {
-  max-width: 48ch;
-  margin: var(--chisan-space-1) 0 0;
-  color: var(--chisan-color-stone);
-}
 
 .detail-news-prompt {
   justify-content: space-between;
@@ -1013,7 +948,6 @@ body:has(.detail-page) {
   font-weight: var(--chisan-weight-interface);
 }
 
-.detail-product-invitation a,
 .detail-news-prompt a {
   display: inline-flex;
   align-items: center;
@@ -1031,7 +965,6 @@ body:has(.detail-page) {
 }
 
 @media (hover: hover) {
-  .detail-product-invitation a:hover,
   .detail-news-prompt a:hover {
     background: var(--chisan-color-moss-dark);
   }
@@ -1241,74 +1174,6 @@ body:has(.detail-page) {
   .detail-b2b__actions a + a:hover {
     background: var(--chisan-color-inverse-fill);
   }
-}
-
-/* Approved links render as visual destination cards. */
-.detail-highlighted-links ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
-  gap: var(--chisan-space-3);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.detail-highlighted-links li {
-  min-width: 0;
-}
-
-.detail-highlighted-links a {
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--chisan-space-3);
-  min-height: 6rem;
-  overflow: hidden;
-  border: var(--chisan-line) solid var(--chisan-color-hairline);
-  border-radius: var(--chisan-radius-object);
-  color: var(--chisan-color-ink);
-  text-decoration: none;
-  transition:
-    border-color var(--chisan-motion-component) var(--chisan-ease),
-    box-shadow var(--chisan-motion-component) var(--chisan-ease),
-    translate var(--chisan-motion-component) var(--chisan-ease);
-}
-
-@media (hover: hover) {
-  .detail-highlighted-links a:hover {
-    border-color: var(--chisan-color-moss-line);
-    box-shadow: var(--chisan-shadow-raised);
-    translate: 0 -2px;
-  }
-}
-
-.detail-highlighted-links__art {
-  display: grid;
-  place-items: center;
-  align-self: stretch;
-  background: var(--chisan-color-moss-pale);
-  color: var(--chisan-color-moss-dark);
-}
-
-.detail-highlighted-links strong,
-.detail-highlighted-links small {
-  display: block;
-  overflow-wrap: anywhere;
-}
-
-.detail-highlighted-links strong {
-  font-weight: var(--chisan-weight-interface);
-}
-
-.detail-highlighted-links small {
-  margin-top: var(--chisan-space-1);
-  color: var(--chisan-color-stone);
-  font-size: var(--chisan-font-micro);
-}
-
-.detail-highlighted-links a > svg {
-  margin-right: var(--chisan-space-3);
-  color: var(--chisan-color-moss-dark);
 }
 
 /* Video: nothing loads from YouTube until the visitor asks. */
@@ -1850,4 +1715,16 @@ body:has(.detail-page) {
     grid-column: auto;
     min-width: 14rem;
   }
+}
+
+.detail-read-more summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--chisan-control-height);
+  color: var(--chisan-color-moss);
+  font-size: var(--chisan-font-small);
+}
+
+.detail-read-more[open] summary {
+  margin-bottom: var(--chisan-space-2);
 }

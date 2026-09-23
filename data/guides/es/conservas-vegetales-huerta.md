@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Despensa
-title: "Conservas vegetales de la huerta: origen y trabajo de elaboración"
+title: "La huerta que guardamos en un tarro"
 description: Cómo elegir una conserva vegetal por hortaliza, elaboración, ingredientes y origen, sin confundir la ubicación de la conservera con el lugar de cultivo.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

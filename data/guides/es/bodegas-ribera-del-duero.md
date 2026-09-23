@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Bodegas de Ribera del Duero: de Peñafiel y Pesquera a Roa"
+title: "De Peñafiel a Roa por las bodegas de Ribera"
 description: Cinco puntos de partida en Valladolid y Burgos para leer una botella, diferenciar sedes y preparar una visita sin abarcar toda la denominación.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

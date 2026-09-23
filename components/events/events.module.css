@@ -126,8 +126,8 @@
 }
 
 .eventCard {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
   gap: var(--chisan-space-2);
   min-height: 230px;
   padding: var(--chisan-space-6);
@@ -281,4 +281,16 @@
   .facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+.cardImage { grid-row: 1 / 4; width: 100%; height: auto; object-fit: contain; object-position: top left; border-radius: var(--chisan-radius-control); }
+.cardDescription, .cardAction { grid-column: 1 / -1; }
+.eventIdentity { width: 10rem; height: auto; border-radius: var(--chisan-radius-object); }
+@media (min-width: 700px) {
+  .eventCard { display: grid; grid-template-columns: 7rem minmax(0, 1fr); column-gap: var(--chisan-space-5); }
+  .cardImage { grid-row: 1 / 6; }
+  .cardDescription, .cardAction { grid-column: 2; }
+  .header { max-width: none; grid-template-columns: minmax(0, 76ch) auto; }
+  .header > :not(.eventIdentity) { grid-column: 1; }
+  .eventIdentity { grid-column: 2; grid-row: 1 / 6; }
 }

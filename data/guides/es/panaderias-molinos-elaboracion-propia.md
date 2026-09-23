@@ -5,7 +5,7 @@ locale: es
 country: es
 status: published
 topic: Despensa
-title: "Panaderías y molinos: del cereal a la harina y al pan"
+title: "El camino del cereal hasta el pan"
 description: Cómo distinguir cultivo, molienda y panificación, leer las menciones de pan integral y masa madre y elegir un pan para el uso que necesitas.
 publishedAt: 2026-09-06
 updatedAt: 2026-09-23

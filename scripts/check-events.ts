@@ -23,12 +23,13 @@ async function main() {
     rows.forEach((row, index) => {
       if (!row) throw new Error(`${event.slug}: unknown producer ${event.exhibitors[index].producerId}`);
     });
-    if (event.plan) {
-      const imagePath = `public${event.plan.src}`;
-      if (!existsSync(imagePath)) throw new Error(`${event.slug}: missing plan ${imagePath}`);
+    for (const [kind, asset] of [["image", event.image], ["plan", event.plan]] as const) {
+      if (!asset) continue;
+      const imagePath = `public${asset.src}`;
+      if (!existsSync(imagePath)) throw new Error(`${event.slug}: missing ${kind} ${imagePath}`);
       const dimensions = await sharp(imagePath).metadata();
-      if (dimensions.width !== event.plan.width || dimensions.height !== event.plan.height) throw new Error(`${event.slug}: plan dimensions disagree with file`);
-      if (event.plan.checkedAt > new Date().toISOString().slice(0, 10)) throw new Error(`${event.slug}: future plan review date`);
+      if (dimensions.width !== asset.width || dimensions.height !== asset.height) throw new Error(`${event.slug}: ${kind} dimensions disagree with file`);
+      if (asset.checkedAt > new Date().toISOString().slice(0, 10)) throw new Error(`${event.slug}: future ${kind} review date`);
     }
     for (const source of event.sources) {
       if (source.checkedAt > new Date().toISOString().slice(0, 10)) throw new Error(`${event.slug}: future source review date`);

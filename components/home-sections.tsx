@@ -1,6 +1,12 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { MapPinIcon, QrCodeIcon, ArrowUpRightIcon, PlantIcon } from "@phosphor-icons/react/ssr";
+import Image from "next/image";
+import { ChisanQrCode } from "@/components/brand/chisan-qr-code";
+import { buildProfileQrUrl } from "@/lib/profile-qr";
+import { USER_PRO_PATH } from "@/lib/accounts/pro-paths";
+import { listDiscoverEvents } from "@/lib/events/catalog";
+import { eventPath } from "@/lib/events/routes";
+import { MapPinIcon, ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { ChisanMascot, ChisanMark } from "@/components/brand/chisan-brand";
 import { GuideHighlights } from "@/components/guides/guide-highlights";
 import { HomeCommunity } from "@/components/home-community";
@@ -24,6 +30,9 @@ export function HomeSections({
 }) {
   const numberFormat = new Intl.NumberFormat("es-ES");
   const shelfAvailable = selectionShelfEnabled();
+  const event = listDiscoverEvents().find((item) => item.plan);
+  const wine = categoryCounts.find((item) => item.token === "Vino");
+  const cheese = categoryCounts.find((item) => item.token === "Lácteos y quesos");
 
   return (
     <div className={`home-story ${styles.sections}`}>
@@ -73,9 +82,8 @@ export function HomeSections({
         <div className={styles.qrVisual} aria-hidden="true">
           <div className={styles.qrCard}>
             <span className={styles.qrCardTop}>CHISAN / ORIGEN</span>
-            <QrCodeIcon size={96} weight="light" />
-            <ChisanMark alt="" />
-            <span>Escanea y conoce su historia</span>
+            <ChisanQrCode value={buildProfileQrUrl("/es")} title="Abrir el mapa de Chisan" />
+            <span>Escanea y descubre productores</span>
           </div>
           <ChisanMascot state="catalog" size={96} alt="" className={styles.qrMascot} />
         </div>
@@ -109,19 +117,29 @@ export function HomeSections({
             </Link>
           </div>
         </div>
-        <div className={styles.agentVisual} aria-hidden="true">
+        <div className={styles.agentVisual}>
           <div className={styles.agentPhoto}>
-            <span className={styles.agentPhotoTop}>01 / FOTO</span>
-            <div className={styles.agentShelves}><i /><i /><i /><i /><i /><i /></div>
-            <span className={styles.agentPhotoPin}><MapPinIcon size={20} weight="fill" /></span>
+            <Image src="/editorial/guides/cava-maduracion-quesos.webp" alt="Quesos sobre una estantería de madera" width={1600} height={2400} sizes="(min-width: 761px) 40vw, 85vw" />
           </div>
-          <div className={styles.agentResult}>
+          <div className={styles.agentResult} aria-hidden="true">
             <ChisanMascot state="search" size={56} alt="" />
             <span>02 / REVISIÓN</span>
             <strong>De la imagen a tus productores</strong>
             <small>Tú decides qué se publica</small>
           </div>
         </div>
+      </section>
+
+      <section data-reveal aria-labelledby="home-visual-title">
+        <p className="chisan-eyebrow">Sigue el origen</p>
+        <h2 id="home-visual-title">De lo que ves a quien lo produce</h2>
+        <div className={styles.imageEntrances}>
+          {[{ href: wine?.href ?? "/es/guias/vinos-de-espana-denominaciones-origen", src: "/editorial/guides/vino.webp", title: "El mapa del vino", alt: "Copa de vino tinto" }, { href: cheese?.href ?? "/es/guias/quesos-de-espana", src: "/editorial/guides/queso.webp", title: "Encuentra tu próxima quesería", alt: "Queso de corteza blanca con aceitunas sobre papel" }, ...(event?.plan ? [{ href: `${eventPath(event.slug)}#plano`, src: event.plan.src, title: `Dentro de ${event.title}`, alt: event.plan.alt }] : [])].map((item) => <Link key={item.href} className="chisan-card" href={item.href}>
+            <div className="chisan-card__media"><Image src={item.src} alt={item.alt} width={640} height={420} sizes="(min-width: 761px) 30vw, 90vw" /></div>
+            <span>{item.title}<ArrowUpRightIcon className="chisan-arrow" size={18} aria-hidden="true" /></span>
+          </Link>)}
+        </div>
+        <p className={styles.note}>Fotografía de estantería: <a href="https://unsplash.com/photos/8TRKdGhW8TE" target="_blank" rel="noreferrer">Sandie Clarke / Unsplash</a>. Imágenes de vino y queso: créditos en nuestras <Link href="/es/guias">guías</Link>.</p>
       </section>
 
       <div data-reveal><GuideHighlights compactHome /></div>
@@ -148,7 +166,7 @@ export function HomeSections({
         </section>
 
         <section className={`chisan-panel chisan-panel--tint ${styles.cta}`} aria-labelledby="home-producer-title">
-          <span className={styles.ctaMark} aria-hidden="true"><PlantIcon size={32} /></span>
+          <span className={styles.ctaMark} aria-hidden="true"><ChisanMark alt="" /></span>
           <div>
             <p className="chisan-eyebrow">Tu trabajo merece conocerse</p>
             <h2 id="home-producer-title">¿Eres productor?</h2>
@@ -176,7 +194,7 @@ export function HomeSections({
             <p>Sigue productores, comparte tu selección y ayuda a mejorar las fichas.</p>
             <div className={styles.planTier}><strong>Pro</strong><span>Por consulta</span></div>
             <p>QR descargable para tu selección. Perfil de negocio y consultas B2B en preparación.</p>
-            <Link className="chisan-button chisan-button--primary" href={ACCOUNT_ROUTES.signUp}>Crear mi cuenta</Link>
+            <Link className="chisan-button chisan-button--primary" href={USER_PRO_PATH}>Conocer Usuario Pro</Link>
           </ResponsiveDisclosure>
           <ResponsiveDisclosure
             className={styles.planCard}
@@ -186,7 +204,7 @@ export function HomeSections({
             <p>Ficha revisada, contacto, fotos y verificación de titularidad sin coste.</p>
             <div className={styles.planTier}><strong>Pro</strong><span>Por consulta</span></div>
             <p>Productos y enlaces de compra revisados, perfil ampliado, estadísticas y QR. Asistente por WhatsApp según disponibilidad.</p>
-            <Link className="chisan-button chisan-button--primary" href="/contact">Consultar Pro</Link>
+            <Link className="chisan-button chisan-button--primary" href="/pro?perfil=productor">Conocer Productor Pro</Link>
           </ResponsiveDisclosure>
         </div>
         <p className={styles.note}>La contratación online todavía no está disponible. Las funciones en preparación se activarán cuando estén listas.</p>

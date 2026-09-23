@@ -12,8 +12,6 @@ import Link from "next/link";
 import { Suspense, type ComponentType } from "react";
 
 import { ProducerFollowButton } from "@/components/account/producer-follow-button";
-import { ProducerCover } from "@/components/producer-gallery";
-import type { ProducerContent } from "@/lib/catalog/content-schema";
 import {
   buildCatalogHref,
   type CatalogNavigationScope,
@@ -21,8 +19,6 @@ import {
 import { getCategoryLabel } from "@/lib/i18n/categories";
 import type { Locale } from "@/lib/i18n/locales";
 import { formatMessage, type Messages } from "@/lib/i18n/messages";
-
-type Photo = ProducerContent["gallery"][number];
 
 export type ProducerSocialLink = {
   url: string;
@@ -44,7 +40,6 @@ export type ProducerHeroProps = {
   countryHref: string;
   countryLabel: string;
   countrySlug: string;
-  cover: Photo | null;
   description?: string;
   email?: string;
   identityImageSrc: string;
@@ -80,7 +75,6 @@ export function ProducerHero({
   countryHref,
   countryLabel,
   countrySlug,
-  cover,
   description,
   email,
   identityImageSrc,
@@ -105,14 +99,8 @@ export function ProducerHero({
   return (
     <header
       id="detail-hero"
-      className={`detail-hero detail-hero--identity${cover ? " detail-hero--cover" : ""}${premiumActive ? " detail-hero--premium" : ""}`}
+      className={`detail-hero detail-hero--identity${premiumActive ? " detail-hero--premium" : ""}`}
     >
-      {cover ? (
-        <ProducerCover
-          photo={cover}
-          captionLabel={profileWords.photoCaption}
-        />
-      ) : null}
       <div className="detail-hero__tab">
         {identityImageSrc ? (
           <div className="detail-identity">
@@ -124,7 +112,7 @@ export function ProducerHero({
               width={320}
               height={240}
               sizes="160px"
-              priority={!cover}
+              priority
             />
           </div>
         ) : null}
@@ -148,9 +136,10 @@ export function ProducerHero({
                 <a
                   href="#detail-info"
                   className="detail-status detail-status--pending"
+                  aria-label={profileWords.pending}
+                  title={profileWords.pending}
                 >
                   <WarningCircleIcon size={20} aria-hidden="true" />
-                  {profileWords.pending}
                 </a>
               ) : null}
             </div>
@@ -162,21 +151,21 @@ export function ProducerHero({
                   returnTo={returnTo}
                   name={name}
                   locale={locale}
-                  dropdown
+                  compact
                 />
               </Suspense>
             </div>
           </div>
-          <div className="detail-context">
+        </div>
+        <div className="detail-context">
             <nav className="detail-breadcrumb" aria-label={messages.producer.navigation}>
               <ol>
                 <li><Link href={countryHref} prefetch={false}>{countryLabel}</Link></li>
                 <li><Link href={areaHref} prefetch={false}>{areaLabel}</Link></li>
-                <li aria-current="page">{name}</li>
+                <li><Link href={municipalityHref} prefetch={false}>{city}</Link></li>
               </ol>
             </nav>
             <div className="detail-subtitle">
-              <Link href={municipalityHref} prefetch={false}>{city}</Link>
               {categories.map((category) => (
                 <Link
                   key={category}
@@ -187,7 +176,6 @@ export function ProducerHero({
                 </Link>
               ))}
             </div>
-          </div>
         </div>
       </div>
       {description || hasHeroLinks ? (

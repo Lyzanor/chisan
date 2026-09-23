@@ -1018,3 +1018,31 @@ and map marker remain linked. The event card also renders under Ferias y
 encuentros in Descubrir. The source credit and full original plan remain
 available below the explorer. This review used the local Webpack dev server;
 no production publication is claimed.
+
+## 2026-09-24 — Shared discovery, profile imagery and Pro entry
+
+Reviewed home, Descubrir, the Barcelona map, Pan’Cake, event cards and Escumostra
+at 390px first, then home/profile at 1440px. No horizontal overflow was observed.
+The shared map sheet has a grip-only collapsed state, retains a 44px target and
+opens the complete roster with its count. Desktop navigation uses the same
+Descubrir/map icons as the bottom bar. The profile identity stays beside the name;
+the country/area/municipality context no longer repeats it. The pending-review
+icon and compact follow retain accessible labels.
+
+Home uses the actual branded QR renderer and reviewed guide photographs, with
+credits. Sections reveal once on intersection; the reduced-motion CSS keeps
+content visible and removes decorative animation. The shared footer omits the
+wordmark, overlaps its existing scenery and places the mascot at the right
+corner. The official event poster preserves its portrait ratio on both the card
+and page; event-plan links retain the organizer’s credited original.
+
+A disposable local fixture exercised product cards, both photo and identity
+link thumbnails, the full gallery and the native read-more disclosure. The
+disclosure opened correctly, and German long text and Japanese text wrapped
+without overflow at 390px. The fixture was removed and is not a public route.
+
+The shared Pro entry retained Pan’Cake’s identity and showed the exact October 1
+account-availability copy with accounts disabled, plus a conditions enquiry.
+It does not activate checkout or entitlements. Buyer/supplier Pro enforcement,
+expiry and retained history are covered by the isolated B2B service tests.
+Authenticated commercial activation is not claimed by this visual review.

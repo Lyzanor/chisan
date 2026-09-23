@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@clerk/nextjs";
-import { UserCircleIcon } from "@phosphor-icons/react";
+import { MapTrifoldIcon, SparkleIcon, UserCircleIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -78,14 +78,16 @@ function AccountNavView({ isSignedIn, messages }: AccountNavViewProps) {
         className={`site-account-nav__link ${isActividadActive ? "is-active" : ""}`}
         aria-current={isActividadActive ? "page" : undefined}
       >
-        Descubrir
+        <SparkleIcon size={18} weight={isActividadActive ? "fill" : "regular"} aria-hidden="true" />
+        <span>Descubrir</span>
       </Link>
       <Link
         href={mapHref}
         className={`site-account-nav__link ${isMapPathname(pathname) ? "is-active" : ""}`}
         aria-current={isMapPathname(pathname) ? "page" : undefined}
       >
-        Mapa
+        <MapTrifoldIcon size={18} weight={isMapPathname(pathname) ? "fill" : "regular"} aria-hidden="true" />
+        <span>Mapa</span>
       </Link>
 
       <Link
