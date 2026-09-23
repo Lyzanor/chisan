@@ -1,6 +1,5 @@
 import { producerDistanceKm } from "./nearby-producer-focus";
 
-export const DEFAULT_SEARCH_RADIUS_KM = 5;
 export const MAX_SEARCH_RADIUS_KM = 500;
 export type RadiusFilter = { latitude: number; longitude: number; radiusKm: number };
 type Point = { latitude: number | null; longitude: number | null };
