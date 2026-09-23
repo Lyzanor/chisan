@@ -827,6 +827,20 @@ photos and all three product actions align. At 390×844, the new phone carousel
 was checked with a 304px card and the next card visible to invite a sideways
 swipe; the document stayed within the viewport.
 
+## 2026-09-23 — Producer verification invitation and shared footer
+
+Reviewed an unclaimed Barcelona profile at 390×844 first, then 1440×900. Its
+"¿Eres este productor?" invitation now follows the early gallery and fits the
+phone width without document overflow. With accounts enabled it preserves the
+claim route. With accounts disabled it offers a preaddressed email containing
+the canonical profile URL and producer key; this begins editorial contact, not
+ownership approval. Verified profiles do not show a second claim invitation.
+
+The revised forest-green panorama adds a small city between the farm and
+vineyard. It sits behind the shared footer content at both widths, with the
+phone's final scene line above the fixed bottom navigation. The footer links
+and copyright remain legible over the illustration.
+
 ## 2026-09-23 — App entry and usable viewport, APK 0.1.2
 
 A fresh Pixel 8 / Android 16 emulator installation reproduced the missing

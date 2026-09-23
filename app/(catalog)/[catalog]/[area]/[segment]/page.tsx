@@ -428,10 +428,11 @@ export default async function ProducerPage({
       producer: candidate.name,
     }),
   }));
+  const accountsEnabled = isAccountSystemConfigured();
 
   return (
     <ProducerAccountProvider
-      enabled={isAccountSystemConfigured()}
+      enabled={accountsEnabled}
       country={country.slug}
       producerId={producer.producerId}
       activeOwner={ownershipVerified}
@@ -510,7 +511,7 @@ export default async function ProducerPage({
               title={profileWords.gallery}
               captionLabel={profileWords.photoCaption}
             />
-            {isAccountSystemConfigured() ? (
+            {accountsEnabled ? (
               <Suspense fallback={null}>
                 <ProducerGalleryAction
                   country={country.slug}
@@ -531,6 +532,19 @@ export default async function ProducerPage({
             />
           </aside>
         </div>
+
+        <Suspense fallback={null}>
+          <ProducerAccountActions
+            accountsEnabled={accountsEnabled}
+            country={country.slug}
+            locale={locale}
+            messages={messages.accountActions}
+            ownershipVerified={ownershipVerified}
+            producerId={producer.producerId}
+            producerName={producer.name}
+            profileUrl={canonicalUrl}
+          />
+        </Suspense>
 
         <ProducerProducts featuredProducts={featuredProducts} messages={messages} />
         {!premiumActive ? (
@@ -604,14 +618,6 @@ export default async function ProducerPage({
           title={similarMessages.title}
           producers={similarProducers}
         />
-        <Suspense fallback={null}>
-          <ProducerAccountActions
-            locale={locale}
-            country={country.slug}
-            producerId={producer.producerId}
-            messages={messages.accountActions}
-          />
-        </Suspense>
       </article>
     </main>
     </ProducerAccountProvider>

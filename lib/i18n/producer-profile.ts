@@ -15,6 +15,11 @@ const en = {
   participate: "Is this your production?",
   participateHelp:
     "Claim your profile for free, keep your information up to date and add a gallery of up to 5 photos. We review each change before publishing it.",
+  participateOfflineHelp:
+    "Account registration is temporarily unavailable. Write to us to start reviewing your connection to this producer.",
+  participateEmailAction: "Request verification by email",
+  participateEmailSubject: "Verify producer",
+  participateEmailBody: "Hello, I would like to verify my connection to this producer profile:",
   contribute: "A profile that grows with you",
   contributeHelp:
     "Keep your information up to date. We review each change before publishing it.",
@@ -26,10 +31,6 @@ const en = {
     "Show your work, your place and your products. New photos are reviewed before publication.",
   galleryManageTitle: "Bring your profile to life",
   galleryManageAction: "Manage photos",
-  galleryClaimTitle: "Is this your project?",
-  galleryClaimHelp:
-    "Add your photos and complete your profile for free. Verify your relationship with this producer to get started.",
-  galleryClaimAction: "Complete my profile",
   galleryClaimPendingTitle: "Verification request submitted",
   galleryClaimPendingHelp: "Your claim is currently under editorial review.",
   galleryClaimPendingAction: "View claim",
@@ -49,6 +50,11 @@ const es: typeof en = {
   participate: "¿Eres este productor?",
   participateHelp:
     "Solicita gratis la verificación de tu ficha, mantén tu información al día y añade una galería de hasta 5 fotos. Revisamos cada cambio antes de publicarlo.",
+  participateOfflineHelp:
+    "El registro está temporalmente desactivado. Escríbenos para iniciar la revisión de tu vinculación con este productor.",
+  participateEmailAction: "Solicitar verificación por correo",
+  participateEmailSubject: "Verificar productor",
+  participateEmailBody: "Hola, quiero verificar mi vinculación con esta ficha de productor:",
   contribute: "Una ficha que crece contigo",
   contributeHelp:
     "Mantén tu información al día. Revisamos cada cambio antes de publicarlo.",
@@ -60,10 +66,6 @@ const es: typeof en = {
     "Muestra tu trabajo, tu lugar y tus productos. Las fotos nuevas se revisan antes de publicarse.",
   galleryManageTitle: "Dale vida a tu ficha",
   galleryManageAction: "Gestionar fotos",
-  galleryClaimTitle: "¿Es tu proyecto?",
-  galleryClaimHelp:
-    "Añade tus fotos y completa la ficha gratis. Verifica tu vinculación con este productor para empezar.",
-  galleryClaimAction: "Completar mi ficha",
   galleryClaimPendingTitle: "Solicitud de verificación enviada",
   galleryClaimPendingHelp: "Tu solicitud está en revisión por el equipo editorial.",
   galleryClaimPendingAction: "Ver solicitud",
@@ -83,6 +85,11 @@ const ca: typeof en = {
   participate: "Ets aquest productor?",
   participateHelp:
     "Reclama la fitxa de franc, mantén la informació al dia i afegeix una galeria de fins a 5 fotos. Revisem cada canvi abans de publicar-lo.",
+  participateOfflineHelp:
+    "El registre està temporalment desactivat. Escriu-nos per iniciar la revisió de la teva vinculació amb aquest productor.",
+  participateEmailAction: "Sol·licitar la verificació per correu",
+  participateEmailSubject: "Verificar productor",
+  participateEmailBody: "Hola, vull verificar la meva vinculació amb aquesta fitxa de productor:",
   contribute: "Una fitxa que creix amb tu",
   contributeHelp:
     "Mantén la informació al dia. Revisem cada canvi abans de publicar-lo.",
@@ -94,10 +101,6 @@ const ca: typeof en = {
     "Mostra la teva feina, el teu lloc i els teus productes. Les fotos noves es revisen abans de publicar-les.",
   galleryManageTitle: "Dona vida a la teva fitxa",
   galleryManageAction: "Gestionar fotos",
-  galleryClaimTitle: "És el teu projecte?",
-  galleryClaimHelp:
-    "Afegeix les teves fotos i completa la fitxa de franc. Verifica la teva vinculació amb aquest productor per començar.",
-  galleryClaimAction: "Completar la meva fitxa",
   galleryClaimPendingTitle: "Sol·licitud de verificació enviada",
   galleryClaimPendingHelp: "La teva sol·licitud està en revisió per l'equip editorial.",
   galleryClaimPendingAction: "Veure sol·licitud",

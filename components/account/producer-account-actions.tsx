@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRightIcon, ClockIcon, PencilSimpleIcon, CameraIcon } from "@phosphor-icons/react";
+import { ArrowUpRightIcon, ClockIcon, PencilSimpleIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ChisanMascot } from "@/components/brand/chisan-brand";
@@ -10,6 +10,7 @@ import type { Locale } from "@/lib/i18n/locales";
 import { producerProfileLabels } from "@/lib/i18n/producer-profile";
 import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
 import type { Messages } from "@/lib/i18n/messages";
+import { SITE_CONTACT_EMAIL } from "@/lib/site";
 import { useProducerAccountState } from "./producer-account-provider";
 
 type ProducerSuggestionActionProps = {
@@ -20,6 +21,13 @@ type ProducerSuggestionActionProps = {
 
 type ProducerAccountActionsProps = ProducerSuggestionActionProps & {
   locale: Locale;
+};
+
+type ProducerClaimActionProps = ProducerAccountActionsProps & {
+  accountsEnabled: boolean;
+  ownershipVerified: boolean;
+  producerName: string;
+  profileUrl: string;
 };
 
 /** Community corrections, shown beside the profile details and their notice. */
@@ -57,12 +65,29 @@ export function ProducerSuggestionAction({
  * unverified profile, or the management links of its active members.
  */
 export function ProducerAccountActions({
+  accountsEnabled,
   country,
   producerId,
+  producerName,
+  profileUrl,
+  ownershipVerified,
   messages,
   locale,
-}: ProducerAccountActionsProps) {
+}: ProducerClaimActionProps) {
   const state = useProducerAccountState();
+  const words = producerProfileLabels(locale);
+  if (!accountsEnabled) {
+    if (ownershipVerified) return null;
+    const subject = encodeURIComponent(`${words.participateEmailSubject}: ${producerName}`);
+    const body = encodeURIComponent(`${words.participateEmailBody}\n\n${profileUrl}\n${country.toUpperCase()} #${producerId}`);
+    return (
+      <ProducerClosingSection title={words.participate} help={words.participateOfflineHelp} mascot>
+        <a href={`mailto:${SITE_CONTACT_EMAIL}?subject=${subject}&body=${body}`}>
+          {words.participateEmailAction}
+        </a>
+      </ProducerClosingSection>
+    );
+  }
   if (!state) return null;
   const {
     signedIn,
@@ -72,8 +97,6 @@ export function ProducerAccountActions({
     canClaimProducer,
     canOfferProfileUpgrade,
   } = state;
-  const words = producerProfileLabels(locale);
-
   if (membership) {
 
     return (
@@ -110,7 +133,7 @@ export function ProducerAccountActions({
   if (!canClaimProducer) return null;
 
   return (
-    <ProducerClosingSection title={words.participate} help={words.participateHelp}>
+    <ProducerClosingSection title={words.participate} help={words.participateHelp} mascot>
       {!signedIn ? (
         <Link prefetch={false} href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`}>
           {messages.claimProducer}
@@ -132,7 +155,7 @@ export function ProducerGalleryAction({
 }: ProducerAccountActionsProps) {
   const state = useProducerAccountState();
   if (!state) return null;
-  const { signedIn, activeOwner, membership, claim, canClaimProducer } = state;
+  const { activeOwner, membership, claim } = state;
 
   const words = producerProfileLabels(locale);
   if (membership) {
@@ -154,8 +177,6 @@ export function ProducerGalleryAction({
   }
   if (activeOwner) return null;
 
-  const claimPath = `/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`;
-
   if (claim) {
     return (
       <aside className="detail-gallery-action detail-gallery-action--pending" aria-label={words.galleryClaimPendingTitle}>
@@ -173,43 +194,26 @@ export function ProducerGalleryAction({
       </aside>
     );
   }
-  if (!canClaimProducer) return null;
-
-  const href = !signedIn
-    ? `${ACCOUNT_ROUTES.signIn}?redirect_url=${encodeURIComponent(claimPath)}`
-    : claimPath;
-
-  return (
-    <aside className="detail-gallery-action" aria-label={words.galleryClaimTitle}>
-      <div className="detail-gallery-action__content">
-        <CameraIcon size={20} aria-hidden="true" className="detail-gallery-action__icon" />
-        <div className="detail-gallery-action__copy">
-          <strong>{words.galleryClaimTitle}</strong>
-          <span className="detail-gallery-action__help">{words.galleryClaimHelp}</span>
-        </div>
-      </div>
-      <Link prefetch={false} href={href} className="detail-gallery-action__action">
-        <span>{words.galleryClaimAction}</span>
-        <ArrowUpRightIcon size={14} aria-hidden="true" />
-      </Link>
-    </aside>
-  );
+  return null;
 }
 
 function ProducerClosingSection({
   title,
   help,
   children,
+  mascot = false,
 }: {
   title: string;
   help: string;
   children: ReactNode;
+  mascot?: boolean;
 }) {
   return (
     <section
-      className="detail-participate"
+      className={`detail-participate${mascot ? " detail-participate--claim" : ""}`}
       aria-labelledby="detail-participate-title"
     >
+      {mascot ? <span className="detail-participate__mascot"><ChisanMascot state="gallery" size={64} alt="" /></span> : null}
       <div>
         <h2 id="detail-participate-title">{title}</h2>
         <p>{help}</p>

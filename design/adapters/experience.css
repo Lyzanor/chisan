@@ -754,11 +754,11 @@ body { min-height: 100svh; }
 .detail-sources small { display: block; color: var(--chisan-color-stone); }
 
 /* The footer is a clear page ending, above any content decoration. */
-.site-footer { position: relative; isolation: isolate; background: var(--chisan-color-surface); color: var(--chisan-color-ink); border: 0; border-top: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: 0; }
+.site-footer { position: relative; isolation: isolate; overflow: hidden; padding-bottom: 4rem; background: var(--chisan-color-surface); color: var(--chisan-color-ink); border: 0; border-top: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: 0; }
 .site-footer a { color: var(--chisan-color-moss-dark); }
 .site-footer a:focus-visible, .site-footer summary:focus-visible { outline: var(--chisan-focus-ring) solid var(--chisan-color-moss); outline-offset: 3px; }
 .site-footer a:hover { text-decoration-color: currentColor; }
-.site-footer__top { display: grid; grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2.2fr); gap: var(--chisan-space-12); padding: var(--chisan-space-12) var(--chisan-space-6); }
+.site-footer__top { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2.2fr); gap: var(--chisan-space-12); padding: var(--chisan-space-12) var(--chisan-space-6); background: linear-gradient(to bottom, var(--chisan-color-surface) 40%, color-mix(in srgb, var(--chisan-color-surface) 30%, transparent)); }
 .site-footer__identity p { max-width: 22ch; color: var(--chisan-color-stone); line-height: 1.4; }
 .site-footer__links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--chisan-space-6); padding: 0; }
 .site-footer__group { min-width: 0; }
@@ -766,18 +766,19 @@ body { min-height: 100svh; }
 .site-footer__group summary::-webkit-details-marker { display: none; }
 .site-footer__group > div { display: grid; gap: var(--chisan-space-2); }
 .site-footer__group a { display: flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
-.site-footer__bottom { display: flex; align-items: center; justify-content: space-between; gap: var(--chisan-space-4); padding: var(--chisan-space-4) var(--chisan-space-6); border-top: 1px solid var(--chisan-color-hairline); color: var(--chisan-color-stone); font-size: 0.8125rem; }
+.site-footer__bottom { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: var(--chisan-space-4); padding: var(--chisan-space-4) var(--chisan-space-6); border-top: 1px solid var(--chisan-color-hairline); background: color-mix(in srgb, var(--chisan-color-surface) 42%, transparent); color: var(--chisan-color-stone); font-size: 0.8125rem; }
 .site-footer__bottom a { min-height: 44px; display: inline-flex; align-items: center; }
-.footer-landscape { position: relative; height: clamp(150px, 16vw, 220px); overflow: hidden; background: var(--chisan-color-surface); }
+.footer-landscape { position: absolute; z-index: 0; inset: auto 0 0; height: clamp(210px, 19vw, 270px); overflow: hidden; pointer-events: none; }
 .footer-landscape__scenery { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block; }
-.footer-landscape__journey { position: absolute; bottom: 4px; left: 15%; pointer-events: none; }
+.footer-landscape__journey { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); pointer-events: none; }
 @media (max-width: 760px) {
+  .site-footer { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
   .site-footer__top { grid-template-columns: 1fr; gap: var(--chisan-space-4); padding: var(--chisan-space-8) var(--chisan-space-6); }
   .site-footer__identity p { max-width: none; }
   .site-footer__links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .footer-landscape { height: 150px; }
+  .footer-landscape { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); height: 200px; }
   .footer-landscape__scenery { width: 900px; max-width: none; position: absolute; left: 50%; transform: translateX(-50%); }
-  .footer-landscape__journey { left: 5%; }
+  .footer-landscape__journey { bottom: 40px; }
   .profile-qr__body { padding-top: var(--chisan-space-12); }
 }
 @media (max-width: 540px) {

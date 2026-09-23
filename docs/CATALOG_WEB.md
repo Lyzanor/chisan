@@ -83,6 +83,11 @@ management links from `/api/account/producer` with `private, no-store`; anonymou
 visitors need no account-state request. Every action and private destination
 still checks exact current server permissions. Followers' names, avatars and
 visibility are loaded only when opening the list and never enter cached HTML.
+Unclaimed profiles show the producer verification invitation beside the early
+gallery. When accounts are disabled, it opens a preaddressed email with the
+canonical profile URL instead of linking to unavailable registration. Verified
+profiles do not invite another ownership claim. The email starts a review; it
+does not grant a membership or publish a change.
 Safe filter context is applied to language navigation in the browser; canonical
 metadata is independent of those filters. Compatibility URLs use bounded build
 rewrites and a query-aware redirect handler, not a dynamic canonical profile.

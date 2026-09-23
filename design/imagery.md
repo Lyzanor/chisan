@@ -23,19 +23,20 @@ without reusing a photograph that depicts the wrong product.
 ## Illustration and movement
 
 The footer is a fine forest-green pen/engraving landscape with sparse gold
-accents. White sky and a low panorama leave the links separate and readable.
-A generic delivery cyclist carries produce along the path in one slow pass
-when the footer appears; reduced motion shows a static illustration. The scene
-must be decorative, non-interactive and visible below every profile.
+accents. Its orchard and vineyard now meet a modest urban neighborhood. The
+scene sits behind the lower footer content instead of forming a detached strip;
+the white sky keeps links readable.
+A small Chisan mascot sits on the path. The scene is decorative and
+non-interactive, and its last line remains visible above the phone navigation.
 
-The motion reference was the [train footer on Inspora](https://www.inspora.design/posts/train-animation).
-Chisan's orchard, farm, vineyard and bicycle are newly generated artwork, not
-copied frames from that animation.
+Chisan's orchard, farm, vineyard, city and bicycle are newly generated artwork,
+not copied from another site. The bicycle remains a spare asset.
 
 ## Asset provenance
 
-All four ambient assets were generated with the built-in Image Gen tool for
-this direction on 2026-09-14, inspected and encoded as WebP. Runtime files live
+The first four ambient assets were generated with the built-in Image Gen tool
+on 2026-09-14. The urban footer variant was edited from that landscape on
+2026-09-23. All were inspected and encoded as WebP. Runtime files live
 in `public/brand/ambient/`; they depict generic products and imaginary places.
 
 | File | Generation brief |
@@ -43,6 +44,7 @@ in `public/brand/ambient/`; they depict generic products and imaginary places.
 | `cheese.webp` | Ivory artisan wheel, wedge and small leaf sprig, high-key daylight and white margins |
 | `wine.webp` | Dark grapes, one vine leaf and translucent ruby wine in a plain glass, white margins |
 | `footer-landscape.webp` | Fine green orchard, farm and vineyard; white sky, low connecting path, no text or vehicle |
+| `footer-landscape-urban.webp` | The same low panorama with a small city neighborhood between farm and vineyard; active shared footer scene |
 | `footer-bicycle.webp` | Right-facing adult cyclist with a produce crate, fine green pen lines and small gold accents on white |
 
 The [brand identity](brand/README.md) remains the supplied Chisan artwork and
