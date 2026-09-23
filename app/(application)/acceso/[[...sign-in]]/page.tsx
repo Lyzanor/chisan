@@ -19,10 +19,8 @@ export default function SignInPage() {
       <main className="auth-page">
         <section className="auth-shell" aria-labelledby="account-auth-unavailable-title">
           <div className="auth-copy">
-          <h1 id="account-auth-unavailable-title">El acceso no está disponible</h1>
-          <p>
-            El acceso a cuentas no está habilitado. Puedes consultar el catálogo de productores sin iniciar sesión.
-          </p>
+          <h1 id="account-auth-unavailable-title">Acceso a cuentas</h1>
+          <p>El acceso a cuentas estará habilitado a partir del 1 de octubre.</p>
           <Link href="/" className="account-button account-button--secondary">Volver al catálogo</Link>
           </div>
         </section>

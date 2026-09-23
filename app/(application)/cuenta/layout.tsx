@@ -21,10 +21,8 @@ export default async function AccountLayout({ children }: { children: React.Reac
       <main className="page-shell account-page">
         <section className="panel account-setup-panel">
           <p className="catalog-kicker">Cuentas de {SITE_NAME}</p>
-          <h1>Las cuentas no están disponibles</h1>
-          <p>
-            Puedes seguir consultando el catálogo público de productores. El registro de cuentas todavía no está habilitado.
-          </p>
+          <h1>Acceso a cuentas</h1>
+          <p>El acceso a cuentas estará habilitado a partir del 1 de octubre.</p>
           <Link href="/" className="account-button account-button--secondary">
             Volver al catálogo
           </Link>
