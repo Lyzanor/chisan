@@ -33,8 +33,8 @@ export function GuideHighlights({ producer, compactHome = false }: { producer?: 
       </div>
       {!producer ? (
         <p>
-          Quesos, vinos y miel: conoce sus detalles, sitúa a sus productores y
-          sigue explorando sus fichas.
+          Aprende a elegir alimentos y a comprar en origen con guías que puedes
+          volver a consultar.
         </p>
       ) : null}
       <div className={styles.highlightGrid}>

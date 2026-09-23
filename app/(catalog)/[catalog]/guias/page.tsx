@@ -9,6 +9,7 @@ import {
   resolveGuidesScope,
 } from "@/lib/guides/catalog";
 import { buildGuideMetadata } from "@/lib/guides/metadata";
+import { GUIDE_KINDS, type Guide } from "@/lib/guides/schema";
 import styles from "@/components/guides/guides.module.css";
 
 export const metadata = buildGuideMetadata();
@@ -21,6 +22,23 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+function GuideCards({ guides }: { guides: Guide[] }) {
+  return (
+    <div className={styles.cards}>
+      {guides.map((guide) => (
+        <article key={guide.slug} className={styles.card}>
+          <GuideCover guide={guide} compact />
+          <p className={styles.eyebrow}>
+            {guide.topic} · {GUIDE_KINDS[guide.kind]}
+          </p>
+          <h3><Link href={guidePath(guide.slug)}>{guide.title}</Link></h3>
+          <p>{guide.description}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
 
 export default async function GuidesPage() {
   const guides = listPublishedGuides();
@@ -38,23 +56,34 @@ export default async function GuidesPage() {
         </div>
         <div>
           <p>
-            Detrás de cada alimento hay un lugar y una forma de hacer. Te
-            ayudamos a leer esos detalles y a encontrar a quienes los hacen
-            posibles.
+            Guías de referencia para volver a consultar, respuestas para la
+            compra y lecturas al ritmo de las cosechas. Con productores,
+            fuentes y fechas de revisión.
           </p>
-          <a href="#biblioteca" className={styles.textLink}>
+          <a href="#referencia" className={styles.textLink}>
             Explorar las guías <span aria-hidden="true">↓</span>
           </a>
         </div>
       </header>
+      <nav className={styles.topicNav} aria-label="Tipos de lectura">
+        <a href="#referencia">Para empezar</a>
+        <a href="#biblioteca">Guías prácticas</a>
+        <a href="#temporada">De temporada</a>
+        <a href="#historias">Historias</a>
+      </nav>
+      <section id="referencia" className={styles.topicSection} aria-labelledby="reference-title">
+        <h2 id="reference-title">Guías de referencia</h2>
+        <p>Las claves para entender el origen, elegir alimentos y comprar a sus productores.</p>
+        <GuideCards guides={guides.filter((guide) => guide.kind === "reference")} />
+      </section>
       <section
         id="biblioteca"
         className={styles.library}
         aria-labelledby="library-title"
       >
         <div className={styles.libraryHeading}>
-          <h2 id="library-title">Un alimento, muchas historias</h2>
-          <p>{guides.length} guías para explorar</p>
+          <h2 id="library-title">Para ir al detalle</h2>
+          <p>Guías prácticas por alimento y territorio</p>
         </div>
         <nav className={styles.topicNav} aria-label="Temas de las guías">
           {GUIDE_TOPICS.map((topic) => (
@@ -71,32 +100,29 @@ export default async function GuidesPage() {
             aria-labelledby={`titulo-${topic.toLowerCase()}`}
           >
             <h2 id={`titulo-${topic.toLowerCase()}`}>{topic}</h2>
-            <div className={styles.cards}>
-              {guides
-                .filter((guide) => guide.topic === topic)
-                .map((guide) => (
-                  <article key={guide.slug} className={styles.card}>
-                    <GuideCover guide={guide} compact />
-                    <p className={styles.eyebrow}>
-                      {guide.topic} · Guía de origen
-                    </p>
-                    <h3>
-                      <Link href={guidePath(guide.slug)}>{guide.title}</Link>
-                    </h3>
-                    <p>{guide.description}</p>
-                  </article>
-                ))}
-            </div>
+            <GuideCards guides={guides.filter((guide) => guide.kind === "practical" && guide.topic === topic)} />
           </section>
         ))}
+      </section>
+      <section id="temporada" className={styles.topicSection} aria-labelledby="seasonal-title">
+        <h2 id="seasonal-title">De temporada</h2>
+        <p>Qué preguntar cuando llega una cosecha y cómo llevarla a la despensa.</p>
+        <GuideCards guides={guides.filter((guide) => guide.kind === "seasonal")} />
+      </section>
+      <section id="historias" className={styles.topicSection} aria-labelledby="stories-title">
+        <h2 id="stories-title">Historias del alimento</h2>
+        <p>Detalles del oficio y preguntas cotidianas que merecen una explicación.</p>
+        <GuideCards guides={guides.filter((guide) => guide.kind === "story")} />
       </section>
       <section className={styles.indexNote}>
         <p className={styles.eyebrow}>Del texto al territorio</p>
         <h2>Leer, situar, conocer.</h2>
         <p>
-          Cada guía conecta contexto, productores y sus fichas. Encontrarás una
-          selección comentada, un mapa para orientarte y las fuentes para seguir
-          investigando. Volvemos a los artículos para ampliar lo que sabemos.
+          Chisan firma estas guías a partir del catálogo y de fuentes públicas,
+          con asistencia de IA. Las selecciones explican su alcance y cada
+          revisión indica qué ha cambiado. Puedes consultar{" "}
+          <Link href="/how-we-work">cómo trabajamos</Link> o{" "}
+          <Link href="/contact">proponer una corrección documentada</Link>.
         </p>
         <Link href="/#choose-country" className={styles.textLink}>
           Explorar el catálogo <span aria-hidden="true">↗</span>

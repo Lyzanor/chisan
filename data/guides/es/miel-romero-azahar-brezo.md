@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Miel
 title: "Miel de romero, azahar y brezo: leer la floración en el tarro"
-description: "Recorre el calendario aromático español a través de tres floraciones cumbre: la sutileza del azahar, la frescura del romero y la fuerza del brezo."
+description: Cómo comparar tres nombres de floración a partir del lote, el origen y la información del apicultor, sin dar por fijos color, sabor o calendario.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/abeja-flor-miel.webp
   alt: Abeja recolectando néctar en una flor silvestre
@@ -19,75 +19,62 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: cortes
-    title: Apícola Cortés · Floraciones de secano
-    url: https://apicolacortes.com/
-    checkedAt: 2026-09-06
-  - id: laparra
-    title: Apícola Laparra · Romero y brezo de Cuenca
-    url: https://apicolalaparra.com/
-    checkedAt: 2026-09-06
+  - id: boe-miel
+    title: BOE · Norma de calidad relativa a la miel, texto consolidado
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598
+    checkedAt: 2026-09-23
 related:
-  - como-leer-origen-miel
   - miel-de-espana
-  - miel-alcarria-liebana
+  - como-leer-origen-miel
+  - por-que-cristaliza-la-miel
+kind: practical
+revisionSummary: Eliminamos perfiles de cata universales y explicamos cómo contrastar una mención floral en la referencia elegida.
 ---
 
-El año apícola en la península se puede leer a través de tres colores y tres perfumes. Primero llega el azahar en marzo y abril, cuando los valles de naranjos y limoneros del Levante y Andalucía se cubren de pétalos blancos. Poco después, en los secanos de la meseta, el romero tiñe los campos con sus florecillas azuladas. Y a finales del verano, en las laderas altas del norte y del Sistema Central, el brezo florece en tonos púrpura antes de los primeros fríos.
+Romero, azahar y brezo son nombres que ayudan a explorar la miel, pero no describen una receta idéntica cada año. Para comparar dos tarros necesitas saber de qué cosecha y lugar proceden, además de leer la floración.
 
-Estas tres floraciones representan el abanico sensorial completo de la miel española: desde la caricia cítrica más etérea hasta la potencia amarga y mineral del matorral atlántico.
+## La floración necesita contexto {#floracion}
 
-## Tres estaciones, tres emociones en el paladar {#floracion}
+La denominación floral debe sostenerse en características del producto, según la [norma de la miel](https://www.boe.es/buscar/act.php?id=BOE-A-2003-15598). No basta con situar colmenas junto a una planta, ni sirve imponer a todas las flores un único porcentaje de polen.
 
-El azahar es pura primavera mediterránea: de color amarillo pajizo claro, al abrir el tarro salta un perfume embriagador que recuerda a los huertos en flor. En boca es suave, ácida, fresca y muy digestiva, perfecta para quienes rehúyen de los sabores empalagosos.
+Una pregunta útil al apicultor es cómo identifica esa miel y qué ocurrió en su campaña. Si no hay una referencia disponible este año, no hace falta sustituirla por otra con un nombre parecido.
 
-![Tarro de miel artesanal con panal natural](/editorial/guides/tarro-miel-artesanal.webp)
+## Proyectos para consultar la floración {#productores}
 
-El romero es el estandarte del secano castellano y levantino. Su miel es casi transparente en estado líquido y adquiere una blancura nacarada al cristalizar en textura de crema. Su aroma es limpio, sutil, con un fondo balsámico y alcanforado que evoca el rocío de la mañana sobre la roca caliza.
-
-En el extremo opuesto reina el brezo (calluna o erica). Cosechada en las brañas y laderas lluviosas del norte peninsular y las serranías altas, es una miel cobriza oscura, de textura viscosa y casi gelatinosa. Al probarla sorprende con un sabor rotundo, con notas de caramelo tostado, madera vieja y un marcado toque amargo final que apasiona a los amantes de los sabores intensos.
-
-Fuentes: [Apícola Cortés](https://apicolacortes.com/) · [Apícola Laparra](https://apicolalaparra.com/).
-
-## Cinco apicultores para recorrer las floraciones {#productores}
-
-Cinco proyectos que trabajan en sintonía con las floraciones autóctonas y embotellan en crudo cosechas monovarietales irrepetibles.
+La oferta de una casa cambia. Estos casos permiten preguntar por referencias y lotes concretos.
 
 ### [Apícola Cortés](producer:es:828)
 
-En Guadalajara, Apícola Cortés es una referencia imprescindible en mieles de floración temprana. Su miel cruda de romero, cosechada en las tierras alcarreñas, destaca por su blancura inmaculada, su textura cremosa ultrafina y un aroma herbal que transporta directamente al campo.
+Su actividad apícola en Orés ofrece un punto de partida para consultar mieles disponibles y lugar de recolección.
 
-### [Apícola Laparra (Miel La Orza)](producer:es:833)
+### [Apícola Laparra](producer:es:833)
 
-Desde la provincia de Cuenca, esta saga apícola domina tanto las floraciones de matorral como las de montaña. Su miel de brezo cosechada en las cotas más altas de la Serranía de Cuenca es un monumento de fuerza terrosa, color ámbar oscuro y persistencia amarga.
+La empresa de Fuenlabrada de los Montes trabaja mieles monoflorales y multiflorales bajo La Orza. No hay que confundir su sede extremeña con un único origen de toda la gama.
 
 ### [Mel Muria](producer:es:8583)
 
-En El Perelló (Tarragona), la familia Muria lleva elaborando mieles artesanas desde 1810 a lo largo de seis generaciones. Son una referencia europea en mieles monoflorales, destacando su azahar sutilísimo recolectado en los cítricos del Baix Ebre y su romero brillante de monte calizo.
+El proyecto de El Perelló produce y envasa miel y otros productos de la colmena. Distingue la miel que buscas de los demás productos y consulta su ficha.
 
 ### [Mieles Amuza](producer:es:8822)
 
-En Castellón, Mieles Amuza recolecta de forma artesanal miel cruda 100% natural. Sus colmenas situadas en las comarcas levantinas aprovechan tanto el estallido floral del azahar de primavera como el romero silvestre de secano, ofreciendo una cristalización limpia y natural.
+El catálogo recoge romero, azahar y tomillo. Es un ejemplo para comparar distintas floraciones en una misma casa cuando estén disponibles.
 
-### [Miel de Brezo Ecológica](producer:es:8684)
+### [Brezomiel](producer:es:8684)
 
-En Mirones (Cantabria), bajo la marca Brezomiel, elaboran miel ecológica de brezo puro cosechada en las laderas montañosas cántabras. Oscura, densa y de marcado fondo amargo y floral, es una de las mayores expresiones de la mielada atlántica del norte.
+La ficha de Miera recoge miel de brezo y mil flores y pedidos por contacto. Pregunta qué lote ofrece y cómo recomienda conservarlo.
 
 <!-- mapa -->
 
-## Cómo observar el color y la textura {#observacion}
+## Observar sin convertir una impresión en certificado {#observacion}
 
-Para disfrutar de estas tres mieles en casa:
-- **Prueba en cuchara de madera o porcelana**: evita el metal prolongado, que puede alterar sutilmente la percepción gustativa.
-- **Compara a contraluz**: alinea una cucharada de azahar, una de romero y una de brezo. La degradación visual del blanco pajizo al caoba profundo es una lección de botánica en la cocina.
-- **Siente el retrogusto**: mientras el romero deja una sensación limpia y balsámica, el brezo permanece durante minutos con recuerdos a bosque húmedo y malta.
+Anota color, textura y lo que percibes al probarlas, pero trata esas notas como tu experiencia con esos tarros. No conviertas «oscura» en «más pura» ni «líquida» en «menos natural».
 
-## Maridajes con personalidad {#preguntas}
+La [cristalización](/es/guias/por-que-cristaliza-la-miel) también cambia la forma de servir. Si quieres miel para untar o para una preparación concreta, explícalo al comprar en lugar de buscar un supuesto orden de calidad entre flores.
 
-- **Azahar**: enriquece infusiones de manzanilla o poleo, acompaña requesones y cuajadas, y aporta un toque celestial a vinagretas cítricas para ensaladas de endivias y granada.
-- **Romero**: el clásico sobre una tostada con aceite de oliva virgen extra y tomate, o como endulzante sutil en repostería fina y yogur de oveja.
-- **Brezo**: sublime junto a quesos azules (Cabrales, Valdeón), patés de caza, carnes de cerdo glaseadas o simplemente sobre un trozo de pan rústico de centeno.
+## Una comparación con una sola pregunta {#preguntas}
+
+Puedes elegir dos mieles del mismo productor para explorar la floración, o dos de la misma floración para preguntar por el origen. Compra formatos que vayas a utilizar y guarda sus etiquetas. Ese pequeño registro ayuda a repetir una elección sin exigir que todas las cosechas sean iguales.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Elegimos apicultores que identifican con rigor botánico el polen de cada floración y respetan los tiempos naturales de operculado en el panal. Esta guía celebra las tres grandes identidades florales de la despensa apícola peninsular.
+La guía propone un método de comparación y ejemplos del catálogo. No contiene catas propias ni asigna aromas, porcentajes de polen o fechas universales a cada floración. La información floral debe corresponder al producto y al lote.

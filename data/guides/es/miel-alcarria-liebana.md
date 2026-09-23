@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Miel
 title: "Miel de La Alcarria y Miel de Liébana: dos nombres de origen"
-description: "Compara el néctar floral de los páramos de Guadalajara con la intensidad boscosa de los Picos de Europa en dos mieles con denominación protegida."
+description: Cómo comparar Miel de La Alcarria y Miel de Liébana a partir de sus nombres protegidos y del producto, con ejemplos del catálogo.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/colmenas-apiario.webp
   alt: Hileras de colmenas de madera en un prado natural
@@ -19,80 +19,62 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: dop-alcarria
-    title: D.O.P. Miel de La Alcarria · Pliego de condiciones
-    url: https://mieldelaalcarria.org/
-    checkedAt: 2026-09-06
-  - id: dop-liebana
-    title: D.O.P. Miel de Liébana · Pliego y características
-    url: https://alimentosdecantabria.com/miel-de-liebana
-    checkedAt: 2026-09-06
-  - id: valserrano
-    title: Cooperativa Apícola Alcarreña · Miel Valserrano
-    url: https://mielvalserrano.es/
-    checkedAt: 2026-09-06
-  - id: vendejo
-    title: Colmenares de Vendejo · Liébana
-    url: https://mieldeliebana.com/
-    checkedAt: 2026-09-06
+  - id: mapa-dop
+    title: MAPA · Denominaciones de Origen e Indicaciones Geográficas Protegidas
+    url: https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/
+    checkedAt: 2026-09-23
+  - id: comision-origen
+    title: Comisión Europea · Denominaciones e indicaciones geográficas
+    url: https://agriculture.ec.europa.eu/farming/geographical-indications-and-quality-schemes/geographical-indications-and-quality-schemes-explained_en
+    checkedAt: 2026-09-23
 related:
   - miel-de-espana
   - como-leer-origen-miel
   - miel-romero-azahar-brezo
+kind: practical
+revisionSummary: Separamos territorio, certificación y gama; retiramos de la selección certificada un caso cuya ficha solo documentaba una intención de incorporación.
 ---
 
-Pocos contrastes geográficos son tan elocuentes en la mesa como el que separa los páramos aromáticos de La Alcarria de las gargantas escarpadas del valle de Liébana. En un país donde la apicultura es un arte milenario, estas dos comarcas cuentan con Denominación de Origen Protegida, demostrando cómo la botánica de cada territorio firma el aroma de sus tarros.
+Miel de La Alcarria y Miel de Liébana son dos nombres protegidos para explorar el vínculo entre miel y territorio. Para compararlos, empieza por tarros identificados con su denominación, no por una dirección de empresa o una imagen de paisaje.
 
-La Alcarria es el reino del sol, la caliza y el matorral mediterráneo: una meseta surcada de barrancos donde florecen el romero, el espliego silvestre y el tomillo. Liébana, encaramada en Cantabria al pie de los Picos de Europa, es un vergel umbrío de robles melojos, encinares de ladera, castaños centenarios y brezos de alta montaña.
+## Dos nombres, dos documentos que consultar {#dos-referencias}
 
-## Dos universos botánicos en la cuchara {#dos-referencias}
+Localiza cada denominación en la [documentación de calidad diferenciada del MAPA](https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/). El pliego explica el ámbito y las características exigidas. No presupongas que dos mieles de la misma DOP son idénticas o que un productor solo vende referencias amparadas.
 
-En La Alcarria, las abejas liban el néctar de las flores aromáticas de secano. Su miel monofloral de romero es de un color ámbar extra claro, casi blanco al cristalizar, con un aroma delicado, floral y balsámico que recuerda a un paseo matutino por el monte bajo.
+## Ejemplos para seguir el nombre protegido {#productores}
 
-![Abeja recolectando néctar en una flor silvestre](/editorial/guides/abeja-flor-miel.webp)
+La vinculación descrita procede de las fichas del catálogo. Confirma la referencia y su etiquetado cuando compres.
 
-En Liébana, el paisaje impone una miel muy diferente: la miel de mielada o miel de bosque. Las abejas no solo recolectan néctar de flores, sino también las secreciones azucaradas que exudan los robles y castaños. El resultado es una miel oscura, densa, casi resinosa, con un aroma profundo a madera, malta tostada y sotobosque, mucho menos dulce al paladar y repleta de minerales y hierro.
+### [Valserrano](producer:es:11634)
 
-Fuentes: [D.O.P. Miel de La Alcarria](https://mieldelaalcarria.org/) · [D.O.P. Miel de Liébana](https://alimentosdecantabria.com/) · [Valserrano](https://mielvalserrano.es/) · [Colmenares de Vendejo](https://mieldeliebana.com/).
+La Sociedad Cooperativa Apícola Alcarreña, en Renera, está documentada como registrada en la DOP Miel de La Alcarria y comercializadora de Valserrano.
 
-## Cinco productores guardianes de la denominación {#productores}
+### [Colmenares de Vendejo](producer:es:8675)
 
-Cinco casas apícolas que custodian el rigor de sus respectivos sellos de calidad diferenciada entre páramos y cumbres.
-
-### [Sociedad Cooperativa Apícola Alcarreña - Valserrano](producer:es:11634)
-
-Ubicada en Guadalajara, esta cooperativa reúne a familias apícolas que mantienen viva la trashumancia en los campos alcarreños. Su marca Valserrano, amparada por la D.O.P. Miel de La Alcarria, es un referente incuestionable de miel de romero y milflores con texturas cremosas y frescura vegetal intachable.
-
-### [Miel Colmenares De Vendejo - Miel de Liébana - BeeXperience - Turismo apícola](producer:es:8675)
-
-En la aldea lebaniega de Vendejo (Pesaguero), este proyecto familiar protege colmenares tradicionales en bancales rodeados de castañales y brezos. Su Miel de Liébana DOP atrapa la esencia umbría del bosque cantábrico en tarros oscuros de una intensidad balsámica arrolladora.
+La empresa de Cabezón de Liébana documenta Miel de Liébana DOP. Sus actividades BeeXperience abren otra vía de consulta que requiere reserva independiente.
 
 ### [El Colmenar de Valderromero](producer:es:5143)
 
-En Sigüenza (Guadalajara), la familia de Valderromero cuida sus colmenares en los valles altos de la comarca con sello de calidad Miel de La Alcarria. Sus mieles de espliego y romero cosechadas artesanalmente destacan por su aroma penetrante a monte bajo y una textura suave que cristaliza de forma homogénea.
+El catálogo recoge en Sigüenza una empresa familiar vinculada al sello Miel de La Alcarria. Pide la etiqueta de la referencia para continuar la comprobación.
 
-### [Nectarius · Alcarria Esencial Nature](producer:es:9057)
+### [Nectarius](producer:es:9057)
 
-En Cifuentes, en pleno corazón alcarreño, Nectarius elabora miel cruda y sin filtrar amparada por la DOP Miel de La Alcarria. Con un manejo escrupuloso de los panales en asentamientos alejados de cultivos intensivos, ofrecen mieles de tomillo y romero de una pureza floral cristalina.
-
-### [MIEL El Colmenar de las Doñas](producer:es:8715)
-
-En Vega de Liébana, al abrigo de las cumbres de los Picos de Europa, esta pequeña explotación familiar elabora miel artesana y productos de la colmena con su propio obrador. Sus mieles de bosque y brezo condensan notas minerales y tostadas características del valle lebaniego.
+El proyecto de Cifuentes está documentado con miel de la DOP Miel de La Alcarria. La floración y el lote aportan más detalle que el nombre de la casa por sí solo.
 
 <!-- mapa -->
 
-## Qué preguntar al comparar ambos orígenes {#comparar-origen}
+## Comparar el mismo nivel de información {#comparar-origen}
 
-Para entender el contraste en casa:
-- **Observa la luz**: coloca ambos tarros a contraluz. La miel de La Alcarria dejará pasar tonos dorados y luminosos, mientras que la de Liébana se mostrará profunda, opaca y cobriza.
-- **Prueba el dulzor**: la miel de romero alcarreña entra dulce, limpia y floral; el mielato lebaniego aporta notas saladas y amargas sutiles que amortiguan el impacto del azúcar.
-- **Tiempo de cristalización**: las mieles de néctar cristalizan antes debido a su mayor concentración de glucosa; las mieles de mielato de bosque permanecen viscosas mucho más tiempo.
+Anota denominación, floración declarada, lote y país de recolección de ambos tarros. Si uno incluye más detalle, pregunta por el dato que falta en el otro. No rellenes el hueco suponiendo que todo un valle trabaja de la misma manera.
 
-## Usos culinarios para cada origen {#del-tarro-al-lugar}
+Una comparación personal puede empezar con pequeñas cantidades y una misma preparación. Las preferencias que observes describen esos productos, no la superioridad de una comarca sobre otra.
 
-- **Miel de La Alcarria**: perfecta para infusionar tés suaves, regar quesos frescos de cabra, endulzar yogures artesanos o untar en pan blanco con mantequilla.
-- **Miel de Liébana**: el cómplice soñado de quesos azules intensos (como el Picón Bejes-Tresviso o Cabrales), carnes de caza, salsas para asados de cerdo o frutos secos tostados.
+## Del tarro al lugar {#del-tarro-al-lugar}
+
+Si quieres conocer el trabajo apícola, pregunta si el productor ofrece una actividad, en qué fecha y qué incluye. El acceso al colmenar y sus condiciones no se deducen de que haya una tienda.
+
+Para leer mezclas y origen nacional, vuelve a [cómo leer el origen de la miel](/es/guias/como-leer-origen-miel).
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Seleccionamos productores adscritos a los consejos reguladores oficiales que garantizan la pureza botánica y la extracción en frío sin sobrecalentamientos. Esta comparativa celebra dos de los paisajes apícolas más bellos y singulares de España.
+No publicamos un registro completo de operadores. Incluimos vínculos recogidos en el catálogo y no tratamos un proyecto de futura certificación como si ya estuviera certificado. No hay cata comparativa ni una descripción sensorial común para cada denominación.

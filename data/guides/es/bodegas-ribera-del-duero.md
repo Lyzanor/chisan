@@ -5,10 +5,10 @@ locale: es
 country: es
 status: published
 topic: Vinos
-title: "Bodegas de Ribera del Duero: Peñafiel y Pesquera como punto de partida"
-description: "Adéntrate en la meseta castellana, los suelos calizos del Duero y la nobleza de la tinta del país a través de dos bodegas históricas."
+title: "Bodegas de Ribera del Duero: de Peñafiel y Pesquera a Roa"
+description: Cinco puntos de partida en Valladolid y Burgos para leer una botella, diferenciar sedes y preparar una visita sin abarcar toda la denominación.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/uvas-tintas-ribera.webp
   alt: Racimos de uva tinta en el viñedo
@@ -19,78 +19,60 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: do-ribera
-    title: D.O. Ribera del Duero · El terroir y las bodegas
+  - id: ribera
+    title: Consejo Regulador · Ribera del Duero
     url: https://www.riberadelduero.es/
-    checkedAt: 2026-09-06
-  - id: protos
-    title: Bodegas Protos · Historia en Peñafiel
-    url: https://www.bodegasprotos.com/
-    checkedAt: 2026-09-06
-  - id: moro
-    title: Bodegas Emilio Moro · Tradición y terruño en Pesquera
-    url: https://www.emiliomoro.com/
-    checkedAt: 2026-09-06
+    checkedAt: 2026-09-23
 related:
   - vinos-de-espana-denominaciones-origen
   - bodegas-rioja
-  - bodegas-jerez
+  - vinos-bierzo
+kind: practical
+revisionSummary: Ajustamos título y alcance a las localidades de la selección y retiramos afirmaciones de calidad basadas en altitud o propiedad del viñedo.
 ---
 
-La Ribera del Duero es una tierra de extremos. A más de ochocientos metros de altitud sobre la llanura castellana, las cepas de tempranillo —conocida aquí como tinta del país o tinto fino— soportan inviernos gélidos con heladas tardías y veranos de sol abrasador donde la temperatura cae en picado durante la noche.
+Peñafiel, Pesquera de Duero, Roa y Pedrosa de Duero ofrecen entradas distintas para explorar bodegas del entorno de Ribera del Duero. Antes de comparar vinos, localiza la instalación y elige una referencia concreta.
 
-Esta oscilación térmica brutal frena la maduración durante las horas nocturnas, preservando una acidez fresca mientras la piel de la uva se engrosa para protegerse del sol. De ese esfuerzo de la vid nace un tinto de color picota impenetrable, cargado de fruta negra madura, taninos firmes y una estructura imperial pensada para el paso del tiempo en el roble.
+## Un recorrido acotado {#situar}
 
-## El valle del Duero y los suelos calizos {#situar}
+El [Consejo Regulador](https://www.riberadelduero.es/) mantiene información sobre vinos y un buscador de bodegas. Esta selección del catálogo no cubre toda la denominación ni atribuye el mismo suelo a todas sus viñas.
 
-El río Duero es el alma de la comarca. A lo largo de su curso vallisoletano, entre Peñafiel y Pesquera de Duero, los páramos y terrazas fluviales combinan arenas, arcillas rojas y vetas de caliza pura. La caliza aporta tensión y mineralidad, evitando que los vinos caigan en la pesadez alcohólica y otorgándoles un nervio vertical inconfundible.
+Si una empresa elabora en más de una región, comprueba qué instalación y qué vino estás consultando. La marca del grupo no convierte sus otras bodegas en productores de Ribera del Duero.
 
-![Hileras de viñedo bajo el sol castellano](/editorial/guides/vinedo-costers-priorat.webp)
+## Bodegas para empezar por una localidad {#productores}
 
-En las últimas décadas, la Ribera ha evolucionado desde los vinos marcados predominantemente por la madera hacia una búsqueda obsesiva de la identidad de la parcela. Hoy los mejores elaboradores seleccionan viñas viejas plantadas en vaso, fermentan con levaduras autóctonas y usan maderas más respetuosas para que la fruta y el suelo sean los verdaderos protagonistas en la copa.
+El mapa sitúa las fichas seleccionadas; consulta la certificación y documentación de la botella que te interese.
 
-Fuentes: [D.O. Ribera del Duero](https://www.riberadelduero.es/) · [Bodegas Protos](https://www.bodegasprotos.com/) · [Bodegas Emilio Moro](https://www.emiliomoro.com/).
+### [Protos](producer:es:2308)
 
-## Cinco bodegas emblemáticas de la Ribera del Duero {#productores}
+Su ficha de Peñafiel sirve para localizar la bodega y acceder a su información. Confirma qué sede corresponde a la visita o compra elegida.
 
-Cinco proyectos que definen el pulso vitivinícola de la Ribera: desde la cuna de Peñafiel y Pesquera hasta los suelos privilegiados de Roa y Pedrosa de Duero.
+### [Emilio Moro](producer:es:1991)
 
-### [Bodegas Protos](producer:es:2308)
+La ficha de Pesquera de Duero es distinta de la instalación del mismo grupo en el Bierzo. Esa separación evita mezclar vinos de territorios diferentes.
 
-Fundada en 1927 a la sombra del majestuoso castillo de Peñafiel, Protos fue la bodega que cedió el nombre «Ribera del Duero» a la denominación de origen. Sus galerías subterráneas excavadas en la roca bajo la montaña albergan miles de barricas donde maduran desde sus clásicos crianzas hasta vinos de parcela de altura que demuestran la vigencia de su lema fundacional: ser los primeros.
+### [Hermanos Pérez Pascuas](producer:es:2067)
 
-### [Bodegas Emilio Moro](producer:es:1991)
+En Pedrosa de Duero, el catálogo documenta un proyecto familiar con viñedo propio y la gama Viña Pedrosa. Consulta la referencia y añada antes de comparar elaboraciones.
 
-En Pesquera de Duero, la familia Moro lleva tres generaciones unida a la viña. Decidieron eliminar las categorías tradicionales de crianza y reserva para clasificar sus vinos por la personalidad de cada finca (como Malleolus, Valderramiro o Sanchomartín). Sus viñedos viejos de clon propio de tinto fino entregan vinos opulentos, perfumados y de tanino aterciopelado.
+### [López Cristóbal](producer:es:2138)
 
-### [Bodegas Hnos. Pérez Pascuas – Viña Pedrosa](producer:es:2067)
+El proyecto de Roa permite continuar por otra localidad. Su trayectoria vitícola familiar aporta contexto, sin describir automáticamente cada vino actual.
 
-Fundada en 1980 en Pedrosa de Duero por los hermanos Pérez Pascuas, esta bodega familiar fue artífice directa del nacimiento de la D.O. Ribera del Duero. Elaboran exclusivamente a partir de sus propios viñedos de tinta del país, con cepas de hasta noventa años que alumbran su legendario Viña Pedrosa, arquetipo de elegancia, equilibrio y longevidad castellana.
+### [Carmelo Rodero](producer:es:1887)
 
-### [Bodegas López Cristobal, S.L.](producer:es:2138)
-
-En Roa de Duero, la familia López Cristóbal combina tradición vitícola casi centenaria con una interpretación moderna y honesta del terruño. Trabajando parcelas de suelos calizos y arcillosos a más de 800 metros de altitud, sus tintos destacan por una fruta negra pulida, equilibrio fresco y un roble perfectamente integrado.
-
-### [Bodegas Carmelo Rodero](producer:es:1887)
-
-En Pedrosa de Duero, Carmelo Rodero y sus hijas María y Beatriz han construido una de las bodegas familiares más admiradas de la meseta. Gracias a su minuciosa clasificación de parcelas y un sistema de gravedad que mima la uva entera, vinos como Pago de Valtarreña o TSM muestran una concentración sedosa y una elegancia que seduce al instante.
+La gama incluye referencias como 9 Meses, Crianza o Pago de Valtarreña. Usa esos nombres para pedir la ficha técnica exacta.
 
 <!-- mapa -->
 
-## Cómo leer un tinto ribereño {#variedad-y-crianza}
+## Variedad y crianza por referencia {#variedad-y-crianza}
 
-Al servir un Ribera del Duero en la copa:
-- Observa la capa: un ribete amoratado denota juventud, mientras que los tonos rubí y teja señalan la madurez serena de la barrica.
-- Busca la fruta: antes de mover la copa, inhala las notas de mora, arándano y ciruela negra. Al agitar suavemente, despertarán los recuerdos a pimienta negra, clavo, cacao, torrefactos y monte bajo.
-- En boca, busca el tanino: debe ser envolvente, carnoso pero noble, dejando una sensación de frescura mineral que pide el siguiente sorbo.
+Busca composición, añada y crianza declaradas. No conviertas la altura de una finca o el número de meses en barrica en una escala automática de calidad. Si una añada cambia, comprueba también si cambió la elaboración.
 
-## En la mesa: el reino del lechazo {#preguntas}
+## Preguntas para una visita útil {#preguntas}
 
-La gastronomía castellana ha crecido en simbiosis con estos vinos:
-- **Lechazo asado en horno de leña**: la grasa crujiente y tierna del cordero churro encuentra en la acidez y los taninos del tinto el contrapunto perfecto para limpiar el paladar.
-- **Caza mayor y carnes rojas**: un solomillo ibérico, un ciervo estofado o un chuletón de buey se crecen ante la potencia de los vinos de viñas viejas.
-- **Quesos curados de oveja**: un queso zamorano o castellano añejo potencia las notas tostadas y especiadas de la madera noble.
+Pregunta qué proceso puedes ver, de dónde procede la uva del vino presentado y qué distingue las referencias de la casa. Confirma reserva y desplazamiento. Para preparar la lectura de la etiqueta, vuelve a [vinos de España](/es/guias/vinos-de-espana-denominaciones-origen).
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Seleccionamos bodegas históricas que mantienen viñedos propios en cotas altas de la meseta y demuestran un compromiso constante con la expresión del tempranillo castellano. Esta guía orienta el paladar hacia el corazón de una de las denominaciones más prestigiosas del mundo.
+Esta es una selección territorial comentada de fichas existentes. No presupone pertenencia de toda la gama a una denominación ni ofrece un registro exhaustivo, una cata comparativa o disponibilidad de visitas.

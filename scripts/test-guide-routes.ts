@@ -31,15 +31,20 @@ test("guide routes serve Spanish text, canonical metadata and exact producer lin
     assert.match(html, /application\/ld\+json/);
     assert.match(html, /"@type":"Article"/);
     assert.match(html, /Nuestro criterio editorial/);
-    assert.match(html, /Mapa de los productores de esta selección/);
+    assert.match(html, /max-image-preview:large/);
+    if (guide.revisionSummary) assert.match(html, /En esta revisión:/);
+    const hasMap = guide.sections.some((section) => section.type === "producers" && section.showMap);
+    assert.equal(html.includes("Mapa de los productores de esta selección"), hasMap);
     const producers = await resolveGuideProducers(guide);
     for (const producer of producers)
       assert.ok(html.includes(`href="${producer.href}"`));
-    const profile: Response = await fetch(`${baseUrl}${producers[0].href}`);
-    assert.equal(profile.status, 200);
-    const profileHtml = await profile.text();
-    assert.match(profileHtml, /Aparece en estas guías/);
-    assert.ok(profileHtml.includes(`href="${route}"`));
+    if (producers.length) {
+      const profile: Response = await fetch(`${baseUrl}${producers[0].href}`);
+      assert.equal(profile.status, 200);
+      const profileHtml = await profile.text();
+      assert.match(profileHtml, /Aparece en estas guías/);
+      assert.ok(profileHtml.includes(`href="${route}"`));
+    }
   }
   assert.equal(
     (await fetch(`${baseUrl}${GUIDES_PATH}/unknown-guide`)).status,

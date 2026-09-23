@@ -5,10 +5,10 @@ locale: es
 country: es
 status: published
 topic: Territorios
-title: "Productores de Extremadura: queso y miel para conocer el territorio"
-description: "En las dehesas de Trujillo y los montes de Fuenlabrada florece la esencia de Extremadura: la torta cremosa de Finca Pascualete y la miel virgen de Apícola Laparra."
+title: "La despensa de Extremadura: queso, miel, pimentón e ibérico"
+description: Cinco proyectos de Cáceres y Badajoz para seguir elaboraciones concretas, comprobar origen y preparar una compra sin reducir la región a un solo paisaje.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/dehesa-extremadura-encinas.webp
   alt: Dehesa con encinas centenarias y pastos
@@ -19,71 +19,62 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: pascualete
-    title: Finca Pascualete · La Retorta
-    url: https://www.fincapascualete.com/shop/queso-de-torta
-    checkedAt: 2026-09-06
-  - id: laparra
-    title: Apícola Laparra · Producción y tienda
-    url: https://www.apicolalaparra.es/
-    checkedAt: 2026-09-06
+  - id: mapa-dop
+    title: MAPA · Denominaciones de Origen e Indicaciones Geográficas Protegidas
+    url: https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/
+    checkedAt: 2026-09-23
 related:
   - queserias-leche-oveja
   - miel-de-espana
-  - miel-romero-azahar-brezo
+  - comprar-directamente-a-productores
+kind: practical
+revisionSummary: Ampliamos el título al contenido real y corregimos atribuciones de ganadería propia, pastoreo y extracción en frío sin respaldo.
 ---
 
-Extremadura es un santuario natural de silencio, cielo abierto y horizontes dilatados. En este paisaje legendario domina la dehesa: un ecosistema agroforestal milenario donde encinas y alcornoques centenarios conviven con pastos aromáticos, berrocales de granito y sierras agrestes pobladas de jarales, brezos y tomillos silvestres.
+Queso de oveja, miel, pimentón e ibérico ofrecen cuatro formas de empezar a conocer productores de Extremadura. El punto de partida es lo que hace cada proyecto, no la idea de que toda la región comparte un mismo paisaje o proceso.
 
-En este rincón del suroeste peninsular, el queso y la miel son mucho más que alimentos: son testimonios vivos de pastores que trashumaron durante siglos y de apicultores que conocen el calendario secreto de cada floración. Conocer de cerca a sus productores es descubrir una Extremadura indómita, refinada y profundamente arraigada en su tierra.
+## Trabajos diferentes, preguntas diferentes {#dos-trabajos}
 
-## Dehesas, jarales y la paciencia del pastoreo {#dos-trabajos}
+Para el queso, interesa la leche y la elaboración. Para la miel, el lugar de recolección del lote. Para un pimentón, la referencia y el nombre protegido. Para jamón o embutido, la denominación exacta del producto que se vende.
 
-La dehesa impone un ritmo sereno. Las ovejas merinas pastan en libertad entre bellotas caídas y tréboles silvestres, transformando esa riqueza vegetal en una leche densa, grasa y aromática como pocas en el mundo.
+Esa lectura evita convertir una descripción de territorio en una garantía sobre cualquier alimento elaborado allí.
 
-![Rebaño de ovejas pastando en la dehesa extremeña](/editorial/guides/ovejas-pastizal-queso.webp)
+## Cinco proyectos en Cáceres y Badajoz {#productores}
 
-A pocos kilómetros, en las estribaciones de La Siberia y las sierras extremeñas, los enjambres de abejas liban el néctar de cantuesos, jaras pringosas y mielatos de roble. Tanto el queso de pasta blanda cuajado con flor de cardo como la miel cruda recién cosechada comparten una virtud esencial: no admiten atajos ni maquinarias que sustituyan el conocimiento paciente del medio natural.
+La selección ofrece entradas concretas al catálogo, sin proponer una ruta de una jornada.
 
-Fuentes: [Finca Pascualete · La Retorta](https://www.fincapascualete.com/shop/queso-de-torta) · [Apícola Laparra · Producción y tienda](https://www.apicolalaparra.es/).
+### [Finca Pascualete](producer:es:10528)
 
-## Cinco baluartes del sabor extremeño {#productores}
+La quesería de Trujillo elabora quesos de oveja y vende mediante tienda propia. Consulta textura y formato de la referencia, no solo el nombre de la casa.
 
-Cinco proyectos familiares que encarnan la excelencia agroalimentaria de la dehesa, la comarca de La Vera y la sierra.
+### [Apícola Laparra](producer:es:833)
 
-### [Quesería Finca Pascualete](producer:es:10528)
+Su producción y envasado de miel La Orza se sitúan en Fuenlabrada de los Montes, Badajoz. La floración y el origen del lote completan la lectura.
 
-En las dehesas históricas de Trujillo (Cáceres), Finca Pascualete elabora quesos desde hace generaciones con la leche de su propio rebaño de ovejas criado en total libertad. Su queso insignia, La Retorta, es un prodigio gastronómico elaborado con leche cruda y cuajo vegetal obtenido de la maceración de los pistilos del cardo silvestre (*Cynara cardunculus*). De corteza fina y corazón líquido y fundente, despliega aromas herbáceos, recuerdos a pastizal húmedo y un suave amargor vegetal elegante e inolvidable.
+### [Pimentón Las Hermanas](producer:es:10189)
 
-### [Apícola Laparra (Miel La Orza)](producer:es:833)
-
-En Fuenlabrada de los Montes (Badajoz), considerada la cuna de la miel en el suroeste peninsular, la familia Laparra ejerce una apicultura artesana y trashumante ejemplar. Sus mieles crudas monoflorales de azahar, romero, jara, brezo y milflores se recolectan a mano y se decantan en frío sin someterse a pasteurización térmica, conservando intactos todos sus enzimas vivos, pólenes naturales y matices resinosos y balsámicos.
-
-### [Pimentón de la Vera Las Hermanas](producer:es:10189)
-
-En Cuacos de Yuste (Cáceres), Las Hermanas preserva la liturgia del Pimentón de la Vera con Denominación de Origen Protegida. El secado artesanal en humeros con leña de encina y roble durante dos semanas confiere a sus variedades dulce, agridulce y picante ese inconfundible aroma ahumado y color rubí que viste la gastronomía de toda la península.
+En Cuacos de Yuste fabrica y envasa Pimentón de la Vera DOP. Distingue referencia, presentación y certificación en la etiqueta.
 
 ### [Extrem Puro Extremadura](producer:es:5711)
 
-En Herreruela (Cáceres), Extrem elabora jamones y embutidos de cerdos 100% ibéricos criados en régimen extensivo en miles de hectáreas de dehesa propia. Su curación lenta en secaderos naturales con aire de sierra produce jamones de bellota de veteado brillante, aroma profundo a frutos secos y grasa sedosa que se deshace en el paladar.
+La ficha de Herreruela documenta jamón y embutidos 100 % ibéricos de bellota y tienda propia. Comprueba la denominación del artículo concreto antes del pedido.
 
 ### [Cremositos del Zújar](producer:es:4681)
 
-En Campanario (Badajoz), en plena comarca de La Serena, Arteserena elabora sus afamados Cremositos del Zújar con leche cruda de oveja merina y cuajo vegetal de cardo. Esta torta cremosa, madurada sobre madera y volteada a diario, ofrece una textura untuosa insuperable con ligeras notas agrias y florales.
+Arteserena elabora en Campanario tortas y quesos de oveja. Pregunta qué diferencia cada presentación y cómo conservarla después de abrir.
 
 <!-- mapa -->
 
-## Degustar la pureza: el ritual del cardo y la cuchara {#conocer-producto}
+## Conocer el producto antes de comprar cantidad {#conocer-producto}
 
-Disfrutar de estas dos joyas extremeñas exige respetar sus particulares tiempos:
-- **Atemperar La Retorta**: un queso de pasta blanda jamás debe tomarse frío de la nevera. Sácalo con al menos tres o cuatro horas de antelación para que alcance los 20 °C.
-- **El corte de la tapa**: con un cuchillo afilado de punta, realiza una incisión circular horizontal en la corteza superior levantando una tapa como si fuera la cubierta de una arqueta.
-- **La cuchara y el maridaje**: hunde la cuchara de madera o unta un pan rústico recién tostado con la crema sedosa. Prueba a acompañarla con una gota generosa de miel pura de tomillo o brezo: el contraste entre la grasa untuosa y amarga del queso y el dulzor floral resinoso de la miel es una revelación absoluta.
+Una primera selección puede limitarse a dos elaboraciones que vayas a utilizar. Compara cantidades y formatos; un producto para compartir una vez y otro para uso cotidiano no necesitan el mismo tamaño.
 
-## Una tierra viva que recompensa al viajero atento {#ampliar}
+Si buscas un nombre protegido, la información del [MAPA](https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/) permite consultar su documentación. Una dirección en Extremadura no sustituye el sello o la referencia correspondiente.
 
-Visitar Extremadura es adentrarse en pueblos de piedra coronados por cigüeñas, atardeceres dorados sobre los encinares y castillos templarios. Al planificar tu itinerario, ponte en contacto con los productores para coordinar visitas a las instalaciones o compras directas en obrador, donde podrás charlar cara a cara con quienes dedican su vida a cuidar este patrimonio biológico irrepetible.
+## Ampliar por alimento {#ampliar}
+
+La [guía de quesos de oveja](/es/guias/queserias-leche-oveja) y la [referencia sobre miel](/es/guias/miel-de-espana) desarrollan las preguntas de elaboración. Para recibir un pedido, consulta [compra directa](/es/guias/comprar-directamente-a-productores).
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Elegimos proyectos extremeños con ganadería propia en extensivo o colmenares sostenibles que elaboran con respeto al bienestar animal, la leche cruda y el envasado en frío de miel virgen sin pasteurizar.
+Partimos de actividades y municipios documentados en el catálogo. No inferimos ganado propio, dehesa, pastoreo o un tratamiento de la miel por el origen regional. La selección es introductoria y no un censo ni una clasificación de calidad.

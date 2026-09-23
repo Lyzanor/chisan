@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Territorios
 title: "La despensa de Galicia: fabas, vino y conservas con origen"
-description: "Del verde interior de Lourenzá a las rías atlánticas: la Faba de Terras da Mariña, los blancos de Terras Gauda y las joyas conserveras de Ramón Peña."
+description: "Lourenzá, Padrón y las Rías Baixas como entradas a legumbres, pimientos, vino y conservas: cómo seguir cada producto hasta su elaborador."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/costa-galicia-atlantico.webp
   alt: Costa atlántica rocosa de Galicia al atardecer
@@ -19,75 +19,67 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: terras-marina
-    title: Terras da Mariña · Faba de Lourenzá y verdina
-    url: https://www.terrasdamarina.com/
-    checkedAt: 2026-09-06
-  - id: terras
-    title: Terras Gauda · La bodega y sus vinos
-    url: https://terrasgauda.com/
-    checkedAt: 2026-09-06
-  - id: ramon
-    title: Conservas Ramón Peña · Elaboraciones de pescado y marisco
-    url: https://conservasramonpena.com/
-    checkedAt: 2026-09-06
+  - id: mapa-dop
+    title: MAPA · Denominaciones de Origen e Indicaciones Geográficas Protegidas
+    url: https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/
+    checkedAt: 2026-09-23
+  - id: rias-baixas
+    title: Consejo Regulador · D.O. Rías Baixas
+    url: https://doriasbaixas.com/
+    checkedAt: 2026-09-23
 related:
   - legumbres-de-espana
   - bodegas-rias-baixas
   - conservas-pescado-marisco
+  - calendario-frutas-verduras-temporada
+kind: practical
+revisionSummary: Incorporamos el cultivo de pimiento a la lectura y separamos procedencia de la materia prima, transformación y denominación.
 ---
 
-Galicia es una tierra bendecida por la lluvia atlántica, el granito y una costa escarpada modelada por rías fértiles que actúan como auténticos criaderos naturales de marisco. Su despensa tiene un pulso propio: una comunión profunda entre los campos verdes del interior campesino y el rumor salobre de las mareas.
+Explorar la despensa de Galicia puede empezar con una faba, un pimiento, una conserva o una botella. Cada producto abre una pregunta distinta sobre cultivo, transformación y origen.
 
-Explorar sus sabores a través de los productores locales revela una cultura gastronómica obsesionada con la pureza del producto: la legumbre que se funde en mantequilla al fuego lento, el mosto de uvas autóctonas que sabe a brisa marina y las latas de conserva marina empacadas a mano como si fueran cofres de orfebrería.
+## Cuatro entradas, sin una ruta única {#tres-entradas}
 
-## La triple huella del suelo, la ría y el microclima {#tres-entradas}
+Lourenzá, Padrón, O Rosal, Meis y Ribadumia sitúan los proyectos de esta selección. No forman una excursión cerrada ni representan por sí solos toda la producción gallega.
 
-El secreto gallego reside en sus microclimas singulares. En las vegas resguardadas del norte lucense, la niebla matinal de A Mariña aporta la humedad justa para que la alubia desarrolle una piel casi invisible.
+El mapa ayuda a orientarse. La documentación de cada alimento permite ir más lejos: una denominación se comprueba en el producto, y una conservera situada en Galicia no implica por sí sola que toda su materia prima tenga ese origen.
 
-![Racimos dorados de albariño en parras gallegas](/editorial/guides/uvas-blancas-rias-baixas.webp)
+## Cinco proyectos para elegir un punto de partida {#productores}
 
-En el suroeste, las laderas que descienden hacia el río Miño gozan de un enclave soleado donde cepas criadas en emparrados elevados maduran al amparo del viento oceánico. Y en el corazón de las rías, las corrientes ricas en plancton alimentan berberechos, navajas y sardinillas con una concentración de sabor salino inigualable en el resto del mundo.
-
-Fuentes: [Terras da Mariña · Faba de Lourenzá y verdina](https://www.terrasdamarina.com/) · [Terras Gauda · La bodega y sus vinos](https://terrasgauda.com/) · [Conservas Ramón Peña · Elaboraciones de pescado y marisco](https://conservasramonpena.com/).
-
-## Cinco guardianes de la despensa atlántica {#productores}
-
-Cinco firmas gallegas admiradas por su apego al origen y a la excelencia artesanal entre el mar y la tierra.
+Las fichas recogen estos trabajos y permiten continuar hacia la información de cada productor.
 
 ### [Terras da Mariña](producer:es:11797)
 
-En Lourenzá (Lugo), esta cooperativa de agricultores familiares preserva con devoción la Faba de Lourenzá amparada con Indicación Geográfica Protegida (I.G.P.). Sembradas en suelos aluviales fértiles y secadas con calma al abrigo de los hórreos tradicionales, sus fabas se distinguen por un grano blanco brillante y uniforme que, tras horas de cocción paciente, ofrece una textura mantecosa sublime sin soltar el hollejo.
+En Lourenzá, la cooperativa trabaja Faba de Lourenzá IGP y otras legumbres. Pregunta por la variedad, la cosecha y la presentación.
 
 ### [Terras Gauda](producer:es:11801)
 
-En O Rosal (Pontevedra), a orillas de la desembocadura del Miño, Terras Gauda es un templo del vino atlántico. Su gran acierto fue combinar el albariño estructurado con la finura aromática del loureiro y la frescura ácida del caíño blanco. Sus blancos despliegan una complejidad majestuosa, con recuerdos a cítricos maduros, laurel silvestre, notas minerales y una boca envolvente y larga.
+Su actividad en O Rosal permite conocer albariño junto a caíño blanco y loureiro. La referencia elegida indica cómo se combinan.
 
-### [Conservas Ramón Peña](producer:es:4343)
+### [Ramón Peña](producer:es:4343)
 
-En Ribadumia (Pontevedra), la familia Ramón Peña practica desde hace tres generaciones la alta costura conservera. Compran el mejor marisco y pescado en las lonjas gallegas durante las mareas más propicias del año: navajas desarenadas primorosamente a mano, berberechos de calibre excepcional y sardinillas plateadas empacadas una a una con pinzas y cubiertas por aceites de oliva de máxima pureza.
+La conservera de Ribadumia elabora pescados y mariscos. Mira especie, preparación y cantidad para organizar una compra concreta.
 
 ### [Pazo Señorans](producer:es:10106)
 
-En Meis (Pontevedra), en el valle de O Salnés, Pazo de Señoráns demostró la capacidad de envejecimiento del albariño mediante largas crianzas sobre lías. Su Selección de Añada es una cumbre enológica mundial que aúna mineralidad marina, complejidad sutil y textura glicérica profunda.
+En Meis trabaja vinos de albariño y aguardientes. Es un ejemplo de por qué una bodega puede ofrecer productos con procesos diferentes.
 
 ### [A Pementeira](producer:es:49)
 
-En Padrón (A Coruña), esta sociedad agraria de mujeres productoras defiende la autenticidad del Pemento de Herbón con DOP. Cosechados a mano uno a uno en su punto justo de verdor durante el verano, ofrecen el bocado estival más célebre de Galicia: fritos en aceite virgen extra y sazonados con sal gorda.
+La sociedad agraria de Padrón agrupa principalmente a productoras de pimiento de Herbón DOP y cuenta con elaborados propios. Permite seguir cultivo y transformación.
 
 <!-- mapa -->
 
-## Cómo llevar la emoción de Galicia a tu mesa {#despensa}
+## Una despensa que puedas repetir {#despensa}
 
-Armar un banquete con sabor a costa y terruño gallego es tan sencillo como respetar a sus artesanos:
-- **La faba en su caldo**: prepara un guiso marinero con fabas de Lourenzá pochadas despacio, añadiendo al final unas almejas de carril o el propio caldo de una lata de marisco noble.
-- **La conserva al natural**: sirve las navajas o berberechos ligeramente atemperados, sin calentar en exceso ni añadir gotas de limón que enmascaren su yodo natural.
-- **La copa bien fría**: descorcha una botella de Terras Gauda a 10 °C y disfruta de cómo su tensión mineral limpia la boca y multiplica el sabor de las mareas.
+Elige una referencia por uso, en lugar de comprar por acumulación. Guarda la variedad de la legumbre que te ha funcionado, la preparación de la conserva y el nombre y añada del vino. Ese registro ayuda más que una etiqueta genérica de «producto gallego».
 
-## Recorrer las rías y valles interiores con calma {#salida}
+Para producto fresco, pregunta si está en cosecha local en la fecha de compra. La presencia en una tienda durante todo el año no sustituye esa información.
 
-Galicia no se visita con prisas: cada curva de la carretera esconde una ría luminosa, un pazo rodeado de viñas o una taberna donde el tiempo se detiene. Si viajas a conocer a sus productores, infórmate previamente de sus visitas concertadas y temporadas de campaña: las bodegas en vendimia otoñal y los campos de fabas en la recolección de finales de verano son espectáculos inolvidables.
+## Continuar por un tema {#salida}
+
+Si te interesa el vino, sigue por [Rías Baixas](/es/guias/bodegas-rias-baixas). Para la cocina, consulta [legumbres](/es/guias/legumbres-de-espana) o [conservas](/es/guias/conservas-pescado-marisco). Si preparas una salida, reserva primero la actividad y después organiza los desplazamientos.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Respaldamos proyectos gallegos que garantizan el origen geográfico estricto de sus cultivos, vinos y capturas, premiando el trabajo manual de cooperativas agrarias, viticultores y conserveras históricas.
+La selección explica oficios y referencias documentadas del catálogo. No constituye un inventario regional ni garantiza el origen gallego de todos los ingredientes o capturas. No hay visitas ni catas propias atribuidas a Chisan.

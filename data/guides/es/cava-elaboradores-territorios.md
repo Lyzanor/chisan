@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Vinos
 title: "Cava: elaboradores certificados de la DOP, territorio a territorio"
-description: "Recorre las 152 bodegas del catálogo con instalación certificada por la DO Cava, de Sant Sadurní a Requena, y aprende a leer Guarda, Reserva y Paraje Calificado."
+description: Una selección documentada de instalaciones certificadas y productores del catálogo, con las claves de crianza, azúcar y territorio para leer la etiqueta.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/copa-cava-espumoso.webp
   alt: Copa de vino espumoso con burbujas finas
@@ -22,11 +22,11 @@ sources:
   - id: listado-instalaciones-2026
     title: DO Cava · Listado de instalaciones elaboradoras de cava certificadas, 28/04/2026
     url: https://www.cava.wine/documents/529/20260428_Listado_de_empresas_de_CAVA_certificadas_2026.pdf
-    checkedAt: 2026-09-13
+    checkedAt: 2026-09-23
   - id: pliego-dop-cava
     title: DOP Cava · Pliego de condiciones
     url: https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf
-    checkedAt: 2026-09-13
+    checkedAt: 2026-09-23
   - id: mapa-dop-cava
     title: MAPA · Denominación de Origen Protegida «Cava»
     url: https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/detalle/vcprd/dop_cava
@@ -38,7 +38,7 @@ sources:
   - id: elaborador-integral
     title: DO Cava · Sello de Elaborador Integral
     url: https://www.cava.wine/es/origen/sello-elaborador-integral/
-    checkedAt: 2026-09-13
+    checkedAt: 2026-09-23
   - id: corpinnat
     title: Corpinnat · Bodegas afiliadas
     url: https://www.corpinnat.com/
@@ -51,45 +51,41 @@ sources:
     title: Diari de Tarragona · Juvé & Camps abandona la DO Cava
     url: https://www.diaridetarragona.com/economia/256288/juve-camps-abandona-do-cava-incorporarse-corpinnat-suma-22-bodegas.html
     checkedAt: 2026-09-13
-  - id: codorniu
-    title: Codorníu · Non Plus Ultra Brut Reserva Ecológico
-    url: https://www.codorniu.com/cavas/premium-prestige/codorniu-non-plus-ultra-brut-reserva-eco
-    checkedAt: 2026-09-06
 related:
   - vinos-de-espana-denominaciones-origen
   - priorat-montsant
   - bodegas-jerez
+kind: practical
+revisionSummary: Aclaramos tiraje, azúcar y crianza, retiramos una imagen ajena al proceso y contrastamos las 152 referencias con las certificaciones del catálogo; conservamos la fecha del registro utilizado.
 ---
 
-El sonido festivo del descorche esconde un proceso de paciencia casi monacal. En las colinas del Penedès y en los terruños del Ebro, Requena o Almendralejo, el cava nace en el silencio subterráneo: millones de botellas reposan en posición horizontal —en rima— en cavas excavadas donde la temperatura permanece fresca y constante a lo largo de las cuatro estaciones.
+El cava es un vino espumoso de método tradicional con una denominación de origen propia. Para elegirlo, conviene separar tres datos: la bodega que elabora, el tiempo de crianza y la mención de azúcar de la botella.
 
-Allí, el vino base realiza su segunda fermentación dentro de cada botella individual siguiendo el método tradicional. Las levaduras transforman los azúcares naturales en burbujas diminutas y continuas, y durante meses o años de reposo sobre lías regalan esa finura que corona la copa. Esta guía reúne las 152 bodegas del catálogo cuya instalación elaboradora está oficialmente certificada por el Consejo Regulador, ordenadas territorio a territorio.
+Esta guía reúne los 152 productores del catálogo cuya ficha recoge una instalación certificada como DOP Cava. La relación procede del listado oficial del 28 de abril de 2026 y de la revisión documental del 13 de septiembre de 2026. Es una cobertura fechada del catálogo, no un registro en tiempo real de todas las empresas del consejo.
 
-El listado oficial del 28 de abril de 2026 recoge 163 instalaciones de 158 empresas y personas elaboradoras. En Chisan están ya identificadas 152 de esas bodegas con su instalación vinculada; otras ocho permanecen en revisión hasta confirmar documentalmente su actividad actual.
+Para una primera lectura, empieza por las menciones de la etiqueta y después elige un territorio. La selección y sus mapas permiten continuar hacia la ficha de cada productor.
 
 ## Qué garantiza la palabra cava {#denominacion}
 
-El pliego de condiciones define el cava como un vino espumoso de calidad obtenido por segunda fermentación en botella, con al menos nueve meses de contacto ininterrumpido con las lías en la misma botella. Puede ser blanco o rosado, y su contenido en azúcares se expresa con términos precisos como Brut Nature (sin adición de licor de expedición), Extra Brut, Brut o Semiseco.
+El [pliego de la DOP](https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf) exige segunda fermentación en botella y un mínimo de nueve meses de contacto con las lías. El licor de tiraje interviene en esa segunda fermentación; no debe confundirse con el licor de expedición posterior.
 
-![Cava de maduración con botellas reposando en rima](/editorial/guides/cava-maduracion-quesos.webp)
+La mención de azúcar responde a otra pregunta: Brut Nature indica menos de 3 g/l y sin adición de azúcar; Brut, menos de 12 g/l. No describen meses de crianza. Para comparar dos botellas, anota ambas dimensiones.
 
-La certificación oficial ampara a la instalación concreta donde se realiza la vinificación, el tiraje y la crianza, no a una marca flotante en el aire ni a un gentilicio genérico. Por eso cada referencia en esta guía identifica la bodega elaboradora real.
-
-Fuentes: [DOP Cava · Pliego de condiciones](https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf) · [DO Cava · Listado de instalaciones elaboradoras de cava certificadas, 28/04/2026](https://www.cava.wine/documents/529/20260428_Listado_de_empresas_de_CAVA_certificadas_2026.pdf) · [MAPA · Denominación de Origen Protegida «Cava»](https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/detalle/vcprd/dop_cava).
+La selección relaciona la instalación certificada del [listado del consejo](https://www.cava.wine/documents/529/20260428_Listado_de_empresas_de_CAVA_certificadas_2026.pdf) con su productor del catálogo. Una marca o una dirección del Penedès no bastan para establecer esa relación.
 
 ## Zonas, subzonas y parajes {#territorios}
 
-El pliego divide la zona de producción en cuatro grandes zonas: Comtats de Barcelona, Valle del Ebro, Viñedos de Almendralejo y Requena. Comtats de Barcelona se reparte en las subzonas Valls d'Anoia-Foix, Serra de Mar, Conca del Gaià, Serra de Prades y Pla de Ponent, y el Valle del Ebro en Alto Ebro y Valle del Cierzo. Los Parajes Calificados son unidades singulares menores, reconocidas viña a viña por su suelo y microclima excepcionales.
+El pliego divide la zona de producción en cuatro grandes zonas: Comtats de Barcelona, Valle del Ebro, Viñedos de Almendralejo y Requena. Comtats de Barcelona se reparte en las subzonas Valls d'Anoia-Foix, Serra de Mar, Conca del Gaià, Serra de Prades y Pla de Ponent, y el Valle del Ebro en Alto Ebro y Valle del Cierzo. Los Parajes Calificados tienen requisitos propios dentro del pliego.
 
-Agrupamos las bodegas por el municipio de su instalación certificada. La zona o subzona que puede lucir una botella depende del origen del viñedo cosechado, garantizando trazabilidad total desde la cepa.
+Agrupamos las bodegas por el municipio de su instalación certificada. La zona o subzona que puede lucir una botella depende del origen del viñedo cosechado, y de los requisitos de esa mención.
 
 Fuentes: [DOP Cava · Pliego de condiciones](https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf).
 
 ## Guarda, Guarda Superior y Elaborador Integral {#etiqueta}
 
-Las menciones Reserva, Gran Reserva y Paraje Calificado forman el Cava de Guarda Superior: exigen uva de viñedos inscritos en su registro y crianzas mínimas de 18, 30 y 36 meses desde el tiraje hasta el degüelle. En Gran Reserva y Paraje Calificado todo el proceso transcurre además en la misma botella y en la misma bodega.
+Reserva, Gran Reserva y Paraje Calificado tienen mínimos de crianza de 18, 30 y 36 meses, respectivamente, desde el tiraje hasta el degüelle. La etiqueta permite distinguir estas menciones de la cantidad de azúcar. Para otros requisitos de Guarda Superior, consulta el pliego y la referencia concreta.
 
-El sello de Elaborador Integral distingue a las bodegas que llevan a cabo toda la elaboración en su propiedad, con el 100 % de la uva prensada y vinificada allí. Las categorías y sellos que citamos para cada casa proceden de su ficha en el directorio del consejo; la etiqueta de cada botella indica los suyos.
+El sello de Elaborador Integral identifica elaboración de principio a fin en la misma propiedad, con el 100 % prensado y vinificado allí. No significa por sí solo que toda la uva sea de viñedo propio. Las categorías y sellos que citamos para cada casa proceden de su ficha en el directorio del consejo; la etiqueta de cada botella indica los suyos.
 
 Fuentes: [DOP Cava · Pliego de condiciones](https://www.cava.wine/documents/615/Pliego_de-CondicionesDOPCAVA.pdf) · [DO Cava · Las bodegas de la D.O. Cava](https://www.cava.wine/es/bodegas/) · [DO Cava · Sello de Elaborador Integral](https://www.cava.wine/es/origen/sello-elaborador-integral/).
 

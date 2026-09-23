@@ -20,7 +20,11 @@ export function buildGuideMetadata(guide?: Guide): Metadata {
     title,
     description,
     alternates: { canonical: url, languages: { es: url } },
-    robots: { index: isPublicDiscoveryEnabled(), follow: true },
+    robots: {
+      index: isPublicDiscoveryEnabled(),
+      follow: true,
+      "max-image-preview": "large",
+    },
     openGraph: {
       type: guide ? "article" : "website",
       title,

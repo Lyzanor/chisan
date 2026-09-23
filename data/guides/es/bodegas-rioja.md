@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Vinos
 title: "Bodegas de Rioja: cinco miradas al vino desde Haro"
-description: "Viaja al mítico Barrio de la Estación de Haro y comprende el diálogo entre el clasicismo centenario y la viticultura de parcela riojana a través de cinco bodegas de referencia."
+description: Un recorrido por Haro para entender tonelería, calados y referencias de vino, con cinco bodegas y claves para preparar una comparación o visita.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/vinedo-rioja.webp
   alt: Hileras de viñedo con montañas al fondo
@@ -19,78 +19,68 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: do-rioja
-    title: D.O.Ca. Rioja · Zonas y variedades
-    url: https://www.riojawine.com/
-    checkedAt: 2026-09-06
-  - id: muga
-    title: Bodegas Muga · Elaboración, tonelería y Prado Enea
-    url: https://www.bodegasmuga.com/
-    checkedAt: 2026-09-06
-  - id: tondonia
-    title: R. López de Heredia Viña Tondonia · Filosofía centenaria
-    url: https://www.lopezdeheredia.com/
-    checkedAt: 2026-09-06
+  - id: rioja-crianza
+    title: Consejo Regulador · Clasificación de los vinos Rioja según su crianza
+    url: https://riojawine.com/es/blog/clasificacion-de-los-vinos-rioja-segun-su-crianza/
+    checkedAt: 2026-09-23
+  - id: rioja
+    title: Consejo Regulador · DOCa Rioja
+    url: https://riojawine.com/es/
+    checkedAt: 2026-09-23
 related:
   - vinos-de-espana-denominaciones-origen
   - bodegas-ribera-del-duero
-  - bodegas-jerez
+  - cava-elaboradores-territorios
+kind: practical
+revisionSummary: Acotamos el alcance a Haro y recuperamos detalles documentados de las bodegas, sin convertir la selección en un ranking.
 ---
 
-En ningún otro rincón del planeta existe una concentración semejante de bodegas centenarias como en el Barrio de la Estación de Haro. A finales del siglo XIX, cuando la plaga de filoxera asolaba los viñedos franceses, los comerciantes de Burdeos tendieron las vías del ferrocarril hasta esta esquina privilegiada de La Rioja Alta para abastecerse de vino fino.
+Haro permite acercarse al vino a través de bodegas con historias y formas de trabajo diferentes en una misma localidad. Es un punto de partida manejable, no un resumen de toda Rioja.
 
-Alrededor de los andenes brotaron naves de sillería dorada, cavas subterráneas y jardines señoriales que hoy conforman la cuna espiritual del vino español. Aquí el tempranillo se funde con la garnacha, el graciano y el mazuelo bajo la influencia atlántica de la Sierra de Cantabria, dando vida a vinos de una finura sedosa, acidez luminosa y una capacidad de evolución que desafía las décadas.
+## Haro dentro de Rioja {#dos-casas}
 
-## El roble, el tiempo y la elegancia riojana {#dos-casas}
+El [Consejo Regulador](https://riojawine.com/es/) distingue Rioja Alta, Rioja Alavesa y Rioja Oriental y ofrece información sobre clasificación, variedades y bodegas. Esta guía se concentra en Haro: no pretende representar las tres zonas con cinco nombres.
 
-El clasicismo riojano no es inmovilismo: es una devoción radical por la paciencia. Mientras el mundo del vino moderno persigue a menudo la extracción rápida y la fruta primaria efímera, los grandes elaboradores de Haro esperan años —a veces más de una década— antes de sacar una botella al mercado.
+La ubicación del edificio y el origen de la uva son preguntas distintas. Durante una visita, pregunta qué se elabora allí y qué parcelas o proveedores corresponden al vino que te muestran.
 
-![Botas de roble y silencio en la cava](/editorial/guides/botas-jerez.webp)
+## Cinco bodegas y un detalle que seguir {#productores}
 
-Durante su larga estancia en tinas y barricas de roble, el vino sufre trasiegas artesanales por gravedad a la luz de una vela. Los taninos se pulen hasta volverse caricia, y en el bouquet emergen notas embriagadoras a tabaco de pipa, cuero ruso, vainilla especiada, té negro y hojas secas de otoño. Es la magia de la reducción noble en botella: un equilibrio aristocrático donde nada sobra y todo conmueve.
+Los detalles proceden de sus fichas del catálogo; sirven para preparar preguntas, sin trasladarlos a todos sus vinos.
 
-Fuentes: [D.O.Ca. Rioja](https://www.riojawine.com/) · [Bodegas Muga](https://www.bodegasmuga.com/) · [R. López de Heredia](https://www.lopezdeheredia.com/).
+### [Muga](producer:es:2224)
 
-## Cinco catedrales del Barrio de la Estación {#productores}
+La bodega cuenta con tonelería propia. Pregunta cómo se decide qué recipiente utiliza cada vino y cómo se mantiene una barrica.
 
-Cinco bodegas legendarias que custodian el alma de Haro con personalidades complementarias: el dominio artesanal de la madera, la viticultura de precisión y la fidelidad a una liturgia centenaria.
+### [López de Heredia](producer:es:11020)
 
-### [BODEGAS MUGA](producer:es:2224)
+Sus calados y su patrimonio documental permiten explorar la historia material de una bodega. Confirma qué espacios se incluyen en cualquier actividad ofrecida.
 
-Muga es una de las poquísimas bodegas del mundo que conserva su propia tonelería artesanal en casa. La familia controla desde el secado del roble hasta el tostado a fuego de sus cubas y barricas. Elaboraciones míticas como Prado Enea Gran Reserva o Torre Muga demuestran cómo la fidelidad a la madera artesanal y el clarificado tradicional con claras de huevo fresco crean tintos de una riqueza y nobleza legendarias.
+### [La Rioja Alta](producer:es:7840)
 
-### [R. LÓPEZ DE HEREDIA VIÑA TONDONIA, S.A.](producer:es:11020)
+Su gama recoge nombres como Viña Ardanza y Viña Alberdi. Identifica referencia y añada antes de comparar crianzas o composición.
 
-Fundada en 1877 por don Rafael López de Heredia, Viña Tondonia es un templo vivo de la enología universal. Nada ha cambiado en su forma de elaborar: tinas gigantescas cubiertas de levaduras centenarias, telarañas que protegen el reposo subterráneo y un rechazo total a las modas pasajeras. Sus tintos y blancos de Viña Tondonia y Viña Gravonia son prodigios de finura, acidez vibrante y eternidad en copa.
+### [Roda](producer:es:2342)
 
-### [La Rioja Alta, S.A.](producer:es:7840)
-
-Fundada en 1890 por cinco familias viticultoras de Haro y Álava, La Rioja Alta es el estandarte del gran reserva clásico. Con viñedos propios excepcionales en Briñas, Labastida y Rodezno, sus míticos Gran Reserva 890 y Gran Reserva 904 encarnan el arquetipo de la sutileza riojana: notas balsámicas, seda pura en boca y una frescura imbatible.
-
-### [Bodegas Roda](producer:es:2342)
-
-Llegada al Barrio de la Estación a finales de los años ochenta, Roda protagonizó una renovación deslumbrante en Rioja. Con una investigación exhaustiva sobre el comportamiento del tempranillo y la garnacha en distintas añadas, vinos como Roda I y Cirsion deslumbran por su fruta roja y negra pletórica de vida, tanino redondo y pulso contemporáneo.
+El catálogo documenta vinificación en tinas de roble francés. Es una oportunidad para separar el recipiente de fermentación de la crianza posterior.
 
 ### [CVNE](producer:es:4721)
 
-La Compañía Vinícola del Norte de España nació en Haro en 1879. Con su famosa nave de barricas diseñada por el estudio de Gustave Eiffel, CVNE ha elaborado algunas de las botellas más gloriosas de la historia española, destacando su icónico Imperial: un tinto de equilibrio imperial y gran nobleza que madura con serenidad durante décadas.
+Su historia en Haro incluye la Nave Eiffel y la elaboración de Imperial. Distingue el patrimonio de la casa de la ficha técnica de la botella elegida.
 
 <!-- mapa -->
 
-## Cómo disfrutar un gran clásico de Rioja {#comparar}
+## Comparar dos botellas con una pregunta {#comparar}
 
-Para descorchar un Rioja de guarda con todos los honores:
-- Descorcha la botella con tiempo: los vinos con años de crianza necesitan respirar suavemente en la botella o en un decantador para despertar sus terciarios sin brusquedad.
-- Utiliza copas amplias tipo Borgoña: la copa abierta permite que los aromas a sotobosque, ciruela pasa, cedro y especias se desplieguen en abanico aromático.
-- Sírvelo entre 16 y 18 ºC: el calor excesivo estropea la sutileza de los aromas añejos, mientras que el frío enmascara su textura sedosa.
+En los tintos de Rioja, las menciones **Crianza, Reserva y Gran Reserva** corresponden a periodos mínimos de dos, tres y cinco años, respectivamente, con requisitos de permanencia en barrica y botella. No significa que todo ese tiempo transcurra en madera. Blancos y rosados tienen condiciones diferentes; la [explicación del consejo](https://riojawine.com/es/blog/clasificacion-de-los-vinos-rioja-segun-su-crianza/) permite leer cada caso.
 
-## La visita al Barrio de la Estación {#visita}
+Elige qué quieres entender: añada, variedad, elaboración o crianza. Anota esos datos de cada referencia. Evita cambiar todas las variables y concluir después que una sola de ellas explica tus preferencias.
 
-Pasear entre las bodegas de Haro es un viaje en el tiempo:
-- Camina a pie de una bodega a otra: en un radio de apenas quinientos metros puedes visitar cavas históricas con más de un siglo de historia continua.
-- Pregunta por el viñedo: comprende cómo la Sierra de Toloño frena los vientos fríos del norte y cómo el río Ebro modula las maduraciones en Rioja Alta.
-- No pases por alto los blancos de guarda: los blancos añejos de Rioja criados en madera son una de las joyas secretas más cotizadas por los coleccionistas internacionales.
+Una mención de crianza describe requisitos; no asegura que una botella vaya a gustarte más que otra. La [guía general del vino](/es/guias/vinos-de-espana-denominaciones-origen) ayuda a ordenar la lectura.
+
+## Preparar la visita {#visita}
+
+Consulta disponibilidad, instalación visitada, duración y contenido. Una visita de bodega, una degustación y una actividad entre viñas son propuestas diferentes. Deja margen entre reservas y organiza los desplazamientos antes de elegir cuántas paradas hacer.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Seleccionamos bodegas históricas de Haro que mantienen métodos artesanales de vinificación, tonelería propia o cavas subterráneas activas. Esta guía rinde homenaje al clasicismo que situó a España en el mapa de las grandes regiones vinícolas del planeta.
+Seleccionamos bodegas del catálogo situadas en Haro para explicar diferencias documentadas. No hay cata propia, ranking ni inventario completo de operadores de Rioja. Las denominaciones se comprueban por referencia y registro, no por la sola localización.

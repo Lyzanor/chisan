@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Aceite
 title: "Picual, arbequina y hojiblanca: comparar aceites con nombre propio"
-description: "Aprende a diferenciar las tres grandes variedades de aceite español a través de notas de cata, aromas de campo y cinco almazaras maestras."
+description: "Cómo comparar referencias de picual, arbequina y hojiblanca: variedad declarada, campaña, categoría y una prueba doméstica que puedas repetir."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/aceitunas-variedades.webp
   alt: Aceitunas verdes y negras recién cosechadas
@@ -19,74 +19,57 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: oro
-    title: Oro Bailén · Reserva Familiar Picual y Arbequina
-    url: https://www.orobailen.com/en/node/311
-    checkedAt: 2026-09-06
-  - id: subbetica
-    title: Almazaras de la Subbética · Rincón de la Subbética
-    url: https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/
-    checkedAt: 2026-09-06
+  - id: ue-aceite
+    title: Unión Europea · Normas de comercialización del aceite de oliva
+    url: https://eur-lex.europa.eu/legal-content/ES/ALL/?uri=uriserv%3AOJ.L_.2022.284.01.0001.01.SPA
+    checkedAt: 2026-09-23
 related:
   - aceite-oliva-variedades-almazaras
   - almazaras-venta-directa
-  - conservas-vegetales-huerta
+kind: practical
+revisionSummary: Sustituimos perfiles sensoriales absolutos por referencias documentadas y una comparación de variedades, campaña y uso.
 ---
 
-Cada variedad de aceituna es un paisaje condensado en una gota. Hablar de aceite de oliva en singular oculta una de las diversidades botánicas más apasionantes de la península: la potencia vibrante del picual jiennense, la sutil caricia frutal de la arbequina y el elegante equilibrio silvestre de la hojiblanca cordobesa.
+Picual, arbequina y hojiblanca son variedades de aceituna. Su nombre orienta la búsqueda, pero no fija por sí solo el sabor de todos los aceites: para comparar hace falta una referencia, una campaña y una categoría comercial.
 
-Aprender a distinguirlas no requiere un laboratorio: basta abrir una botella fresca, servir unas gotas en un plato blanco y dejar que los aromas cuenten la historia del suelo y del clima donde maduraron los frutos.
+## Tres nombres y una ficha concreta {#tres-referencias}
 
-## Tres personalidades olivareras {#tres-referencias}
+Busca si la botella declara una variedad o una combinación y anota la campaña cuando figure. Después lee la ficha de esa referencia. La nota de un elaborador describe su producto; no debe trasladarse a todos los aceites de esa variedad.
 
-El picual es el guardián del olivar andaluz. Su alto contenido en polifenoles le otorga una longevidad prodigiosa y una personalidad desbordante: al olerlo en copa cerrada saltan aromas a hoja de higuera, tomatera y hierba recién segada. En boca, el amargo rotundo y el picor persistente recuerdan la fuerza de la tierra caliente de Jaén.
+Si todavía no distingues variedad y categoría, empieza por la [guía general de aceite](/es/guias/aceite-oliva-variedades-almazaras).
 
-![Aceite de oliva virgen extra en aceitera de cristal](/editorial/guides/aceite.webp)
+## Referencias y casas para comparar {#productores}
 
-La arbequina, originaria de Arbeca en Lleida pero aclimatada con maestría en el sur, representa la armonía y la delicadeza. Es un zumo dulce, fluido, con notas a manzana madura, plátano verde y papilla de frutas, casi desprovisto de amargor. Entre ambos mundos se sitúa la hojiblanca: la aceituna de envés plateado que en las laderas calizas de Córdoba regala notas de alcachofa, alloza verde y un picor tardío y progresivo que acaricia la garganta con elegancia.
+La información de cada botella decide la comparación; no atribuimos tres variedades a todas las almazaras.
 
-Fuentes: [Oro Bailén · Reserva Familiar](https://www.orobailen.com/en/node/311) · [Almazaras de la Subbética · Rincón de la Subbética](https://almazarasdelasubbetica.com/productos/rincon-de-la-subbetica-500ml/).
+### [Oro Bailén](producer:es:200)
 
-## Cinco casas maestras detrás de las variedades {#productores}
+Su AOVE picual de cosecha temprana está documentado en el catálogo. Consulta la campaña disponible y la composición de otras referencias de su gama.
 
-Cinco proyectos que han llevado el cultivo y la molienda de estas variedades a su máxima expresión gastronómica en el momento óptimo de envero.
+### [Almazaras de la Subbética](producer:es:678)
 
-### [Aceites Oro Bailén](producer:es:200)
-
-En las faldas de Sierra Morena, Oro Bailén es sinónimo de maestría agronómica. Producen tanto su icónico Reserva Familiar Picual —una explosión vegetal premiada año tras año— como un monovarietal de Arbequina de pureza cristalina, permitiendo comparar bajo una misma filosofía de recolección dos mundos sensoriales opuestos.
-
-### [Almazaras de la Subbética, S.C.A.](producer:es:678)
-
-Desde Carcabuey, esta cooperativa cordobesa cuida olivares tradicionales en pendiente donde la hojiblanca encuentra su máxima nobleza. Su referencia Rincón de la Subbética se recolecta en los primeros días de campaña para atrapar una complejidad balsámica única, convirtiéndose en el estándar dorado de esta variedad.
+Rincón de la Subbética ofrece un ejemplo documentado de hojiblanca. Compáralo con otra referencia identificada, sin sustituir la ficha por una idea genérica de la variedad.
 
 ### [Oro del Desierto](producer:es:9329)
 
-En el árido término de Tabernas (Almería), esta almazara familiar ecológica embotella monovarietales de arbequina, hojiblanca y picual cosechados en su momento justo. La insolación extrema y el contraste térmico del desierto moldean unos perfiles sensoriales vibrantes y un coupage temprano de elegancia magistral.
+El proyecto de Tabernas permite continuar la búsqueda en su web. Selecciona allí una referencia con variedad declarada antes de incluirla en tu comparación.
 
 ### [Alma de Cántaro](producer:es:615)
 
-En Bujalance (Córdoba), Alma de Cántaro mima olivares familiares de arbequina y picual en plena campiña. Su proceso de recolección nocturna y extracción inmediata da como resultado un arbequina de finísima textura aterciopelada y un picual equilibrado con recuerdos a hierbabuena y almendra fresca.
-
-### [Cortijo de la Torre](producer:es:4648)
-
-En Arjona (Jaén), Cortijo de la Torre exprime la quintaesencia del picual tradicional jiennense. Con aceitunas recolectadas en octubre en parcelas seleccionadas, su virgen extra despliega notas nítidas de tomatera, alcachofa silvestre y un picor noble que perdura en el retrogusto.
+El catálogo recoge AOVE picual y distintos puntos de maduración. Es una forma de plantear una comparación manteniendo la variedad y cambiando el momento de recolección.
 
 <!-- mapa -->
 
-## Una cata comparativa en casa {#preparar}
+## Preparar una comparación en casa {#preparar}
 
-Para entrenar el paladar, organiza una pequeña cata a ciegas:
-- Sirve tres cucharadas soperas en vasitos pequeños de vidrio y tápalos unos minutos con la palma de la mano para templar el aceite y concentrar los volátiles.
-- Inhala primero con suavidad: notarás la diferencia entre el impacto punzante del picual, el aroma floral y goloso de la arbequina y la frescura vegetal de la hojiblanca.
-- Al probar, da un pequeño sorbo y aspira un hilo de aire entre los dientes (retronasal). Sentirás cómo la hierba fresca inunda el paladar antes de dejar paso al picor noble de los antioxidantes.
+Elige dos botellas pequeñas de la misma categoría y apunta referencia, campaña y variedad. Pruébalas sobre el mismo alimento, con una cantidad parecida. Después repite en un plato que cocines habitualmente.
 
-## Maridar con intención en la cocina {#elegir-formato}
+Anota tus preferencias con palabras propias. Esa experiencia ayuda a comprar; no sustituye una evaluación profesional de la categoría ni permite deducir propiedades saludables a partir del amargor o picor.
 
-Cada aceite tiene su cómplice en la mesa:
-- **Picual**: el compañero perfecto para platos con carácter. Realza un salmorejo cordobés, carnes rojas a la plancha, quesos viejos de oveja o una tostada matutina con tomate maduro.
-- **Arbequina**: ideal para platos que exigen suavidad sin invadir. Funciona de maravilla en mayonesas caseras, pescados blancos al vapor, gazpachos suaves y repostería tradicional.
-- **Hojiblanca**: la reina de las verduras salteadas, los pescados azules a la brasa, los carpaccios de ternera y las ensaladas templadas donde se busca un remate perfumado y picante.
+## Elegir formato después de elegir uso {#elegir-formato}
+
+Una vez sepas cuál prefieres para tu cocina, compara precio por litro y portes. No hace falta comprar tres garrafas para conocer tres variedades. Si una ficha no declara la variedad, consulta antes de tratarla como un monovarietal.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Seleccionamos productores que miman la recolección temprana de cada variedad por separado, sin mezclas de campo y con trazabilidad de parcela contrastada. Esta guía celebra la diversidad botánica del olivar español a través de referencias consolidadas internacionalmente.
+La selección sirve para documentar comparaciones posibles, no para reproducir una cata ni asignar sabores fijos a cada variedad. Las referencias del catálogo se mantienen separadas de las condiciones comerciales y de la campaña disponible.

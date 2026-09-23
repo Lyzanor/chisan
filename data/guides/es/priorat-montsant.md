@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Vinos
 title: "Priorat y Montsant: dos denominaciones para leer por separado"
-description: "Descubre la viticultura heroica sobre pizarras de llicorella y el carácter indómito de dos comarcas hermanas en el sur de Cataluña."
+description: Cómo distinguir comarca, DOQ Priorat y DO Montsant; cinco proyectos para seguir la botella, el lugar y la clasificación sin confundirlos.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/vinedo-costers-priorat.webp
   alt: Viñedos en bancales sobre laderas de montaña
@@ -19,77 +19,69 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: do-priorat
-    title: D.O.Ca. Priorat · Els costers de llicorella
+  - id: noms-terra
+    title: DOQ Priorat · Els noms de la terra
+    url: https://www.doqpriorat.org/els-noms-de-la-terra/
+    checkedAt: 2026-09-23
+  - id: priorat
+    title: Consell Regulador · DOQ Priorat
     url: https://www.doqpriorat.org/
-    checkedAt: 2026-09-06
-  - id: do-montsant
-    title: D.O. Montsant · Paisaje y variedades
-    url: https://domontsant.com/
-    checkedAt: 2026-09-06
-  - id: mogador
-    title: Clos Mogador · René Barbier y la viña de Gratallops
-    url: https://www.closmogador.com/
-    checkedAt: 2026-09-06
+    checkedAt: 2026-09-23
+  - id: montsant
+    title: Consell Regulador · DO Montsant
+    url: https://www.domontsant.com/
+    checkedAt: 2026-09-23
 related:
   - vinos-de-espana-denominaciones-origen
-  - vinos-bierzo
-  - bodegas-rioja
+  - cava-elaboradores-territorios
+kind: practical
+revisionSummary: Retiramos la oposición simplista entre suelos de ambas denominaciones y centramos la lectura en pliego, referencia y localización.
 ---
 
-El paisaje del Priorat corta la respiración. Laderas vertiginosas con desniveles que rozan el sesenta por ciento, terrazas estrechísimas esculpidas en la piedra y un suelo de pizarra negra y brillante —la llicorella— que cruje bajo los pasos y refracta el calor del sol como un espejo de lava.
+Priorat puede nombrar una comarca; DOQ Priorat y DO Montsant identifican dos denominaciones distintas. La cercanía entre bodegas no permite intercambiar esos nombres en una botella.
 
-Aquí la mecanización es imposible: la vendimia se hace a mano, cargando cajas al hombro o con ayuda de mulos, en lo que el mundo del vino bautizó con justicia como viticultura heroica. Cada cepa centenaria de garnacha peluda o cariñena apenas produce un kilo de uva concentrada, mineral y profunda, un milagro agrario que renació en los años ochenta para situar a este rincón de Tarragona en el olimpo mundial.
+## Dos nombres que leer por separado {#dos-nombres}
 
-## Llicorella frente a calizas: dos personalidades contiguas {#dos-nombres}
+Consulta los sitios de los consejos de [DOQ Priorat](https://www.doqpriorat.org/) y [DO Montsant](https://www.domontsant.com/). Cada uno explica su ámbito y sus reglas. Evita reducir toda la diferencia a «pizarra frente a caliza»: la información de una parcela no describe por sí sola una denominación completa.
 
-Rodeando como una herradura al Priorat se encuentra la D.O. Montsant, una comarca hermana pero con un mosaico geológico propio. Mientras el Priorat es el reino casi absoluto de la pizarra metamórfica, en Montsant conviven las pizarras con arcillas rojas, arenas graníticas y suelos calcáreos al abrigo de la imponente muralla de la Serra de Montsant.
+## Proyectos para empezar por la referencia {#productores}
 
-![Uvas tintas en el viñedo](/editorial/guides/uvas-tintas-ribera.webp)
-
-Esa diferencia de suelos se traduce en la copa: los tintos del Priorat destacan por su mineralidad casi táctil, recuerdos a grafito, monte bajo mediterráneo (tomillo, romero, jara) y una estructura monumental. En Montsant, las garnachas y cariñenas ganan en jugosidad frutal, frescura aérea y una accesibilidad amable que conquista desde el primer trago.
-
-Fuentes: [D.O.Ca. Priorat](https://www.doqpriorat.org/) · [D.O. Montsant](https://domontsant.com/) · [Clos Mogador](https://www.closmogador.com/).
-
-## Cinco proyectos que explican el territorio {#productores}
-
-Cinco bodegas maestras que encarnan la magia de esta tierra: los visionarios del renacimiento de la llicorella, la viticultura ecológica de Montsant y la solidez cooperativa.
+Estos puntos del catálogo ayudan a orientarse. La denominación y las menciones se comprueban en el vino concreto.
 
 ### [Clos Mogador](producer:es:4094)
 
-En Gratallops, René Barbier fue el alma pionera que descubrió el potencial infinito de las viñas viejas abandonadas tras la filoxera. Clos Mogador es una obra de arte viva: un anfiteatro natural cultivado en biodinámica estricta donde la garnacha y la cariñena se funden con syrah y cabernet sauvignon. Su vino es una lección de profundidad, tanino noble, fruta negra especiada y mineralidad de pizarra que permanece en el recuerdo para siempre.
+La ficha de Gratallops permite acceder al proyecto y a sus vinos. Distingue la casa, sus referencias y los posibles proyectos relacionados.
 
 ### [Celler Masroig](producer:es:3701)
 
-Fundada en 1917 en la comarca del Priorat pero adscrita a la D.O. Montsant, esta bodega cooperativa demuestra la fuerza del trabajo colectivo. Miman más de quinientas hectáreas de viñedo propio donde la cariñena (aquí llamada samsó) y la garnacha tinta entregan vinos vibrantes, frescos y profundamente enraizados en su tierra, accesibles y auténticos.
+La actividad cooperativa incluye vino y aceite. Es una buena ocasión para preguntar qué corresponde a cada producto y qué territorio describe.
 
 ### [Álvaro Palacios](producer:es:719)
 
-Llegado a Gratallops en 1989 junto al grupo pionero de los «Cinco Magníficos», Álvaro Palacios redefinió el prestigio de los vinos españoles en el mundo. Desde viñas de pendiente extrema en costers de llicorella, crea leyendas enológicas como L'Ermita, Finca Dofí o Les Terrasses, aunando misticismo, espiritualidad y una pureza de garnacha inalcanzable.
+El catálogo recoge referencias como L’Ermita, Finca Dofí y Les Terrasses. Sus nombres permiten buscar fichas concretas en lugar de atribuir un único viñedo a toda la casa.
 
 ### [Vinyes Domènech](producer:es:12299)
 
-En Capçanes, en un paraje protegido rodeado de bosques y sotobosque mediterráneo en la D.O. Montsant, Joan Ignasi Domènech practica una viticultura ecológica y biodinámica ejemplar. Su vino Teixar, elaborado con garnacha peluda sobre suelos calcáreos, es uno de los pocos Vinos de Finca Calificada de Cataluña, deslumbrando por su frescura sedosa y notas de hierbas aromáticas.
+El proyecto de Capçanes se vincula en su ficha a Montsant. Consulta qué referencia y parcela se explican al hablar de la finca.
 
 ### [Venus la Universal](producer:es:12105)
 
-En Falset, Sara Pérez y René Barbier júnior crearon Venus la Universal como un canto a la feminidad, la naturaleza y la agricultura libre. Con viñedos viejos ecológicos cultivados en suelos graníticos y arcillosos de Montsant, sus vinos Venus y Dido encandilan por su sapidez fresca, energía vibrante y textura transparente.
+El proyecto de Falset abre otra entrada a Montsant. Confirma el vino y la instalación de una posible visita, sin deducirlos solo de la marca.
 
 <!-- mapa -->
 
-## Entender la botella: del vino de vila a la viña clasificada {#detalle}
+## La escala de una mención {#detalle}
 
-El Priorat ha sido pionero en España en adoptar un modelo de clasificación piramidal semejante al de Borgoña:
-- **Vino de Vila**: elaborado exclusivamente con uvas y bodegas de un municipio específico (como Gratallops, Porrera o Poboleda), reflejando su microclima local.
-- **Viña Clasificada y Gran Viña Clasificada**: el escalón más alto, procedente de parcelas singulares con viñedos centenarios de rendimiento extraordinariamente bajo.
+La DOQ Priorat presentó en 2019 **Els noms de la terra**, una clasificación para precisar el origen. Sus nombres van desde el conjunto de la denominación a **Vi de Vila, Vi de Paratge, Vinya Classificada y Gran Vinya Classificada**. La [explicación del consejo](https://www.doqpriorat.org/els-noms-de-la-terra/) permite relacionar la mención de la botella con esa escala territorial.
 
-## La mesa del Priorat: cocina de sierra y lumbre {#visitar}
+Al comparar, anota el nombre geográfico completo junto a la referencia y la añada. Esta clasificación pertenece a la DOQ Priorat: una botella de Montsant se lee con las reglas de su propio consejo.
 
-Vinos con tanto carácter piden platos con arraigo:
-- **Guisos de caza y carne de cordero**: una pierna de cordero asada con hierbas aromáticas o un jabalí estofado se funden con los taninos poderosos del Priorat.
-- **Embutidos y quesos curados**: el bull de la comarca y los quesos artesanos de cabra agradecen la frescura mineral y la potencia alcohólica de estos vinos.
-- **Sírvelo con mimo**: abre la botella con antelación o usa decantador; a unos 16-18 ºC en copa amplia, el vino se irá abriendo capa tras capa durante horas.
+## Organizar una consulta o una visita {#visitar}
+
+Elige primero el vino o el proceso que te interesa conocer. Después confirma reserva, dirección y duración. El mapa sirve para situar proyectos y continuar hacia sus fichas; no sustituye los tiempos de desplazamiento ni acredita disponibilidad.
+
+Vuelve a [cómo orientarse entre denominaciones](/es/guias/vinos-de-espana-denominaciones-origen) si necesitas separar variedad, origen y elaborador.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Celebramos bodegas que preservan las viñas viejas en costers y respetan la orografía imposible de la comarca, rechazando atajos productivos. Priorat y Montsant son dos formas complementarias e inolvidables de entender la emoción del vino.
+La guía explica una distinción territorial y ofrece proyectos del catálogo. No es un registro completo de operadores certificados ni una cata. No inferimos suelo, viticultura ecológica o denominación por la mera ubicación de una bodega.

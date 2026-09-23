@@ -17,7 +17,7 @@ import type { Guide } from "./schema";
 import { parseGuideMarkdown } from "./markdown";
 
 export const GUIDE_TOPICS = ["Quesos", "Vinos", "Miel", "Aceite", "Despensa", "Territorios"] as const;
-const FEATURED_GUIDES = ["quesos-de-espana", "vinos-de-espana-denominaciones-origen", "miel-de-espana"];
+const FEATURED_GUIDES = ["comprar-directamente-a-productores", "quesos-de-espana", "miel-de-espana"];
 export function listFeaturedGuides(): Guide[] {
   const guides = listPublishedGuides();
   return FEATURED_GUIDES.flatMap((slug) => guides.filter((guide) => guide.slug === slug));
@@ -25,7 +25,7 @@ export function listFeaturedGuides(): Guide[] {
 
 export const GUIDES_TITLE = "Guías de productores y alimentos de España";
 export const GUIDES_DESCRIPTION =
-  "Quesos, vinos, miel y sus lugares de origen. Guías de Chisan para entender qué hace cada productor, comparar propuestas y explorar el mapa.";
+  "Guías para elegir alimentos, entender su origen y comprar a sus productores. Referencias, lecturas prácticas, productos de temporada e historias con fuentes.";
 
 // The public route stays the library's stable entry point for its consumers.
 export {

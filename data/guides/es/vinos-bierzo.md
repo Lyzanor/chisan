@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Vinos
 title: "Vinos del Bierzo: mencía, godello y trabajo de parcela"
-description: "Recorre las laderas leonesas de viña vieja, el carácter atlántico de la mencía y la elegancia mineral del godello."
+description: "Mencía, godello, referencias y parcelas: cómo empezar a explorar el Bierzo a través de proyectos del catálogo y documentación del consejo."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/laderas-vinedo-bierzo.webp
   alt: Laderas de viñedo en pendiente bajo el sol
@@ -19,78 +19,64 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: do-bierzo
-    title: D.O. Bierzo · Pliego de condiciones y clasificación de parajes
-    url: https://www.crdobierzo.es/
-    checkedAt: 2026-09-06
-  - id: losada
-    title: Losada Vinos de Finca · Arcillas y viña vieja en Cacabelos
-    url: https://www.losadavinosdefinca.com/
-    checkedAt: 2026-09-06
-  - id: moro-bierzo
-    title: Bodegas Emilio Moro · El Bailarín y Polvorete en El Bierzo
-    url: https://www.emiliomoro.com/
-    checkedAt: 2026-09-06
+  - id: bierzo
+    title: Consejo Regulador · Unidades geográficas del Bierzo
+    url: https://www.crdobierzo.es/es/consejo-regulador/unidades-geograficas/
+    checkedAt: 2026-09-23
 related:
   - vinos-de-espana-denominaciones-origen
-  - bodegas-rias-baixas
-  - priorat-montsant
+  - bodegas-ribera-del-duero
+  - despensa-galicia
+kind: practical
+revisionSummary: Revisamos las referencias y distinguimos las dos instalaciones de Emilio Moro; retiramos perfiles de cata y garantías por edad de la viña.
 ---
 
-En la fosa tectónica que separa la meseta leonesa de las montañas verdes de Galicia, El Bierzo disfruta de un microclima único. Protegido por los Montes Aquilianos de los rigores de la meseta y con la humedad justa del Atlántico que entra por el valle del Sil, este anfiteatro natural es el hogar de una de las uvas más fascinantes de España: la mencía.
+Mencía y godello ofrecen dos caminos para empezar a conocer vinos del Bierzo. La elección gana precisión cuando añades el nombre de la referencia, la añada y lo que el elaborador documenta de su origen.
 
-Las cepas del Bierzo son auténticas reliquias vivientes: plantadas en vaso sobre laderas empinadas, muchas superan los sesenta y ochenta años de edad. En lugar de los tintos pesados y sobremadurados de antaño, la revolución enológica del Bierzo ha descubierto la faceta más noble de la mencía: un tinto fluido, fragante, con notas a frutos silvestres rojos, violetas, pimienta blanca y una mineralidad terrosa que recuerda a los grandes vinos del Ródano o Borgoña.
+## La parcela es una pregunta concreta {#parcelas}
 
-## Arcillas, pizarras y el renacer del godello {#parcelas}
+En junio de 2020 llegaron al mercado los primeros vinos de villa y de paraje de la denominación, según el [Consejo Regulador del Bierzo](https://www.crdobierzo.es/es/consejo-regulador/unidades-geograficas/). Esos nombres permiten leer el origen a una escala más pequeña que el conjunto de la comarca.
 
-El Bierzo no es homogéneo. En las laderas bajas y colinas de Cacabelos y Villafranca predominan las arcillas profundas, que aportan volumen y carnosidad a la mencía. En las zonas altas de montaña —como Corullón— la roca viva de pizarra y cuarzo confiere a los vinos una tensión afilada, un nervio eléctrico y una acidez vibrante.
+- **Vino de Villa:** la totalidad de la uva procede del municipio o pedanía indicado.
+- **Vino de Paraje:** la totalidad procede de un mismo paraje reconocido.
+- **Viña Clasificada y Gran Viña Clasificada:** añaden requisitos de delimitación, rendimientos y trayectoria acreditada dentro de la clasificación.
 
-![Laderas de viñedo en pendiente](/editorial/guides/vinedo-costers-priorat.webp)
+La ubicación de la bodega y la del viñedo pueden ser distintas. Estas menciones ayudan a situar la uva; para conocer la elaboración sigue haciendo falta la ficha del vino.
 
-Junto a la mencía, la uva blanca godello vive su propia edad de oro. Recuperada de una desaparición casi segura en los años setenta, el godello berciano combina notas cítricas, manzana reineta madura y flores blancas con una textura glicérica en boca y una acidez mineral que la convierte en una de las castas blancas más codiciadas de Europa.
+## Cinco entradas al catálogo {#productores}
 
-Fuentes: [D.O. Bierzo](https://www.crdobierzo.es/) · [Losada Vinos de Finca](https://www.losadavinosdefinca.com/) · [Bodegas Emilio Moro Bierzo](https://www.emiliomoro.com/).
+Los ejemplos permiten comparar proyectos y referencias documentadas, sin establecer un orden de calidad.
 
-## Cinco miradas al terruño berciano {#productores}
+### [Losada Vinos de Finca](producer:es:8235)
 
-Cinco proyectos que ilustran la efervescencia enológica de la comarca: la recuperación de parajes históricos, la viticultura ecológica de ladera y la interpretación singular de la mencía y el godello.
+En Cacabelos trabaja mencía y godello y referencias de finca. Usa el nombre del vino para preguntar por la parcela correspondiente.
 
-### [Losada Vinos de Finca S.A.](producer:es:8235)
+### [Emilio Moro · Bierzo](producer:es:1992)
 
-En Cacabelos, Losada Vinos de Finca apostó desde su nacimiento por los suelos de arcilla frente a la hegemonía de la pizarra, demostrando que las arcillas bien trabajadas entregan mencías de una sedosidad y elegancia incomparables. Pequeñas parcelas recuperadas dan vida a vinos como Losada y Altos de Losada, pura fruta roja silvestre, finura tánica y equilibrio gastronómico.
+Esta ficha corresponde a la bodega del grupo en Ponferrada, con referencias de godello como Polvorete, El Zarzal y La Revelía. Es una identidad distinta de su bodega de Pesquera de Duero.
 
-### [Bodegas Emilio Moro - Bierzo S.L.](producer:es:1992)
+### [Verónica Ortega](producer:es:2455)
 
-Cautivados por el potencial del godello, la prestigiosa bodega ribereña Emilio Moro se instaló en Ponferrada para explorar la vertiente blanca del Bierzo. Con vinos como Polvorete y El Zarzal, han demostrado cómo el trabajo respetuoso con el mosto y las lías resalta la frescura aromática y la personalidad mineral de esta uva atlántica.
+La ficha de Carracedelo documenta vinos de parcela de mencía y godello. Permite explorar dos variedades sin confundirlas con un solo estilo.
 
-### [Bodegas Verónica Ortega](producer:es:2455)
+### [Casar de Burbia](producer:es:3462)
 
-Formada en los mejores dominios de Borgoña y el Ródano, Verónica Ortega se instaló en Valtuille de Abajo para interpretar la mencía vieja con una sensibilidad etérea. Con vinificaciones en ánforas de barro y foudres de madera, tintos como ROC o Quite y su godello CAL son prodigios de finura floral, mineralidad de roca y pureza aromática.
+Su actividad en Carracedelo incluye vinos de paraje de variedades autóctonas. Consulta la documentación de la referencia y añada que te interese.
 
-### [Casar de Burbia S.l.](producer:es:3462)
+### [Cuatro Pasos](producer:es:1366)
 
-En Valtuille de Arriba, la familia Bello cuida viñedos viejos en laderas de montaña con viticultura ecológica certificada. Sus tintos de paraje bajo la saga Tebaida y su godello fermentado en barrica nacen de suelos pedregosos y de cuarcita, mostrando la faceta más estructurada, profunda y mineral del Bierzo alto.
-
-### [Bodega Cuatro Pasos](producer:es:1366)
-
-Desde Cacabelos, Cuatro Pasos elabora mencías procedentes de cepas centenarias plantadas en las zonas altas de montaña del Bierzo. Comprometida con la protección del hábitat del oso pardo, sus vinos ofrecen una entrada amable, vivaz fruta negra y una frescura atlántica accesible que conecta de inmediato con el paisaje.
+La bodega de Cacabelos tiene una gama propia de mencía. Distingue cada referencia antes de comparar elaboración o crianza.
 
 <!-- mapa -->
 
-## La nueva clasificación por parajes {#dos-lecturas}
+## Dos lecturas de la etiqueta {#dos-lecturas}
 
-El Bierzo fue de las primeras denominaciones españolas en regular una pirámide de calidad inspirada en el terruño:
-- **Vino de Villa**: procedente exclusivamente de viñedos de un municipio determinado.
-- **Vino de Paraje**: delimitado a una zona topográfica concreta con características edáficas y climáticas singulares.
-- **Viña Clasificada y Gran Viña Clasificada**: parcelas históricas de rendimientos mínimos donde la viña vieja habla con voz propia.
+Lee primero variedad y añada. Después busca las menciones de origen más detalladas y su significado en la documentación del consejo. La palabra «paraje» necesita contexto; no conviene tratarla como una puntuación de calidad.
 
-## En la mesa: botillo, pimientos y castañas {#continuar}
+## Cómo continuar {#continuar}
 
-La cocina berciana es generosa y contundente:
-- **Botillo del Bierzo y carnes curadas**: la acidez vivaz y la frescura de la mencía cortan a la perfección la grasa del botillo, los chorizos y las carnes asadas.
-- **Empanada de batallón y cecina de León**: los taninos suaves del tinto joven o crianza armonizan sin avasallar el humo noble de la cecina.
-- **Pescados y quesos semicurados con godello**: el blanco berciano es imbatible ante truchas de río, pulpo a la brasa o quesos de cabra leoneses.
+Para una primera compra, elige dos referencias cuya diferencia quieras entender y compara sus fichas. Para una visita, confirma qué instalación se recorre y reserva. La [guía general de vinos](/es/guias/vinos-de-espana-denominaciones-origen) reúne el vocabulario común sin repetirlo en cada región.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Apoyamos bodegas que cuidan viñas viejas en vaso y defienden la clasificación de parajes como garantía de autenticidad. El Bierzo es uno de los paisajes vitícolas más honestos y emocionantes de la España contemporánea.
+Partimos de fichas del catálogo y documentación del consejo para orientar la lectura. No hemos realizado catas ni una reconciliación completa del registro. No atribuimos prácticas agrícolas, suelos o certificaciones a toda una casa a partir de una referencia.

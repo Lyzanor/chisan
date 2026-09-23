@@ -3,6 +3,12 @@ import { z } from "zod";
 const text = z.string().trim().min(1);
 const slug = text.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const date = z.iso.date();
+export const GUIDE_KINDS = {
+  reference: "Guía de referencia",
+  practical: "Guía práctica",
+  seasonal: "De temporada",
+  story: "Historias del alimento",
+} as const;
 const identity = z.strictObject({
   country: z.literal("es"),
   producerId: z.number().int().positive(),
@@ -31,6 +37,7 @@ export const guideSchema = z
     locale: z.literal("es"),
     country: z.literal("es"),
     status: z.enum(["draft", "published"]),
+    kind: z.enum(["reference", "practical", "seasonal", "story"]),
     topic: z.enum([
       "Quesos",
       "Vinos",
@@ -54,6 +61,7 @@ export const guideSchema = z
     introduction: text,
     publishedAt: date,
     updatedAt: date,
+    revisionSummary: text.optional(),
     selectionCriteria: text,
     sections: z.array(z.discriminatedUnion("type", [prose, selection])).min(1),
     sources: z

@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Despensa
 title: "Panaderías y molinos: del cereal a la harina y al pan"
-description: "Del grano cultivado a la muela de piedra y la hogaza crujiente: cómo entender el oficio del pan artesano a través de cinco proyectos cerealistas ejemplares."
+description: Cómo distinguir cultivo, molienda y panificación, leer las menciones de pan integral y masa madre y elegir un pan para el uso que necesitas.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/pan.webp
   alt: Pan sobre una tabla de madera
@@ -19,76 +19,62 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-09
 sources:
-  - id: ecotambo
-    title: Molino Ecotambo · Cultivo y transformación propios
-    url: https://molinoecotambo.es/proyecto/
-    checkedAt: 2026-09-06
-  - id: original
-    title: La Original · Panadería de La Seu d’Urgell
-    url: https://laoriginal.cat/
-    checkedAt: 2026-09-06
+  - id: boe-pan
+    title: BOE · Norma de calidad para el pan, texto consolidado
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2019-6994
+    checkedAt: 2026-09-23
 related:
+  - comprar-directamente-a-productores
   - productores-pirineo
-  - aceites-picual-arbequina-hojiblanca
-  - conservas-vegetales-huerta
+  - aceite-oliva-variedades-almazaras
+kind: practical
+revisionSummary: Contrastamos la norma del pan, incluida su actualización de 2026, y distinguimos molinos, obradores y procedencia del cereal.
 ---
 
-El pan de verdad empieza mucho antes de encender el horno: empieza en el surco de la tierra donde germina el cereal y en el rozamiento pausado de las muelas de piedra que transforman el grano en harina viva, conservando intacto su germen y su aroma a campo fresco. Durante décadas, la industria nos acostumbró a baguettes precocidas, ultrarrápidas y desprovistas de alma, infladas con mejorantes químicos que sacrifican la digestibilidad y el sabor en nombre de la prisa.
+Un molino transforma cereal en harina; un obrador convierte harina y otros ingredientes en pan. Un proyecto puede hacer varias etapas o colaborar con otros. Para conocer el origen, conviene preguntar quién se encarga de cada una.
 
-Reconectar con el pan implica desandar ese camino y entender que tras cada hogaza hay dos oficios independientes pero complementarios: el del agricultor y molinero que cuida la semilla, y el del panadero que alimenta su masa madre con mimo y paciencia de relojero.
+## Del cereal a la harina {#molino}
 
-## El viaje del cereal: grano, molienda y germen {#molino}
+Distingue lugar de cultivo y lugar de molienda. Después pregunta por el cereal y el tipo de harina. Una imagen de un campo junto al molino no prueba que toda su harina proceda de ese campo.
 
-En una molienda industrial de cilindros de acero, el grano se despieza implacablemente para separar el salvado y eliminar el germen graso, garantizando harinas blancas inertes que duran meses en un saco pero que han perdido sus vitaminas, minerales y matices aromáticos.
+Para el pan, la [norma de calidad](https://www.boe.es/buscar/act.php?id=BOE-A-2019-6994) reserva «pan integral» o «pan 100 % integral» al elaborado con harina exclusivamente integral y regula cómo indicar el porcentaje cuando no es así. El color oscuro o las semillas de la corteza no resuelven esa lectura.
 
-![Sacos de legumbres y granos cosechados en el campo](/editorial/guides/legumbres-garbanzos.webp)
+## Proyectos en etapas diferentes {#productores}
 
-La molienda artesanal a la piedra trabaja a bajas revoluciones y sin calentar el cereal. El germen se funde con el endospermo, aportando un tono crema inconfundible y notas tostadas que recuerdan a frutos secos y paja soleada. Proyectos pioneros como Molino Ecotambo en Zaragoza demuestran la fuerza de sembrar variedades rústicas de cereal en campos propios y transformarlas sin aditivos en su propio molino.
-
-Fuentes: [Molino Ecotambo · Cultivo y transformación propios](https://molinoecotambo.es/proyecto/).
-
-## Cinco maestros del oficio cerealista {#productores}
-
-Cinco proyectos que reivindican la honestidad desde el cultivo del grano hasta el horno de leña y la masa madre.
+Estas fichas sirven para seguir el recorrido del cereal, sin presuponer relaciones comerciales entre ellos.
 
 ### [Molino Ecotambo](producer:es:8906)
 
-En Sádaba (Zaragoza), esta explotación familiar practica una agricultura ecológica integral donde ellos mismos cultivan, limpian y muelen sus propios trigos, espeltas y centenos. En su molino de piedra, el grano pasa directamente del campo a la tolva sin pasar por intermediarios, ofreciendo harinas vivas con una fuerza y un comportamiento panadero honesto, ideal para repostería tradicional o masas campesinas con personalidad rotunda.
+Cultiva cereal ecológico y lo transforma en su molino de Sádaba. Es un ejemplo documentado de cultivo y transformación dentro de un mismo proyecto.
 
-### [La Original (Forn del Serafí)](producer:es:7784)
+### [La Original · Forn del Serafí](producer:es:7784)
 
-En La Seu d’Urgell (Lleida), este histórico obrador de montaña mantiene encendida la llama de la panadería artesanal pirenaica. Trabajan con masas madre vivas refrescadas a diario y fermentaciones que reposan durante más de 20 horas en bloque antes del horneado. Cada hogaza de La Original despliega una corteza crujiente y caramelizada, y una miga alveolada y jugosa con la acidez justa que se conserva perfecta durante días.
+El obrador de La Seu d’Urgell trabaja pan y pastelería y documenta fermentaciones lentas. Pregunta por la harina de la pieza concreta que vayas a comprar.
 
 ### [Bioartesa](producer:es:1213)
 
-En Castilléjar (Granada), Bioartesa cierra el ciclo cerealista desde la siembra hasta la molienda. Cultivan trigos antiguos y granos ecológicos en el altiplano granadino, moliéndolos a baja temperatura en molino de piedra propio para preservar el germen y la vitalidad nutricional de la harina.
+Su actividad en Castilléjar incluye producción propia de harinas ecológicas. Conviene separar esa transformación del resto de productos que comercializa.
 
-### [Obrador Artesano David Ruano](producer:es:9122)
+### [David Ruano](producer:es:9122)
 
-En Córdoba, el maestro panadero David Ruano lidera un obrador artesanal consagrado al pan de fermentación lenta y masa madre natural. Con harinas seleccionadas y largas horas de reposo en bloque, sus hogazas rústicas ofrecen una corteza tostada, miga esponjosa y una digestibilidad extraordinaria.
+El obrador de Córdoba documenta pan de masa madre y fermentación lenta. Su trabajo ayuda a preguntar cómo se relaciona la fermentación con cada elaboración.
 
 ### [Pan de mi Pueblo](producer:es:9428)
 
-En Dílar (Granada), a los pies de Sierra Nevada, esta panadería ecológica hornea a diario con leña y harinas de proximidad. Sus panes de masa madre tradicional de fermentación pausada recuperan el sabor del pan de pueblo auténtico, con una durabilidad de varios días sin perder humedad ni tersura.
+La panadería de Dílar elabora panes de distintos cereales ecológicos. Compara la composición de dos piezas, no solo su apariencia.
 
 <!-- mapa -->
 
-## Cómo dialogar con el panadero frente al mostrador {#obrador}
+## Qué preguntar en el obrador {#obrador}
 
-Entrar en una buena panadería no debería ser una transacción automática. Preguntar al artesano te abrirá las puertas de su oficio:
-- **¿Qué harina compone este pan?**: Conoce si lleva trigo del país, centeno, espelta o variedades integrales.
-- **¿Qué tipo de fermentación ha seguido?**: Un pan elaborado únicamente con masa madre y fermentado en frío durante 18 o 24 horas descompone los fitatos y precalibra los azúcares, resultando infinitamente más ligero y digestivo.
-- **¿Cuándo ha salido del horno?**: Un pan con corteza gruesa necesita asentarse unas horas antes de ser cortado para que la humedad interior se estabilice.
+Pregunta qué cereales y proporciones lleva el pan, cómo se fermenta, qué alérgenos contiene y qué tamaño encaja con tu consumo. «Masa madre» es una información de elaboración que necesita contexto; no implica por sí sola una promesa de salud.
 
-Fuentes: [La Original · Panadería de La Seu d’Urgell](https://laoriginal.cat/).
+El texto consolidado de la norma incorpora desde marzo de 2026 la consideración de ciertos panes sin gluten como pan especial. Esa clasificación no convierte una masa madre de trigo en un producto sin gluten: lee siempre la información del producto.
 
-## Conservar y disfrutar el pan de verdad en casa {#en-casa}
+## Organizar la compra en casa {#en-casa}
 
-Un pan de masa madre y harina molida a la piedra no se pone correoso a las pocas horas:
-- **Huye del plástico**: nunca guardes una hogaza artesana en una bolsa de plástico, pues atrapará la humedad interior, ablandará la corteza y favorecerá la aparición de moho.
-- **Bolsa de tela o lino**: conserva la pieza envuelta en un paño de algodón limpio o dentro de una panera de madera transpirable.
-- **Corte inteligente**: corta solo las rebanadas que vayas a consumir al momento y apoya la hogaza sobre la tabla con el lado del corte hacia abajo. Si pasan tres o cuatro días, bastará un leve golpe de tostador para devolverle toda su fragancia y textura crujiente.
+Explica si vas a consumirlo hoy o a repartirlo en varios días y sigue las indicaciones del panadero para conservarlo. Anota la referencia que te funciona para tostadas, bocadillos o acompañar una comida. Así puedes volver a pedirla sin depender del aspecto de la hogaza.
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Seleccionamos iniciativas que controlan el cereal en origen mediante molienda a la piedra o panaderías con fermentaciones lentas y masa madre viva. La inclusión no presupone vínculos comerciales mutuos ni promueve sucedáneos precocidos industriales.
+Distinguimos las etapas documentadas de cada proyecto. No atribuimos molienda a la piedra, cereal propio o idénticos tiempos de fermentación a todas las casas. La guía no incluye pruebas de producto ni recomendaciones clínicas.

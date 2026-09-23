@@ -5,10 +5,10 @@ locale: es
 country: es
 status: published
 topic: Aceite
-title: "Almazaras con venta directa: preparar un pedido de aceite"
-description: "Descubre cómo comprar aceite de oliva virgen extra directamente a quienes cuidan el olivar y molturan en frío cada otoño."
+title: "Comprar aceite a una almazara: campaña, formato y pedido"
+description: Cómo confirmar la venta al particular, comparar el coste por litro y elegir una cantidad adecuada de aceite sin dar por hecho el stock de nueva cosecha.
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/olivar-almazara.webp
   alt: Olivar tradicional con olivos y tierra rojiza
@@ -19,74 +19,67 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: oro
-    title: Oro Bailén · Tienda y referencias de cosecha
-    url: https://www.orobailen.com/
-    checkedAt: 2026-09-06
-  - id: subbetica
-    title: Almazaras de la Subbética · Venta directa de cooperativa
-    url: https://almazarasdelasubbetica.com/tienda/
-    checkedAt: 2026-09-06
+  - id: mapa-canal-corto
+    title: MAPA · Canales cortos de comercialización
+    url: https://www.mapa.gob.es/es/alimentacion/temas/desperdicio/canales-cortos
+    checkedAt: 2026-09-23
+  - id: ue-aceite
+    title: Unión Europea · Normas de comercialización del aceite de oliva
+    url: https://eur-lex.europa.eu/legal-content/ES/ALL/?uri=uriserv%3AOJ.L_.2022.284.01.0001.01.SPA
+    checkedAt: 2026-09-23
 related:
+  - comprar-directamente-a-productores
   - aceite-oliva-variedades-almazaras
   - aceites-picual-arbequina-hojiblanca
-  - conservas-vegetales-huerta
+kind: practical
+revisionSummary: Retiramos una instalación orientada al comercio industrial de la selección de compra particular y revisamos las promesas de campaña, precio y entrega.
 ---
 
-Comprar aceite de oliva directamente en la almazara es recuperar el contacto con una de las cosechas más hermosas del otoño. En los pueblos de Jaén, Córdoba o Navarra, noviembre huele a almazara: un perfume verde, denso e inconfundible que anuncia la llegada del primer aceite sin filtrar, turbio y brillante como una esmeralda líquida.
+Una almazara puede vender a particulares, trabajar a granel o combinar canales. Antes de preparar un pedido, confirma que la referencia y el formato que quieres están disponibles para tu destino.
 
-El canal directo permite no solo conseguir el precio más justo para el agricultor, sino también acceder a lotes recién decantados, cosechas tempranas que apenas llegan a los supermercados y asesoramiento directo de quienes han pasado el año podando, regando y velando por la salud de los olivos.
+## La cantidad antes que la oferta {#cantidad}
 
-## Del campo al molino sin intermediarios {#cantidad}
+Piensa cuánto aceite utilizas y dónde vas a guardarlo. Una garrafa puede encajar con un consumo habitual; una botella pequeña ayuda a probar una referencia. Compara el importe total dividido entre litros, incluyendo portes.
 
-El aceite de oliva virgen extra es un producto vivo que sufre con la luz, el calor y el paso de los meses. Por eso, el primer consejo de un buen molinero es comprar con previsión: calcula el consumo real de tu hogar para los próximos cuatro o seis meses.
+La [venta directa y los canales cortos](https://www.mapa.gob.es/es/alimentacion/temas/desperdicio/canales-cortos) describen la relación comercial, no una garantía automática de menor precio o de cosecha más reciente.
 
-![Aceitunas seleccionadas listas para la muela](/editorial/guides/aceitunas-variedades.webp)
+## Proyectos para consultar un pedido {#productores}
 
-Para el uso diario en cocina caliente, una garrafa de lata oscura o bag-in-box de cinco litros conserva el aceite protegido de la radiación ultravioleta y el oxígeno. Para terminar platos en crudo, las botellas de vidrio oscuro o cristal opaco de 500 ml son la joya de la corona: se abren en su momento óptimo y concentran toda la intensidad de la cosecha temprana.
+Estas fichas son accesos al elaborador. Revisa en su canal actual la venta al particular y las condiciones de la referencia.
 
-Fuentes: [Oro Bailén · Tienda oficial](https://www.orobailen.com/) · [Almazaras de la Subbética · Tienda online](https://almazarasdelasubbetica.com/tienda/).
+### [Oro Bailén](producer:es:200)
 
-## Cinco almazaras con canal directo ejemplar {#productores}
+Integra elaboración y envasado de AOVE. Consulta formatos, campaña y gastos de envío antes de comparar una botella con una garrafa.
 
-Cinco casas que han perfeccionado el servicio directo al consumidor, enviando el aceite con embalajes térmicos seguros y garantizando la trazabilidad de la campaña en curso.
+### [Almazaras de la Subbética](producer:es:678)
 
-### [Aceites Oro Bailén](producer:es:200)
+Su gama incluye Rincón de la Subbética y Parqueoliva Serie Oro. Elige primero la referencia y después el tamaño; una marca no resume toda la cooperativa.
 
-Desde Villanueva de la Reina, Oro Bailén envía directamente sus afamados aceites de recolección temprana de octubre, así como sus formatos familiares. Comprar directamente en su tienda permite elegir entre sus botellas de cata de picual, arbequina, hojiblanca y frantoio con la certeza de recibir el lote más fresco de la muela.
+### [Cooperativa de Guadalupe](producer:es:9270)
 
-### [Almazaras de la Subbética, S.C.A.](producer:es:678)
-
-La cooperativa de Carcabuey ofrece en su canal directo tanto los aceites premiados Rincón de la Subbética y Parqueoliva Serie Oro como formatos de cooperativa ideales para el abastecimiento anual de despensa, respaldando directamente a miles de familias olivareras de montaña.
-
-### [Almazara Adamuz, S.L.U](producer:es:623)
-
-En Sierra Morena cordobesa, la almazara de Adamuz elabora virgen extra procedente de olivares de sierra de la variedad nevado azul y picual. Su tienda y venta directa permite adquirir garrafas y botellas con envío directo a domicilio, conservando la autenticidad rústica y el perfil balsámico de los aceites de media montaña.
-
-### [Olivarera Ntra. Sra. de Guadalupe](producer:es:9270)
-
-En Baena (Córdoba), cuna de la D.O.P. Baena, esta cooperativa histórica facilita pedidos directos de sus aceites virgen extra de campiña. Su gama amparada por denominación combina picudo, lechín y hojiblanca, garantizando frescura y precios ajustados de molino.
+Elabora en Baena varias referencias, entre ellas Virrey del Pino y Fuente Baena. Identifica cuál se ofrece en el formato que te interesa.
 
 ### [Oleícola San Francisco](producer:es:9194)
 
-En Begíjar (Jaén), esta centenaria almazara familiar fue pionera en el oleoturismo andaluz y el trato cercano con el cliente. Molturan con tecnología moderna y despachan lotes tempranos monovarietales en estuches cuidados, ofreciendo atención directa sobre variedades y fechas de molienda.
+La actividad de Begíjar incluye AOVE y otros productos. Confirma el lugar de recogida o la entrega del pedido por separado de cualquier visita.
 
 <!-- mapa -->
 
-## Claves para preparar tu pedido {#pedido}
+## Qué confirmar antes de pagar {#pedido}
 
-Antes de tramitar un pedido directo, ten en cuenta tres recomendaciones esenciales:
-- **Exige el año de campaña**: La etiqueta o la ficha web debe indicar claramente la campaña actual (por ejemplo, 2025/2026). Huye de los aceites que omiten la fecha de recolección o solo muestran una fecha de consumo preferente lejana.
-- **Distingue temprano de cosecha madura**: El aceite verde de octubre es un lujo sensorial para consumir en crudo. Si buscas volumen para freír o guisar lentamente, pide los aceites de diciembre o enero, más dulces y económicos pero igualmente vírgenes extra.
-- **Aprovecha el envío agrupado**: Los costes logísticos se amortizan mucho mejor al pedir cajas completas de botellas o varias garrafas junto a familiares o vecinos.
+- Referencia, categoría y variedad declarada.
+- Campaña disponible, si el productor la identifica.
+- Volumen, número de envases e importe final con portes.
+- Destino, plazo previsto y canal para resolver incidencias.
 
-## Conservación en la despensa {#repetir}
+«Nueva cosecha» debe referirse a una campaña concreta. Si te interesa la siguiente, pregunta cuándo estará disponible; no conviertas el comienzo del otoño en una fecha de lanzamiento para todas las almazaras.
 
-Una vez recibido el paquete en casa:
-- Guarda las botellas en un armario fresco, oscuro y alejado de fuentes de calor (horno, fuegos o radiadores).
-- No guardes el aceite en el frigorífico: las bajas temperaturas provocan que los triglicéridos se solidifiquen formando grumos blancos, que aunque inocuos, alteran temporalmente la fluidez.
-- Cierra siempre bien el tapón tras cada uso: el oxígeno degrada los aromas frutados y acelera el enranciamiento.
+## Repetir una buena compra {#repetir}
+
+Guarda referencia, campaña y fecha de apertura. Conserva según el envase, protegido de luz y calor. Si compartes un pedido, repartir envases cerrados permite que cada persona mantenga su etiqueta y lote.
+
+Para decidir qué aceite comparar, consulta la [guía de categorías y cosecha](/es/guias/aceite-oliva-variedades-almazaras).
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Apoyamos almazaras y cooperativas que ofrecen venta directa con precios transparentes, etiquetado de campaña visible y formatos que protegen el producto de la luz y la oxidación. Comprar en origen es el camino más directo para dignificar la vida en el medio rural.
+Los ejemplos se basan en productores del catálogo, sin pedidos de prueba ni garantías de stock. La existencia de una instalación industrial no prueba venta al consumidor. Solo las condiciones actuales de cada vendedor resuelven precio, entrega y disponibilidad.

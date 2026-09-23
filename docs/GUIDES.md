@@ -27,6 +27,111 @@ published area uses the segment. The first published root paths `/guias` and
 No translated variants are implied. Future translations need explicit language
 routes, reviewed copies and reciprocal alternates before publication.
 
+## Editorial strategy
+
+The library is a maintained reference for choosing food and finding its producers.
+Search is the primary discovery opportunity for that useful work. Chisan's
+Descubrir page is an editorial entrance; Google Discover is a separate, optional
+distribution surface, not a reason to turn the library into a daily news feed.
+
+Front matter `kind` states an article's reading role independently of its food
+`topic`. Every article has one role; the library presents it once:
+
+| Kind | Reader promise | Maintenance |
+| --- | --- | --- |
+| `reference` | A durable starting point that answers the broad question and links to deeper reading | Review when a rule, source, explanation or linked example changes; prioritise these in maintenance sessions |
+| `practical` | A distinct decision, product family or explicitly bounded territory | Update the relevant product, channel, register or visit information when it changes |
+| `seasonal` | Help for a recurring harvest or time of year | Recheck before promoting that season; distinguish typical timing from a documented current campaign |
+| `story` | One concrete question, production detail or documented anecdote | Add evidence or correct the explanation when needed; do not manufacture recency |
+
+Reference coverage and the intended boundaries of its supporting reading:
+
+| Reference | Owns the broad answer | Supporting reading owns |
+| --- | --- | --- |
+| `comprar-directamente-a-productores` | Find the producer, identify the seller and prepare a first order | Product-specific formats, delivery and purchase questions |
+| `quesos-de-espana` | Milk, texture, maturation and choosing a cheese | Goat/sheep milk, blues, DOP recognition, orders and the bounded Cabrales visit guide |
+| `vinos-de-espana-denominaciones-origen` | Bottle, variety, denomination and producer | Regional reading; Cava's separately evidenced installation inventory |
+| `miel-de-espana` | Harvest origin, botanical origin and producer | Label reading, floral comparisons, named DOPs and crystallisation |
+| `aceite-oliva-variedades-almazaras` | Category, variety, harvest and format | Named-variety comparisons and ordering from a mill |
+| `calendario-frutas-verduras-temporada` | Interpret a dated national calendar and adapt it locally | Seasonal purchase decisions and preserved vegetables |
+
+Other pantry and territorial guides are bounded practical entrances, not competing
+national pillars. Each should have a useful next link to the relevant reference;
+references link back to the deeper answers they delegate. Use descriptive inline
+links at the point of need and a short, relevant `related` list. Avoid linking
+every article to every other article or repeating full explanations in each one.
+
+### Expand without saturation
+
+Improve an existing answer before opening another URL. A new article needs a
+distinct reader question, adequate evidence and a realistic reason to maintain it.
+No publishing quota, required word count, fixed number of selected producers,
+annual duplicates, interchangeable regional pages or keyword-only variants.
+Search demand is a hypothesis until Search Console provides evidence; the current
+structure follows reader tasks and available editorial substance.
+
+Keep the Descubrir/home selection bounded to three articles through the existing
+featured selection. A new guide does not automatically become a featured story.
+Prioritise reference pieces now. When selecting timely reading, verify its actual
+campaign or news hook before promotion; a substantive change in a stable guide
+can be the useful update. Never sort the whole library by an artificially renewed
+review date to simulate a newspaper.
+
+Recurring seasonal advice keeps its stable slug. A one-off story needs a dated,
+attributed fact with continuing explanatory value. Event dates, venue, edition and
+exhibitor roster belong to [Events](EVENTS.md), whose edition lifecycle already
+handles promotion and expiry. A guide may explain or link to an event but must not
+maintain a competing agenda or exhibitor list. Do not copy a future edition from
+last year's dates or retain expired attendance promises as current advice.
+
+### Trust and editorial responsibility
+
+Apply Google's [people-first guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+as editorial judgement, not an E-E-A-T score or a checklist of ranking signals.
+Chisan is the visible organisational author. Keep the linked explanation of the
+project, AI assistance, sources, scope and correction channel. Add a named author,
+expert reviewer, visit, interview or tasting only when the person, work, date and
+supporting evidence actually exist. Sources and a byline cannot stand in for
+first-hand experience.
+
+State the useful answer early, explain distinctions with attributable examples,
+and make limitations specific to the claim. Replace unsupported superlatives,
+sensory verdicts, health promises and common-method claims with facts or a concrete
+question. Location does not prove raw-material origin; a producer's certification
+does not cover its whole range. Do not turn necessary caveats into the article's
+main content. Preserve documented history, production details and original useful
+comparisons; shorten repetition rather than removing substance for a word target.
+
+Use primary sources for standards, regulations and current claims; read the source
+actually linked. Catalog-backed examples link to their canonical producer profiles.
+Keep a source's real consultation date. State the edition and limits of older
+reference material (for example, a national commercialisation calendar is not a
+forecast of this year's local harvest). Attribute a producer's tasting note as
+their description, never as Chisan's own experience.
+
+### Living references and review
+
+For a maintenance session, begin with references affected by a documented change,
+then their supporting articles. Check the claim and source, producer relationships,
+internal links and any commercial/visit information being recommended. Add a useful
+new fact or correction in place; do not insert unrelated recent anecdotes solely
+to make an article look current. A source becoming unavailable is a reason to
+review its claim, not to invent replacement evidence.
+
+After a substantive revision, set `updatedAt` and a short `revisionSummary` describing
+what changed for the reader. Keep `publishedAt` fixed. The visible note does not
+claim all sources were newly consulted; each source keeps its own `checkedAt`.
+The full history stays in Git. No review-date bumps for builds, styling, spelling,
+taxonomy-only changes or unrelated catalog updates. If a review finds no change,
+do not imply a new edition of the article.
+
+This is on-demand editorial work, not a new automation, CMS or standing queue.
+Before seasonal promotion, verify the season's claims again. After measured
+Search Console data is available, look at queries and pages together: impressions,
+clicks and CTR for the intended questions, overlap between pages, and useful onward
+visits to producers when measurable. Assess Google Discover separately when its
+report is available; neither eligibility nor a traffic spike is proof of quality.
+
 ## Article shape
 
 Articles combine explanatory prose, commented producer selections, an optional
@@ -36,6 +141,7 @@ The files in `data/guides/` hold the current library and topic coverage.
 
 Each article is a Markdown document with YAML front matter for identity, title,
 description, publication status, dates, topic, source metadata and related slugs.
+It also holds `kind` and an optional `revisionSummary` for substantive updates.
 The introduction, explanatory sections, producer commentary and selection criteria
 are authored as ordinary CommonMark. There is no parallel JSON text store.
 
@@ -87,7 +193,7 @@ separate manually maintained reverse-link list. Only published guides appear.
 ## Where the texts live and how to update them
 
 The immediate editing interface is the repository. An editor can request changes
-in Codex or edit a JSON file directly, for example: “Update the cheese guide with
+in Codex or edit a Markdown file directly, for example: “Update the cheese guide with
 these two producers and explain their milk.”
 
 1. Open `data/guides/es/<slug>.md`. For a new guide, copy an existing article,
@@ -103,7 +209,8 @@ these two producers and explain their milk.”
 4. Preview with `pnpm dev` and inspect text, links and map. Drafts return 404 on
    public routes. To preview a draft, temporarily set it to published locally;
    retain that status only after editorial review.
-5. Set `updatedAt` after a substantive revision of the article. Retain the original
+5. Set `updatedAt` and explain the change in `revisionSummary` after a substantive
+   revision of the article. Retain the original
    `publishedAt`; change each source's `checkedAt` only when consulted. Builds,
    spelling fixes and unrelated catalog edits do not imply a new article review.
 6. Review the diff and commit only the intended scope. Publish through the normal
@@ -172,3 +279,12 @@ provide original useful detail and accurate titles and attribution; avoid thin
 mass-produced pages and artificial freshness. There are no ranking or rich-result
 promises. Performance assessments need measured impressions, clicks and
 guide-to-profile visits alongside coverage and factual usefulness.
+
+Google's [Discover guidance](https://developers.google.com/search/docs/appearance/google-discover)
+also permits useful older content and describes that traffic as supplemental.
+Use accurate headlines and representative credited images; avoid clickbait or
+claims that an article is breaking news. Guide metadata allows
+`max-image-preview:large`. Prefer landscape images at least 1200px wide, with
+enough resolution and a meaningful crop; the new guide covers are 1600×900.
+Keep visible attribution, dates and Article metadata consistent. There is no
+special Discover schema or publishing-frequency guarantee.

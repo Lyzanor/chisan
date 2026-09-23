@@ -10,7 +10,7 @@ import {
   type GuideProducer,
 } from "@/lib/guides/catalog";
 import { buildGuideStructuredData } from "@/lib/guides/metadata";
-import type { Guide } from "@/lib/guides/schema";
+import { GUIDE_KINDS, type Guide } from "@/lib/guides/schema";
 import { serializeStructuredData } from "@/lib/site-structured-data";
 import styles from "./guides.module.css";
 
@@ -49,7 +49,7 @@ export function GuideArticle({
       </nav>
       <article>
         <header className={styles.articleHeader}>
-          <p className={styles.eyebrow}>Guías de origen · {guide.topic}</p>
+          <p className={styles.eyebrow}>{GUIDE_KINDS[guide.kind]} · {guide.topic}</p>
           <h1>{guide.title}</h1>
           <p className={styles.dek}>{guide.description}</p>
           <p className={styles.byline}>
@@ -65,6 +65,11 @@ export function GuideArticle({
               {formatGuideDate(guide.updatedAt)}
             </time>
           </p>
+          {guide.revisionSummary ? (
+            <p className={styles.caption}>
+              <strong>En esta revisión:</strong> {guide.revisionSummary}
+            </p>
+          ) : null}
         </header>
         <GuideCover guide={guide} />
         <nav aria-label="En esta guía" className={styles.contents}>
@@ -174,9 +179,10 @@ export function GuideArticle({
               ))}
             </ul>
             <p className={styles.caption}>
-              La fecha de revisión corresponde a una revisión del texto y sus
-              referencias. Esta guía se ampliará a medida que incorporemos nuevos
-              detalles documentados.
+              La fecha de revisión señala un cambio sustancial del artículo;
+              cada fuente conserva su fecha de consulta. Si encuentras un dato
+              que haya cambiado, puedes{" "}
+              <Link href="/contact">enviarnos una corrección con su fuente</Link>.
             </p>
           </section>
         </div>

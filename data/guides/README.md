@@ -8,3 +8,9 @@ Read [Editorial guides](../../docs/GUIDES.md) for syntax, publication rules and
 the update workflow. Edit the document directly or request the revision in Codex.
 Use `status: draft` for unpublished work and run `pnpm check:guides` after edits.
 There is no administration editor yet. Reviewed changes publish through Git.
+
+Choose one reading role in `kind`: `reference`, `practical`, `seasonal` or
+`story`. Extend an existing answer before creating an overlapping guide. After
+a substantive revision, preserve `publishedAt`, update `updatedAt` and explain
+the reader-facing change in `revisionSummary`. Source `checkedAt` dates record
+actual consultation, not the article's general update date.

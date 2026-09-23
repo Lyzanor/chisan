@@ -6,9 +6,9 @@ country: es
 status: published
 topic: Despensa
 title: "Legumbres de España: variedades, cultivo y productores"
-description: "De las fabas de Lourenzá a las lentejas de La Armuña y los garbanzos castellanos: la nobleza del grano seco en nuestra cocina de cuchara."
+description: "Cómo comparar legumbres por especie, variedad, origen, cosecha y presentación: ejemplos de productores y pautas para una compra que puedas repetir."
 publishedAt: 2026-09-06
-updatedAt: 2026-09-15
+updatedAt: 2026-09-23
 cover:
   src: /editorial/guides/legumbres-garbanzos.webp
   alt: Cuenco con garbanzos y legumbres secas sobre mesa rústica
@@ -19,80 +19,65 @@ cover:
   licenseUrl: https://unsplash.com/license
   checkedAt: 2026-09-15
 sources:
-  - id: igp-faba
-    title: I.G.P. Faba de Lourenzá · Galicia
-    url: https://www.fabadelourenza.org/
-    checkedAt: 2026-09-06
-  - id: terras-marina
-    title: Terras da Mariña · Faba de Lourenzá
-    url: https://terrasdamarina.org/
-    checkedAt: 2026-09-06
-  - id: can-casamada
-    title: Can Casamada · Mongeta del Ganxet en Cataluña
-    url: https://cancasamada.com/
-    checkedAt: 2026-09-06
+  - id: mapa-dop
+    title: MAPA · Denominaciones de Origen e Indicaciones Geográficas Protegidas
+    url: https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/
+    checkedAt: 2026-09-23
 related:
-  - conservas-vegetales-huerta
+  - comprar-directamente-a-productores
   - despensa-galicia
-  - despensa-asturias
+  - conservas-vegetales-huerta
+  - despensa-de-otono
+kind: practical
+revisionSummary: Separamos cultivo, selección y envasado y sustituimos recetas universales por información del lote y las instrucciones del productor.
 ---
 
-La cocina de cuchara es el corazón latente de la cultura culinaria peninsular. En ningún otro rincón del continente existe tal devoción por la legumbre seca: pucheros que borbotean durante horas al calor de la lumbre, cocidos monumentales de varios vuelcos, fabadas donde la manteca vegetal se funde con el humo noble del compango y potajes de vigilia aromáticos.
+Para elegir legumbre, empieza por el plato que quieres hacer y la presentación que necesitas: seca, cocida o preparada. Después busca variedad y origen. No es lo mismo conocer el lugar del envasador que saber dónde se cultivó el grano.
 
-Sin embargo, detrás de la receta siempre está el grano: la tierra arcillosa o caliza donde germinó, la semilla seleccionada generación tras generación y el clima que permitió que la piel permaneciera tan fina y tierna que casi desaparezca en el paladar.
+## Especie, variedad y nombre protegido {#grano-y-nombre}
 
-## El mapa de las joyas del grano seco {#grano-y-nombre}
+Alubia, garbanzo y lenteja no son variedades de una misma legumbre. Dentro de cada grupo encontrarás nombres locales y comerciales; algunos están vinculados a DOP o IGP con condiciones específicas.
 
-España cuenta con sellos de calidad que protegen variedades únicas adaptadas a microclimas concretos:
-- **La Faba de Lourenzá y la Faba Asturiana**: judías blancas de tamaño generoso, forma arriñonada y una piel tan imperceptible que al cocerse liberan un corazón de mantequilla pura que liga los caldos con untuosidad soberbia.
-- **La Mongeta del Ganxet**: la alubia blanca catalana del Vallès y el Maresme, aplanada y con forma de ganchillo, famosa por su textura cremosa y un sabor finísimo que enamora con un simple hilo de aceite virgen extra.
-- **El Garbanzo de Fuentesaúco y de Pedrosillo**: pequeños, redondos, que no sueltan el hollejo durante la cocción prolongada y mantienen una textura tierna, jamás harinosa.
-- **La Lenteja de La Armuña y de Tierra de Campos**: pequeñas, de tonos verdes o pardos, con un hollejo suave que no se desprende y un sabor vegetal y terroso incomparable.
+La documentación del [MAPA](https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/) ayuda a comprobar esos nombres. En la compra, relaciónalos con el lote y el producto, sin suponer que todo el catálogo de un envasador procede de la misma zona.
 
-![Cesta con hortalizas de huerta](/editorial/guides/huerta.webp)
+## Cinco formas de seguir el grano {#productores}
 
-Fuentes: [I.G.P. Faba de Lourenzá](https://www.fabadelourenza.org/) · [Terras da Mariña](https://terrasdamarina.org/) · [Can Casamada](https://cancasamada.com/).
-
-## Cinco productores dedicados a la tierra y al grano {#productores}
-
-Cinco proyectos que miman el cultivo tradicional de legumbres con sellos de origen protegido a lo largo de la península.
+Los ejemplos distinguen cooperativas, cultivo y trabajo de selección o envasado, según cada ficha.
 
 ### [Terras da Mariña](producer:es:11797)
 
-En Lourenzá (Lugo), esta cooperativa de agricultores cuida las vegas húmedas y templadas de A Mariña Lucense. Su Faba de Lourenzá con I.G.P. es un tesoro gastronómico indiscutible: seleccionan a mano las vainas y secan el grano con paciencia natural, logrando unas alubias mantecosas que elevan cualquier guiso de pescado, pulpo o compango tradicional.
+La cooperativa de Lourenzá trabaja Faba de Lourenzá IGP y otras legumbres. Pregunta qué referencia está amparada y cuál es su cosecha.
 
 ### [Can Casamada](producer:es:2915)
 
-En Castellar del Vallès (Barcelona), la masía Can Casamada cultiva la auténtica Mongeta del Ganxet con D.O.P. Mongeta del Ganxet Vallès-Maresme. Sus alubias, cosechadas en secano sobre suelos arenosos, son mundialmente codiciadas por su textura delicada, su piel imperceptible y su finura en ensaladas tibias o salteadas con butifarra.
+La explotación familiar de Castellar del Vallès produce Mongeta del Ganxet DOP y cuenta con agrobotiga. Permite conectar cultivo y punto de compra.
 
 ### [Legumbres El Peregrino](producer:es:8074)
 
-En la comarca de La Bañeza (León), El Peregrino selecciona y envasa alubias amparadas por la I.G.P. Alubia de La Bañeza-León. Con variedades autóctonas como la alubia riñón y la canela, sus legumbres son célebres por su piel tiernísima que no se rompe y un caldo espeso y sabroso.
+La actividad de selección y envasado incluye numerosas variedades. Su amplitud hace especialmente útil leer el origen de cada referencia.
 
 ### [Bernabé Campal](producer:es:1163)
 
-En Pedrosillo el Ralo (Salamanca), esta casa agrícola selecciona y calibra la auténtica Lenteja de La Armuña con I.G.P. Su grano verdoso y moteado destaca por una finura vegetal incomparable, manteniéndose entero durante la cocción sin soltar hollejo.
+Trabaja selección y envasado de legumbres con marcas propias. Distingue la marca, la variedad y la procedencia del lote.
 
-### [Campo de Tejada S.C.A.](producer:es:2884)
+### [Campo de Tejada](producer:es:2884)
 
-En Escacena del Campo (Huelva), esta cooperativa produce el reputado Garbanzo de Escacena con I.G.P. Cultivado en suelos albarizos de campiña, su grano blanco lechoso de calibre grande ofrece una cremosidad mantecosa y una ausencia total de pellejo al paladar.
+La cooperativa de Escacena del Campo produce y comercializa Garbanzo de Escacena IGP. Es otra forma de relacionar agricultores y producto protegido.
 
 <!-- mapa -->
 
-## Claves para comprar y cocinar legumbre seca {#compra}
+## Comprar una cantidad que puedas utilizar {#compra}
 
-Para triunfar con la legumbre en casa:
-- **Exige cosecha del año**: la legumbre seca vieja pierde agua, endurece la piel y tarda el doble en cocerse, resultando a menudo harinosa. Comprueba en el paquete el año de recolección.
-- **El agua de remojo**: utiliza agua de baja mineralización (blanda). Las aguas duras con mucha cal endurecen el hollejo durante el remojo e impiden que el grano se ablande.
-- **El remojo adecuado**: las alubias y garbanzos necesitan entre diez y doce horas de remojo en agua fría abundante (los garbanzos agradecen agua templada con una pizca de sal). Las lentejas de piel fina apenas necesitan un par de horas o pueden cocerse directamente.
+Si pruebas una variedad nueva, empieza con un formato pequeño y guarda la etiqueta. Pregunta por la cosecha cuando quieras comparar el mismo grano en compras sucesivas.
 
-## El fuego lento y el «asustado» {#seca-o-elaborada}
+Para cocinar, sigue las indicaciones de remojo y cocción del envase o del productor. El tipo de legumbre, el lote y la preparación no se resuelven con una única regla de tiempo o con el mismo gesto para todos los granos.
 
-Al poner la olla al fuego:
-- Cuece las alubias y lentejas partiendo de agua fría; los garbanzos, en cambio, deben entrar en la olla cuando el agua ya esté hirviendo.
-- Cuando las alubias rompan a hervir con fuerza, «asústalas» añadiendo un chorrito de agua fría dos o tres veces: este choque térmico frena el hervor violento y evita que la piel se rompa.
-- Mantén un chup-chup suave y constante durante dos o tres horas: la paciencia del fuego lento es el único secreto de la mantecosidad perfecta.
+## Seca, cocida o preparada {#seca-o-elaborada}
+
+En seco pagas por una materia prima que aún vas a preparar; en cocido o en conserva, también por ese trabajo. Compara cantidades y usos equivalentes. En un tarro cocido, mira el peso escurrido cuando se indique y qué otros ingredientes lleva.
+
+La [despensa de otoño](/es/guias/despensa-de-otono) propone conectar esa compra con otras cosechas sin equiparar automáticamente «comprado en otoño» y «cosechado este otoño».
 
 ## Nuestro criterio editorial {#criterio-editorial}
 
-Apoyamos a cooperativas y agricultores que defienden variedades autóctonas con denominación protegida y secado natural, sin tratamientos químicos aceleradores. La legumbre es salud, sostenibilidad agronómica y memoria popular.
+La selección se apoya en fichas del catálogo y no atribuye cultivo propio a todo envasador. No inferimos DOP, secado natural o ausencia de tratamientos por el nombre comercial. Las propuestas culinarias se limitan a organizar la compra y consultar instrucciones.

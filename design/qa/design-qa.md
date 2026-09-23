@@ -3,6 +3,18 @@
 Active system: [Product in the light](../README.md). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-23 — Guide reading roles and editorial revision notes
+
+Reused the existing guide styles for reference, practical, seasonal and story
+sections; no CSS or design tokens changed. Checked the library at 390×844 first,
+then 1440×1000: all 35 articles appear once, navigation anchors resolve, and the
+document width matches the viewport. The direct-purchase article keeps readable
+ordered advice, source attribution and related links at both widths. The honey
+story uses the same article structure with prose and sources, without a producer
+selection. Screenshots are disposable local artifacts under `output/playwright/`
+(`guides-library-mobile.png`, `guides-library-wide.png`, `guides-order-mobile.png`
+and `guides-order-wide.png`). The existing shared CSS remains the design owner.
+
 ## 2026-09-23 — Browser favicon and app icon restored to forest green background
 
 Restored the app icon and browser favicon to the approved corporate palette:

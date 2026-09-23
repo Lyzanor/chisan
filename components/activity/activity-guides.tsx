@@ -4,7 +4,7 @@ import {
   GUIDES_PATH,
   guidePath,
 } from "@/lib/guides/catalog";
-import type { Guide } from "@/lib/guides/schema";
+import { GUIDE_KINDS, type Guide } from "@/lib/guides/schema";
 import styles from "./activity.module.css";
 
 type ActivityGuidesProps = {
@@ -22,7 +22,7 @@ export function ActivityGuides({ guides }: ActivityGuidesProps) {
           <h2 id="activity-guides-title">Guías destacadas</h2>
         </div>
         <Link href={GUIDES_PATH} className={styles.sectionLink}>
-          Todas las guías ({guides.length}) →
+          Todas las guías →
         </Link>
       </div>
 
@@ -35,7 +35,7 @@ export function ActivityGuides({ guides }: ActivityGuidesProps) {
           >
             <GuideCover guide={guide} compact />
             <div className={styles.guideBody}>
-              <span className={styles.guideTopic}>{guide.topic}</span>
+              <span className={styles.guideTopic}>{GUIDE_KINDS[guide.kind]} · {guide.topic}</span>
               <h3 className={styles.guideTitle}>{guide.title}</h3>
               <p className={styles.guideExcerpt}>{guide.description}</p>
             </div>

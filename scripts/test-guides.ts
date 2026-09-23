@@ -17,7 +17,7 @@ import {
   GUIDES_PATH,
   GUIDES_SEGMENT,
 } from "../lib/guides/catalog";
-import { guideSchema } from "../lib/guides/schema";
+import { GUIDE_KINDS, guideSchema } from "../lib/guides/schema";
 import {
   buildGuideMetadata,
   buildGuideStructuredData,
@@ -35,7 +35,9 @@ test("guide content has valid structure, stable related links and publication da
   const guides = readGuides();
   assert.ok(guides.length >= 31);
   for (const guide of guides) assert.ok(guideSchema.safeParse(guide).success);
+  assert.deepEqual(new Set(guides.map((guide) => guide.kind)), new Set(Object.keys(GUIDE_KINDS)));
   const guide = guides[0];
+  assert.equal(guideSchema.safeParse({ ...guide, kind: "newsfeed" }).success, false);
   assert.equal(
     guideSchema.safeParse({ ...guide, unexpectedHtml: "<script>" }).success,
     false,
@@ -157,6 +159,8 @@ test("article metadata, dates and sitemap agree; structured data is safely seria
   for (const guide of guides) {
     const url = `https://chisan.app${guidePath(guide.slug)}`;
     const metadata = buildGuideMetadata(guide);
+    assert.ok(metadata.robots && typeof metadata.robots === "object");
+    assert.equal(metadata.robots["max-image-preview"], "large");
     const entry = entries.find((entry) => entry.url === url);
     assert.equal(metadata.alternates?.canonical, url);
     assert.deepEqual(entry?.alternates?.languages, { es: url });
@@ -184,7 +188,7 @@ test("Markdown is the sole authored body and keeps formatting and exact producer
   const selection = guide.sections.find((section) => section.type === "producers")!;
   assert.deepEqual(selection.items.map((item) => item.producerId), [10716, 10555, 10528, 10714, 10973]);
   assert.equal(selection.showMap, true);
-  const edited = parseGuideMarkdown(text.replace("Un queso cuenta", "Un **queso** cuenta"));
+  const edited = parseGuideMarkdown(text.replace("Un queso", "Un **queso**"));
   const html = renderToStaticMarkup(createElement(GuideMarkdown, null, edited.introduction));
   assert.ok(html.includes("<strong>queso</strong>"));
   assert.throws(() => parseGuideMarkdown(text.replace("schemaVersion: 1", "schemaVersion: 1\nsections: []")), /belongs in the Markdown body/);
