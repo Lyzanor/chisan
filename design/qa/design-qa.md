@@ -817,9 +817,15 @@ longer profile sections. Compact practical facts use two phone columns.
 
 The local browser ran with accounts and database disabled, so the entitlement
 gates correctly hid the producer QR and Pro product cards. Their rendering and
-commerce contracts are covered by focused tests; live entitlement presentation
-still needs a deployed browser check. Local console errors concerned the
+commerce contracts are covered by focused tests. The live entitlement check
+follows below. Local console errors concerned the
 existing development WebMCP and analytics loading, not this layout.
+
+The live Chisan profile supplied the entitlement-only QR and three Pro product
+cards for the follow-up check. At 1440×900 the QR remains beside the early
+photos and all three product actions align. At 390×844, the new phone carousel
+was checked with a 304px card and the next card visible to invite a sideways
+swipe; the document stayed within the viewport.
 
 ## 2026-09-23 — App entry and usable viewport, APK 0.1.2
 

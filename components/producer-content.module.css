@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow-wrap: anywhere;
   padding: var(--chisan-space-4);
   border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-object);
@@ -114,3 +115,18 @@
 .linkCopy { min-width: 0; padding-right: var(--chisan-space-3); }
 .linkCopy strong, .linkCopy small { display: block; overflow-wrap: anywhere; }
 .linkCopy small { margin-top: var(--chisan-space-1); color: var(--chisan-color-stone); font-size: .75rem; }
+
+@media (max-width: 760px) {
+  .products {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(78vw, 20rem);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding-bottom: var(--chisan-space-2);
+  }
+  .products > li { scroll-snap-align: start; }
+  .products:focus-visible { outline: 2px solid var(--chisan-color-moss); outline-offset: 2px; }
+}

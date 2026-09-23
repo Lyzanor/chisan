@@ -33,7 +33,7 @@ export function ProducerContent({
       {content.products.length ? (
         <section aria-labelledby="producer-content-products">
           <h2 id="producer-content-products">{labels.products}</h2>
-          <ul className={styles.products}>
+          <ul className={styles.products} tabIndex={content.products.length > 1 ? 0 : undefined}>
             {content.products.map((product) => (
               <li key={product.id} id={`product-${product.id}`}>
                 <h3 lang={product.locale}>{product.name}</h3>

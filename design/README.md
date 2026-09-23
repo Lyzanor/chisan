@@ -358,7 +358,9 @@ ratios that scrolls sideways when the screen is narrow or the gallery is long.
 Pointer hover scales a photo to 1.03 within its frame; the photos open nothing,
 and reduced motion removes the emphasis.
 Pro product cards align their commerce footers despite different description
-lengths. Approved links render as visual destination cards; no remote preview
+lengths. On phones, equal-width cards swipe sideways with a visible hint of the
+next card and keyboard scrolling. Approved links render as visual destination
+cards; no remote preview
 image is inferred. The printable producer QR appears beside the early content
 with a small download control. Short visit and order facts form one group;
 certifications keep their exact scope and link back to recorded public sources.
