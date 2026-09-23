@@ -284,3 +284,13 @@ Discovery pass from BioCultura (Asociación Vida Sana), cross-checked against th
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | La Palmera Bio | Écija | `Aceite` — organic unfiltered estate EVOO | Family-owned olive estate (+300 ha) at Finca La Reina with dedicated on-site mill and packing facility. | [BioCultura](https://biocultura.org/) | <https://www.aceiteecologico.org/> | Verify exact mill coordinates and commercial visiting hours before admission. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (coffee roasters). Sources: specialty-coffee guides and roaster web search. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 3 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Black Jebena | Sevilla; Avenida Kansas City | `Café` — specialty coffee roasted in micro-lots | Roaster with its own shop and web store; it roasts in-house in small batches. | <https://blackjebena.com/en/blogs/aprende-con-black-jebena/tostador-de-cafe-en-sevilla> | <https://blackjebena.com/> | Confirm the roaster is at the Sevilla store rather than elsewhere. |
+| Cafeólogo | Sevilla; Alameda area | `Café` — specialty coffee | Named by a specialty-coffee guide as a Sevilla roaster that roasts in the city and rotates origins. | [Guide](https://cafedeespecialidad.com.es/articulo/mejores-cafeterias-especialidad-sevilla) | — | Find a first-party source for its own roasting and bean sales. |
+| Torch Coffee Roasters | Sevilla | `Café` — specialty coffee | Named by the same guide as a roaster selecting and roasting its own beans. | [Guide](https://cafedeespecialidad.com.es/articulo/mejores-cafeterias-especialidad-sevilla) | — | Find a first-party source and confirm roasted beans are sold. |

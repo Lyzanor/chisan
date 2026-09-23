@@ -93,3 +93,11 @@ Discovery pass over the published exhibitor directory of AUTENTICA Premium Food 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | La Jabugueña | Jabugo (plant at Pl. J. A. Escuredo Raimondez s/n; company offices and a deboning room in Salt, Girona) | `Carne` | The directory states: “La Jabugueña es una empresa que se dedica a la elaboración y distribución de productos ibéricos , caracterizándose…” | [Directory](https://www.proveedores.com/proveedores/la-jabuguena/) | <https://www.lajabuguena.com/> | La Jabugueña ham and cured meats are made by Matadero La Jabugueña, SL (B21425764) in Jabugo, while Productes La Jabugueña, SL keeps its offices and a RIAAC deboning room in Salt (Girona); the site also lists a serrano line at Toral de los Vados (León) and a dehesa in Encinasola: confirm the Jabugo plant and its current range, distinct from the published Alba Romero (Los Romeros de Jabugo) in Cala. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (coffee roasters). Sources: roaster web search. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 1 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Hortelano Coffee Roasters | Calañas | `Café` — specialty coffee roasted in small batches | "Pequeño obrador de café" roasting in Calañas, with its own web store. | <https://hortelanocoffeeroasters.com/> | <https://hortelanocoffeeroasters.com/> | Confirm the roasting address. |

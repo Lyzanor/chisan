@@ -219,3 +219,14 @@ does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | S. COOP. UCOGAL | Cubillas de los Oteros | `Otros` — sugar | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.coreccal.es> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Cultivos herbáceos (salvo algodón y forrajes), Forrajes, Suministros a los socios y carburantes, Tiendas. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (olive oil and fruit and vegetables). Sources: web search for Bierzo olive oil; the Tierra de Sabor producer directory filtered to the fruit and vegetable sections. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 4 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Olibier | Congosto (El Bierzo) | `Aceite` — AOVE | Described as the first registered almazara in León province; olives are pressed within six hours of harvest. | <https://www.elbierzodigital.com/olibier-aceite-brota-sueno-berciano/> | <https://olibierbierzo.com/> | Confirm its own groves and current offer. |
+| A6 AOVE | El Bierzo | `Aceite` — Arbequina AOVE | Family production of Arbequina grown at 600 m in El Bierzo. | <https://a6aceitedelbierzo.com/> | <https://a6aceitedelbierzo.com/> | Resolve the municipality and who presses the oil. |
+| Oro del Bierzo | Pieros (Cacabelos) | `Aceite` — Arbequina AOVE | Artisan Arbequina from Pieros, about 4,000 l a year. | [Retailer](https://lomejordelbierzo.com/inicio/228-aceite-de-oliva-oro-del-bierzo-8437010697333.html) | — | Find the producer behind the brand; the source is a retailer. |
+| Nuestra Huertina Leonesa | Vidanes (Cistierna) | `Fruta y verdura` — tomatoes | Tierra de Sabor lists the company for tomatoes, with its own domain. | [Tierra de Sabor directory](https://www.tierradesabor.es/productores-y-productos/) | <https://www.nuestrahuertina.com/> | Confirm its own greenhouse production and current offer. |

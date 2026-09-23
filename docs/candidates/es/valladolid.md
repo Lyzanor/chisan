@@ -174,3 +174,15 @@ does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | PECUARIA TIERRA DE CAMPOS S.COOP. | Medina de Rioseco | `Lácteos y quesos` — cow milk | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.lapecuaria.com> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Ovino / caprino  (Carnes o vivo), Suministros a los socios y carburantes, Tiendas. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (fruit and vegetables). Sources: the Tierra de Sabor producer directory filtered to the fruit and vegetable sections (40 entries, most already represented). Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 5 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Castillo de Íscar, S. Coop. | Íscar | `Fruta y verdura` — carrots | Tierra de Sabor lists the cooperative for carrots. | [Tierra de Sabor directory](https://www.tierradesabor.es/productores-y-productos/) | — | Establish the member growers and whether it sells to consumers beyond packing for wholesale. |
+| Hortícola Esma | Villanueva de Duero | `Fruta y verdura` — carrots | Tierra de Sabor lists the company for carrots, with its own domain. | [Tierra de Sabor directory](https://www.tierradesabor.es/productores-y-productos/) | <https://www.horticolaesma.com/> | Establish own growing rather than packing only. |
+| Hortícolas Murillo | Alcazarén | `Fruta y verdura` — carrots | Tierra de Sabor lists the company for carrots. | [Tierra de Sabor directory](https://www.tierradesabor.es/productores-y-productos/) | — | Find a first-party source; establish own growing. |
+| Muñozval | Valdestillas | `Fruta y verdura` — carrots, leeks | Tierra de Sabor lists the company for carrots and leeks, with its own domain. | [Tierra de Sabor directory](https://www.tierradesabor.es/productores-y-productos/) | <https://www.munozval.es/> | Establish own growing and a consumer-identifiable offer. |
+| Comercial Agrícola Riojana (CARSA) | Tordesillas | `Fruta y verdura` — potatoes | Tierra de Sabor lists the company for potatoes. | [Tierra de Sabor directory](https://www.tierradesabor.es/productores-y-productos/) | <https://www.carsa.net/> | Most likely a potato packer and trader: establish own growing or close it as out of scope. |

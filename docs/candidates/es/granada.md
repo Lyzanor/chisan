@@ -197,3 +197,15 @@ does not decide eligibility. Source ceiling: `data/csv/es/AGENTS.md`.
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | SCA TEMPLEOLIVA | Ventas de Huelma | `Aceite` — olive oil | Registered in the sector federation's directory under an elaborating food sector at this municipality, and it publishes a first-party website. | [Cooperativas Agro-alimentarias](https://www.agro-alimentarias.coop/cooperativas) | <https://www.templeoliva.com/index.htm> | Confirm an attributable food or drink offer from this cooperative's own or governed production; a milling or bulk-sales entry alone neither proves nor disproves that offer. Also registered for: Suministros a los socios y carburantes. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (coffee roasters). Sources: roaster web search and a Granada roaster list. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 5 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Coffee 1931 | Granada; Camino de Ronda 113 | `Café` — specialty micro-roasted coffee | Micro-roaster with a shop and an active web store. | <https://www.coffee1931.com/> | <https://www.coffee1931.com/> | Confirm the roasting happens at the Granada premises. |
+| Despiertoo Specialty Coffee | Granada; Calle Jáudenes | `Café` — specialty coffee | A café reported to roast its beans on site. | [Travel list](https://wanderlog.com/list/geoCategory/1861724/best-coffee-roasters-in-granada) | — | Establish its own roasting and a bean offer beyond the café. |
+| Kona Specialty Coffee | Granada; Plaza Bibataubín | `Café` — specialty coffee | Described as a coffee roastery. | [Travel list](https://wanderlog.com/list/geoCategory/1861724/best-coffee-roasters-in-granada) | — | Establish its own roasting and a bean offer. |
+| Oteiza Coffee | Granada; Carrera del Darro | `Café` — specialty coffee | Reported to have its own micro-roastery. | [Travel list](https://wanderlog.com/list/geoCategory/1861724/best-coffee-roasters-in-granada) | — | Establish its own roasting and a bean offer. |
+| Dulcimena Coffee & Go | Granada; Calle Molinos | `Café` — coffee roasted weekly | Reported to roast its bulk coffee weekly. | [Travel list](https://wanderlog.com/list/geoCategory/1861724/best-coffee-roasters-in-granada) | — | Establish its own roasting and a bean offer. |

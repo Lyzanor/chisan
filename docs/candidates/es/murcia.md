@@ -387,3 +387,14 @@ The plain-ice rule does not exclude a separately evidenced food or drink range.
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Jiménez Hielos y Granizados | Los Alcázares, industrial estate, nave 10A | `Bebidas sin alcohol` — flavoured granizados | Its company-authored supplier profile explicitly describes making lemon, fruit, horchata and milk granizados as well as ice. | [Supplier profile](https://www.proveedores.com/proveedores/jimenez-hielos-y-granizados/) | <https://www.granizadosjimenez.es/> | Confirm the current productive unit and attributable granizado offer through a current verifying source. The official site was unavailable; withdraw the blanket ice rejection without treating the directory address as a proved factory. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (eggs). Sources: web search for free-range and organic egg farms. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 4 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Huevos del Nido | Abanilla; Paraje de Mi Naranja | `Huevos` — free-range eggs | Own free-range flock fed organic feed, presented on its own site. | <https://huevosdelnido.es/> | <https://huevosdelnido.es/> | Find a usable purchase channel; the site only gives contact details. |
+| Eco Huevos La Cueva | Fuente Álamo de Murcia; Cueva Pagán | `Huevos` — organic eggs | Organic-certified meadow of over 2,000 m² for its own hens, in the Cartagena hinterland. | [Search result](https://www.ecohuevoslacueva.com/galeria) | — | Its domain no longer resolves: find a current profile or channel. |
+| Fuente de Columbares — granja ecológica | Murcia (Beniaján area) | `Huevos` — organic eggs | The association runs a small organic farm whose hens lay eggs. | <https://www.fuentecolumbares.org/granja.html> | <https://www.fuentecolumbares.org/> | Decide whether this is an educational farm or a producer with a sold egg offer. |
+| Finca Ecológica El Romero | Bullas | `Huevos` — organic eggs from native breeds | Small organic farm selling eggs from endangered Murcian and Black Castilian hens. | <https://www.fincaecologicaelromero.com/> | <https://www.fincaecologicaelromero.com/> | Confirm a current egg offer and the farm address in Bullas. |

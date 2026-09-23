@@ -164,3 +164,13 @@ Discovery pass from BioCultura (Asociación Vida Sana) and Ecovalia, cross-check
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Biovalle | Palma del Río | `Fruta y verdura` — organic traditional citrus fruits | Family-run organic citrus groves in the Guadalquivir Valley (Palma del Río / Hornachuelos), preserving traditional varieties such as cadenera orange with direct sales. | [Ecovalia BioCultura](https://www.ecovalia.org/) | <https://biovalle.es/> | Confirm physical headquarters / packhouse address in Palma del Río before admission. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (coffee roasters). Sources: the Páginas Amarillas coffee-roaster listing for the province. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 3 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cafés Castel | Córdoba | `Café` — roasted coffee | Listed as a coffee roaster in Córdoba. | [Directory](https://www.paginasamarillas.es/a/tostadero-de-cafe/cordoba/) | — | Find a first-party source and a current retail offer. |
+| Productos del Café | Córdoba / Los Pedroches | `Café` — roasted coffee | Listed twice as a coffee roaster (Córdoba and Pedroches). | [Directory](https://www.paginasamarillas.es/a/tostadero-de-cafe/cordoba/) | — | Resolve the entity and the roasting municipality. |
+| Perla Negra | Lucena | `Café` — roasted coffee | Listed as a coffee roaster in Lucena. | [Directory](https://www.paginasamarillas.es/a/tostadero-de-cafe/cordoba/) | — | Find a first-party source and own offer. |

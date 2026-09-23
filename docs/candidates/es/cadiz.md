@@ -174,3 +174,11 @@ Discovery pass from BioCultura (Asociación Vida Sana) and Ecovalia, cross-check
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Soul K | El Puerto de Santa María | `Bebidas sin alcohol` — certified organic live craft kombucha | Dedicated fermentation and bottling brewery in Polígono Industrial Las Salinas, El Puerto de Santa María, crafting organic raw kombucha with marketed brand identity. | [Ecovalia BioCultura](https://www.ecovalia.org/) | <https://soulk.es/> | Reconcile production brewery address with corporate registry in Jerez and verify retail sales channels before admission. |
+
+## Category-gap discovery pass — 2026-09-23
+
+Targeted at categories with few published producers in this area (coffee roasters). Sources: roaster web search and the Empresite coffee-roaster listing; most listed entries are cafés and were not queued. Cutoff: 2026-09-23. Every lead was checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and phone; 1 were queued, and leads already represented or queued were not repeated.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Cafés La Tacita | San Fernando | `Café` — roasted coffee | Listed under coffee roasters in Cádiz province. | [Directory](https://empresite.eleconomista.es/Actividad/TOSTADORES-CAFE/provincia/CADIZ/) | — | Most entries in this directory are cafés: establish whether it actually roasts. |
