@@ -8,7 +8,7 @@ import categories from "../../data/reference/categories.json";
 import { isProducerOwnershipVerified } from "../accounts/producer-ownership";
 import { buildProducerHref } from "../catalog-navigation";
 import { buildCatalogSearchDocument, normalizeCatalogSearch, rankCatalogEntries, type CatalogSearchDocument } from "../catalog-search";
-import { publicCatalogSearchFields, toExplorerProducer } from "../catalog/explorer";
+import { encodeExplorerPage, EXPLORER_COMPACT_PAGE_SIZE, publicCatalogSearchFields, toExplorerProducer } from "../catalog/explorer";
 import {
   type ProducerContent,
   hasProducerContent,
@@ -323,7 +323,7 @@ export async function publicProducerIndex(locale?: Locale) {
   return pending;
 }
 
-export async function readExplorerCatalog(country: string, locale: Locale, offset = 0, revision?: string) {
+export async function readExplorerCatalog(country: string, locale: Locale, offset = 0, revision?: string, compact = false) {
   const published = findPublishedCountry(country);
   if (!published || !published.regions.some((region) => region.areas.some((area) => area.publishedLocales.includes(locale)))) {
     throw new CatalogRequestError(404, "not_found", "Published country or language not found.");
@@ -333,8 +333,8 @@ export async function readExplorerCatalog(country: string, locale: Locale, offse
     throw new CatalogRequestError(409, "catalog_changed", "Catalog changed. Reload the explorer.");
   }
   const entries = index.entries.filter((entry) => entry.country === country);
-  const limit = 1000;
-  return {
+  const limit = compact ? EXPLORER_COMPACT_PAGE_SIZE : 1000;
+  const page = {
     revision: index.revision,
     total: entries.length,
     limit,
@@ -342,6 +342,7 @@ export async function readExplorerCatalog(country: string, locale: Locale, offse
     producers: entries.slice(offset, offset + limit)
       .map(({ producer }) => toExplorerProducer(producer)),
   };
+  return compact ? encodeExplorerPage(page, country, buildCatalogScope(published, locale).pathPrefix) : page;
 }
 
 export function producerSearchPredicate(

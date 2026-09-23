@@ -41,7 +41,8 @@ jobs:
         with:
           node-version: 24
 
-      - run: npm install --global pnpm@11
+      - name: Install the repository's pinned package manager
+        run: npm install --global "$(node -p 'require("./package.json").packageManager')"
 
       - run: pnpm install --frozen-lockfile
 

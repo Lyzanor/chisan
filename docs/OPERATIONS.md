@@ -363,8 +363,10 @@ domain. Keep the normal build and database compatibility checks enabled.
 When automatic Git deployments are enabled, `scripts/vercel-ignore-build.mjs`
 only suppresses the Vercel build when every
 changed file is deployment-neutral: repository documentation, country agent
-guides, editorial evidence, Markdown design records, GitHub workflow files or
-test-only scripts. Any public catalog row or sidecar, image, application source,
+guides, Markdown design records, standalone design prototypes, GitHub workflow
+files or test-only scripts. Evidence ledgers are runtime inputs for public
+profile sources and source figures, so evidence-only changes also deploy.
+Any public catalog row or sidecar, image, application source,
 runtime configuration, dependency, build/check script, or mixed change builds
 and deploys normally. If the previous successful deployment cannot be resolved
 inside Vercel's shallow clone, the classifier fails open and the build runs.

@@ -3,6 +3,50 @@
 Active system: [One field](../README.md) (v0.7). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-23 — National loading, province navigation and homepage queries
+
+The map keeps every producer and coordinate. A lossless compact transport reduces
+the Spanish country load from 14 requests to three; a bounded browser-memory
+cache reuses it across explorer mounts. Barcelona still renders 2,359 marker
+elements at both 390×844 and 1440×1000. Checked the same widths for the homepage
+and national search with no horizontal overflow or copy/layout changes.
+
+Browser QA exposed a province selector that changed the URL without fetching the
+new province model. It now uses router navigation. Switching Barcelona → Girona
+updates the heading and catalog, and returning to national “muga” results makes
+no additional explorer request. Captures are disposable local files under
+`output/playwright/project-fixes-20260923/`.
+
+Homepage totals reuse immutable catalog data; account-derived cards still query
+current permissions and public visibility. Database tests cover bounded membership
+pages, retired identities, suspension, revocation and privacy changes. Six restored
+Spanish descriptions return indexable metadata in the local production build with
+public discovery enabled. No production account operations were performed.
+
+`pnpm verify:ai` passed (486 reported tests). The subsequent province-selector fix
+also passed `pnpm verify`, all 72 catalog-geography tests and the browser journey
+above. The local Vercel Analytics script remains the expected 404.
+
+## 2026-09-23 — Project maintenance and framework update
+
+Removed the legacy administrative pilot-shelf import and kept the ordinary shelf
+workflow. Moved standalone HTML prototypes into `design/prototypes` without
+changing their contents. Updated Next.js to 16.3.6 without changing the visual
+system.
+
+Checked the production build at 390×844 first, then 1440×1000: home at phone
+width, the Barcelona map filtered by wine, and the Abadal producer profile.
+Map and profile captures show no horizontal overflow at either width. The
+national search for “muga” returned La Rioja producers from the Barcelona map;
+its 14 explorer requests completed. Disposable captures are under
+`output/playwright/project-audit-20260923/`.
+
+`pnpm verify:ai` passed, including 24/24 concurrent ISR cache hits with identical
+public HTML. Android and iOS JavaScript exports also passed. The local server
+returned the expected 404 for Vercel's analytics script; no application exception
+was observed. Authenticated administration and physical-device permissions were
+not exercised in this visual check.
+
 ## 2026-09-23 — v0.7 One field: one token system, shared primitives and fluid motion
 
 The stylesheets had grown by layering: `app/styles/*`, `web.css`,

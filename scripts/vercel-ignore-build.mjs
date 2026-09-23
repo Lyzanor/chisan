@@ -10,9 +10,9 @@ const REPOSITORY_ROOT = path.resolve(SCRIPT_DIR, "..");
 const DEPLOYMENT_NEUTRAL_PATH_PATTERNS = [
   /^\.github\//,
   /^docs\//,
-  /^data\/evidence\//,
   /^data\/csv\/[a-z]{2}\/AGENTS\.md$/,
   /^design\/.*\.md$/,
+  /^design\/prototypes\//,
   /^scripts\/test-[^/]+(?:\.[^/]+)+$/,
   /^AGENTS\.md$/,
   /^README\.md$/,

@@ -20,9 +20,8 @@ import {
   getLocalizedCatalogLabel,
   getLocalizedCatalogUnit,
   listPublishedCountries,
-  listCountryProducers,
 } from "@/lib/csv-catalog";
-import { getCategoryPresentation } from "@/lib/i18n/categories";
+import { loadHomeCatalogSummary } from "@/lib/catalog/home-summary";
 import {
   buildCatalogScope,
   EXPLICIT_LOCALE_COOKIE,
@@ -46,32 +45,6 @@ import {
 import { SITE_NAME } from "@/lib/site";
 
 const HOME_LOCALE = "es" as const;
-
-// The featured categories describe the catalog's range. The catch-all says
-// nothing on its own, so it stays out of the summary.
-const HOME_SUMMARY_SKIPPED_CATEGORIES = new Set(["Otros"]);
-const HOME_SUMMARY_CATEGORY_LIMIT = 12;
-
-/** The most numerous categories, each producer counted once per category. */
-function summarizeFeaturedCategories(
-  producers: readonly { categories: string[] }[],
-): HomeCategoryCount[] {
-  const totals = new Map<string, number>();
-  for (const { categories } of producers) {
-    for (const category of new Set(categories)) {
-      if (HOME_SUMMARY_SKIPPED_CATEGORIES.has(category)) continue;
-      totals.set(category, (totals.get(category) ?? 0) + 1);
-    }
-  }
-
-  return [...totals]
-    .sort(([, first], [, second]) => second - first)
-    .slice(0, HOME_SUMMARY_CATEGORY_LIMIT)
-    .map(([category, count]) => ({
-      ...getCategoryPresentation(category, HOME_LOCALE),
-      count,
-    }));
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await loadMessages(HOME_LOCALE);
@@ -261,18 +234,12 @@ function ProjectSummary({
 
 export default async function HomePage() {
   const countries = listPublishedCountries();
-  const producers = (
-    await Promise.all(
-      countries.map((country) => listCountryProducers(country.slug)),
-    )
-  ).flat();
-  const producerCount = producers.length;
-  const categoryCounts = summarizeFeaturedCategories(producers);
   const locationAreas = listEnabledLocationAreas({
     countries,
     locale: HOME_LOCALE,
   });
-  const [messages, cookieStore, requestHeaders] = await Promise.all([
+  const [{ producerCount, categoryCounts }, messages, cookieStore, requestHeaders] = await Promise.all([
+    loadHomeCatalogSummary(),
     loadMessages(HOME_LOCALE),
     cookies(),
     headers(),

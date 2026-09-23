@@ -29,7 +29,7 @@ import { GET as detail } from "../app/(internal)/api/catalog/v1/producers/[count
 import { needsClerkRequestContext } from "../lib/proxy-scope";
 import robots from "../app/robots";
 import { GET as explorer } from "../app/(internal)/api/catalog/v1/explorer/route";
-import { explorerSearchFields, type ExplorerCatalogPage } from "../lib/catalog/explorer";
+import { decodeExplorerPage, explorerSearchFields, type CompactExplorerPage, type ExplorerCatalogPage } from "../lib/catalog/explorer";
 import { buildCatalogSearchDocument, rankCatalogEntries } from "../lib/catalog-search";
 
 const origin = "https://chisan.app";
@@ -52,6 +52,18 @@ test("browser national index and API return the same literal relevance order", a
   assert.ok(new Set(producers.map((p) => p.area)).size > 1);
   assert.ok(producers.every((p) => p.href === `/es/${p.area}/${p.slug}`));
   assert.ok(producers.every((p) => !("expanded" in p) && !("contact" in p) && !("fields" in p)));
+  const compactResponse = await explorer(request("/explorer?country=es&locale=es&format=compact-v1"));
+  const compact: CompactExplorerPage = await compactResponse.json();
+  const restored = [...decodeExplorerPage(compact).producers];
+  let compactBytes = Buffer.byteLength(JSON.stringify(compact));
+  for (let offset = compact.limit; offset < compact.total; offset += compact.limit) {
+    const page: CompactExplorerPage = await (await explorer(request(`/explorer?country=es&locale=es&format=compact-v1&offset=${offset}&revision=${compact.revision}`))).json();
+    compactBytes += Buffer.byteLength(JSON.stringify(page));
+    restored.push(...decodeExplorerPage(page).producers);
+  }
+  assert.deepEqual(restored, producers, "compact transport preserves every field of every producer, including all map points");
+  assert.ok(compactBytes < Buffer.byteLength(JSON.stringify(producers)) * 0.75);
+  console.log(`National transport: ${producers.length} producers, ${Math.ceil(compact.total / compact.limit)} pages, ${compactBytes} JSON bytes.`);
   const entries = producers.map((p) => ({ ...p, search: buildCatalogSearchDocument(explorerSearchFields(p)) }));
   for (const q of ["miel", "masa madre", "queso cabra"]) {
     const browser = rankCatalogEntries(entries, q);
@@ -60,7 +72,7 @@ test("browser national index and API return the same literal relevance order", a
     assert.deepEqual(browser.slice(0, 50).map((p) => p.producerId), api.producers.map((p) => p.producer_id), q);
   }
   assert.equal((await explorer(request(`/explorer?country=es&locale=es&revision=${"0".repeat(64)}`))).status, 409);
-  for (const query of ["country=es&locale=es&lat=41", "country=es&locale=es&offset=-1", "country=es&locale=es&country=es"]) {
+  for (const query of ["country=es&locale=es&lat=41", "country=es&locale=es&format=compact-v1&lat=41", "country=es&locale=es&format=unknown", "country=es&locale=es&offset=-1", "country=es&locale=es&country=es"]) {
     assert.equal((await explorer(request(`/explorer?${query}`))).status, 400);
   }
   assert.equal((await explorer(request("/explorer?country=de&locale=es"))).status, 404);

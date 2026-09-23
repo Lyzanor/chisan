@@ -29,6 +29,7 @@ brand/chisan-reference.png     supplied identity sheet (pixel source)
 brand/assets/            generated metadata and icon exports
 public/brand/            lossless SVG wrappers for the supplied identity
 references/              selected image direction and external inspiration
+prototypes/              standalone HTML explorations; not runtime assets
 qa/design-qa.md          current visual verification
 qa/history/              dated historical checks, not current specifications
 ```

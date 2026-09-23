@@ -6,7 +6,7 @@ import { getCatalogSearchMessages } from "@/lib/i18n/catalog-search";
 import type { ProducerMapMarker } from "@/lib/producer-selections";
 import { CatalogSearchControl } from "@/components/catalog-search-control";
 import { CatalogSearchSlot } from "@/components/catalog-search-slot";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ProducerCandidateSuggestionModal } from "@/components/map/producer-candidate-suggestion-modal";
 import {
   Suspense,
@@ -264,6 +264,7 @@ function AreaExplorerView({
   searchQuery?: string;
   searchScope?: SearchScope;
 }) {
+  const router = useRouter();
   const searchMessages = getCatalogSearchMessages(model.locale);
   const national = useNationalCatalog(model.scope.country, model.locale, searchScope !== "area");
   const producers = searchScope === "area" ? model.producers : national.catalog?.producers;
@@ -723,7 +724,8 @@ function AreaExplorerView({
             setMapFocusRequest(undefined);
             setPrioritizedProducerScope(null);
             listOrderLockedCategoryRef.current = null;
-            pushAreaQuery(areaOption.href);
+            // A different province needs its server model, not just new query state.
+            router.push(areaOption.href);
           }}
         />
       </CatalogSearchSlot>

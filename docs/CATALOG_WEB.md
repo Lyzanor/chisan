@@ -500,6 +500,10 @@ the result's actual area and published locale.
 
 National data loads lazily in bounded public pages, with loading, retry and
 empty states. The UI never labels a partial download as national coverage.
+The lossless compact transport and short browser-memory cache reuse the complete
+country/locale projection between navigations. Optimizations preserve every
+matching producer and map point; marker density is part of the discovery surface,
+not a reason to cap or cluster away the results.
 The mobile map fills the viewport below the header and categories. A horizontal
 card carousel synchronizes explicit selection with `highlight` and map focus;
 the compact bottom disclosure previews one photographed row and opens the same

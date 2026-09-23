@@ -7,7 +7,7 @@ import mascot from "../assets/intro-mascot.png";
 
 const nativeDriver = Platform.OS !== "web";
 
-// These three images are the layers in chisan-intro.html. The native sequence
+// These images come from design/prototypes/chisan-intro.html. The native sequence
 // plays once, after discovery has either loaded or reported a recoverable error.
 export function Launch({ ready, onFinish }: { ready: boolean; onFinish: () => void }) {
   const { width } = useWindowDimensions();

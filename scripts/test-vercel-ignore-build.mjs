@@ -13,8 +13,9 @@ test("deployment-neutral repository records do not require a Vercel build", () =
     "AGENTS.md",
     "README.md",
     "data/csv/es/AGENTS.md",
-    "data/evidence/es/catalunya/barcelona.jsonl",
     "design/qa/design-qa.md",
+    "design/prototypes/chisan-intro.html",
+    "design/prototypes/chisan-mascot-ui.html",
     "docs/OPERATIONS.md",
     "docs/candidates/es/barcelona.md",
     "scripts/test-csv-audit.sh",
@@ -34,6 +35,7 @@ test("every public or build input requires a Vercel deployment", () => {
     "components/area-catalog.tsx",
     "data/csv/es/catalunya/barcelona.csv",
     "data/csv/es/translations.ca.csv",
+    "data/evidence/es/catalunya/barcelona.jsonl",
     "data/reference/translation-glossary.json",
     "design/foundations/tokens.css",
     "lib/csv-catalog.ts",
@@ -59,11 +61,11 @@ test("one deployable file makes a mixed push build", () => {
       "app/(application)/page.tsx",
     ]),
     {
-      deploymentNeutral: [
+      deploymentNeutral: ["docs/OPERATIONS.md"],
+      deploymentRequired: [
+        "app/(application)/page.tsx",
         "data/evidence/es/catalunya/barcelona.jsonl",
-        "docs/OPERATIONS.md",
       ],
-      deploymentRequired: ["app/(application)/page.tsx"],
     },
   );
 });

@@ -55,7 +55,7 @@ Moving or translating a page does not change its account or content identity.
 | Editorial decisions and sources | `docs/candidates/`, `data/evidence/`, `lib/editorial/` | [Editorial](docs/EDITORIAL.md), [evidence](docs/EVIDENCE_CONTRACT.md) |
 | Accounts and contributions | `lib/accounts/`, `app/(application)/cuenta/actions/` | [Account system](docs/ACCOUNT_SYSTEM.md) |
 | Maps and location | `components/map/`, `lib/location/` | [Producer coordinates](docs/PRODUCER_GEOLOCATION.md), [visitor location](docs/VISITOR_LOCATION_ROUTING.md) |
-| Visual system | `design/`, component styles | [Design](design/README.md) |
+| Visual system and standalone prototypes | `design/`, `design/prototypes/`, component styles | [Design](design/README.md) |
 | Runtime and release | `scripts/`, `.github/workflows/` | [Operations](docs/OPERATIONS.md) |
 | Android and iOS | `apps/mobile/` | [Mobile apps](docs/MOBILE_APPS.md) |
 | Payment adapter | `lib/payments/` | [Stripe runbook](docs/STRIPE_RUNBOOK.md) |
@@ -83,9 +83,11 @@ permissions. [The content contract](docs/PRODUCER_CONTENT.md) includes an exampl
 
 Production runs on Vercel Pro. Pushing reviewed, validated changes to `main`
 synchronizes GitHub, runs CI and automatically deploys product changes to
-<https://chisan.app>. Documentation, evidence and test-only pushes skip the
-Vercel build. Use local checks while iterating, batch coherent changes into one
-push, and verify the deployed commit and public behavior. Follow
+<https://chisan.app>. Documentation, standalone design prototypes and test-only
+pushes skip the Vercel build. Evidence changes deploy because public profiles
+and source figures read the ledgers. Use local checks while iterating, batch
+coherent changes into one push, and verify the deployed commit and public
+behavior. Follow
 [the live operating mode and release checks](docs/OPERATIONS.md), including
 database preflight before publishing code that needs a new schema.
 Producer and selection QR behavior is documented in the

@@ -90,12 +90,17 @@ invalidate older pagination revisions.
 
 The existing web explorer uses this same base-field projection and scorer. Its
 internal browser transport, `/api/catalog/v1/explorer`, accepts required country
-and locale, plus optional offset and revision. It returns at most 1,000 compact
-records with total/limit/offset and the public index revision; it is not an
+and locale, plus optional offset, revision and `format=compact-v1`. Its default
+object representation returns at most 1,000 records; the versioned compact
+format returns at most 5,000 lossless rows with shared area/category dictionaries.
+Both carry total/limit/offset and the public index revision; it is not an
 additional WebMCP operation. It rejects coordinates and unknown parameters,
 uses the same published-language policy, conditional caching and error envelope,
 and exposes neither expanded content nor raw CSV field bags. The browser loads
 all pages before displaying a national result and checks one revision throughout.
+Concurrent consumers and later explorer mounts share the same download in browser
+memory, keyed by country and locale, for five minutes with at most four entries.
+Failures are evicted for retry; incomplete or mixed-revision loads are never shown.
 The paginated producer API remains the interface for agent searches.
 
 Responses default to 20 producers and allow at most 50. `next` carries the same

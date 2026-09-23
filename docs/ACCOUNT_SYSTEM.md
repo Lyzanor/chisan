@@ -1117,10 +1117,15 @@ by active accounts and up to four active users with explicitly public profiles.
 Private and unlisted users never enter this discovery surface. The projection
 contains only producer catalog identity, public names, profile routes and avatar
 routes; owner identity, emails, account IDs and avatar bytes remain server-side.
-Santa Coloma de Gramenet is currently preferred, then stable name/creation order.
+Santa Coloma de Gramenet is currently preferred, then stable country/producer-ID
+order for producers and creation order for users. Producer memberships are read
+in keyset pages of four; retired identities are skipped until four current
+producers are found or the eligible memberships end. Standby countries are excluded.
 This is a replaceable presentation choice in `lib/accounts/home-community.ts`,
 not editorial eligibility or an endorsement score. Revocation and visibility
-changes apply on the next server render; no persistent homepage cache is used.
+changes apply on the next server render; account-derived results are not cached.
+Only the immutable CSV-backed producer/category totals are memoized within the
+running deployment; request preferences and account permissions stay outside it.
 The community block degrades to a registration link if accounts are disabled or
 unavailable. Homepage plans describe the free account and premium capabilities
 with a contact route; they do not activate checkout or imply a shared account

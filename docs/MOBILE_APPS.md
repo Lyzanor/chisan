@@ -1,8 +1,9 @@
 # Android and iOS apps
 
 `apps/mobile` is a small Expo / React Native shell around Chisan's responsive
-website. The app plays the checked-in `chisan-intro.html` layers as a native
-one-shot launch animation, then shows the site's real mobile navigation and
+website. The app plays the layers from
+[the launch prototype](../design/prototypes/chisan-intro.html) as a native one-shot
+launch animation, then shows the site's real mobile navigation and
 content in a WebView. This includes **Descubrir / Mapa / Mi Cuenta**, the
 interactive catalog map, filters, producer profiles, guides and later website
 redesigns. The app does not maintain a second producer list, map, account view
@@ -108,8 +109,9 @@ check in `design/qa/design-qa.md`.
 ## Launch experience
 
 The native startup gate uses the three checked-in image layers from
-`chisan-intro.html`. It idles until the website loads or reports a recoverable
-error, moves the detached module into the **C**, reveals the wordmark and fades
-into the already mounted website. Reduced-motion settings skip the movement.
+`design/prototypes/chisan-intro.html`. It idles until the website loads or reports
+a recoverable error, moves the detached module into the **C**, reveals the
+wordmark and fades into the already mounted website. Reduced-motion settings
+skip the movement.
 Haptics and audio remain prototype directions; add them only with reviewed
 assets, silent-mode behavior and device QA.
