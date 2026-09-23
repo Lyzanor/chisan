@@ -1252,11 +1252,18 @@
 | PASTISSERIES MAGDA, SL | Olesa de Montserrat | `Pan y cereal` | RIAAC entry with no published registration number, main activity “Fabricació de pa i panets, excepte pa torrat” | [RIAAC dataset](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Ind-stries-agroaliment-ries-de-Catalunya/p28j-xe65) |  | Decide whether this registration is the published Forn d'Sara (obrador) row under its trading name. Only if it is a different productive unit does it become a candidate. |
 | SERHS FOOD AREA, SL | Mataró | `Pescado` | RIAAC registration 000310201, main activity “Elaboració i manipulació de productes transformats i plats precuinats a base de peix i altres productes marins” | [RIAAC dataset](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Ind-stries-agroaliment-ries-de-Catalunya/p28j-xe65) |  | Decide whether this registration is the published Confraria de Pescadors de Mataró (Llotja) row under its trading name. Only if it is a different productive unit does it become a candidate. RIAAC registers the establishment at C. FONERIA, 22, Mataró. |
 
-## DO Penedès and DOQ Priorat registered cellers — 2026-09-04
+## Escumostra 2026 gastronomy follow-up — 2026-09-23
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Vins per Estimar el Vi | Sant Sadurní d'Anoia | `Vino` | Celler registered in the DO Penedès, published in the council's own directory | [DO Penedès directory](https://dopenedes.cat/cellers/) |  | Confirm a current published range under this identity, then check it against the RIAAC leads listed above before creating a row: the register carries this winery's legal name, not its brand. |
+| Ylonka Tartas | Sant Sadurní d'Anoia | `Dulces y repostería` | The fair lists a cake maker; a wedding directory describes custom cakes and gives Sant Sadurní as its base. | [Escumostra plan](https://santsadurni.cat/ARXIUS/turisme/Planol_expositors_Escumostra.jpg); [wedding directory](https://www.bodas.net/tartas-de-boda/yloncakes--e70101) |  | Establish the current workshop's productive address and a producer-controlled channel before creating a row. The fair stand and a shop address alone do not place the cake-making unit. |
+| Cookies L’Estrella | Sant Sadurní d'Anoia | `Dulces y repostería` | The fair lists a cookie offering under L’Estrella. | [Escumostra plan](https://santsadurni.cat/ARXIUS/turisme/Planol_expositors_Escumostra.jpg) |  | Identify the maker and where the cookies are baked; the café listing does not establish a separate productive unit or an own packaged offer. |
+
+## DO Penedès published-row follow-up — 2026-09-23
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Vinares 1909 (`es:12203`, already published) | Finca Cal Maginet, Barri Cal Cintet, Font-rubí | `Vino` | The current DO Penedès directory lists the bodega and the Catalan bottler register locates its own bottling installation at Cal Maginet. | [DO Penedès directory](https://dopenedes.cat/es/bodegas/) | [Catalan bottler register](https://agricultura.gencat.cat/web/.content/04-alimentacio/registres-oficials/enllacos-documents/fitxers-binaris/empreses-registre-envasadors-nom-titular.pdf) | Confirm current wine labels and whether this unit grows grapes or vinifies wine; bottling registration alone does not establish that activity. The old map pin was removed because it pointed away from Font-rubí. |
 
 ## Venda de proximitat accredited producers — 2026-09-04
 

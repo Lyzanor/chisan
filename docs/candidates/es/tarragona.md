@@ -669,12 +669,11 @@
 | REGANTS ESQUERRA, SL | Deltebre | `Pan y cereal` | RIAAC registration 430020693, main activity “Assecat i mòlta d'arròs” | [RIAAC dataset](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Ind-stries-agroaliment-ries-de-Catalunya/p28j-xe65) |  | Decide whether this registration is the published Arrossaires del Delta de l'Ebre, Molí de Rafelet rows under its trading name. Only if it is a different productive unit does it become a candidate. RIAAC registers the establishment at PASSATGE  CANAL, S/N, Deltebre. |
 | TRAMONTANO, SL | Deltebre | `Pan y cereal` | RIAAC registration 000307757, main activity “Assecat i mòlta d'arròs” | [RIAAC dataset](https://analisi.transparenciacatalunya.cat/Medi-Rural-Pesca/Ind-stries-agroaliment-ries-de-Catalunya/p28j-xe65) |  | Decide whether this registration is the published Arrossaires del Delta de l'Ebre, Molí de Rafelet rows under its trading name. Only if it is a different productive unit does it become a candidate. RIAAC registers the establishment at MAS TRAMONTANO, S/N, Deltebre. |
 
-## DO Penedès and DOQ Priorat registered cellers — 2026-09-04
+## Escumostra 2026 gastronomy follow-up — 2026-09-23
 
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
-| Can Sumoi | El Montmell | `Vino` | Celler registered in the DO Penedès, published in the council's own directory | [DO Penedès directory](https://dopenedes.cat/cellers/) |  | Confirm a current published range under this identity, then check it against the RIAAC leads listed above before creating a row: the register carries this winery's legal name, not its brand. |
-| Celler Can Marlès | El Montmell | `Vino` | Celler registered in the DO Penedès, published in the council's own directory | [DO Penedès directory](https://dopenedes.cat/cellers/) |  | Confirm a current published range under this identity, then check it against the RIAAC leads listed above before creating a row: the register carries this winery's legal name, not its brand. |
+| La Musclera del Delta | Delta de l'Ebre; productive municipality unresolved | `Pescado` | The producer site refers to its shellfish nurseries in the Delta bays and the fair lists its offer. | [Escumostra plan](https://santsadurni.cat/ARXIUS/turisme/Planol_expositors_Escumostra.jpg) | [producer site](https://lamusclera.com/) | Identify the concession or nursery and its municipality. The company's Deltebre retail address does not establish where it farms shellfish; do not conflate it with Musclera de l’Avi Agustí. |
 
 ## DO Terra Alta, DO Montsant and DO Conca de Barberà verified cellers — 2026-09-04
 
