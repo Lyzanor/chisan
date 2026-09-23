@@ -2,7 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { pathToFileURL, fileURLToPath } from "node:url";
 
 import { parse } from "csv-parse/sync";
 
@@ -10,6 +10,28 @@ import { classifyCatalogCsvPath } from "./lib/catalog-translations.mjs";
 
 const DEFAULT_CSV_ROOT = "data/csv";
 const DEFAULT_EVIDENCE_ROOT = "data/evidence";
+const DEFAULT_CATEGORIES_PATH = "data/reference/categories.json";
+
+export function loadCanonicalCategories(
+  categoriesPath = DEFAULT_CATEGORIES_PATH,
+) {
+  const resolved = path.isAbsolute(categoriesPath)
+    ? categoriesPath
+    : path.resolve(categoriesPath);
+  if (!fs.existsSync(resolved)) {
+    const fallback = path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      "../data/reference/categories.json",
+    );
+    if (fs.existsSync(fallback)) {
+      const data = JSON.parse(fs.readFileSync(fallback, "utf8"));
+      return new Set(data.categories ?? []);
+    }
+    return new Set();
+  }
+  const data = JSON.parse(fs.readFileSync(resolved, "utf8"));
+  return new Set(data.categories ?? []);
+}
 
 const ACTIONS = new Set(["keep", "reject", "purge", "merge"]);
 const SOURCE_TYPES = new Set([
@@ -50,6 +72,7 @@ const TOP_LEVEL_KEYS = new Set([
   "slug",
   "action",
   "reason",
+  "category",
   "targetSlug",
   "sources",
   "notes",
@@ -76,6 +99,7 @@ function parseArgs(argv) {
   const args = {
     csvRoot: DEFAULT_CSV_ROOT,
     evidenceRoot: DEFAULT_EVIDENCE_ROOT,
+    categoriesPath: DEFAULT_CATEGORIES_PATH,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -86,6 +110,10 @@ function parseArgs(argv) {
     }
     if (arg === "--evidence-root") {
       args.evidenceRoot = argv[++index];
+      continue;
+    }
+    if (arg === "--categories-path") {
+      args.categoriesPath = argv[++index];
       continue;
     }
     throw new Error(`Unknown argument: ${arg}`);
@@ -226,8 +254,26 @@ function validateSources(record, location, errors) {
 
 // Each action states where the slug must be: present for `keep`, gone for the
 // tombstones. That relationship is the only thing the CSV cannot say by itself.
-function validateAction({ record, row, rows, location, errors }) {
+function validateAction({
+  record,
+  row,
+  rows,
+  location,
+  errors,
+  validCategories,
+}) {
   const action = record.action;
+
+  if (record.category !== undefined) {
+    const category = validateString(record, "category", location, errors);
+    if (category) {
+      if (action !== "purge") {
+        errors.push(`${location}: category is only allowed on purge records`);
+      } else if (validCategories && !validCategories.has(category)) {
+        errors.push(`${location}: unsupported category '${record.category}'`);
+      }
+    }
+  }
 
   if (action === "keep") {
     if (!row) {
@@ -271,7 +317,12 @@ function validateAction({ record, row, rows, location, errors }) {
   }
 }
 
-function validateEvidenceFile(evidencePath, csvPath, errors) {
+function validateEvidenceFile(
+  evidencePath,
+  csvPath,
+  errors,
+  validCategories,
+) {
   const rows = readCsvRows(csvPath);
   const raw = fs.readFileSync(evidencePath, "utf8");
   const records = new Map();
@@ -317,7 +368,14 @@ function validateEvidenceFile(evidencePath, csvPath, errors) {
 
     validateSources(record, location, errors);
     if (ACTIONS.has(action)) {
-      validateAction({ record, row: rows.get(slug), rows, location, errors });
+      validateAction({
+        record,
+        row: rows.get(slug),
+        rows,
+        location,
+        errors,
+        validCategories,
+      });
     }
 
     if (slug) {
@@ -331,9 +389,11 @@ function validateEvidenceFile(evidencePath, csvPath, errors) {
 export function auditEvidence({
   csvRoot = DEFAULT_CSV_ROOT,
   evidenceRoot = DEFAULT_EVIDENCE_ROOT,
+  categoriesPath = DEFAULT_CATEGORIES_PATH,
 } = {}) {
   const resolvedCsvRoot = path.resolve(csvRoot);
   const resolvedEvidenceRoot = path.resolve(evidenceRoot);
+  const validCategories = loadCanonicalCategories(categoriesPath);
   const errors = [];
   const catalogFiles = listFiles(resolvedCsvRoot, ".csv").filter(
     (file) => classifyCatalogCsvPath(resolvedCsvRoot, file).kind === "area",
@@ -361,7 +421,10 @@ export function auditEvidence({
       continue;
     }
 
-    areaResults.set(areaKey, validateEvidenceFile(evidencePath, csvPath, errors));
+    areaResults.set(
+      areaKey,
+      validateEvidenceFile(evidencePath, csvPath, errors, validCategories),
+    );
   }
 
   let documentedRows = 0;

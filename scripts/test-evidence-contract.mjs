@@ -89,6 +89,22 @@ function validReject() {
   };
 }
 
+function validPurge() {
+  return {
+    slug: "productor-purgado",
+    action: "purge",
+    reason: "closed",
+    sources: [
+      {
+        url: "https://example.com/closure",
+        type: "official-site",
+        checkedAt: "2026-06-15",
+        claims: ["identity", "closure"],
+      },
+    ],
+  };
+}
+
 function validMerge() {
   return {
     slug: "productor-uno-duplicado",
@@ -165,6 +181,18 @@ function main() {
     assert.equal(result.documentedRows, 1);
     assert.equal(result.tombstones, 2);
     assert.deepEqual(missingAdmissionEvidenceClaims(validKeep()), []);
+
+    // A purge record may optionally preserve its former catalog category.
+    writeLedger(fixture.ledgerPath, [
+      validKeep(),
+      validReject(),
+      validMerge(),
+      { ...validPurge(), category: "Vino" },
+    ]);
+    result = auditEvidence(fixture);
+    assert.deepEqual(result.errors, []);
+    assert.equal(result.records, 4);
+    assert.equal(result.tombstones, 3);
 
     const incompleteAdmission = validKeep();
     incompleteAdmission.sources[0].claims = ["identity", "producer-activity"];
@@ -243,6 +271,32 @@ function main() {
     expectError(
       [{ ...validMerge(), targetSlug: "productor-inexistente" }],
       "is not in area CSV",
+    );
+
+    // category is allowed only on purge, and must match canonical reference
+    expectError(
+      [{ ...validKeep(), category: "Vino" }],
+      "category is only allowed on purge records",
+    );
+    expectError(
+      [{ ...validReject(), category: "Vino" }],
+      "category is only allowed on purge records",
+    );
+    expectError(
+      [{ ...validMerge(), category: "Vino" }],
+      "category is only allowed on purge records",
+    );
+    expectError(
+      [{ ...validPurge(), category: "Categoria Inexistente" }],
+      "unsupported category 'Categoria Inexistente'",
+    );
+    expectError(
+      [{ ...validPurge(), category: "" }],
+      "'category' must be a non-empty string",
+    );
+    expectError(
+      [{ ...validPurge(), category: 123 }],
+      "'category' must be a non-empty string",
     );
 
     const badClaim = validKeep();

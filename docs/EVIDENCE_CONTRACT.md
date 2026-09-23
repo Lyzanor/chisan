@@ -62,6 +62,7 @@ Structure is mandatory: malformed evidence fails `check:evidence`.
 | `slug` | Required lowercase ASCII kebab-case; unique within the ledger |
 | `action` | `keep`, `reject`, `purge`, or `merge` |
 | `reason` | Required for `reject` and `purge`; forbidden elsewhere |
+| `category` | Optional canonical category; allowed only for `purge` to preserve former catalog taxonomy |
 | `targetSlug` | Required for `merge`; forbidden elsewhere |
 | `sources` | Required non-empty array of source objects |
 | `notes` | Optional factual context not represented elsewhere |
@@ -78,7 +79,9 @@ Each source:
 
 Unknown fields are errors. Do not copy CSV decisions or `producer_id`, Git
 authorship, or a separate review timestamp into evidence; `checkedAt` records
-when each source was seen.
+when each source was seen. For `purge` tombstones, optional `category` may
+preserve the former catalog category of the removed row so that historical
+sector taxonomy is retained without depending on Git log extraction.
 
 ## Actions
 
