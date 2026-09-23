@@ -187,3 +187,15 @@ Already open from an earlier pass in this note, so no row was added here and the
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Agrícola La Veguill… | El Carpio de Tajo | `Fruta y verdura` — vegetables | RVDCLM0151 accredits own vegetables. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+
+## Category-gap directory pass — 2026-09-23
+
+Second targeted pass at thin categories in this area (fruit, sweets and preserves). Source: the Alimentos y Vinos de Castilla-La Mancha directory. Cutoff: 2026-09-23. Leads were checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain, phone and distinctive name tokens; 5 were queued.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Aceites y Frutas de Cebolla, S. Coop. | Cebolla; Carretera de Malpica 3 | `Fruta y verdura` / `Aceite` — Cuello de Dama figs, olive oil | Cooperative that grows and markets Cuello de Dama figs alongside its oil. | [CLM directory](https://www.foodandwineclm.com/empresa/aceites-y-frutas-de-cebolla-s-coop-de-clm/) | <https://aceitesyfrutasdecebolla.es/> | Check whether its oil is already published under another name; confirm a consumer channel for the figs. |
+| Terrallana Natural | Quintanar de la Orden; Calle Grande 25 | `Fruta y verdura` — white, purple and violet garlic | Garlic company with several varieties (two directory profiles). | [CLM directory](https://www.foodandwineclm.com/empresa/terrallana-natural-s-l/) | — | Establish own growing rather than packing and trading. |
+| Canela en Rama (CR Artisans since 1919) | Ajofrín; Calle Real 56 | `Dulces y repostería` — desserts | Family maker of desserts, mainly for horeca. | [CLM directory](https://www.foodandwineclm.com/empresa/canela-en-rama-cr-artisans-since-1919/) | — | Establish a consumer offer. |
+| Pistachos Lalola 1947 | Villacañas; Calle Chaparral 20 | `Frutos secos` — pistachios | Pistachio brand. | [CLM directory](https://www.foodandwineclm.com/empresa/pistachos-lalola-1947/) | — | Establish own orchards. |
+| Lagua Parts — fábrica de membrillo | Santa Cruz del Retamar | `Conservas` — quince paste | Quince-paste factory for retail, horeca and industry. | [CLM directory](https://www.foodandwineclm.com/empresa/lagua-parts-fabrica-de-membrillo/) | — | Establish a consumer-identifiable brand. |

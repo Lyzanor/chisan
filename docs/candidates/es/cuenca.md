@@ -65,3 +65,12 @@ Discovery URL for every row: <https://registroventadirecta.castillalamancha.es/>
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Agropecuaria La Olm… | Mota del Cuervo | `Fruta y verdura` — vegetables | RVDCLM0072 accredits own vegetables. | Register | — | Register name is truncated at 19 characters; resolve the full legal name and the public trade name, then confirm current activity and own offer before admission. |
+
+## Category-gap directory pass — 2026-09-23
+
+Second targeted pass at thin categories in this area (nuts, mushrooms and saffron). Source: the Alimentos y Vinos de Castilla-La Mancha directory. Cutoff: 2026-09-23. Leads were checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain, phone and distinctive name tokens; 2 were queued.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Las Morenitas | Villalpardo; Calle Onésimo Redondo 1 | `Frutos secos` — caramelized almonds, hazelnuts, walnuts | Caramelizes nuts by hand from its own fields. | [CLM directory](https://www.foodandwineclm.com/empresa/las-morenitas-snacks-saludables/) | — | Confirm a consumer channel. |
+| Azafrán Bealar | Motilla del Palancar | `Condimentos` — saffron | Grows, selects and packs saffron in its own fields and plant. | [CLM directory](https://www.foodandwineclm.com/empresa/azafran-bealar/) | — | Separate own growing from bought-in saffron. |
