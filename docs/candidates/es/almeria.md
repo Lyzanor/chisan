@@ -120,3 +120,9 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | MIELES SIERRA DE GADOR SL | El Ejido | `Miel` | RGSEAA registers it under key 23 for manufacturing or elaboration, entry 23.004724/AL | [RGSEAA search](https://rgsa-web-aesan.mscbs.es/rgsa/formulario_principal_js.jsp) |  | Confirm an own apiary behind the honey sold; a packer that buys third-party honey is not a producer through that activity. Resolve the official municipality from the registered address "CALLE MONTENEGRO Nº13". |
+
+## Routed from Barcelona — 2026-09-23
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Gavá | El Ejido and Níjar (Grupo Gavà Almería, SCA; the group trades from Mercabarna, Barcelona) | `Fruta y verdura` | The directory states: “Gavá es una compañía localizada en la ciudad de Barcelona que se encarga de la comercialización de vegetales , frutas…” | [Directory](https://www.proveedores.com/proveedores/gava/) | <https://gavagrup.com/> | Gavà Grup’s farming division, Grupo Gavà Almería, SCA, grows about 160 ha under greenhouses around El Ejido and Níjar, while the Barcelona companies handle and trade produce at Mercabarna: identify the holding, its municipality and an attributable offer before admitting a row. |
