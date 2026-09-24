@@ -141,6 +141,9 @@ export function ProducerAccountActions({
       ) : (
         <Link className="chisan-button chisan-button--primary" prefetch={false} href={claimPath}>{messages.claimProducer}</Link>
       )}
+      <Link className="chisan-link" prefetch={false} href="/soy-productor">
+        {locale === "es" ? "Más información para productores" : locale === "ca" ? "Més informació per a productors" : "More information for producers"}
+      </Link>
     </ProducerClosingSection>
   );
 }

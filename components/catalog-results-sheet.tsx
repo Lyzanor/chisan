@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, type ReactNode, type Ref } from "react";
 
-export function CatalogResultsSheet({ children, open, onOpenChange, label, closeLabel, title, viewerRef }: {
+export function CatalogResultsSheet({ children, open, onOpenChange, label, closeLabel, title, viewerRef, showLabel = false }: {
   children: ReactNode;
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -10,6 +10,7 @@ export function CatalogResultsSheet({ children, open, onOpenChange, label, close
   closeLabel: string;
   title: string;
   viewerRef?: Ref<HTMLElement>;
+  showLabel?: boolean;
 }) {
   const handleRef = useRef<HTMLButtonElement>(null);
   const startY = useRef<number | null>(null);
@@ -57,6 +58,7 @@ export function CatalogResultsSheet({ children, open, onOpenChange, label, close
         }}
       >
         <span className="catalog-results-sheet__grip" aria-hidden="true" />
+        {showLabel ? <span>{open ? closeLabel : label}</span> : null}
       </button>
       <div className="catalog-viewer-body" id={bodyId} role="region" aria-label={title}>
         {children}

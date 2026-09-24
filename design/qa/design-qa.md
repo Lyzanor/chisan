@@ -3,6 +3,57 @@
 Active system: [One field](../README.md) (v0.7). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-24 — Shared physical presence and origin viewer
+
+Escumostra now reaches its viewer at about 301px from the document top on a
+390×844 phone, after a compact date/venue header. Descriptions, venue coordinates
+and credits remain in a bottom disclosure. The visible total is consistently
+58 catalog producers (39 physical stands); five producers without coordinates
+retain their physical position and an explicit map notice.
+
+The image and map stay mounted in a bounded CSS Grid workspace. Phone panels
+stack; at 1440×900 they sit side by side. Expansion preserves the producer and
+keeps the other surface as a compact reference. Reviewed the compiled build at
+both widths with no horizontal overflow. Fonpinet selects stand 16 and its own
+profile; Mallart retains stand 9 with an unavailable-coordinate notice. Search,
+exact URL occurrences, browser Back and Escape were exercised. Image targets
+are 44px and nearby positions open an explicit chooser.
+
+A temporary, visibly synthetic portrait-cheese fixture exercised two products
+from one producer and a shared position with another producer. Choosing the
+second product retained its occurrence; choosing its origin marker highlighted
+both positions. The fixture was removed before the production build. Existing
+account-backed shelf persistence was not exercised because the local account
+database was unavailable; publication and permission code is unchanged.
+Reduced-motion branches disable panel transitions and smooth image movement.
+Tests cover repeated products, collective stands, crowding, stale point identity
+and every real Escumostra producer/point with a reordered roster.
+Validation: `pnpm install --frozen-lockfile`, `pnpm verify:ai` and the final
+documentation/diff checks passed.
+
+## 2026-09-24 — Category pictograms in producer profiles
+
+Replaced visible category names with the existing registry pictograms in the
+profile context row and related-producer cards. Profile pictograms retain their
+catalog-filter links, 44px targets and localized accessible names; related cards
+include the category in the link name. Checked a real producer profile at
+390×844 and 1440×900, plus a related card at phone width. No horizontal overflow
+at either width.
+
+## 2026-09-24 — Public producer onboarding landing page
+
+`/soy-productor` offers anonymous catalog search, a producer-specific claim link
+and a zero-results path to editorial admission. Reviewed at 390×844 and
+1440×900 with no horizontal overflow. Searching Fonpinet resolves producer
+`es:13472`; its claim link preserves the identity. The compiled build with
+accounts disabled shows the approved October 1 notice. A nonmatching search
+links to the existing suggestion flow without creating a producer.
+
+Copy distinguishes free gallery/base updates from premium product records,
+verified representation from factual certification, and starting a claim from
+its later review. Public pages, footer, profile entry and sitemap include the
+landing page. The sitemap contract explicitly verifies its canonical URL.
+
 ## 2026-09-23 — Place picker and province framing
 
 The header search now names the place it searches. The filter icon became a

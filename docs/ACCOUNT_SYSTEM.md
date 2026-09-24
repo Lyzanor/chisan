@@ -69,12 +69,15 @@ checks the subject's entitlement and its publication/visibility rules.
 
 ### Free producer onboarding and verification
 
-The intended entry is “Soy productor”: sign in, find the existing productive
-unit and request its management. Reuse known catalog facts and ask only for
-missing facts and the proof needed for review. When no matching producer exists,
-collect a candidate for editorial admission and deduplication first; review and
-publish its stable identity before granting ownership. A sign-up or claim never
-creates a duplicate catalog record or publishes self-declared facts directly.
+The intended public entry is “Soy productor” (`/soy-productor`): a public,
+zero-friction landing page with an embedded catalog search, radical transparency
+about free verification and zero sales commissions, and direct links into the
+claim flow. Once the producer selects their productive unit, they sign in and
+request its management. Reuse known catalog facts and ask only for missing facts
+and the proof needed for review. When no matching producer exists, collect a
+candidate for editorial admission and deduplication first; review and publish its
+stable identity before granting ownership. A sign-up or claim never creates a
+duplicate catalog record or publishes self-declared facts directly.
 
 The phone-first flow has one decision per screen. Account setup
 (`/cuenta/bienvenida`) asks for the display name and whether the person
@@ -92,7 +95,7 @@ membership or open claim sees a dashboard entry back into the flow.
 
 Keep sign-in identifier verification, evidence for catalog facts, and authority
 to represent the producer separate. An approved claim creates the active owner
-membership; the existing “Verificado por el productor” label reflects that
+membership; the “Productor verificado” label reflects that
 relationship. It does not certify every field. Editorial caveats continue to
 follow [Editorial](EDITORIAL.md#core-verification-claims). Neither payment nor
 profile kind removes a caveat or supplies ownership proof.
@@ -1035,8 +1038,8 @@ the favorite aggregation. The public roster uses the same active-follow relation
 
 ## Shelf photos in shared selections
 
-`CHISAN_SELECTION_SHELF_ENABLED` gates an optional photo below the existing
-`/u/<handle>` map. Apply migrations through `0020_public_follows_shelf_proposals`
+`CHISAN_SELECTION_SHELF_ENABLED` gates an optional photo alongside the
+`/u/<handle>` origin map in the shared presence viewer. Apply migrations through `0020_public_follows_shelf_proposals`
 before enabling it. This is account-owned presentation in PostgreSQL; it does not
 register a shop or change CSV/content facts. Private business data is never
 reused as public location or presentation.

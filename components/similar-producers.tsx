@@ -8,6 +8,7 @@ export type SimilarProducerCard = Readonly<{
   name: string;
   city: string;
   category: string;
+  categoryIcon: string;
   distance: string;
   imageSrc: string;
   accessibleLabel: string;
@@ -30,7 +31,7 @@ export function SimilarProducers({
       <div className="detail-similar-grid">
         {producers.map((producer) => (
           <article className="detail-similar-card" key={producer.producerId}>
-            <Link href={producer.href} aria-label={producer.accessibleLabel}>
+            <Link href={producer.href} aria-label={`${producer.accessibleLabel} · ${producer.category}`}>
               <span className="detail-similar-card__media">
                 <Image
                   src={producer.imageSrc}
@@ -42,8 +43,8 @@ export function SimilarProducers({
                 />
               </span>
               <span className="detail-similar-card__content">
-                <span className="detail-similar-card__category">
-                  {producer.category}
+                <span className="detail-similar-card__category" title={producer.category}>
+                  <span aria-hidden="true">{producer.categoryIcon}</span>
                 </span>
                 <strong>{producer.name}</strong>
                 <span>{producer.city}</span>

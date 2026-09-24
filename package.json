@@ -64,7 +64,7 @@
     "check:events": "node --conditions=react-server --import tsx scripts/check-events.ts",
     "test:guides": "tsx --test scripts/test-guides.ts",
     "test:events": "node --conditions=react-server --import tsx --test scripts/test-events.ts",
-    "test:selection-shelf": "node --conditions=react-server --import tsx --test scripts/test-selection-shelf.ts",
+    "test:selection-shelf": "node --conditions=react-server --import tsx --test scripts/test-selection-shelf.ts scripts/test-annotated-producer-image.ts",
     "test:whatsapp": "node --conditions=react-server --import tsx --test scripts/test-whatsapp.ts",
     "test:catalog-cache": "node --test scripts/test-producer-cache.mjs",
     "mobile:dev": "pnpm --filter @chisan/mobile start",

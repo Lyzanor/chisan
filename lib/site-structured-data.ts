@@ -50,7 +50,7 @@ export function buildPublicPageStructuredData({
   description: string;
   locale: string;
   name: string;
-  type: "AboutPage" | "ContactPage";
+  type: "AboutPage" | "ContactPage" | "WebPage";
   url: string;
 }) {
   return {

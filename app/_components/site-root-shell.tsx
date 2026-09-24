@@ -172,6 +172,7 @@ export function SiteRootShell({
               <ResponsiveDisclosure className="site-footer__group" compactWidth={540} summary="Chisan">
                   <Link href="/about">{spanish ? "Sobre Chisan" : "About Chisan"}</Link>
                   <Link href="/how-we-work">{footerMessages.aboutLink}</Link>
+                  <Link href="/soy-productor">{spanish ? "Soy productor" : "For producers"}</Link>
                   <Link href="/contact">{footerMessages.contactLink}</Link>
               </ResponsiveDisclosure>
               <ResponsiveDisclosure className="site-footer__group" compactWidth={540} summary={spanish ? "Conecta" : "Connect"}>

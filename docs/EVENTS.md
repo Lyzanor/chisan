@@ -41,11 +41,21 @@ by the organizer. Multiple producers may share a collective stand. The optional
 `plan` holds a credited local copy of the organizer's image, its source URL,
 dimensions, review date and normalized points (0–1). A point must reference an
 exhibitor in the same event. A point marks that exhibitor's stand on the event
-plan; it is not a new productive coordinate. Dense plans show one selected
-point at a time, with the numbered original visible and an exhibitor list to
-choose from. The existing shelf image and origin-map interaction is reused for
-viewing, without using shelf records or its photo analysis workflow as event
-storage.
+plan; it is not a new productive coordinate. The shared presence viewer keeps the physical image and producer origins mounted
+together, with one identity selection and a searchable drawer. Nearby image
+targets merge into an explicit position chooser at small scales; a selected
+position always uses its exact normalized point. Collective stands show all
+linked producers before choosing one. Counts use unique catalog identities,
+independently of stand counts or wine/food categories.
+
+`lib/annotated-producer-image.ts` owns the derived presentation contract and
+identity/position resolution. The URL carries `highlight=country:id` and an
+optional `point` for the exact image occurrence. A map selection shows every
+appearance of that producer; choosing an image occurrence retains its optional
+product ID. Missing productive coordinates remain explicitly unavailable, never
+replaced by the venue. Event and shelf adapters share viewing components without
+using shelf records or photo analysis as event storage. Venue coordinates,
+credits and editorial detail remain available in the bottom disclosure.
 
 The published roster can be a subset of the organizer's full exhibitor list:
 only confidently reconciled, published Chisan producers receive profile links.

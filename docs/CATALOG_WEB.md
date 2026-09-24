@@ -391,7 +391,7 @@ separate content into understandable, independently inspectable groups:
 
 | File pattern | Contents |
 | --- | --- |
-| `/sitemap-pages-1.xml` | Home and public information pages |
+| `/sitemap-pages-1.xml` | Home and public information pages (`/about`, `/how-we-work`, `/soy-productor`, `/contact`, `/privacy`) |
 | `/sitemap-catalog-<country>-1.xml` | Published country and area landing pages |
 | `/sitemap-guides-<scope>-1.xml` | Published guide library and articles |
 | `/sitemap-events-<scope>-1.xml` | Published event library and events |

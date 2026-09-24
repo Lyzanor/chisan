@@ -277,9 +277,12 @@ body:has(.detail-page) {
 }
 
 @media (hover: hover) {
-  .detail-breadcrumb a:hover,
-  .detail-subtitle a:hover {
+  .detail-breadcrumb a:hover {
     text-decoration-color: currentColor;
+  }
+
+  .detail-subtitle a:hover {
+    background: var(--chisan-color-moss-pale);
   }
 }
 
@@ -292,15 +295,16 @@ body:has(.detail-page) {
 }
 
 .detail-subtitle a {
-  font-size: var(--chisan-font-micro);
-  white-space: nowrap;
+  justify-content: center;
+  min-width: var(--chisan-control-height);
+  font-size: var(--chisan-font-body);
+  text-decoration: none;
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface-muted);
 }
 
-.detail-subtitle a + a::before {
-  content: "·" / "";
-  display: inline-block;
-  margin-inline-end: var(--chisan-space-2);
-  color: var(--chisan-color-stone);
+.detail-subtitle a > span {
+  line-height: 1;
 }
 
 /* Description and the ways to reach the producer. */
@@ -496,8 +500,7 @@ body:has(.detail-page) {
   }
 
 
-  .detail-breadcrumb ol,
-  .detail-subtitle a {
+  .detail-breadcrumb ol {
     font-size: var(--chisan-font-caption);
   }
 
@@ -1619,11 +1622,13 @@ body:has(.detail-page) {
 }
 
 .detail-similar-card__category {
-  color: var(--chisan-color-moss);
-  font-size: var(--chisan-font-micro);
-  font-weight: var(--chisan-weight-interface);
-  letter-spacing: var(--chisan-tracking-caps);
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--chisan-font-body);
+}
+
+.detail-similar-card__category > span {
+  line-height: 1;
 }
 
 .detail-similar-card__content strong {

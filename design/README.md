@@ -363,10 +363,36 @@ card or open a self-referential popup because the page itself is that surface.
 Every interactive category pictogram uses the full 44px target, including at
 overview zooms. Fixed detail points are non-essential map context.
 
+## Physical presence and producer origins
+
+`ProducerSelectionExplorer` presents one reviewed image (event plan or shelf),
+one geographic origin map and one shared producer card. At phone width the two
+panels stack in a viewport-bounded workspace; at 48rem container width they sit
+side by side. Expanding either panel keeps the other mounted as a compact
+reference, retaining map state and image pan. Grid transitions respect reduced
+motion. Image scaling preserves its aspect ratio, including portrait shelves.
+
+Physical positions use 44px targets. Overlapping targets open a position chooser
+rather than sending the visitor to an arbitrary producer. A collective position
+then lists its producers. Selecting a producer on the map highlights all its
+image appearances; an optional occurrence selector picks an exact product or
+position. One searchable results sheet supports names, products and stand
+numbers. Keyboard opening focuses search, Escape returns to its handle, and
+covered panels become inert while the sheet is open.
+
+Event pages bring the viewer immediately after compact identity, date, venue and
+navigation actions. A bottom disclosure retains coordinates, descriptions and
+source credits. Producer totals come from the resolved unique identities, not
+from image marker or category counts. Event and shelf storage, permissions and
+publication remain governed by their own contracts.
+
 ## Producer profile
 
-Country, area, producer, municipality and category share a compact context row
-below the name. The location and category labels link to their catalog filters.
+Country, area and municipality share a compact context row below the producer
+name. Category pictograms replace visible category labels in that row and in
+related-producer cards. Profile pictograms link to their catalog filters and
+retain the localized category as their accessible name and tooltip.
+Location labels link to their catalog filters.
 The municipality filter matches the full municipality and
 has a visible removal control, preserving category and search intersections.
 
@@ -464,7 +490,7 @@ workflow.
 
 Related discovery shows up to three nearby producers that share a canonical
 category. Each recommendation is one compact linked card with the reviewed image
-beside the producer name, municipality, shared category and straight-line
+beside the producer name, municipality, shared-category pictogram and straight-line
 distance. Cards fill as many columns as fit and collapse to one on narrow
 screens. Missing coordinates or nearby matches omit unsupported cards; the
 layout never invents proximity to fill a row.

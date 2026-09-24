@@ -99,6 +99,11 @@ async function buildCatalogSitemapGroups(): Promise<CatalogSitemapGroup[]> {
     url: privacyUrl,
     alternates: { languages: { es: privacyUrl } },
   });
+  const soyProductorUrl = new URL("/soy-productor", SITE_ORIGIN).toString();
+  entries.push({
+    url: soyProductorUrl,
+    alternates: { languages: { es: soyProductorUrl } },
+  });
 
   for (const country of countries) {
     const territories: CatalogSitemapEntry[] = [];

@@ -181,11 +181,15 @@ test("sitemap count matches effective locale policies and every alternate is rec
     assert.ok(locales, `Missing producer readiness for ${route.slug}`);
     return count + locales.length;
   }, 0);
-  // 5 static public routes: home, about, how-we-work, contact, privacy
-  const staticPublicRoutesCount = 5;
+  // Static public routes include the producer onboarding landing page.
+  const staticPublicRoutes = ["/", "/about", "/how-we-work", "/contact", "/privacy", "/soy-productor"];
+  const staticPublicRoutesCount = staticPublicRoutes.length;
   const expectedCount = staticPublicRoutesCount + listGuideSitemapEntries().length + listEventSitemapEntries().length + countryCount + areaCount + producerCount;
 
   assert.equal(entries.length, expectedCount);
+  for (const path of staticPublicRoutes) {
+    assert.ok(entries.some((entry) => new URL(entry.url).pathname === path), `Missing public page ${path}`);
+  }
 
   const entryByUrl = new Map(entries.map((entry) => [entry.url, entry]));
   assert.equal(entryByUrl.size, entries.length, "Sitemap URLs must be unique.");

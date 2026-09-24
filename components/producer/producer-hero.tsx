@@ -16,7 +16,7 @@ import {
   buildCatalogHref,
   type CatalogNavigationScope,
 } from "@/lib/catalog-navigation";
-import { getCategoryLabel } from "@/lib/i18n/categories";
+import { getCategoryIcon, getCategoryLabel } from "@/lib/i18n/categories";
 import type { Locale } from "@/lib/i18n/locales";
 import { formatMessage, type Messages } from "@/lib/i18n/messages";
 
@@ -166,15 +166,20 @@ export function ProducerHero({
               </ol>
             </nav>
             <div className="detail-subtitle">
-              {categories.map((category) => (
-                <Link
-                  key={category}
-                  href={buildCatalogHref({ scope, area, category })}
-                  prefetch={false}
-                >
-                  {getCategoryLabel(category, locale)}
-                </Link>
-              ))}
+              {categories.map((category) => {
+                const label = getCategoryLabel(category, locale);
+                return (
+                  <Link
+                    key={category}
+                    href={buildCatalogHref({ scope, area, category })}
+                    prefetch={false}
+                    aria-label={label}
+                    title={label}
+                  >
+                    <span aria-hidden="true">{getCategoryIcon(category)}</span>
+                  </Link>
+                );
+              })}
             </div>
         </div>
       </div>

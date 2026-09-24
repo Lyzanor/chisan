@@ -67,7 +67,7 @@ import {
   getLocalizedCatalogLabel,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
-import { formatCategoryList, getCategoryLabel } from "@/lib/i18n/categories";
+import { formatCategoryList, getCategoryIcon, getCategoryLabel } from "@/lib/i18n/categories";
 import { buildCatalogScope } from "@/lib/i18n/catalog-scope";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 import { getProducerActionLabels } from "@/lib/i18n/producer-action-labels";
@@ -418,6 +418,7 @@ export default async function ProducerPage({
     name: candidate.name,
     city: candidate.city,
     category: getCategoryLabel(candidate.sharedCategory, locale),
+    categoryIcon: getCategoryIcon(candidate.sharedCategory),
     distance: formatMessage(similarMessages.distance, {
       distance: formatProducerDistanceKm(candidate.distanceKm, locale),
     }),
