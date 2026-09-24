@@ -126,3 +126,17 @@
 | name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
 |---|---|---|---|---|---|---|
 | Gavá | El Ejido and Níjar (Grupo Gavà Almería, SCA; the group trades from Mercabarna, Barcelona) | `Fruta y verdura` | The directory states: “Gavá es una compañía localizada en la ciudad de Barcelona que se encarga de la comercialización de vegetales , frutas…” | [Directory](https://www.proveedores.com/proveedores/gava/) | <https://gavagrup.com/> | Gavà Grup’s farming division, Grupo Gavà Almería, SCA, grows about 160 ha under greenhouses around El Ejido and Níjar, while the Barcelona companies handle and trade produce at Mercabarna: identify the holding, its municipality and an attributable offer before admitting a row. |
+
+## Provincial food-brand directory pass — 2026-09-24
+
+Source: the Diputación de Almería *Sabores Almería* producer listing (63 producer pages), nearly all already represented. Cutoff: 2026-09-24. Leads were checked against the Spanish CSVs, the evidence ledgers and the open candidate notes by name, domain and distinctive name tokens; 7 were queued.
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Brisamar del Mare Nostrum (Mar de Adra) | Adra | `Pescado` — fish preparations | Sabores Almería profile: Adra company reworking traditional fish recipes under the Mar de Adra name. | [Sabores Almería](https://saboresalmeria.com/productor/brisamar-del-mare-nostrum) | — | Establish what it elaborates and a consumer channel. |
+| Aquí Carboneras (Aquí Santoña) | Carboneras | `Pescado` — carpaccios and fish preparations | Sabores Almería profile: The Santoña company Aquí Santoña runs a Carboneras operation listed as a producer. | [Sabores Almería](https://saboresalmeria.com/productor/aqui-carboneras) | — | Establish whether the elaboration happens in Carboneras. |
+| Especialidades Campos Valverde (Productos Camp) | Fondón | `Dulces y repostería` | Sabores Almería profile: Makes traditional artisan pastry. | [Sabores Almería](https://saboresalmeria.com/productor/especialidades-campos-valverde-sl-productos-camp) | — | Confirm the obrador and a channel. |
+| Bio Sol Portocarrero | Níjar; Barranquete | `Fruta y verdura` — organic produce | Sabores Almería profile: Pioneer organic grower in Níjar. | [Sabores Almería](https://saboresalmeria.com/productor/bio-sol-portocarrero) | — | Establish own growing versus marketing for others, and a consumer channel. |
+| Industrias Cárnicas Escobar | El Ejido | `Carne` — embutido, lamb | Sabores Almería profile: Makes embutido and sells it wholesale and retail. | [Sabores Almería](https://saboresalmeria.com/productor/industrias-carnicas-escobar) | — | Confirm its own elaboration and the shop. |
+| Jonimiel | Níjar | `Miel` / `Destilados y licores` | Sabores Almería profile: Extracts and packs honey and makes liqueurs and honey rum. | [Sabores Almería](https://saboresalmeria.com/productor/jonimiel) | — | Establish its own apiaries and the product split. |
+| Jamones de Serón Cortijo de Canata | Serón | `Carne` — Serón ham | Sabores Almería profile: Ham-curing house in Serón, Sierra de los Filabres. | [Sabores Almería](https://saboresalmeria.com/productor/jamones-de-seron-cortijo-de-canata) | — | Confirm a consumer channel. |
