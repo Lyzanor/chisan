@@ -1097,3 +1097,13 @@ account-availability copy with accounts disabled, plus a conditions enquiry.
 It does not activate checkout or entitlements. Buyer/supplier Pro enforcement,
 expiry and retained history are covered by the isolated B2B service tests.
 Authenticated commercial activation is not claimed by this visual review.
+
+## 2026-09-24 — Venue directions and producer card below the origin map
+
+Reviewed Escumostra locally at 390×844, then 1440×900. “Cómo llegar” resolves
+the venue coordinates through the same Google Maps directions format as a
+producer profile. Selecting an exhibitor shows its stand followed by the shared
+map card with catalog image, municipality, name and description immediately
+under the origin map; the whole card links to the producer profile. The map
+remains usable when expanded on the phone, and the card stays under the map
+column on desktop. Neither layout has horizontal document overflow.

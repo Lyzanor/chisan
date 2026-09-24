@@ -14,7 +14,7 @@ import styles from "./events.module.css";
 export function EventPage({ event, selection }: { event: EditorialEvent; selection: ProducerSelectionExplorerModel }) {
   const dates = new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })
     .formatRange(new Date(`${event.startDate}T00:00:00Z`), new Date(`${event.endDate}T00:00:00Z`));
-  const locationUrl = `https://www.openstreetmap.org/?mlat=${event.venue.latitude}&mlon=${event.venue.longitude}#map=16/${event.venue.latitude}/${event.venue.longitude}`;
+  const locationUrl = `https://www.google.com/maps/dir/?${new URLSearchParams({ api: "1", destination: `${event.venue.latitude},${event.venue.longitude}` })}`;
   const plan = event.plan ? { imageSrc: event.plan.src, width: event.plan.width, height: event.plan.height, alt: event.plan.alt, points: event.plan.points } : null;
 
   return <main className={`${styles.page} ${styles.eventPage}`}>

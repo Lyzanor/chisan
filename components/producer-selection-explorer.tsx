@@ -1,16 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowsInSimpleIcon, ArrowsOutSimpleIcon, MapTrifoldIcon, ImageIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { CatalogResultsSheet } from "@/components/catalog-results-sheet";
 import { ProducerCollectionMap } from "@/components/map/producer-collection-map";
+import { ProducerMapSelectionCard } from "@/components/map/producer-map-selection-card";
 import { ProducerSelectionMap, type MapMessages, type ProducerMapFocusRequest } from "@/components/map/producers-map";
 import { AnnotatedProducerImageView } from "@/components/annotated-producer-image";
 import { imagePlacements, imageSelectionHref, resolveImageSelection, type AnnotatedProducerImage, type ImagePlacement } from "@/lib/annotated-producer-image";
 import type { PublicSelectionShelf } from "@/lib/selection-shelf/policy";
 import { hasProducerSelectionCoordinates, type ProducerMapMarker, type ProducerSelectionExplorerModel } from "@/lib/producer-selections";
+import { catalogDescriptionPreview } from "@/lib/catalog-search";
 import styles from "./producer-selection-explorer.module.css";
 
 export type ProducerSelectionExplorerMessages = {
@@ -96,7 +97,7 @@ function ProducerSelectionExplorerView({ selection, messages, shelf, plan, selec
     initialFocusKeys={selection.initialFocusKeys} messages={messages.map} relatedSurfaceRef={root} /></section>;
 
   return <section ref={root} className={styles.explorer} aria-label="Presencia y origen de los productores">
-    <div className={styles.workspace} data-emphasis={emphasis}>
+    <div className={styles.workspace} data-emphasis={emphasis} data-has-selection={Boolean(selected)}>
       <div className={styles.panels} inert={open}>
         <section className={styles.panel} data-panel="image" aria-label={imageTitle}>
           <button type="button" className={styles.panelHeading} aria-expanded={emphasis === "image"} onClick={() => setEmphasis(emphasis === "image" ? "both" : "image")}>
@@ -107,7 +108,7 @@ function ProducerSelectionExplorerView({ selection, messages, shelf, plan, selec
             <AnnotatedProducerImageView image={image} placements={placements} selectedIds={selectedIds} focusId={`${selectedKey}:${pointId}:${focusVersion}`} isPlan={isPlan} onChoose={choosePlacements} />
           </div>
         </section>
-        <section className={styles.panel} data-panel="map" aria-label={messages.map.producerMap}>
+        <section className={`${styles.panel} ${styles.mapPanel}`} data-panel="map" aria-label={messages.map.producerMap}>
           <button type="button" className={styles.panelHeading} aria-expanded={emphasis === "map"} onClick={() => setEmphasis(emphasis === "map" ? "both" : "map")}>
             <span><MapTrifoldIcon size={18} aria-hidden="true" />Origen</span>
             <span>{emphasis === "map" ? "Ver ambos" : "Ampliar"}{emphasis === "map" ? <ArrowsInSimpleIcon size={18} aria-hidden="true" /> : <ArrowsOutSimpleIcon size={18} aria-hidden="true" />}</span>
@@ -117,24 +118,25 @@ function ProducerSelectionExplorerView({ selection, messages, shelf, plan, selec
               initialFocusKeys={selection.initialFocusKeys} onSelectKey={selectProducer} messages={messages.map} />
             {missingCoordinates ? <p className={styles.coordinateNotice} role="status">{selected?.name}: ubicación exacta pendiente{selected?.city ? ` · ${selected.city}` : ""}.</p> : null}
           </div>
+          <div className={styles.selectionCard} inert={open || emphasis === "image"} aria-live="polite" aria-atomic="true">
+            {selected ? <>
+              <span className={styles.position}>{positionLabel}</span>
+              <ProducerMapSelectionCard producer={{ ...selected, description: catalogDescriptionPreview(selected.description), location: selected.city }} />
+              {physical.appearances.length > 1 ? <label className={styles.appearances}>En la imagen
+                <select aria-label={`Posición de ${selected.name}`} value={physical.point?.id ?? ""} onChange={(event) => updateSelection(selected.key, event.target.value)}>
+                  <option value="">Todas las posiciones ({physical.appearances.length})</option>
+                  {physical.appearances.flatMap((group) => group.points.filter((point) => point.producerKey === selected.key).map((point) => <option key={point.id} value={point.id}>{isPlan ? placementTitle(group) : point.label}</option>))}
+                </select>
+              </label> : null}
+            </> : <>
+              <div className={styles.identity}>
+                {physical.placement ? <><strong>{placementTitle(physical.placement)}</strong><span>{new Set(physical.placement.points.map((point) => point.producerKey)).size} productores comparten esta posición</span></>
+                  : <><strong>{countLabel}</strong><span>{isPlan ? "Elige un puesto o un productor" : "Toca un producto para descubrir su origen"}</span></>}
+              </div>
+              {physical.placement ? <button type="button" className="chisan-button" onClick={() => choosePlacements([physical.placement!])}>Elegir productor</button> : null}
+            </>}
+          </div>
         </section>
-      </div>
-      <div className={styles.selectionCard} inert={open}>
-        <div className={styles.identity} aria-live="polite" aria-atomic="true">
-          {selected ? <>
-            <strong>{selected.name}</strong>
-            <span>{positionLabel}{selected.city ? ` · ${selected.city}` : ""}</span>
-          </> : physical.placement ? <><strong>{placementTitle(physical.placement)}</strong><span>{new Set(physical.placement.points.map((point) => point.producerKey)).size} productores comparten esta posición</span></>
-            : <><strong>{countLabel}</strong><span>{isPlan ? "Elige un puesto o un productor" : "Toca un producto para descubrir su origen"}</span></>}
-        </div>
-        {selected ? <Link prefetch={false} className="chisan-button" href={selected.href}>Ver ficha</Link> : null}
-        {selected && physical.appearances.length > 1 ? <label className={styles.appearances}>En la imagen
-          <select aria-label={`Posición de ${selected.name}`} value={physical.point?.id ?? ""} onChange={(event) => updateSelection(selected.key, event.target.value)}>
-            <option value="">Todas las posiciones ({physical.appearances.length})</option>
-            {physical.appearances.flatMap((group) => group.points.filter((point) => point.producerKey === selected.key).map((point) => <option key={point.id} value={point.id}>{isPlan ? placementTitle(group) : point.label}</option>))}
-          </select>
-        </label> : null}
-        {!selected && physical.placement ? <button type="button" className="chisan-button" onClick={() => choosePlacements([physical.placement!])}>Elegir productor</button> : null}
       </div>
       <CatalogResultsSheet viewerRef={sheet} open={open} onOpenChange={(value) => { setOpen(value); if (!value) { setChoices(null); setQuery(""); } }}
         label={`Buscar · ${countLabel}`} closeLabel="Volver a la imagen y al mapa" title={messages.producers} showLabel>

@@ -56,6 +56,11 @@ product ID. Missing productive coordinates remain explicitly unavailable, never
 replaced by the venue. Event and shelf adapters share viewing components without
 using shelf records or photo analysis as event storage. Venue coordinates,
 credits and editorial detail remain available in the bottom disclosure.
+The event's directions action opens Google Maps for the venue coordinates,
+matching producer-profile directions. A selected producer appears directly
+below the origin map in the shared image-and-map viewer, using the same
+catalog-backed image, description and profile link as other map selections;
+the stand or image position remains visible above that card.
 
 The published roster can be a subset of the organizer's full exhibitor list:
 only confidently reconciled, published Chisan producers receive profile links.
