@@ -88,6 +88,9 @@ function ProducerSelectionExplorerView({ selection, messages, shelf, plan, selec
   const placementTitle = (group: ImagePlacement) => `${isPlan ? "Puesto" : "Posición"} ${group.marker}`;
   const countLabel = messages.countLabels[String(selection.items.length)] ?? `${selection.items.length} productores`;
   const missingCoordinates = Boolean(selected && !hasProducerSelectionCoordinates(selected));
+  const positionLabel = physical.point && !isPlan ? physical.point.label
+    : activePlacements.length === 1 ? placementTitle(activePlacements[0])
+      : activePlacements.length ? `${activePlacements.length} ${isPlan ? "puestos" : "posiciones"}` : "Sin posición señalada";
 
   if (!image) return <section ref={root}><ProducerCollectionMap items={selection.items} selectedKey={selected?.key ?? ""} onSelect={selectProducer} onClear={clearSelection}
     initialFocusKeys={selection.initialFocusKeys} messages={messages.map} relatedSurfaceRef={root} /></section>;
@@ -120,7 +123,7 @@ function ProducerSelectionExplorerView({ selection, messages, shelf, plan, selec
         <div className={styles.identity} aria-live="polite" aria-atomic="true">
           {selected ? <>
             <strong>{selected.name}</strong>
-            <span>{physical.point ? isPlan ? placementTitle(physical.placement!) : physical.point.label : activePlacements.length ? `${activePlacements.length} ${isPlan ? "puestos" : "posiciones"}` : "Sin posición señalada"}{selected.city ? ` · ${selected.city}` : ""}</span>
+            <span>{positionLabel}{selected.city ? ` · ${selected.city}` : ""}</span>
           </> : physical.placement ? <><strong>{placementTitle(physical.placement)}</strong><span>{new Set(physical.placement.points.map((point) => point.producerKey)).size} productores comparten esta posición</span></>
             : <><strong>{countLabel}</strong><span>{isPlan ? "Elige un puesto o un productor" : "Toca un producto para descubrir su origen"}</span></>}
         </div>
