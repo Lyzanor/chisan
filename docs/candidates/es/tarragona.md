@@ -7,6 +7,12 @@
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
 - Editorial and source rules: `docs/EDITORIAL.md`, `docs/EVIDENCE_CONTRACT.md` and `data/csv/es/AGENTS.md`.
 
+## September 2026 seasonal-product lead — préssec de la Ribera d'Ebre
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| La Capelleta SAT / Grup La Coma | Benissanet | `Fruta y verdura` — préssec and other stone fruit | The county council identified the Benissanet group's stone-fruit production, and a trade directory published its peach range under La Capelleta. The catalog has no matching row. | [County council](https://www.riberaebre.org/2016/04/11/la-ribera-debre-desembarca-a-italia-i-austria-per-augmentar-les-exportacions-de-fruita-dolca-de-la-comarca/); [Trade directory](https://valenciafruits.com/wp-content/uploads/2020/05/2894_120520.pdf); [Stone-fruit directory](https://www.turismeriberaebre.org/productes-de-la-ribera-debre/productors-agroalimentaris-de-la-ribera-debre/fruita-dolca-de-pinyol/) | — | Sources are old: confirm current activity, an own offer attributable to the productive unit, and whether La Coma and La Capelleta are one unit before admission. |
+
 - Follow-up 2026-09-07: 8 producers admitted from the recent municipality/HelloBo/artisan batches. Older historical holds remain outside this focused follow-up; optional missing data is not an eligibility blocker.
 
 - Follow-up 2026-09-22 (leads with an official site): 13 producers admitted through their own sites, RIAAC and the proximity register. Rejected: Fruselva (contract baby-food manufacturer, out-of-scope) and four distributors, importers or handlers as not-producer (Marpin, Greenforest Iberia, Frigoríficos Lluis, Dispafred). Already published: Virginias (Agramunt, Lleida) and La Perla de Sarrión (Sarrión, Teruel). Productos Klam (Almendrina) was routed to the Lleida note: its site places the company in Agramunt. Several listed domains no longer resolve; that is recorded as a blocker, not as closure.

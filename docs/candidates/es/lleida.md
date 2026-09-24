@@ -7,6 +7,13 @@
 - Resolved admissions, confirmed duplicates and closed exclusions have left this queue. Approved facts and closed decisions belong to the canonical CSVs and evidence ledgers.
 - Editorial and source rules: `docs/EDITORIAL.md`, `docs/EVIDENCE_CONTRACT.md` and `data/csv/es/AGENTS.md`.
 
+## September 2026 seasonal-product leads — figa coll de dama d'Alguaire
+
+| name | municipality / geographic clue | probable category / output | reason it may qualify | discovery | official | remaining work |
+|---|---|---|---|---|---|---|
+| Lo Macot Fruits | Alguaire | `Fruta y verdura` — figa coll de dama negra | Its own site describes family growing and sale under this name; a 2025 visit reported a fig-producing and marketing unit in Alguaire. It is a separate lead from published Cal Pinela / Agrícola Tupinaire. | [2025 field visit](https://totlleida.cat/amp/el-subdelegat-del-govern-visita-una-plantacio-de-figues-a-alguaire-amb-motiu-de-linici-de-la-campanya-de-recol%C2%B7leccio/) | <https://lomacotfruits.wixsite.com/alguaire/qui-som-> | Confirm the exact growing unit, its independence from Cal Pinela and whether its own fig offer remains active in the 2026 season. |
+| Figues La Noria | Alguaire | `Fruta y verdura` — figa coll de dama | A 2026 harvest report identifies Àlex Lladonosa as the third generation of this family's fig operation and describes its Alguaire cultivation. No matching catalog row found. | [2026 harvest report](https://www.segriatv.cat/ca/turisme/segriatv/actualitat/50781/la-campanya-de-figues-marcada-per-la-gran-qualitat-tot-i-la-minva-de-calibre/13672.html) | — | Find the producer's own attributable sales identity or a current labelled offer, and establish the exact productive unit. |
+
 - Follow-up 2026-09-07: 8 producers admitted from the recent municipality/HelloBo/artisan batches. Older historical holds remain outside this focused follow-up; optional missing data is not an eligibility blocker.
 
 - Follow-up 2026-09-22 (leads with an official site): seven producers admitted through their own sites, RIAAC and the proximity register. Torrelsa and the Cooperativa de La Granadella were already published; the published Torrelsa row sits in Barcelona although its roasting plant is at Ctra. N-230 km 4,84, Lleida (RIAAC), which needs a separate routing review. The fruit packers stay on hold until their orchards are placed.
