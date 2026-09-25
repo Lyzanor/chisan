@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3579,
+  "products": [],
+  "gallery": [
+    {
+      "id": "vinedo-de-celler-anna-rosell-con-cubiert",
+      "src": "/productores/es/content/3579/a8455d0f6fe744a665cc922c1a2094796f26a226ae2089d3b31a3af585821a41.webp",
+      "alt": "Viñedo de Celler Anna Rosell con cubierta vegetal entre las cepas",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 900,
+      "credit": "Anna Rosell Parellada · Celler Anna Rosell"
+    },
+    {
+      "id": "botellas-de-vinos-de-celler-anna-rosell",
+      "src": "/productores/es/content/3579/dce0035a704bfe96156f4e31473c895db598f9aff6bae42b2b2f95ca6fb358b0.webp",
+      "alt": "Botellas de vinos de Celler Anna Rosell",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 900,
+      "credit": "Anna Rosell Parellada · Celler Anna Rosell"
+    },
+    {
+      "id": "fotografia-historica-de-la-familia-de-ce",
+      "src": "/productores/es/content/3579/c2547165dffb95607cf5f23dd961d4b58e3658867d075ba2c2edcb6bad15ae26.webp",
+      "alt": "Fotografía histórica de la familia de Celler Anna Rosell en el viñedo",
+      "caption": "Fotografía histórica del archivo familiar publicada por Celler Anna Rosell.",
+      "locale": "es",
+      "width": 1600,
+      "height": 1600,
+      "credit": "Anna Rosell Parellada · Celler Anna Rosell"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

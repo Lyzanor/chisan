@@ -175,66 +175,107 @@ automatic decisions, and do not catch unique junk.
 
 ## Gallery photo discovery (`enrich:gallery`)
 
-`scripts/enrich-producer-gallery.py` discovers honest photo candidates (workshop,
-farm, elaboration, people and products) from the producer's official website. It
-inspects the homepage and relevant internal pages (such as `/nosotros`,
-`/el-obrador`, `/bodega`, `/galeria` or `/productos`), filters out logos, icons,
-SVGs and UI junk, extracts candidate images (including `<picture>`, `<source srcset>`
-and CSS background images), and normalizes candidate WebP files (max 1600 px on the
-long edge, preserving their true aspect ratio).
+This is an on-demand local review tool, not a publishing service or a standing
+crawler. It reuses the primary-image tool's bounded HTTP requests and the
+existing `producer:content apply` contract. No database, AI service or scheduled
+job is involved. Official publication of a photo establishes its source, not
+permission to reuse it: verify the public permission and its scope, or obtain
+producer permission, before applying. Preserve required attribution.
+Check the source's terms before downloading a batch. When permission is missing
+or the terms restrict copying, keep source links for follow-up rather than
+building a local photo library. A generic official-site credit is not a licence.
 
-1. **Audit coverage** with `--inventory`:
-
-   Inspect existing gallery coverage across an area or entire country without crawling:
-
-   ```bash
-   pnpm enrich:gallery --inventory --country es --area [area]
-   ```
-
-   This reports producers with eligible websites, count distribution of existing
-   gallery packages (e.g., 5 photos, 1–4 photos, no gallery), and lists producers
-   lacking photos to help prioritize discovery sweeps.
-
-2. **Sweep** an area or municipality into `.tmp/`:
+1. Inspect coverage without network requests:
 
    ```bash
-   pnpm enrich:gallery --area [area] --municipality "[municipality]" \
-     --contact-sheet .tmp/gallery/[area]
+   pnpm enrich:gallery --inventory --country es --area barcelona
    ```
 
-   This downloads candidates, generates an interactive visual contact sheet at
-   `.tmp/gallery/[area]/index.html`, and writes an initial template
-   `.tmp/gallery/[area]/decisions.template.txt` listing all candidates with cleaned
-   alt text suggestions.
+   Counts cover the stored image collection, including product-assigned images;
+   they do not measure standalone public-gallery visibility or eligible rights.
 
-3. **Review** the contact sheet in a browser:
+2. Discover candidates into a **new, empty** local directory:
 
-   Select up to five photographs per producer representing real production, premises
-   or products. Copy or uncomment rows into `.tmp/gallery/[area]/decisions.txt`:
+   ```bash
+   pnpm enrich:gallery --country es --area barcelona \
+     --municipality "Santa Coloma de Gramenet" --contact-sheet .tmp/gallery/review
+   # A cross-area batch uses existing catalog IDs, repeated as needed:
+   pnpm enrich:gallery --producer-id 12890 --producer-id 506 \
+     --contact-sheet .tmp/gallery/selection
+   ```
+
+   Derive an event's IDs from its existing exhibitor roster; the image tool does
+   not maintain another event list. Producers without a website remain in the
+   bundle with no candidates. A failed request is not proof that no photos exist.
+
+   Discovery inspects the resolved homepage and up to five relevant internal
+   pages, attempts at most 30 image downloads per producer and retains up to 15
+   distinct normalized WebPs. Requests use the existing redirect, destination
+   and byte limits. Page rotation prevents a large homepage product menu from
+   consuming the entire download budget. Responsive and lazy-loaded sources are
+   preferred; no browser scraping or external stylesheet crawler is required.
+
+3. Open `index.html`, inspect each selected photograph and its linked source,
+   then write `decisions.txt`. Each line binds a producer to the **full digest**
+   of the reviewed WebP and a reviewed description, in JSON string syntax:
 
    ```text
-   <producer_id> <candidate_id> "Informative, honest alt text"
+   <producer_id> <64-character-sha256> "Informative alt text"
    ```
 
-   Each selected photo should receive clear, concise alt text describing what is seen
-   in the producer's source language.
+   Choose up to five new photographs per producer, with a landscape context
+   image first when starting a gallery. Suggestions derived from source alt text
+   or filenames are not facts and are never accepted automatically. Record the
+   actual source page, selected asset URLs and public reuse basis in the existing
+   producer evidence ledger; keep private permissions outside public evidence.
 
-4. **Apply** the reviewed selections:
+4. Apply explicit selections using the language of their reviewed alt text:
 
    ```bash
-   pnpm enrich:gallery --apply \
-     --decisions .tmp/gallery/[area]/decisions.txt \
-     --from .tmp/gallery/[area]
+   pnpm enrich:gallery --apply --country es --locale es \
+     --decisions .tmp/gallery/review/decisions.txt --from .tmp/gallery/review
    ```
 
-   Pass `--replace` if you want to overwrite an existing standalone gallery instead of
-   appending/merging new photos.
+   The versioned bundle binds country, producer identity, official URL and the
+   content revision. Apply preflights all selections and verifies frozen bytes
+   and dimensions. Invalid, duplicate or stale choices fail explicitly. New
+   photos append without truncating or reordering existing content, product
+   references, people or translations. Five is a review-batch limit, not a
+   destructive cap on the shared image collection.
 
-   `apply` installs normalized WebPs at
-   `public/productores/<country>/content/<producer_id>/<sha256>.webp`, updates
-   `data/content/<country>/<producer_id>.json` preserving any products or people,
-   and verifies the updated content packages with `check:content`.
+   Each changed package uses `producer:content apply` for the owning schema,
+   asset, dirty-file and revision checks, lock and atomic write. A failure removes
+   only that producer's newly created unchanged assets; earlier successful
+   producers remain applied. Inspect the reported result before resuming. Use
+   the ordinary content editor for removal, replacement, reordering or custom
+   photographer credits. There is no second replacement or auto-selection flow.
 
+Inspect the saved WebPs and diff, update evidence, run the matching checks in
+`AGENTS.md`, and commit packages, assets and evidence together. Old unversioned
+bundles must be regenerated. Temporary downloads, contact sheets and decisions
+stay in `.tmp/`; unresolved source or rights questions belong in candidate notes.
+At batch closure, discard temporary image copies whose reuse remains unsupported;
+retain source URLs and the unresolved prerequisite, not a permanent photo archive.
+Internal storage is not a substitute for permission. A verified representative
+must separately confirm their authority to license each proposed image before
+it enters the private upload/review workflow; a website-only photographer or
+stock licence may not cover publication by Chisan.
+
+### Lessons from the Escumostra review
+
+- Reuse the HTTP and content owners instead of maintaining parallel safety and
+  publication implementations. A compact HTML sheet is sufficient for review.
+- Prefer real responsive image sources to placeholders and thumbnails; use the
+  redirected page URL when resolving relative links.
+- Preserve existing image order and references. Never use a five-photo discovery
+  target to truncate a package that also stores product photographs.
+- Separate discovery coverage from usable, attributable and reusable material.
+  More downloads or successful validation cannot resolve missing permission.
+- Review legacy batches by the same standard: publication history is not reuse
+  evidence. When withdrawing unsupported photos, remove their public bytes as
+  well as gallery references; hiding a gallery alone leaves direct URLs usable.
+- Keep exceptional source handling manual until repeated real cases justify a
+  shared capability. An event batch does not need a new maintained subsystem.
 
 ## Premium producer uploads and the declared demo
 

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 7422,
+  "products": [],
+  "gallery": [
+    {
+      "id": "vinedos-de-la-propietat-despiells-en-oto",
+      "src": "/productores/es/content/7422/52e86299f28838a3650c56f939aec3e72e0a4d41301217e7bd32929137f680f5.webp",
+      "alt": "Viñedos de la Propietat d’Espiells en otoño",
+      "caption": "",
+      "locale": "es",
+      "width": 800,
+      "height": 500,
+      "credit": "Jordi Elias · Juvé & Camps · Material de prensa"
+    },
+    {
+      "id": "uvas-y-bodega-de-la-propietat-despiells",
+      "src": "/productores/es/content/7422/4a27d5554cb03a69ded42918e48849ca5a5cf05d54055358c0ce9dc17cac27c0.webp",
+      "alt": "Uvas y bodega de la Propietat d’Espiells",
+      "caption": "",
+      "locale": "es",
+      "width": 800,
+      "height": 500,
+      "credit": "Jordi Elias · Juvé & Camps · Material de prensa"
+    },
+    {
+      "id": "vendimia-manual-de-uvas-en-espiells",
+      "src": "/productores/es/content/7422/13903ed00dbffb8863e1fcfc308bfa21633071d7f7796577b15df3a4ca256651.webp",
+      "alt": "Vendimia manual de uvas en Espiells",
+      "caption": "",
+      "locale": "es",
+      "width": 800,
+      "height": 500,
+      "credit": "Juvé & Camps · Material de prensa"
+    },
+    {
+      "id": "manipulacion-de-botellas-durante-la-cria",
+      "src": "/productores/es/content/7422/9b0e8a409dcab733c8a22cf7bac4409338a208fb20f41144d34871936c095207.webp",
+      "alt": "Manipulación de botellas durante la crianza en las cavas de Juvé & Camps",
+      "caption": "",
+      "locale": "es",
+      "width": 800,
+      "height": 500,
+      "credit": "Jordi Elias · Juvé & Camps · Material de prensa"
+    },
+    {
+      "id": "botellas-en-el-interior-abovedado-de-las",
+      "src": "/productores/es/content/7422/04b432e8af8d973cd2777cef893d6f0b0204cfa1ee7a0f2e7d8290d433b7559a.webp",
+      "alt": "Botellas en el interior abovedado de las cavas de Juvé & Camps",
+      "caption": "",
+      "locale": "es",
+      "width": 800,
+      "height": 500,
+      "credit": "Jordi Elias · Juvé & Camps · Material de prensa"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

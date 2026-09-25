@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3529,
+  "products": [],
+  "gallery": [
+    {
+      "id": "exterior-de-la-bodega-pages-entrena",
+      "src": "/productores/es/content/3529/8b2e07caf25849a73a1a67b5b83c4acc5d0d2eea4901d70dba21d949f04a3ec4.webp",
+      "alt": "Exterior de la bodega Pagès Entrena",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 734,
+      "credit": "Pagès Entrena, SL"
+    },
+    {
+      "id": "la-familia-pages-entrena-ante-la-bodega",
+      "src": "/productores/es/content/3529/05eb7648dc1b665a199eb8af83cc4dd38f0992cc80396a511e4d22edc09afbf3.webp",
+      "alt": "La familia Pagès Entrena ante la bodega",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 1200,
+      "credit": "Pagès Entrena, SL"
+    },
+    {
+      "id": "seleccion-de-botellas-de-cava-pages-entr",
+      "src": "/productores/es/content/3529/e99ee4a05f1c26ed45caa4529e85b01ddaba3a78875b6fd53ecbc3f710c4ebcc.webp",
+      "alt": "Selección de botellas de cava Pagès Entrena",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 1200,
+      "credit": "Pagès Entrena, SL"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

@@ -5,6 +5,11 @@ from __future__ import annotations
 
 import importlib.util
 import sys
+import hashlib
+import json
+import subprocess
+import tempfile
+from unittest.mock import patch
 from io import BytesIO
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -63,6 +68,9 @@ check("rejects payment", enrich_gallery.is_junk_asset("https://site.org/visa-mas
 check("rejects primary logo", enrich_gallery.is_junk_asset("https://site.org/logo.png", primary_imagen="/productores/es/area/logo.webp"), True)
 check("accepts obrador photo", enrich_gallery.is_junk_asset("https://site.org/obrador.jpg"), False)
 
+check("official host does not make a stock photo usable", enrich_gallery.is_junk_asset("https://official.org/fotolia-123.jpg"), True)
+check("award graphics are not gallery photos", enrich_gallery.is_junk_asset("https://official.org/group.png", "Imatge MEDALLA DOR"), True)
+
 # --- normalize_photo ----------------------------------------------------------
 # Test normal 400x300 image
 img = Image.new("RGB", (400, 300), color=(100, 150, 200))
@@ -115,18 +123,97 @@ check("extracts lazy image", "https://artesa.cat/images/lazy-field.jpg" in urls,
 check("extracts background-image", "https://artesa.cat/images/hero-bg.jpg" in urls, True)
 check("filters out payment junk", any("visa.png" in u for u in urls), False)
 
-# --- parse_decision_line ------------------------------------------------------
-p1 = enrich_gallery.parse_decision_line('123 cand-01 "Obrador de pa artesà"')
-check("parses standard decision line", p1, ("123", "cand-01", "Obrador de pa artesà"))
+# --- Review/apply boundary ----------------------------------------------------
+def rejects(label, call, error=ValueError):
+    try:
+        call()
+    except error:
+        return
+    failures.append(f"{label}: expected {error.__name__}")
 
-p2 = enrich_gallery.parse_decision_line('456 cand-02 cover "Façana principal"')
-check("parses decision line with legacy role", p2, ("456", "cand-02", "Façana principal"))
+sha = "a" * 64
+check("quoted alt supports embedded quotes", enrich_gallery.parse_decision_line(f'123 {sha} "Bodega \\"del valle\\""'),
+      ("123", sha, 'Bodega "del valle"'))
+check("ignores comments", enrich_gallery.parse_decision_line("# review"), None)
+rejects("ordinal decisions cannot silently select a different image", lambda: enrich_gallery.parse_decision_line('123 cand-01 "Bodega"'))
+rejects("requires reviewed alt", lambda: enrich_gallery.parse_decision_line(f'123 {sha} ""'))
+rejects("trailing garbage is rejected", lambda: enrich_gallery.parse_decision_line(f'123 {sha} "Bodega" trailing'))
 
-p3 = enrich_gallery.parse_decision_line('# comment')
-check("ignores commented line", p3, None)
+lazy = BeautifulSoup('<img src="data:image/gif;base64,abc" data-src="/real.jpg"><img src="/thumb.jpg" srcset="/full.jpg 1600w">', 'html.parser')
+urls = [x[0] for x in enrich_gallery.extract_images_from_soup(lazy, 'https://example.org/')]
+check("lazy placeholder does not hide photo", 'https://example.org/real.jpg' in urls, True)
+check("responsive full size wins over thumbnail", 'https://example.org/full.jpg' in urls, True)
+check("SVG query does not bypass filter", enrich_gallery.is_junk_asset('https://example.org/asset.svg?v=1'), True)
 
-p4 = enrich_gallery.parse_decision_line('789 cand-03')
-check("parses line without alt text", p4, ("789", "cand-03", ""))
+with tempfile.TemporaryDirectory() as tmp:
+    root = Path(tmp)
+    bundle = root / 'bundle'
+    (bundle / '123').mkdir(parents=True)
+    content = root / 'data/content/es/123.json'
+    content.parent.mkdir(parents=True)
+    raw = res[2]
+    digest = hashlib.sha256(raw).hexdigest()
+    photo = bundle / '123' / f'{digest}.webp'
+    photo.write_bytes(raw)
+    row = dict(country='es', producer_id='123', nombre='Bodega', slug='bodega', region='region', area='area', municipio='Villa', web='https://example.org')
+    # Five existing gallery items, including a product reference and a translation.
+    existing = dict(version=1, country='es', producer_id=123,
+                    products=[dict(id='vino', media_ids=['old-0'])],
+                    gallery=[dict(id=f'old-{i}', src=f'/old-{i}.webp') for i in range(5)],
+                    links=[dict(id='shop')], people=[dict(id='owner')],
+                    translations=[dict(collection='gallery', item_id='old-0')])
+    content.write_text(json.dumps(existing))
+    entry = dict(producer=enrich_gallery.producer_binding(row), content_revision=enrich_gallery.content_revision(content),
+                 candidates=[dict(sha256=digest, width=res[0], height=res[1], candidate_id='cand-01', alt='unreviewed',
+                                  url='https://example.org/a.jpg', source_page='https://example.org/')])
+    manifest = dict(version=1, country='es', producers=[entry])
+    def save_manifest():
+        (bundle / 'candidates.json').write_text(json.dumps(manifest))
+    save_manifest()
+    decisions = bundle / 'decisions.txt'
+    decisions.write_text(f'123 {digest} "Nave de elaboración"\n')
+    dest = root / 'public/productores/es/content/123' / f'{digest}.webp'
+    with patch.object(enrich_gallery, 'REPO_ROOT', root), patch.object(enrich_gallery, 'catalog_rows', return_value=[row]), patch.object(enrich_gallery.subprocess, 'run') as run:
+        enrich_gallery.apply_decisions(decisions, bundle, locale='ca')
+        draft = json.loads((bundle / '123/reviewed.json').read_text())
+        check("append never truncates previous photos", draft['gallery'][:5], existing['gallery'])
+        check("append retains all six photos", len(draft['gallery']), 6)
+        for field in ('products', 'people', 'links', 'translations'):
+            check(f"preserves {field}", draft[field], existing[field])
+        check("explicit alt locale", draft['gallery'][-1]['locale'], 'ca')
+        check("delegates to existing content owner", run.call_args.args[0][1:3], ['producer:content', 'apply'])
+        check("delegation passes reviewed revision", run.call_args.args[0][-1], entry['content_revision'])
+        dest.unlink()
+        run.reset_mock()
+        decisions.write_text(f'123 {digest} "Valid"\n999 {sha} "Missing"\n')
+        rejects("all selections preflight before first write", lambda: enrich_gallery.apply_decisions(decisions, bundle))
+        check("invalid later producer writes no assets", dest.exists(), False)
+        check("invalid later producer invokes no apply", run.called, False)
+        decisions.write_text(f'123 {digest} "Valid"\n123 {digest} "Duplicate"\n')
+        rejects("duplicate selections rejected", lambda: enrich_gallery.apply_decisions(decisions, bundle))
+        decisions.write_text(f'123 {digest} "Valid"\n')
+        photo.write_bytes(b'tampered')
+        rejects("tampered review bytes rejected", lambda: enrich_gallery.apply_decisions(decisions, bundle))
+        photo.write_bytes(raw)
+        entry['producer']['web'] = 'https://changed.org'
+        save_manifest()
+        rejects("changed official source rejected", lambda: enrich_gallery.apply_decisions(decisions, bundle))
+        entry['producer']['web'] = row['web']
+        entry['content_revision'] = 'absent'
+        save_manifest()
+        rejects("stale content rejected", lambda: enrich_gallery.apply_decisions(decisions, bundle))
+        entry['content_revision'] = enrich_gallery.content_revision(content)
+        save_manifest()
+        run.side_effect = subprocess.CalledProcessError(1, 'apply')
+        rejects("owner validation failure surfaced", lambda: enrich_gallery.apply_decisions(decisions, bundle), subprocess.CalledProcessError)
+        check("failed apply cleans only new asset", dest.exists(), False)
+        check("failed apply leaves content intact", json.loads(content.read_text()), existing)
+    content.write_text('{broken')
+    rejects("corrupt existing content never treated as absent", lambda: enrich_gallery.read_content_json(content))
+    entry['producer']['name'] = '<script>alert(1)</script>'
+    entry['candidates'][0]['alt'] = '</textarea><script>alert(1)</script>'
+    enrich_gallery.render_html_contact_sheet([entry], bundle / 'index.html')
+    check("source text escaped in review HTML", '<script>' in (bundle / 'index.html').read_text(), False)
 
 
 if failures:

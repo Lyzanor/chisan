@@ -3,6 +3,28 @@
 Active system: [One field](../README.md) (v0.7). Earlier verification is
 preserved in [history](history/README.md); it does not specify the current brand.
 
+## 2026-09-25 — Gallery curation and source rights
+
+Reviewed the compiled local profiles for Pagès Entrena (3 photos), Celler Anna
+Rosell (3) and Juvé & Camps (5) at 390px first, then 1440px. The images load,
+retain their source aspect ratios in the stored assets, and the document has no
+horizontal overflow. The existing mobile strip and wide gallery remain intact;
+opened the photo-credit disclosure to verify the required attribution. Context
+images lead each gallery; the historical Anna Rosell photo is explicitly captioned.
+No public layout or account behavior changed.
+
+The Santa Coloma rights audit withdrew 32 unsupported source photos across
+eight real-producer galleries. On a fresh local server, all eight profiles return
+200 without a gallery and all 32 former direct asset URLs return 404. Reviewed
+Capfoguer at 390px first, then 1440px: no empty gallery shell or horizontal
+overflow, and its existing profile content remains usable. This checks the local
+correction, not a production withdrawal. The fictional Chisan demo is unchanged.
+
+Playwright captures are disposable under `output/playwright/escumostra-gallery/`.
+The local production preview reports the existing Vercel Analytics endpoint 404
+and Clerk production-domain rejection on localhost; public photos and native
+credit disclosures still work. This check does not verify authenticated uploads.
+
 ## 2026-09-24 — Shared physical presence and origin viewer
 
 Escumostra now reaches its viewer at about 301px from the document top on a
