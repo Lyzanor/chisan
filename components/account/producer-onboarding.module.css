@@ -225,6 +225,7 @@
 .thumb {
   width: 56px;
   height: 56px;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-control);
   background: var(--chisan-color-surface-muted);
   object-fit: cover;
@@ -274,6 +275,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 10;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-object);
   background: var(--chisan-color-surface-muted);
   object-fit: cover;

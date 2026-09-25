@@ -630,7 +630,7 @@ with tempfile.TemporaryDirectory(prefix="chisan-enrich-") as temp_dir:
         raw_csv.encode("utf-8"),
         updated_csv,
         image_path,
-        Image.new("RGB", enrich.CANVAS_SIZE, (243, 240, 232)),
+        Image.new("RGB", enrich.CANVAS_SIZE, enrich.BACKGROUND_RGBA[:3]),
     )
     check("staged writer keeps surgical CSV output", csv_path.read_text(encoding="utf-8"), updated_csv)
     check("staged writer creates the reviewed image", image_path.exists(), True)
@@ -646,7 +646,7 @@ with tempfile.TemporaryDirectory(prefix="chisan-enrich-concurrent-") as temp_dir
             raw_csv.encode("utf-8"),
             updated_csv,
             image_path,
-            Image.new("RGB", enrich.CANVAS_SIZE, (243, 240, 232)),
+            Image.new("RGB", enrich.CANVAS_SIZE, enrich.BACKGROUND_RGBA[:3]),
         )
     except RuntimeError as exc:
         check("concurrent CSV changes abort the write", "nothing was written" in str(exc), True)
@@ -1136,7 +1136,7 @@ with tempfile.TemporaryDirectory(prefix="chisan-enrich-manual-source-") as temp_
 # --- a reviewed composition survives the cache round trip unchanged ---------
 with tempfile.TemporaryDirectory(prefix="chisan-enrich-cache-") as temp_dir:
     sheet_dir = Path(temp_dir)
-    composition = Image.new("RGB", enrich.CANVAS_SIZE, (243, 240, 232))
+    composition = Image.new("RGB", enrich.CANVAS_SIZE, enrich.BACKGROUND_RGBA[:3])
     composition.paste(Image.new("RGB", (400, 300), (10, 90, 60)), (200, 200))
     digest = enrich.composed_digest(composition)
     enrich.save_compositions(sheet_dir, {digest: composition})

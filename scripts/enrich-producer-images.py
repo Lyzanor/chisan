@@ -54,7 +54,9 @@ except ModuleNotFoundError:
 
 
 CANVAS_SIZE = (1600, 1200)
-BACKGROUND_RGBA = (243, 240, 232, 255)
+# The canvas is the page: a logo tile reads as the producer's mark on Chisan's
+# white field rather than as a tinted card.
+BACKGROUND_RGBA = (255, 255, 255, 255)
 LOW_CONTRAST_LOGO_RGBA = (73, 68, 60, 255)
 TARGET_LOGO_LONG_EDGE = 960
 MAX_IMAGE_UPSCALE = 3.0

@@ -610,6 +610,7 @@ body:has(.catalog-page--immersive) .site-footer {
 
 .catalog-map-carousel .producer-map-selection-card__media {
   min-height: 0;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-control);
 }
 
@@ -851,6 +852,7 @@ body:has(.catalog-page--immersive) .site-footer {
 .producer-map-roster-row__image {
   width: 64px;
   height: 64px;
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
   border-radius: var(--chisan-radius-control);
   background: var(--chisan-color-surface-muted);
   object-fit: cover;

@@ -407,7 +407,10 @@ across maps and profiles; pending and unavailable states never pretend to be
 saved or empty. Premium visibility remains independent of ownership.
 
 The header shows the reviewed `imagen` identity beside the name at phone and
-wide widths; it never promotes a gallery photograph to a cover. The breadcrumb
+wide widths; it never promotes a gallery photograph to a cover. Logos are
+composed on the page white, so a free-standing identity tile or thumbnail
+carries a hairline edge; media that fills a bordered card relies on the card's
+edge. The breadcrumb
 contains country, area and municipality without repeating the producer name,
 followed by the category. A missing identity or gallery leaves no placeholder.
 Captions and credits wait behind a small info disclosure on each photograph.

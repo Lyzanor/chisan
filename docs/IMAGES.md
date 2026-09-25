@@ -49,7 +49,8 @@ is unclear.
 - Canonical path:
   `/productores/<country>/<region>/<area>/<slug>.webp`, derived from the CSV
   location. There is no path flag to pass or to get wrong.
-- Logo background: `#F3F0E8`, centred with visible breathing room.
+- Logo background: `#FFFFFF`, the page white, centred with visible breathing
+  room. Surfaces frame the tile with their own hairline edge.
 - Target logo long edge: about 960 px.
 - Do not upscale a logo or photograph beyond 3× its source dimensions.
 - Reject sources below 200 px on the long edge.

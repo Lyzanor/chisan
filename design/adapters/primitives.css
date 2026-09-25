@@ -463,6 +463,7 @@
 .chisan-link-card { display: grid; grid-template-columns: 6rem minmax(0, 1fr) auto; align-items: center; gap: var(--chisan-space-3); min-height: 6rem; overflow: hidden; border: var(--chisan-line) solid var(--chisan-color-hairline); border-radius: var(--chisan-radius-object); color: var(--chisan-color-ink); text-decoration: none; }
 .chisan-link-card__media { display: grid; place-items: center; align-self: stretch; background: var(--chisan-color-surface-muted); }
 .chisan-link-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.chisan-link-card__media--identity { background: var(--chisan-color-surface); }
 .chisan-link-card__media--identity img { object-fit: contain; }
 .chisan-link-card__copy { min-width: 0; }
 .chisan-link-card__copy strong, .chisan-link-card__copy small { display: block; overflow-wrap: anywhere; }
