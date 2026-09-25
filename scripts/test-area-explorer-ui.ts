@@ -6,6 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { ProducerMapSelectionCard } from "../components/map/producer-map-selection-card";
 import { ProducerMapRosterRow } from "../components/map/producer-map-roster-row";
 import { ProducerFollowButton } from "../components/account/producer-follow-button";
+import { ProducerShareButton } from "../components/producer/producer-share-button";
 import { ProducerFollowsContext } from "../components/account/producer-follows-context";
 import { buildCatalogSearchDocument, rankCatalogEntries, catalogDescriptionPreview, findCatalogSearchMatch } from "../lib/catalog-search";
 import { buildCatalogHref, readCatalogQueryContext } from "../lib/catalog-navigation";
@@ -32,6 +33,19 @@ test("guest map rows and profiles expose registration without hiding follow cont
   const profile = renderToStaticMarkup(createElement(ProducerFollowButton, { ...item, returnTo: item.href }));
   assert.match(profile, />Seguir<\/span>/);
   assert.match(profile, /href="\/registro\?/);
+});
+
+test("producer share button renders with accessible label and share icon", () => {
+  const markup = renderToStaticMarkup(createElement(ProducerShareButton, {
+    name: "Abadal",
+    returnTo: "/es/barcelona/abadal-avinyo",
+    locale: "es",
+    description: "Bodega familiar",
+  }));
+  assert.match(markup, /class="producer-share-button"/);
+  assert.match(markup, /aria-label="Compartir · Abadal"/);
+  assert.match(markup, /title="Compartir · Abadal"/);
+  assert.match(markup, /<svg/);
 });
 
 test("follow state uses durable country/id keys and keeps unavailable state distinct", () => {

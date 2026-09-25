@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Suspense, type ComponentType } from "react";
 
 import { ProducerFollowButton } from "@/components/account/producer-follow-button";
+import { ProducerShareButton } from "@/components/producer/producer-share-button";
 import {
   buildCatalogHref,
   type CatalogNavigationScope,
@@ -143,7 +144,7 @@ export function ProducerHero({
                 </a>
               ) : null}
             </div>
-            <div className="detail-title__follow">
+            <div className="detail-title__actions">
               <Suspense fallback={null}>
                 <ProducerFollowButton
                   country={countrySlug}
@@ -154,6 +155,12 @@ export function ProducerHero({
                   compact
                 />
               </Suspense>
+              <ProducerShareButton
+                name={name}
+                returnTo={returnTo}
+                locale={locale}
+                description={description}
+              />
             </div>
           </div>
         </div>

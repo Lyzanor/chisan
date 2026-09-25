@@ -479,19 +479,6 @@ export default async function ProducerPage({
           whatsAppLink={whatsAppLink}
         />
 
-        <ProducerDetails
-          accountsEnabled={accountsEnabled}
-          countrySlug={country.slug}
-          lastApprovedChange={lastApprovedChange}
-          locale={locale}
-          messages={messages}
-          ownershipVerified={ownershipVerified}
-          producerId={producer.producerId}
-          profileWords={profileWords}
-          sources={sources}
-          verification={verification}
-        />
-
         <div className="detail-lead">
           <div className="detail-lead__main">
             <ProducerGallery
@@ -595,6 +582,19 @@ export default async function ProducerPage({
         <SimilarProducers
           title={similarMessages.title}
           producers={similarProducers}
+        />
+
+        <ProducerDetails
+          accountsEnabled={accountsEnabled}
+          countrySlug={country.slug}
+          lastApprovedChange={lastApprovedChange}
+          locale={locale}
+          messages={messages}
+          ownershipVerified={ownershipVerified}
+          producerId={producer.producerId}
+          profileWords={profileWords}
+          sources={sources}
+          verification={verification}
         />
       </article>
     </main>

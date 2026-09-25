@@ -1197,3 +1197,20 @@ link cards show the contained logo on white instead of grey bars. Checked area
 discovery with the roster open and two converted profiles at 390 × 844, then
 1440 × 900: no horizontal overflow, tiles read as white objects with a quiet
 edge. `pnpm check:images`, `pnpm test:images` and `pnpm check:design` pass.
+
+## 2026-09-25 — Producer profile share button and details/sources placement
+
+- Added a compact share button (`ProducerShareButton`) in the producer profile title next
+  to the follow button. Uses the native Web Share API where supported (iOS/Android) and
+  falls back to clipboard copy with tooltip and checkmark feedback on desktop. The control
+  matches the 44px minimum touch target, transparent border baseline, moss hover states,
+  and pop animation of the compact follow button.
+- Moved the details and sources section (`ProducerDetails`) to the very end of the producer
+  profile article, ensuring editorial content (gallery, production methods, products, sales,
+  story, visit, and related recommendations) leads the discovery flow while verification
+  metadata, last change date, suggestion link, and public evidence sources form the concluding
+  closing strip. Removed the `.detail-lead` `border-top: 0` override so it receives the standard
+  section hairline divider after the hero.
+- Verified markup and styling at 390px (mobile) and wide viewports: title actions stay side by
+  side without wrapping or horizontal overflow, and the concluding details section retains its
+  pale moss background and hairline borders.

@@ -220,10 +220,80 @@ body:has(.detail-page) {
   text-underline-offset: 4px;
 }
 
+.detail-title__actions,
 .detail-title__follow {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chisan-space-1);
   flex: none;
   min-height: var(--chisan-control-height);
+}
+
+.producer-share-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.producer-share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--chisan-control-height);
+  min-height: var(--chisan-control-height);
+  padding: var(--chisan-space-2);
+  border: var(--chisan-line) solid transparent;
+  border-radius: var(--chisan-radius-control);
+  background: transparent;
+  color: var(--chisan-color-moss-dark);
+  cursor: pointer;
+  transition:
+    background-color var(--chisan-motion-immediate) var(--chisan-ease),
+    border-color var(--chisan-motion-immediate) var(--chisan-ease),
+    color var(--chisan-motion-immediate) var(--chisan-ease),
+    scale var(--chisan-motion-instant) var(--chisan-ease);
+}
+
+@media (hover: hover) {
+  .producer-share-button:hover {
+    border-color: var(--chisan-color-moss);
+    background: var(--chisan-color-moss-pale);
+  }
+}
+
+.producer-share-button:active {
+  scale: 0.95;
+}
+
+.producer-share-button svg {
+  transition: scale var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+.producer-share-button[data-copied="true"] {
+  color: var(--chisan-color-moss);
+}
+
+.producer-share-button[data-copied="true"] svg {
+  animation: chisan-pop var(--chisan-motion-component) var(--chisan-ease-pop);
+}
+
+.producer-share-tooltip {
+  position: absolute;
+  top: calc(100% + var(--chisan-space-1));
+  right: 0;
+  z-index: var(--chisan-z-menu);
+  padding: var(--chisan-space-1) var(--chisan-space-2);
+  border: var(--chisan-line) solid var(--chisan-color-hairline);
+  border-radius: var(--chisan-radius-control);
+  background: var(--chisan-color-surface);
+  box-shadow: var(--chisan-shadow-overlay);
+  color: var(--chisan-color-ink);
+  font-size: var(--chisan-font-micro);
+  font-weight: var(--chisan-weight-interface);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: chisan-scale-in var(--chisan-motion-immediate) var(--chisan-ease) both;
 }
 
 /* Country, area, municipality and category; the name already has its heading. */
@@ -690,7 +760,6 @@ body:has(.detail-page) {
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: var(--chisan-space-6);
-  border-top: 0;
 }
 
 .detail-lead__main {
