@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 3813,
+  "products": [],
+  "gallery": [
+    {
+      "id": "obrador-9",
+      "src": "/productores/es/content/3813/5836997678898bbb0628cb943085dc2e606e49d61cf7c3c26cdd13b6a8b8b5d6.webp",
+      "alt": "Obrador de cocció de Cervesa Capfoguer a Santa Coloma",
+      "caption": "",
+      "locale": "es",
+      "width": 1500,
+      "height": 1500,
+      "credit": "Web oficial de Cervesa Capfoguer"
+    },
+    {
+      "id": "cerve-capfu",
+      "src": "/productores/es/content/3813/4b9183194ce58b333427eb5684a727123f1ea62a264e388a84aa6534ba583964.webp",
+      "alt": "Copa de cervesa artesana servida a la Fàbrica",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 952,
+      "credit": "Web oficial de Cervesa Capfoguer"
+    },
+    {
+      "id": "esdeveniments-barri-sud-54-remini-enhanc",
+      "src": "/productores/es/content/3813/fe1b4d35a878e23ac84a0ebfb431c4dde58892adc3a0da1071ed5ede50d6902d.webp",
+      "alt": "Esdeveniment comunitari i sociocultural a Capfoguer",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 1011,
+      "credit": "Web oficial de Cervesa Capfoguer"
+    },
+    {
+      "id": "popular",
+      "src": "/productores/es/content/3813/3fe4a0e352478b98628f3b21e9a21dc439fb4d4e5a62764b89bd87c0b8c88cba.webp",
+      "alt": "Cervesa artesana Popular d'elaboració pròpia",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 1600,
+      "credit": "Web oficial de Cervesa Capfoguer"
+    },
+    {
+      "id": "pale-ale",
+      "src": "/productores/es/content/3813/9ca57b28247e15b4ab96b5573179bacab6d7f6fe297d21aae046b9ba00acdd71.webp",
+      "alt": "Cervesa artesana Pale Ale de Capfoguer",
+      "caption": "",
+      "locale": "es",
+      "width": 1600,
+      "height": 1600,
+      "credit": "Web oficial de Cervesa Capfoguer"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 5388,
+  "products": [],
+  "gallery": [
+    {
+      "id": "tienda-av-generalitat-no-68",
+      "src": "/productores/es/content/5388/db4211c77940adfd61075284503c59b008375256a34df5097c6335508cd0cfb4.webp",
+      "alt": "Botiga de Casa Paredes a l'avinguda de la Generalitat",
+      "caption": "",
+      "locale": "es",
+      "width": 1000,
+      "height": 690,
+      "credit": "Web oficial de Embutidos Artesanos Casa Paredes"
+    },
+    {
+      "id": "parada-no5",
+      "src": "/productores/es/content/5388/732b47ff68ab3cce7071ee8d14ed079c2d9a4112b271237a2c210874166059d3.webp",
+      "alt": "Parada de Casa Paredes al Mercat del Fondo",
+      "caption": "",
+      "locale": "es",
+      "width": 800,
+      "height": 598,
+      "credit": "Web oficial de Embutidos Artesanos Casa Paredes"
+    },
+    {
+      "id": "fabricacion-carne-picada-1",
+      "src": "/productores/es/content/5388/1abb5385b2e7e03f59d7f1c141efa667802b2733c3410e80469d76f1d50e81ca.webp",
+      "alt": "Elaboració tradicional de carn picada a l'obrador",
+      "caption": "",
+      "locale": "es",
+      "width": 465,
+      "height": 677,
+      "credit": "Web oficial de Embutidos Artesanos Casa Paredes"
+    },
+    {
+      "id": "lomo-carne",
+      "src": "/productores/es/content/5388/74b890e835bda8fd80f52f20fe21a11606e3a71bb353c33262269b88d4426f06.webp",
+      "alt": "Llom i peces de carn d'elaboració pròpia",
+      "caption": "",
+      "locale": "es",
+      "width": 1200,
+      "height": 801,
+      "credit": "Web oficial de Embutidos Artesanos Casa Paredes"
+    },
+    {
+      "id": "producto-morcilla",
+      "src": "/productores/es/content/5388/71316f77579979067d081f3a18523cd2e77692b25edbc8faeca9faabf4ce95b6.webp",
+      "alt": "Embutits i botifarres artesanes tradicionals",
+      "caption": "",
+      "locale": "es",
+      "width": 600,
+      "height": 400,
+      "credit": "Web oficial de Embutidos Artesanos Casa Paredes"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

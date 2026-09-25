@@ -172,6 +172,41 @@ sources. It is the only pass that sees what was actually published.
 non-canonical or suspicious files. Duplicate hashes are review signals, not
 automatic decisions, and do not catch unique junk.
 
+## Gallery photo discovery (`enrich:gallery`)
+
+`scripts/enrich-producer-gallery.py` discovers honest photo candidates (workshop,
+farm, elaboration, people and products) from the producer's official website. It
+inspects the homepage and relevant internal pages (such as `/nosotros`,
+`/el-obrador`, `/galeria` or `/productos`), filters out logos, icons, SVGs and UI
+junk, and normalizes candidate WebP files (max 1600 px on the long edge, preserving
+their true aspect ratio).
+
+1. **Sweep** an area or municipality into `.tmp/`:
+
+   ```bash
+   pnpm enrich:gallery --area [area] --municipality "[municipality]" \
+     --contact-sheet .tmp/gallery/[area]
+   ```
+
+   This downloads candidates and generates an interactive visual contact sheet at
+   `.tmp/gallery/[area]/index.html`.
+
+2. **Review** the contact sheet in a browser. Select up to five photographs and
+   prepare a `decisions.txt` file (`<producer_id> <candidate_id> "Alt text"`).
+
+3. **Apply** the reviewed selections:
+
+   ```bash
+   pnpm enrich:gallery --apply \
+     --decisions .tmp/gallery/[area]/decisions.txt \
+     --from .tmp/gallery/[area]
+   ```
+
+   `apply` installs the normalized WebPs at
+   `public/productores/<country>/content/<producer_id>/<sha256>.webp`, updates
+   `data/content/<country>/<producer_id>.json`, and verifies the result with
+   `check:content`.
+
 
 ## Premium producer uploads and the declared demo
 
