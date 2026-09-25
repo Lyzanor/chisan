@@ -1,12 +1,15 @@
-import { and, asc, count, desc, eq, gte, inArray, lt, or, sql } from "drizzle-orm";
+import { eventSchema } from "../events/schema";
+import { eventSubmissionSchema, eventExportSchema } from "./event-request";
+import { randomUUID } from "node:crypto";
+import { and, asc, count, desc, eq, gte, inArray, lt, or, isNull, isNotNull, sql } from "drizzle-orm";
 import type { Database } from "../db";
-import { auditEvents, selectionShelves, users } from "../db/schema";
+import { auditEvents, selectionShelves, users, accountSelections } from "../db/schema";
 import { normalizePublicHandle, publicHandleProblem } from "../accounts/public-profile-policy";
 import type { PublicProfileBaseLocation } from "../accounts/public-profile-location";
 import { prepareImage } from "../accounts/prepare-producer-image";
 import { canManageSelectionShelf, canReviewSelectionShelf } from "./access";
 import { aiRequestReportSchema } from "../ai/usage";
-import { SHELF_LIMITS, ShelfError, shelfSourceMessageKey, shelfImageUrl, shelfPointsSchema, shelfReviewSchema, shelfPublishSchema, type ShelfPoint, type PublicSelectionShelf, type ShelfCandidate } from "./policy";
+import { SHELF_LIMITS, ShelfError, shelfInputSchema, type ShelfInput, shelfSourceMessageKey, shelfImageUrl, shelfPointsSchema, shelfReviewSchema, shelfPublishSchema, type ShelfPoint, type PublicSelectionShelf, type ShelfCandidate } from "./policy";
 
 type Transaction = Parameters<Parameters<Database["transaction"]>[0]>[0];
 export type ShelfRecord = typeof selectionShelves.$inferSelect;
@@ -37,8 +40,9 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
     await tx.insert(auditEvents).values({ actorKind: "user", actorUserId: actor,
       action: `selection_shelf.${action}`, targetType: "selection_shelf", targetId: id, metadata });
   }
-  async function submit(userId: string, bytes: Buffer, channel: string, externalMessageId?: string) {
+  async function submit(userId: string, bytes: Buffer, channel: string, externalMessageId?: string, rawInput?: ShelfInput) {
     enabled();
+    const input = rawInput === undefined ? undefined : shelfInputSchema.parse(rawInput);
     const messageId = shelfSourceMessageKey(channel, externalMessageId);
     // Reserve uploads before decoding, including invalid files. No inference runs here.
     await db.transaction(async (tx) => {
@@ -59,15 +63,28 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
           .where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.messageId, messageId))).limit(1);
         if (receipt) return receipt.id;
       }
-      const [same] = await tx.select({ id: selectionShelves.id }).from(selectionShelves).where(and(
-        eq(selectionShelves.userId, userId), eq(selectionShelves.sha256, image.sha256),
+      // Lock the account first; ownership and replacement are checked in the same transaction.
+      let selectionId = input?.selectionId;
+      if (selectionId) {
+        const [selection] = await tx.select().from(accountSelections).where(and(eq(accountSelections.id, selectionId), eq(accountSelections.userId, userId))).for("update");
+        if (!selection) throw new ShelfError("missing");
+      }
+      const scope = selectionId ? eq(selectionShelves.selectionId, selectionId) : isNull(selectionShelves.selectionId);
+      const [same] = input && !selectionId ? [] : await tx.select({ id: selectionShelves.id }).from(selectionShelves).where(and(
+        eq(selectionShelves.userId, userId), scope, eq(selectionShelves.sha256, image.sha256), input ? eq(selectionShelves.input, input) : undefined,
         inArray(selectionShelves.status, [...pending, "published"]))).orderBy(desc(selectionShelves.createdAt)).limit(1);
       if (same) return same.id;
+      if (input && !selectionId) {
+        const id = randomUUID();
+        const [createdSelection] = await tx.insert(accountSelections).values({ id, userId, publicHandle: `seleccion-${id.replaceAll("-", "").slice(0, 24)}`, title: input.title, visibility: "private" }).returning({ id: accountSelections.id });
+        selectionId = createdSelection.id;
+      }
+      const replacementScope = selectionId ? eq(selectionShelves.selectionId, selectionId) : isNull(selectionShelves.selectionId);
       await tx.update(selectionShelves).set({ status: "superseded", version: sql`${selectionShelves.version} + 1`, updatedAt: new Date() })
-        .where(and(eq(selectionShelves.userId, userId), inArray(selectionShelves.status, pending)));
+        .where(and(eq(selectionShelves.userId, userId), replacementScope, inArray(selectionShelves.status, pending)));
       await tx.delete(selectionShelves).where(and(eq(selectionShelves.userId, userId),
         inArray(selectionShelves.status, ["superseded", "rejected"]), lt(selectionShelves.updatedAt, new Date(Date.now() - 30 * 86_400_000))));
-      const [created] = await tx.insert(selectionShelves).values({ ...image, userId, channel, messageId, status: "queued" }).returning({ id: selectionShelves.id });
+      const [created] = await tx.insert(selectionShelves).values({ ...image, userId, selectionId, ...(input ? { input } : {}), channel, messageId, status: "queued" }).returning({ id: selectionShelves.id });
       await audit(tx, userId, created.id, "received", { channel, sha256: image.sha256, rightsConfirmed: true });
       return created.id;
     });
@@ -77,6 +94,7 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
     const [shelf] = await db.select({
       id: selectionShelves.id,
       userId: selectionShelves.userId,
+      selectionId: selectionShelves.selectionId,
       width: selectionShelves.width,
       height: selectionShelves.height,
       points: selectionShelves.points,
@@ -86,14 +104,19 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
         or(
           eq(selectionShelves.id, subjectId),
           eq(selectionShelves.selectionId, subjectId),
-          eq(selectionShelves.userId, subjectId),
+          and(eq(selectionShelves.userId, subjectId), or(isNull(selectionShelves.selectionId), inArray(selectionShelves.selectionId,
+            db.select({ id: accountSelections.id }).from(accountSelections).innerJoin(users, and(eq(users.id, accountSelections.userId), eq(users.publicHandle, accountSelections.publicHandle))).where(eq(users.id, subjectId))))),
         ),
         eq(selectionShelves.status, "published"),
       )).limit(1);
     if (!shelf?.reviewedAt) return null;
     const [owner] = await db.select({ visibility: users.publicProfileVisibility, handle: users.publicHandle }).from(users)
       .where(and(eq(users.id, shelf.userId), eq(users.status, "active"))).limit(1);
-    if (!owner || owner.visibility === "private" || !(await canManageSelectionShelf(db, shelf.userId))) return null;
+    if (!owner || !(await canManageSelectionShelf(db, shelf.userId))) return null;
+    if (shelf.selectionId) {
+      const [selection] = await db.select().from(accountSelections).where(and(eq(accountSelections.id, shelf.selectionId), eq(accountSelections.userId, shelf.userId))).limit(1);
+      if (!selection || selection.visibility === "private") return null;
+    } else if (owner.visibility === "private") return null;
     const parsed = shelfPointsSchema.safeParse(shelf.points);
     if (!parsed.success) return null;
     const choices = await deps.catalog(identitiesFor(parsed.data.map((point) => point.producerKey)));
@@ -121,23 +144,19 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
   }
   async function ownerStatus(userId: string) {
     enabled();
-    const rows = await db.select({ id: selectionShelves.id, status: selectionShelves.status, createdAt: selectionShelves.createdAt })
-      .from(selectionShelves).where(eq(selectionShelves.userId, userId)).orderBy(desc(selectionShelves.createdAt)).limit(5);
-    // A succession of rejected/replaced drafts must not hide the removal
-    // control for the older photo that is still public.
-    if (!rows.some((row) => row.status === "published")) {
-      const [published] = await db.select({ id: selectionShelves.id, status: selectionShelves.status, createdAt: selectionShelves.createdAt })
-        .from(selectionShelves).where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.status, "published"))).limit(1);
-      if (published) rows.push(published);
-    }
+    const rows = await db.select({ id: selectionShelves.id, selectionId: selectionShelves.selectionId, title: selectionShelves.input, status: selectionShelves.status, createdAt: selectionShelves.createdAt })
+      .from(selectionShelves).where(eq(selectionShelves.userId, userId)).orderBy(desc(selectionShelves.createdAt)).limit(50);
+    const published = await db.select({ id: selectionShelves.id, selectionId: selectionShelves.selectionId, title: selectionShelves.input, status: selectionShelves.status, createdAt: selectionShelves.createdAt })
+      .from(selectionShelves).where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.status, "published")));
+    rows.push(...published.filter((row) => !rows.some((item) => item.id === row.id)));
     return rows;
   }
   async function queue(reviewerId: string) {
     enabled();
     if (!(await canReviewSelectionShelf(db, reviewerId))) throw new ShelfError("access");
-    return db.select({ id: selectionShelves.id, status: selectionShelves.status, createdAt: selectionShelves.createdAt,
+    return db.select({ id: selectionShelves.id, selectionId: selectionShelves.selectionId, title: selectionShelves.input, status: selectionShelves.status, createdAt: selectionShelves.createdAt,
       channel: selectionShelves.channel, name: users.displayName, handle: users.publicHandle }).from(selectionShelves)
-      .innerJoin(users, eq(users.id, selectionShelves.userId)).where(inArray(selectionShelves.status, pending))
+      .innerJoin(users, eq(users.id, selectionShelves.userId)).where(or(inArray(selectionShelves.status, pending), and(eq(selectionShelves.status, "published"), isNotNull(selectionShelves.eventRequest))))
       .orderBy(asc(selectionShelves.createdAt)).limit(50);
   }
   async function reviewDetail(reviewerId: string, id: string, query = "") {
@@ -146,7 +165,7 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
     const [row] = await db.select({ id: selectionShelves.id, userId: selectionShelves.userId, version: selectionShelves.version,
       status: selectionShelves.status, width: selectionShelves.width, height: selectionShelves.height, points: selectionShelves.points,
       suggestions: selectionShelves.suggestions, note: selectionShelves.note, analysisError: selectionShelves.analysisError,
-      channel: selectionShelves.channel }).from(selectionShelves).where(eq(selectionShelves.id, id)).limit(1);
+      channel: selectionShelves.channel, eventRequest: selectionShelves.eventRequest }).from(selectionShelves).where(eq(selectionShelves.id, id)).limit(1);
     if (!row) throw new ShelfError("missing");
     const keys = [...row.points.map((point) => point.producerKey), ...row.suggestions.points.flatMap((point) => [point.producerKey, ...(point.candidateKeys ?? [])].filter((key): key is string => Boolean(key)))];
     const selected = await deps.catalog(identitiesFor(keys));
@@ -165,19 +184,22 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
     });
     return { ...row, candidates: choices, imageSrc: shelfImageUrl(row.id), analysisAttempts, allowance, viewerIsOwner: reviewerId === row.userId };
   }
-  async function ownerProposal(userId: string) {
+  async function ownerProposal(userId: string, id?: string) {
     enabled();
     const [row] = await db.select({ id: selectionShelves.id, version: selectionShelves.version, status: selectionShelves.status,
-      points: selectionShelves.points, width: selectionShelves.width, height: selectionShelves.height,
-      suggestions: selectionShelves.suggestions, analysisError: selectionShelves.analysisError }).from(selectionShelves)
-      .where(and(eq(selectionShelves.userId, userId), inArray(selectionShelves.status, pending))).orderBy(desc(selectionShelves.createdAt)).limit(1);
+      points: selectionShelves.points, width: selectionShelves.width, height: selectionShelves.height, input: selectionShelves.input, selectionId: selectionShelves.selectionId,
+      suggestions: selectionShelves.suggestions, analysisError: selectionShelves.analysisError, eventRequest: selectionShelves.eventRequest }).from(selectionShelves)
+      .where(and(eq(selectionShelves.userId, userId), id ? eq(selectionShelves.id, id) : undefined, inArray(selectionShelves.status, id ? [...pending, "published"] : pending))).orderBy(desc(selectionShelves.createdAt)).limit(1);
     if (!row) return null;
     const catalog = await deps.catalog(identitiesFor(row.points.map((point) => point.producerKey)));
     const allowed = new Map(catalog.map((item) => [item.key, item]));
     const points = shelfPointsSchema.parse(row.points).filter((point) => allowed.has(point.producerKey));
+    const observations = row.suggestions.points.filter((point) => !point.producerKey && !points.some((saved) => saved.label === point.label && saved.x === point.x && saved.y === point.y));
     return { id: row.id, version: row.version, status: row.status, points, width: row.width, height: row.height,
-      imageSrc: shelfImageUrl(row.id), producers: catalog, analysisError: row.analysisError,
-      unmatched: row.suggestions.points.filter((point) => !point.producerKey).length };
+      imageSrc: shelfImageUrl(row.id), producers: catalog, analysisError: row.analysisError, input: row.input, selectionId: row.selectionId,
+      eventRequest: row.eventRequest,
+      observations,
+      unmatched: observations.length };
   }
   async function publish(userId: string, raw: unknown) {
     enabled();
@@ -191,22 +213,34 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       const points = shelfPointsSchema.parse(row.points).filter((point) => input.producerKeys.includes(point.producerKey));
       if (input.producerKeys.some((key) => !points.some((point) => point.producerKey === key))) throw new ShelfError("selection");
       await validatePoints(points);
-      const handle = normalizePublicHandle(input.profile.publicHandle);
-      if (publicHandleProblem(handle) || (account.publicHandle && account.publicHandle !== handle)) throw new ShelfError("profile");
-      const location = await deps.location?.(input.profile.baseLocation, input.profile.baseMunicipality);
-      if (!location) throw new ShelfError("profile");
-      const [other] = await tx.select({ id: users.id }).from(users).where(eq(users.publicHandle, handle)).limit(1);
-      if (other && other.id !== userId) throw new ShelfError("profile");
-      await tx.update(users).set({ publicHandle: handle,
-        publicProfileVisibility: account.publicProfileVisibility === "private" ? "public" : account.publicProfileVisibility,
-        publicProfileBaseCountry: location.country, publicProfileBaseArea: location.area, publicProfileBaseMunicipality: location.municipality,
-        updatedAt: new Date() }).where(eq(users.id, userId));
+      let handle: string;
+      if (row.selectionId) {
+        const [selection] = await tx.select().from(accountSelections).where(and(eq(accountSelections.id, row.selectionId), eq(accountSelections.userId, userId))).for("update");
+        if (!selection) throw new ShelfError("missing");
+        handle = selection.publicHandle;
+        await tx.update(accountSelections).set({ title: input.selection?.title ?? row.input.title,
+          description: input.selection?.description ?? selection.description,
+          visibility: selection.visibility === "private" ? "public" : selection.visibility, updatedAt: new Date() }).where(eq(accountSelections.id, selection.id));
+      } else {
+        const profile = input.profile;
+        if (!profile) throw new ShelfError("profile");
+        handle = normalizePublicHandle(profile.publicHandle);
+        if (publicHandleProblem(handle) || (account.publicHandle && account.publicHandle !== handle)) throw new ShelfError("profile");
+        const location = await deps.location?.(profile.baseLocation, profile.baseMunicipality);
+        if (!location) throw new ShelfError("profile");
+        const [other] = await tx.select({ id: users.id }).from(users).where(eq(users.publicHandle, handle)).limit(1);
+        if (other && other.id !== userId) throw new ShelfError("profile");
+        await tx.update(users).set({ publicHandle: handle,
+          publicProfileVisibility: account.publicProfileVisibility === "private" ? "public" : account.publicProfileVisibility,
+          publicProfileBaseCountry: location.country, publicProfileBaseArea: location.area, publicProfileBaseMunicipality: location.municipality,
+          updatedAt: new Date() }).where(eq(users.id, userId));
+      }
 
       await tx.update(selectionShelves).set({ status: "superseded", updatedAt: new Date(), version: sql`${selectionShelves.version} + 1` })
-        .where(and(eq(selectionShelves.userId, userId), eq(selectionShelves.status, "published")));
-      await tx.update(selectionShelves).set({ status: "published", points, reviewedBy: userId, reviewedAt: new Date(), updatedAt: new Date(), version: row.version + 1 })
+        .where(and(eq(selectionShelves.userId, userId), row.selectionId ? eq(selectionShelves.selectionId, row.selectionId) : isNull(selectionShelves.selectionId), eq(selectionShelves.status, "published")));
+      await tx.update(selectionShelves).set({ status: "published", points, ...(row.selectionId && input.selection ? { input: { ...row.input, title: input.selection.title } } : {}), reviewedBy: userId, reviewedAt: new Date(), updatedAt: new Date(), version: row.version + 1 })
         .where(eq(selectionShelves.id, row.id));
-      await audit(tx, userId, row.id, "published", { producerKeys: input.producerKeys, version: row.version + 1, profilePublished: account.publicProfileVisibility === "private" });
+      await audit(tx, userId, row.id, "published", { producerKeys: input.producerKeys, version: row.version + 1, profilePublished: !row.selectionId && account.publicProfileVisibility === "private" });
       return { version: row.version + 1, status: "published", handle };
     });
   }
@@ -236,6 +270,79 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       return { version: record.version + 1, status, handle: account.publicHandle };
     });
   }
+  async function requestEvent(userId: string, raw: unknown) {
+    enabled();
+    const input = eventSubmissionSchema.parse(raw);
+    return db.transaction(async (tx) => {
+      await lockShelfAccount(tx, userId);
+      if (!(await canManageSelectionShelf(tx, userId))) throw new ShelfError("access");
+      const [row] = await tx.select().from(selectionShelves).where(and(eq(selectionShelves.id, input.id), eq(selectionShelves.userId, userId))).for("update");
+      if (!row) throw new ShelfError("missing");
+      if (row.version !== input.version || !["ready", "published"].includes(row.status)) throw new ShelfError("changed");
+      const points = shelfPointsSchema.parse(row.points).filter((point) => input.producerKeys.includes(point.producerKey));
+      if (!points.length || points.some((point) => !point.producerKey.startsWith("es:")) || input.producerKeys.some((key) => !points.some((point) => point.producerKey === key))) throw new ShelfError("selection");
+      await validatePoints(points);
+      await tx.update(selectionShelves).set({ eventRequest: { details: input.details, points, version: row.version + 1, submittedAt: new Date().toISOString() }, version: row.version + 1, updatedAt: new Date() }).where(eq(selectionShelves.id, row.id));
+      await audit(tx, userId, row.id, "event_requested", { version: row.version + 1 });
+      return { version: row.version + 1 };
+    });
+  }
+  async function exportEvent(reviewerId: string, raw: unknown) {
+    enabled();
+    const input = eventExportSchema.parse(raw);
+    return db.transaction(async (tx) => {
+      if (!(await canReviewSelectionShelf(tx, reviewerId))) throw new ShelfError("access");
+      const [row] = await tx.select().from(selectionShelves).where(eq(selectionShelves.id, input.id)).for("update");
+      if (!row?.eventRequest) throw new ShelfError("missing");
+      if (row.version !== input.version || !["ready", "published"].includes(row.status)) throw new ShelfError("changed");
+      if (!(await canManageSelectionShelf(tx, row.userId))) throw new ShelfError("access");
+      const points = shelfPointsSchema.parse(row.eventRequest.points);
+      await validatePoints(points);
+      const request = row.eventRequest.details;
+      const today = new Date().toISOString().slice(0, 10);
+      const image = { src: `/editorial/events/${input.slug}-plan.webp`, alt: request.title,
+        width: row.width, height: row.height, credit: request.organizerName, sourceUrl: request.sourceUrl,
+        rights: "Account supplied image; publication rights and official source require editorial review.", checkedAt: today };
+      const event = eventSchema.parse({ schemaVersion: 1, slug: input.slug, country: "es", locale: "es", status: "draft", featuredInDiscover: false,
+        title: request.title, description: request.description, category: request.category, startDate: request.startDate, endDate: request.endDate, timeZone: request.timeZone,
+        venue: { name: request.venueName, municipality: request.municipality, latitude: input.latitude, longitude: input.longitude },
+        organizerUrl: request.sourceUrl, organizerName: request.organizerName,
+        editorialNote: "Account proposal. Verify attendance, stand positions, venue, sources and image rights before publication.",
+        exhibitors: [...new Set(points.map((point) => point.producerKey))].map((key) => ({ country: key.split(":")[0], producerId: Number(key.split(":")[1]) })),
+        plan: { ...image, points: points.map((point, index) => ({ id: `point-${index + 1}`, producerKey: point.producerKey, marker: String(index + 1), label: point.label, x: point.x, y: point.y })) },
+        sources: [{ title: request.organizerName, url: request.sourceUrl, checkedAt: today }], updatedAt: today });
+      await audit(tx, reviewerId, row.id, "event_exported", { slug: input.slug, version: row.version });
+      // The bundle is private. Account IDs never enter the public event file.
+      return { schemaVersion: 1, proposalId: row.id, version: row.version, event, imageBase64: row.bytes.toString("base64") };
+    });
+  }
+  async function correct(userId: string, raw: unknown) {
+    enabled();
+    const input = shelfReviewSchema.parse(raw);
+    if (input.action !== "save") throw new ShelfError("access");
+    return db.transaction(async (tx) => {
+      await lockShelfAccount(tx, userId);
+      if (!(await canManageSelectionShelf(tx, userId))) throw new ShelfError("access");
+      const [row] = await tx.select().from(selectionShelves).where(and(eq(selectionShelves.id, input.id), eq(selectionShelves.userId, userId))).for("update");
+      if (!row) throw new ShelfError("missing");
+      if (row.version !== input.version || !["review", "ready"].includes(row.status)) throw new ShelfError("changed");
+      await validatePoints(input.points);
+      const status = input.points.length ? "ready" : "review";
+      await tx.update(selectionShelves).set({ points: input.points, status, version: row.version + 1, updatedAt: new Date() }).where(eq(selectionShelves.id, row.id));
+      await audit(tx, userId, row.id, "corrected", { pointCount: input.points.length, version: row.version + 1 });
+      return { version: row.version + 1, status };
+    });
+  }
+  async function search(userId: string, id: string, query: string) {
+    enabled();
+    if (!(await canManageSelectionShelf(db, userId))) throw new ShelfError("access");
+    const [row] = await db.select({ id: selectionShelves.id }).from(selectionShelves).where(and(eq(selectionShelves.id, id), eq(selectionShelves.userId, userId)));
+    if (!row) throw new ShelfError("missing");
+    const normalize = (text: string) => text.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+    const term = normalize(query.trim());
+    if (term.length < 2 || term.length > 100) return [];
+    return (await deps.catalog()).filter((item) => normalize(`${item.name} ${item.city}`).includes(term)).slice(0, 20);
+  }
   async function withdraw(userId: string, id: string) {
     enabled();
     return db.transaction(async (tx) => {
@@ -246,5 +353,5 @@ export function createSelectionShelfService(deps: { database: Database; catalog:
       await audit(tx, userId, id, "withdrawn");
     });
   }
-  return { submit, candidates, publicShelf, readImage, ownerStatus, ownerProposal, publish, queue, reviewDetail, review, withdraw };
+  return { submit, requestEvent, exportEvent, correct, search, candidates, publicShelf, readImage, ownerStatus, ownerProposal, publish, queue, reviewDetail, review, withdraw };
 }

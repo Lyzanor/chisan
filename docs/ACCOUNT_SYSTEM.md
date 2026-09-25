@@ -1038,86 +1038,64 @@ account reduces the count. The statistics query rechecks active owner and exact
 producer premium access in the same statement; visitor totals are unaffected by
 the favorite aggregation. The public roster uses the same active-follow relationship.
 
-## Shelf photos in shared selections
+## Images in account-owned selections
 
-`CHISAN_SELECTION_SHELF_ENABLED` gates an optional photo alongside the
-`/u/<handle>` origin map in the shared presence viewer. Apply migrations through `0020_public_follows_shelf_proposals`
-before enabling it. This is account-owned presentation in PostgreSQL; it does not
-register a shop or change CSV/content facts. Private business data is never
-reused as public location or presentation.
+`CHISAN_SELECTION_SHELF_ENABLED` gates image selections. Apply migration
+`0023_image_selections` before deploying this version with accounts enabled.
+`/cuenta/estanteria` accepts shelves, event plans, posters and programme pages,
+with an optional natural-language request. Web and WhatsApp share normalization,
+catalog matching, permissions, private proposals and the image/origin viewer.
+No personal favorites are read or changed by this workflow.
 
-Published shelf points define the shelf's own curated producer references. They
-remain isolated from the user's personal favorites and following list: unfollowing
-a producer personally does not alter the published shelf, and following a producer
-personally does not insert items onto the venue's shelf.
+Each new web or WhatsApp input creates a private `account_selections` record
+with its own stable `/u/<handle>` route. An explicit replacement names a selection
+owned by that account. Account locking and per-selection partial unique indexes
+keep one pending and one published image per selection; the published image
+survives while a replacement is reviewed. Legacy inputs without a selection ID
+retain their previous single-shelf behavior and routes. Withdrawal remains
+available after Pro expiry. Selection visibility is independent of personal
+profile visibility; publishing a new selection does not publish the profile.
+Private owners are not attributed by name, personal handle or avatar on their
+public selection.
 
-The owner sends a JPEG/PNG/WebP through `/cuenta/estanteria`, linked from the
-selection preview and premium producer editor, or the dedicated WhatsApp shelf
-mode. No favorites need to exist first. Consent covers provider processing and
-preparing a proposal that the owner chooses to publish. Web input is bounded to
-5 MiB, 24 megapixels and 10 attempts per rolling 24 hours; normalization strips
-metadata, corrects orientation and stores at most 2400px / 1.5 MiB WebP.
-WhatsApp first uses its existing bounded JPEG/PNG media adapter.
+The source image, channel receipt and bounded input context stay private until
+owner publication. Consent covers provider processing and proposal preparation.
+JPEG/PNG/WebP input is bounded to 5 MiB, 24 megapixels and 10 attempts per rolling
+24 hours; normalization strips metadata, corrects orientation and stores at most
+2400px / 1.5 MiB WebP. Programme PDFs require a page image. WhatsApp supports an
+instruction before the image or in its caption, consuming the prior instruction
+on successful receipt. Repeated message IDs remain idempotent.
 
-`lib/selection-shelf/access.ts` owns the capability: an active user premium
-entitlement or active membership in a premium producer qualifies. This remains
-a bridge to the separately owned User/Producer Pro model, not an entitlement
-grant. Mutations and public reads recheck access. Removal works after expiry.
+`lib/selection-shelf/access.ts` owns the active user premium or premium-producer
+membership capability. Mutations and public image reads recheck it. Each queued
+input schedules one metered AI attempt outside the database transaction. The
+provider receives visible image content and bounded untrusted owner context,
+never favorites or catalog IDs. The domain resolves observations against current
+published producers and reviewed products. Ambiguities remain private unmatched
+names. No invented identities, origin claims or event attendance are published.
 
-Each new photo enters `queued` and schedules one metered AI attempt. The AI
-transcribes visible producer/product names, label text and normalized point
-centres without receiving existing favorites or catalog IDs. The domain matches
-those observations against all currently published CSV producers and their
-reviewed products. Name normalization tolerates accents, punctuation and common
-producer prefixes; only unambiguous matches become selectable. A product ID is
-attached only for a matching existing reviewed product. Ambiguous, unreadable
-or absent names remain private unmatched observations. No nearest-name guesses,
-new catalog identities, stock or provenance claims are published.
-Owners see receipt, automatic processing or a stopped-analysis explanation;
-they do not need to place points. Staff review refreshes pending work and exposes
-the shared attempt allowance, safe API errors and reported token usage. Manual
-point corrections are optional. Exhausted-allowance retries fail before queuing;
-failed API attempts are not refunded. Missing usage is not reported as zero cost.
+Owners preview the shared image/map, deselect matches, or search the approved
+catalog to correct existing or unmatched observations at their recorded image
+positions. Corrections require ownership, active access and an exact version;
+they never publish. Staff retain optional point placement, review and metered
+retry controls at `/admin/estanterias`. Failed/budget-blocked attempts are not
+retried automatically. Fake-provider tests verify contracts, not recognition
+accuracy on unseen documents.
 
-A successful match creates a `ready` proposal in the account, showing the map,
-photo and checked producers. The owner can uncheck any producer, complete the
-permanent handle and canonical area/municipality, then publish. In one locked
-transaction Chisan rechecks ownership, version, active capability, catalog
-identities/products and profile inputs; inserts selected favorites, removes
-existing favorites explicitly unchecked in this proposal, preserves all other
-favorites and publishes the image. A private whole profile becomes public with
-the owner's explicit confirmation; unlisted/public visibility is preserved.
-AI never changes favorites or publishes by itself.
+Publishing validates identities again and updates only the selected account
+selection and its points in a locked transaction. A private selection becomes
+public on explicit confirmation. Legacy publication retains its existing profile
+checks. Source images use private no-store reads with owner/staff authorization;
+public reads expose only currently published images of active entitled accounts
+and visible selections. Private instructions and unmatched observations are
+never included in the public viewer.
 
-No-match, failed, interrupted or budget-blocked attempts go to `review` in
-`/admin/estanterias`. Active reviewers/admins can search the approved catalog,
-place/correct points, save, reject, prepare a `ready` proposal or explicitly
-request another metered analysis. Staff approval does not publish or add
-favorites on behalf of the owner. Version checks fence stale review and AI
-results. There are no automatic retries of paid failures.
-
-`selection_shelves` permits one pending and one published image per account.
-A replacement supersedes pending work while the last published image stays
-visible until the owner publishes another. Image bytes, dimensions, ownership
-and channel receipt are immutable. Message IDs are namespaced by adapter.
-Identical current images do not repeat inference. Rejected/superseded images
-older than 30 days are removed on the owner's next upload. Migration `0020`
-preserves old favorites and timestamps, drops their obsolete privacy flags,
-and returns older pending photos to manual review while fencing in-flight
-results. It never schedules old photos or changes published images.
-
-`/api/selection-shelf/<id>/image` rechecks access with private no-store caching;
-Next image optimization is bypassed. Owners and active staff can inspect private
-inputs. Public viewers receive only the current published photo, whose points
-must still belong to current favorites and catalog producers. Private/suspended
-accounts, expired premium, withdrawal or an empty resolved selection hide it.
-
-Map and photo share `highlight=country:id`; all points for a producer highlight
-together. Photo zoom and textual producer links remain available on phones.
-The blue visitor marker uses transient browser geolocation and permission,
-not an inferred shop address. The publication date and snapshot copy do not
-promise current stock. Real-photo recognition quality still needs a controlled
-pilot; fake-provider tests verify workflow and authority, not accuracy.
+An optional event request captures the chosen roster separately for editorial
+review; [Events](EVENTS.md#account-proposals-from-images) owns that handoff. Neon
+is required for account input, corrections and account-owned publication. Reviewed
+Git events retain their database-independent public read model. No production
+migration, paid-plan change or AI allowance increase is implied by implementing
+this workflow.
 
 ## Homepage community selection
 

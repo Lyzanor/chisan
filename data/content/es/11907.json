@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 11907,
+  "products": [],
+  "gallery": [
+    {
+      "id": "totcarbo-brasas",
+      "src": "/productores/es/content/11907/5adddd502c7aac61c233d7cf34678faaed492ca65cfe9ed09179cec55537b3b1.webp",
+      "alt": "Brasa i graella de carbó a TotCarbó",
+      "caption": "",
+      "locale": "es",
+      "width": 1024,
+      "height": 471,
+      "credit": "Web oficial de TotCarbó"
+    },
+    {
+      "id": "brasa-pollo",
+      "src": "/productores/es/content/11907/c6b4309aeb306490abf3130a6d2a0ffdb45e00828db251fc610a094b71595e87.webp",
+      "alt": "Pollastre a la brasa al carbó vegetal",
+      "caption": "",
+      "locale": "es",
+      "width": 464,
+      "height": 335,
+      "credit": "Web oficial de TotCarbó"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

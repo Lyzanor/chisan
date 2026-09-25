@@ -143,19 +143,26 @@ new link replaces its previous binding and pending conversation. Each operation
 rechecks the active account, exact producer membership and premium entitlement;
 knowing a name, catalog telephone or producer ID does not confer authority.
 
-## Account shelf mode
+## Account image-selection mode
 
 When `CHISAN_SELECTION_SHELF_ENABLED=true`, `/cuenta/estanteria` can instead
-bind the sender to the account's shared selection. It uses the same signed
+bind the sender to the account's image selections. It uses the same signed
 webhook, durable inbox and reply adapter. Generating a link explicitly replaces
 that account's previous channel mode; one phone cannot bind to two accounts or
 modes, including while shelf intake is disabled. Tokens are single-use, expire
 after ten minutes and are stored as hashes; bindings expire after 30 days.
-The linking consent authorizes processing submitted shelf photos and preparing
+The linking consent authorizes processing submitted shelf, plan, poster or programme images and preparing
 a proposal for the owner to publish. Product-mode consent does not cover it.
 
+The sender can first say what to show (for example, “traslada estos expositores
+al mapa”), then send the image, or include the request as its caption. A bounded
+instruction is saved only for the next successfully received image; a caption
+supersedes it. Each new image creates a separate private account selection.
+Explicit replacement is available from the web panel. Text commands remain
+available without inference. Programme PDFs require a JPEG/PNG page image.
+
 A photo is saved with its namespaced Meta receipt as `queued`. The sender receives
-a link to `/cuenta/estanteria`; processing reads visible labels and matches all
+a link to its proposal at `/cuenta/estanteria?id=<id>`; processing reads visible names and matches all
 approved catalog producers, without requiring existing favorites or calling the
 product extractor. One photo uses at most one automatic attempt; duplicates and
 failed paid attempts cannot automatically spend again. The owner checks the
@@ -165,7 +172,7 @@ work, including ready proposals; published photo removal is in the account.
 Staff can help with failed or unclear matches. No unsolicited outbound notice
 is sent and no photo becomes catalog product media. See the complete storage,
 review and visibility contract in
-[Account System](ACCOUNT_SYSTEM.md#shelf-photos-in-shared-selections).
+[Account System](ACCOUNT_SYSTEM.md#images-in-account-owned-selections).
 
 ## Runtime and recovery
 

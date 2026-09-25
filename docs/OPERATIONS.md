@@ -1002,3 +1002,21 @@ without premium. Products and their attached images must remain unchanged.
 There is no catalog rewrite or backfill; existing premium proposals retain their
 recorded entitlement requirement. Verify account migration status and exercise a
 free gallery draft/submission before declaring the feature active in Production.
+
+### Image-selection migration 0023
+
+Before activating independent image selections, apply `0023_image_selections`
+and deploy the matching runtime migration contract (24 migrations). It adds
+private input context, event-request snapshots and a one-image instruction for
+WhatsApp, and scopes pending/published uniqueness to each selection while
+preserving null-selection legacy rows. Rehearse with the account/shelf tests in
+an isolated database. No new AI allowance or background schedule is required.
+
+Keep `CHISAN_SELECTION_SHELF_ENABLED=false` in the deployed configuration during
+the schema/binary transition. After the new binary is verified, enable intake
+and check a new selection, an explicit replacement and private image access.
+Before rolling back to the previous binary, disable this capability again:
+older upload/publication code replaces images by account and must not run against
+accounts that now have multiple selections. Preserve the additive migration and
+saved selections while recovering. Production account availability is a separate
+prerequisite; a passing local test does not demonstrate Neon is available.

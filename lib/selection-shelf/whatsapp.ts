@@ -12,7 +12,7 @@ import { selectionShelfEnabled, ShelfError, shelfStatusLabels, shelfSourceMessag
 import { createSelectionShelfService, type ShelfCatalog } from "./service";
 
 const DAY = 86_400_000;
-const help = "Envía una foto de tu estantería. Chisan identificará los productos y preparará una propuesta con sus productores del catálogo. Podrás desmarcar y publicar desde tu cuenta. ESTADO consulta el último envío; CANCELAR retira la foto pendiente; DESCONECTAR desvincula el número.";
+const help = "Envía una foto de una estantería, plano, cartel o programa. Puedes añadir qué quieres mostrar en el texto de la foto. Cada envío crea una selección independiente. Chisan identificará los productores y preparará una propuesta con sus productores del catálogo. Podrás desmarcar y publicar desde tu cuenta. ESTADO consulta el último envío; CANCELAR retira la foto pendiente; DESCONECTAR desvincula el número.";
 export async function createShelfWhatsAppLink(database: Database, userId: string) {
   if (!selectionShelfEnabled()) throw new ShelfError("access");
   return database.transaction(async (tx) => {
@@ -47,7 +47,7 @@ export function createShelfWhatsAppHandler(deps: { catalog: ShelfCatalog; image:
           .where(and(eq(links.userId, pending.userId), eq(links.tokenHash, hash), gt(links.tokenExpiresAt, new Date()), isNull(links.sender))).returning();
         if (!linked) return "El código ha caducado o se ha utilizado. Genera otro desde Chisan.";
         await tx.insert(auditEvents).values({ actorKind: "user", actorUserId: linked.userId, action: "selection_shelf.whatsapp_linked", targetType: "user", targetId: linked.userId });
-        return `WhatsApp vinculado a tu estantería durante 30 días. ${help}`;
+        return `WhatsApp vinculado a tus selecciones durante 30 días. ${help}`;
       }
     }
     let [link] = await tx.select().from(links).where(eq(links.sender, message.from)).limit(1);
@@ -65,15 +65,19 @@ export function createShelfWhatsAppHandler(deps: { catalog: ShelfCatalog; image:
     // Nested service transactions use savepoints on this same connection. The
     // photo and inbox receipt commit together. Inference starts after commit; publication belongs to the owner.
     const service = createSelectionShelfService({ database: tx as unknown as Database, catalog: deps.catalog, enabled: selectionShelfEnabled });
-    if (command === "ESTADO") {
+    if (/^(ESTADO|CÓMO VA|COMO VA|VER ESTADO)[?.!]*$/.test(command)) {
       const [latest] = await service.ownerStatus(link.userId);
-      return latest ? `Tu última foto: ${shelfStatusLabels[latest.status]}. ${getAppUrl()}/cuenta/estanteria` : help;
+      return latest ? `Tu última foto: ${shelfStatusLabels[latest.status]}. ${getAppUrl()}/cuenta/estanteria?id=${latest.id}` : help;
     }
-    if (command === "CANCELAR") {
+    if (/^(CANCELAR|CANCELA|CANCELA EL ENVÍO)[.!]*$/.test(command)) {
       const records = await service.ownerStatus(link.userId);
       const pending = records.find((record) => ["received", "queued", "processing", "review", "ready"].includes(record.status));
       if (pending) await service.withdraw(link.userId, pending.id);
       return pending ? "Foto pendiente retirada. La foto ya publicada sigue visible." : "No hay ninguna foto pendiente. Puedes retirar la publicada desde tu cuenta.";
+    }
+    if (message.type === "text" && text && !code) {
+      await tx.update(links).set({ instruction: text.slice(0, 600) }).where(eq(links.userId, link.userId));
+      return "De acuerdo. Envía la imagen, plano o programa y usaré tu indicación para preparar el mapa. Podrás revisar los productores antes de publicar.";
     }
     if (message.type !== "image" || !message.image) return help;
     const [receipt] = await tx.select({ id: selectionShelves.id }).from(selectionShelves).where(eq(selectionShelves.messageId, shelfSourceMessageKey("whatsapp", message.id)!)).limit(1);
@@ -85,8 +89,9 @@ export function createShelfWhatsAppHandler(deps: { catalog: ShelfCatalog; image:
       return `No hemos podido recibir la foto desde WhatsApp. Vuelve a enviarla o súbela desde ${getAppUrl()}/cuenta/estanteria.`;
     }
     try {
-      await service.submit(link.userId, image, "whatsapp", message.id);
-      return `Foto recibida. Prepararemos una propuesta con los productores identificados. Revisa, desmarca y publica desde ${getAppUrl()}/cuenta/estanteria. Tu foto publicada seguirá visible hasta que publiques la nueva.`;
+      const id = await service.submit(link.userId, image, "whatsapp", message.id, { kind: "auto", title: "Selección desde WhatsApp", instruction: (message.image.caption ?? link.instruction).slice(0, 600) });
+      await tx.update(links).set({ instruction: "" }).where(eq(links.userId, link.userId));
+      return `Foto recibida. Prepararemos una propuesta con los productores identificados. Revisa, desmarca y publica desde ${getAppUrl()}/cuenta/estanteria?id=${id}. Tus selecciones anteriores se conservan.`;
     } catch (error) {
       if (error instanceof ShelfError) {
         if (error.code === "quota") return "Has alcanzado el límite de 10 fotos en 24 horas. Prueba mañana.";

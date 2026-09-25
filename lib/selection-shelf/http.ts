@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { ProducerImageError } from "../accounts/prepare-producer-image";
-import { SHELF_LIMITS, ShelfError } from "./policy";
+import { SHELF_LIMITS, ShelfError, shelfInputSchema } from "./policy";
 import type { createSelectionShelfService } from "./service";
 
 const headers = {
@@ -35,7 +35,7 @@ export async function readShelfBody(request: Request, limit: number) {
   return Buffer.concat(chunks);
 }
 
-export function createShelfMutationHandler(deps: Dependencies, operation: "upload" | "review" | "withdraw" | "publish") {
+export function createShelfMutationHandler(deps: Dependencies, operation: "upload" | "review" | "withdraw" | "publish" | "correct" | "search" | "event" | "export-event") {
   return async (request: Request) => {
     if (!deps.enabled()) return reply("unavailable", 503);
     const url = new URL(request.url);
@@ -47,7 +47,12 @@ export function createShelfMutationHandler(deps: Dependencies, operation: "uploa
       const service = deps.service();
       if (operation === "upload") {
         if (request.headers.get("x-chisan-shelf-consent") !== "1") return reply("consent", 422);
-        const id = await service.submit(account.id, await readShelfBody(request, SHELF_LIMITS.inputBytes), "web");
+        const context = request.headers.get("x-chisan-image-context");
+        if (context && context.length > 7000) return reply("invalid", 422);
+        const input = context ? shelfInputSchema.parse(JSON.parse(decodeURIComponent(context))) : undefined;
+        const requestId = request.headers.get("x-chisan-shelf-request");
+        if (requestId && !z.uuid().safeParse(requestId).success) return reply("invalid", 422);
+        const id = await service.submit(account.id, await readShelfBody(request, SHELF_LIMITS.inputBytes), "web", requestId ?? undefined, input);
         deps.schedule(id);
         return Response.json({ id }, { status: 202, headers });
       }
@@ -57,13 +62,20 @@ export function createShelfMutationHandler(deps: Dependencies, operation: "uploa
         await service.withdraw(account.id, id);
         return Response.json({ ok: true }, { headers });
       }
+      if (operation === "event") return Response.json(await service.requestEvent(account.id, raw), { headers });
+      if (operation === "export-event") return Response.json(await service.exportEvent(account.id, raw), { headers });
+      if (operation === "search") {
+        const { id, query } = z.object({ id: z.uuid(), query: z.string().max(100) }).strict().parse(raw);
+        return Response.json({ candidates: await service.search(account.id, id, query) }, { headers });
+      }
+      if (operation === "correct") return Response.json(await service.correct(account.id, raw), { headers });
       const result = operation === "publish" ? await service.publish(account.id, raw) : await service.review(account.id, raw);
       if (operation === "review" && raw.action === "analyze") deps.schedule(raw.id);
       return Response.json(result, { headers });
     } catch (error) {
       if (error instanceof ShelfError) return reply(error.code, ({ access: 403, missing: 404, changed: 409, selection: 422, quota: 429, budget: 429, invalid: 422, profile: 422 })[error.code]);
       if (error instanceof ProducerImageError) return reply(error.code, error.code === "size" ? 413 : 422);
-      if (error instanceof z.ZodError || error instanceof SyntaxError) return reply("invalid", 422);
+      if (error instanceof z.ZodError || error instanceof SyntaxError || error instanceof URIError) return reply("invalid", 422);
       return reply("unavailable", 503);
     }
   };

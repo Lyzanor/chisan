@@ -1,7 +1,8 @@
+import type { StoredEventRequest } from "../selection-shelf/event-request";
 import { sql } from "drizzle-orm";
 import { pgTable, uuid, varchar, text, integer, jsonb, timestamp, customType, index, uniqueIndex, check } from "drizzle-orm/pg-core";
 import { users, accountSelections } from "./schema";
-import type { ShelfPoint, ShelfDetection } from "../selection-shelf/policy";
+import type { ShelfPoint, ShelfDetection, ShelfInput } from "../selection-shelf/policy";
 
 const time = (name: string) => timestamp(name, { withTimezone: true, mode: "date" });
 const imageBytes = customType<{ data: Buffer; driverData: Buffer }>({
@@ -15,6 +16,8 @@ export const selectionShelves = pgTable("selection_shelves", {
   id: uuid("id").primaryKey().defaultRandom(),
   userId: uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
   selectionId: uuid("selection_id").references(() => accountSelections.id, { onDelete: "cascade" }),
+  eventRequest: jsonb("event_request").$type<StoredEventRequest>(),
+  input: jsonb("input").$type<ShelfInput>().notNull().default({ kind: "auto", instruction: "", title: "Mi selección" }),
   channel: varchar("channel", { length: 32 }).notNull(),
   messageId: varchar("message_id", { length: 256 }).unique(),
   sha256: varchar("sha256", { length: 64 }).notNull(),
@@ -34,8 +37,10 @@ export const selectionShelves = pgTable("selection_shelves", {
   createdAt: time("created_at").notNull().defaultNow(),
   updatedAt: time("updated_at").notNull().defaultNow(),
 }, (table) => [
-  uniqueIndex("selection_shelves_published_idx").on(table.userId).where(sql`${table.status} = 'published'`),
-  uniqueIndex("selection_shelves_pending_idx").on(table.userId).where(sql`${table.status} in ('received','queued','processing','review','ready')`),
+  uniqueIndex("selection_shelves_published_idx").on(table.userId).where(sql`${table.status} = 'published' and ${table.selectionId} is null`),
+  uniqueIndex("selection_shelves_pending_idx").on(table.userId).where(sql`${table.status} in ('received','queued','processing','review','ready') and ${table.selectionId} is null`),
+  uniqueIndex("selection_shelves_selection_published_idx").on(table.selectionId).where(sql`${table.status} = 'published'`),
+  uniqueIndex("selection_shelves_selection_pending_idx").on(table.selectionId).where(sql`${table.status} in ('received','queued','processing','review','ready')`),
   index("selection_shelves_selection_id_idx").on(table.selectionId),
   index("selection_shelves_queue_idx").on(table.status, table.createdAt),
   check("selection_shelves_status_check", sql`${table.status} in ('received','queued','processing','review','ready','published','rejected','superseded')`),
@@ -48,6 +53,7 @@ export const selectionShelves = pgTable("selection_shelves", {
 
 export const selectionShelfWhatsAppLinks = pgTable("selection_shelf_whatsapp_links", {
   userId: uuid("user_id").primaryKey().references(() => users.id, { onDelete: "cascade" }),
+  instruction: varchar("instruction", { length: 600 }).notNull().default(""),
   sender: varchar("sender", { length: 15 }).unique(),
   tokenHash: varchar("token_hash", { length: 64 }).unique(),
   tokenExpiresAt: time("token_expires_at"),

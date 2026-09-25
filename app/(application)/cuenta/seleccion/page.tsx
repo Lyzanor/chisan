@@ -84,7 +84,7 @@ export default async function SelectionPreviewPage({
           </p>
         </div>
         <div className="account-inline-actions">
-          {selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="chisan-button chisan-button--primary">Foto de mi estantería</Link> : null}
+          {selectionShelfEnabled() ? <Link href="/cuenta/estanteria" className="chisan-button chisan-button--primary">Crear un mapa desde una imagen</Link> : null}
           <Link
             href="/cuenta/siguiendo"
             className="chisan-button"

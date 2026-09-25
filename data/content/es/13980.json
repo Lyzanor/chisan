@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "country": "es",
+  "producer_id": 13980,
+  "products": [],
+  "gallery": [
+    {
+      "id": "offerings-3-jpg-1",
+      "src": "/productores/es/content/13980/3b2f47169b99950261789b6a71415f29bfa34545574cc32d649b5d7c00fa87e7.webp",
+      "alt": "Xurros artesans tradicionals acabats de fer",
+      "caption": "",
+      "locale": "es",
+      "width": 473,
+      "height": 456,
+      "credit": "Web oficial de Churros Cruz"
+    },
+    {
+      "id": "offerings-2-jpg-1",
+      "src": "/productores/es/content/13980/9c200c83291afb67ea1284a8a3ed69ac03a7c51bc66e3d2606946ecc8cfa73c2.webp",
+      "alt": "Porres tradicionals de xurreria artesana",
+      "caption": "",
+      "locale": "es",
+      "width": 473,
+      "height": 456,
+      "credit": "Web oficial de Churros Cruz"
+    },
+    {
+      "id": "offerings-1-jpg-1",
+      "src": "/productores/es/content/13980/08c80f9fbb19a8609f9e232501544c45fcf590dcd021a264a48a9cfa54a7d621.webp",
+      "alt": "Xurros acompanyats de xocolata desfeta",
+      "caption": "",
+      "locale": "es",
+      "width": 472,
+      "height": 456,
+      "credit": "Web oficial de Churros Cruz"
+    },
+    {
+      "id": "foto",
+      "src": "/productores/es/content/13980/826685b0193bc4d71f540e919b93d3f757d706210d421d438d1020291d1ac71c.webp",
+      "alt": "Food truck i servei de Churros Cruz",
+      "caption": "",
+      "locale": "es",
+      "width": 585,
+      "height": 345,
+      "credit": "Web oficial de Churros Cruz"
+    },
+    {
+      "id": "foto-2",
+      "src": "/productores/es/content/13980/de1529b38f131775da92a802a2240d656e3504ab0621dba75d8061490de6a074.webp",
+      "alt": "Elaboració tradicional de xurros a l'obrador",
+      "caption": "",
+      "locale": "es",
+      "width": 585,
+      "height": 345,
+      "credit": "Web oficial de Churros Cruz"
+    }
+  ],
+  "links": [],
+  "translations": []
+}

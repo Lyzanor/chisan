@@ -1136,6 +1136,20 @@ producer's map card. Escumostra, which has a plan, does not render the section.
   Catalan band label, with an independent Vision reader. The fixture is not a
   public route and was removed after QA.
 
+## 2026-09-25 — Image-to-selection and event proposal intake
+
+- Extended the existing shelf form with an optional request, automatic document
+  interpretation and independent selection destinations; retained shared controls
+  and the annotated image/origin viewer.
+- Checked the actual upload, correction and event-request components in a disposable
+  local fixture at 390px first, then 1440px. Labels, disclosure controls, selection
+  checkboxes and event dates render without horizontal overflow or framework error
+  overlays. Added existing account field/fieldset classes after the phone review.
+- The fixture uses synthetic private proposal data and is removed after QA. Account
+  mutations and authorization are exercised with isolated PGlite tests; live
+  authenticated/Meta/provider verification remains blocked by production account
+  availability and requires the normal activation checks. No live AI calls made.
+
 ## 2026-09-25 — Producer logos on the page white
 
 Producer identity tiles were composed on `#F3F0E8`, a warm beige that read as a

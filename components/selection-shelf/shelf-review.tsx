@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SHELF_LIMITS, shelfPointsSchema, type ShelfPoint } from "@/lib/selection-shelf/policy";
 import type { createSelectionShelfService } from "@/lib/selection-shelf/service";
+import { ShelfEventExport } from "./shelf-event-request";
 import styles from "./shelf.module.css";
 
 type Detail = Awaited<ReturnType<ReturnType<typeof createSelectionShelfService>["reviewDetail"]>>;
@@ -75,12 +76,13 @@ export function ShelfReview({ detail }: { detail: Detail }) {
     finally { setBusy(false); }
   }
   return <>
+    {detail.eventRequest ? <ShelfEventExport id={detail.id} version={version} request={detail.eventRequest} /> : null}
     <section className={styles.analysisStatus} aria-label="AI analysis status">
       <p role="status"><strong>{preparing ? (status === "queued" ? "Request received — waiting for analysis" : "AI is identifying labels and placing points") : status === "ready" ? "Proposal ready for the owner" : detail.analysisError ? "Analysis could not be completed" : `Photo status: ${status}`}</strong></p>
       <p>The AI identifies producers and places the points automatically. The owner then chooses what to publish from their account.</p>
       {preparing ? <p>{pollingExpired ? "Automatic refresh has paused. Check the saved result; the request may need attention from Chisan." : "This page updates automatically. You do not need to add points or request another analysis."}</p> : null}
       {status === "review" && detail.analysisError ? <p role="alert">{analysisFailures[failureCode ?? ""] ?? `Automatic analysis failed (${detail.analysisError}). Check the API attempt details before retrying.`}</p> : null}
-      {status === "ready" ? <p>{points.length} points linked to {new Set(points.map((point) => point.producerKey)).size} catalog producers.{detail.viewerIsOwner ? <> <Link href="/cuenta/estanteria">Open your owner proposal</Link>.</> : null}</p> : null}
+      {status === "ready" ? <p>{points.length} points linked to {new Set(points.map((point) => point.producerKey)).size} catalog producers.{detail.viewerIsOwner ? <> <Link href={`/cuenta/estanteria?id=${detail.id}`}>Open your owner proposal</Link>.</> : null}</p> : null}
       {status === "review" && !detail.analysisError && !points.length ? <p>No clear catalog matches were found. The photo remains saved for review; no favorites have been added.</p> : null}
       {detail.allowance ? <p>Shared AI allowance: <strong>{detail.allowance.used}/{detail.allowance.limit} attempts used</strong> · {detail.allowance.remaining} remaining. Failed API attempts also count.</p> : null}
       <div className={styles.actions}>

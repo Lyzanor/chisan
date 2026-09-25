@@ -1,3 +1,8 @@
+import { publicSelectionOwner } from "../lib/accounts/selections";
+import { createRequire } from "node:module";
+import { execFileSync } from "node:child_process";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { createOpenAIProvider, openAIConfiguration } from "../lib/ai/openai";
 import { aiCallLimit, readAIAllowance } from "../lib/ai/allowance";
 import { createAIProvider } from "../lib/ai/runtime";
@@ -6,7 +11,7 @@ import { createProductExtractor } from "../lib/intake/extractor";
 import { emptyCandidate } from "../lib/intake/product";
 import { withAIAllowance, type StructuredAIProvider } from "../lib/ai/structured";
 import assert from "node:assert/strict";
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, mkdtemp, writeFile, rm } from "node:fs/promises";
 import test from "node:test";
 import { PGlite } from "@electric-sql/pglite";
 import { drizzle } from "drizzle-orm/pglite";
@@ -317,12 +322,17 @@ test("WhatsApp binding routes shelf photos once, preserves other accounts and ne
       return (await db.select().from(schema.whatsappInbox).where(eq(schema.whatsappInbox.id, id)))[0];
     }
     assert.match((await receive(`VINCULAR ${token}`)).reply!, /estantería/);
+    assert.match((await receive("Traslada los expositores de este programa al mapa")).reply!, /Envía la imagen/);
     const imageReceipt = await receive(undefined, true);
     assert.match(imageReceipt.reply!, /Foto recibida/); assert.equal(images, 1);
     assert.equal(imageReceipt.message.image, undefined, "raw inbox content is removed after receipt");
     await processSender(db, imageReceipt.sender, dependencies);
     assert.equal(images, 1, "a repeated signed event cannot create another photo or paid attempt");
     assert.equal((await service.ownerStatus(owner.id))[0].status, "queued");
+    const savedInput = await f.row((await service.ownerStatus(owner.id))[0].id);
+    assert.equal(savedInput.input.instruction, "Traslada los expositores de este programa al mapa");
+    assert(savedInput.selectionId);
+    assert.equal((await db.select().from(schema.selectionShelfWhatsAppLinks))[0].instruction, "");
     let analyses = 0;
     const processShelf = createShelfProcessor({ database: db, service, detector: () => ({ profile: { provider: "fake", model: "test", promptVersion: "1" }, detect: async () => { analyses++; return { points: [{ producerName: "Producer 2", productName: null, label: "Visible", x: 0.5, y: 0.5 }] }; } }) });
     assert.equal(await processShelf(), true); assert.equal(await processShelf(), false); assert.equal(analyses, 1);
@@ -437,4 +447,89 @@ test("incomplete API output still records reported token usage and never retries
   assert.equal(calls, 1);
   assert.equal(reports.length, 1);
   assert.match(JSON.stringify(reports), /"outputTokens":1024/);
+});
+
+test("independent image selections preserve profile privacy, isolate replacements and enforce owner corrections", async () => {
+  const f = await fixture();
+  try {
+    const { service, db, owner, stranger } = f;
+    await db.update(users).set({ publicProfileVisibility: "private" }).where(eq(users.id, owner.id));
+    const context = { kind: "plan" as const, title: "Feria de otoño", instruction: "Lleva los expositores al mapa" };
+    const first = await service.submit(owner.id, await photo(), "web", "browser-receipt", context);
+    assert.equal(await service.submit(owner.id, await photo(), "web", "browser-receipt", context), first, "retrying an uncertain upload does not create another selection");
+    const second = await service.submit(owner.id, await photo("blue"), "web", undefined, { ...context, kind: "program", title: "Programa" });
+    assert.equal((await f.row(first)).status, "queued", "new selections do not supersede other pending work");
+    await f.approve(first); await f.approve(second, [{ ...point, producerKey: "es:2" }]);
+    assert.equal(await service.ownerProposal(stranger.id, first), null);
+    assert.deepEqual(await service.search(owner.id, first, "producer"), await catalog());
+    await assert.rejects(service.search(stranger.id, first, "producer"), ShelfError);
+    await assert.rejects(service.correct(stranger.id, { id: first, version: (await f.row(first)).version, action: "save", points: [point], note: "" }), ShelfError);
+    const version = (await f.row(first)).version;
+    await service.correct(owner.id, { id: first, version, action: "save", points: [{ ...point, producerKey: "es:2" }], note: "" });
+    await assert.rejects(service.correct(owner.id, { id: first, version, action: "save", points: [point], note: "" }), ShelfError);
+    const publish = async (id: string) => service.publish(owner.id, { id, version: (await f.row(id)).version, producerKeys: ["es:2"], selection: { title: "Mi feria", description: "Productores del programa" } });
+    const result = await publish(first); await publish(second);
+    assert.match(result.handle, /^seleccion-/);
+    const firstRow = await f.row(first);
+    assert(await service.publicShelf(firstRow.selectionId!));
+    await db.update(schema.accountSelections).set({ publicHandle: owner.publicHandle! }).where(eq(schema.accountSelections.id, firstRow.selectionId!));
+    assert.equal((await service.publicShelf(owner.id))?.id, first, "the migrated original shelf remains accessible through the legacy account preview");
+    assert(await service.publicShelf((await f.row(second)).selectionId!));
+    assert.equal((await db.select().from(users).where(eq(users.id, owner.id)))[0].publicProfileVisibility, "private");
+    assert.equal((await db.select().from(favorites)).length, 0);
+    await assert.rejects(service.submit(owner.id, await photo("green"), "web", undefined, { ...context, selectionId: stranger.id }), ShelfError);
+    const replacement = await service.submit(owner.id, await photo("green"), "web", undefined, { ...context, selectionId: firstRow.selectionId! });
+    assert.equal((await service.publicShelf(firstRow.selectionId!))?.id, first);
+    await f.approve(replacement, [{ ...point, producerKey: "es:2" }]); await publish(replacement);
+    assert.equal((await service.publicShelf(firstRow.selectionId!))?.id, replacement);
+    assert.equal((await f.row(second)).status, "published");
+    await service.withdraw(owner.id, replacement);
+    assert.equal(await service.publicShelf(firstRow.selectionId!), null);
+    assert.equal(await service.readImage(replacement), null);
+  } finally { await f.pg.close(); }
+});
+
+test("event requests snapshot the chosen roster; only staff can export a private draft with a separately located venue", async () => {
+  const f = await fixture();
+  try {
+    const id = await f.service.submit(f.owner.id, await photo(), "web", undefined, { kind: "plan", title: "Feria", instruction: "" });
+    await f.approve(id, [point, { ...point, id: "second", producerKey: "es:2" }]);
+    const details = { title: "Feria", description: "Productores locales", startDate: "2026-10-02", endDate: "2026-10-04", venueName: "Parc", municipality: "Barcelona", organizerName: "Organizador", sourceUrl: "https://example.org/feria", category: "Alimentos", timeZone: "Europe/Madrid" };
+    const submission = { id, version: (await f.row(id)).version, details, producerKeys: ["es:1"] };
+    await assert.rejects(f.service.requestEvent(f.stranger.id, submission), ShelfError);
+    await assert.rejects(f.service.requestEvent(f.owner.id, { ...submission, details: { ...details, endDate: "2026-01-01" } }));
+    await f.service.requestEvent(f.owner.id, submission);
+    assert.equal((await f.row(id)).status, "ready", "requesting an event does not publish the image");
+    const request = { id, version: (await f.row(id)).version, slug: "feria-2026", latitude: 41.4, longitude: 2.1 };
+    await assert.rejects(f.service.exportEvent(f.owner.id, request), ShelfError);
+    await assert.rejects(f.service.exportEvent(f.reviewer.id, { ...request, version: 1 }), ShelfError);
+    await assert.rejects(f.service.exportEvent(f.reviewer.id, { ...request, latitude: 0, longitude: 0 }));
+    const bundle = await f.service.exportEvent(f.reviewer.id, request);
+    assert.equal(bundle.event.status, "draft"); assert.equal(bundle.event.featuredInDiscover, false);
+    assert.deepEqual(bundle.event.exhibitors, [{ country: "es", producerId: 1, presence: "stand" }]);
+    assert.equal(bundle.event.plan?.points[0].x, point.x);
+    assert.equal(bundle.event.venue.latitude, 41.4);
+    assert(!JSON.stringify(bundle.event).includes(f.owner.id));
+    assert.equal(bundle.proposalId, id);
+    const directory = await mkdtemp(path.join(tmpdir(), "chisan-event-proposal-"));
+    try {
+      const snapshot = path.join(directory, "private.json");
+      await writeFile(snapshot, JSON.stringify(bundle));
+      const args = ["--import", createRequire(path.resolve("package.json")).resolve("tsx"), path.resolve("scripts/prepare-event-proposal.ts"), "--snapshot", snapshot];
+      execFileSync(process.execPath, args, { cwd: directory, stdio: "pipe" });
+      const prepared = JSON.parse(await readFile(path.join(directory, "data/events/es/feria-2026.json"), "utf8"));
+      assert.equal(prepared.status, "draft");
+      assert.deepEqual(prepared.exhibitors, bundle.event.exhibitors);
+      assert.throws(() => execFileSync(process.execPath, args, { cwd: directory, stdio: "pipe" }), /Refusing to overwrite/);
+    } finally { await rm(directory, { recursive: true, force: true }); }
+    assert.equal((await sharp(Buffer.from(bundle.imageBase64, "base64")).metadata()).format, "webp");
+    assert.equal(await f.service.publicShelf((await f.row(id)).selectionId!), null);
+  } finally { await f.pg.close(); }
+});
+
+
+test("a public selection does not disclose its private owner's name, handle or avatar", () => {
+  const owner = { displayName: "Private name", publicHandle: "private-handle", avatarUrl: "/api/account/avatar/private" };
+  assert.deepEqual(publicSelectionOwner({ ...owner, visibility: "private" }), { displayName: null, publicHandle: null, avatarUrl: null });
+  assert.deepEqual(publicSelectionOwner({ ...owner, visibility: "public" }), owner);
 });
