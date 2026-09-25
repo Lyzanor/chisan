@@ -7,6 +7,7 @@ import importlib.util
 import sys
 from io import BytesIO
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 SCRIPT = Path(__file__).resolve().parent / "enrich-producer-gallery.py"
 
@@ -33,6 +34,16 @@ def check(label: str, actual, expected) -> None:
 check("keeps informative alt", enrich_gallery.clean_alt_text("Obrador de pa", "http://x/1.jpg"), "Obrador de pa")
 check("discards generic og:image", enrich_gallery.clean_alt_text("og:image", "http://x/el-obrador.jpg"), "El obrador")
 check("discards generic foto", enrich_gallery.clean_alt_text("foto", "http://x/queso-curado.png"), "Queso curado")
+check(
+    "cleans CMS resizer and scale suffixes",
+    enrich_gallery.clean_alt_text("", "http://x/esdeveniments_barri_sud_54.remini-enhanced-2-scaled.jpg"),
+    "Esdeveniments barri sud",
+)
+check(
+    "cleans WordPress dimension suffixes",
+    enrich_gallery.clean_alt_text("", "http://x/obrador-pan-1024x768.webp"),
+    "Obrador pan",
+)
 check("trims long alt to 160", len(enrich_gallery.clean_alt_text("A" * 200, "http://x/img.jpg")), 160)
 
 # --- make_item_id -------------------------------------------------------------
@@ -79,6 +90,44 @@ large_img.save(buf_large, format="JPEG")
 res_large = enrich_gallery.normalize_photo(buf_large.getvalue())
 check("normalize_photo downscales long edge to 1600", res_large[0] if res_large else 0, 1600)
 check("normalize_photo preserves ratio on downscale", res_large[1] if res_large else 0, 800)
+
+# --- extract_images_from_soup -------------------------------------------------
+html_snippet = """
+<html>
+  <head><meta property="og:image" content="/images/og.jpg"></head>
+  <body>
+    <picture>
+      <source srcset="/images/pic-small.jpg 400w, /images/pic-large.jpg 1200w">
+      <img src="/images/pic-fallback.jpg" alt="Foto en picture">
+    </picture>
+    <img data-lazy-src="/images/lazy-field.jpg" alt="Campo de trigo">
+    <div style="background-image: url('/images/hero-bg.jpg'); height: 300px;"></div>
+    <img src="/icons/visa.png" alt="Visa">
+  </body>
+</html>
+"""
+soup = BeautifulSoup(html_snippet, "html.parser")
+extracted = enrich_gallery.extract_images_from_soup(soup, "https://artesa.cat/sobre-nosaltres")
+urls = [u for u, alt, src in extracted]
+check("extracts og:image", "https://artesa.cat/images/og.jpg" in urls, True)
+check("extracts largest picture source", "https://artesa.cat/images/pic-large.jpg" in urls, True)
+check("extracts lazy image", "https://artesa.cat/images/lazy-field.jpg" in urls, True)
+check("extracts background-image", "https://artesa.cat/images/hero-bg.jpg" in urls, True)
+check("filters out payment junk", any("visa.png" in u for u in urls), False)
+
+# --- parse_decision_line ------------------------------------------------------
+p1 = enrich_gallery.parse_decision_line('123 cand-01 "Obrador de pa artesà"')
+check("parses standard decision line", p1, ("123", "cand-01", "Obrador de pa artesà"))
+
+p2 = enrich_gallery.parse_decision_line('456 cand-02 cover "Façana principal"')
+check("parses decision line with legacy role", p2, ("456", "cand-02", "Façana principal"))
+
+p3 = enrich_gallery.parse_decision_line('# comment')
+check("ignores commented line", p3, None)
+
+p4 = enrich_gallery.parse_decision_line('789 cand-03')
+check("parses line without alt text", p4, ("789", "cand-03", ""))
+
 
 if failures:
     print(f"enrich:gallery unit tests FAILED ({len(failures)} errors):", file=sys.stderr)

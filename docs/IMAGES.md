@@ -178,24 +178,48 @@ automatic decisions, and do not catch unique junk.
 `scripts/enrich-producer-gallery.py` discovers honest photo candidates (workshop,
 farm, elaboration, people and products) from the producer's official website. It
 inspects the homepage and relevant internal pages (such as `/nosotros`,
-`/el-obrador`, `/galeria` or `/productos`), filters out logos, icons, SVGs and UI
-junk, and normalizes candidate WebP files (max 1600 px on the long edge, preserving
-their true aspect ratio).
+`/el-obrador`, `/bodega`, `/galeria` or `/productos`), filters out logos, icons,
+SVGs and UI junk, extracts candidate images (including `<picture>`, `<source srcset>`
+and CSS background images), and normalizes candidate WebP files (max 1600 px on the
+long edge, preserving their true aspect ratio).
 
-1. **Sweep** an area or municipality into `.tmp/`:
+1. **Audit coverage** with `--inventory`:
+
+   Inspect existing gallery coverage across an area or entire country without crawling:
+
+   ```bash
+   pnpm enrich:gallery --inventory --country es --area [area]
+   ```
+
+   This reports producers with eligible websites, count distribution of existing
+   gallery packages (e.g., 5 photos, 1–4 photos, no gallery), and lists producers
+   lacking photos to help prioritize discovery sweeps.
+
+2. **Sweep** an area or municipality into `.tmp/`:
 
    ```bash
    pnpm enrich:gallery --area [area] --municipality "[municipality]" \
      --contact-sheet .tmp/gallery/[area]
    ```
 
-   This downloads candidates and generates an interactive visual contact sheet at
-   `.tmp/gallery/[area]/index.html`.
+   This downloads candidates, generates an interactive visual contact sheet at
+   `.tmp/gallery/[area]/index.html`, and writes an initial template
+   `.tmp/gallery/[area]/decisions.template.txt` listing all candidates with cleaned
+   alt text suggestions.
 
-2. **Review** the contact sheet in a browser. Select up to five photographs and
-   prepare a `decisions.txt` file (`<producer_id> <candidate_id> "Alt text"`).
+3. **Review** the contact sheet in a browser:
 
-3. **Apply** the reviewed selections:
+   Select up to five photographs per producer representing real production, premises
+   or products. Copy or uncomment rows into `.tmp/gallery/[area]/decisions.txt`:
+
+   ```text
+   <producer_id> <candidate_id> "Informative, honest alt text"
+   ```
+
+   Each selected photo should receive clear, concise alt text describing what is seen
+   in the producer's source language.
+
+4. **Apply** the reviewed selections:
 
    ```bash
    pnpm enrich:gallery --apply \
@@ -203,10 +227,13 @@ their true aspect ratio).
      --from .tmp/gallery/[area]
    ```
 
-   `apply` installs the normalized WebPs at
+   Pass `--replace` if you want to overwrite an existing standalone gallery instead of
+   appending/merging new photos.
+
+   `apply` installs normalized WebPs at
    `public/productores/<country>/content/<producer_id>/<sha256>.webp`, updates
-   `data/content/<country>/<producer_id>.json`, and verifies the result with
-   `check:content`.
+   `data/content/<country>/<producer_id>.json` preserving any products or people,
+   and verifies the updated content packages with `check:content`.
 
 
 ## Premium producer uploads and the declared demo

@@ -209,7 +209,9 @@ verifies actual format/dimensions, existence and containment inside `public/`.
 
 Follow `docs/IMAGES.md` for sourcing, rights and visual review. The existing
 main-image composition is not mandatory for a gallery: preserve the image's
-honest aspect ratio. A model-generated product or production scene is not
+honest aspect ratio. For editorial discovery and batch curation of standalone
+galleries from official producer websites, use `pnpm enrich:gallery` (see
+`docs/IMAGES.md`). A model-generated product or production scene is not
 producer evidence. There is no remote image fetch or deployed catalog-filesystem upload. The private account upload workflow below accepts local files.
 Keep originals and private permissions outside the public package.
 
