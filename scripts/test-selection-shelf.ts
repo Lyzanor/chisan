@@ -506,7 +506,7 @@ test("event requests snapshot the chosen roster; only staff can export a private
     await assert.rejects(f.service.exportEvent(f.reviewer.id, { ...request, latitude: 0, longitude: 0 }));
     const bundle = await f.service.exportEvent(f.reviewer.id, request);
     assert.equal(bundle.event.status, "draft"); assert.equal(bundle.event.featuredInDiscover, false);
-    assert.deepEqual(bundle.event.exhibitors, [{ country: "es", producerId: 1 }]);
+    assert.deepEqual(bundle.event.exhibitors, [{ country: "es", producerId: 1, presence: "stand" }]);
     assert.equal(bundle.event.plan?.points[0].x, point.x);
     assert.equal(bundle.event.venue.latitude, 41.4);
     assert(!JSON.stringify(bundle.event).includes(f.owner.id));
