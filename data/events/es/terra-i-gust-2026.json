@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "slug": "terra-i-gust-2026",
+  "country": "es",
+  "locale": "es",
+  "status": "published",
+  "featuredInDiscover": true,
+  "title": "Terra i Gust 2026",
+  "description": "La sexta Fiesta de la Alimentación Sostenible de la Mercè se celebra del 25 al 27 de septiembre en el paseo de los Til·lers del Parc de la Ciutadella. Horarios: viernes de 18 a 22.30 h, sábado y domingo de 12 a 22.30 h. Reúne 14 restaurantes de proximidad, un mercado de pequeñas productoras, vinos naturales, cerveza artesana, showcookings, talleres y conciertos.",
+  "category": "Alimentos",
+  "startDate": "2026-09-25",
+  "endDate": "2026-09-27",
+  "timeZone": "Europe/Madrid",
+  "venue": {
+    "name": "Parc de la Ciutadella (paseo de los Til·lers)",
+    "municipality": "Barcelona",
+    "latitude": 41.388178,
+    "longitude": 2.186597
+  },
+  "organizerUrl": "https://www.barcelona.cat/alimentaciosostenible/es/terra-i-gust",
+  "organizerName": "Ajuntament de Barcelona",
+  "editorialNote": "La organización no publica plano ni números de puesto. Enlazamos las productoras del mercado, las bodegas del espacio de vinos naturales, la kombucha y la granja cervecera de la charla con cata del domingo cuando hemos podido identificar su unidad productiva publicada en Chisan. Quedan fuera los 14 restaurantes, que no son unidades productivas, las cerveceras que selecciona Barcelona Beer Festival, que no se nombran, y los puestos que aún no están en Chisan (Mellow Sheng, Organic Africa Chocolate, Forno Bomba, DeCollserola y Celler Nessu) o cuya unidad no hemos podido precisar (helados Delacrem). La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
+  "exhibitors": [
+    {
+      "country": "es",
+      "producerId": 11964
+    },
+    {
+      "country": "es",
+      "producerId": 8430
+    },
+    {
+      "country": "es",
+      "producerId": 7510
+    },
+    {
+      "country": "es",
+      "producerId": 11022
+    },
+    {
+      "country": "es",
+      "producerId": 12621
+    },
+    {
+      "country": "es",
+      "producerId": 4098
+    },
+    {
+      "country": "es",
+      "producerId": 8237
+    },
+    {
+      "country": "es",
+      "producerId": 8197
+    }
+  ],
+  "sources": [
+    {
+      "title": "Terra i Gust 2026: programa, restauración y productoras — Ajuntament de Barcelona",
+      "url": "https://www.barcelona.cat/alimentaciosostenible/es/terra-i-gust",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "Programa oficial de Terra i Gust 2026 (A5)",
+      "url": "https://www.barcelona.cat/alimentaciosostenible/sites/default/files/2026-09/Terra_Gust_programa_A5.pdf",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "Nota de prensa: Terra i Gust torna per la Mercè amb una 6a edició — Ajuntament de Barcelona",
+      "url": "https://ajuntament.barcelona.cat/premsa/2026/08/29/la-festa-de-lalimentacio-sostenible-terra-i-gust-torna-per-la-merce-amb-una-6a-edicio-dedicada-al-comerc-de-proximitat/",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "Guía de Barcelona: ubicación de la Festa de l’Alimentació Sostenible",
+      "url": "https://guia.barcelona.cat/es/detall/festa-de-l-alimentacio-sostenible-terra-i-gust_99400657689.html",
+      "checkedAt": "2026-09-25"
+    }
+  ],
+  "publishedAt": "2026-09-25",
+  "updatedAt": "2026-09-25",
+  "image": {
+    "src": "/editorial/events/terra-i-gust-2026-poster.webp",
+    "alt": "Cartel oficial de Terra i Gust, Mercè 2026, con una ilustración de una aceitera y tomates entre edificios",
+    "width": 400,
+    "height": 567,
+    "credit": "Ajuntament de Barcelona",
+    "sourceUrl": "https://www.barcelona.cat/alimentaciosostenible/sites/default/files/2026-09/Terra_Gust_programa_A5.pdf",
+    "rights": "Portada del programa oficial publicada por la organización; se reproduce para identificar esta edición, sin alterar su diseño.",
+    "checkedAt": "2026-09-25"
+  }
+}
