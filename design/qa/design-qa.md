@@ -1135,3 +1135,28 @@ producer's map card. Escumostra, which has a plan, does not render the section.
   transparent corners) for producer and selection URLs, including a long
   Catalan band label, with an independent Vision reader. The fixture is not a
   public route and was removed after QA.
+
+## 2026-09-25 — Producer logos on the page white
+
+Producer identity tiles were composed on `#F3F0E8`, a warm beige that read as a
+dirty card on the white page and clashed with `surface-muted` fills. The image
+pipeline now composes on `#FFFFFF`, and the 9,939 existing compositions that
+still carried the cream canvas were moved to white from their published WebP:
+the flat canvas becomes white and only its anti-aliased rim is un-blended, so
+logo colours are unchanged. Dimensions stay 1600 × 1200; total producer assets
+went from 369 MB to 361 MB for the rewritten files.
+
+Logos whose near-white ink touched the canvas were reviewed one by one (659
+contact-sheet rows: current, white, tinted). White plates framing a logo merge
+into the page; 193 rows with white lettering, previously close to invisible on
+cream, had that ink darkened with the pipeline's existing low-contrast tint.
+Two rows whose partial tint would have misread the name keep their cream
+canvas. Twenty images that show funding, certification or payment marks
+instead of the producer were noted for separate editorial follow-up.
+
+Free-standing thumbnails (map carousel, roster rows, claim search and
+confirmation) gained a hairline edge so a white logo keeps its tile; identity
+link cards show the contained logo on white instead of grey bars. Checked area
+discovery with the roster open and two converted profiles at 390 × 844, then
+1440 × 900: no horizontal overflow, tiles read as white objects with a quiet
+edge. `pnpm check:images`, `pnpm test:images` and `pnpm check:design` pass.
