@@ -26,6 +26,13 @@ export type PublicAccountSelection = {
   };
 };
 
+/** Publishing a curated selection does not consent to personal attribution. */
+export function publicSelectionOwner(input: { visibility: PublicProfileVisibility; displayName: string | null; publicHandle: string | null; avatarUrl: string | null }) {
+  return input.visibility === "private"
+    ? { displayName: null, publicHandle: null, avatarUrl: null }
+    : { displayName: input.displayName, publicHandle: input.publicHandle, avatarUrl: input.avatarUrl };
+}
+
 export const findPublicAccountSelection = cache(
   async (rawHandle: string): Promise<PublicAccountSelection | null> => {
     const handle = normalizePublicHandle(rawHandle);
@@ -44,6 +51,7 @@ export const findPublicAccountSelection = cache(
         baseArea: accountSelections.baseArea,
         baseMunicipality: accountSelections.baseMunicipality,
         ownerDisplayName: users.displayName,
+        ownerVisibility: users.publicProfileVisibility,
         ownerHandle: users.publicHandle,
         ownerStatus: users.status,
       })
@@ -83,11 +91,7 @@ export const findPublicAccountSelection = cache(
       visibility: row.visibility,
       baseLocation,
       profileQrEnabled: qrEnabled,
-      owner: {
-        displayName: row.ownerDisplayName,
-        publicHandle: row.ownerHandle,
-        avatarUrl: presentation.avatarUrl,
-      },
+      owner: publicSelectionOwner({ visibility: row.ownerVisibility, displayName: row.ownerDisplayName, publicHandle: row.ownerHandle, avatarUrl: presentation.avatarUrl }),
     };
   },
 );
@@ -108,6 +112,7 @@ export async function listPublicSelectionsByUserId(
       baseArea: accountSelections.baseArea,
       baseMunicipality: accountSelections.baseMunicipality,
       ownerDisplayName: users.displayName,
+        ownerVisibility: users.publicProfileVisibility,
       ownerHandle: users.publicHandle,
     })
     .from(accountSelections)
@@ -136,10 +141,6 @@ export async function listPublicSelectionsByUserId(
           }
         : null,
     profileQrEnabled: false,
-    owner: {
-      displayName: row.ownerDisplayName,
-      publicHandle: row.ownerHandle,
-      avatarUrl: null,
-    },
+    owner: publicSelectionOwner({ visibility: row.ownerVisibility, displayName: row.ownerDisplayName, publicHandle: row.ownerHandle, avatarUrl: null }),
   }));
 }

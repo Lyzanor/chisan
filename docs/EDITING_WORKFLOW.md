@@ -86,7 +86,7 @@ reservation still enforces the limit atomically when concurrent work starts.
 | --- | --- | --- | --- |
 | Producer web editor | Active exact membership; premium entitlement for expanded fields/products; `producer_change_requests` | `/admin/cambios` | Existing controlled materializer |
 | WhatsApp text or photo | Expiring account binding, same membership and entitlement checks; automatically extracted product or news candidate becomes `producer_change_requests` | Same `/admin/cambios`, including structured channel and extraction history | Same controlled materializer |
-| Shelf photo from web or messaging | Active shelf capability and explicit publication consent; `selection_shelves` | Owner confirmation in `/cuenta/estanteria`; staff fallback in `/admin/estanterias` | Account presentation in PostgreSQL, never catalog facts |
+| Shelf, plan or programme image from web or messaging | Active shelf capability and explicit publication consent; `selection_shelves` | Owner correction and confirmation in `/cuenta/estanteria`; optional event request; staff fallback in `/admin/estanterias` | Account presentation in PostgreSQL, never catalog facts |
 | Community suggestion | Verified active account, unclaimed producer, scoped standard fields; `producer_suggestions`; no ownership rights | `/admin/sugerencias` | Editorial file edit and release; reviewer records the result afterward |
 | Editorial research | Evidence-backed editorial decision | [Editorial workflow](EDITORIAL.md) | Reviewed file edit, validation, Git and deployment |
 
@@ -172,3 +172,8 @@ rejection. These tests run without real provider calls or changes to the working
 Complete the real Meta/OpenAI and recovery smoke tests in
 [WhatsApp Assistant](WHATSAPP_ASSISTANT.md) before enabling the pilot. Production
 activation, database migration and deployment remain separate operational work.
+
+Image intake can also prepare an account-owned event proposal. The owner request,
+chosen roster and editorial export are defined in [Events](EVENTS.md#account-proposals-from-images).
+The same private extraction and shared image/map presentation are reused; personal
+follows remain unrelated to the selection roster.

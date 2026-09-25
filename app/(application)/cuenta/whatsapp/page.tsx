@@ -49,7 +49,7 @@ export default async function WhatsAppPage() {
   ).filter((item) => item !== null);
   return (
     <div className="account-content">
-      {selectionShelfEnabled() ? <section className="account-callout"><h2>Fotos de tu estantería</h2><p>Para conectar una foto con el mapa de tu selección, <Link href="/cuenta/estanteria">vincula WhatsApp a tu estantería</Link>. Chisan revisa los puntos y publica la foto. Puedes elegir entre este modo y el asistente de productos de abajo.</p></section> : null}
+      {selectionShelfEnabled() ? <section className="account-callout"><h2>De una imagen a un mapa</h2><p>Para conectar una foto con el mapa de tu selección, <Link href="/cuenta/estanteria">vincula WhatsApp a tus selecciones</Link>. Puedes enviar una estantería, plano o programa con una indicación. Chisan prepara la propuesta y tú revisas los productores antes de publicar. Puedes elegir entre este modo y el asistente de productos de abajo.</p></section> : null}
       <section className="account-callout">
         <h2>Tu asistente por WhatsApp</h2>
         <p>

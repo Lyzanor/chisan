@@ -78,7 +78,7 @@ const nextConfig: NextConfig = {
     "/admin/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/u/**": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/api/selection-shelf{,/**}": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
-    "/api/admin/selection-shelf": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
+    "/api/admin/selection-shelf{,/**}": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/api/webhooks/whatsapp": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
     "/api/whatsapp/process": ["./data/csv/**/*.csv", "./data/content/**/*.json"],
   },

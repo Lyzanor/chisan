@@ -14,6 +14,16 @@ export function selectionShelfEnabled(environment = process.env) {
   return environment.CHISAN_SELECTION_SHELF_ENABLED === "true";
 }
 
+// The same private intake accepts shelves, printed plans and programme pages.
+export const shelfInputSchema = z.object({
+  kind: z.enum(["auto", "shelf", "plan", "program"]).default("auto"),
+  instruction: z.string().trim().max(600).default(""),
+  title: z.string().trim().min(1).max(160).default("Mi selección"),
+  selectionId: z.uuid().optional(),
+}).strict();
+export type ShelfInput = z.infer<typeof shelfInputSchema>;
+export const shelfInputLabels = { auto: "Reconocer automáticamente", shelf: "Estantería o productos", plan: "Plano de un evento", program: "Cartel, programa o lista" } as const;
+
 export const shelfProducerKeySchema = z.string().regex(/^[a-z]{2}:[1-9]\d{0,14}$/);
 export const shelfPointSchema = z.object({
   id: z.string().regex(/^[a-zA-Z0-9-]{1,80}$/),
@@ -71,11 +81,12 @@ export const shelfPublishSchema = z.object({
   id: z.uuid(), version: z.number().int().positive(),
   producerKeys: z.array(shelfProducerKeySchema).min(1).max(SHELF_LIMITS.hotspots)
     .refine((keys) => new Set(keys).size === keys.length),
+  selection: z.object({ title: z.string().trim().min(1).max(160), description: z.string().trim().max(600).default("") }).strict().optional(),
   profile: z.object({
     publicHandle: z.string().trim().max(40),
     baseLocation: z.string().trim().max(100),
     baseMunicipality: z.string().trim().min(1).max(160),
-  }).strict(),
+  }).strict().optional(),
 }).strict();
 
 export class ShelfError extends Error {
@@ -87,7 +98,7 @@ export class ShelfError extends Error {
 export const shelfStatusLabels: Record<string, string> = {
   received: "Pendiente de preparar propuesta",
   queued: "Preparando tu propuesta",
-  processing: "Identificando productos",
+  processing: "Identificando productores",
   review: "En revisión por Chisan",
   ready: "Propuesta lista para publicar",
   published: "Publicada",

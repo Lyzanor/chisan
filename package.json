@@ -72,7 +72,8 @@
     "mobile:ios": "pnpm --filter @chisan/mobile ios",
     "build:mobile-tokens": "node scripts/build-native-tokens.mjs",
     "check:mobile": "node scripts/build-native-tokens.mjs --check && pnpm --filter @chisan/mobile typecheck && tsx --test scripts/test-mobile.ts",
-    "test:instagram": "tsx --test scripts/test-instagram-verification.ts"
+    "test:instagram": "tsx --test scripts/test-instagram-verification.ts",
+    "event:prepare": "tsx scripts/prepare-event-proposal.ts"
   },
   "dependencies": {
     "@clerk/localizations": "^4.16.0",

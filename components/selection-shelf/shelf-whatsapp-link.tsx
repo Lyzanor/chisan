@@ -16,7 +16,7 @@ export async function ShelfWhatsAppLink() {
     .from(selectionShelfWhatsAppLinks).where(and(eq(selectionShelfWhatsAppLinks.userId, account.id), gt(selectionShelfWhatsAppLinks.expiresAt, sql`now()`))).limit(1);
   return <section className="account-callout"><h3>Envía la foto por WhatsApp</h3>
     {link?.sender ? <>
-      <p>Tu número terminado en {link.sender.slice(-4)} está vinculado a la estantería. Envía la foto al chat de Chisan; nosotros nos encargamos del resto.</p>
+      <p>Tu número terminado en {link.sender.slice(-4)} está vinculado a tus selecciones. Cuéntanos qué quieres mostrar y envía una imagen al chat de Chisan; después podrás revisar y publicar el resultado.</p>
       <form action={unlinkWhatsApp}><button className="chisan-button">Desconectar WhatsApp</button></form>
     </> : <ShelfWhatsAppForm aiProviderName={aiProviderLabel()} />}
   </section>;

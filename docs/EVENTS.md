@@ -95,3 +95,36 @@ checker validates structure, asset dimensions, publication scope and existing
 producer IDs. It cannot prove that a plotted point hits the right stand or that
 an exhibitor will attend. Inspect the rendered image at phone width and wide
 width before publishing. Release and rollback follow [Operations](OPERATIONS.md).
+
+## Account proposals from images
+
+An active Pro-capable account can prepare independent image selections at
+`/cuenta/estanteria` using a shelf photo, plan, poster or programme page. These
+private inputs and owner-confirmed selections belong to the account; the public
+editorial event remains Git-owned. Uploading a document does not verify that its
+sender represents the organizer. Existing editorial editions such as Escumostra
+are not automatically assigned to an account.
+
+After checking catalog matches, the owner can submit an event request with its
+calendar, venue name, organizer and official source. `selection_shelves.event_request`
+stores that private request and an immutable snapshot of the selected points,
+separate from personal follows. Staff see it in `/admin/estanterias`, verify
+attendance and positions, locate the venue independently, and export a private
+versioned bundle. The `selection_shelf.event_exported` audit connects the source
+account proposal and intended edition slug. Account IDs never enter the public
+JSON. Corrections to the requested roster require a fresh owner submission;
+the export uses the submitted snapshot, not a subsequently changed selection.
+
+Run `pnpm event:prepare --snapshot <private-export.json>` on demand to prepare
+an unpublished JSON and image in the normal editorial locations. The command
+validates the bundle and image and refuses to overwrite existing editions or
+assets. Never commit the private export. Review its source dates, image rights,
+venue and associations, add a separate official identity poster, then publish
+through the normal event checks and Git workflow. Existing editions are updated
+by reviewing the proposal against their current files; account submissions never
+overwrite them automatically. Preparation alone is neither approval nor deployment.
+
+The input currently accepts JPEG/PNG/WebP images, including a photograph or
+screenshot of a programme page, not multipage PDFs. The detector locates printed
+names in lists and only maps names onto stands when a printed legend explicitly
+establishes the association. Producer origins always come from the catalog.
