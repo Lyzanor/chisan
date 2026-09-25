@@ -1424,8 +1424,9 @@ Full review of the municipality: every published row, the RIAAC and RGSEAA
 entries for Santa Coloma (every activity key), the venda de proximitat
 register, the municipal market pages and Google Maps searches by trade
 (bakery, pastry, churros, ice cream, rotisserie, empanadas, fresh pasta,
-charcuterie). Churros Cruz, Churrería Chocolatería Loli, Pasteles Salvadoreños
-and Pastisseria Sant Carles were admitted; Pastelería Pascual was purged as
+charcuterie). Churros Cruz, Churrería Chocolatería Loli, Pasteles Salvadoreños,
+Pastisseria Sant Carles and LaCrep (for its own Maduixada strawberry sorbet)
+were admitted; Pastelería Pascual was purged as
 closed, and La Meiga das Empanadas (franchise outlet) and Ferronet Trading
 (trader) were rejected. Bakery-cafés without any sign of their own workshop
 (Santa Anna, Araceli, Forn i Nata, La Baguette, El Forn del Barri), chains
@@ -1441,7 +1442,6 @@ Badalona pastry shop: both belong to those municipalities if queued.
 | Churrería Grama-Potosí | Santa Coloma de Gramenet (Av. de Can Peixauet s/n) | `Dulces y repostería` — churros, porras | Long-running churrería; reviews mention churros and porras. | [Google Maps](https://www.google.com/maps/search/?api=1&query=Churrer%C3%ADa%20Grama-Potosi&query_place_id=ChIJ13iuHJS8pBIRbman7YTYn8w) | — | Map listing only: find a first-party source for identity and production. |
 | Churrería la Andaluza | Santa Coloma de Gramenet (Rambla de Sant Sebastià 37) | `Dulces y repostería` — churros, porras | Churrería with reviews of its churros and porras. | [Google Maps](https://www.google.com/maps/search/?api=1&query=Churrer%C3%ADa%20la%20Andaluza&query_place_id=ChIJw0AHPOq9pBIRGHpu8IA6Wrw) | — | Map listing only: find a first-party source for identity and production. |
 | Granja Churrería La Deliciosa | Santa Coloma de Gramenet (Carrer de Sant Ramon 16) | `Dulces y repostería` — churros, porras | Churrería-granja with reviews of its churros and porras. | [Google Maps](https://www.google.com/maps/search/?api=1&query=Granja%20Churrer%C3%ADa%20La%20Deliciosa&query_place_id=ChIJ7xHfAyy9pBIR3Sl_t87cZUk) | — | Map listing only: find a first-party source for identity and production. |
-| LaCrep | Santa Coloma de Gramenet (Carrer de Sant Carles 10) | `Helados` — ice cream, orxata | Ice-cream and crêpe shop open for ten years; reviews call its ice cream natural. | [Google Maps](https://www.google.com/maps/search/?api=1&query=Helader%C3%ADa%20LaCrep&query_place_id=ChIJoevcU4y8pBIRffe5xnrxH1w) | <https://www.instagram.com/lacrepgelateria/> | lacrep.info now serves an unrelated review page. Establish that the ice cream and orxata are made on site. |
 | Sabor a ti | Santa Coloma de Gramenet (Rambla del Fondo 4) | `Helados` | Ice-cream and crêpe shop. | [Google Maps](https://www.google.com/maps/search/?api=1&query=Sabor%20a%20ti&query_place_id=ChIJW22BIIW8pBIRCk4XGJd7yuw) | <https://www.instagram.com/saboratinet> | Establish own ice-cream production rather than resale. |
 | Rostisseria Katia | Santa Coloma de Gramenet (Carrer de Sant Josep 8-10) | `Comida preparada` | Takeaway rotisserie with croquettes and cooked dishes. | [Google Maps](https://www.google.com/maps/search/?api=1&query=LA%20Katia&query_place_id=ChIJaXLII468pBIRtPgjsIC6Chw) | <https://www.instagram.com/rostisseria_katia> | Profile states only takeaway and delivery: document the own cooked range (menu) before admission. |
 | Rostisseria Banús | Santa Coloma de Gramenet (Av. dels Banús 55) | `Comida preparada` | Rotisserie; reviews mention stuffed chicken to order. | [Google Maps](https://www.google.com/maps/search/?api=1&query=Rosticer%C3%ADa%20Ban%C3%BAs&query_place_id=ChIJ4SmuopC8pBIRgsb5jC7ozKA) | <https://www.facebook.com/people/Rostisseria-BANUS/100063645637204/> | Latest own post is from December 2024: document the current cooked range. |
