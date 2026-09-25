@@ -1165,8 +1165,9 @@ contact-sheet rows: current, white, tinted). White plates framing a logo merge
 into the page; 193 rows with white lettering, previously close to invisible on
 cream, had that ink darkened with the pipeline's existing low-contrast tint.
 Two rows whose partial tint would have misread the name keep their cream
-canvas. Twenty images that show funding, certification or payment marks
-instead of the producer were noted for separate editorial follow-up.
+canvas. The 20 images found showing funding, certification or payment marks
+instead of the producer were replaced or cleared on `main` (411ba8a); its 17
+replacements got the same white recomposition when merged.
 
 Free-standing thumbnails (map carousel, roster rows, claim search and
 confirmation) gained a hairline edge so a white logo keeps its tile; identity
