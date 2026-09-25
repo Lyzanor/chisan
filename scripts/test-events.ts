@@ -18,6 +18,20 @@ test("event dates, venue and plan relationships are validated", () => {
   assert.equal(eventSchema.safeParse({ ...event, exhibitors: [...event.exhibitors, event.exhibitors[0]] }).success, false);
 });
 
+test("dish and activity presences need a note and never take a stand or plan point", async () => {
+  const escumostra = readEvents().find((entry) => entry.slug === "escumostra-2026")!;
+  const [first, ...rest] = escumostra.exhibitors;
+  assert.equal(eventSchema.safeParse({ ...escumostra, exhibitors: [{ ...first, presence: "dish", stand: undefined }, ...rest] }).success, false);
+  assert.equal(eventSchema.safeParse({ ...escumostra, exhibitors: [{ ...first, presence: "dish", note: "En un plato" }, ...rest] }).success, false);
+  assert.equal(eventSchema.safeParse({ ...escumostra, exhibitors: [{ ...first, presence: "dish", stand: undefined, note: "En un plato" }, ...rest] }).success, false);
+  const page = await loadEvent("terra-i-gust-2026");
+  assert.ok(page);
+  assert.deepEqual(page.presence.map((group) => group.kind), ["stand", "dish", "activity"]);
+  assert.equal(page.presence.flatMap((group) => group.entries).length, page.event.exhibitors.length);
+  const dish = page.presence.find((group) => group.kind === "dish")!.entries[0];
+  assert.ok(dish.note && dish.item.description.startsWith(dish.note));
+});
+
 test("only current editor-selected events appear in Descubrir; archived pages stay published", () => {
   assert.ok(listDiscoverEvents(new Date("2026-09-23T12:00:00Z")).some((event) => event.slug === "escumostra-2026"));
   assert.ok(listDiscoverEvents(new Date("2026-10-05T12:00:00Z")).every((event) => event.slug !== "escumostra-2026"));

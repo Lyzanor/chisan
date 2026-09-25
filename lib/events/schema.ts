@@ -40,7 +40,11 @@ export const eventSchema = z.strictObject({
   organizerUrl: httpsUrl,
   organizerName: text,
   editorialNote: text,
-  exhibitors: z.array(identity.extend({ stand: text.optional() })).min(1),
+  exhibitors: z.array(identity.extend({
+    presence: z.enum(["stand", "dish", "activity"]).default("stand"),
+    stand: text.optional(),
+    note: text.optional(),
+  })).min(1),
   plan: eventImage.extend({
     points: z.array(z.strictObject({
       id: slug,
@@ -63,11 +67,18 @@ export const eventSchema = z.strictObject({
   if (event.publishedAt && event.updatedAt < event.publishedAt) issue("updatedAt precedes publishedAt");
   const keys = event.exhibitors.map(({ country, producerId }) => `${country}:${producerId}`);
   if (new Set(keys).size !== keys.length) issue("Duplicate exhibitor");
+  for (const exhibitor of event.exhibitors) {
+    const key = `${exhibitor.country}:${exhibitor.producerId}`;
+    if (exhibitor.presence !== "stand" && exhibitor.stand) issue(`${key}: only a stand presence has a stand number`);
+    if (exhibitor.presence !== "stand" && !exhibitor.note) issue(`${key}: a dish or activity presence needs its note`);
+  }
   if (event.plan) {
     const ids = event.plan.points.map((point) => point.id);
     if (new Set(ids).size !== ids.length) issue("Duplicate plan point");
     for (const point of event.plan.points) {
-      if (!keys.includes(point.producerKey)) issue(`Plan point refers to unlisted exhibitor ${point.producerKey}`);
+      const exhibitor = event.exhibitors.find(({ country, producerId }) => `${country}:${producerId}` === point.producerKey);
+      if (!exhibitor) issue(`Plan point refers to unlisted exhibitor ${point.producerKey}`);
+      else if (exhibitor.presence !== "stand") issue(`Plan point refers to ${point.producerKey}, which has no stand`);
     }
   }
 });

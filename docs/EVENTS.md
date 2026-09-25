@@ -36,8 +36,18 @@ an event's identity. Drafts may omit the image while research is in progress.
 
 ## Exhibitors and plans
 
-`exhibitors` contains reviewed catalog identities and the stand number printed
-by the organizer. Multiple producers may share a collective stand. The optional
+`exhibitors` contains reviewed catalog identities and how each one takes part.
+`presence` is `stand` (the default: the producer staffs a stall), `dish` (a
+participating kitchen names the producer as the source of an ingredient) or
+`activity` (the producer leads or supplies a programme item). A stand may carry
+the stand number printed by the organizer; multiple producers may share a
+collective stand. A dish or activity presence needs a short `note` naming the
+dish or session, and never has a stand number or plan point. Link a dish only
+when the organizer or kitchen names the producer; an origin label such as a
+DOP, an agrarian park or "Pyrenean lamb" is not a producer. Kitchens,
+distributors and brands remain unlinked. Without a plan, the page lists
+producers grouped by presence below the origin map, and a note leads that
+producer's map card. The optional
 `plan` holds a credited local copy of the organizer's image, its source URL,
 dimensions, review date and normalized points (0–1). A point must reference an
 exhibitor in the same event. A point marks that exhibitor's stand on the event

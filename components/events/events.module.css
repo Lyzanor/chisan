@@ -241,6 +241,27 @@
   list-style: none;
 }
 
+.presence .standGrid {
+  padding: 0;
+  border-top: 0;
+}
+
+.presence .standGroup li {
+  display: grid;
+  padding-bottom: var(--chisan-space-2);
+}
+
+.presence .standGroup li span {
+  color: var(--chisan-color-stone);
+  font-size: var(--chisan-font-small);
+  line-height: var(--chisan-leading-body);
+}
+
+.presence .standGroup a {
+  min-height: auto;
+  padding-top: var(--chisan-space-2);
+}
+
 .standGroup a {
   display: flex;
   align-items: center;

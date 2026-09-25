@@ -27,9 +27,23 @@ export async function loadEvent(slug: string) {
   rows.forEach((row, index) => {
     if (!row) throw new Error(`${event.slug}: unknown exhibitor ${event.exhibitors[index].country}:${event.exhibitors[index].producerId}`);
   });
-  const items = buildProducerSelectionItems(rows, { explicitLocale: null, locale: event.locale });
+  const catalogItems = buildProducerSelectionItems(rows, { explicitLocale: null, locale: event.locale });
+  const notes = new Map(event.exhibitors.map((exhibitor) => [`${exhibitor.country}:${exhibitor.producerId}`, exhibitor.note]));
+  // The event note says how the producer is present; the catalog description follows it.
+  const items = catalogItems.map((item) => {
+    const note = notes.get(item.key);
+    return note ? { ...item, description: `${note}. ${item.description}` } : item;
+  });
+  const presence = (["stand", "dish", "activity"] as const).map((kind) => ({
+    kind,
+    entries: event.exhibitors.filter((exhibitor) => exhibitor.presence === kind).flatMap((exhibitor) => {
+      const item = items.find(({ key }) => key === `${exhibitor.country}:${exhibitor.producerId}`);
+      return item ? [{ item, note: exhibitor.note ?? null }] : [];
+    }),
+  })).filter((group) => group.entries.length);
   return {
     event,
+    presence,
     selection: {
       canonicalPath: eventPath(event.slug),
       items,

@@ -6,12 +6,20 @@ import { selectionPageMessages } from "@/lib/accounts/selection-presentation";
 import { EVENTS_PATH } from "@/lib/events/routes";
 import { buildEventStructuredData } from "@/lib/events/metadata";
 import type { EditorialEvent } from "@/lib/events/schema";
-import type { ProducerSelectionExplorerModel } from "@/lib/producer-selections";
+import type { ProducerSelectionExplorerModel, ProducerSelectionItem } from "@/lib/producer-selections";
 import { serializeStructuredData } from "@/lib/site-structured-data";
 import { formatEventDate } from "./event-card";
 import styles from "./events.module.css";
 
-export function EventPage({ event, selection }: { event: EditorialEvent; selection: ProducerSelectionExplorerModel }) {
+type EventPresence = { kind: EditorialEvent["exhibitors"][number]["presence"]; entries: { item: ProducerSelectionItem; note: string | null }[] };
+
+const presenceTitles: Record<EventPresence["kind"], string> = {
+  stand: "En los puestos",
+  dish: "En los platos",
+  activity: "En las actividades",
+};
+
+export function EventPage({ event, selection, presence }: { event: EditorialEvent; selection: ProducerSelectionExplorerModel; presence: EventPresence[] }) {
   const dates = new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })
     .formatRange(new Date(`${event.startDate}T00:00:00Z`), new Date(`${event.endDate}T00:00:00Z`));
   const locationUrl = `https://www.google.com/maps/dir/?${new URLSearchParams({ api: "1", destination: `${event.venue.latitude},${event.venue.longitude}` })}`;
@@ -37,8 +45,21 @@ export function EventPage({ event, selection }: { event: EditorialEvent; selecti
     <section id="plano" className={styles.eventExplorer} aria-label="Expositores en Chisan">
       <ProducerSelectionExplorer selection={selection} plan={plan} messages={{ producers: "Expositores",
         countLabels: { [String(selection.items.length)]: `${selection.items.length} productores en Chisan` },
-        map: { ...selectionPageMessages.map, producerMap: "Mapa del origen de los expositores" } }} />
+        map: { ...selectionPageMessages.map, producerMap: "Mapa del origen de los productores" } }} />
     </section>
+    {/* Without an organizer plan, the grouped list says how each producer takes part. */}
+    {!event.plan ? <section className={`${styles.section} ${styles.presence}`} aria-labelledby="presencia">
+      <h2 id="presencia">Cómo encontrarlos en la feria</h2>
+      <div className={styles.standGrid}>
+        {presence.map((group) => <section key={group.kind} className={styles.standGroup}>
+          <h3>{presenceTitles[group.kind]}</h3>
+          <ul>{group.entries.map(({ item, note }) => <li key={item.key}>
+            <Link href={item.href}>{item.name}</Link>
+            {note ? <span>{note}</span> : <span>{item.city}</span>}
+          </li>)}</ul>
+        </section>)}
+      </div>
+    </section> : null}
     <details className={`chisan-disclosure ${styles.eventInformation}`}>
       <summary>Información del evento y fuentes</summary>
       <div className={styles.informationBody}>

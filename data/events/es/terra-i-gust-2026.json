@@ -19,39 +19,103 @@
   },
   "organizerUrl": "https://www.barcelona.cat/alimentaciosostenible/es/terra-i-gust",
   "organizerName": "Ajuntament de Barcelona",
-  "editorialNote": "La organización no publica plano ni números de puesto. Enlazamos las productoras del mercado, las bodegas del espacio de vinos naturales, la kombucha y la granja cervecera de la charla con cata del domingo cuando hemos podido identificar su unidad productiva publicada en Chisan. Quedan fuera los 14 restaurantes, que no son unidades productivas, las cerveceras que selecciona Barcelona Beer Festival, que no se nombran, y los puestos que aún no están en Chisan (Mellow Sheng, Organic Africa Chocolate, Forno Bomba, DeCollserola y Celler Nessu) o cuya unidad no hemos podido precisar (helados Delacrem). La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
+  "editorialNote": "La organización no publica plano ni números de puesto. Enlazamos a los productores publicados en Chisan de tres formas: con puesto propio (mercado de productoras, vinos naturales y kombucha), a través de los platos cuando el restaurante nombra al productor del ingrediente, y en las actividades del programa. Quedan fuera los 14 restaurantes, que no son unidades productivas; los ingredientes sin productor nombrado; las cerveceras que selecciona Barcelona Beer Festival, que no se nombran; la distribuidora DeCollserola; Organic Africa Chocolate, que elabora en Sierra Leona, y los puestos que aún estamos revisando (Mellow Sheng, Forno Bomba, Celler Nessu y los helados Delacrem). La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
   "exhibitors": [
     {
       "country": "es",
-      "producerId": 11964
+      "producerId": 11964,
+      "presence": "stand",
+      "note": "Mercado de productoras: fruta y verdura ecológica del Baix Llobregat"
     },
     {
       "country": "es",
-      "producerId": 8430
+      "producerId": 8430,
+      "presence": "stand",
+      "note": "Mercado de productoras: quesos de leche cruda de vaca"
     },
     {
       "country": "es",
-      "producerId": 7510
+      "producerId": 7510,
+      "presence": "stand",
+      "note": "Espacio de vinos naturales"
     },
     {
       "country": "es",
-      "producerId": 11022
+      "producerId": 11022,
+      "presence": "stand",
+      "note": "Espacio de vinos naturales"
     },
     {
       "country": "es",
-      "producerId": 12621
+      "producerId": 12621,
+      "presence": "stand",
+      "note": "Espacio de vinos naturales"
     },
     {
       "country": "es",
-      "producerId": 4098
+      "producerId": 4098,
+      "presence": "stand",
+      "note": "Espacio de vinos naturales"
     },
     {
       "country": "es",
-      "producerId": 8237
+      "producerId": 8237,
+      "presence": "stand",
+      "note": "Kombucha, zumos y refrescos ecológicos"
     },
     {
       "country": "es",
-      "producerId": 8197
+      "producerId": 6017,
+      "presence": "dish",
+      "note": "Su queso Blau de Jutglar, en la berenjena en tempura de Bar El Pepino"
+    },
+    {
+      "country": "es",
+      "producerId": 6022,
+      "presence": "dish",
+      "note": "Su queso de oveja de leche cruda, en la focaccia de verduras de Casa Xica"
+    },
+    {
+      "country": "es",
+      "producerId": 2555,
+      "presence": "dish",
+      "note": "Sus setas ecológicas, en las croquetas de El Brot L'H"
+    },
+    {
+      "country": "es",
+      "producerId": 11349,
+      "presence": "dish",
+      "note": "Su ternera ecológica, en la hamburguesa catalana de El Filete Ruso"
+    },
+    {
+      "country": "es",
+      "producerId": 10209,
+      "presence": "dish",
+      "note": "Su stracchino ecológico, en la hamburguesa catalana de El Filete Ruso"
+    },
+    {
+      "country": "es",
+      "producerId": 8178,
+      "presence": "dish",
+      "note": "Su lomo, en el bocadillo de cerdo asado de Espai Puntal"
+    },
+    {
+      "country": "es",
+      "producerId": 2831,
+      "presence": "dish",
+      "note": "Su cerdo, en el bao char siu de Mosquito"
+    },
+    {
+      "country": "es",
+      "producerId": 8197,
+      "presence": "activity",
+      "note": "Charla con cata sobre lúpulo catalán con Quiònia Pujol, domingo de 16.30 a 17.15 h"
+    },
+    {
+      "country": "es",
+      "producerId": 5614,
+      "presence": "activity",
+      "note": "Mermelada de naranja amarga de Ciudades Comestibles en el juego de Espigoladors, viernes de 18 a 20 h"
     }
   ],
   "sources": [
@@ -73,6 +137,16 @@
     {
       "title": "Guía de Barcelona: ubicación de la Festa de l’Alimentació Sostenible",
       "url": "https://guia.barcelona.cat/es/detall/festa-de-l-alimentacio-sostenible-terra-i-gust_99400657689.html",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "Formatge Blau de Jutglar, de Formatges Reixagó — Va de Gust",
+      "url": "https://vadegust.cat/formatges/formatge-blau-de-jutglar-quan-sajunten-seny-rauxa-i-talent-7005/",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "Espigolar per transformar: mermeladas de Ciutats Comestibles en el obrador im-perfect — La Guia de Reus",
+      "url": "https://www.laguiadereus.com/espigolar-per-transformar/",
       "checkedAt": "2026-09-25"
     }
   ],
