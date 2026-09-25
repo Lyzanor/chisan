@@ -683,7 +683,7 @@ body:has(.detail-page) {
   }
 }
 
-/* Lead: photographs, how they produce and the QR label. ------------------- */
+/* Lead: photographs and how they produce. --------------------------------- */
 
 .detail-lead {
   display: grid;
@@ -697,16 +697,6 @@ body:has(.detail-page) {
   display: grid;
   gap: var(--profile-section-space);
   min-width: 0;
-}
-
-.detail-lead__aside {
-  justify-self: end;
-  width: min(11rem, 46vw);
-  min-width: 0;
-}
-
-.detail-lead__aside:empty {
-  display: none;
 }
 
 .detail-lead:not(:has(.detail-lead__main > *)) {
@@ -794,21 +784,6 @@ body:has(.detail-page) {
 
   .detail-gallery-action__content {
     flex: 1 1 auto;
-  }
-}
-
-@media (min-width: 801px) {
-  .detail-lead {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: var(--chisan-space-8);
-  }
-
-  .detail-lead:not(:has(.detail-lead__aside > *)) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .detail-lead__aside {
-    width: min(19vw, 15rem);
   }
 }
 

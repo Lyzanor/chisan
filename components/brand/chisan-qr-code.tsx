@@ -1,23 +1,42 @@
-"use client";
+import { buildBrandQr, type BrandQr } from "@/lib/brand-qr";
+import { CHISAN_MARK_INK_SRC, CHISAN_MARK_SRC } from "@/lib/brand";
 
-import { QRCodeCanvas } from "qrcode.react";
-import type { Ref } from "react";
-import { CHISAN_MARK_INK_SRC, CHISAN_MARK_SRC, PROFILE_QR_MARK_SIZE } from "@/lib/brand";
+export const CHISAN_QR_COLORS = { moss: "#00563f", ink: "#18221c" } as const;
 
-/** The same scannable code and supplied C in previews and downloaded labels. */
-export function ChisanQrCode({ value, size = 176, ink = false, title, canvasRef }: {
-  value: string; size?: number; ink?: boolean; title?: string; canvasRef?: Ref<HTMLCanvasElement>;
+/** Scannable code with the Chisan C finders and the supplied C at its centre. */
+export function ChisanQrCode({ value, ink = false, title }: {
+  value: string; ink?: boolean; title?: string;
 }) {
-  return <QRCodeCanvas
-    ref={canvasRef}
-    value={value}
-    size={size}
-    level="H"
-    marginSize={4}
-    bgColor="#ffffff"
-    fgColor={ink ? "#18221c" : "#00563f"}
-    imageSettings={{ src: ink ? CHISAN_MARK_INK_SRC : CHISAN_MARK_SRC, width: size * PROFILE_QR_MARK_SIZE / 880, height: size * PROFILE_QR_MARK_SIZE / 880, excavate: true }}
-    title={title}
-    style={{ height: "auto", width: "100%" }}
-  />;
+  const qr = buildBrandQr(value);
+
+  return (
+    <svg
+      viewBox={`0 0 ${qr.size} ${qr.size}`}
+      role={title ? "img" : undefined}
+      aria-label={title}
+      aria-hidden={title ? undefined : true}
+      style={{ display: "block", height: "auto", width: "100%" }}
+    >
+      <ChisanQrCodeMarks qr={qr} ink={ink} />
+    </svg>
+  );
+}
+
+/** The code's shapes in module units, for nesting inside a larger SVG label. */
+export function ChisanQrCodeMarks({ qr, ink = false }: { qr: BrandQr; ink?: boolean }) {
+  const color = ink ? CHISAN_QR_COLORS.ink : CHISAN_QR_COLORS.moss;
+
+  return (
+    <>
+      <path d={qr.modulesPath} fill={color} shapeRendering="crispEdges" />
+      <path d={qr.findersPath} fill={color} />
+      <image
+        href={ink ? CHISAN_MARK_INK_SRC : CHISAN_MARK_SRC}
+        x={qr.mark.offset}
+        y={qr.mark.offset}
+        width={qr.mark.size}
+        height={qr.mark.size}
+      />
+    </>
+  );
 }

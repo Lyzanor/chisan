@@ -254,7 +254,7 @@ body:has(.profile-qr__dialog[open]) {
   visibility: visible;
 }
 
-.profile-qr__copy > small,
+.profile-qr__note,
 .profile-qr__status {
   display: block;
   color: var(--chisan-color-stone);
@@ -262,7 +262,7 @@ body:has(.profile-qr__dialog[open]) {
   line-height: var(--chisan-leading-ui);
 }
 
-.profile-qr__copy > small {
+.profile-qr__note {
   margin-top: var(--chisan-space-3);
 }
 
@@ -271,137 +271,31 @@ body:has(.profile-qr__dialog[open]) {
   margin-top: var(--chisan-space-2);
 }
 
-/* The label itself: what gets printed. */
+/* The sticker itself: the same SVG layout the PNG download paints. */
 .profile-qr__label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-self: center;
   width: 100%;
   max-width: 320px;
-  aspect-ratio: 3 / 4;
   margin: 0;
-  padding: var(--chisan-space-6);
-  border: var(--chisan-space-1) solid var(--profile-qr-accent);
-  background: var(--chisan-color-rice-paper);
 }
 
-.profile-qr__wordmark {
-  width: 7rem;
-}
-
-.profile-qr__label > p {
-  margin: var(--chisan-space-2) 0 var(--chisan-space-4);
-  color: var(--profile-qr-accent);
-  font-size: var(--chisan-font-micro);
-  font-weight: var(--chisan-weight-interface);
-  letter-spacing: var(--chisan-tracking-caps);
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.profile-qr__code {
-  width: 100%;
-  padding: var(--chisan-space-2);
-  background: var(--chisan-color-surface);
-}
-
-.profile-qr__code canvas {
+.profile-qr__sticker {
   display: block;
-}
-
-.profile-qr__label figcaption {
   width: 100%;
-  min-width: 0;
-  margin-top: auto;
-  padding-top: var(--chisan-space-4);
-  text-align: center;
+  height: auto;
+  font-family: var(--chisan-font-sans);
 }
 
-.profile-qr__label figcaption strong,
-.profile-qr__label figcaption span {
-  display: block;
-}
-
-.profile-qr__label figcaption strong {
-  font-size: var(--chisan-font-body);
-  font-weight: var(--chisan-weight-interface);
-  line-height: var(--chisan-leading-ui);
-  overflow-wrap: anywhere;
-}
-
-.profile-qr__label figcaption span {
-  margin-top: var(--chisan-space-1);
-  color: var(--chisan-color-stone);
-  font-size: var(--chisan-font-micro);
-}
-
-/* On the producer page the label is already visible, with a floating download. */
+/* In the producer's account the sticker sits beside its download actions. */
 .profile-qr--inline {
-  position: relative;
-  margin: 0;
+  display: grid;
+  gap: var(--chisan-space-4);
+  align-items: center;
+  margin: var(--chisan-space-4) 0 0;
 }
 
 .profile-qr--inline .profile-qr__label {
-  max-width: none;
-  padding: var(--chisan-space-3);
-  border-width: 2px;
-}
-
-.profile-qr--inline .profile-qr__wordmark {
-  width: 5.5rem;
-}
-
-.profile-qr--inline .profile-qr__label > p {
-  margin: var(--chisan-space-1) 0 var(--chisan-space-2);
-  font-size: var(--chisan-font-micro);
-}
-
-.profile-qr--inline .profile-qr__code {
-  padding: var(--chisan-space-1);
-}
-
-.profile-qr--inline .profile-qr__label figcaption {
-  padding-top: var(--chisan-space-2);
-}
-
-.profile-qr--inline .profile-qr__label figcaption strong {
-  font-size: var(--chisan-font-small);
-}
-
-.profile-qr__download-float {
-  position: absolute;
-  top: var(--chisan-space-2);
-  right: var(--chisan-space-2);
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: var(--chisan-color-moss);
-  box-shadow: var(--chisan-shadow-control);
-  color: var(--chisan-color-surface);
-  transition:
-    background-color var(--chisan-motion-immediate) var(--chisan-ease),
-    scale var(--chisan-motion-component) var(--chisan-ease-pop);
-}
-
-@media (hover: hover) {
-  .profile-qr__download-float:hover {
-    background: var(--chisan-color-moss-dark);
-    scale: 1.06;
-  }
-}
-
-.profile-qr__download-float:active {
-  scale: 0.94;
-}
-
-.profile-qr__inline-status {
-  margin: var(--chisan-space-1) 0 0;
-  font-size: var(--chisan-font-micro);
+  max-width: 240px;
 }
 
 @media (min-width: 461px) {
@@ -419,5 +313,10 @@ body:has(.profile-qr__dialog[open]) {
 @media (min-width: 761px) {
   .profile-qr__body {
     grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  }
+
+  .profile-qr--inline {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: var(--chisan-space-8);
   }
 }

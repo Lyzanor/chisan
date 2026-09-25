@@ -1117,3 +1117,21 @@ actividades”; each name links to the profile, and the stand, dish or session
 note sits under it in the stone small text. It is one column on the phone and
 three on desktop, reusing the event stand-grid styles. The same note leads the
 producer's map card. Escumostra, which has a plan, does not render the section.
+
+## 2026-09-25 — QR sticker and owner-only producer download
+
+- Replaced the printable label with a wall/entrance sticker: white rounded card,
+  thin outer rule, wordmark, hairline divider, code with Chisan C finder
+  patterns, and a solid band reading “Productor local” (forest) or “Nuestros
+  productores” (ink). Earlier drafts with extra copy, eyes, a corner seal,
+  rounded data modules and kraft/bleed borders were rejected for distance
+  legibility or print simplicity.
+- Removed the producer QR from the public profile; the owner downloads it from
+  the producer account. The profile lead is now one column at 375px and 1440px.
+- Checked the account section and the selection dialog in a disposable local
+  fixture at 375px, then 1440px: no horizontal overflow, the sticker stays
+  240px beside its actions on desktop and fits the dialog on phones.
+- Decoded the server-rendered SVG and the canvas PNG (2150 × 2750 px,
+  transparent corners) for producer and selection URLs, including a long
+  Catalan band label, with an independent Vision reader. The fixture is not a
+  public route and was removed after QA.

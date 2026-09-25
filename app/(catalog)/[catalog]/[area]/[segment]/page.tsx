@@ -32,7 +32,6 @@ import { ExpandedProducerProfile } from "@/components/expanded-producer-profile"
 import { GuideHighlights } from "@/components/guides/guide-highlights";
 import { LanguageMenuRegistration } from "@/components/language-menu-registration";
 import { ProducerLanguageMenu } from "@/components/producer-language-menu";
-import { ProducerProfileQrLabel } from "@/components/producer-profile-qr-label";
 import { SimilarProducers } from "@/components/similar-producers";
 import { ProducerHero } from "@/components/producer/producer-hero";
 import { ProducerProducts, ProducerSales } from "@/components/producer/producer-products";
@@ -329,10 +328,6 @@ export default async function ProducerPage({
       Icon: MapPinIcon,
     },
   ].filter((link) => link.url);
-  const profileQrPath = buildProducerHref(producer, {
-    scope: buildCatalogScope(country),
-    area,
-  });
   const mapMessages = {
     loading: messages.map.loading,
     emptyCoordinates: messages.map.emptyCoordinates,
@@ -521,15 +516,6 @@ export default async function ProducerPage({
               </Suspense>
             ) : null}
           </div>
-          <aside className="detail-lead__aside">
-            <ProducerProfileQrLabel
-              country={country.slug}
-              locale={locale}
-              name={producer.name}
-              path={profileQrPath}
-              producerId={producer.producerId}
-            />
-          </aside>
         </div>
 
         <Suspense fallback={null}>

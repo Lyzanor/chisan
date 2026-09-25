@@ -363,7 +363,7 @@ test("account pages render localized help and enforce gift entry-point permissio
     "@/lib/accounts/producer-media": `export const listProducerMediaUploads = ${unexpected};`,
     "@/lib/catalog/content": "export async function loadProducerContent() { return null; }",
     "@/lib/payments/stripe-profile-upgrade-config": "export const getStripeProfileUpgradeConfiguration = () => ({ checkoutReady: false });",
-    "@/app/(application)/cuenta/actions": `export const submitProducerChangeAction = ${unexpected}; export const updateProducerProfileQrAction = ${unexpected};`,
+    "@/app/(application)/cuenta/actions": `export const submitProducerChangeAction = ${unexpected};`,
     "@/lib/admin/review-producer-change": `export const createProducerChangeReviewService = ${unexpected};`,
     "@/lib/admin/review-producer-suggestion": `export const createProducerSuggestionReviewService = ${unexpected};`,
     "@/lib/payments/stripe-profile-upgrades": `export const fulfillProducerProfileUpgradeCheckout = ${unexpected};`,

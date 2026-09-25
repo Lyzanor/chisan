@@ -2,33 +2,25 @@
 
 import { ArrowRightIcon, CheckIcon, CopyIcon, DownloadSimpleIcon, QrCodeIcon, XIcon } from "@phosphor-icons/react";
 import { useEffect, useId, useRef, useState } from "react";
-import { ChisanQrCode } from "@/components/brand/chisan-qr-code";
 
-import { ChisanMark, ChisanWordmark } from "@/components/brand/chisan-brand";
+import { ChisanMark } from "@/components/brand/chisan-brand";
+import { CHISAN_QR_COLORS } from "@/components/brand/chisan-qr-code";
+import { ProfileQrSticker } from "@/components/profile-qr-sticker";
 import {
   CHISAN_MARK_INK_SRC,
   CHISAN_MARK_SRC,
   CHISAN_WORDMARK_INK_SRC,
   CHISAN_WORDMARK_SRC,
-  PROFILE_QR_MARK_SIZE,
 } from "@/lib/brand";
 import { getProfileQrLabels } from "@/lib/i18n/profile-qr-labels";
 import type { Locale } from "@/lib/i18n/locales";
 import {
   buildProfileQrFilename,
   buildProfileQrUrl,
-  PROFILE_QR_LABEL_HEIGHT,
-  PROFILE_QR_LABEL_WIDTH,
   type ProfileQrKind,
 } from "@/lib/profile-qr";
+import { drawProfileQrSticker } from "@/lib/profile-qr-canvas";
 
-const LABEL_COLORS = {
-  background: "#ffffff",
-  surface: "#ffffff",
-  ink: "#18221c",
-  stone: "#59645d",
-  moss: "#00563f",
-} as const;
 const COPY_FEEDBACK_DURATION_MS = 1_500;
 
 export type ProfileQrLabelProps = Readonly<{
@@ -47,57 +39,6 @@ function loadImage(src: string): Promise<HTMLImageElement> {
     });
     image.src = src;
   });
-}
-
-function truncateCanvasLine(
-  context: CanvasRenderingContext2D,
-  value: string,
-  maxWidth: number,
-): string {
-  if (context.measureText(value).width <= maxWidth) return value;
-
-  const characters = Array.from(value);
-  while (characters.length && context.measureText(`${characters.join("")}…`).width > maxWidth) {
-    characters.pop();
-  }
-
-  return `${characters.join("").trimEnd()}…`;
-}
-
-function wrapCanvasText(
-  context: CanvasRenderingContext2D,
-  value: string,
-  maxWidth: number,
-): string[] {
-  const tokens = value.includes(" ") ? value.split(/\s+/) : Array.from(value);
-  const separator = value.includes(" ") ? " " : "";
-  const lines: string[] = [];
-  let current = "";
-
-  for (const [index, token] of tokens.entries()) {
-    const candidate = current ? `${current}${separator}${token}` : token;
-    if (!current || context.measureText(candidate).width <= maxWidth) {
-      current = candidate;
-      continue;
-    }
-
-    lines.push(current);
-    current = token;
-    if (lines.length === 1) {
-      const remainder = [current, ...tokens.slice(index + 1)].join(separator);
-      lines.push(truncateCanvasLine(context, remainder, maxWidth));
-      return lines;
-    }
-  }
-
-  if (current && lines.length < 2) lines.push(current);
-  if (lines.length === 0) lines.push(value);
-  lines[lines.length - 1] = truncateCanvasLine(
-    context,
-    lines[lines.length - 1],
-    maxWidth,
-  );
-  return lines.slice(0, 2);
 }
 
 async function copyText(value: string) {
@@ -119,7 +60,7 @@ async function copyText(value: string) {
 }
 
 export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps) {
-  const qrCanvas = useRef<HTMLCanvasElement>(null);
+  const figure = useRef<HTMLElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const dialogId = useId();
@@ -135,6 +76,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
     : labels.selectionDescription;
   const scanLabel = isProducer ? labels.scan : labels.selectionDescription;
   const labelType = isProducer ? labels.producerLabel : labels.selectionLabel;
+  const bandLabel = labelType.toLocaleUpperCase(locale);
 
   useEffect(
     () => () => {
@@ -179,8 +121,8 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
   async function handleDownload() {
     clearCopyFeedback();
     const downloadFeedbackGeneration = copyFeedbackGenerationRef.current;
-    const sourceQr = qrCanvas.current;
-    if (!sourceQr) {
+    const source = figure.current;
+    if (!source) {
       setStatus(labels.downloadFailed);
       return;
     }
@@ -191,68 +133,14 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
         loadImage(isProducer ? CHISAN_WORDMARK_SRC : CHISAN_WORDMARK_INK_SRC),
         loadImage(isProducer ? CHISAN_MARK_SRC : CHISAN_MARK_INK_SRC),
       ]);
-      const fontFamily = getComputedStyle(sourceQr).fontFamily;
-      const canvas = document.createElement("canvas");
-      canvas.width = PROFILE_QR_LABEL_WIDTH;
-      canvas.height = PROFILE_QR_LABEL_HEIGHT;
-      const context = canvas.getContext("2d");
-      if (!context) throw new Error("Canvas is unavailable.");
-
-      const accent = isProducer ? LABEL_COLORS.moss : LABEL_COLORS.ink;
-      context.fillStyle = LABEL_COLORS.background;
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      context.strokeStyle = accent;
-      context.lineWidth = 24;
-      context.strokeRect(12, 12, canvas.width - 24, canvas.height - 24);
-
-      const wordmarkWidth = 420;
-      const wordmarkHeight = wordmarkWidth / (wordmark.width / wordmark.height);
-      context.drawImage(
-        wordmark,
-        (canvas.width - wordmarkWidth) / 2,
-        88,
-        wordmarkWidth,
-        wordmarkHeight,
-      );
-
-      context.fillStyle = accent;
-      context.font = `500 32px ${fontFamily}`;
-      context.textAlign = "center";
-      context.textBaseline = "middle";
-      context.fillText(labelType.toLocaleUpperCase(locale), canvas.width / 2, 282);
-
-      context.imageSmoothingEnabled = false;
-      context.fillStyle = LABEL_COLORS.surface;
-      context.fillRect(160, 340, 880, 880);
-      context.drawImage(sourceQr, 160, 340, 880, 880);
-      context.imageSmoothingEnabled = true;
-      // Paint the loaded mark explicitly: download must not race the QR canvas's
-      // asynchronous image load. The QR renderer excavates this same area.
-      context.fillRect(
-        160 + (880 - PROFILE_QR_MARK_SIZE) / 2,
-        340 + (880 - PROFILE_QR_MARK_SIZE) / 2,
-        PROFILE_QR_MARK_SIZE,
-        PROFILE_QR_MARK_SIZE,
-      );
-      context.drawImage(
+      const canvas = drawProfileQrSticker({
+        accent: isProducer ? CHISAN_QR_COLORS.moss : CHISAN_QR_COLORS.ink,
+        fontFamily: getComputedStyle(source).fontFamily,
+        label: bandLabel,
         mark,
-        160 + (880 - PROFILE_QR_MARK_SIZE) / 2,
-        340 + (880 - PROFILE_QR_MARK_SIZE) / 2,
-        PROFILE_QR_MARK_SIZE,
-        PROFILE_QR_MARK_SIZE,
-      );
-
-      context.fillStyle = LABEL_COLORS.ink;
-      context.font = `500 56px ${fontFamily}`;
-      const nameLines = wrapCanvasText(context, name, 960);
-      const firstLineY = nameLines.length === 1 ? 1340 : 1308;
-      nameLines.forEach((line, index) => {
-        context.fillText(line, canvas.width / 2, firstLineY + index * 68);
+        value: profileUrl,
+        wordmark,
       });
-
-      context.fillStyle = LABEL_COLORS.stone;
-      context.font = `500 32px ${fontFamily}`;
-      context.fillText("chisan.app", canvas.width / 2, 1500);
 
       const link = document.createElement("a");
       link.download = buildProfileQrFilename(kind, name);
@@ -275,26 +163,59 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
   }
 
   const labelFigure = (
-    <figure className="profile-qr__label">
-      <ChisanWordmark alt="" className="profile-qr__wordmark" ink={!isProducer} />
-      <p>{labelType}</p>
-      <div className="profile-qr__code">
-        <ChisanQrCode canvasRef={qrCanvas} value={profileUrl} size={880} ink={!isProducer} title={`${scanLabel}: ${name}`} />
-      </div>
-      <figcaption>
-        <strong>{name}</strong>
-        <span>chisan.app</span>
-      </figcaption>
+    <figure ref={figure} className="profile-qr__label">
+      <ProfileQrSticker
+        kind={kind}
+        label={bandLabel}
+        title={`${scanLabel}: ${name}`}
+        value={profileUrl}
+      />
     </figure>
   );
 
+  const actions = (
+    <>
+      <div className="profile-qr__actions">
+        <button type="button" onClick={handleDownload}>
+          <DownloadSimpleIcon size={18} aria-hidden="true" />
+          {labels.download}
+        </button>
+        <button
+          type="button"
+          className="profile-qr__action--secondary profile-qr__copy-button"
+          aria-label={labels.copy}
+          onClick={handleCopy}
+        >
+          <span className="profile-qr__copy-label" aria-hidden="true">
+            <span className={isCopied ? undefined : "is-visible"}>
+              <CopyIcon size={18} />
+              {labels.copy}
+            </span>
+            <span className={isCopied ? "is-visible" : undefined}>
+              <CheckIcon size={16} weight="bold" />
+              {labels.copied}
+            </span>
+          </span>
+        </button>
+      </div>
+      <small className="profile-qr__note">{labels.fileNote}</small>
+      <p
+        className="profile-qr__status"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {isCopied ? <span className="visually-hidden">{status}</span> : status}
+      </p>
+    </>
+  );
+
+  // Producer stickers are downloaded from the owner's account, never from the
+  // public profile, so they render in place without a dialog.
   if (isProducer) return (
     <section className="profile-qr profile-qr--producer profile-qr--inline" aria-label={scanLabel}>
       {labelFigure}
-      <button type="button" className="profile-qr__download-float" onClick={handleDownload} aria-label={labels.download} title={labels.download}>
-        <DownloadSimpleIcon size={20} aria-hidden="true" />
-      </button>
-      <p className="profile-qr__inline-status" role="status" aria-live="polite">{status}</p>
+      <div className="profile-qr__copy">{actions}</div>
     </section>
   );
 
@@ -313,7 +234,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
           <QrCodeIcon size={32} />
         </span>
         <span>
-          <strong>{isProducer ? labels.title : labels.selectionTitle}</strong>
+          <strong>{labels.selectionTitle}</strong>
           <small>{description}</small>
         </span>
         <ArrowRightIcon className="profile-qr__arrow" size={24} aria-hidden="true" />
@@ -344,38 +265,7 @@ export function ProfileQrLabel({ kind, locale, name, path }: ProfileQrLabelProps
             <p className="profile-qr__eyebrow">{labelType}</p>
             <h2 id={`${dialogId}-title`}>{scanLabel}</h2>
             <p>{description}</p>
-            <div className="profile-qr__actions">
-              <button type="button" onClick={handleDownload}>
-                <DownloadSimpleIcon size={18} aria-hidden="true" />
-                {labels.download}
-              </button>
-              <button
-                type="button"
-                className="profile-qr__action--secondary profile-qr__copy-button"
-                aria-label={labels.copy}
-                onClick={handleCopy}
-              >
-                <span className="profile-qr__copy-label" aria-hidden="true">
-                  <span className={isCopied ? undefined : "is-visible"}>
-                    <CopyIcon size={18} />
-                    {labels.copy}
-                  </span>
-                  <span className={isCopied ? "is-visible" : undefined}>
-                    <CheckIcon size={16} weight="bold" />
-                    {labels.copied}
-                  </span>
-                </span>
-              </button>
-            </div>
-            <small>{labels.fileNote}</small>
-            <p
-              className="profile-qr__status"
-              role="status"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              {isCopied ? <span className="visually-hidden">{status}</span> : status}
-            </p>
+            {actions}
           </div>
 
           {labelFigure}

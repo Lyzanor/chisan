@@ -2,7 +2,6 @@ import "server-only";
 
 import { and, eq, gt, isNull, lte, or, sql } from "drizzle-orm";
 
-import { activeProducerPremiumEntitlementCondition } from "@/lib/accounts/producer-premium-entitlements";
 import {
   findProducersByIds,
   findPublishedCountry,
@@ -14,7 +13,6 @@ import {
   auditEvents,
   favorites,
   entitlements,
-  producerMemberships,
   users,
 } from "@/lib/db/schema";
 import {
@@ -60,18 +58,6 @@ export async function isPublicUserProfileQrEnabled(
   userId: string,
 ): Promise<boolean> {
   const entitlement = await getActiveUserProfilePremiumEntitlement(userId);
-  return isProfileQrEnabled(entitlement?.metadata);
-}
-
-export async function isProducerProfileQrEnabled(
-  country: string,
-  producerId: number,
-): Promise<boolean> {
-  const [entitlement] = await getDatabase()
-    .select({ metadata: entitlements.metadata })
-    .from(entitlements)
-    .where(activeProducerPremiumEntitlementCondition(country, producerId))
-    .limit(1);
   return isProfileQrEnabled(entitlement?.metadata);
 }
 
@@ -196,64 +182,4 @@ export async function updateUserProfileQrPreference(
           : [],
       ),
   })(input);
-}
-
-export async function updateProducerProfileQrPreference(input: {
-  country: string;
-  enabled: boolean;
-  producerId: number;
-  userId: string;
-}): Promise<ProfileQrPreferenceUpdateResult> {
-  return getDatabase().transaction(async (transaction) => {
-    await transaction.execute(
-      sql`select pg_advisory_xact_lock(hashtext(${`producer:${input.country}:${input.producerId}`}))`,
-    );
-
-    const [membership] = await transaction
-      .select({ id: producerMemberships.id })
-      .from(producerMemberships)
-      .where(
-        and(
-          eq(producerMemberships.userId, input.userId),
-          eq(producerMemberships.country, input.country),
-          eq(producerMemberships.producerId, input.producerId),
-          eq(producerMemberships.role, "owner"),
-          eq(producerMemberships.status, "active"),
-        ),
-      )
-      .limit(1);
-    if (!membership) return "not_authorized";
-
-    const now = new Date();
-    const [updated] = await transaction
-      .update(entitlements)
-      .set({
-        metadata: enabledMetadata(input.enabled),
-        updatedAt: now,
-      })
-      .where(
-        activeProducerPremiumEntitlementCondition(
-          input.country,
-          input.producerId,
-          now,
-        ),
-      )
-      .returning({ id: entitlements.id });
-    if (!updated) return "not_entitled";
-
-    await transaction.insert(auditEvents).values({
-      actorKind: "user",
-      actorUserId: input.userId,
-      action: "profile_qr.preference_updated",
-      targetType: "entitlement",
-      targetId: updated.id,
-      metadata: {
-        country: input.country,
-        enabled: input.enabled,
-        producerId: input.producerId,
-        subjectKind: "producer",
-      },
-    });
-    return "updated";
-  });
 }

@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
-import { submitProducerChangeAction, updateProducerProfileQrAction } from "@/app/(application)/cuenta/actions";
+import { submitProducerChangeAction } from "@/app/(application)/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import {
   ProducerChangeForm,
@@ -50,7 +50,6 @@ import { PRODUCER_CONTENT_LIMITS } from "@/lib/catalog/content-schema";
 import { hashProducerContent } from "@/lib/accounts/producer-content-change";
 import { getProducerStatsLabels } from "@/lib/i18n/producer-stats";
 import { getProducerEditorLabels } from "@/lib/i18n/producer-editor";
-import { isProfileQrEnabled } from "@/lib/profile-qr";
 
 export const metadata: Metadata = {
   title: "Editar perfil del productor",
@@ -62,54 +61,22 @@ type EditProducerPageProps = {
   searchParams: Promise<AccountMessageParams>;
 };
 
-function ProducerQrSettings({
-  country,
-  enabled,
+function ProducerQrSticker({
   locale,
   name,
   path,
-  producerId,
 }: {
-  country: string;
-  enabled: boolean;
   locale: Parameters<typeof ProfileQrLabel>[0]["locale"];
   name: string;
   path: string;
-  producerId: number;
 }) {
   return (
     <section className="account-callout account-form-section--premium">
       <strong>QR del productor</strong>
       <p>
-        El QR del productor es opcional. Solo aparece públicamente cuando el titular verificado lo activa aquí y mientras su acceso al perfil ampliado siga activo.
+        Descarga la pegatina con el QR de tu ficha para ponerla en la entrada, el puesto o el obrador. Solo tú la ves aquí: no aparece en tu perfil público.
       </p>
-      <form action={updateProducerProfileQrAction} className="account-form">
-        <input type="hidden" name="country" value={country} />
-        <input type="hidden" name="producerId" value={producerId} />
-        <label className="account-field">
-          <span>Etiqueta QR</span>
-          <span>
-            <input
-              type="checkbox"
-              name="profileQrEnabled"
-              value="yes"
-              defaultChecked={enabled}
-            />{" "}
-            Mostrar y permitir descargar la etiqueta QR
-          </span>
-        </label>
-        <button type="submit" className="chisan-button chisan-button--primary">
-          Guardar preferencia del QR
-        </button>
-      </form>
-      {enabled ? (
-        <ProfileQrLabel
-          kind="producer"
-          locale={locale}
-          name={name}
-          path={path}
-        />
-      ) : null}
+      <ProfileQrLabel kind="producer" locale={locale} name={name} path={path} />
     </section>
   );
 }
@@ -183,21 +150,17 @@ export default async function EditProducerPage({
   const labels = getProducerEditorLabels(presentation.locale);
   const publicHref = buildAccountProducerHref(producer, presentation.explicitLocale);
   const premiumActive = Boolean(premiumEntitlement);
-  const producerQrEnabled = isProfileQrEnabled(premiumEntitlement?.metadata);
   const statisticsLink = owner ? (
     <Link href={`/cuenta/productores/${country}/${producerId}/estadisticas`} className="chisan-button">
       {getProducerStatsLabels(presentation.locale).link}
     </Link>
   ) : null;
-  const producerQrSettings =
+  const producerQrSticker =
     premiumActive && owner ? (
-      <ProducerQrSettings
-        country={country}
-        enabled={producerQrEnabled}
+      <ProducerQrSticker
         locale={presentation.locale}
         name={producer.name}
         path={buildAccountProducerHref(producer, null)}
-        producerId={producerId}
       />
     ) : null;
   if (openChange && (openChange.status !== "draft" || (openChange.requiredEntitlementKey && !premiumActive))) {
@@ -221,7 +184,7 @@ export default async function EditProducerPage({
           </div>
         </div>
         {statisticsLink}
-        {producerQrSettings}
+        {producerQrSticker}
       </div>
     );
   }
@@ -241,7 +204,7 @@ export default async function EditProducerPage({
           </Link>
         </div>
         {statisticsLink}
-        {producerQrSettings}
+        {producerQrSticker}
       </div>
     );
   }
@@ -403,7 +366,7 @@ export default async function EditProducerPage({
         ) : null}
       </div>
 
-      {producerQrSettings}
+      {producerQrSticker}
 
       <ProducerChangeForm
         action={submitProducerChangeAction}

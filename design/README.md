@@ -21,7 +21,7 @@ adapters/map.css           the shared map: Leaflet chrome, markers, locator, sel
 adapters/map-explorer.css  immersive discovery, header search, card strip and results sheet
 adapters/discovery.css     home hero and location card, province choice, selections
 adapters/producer-profile.css  the edge-to-edge producer profile
-adapters/profile-qr.css    printable QR invitation, dialog and label
+adapters/profile-qr.css    printable QR invitation, dialog and sticker
 adapters/accounts.css      sign-in, account workspace, forms, reviews and producer tools
 adapters/category-themes.css   soft ingredient photography in category margins
 adapters/native-colors.json    generated native colour projection; never edit directly
@@ -463,8 +463,8 @@ next card and keyboard scrolling. Approved links use the shared thumbnail card,
 with their associated product image or the reviewed producer identity, without
 fetching remote website previews. They render as visual destination
 cards; no remote preview
-image is inferred. The printable producer QR appears beside the early content
-with a small download control. Short visit and order facts form one group;
+image is inferred. The producer QR is not part of the public profile; its owner
+downloads the sticker from the account. Short visit and order facts form one group;
 certifications keep their exact scope and link back to recorded public sources.
 B2B has a separate section and leads eligible buyers toward their professional
 account. The current single CSV news notice renders as a dated feed item, with
@@ -514,18 +514,21 @@ selection QR centres. Current exports and their roles are listed in
   wrappers. These are raster-derived assets, not newly traced vector masters. The
   supplied pixels remain the authority.
 
-Profile QR labels use forest green for producer codes, neutral ink for selection
-codes and a pure white background. Producer labels use the forest green wordmark
-and center C; selection labels use the neutral ink wordmark and center C,
-establishing a 100% monochrome distinction between the two families. Both
-include the approved one-square C at the center of a small excavated area, with H
-error correction and a four-module outer quiet zone. Finder patterns remain
-intact. The 160px mark in an 880px code is a maximum visual footprint, not a
-guarantee for every payload or print size. Independently decode representative
+Profile QR labels are wall and entrance stickers (100 × 127.9 mm): a white
+rounded card with a thin outer rule, the wordmark, a hairline divider, the code
+and a solid bottom band carrying one uppercase line, "Productor local" or
+"Nuestros productores" in the locale. Forest green marks producer stickers and
+neutral ink marks selection stickers, a 100% monochrome distinction across the
+rule, wordmark, code, centre C and band. The code keeps square data modules
+while its three finder patterns are drawn as the Chisan C: a one-module ring
+opened at the upper right with the detached square in the opening. It uses H
+error correction and the approved C in a small excavated centre; the white card
+around it is the quiet zone. `ProfileQrSticker` draws the on-screen SVG and
+`drawProfileQrSticker` paints the same `PROFILE_QR_STICKER` layout into a
+2150 × 2750 px PNG with transparent corners. Independently decode representative
 short and long profile/selection URLs and actual downloaded labels before
-release. Producer labels retain a forest outer rule; selection labels retain an
-ink rule. Neither implies verification, ownership or a reviewed restaurant/shop
-classification.
+release. Neither colour implies verification, ownership or a reviewed
+restaurant/shop classification.
 
 Sizing and alt text live in `components/brand/chisan-brand.tsx`. Give an image
 empty alt text when its link already has an accessible name.
@@ -608,9 +611,8 @@ delivery bicycle in that scene. Decoration never captures pointer or keyboard in
 The selection QR invitation uses the supplied C, which crossfades upward into
 the QR icon on hover/focus. Activation opens a native modal dialog with a brief
 fade and rise. It keeps focus inside, supports Escape and outside dismissal,
-restores trigger focus and locks background scroll. The eligible producer QR is
-already visible on the producer page, with a small floating download button.
-The producer/selection eligibility gates remain unchanged.
+restores trigger focus and locks background scroll. The producer sticker renders
+in place in the owner's account beside its download and copy actions.
 Area filters and producer selection update the URL through Next.js-integrated
 browser history, using the already loaded area model. Back, Forward and shared
 URLs retain the same meaning without fetching the area on every interaction.
@@ -674,8 +676,8 @@ It writes the public SVG wrappers, metadata PNGs and `app/favicon.ico` with 16, 
 mask. The generator refuses a sheet whose dimensions no longer match its measured
 crop boxes. No font tracing or image-model redraw occurs.
 
-Outfit's font and license live in `app/_fonts/`; QR canvas typography consumes the
-resolved interface font. Review the exports visually and independently decode
+Outfit's font and license live in `app/_fonts/`; the QR sticker's canvas typography
+consumes the resolved interface font. Review the exports visually and independently decode
 actual short/long producer and selection downloads whenever the mark changes.
 
 ## References

@@ -623,15 +623,16 @@ verified bytes to Git assets. Upload metadata, previews, bounds and retention
 follow `docs/PRODUCER_CONTENT.md`. Links and translations are preserved from the
 reviewed package and maintained through the local editorial workflow.
 
-The printable producer QR is an optional presentation feature within that same
-capability. It is hidden by default and renders only while the entitlement is
-active and its `profileQrEnabled` metadata flag is `true`. Only the exact active
-owner may change that flag from the producer profile controls. The preference
-does not enter the CSV, does not change the producer route or identity, and an
-entitlement revocation hides the QR immediately without deleting catalog data.
-Both producer and selection labels encode only the stable same-origin canonical
-URL, without query parameters, tracking or a presentation locale. An already
-printed producer QR still opens the base profile after premium access ends.
+The printable producer QR is a download within that same capability, not part
+of the public profile. The producer account page offers the sticker only to the
+exact active owner while the entitlement is active; there is no opt-in flag and
+nothing renders on the public producer page. It does not enter the CSV, does not
+change the producer route or identity, and entitlement revocation removes the
+download without deleting catalog data. Earlier `profileQrEnabled` producer
+metadata is inert. Both producer and selection labels encode only the stable
+same-origin canonical URL, without query parameters, tracking or a presentation
+locale. An already printed producer QR still opens the base profile after
+premium access ends.
 
 `docs/CATALOG_WEB.md` owns the public HTML, locale, canonical identity, indexing and
 JSON-LD contract for both base and expanded profiles. The entitlement changes
@@ -909,9 +910,10 @@ activation, incidents, replacement and retirement are owned by
 - Re-check the exact producer entitlement at premium proposal, approval,
   materialization and finalization. Payment authorizes a capability, never the
   truth or editorial acceptance of a field.
-- Re-check the exact active user or producer premium entitlement and, for a
-  producer, the exact owner membership in every QR preference mutation. A
-  client checkbox, profile kind or public route never grants QR access.
+- Re-check the exact active user premium entitlement in every selection QR
+  preference mutation, and the exact producer premium entitlement and owner
+  membership before offering a producer QR download. A client checkbox, profile
+  kind or public route never grants QR access.
 - Re-check ownership at claim submission, approval and materialization. An
   active owner blocks every later claim submission for that producer, and an
   account may hold only one active owner membership. PostgreSQL enforces both
