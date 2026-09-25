@@ -19,7 +19,7 @@
   },
   "organizerUrl": "https://www.barcelona.cat/alimentaciosostenible/es/terra-i-gust",
   "organizerName": "Ajuntament de Barcelona",
-  "editorialNote": "La organización no publica plano ni números de puesto. Enlazamos a los productores publicados en Chisan de tres formas: con puesto propio (mercado de productoras, vinos naturales y kombucha), a través de los platos cuando el restaurante nombra al productor del ingrediente, y en las actividades del programa. Quedan fuera los 14 restaurantes, que no son unidades productivas; los ingredientes sin productor nombrado; las cerveceras que selecciona Barcelona Beer Festival, que no se nombran; la distribuidora DeCollserola; Organic Africa Chocolate, que elabora en Sierra Leona, y los puestos que aún estamos revisando (Mellow Sheng, Forno Bomba, Celler Nessu y los helados Delacrem). La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
+  "editorialNote": "La organización no publica plano ni números de puesto. Enlazamos a los productores publicados en Chisan de tres formas: con puesto propio (mercado de productoras, vinos naturales y kombucha), a través de los platos cuando el restaurante nombra al productor del ingrediente, y en las actividades del programa. Quedan fuera los 14 restaurantes, que no son unidades productivas; los ingredientes sin productor nombrado; las cerveceras que selecciona Barcelona Beer Festival, que no se nombran; la distribuidora DeCollserola; Organic Africa Chocolate, que elabora en Sierra Leona, y Mellow Sheng, que aún estamos revisando. Delacrem tiene dos obradores en Barcelona y no indica cuál elabora la línea Terra: la enlazamos con delaCrem Creativa, que presenta como su obrador y espacio de proyectos. La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
   "exhibitors": [
     {
       "country": "es",
@@ -62,6 +62,24 @@
       "producerId": 8237,
       "presence": "stand",
       "note": "Kombucha, zumos y refrescos ecológicos"
+    },
+    {
+      "country": "es",
+      "producerId": 13978,
+      "presence": "stand",
+      "note": "Espacio de vinos naturales"
+    },
+    {
+      "country": "es",
+      "producerId": 13979,
+      "presence": "stand",
+      "note": "Mercado de productoras: pan y focaccias con harinas ecológicas"
+    },
+    {
+      "country": "es",
+      "producerId": 4790,
+      "presence": "stand",
+      "note": "Helados de proximidad de la línea delaCrem Terra"
     },
     {
       "country": "es",
@@ -147,6 +165,16 @@
     {
       "title": "Espigolar per transformar: mermeladas de Ciutats Comestibles en el obrador im-perfect — La Guia de Reus",
       "url": "https://www.laguiadereus.com/espigolar-per-transformar/",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "delaCrem Terra: cremas heladas de proximidad",
+      "url": "https://delacrem.cat/terra/",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "title": "delaCrem Creativa: obrador de Passeig de Sant Joan",
+      "url": "https://delacrem.cat/creativa/",
       "checkedAt": "2026-09-25"
     }
   ],
