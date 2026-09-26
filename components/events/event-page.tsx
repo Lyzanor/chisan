@@ -47,8 +47,8 @@ export function EventPage({ event, selection, presence }: { event: EditorialEven
         countLabels: { [String(selection.items.length)]: `${selection.items.length} productores en Chisan` },
         map: { ...selectionPageMessages.map, producerMap: "Mapa del origen de los productores" } }} />
     </section>
-    {/* Without an organizer plan, the grouped list says how each producer takes part. */}
-    {!event.plan ? <section className={`${styles.section} ${styles.presence}`} aria-labelledby="presencia">
+    {/* A general plan without verified stand points still needs the grouped presence list. */}
+    {!event.plan?.points.length ? <section className={`${styles.section} ${styles.presence}`} aria-labelledby="presencia">
       <h2 id="presencia">Cómo encontrarlos en la feria</h2>
       <div className={styles.standGrid}>
         {presence.map((group) => <section key={group.kind} className={styles.standGroup}>

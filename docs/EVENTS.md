@@ -51,8 +51,11 @@ producer's map card. The optional
 `plan` holds a credited local copy of the organizer's image, its source URL,
 dimensions, review date and normalized points (0–1). A point must reference an
 exhibitor in the same event. A point marks that exhibitor's stand on the event
-plan; it is not a new productive coordinate. The shared presence viewer keeps the physical image and producer origins mounted
-together, with one identity selection and a searchable drawer. Nearby image
+plan; it is not a new productive coordinate. When a displayed venue plan shows
+only general areas, keep `points` empty and show the grouped presence list;
+never assign producer pins to approximate zones. The shared presence viewer
+keeps the physical image and producer origins mounted together, with one
+identity selection and a searchable drawer. Nearby image
 targets merge into an explicit position chooser at small scales; a selected
 position always uses its exact normalized point. Collective stands show all
 linked producers before choosing one. Counts use unique catalog identities,

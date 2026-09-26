@@ -18,6 +18,7 @@ export function AnnotatedProducerImageView({ image, placements, selectedIds, foc
   const [zoom, setZoom] = useState(isPlan ? 3 : 1);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const position = useRef({ x: 0.5, y: 0.5 });
+  const hasMeasured = useRef(false);
   const selected = placements.filter((group) => selectedIds.includes(group.id));
   const selectedId = selected.length === 1 ? selected[0].id : "";
   const ratio = image.height / image.width;
@@ -50,10 +51,14 @@ export function AnnotatedProducerImageView({ image, placements, selectedIds, foc
 
   useLayoutEffect(() => {
     const element = viewport.current;
-    if (!element) return;
+    if (!element || !size.width) return;
+    if (!hasMeasured.current) {
+      position.current = { x: focusX, y: focusY };
+      hasMeasured.current = true;
+    }
     element.scrollTo({ left: position.current.x * canvasWidth - element.clientWidth / 2,
       top: position.current.y * canvasHeight - element.clientHeight / 2, behavior: "instant" });
-  }, [canvasWidth, canvasHeight]);
+  }, [canvasWidth, canvasHeight, focusX, focusY, size.width]);
 
   useEffect(() => {
     const element = viewport.current;

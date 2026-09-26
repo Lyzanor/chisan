@@ -19,7 +19,7 @@
   },
   "organizerUrl": "https://www.barcelona.cat/alimentaciosostenible/es/terra-i-gust",
   "organizerName": "Ajuntament de Barcelona",
-  "editorialNote": "La organización no publica plano ni números de puesto. Enlazamos a los productores publicados en Chisan de tres formas: con puesto propio (mercado de productoras, vinos naturales y kombucha), a través de los platos cuando el restaurante nombra al productor del ingrediente, y en las actividades del programa. Quedan fuera los 14 restaurantes, que no son unidades productivas; los ingredientes sin productor nombrado; las cerveceras que selecciona Barcelona Beer Festival, que no se nombran; la distribuidora DeCollserola; Organic Africa Chocolate, que elabora en Sierra Leona, y Mellow Sheng, que aún estamos revisando. Delacrem tiene dos obradores en Barcelona y no indica cuál elabora la línea Terra: la enlazamos con delaCrem Creativa, que presenta como su obrador y espacio de proyectos. La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
+  "editorialNote": "El plano fotografiado en el recinto sitúa la zona de bebidas entre el escenario de la Mercè y el mercado Slow Food, pero no identifica puestos individuales; por eso no señalamos posiciones de productores en él. Los carteles de los puestos confirman a Kibus Beer y Birra 08 entre las cerveceras seleccionadas por Barcelona Beer Festival, además de L'Olivera, Rabassaires, Celler Nessu y LOV Ferments en la zona de bebidas. Enlazamos productores publicados en Chisan con puesto propio, a través de platos que nombran al productor del ingrediente, o en actividades del programa. Quedan fuera los 14 restaurantes, que no son unidades productivas; los ingredientes sin productor nombrado; la distribuidora DeCollserola; Organic Africa Chocolate, que elabora en Sierra Leona, y Mellow Sheng, que aún estamos revisando. Delacrem tiene dos obradores en Barcelona y no indica cuál elabora la línea Terra: la enlazamos con delaCrem Creativa, que presenta como su obrador y espacio de proyectos. La ubicación de la feria es distinta de los lugares de producción que muestra el mapa.",
   "exhibitors": [
     {
       "country": "es",
@@ -37,13 +37,13 @@
       "country": "es",
       "producerId": 7510,
       "presence": "stand",
-      "note": "Espacio de vinos naturales"
+      "note": "Vinos de proximidad: Masia Can Calopa de Dalt"
     },
     {
       "country": "es",
       "producerId": 11022,
       "presence": "stand",
-      "note": "Espacio de vinos naturales"
+      "note": "Vinos de proximidad: Medir, Cugat, Orbis y vermut Flors de Collserola"
     },
     {
       "country": "es",
@@ -61,13 +61,25 @@
       "country": "es",
       "producerId": 8237,
       "presence": "stand",
-      "note": "Kombucha, zumos y refrescos ecológicos"
+      "note": "Zona de bebidas: kombutxa, refrescos y zumos"
     },
     {
       "country": "es",
       "producerId": 13978,
       "presence": "stand",
-      "note": "Espacio de vinos naturales"
+      "note": "Vinos de proximidad: Bulla, Loop, Límit y Pinna"
+    },
+    {
+      "country": "es",
+      "producerId": 7441,
+      "presence": "stand",
+      "note": "Cervezas artesanas: Blonde Wheat Ale, Hibisc Ale Bio, Bruna Bio y Atrevida"
+    },
+    {
+      "country": "es",
+      "producerId": 1240,
+      "presence": "stand",
+      "note": "Cervezas artesanas: Born, Sants, Barceloneta y Gràcia"
     },
     {
       "country": "es",
@@ -179,7 +191,7 @@
     }
   ],
   "publishedAt": "2026-09-25",
-  "updatedAt": "2026-09-25",
+  "updatedAt": "2026-09-26",
   "image": {
     "src": "/editorial/events/terra-i-gust-2026-poster.webp",
     "alt": "Cartel oficial de Terra i Gust, Mercè 2026, con una ilustración de una aceitera y tomates entre edificios",
@@ -189,5 +201,16 @@
     "sourceUrl": "https://www.barcelona.cat/alimentaciosostenible/sites/default/files/2026-09/Terra_Gust_programa_A5.pdf",
     "rights": "Portada del programa oficial publicada por la organización; se reproduce para identificar esta edición, sin alterar su diseño.",
     "checkedAt": "2026-09-25"
+  },
+  "plan": {
+    "src": "/editorial/events/terra-i-gust-2026-plan.png",
+    "alt": "Plano general de Terra i Gust 2026 expuesto en el recinto: escenario hacia el Zoo de Barcelona, bebidas en el centro y mercado Slow Food hacia el Arc de Triomf; no indica puestos individuales.",
+    "width": 1088,
+    "height": 1446,
+    "credit": "Adaptación visual de Chisan del plano del Ajuntament de Barcelona fotografiado por un asistente",
+    "sourceUrl": "https://chisan.app/editorial/events/terra-i-gust-2026-plan-original.jpg",
+    "rights": "Versión centrada para lectura del plano expuesto en el recinto el 26 de septiembre de 2026; el enlace abre la fotografía original. Se muestra como orientación general sin atribuir puestos individuales.",
+    "checkedAt": "2026-09-26",
+    "points": []
   }
 }

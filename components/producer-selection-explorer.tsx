@@ -131,7 +131,7 @@ function ProducerSelectionExplorerView({ selection, messages, shelf, plan, selec
             </> : <>
               <div className={styles.identity}>
                 {physical.placement ? <><strong>{placementTitle(physical.placement)}</strong><span>{new Set(physical.placement.points.map((point) => point.producerKey)).size} productores comparten esta posición</span></>
-                  : <><strong>{countLabel}</strong><span>{isPlan ? "Elige un puesto o un productor" : "Toca un producto para descubrir su origen"}</span></>}
+                  : <><strong>{countLabel}</strong><span>{isPlan ? placements.length ? "Elige un puesto o un productor" : "Consulta el plano general o busca un productor" : "Toca un producto para descubrir su origen"}</span></>}
               </div>
               {physical.placement ? <button type="button" className="chisan-button" onClick={() => choosePlacements([physical.placement!])}>Elegir productor</button> : null}
             </>}

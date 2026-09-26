@@ -18,6 +18,13 @@ test("event dates, venue and plan relationships are validated", () => {
   assert.equal(eventSchema.safeParse({ ...event, exhibitors: [...event.exhibitors, event.exhibitors[0]] }).success, false);
 });
 
+test("a venue photograph can show a general plan without stand points", () => {
+  const event = readEvents().find((entry) => entry.slug === "terra-i-gust-2026");
+  assert.ok(event?.plan);
+  assert.deepEqual(event.plan.points, []);
+  assert.equal(eventSchema.safeParse(event).success, true);
+});
+
 test("dish and activity presences need a note and never take a stand or plan point", async () => {
   const escumostra = readEvents().find((entry) => entry.slug === "escumostra-2026")!;
   const [first, ...rest] = escumostra.exhibitors;

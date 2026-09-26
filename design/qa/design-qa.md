@@ -1214,3 +1214,18 @@ edge. `pnpm check:images`, `pnpm test:images` and `pnpm check:design` pass.
 - Verified markup and styling at 390px (mobile) and wide viewports: title actions stay side by
   side without wrapping or horizontal overflow, and the concluding details section retains its
   pale moss background and hairline borders.
+
+## 2026-09-26 — Terra i Gust general plan
+
+The visitor's photograph of the posted venue diagram is preserved beside a
+centered reading adaptation. The plan marks broad areas, so it has no producer
+pins; the grouped stand, dish and activity list remains below the shared
+plan-and-origin viewer. Its initial position now centers the beverage area
+after the image viewport is measured.
+
+Checked the local event page at 390×844 first, then 1440×900. The plan image
+loads at its declared 1088×1446 dimensions; the photo source link, zoom
+controls, origin map, Kibus Beer and Birra 08 profile links, and grouped list
+are present. Neither viewport has horizontal document overflow. The local dev
+console has only the expected Clerk development-key warning and missing Vercel
+Analytics script.
